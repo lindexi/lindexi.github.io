@@ -1,11 +1,17 @@
 # win10 uwp App-to-app communication 应用通信
 
 这篇文章都是乱说的，如果觉得有不好的，可以发我邮箱
+
 应用之间需要相互的发送信息，就是我们经常用的分享
+
+
 ![这里写图片描述](http://img.blog.csdn.net/20160404102715815)
+
 有个人看到一个网页很好，于是就希望把这个网页发送到邮件，那么这样的话就是使用应用通信。
+
 因为每个应用都是不能访问其他应用数据，所以需要通信可以使用启动内置应用，文件关联应用。
 ##发送数据
+
 创建一个event 可以在用户发送，共享发送
 
 ```
@@ -53,6 +59,7 @@
             request.Data.Properties.Description = "我的博客blog.csdn.net/lindexi_gd";
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160404105455138)
+
 开始通信
 
 ```
@@ -86,16 +93,23 @@ DataTransferManager.ShowShareUI();
 
 要接受其他的app我们需要设置`requestData.Properties.ContentSourceApplicationLink = ApplicationLink;`
 ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
+
 要接受其他的app我们需要设置
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-4-5/70888377.jpg)
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-4-5/65763757.jpg)
 我们在说明写：林德熙博客
+
 但说明其实没有什么用，主要是数据格式才是需要我们选择，在上也看到我们可以分享的数据有多种格式，那么满足格式的分享就会在分享看到我们的应用。
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-4-5/25742257.jpg)
 新建一个页面接分享，因为我想不到这个叫什么，我就放在MainPage
+
 导航到MainPage就是分享打开
+
 页面传参数可以使用，`Frame frame.Navigate`(页面，参数)
+
 
 ```
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -147,9 +161,12 @@ ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
         }
 ```
 
-当我们做完可以告诉`            share_operation.ReportCompleted();`
+当我们做完可以告诉` share_operation.ReportCompleted();`
+
 如果错了可以告诉发送我们接受错
+
 分享成功经常返回一个链接，我们把一个东西分享到百度云，那么我们可以拿到一个链接百度云，可以发送，这个`QuickLink`
+
 
 `QuickLink `·我们需要标题，图标，id
 
@@ -173,6 +190,7 @@ ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
             share_operation.ReportCompleted(quickLinkInfo);
 ```
 ##文件启动
+
 我们需要关联
 ![这里写图片描述](http://img.blog.csdn.net/20160405185522977)
 在app.xaml.cs
