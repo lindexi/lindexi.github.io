@@ -12,10 +12,13 @@
 
 ##添加控件
 
+
 可以使用以下任意方式添加控件
 
 - 使用界面直接拖控件，Blend直接在工具箱把控件拖到界面
+- 
 ![](http://i12.tietuku.cn/5af30d67c9536b70.png)
+
  点击Button，拖动Button界面
  ![](http://i13.tietuku.cn/d1ce83f232b174fb.jpg)
  
@@ -26,12 +29,20 @@
 在visual studio可以使用工具箱、Xaml编辑器、设计器，属性窗口
 
 - 工具箱
+
 ![](http://i13.tietuku.cn/75399cc4641b063e.png)
+
+
 - Xaml编辑器
+
 ![这里写图片描述](http://img.blog.csdn.net/20160323170242683)
+
 - 设计器
+
 ![这里写图片描述](http://img.blog.csdn.net/20160323170453139)
+
 - 属性窗口
+
 ![这里写图片描述](http://img.blog.csdn.net/20160323170538139)
 
 工具箱显示很多可以用在软件的控件，可以拖动控件到界面，可以双击控件，控件就会自动添加到软件。
@@ -56,16 +67,20 @@
 ##设置控件属性
 
 可以在属性选择控件属性
+
 ![这里写图片描述](http://img.blog.csdn.net/20160323171006786)
 
 可以编辑Xaml写控件
+
 ![这里写图片描述](http://img.blog.csdn.net/20160323171135819)
 
 如果你设置了一个你不要，可以重设属性
+
 ![](http://i12.tietuku.cn/54149a3630910083.png)
 点击重新设置
 
 设置颜色可以使用下面的颜色表
+
 ![](http://i12.tietuku.cn/8f87d0190a7279e7.png)
 
 在Xaml写Visual studio在你按下一个键就会提示
@@ -75,9 +90,12 @@
 ##控件事件
 
 每个控件都有很多事件，可以使用Xaml，属性创建事件，创建事件的方法是事件处理，参见：https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview
+
 创建事件可以在属性
+
 ![](http://i12.tietuku.cn/7ddf9aae007a821a.png)
 选择事件，写名称，按回车，就会到cs，事件处理第一个参数是发送者，引用对象，第二个是事件数据
+
 我们创建一个Click
 
 ```
@@ -87,6 +105,7 @@
         }
 ```
 如果有给按钮名称，可以在代码
+
 ![](http://i12.tietuku.cn/2cc32155efa5e434.png)
 
 原文：https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro
