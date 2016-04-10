@@ -1,7 +1,9 @@
 # win10 UWP 全屏
 
 win10 可以全屏软件或窗口，窗口有一般、最小化、最大化。我们有新的API设置我们软件是全屏，是窗口。我们可以使用`ApplicationView`让我们软件全屏，取消。
+
 下面是一个简单的例子，判断我们软件是不是全屏，如果是，就不全屏，代码在一个ToggleButton
+
 
 ```
 ApplicationView view = ApplicationView.GetForCurrentView();
@@ -18,8 +20,11 @@ else
 }
 ```
 `IsFullScreenMode`为true，现在应用全屏
+
 `ExitFullScreenMode`退出全屏
+
 `TryEnterFullScreenMode`进入全屏，进入全屏成功true
+
 如果窗口改变需要知道，可以注册`Window.Current.SizeChanged`
 
 ```
