@@ -1,7 +1,12 @@
 # 三种方式设置特定设备UWP XAML view
 
-开发者可以设置UWP特定设备xaml view，在桌面，手机，Iot，这个对于设置对不同设备的不同屏幕有用。我们可以使用RelativePanel，VisualStateTriggers，但是这样我们的xaml很大，我们在弄的时候觉得想修改一个东西会让我们把全部删了。为了让我们可以在不同设备使用不同xaml view，我们可以有下面的方式：
+开发者可以设置UWP特定设备xaml view，在桌面，手机，Iot，这个对于设置对不同设备的不同屏幕有用。我们可以使用RelativePanel，VisualStateTriggers，但是这样我们的xaml很大，我们在弄的时候觉得想修改一个东西会让我们把全部删了。
+
+为了让我们可以在不同设备使用不同xaml view，我们可以有下面的方式：
+
+
 在不同设备显示不同背景颜色，文本，在同xaml，开始的页面
+
 <Page  
     x:Class="DeviceFamily.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -19,11 +24,17 @@
 
 ##新建文件夹DeviceFamily-Type
 里面的type是我们的设备，手机：Mobile，桌面：Desktop，IOT
+
 在我们的解决方案新建一个文件夹，我们这里在手机Mobile
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-4-6/21773005.jpg)
+
 我们在新建DeviceFamily-Mobile新建xaml，MainPage
+
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438517274/deviceFamilyVS2_g6gazd.jpg)
+
 新建类MainPage
+
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438517385/deviceFamilyVS3_zrnft1.jpg)
 
 如果在手机运行，就会使用DeviceFamily-Mobile/MainPage.xaml，如果是其他，就会使用解决方案DeviceFamily/MainPage.xaml
