@@ -1,6 +1,6 @@
 # win10 uwp 使用油墨输入
 
-win10可以很简单在我们的app使用自然输入，这篇文章主要翻译[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/)  一些内容是参见[成染大神](http://www.wangchenran.com/win10uwp%E5%BC%80%E5%8F%91-ink.html)
+win10可以很简单在我们的app使用自然输入，这篇文章主要翻译[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/)  一些内容是参见[陈染大神](http://www.wangchenran.com/win10uwp%E5%BC%80%E5%8F%91-ink.html)
 
 现在很多人还是使用笔和纸来记录，那么可以在电脑输入方式和之前使用的方式一样，很多用户觉得会方便。在win10 我们有一个简单的方法去让用户输入，`InkCanvas`。现在edge，OneNote这些都有使用`InkCanvas`。
 
@@ -107,7 +107,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
                 }
             }
 ```
-成染大神的保存
+陈染大神的保存
 
 ```
  //声明一个流来存储墨迹信息
