@@ -23,6 +23,7 @@
 </Page> 
 
 ##新建文件夹DeviceFamily-Type
+
 里面的type是我们的设备，手机：Mobile，桌面：Desktop，IOT
 
 在我们的解决方案新建一个文件夹，我们这里在手机Mobile
@@ -42,8 +43,11 @@
 第二种方式在xaml文件加.DeviceFamily-Type，我们创建一个新的xaml，MainPage.DeviceFamily-Mobile.xaml
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438517871/deviceFamilyVS4_syhdit.jpg)
 我们不能使用方法1和2在一个工程。
+
 我们打开mobil会使用MainPage.DeviceFamily-Mobile.xaml
+
 ##InitializeComponent重载
+
 添加一个DeviceFamily-Type文件夹在里面写一个xaml会在MainPage.g.i.cs对InitializeComponent重载。
 
 ```
@@ -61,7 +65,9 @@ public void InitializeComponent(global::System.Uri resourceLocator)
     global::Windows.UI.Xaml.Application.LoadComponent(this, resourceLocator, global::Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation.Application);
 }
 ```
+
 可以指定一个uri到需要xaml
+
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438520919/deviceFamilyVS5_gdgxb8.jpg)
 
 ```
@@ -85,6 +91,7 @@ public MainPage()
 }
 ```
 使用DeviceFamily指定视图的效果，首先是桌面的MainPage.xaml
+
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438521366/desktop_yaxua2.jpg)
 我们使用不同颜色放在mobil
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438521806/mobile1_sin4zt.jpg)
@@ -94,6 +101,7 @@ public MainPage()
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438522070/mobile-secondary_gjihv4.jpg)
 
 单页面触发器
+
 我们可以在一个页面不同设备使用不同的xaml
 [WindowsStateTriggers DeviceFamily sample](https://github.com/dotMorten/WindowsStateTriggers/blob/master/src/TestApp/Samples/DeviceFamilySample.xaml)
 
