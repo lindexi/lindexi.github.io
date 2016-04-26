@@ -8,5 +8,5 @@
 * [win10 uwp 使用油墨输入](win10_uwp_shi_yong_you_mo_shu_ru.md)
 * [三种方式设置特定设备UWP XAML view](san_zhong_fang_shi_shezhi_te_ding_she_bei_uwp_xaml.md)
 * [win10 uwp iot](win10_uwp_iot.md)
-* win10 uwp 活动磁贴
+* [win10 uwp 活动磁贴](win10_uwp_huo_dong_ci_tie.md)
 
