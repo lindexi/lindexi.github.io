@@ -9,5 +9,5 @@
 * [三种方式设置特定设备UWP XAML view](san_zhong_fang_shi_shezhi_te_ding_she_bei_uwp_xaml.md)
 * [win10 uwp iot](win10_uwp_iot.md)
 * [win10 uwp 活动磁贴](win10_uwp_huo_dong_ci_tie.md)
-* win 10 UWP 标签
+* [win 10 UWP 标签](win_10_uwp_biao_qian.md)
 
