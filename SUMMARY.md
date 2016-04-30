@@ -10,5 +10,5 @@
 * [win10 uwp iot](win10_uwp_iot.md)
 * [win10 uwp 活动磁贴](win10_uwp_huo_dong_ci_tie.md)
 * [win 10 UWP 标签](win_10_uwp_biao_qian.md)
-* Xamarin Forms 进度条控件
+* [Xamarin Forms 进度条控件](xamarin_forms_jin_du_tiao_kong_jian.md)
 
