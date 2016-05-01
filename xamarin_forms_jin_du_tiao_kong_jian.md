@@ -170,6 +170,7 @@ namespace CircularProgress
     }
 }
 ```
+
 不使用自定义渲染，可以在各个平台没有使用厉害的技术覆盖两个图做出从0-100%，可以使用不同角度表示0.001
 
 本文：http://blog.csdn.net/lindexi_gd
