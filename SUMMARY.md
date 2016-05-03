@@ -12,5 +12,5 @@
 * [win10 uwp 活动磁贴](win10_uwp_huo_dong_ci_tie.md)
 * [win 10 UWP 标签](win_10_uwp_biao_qian.md)
 * [Xamarin Forms 进度条控件](xamarin_forms_jin_du_tiao_kong_jian.md)
-* win10 UWP MessageDialog 和 ContentDialog
+* [win10 UWP MessageDialog 和 ContentDialog](win10_uwp_messagedialog_he_contentdialog.md)
 
