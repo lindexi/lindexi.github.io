@@ -49,6 +49,8 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
 
 [后面](#俄罗斯方块)说的有些小白。
 
+
+
 我们程序：
 
 - view:MainPage.xaml
@@ -76,7 +78,8 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
 
 每个方块
 `Rectangle[,] _rectangle`
-我们需要设计高度宽度 `size = 10;`
+我们需要设计高度宽度 `size = 10;`，其实这里可以根据你自己需要，每个方块的size可以设置大，可以看到上面的图，我的方块是有些小。
+
 现在就是我们重要的绑定，我们有200个Rectangle，如果每个在xaml，写我觉得我没有这么时间，也容易错
 
 所以我们在
@@ -101,11 +104,27 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
             }
 ```
 
+后台写了200个方块，就几句。我们给宽度高度、显示的颜色。显示颜色是没有方块显示的颜色，这里说的没有方块是说没有俄罗斯方块。
+
+然后我们给每个方块边框，Stroke，他们的位置。
+
+这样我们的屏幕就有了200个方块，但是放进去我们会发现和我们上面的图不同，因为宽度和高度不同
+
+```
+            canvas.Width = size * view.col;
+            canvas.Height = size * view.row;
+```
+
+这样就好了。
+
+界面大概就需要做的就这样，算法很简单，放在最后。
+
 我们有的model，有俄罗斯方块的初始方块、移动、变形、向下
 
 他把所有的数据保存在一个数组`grid_observable`，类型grid里面有个`rectangle`，如果为0表示这个地方没有方块，如果为1表示有方块。
 
 类型grid
+
 * 长
 * 宽
 * 是否有方块
@@ -221,6 +240,8 @@ _rectangle[i, j].SetBinding(Shape.FillProperty, bind);
 
 其实我是不喜欢直接绑定就转换，因为这样类很多，我们需要文件夹
 Convert里面是转换类
+
+我想说的不是做一个俄罗斯方块，而是把之前数据保存二进制矩阵的游戏移植到UWP思路。很简单不用多修改就可以使用，界面我们可以自己来写，只要绑定写了，那么就可以使用。
 
 写到这，后面都是小白
 
@@ -745,3 +766,1156 @@ TextBox 我们需要按键
 ```
 
 rectangle绑定我们的界面
+
+绑定在上面有写了
+
+```
+        private void rectangle()
+        {
+            view = new viewModel();
+            Rectangle[,] _rectangle = new Rectangle[view.row, view.col];
+            double height = 600;
+            double size = height / view.row;
+            if (size < 10)
+            {
+                size = 10;
+            }
+            canvas.Width = size * view.col;
+            canvas.Height = size * view.row;
+            canvas.Background = new SolidColorBrush(Colors.BurlyWood);
+            for (int i = 0; i < view.row; i++)
+            {
+                for (int j = 0; j < view.col; j++)
+                {
+                    _rectangle[i, j] = new Rectangle()
+                    {
+                        Width = size,
+                        Height = size,
+                        Fill = new SolidColorBrush(Colors.Gray),
+                        Stroke = new SolidColorBrush(Colors.LightCoral),
+                        AllowDrop = false,
+                        CanDrag = false,
+                        Margin = new Thickness(j * size, i * size, 0, 0)
+                    };
+                    Binding bind = new Binding()
+                    {
+                        Path = new PropertyPath("solid_collection[" + (i * view.col + j) + "].solids"),
+                        Mode = BindingMode.OneWay
+                    };
+                    _rectangle[i, j].DataContext = view;
+                    _rectangle[i, j].SetBinding(Shape.FillProperty, bind);
+                    canvas.Children.Add(_rectangle[i, j]);
+                }
+            }
+        }
+```
+
+我们可以开始运行，就可以看到，只下来一块
+
+我们要让整个方块向下
+
+```
+        public void down()
+        {
+            if (_square == null)
+            {
+                new_block();
+            }
+           
+            foreach (grid temp in _square._grid)
+            {
+                temp.row++;
+            }
+        }
+```
+
+每个都向下
+
+我们会发现我们的方块下到最下还是没有停下来
+
+我们需要判断方块是不是到最下
+
+判断方块是不是要到的位置不可以，这句话是说判断是不是在grid里，位置超过最大可以的位置，或者小于0，位置是不是有方块。
+
+```
+        private bool rectangle(square _square)
+        {
+            bool _rectangle = true;
+
+            foreach (grid temp in _square._grid)
+            {
+                if (temp.col >= 0 && temp.row >= 0)
+                {
+                    int n = (temp.row ) * col + temp.col;
+                    if (_grid_observable.Count > n && _grid_observable[n].rectangle != 0)
+                    {
+                        _rectangle = false;
+                    }
+                }
+                else if (temp.col < 0)
+                {
+                    return false;
+                }
+
+                if (temp.row >= _row || temp.col >= _col)
+                {
+                    return false;
+                }
+            }
+            return _rectangle;
+        }
+```
+
+我们先复制方块，然后让方块向下，判断是个方块是不是可以在他的位置，如果可以，复制回去。
+
+```
+        public void down()
+        {
+            if (_square == null)
+            {
+                new_block();
+            }
+            square temp = _square.clone();
+            foreach (grid t in temp._grid)
+            {
+                t.row++;
+            }
+            if (rectangle(temp))
+            {
+                _square = temp;
+            }
+        }
+```
+
+复制
+
+```
+        public square clone()
+        {
+            square temp = new square(_block, 0);
+            for (int i = 0; i < _grid.Length; i++)
+            {
+                temp._grid[i] = _grid[i].clone();
+            }
+            temp.rotate_count = rotate_count;
+            return temp;
+        }
+```
+运行我们可以看到方块能向下，在最下停下，但是不会出新方块，我们需要判断向下，如果没有可以位置，那么新方块
+
+```
+        public void down()
+        {
+            if (_square == null)
+            {
+                new_block();
+            }
+            square temp = _square.clone();
+            foreach (grid t in temp._grid)
+            {
+                t.row++;
+            }
+            if (!rectangle(temp))//修改
+            {
+                draw();          //画出来
+                new_block();     
+            }
+            else
+            {
+                _square = temp; //为什么不clone
+            }
+        }
+```
+
+上面代码留有一个问题，就是最后的把可以的位置复制回去怎么不需要写复制，当然这个简单。
+
+我们现在还需要看画出来
+
+我们需要把方块画在grid，那些我们无法移动的方块需要画在grid
+
+```
+        private void draw()
+        {
+            int n = 0;
+            foreach (grid temp in _square._grid)
+            {
+                if (temp.col >= 0 && temp.row >= 0)
+                {
+                    n = temp.row * col + temp.col;
+                    if (_grid_observable.Count > n)
+                    {
+                        _grid_observable[n].rectangle = 1;
+                    }
+                }
+            }
+            clean();
+        }
+```
+
+画完我们判断是不是可以删掉，判断一行是不是有方块，有就删掉
+
+```
+        private void clean()
+        {
+            bool _rectangle = true;
+            int n = 1;
+            foreach (grid temp in _grid_observable)
+            {
+                if (temp.col < _col - 1)
+                {
+                    _rectangle = _rectangle && temp.rectangle != 0;
+                }
+                else if (temp.col == _col - 1)
+                {
+                    _rectangle = _rectangle && temp.rectangle != 0;
+                    if (_rectangle)
+                    {
+                        for (int i = n*_col - 1; i > _col; i--)
+                        {
+                            _grid_observable[i].rectangle = _grid_observable[i - _col].rectangle;
+                        }
+                        n--;
+                    }
+                    n++;
+                    _rectangle = true;
+                }
+            }
+        }
+```
+
+现在我们需要写移动
+
+左移col--，判断是否可以存在，可以，复制回去
+
+```
+        public void move(bool left)
+        {
+            square temp = _square.clone();
+            foreach (grid t in temp._grid)
+            {
+                if (left)
+                {
+                    t.col--;
+                }
+                else
+                {
+                    t.col++;
+                }
+            }
+
+            if (rectangle(temp))
+            {
+                _square = temp;
+            }
+        }
+```
+
+我们基本做好了俄罗斯方块算法
+
+我们去mainpage写
+
+```
+        private void keydown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+        {
+            if (e.Key == VirtualKey.Up)
+            {
+                view.translate();
+            }
+            else if (e.Key == VirtualKey.Left)
+            {
+                view.move(true);
+            }
+            else if(e.Key==VirtualKey.Right)
+            {
+                view.move(false);
+            }
+            else if (e.Key == VirtualKey.Down)
+            {
+                view.down();
+            }
+        }
+```
+
+viewmode只是使用model
+
+```
+        public void move(bool left)
+        {
+            _model.move(left);
+        }
+```
+
+运行，我们可以开始玩了，然后你会发现好像我们还少个没有写
+
+我把全部代码放下面，等到你不知道怎么写才去，我的变量命名其实有问题，如果可以去改下，因为按shift然后大写实在不会，所以都是`_`，然后你们知道我怎么按的，其实我只需要使用`-`，怎么做我会在之后告诉大家
+
+MainPage.xaml
+
+```
+<Page
+    x:Class="tetris.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:tetris"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox Margin="10,10,10,10" Width="1" Height="1" KeyDown="keydown"></TextBox>
+        <Canvas x:Name="canvas" Margin="10,10,10,10">
+
+        </Canvas>
+    </Grid>
+</Page>
+
+```
+
+```
+// lindexi
+// 11:22
+
+#region
+
+using System.Runtime.CompilerServices;
+using Windows.System;
+using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Shapes;
+
+#endregion
+
+//“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
+
+namespace tetris
+{
+    /// <summary>
+    /// 可用于自身或导航至 Frame 内部的空白页。
+    /// </summary>
+    public sealed partial class MainPage : Page
+    {
+        private viewModel view;
+        public MainPage()
+        {
+            InitializeComponent();
+            rectangle();
+        }
+
+        private void keydown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+        {
+            if (e.Key == VirtualKey.Up)
+            {
+                view.translate();
+            }
+            else if (e.Key == VirtualKey.Left)
+            {
+                view.move(true);
+            }
+            else if(e.Key==VirtualKey.Right)
+            {
+                view.move(false);
+            }
+            else if (e.Key == VirtualKey.Down)
+            {
+                view.down();
+            }
+        }
+
+        private void rectangle()
+        {
+            view = new viewModel();
+            Rectangle[,] _rectangle = new Rectangle[view.row, view.col];
+            double height = 600;
+            double size = height / view.row;
+            if (size < 10)
+            {
+                size = 10;
+            }
+            canvas.Width = size * view.col;
+            canvas.Height = size * view.row;
+            canvas.Background = new SolidColorBrush(Colors.BurlyWood);
+            for (int i = 0; i < view.row; i++)
+            {
+                for (int j = 0; j < view.col; j++)
+                {
+                    _rectangle[i, j] = new Rectangle()
+                    {
+                        Width = size,
+                        Height = size,
+                        Fill = new SolidColorBrush(Colors.Gray),
+                        Stroke = new SolidColorBrush(Colors.LightCoral),
+                        AllowDrop = false,
+                        CanDrag = false,
+                        Margin = new Thickness(j * size, i * size, 0, 0)
+                    };
+                    Binding bind = new Binding()
+                    {
+                        Path = new PropertyPath("solid_collection[" + (i * view.col + j) + "].solids"),
+                        Mode = BindingMode.OneWay
+                    };
+                    _rectangle[i, j].DataContext = view;
+                    _rectangle[i, j].SetBinding(Shape.FillProperty, bind);
+                    canvas.Children.Add(_rectangle[i, j]);
+                }
+            }
+        }
+    }
+}
+```
+
+viewModel
+
+```
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Shapes;
+
+namespace tetris
+{
+    public class viewModel : notify_property
+    {
+        public viewModel(Rectangle[,] rectangle)
+        {
+            _rectangle = rectangle;
+        }
+
+        public viewModel()
+        {
+            //_solid = new SolidColorBrush[row, col];
+            solid_collection = new ObservableCollection<solid>();
+            for (int i = 0; i < col * row; i++)
+            {
+                solid_collection.Add(new solid(new SolidColorBrush(Colors.Gray)));
+            }
+            visibility = new Visibility[row * col];
+            rectangle_visibility = new Visibility[row, col];
+            DispatcherTimer time = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(0.5)
+            };
+            time.Tick += tick;
+            time.Start();
+        }
+
+        public void translate()
+        {
+            _model.translate();
+        }
+
+        public void move(bool left)
+        {
+            _model.move(left);
+        }
+
+        private void tick(object sender, object e)
+        {
+            DispatcherTimer time = sender as DispatcherTimer;
+            time?.Stop();
+            down();
+            time?.Start();
+        }
+
+        //Rectangle
+        private Rectangle[,] _rectangle;
+        //private SolidColorBrush[,] _solid;
+        public ObservableCollection<solid> solid_collection
+        {
+            set;
+            get;
+        }
+
+        //private void draw()
+        //{
+        //    foreach (grid temp in _model.grid_observable)
+        //    {
+
+        //    }
+        //}
+
+        public int col
+        {
+            set
+            {
+                value = 0;
+            }
+            get
+            {
+                return _model.col;
+            }
+        }
+
+        public int row
+        {
+            set
+            {
+                value = 0;
+            }
+            get
+            {
+                return _model.row;
+            }
+        }
+
+        //public SolidColorBrush[,] solid
+        //{
+        //    set
+        //    {
+        //        _solid = value;
+        //        OnPropertyChanged();
+        //    }
+        //    get
+        //    {
+        //        return _solid;
+        //    }
+        //}
+
+        public Visibility[,] rectangle_visibility
+        {
+            set
+            {
+                _rectangle_visibility = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _rectangle_visibility;
+            }
+
+        }
+
+        private Visibility[,] _rectangle_visibility;
+        private Visibility[] _visibility;
+
+        public Visibility[] visibility
+        {
+            set
+            {
+                _visibility = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _visibility;
+            }
+        }
+
+        public void down()
+        {
+            //visibility = visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+            _model.down();
+
+            foreach (grid temp in _model.grid_observable)
+            {
+                //SolidColorBrush _sld=new SolidColorBrush();
+                if (temp.rectangle == 0)
+                {
+                    //solid[temp.row, temp.col] = new SolidColorBrush(Colors.Gray);
+                    solid_collection[temp.row * col + temp.col].solids = new SolidColorBrush(Colors.Gray);
+                    //rectangle_visibility[temp.row, temp.col] = Visibility.Collapsed;
+                    //visibility[temp.row * col + temp.col] = Visibility.Collapsed;
+                }
+                else //if(temp.rectangle == 1)
+                {
+                    //solid[temp.row, temp.col] = new SolidColorBrush(Colors.White);
+                    solid_collection[temp.row * col + temp.col].solids = new SolidColorBrush(Colors.White);
+                    //rectangle_visibility[temp.row, temp.col] = Visibility.Visible;
+                    //visibility[temp.row * col + temp.col] = Visibility.Visible;
+                }
+            }
+
+            foreach (grid temp in _model.grid_observable)
+            {
+                if (temp.rectangle == 0)
+                {
+                    solid_collection[temp.row * col + temp.col].solids = new SolidColorBrush(Colors.Gray);
+                }
+                else 
+                {
+                    solid_collection[temp.row * col + temp.col].solids = new SolidColorBrush(Colors.White);
+                }
+            }
+
+            foreach (grid temp in _model._square._grid.Where(temp => temp.col >= 0 && temp.row >= 0))
+            {
+                solid_collection[temp.row * col + temp.col].solids = new SolidColorBrush(Colors.White);
+            }
+        }
+
+        private model _model = new model();
+    }
+
+    public class solid : notify_property
+    {
+        public solid(SolidColorBrush solid)
+        {
+            _solid = solid;
+        }
+
+        public SolidColorBrush solids
+        {
+            set
+            {
+                _solid = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _solid;
+            }
+        }
+        private SolidColorBrush _solid;
+    }
+}
+
+```
+
+model
+
+```
+// lindexi
+// 10:41
+
+#region
+
+using System;
+using System.Collections.ObjectModel;
+
+#endregion
+
+namespace tetris
+{
+    public class model
+    {
+        public model()
+        {
+            _grid_observable = new ObservableCollection<grid>();
+            for (int i = 0; i < _row; i++)
+            {
+                for (int j = 0; j < _col; j++)
+                {
+                    _grid_observable.Add(new grid(j, i));
+                }
+            }
+        }
+
+        public square _square
+        {
+            set;
+            get;
+        }
+
+        public int col
+        {
+            set
+            {
+                _col = value;
+            }
+            get
+            {
+                return _col;
+            }
+        }
+
+        public ObservableCollection<grid> grid_observable
+        {
+            set
+            {
+                _grid_observable = value;
+            }
+            get
+            {
+                return _grid_observable;
+            }
+        }
+
+        public int row
+        {
+            set
+            {
+                _row = value;
+            }
+            get
+            {
+                return _row;
+            }
+        }
+
+        public void translate()
+        {
+            square rotate = _square.clone();
+            rotate.rotate();
+
+            if (rectangle(rotate))
+            {
+                _square = rotate;
+            }
+        }
+
+        public void move(bool left)
+        {
+            square temp = _square.clone();
+            foreach (grid t in temp._grid)
+            {
+                if (left)
+                {
+                    t.col--;
+                }
+                else
+                {
+                    t.col++;
+                }
+            }
+
+            if (rectangle(temp))
+            {
+                _square = temp;
+            }
+        }
+
+        public void down()
+        {
+            if (_square == null)
+            {
+                new_block();
+            }
+            square temp = _square.clone();
+            foreach (grid t in temp._grid)
+            {
+                t.row++;
+            }
+            if (!rectangle(temp))
+            {
+                draw();
+                new_block();
+            }
+            else
+            {
+                _square = temp;
+            }
+        }
+
+        private Random ran
+        {
+            set
+            {
+                _ran = value;
+            }
+            get
+            {
+                return _ran;
+            }
+        }
+
+        private int _col = 10;
+
+        private ObservableCollection<grid> _grid_observable;
+        private Random _ran = new Random();
+        private int _row = 20;
+
+
+        private void new_block()
+        {
+            block _block = (block) ran.Next(4);
+            int center = _col/2;
+            _square = new square(_block, center);
+            //_square = new square(block.straight, center);
+        }
+
+        private void draw()
+        {
+            int n = 0;
+            foreach (grid temp in _square._grid)
+            {
+                if (temp.col >= 0 && temp.row >= 0)
+                {
+                    n = temp.row*col + temp.col;
+                    if (_grid_observable.Count > n)
+                    {
+                        _grid_observable[n].rectangle = 1;
+                    }
+                }
+            }
+            clean();
+        }
+
+        private bool rectangle(square _square)
+        {
+            bool _rectangle = true;
+
+            foreach (grid temp in _square._grid)
+            {
+                if (temp.col >= 0 && temp.row >= 0)
+                {
+                    int n = temp.row*col + temp.col;
+                    if (_grid_observable.Count > n && _grid_observable[n].rectangle != 0)
+                    {
+                        _rectangle = false;
+                    }
+                }
+                else if (temp.col < 0)
+                {
+                    return false;
+                }
+
+                if (temp.row >= _row || temp.col >= _col)
+                {
+                    return false;
+                }
+            }
+            return _rectangle;
+        }
+
+        private void clean()
+        {
+            bool _rectangle = true;
+            int n = 1;
+            foreach (grid temp in _grid_observable)
+            {
+                if (temp.col < _col - 1)
+                {
+                    _rectangle = _rectangle && temp.rectangle != 0;
+                }
+                else if (temp.col == _col - 1)
+                {
+                    _rectangle = _rectangle && temp.rectangle != 0;
+                    if (_rectangle)
+                    {
+                        for (int i = n*_col - 1; i > _col; i--)
+                        {
+                            _grid_observable[i].rectangle = _grid_observable[i - _col].rectangle;
+                        }
+                        n--;
+                    }
+                    n++;
+                    _rectangle = true;
+                }
+            }
+        }
+    }
+
+    public class grid : notify_property
+    {
+        public grid()
+        {
+            _rectangle = 1;
+        }
+
+        public grid(int col, int row)
+        {
+            _col = col;
+            _row = row;
+            _rectangle = 0;
+        }
+
+        public int col
+        {
+            set
+            {
+                _col = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _col;
+            }
+        }
+
+        public int rectangle
+        {
+            set
+            {
+                _rectangle = value;
+            }
+            get
+            {
+                return _rectangle;
+            }
+        }
+
+        public int row
+        {
+            set
+            {
+                _row = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _row;
+            }
+        }
+
+        public grid clone()
+        {
+            return new grid(col, row);
+        }
+
+        private int _col;
+
+        private int _rectangle;
+
+        private int _row;
+    }
+
+    public enum block
+    {
+        straight, //直
+        square,
+        t,
+        bent
+    }
+
+    public class square
+    {
+        public square(block block, int center)
+        {
+            _block = block;
+            int n = 4;
+            //col = new int[n];
+            //row = new int[n];
+            _grid = new grid[n];
+            for (int i = 0; i < n; i++)
+            {
+                _grid[i] = new grid();
+                switch (block)
+                {
+                    case block.straight:
+                        //col[i] = center;
+                        //row[i] = -i;
+                        _grid[i].col = center;
+                        _grid[i].row = -i;
+                        break;
+                    case block.t:
+                        _grid[0].col = center;
+                        _grid[0].row = 0;
+                        if (i > 0)
+                        {
+                            _grid[i].col = center + i - 3;
+                            _grid[i].row = -1;
+                        }
+                        break;
+                    case block.square:
+                        if (i <= 1)
+                        {
+                            //col[i] = center + i;
+                            //row[i] = 0;
+                            _grid[i].col = center + i;
+                            _grid[i].row = 0;
+                        }
+                        else
+                        {
+                            //col[i] = center + i - 2;
+                            //row[i] = -1;
+                            _grid[i].col = center + i - 2;
+                            _grid[i].row = -1;
+                        }
+                        break;
+                    case block.bent:
+                        if (i <= 1)
+                        {
+                            //col[i] = center + 1;
+                            //row[i] = 0;
+                            _grid[i].col = center + i;
+                            _grid[i].row = 0;
+                        }
+                        else
+                        {
+                            //col[i] = center + i - 3;
+                            //row[i] = -1;
+                            _grid[i].col = center + i - 3;
+                            _grid[i].row = -1;
+                        }
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(block), block, null);
+                }
+            }
+        }
+
+        public void rotate()
+        {
+            switch (_block)
+            {
+                case block.straight:
+                    if (rotate_count == 0 || rotate_count == 2)
+                    {
+                        int row = _grid[2].row;
+                        int col = _grid[2].col;
+                        _grid[0].row = row;
+                        _grid[0].col = col + 2;
+
+                        _grid[1].row = row;
+                        _grid[1].col = col + 1;
+
+                        _grid[3].row = row;
+                        _grid[3].col = col - 1;
+                    }
+                    else if (rotate_count == 1 || rotate_count == 3)
+                    {
+                        int row = _grid[2].row;
+                        int col = _grid[2].col;
+
+                        _grid[0].row = row - 2;
+                        _grid[0].col = col;
+
+                        _grid[1].row = row - 1;
+                        _grid[1].col = col;
+
+                        _grid[3].row = row + 1;
+                        _grid[3].col = col;
+                    }
+                    break;
+                case block.square:
+                    break;
+                case block.t:
+                    if (rotate_count == 0)
+                    {
+                        int row = _grid[2].row;
+                        int col = _grid[2].col;
+
+                        _grid[0].row = row + 1;
+                        _grid[0].col = col - 1;
+
+                        _grid[1].row--;
+                        _grid[1].col++;
+
+                        _grid[3].row++;
+                        _grid[3].col--;
+                    }
+                    else if (rotate_count == 1)
+                    {
+                        int row = _grid[3].row;
+                        int col = _grid[3].col;
+
+                        _grid[0].row--;
+
+                        _grid[1].row = row;
+                        _grid[1].col = col + 1;
+
+                        _grid[2].row = row;
+                        _grid[2].col = col - 1;
+                    }
+                    else if (rotate_count == 2)
+                    {
+                        int row = _grid[2].row;
+                        int col = _grid[2].col;
+
+                        _grid[0].col++;
+
+                        _grid[1].row = row - 1;
+                        _grid[1].col = col;
+
+                        _grid[3].row = row + 1;
+                        _grid[3].col = col;
+                    }
+                    else if (rotate_count == 3)
+                    {
+                        int row = _grid[2].row;
+                        int col = _grid[2].col;
+
+                        _grid[0].row = row + 1;
+                        _grid[0].col = col + 2;
+
+                        _grid[1].row = row;
+                        _grid[1].col = col;
+
+                        _grid[2].row = row;
+                        _grid[2].col = col + 1;
+
+                        _grid[3].row = row;
+                        _grid[3].col = col + 2;
+                    }
+                    break;
+                case block.bent:
+                    if (rotate_count == 0 || rotate_count == 2)
+                    {
+                        _grid[1].row = _grid[2].row - 1;
+                        _grid[1].col = _grid[2].col;
+                    }
+                    else if (rotate_count == 1 || rotate_count == 3)
+                    {
+                        _grid[1].row = _grid[0].row;
+                        _grid[1].col = _grid[0].col + 1;
+                    }
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            rotate_count++;
+        }
+
+        public square clone()
+        {
+            square temp = new square(_block, 0);
+            for (int i = 0; i < _grid.Length; i++)
+            {
+                temp._grid[i] = _grid[i].clone();
+            }
+            temp.rotate_count = rotate_count;
+            return temp;
+        }
+
+        private int rotate_count
+        {
+            set
+            {
+                if (value >= 4)
+                {
+                    value = value%4;
+                }
+                _rotate_count = value;
+            }
+            get
+            {
+                if (_rotate_count > 4)
+                {
+                    _rotate_count = 0;
+                }
+                return _rotate_count;
+            }
+        }
+
+        //public int[] col
+        //{
+        //    set
+        //    {
+        //        _col = value;
+        //    }
+        //    get
+        //    {
+        //        return _col;
+        //    }
+        //}
+
+        //public int[] row
+        //{
+        //    set
+        //    {
+        //        _row = value;
+        //    }
+        //    get
+        //    {
+        //        return _row;
+        //    }
+        //}
+
+        private block _block;
+
+        private int _rotate_count;
+
+        public grid[] _grid;
+    }
+}
+```
