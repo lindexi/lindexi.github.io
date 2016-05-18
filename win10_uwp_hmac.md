@@ -1,6 +1,7 @@
 # win10 UWP Hmac
 
 HMAC是密钥相关的哈希运算消息认证码，输入密钥和信息。
+
 在uwp，Hmac在很多网络使用，我最近写qiniu SDK，把原来C#改为UWP，需要使用HMAC。
 
 上传文件
