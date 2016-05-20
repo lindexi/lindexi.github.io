@@ -20,4 +20,5 @@
 * [win10 UWP 标题栏后退](win10_uwp_biao_ti_lan_hou_tui.md)
 * [win10 uwp 分治法](win10_uwp_fen_zhi_fa.md)
 * [win10 UWP 剪贴板 Clipboard](win10_uwp_jian_tie_ban_clipboard.md)
+* win10 UWP 应用设置
 
