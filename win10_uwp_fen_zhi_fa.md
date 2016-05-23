@@ -4,10 +4,17 @@
 其实我想说Path，因为最近在做一个简单的分治。
 
 算法涉及到了一个平面几何的知识。就是三角形p1p2p3的面积等于以下行列式的二分之一： 
-| x1 y1 1 | 
-| x2 y2 1 | =
-| x3 y3 1 | 
-                $x1*y2+x3*y1+x2*y3-x3*y2-x2*y1-x1*y3  = x1*y2-x2*y1+x3*(y1-y2)+y3*(x2-x1) $
+$$
+\begin{array}{cccc} 
+| x1 & y1 & 1 & | \\
+| x2 & y2 & 1 & | &=\\
+| x3 & y3 & 1 & | \\
+\end{array}
+$$
+
+
+ $$x1*y2+x3*y1+x2*y3-x3*y2-x2*y1-x1*y3  = x1*y2-x2*y1+x3*(y1-y2)+y3*(x2-x1)$$
+ 
 而且当点P3 在射线P1P2的左侧的时候，表达式为正，右侧表达式为负，三点同线的话表达式为0；算法中就利用该几何特性判断一个点在一条线的左侧还是右侧。
 
 参见：http://www.cnblogs.com/Booble/archive/2011/03/10/1980089.html
@@ -154,5 +161,3 @@ PathFigure第一个点`StartPoint = point[i]`，LineSegment第二个，`path_seg
 做完我来运行
 
 ![这里写图片描述](http://img.blog.csdn.net/20160523191446249)
-
-
