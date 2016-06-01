@@ -5,7 +5,7 @@ http://blog.csdn.net/baijinwen/article/details/6159043
 继承 Popup
 
 ```
-public class CCPopup : Popup
+    public class CCPopup : Popup
     {
         public static DependencyProperty TopmostProperty = Window.TopmostProperty.AddOwner(typeof(CCPopup), new FrameworkPropertyMetadata(false, OnTopmostChanged));
         public bool Topmost
@@ -46,5 +46,6 @@ public class CCPopup : Popup
         private static extern int SetWindowPos(IntPtr hWnd, int hwndInsertAfter, int x, int y, int cx, int cy, int wFlags);
         #endregion
     }
+    
 ```
 
