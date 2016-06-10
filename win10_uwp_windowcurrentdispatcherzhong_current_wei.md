@@ -28,8 +28,6 @@
 老周：由于线程出现嵌套，在Get请求回调的时候，窗口线程已由系统调整。就按你的做法，用主视图层上的调度对象来调用，应用程序级别的视图线程一般不会改变。
 要么改用HttpClient类的异步方法来请求，是Windows.Web.Http下面的类，非.net core类型
 
-![](image/
-
 简单方法：
 ```
 await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => {  });
