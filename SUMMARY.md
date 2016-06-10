@@ -25,4 +25,5 @@
 * [win10 uwp BadgeLogo 颜色](win10_uwp_badgelogo_yan_se.md)
 * [win10 uwp json](win10_uwp_json.md)
 * [win10 uwp win2d](win10_uwp_win2d.md)
+* win10 uwp Window.Current.Dispatcher中Current为null
 
