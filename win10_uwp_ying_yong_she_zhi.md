@@ -21,7 +21,9 @@ string str
   }
 }
 ```
+
 如果设置在LocalSettings让程序太乱，有很多变量名称一样，可以使用新的ApplicationDataContainer
+
 ```
             string str = "";
             var t = ApplicationData.Current.LocalSettings.CreateContainer("str", ApplicationDataCreateDisposition.Always);
