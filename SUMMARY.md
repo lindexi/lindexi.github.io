@@ -26,4 +26,5 @@
 * [win10 uwp json](win10_uwp_json.md)
 * [win10 uwp win2d](win10_uwp_win2d.md)
 * [win10 uwp Window.Current.Dispatcher中Current为null](win10_uwp_windowcurrentdispatcherzhong_current_wei.md)
+* win10 uwp 无法附加到CoreCLR
 
