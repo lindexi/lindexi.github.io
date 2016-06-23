@@ -27,4 +27,5 @@
 * [win10 uwp win2d](win10_uwp_win2d.md)
 * [win10 uwp Window.Current.Dispatcher中Current为null](win10_uwp_windowcurrentdispatcherzhong_current_wei.md)
 * [win10 uwp 无法附加到CoreCLR](win10_uwp_wu_fa_fu_jia_dao_coreclr.md)
+* win10 uwp HttpClient post错误
 
