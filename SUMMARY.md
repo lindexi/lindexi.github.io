@@ -29,4 +29,5 @@
 * [win10 uwp 无法附加到CoreCLR](win10_uwp_wu_fa_fu_jia_dao_coreclr.md)
 * [win10 uwp HttpClient post错误](win10_uwp_httpclient_postcuo_wu.md)
 * [win10 uwp 自定义控件 SplitViewItem](win10_uwp_zi_ding_yikong_jian_splitviewitem.md)
+* win10 uwp ContentDialog 点确定不关闭
 
