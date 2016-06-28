@@ -1,4 +1,4 @@
-# win10 uwp json
+﻿# win10 uwp json
 
 本文讲的是关于在uwp使用json的简单使用，json应用很多，因为我只是写简单使用，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，可以在我博客评论 http://blog.csdn.net/lindexi_gd
 
@@ -156,7 +156,44 @@ for (uint i = 0; i < root.Count; i++) {
 
 ```
 
-如果属性多，基本上很多人会容易就打错，当然，可以先实例一个RootObject，然后使用新关键字，name去得到实例属性名称
+如果属性多，基本上很多人会容易就打错，当然，可以先实例一个RootObject，然后使用新关键字，name去得到实例属性名称当然在我们使用Json会遇到一些属性我们不要的，那么如何json忽略属性，其实很简单，在Newtosoft可以在属性加[JsonIgnore]，因为这些比较乱，所以也不打算在这里说。
+
+首先是我们的类，
+
+```
+  public class Thine
+  {
+      public string Property{set;get;}
+      public string Ignore{set;get;}
+  }
+```
+
+我们要把Property包含，但是不包含Ignore，简单的
+
+```
+  public class Thine
+  {
+      public string Property{set;get;}
+      [JsonIgnore]
+      public string Ignore{set;get;}
+  }
+```
+
+但是有时候我们要包含很少，基本都是不包含的，那么如何只用包含，其实我们可以在类加`[JsonObject(MemberSerialization.OptIn)]`看到了OptIn，其实OptOut就是不包含一些，OptIn就是包含一些
+
+
+```
+
+  [JsonObject(MemberSerialization.OptIn)]
+  public class Thine
+  {
+      [JsonProperty]
+      public string Property{set;get;}
+      public string Ignore{set;get;}
+  }
+```
+
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
