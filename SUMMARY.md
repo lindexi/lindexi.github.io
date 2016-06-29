@@ -31,5 +31,5 @@
 * [win10 uwp 自定义控件 SplitViewItem](win10_uwp_zi_ding_yikong_jian_splitviewitem.md)
 * [win10 uwp ContentDialog 点确定不关闭](win10_uwp_contentdialog_dian_que_ding_bu_guan_bi.md)
 * [win10 uwp smms图床](win10_uwp_smmstu_chuang.md)
-* win10 uwp 从StorageFile获取文件大小
+* [win10 uwp 从StorageFile获取文件大小](win10_uwp_cong_storagefile_huo_qu_wen_jian_da_xiao.md)
 
