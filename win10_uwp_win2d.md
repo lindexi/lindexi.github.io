@@ -10,7 +10,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 使用他可以将界面交给GPU，让CPU集中计算我们的算法
 
-我们可以通过Nuget来得到win2d，Nuget的windows10版win2d:http://www.nuget.org/packages/Win2D.uwp，Nuget的windows 8.1版win2d:http://www.nuget.org/packages/Win2D.win81
+我们可以通过Nuget来得到win2d，Nuget的windows10版win2d:[http://www.nuget.org/packages/Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp)，Nuget的windows 8.1版win2d:http://www.nuget.org/packages/Win2D.win81
 
 如何使用可以参见微软示例http://github.com/Microsoft/Win2D-samples
 
