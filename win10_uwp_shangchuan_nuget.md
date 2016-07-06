@@ -24,6 +24,8 @@ nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 项目文件夹就是我们要打包项目*.csproj所在文件夹
 
+我的工程文件smms，打开smms.csproj所在文件夹A:\smms\smms
+
 进入文件夹命令
 
 首先进入盘，我是在A盘，
@@ -48,7 +50,7 @@ nuget spec
 
 ![这里写图片描述](http://img.blog.csdn.net/20160705154308176)
 
-这个可以用文本打开，里面会自动替换
+smms.nuspec这个可以用文本打开，里面会自动替换
 
 里面有
 
@@ -96,9 +98,13 @@ iconUrl：一个32*32像素的.png文件地址，作为最终在nuget中显示�
 ![这里写图片描述](http://img.blog.csdn.net/20160705154345051)
 
 其中他会把`$$`代为AssemblyInfo.cs 
+
 作者代为AssemblyCompany
+
 id代为Assembly名
+
 version代为AssemblyVersion
+
 description代为AssemblyDescription
 
 做完我们文本打开 *.nuspec
