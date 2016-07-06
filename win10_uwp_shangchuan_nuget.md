@@ -125,6 +125,7 @@ description代为AssemblyDescription
 解决方案: 请替换为适当的值或删除它，然后重新生成程序包。
 ```
 
+把我们信息写后打包
 
 ```
 nuget pack smms.csproj
@@ -139,8 +140,8 @@ nuget pack smms.csproj
 ![这里写图片描述](http://img.blog.csdn.net/20160705154503646)
 
 
-
 ##上传
+
 首先有一个微软账号，登录https://www.nuget.org
 
 点击自己https://www.nuget.org/account
