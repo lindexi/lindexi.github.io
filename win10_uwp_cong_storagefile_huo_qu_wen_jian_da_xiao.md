@@ -26,16 +26,35 @@
 第一个很简单，用户最近使用文件或文件夹，这个只能保存25，我就在这里坑，他会自动删除，找了[https://msdn.microsoft.com/zh-cn/windows/uwp/files/how-to-track-recently-used-files-and-folders](https://msdn.microsoft.com/zh-cn/windows/uwp/files/how-to-track-recently-used-files-and-folders)，其实我们可以使用FutureAccessList ，这个可以使用1k个，但是为什么只有1k，好少，垃圾wr，要就给无限
 
 
-##在多字节的目标代码页中，没有此 Unicode 字符可以映射到的字符
+##win10 uwp 读取文本ASCII错误
+
+我使用NotePad记事本保存文件，格式ASCII，用微软示例打开文件方式读取，出现错误
+
 在多字节的目标代码页中，没有此 Unicode 字符可以映射到的字符
 
 英文 No mapping for the Unicode character exists in the target multi-byte code page
 
-UWP 读ASCII错误
+这个问题看来很简单，不就是编码错误，可以我就弄了一晚上
 
-UWP read ASCII
+我先换个说法，让大家容易搜索到
+
+ - UWP 读ASCII错误
+
+ - UWP read ASCII
+ - UWP GBK
+ - UWP 读取记事本
 
 其实不知道垃圾wr怎么想，现在没法读ASCII，官方给的，直接错
+
+用了nos大神的代码http://blog.csdn.net/nomasp/article/details/50310357，也是报错
+
+用了我csdn博客置顶代码，就直接乱码 所有中文代为 "?" 
+
+查了一下WPF使用默认可以读，也就是我们保存时GBK，查询到Encoding没有GBK，没有默认
+
+于是我就在网上找，很久没找到，但是找到http://www.cnblogs.com/yffswyf/p/4826207.html，写到一半我就不想写，好难
+
+在网上看到
 
 参考：http://stackoverflow.com/questions/35296213/read-unicode-string-from-text-file-in-uwp-app/38299563#38299563
 
