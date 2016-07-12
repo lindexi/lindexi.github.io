@@ -13,6 +13,7 @@
 ##下载
 
 首先下载
+
 nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 如果没法下载和我说，我发给你
@@ -94,6 +95,8 @@ owners 拥有者：你可以随便写，但是在发布的时候会被你的nuge
 iconUrl：一个32*32像素的.png文件地址，作为最终在nuget中显示的图标
 
 描述、标签、许可地址、项目地址
+
+Dependencies:此类库依赖的程序集，根据实际情况添加依赖类库的Id和版本号，若无留空即可，这里需要注意下填写的依赖类库需要在NuGet服务器上能找到，否则无法完成自动引用添加
 
 我们可以在vs
 
