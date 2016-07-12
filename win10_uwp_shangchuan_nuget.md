@@ -169,7 +169,7 @@ nuget pack smms.csproj
 
 发布
 
-我们可以在https://www.nuget.org/account/Packages
+我们可以在[https://www.nuget.org/account/Packages](https://www.nuget.org/account/Packages)
 
 我们上传包，如果还要上传，我们的version要比之前大
 
@@ -181,7 +181,7 @@ nuget pack smms.csproj
 
 安装
 
-Install-Package ID
+`Install-Package ID`
 
 ![这里写图片描述](http://img.blog.csdn.net/20160705155205298)
 
