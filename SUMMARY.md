@@ -37,4 +37,5 @@
 * [win10 uwp 上传Nuget](win10_uwp_shangchuan_nuget.md)
 * [win10 uwp 手动锁Bitlocker](win10_uwp_shou_dong_suo_bitlocker.md)
 * [win10 uwp 圆角按钮](win10_uwp_yuan_jiao_an_niu.md)
+* win10 uwp 读取文本ASCII错误
 
