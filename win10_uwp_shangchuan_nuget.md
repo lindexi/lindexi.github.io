@@ -116,7 +116,7 @@ version代为AssemblyVersion
 
 description代为AssemblyDescription
 
-做完我们文本打开 *.nuspec
+做完我们文本打开 `*.nuspec`
 
 改releaseNotes、tags
 
@@ -142,7 +142,7 @@ nuget pack smms.csproj
 
 ![这里写图片描述](http://img.blog.csdn.net/20160705154443317)
 
-我们就把我们项目打包，接着我们看到文件夹有*.nupkg
+我们就把我们项目打包，接着我们看到文件夹有`*.nupkg`
 
 修改项目地址
 
@@ -151,13 +151,13 @@ nuget pack smms.csproj
 
 ##上传
 
-首先有一个微软账号，登录https://www.nuget.org
+首先有一个微软账号，登录 [https://www.nuget.org](https://www.nuget.org)
 
-点击自己https://www.nuget.org/account
+点击自己 [https://www.nuget.org/account](https://www.nuget.org/account)
 
 ![这里写图片描述](http://img.blog.csdn.net/20160705154531195)
 
-复制
+复制，这个key是我的，你的应该和我不同
 
 ![这里写图片描述](http://img.blog.csdn.net/20160705154957007)
 
