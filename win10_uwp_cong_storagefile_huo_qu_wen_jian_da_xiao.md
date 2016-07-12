@@ -26,5 +26,8 @@
 第一个很简单，用户最近使用文件或文件夹，这个只能保存25，我就在这里坑，他会自动删除，找了[https://msdn.microsoft.com/zh-cn/windows/uwp/files/how-to-track-recently-used-files-and-folders](https://msdn.microsoft.com/zh-cn/windows/uwp/files/how-to-track-recently-used-files-and-folders)，其实我们可以使用FutureAccessList ，这个可以使用1k个，但是为什么只有1k，好少，垃圾wr，要就给无限
 
 
+##在多字节的目标代码页中，没有此 Unicode 字符可以映射到的字符
+在多字节的目标代码页中，没有此 Unicode 字符可以映射到的字符
+
         
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。        
