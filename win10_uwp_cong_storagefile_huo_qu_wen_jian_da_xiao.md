@@ -54,7 +54,78 @@
 
 于是我就在网上找，很久没找到，但是找到http://www.cnblogs.com/yffswyf/p/4826207.html，写到一半我就不想写，好难
 
-在网上看到
+在网上看到Encoding.GetEncoding（0）默认，于是我找了GetEncoding，原来有string，那么`Encoding gbk = Encoding.GetEncoding("GBK");`
+
+报错
+ 'GBK' is not a supported encoding name. 
+ 
+ 看来这个也不可以，我觉得我要写个转换
+ 
+最后发现
+https://bbs.uwp.ac.cn/?/article/43
+
+```
+//使用CodePagesEncodingProvider去注册扩展编码。
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+//注册GBK编码
+Encoding encodingGbk =Encoding.GetEncoding("GBK");
+```
+
+全部代码
+
+```
+        private async Task<string> Read(StorageFile file)
+        {
+            string str = "";
+            try
+            {
+                str = await Windows.Storage.FileIO.ReadTextAsync(file);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                //using(var stream =new StreamReader((await file.OpenReadAsync()).GetInputStreamAt(0).AsStreamForRead()))
+                //{
+                //    string text = stream.ReadToEnd();
+                //    return text;
+                //}
+
+
+                IBuffer buffer = await FileIO.ReadBufferAsync(file);
+                DataReader reader = DataReader.FromBuffer(buffer);
+                byte[] fileContent = new byte[reader.UnconsumedBufferLength];
+                reader.ReadBytes(fileContent);
+                string text = "";
+
+               // Encoding.ASCII.GetString(fileContent, 0, fileContent.Length);
+
+               //text= Encoding.GetEncoding(0).GetString(fileContent, 0, fileContent.Length);
+
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                Encoding gbk = Encoding.GetEncoding("GBK");
+
+                text = gbk.GetString(fileContent);
+                //string text = AutoEncoding(new byte[4] { fileContent[0], fileContent[1], fileContent[2], fileContent[3] }).GetString(fileContent);
+
+                return text;
+            }
+            return str;
+        }
+
+        private static Encoding AutoEncoding(byte[] bom)
+        {
+            if (bom.Length != 4)
+            {
+                throw new ArgumentException();
+            }
+            // Analyze the BOM
+            if (bom[0] == 0x2b && bom[1] == 0x2f && bom[2] == 0x76) return Encoding.UTF7;
+            if (bom[0] == 0xef && bom[1] == 0xbb && bom[2] == 0xbf) return Encoding.UTF8;
+            if (bom[0] == 0xff && bom[1] == 0xfe) return Encoding.Unicode; //UTF-16LE
+            if (bom[0] == 0xfe && bom[1] == 0xff) return Encoding.BigEndianUnicode; //UTF-16BE
+            if (bom[0] == 0 && bom[1] == 0 && bom[2] == 0xfe && bom[3] == 0xff) return Encoding.UTF32;
+            return Encoding.ASCII;
+        }
+```
 
 参考：http://stackoverflow.com/questions/35296213/read-unicode-string-from-text-file-in-uwp-app/38299563#38299563
 
