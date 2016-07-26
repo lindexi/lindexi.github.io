@@ -22,9 +22,43 @@ UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也�
 
 接着我们就需要学如何使用控件，参见：http://blog.csdn.net/lindexi_gd/article/details/50964889
 
+控件，我们有时觉得官方的不够，我们需要学自定义，可以看[win10 UWP button](http://blog.csdn.net/lindexi_gd/article/details/50450292) [ win10 UWP FlipView](http://blog.csdn.net/lindexi_gd/article/details/50272907) [RichEditBox 使用自定义菜单](http://blog.csdn.net/lindexi_gd/article/details/50250795)
+
+我们需要知道一些新的UWP带来的，[x:bind](http://blog.csdn.net/lindexi_gd/article/details/48294123) 和加载 http://blog.csdn.net/lindexi_gd/article/details/49743845
+
+当然我们和用户之间还需要MessageDialog 和 ContentDialog，http://blog.csdn.net/lindexi_gd/article/details/50822507
+
+如果觉得微软控件还是不够，可以来看下我做的一些控件
+
+win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/article/details/49007841，还有比较少用的md5 http://blog.csdn.net/lindexi_gd/article/details/48951849 ,Hamc http://blog.csdn.net/lindexi_gd/article/details/50830924
+
+我们有一些常用的，这些可以看下，虽然不是马上可以用到
+
+ win10 UWP 全屏 http://blog.csdn.net/lindexi_gd/article/details/51093890
+ 
+ win10 uwp 屏幕常亮 http://blog.csdn.net/lindexi_gd/article/details/51166285
+ 
+ win10 uwp 判断文件存在 http://blog.csdn.net/lindexi_gd/article/details/51387901
+ 
+ win10 UWP 标题栏后退 http://blog.csdn.net/lindexi_gd/article/details/50618029
+ 
+ 有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
+
+程序一般不是我们写完就运行，一般需要http://blog.csdn.net/lindexi_gd/article/details/50707981
+
+
 然后我们可以看微软教程 国内最好的几个视频有[刘老师](http://www.win10.me/?cat=5)和[bilibili](http://space.bilibili.com/18340402)
 
 如果要学比较高级的可以看https://github.com/Microsoft/Windows-universal-samples ，如果是开始还不懂使用，可以看：http://blog.csdn.net/bending1218/article/details/50523243
+
+
+我将告诉大家一些案例，先一个有源代码的Markdown http://blog.csdn.net/lindexi_gd/article/details/50488191 
+
+开发过程中我遇到一些诡异，发在下面：
+
+- win10 uwp 无法附加到CoreCLR http://blog.csdn.net/lindexi_gd/article/details/51762068
+- win10 uwp BadgeLogo 颜色 http://blog.csdn.net/lindexi_gd/article/details/51761788
+- 
 
 当然我们也可以使用js来写，js参见：http://lib.csdn.net/article/csharp/32749 这个就是简单的使用js来写。
 
