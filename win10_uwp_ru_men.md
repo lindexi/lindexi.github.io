@@ -73,6 +73,8 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 - win10 uwp 从StorageFile获取文件大小 http://www.win10.me/?p=916
  
 - win10 uwp 如何让WebView标识win10手机 http://www.win10.me/?p=914
+
+- [win10 uwp 语音](win10_uwp_yu_yin.md)
  
 有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
 
