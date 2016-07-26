@@ -26,7 +26,11 @@ UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也�
 
 我们需要知道一些新的UWP带来的，[x:bind](http://blog.csdn.net/lindexi_gd/article/details/48294123) 和加载 http://blog.csdn.net/lindexi_gd/article/details/49743845
 
+win10 UWP 显示地图 http://blog.csdn.net/lindexi_gd/article/details/49935341
+
 当然我们和用户之间还需要MessageDialog 和 ContentDialog，http://blog.csdn.net/lindexi_gd/article/details/50822507
+
+在用到APPBarButton他的Icon我都写出： http://blog.csdn.net/lindexi_gd/article/details/49307913
 
 如果觉得微软控件还是不够，可以来看下我做的一些控件，圆形等待 http://blog.csdn.net/lindexi_gd/article/details/50606261
 
@@ -50,6 +54,11 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
  
  win10 uwp clone http://blog.csdn.net/lindexi_gd/article/details/50117925
  
+ UWP 绘制图形 http://blog.csdn.net/lindexi_gd/article/details/49805029
+  
+ win10 uwp 通知Toast http://blog.csdn.net/lindexi_gd/article/details/49824613
+  
+ UWP xaml 圆形头像 http://blog.csdn.net/lindexi_gd/article/details/49757187
  
  
  有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
