@@ -14,11 +14,14 @@ UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也�
 
 学习开发一般学Hellow，那么国内看到一篇比较好的 http://www.ceix.me/suibi/uwp开发学习笔记-1-hello-world
 
+官方 https://msdn.microsoft.com/zh-cn/windows/uwp/get-started/create-a-hello-world-app-xaml-universal
+
 开发开始就是我们的控件，一般控件可以参见：http://blog.csdn.net/lindexi_gd/article/details/50972343
 
 当然还有：http://blog.csdn.net/NoMasp/article/details/50263383
 
 接着我们就需要学如何使用控件，参见：http://blog.csdn.net/lindexi_gd/article/details/50964889
+
 
 
 
