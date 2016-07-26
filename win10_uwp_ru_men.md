@@ -46,6 +46,12 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
  
  win10 UWP 应用设置 http://blog.csdn.net/lindexi_gd/article/details/50506692
  
+ win10 UWP 获取系统信息 http://blog.csdn.net/lindexi_gd/article/details/50277341
+ 
+ win10 uwp clone http://blog.csdn.net/lindexi_gd/article/details/50117925
+ 
+ 
+ 
  有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
 
 程序一般不是我们写完就运行，一般需要http://blog.csdn.net/lindexi_gd/article/details/50707981
@@ -58,11 +64,13 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 
 我将告诉大家一些案例，先一个有源代码的Markdown http://blog.csdn.net/lindexi_gd/article/details/50488191 
 
+还有一个很简单win10 uwp 装机必备应用 含源代码 http://blog.csdn.net/lindexi_gd/article/details/50166161
+
 开发过程中我遇到一些诡异，发在下面：
 
 - win10 uwp 无法附加到CoreCLR http://blog.csdn.net/lindexi_gd/article/details/51762068
 - win10 uwp BadgeLogo 颜色 http://blog.csdn.net/lindexi_gd/article/details/51761788
-- 
+- win10 输入法禁用IME http://blog.csdn.net/lindexi_gd/article/details/50117909
 
 当然我们也可以使用js来写，js参见：http://lib.csdn.net/article/csharp/32749 这个就是简单的使用js来写。
 
