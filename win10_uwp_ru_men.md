@@ -64,6 +64,9 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
   
  UWP xaml 圆形头像 http://blog.csdn.net/lindexi_gd/article/details/49757187
  
+ win10 uwp App-to-app communication 应用通信 http://blog.csdn.net/lindexi_gd/article/details/51055589
+ 
+ win10 uwp json http://blog.csdn.net/lindexi_gd/article/details/51602405
  
  有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
 
@@ -80,6 +83,8 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 还有一个很简单win10 uwp 装机必备应用 含源代码 http://blog.csdn.net/lindexi_gd/article/details/50166161
 
 使用Path win10 uwp 分治法 http://blog.csdn.net/lindexi_gd/article/details/51315914
+
+移植 http://blog.csdn.net/lindexi_gd/article/details/51321064
 
 开发过程中我遇到一些诡异，发在下面：
 
