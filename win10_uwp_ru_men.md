@@ -44,37 +44,37 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 
 我们有一些常用的，这些可以看下，虽然不是马上可以用到
 
- win10 UWP 全屏 http://blog.csdn.net/lindexi_gd/article/details/51093890
+- win10 UWP 全屏 http://blog.csdn.net/lindexi_gd/article/details/51093890
  
- win10 uwp 屏幕常亮 http://blog.csdn.net/lindexi_gd/article/details/51166285
+- win10 uwp 屏幕常亮 http://blog.csdn.net/lindexi_gd/article/details/51166285
  
- win10 uwp 判断文件存在 http://blog.csdn.net/lindexi_gd/article/details/51387901
+- win10 uwp 判断文件存在 http://blog.csdn.net/lindexi_gd/article/details/51387901
  
- win10 UWP 标题栏后退 http://blog.csdn.net/lindexi_gd/article/details/50618029
+- win10 UWP 标题栏后退 http://blog.csdn.net/lindexi_gd/article/details/50618029
  
- 剪贴板 http://blog.csdn.net/lindexi_gd/article/details/50479180
+- 剪贴板 http://blog.csdn.net/lindexi_gd/article/details/50479180
  
- win10 UWP 应用设置 http://blog.csdn.net/lindexi_gd/article/details/50506692
+- win10 UWP 应用设置 http://blog.csdn.net/lindexi_gd/article/details/50506692
  
- win10 UWP 获取系统信息 http://blog.csdn.net/lindexi_gd/article/details/50277341
+- win10 UWP 获取系统信息 http://blog.csdn.net/lindexi_gd/article/details/50277341
  
- win10 uwp clone http://blog.csdn.net/lindexi_gd/article/details/50117925
+- win10 uwp clone http://blog.csdn.net/lindexi_gd/article/details/50117925
  
- UWP 绘制图形 http://blog.csdn.net/lindexi_gd/article/details/49805029
+- UWP 绘制图形 http://blog.csdn.net/lindexi_gd/article/details/49805029
   
- win10 uwp 通知Toast http://blog.csdn.net/lindexi_gd/article/details/49824613
+- win10 uwp 通知Toast http://blog.csdn.net/lindexi_gd/article/details/49824613
   
- UWP xaml 圆形头像 http://blog.csdn.net/lindexi_gd/article/details/49757187
+- UWP xaml 圆形头像 http://blog.csdn.net/lindexi_gd/article/details/49757187
  
- win10 uwp App-to-app communication 应用通信 http://blog.csdn.net/lindexi_gd/article/details/51055589
+- win10 uwp App-to-app communication 应用通信 http://blog.csdn.net/lindexi_gd/article/details/51055589
  
- win10 uwp json http://blog.csdn.net/lindexi_gd/article/details/51602405
+- win10 uwp json http://blog.csdn.net/lindexi_gd/article/details/51602405
  
- win10 uwp 从StorageFile获取文件大小 http://www.win10.me/?p=916
+- win10 uwp 从StorageFile获取文件大小 http://www.win10.me/?p=916
  
- win10 uwp 如何让WebView标识win10手机 http://www.win10.me/?p=914
+- win10 uwp 如何让WebView标识win10手机 http://www.win10.me/?p=914
  
- 有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
+有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
 
 程序一般不是我们写完就运行，一般需要http://blog.csdn.net/lindexi_gd/article/details/50707981
 
@@ -94,8 +94,11 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 开发过程中我遇到一些诡异，发在下面：
 
 - win10 uwp 无法附加到CoreCLR http://blog.csdn.net/lindexi_gd/article/details/51762068
+
 - win10 uwp BadgeLogo 颜色 http://blog.csdn.net/lindexi_gd/article/details/51761788
+
 - win10 输入法禁用IME http://blog.csdn.net/lindexi_gd/article/details/50117909
+
 - win10 uwp 读取文本ASCII错误 http://www.win10.me/?p=938
 
 当然我们也可以使用js来写，js参见：http://lib.csdn.net/article/csharp/32749 这个就是简单的使用js来写。
