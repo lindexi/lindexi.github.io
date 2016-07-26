@@ -38,6 +38,8 @@ win10 UWP 显示地图 http://blog.csdn.net/lindexi_gd/article/details/49935341
 
 如果需要图床 http://blog.csdn.net/lindexi_gd/article/details/51784666
 
+如果你也做了一些好用的，希望给别人可以看 http://www.win10.me/?p=952
+
 win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/article/details/49007841，还有比较少用的md5 http://blog.csdn.net/lindexi_gd/article/details/48951849 ,Hamc http://blog.csdn.net/lindexi_gd/article/details/50830924
 
 我们有一些常用的，这些可以看下，虽然不是马上可以用到
