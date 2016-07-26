@@ -95,6 +95,8 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 
 移植 http://blog.csdn.net/lindexi_gd/article/details/51321064
 
+关于网络一个完整可以 StreamSocket聊天室 http://www.wangchenran.com/uwp-streamsocket-chatroom-1.html
+
 开发过程中我遇到一些诡异，发在下面：
 
 - win10 uwp 无法附加到CoreCLR http://blog.csdn.net/lindexi_gd/article/details/51762068
