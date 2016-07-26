@@ -34,6 +34,10 @@ win10 UWP 显示地图 http://blog.csdn.net/lindexi_gd/article/details/49935341
 
 如果觉得微软控件还是不够，可以来看下我做的一些控件，圆形等待 http://blog.csdn.net/lindexi_gd/article/details/50606261
 
+我做的SplitViewItem http://blog.csdn.net/lindexi_gd/article/details/51784671
+
+如果需要图床 http://blog.csdn.net/lindexi_gd/article/details/51784666
+
 win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/article/details/49007841，还有比较少用的md5 http://blog.csdn.net/lindexi_gd/article/details/48951849 ,Hamc http://blog.csdn.net/lindexi_gd/article/details/50830924
 
 我们有一些常用的，这些可以看下，虽然不是马上可以用到
@@ -74,6 +78,8 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 我将告诉大家一些案例，先一个有源代码的Markdown http://blog.csdn.net/lindexi_gd/article/details/50488191 
 
 还有一个很简单win10 uwp 装机必备应用 含源代码 http://blog.csdn.net/lindexi_gd/article/details/50166161
+
+使用Path win10 uwp 分治法 http://blog.csdn.net/lindexi_gd/article/details/51315914
 
 开发过程中我遇到一些诡异，发在下面：
 
