@@ -2,6 +2,8 @@
 
 UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也是合并我写的博客。
 
+关于UWP介绍可以参见:http://lib.csdn.net/article/csharp/32451
+
 首先需要申请一个微软账号，没有账号是没法上传软件。
 
 申请可以看：http://blog.csdn.net/lindexi_gd/article/details/50329121
