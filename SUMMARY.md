@@ -39,5 +39,5 @@
 * [win10 uwp 圆角按钮](win10_uwp_yuan_jiao_an_niu.md)
 * [win10 uwp 读取文本ASCII错误](win10_uwp_du_qu_wen_ben_ascii_cuo_wu.md)
 * [win10 uwp 隐藏实时可视化](win10_uwp_yin_cang_shi_shi_ke_shi_hua.md)
-* win10 uwp 入门
+* [win10 uwp 入门](win10_uwp_ru_men.md)
 
