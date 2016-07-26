@@ -21,3 +21,4 @@ UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也�
 当然我们也可以使用js来写，js参见：http://lib.csdn.net/article/csharp/32749 这个就是简单的使用js来写。
 
 我们在开发会发现一些诡异的，或有些还是不懂，因为中文的书很少，但是我们可以看博客，我收很多人的博客，参见：http://blog.csdn.net/lindexi_gd/article/details/50032135
+
