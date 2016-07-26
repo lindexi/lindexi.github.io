@@ -28,7 +28,7 @@ UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也�
 
 当然我们和用户之间还需要MessageDialog 和 ContentDialog，http://blog.csdn.net/lindexi_gd/article/details/50822507
 
-如果觉得微软控件还是不够，可以来看下我做的一些控件
+如果觉得微软控件还是不够，可以来看下我做的一些控件，圆形等待 http://blog.csdn.net/lindexi_gd/article/details/50606261
 
 win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/article/details/49007841，还有比较少用的md5 http://blog.csdn.net/lindexi_gd/article/details/48951849 ,Hamc http://blog.csdn.net/lindexi_gd/article/details/50830924
 
@@ -41,6 +41,10 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
  win10 uwp 判断文件存在 http://blog.csdn.net/lindexi_gd/article/details/51387901
  
  win10 UWP 标题栏后退 http://blog.csdn.net/lindexi_gd/article/details/50618029
+ 
+ 剪贴板 http://blog.csdn.net/lindexi_gd/article/details/50479180
+ 
+ win10 UWP 应用设置 http://blog.csdn.net/lindexi_gd/article/details/50506692
  
  有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
 
