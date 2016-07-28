@@ -43,5 +43,5 @@
 * [win10 uwp 布局](win10-uwp-布局.md)
 * win10 uwp 初始屏幕
 * win10 uwp 多语言
-* win10 uwp 访问解决方案文件
+* [win10 uwp 访问解决方案文件](win10-uwp-访问解决方案文件.md)
 
