@@ -18,6 +18,16 @@
  
  - UWP 读取记事本
 
+ - UWP 访问GBK网页乱码
+
+ - UWP 乱码
+ 
+ - UWP GB2312 乱码 
+ 
+ - UWP 网页乱码
+
+ 
+
 其实不知道垃圾wr怎么想，现在没法读ASCII，官方给的，直接错
 
 用了nos大神的代码http://blog.csdn.net/nomasp/article/details/50310357，也是报错
