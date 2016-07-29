@@ -41,8 +41,8 @@
 * [win10 uwp 隐藏实时可视化](win10_uwp_yin_cang_shi_shi_ke_shi_hua.md)
 * [win10 uwp 入门](win10_uwp_ru_men.md)
 * [win10 uwp 布局](win10-uwp-布局.md)
-* win10 uwp 初始屏幕
-* win10 uwp 多语言
+* [win10 uwp 初始屏幕](win10-uwp-初始屏幕.md)
+* [win10 uwp 多语言](win10-uwp-多语言.md)
 * [win10 uwp 访问解决方案文件](win10-uwp-访问解决方案文件.md)
 * [win10 uwp如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
 * [win10 uwp 切换主题](win10-uwp-切换主题.md)
