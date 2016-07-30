@@ -8,17 +8,17 @@
 
 在这前，我们先说如何制作主题，其实主题就是Dictionary，我们在解决方案加上两个文件夹，一个是View，一个是ViewModel，其中View将会放主题，如果主题比较多，还可以在View加一个文件夹。
 
-!\[这里写图片描述\]\(http:\/\/img.blog.csdn.net\/20160728161505206\)
+![这里写图片描述](http://img.blog.csdn.net/20160728161505206)
 
 首先在View文件夹新建资源
 
-!\[这里写图片描述\]\(http:\/\/img.blog.csdn.net\/20160728161516093\)
+![这里写图片描述](http://img.blog.csdn.net/20160728161516093/)
 
 我根据原文说的新建几个资源叫LightThemeDictionary、DarkThemeDictionary，一个是白天颜色，一个是黑暗
 
 然后我们在我们的资源写入几个资源
 
-\`\`\`
+```
 
 &lt;ResourceDictionary xmlns="http:\/\/schemas.microsoft.com\/winfx\/2006\/xaml\/presentation" xmlns:x="http:\/\/schemas.microsoft.com\/winfx\/2006\/xaml" xmlns:local="using:NightDayThemeToggleButton.View"&gt;
 
@@ -30,19 +30,17 @@
 
 &lt;\/ResourceDictionary&gt;
 
-\`\`\`
+```
 
 然后在黑暗也写相同key的资源
 
-\`\`\`&lt;ResourceDictionary xmlns="http:\/\/schemas.microsoft.com\/winfx\/2006\/xaml\/presentation" xmlns:x="http:\/\/schemas.microsoft.com\/winfx\/2006\/xaml" xmlns:local="using:NightDayThemeToggleButton.View"&gt; &lt;SolidColorBrush x:Key="SystemBackgroundAltHighBrush" Color="\#FF1A1C37"\/&gt; &lt;SolidColorBrush x:Key="SystemBackgroundBaseHighBrush" Color="\#FFDFDFDF"\/&gt; &lt;Color x:Key="SystemTranslucentBaseHighColor"&gt;\#FFFFFFFF&lt;\/Color&gt; &lt;Color x:Key="SystemThemeMainColor"&gt;\#FF0074CE&lt;\/Color&gt;&lt;\/ResourceDictionary&gt;
+```&lt;ResourceDictionary xmlns="http:\/\/schemas.microsoft.com\/winfx\/2006\/xaml\/presentation" xmlns:x="http:\/\/schemas.microsoft.com\/winfx\/2006\/xaml" xmlns:local="using:NightDayThemeToggleButton.View"&gt; &lt;SolidColorBrush x:Key="SystemBackgroundAltHighBrush" Color="\#FF1A1C37"\/&gt; &lt;SolidColorBrush x:Key="SystemBackgroundBaseHighBrush" Color="\#FFDFDFDF"\/&gt; &lt;Color x:Key="SystemTranslucentBaseHighColor"&gt;\#FFFFFFFF&lt;\/Color&gt; &lt;Color x:Key="SystemThemeMainColor"&gt;\#FF0074CE&lt;\/Color&gt;&lt;\/ResourceDictionary&gt;
 
 \`\`\`
 
 然后我们需要在前台把资源放在Page
 
-
-
-\`\`\` 
+\`\`\`
 
 &lt;Page.Resources&gt; &lt;ResourceDictionary&gt; &lt;ResourceDictionary.ThemeDictionaries&gt; &lt;ResourceDictionary x:Key="Light" Source="View\/DarkThemeDictionary.xaml"&gt;&lt;\/ResourceDictionary&gt; &lt;ResourceDictionary x:Key="Dark" Source="View\/LightThemeDictionary.xaml"&gt;&lt;\/ResourceDictionary&gt; &lt;\/ResourceDictionary.ThemeDictionaries&gt; &lt;\/ResourceDictionary&gt; &lt;\/Page.Resources&gt;
 
@@ -60,11 +58,9 @@ ViewModel建立在ViewModel文件夹，一般少把类名称和文件夹一样
 
 viewModel
 
-
-
 \`\`\`
 
- public class ViewModel : NotifyProperty { public ViewModel\(\) { }
+public class ViewModel : NotifyProperty { public ViewModel\(\) { }
 
 public ElementTheme Theme { get { return \_theme; } set { \_theme = value; OnPropertyChanged\(\); } }
 
@@ -76,17 +72,13 @@ private ElementTheme \_theme = ElementTheme.Light; }
 
 先在xaml.cs写
 
-
-
-\`\`\` 
+\`\`\`
 
 private ViewModel.ViewModel View { set; get; }=new ViewModel.ViewModel\(\);
 
 \`\`\`
 
 然后在xaml
-
-
 
 \`\`\`
 
@@ -96,19 +88,15 @@ private ViewModel.ViewModel View { set; get; }=new ViewModel.ViewModel\(\);
 
 我们要看到变化，在xaml使用
 
-
-
 \`\`\`
 
- &lt;Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"&gt; &lt;Grid Background="{ThemeResource SystemBackgroundAltHighBrush}"&gt; &lt;ToggleSwitch HorizontalAlignment="Center" Toggled="ToggleSwitch\_OnToggled"&gt;&lt;\/ToggleSwitch&gt; &lt;\/Grid&gt; &lt;\/Grid&gt;
+&lt;Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"&gt; &lt;Grid Background="{ThemeResource SystemBackgroundAltHighBrush}"&gt; &lt;ToggleSwitch HorizontalAlignment="Center" Toggled="ToggleSwitch\_OnToggled"&gt;&lt;\/ToggleSwitch&gt; &lt;\/Grid&gt; &lt;\/Grid&gt;
 
 \`\`\`
 
 SystemBackgroundAltHighBrush是我们两个资源的，其中一个是白天，一个不是
 
-
-
-\`\`\` 
+\`\`\`
 
 private void ToggleSwitch\_OnToggled\(object sender, RoutedEventArgs e\) { View.Theme = View.Theme == ElementTheme.Light ? ElementTheme.Dark : ElementTheme.Light; }
 
@@ -132,7 +120,7 @@ NightDayThemeToggleButton
 
 做一个按钮，其实是修改
 
-\`\`\` 
+\`\`\`
 
 &lt;Style x:Key="NightDayThemeToggleButton" TargetType="CheckBox"&gt; &lt;Setter Property="Background" Value="Transparent"\/&gt; &lt;Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"\/&gt; &lt;Setter Property="Padding" Value="8,5,0,0"\/&gt; &lt;Setter Property="HorizontalAlignment" Value="Left"\/&gt; &lt;Setter Property="VerticalAlignment" Value="Center"\/&gt; &lt;Setter Property="HorizontalContentAlignment" Value="Left"\/&gt; &lt;Setter Property="VerticalContentAlignment" Value="Top"\/&gt; &lt;Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"\/&gt; &lt;Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"\/&gt; &lt;Setter Property="MinWidth" Value="120"\/&gt; &lt;Setter Property="MinHeight" Value="32"\/&gt; &lt;Setter Property="UseSystemFocusVisuals" Value="True"\/&gt; &lt;Setter Property="Template"&gt; &lt;Setter.Value&gt; &lt;ControlTemplate TargetType="CheckBox"&gt; &lt;Grid BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"&gt; &lt;VisualStateManager.VisualStateGroups&gt; &lt;VisualStateGroup x:Name="CombinedStates"&gt; &lt;VisualState x:Name="UncheckedNormal"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="UncheckedPointerOver"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="UncheckedPressed"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="UncheckedDisabled"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="CheckedNormal"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="CheckedPointerOver"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="CheckedPressed"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="CheckedDisabled"&gt; &lt;Storyboard&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Light" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="0"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;ObjectAnimationUsingKeyFrames Storyboard.TargetName="Dark" Storyboard.TargetProperty="Opacity"&gt; &lt;DiscreteObjectKeyFrame KeyTime="0" Value="1"&gt;&lt;\/DiscreteObjectKeyFrame&gt; &lt;\/ObjectAnimationUsingKeyFrames&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="IndeterminateNormal"&gt; &lt;Storyboard&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="IndeterminatePointerOver"&gt; &lt;Storyboard&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="IndeterminatePressed"&gt; &lt;Storyboard&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;VisualState x:Name="IndeterminateDisabled"&gt; &lt;Storyboard&gt; &lt;\/Storyboard&gt; &lt;\/VisualState&gt; &lt;\/VisualStateGroup&gt; &lt;\/VisualStateManager.VisualStateGroups&gt; &lt;Image x:Name="Light" Source="Assets\/weather\_sun.png"&gt;&lt;\/Image&gt; &lt;Image x:Name="Dark" Source="Assets\/weather\_moon.png"&gt;&lt;\/Image&gt; &lt;\/Grid&gt; &lt;\/ControlTemplate&gt; &lt;\/Setter.Value&gt; &lt;\/Setter&gt; &lt;\/Style&gt;
 
