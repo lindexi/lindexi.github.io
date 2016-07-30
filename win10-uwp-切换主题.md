@@ -11,7 +11,10 @@
 我根据原文说的新建几个资源叫LightThemeDictionary、DarkThemeDictionary，一个是白天颜色，一个是黑暗 然后我们在我们的资源写入几个资源
 
  ```
- <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:NightDayThemeToggleButton.View"> <SolidColorBrush x:Key="SystemBackgroundAltHighBrush" Color="#FFF0F0F0"/> <SolidColorBrush x:Key="SystemBackgroundBaseHighBrush" Color="#FF101010"/> <Color x:Key="SystemTranslucentBaseHighColor">#FF000000</Color> <Color x:Key="SystemThemeMainColor">#FF0074CE</Color> </ResourceDictionary>
+ <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:NightDayThemeToggleButton.View"> <SolidColorBrush x:Key="SystemBackgroundAltHighBrush" Color="#FFF0F0F0"/>
+ <SolidColorBrush x:Key="SystemBackgroundBaseHighBrush" Color="#FF101010"/> 
+    <Color x:Key="SystemTranslucentBaseHighColor">#FF000000</Color>
+ <Color x:Key="SystemThemeMainColor">#FF0074CE</Color> </ResourceDictionary>
 
  ```
 
