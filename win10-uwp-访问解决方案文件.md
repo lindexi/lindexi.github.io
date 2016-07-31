@@ -1,4 +1,8 @@
-参见：https:\/\/msdn.microsoft.com\/zh-cn\/library\/windows\/apps\/xaml\/hh965322\(v=win.10\).aspx
+本文讲如何访问解决方案的资源。
+
+我们
+
+参见：https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/hh965322(v=win.10).aspx
 
 
 
