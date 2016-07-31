@@ -9,7 +9,19 @@
 ```
 
 ```
-var file=
+var file=await  StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/1.png")); 
+```
+
+那么我们访问我们解决方案加的ms-appx就是解决方案的绝对路径，如果我们相对于我们xaml的路径也是可以
+
+如果需要访问我们应用中的本地数据local，临时文件temp等，可以使用 ms-appdate:// 后面加/ local、temp
+
+如果我们本地有1.png 放在local
+
+我们可以使用
+
+```
+var file=await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdate:///local/1.png"));
 ```
 
 参见：[https:\/\/msdn.microsoft.com\/zh-cn\/library\/windows\/apps\/xaml\/hh965322\(v=win.10\).aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/hh965322(v=win.10).aspx\)
