@@ -48,4 +48,5 @@
 * [win10 uwp 切换主题](win10-uwp-切换主题.md)
 * [win10 uwp 显示SVG](win10-uwp-显示svg.md)
 * [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
+* [win10 uwp 列表模板选择器](win10-uwp-列表模板选择器.md)
 
