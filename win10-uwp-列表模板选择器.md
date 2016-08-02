@@ -6,27 +6,17 @@
 
 假设我们的 人有个属性叫做名称，而男生有个属性叫身高，女孩有个属性叫年龄，当然女生年龄放出来并不好，不过我也没找到别的。
 
-
-
 好啦，我们在ViewModel放一个ObservableCollection&lt;Human&gt; HumanWord,这是我们发现，在前台不好弄，如何让列表显示男生和女孩，因为他们的属性不同。
-
-
 
 这时就需要我们做选择器，这个可以根据我们传入选择模板。
 
-
-
 首先我们建立一个类
-
-
 
 这个类是ListViewDataTemplateSelector选择我们的模板，模板我们会在xaml，不会写cs
 
-我们类继承
+我们类继承DataTemplateSelector
 
 我们属性
-
-
 
 ```
  public DataTemplate MaleData { set; get; }
@@ -34,8 +24,4 @@
  public DataTemplate FemaleData { set; get; }
 
 ```
-
-
-
-
 
