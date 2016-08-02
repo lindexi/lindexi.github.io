@@ -25,7 +25,11 @@
 
 ```
 
-然后我们判断我们是否传进来是男生，如果是就返回MaleData 
+然后我们判断我们是否传进来是男生，如果是就返回MaleData
 
-我们需要override SelectTemplateCore，这时有两个，如果我们的 `ItemsPanel` 是 `ItemsStackPanel` 或 ItemsWrapGrid 我们就需要选择
+我们需要override SelectTemplateCore，这时有两个，如果我们的 `ItemsPanel` 是 `ItemsStackPanel` 或 ItemsWrapGrid 我们就需要选择 `SelectTemplateCore(Object)` 。如果我们的 `VirtualizingStackPanel` 或其他的`WrapGrid` ，就是 `SelectTemplateCore(Object, DependencyObject)`
+
+
+
+
 
