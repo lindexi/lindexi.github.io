@@ -9,75 +9,39 @@ Email:[lindexi_gd@163.com](mailto:lindexi_gd@163.com)
 UWP入门
 =====
 
-
-
 UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也是合并我写的博客。
-
-
 
 关于UWP介绍可以参见:http://lib.csdn.net/article/csharp/32451
 
-
-
 首先需要申请一个微软账号，没有账号是没法上传软件。
-
-
 
 申请可以看：http://blog.csdn.net/lindexi_gd/article/details/50329121
 
-
-
 之后我们可以在官网下载vs，这个不需要多说，但是vs安装一般使用自定义，选择全平台，把所有可以打钩加上，当然安卓什么跨平台就不要。
-
-
 
 忘了，其实我们还需要windows10 系统。
 
-
-
 学习开发一般学Hellow，那么国内看到一篇比较好的 http://www.ceix.me/suibi/uwp开发学习笔记-1-hello-world
-
-
 
 官方 https://msdn.microsoft.com/zh-cn/windows/uwp/get-started/create-a-hello-world-app-xaml-universal
 
-
-
 开发开始就是我们的控件，一般控件可以参见：http://blog.csdn.net/lindexi_gd/article/details/50972343
-
-
 
 当然还有：http://blog.csdn.net/NoMasp/article/details/50263383
 
-
-
 接着我们就需要学如何使用控件，参见：http://blog.csdn.net/lindexi_gd/article/details/50964889
-
-
 
 控件，我们有时觉得官方的不够，我们需要学自定义，可以看[win10 UWP button](http://blog.csdn.net/lindexi_gd/article/details/50450292) [ win10 UWP FlipView](http://blog.csdn.net/lindexi_gd/article/details/50272907) [RichEditBox 使用自定义菜单](http://blog.csdn.net/lindexi_gd/article/details/50250795)
 
-
-
 我们需要知道一些新的UWP带来的，[x:bind](http://blog.csdn.net/lindexi_gd/article/details/48294123) 和加载 http://blog.csdn.net/lindexi_gd/article/details/49743845
-
-
 
 win10 UWP 显示地图 http://blog.csdn.net/lindexi_gd/article/details/49935341
 
-
-
 当然我们和用户之间还需要MessageDialog 和 ContentDialog，http://blog.csdn.net/lindexi_gd/article/details/50822507
-
-
 
 在用到APPBarButton他的Icon我都写出： http://blog.csdn.net/lindexi_gd/article/details/49307913
 
-
-
 如果觉得微软控件还是不够，可以来看下我做的一些控件，圆形等待 http://blog.csdn.net/lindexi_gd/article/details/50606261
-
-
 
 我做的SplitViewItem http://blog.csdn.net/lindexi_gd/article/details/51784671
 
