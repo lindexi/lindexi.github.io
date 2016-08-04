@@ -22,3 +22,18 @@
 
 ```
 
+在UWP那简单，我们在Resource
+
+```
+ <x:Double x:Key="Height"> 200 </x:Double>
+
+```
+
+当然需要一个Key，然后一个值，我们可以有
+
+- Boolean
+
+- Int32
+
+- String
+
