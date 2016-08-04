@@ -7,6 +7,10 @@
 
 首先把控件放在xaml，在后台放个int，然后绑定，接着修改这个int就可以看到颜色从绿到红，使用简单。
 
+```
+        <local:RoundFigureGradual N="{x:Bind N,Mode=OneWay}"></local:RoundFigureGradual>
+```
+
 转换的代码
 
 
@@ -30,6 +34,8 @@
         }
     }
 ```
+
+
 
 ## xaml定义常量
 
