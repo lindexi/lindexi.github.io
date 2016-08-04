@@ -1,6 +1,24 @@
 我朋友在做一个控件，是显示异常，那么异常多就变为颜色，大概就是下面的图，很简单
 
 
+![这里写图片描述](http://img.blog.csdn.net/20160804170030148)
+
+![这里写图片描述](http://img.blog.csdn.net/20160804170037101)
+
+![这里写图片描述](http://img.blog.csdn.net/20160804170050257)
+
+![这里写图片描述](http://img.blog.csdn.net/20160804170100710)
+
+![这里写图片描述](http://img.blog.csdn.net/20160804170108085)
+
+![这里写图片描述](http://img.blog.csdn.net/20160804170119132)
+
+![这里写图片描述](http://img.blog.csdn.net/20160804170125736)
+
+![这里写图片描述](http://img.blog.csdn.net/20160804170133148)
+
+
+
 首先是一个Ellipse，然后把他的颜色绑定到Int，需要一个转换，UWP的转换和WPF差不多，因为我现在还不会转换，就不多说。
 
 转换很简单，不过我先说如何使用，控件放在[https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure](https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure)
