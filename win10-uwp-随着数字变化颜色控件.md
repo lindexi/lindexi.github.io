@@ -1,6 +1,16 @@
 我朋友在做一个控件，是显示异常，那么异常多就变为颜色，大概就是下面的图，很简单
 
 
+首先是一个Ellipse，然后把他的颜色绑定到Int，需要一个转换，UWP的转换和WPF差不多，因为我现在还不会转换，就不多说。
+
+转换很简单，不过我先说如何使用，控件放在[https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure](https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure)
+
+首先把控件放在xaml，在后台放个int，然后绑定，接着修改这个int就可以看到颜色从绿到红，使用简单。
+
+转换的代码
+
+
+
 
 ## xaml定义常量
 
