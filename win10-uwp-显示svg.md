@@ -99,7 +99,7 @@ await Svg.LoadFileAsync(file);
 ```
 protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 {
- Svg.SafeUnload();
+  Svg.SafeUnload();
 }
 ```
 
