@@ -50,6 +50,6 @@
 * [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
 * [win10 uwp 魔力鬼畜](win10_uwp_mo_li_gui_chu.md)
 * [win10 uwp 随着数字变化颜色控件](win10-uwp-随着数字变化颜色控件.md)
-   * [win10 uwp 魔力鬼畜](win10_uwp_mo_li_gui_chu.md)
+* [win10 uwp 魔力鬼畜](win10_uwp_mo_li_gui_chu.md)
 * [win10 uwp 列表模板选择器](win10-uwp-列表模板选择器.md)
 
