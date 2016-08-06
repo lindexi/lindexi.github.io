@@ -16,6 +16,8 @@
 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
 ```
 
+设置发现我们的窗口没变小，其实使用下面代码
+
 窗口最小
 
 ```
