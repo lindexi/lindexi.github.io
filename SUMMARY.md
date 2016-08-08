@@ -52,5 +52,5 @@
 * [win10 uwp 随着数字变化颜色控件](win10-uwp-随着数字变化颜色控件.md)
 * [win10 uwp 列表模板选择器](win10-uwp-列表模板选择器.md)
 * [win10 uwp 设置启动窗口大小  获取窗口大小](win10_uwp_she_zhi_qi_dong_chuang_kou_da_xiao_huo_q.md)
-* win10 uwp 简单MasterDetail
+* [win10 uwp 简单MasterDetail](win10_uwp_jian_dan_masterdetail.md)
 
