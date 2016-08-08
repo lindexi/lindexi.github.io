@@ -210,9 +210,15 @@ FrameNavigate(typeof(页), 参数);
         }
 ```
 
+CurrentStateChanged就是当触发我们的界面变化发生，用这个比较好，因为我们界面大小修改不一定会小于我们设置的，一旦小于再触发，因为View的函数需要`object sender, VisualStateChangedEventArgs e`
+
+那么从函数获得我们窗口变化可以使用下面两个：
+
 Window.Current.Bounds.Width放在函数，就可以得到我们的窗口大小。
 
 当然我们可以给我们VisualState名，从e.NewState拿到Name就很简单，我们使用Narrow，判断显示屏是小还是可以显示两个
+
+我推荐是使用第一个，因为第二个我们必须修改前台就修改ViewModel
 
 ##修改显示
 
@@ -227,5 +233,85 @@ Window.Current.Bounds.Width放在函数，就可以得到我们的窗口大小�
 可以看到我们需要设置一个ZIndex就好
 
 我们就在界面变化，和点击后悔，点击列表，使用判断，我们判断写成一个函数，函数判断现在窗口，判断HasFrame，很简单。
+
+如果看不懂我上面说的，可以看我代码https://github.com/lindexi/UWP/tree/master/uwp/src/DetailMaster
+
+我们开始的大屏幕是使用Grid有分开，左边列表，右边Content，其中Content是Frame，用到页面导航。
+
+如果屏幕小，那么使用List和Content放在同一个Grid，依靠Zindex显示，如果是需要显示列表就列表的ZIndex大，需要显示内容，就把内容的ZIndex大。
+
+我们需要判断我们是否点击了List和用户是否点了返回键，一旦按返回键，我们显示列表，当然在我们屏幕大，可以不做什么，如果屏幕小，就需要设置ZIndex。
+
+那么我们在界面变化的是否，是否知道我们显示内容还是显示列表，这时就是我们得HasFrame，依靠这个选择ZIndex
+
+##修改我代码
+
+现在需要说下，如何修改我的代码，作为你需要。
+
+一般可以自己写一个，不过通过修改我的代码会让你更加理解
+
+首先我们需要Model，这是你自己定义的，随便写
+
+然后打开ViewModel，我们里面关键的有ObservableCollection的，这是列表。
+
+MasterClick里面把跳转换为你需要的。
+
+BackRequested是返回，按返回键，我们现在简单使用界面的，不使用硬件，如果需要硬件其实简单。
+
+界面开始的Image可以换为你需要的，然后其他的可以选择不修改。
+
+很简单使用。
+
+
+##源码
+
+接着我们来说下我源代码怎么做。
+
+我首先新建Model，放下随意的，然后在ViewModel使用ObservableCollection，当然给他的也是随意的
+
+在界面我们需要Grid，这时我绑定了GridLength，设置这个简单。
+
+如果需要auto，简单 ` GridLength.Auto`，如果需要`1*`，可以`new GridLength(1, GridUnitType.Star);`就是这样，开始是左边Auto，右边`1*`，MasterGrid就是列表啦，这个不想说
+
+我绑定是用x:Bind，要OneWay
+
+我写List需要使用Grid，因为背景透明，其实我在List也可以用背景，但是我想我会在List做弹出，最后想着用Grid
+
+```
+ <Grid
+                Background="White"
+                Canvas.ZIndex="{x:Bind View.ZListView,Mode=OneWay}">
+```
+
+在List
+
+```
+            <Grid Grid.Column="{x:Bind View.GridInt,Mode=OneWay}"
+                  Canvas.ZIndex="{x:Bind View.ZFrame,Mode=OneWay}">
+```
+
+我们需要做一点修改，在我们的内容没有，我们是不需要返回键的，那么这时的返回键可以作为按两次退出，这个可以看http://blog.csdn.net/xuzhongxuan/article/details/49962705
+
+如果我们按返回，但是我们撸了一半，假如我们是页面跳转，不使用我源码，那么加上NavigationCacheMode ，保存页面，这样不会让页面现在的选择重新
+
+下面说下English，其实是Google翻译，因为我这个遇到一个用英文问我的人，不知道是不是，反正就直接翻译
+
+#English
+
+I make a Easy MasterDetail to use.It's very easy,and I has not yet been see the other easier that it.
+
+In big screen and the widescreen,we have a Grid with  two columns.And the left is list and the right is content.
+
+The content is an Image and a Frame.If not content,show Image,else show Image.
+
+In narrowscreen,we make the list and content in a col.If has content ,the content's Zindex is greater than the list.And if click the backButton ,the List's zindex is greater than content.
+
+We make the list's background white,so if the list zindex is grerater than content and we can't see content.
+
+We have bool hasFrame ,if we has content ,it is true,else false.In the windows be narrow ,if the hasFrame==true ,we make Content's zindex greater than list.
+
+We can change the model for your class and write ObservableCollection.In `MasterClick` ,we can make Navigate.
+
+If something perplexes you,mailto lindexi_gd@163.com.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
