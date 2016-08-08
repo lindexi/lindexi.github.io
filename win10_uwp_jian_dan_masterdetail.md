@@ -177,7 +177,7 @@ FrameNavigate(typeof(页), 参数);
 
 大概我们就把一个页面做好，Detail就显示我们点击传的str
 
-我们需要手机按后退也是。
+我们需要手机按后退也是 `Windows.Phone.UI.Input.HardwareButtons.BackPressed`
 
 ##页面更改大小
 
