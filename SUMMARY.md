@@ -54,4 +54,5 @@
 * [win10 uwp 设置启动窗口大小  获取窗口大小](win10_uwp_she_zhi_qi_dong_chuang_kou_da_xiao_huo_q.md)
 * [win10 uwp 简单MasterDetail](win10_uwp_jian_dan_masterdetail.md)
 * [win10 uwp 异步进度条](win10_uwp_yi_bu_jin_du_tiao.md)
+* win10 uwp InkCanvas控件数据绑定
 
