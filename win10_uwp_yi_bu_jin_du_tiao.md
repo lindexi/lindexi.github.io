@@ -98,6 +98,93 @@
 
 那么进度条如果不需要进度，那么我有一些好的，例如我之前的博客有说的，还有一个简单，也是上面改，我们一个值是显示一个值是不显示，那么我们可以做
 
+![这里写图片描述](http://img.blog.csdn.net/20160810190545145)
+
+```
+<UserControl
+    x:Class="lindexi.uwp.control.RountProgress.View.IndeterminateProgress"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lindexi.uwp.control.RountProgress.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+
+        <Style TargetType="ProgressRing">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+            <Setter Property="IsHitTestVisible" Value="False"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressRing">
+                        <Grid x:Name="Ring" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" FlowDirection="LeftToRight" MaxWidth="{Binding TemplateSettings.MaxSideLength, RelativeSource={RelativeSource Mode=TemplatedParent}}" MaxHeight="{Binding TemplateSettings.MaxSideLength, RelativeSource={RelativeSource Mode=TemplatedParent}}" Padding="{TemplateBinding Padding}" RenderTransformOrigin=".5,.5" >
+                            <Grid.Resources>
+                                <Style x:Key="ProgressRingEllipseStyle" TargetType="Ellipse">
+                                    <Setter Property="Opacity" Value="0"/>
+                                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                                    <Setter Property="VerticalAlignment" Value="Top"/>
+                                </Style>
+                            </Grid.Resources>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SizeStates">
+                                    <VisualState x:Name="Large">
+                                        <Storyboard>
+                                      
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Small"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="ActiveStates">
+                                    <VisualState x:Name="Inactive"/>
+                                    <VisualState x:Name="Active">
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <DoubleAnimation Storyboard.TargetName="Rount" Storyboard.TargetProperty="Angle"
+                                                           BeginTime="0:0:0" Duration="0:0:5" From="0" To="360"  >
+
+                                            </DoubleAnimation>
+                                            
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                           
+                            <Ellipse  Stroke="DeepSkyBlue" Height="100" Width="100" 
+                                      StrokeThickness="3"  
+                                      RenderTransformOrigin="0.5,0.5"/>
+                            <Ellipse  Stroke="DeepSkyBlue" Height="200" Width="200" 
+                                      StrokeThickness="3" StrokeDashArray="50 50" 
+                                      RenderTransformOrigin="0.5,0.5" >
+                                <Ellipse.RenderTransform>
+                                    <RotateTransform  x:Name="Rount" Angle="0"/>
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid>
+        <ProgressRing Width="200" Height="200" 
+                      IsActive="True"></ProgressRing>
+    </Grid>
+
+</UserControl>
+```
+
+
+
+
 
  
  
