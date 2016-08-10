@@ -211,7 +211,29 @@
 
 我觉得匀速不好，修改速度
 
+- BackEase
 
+ 缓动函数，它在部分持续时间内向反方向更改主函数的值
+ 
+- BounceEase
+ 
+ 弹跳
+
+- CircleEase 
+
+  加速
+  
+- PowerEase 
+
+  次方
+  
+- SineEase 
+
+  sin加速
+  
+- QuadraticEase 
+
+  `^2`
 
  
  
