@@ -182,7 +182,32 @@
 </UserControl>
 ```
 
+我们使用一个简单的修改，因为我们可以使用`<RotateTransform  x:Name="Rount" Angle="0"/>`
 
+我们使用
+
+```
+                                    <VisualState x:Name="Active">
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <DoubleAnimation Storyboard.TargetName="Rount" Storyboard.TargetProperty="Angle"
+                                                             Duration="0:0:5" From="0" To="360"  >
+
+                                            </DoubleAnimation>
+                                            
+                                        </Storyboard>
+                                    </VisualState>
+```
+
+
+
+修改我们旋转，时间0:0:5，5秒，从0到360，循环
+
+因为是修改，所以可以放在Resource
+
+```
+<ProgressRing Width="200" Height="200" 
+                      IsActive="True"></ProgressRing>
+ ```
 
 
 
