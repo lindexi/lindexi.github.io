@@ -52,8 +52,46 @@
  
  `长=圆*30%/宽度`
  
- `圆=PI*总长度`
+ `圆=PI*(总长度-宽度)`
  
- 
+ ```
+         <Ellipse x:Name="Rount" Stroke="DeepSkyBlue" Height="100" Width="100" 
+                 StrokeThickness="3" 
+                 RenderTransformOrigin="0.5,0.5"/>
+                 
+```
+
+那么我们第一个值 (总长度100 - 宽度3) \* PI / 宽度3
+
+因为我们需要算我们的宽度不是直接总长度，是总长度-宽度
+
+第二个最好是Double.Max
+
+我们想要一个可以用户进度，那么可以绑定一个属性，在我们控件
+
+我们需要这个为double，然后绑定
+
+因为我们需要两个值，所以转换
+
+假如我们的转换是固定的总长度，宽度，那么可以使用
+
+```
+
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            double thine = 3;
+            double w = 100 - thine;
+            double n = Math.PI * w/thine * (double)value / 100;
+            DoubleCollection temp = new DoubleCollection()
+            {
+               n,
+                1000
+            };
+
+            return temp;
+        }
+```
+
+如果觉得固定不好，可以在我们转换写属性，然后在界面把我们的宽度给属性，然后换为我们的宽度算，这个简单
  
  
