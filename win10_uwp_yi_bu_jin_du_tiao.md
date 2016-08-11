@@ -296,6 +296,7 @@ ViewModel
  
  UWP动画Margin可以
  
+ ```
  <Storyboard TargetName="Rount">
     <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Margin"
                                    BeginTime="00:00:00" EnableDependentAnimation="True"
@@ -312,7 +313,7 @@ ViewModel
          </DiscreteObjectKeyFrame>
     </ObjectAnimationUsingKeyFrames>
  </Storyboard>
-
+```
 Rount就是我们要修改的控件，我们看到这是在2就直接修改，没有从1到200，这样其实并不是我们直接就想从1然后两秒200
 
 
