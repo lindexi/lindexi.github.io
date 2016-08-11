@@ -314,7 +314,7 @@ In narrowscreen,we make the list and content in a col.If has content ,the conten
 
 We make the list's background white,so if the list zindex is grerater than content and we can't see content.
 
-We have bool hasFrame ,if we has content ,it is true,else false.In the windows be narrow ,if the hasFrame==true ,we make Content's zindex greater than list.
+We have bool value is hasFrame ,if we has content ,it is true,else false.In the windows be narrow ,if the hasFrame==true ,we make Content's zindex greater than list.
 
 We can change the model for your class and write ObservableCollection.In `MasterClick` ,we can make Navigate.
 
