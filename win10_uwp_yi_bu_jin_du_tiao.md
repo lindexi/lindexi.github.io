@@ -296,22 +296,22 @@ ViewModel
  
  UWP动画Margin可以
  
-                                         <Storyboard TargetName="Rount">
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Margin"
-                                                                          BeginTime="00:00:00" EnableDependentAnimation="True"
-                                                                          Duration="0:0:2" >
-                                                <DiscreteObjectKeyFrame KeyTime="00:00:00"  >
-                                                    <DiscreteObjectKeyFrame.Value >
-                                                        <Thickness>10,1,10,10</Thickness>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                                <DiscreteObjectKeyFrame KeyTime="00:00:02">
-                                                    <DiscreteObjectKeyFrame.Value >
-                                                        <Thickness>10,200,10,10</Thickness>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
+ <Storyboard TargetName="Rount">
+    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Margin"
+                                   BeginTime="00:00:00" EnableDependentAnimation="True"
+                                   Duration="0:0:2" >
+                 <DiscreteObjectKeyFrame KeyTime="00:00:00"  >
+                     <DiscreteObjectKeyFrame.Value >
+                         <Thickness>10,1,10,10</Thickness>
+                     </DiscreteObjectKeyFrame.Value>
+                   </DiscreteObjectKeyFrame>
+                 <DiscreteObjectKeyFrame KeyTime="00:00:02">
+                     <DiscreteObjectKeyFrame.Value >
+                         <Thickness>10,200,10,10</Thickness>
+                 </DiscreteObjectKeyFrame.Value>
+         </DiscreteObjectKeyFrame>
+    </ObjectAnimationUsingKeyFrames>
+ </Storyboard>
 
 Rount就是我们要修改的控件，我们看到这是在2就直接修改，没有从1到200，这样其实并不是我们直接就想从1然后两秒200
 
