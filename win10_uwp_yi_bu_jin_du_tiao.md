@@ -4,6 +4,25 @@
  
  进度条其实异步就是使用后台变化，然后value绑定
  
+ 我使用一个
+ 
+ ```
+         <ProgressBar Maximum="100" Value="{x:Bind View.Value,Mode=OneWay}" Height="20" Width="100"></ProgressBar>
+```
+
+绑定到我们的ViewModel，一般如果后台线程操作界面是不能直接，但是我用了
+
+ ```
+             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                () =>
+                {
+                     
+                });
+```
+ 
+代码参见：https://github.com/lindexi/UWP，项目所有代码都会发出
+
+
  
  ##圆形进度条
  
