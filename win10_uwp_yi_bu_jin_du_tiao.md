@@ -261,4 +261,7 @@
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
 
-Rount就是我们要修改的控件，我们看到这是在2就直接修改，没有从1到200，这样其实并不是我们直接就想
+Rount就是我们要修改的控件，我们看到这是在2就直接修改，没有从1到200，这样其实并不是我们直接就想从1然后两秒200
+
+我们用Canvas，因为我们简单Canvas的是Double
+
