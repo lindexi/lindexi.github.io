@@ -308,7 +308,7 @@ I make a Easy MasterDetail to use.It's very easy,and I has not yet been see the 
 
 In big screen and the widescreen,we have a Grid with  two columns.And the left is list and the right is content.
 
-The content is an Image and a Frame.If not content,show Image,else show Image.
+The content is an Image and a Frame.If not content,show Image,else show content.
 
 In narrowscreen,we make the list and content in a col.If has content ,the content's Zindex is greater than the list.And if click the backButton ,the List's zindex is greater than content.
 
