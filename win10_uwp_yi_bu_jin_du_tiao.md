@@ -22,7 +22,40 @@
  
 代码参见：https://github.com/lindexi/UWP，项目所有代码都会发出
 
+我们使用Task异步，我们因为没有什么耗时的，就`Task.Delay(1000).Wait();`
 
+ViewModel
+
+```
+        public ViewModel()
+        {
+            new Task(() =>
+            {
+                while (Value < 90)
+                {
+                    Value += 10;
+                    Task.Delay(1000).Wait();
+                }
+            }).Start();
+        }
+
+        public double Value
+        {
+            set
+            {
+                _value = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _value;
+            }
+        }
+
+        private double _value;
+```
+
+我还自己的控件，一个值从0到100的圆形的，可以看下面
  
  ##圆形进度条
  
