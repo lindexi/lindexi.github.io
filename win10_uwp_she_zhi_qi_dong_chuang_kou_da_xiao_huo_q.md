@@ -13,6 +13,15 @@
 ```
 `ApplicationView.PreferredLaunchWindowingMode `设置UWP窗口全屏
 
+如果设置过屏幕大小导致了每次开启窗口都变小，那么可以简单使用（下面代码没有测试）
+```
+ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+ApplicationView.PreferredLaunchWindowingMode =
+ApplicationViewWindowingMode.Auto;
+```
+和这个问题相似的还有，UWP的标题栏问题，我们通过设置了
+
 ```
 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
 ```
