@@ -20,7 +20,13 @@ ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.Pref
 ApplicationView.PreferredLaunchWindowingMode =
 ApplicationViewWindowingMode.Auto;
 ```
-和这个问题相似的还有，UWP的标题栏问题，我们通过设置了
+和这个问题相似的还有，UWP的标题栏问题，我们通过设置了ExtendViewIntoTitleBar=true，导致了没有标题栏，但是如果我们之后设置了false，程序关闭后发现并没有用，简单的方法
+
+```
+            var windows = CoreApplication.GetCurrentView().TitleBar;
+            windows.ExtendViewIntoTitleBar = false;
+            windows.ExtendViewIntoTitleBar = true;
+```
 
 ```
 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
