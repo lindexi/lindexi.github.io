@@ -16,6 +16,15 @@
 
 其实简单UWP ListView宽度过小，可以通过
 
+```
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment"
+                                Value="Stretch"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+```
 
 ##
  
