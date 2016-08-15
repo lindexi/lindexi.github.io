@@ -349,9 +349,17 @@ Rount就是我们要修改的控件，我们看到这是在2就直接修改，�
 
 ```
 
-  
+                                              <DoubleAnimation Storyboard.TargetName="Rount"
+                                                             Storyboard.TargetProperty="Y"
+                                                             Duration="0:0:2" From="0" To="300">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BounceEase Bounces="2"></BounceEase>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
 
 ```
+
+我们使用Rount，x，记得要给名字，然后两秒，从0到300，下面就是弹跳，我上面有说，这个在官方有说比我写还好，但是官方的我没法拿来
 
 
 
