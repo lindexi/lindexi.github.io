@@ -20,9 +20,9 @@
                 });
 ```
  
-代码参见：https://github.com/lindexi/UWP，项目所有代码都会发出
+代码参见：[https://github.com/lindexi/UWP/tree/master/uwp/control/Progress](https://github.com/lindexi/UWP/tree/master/uwp/control/Progress)，项目所有代码都会发出
 
-我们使用Task异步，我们因为没有什么耗时的，就`Task.Delay(1000).Wait();`
+我们使用Task异步，我们因为没有什么耗时的，就`Task.Delay(1000).Wait();`我们进度会等一秒，当然自己也可以设置多些。也可以写 `await Task.Dalay(1000);`
 
 ViewModel
 
