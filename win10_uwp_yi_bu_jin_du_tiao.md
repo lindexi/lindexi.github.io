@@ -337,7 +337,19 @@ Rount就是我们要修改的控件，我们看到这是在2就直接修改，�
 
 ```
  
+    <local:IndeterminateProgress Margin="0,10,0,0" Width="200" Height="200" >
+       <local:IndeterminateProgress.RenderTransform>
+               <TranslateTransform x:Name="Rount" Y="10" />
+       </local:IndeterminateProgress.RenderTransform>
+    </local:IndeterminateProgress>
 
+```
+
+在动画
+
+```
+
+  
 
 ```
 
