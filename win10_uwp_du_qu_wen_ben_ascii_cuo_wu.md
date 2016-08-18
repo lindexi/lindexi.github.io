@@ -115,6 +115,8 @@ Encoding encodingGbk =Encoding.GetEncoding("GBK");
 
 http://www.cnblogs.com/loyieking/p/5617508.html
 
+对于一个需要追加的文件，UWP追加文件写入其实可以使用`await FileIO.AppendTextAsync(StorageFile,"追加文本");`
+
 
 
         
