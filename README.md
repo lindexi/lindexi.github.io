@@ -1,4 +1,4 @@
-﻿#README
+#README
 
 Email:[lindexi_gd@163.com](mailto:lindexi_gd@163.com)
 
