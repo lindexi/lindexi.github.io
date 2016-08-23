@@ -106,16 +106,10 @@ win10 改了很多，最简单的读写文件：http://blog.csdn.net/lindexi_gd/
 有时候我们会使用网络，本来我想写网络编程，现在没写，网络只有 http://blog.csdn.net/lindexi_gd/article/details/50838740
 
 
-
 程序一般不是我们写完就运行，一般需要http://blog.csdn.net/lindexi_gd/article/details/50707981
 
 
-
-
-
 然后我们可以看微软教程 国内最好的几个视频有[刘老师](http://www.win10.me/?cat=5)和[bilibili](http://space.bilibili.com/18340402)
-
-
 
 如果要学比较高级的可以看https://github.com/Microsoft/Windows-universal-samples ，如果是开始还不懂使用，可以看：http://blog.csdn.net/bending1218/article/details/50523243
 
