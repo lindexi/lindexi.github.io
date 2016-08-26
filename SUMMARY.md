@@ -2,8 +2,8 @@
 
 * [Introduction](README.md)
 * [控件](kong_jian.md)
-   * [Win10 UWP Intro to controls and events](win10_uwp_intro_to_controls_and_events.md)
-   * [win10 UWP Controls by function](win10_uwp_controls_by_function.md)
+    * [Win10 UWP Intro to controls and events](win10_uwp_intro_to_controls_and_events.md)
+    * [win10 UWP Controls by function](win10_uwp_controls_by_function.md)
 * [win10 uwp App-to-app communication 应用通信](win10_uwp_app-to-app_communication_ying_yong_tong_.md)
 * [win10 UWP 全屏](win10_uwp_quan_ping.md)
 * [win10 uwp 使用油墨输入](win10_uwp_shi_yong_you_mo_shu_ru.md)
@@ -57,4 +57,5 @@
 * [win10 uwp InkCanvas控件数据绑定](win10_uwp_inkcanvaskong_jian_shu_ju_bang_ding.md)
 * [win10 uwp 网络编程](win10_uwp_wang_luo_bian_cheng.md)
 * [win10 uwp 动画](win10_uwp_dong_hua.md)
+* [C\# 7.0](c-70.md)
 
