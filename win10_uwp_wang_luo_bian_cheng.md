@@ -44,6 +44,8 @@
  
  
  我们开始接收就接收16+16+16+16位，然后使用length接收下面，这样就可以解决
+
+技术很简单，其实我们需要做服务器，和客户端，一般我们可以在UWP做两个，这个参见http://www.wangchenran.com/uwp-streamsocket-chatroom-1.html
  
  
  
