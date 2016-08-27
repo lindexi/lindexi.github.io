@@ -47,5 +47,8 @@
 
 技术很简单，其实我们需要做服务器，和客户端，一般我们可以在UWP做两个，这个参见http://www.wangchenran.com/uwp-streamsocket-chatroom-1.html
  
+我们可以用传输数据，可以传输文本，这个我们需要传什么需要一个协议，这个是应用高层，前面说的是协议传输
+
+
  
  
