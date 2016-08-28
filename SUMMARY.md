@@ -58,4 +58,5 @@
 * [win10 uwp 网络编程](win10_uwp_wang_luo_bian_cheng.md)
 * [win10 uwp 动画](win10_uwp_dong_hua.md)
 * [C\# 7.0](c-70.md)
+* [Visual studio 创建项目失败vstemplate](visual-studio-创建项目失败vstemplate.md)
 
