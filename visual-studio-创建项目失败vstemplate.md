@@ -24,7 +24,7 @@ vstemplate文件引用的向导类“Microsoft.VisualStudio.WinRT.TemplateWizard
 
 然后保存到桌面，从桌面复制，这样是没法直接保存在C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP\1033\BlankApplication
 
-复制选择管理员
+复制选择管理员，这个需要我们管理员复制才可以
 
 复制我们就可以新建我们的项目
 
