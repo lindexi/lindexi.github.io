@@ -224,6 +224,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 如果我们没法识别，那么检查设置时间语言，检查安装语言，下载手写
 
 那么我们可以使用
+
 ```
             var container = new InkRecognizerContainer();
             foreach (var temp in container.GetRecognizers())
@@ -231,6 +232,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
                 Text.Text += temp.Name + "\r\n";
             }
 ```
+
 来看我们安装了哪些，有安装才能使用
 
 ##语音
