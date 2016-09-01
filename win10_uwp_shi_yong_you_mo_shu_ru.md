@@ -182,6 +182,9 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
 
 但是我们每次需要使用`InkCanvas`需要使用很多按钮，微软给了我们`Ink Toolbar `可以简单使用。
 扩展下载：https://visualstudiogallery.msdn.microsoft.com/58194dfe-df44-4c4e-893a-1eca40675269
+
+![这里写图片描述](http://img.blog.csdn.net/20160901165925839) 
+
    首先安装该工具扩展，然后引用InkToolbar Control.dll，接着在View中声明控件:
    
 
