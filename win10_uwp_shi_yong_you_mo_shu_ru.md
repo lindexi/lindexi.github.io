@@ -217,6 +217,22 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 ```
 `TargetInkCanvas`属性bind到要设置的`InkCanvas`上即可。
 
+##无法识别手写
+
+首先我们手写需要安装。
+
+如果我们没法识别，那么检查设置时间语言，检查安装语言，下载手写
+
+那么我们可以使用
+```
+            var container = new InkRecognizerContainer();
+            foreach (var temp in container.GetRecognizers())
+            {
+                Text.Text += temp.Name + "\r\n";
+            }
+```
+来看我们安装了哪些，有安装才能使用
+
 ##语音
 
 现在很多人都是使用语音输入，把文字转为语音我已经写了一篇博客。
