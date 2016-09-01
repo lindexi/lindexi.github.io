@@ -7,7 +7,17 @@
 这个问题简单。
 
 ```
+                <ListView.ItemContainerStyle>
 
+                    <Style TargetType="ListViewItem">
+
+                        <Setter Property="HorizontalContentAlignment"
+
+                                Value="Stretch"></Setter>
+
+                    </Style>
+
+                </ListView.ItemContainerStyle>
 ```
 
 ##获取博客
