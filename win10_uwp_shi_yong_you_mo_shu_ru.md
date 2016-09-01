@@ -18,7 +18,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
 `InkPresenter`可以获取InkCanvas基础对象，可以设置输入为笔，触摸，鼠标，上面那个是从微软拿来，因为我是在用电脑。
 
-为了画出上面的图，我们可以设置`ink_canvas.InkPresenter.InputDeviceTypes= CoreInputDeviceTypes.Mouse;`
+为了画出上面的图，我们可以设置`ink_canvas.InkPresenter.InputDeviceTypes= CoreInputDeviceTypes.Mouse;`如果我们有鼠标还要在手机运行，我们可以来`|`然后写手机。
 
 ```
         public MainPage()
@@ -82,7 +82,10 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
                 InkInputProcessingMode.Inking;
         }
 ```
+
 点击橡皮可以擦掉，但是有些诡异，大家可以自己去写
+
+
 保存墨迹
 
 ```
