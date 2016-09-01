@@ -235,6 +235,8 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 来看我们安装了哪些，有安装才能使用
 
+源代码 https://github.com/lindexi/UWP/tree/master/uwp/src/Ink
+
 ##语音
 
 现在很多人都是使用语音输入，把文字转为语音我已经写了一篇博客。
