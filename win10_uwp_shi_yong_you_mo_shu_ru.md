@@ -218,12 +218,19 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 `TargetInkCanvas`属性bind到要设置的`InkCanvas`上即可。
 
 ##语音
+
 现在很多人都是使用语音输入，把文字转为语音我已经写了一篇博客。
+
 我们需要先有麦克风
+
 ![这里写图片描述](http://img.blog.csdn.net/20160416103452875)
+
 首先我们需要设置语言
+
 需要的识别，可以使用web
+
 告诉用户需要输入
+
 ```
             Language language = SpeechRecognizer.SystemSpeechLanguage;
             speechRecognizer = new SpeechRecognizer(language);
