@@ -168,6 +168,15 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
                await InkCanvas.InkPresenter.StrokeContainer.LoadAsync(file);
            }
 ```
+
+##UWP 手写清理笔画
+
+我们写完一个字需要清理我们笔画
+
+```
+ink.InkPresenter.StrokeContainer.Clear();
+```
+
 ##手写识别
 
 ```
