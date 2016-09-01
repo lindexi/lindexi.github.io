@@ -92,9 +92,9 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
             FileSavePicker picker = new FileSavePicker
             {
                 SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary
-            };
+            };//建议我们选择在图片，其实这个不用写
             picker.FileTypeChoices.Add("Gif", new
-            System.Collections.Generic.List<string> { ".gif" });
+            System.Collections.Generic.List<string> { ".gif" });//类型gif，其实是isf
             //名称
             picker.SuggestedFileName = "http://blog.csdn.net/lindexi_gd";
             StorageFile file = await picker.PickSaveFileAsync();
