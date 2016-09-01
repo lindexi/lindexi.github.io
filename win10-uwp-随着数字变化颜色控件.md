@@ -23,7 +23,7 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160901103735693) 
 
-转换很简单，不过我先说如何使用，控件放在[https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure](https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure)
+转换很简单，不过我先说如何使用，控件放在[![](https://octodex.github.com/images/gobbleotron.gif)](https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure)
 
 首先把控件放在xaml，在后台放个int，然后绑定，接着修改这个int就可以看到颜色从绿到红，使用简单。
 
