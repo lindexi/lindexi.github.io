@@ -122,3 +122,22 @@
                 <span id="mt54" class="sentence" data-guid="ff973168b9c603228da0de366494f6df" data-source="The current year in the format YYYY." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">以 YYYY 格式表示的当前年份。</sentenceText></span>
               </p></td></tr></table>
 
+我们在添加我们的文件，如果需要放在项目的文件夹，我们需要`<ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>`写一个位置相对
+
+写完我们打开`Application.csproj`ItemGroup是我们项目文件，我们需要写入我们的文件是编译还是内容，我们添加很多是编译
+
+`<Compile Include="ViewModel\NotifyProperty.cs" />`
+
+如果我们需要文件夹，里没有内容，我们可以
+
+```
+    <Folder Include="Model\" />
+```
+
+这样保存，复制`C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP\2052\BlankApplication`这个位置需要和你复制出的位置一样。
+
+需要管理员
+
+我们新建项目如果出找不到文件，打开`C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplatesCache`相同位置，把文件复制，因为这个是临时，VisualStudio会在文件夹读，一般关掉VisualStudio会好，但是后来有人说这样不好，我们就手动把文件复制
+
+
