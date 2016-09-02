@@ -59,4 +59,5 @@
 * [win10 uwp 动画](win10_uwp_dong_hua.md)
 * [C\# 7.0](c-70.md)
 * [Visual studio 创建项目失败vstemplate](visual-studio-创建项目失败vstemplate.md)
+* [Visual Studio 自定义项目模板](visual-studio-自定义项目模板.md)
 
