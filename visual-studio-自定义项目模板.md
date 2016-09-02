@@ -14,4 +14,111 @@
 
 我们先打开BlankApplication里BlankApplication.vstemplate
 
-我们要修改
+我们要修改是我们项目包含文件TemplateContent就是我们项目包含的文件
+
+![这里写图片描述](http://img.blog.csdn.net/20160902105740743)
+
+我们包含项目Application.csproj，但是我们后面`ReplaceParameters="true"`我们会把东西代换，代换的我在后面讲。
+
+然后就是我们的项目包含文件，`<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>`我们从本地找到`App.xaml`文件，放在新建项目的`App.xaml`放入之前需要代换，因为`ReplaceParameters="true"`
+
+那我们会代什么，我们打开`App.xaml`
+
+![这里写图片描述](http://img.blog.csdn.net/20160902110135270)
+
+看到`$safeprojectname$`这就是我们代换的，可以代换
+
+<table Responsive="true"><tr Responsive="true"><th><p>
+                <span id="mt17" class="sentence" data-guid="03144cce1fcdacdbe993e5266c0bf3f3" data-source="Parameter" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">
+  <sentenceText xmlns="http://www.w3.org/1999/xhtml">参数</sentenceText>
+</sentenceText></span>
+              </p></th><th><p>
+                <span id="mt18" class="sentence" data-guid="67daf92c833c41c95db874e18fcb2786" data-source="Description" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">描述</sentenceText></span>
+              </p></th></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt19" class="sentence" data-guid="c133fa31e454fa144f7d7d90e9ae1693" data-source="clrversion" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">clrversion</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt20" class="sentence" data-guid="99a29f3977417776732298c48e65dfe4" data-source="Current version of the common language runtime (CLR)." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">公共语言运行时 (CLR) 的当前版本。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt21" class="sentence" data-guid="49705cbf330537640981f0ab18accad6" data-source="GUID [1-10]" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">GUID [1-10]</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt22" class="sentence" data-guid="e0fa6a3b9ee8f16086de726310c4b135" data-source="A GUID used to replace the project GUID in a project file." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用于替换项目文件中的项目 GUID 的 GUID。</sentenceText></span>  <span id="mt23" class="sentence" data-guid="496e67ee5856defb304ddf191ba41dba" data-source="You can specify up to 10 unique GUIDs (for example, &lt;span class=&quot;code&quot;&gt;guid1)&lt;/span&gt;." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">最多可以指定 10 个唯一的 GUID（例如，<span class="code" xmlns="http://www.w3.org/1999/xhtml">guid1)</span>）。</sentenceText></span>  </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt24" class="sentence" data-guid="3e3640c36bf50aec770a87493828e76d" data-source="itemname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">itemname</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt25" class="sentence" data-guid="45f07a95e0e4d41abc8629973ec2626a" data-source="The name provided by the user in the &lt;strong&gt;Add New Item&lt;/strong&gt; dialog box." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">添加新项</strong>对话框中提供的名称。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt26" class="sentence" data-guid="62f2e1d94ea5a730c4dfda5ead0bde29" data-source="machinename" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">machinename</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt27" class="sentence" data-guid="07677bf070f0091903f60cd3dffbfc75" data-source="The current computer name (for example, Computer01)." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前的计算机名称（例如，Computer01）。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt28" class="sentence" data-guid="0c79925e09c937c71744ced5b822bb9c" data-source="projectname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">projectname</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt29" class="sentence" data-guid="5dc7586ced55345b6c0596d20776a515" data-source="The name provided by the user in the &lt;strong&gt;New Project&lt;/strong&gt; dialog box." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">新建项目</strong>对话框中提供的名称。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt30" class="sentence" data-guid="b8cb8cda7a77173c8cd60820bac24c51" data-source="registeredorganization" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">registeredorganization</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt31" class="sentence" data-guid="32030027fe55b00c51bee4c32d919923" data-source="The registry key value from HKLM\Software\Microsoft\Windows NT\CurrentVersion\RegisteredOrganization." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">HKLM\Software\Microsoft\Windows NT\CurrentVersion\RegisteredOrganization 中的注册表项值。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt32" class="sentence" data-guid="5d813332b11ed6b05867ff78e5dc118e" data-source="rootnamespace" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">rootnamespace</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt33" class="sentence" data-guid="fb3308554d201bf0102437cc193e91cb" data-source="The root namespace of the current project." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前项目的根命名空间。</sentenceText></span>  <span id="mt34" class="sentence" data-guid="2e96c802b934ca14367b106bc8c23617" data-source="This parameter applies only to item templates." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">此参数仅适用于项目模板。</sentenceText></span>  </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt35" class="sentence" data-guid="1d776f1950944fd630b39229db934fef" data-source="safeitemname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">safeitemname</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt36" class="sentence" data-guid="5c6bf9887241db9208137f7209ff1535" data-source="The name provided by the user in the &lt;strong&gt;Add New Item&lt;/strong&gt; dialog box, with all unsafe characters and spaces removed." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">“添加新项”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt37" class="sentence" data-guid="5eee0cd89154fbf6bd9e081b5a94ced6" data-source="safeprojectname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">safeprojectname</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt38" class="sentence" data-guid="944b58f8edf11ae44c537b00d5b613e9" data-source="The name provided by the user in the &lt;strong&gt;New Project&lt;/strong&gt; dialog box, with all unsafe characters and spaces removed." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">“新建项目”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt39" class="sentence" data-guid="07cc694b9b3fc636710fa08b6922c42b" data-source="time" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">time</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt40" class="sentence" data-guid="5007398966b1b1418146c463e385a194" data-source="The current time in the format DD/MM/YYYY 00:00:00." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">以 DD/MM/YYYY 00:00:00 格式表示的当前时间。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt41" class="sentence" data-guid="20529023398a5d29e764f6e787169d00" data-source="SpecificSolutionName" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">SpecificSolutionName</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt42" class="sentence" data-guid="6aa4abce5410b2782dae55878d8f0e93" data-source="The name of the solution." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">解决方案的名称。</sentenceText></span>  <span id="mt43" class="sentence" data-guid="0f28d8c9eee8721e7a248bffe1acae05" data-source="When &quot;create solution directory&quot; is checked, &lt;strong&gt;SpecificSolutionName&lt;/strong&gt; has the solution name." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当“创建解决方案的目录”被选中，<strong xmlns="http://www.w3.org/1999/xhtml">SpecificSolutionName</strong> 具有解决方案的名称。</sentenceText></span>  <span id="mt44" class="sentence" data-guid="8f19232114d8a1d29699331a4cbce1aa" data-source="When &quot;create solution directory&quot; is not checked, &lt;strong&gt;SpecificSolutionName&lt;/strong&gt; is blank." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当“创建解决方案的目录”没有被选中，<strong xmlns="http://www.w3.org/1999/xhtml">SpecificSolutionName</strong>是空。</sentenceText></span>  </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt45" class="sentence" data-guid="cbbacbb40776f2eda9611f5d6a1aceb7" data-source="userdomain" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">userdomain</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt46" class="sentence" data-guid="bdd1425d9a1a601a0cef89e8998dc36d" data-source="The current user domain." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前的用户域。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt47" class="sentence" data-guid="14c4b06b824ec593239362517f538b29" data-source="username" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">username</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt48" class="sentence" data-guid="2104843e8c143db53f8ab885786712fd" data-source="The current user name." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前的用户名。</sentenceText></span>
+              </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt49" class="sentence" data-guid="3e729841ba9695cb7b4b18a70d26d9cd" data-source="webnamespace" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">webnamespace</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt50" class="sentence" data-guid="dfedbc6a8db02a652582ef84fa3f8855" data-source="The name of the current Web site." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前网站的名称。</sentenceText></span>  <span id="mt51" class="sentence" data-guid="53ed8b23db00a4418f607bbc6e330322" data-source="This parameter is used in the Web form template to guarantee unique class names." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">在 Web 窗体模板中使用此参数以确保类名称是唯一的。</sentenceText></span>  <span id="mt52" class="sentence" data-guid="0e5c2b875b8ed8d2eaa94599237b8633" data-source="If the Web site is at the root directory of the Web server, this template parameter resolves to the root directory of the Web Server." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">如果网站位于 Web 服务器的根目录下，则此模板参数将解析为 Web 服务器的根目录。</sentenceText></span>  </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
+                <strong>
+                  <span id="mt53" class="sentence" data-guid="84cdc76cabf41bd7c961f6ab12f117d8" data-source="year" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">year</sentenceText></span>
+                </strong>
+              </p></td><td data-th="&#xA;                描述&#xA;              "><p>
+                <span id="mt54" class="sentence" data-guid="ff973168b9c603228da0de366494f6df" data-source="The current year in the format YYYY." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">以 YYYY 格式表示的当前年份。</sentenceText></span>
+              </p></td></tr></table>
+
