@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>林德熙</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal-default-theme.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>
+    <!--<script src="static/js/script.js"></script>-->
+</head>
+<body>
+    <div class="container" id="cv">
+        <div class="side">
+            <div class="me">
+                <div class="portrait"></div>
+                <div class="remodal remodal-img" data-remodal-id="portrait-modal">
+                    <h3>请输入图片URL地址：</h3>
+                    <br />
+                    <input type="text" id="avatar-url">
+                    <button data-remodal-action="confirm" class="remodal-confirm">确定</button>
+                </div>
+                <h1 id="username">林德熙</h1>
+                <h4 id="persona-tag">C# / UWP / WPF</h4>
+            </div>
+            <div class="profile info-unit">
+                <h2 class="info-header"><i class="iconfont icon-person"></i> <span class="info-title">基本信息</span></h2>
+                <hr>
+                <ul class="info-list">
+                    <li>
+                        <label class="left-label">姓名</label><span class="label-value">林德熙</span>
+                    </li>
+                    <li>
+                        <label class="left-label">学历</label><span class="label-value">本科</span>
+                    </li>
+                    <li>
+                        <label class="left-label">毕业院校</label><span class="label-value">广东工业大学</span>
+                    </li>
+                    <li>
+                        <label class="left-label">毕业年份</label><span class="label-value">2017</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact info-unit">
+                <h2 class="info-header"><i class="iconfont icon-call"></i> <span class="info-title">联系方式</span></h2>
+                <hr>
+                <ul class="info-list">
+                    <li>
+                        <label class="left-label">手机</label><span class="label-value">156XXXXXXXX</span>
+                    </li>
+                    <li>
+                        <label class="left-label">邮箱</label><span class="label-value">lindexi_gd@163.com</span>
+                    </li>
+                    <li>
+                        <label class="left-label">个人主页</label><span class="label-value">lindexi.github.io</span>
+                    </li>
+                    <li>
+                        <label class="left-label">Github</label><span class="label-value"><a href="https://github.com/lindexi">https://github.com/lindexi</a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="skill info-unit">
+                <h2 class="info-header"><i class="iconfont icon-star"></i> <span class="info-title">技能点</span></h2>
+                <hr>
+                <ul class="progress-list">
+                    <li>
+                        <label class="left-label">C#</label>
+                        <progress value="80" max="100"></progress>
+                    </li>
+                    <li>
+                        <label class="left-label">xaml</label>
+                        <progress value="70" max="100"></progress>
+                    </li>
+                    <li>
+                        <label class="left-label">UWP</label>
+                        <progress value="70" max="100"></progress>
+                    </li>
+                    <li>
+                        <label class="left-label">WPF</label>
+                        <progress value="60" max="100"></progress>
+                    </li>
+                    <li>
+                        <label class="left-label">高性能</label>
+                        <progress value="60" max="100"></progress>
+                    </li>
+                    <li>
+                        <label class="left-label">大数据</label>
+                        <progress value="10" max="100"></progress>
+                    </li>
+                </ul>
+            </div>
+            <div class="stack info-unit">
+                <h2 class="info-header"><i class="iconfont icon-build"></i> <span class="info-title">博客</span></h2>
+                <hr>
+                <ul class="stack-list">
+                    <li>
+                        <label class="left-label">CSDN</label>
+                        <span class="label-value">
+                            <a href="http://blog.csdn.net/lindexi_gd">http://blog.csdn.net/lindexi_gd</a>
+                        </span>
+                    </li>
+                    <li>
+                        <label class="left-label">九幽</label>
+                        <span class="label-value">
+                            <a href="http://www.win10.me/?cat=118">http://www.win10.me/?cat=118</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="stack info-unit">
+                <hr>
+                <p>
+                    有团队开发经验和微软应用商店发布应用经验<br />
+                    擅长Windows10 应用开发<br />
+                    熟悉xaml、C#<br />
+                    熟悉MVVM开发<br />
+                    自学能力强<br />
+                    英语能力较好，能流畅阅读微软 MSDN 的英文文档<br />
+                </p>
+            </div>
+
+            <!--<div class="stack info-unit">
+                <h2 class="info-header"><i class="iconfont icon-build"></i> <span class="info-title">技术栈</span></h2>
+                <hr>
+                <ul class="stack-list">
+                    <li>
+                        <label class="left-label">前端</label><span class="label-value">jQuery、Angular.js、React.js</span></li>
+                    <li>
+                        <label class="left-label">后端</label><span class="label-value">Flask、Django、Twisted、Node.js、MongoDB、MySQL、Redis</span></li>
+                    <li>
+                        <label class="left-label">其它</label><span class="label-value">我全都是瞎写的。</span></li>
+                </ul>
+            </div>-->
+            <!--<div class="code info-unit">
+                <h2 class="info-header"><i class="iconfont icon-weixin"></i> <span class="info-title">个人微信</span></h2>
+                <hr>
+                <div class="weixin">
+                    <img src="static/image/weixin.png" alt="">
+
+                </div>
+            </div>-->
+            <div class="remodal remodal-img" data-remodal-id="weixin-modal">
+                <h3>请输入图片URL地址：</h3>
+                <br />
+                <input type="text" id="weixin-url">
+                <button data-remodal-action="confirm" class="remodal-confirm">确定</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="education info-unit right-list">
+                <h2 class="info-header"><i class="iconfont icon-education"></i> <span class="info-title">教育经历</span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3>广东工业大学 - 软件工程专业（本科）2013-2017</h3>
+                        <!--<p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>-->
+                    </li>
+                </ul>
+            </div>
+            <div class="work info-unit right-list">
+                <h2 class="info-header"><i class="iconfont icon-work"></i> <span class="info-title">工作经历</span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3>CVTE－实习生（实习）</h3>
+                        <p>
+                            实习我负责两个项目开发，第一个是负责Nuget包管理器软件开发,
+                            Nuget包管理器软件是帮助开发者一次性升级多个工程多个分支到指定包版本。
+                            开发出来的软件应用到工程开发中，有效减少开发升级包的工作量。<br />
+                            第二个项目负责异常分配管理软件的软件传输层协议设计和开发。
+                        </p>
+                    </li>
+                    <li>
+                        <h3>广州宝资通科技有限公司－软件工程师（实习）</h3>
+                        <p>
+                            主要负责外贸工具箱项目开发。<br />
+                            主要使用WPF开发技术开发，使用技术有网络爬虫，简单数据挖掘。<br />
+
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project info-unit right-list">
+                <h2 class="info-header"><i class="iconfont icon-project"></i> <span class="info-title">个人项目</span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3>私密密码本</h3>
+                        <p>
+                            独立开发软件，包括对项目进行需求分析，编写软件核心算法，测试项目。 <br />
+                            攥写软件技术博客，并发布在微软应用商店。
+                            <a href="http://www.microsoft.com/zh-cn/store/apps/%E7%A7%81%E5%AF%86%E5%AF%86%E7%A0%81%E6%9C%AC/9nblggh5cc3g">链接</a>
+
+                            <br />
+                        </p>
+                    </li>
+                    <li>
+                        <h3>UWP 库</h3>
+                        <p>
+                            UWP 常用源代码和控件。
+                            <br/><a href="https://github.com/lindexi/UWP">https://github.com/lindexi/UWP</a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3>winMarkDown</h3>
+                        <p>
+                            win10 UWP MarkDown软件，开源项目<br />
+                            <a href="https://github.com/lindexi/Markdown">https://github.com/lindexi/Markdown</a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3>小说阅读器 UWP </h3>
+                        <p>
+                            win10 UWP 小说阅读器软件，可以在手机运行。开源项目<br />
+                            <a href="https://github.com/lindexi/NovelRead">https://github.com/lindexi/NovelRead</a>
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Imageshack</h3>
+                        <p>
+                            图床库，可以简单在UWP应用上传图片到图床。
+                        </p>
+                    </li>
+                    <li>
+                        <h3>简体翻译转换软件</h3>
+                        <p>
+                            UWP软件，可以把字体简单转换。
+                        </p>
+                    </li>
+                    <li>
+                        <h3>CSDN博客阅读</h3>
+                        <p>
+                            UWP软件，可以获得CSDN博客阅读量。
+                            开源项目<br/><a href="https://github.com/lindexi/csdn-uwp">https://github.com/lindexi/csdn-uwp</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="project info-unit right-list">
+                <h2 class="info-header"><i class="iconfont icon-project"></i> <span class="info-title">活动</span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>2013 年 参加学校超算工作室，在工作室学习和开发工作室项目</li>
+                    <li>2014 年 参与全国并行应用挑战赛 2014 并获得优胜奖</li>
+                    <li>2015 年 参与全国并行应用挑战赛 2015 并获得全国华中及华南赛区 一等奖</li>
+                    <li>2016 年 2月 成为CSDN博客准专家</li>
+                    <li>2016 年 3月 成为九幽专栏作家</li>
+                    <li>2016 年 7月 发布论文到全国理论计算机会议 并被推荐到《计算机科学与探索》</li>
+                 </ul>
+            </div>
+            <!--<div class="trophy info-unit">
+                <h2 class="info-header"><i class="iconfont icon-trophy"></i> <span class="info-title">奖项与证书</span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3>小学生作文二等奖</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam。
+                        </p>
+                    </li>
+                    <li>
+                        <h3>曾获统一冰红茶“再来一瓶”奖</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam。
+                        </p>
+                    </li>
+                    <li>
+                        <h3>这一行也是为了凑版面</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam。
+                        </p>
+                    </li>
+                </ul>
+            </div>-->
+            <div class="aboutme info-unit right-paragraph">
+                <h2 class="info-header"><i class="iconfont icon-flower"></i> <span class="info-title">个人兴趣</span></h2>
+                <hr>
+                <p>
+                    写代码，编写技术类博客
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
