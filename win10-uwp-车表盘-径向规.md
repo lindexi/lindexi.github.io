@@ -8,6 +8,8 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160903165703064) 
 
+![这里写图片描述](http://img.blog.csdn.net/20160903173217169) 
+
 使用很简单，在Nuget，Radial Gauge
 
 ![这里写图片描述](http://img.blog.csdn.net/20160903165948549) 
@@ -15,6 +17,11 @@
 
 要使用大神做的，简单，在使用我们需要在Nuget下载，然后在引用` xmlns:controls="using:WinRTXamlToolkit.Controls"`
 
+我们需要知道每个值是什么
+
+![这里写图片描述](http://img.blog.csdn.net/20160903173511567) 
+
+tick:最上面表盘，我们可以修改颜色TickBrush，我们颜色可以用
 
 
 
