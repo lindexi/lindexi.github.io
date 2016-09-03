@@ -6,6 +6,14 @@
 
 看名字不知道是什么，我就放一张图
 
+![这里写图片描述](http://img.blog.csdn.net/20160903165703064) 
+
+使用很简单，在Nuget，Radial Gauge
+
+![这里写图片描述](http://img.blog.csdn.net/20160903165948549) 
+
+
+要使用大神做的，简单，在使用我们需要在Nuget下载，然后在引用` xmlns:controls="using:WinRTXamlToolkit.Controls"`
 
 
 
