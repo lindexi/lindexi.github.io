@@ -1,5 +1,7 @@
 # win10 uwp InkCanvas控件数据绑定
 
+【】
+
 本文主要说如何绑定InkCanvas，让笔画变化的时候我们可以知道。
 
 我们本来的InkCanvas没有提供笔画绑定，所以我们自己写
