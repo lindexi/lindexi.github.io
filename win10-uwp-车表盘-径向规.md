@@ -51,6 +51,7 @@ tick:最上面表盘，我们可以修改颜色TickBrush，我们颜色可以用
             </controls:Gauge>
 ```
 
+如果感兴趣可以去https://github.com/xyzzer/WinRTXamlToolkit
 
 [http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx](http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx)
 
