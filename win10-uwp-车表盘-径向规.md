@@ -25,6 +25,8 @@ tick:最上面表盘，我们可以修改颜色TickBrush，我们颜色可以用
 
 我们对每个值都可以修改，可以是颜色，图片。
 
+trail
+
 ```
             <controls:Gauge
                 x:Name="Gauge"
