@@ -99,6 +99,7 @@ needle：指针，英文我就不翻译
 
 如果大小觉得不是你要的，使用ViewBox，然后这个是放大多少都不会模糊。
 
+修改Fill修改颜色，修改Stroke修改边框，第一个是田后面就是垃圾wr
 
 [http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx](http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx)
 
