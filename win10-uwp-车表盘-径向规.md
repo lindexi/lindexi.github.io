@@ -34,6 +34,8 @@ scale:还没有使用的，可以设置颜色
 Minimum：我们可以修改和进度条那最大值，最小值
 
 
+Unit：下面写的字，我写了博客
+
 ```
             <controls:Gauge
                 x:Name="Gauge"
