@@ -44,8 +44,6 @@
 * [win10 uwp 访问解决方案文件](win10-uwp-访问解决方案文件.md)
 * [win10 uwp 切换主题](win10-uwp-切换主题.md)
 * [win10 uwp 显示SVG](win10-uwp-显示svg.md)
-* [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
-* [win10 uwp 魔力鬼畜](win10_uwp_mo_li_gui_chu.md)
 * [win10 uwp 随着数字变化颜色控件](win10-uwp-随着数字变化颜色控件.md)
 * [win10 uwp 列表模板选择器](win10-uwp-列表模板选择器.md)
 * [win10 uwp 设置启动窗口大小  获取窗口大小](win10_uwp_she_zhi_qi_dong_chuang_kou_da_xiao_huo_q.md)
@@ -60,5 +58,7 @@
 * [win10 uwp 车表盘 径向规](win10-uwp-车表盘-径向规.md)
 * [win10 uwp win2d](win10_uwp_win2d.md)
 * [win10 uwp dataGrid](win10_uwp_datagrid.md)
+* [win10 uwp 魔力鬼畜](win10_uwp_mo_li_gui_chu.md)
 * [win10 uwp如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
+* [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
 
