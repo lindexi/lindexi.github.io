@@ -27,7 +27,11 @@ tick:最上面表盘，我们可以修改颜色TickBrush，我们颜色可以用
 
 trail:我们可以修改颜色，如果需要修改大小，我们修改下面的scaleTick
 
-scaleTick:可以修改颜色，大小，ScaleWidth就是大小
+scaleTick:可以修改颜色，大小，ScaleWidth就是大小，ScaleTickBrush颜色
+
+scale:还没有使用的，可以设置颜色
+
+Minimum：我们可以修改和进度条那最大值，最小值
 
 
 ```
