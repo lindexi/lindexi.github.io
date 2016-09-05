@@ -66,7 +66,7 @@ needle：指针，英文我就不翻译
 
 如果感兴趣可以去https://github.com/xyzzer/WinRTXamlToolkit
 
-
+如果大小觉得不是我们要的，可以用ViewBox，直接设置大小
 
 
 [http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx](http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx)
