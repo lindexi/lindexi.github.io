@@ -35,6 +35,8 @@ Minimum：我们可以修改和进度条那最大值，最小值
 
 Unit：下面写的字，我写了博客
 
+needle：指针，英文我就不翻译
+
 ```
             <controls:Gauge
                 x:Name="Gauge"
