@@ -25,7 +25,10 @@ tick:最上面表盘，我们可以修改颜色TickBrush，我们颜色可以用
 
 我们对每个值都可以修改，可以是颜色，图片。
 
-trail:我们可以修改颜色，如果需要修改大小，我们修改下面的scale
+trail:我们可以修改颜色，如果需要修改大小，我们修改下面的scaleTick
+
+scaleTick:可以修改颜色，大小，ScaleWidth就是大小
+
 
 ```
             <controls:Gauge
