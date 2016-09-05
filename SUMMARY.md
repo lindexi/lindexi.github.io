@@ -32,7 +32,6 @@
 * [win10 uwp smms图床](win10_uwp_smmstu_chuang.md)
 * [win10 uwp 从StorageFile获取文件大小](win10_uwp_cong_storagefile_huo_qu_wen_jian_da_xiao.md)
 * [win10 uwp 如何让WebView标识win10手机](win10_uwp_ru_herang_webview_biao_shi_win10_shou_ji.md)
-* [win10 uwp win2d](win10_uwp_win2d.md)
 * [win10 uwp 上传Nuget](win10_uwp_shangchuan_nuget.md)
 * [win10 uwp 手动锁Bitlocker](win10_uwp_shou_dong_suo_bitlocker.md)
 * [win10 uwp 圆角按钮](win10_uwp_yuan_jiao_an_niu.md)
@@ -60,5 +59,6 @@
 * [Visual studio 创建项目失败vstemplate](visual-studio-创建项目失败vstemplate.md)
 * [Visual Studio 自定义项目模板](visual-studio-自定义项目模板.md)
 * [win10 uwp 车表盘 径向规](win10-uwp-车表盘-径向规.md)
+* [win10 uwp win2d](win10_uwp_win2d.md)
 * [win10 uwp dataGrid](win10_uwp_datagrid.md)
 
