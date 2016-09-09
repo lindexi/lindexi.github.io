@@ -22,6 +22,10 @@
                 </ListView.ItemContainerStyle>
 ```
 
+我们可以使用我们的ListView放数据
+
+
+
 ##获取博客
 
 获取博客可以访问网站，获取源码，使用匹配到的数据
