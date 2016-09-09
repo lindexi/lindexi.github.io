@@ -22,7 +22,7 @@
                 </ListView.ItemContainerStyle>
 ```
 
-
+![QQ截图20160909195739.png](https://ooo.0o0.ooo/2016/09/09/57d2a38d3dc4c.png)
 
 我们可以使用我们的ListView放数据
 
