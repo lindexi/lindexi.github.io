@@ -24,6 +24,8 @@ var file=await  StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///A
 var file=await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdate:///local/1.png"));
 ```
 
+如果提示找不到文件，因为是右击文件，属性，选生成操作：内容。记住要内容，其他可能出现找不到。
+
 参见：[https:\/\/msdn.microsoft.com\/zh-cn\/library\/windows\/apps\/xaml\/hh965322\(v=win.10\).aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/hh965322(v=win.10).aspx\)
 
 关于git http://blog.csdn.net/marktheone/article/details/52062888
