@@ -6,6 +6,9 @@
 
 我们使用`Binding`和WPF其实没有多少不同，在Mode只有`OneWay`,`OneTime`,`TwoWay`。我们使用的`x:bind`在DataTemplate才和原来有一些不同。
 
+我们使用`x:bind`需要我们对我们数据的类型，这个在前没有，我开始不知。
+
+我们假如我们的类型
 
 
 
