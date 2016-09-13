@@ -63,8 +63,14 @@
 
 我们对于内存，还有在我们使用缓存，判断我们应用使用内存，垃圾wr给我们两个事件，需要我们用sdk 14393，我觉得垃圾wr这样不好，才半年就改
 
+`MemoryManager`给我们几个属性，`AppMemoryUsage` 获取应用程序当前的内存使用率, `AppMemoryUsageLevel` 获取应用程序当前的内存使用率级别,`AppMemoryUsageLimit` 获取应用程序当前的内存使用率限制,都是只读，我们可以获取这些值来得到我们应用是不是占用太多内存。
+
 `AppMemoryUsageLimitChanging`在我们应用转入后台，我们的内存限制就会变化，然而还有很多诡异的也会让我们内存限制变化，我们可以根据内存变化，清理缓存
 
+`AppMemoryUsageIncreased`我们在我们开始缓存需要我们的内存应用等级，这个事件是内存使用等级，假如我们的内存等级从小到大，那么发生，一旦发生我们就要检查我们是否清理
 
-`MemoryManager`给我们几个属性，`AppMemoryUsage` 获取应用程序当前的内存使用率, `AppMemoryUsageLevel` 获取应用程序当前的内存使用率级别,`AppMemoryUsageLimit` 获取应用程序当前的内存使用率限制,都是只读，我们可以获取这些值来得到我们应用是不是占用太多内存。
+
+
+
+
 
