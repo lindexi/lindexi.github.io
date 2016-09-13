@@ -66,4 +66,5 @@
 `AppMemoryUsageLimitChanging`在我们应用转入后台，我们的内存限制就会变化，然而还有很多诡异的也会让我们内存限制变化，我们可以根据内存变化，清理缓存
 
 
+`MemoryManager`给我们几个属性，`AppMemoryUsage` 获取应用程序当前的内存使用率, `AppMemoryUsageLevel` 获取应用程序当前的内存使用率级别,`AppMemoryUsageLimit` 获取应用程序当前的内存使用率限制,都是只读，我们可以获取这些值来得到我们应用是不是占用太多内存。
 
