@@ -65,9 +65,13 @@
 
 `MemoryManager`给我们几个属性，`AppMemoryUsage` 获取应用程序当前的内存使用率, `AppMemoryUsageLevel` 获取应用程序当前的内存使用率级别,`AppMemoryUsageLimit` 获取应用程序当前的内存使用率限制,都是只读，我们可以获取这些值来得到我们应用是不是占用太多内存。
 
-`AppMemoryUsageLimitChanging`在我们应用转入后台，我们的内存限制就会变化，然而还有很多诡异的也会让我们内存限制变化，我们可以根据内存变化，清理缓存
+`AppMemoryUsageLimitChanging`应用限制最大内存，在我们应用转入后台，我们的内存限制就会变化，然而还有很多诡异的也会让我们内存限制变化，我们可以根据内存变化，清理缓存
 
 `AppMemoryUsageIncreased`我们在我们开始缓存需要我们的内存应用等级，这个事件是内存使用等级，假如我们的内存等级从小到大，那么发生，一旦发生我们就要检查我们是否清理
+
+`AppMemoryUsageDecreased`我们应用内存等级下降，在我们使用内存从大到小使用，这个在我们清理很多缓存可以让我们知道不用清理，一般用是在`AppMemoryUsageIncreased` 有个任务CleanTask，把我们的缓存清理，然后我们有个bool，一旦`AppMemoryUsageDecreased`我们就设为true，那么我们的CleanTask判断true就停下。
+
+
 
 
 
