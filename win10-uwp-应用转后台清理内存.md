@@ -41,5 +41,27 @@
 
 我们判断在我们进入后台清理我们的内存，因为小说经常不是后台就不用，我们就把我们现在使用的小说打开，其他打开小说放在内存资源全删，很简单，但是我们看官方建议是不`GC.Collect();`
 
+```
+        private void App_EnteredBackground(object sender, EnteredBackgroundEventArgs e)
+        {
+            //应用进入后台
+            _areBackground = true;
+            //清理
+            var account = AccountGoverment.View.Account;//我们把所有的用户的放在用户管理
+            if (account != null)
+            {//我们把我们现在打开的小说除掉，其他都清空
+                foreach (var temp in account.File.Where(temp => temp != AccountGoverment.View.File))
+                {
+                    //AccountGoverment.View.File我们打开的小说
+                    //account.File 所有小说
+                    temp.Str = null;
+                    //我们会在加载的时候，点击小说，EaddressModel.Read()
+                }
+            }
+        }
+```
+
+我们对于内存，还有在我们使用缓存，判断我们应用使用内存，垃圾wr给我们两个事件，需要我们用sdk 14393，我觉得垃圾wr这样不好，才半年就改
+
 
 
