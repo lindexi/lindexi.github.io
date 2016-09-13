@@ -4,3 +4,36 @@
 
 我们很多应用会在前台用很多资源，例如我们的界面，在转入后台可以清理很多资源，如果判断用户不是马上就转回的，我们可以用新的`EnteredBackground`使用简单。在我的小说里面有写，我来看看我是怎么写。
 
+在我们的App()
+
+```
+        public App()
+        {
+            this.InitializeComponent();
+            this.Suspending += OnSuspending;
+
+            EnteredBackground += App_EnteredBackground;
+            LeavingBackground += App_LeavingBackground;
+        }
+
+        private void App_LeavingBackground(object sender, LeavingBackgroundEventArgs e)
+        {
+            //应用离开后台
+            _areBackground = false;
+        }
+
+        private void App_EnteredBackground(object sender, EnteredBackgroundEventArgs e)
+        {
+            //应用进入后台
+            _areBackground = true;
+        }
+
+        private bool _areBackground;
+
+
+```
+
+如果你应用没有EnteredBackground ，更新sdk 14393
+
+如果安装了，可以修改你的文件`<TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>`
+
