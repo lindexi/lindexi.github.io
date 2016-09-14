@@ -55,11 +55,11 @@
 * [Visual studio 创建项目失败vstemplate](visual-studio-创建项目失败vstemplate.md)
 * [Visual Studio 自定义项目模板](visual-studio-自定义项目模板.md)
 * [win10 uwp 车表盘 径向规](win10-uwp-车表盘-径向规.md)
+* [win10 uwp 应用转后台清理内存](win10-uwp-应用转后台清理内存.md)
 * [win10 uwp win2d](win10_uwp_win2d.md)
 * [win10 uwp 初始屏幕](win10-uwp-初始屏幕.md)
 * [win10 uwp dataGrid](win10_uwp_datagrid.md)
 * [win10 uwp 魔力鬼畜](win10_uwp_mo_li_gui_chu.md)
 * [win10 uwp如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
 * [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
-* [win10 uwp 应用转后台清理内存](win10-uwp-应用转后台清理内存.md)
 
