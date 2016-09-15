@@ -62,7 +62,7 @@ Content是一个Frame和一个Image的Grid
 
 先不要Grid的属性，我会在后面说。
 
-我们没Frame会显示图片，Frame有页面就不会显示，因为ZIndex Frame比Image大，很简单
+我们没Frame的Content，也就是我们没点击List，会显示图片，Frame有页面就不会显示，因为ZIndex Frame比Image大，很简单
 
 页面传参数很简单，首先是Frame
 
