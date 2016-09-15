@@ -1,7 +1,5 @@
 # win10 uwp 简单MasterDetail
 
-【】
-
 #中文
 
 #[English](#English)
