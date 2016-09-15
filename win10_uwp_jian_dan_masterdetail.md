@@ -34,7 +34,7 @@ https://msdn.microsoft.com/windows/uwp/controls-and-patterns/master-details
 
 本文是很简单的，一般和我一样渣都能大概知道。
 
-我在很大的压力会议写的，不到一个钟，写完修改，和大家说，可以修改我代码，可以自己写
+代码其实我在很大的压力会议写的，不到一个钟，写完修改，和大家说，可以修改我代码，可以自己写
 
 我们首先一个Grid，分为两栏，其中一栏为List，一栏为Content
 
