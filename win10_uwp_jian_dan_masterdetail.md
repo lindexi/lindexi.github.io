@@ -82,6 +82,8 @@ FrameNavigate(typeof(页), 参数);
         }
 ```
 
+如果要保存我们的页面，不要导航都新建，在构造` NavigationCacheMode = NavigationCacheMode.Enabled;`
+
 ##List点击
 
 我们创建数据Model，我们使用MVVM
