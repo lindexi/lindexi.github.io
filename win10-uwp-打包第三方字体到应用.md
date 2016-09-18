@@ -23,4 +23,26 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160918094933677) 
 
+我们去掉黑色，删除App.xaml.cs
+
+```
+#if DEBUG
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                this.DebugSettings.EnableFrameRateCounter = true;
+            }
+#endif
+
+```
+
+大家可以看到我们的应用没有特殊字体，这时我们写一个我们系统不存在的字体`And Love St.ttf`
+
+```
+
+        <TextBlock Margin="10,100,10,10"
+                   FontFamily="And Love St.ttf"
+                   Text="Lov ms"></TextBlock>
+
+```
+
 
