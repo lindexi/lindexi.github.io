@@ -46,3 +46,28 @@
 ```
 
 
+![这里写图片描述](http://img.blog.csdn.net/20160918094918630)
+
+几乎看不到有变化
+
+我们添加一个文件夹
+
+![这里写图片描述](http://img.blog.csdn.net/20160918095356790) 
+
+我把它叫Font
+
+把我们的字体放入，直接拖进去
+
+![这里写图片描述](http://img.blog.csdn.net/20160918095623994) 
+
+在我们的字体写我们放进去字体
+
+```
+
+        <TextBlock Margin="10,100,10,10"
+                   FontFamily="Font/And Love St.ttf#And Love st"
+                   Text="Lov ms" ></TextBlock> 
+
+```
+
+![这里写图片描述](http://img.blog.csdn.net/20160918100115278) 
