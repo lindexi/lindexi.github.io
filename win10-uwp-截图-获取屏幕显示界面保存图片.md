@@ -43,7 +43,6 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 我们在Grid放一个Image，然后可以看到，我们的原图
 
-
 ![这里写图片描述](http://img.blog.csdn.net/20160919155040537)
 
 参见：http://www.zmy123.cn/?p=1257
