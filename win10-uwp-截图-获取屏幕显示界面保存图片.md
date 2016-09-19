@@ -32,4 +32,16 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 ```
 
+` await bitmap.RenderAsync(Stamp);`能把一个UIelement显示转为图片，不过这个图片我们需要用`BitmapEncoder`才可以保存为我们的图片
+
+`BitmapEncoder`可以保存为bmp、jpg、gif、png
+
+保存需要使用`SetPixelData` `BitmapPixelFormat pixelFormat, BitmapAlphaMode alphaMode, System.UInt32 width, System.UInt32 height, System.Double dpiX, System.Double dpiY, [Range(0, int.MaxValue)] System.Byte[] pixels`
+
+
+我们在Grid放一个Image，然后可以看到，我们的原图
+
+
+
+
 参见：http://www.zmy123.cn/?p=1257
