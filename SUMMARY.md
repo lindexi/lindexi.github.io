@@ -46,7 +46,6 @@
 * [win10 uwp InkCanvas控件数据绑定](win10_uwp_inkcanvaskong_jian_shu_ju_bang_ding.md)
 * [win10 uwp 隐藏实时可视化](win10_uwp_yin_cang_shi_shi_ke_shi_hua.md)
 * [win10 uwp 读取文本ASCII错误](win10_uwp_du_qu_wen_ben_ascii_cuo_wu.md)
-* [win10 uwp 动画](win10_uwp_dong_hua.md)
 * [C\# 7.0](c-70.md)
 * [Visual studio 创建项目失败vstemplate](visual-studio-创建项目失败vstemplate.md)
 * [Visual Studio 自定义项目模板](visual-studio-自定义项目模板.md)
@@ -63,5 +62,6 @@
 * [win10 uwp如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
 * [win10 uwp 多语言](win10-uwp-多语言.md)
 * [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
+* [win10 uwp 动画](win10_uwp_dong_hua.md)
 * [win10 uwp 截图 获取屏幕显示界面保存图片](win10-uwp-截图-获取屏幕显示界面保存图片.md)
 
