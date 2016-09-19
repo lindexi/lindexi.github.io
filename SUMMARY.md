@@ -63,4 +63,5 @@
 * [win10 uwp 魔力鬼畜](win10_uwp_mo_li_gui_chu.md)
 * [win10 uwp如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
 * [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
+* [win10 uwp 截图 获取屏幕显示界面保存图片](win10-uwp-截图-获取屏幕显示界面保存图片.md)
 
