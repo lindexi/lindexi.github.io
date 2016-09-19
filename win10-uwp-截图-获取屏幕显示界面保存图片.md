@@ -49,7 +49,43 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 我们把图片一部分不显示
 
+```
+       <Grid x:Name="Stamp" >
+            <Image x:Name="image" Width="500"
+                   Margin="200,10,10,10">
+            </Image>
+        </Grid>
 
+```
 
+![这里写图片描述](http://img.blog.csdn.net/20160919161007340)
+
+可以看到我们有部分被裁掉
+
+![这里写图片描述](http://img.blog.csdn.net/20160919161220562)
+
+假如我们不显示Grid
+
+```
+  <Grid Grid.Row="0" Background="White"></Grid>
+```
+没影响
+
+那么我们要显示我们的图片显示全，我们可以
+
+```
+        <ScrollViewer VerticalScrollBarVisibility="Visible"
+                      HorizontalScrollBarVisibility="Visible">
+            <Grid x:Name="Stamp" >
+                <Image x:Name="image" Width="500"
+                   Margin="300,10,10,10">
+                </Image>
+            </Grid>
+        </ScrollViewer>
+```
+
+![这里写图片描述](http://img.blog.csdn.net/20160919161643284)
+
+![这里写图片描述](http://img.blog.csdn.net/20160919161712393)
 
 参见：http://www.zmy123.cn/?p=1257
