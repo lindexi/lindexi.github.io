@@ -4,4 +4,6 @@
 
 UWP有一个功能，可以截图，RenderTargetBitmap
 
+我们首先写一个Grid，我们需要给他名字，我这里给他`Stamp`
+
 参见：http://www.zmy123.cn/?p=1257
