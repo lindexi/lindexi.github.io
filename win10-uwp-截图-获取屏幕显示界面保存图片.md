@@ -45,4 +45,11 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 ![这里写图片描述](http://img.blog.csdn.net/20160919155040537)
 
+![这里写图片描述](http://img.blog.csdn.net/20160919160057373)
+
+我们把图片一部分不显示
+
+
+
+
 参见：http://www.zmy123.cn/?p=1257
