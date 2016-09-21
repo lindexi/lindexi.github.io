@@ -64,4 +64,5 @@
 * [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
 * [win10 uwp 动画](win10_uwp_dong_hua.md)
 * [win10 uwp 截图 获取屏幕显示界面保存图片](win10-uwp-截图-获取屏幕显示界面保存图片.md)
+* [C\# 设计模式 责任链](c-设计模式-责任链.md)
 
