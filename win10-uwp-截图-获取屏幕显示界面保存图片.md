@@ -92,6 +92,8 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 ##水印
 
+UWP图片水印简单，我们需要一个Image和一个水印，水印在图片Zindex比他大
+
 我们在我们图片的同个Panel放一个TextBlock，然后TextBlock就是我们的水印。
 
 ```
