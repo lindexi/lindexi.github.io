@@ -96,9 +96,25 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 ```
 
-
+            <Grid x:Name="Stamp">
+                <Image x:Name="image" Width="500"
+                       Margin="300,10,10,10" />
+                <TextBlock Text="blog.csdn.net/lindexi_gd"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+            </Grid>
 
 ```
+
+![这里写图片描述](http://img.blog.csdn.net/20160923165028626) 
+
+可以看到我们有了水印，虽然这样看起来一定都不觉得是好的。（我不想说很烂）
+
+如果遇到了全黑的图，我们还没办法加水印，但是基本99%的图是可以的（谁说的，代码是黑的，vs背景用黑的好多）
+
+如果想要改颜色，每个颜色改为和图不同的，好难。
+
+
 
 参见：http://www.zmy123.cn/?p=1257
 
