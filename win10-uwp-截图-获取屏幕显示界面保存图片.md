@@ -129,6 +129,34 @@ UWP图片水印简单，我们需要一个Image和一个水印，水印在图片
 
 ```
 
+![这里写图片描述](http://img.blog.csdn.net/20160923180345146)
+
+如果对大图感觉水印太小，可以用ViewBox。如果觉得我们水印要在中间，或下方或其他，那么我们需要把Image的宽度不设置，然后Grid也不设置高度和宽度。
+
+```
+
+        <ScrollViewer Width="10" Height="10"
+            VerticalScrollBarVisibility="Visible"
+                      HorizontalScrollBarVisibility="Visible">
+            <Grid x:Name="Stamp">
+                <Image x:Name="image" HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="10,10,10,10" />
+                <TextBlock Text="blog.csdn.net/lindexi_gd"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" >
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </Grid>
+        </ScrollViewer>
+
+```
+
 
 
 
