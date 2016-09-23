@@ -69,9 +69,10 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 ```
   <Grid Grid.Row="0" Background="White"></Grid>
 ```
-没影响
 
-那么我们要显示我们的图片显示全，我们可以
+我们的Grid被一个Grid，背景为白色的遮盖，结果没影响
+
+那么我们要显示我们的图片显示全，我们可以借用一个简单的控件
 
 ```
         <ScrollViewer VerticalScrollBarVisibility="Visible"
@@ -83,6 +84,8 @@ UWP有一个功能，可以截图，RenderTargetBitmap
             </Grid>
         </ScrollViewer>
 ```
+
+我们的图片不会被遮盖，因为我们可以有无限空间
 
 ![这里写图片描述](http://img.blog.csdn.net/20160919161643284)
 
