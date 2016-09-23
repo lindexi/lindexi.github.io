@@ -114,6 +114,21 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 如果想要改颜色，每个颜色改为和图不同的，好难。
 
+我想到渐变，这样每个颜色都有。LinearGradientBrush是渐变，我们需要每个字符都看到，我们把渐变改为从上到下。`EndPoint="0,1" StartPoint="0,0"`一个是开始的Point，一个是结束
+
+```
+
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="结束点X,结束点Y" StartPoint="开始点X,开始点Y">
+                            <GradientStop Color="颜色 默认offset=0"/>
+                            <GradientStop Color="White" Offset="1 1就是100%"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+
+```
+
+
+
 
 
 参见：http://www.zmy123.cn/?p=1257
