@@ -30,6 +30,40 @@
 
 九幽上传很简单，首先是Nuget下载
 
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=2a5bef95bb3678d2836d9d2e0753e754)
+
+我们搜索Jiuyou，有很多九幽的，很好用，但是我们这里下载JyCloud
+
+然后我们写九幽上传，我们基层我们通用任务，我们需要写UploadImage
+
+`public class JyUploadImage : UploadImageTask`
+
+九幽上传可以有多个函数。
+
+- sendFileScale 上传图片可以缩放。我们判断Scale》0，如果是，我们就用这函数上传。
+
+  九幽上传开始需要appKey，这个可以在`http://www.windows.sc`创建应用然后得到。
+
+我们先登录[http://www.windows.sc](http://www.windows.sc),选应用。
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=cc9dbe08cc1697a37b5ebf29a101a66d)
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=a042475a5c7e36609567708ba9904f43)
+
+我们可以创建应用，我们可以用我们创建的应用，可以看到key
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=5ead83cda56807f1502d939630fb6419)
+
+我们创建一个类来放我们的key，我们上传还需要我们的图床密钥。
+
+图床，九幽叫云存储。
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=6cfff56cd26ce5c74a07969517f122d6)
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=5538bd7846ed0ad0caab77fc93dd4c1a)
+
+我们可以看到我们的key，这个是和应用没关。
+
 
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=76fbc3c8c8ef27616e1cd434ba3f7f3f)
