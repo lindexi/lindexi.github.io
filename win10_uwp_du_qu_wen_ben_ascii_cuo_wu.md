@@ -93,7 +93,7 @@ Encoding encodingGbk =Encoding.GetEncoding("GBK");
 
 用Windows.Storage.FileIO.ReadTextAsync如果错误了，就使用GBK读，还错误，那么就是文件错了。
 
-
+编码的错报的ArgumentOutOfRangeException。我们可以Catch，用GBK就是上面写的。
 
 
 全部代码
