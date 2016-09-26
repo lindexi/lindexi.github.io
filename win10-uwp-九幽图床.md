@@ -12,6 +12,26 @@
 
  - File 要上传的图片
 
+ - Name 上传图片的名字，没有用
+
+ - OnUploaded 上传完成EventHandler<bool> 成功true
+
+ - Url 上传成功返回图片
+
+ - Scale 缩放比例，如果没有设置，默认-1，上传图片不缩放
+
+ - Width 默认-1，图片宽度，有设置上传为设置宽度
+
+ - Height 默认-1，图片高度
+
+ - public abstract void UploadImage() 上传图片，不同的类可以有不同上传
+
+我们类需要传StorageFile，这个必须，因为我们上传必须有文件。
+
+九幽上传很简单，首先是Nuget下载
+
+
+
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=76fbc3c8c8ef27616e1cd434ba3f7f3f)
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=3f6f93c292997c8911f272bc2112ddd6)
