@@ -57,6 +57,45 @@ Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 Encoding encodingGbk =Encoding.GetEncoding("GBK");
 ```
 
+我们在读取之前判断我们的编码，这个简单可以使用
+
+```
+        private static Encoding AutoEncoding(byte[] bom)
+
+        {
+
+            if (bom.Length != 4)
+
+            {
+
+                throw new ArgumentException();
+
+            }
+
+            // Analyze the BOM
+
+            if (bom[0] == 0x2b && bom[1] == 0x2f && bom[2] == 0x76) return Encoding.UTF7;
+
+            if (bom[0] == 0xef && bom[1] == 0xbb && bom[2] == 0xbf) return Encoding.UTF8;
+
+            if (bom[0] == 0xff && bom[1] == 0xfe) return Encoding.Unicode; //UTF-16LE
+
+            if (bom[0] == 0xfe && bom[1] == 0xff) return Encoding.BigEndianUnicode; //UTF-16BE
+
+            if (bom[0] == 0 && bom[1] == 0 && bom[2] == 0xfe && bom[3] == 0xff) return Encoding.UTF32;
+
+            return Encoding.ASCII;
+
+        }
+```
+
+这没有GBK所以我们只好通过一个垃圾方法。
+
+用Windows.Storage.FileIO.ReadTextAsync如果错误了，就使用GBK读，还错误，那么就是文件错了。
+
+
+
+
 全部代码
 
 ```
