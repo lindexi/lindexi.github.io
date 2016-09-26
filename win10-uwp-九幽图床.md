@@ -8,7 +8,9 @@
 
 我们可能有很多地方需要上传，我现在使用是九幽，之前有smms的图床，我们做一个通用任务。
 
+ - Guid 上传的Guid，为了识别任务
 
+ - File 要上传的图片
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=76fbc3c8c8ef27616e1cd434ba3f7f3f)
 
