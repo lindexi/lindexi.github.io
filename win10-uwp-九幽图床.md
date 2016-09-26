@@ -30,6 +30,10 @@
 
 我们类需要传StorageFile，这个必须，因为我们上传必须有文件。
 
+我们做类是因为我们可能有很多个图床，九幽一个，smms一个，还有我们现在不知道的。我们都可以通过填写类来做到。
+
+然后每个类一个抽象的UploadImage，根据每个图床不同，上传我们的图片，上传后一般都是使用OnUploaded ，true就是上传成功。
+
 九幽上传很简单，首先是Nuget下载
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=2a5bef95bb3678d2836d9d2e0753e754)
