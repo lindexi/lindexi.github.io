@@ -42,6 +42,12 @@
 
 - sendFileScale 上传图片可以缩放。我们判断Scale》0，如果是，我们就用这函数上传。
 
+- sendFileCustom 上传图片设置图片宽度和高度，我们判断(uploadImageTask.Width > 0) && (uploadImageTask.Height > 0)
+
+- sendFileOriginal上传原图
+
+- sendFileDefault 当图片的宽或高大于某个值时，将高或宽等比缩放到这个值
+
   九幽上传开始需要appKey，这个可以在`http://www.windows.sc`创建应用然后得到。
 
 我们先登录[http://www.windows.sc](http://www.windows.sc),选应用。
@@ -64,13 +70,45 @@
 
 我们可以看到我们的key，这个是和应用没关。
 
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=4607f51cd9435b25a7602ca0318dff8c)
+
+我们上传的是我们的StorageFile，上传完可以有ResponseInfo
+
+```
+        private async Task UploadImage(UploadImageTask uploadImageTask)
+        {
+            //Appid 为静态，有_appid 应用的appid
+            //_secretId 九幽的
+            ResponseInfo responseInfo;
+            if (uploadImageTask.Scale > 0)
+            {
+                responseInfo = await JyCloudTool.JyCloudTool.sendFileScale(
+                    AppId._appId, AppId._secretId, uploadImageTask.File,
+                    uploadImageTask.Scale);
+            }
+            else if ((uploadImageTask.Width > 0) && (uploadImageTask.Height > 0))
+            {
+                responseInfo = await JyCloudTool.JyCloudTool.sendFileCustom(
+                    AppId._appId, AppId._secretId, uploadImageTask.File,
+                    (uint) uploadImageTask.Width, (uint) uploadImageTask.Height);
+            }
+            else
+            {
+                responseInfo = await JyCloudTool.JyCloudTool.sendFileOriginal(
+                    AppId._appId, AppId._secretId, uploadImageTask.File);
+            }
+            if (responseInfo.respose_Status == 0)
+            {
+                uploadImageTask.Url = responseInfo.ImgUrl;
+                uploadImageTask.OnUploaded?.Invoke(uploadImageTask, true);
+            }
+            else
+            {
+                uploadImageTask.OnUploaded?.Invoke(uploadImageTask, false);
+            }
+        }
 
 
-![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=76fbc3c8c8ef27616e1cd434ba3f7f3f)
+```
 
-![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=3f6f93c292997c8911f272bc2112ddd6)
-
-![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=4d4ce4bfd74c5045eaa456a27c9ee3a8)
-
-![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=91165f76d54b16aabb35c741bc96d653)
 
