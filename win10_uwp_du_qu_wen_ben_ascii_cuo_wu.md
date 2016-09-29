@@ -4,7 +4,7 @@
 
 我使用NotePad记事本保存文件，格式ASCII，用微软示例打开文件方式读取，出现错误
 
-在多字节的目标代码页中，没有此 Unicode 字符可以映射到的字符
+“在多字节的目标代码页中，没有此 Unicode 字符可以映射到的字符”
 
 英文 No mapping for the Unicode character exists in the target multi-byte code page
 
