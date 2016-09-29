@@ -1,6 +1,7 @@
-# win10 uwp 读取文本ASCII错误
+# win10 uwp 读取文本GBK错误
 
 【】
+本文讲的是解决文本GBK打开乱码错误，如何去读取GBK，包括网页GBK。最后本文给出一个方法追加文本。
 
 我使用NotePad记事本保存文件，格式ASCII，用微软示例打开文件方式读取，出现错误
 
@@ -155,6 +156,8 @@ Encoding encodingGbk =Encoding.GetEncoding("GBK");
 参考：http://stackoverflow.com/questions/35296213/read-unicode-string-from-text-file-in-uwp-app/38299563#38299563
 
 http://www.cnblogs.com/loyieking/p/5617508.html
+
+文本还有一个坑，我们如何在文本追加？uwp追加文本其实换了类，在FileIO。
 
 对于一个需要追加的文件，UWP追加文件写入其实可以使用`await FileIO.AppendTextAsync(StorageFile,"追加文本");`
 
