@@ -51,7 +51,7 @@
 
 >-  如您是适格的知识产权投诉人并已提起投诉，应被投诉人要求，向被投诉人披露，以便双方处理可能的权利纠纷；
 
->-  在本软件平台上创建的某一交易中，如交易任何一方履行或部分履行了交易义务并提出信息披露请求的，本软件有权决定向该用户提供其交易对方的联络方式等必要信息，以促成交易的完成或纠纷的解决。  
+>-  在本软件平台上创建的某一交易中，如交易任何一方履行或部分履行了交易义务并提出信息披露请求的，本软件有权决定向该用户提供其交易对方的联络方式等必要信息，以促成交易的完成或纠纷的解决。  
 >-  其它本软件根据法律、法规或者网站政策认为合适的披露。 
 
  
@@ -78,5 +78,6 @@
 
 源代码：https://github.com/lindexi/UWP/tree/master/uwp/src/隐私策略
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 
