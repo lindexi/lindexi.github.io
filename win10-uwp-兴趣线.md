@@ -105,6 +105,8 @@ HorizontalAlignment="Center"
 
 ```
 
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=bf9139aa65691dcc99c5f915fd48f762)
+
 开始设计我们不知道宽度和高度的值，每次修改都需要改好多个，那么我们如何就修改一个？我们可以使用常亮，也就是我们的Resource
 
 ```
@@ -122,4 +124,53 @@ HorizontalAlignment="Center"
 我首先是定义了左边的宽度，也就是放圆圈的那个Grid宽度，然后定义Rectangle的宽度，作为垂直的Rectangle就是他宽度，水平的就是他高度。
 
 然后定义它的颜色，定义了Ellipse的宽度。
+
+画完了线我们需要画圆
+
+在Grid放一个Grid，然后画一个圆，注意这个圆Stroke为颜色，然后Fill背景颜色
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=8854fb16de8fc8bc02990fe9c84763d0)
+
+这样就可以让后面的Rectangle被圆不看
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=c54ef276e7bc53dd6f5fc40df7bd4be2)
+
+然后我们需要在我们的圆再一个小的
+
+```
+      <Ellipse Width="10" Height="10"
+               Fill="{StaticResource RectangleColor}"></Ellipse>
+
+
+```            
+
+这样就是我们的画法
+
+全部代码
+
+```
+<Grid Margin="0,0,0,0">
+                                        <Rectangle Margin="0,0,0,0"
+                                                   Width="{StaticResource RectangleWidth}"
+                                                   Fill="{StaticResource RectangleColor}" 
+                                                   VerticalAlignment="Stretch"
+                                                   HorizontalAlignment="Center"></Rectangle>
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Rectangle Grid.Column="1"
+                                                       Fill="{StaticResource RectangleColor}"
+                                                       Height="{StaticResource RectangleWidth}"></Rectangle>
+                                        </Grid>
+                                        <Grid Width="{StaticResource EllipseWidth}" Height="{StaticResource EllipseWidth}">
+                                            <Ellipse Stroke="{StaticResource RectangleColor}" StrokeThickness="6"
+                                                     Fill="White"></Ellipse>
+                                            <Ellipse Width="10" Height="10"
+                                                     Fill="{StaticResource RectangleColor}"></Ellipse>
+                                        </Grid>
+                                    </Grid>
+
+```
+                           
 
