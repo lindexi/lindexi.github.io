@@ -68,4 +68,6 @@
 * [win10 uwp 动画](win10_uwp_dong_hua.md)
 * [C\# 设计模式 责任链](c-设计模式-责任链.md)
 * [win10 uwp 兴趣线](win10-uwp-兴趣线.md)
+* [win10 uwp 隐私声明](win10-uwp-隐私声明.md)
+* [win10 uwp 颜色转换](win10-uwp-颜色转换.md)
 
