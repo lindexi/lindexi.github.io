@@ -2,7 +2,9 @@
 
 【】
 
-我们建一个ListView，然后绑定后台，在我们ListView
+我们建一个ListView，然后绑定后台，在我们ListView要右击显示我们的浮出，要求我们的浮出在我们点击位置。
+
+MenuFlyout可以在后台写，当然写在前台也可以
 
     <ListView ItemsSource="{x:Bind View.Str}">
             <ListView.ItemContainerStyle>
