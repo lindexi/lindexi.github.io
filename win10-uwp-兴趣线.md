@@ -1,7 +1,5 @@
 #win10 uwp 兴趣线
 
-【】
-
 ##行间距
 
 我们在ViewModel写一个ObservableCollection，我把它名字叫Str，因为这个是随意的，我们不需要给他他值。
