@@ -51,6 +51,7 @@
 * [win10 uwp 车表盘 径向规](win10-uwp-车表盘-径向规.md)
 * [win10 uwp 截图 获取屏幕显示界面保存图片](win10-uwp-截图-获取屏幕显示界面保存图片.md)
 * [win10 uwp 获得焦点改变](win10-uwp-获得焦点改变.md)
+* [win10 uwp 隐私声明](win10-uwp-隐私声明.md)
 * [win10 uwp 应用转后台清理内存](win10-uwp-应用转后台清理内存.md)
 * [win10 uwp 打包第三方字体到应用](win10-uwp-打包第三方字体到应用.md)
 * [win10 uwp 九幽图床](win10-uwp-九幽图床.md)
@@ -68,6 +69,5 @@
 * [win10 uwp 动画](win10_uwp_dong_hua.md)
 * [C\# 设计模式 责任链](c-设计模式-责任链.md)
 * [win10 uwp 兴趣线](win10-uwp-兴趣线.md)
-* [win10 uwp 隐私声明](win10-uwp-隐私声明.md)
 * [win10 uwp 颜色转换](win10-uwp-颜色转换.md)
 
