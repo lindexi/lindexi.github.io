@@ -56,6 +56,7 @@
 * [win10 uwp 打包第三方字体到应用](win10-uwp-打包第三方字体到应用.md)
 * [win10 uwp 九幽图床](win10-uwp-九幽图床.md)
 * [win10 uwp 兴趣线](win10-uwp-兴趣线.md)
+* [C\# 设计模式 责任链](c-设计模式-责任链.md)
 * [win10 uwp 显示SVG](win10-uwp-显示svg.md)
 * [win10 uwp 网络编程](win10_uwp_wang_luo_bian_cheng.md)
 * [win10 uwp win2d](win10_uwp_win2d.md)
@@ -68,6 +69,5 @@
 * [win10 uwp CSDN阅读 源代码](win10-uwp-csdn阅读-源代码.md)
 * [win10 uwp 语音](win10_uwp_yu_yin.md)
 * [win10 uwp 动画](win10_uwp_dong_hua.md)
-* [C\# 设计模式 责任链](c-设计模式-责任链.md)
 * [win10 uwp 颜色转换](win10-uwp-颜色转换.md)
 
