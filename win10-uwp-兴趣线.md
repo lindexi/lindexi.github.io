@@ -1,5 +1,7 @@
 #win10 uwp 兴趣线
 
+本文讲的是如何去做一个时间轴样子的东西但我们放的不一定是时间，可能是我们的时间。我把它放在我的CSDN阅读，我的界面做出来很差，但是应该读者能做出很漂亮的。
+
 ##行间距
 
 我们在ViewModel写一个ObservableCollection，我把它名字叫Str，因为这个是随意的，我们不需要给他他值。
@@ -172,6 +174,8 @@ HorizontalAlignment="Center"
                                     </Grid>
 
 ```
+
+做完左边，就去做右边，右边其实就是一个Border里面一个TextBlock，当然里面最好把TextBlock换Grid，注意Margin，这样就好啦。
 
 源代码：https://github.com/lindexi/csdn-uwp
 
