@@ -4,7 +4,9 @@
 
 我们建一个ListView，然后绑定后台，在我们ListView要右击显示我们的浮出，要求我们的浮出在我们点击位置。
 
-MenuFlyout可以在后台写，当然写在前台也可以
+MenuFlyout可以在后台写，当然写在前台也可以。
+
+我们这写在后台，我们可以选择Placement 显示在我们元素的位置，但这不是我们鼠标点击的位置，要显示我们鼠标点击的位置，其实也很简单。我们可以从`e.GetPosition(sender as UIElement)`获得鼠标位置，把这个给`MenuFlyout`我们的浮出显示在我们鼠标点击位置
 
     <ListView ItemsSource="{x:Bind View.Str}">
             <ListView.ItemContainerStyle>
