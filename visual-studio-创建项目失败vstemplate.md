@@ -1,7 +1,5 @@
 #Visual studio 创建项目失败vstemplate
 
-【】
-
 Visual studio 创建项目失败 提示 the vstemplate file references the wizard class 'Microsoft.VisualStudio.WinRT.TemplateWizards.ApplicationInsights.Wizard' which does not exsist in the assembly 'Microsoft.VisualStudio.WinRT.TemplateWizards, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
 
 ```
