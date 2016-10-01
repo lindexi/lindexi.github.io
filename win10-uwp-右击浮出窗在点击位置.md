@@ -1,5 +1,7 @@
 #win10 uwp 右击浮出窗在点击位置
 
+【】
+
 我们建一个ListView，然后绑定后台，在我们ListView
 
     <ListView ItemsSource="{x:Bind View.Str}">
