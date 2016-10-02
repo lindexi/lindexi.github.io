@@ -78,20 +78,21 @@ viewModel
  {
  }
 
- public ElementTheme Theme
- {
- get
- {
- return _theme;
- }
- set
- {
- _theme = value;
- OnPropertyChanged();
- }
- }
+        public ElementTheme Theme
+        {
+            get
+            {
+                return _theme;
+            }
 
- private ElementTheme _theme = ElementTheme.Light;
+            set
+            {
+                _theme = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ElementTheme _theme = ElementTheme.Light;
  }
 ```
 
