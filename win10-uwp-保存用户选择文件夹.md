@@ -81,5 +81,32 @@ FutureAccessList
 
 ```
 
+            StorageFile file = await folder.CreateFileAsync(
+                folderStr+".json", CreationCollisionOption.ReplaceExisting);
+```
+
+因为我们就保存一次，一个好的做法是创建temp，然后做完所有再把原来的改名字为以前做的，然后把temp改名字为account.json，注意保存原先改名字的文件，并把原先改名字的之前的文件删除。
+
+如果我们在保存失败，那么我们的原先文件不会影响，如果我们保存文件在改名字出错了，可以通过原先恢复，这样才好。
+
+我们使用json保存，使用我们第三方。
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=eb992e37cd0bd5c07ae125648f6328bb)
 
 ```
+
+  var json = JsonSerializer.Create();
+```
+ 
+我们需要用StringBuilder来把json序列存放，如果直接用
+
+```
+
+            json.Serialize(new JsonTextWriter(
+                new StreamWriter(await file.OpenStreamForWriteAsync())), Account);
+```
+
+就会出现下次使用UnauthorizedException，UWP UnauthorizedException 创建文件在LocalFolder一般就是我们使用json错误
+
+Account就是我们的数据。
+
