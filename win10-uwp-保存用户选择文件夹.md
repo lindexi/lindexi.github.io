@@ -110,3 +110,44 @@ FutureAccessList
 
 Account就是我们的数据。
 
+我写的方法应该可以是可以把token保存的
+
+```
+
+            StringBuilder str = new StringBuilder();
+            StringWriter stream=new StringWriter(str);
+            json.Serialize(new JsonTextWriter(
+               stream ), Account);
+            using (StorageStreamTransaction transaction = await file.OpenTransactedWriteAsync())
+            {
+                using (DataWriter dataWriter = new DataWriter(transaction.Stream))
+                {
+                    dataWriter.WriteString(str.ToString());
+                    transaction.Stream.Size = await dataWriter.StoreAsync();
+                    await transaction.CommitAsync();
+                }
+            }
+```
+
+我们应用开始我们就可以读取
+
+读取就可以用json的
+
+```
+
+                    StorageFile file = await folder.GetFileAsync(folderStr + ".json");
+                    var json = JsonSerializer.Create();
+                    Account = json.Deserialize<Account>(new JsonTextReader(
+                        new StreamReader(await file.OpenStreamForReadAsync())));
+          
+```
+folder要进去account
+
+我们从FutureAccessList拿文件
+
+```
+
+             file = await StorageApplicationPermissions.FutureAccessList.GetFileAsync(Account.Token);
+
+```
+
