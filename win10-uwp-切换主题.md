@@ -50,12 +50,12 @@
 
 ```
  <Page.Resources>
- <ResourceDictionary>
- <ResourceDictionary.ThemeDictionaries>
- <ResourceDictionary x:Key="Light" Source="View/DarkThemeDictionary.xaml"></ResourceDictionary>
- <ResourceDictionary x:Key="Dark" Source="View/LightThemeDictionary.xaml"></ResourceDictionary>
- </ResourceDictionary.ThemeDictionaries>
- </ResourceDictionary>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light" Source="View/DarkThemeDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary x:Key="Dark" Source="View/LightThemeDictionary.xaml"></ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
  </Page.Resources>
 ```
 
