@@ -77,18 +77,16 @@ viewModel
  public ViewModel()
  {
  }
-
         public ElementTheme Theme
         {
-            get
-            {
-                return _theme;
-            }
-
             set
             {
                 _theme = value;
                 OnPropertyChanged();
+            }
+            get
+            {
+                return _theme;
             }
         }
 
