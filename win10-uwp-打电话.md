@@ -24,3 +24,11 @@ Skype电话使用`Skype:(电话号)?call` `Skype:(skype id)?call`格式
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=5c45af9ae53b84bbd6bf235ad8c1ce58)
 
 打成功是说跳到Skype，用户选择打不打是他的事
+
+如果打电话这么简单，我就不会写这博客，我们还要判断设备。
+
+UWP判断设备可以使用`AnalyticsInfo.VersionInfo.DeviceFamily`，我们判断设备可以选择使用手机的拨号，这个才是真的电话，垃圾Skype
+
+
+
+参见：http://stackoverflow.com/questions/34777603/uwp-use-skype-to-call-number
