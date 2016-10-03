@@ -29,6 +29,24 @@ Skype电话使用`Skype:(电话号)?call` `Skype:(skype id)?call`格式
 
 UWP判断设备可以使用`AnalyticsInfo.VersionInfo.DeviceFamily`，我们判断设备可以选择使用手机的拨号，这个才是真的电话，垃圾Skype
 
+我们需要先引用Windows Mobile Extensions
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=9913efb448c7510d822e4c6dcc570c55)
+
+```
+
+            if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily
+               == "Windows.Mobile")
+            {
+                Windows.ApplicationModel.Calls.PhoneCallManager.ShowPhoneCallUI("110", "警察");
+            }
+```
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=d42118fd3478528e4688f5f9b3d69255)
+
+![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=c0df6586a5d486d0ce7cd9447fd75f59)
+
+好像还是很简单，如果发现有问题可以发邮件给我
 
 
 参见：http://stackoverflow.com/questions/34777603/uwp-use-skype-to-call-number
