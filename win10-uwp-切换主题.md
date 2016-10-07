@@ -314,7 +314,7 @@ NightDayThemeToggleButton
 
 ###UWP 和系统一样的主题
 
-UWP如果想保持主题和系统一样，简单方法，在App.xaml，删除`RequestedTheme="Light"`
+UWP如果想保持主题和系统一样，随着系统主题，简单方法，在App.xaml，删除`RequestedTheme="Light"`
 
 因为在UWP，没有给他一个值，就会和系统一样，但是在我们app运行，改变系统主题，我们就没办法立刻就随着系统改，这个我们不需要去想，因为在之后，垃圾wr自己去弄
 
