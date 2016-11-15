@@ -27,6 +27,42 @@ UWP的Convert和WPF差不多。
 
 如果我们的数据需要转换，转换需要我们的变量，在我上次使用win10 uwp 进度条使用了是静态的数值，这样不好，那么我们需要做一个简单使用我们类数据转换器，在我们常用的是把它写staticResource
 
+首先是创建一个类，这个类继承IValueConverter，于是就有两个方法，我们要实现
+
+```
+ public object Convert(object value, Type targetType,
+            object parameter,
+            string language);
+
+ public object ConvertBack(object value, 
+            Type targetType, 
+            object parameter, string language);
+
+```
+
+一般我们实现第一个就好，最简单的实现是直接转换。假如我们是需要把`bool？`转bool，那么一个简单方法是：
+
+```
+        public object Convert(object value, Type targetType,
+            object parameter,
+            string language)
+        {
+            if (value is bool?)
+            {
+                bool? temp = value as bool?;
+                if (temp == true)
+                {
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
+
+```
+
+在我的[变大数字颜色按钮]
+
 参见：http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html
 
 UWP
