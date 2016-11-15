@@ -61,7 +61,41 @@ UWP的Convert和WPF差不多。
 
 ```
 
-在我的[变大数字颜色按钮]
+在我的[变大数字颜色按钮](https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure) 代码在https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure 有用到转换，是把数字转颜色
+
+我们要使用写的转换器，就需要在xaml写静态资源，我们也可以把他放在viewModel，但是我们先说下放在xaml的。
+
+在资源，如果是Page的xaml，那么就写在
+
+```
+    <Page.Resources>
+
+    </Page.Resources>
+
+```
+
+我的转换器名称是：ConvertBooleanNull
+
+假如我们放在Model里，命名空间是 `项目.Model`，我们需要先在xmlns写`    xmlns:view="using:项目.Model"`，view就是一个变量，这个可以改为你需要的。
+
+然后在静态资源
+
+```
+    <Page.Resources>
+        <view:ConvertBooleanNull x:Key="ConvertBooleanNull">   </view:ConvertBooleanNull>
+    </Page.Resources>
+
+```
+
+在需要使用的控件，假如我们控件绑定是`x:bind`，那么在Converter需要`Converter={StaticResource ConvertBooleanNull}`
+
+假如我们控件绑定的是ViewModel的JiuYouImageShack，需要进行转换，就可以写
+
+```
+ <TextBox Text="{x:Bind View.JiuYouImageShack,Mode=OneWay,Converter={StaticResource ConvertBooleanNull}}"></TextBox>
+
+
+```
 
 参见：http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html
 
