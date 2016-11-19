@@ -23,9 +23,11 @@
 
 ##转换
 
+有时候我们绑定的类型和显示不同，例如我们绑定了一个`bool?`但是我们在ViewModel的类型是bool，那么我们就需要用转换器。转换器就是继承IValueConverter的一个类。
+
 UWP的Convert和WPF差不多。
 
-如果我们的数据需要转换，转换需要我们的变量，在我上次使用win10 uwp 进度条使用了是静态的数值，这样不好，那么我们需要做一个简单使用我们类数据转换器，在我们常用的是把它写staticResource
+在我们常用的是把它写staticResource
 
 首先是创建一个类，这个类继承IValueConverter，于是就有两个方法，我们要实现
 
