@@ -27,7 +27,7 @@
 
 UWP的Convert和WPF差不多。
 
-在我们常用的是把它写staticResource
+数据转换一个简单方法是另外在ViewModel写一个属性，这个属性用于转换变量，然后在前台绑定，但是这样做不好，于是我们比较好的一个做法是做转换器，转换器是一个类，我们需要实现它才能使用，在我们常用的做法是把它写staticResource
 
 首先是创建一个类，这个类继承IValueConverter，于是就有两个方法，我们要实现
 
@@ -67,7 +67,7 @@ UWP的Convert和WPF差不多。
 
 我们要使用写的转换器，就需要在xaml写静态资源，我们也可以把他放在viewModel，但是我们先说下放在xaml的。
 
-在资源，如果是Page的xaml，那么就写在
+在资源，如果是Page的xaml，那么就写在，如果只是这个转换器用在一个Grid，就写在Grid，我先用Page做例子
 
 ```
     <Page.Resources>
