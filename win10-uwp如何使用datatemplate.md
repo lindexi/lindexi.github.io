@@ -80,7 +80,7 @@ UWP的Convert和WPF差不多。
 
 假如我们放在Model里，命名空间是 `项目.Model`，我们需要先在xmlns写`    xmlns:view="using:项目.Model"`，view就是一个变量，这个可以改为你需要的。
 
-然后在静态资源
+然后在静态资源`<view:ConvertBooleanNull x:Key="ConvertBooleanNull">   </view:ConvertBooleanNull>`
 
 ```
     <Page.Resources>
