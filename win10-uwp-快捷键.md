@@ -5,3 +5,7 @@ AcceleratorKey
 
 
 ```
+
+参见：https://msdn.microsoft.com/en-us/library/windows/apps/xaml/Hh868161(v=win.10).aspx#keyboard_shortcuts
+
+https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868246.aspx
