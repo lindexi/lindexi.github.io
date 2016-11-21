@@ -32,7 +32,7 @@
 
 ##表格固定列显示
 
-
+参见：http://www.cnblogs.com/FaDeKongJian/p/5860148.html
 
 ##
  
