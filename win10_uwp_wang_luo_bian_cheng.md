@@ -61,6 +61,16 @@ httpRequestMessage.Headers.Append("X-My-Client","true");
 myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
 ```
 
+```
+            var url = new Uri("http://www.baidu.com", UriKind.Absolute);
+            var httpClient = new System.Net.Http.HttpClient();
+            httpClient.DefaultRequestHeaders.Add("apikey", "123456");
+            var reponse = await httpClient.GetStreamAsync(url);
+            var streamReader = new StreamReader(reponse, Encoding.UTF8);
+            var jsonString = streamReader.ReadToEnd();
+            var jsonObject = JsonObject.Parse(jsonString);
+```
+
 参见：https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx
 
 
