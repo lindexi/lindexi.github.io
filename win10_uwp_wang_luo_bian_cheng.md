@@ -50,6 +50,21 @@
  
 我们可以用传输数据，可以传输文本，这个我们需要传什么需要一个协议，这个是应用高层，前面说的是协议传输
 
+## 带Header的WebRequest
+
+```
+HttpRequestMessage httpRequestMessage = new HttpRequestMessage(
+    HttpMethod.Post, new Uri("http://www.contoso.com"));
+httpRequestMessage.Content = new HttpStringContent("hello, world");
+httpRequestMessage.Headers.Append("X-My-Client","true");
+
+myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
+```
+
+参见：https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx
+
+
+
 
  
  
