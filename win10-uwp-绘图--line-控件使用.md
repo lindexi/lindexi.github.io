@@ -47,5 +47,11 @@ Stroke就是设置颜色或用其他渐变填充，StrokeThickness就是线段�
 
 矩形需要四个点。
 
+可以看到线段裁剪了
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515727.jpg)
+
+被一个大小为150的矩形裁剪了
+
 
 
