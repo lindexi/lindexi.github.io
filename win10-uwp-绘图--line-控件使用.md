@@ -53,5 +53,20 @@ Stroke就是设置颜色或用其他渐变填充，StrokeThickness就是线段�
 
 被一个大小为150的矩形裁剪了
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515828.jpg)
+
+接着就是ms-uap 写的 http://www.cnblogs.com/ms-uap/p/4641419.html
+
+我们给他一个StrokeDashArray，这个值就是很多数，奇数的数就是显示宽度，偶数的就是不显示的宽度，读到最后的数就循环到最前。我们设置一个0.1一个0.2就会显示0.1的宽度，然后空0.2再显示0.1
+
+```
+               <Line X1="0" X2="200" Y1="10" Y2="200"
+                      Stroke="Black" StrokeThickness="50"
+                      StrokeDashArray="0.1 0.2">
+                    <Line.Clip>
+                        <RectangleGeometry Rect="0 0 150 150"></RectangleGeometry>
+                    </Line.Clip>
+                </Line>
+```
 
 
