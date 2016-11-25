@@ -93,7 +93,7 @@ StrokeStartLineCap="Triangle"
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515214.jpg)
 
-
+线段两头尖的画法就是在设置后面的`StrokeEndLineCap`
 
 
 
