@@ -60,6 +60,7 @@
 * [win10 uwp 保存用户选择文件夹](win10-uwp-保存用户选择文件夹.md)
 * [win10 uwp 打电话](win10-uwp-打电话.md)
 * [visual studio 2015 warning MSB3246](visual-studio-2015-warning-msb3246.md)
+* [win10 uwp 绘图  Line 控件使用](win10-uwp-绘图--line-控件使用.md)
 * [win10 uwp Markdown](win10-uwp-markdown.md)
 * [C\# 设计模式 责任链](c-设计模式-责任链.md)
 * [win10 uwp 显示SVG](win10-uwp-显示svg.md)
@@ -79,5 +80,4 @@
 * [Windows 10「设置」应用完整MS-Settings快捷方式汇总](windows-10「设置」应用完整ms-settings快捷方式汇总.md)
 * win10 uwp 用广告赚钱
 * [win10 uwp 快捷键](win10-uwp-快捷键.md)
-* [win10 uwp 绘图  Line 控件使用](win10-uwp-绘图--line-控件使用.md)
 
