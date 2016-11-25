@@ -31,7 +31,7 @@ Title: win10 uwp 绘图  Line 控件使用
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/3d1cee81-4688-4db3-80d6-14ea8c9ce64c20161125145232.jpg)
 
-Stroke就是设置颜色或用其他渐变填充，StrokeThickness就是线段的大小
+Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是线段的大小
 
 我们写上`Stroke="Black" StrokeThickness="5"`
 
@@ -94,6 +94,9 @@ StrokeStartLineCap="Triangle"
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515214.jpg)
 
 线段两头尖的画法就是在设置后面的`StrokeEndLineCap`
+
+
+
 
 
 
