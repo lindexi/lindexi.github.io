@@ -44,6 +44,8 @@
 
 ```
 
+注意，ViewModel 是多个ViewModel，也就是MainModel和ChangeControlModel，写法就是代换ViewModel为你的ViewModel
+
 我们需要在ViewModelLocator的构造上用`SimpleIoc.Default.Register`
 
 ```
