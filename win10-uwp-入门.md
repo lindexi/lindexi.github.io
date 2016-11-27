@@ -65,7 +65,13 @@
     </Page.DataContext>
 ```
 
+当然我们可以换个方式
 
+```
+    DataContext="{Binding Source={StaticResource ViewModelLocator} Path=ViewModel}"
+
+
+```
 
 
 
