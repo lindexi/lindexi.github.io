@@ -80,4 +80,5 @@
 * [Windows 10「设置」应用完整MS-Settings快捷方式汇总](windows-10「设置」应用完整ms-settings快捷方式汇总.md)
 * win10 uwp 用广告赚钱
 * [win10 uwp 快捷键](win10-uwp-快捷键.md)
+* [win10 UWP MvvmLight入门](win10-uwp-入门.md)
 
