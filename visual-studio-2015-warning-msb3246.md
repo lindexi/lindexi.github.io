@@ -1,4 +1,4 @@
-#visual studio 2015 warning MSB3246
+# visual studio 2015 warning MSB3246
 
 在我们很高兴的按下 本地计算机运行 按钮，希望看到我们程序运行的时候，垃圾vs就告诉我们，你的程序出现了问题，问题就是：
 
