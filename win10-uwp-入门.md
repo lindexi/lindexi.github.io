@@ -75,7 +75,32 @@
 
 ##绑定
 
-我们先在ViewModel中新建字段`_str`，我们绑定到
+我们先在ViewModel中新建字段`_str`，我们绑定到xaml
+
+```
+        public string Str
+        {
+            set
+            {
+                Set(ref _str, value);
+            }
+            get
+            {
+                return _str;
+            }
+        }
+
+        private string _str;
+
+```
+
+```
+        <TextBlock Text="{Binding Path=Str,Mode=OneWay}"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+
+```
+
+
 
 
 
