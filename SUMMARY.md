@@ -61,6 +61,7 @@
 * [win10 uwp 打电话](win10-uwp-打电话.md)
 * [visual studio 2015 warning MSB3246](visual-studio-2015-warning-msb3246.md)
 * [win10 uwp 绘图  Line 控件使用](win10-uwp-绘图--line-控件使用.md)
+* [win10 uwp 存放网络图片到本地](win10-uwp-存放网络图片到本地.md)
 * [win10 uwp Markdown](win10-uwp-markdown.md)
 * [C\# 设计模式 责任链](c-设计模式-责任链.md)
 * [win10 uwp 显示SVG](win10-uwp-显示svg.md)
@@ -81,5 +82,4 @@
 * win10 uwp 用广告赚钱
 * [win10 uwp 快捷键](win10-uwp-快捷键.md)
 * [win10 UWP MvvmLight入门](win10-uwp-入门.md)
-* [win10 uwp 存放网络图片到本地](win10-uwp-存放网络图片到本地.md)
 
