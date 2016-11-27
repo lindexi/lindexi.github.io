@@ -68,13 +68,14 @@
 当然我们可以换个方式
 
 ```
-    DataContext="{Binding Source={StaticResource ViewModelLocator} Path=ViewModel}"
+    DataContext="{Binding Source={StaticResource ViewModelLocator}，Path=ViewModel}"
 
 
 ```
 
 ##绑定
 
+我们先在ViewModel中新建字段`_str`，我们绑定到
 
 
 
