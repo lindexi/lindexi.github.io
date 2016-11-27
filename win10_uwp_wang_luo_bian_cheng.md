@@ -71,6 +71,14 @@ myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
             var jsonObject = JsonObject.Parse(jsonString);
 ```
 
+## 获取Buffer
+
+```
+                Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
+                IBuffer buffer = await http.GetBufferAsync(uri);
+
+```
+
 参见：https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx
 
 
