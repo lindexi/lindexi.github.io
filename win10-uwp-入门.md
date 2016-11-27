@@ -100,6 +100,54 @@
 
 ```
 
+我们可以把命令绑定到ViewModel，写法垃圾
+
+```
+        public ViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+            Navigate = new RelayCommand(NavigateHigPage);
+        }
+
+        public ICommand Navigate
+        {
+            set;
+            get;
+        }
+
+        private void NavigateHigPage()
+        {
+            
+        }
+
+```
+
+我们继续做从Main跳到第二页面，第二页面叫HigPage
+
+首先打开ViewModelLocator，在构造写一个帮我们传页面信息NavigationService
+
+```
+            var navigationService = new NavigationService();
+            navigationService.Configure("main",typeof(MainPage));
+            navigationService.Configure("hig",typeof(HightClipPage));
+            SimpleIoc.Default.Register<INavigationService>(() => navigationService);
+
+
+```
+
+在需要跳转的函数
+
+```
+        private void NavigateHigPage()
+        {
+            var navigateService = ServiceLocator.Current.GetInstance<INavigationService>();
+            navigateService.NavigateTo("hig","hellow");
+        }
+
+```
+
+我跳转到第二页面，然后给他参数hellow
+
 
 
 
