@@ -16,5 +16,33 @@ Title: win10 uwp 存放网络图片到本地
 
 图片也是和其他一样，我们可以简单用系统给的网络web下载。
 
-我们需要输入Uri，然后把
+我们需要输入Uri，然后把图片下载。
+
+图片要显示，需要SetSourceAsync，他需要的参数IRandomAccessStream，而这个需要Buffer写数据，不能用byte，我开始用的`System.Net.Http`没有获取Buffer方法，于是我查了垃圾wr，最后用`Windows.Web.Http`
+
+先获取图片
+
+```
+                Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
+                IBuffer buffer = await http.GetBufferAsync(uri);
+
+                BitmapImage img = new BitmapImage();
+                using (IRandomAccessStream stream = new InMemoryRandomAccessStream())
+                {
+                    await stream.WriteAsync(buffer);
+                    stream.Seek(0);
+                    await img.SetSourceAsync(stream);
+                    await StorageImageFolder(stream, uri);
+                    return img;
+                }
+
+```
+
+StorageImageFolder就是保存图片
+
+## 保存图片
+
+
+
+
 
