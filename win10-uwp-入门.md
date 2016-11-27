@@ -57,7 +57,15 @@
         }
 ```
 
-接着打开MainPage.xaml
+接着打开MainPage.xaml，原来是在cs写我们的ViewModel实例，现在我们可以直接在xaml
+
+```
+    <Page.DataContext>
+        <Binding Source="{StaticResource ViewModelLocator}" Path="ViewModel"></Binding>
+    </Page.DataContext>
+```
+
+
 
 
 
