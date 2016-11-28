@@ -101,6 +101,19 @@ UWP的Convert和WPF差不多。
 
 参见：http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html
 
+## 绑定Event到Command
+
+```
+<ListView>
+    <Interactivity:Interaction.Behaviors>
+         <Core:EventTriggerBehavior EventName="SelectionChanged">
+                   <Core:InvokeCommandAction Command="{Binding ShowDialog}" CommandParameter="{Binding ElementName=lv,Path=SelectedItem,Converter={StaticResource converter}}"/>
+         </Core:EventTriggerBehavior>
+    </Interactivity:Interaction.Behaviors>
+</ListView>
+
+```
+
 UWP
 
 ##UWP 默认应用打开文件
