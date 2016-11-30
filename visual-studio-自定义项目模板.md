@@ -8,6 +8,16 @@
 
 里面有文件夹，一般我们打开最后一个，我也不知道你看到我这篇，垃圾微软把它改为最大多少，所以，一个一个来，我现在打开1033，（1033是老周博客写的）我的其实还有更后的，这个如果都是数字，就选最大的。
 
+---
+
+11月更新：
+
+1033是数字版本`LCID（Locale ID，区域性标识符）`，1033代表英语，2052代表简体中文
+
+多谢UltimateLove大神
+
+---
+
 我们先把文件夹复制到我们用户文档或者自己程序的项目位置，然后压缩一份保存，因为怕自己弄坏
 
 然后我们用Visual Studio打开文件，记住，要打开.csproj要用文件 打开。
@@ -139,6 +149,8 @@
 需要管理员
 
 我们新建项目如果出找不到文件，打开`C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplatesCache`相同位置，把文件复制，因为这个是临时，VisualStudio会在文件夹读，一般关掉VisualStudio会好，但是后来有人说这样不好，我们就手动把文件复制
+
+除了手动复制还可以再命令行`devenv /setup`
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
