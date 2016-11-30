@@ -1,4 +1,4 @@
-#Visual Studio 自定义项目模板
+# Visual Studio 自定义项目模板
 
 经常我们需要新建一个项目，然后新建我们的View文件夹，ViewModel文件夹，Model文件夹，还有把我们的ViewModelBase放入我们的VIewModel，如果还用框架，还需要加上好多。
 
