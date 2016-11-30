@@ -1,6 +1,4 @@
-----------
-Title: win10 uwp 绘图  Line 控件使用
-----------
+# win10 uwp 绘图  Line 控件使用
 
 【】
 
