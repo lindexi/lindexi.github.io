@@ -8,4 +8,6 @@
 
 ## 透明标题栏 系统状态栏
 
+参见：http://uwpbox.com/status-bar-at-the-top-of-the-uwp-statusbar.html
+
 参见：http://www.cnblogs.com/tcjiaan/p/4783049.html
