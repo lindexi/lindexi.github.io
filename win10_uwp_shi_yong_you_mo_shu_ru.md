@@ -1,8 +1,10 @@
 # win10 uwp 使用油墨输入
 
-win10可以很简单在我们的app使用自然输入，这篇文章主要翻译[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/)  一些内容是参见[陈染大神](http://www.wangchenran.com/win10uwp%E5%BC%80%E5%8F%91-ink.html)
-
 现在很多人还是使用笔和纸来记录，那么可以在电脑输入方式和之前使用的方式一样，很多用户觉得会方便。在win10 我们有一个简单的方法去让用户输入，`InkCanvas`。现在edge，OneNote这些都有使用`InkCanvas`,我们可以在我们的手机上手写，我们也可以在我们电脑上用鼠标写，然后我们可以把我们写的保存图片，可以识别文字。
+
+<!--more-->
+
+win10可以很简单在我们的app使用自然输入，这篇文章主要翻译[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/)  一些内容是参见[陈染大神](http://www.wangchenran.com/win10uwp%E5%BC%80%E5%8F%91-ink.html)
 
 做法简单，我们有垃圾微软的`InkCanvas `需要我们在页面
 
@@ -44,7 +46,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
             ink_canvas.InkPresenter.UpdateDefaultDrawingAttributes(attribute);
 ```
-##保存，修改，加载ink
+## 保存，修改，加载ink
 
 我们可以给用户选择他当前使用橡皮擦、铅笔还是他需要的。
 我们给用户按钮铅笔，橡皮擦
@@ -175,7 +177,7 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
            }
 ```
 
-##UWP 手写清理笔画
+## UWP 手写清理笔画
 
 我们写完一个字需要清理我们笔画
 
@@ -183,7 +185,7 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
 ink.InkPresenter.StrokeContainer.Clear();
 ```
 
-##手写识别
+## 手写识别
 
 ```
     //手写识别
@@ -217,7 +219,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 ```
 `TargetInkCanvas`属性bind到要设置的`InkCanvas`上即可。
 
-##无法识别手写
+## 无法识别手写
 
 首先我们手写需要安装。
 
@@ -237,7 +239,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 源代码 https://github.com/lindexi/UWP/tree/master/uwp/src/Ink
 
-##语音
+## 语音
 
 现在很多人都是使用语音输入，把文字转为语音我已经写了一篇博客。
 
@@ -279,3 +281,5 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 http://stackoverflow.com/questions/32153880/how-to-render-inkcanvas-to-an-image-in-uwp-windows-10-application/32551620
 
 https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
