@@ -277,7 +277,6 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 语音：https://msdn.microsoft.com/zh-cn/library/windows/apps/dn596121.aspx
  
-
 http://stackoverflow.com/questions/32153880/how-to-render-inkcanvas-to-an-image-in-uwp-windows-10-application/32551620
 
 https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/
