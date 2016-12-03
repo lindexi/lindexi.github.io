@@ -3,6 +3,7 @@
 本文主要翻译http://stackoverflow.com/questions/37119464/uwp-check-if-file-exists/37152526#37152526
 
 我们有多种方法可以判断文件是否存在，最简单的方法是异常
+<!--more-->
 
 假如我们的文件叫 file
 

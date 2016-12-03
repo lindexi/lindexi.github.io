@@ -3,6 +3,7 @@
 本文主要翻译：[http://visuallylocated.com/post/2015/02/20/Creating-a-WrapPanel-for-your-Windows-Runtime-apps.aspx](http://visuallylocated.com/post/2015/02/20/Creating-a-WrapPanel-for-your-Windows-Runtime-apps.aspx)    [http://depblog.weblogs.us/2015/02/18/how-to-add-a-tag-list-into-winrt-universal-apps/](http://depblog.weblogs.us/2015/02/18/how-to-add-a-tag-list-into-winrt-universal-apps/)  
 
 我们需要给用户很多标签，我们需要使用一个控件，他的长度是变化，可以快速放，这样好像wrapPancel就是我们需要，因为这个我直接写如果看起来不懂，可以看
+<!--more-->
 
 ![这里写图片描述](http://img.blog.csdn.net/20160428154345998)
 

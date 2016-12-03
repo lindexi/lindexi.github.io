@@ -1,6 +1,7 @@
 # win10 UWP MessageDialog 和 ContentDialog
 
 我之前开发一个软件 winMarkdown，这个软件在关闭需要提示用户还没有保存东西，需要保存，如果用户选择退出，那么把数据存放。
+<!--more-->
 
 在Metro程序中，没有传统的窗口，当我们要用需要交互的消息提示时，在Win8时代，引入了一个MessageDialog来取代常用的MessageBox。
 

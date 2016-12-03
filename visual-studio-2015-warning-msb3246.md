@@ -5,6 +5,7 @@
 warning MSB3246: 解析的文件包含错误图像、无元数据或不可访问。未能加载文件或程序集“`*.dll`”或它的某一个依赖项。试图加载格式不正确的程序。
 
 其中`*.dll`就是一个dll名称，那么遇到这个问题，不是修复vs就能做好的，我找了好久，在堆栈炸了找到一个可以用的方法
+<!--more-->
 
 1. 检查`.nuget\packages`的包，假如报错的`*.dll`是`System.Numerics.Vectors.WindowsRuntime.dll`那么找到`System.Numerics.Vectors.WindowsRuntime`文件夹
 

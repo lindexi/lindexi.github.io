@@ -1,6 +1,7 @@
 # win10 uwp 异步进度条
 
  本文主要讲我设计的几个进度条，还有如何使用异步控制进度条，如何使用动画做进度。
+<!--more-->
 
  进度条可以参见：http://edi.wang/post/2016/2/25/windows-10-uwp-modal-progress-dialog
  

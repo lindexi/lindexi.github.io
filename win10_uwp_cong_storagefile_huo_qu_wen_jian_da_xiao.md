@@ -1,6 +1,7 @@
 # win10 uwp 从StorageFile获取文件大小
 
 本文主要：获取文件大小
+<!--more-->
 
         private async Task<ulong> FileSize(Windows.Storage.StorageFile file)
         {

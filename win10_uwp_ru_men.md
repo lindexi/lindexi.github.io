@@ -1,6 +1,7 @@
 # win10 uwp 入门
 
 UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也是合并我写的博客。
+<!--more-->
 
 关于UWP介绍可以参见:http://lib.csdn.net/article/csharp/32451
 

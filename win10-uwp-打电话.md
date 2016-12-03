@@ -1,6 +1,7 @@
 #win10 uwp 打电话
 
 UWP可以使用打电话功能，在PC是用Skype，在手机是直接使用电话功能。
+<!--more-->
 
 UWP可以通过Skype打电话，那么如何通过应用间通讯，很简单使用Launcher。
 
