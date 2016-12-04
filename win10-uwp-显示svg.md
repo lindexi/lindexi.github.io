@@ -7,7 +7,12 @@
 
 这些图片在http://www.zcool.com.cn/，不知道是不是不能直接用
 
-我们需要一个看起来不会模糊，因为矢量图，所以我们就使用svg，其实png也是，但是他播放模糊。lindexi
+我们需要一个看起来不会模糊，因为矢量图，所以我们就使用svg，其实png也是，但是他播放模糊。
+
+<!--more-->
+
+
+lindexi
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
