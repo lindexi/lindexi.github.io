@@ -1,4 +1,5 @@
 # win10 UWP MvvmLight入门
+<!--more-->
 
 ## 安装MvvmLight
 
