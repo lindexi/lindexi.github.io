@@ -1,4 +1,4 @@
-# win10 uwp 从Type 使用构造
+# win10 uwp 从Type使用构造
 
 本文主要：如何从Type new一个对象
 
