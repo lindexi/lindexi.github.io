@@ -5,6 +5,7 @@
     * [Win10 UWP Intro to controls and events](win10_uwp_intro_to_controls_and_events.md)
     * [win10 UWP Controls by function](win10_uwp_controls_by_function.md)
 * [win10 uwp App-to-app communication 应用通信](win10_uwp_app-to-app_communication_ying_yong_tong_.md)
+* [win10 UWP 使用MD5算法](win10-uwp-使用md5算法.md)
 * [win10 UWP 全屏](win10_uwp_quan_ping.md)
 * [win10 uwp 使用油墨输入](win10_uwp_shi_yong_you_mo_shu_ru.md)
 * [三种方式设置特定设备UWP XAML view](san_zhong_fang_shi_shezhi_te_ding_she_bei_uwp_xaml.md)
@@ -19,7 +20,7 @@
 * [win10 uwp 判断文件存在](win10_uwp_pan_duan_wen_jian_cun_zai.md)
 * [win10 UWP 标题栏后退](win10_uwp_biao_ti_lan_hou_tui.md)
 * [win10 uwp 分治法](win10_uwp_fen_zhi_fa.md)
-* [win10 UWP 剪贴板 Clipboard](win10_uwp_jian_tie_ban_clipboard.md)
+* win10 UWP 使用MD5算法
 * [win10 UWP 应用设置](win10_uwp_ying_yong_she_zhi.md)
 * [win10 uwp BadgeLogo 颜色](win10_uwp_badgelogo_yan_se.md)
 * [win10 uwp json](win10_uwp_json.md)
