@@ -1,35 +1,53 @@
-button�кܶ��wpfһ�������Կ�������ǳ��WPF��
+# win10 UWP button
 
-���ǿ�����button��clickд��
+Button是一个常用控件，有很多和wpf一样，可以看《深入浅出WPF》，但还有一些虽然常用，但是可能大家不知道的功能
+
+
+<!--more-->
+
+Button常用的就是点击
+
+我们可以在button的click写上
+
 ```
-<Button Content="ȷ��" Click="Button_Click"/>
+<Button Content="确定" Click="Button_Click"/>
 ```
-��Button_Click��F12������д�ϵ����ť��Ҫ����
+
+在Button_Click按F12到代码写上点击按钮需要运行
+
 ```
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+              //这里写上点击按钮后触发
         }
 ```
 
-Ҳ������viewModel��һ������
-viewModel��һ������ ce
+除了写在xaml.cs也可以写在ViewModel，ViewModel的写法很简单，我们需要在ViewModel建立一个方法，这个方法的参数为`void`或`object sender, RoutedEventArgs e`
 
-������Clickд
+假如viewModel有一个方法 ce
+
+在Button可以在Click写
+
 ```
 Click="{x:Bind view.ce}"
 ```
-����view��Ҫ��MainPage.xaml.csд
+
+原来的WPF使用的是Command，实在不好看，用了UWP我都不在WPF写Command
+
+在用ViewModel需要在MainPage.xaml.cs写
+
 ```
 viewModel view {set;get;}= new viewModel();
 
 ```
 
-button content����ʹ��һ��Ԫ�أ����Ԫ�ؿ�����Grid�����ǿ�����һ��Բ��ͷ��
+## 内容
 
-���ҳ�һ��ͼ�����ǰ�����ͼ��ͷ��
+button content可以使用一个元素，这个元素可以是Grid，我们可以做一个圆形头像
 
-��ͼ�ŵ���Ŀ
+先找出一张图，我们把这张图做头像
+
+把图放到项目
 
 ```
                 <Button Height="100" Width="100" Margin="10,10,10,10" Padding="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"> 
@@ -43,12 +61,17 @@ button content����ʹ��һ��Ԫ�أ����Ԫ�ؿ�����Grid�����ǿ�����һ��Բ��ͷ��
                 </Button>
 ```
 
-���ǿ����޸�����ڰ�ť�ϵ�����
+注意，放在项目的图片，不是这么简单，具体如何使用，参见 [win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi/post/win10-uwp-访问解决方案文件/)
+
+## 修改鼠标在按钮上的样子
+
+我们可以修改鼠标在按钮上的样子
 
 
 
-button�����������ԣ�ʹ����Դ
-��Դ����д��ҳ��
+
+button可以设置属性，使用资源
+资源可以写在页面
 
 ```
     <Page.Resources>
@@ -56,7 +79,7 @@ button�����������ԣ�ʹ����Դ
     </Page.Resources>
 ```
 
-���а�ťʹ��ͬ��ʽ
+所有按钮使用同样式
 
 ```
     <Page.Resources>
@@ -66,9 +89,9 @@ button�����������ԣ�ʹ����Դ
     </Page.Resources>
 ```
 
-��ť��������`<Setter Property="����" Value="ֵ"/>`
+按钮的属性用`<Setter Property="属性" Value="值"/>`
 
-��ť�ı���
+按钮的背景
 
 ```
     <Page.Resources>
@@ -78,7 +101,7 @@ button�����������ԣ�ʹ����Դ
     </Page.Resources>
 ```
 
-ָ��һ����ʽ��key
+指定一个样式，key
 
 ```
     <Page.Resources>
@@ -96,16 +119,16 @@ button�����������ԣ�ʹ����Դ
 ```
 
 ```
-         <Button Content="Ĭ��"/>
-         <Button Style="{StaticResource button}" Content="ȷ��"/>
+         <Button Content="默认"/>
+         <Button Style="{StaticResource button}" Content="确定"/>
 ```
 
-![����дͼƬ����](image/20151211154753136.jpg)
+![这里写图片描述](image/20151211154753136.jpg)
 
-����ƣ��㰴ť���һ����༭ģ�帱����ѡ��ǰҳ
-![����дͼƬ����](image/QQ��ͼ20160103092022.png)
+在设计，点按钮，右击，编辑模板副本，选择当前页
+![这里写图片描述](image/QQ截图20160103092022.png)
 
-���Կ���
+可以看到
 ```xaml
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
@@ -180,66 +203,66 @@ button�����������ԣ�ʹ����Դ
     </Page.Resources>
 ```
 
-��` <VisualState x:Name="Pressed">`���԰�����д�����״̬�����ӣ���ť�����������£�����ڰ�ť�ϣ����Զ�ÿ���޸�
+在` <VisualState x:Name="Pressed">`可以把里面写成这个状态的样子，按钮有正常，按下，鼠标在按钮上，可以对每个修改
 
-![����дͼƬ����](image/QQ��ͼ20160103093039.png)
+![这里写图片描述](image/QQ截图20160103093039.png)
 
-���Pressed����pressed
+点击Pressed更改pressed
 
-![���Pressed����pressed](image/QQ��ͼ20160103093204.png)
+![点击Pressed更改pressed](image/QQ截图20160103093204.png)
 
-�������ﰴť�б���
+看到这里按钮有背景
 
-![�������ﰴť�б���](image/QQ��ͼ20160103093320.png)
+![看到这里按钮有背景](image/QQ截图20160103093320.png)
 
-ȥ����������F4�ѱ����޻���
+去掉背景，按F4把背景无画笔
 
-![ȥ����������F4�ѱ����޻���](image/QQ��ͼ20160103093441.png)
+![去掉背景，按F4把背景无画笔](image/QQ截图20160103093441.png)
 
-���ӹ���
+添加过度
 
-![���ӹ���](image/QQ��ͼ20160103093544.png)
+![添加过度](image/QQ截图20160103093544.png)
 
-��¼�ؼ�֡
+记录关键帧
 
-![��¼�ؼ�֡](image/QQ��ͼ20160103093647.png "��¼�ؼ�֡")
+![记录关键帧](image/QQ截图20160103093647.png "记录关键帧")
 
-ѡʱ��0.5�ı䱳��
+选时间0.5改变背景
 
-![ѡʱ��0.5�ı䱳��](image/QQ��ͼ20160103093838.png "ѡʱ��0.5�ı䱳��")
+![选时间0.5改变背景](image/QQ截图20160103093838.png "选时间0.5改变背景")
 
-ѡʱ�䣬�ı䱳��
+选时间，改变背景
 
-![](image/QQ��ͼ20160103094007.png)
+![](image/QQ截图20160103094007.png)
 
-�㲥�ſ��Կ���������������
+点播放可以看到我们做出来的
 
-��������
+可以运行
 
 
-�ƶ���button��ʾ����
+移动到button显示文字
 
-��װ���ر��ƶ����Ѻ���ʾ�Ѻ�
-�ο���http://blog.csdn.net/lindexi_gd/article/details/50166161
+在装机必备移动到搜狐显示搜狐
+参考：http://blog.csdn.net/lindexi_gd/article/details/50166161
 
 ```
-                        <Button Click="souhu_Click" ToolTipService.ToolTip="�Ѻ���Ƶ" Padding="0" >
+                        <Button Click="souhu_Click" ToolTipService.ToolTip="搜狐视频" Padding="0" >
                             <Button.Content>
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
                                     </Grid.RowDefinitions>
-                                    <Image Source="ms-appx:///Assets/�Ѻ�.png" Grid.Row="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
-                                    <TextBlock Text="�Ѻ���Ƶ" Grid.Row="1" HorizontalAlignment="Center" />
+                                    <Image Source="ms-appx:///Assets/搜狐.png" Grid.Row="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+                                    <TextBlock Text="搜狐视频" Grid.Row="1" HorizontalAlignment="Center" />
                                 </Grid>
                             </Button.Content>
                         </Button>
 ```
 
-![����дͼƬ����](image/20151211161126290.jpg)
+![这里写图片描述](image/20151211161126290.jpg)
 
-��ʾͼƬ
+显示图片
 
 ```
                         <Button Click="souhu_Click" Padding="0" >
@@ -249,13 +272,16 @@ button�����������ԣ�ʹ����Դ
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
                                     </Grid.RowDefinitions>
-                                    <Image Source="ms-appx:///Assets/�Ѻ�.png" Grid.Row="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
-                                    <TextBlock Text="�Ѻ���Ƶ" Grid.Row="1" HorizontalAlignment="Center" />
+                                    <Image Source="ms-appx:///Assets/搜狐.png" Grid.Row="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+                                    <TextBlock Text="搜狐视频" Grid.Row="1" HorizontalAlignment="Center" />
                                 </Grid>
                             </Button.Content>
                             <ToolTipService.ToolTip>
-                                <Image Height="50" Width="50" Source="ms-appx:///Assets/�Ѻ�.png"/>
+                                <Image Height="50" Width="50" Source="ms-appx:///Assets/搜狐.png"/>
                             </ToolTipService.ToolTip>
                         </Button>
 ```
 
+## 圆角按钮
+
+参见：[圆角按钮](http://lindexi.oschina.io/lindexi/post/win10-uwp-圆角按钮/)
