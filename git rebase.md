@@ -1,60 +1,77 @@
-һ�����������ύ���ֿ��кö࿴�������ҵ�
-gitû�п��԰����һ���ύ�ύ����������������������rebase
-��ʹ�÷�֧������
+rebase可以修改记录，我总是做小更改就提交，仓库有好多看起来很乱的
+
+git没有可以把最后一个提交提交到服务器的能力，可以用rebase
+
+rebase可以合并提交，使用简单
+
+<!--more-->
+
+先使用分支做更改
 
 ```
-git branch ����
-git checkout ����
+git branch 更改
+git checkout 更改
 ```
 
-�ύ����
+提交更改
 
 ```
-git commit ����
+git commit 更改
 ```
 
-Ȼ������֧�������ύ
+然后到主分支看最新提交
 
 ```
 git checkout master
 git log
 ```
 
-![����дͼƬ����](image/20151226155916257.jpg)
+![这里写图片描述](image/20151226155916257.jpg)
 
-�������ύ
+记下那提交
 
-�Ѹ��ĺϲ�master
-
-```
-git merge ����
-```
-
-��rebase�Ѹ��Ķ����Ϊ���һ��
+把更改合并master
 
 ```
-git rebase -i ���µ��ύ
+git merge 更改
 ```
 
-![����дͼƬ����](image/20151226160007835.jpg)
+用rebase把更改多个合为最后一个
 
-�ڴ򿪵��ļ����˵�һ��pick����Ϊs
+```
+git rebase -i 记下的提交
+```
 
-��i�޸�
+![这里写图片描述](image/20151226160007835.jpg)
 
-![����дͼƬ����](image/20151226160057537.jpg)
+在打开的文件的`pick`除了第一个pick，改为s
 
-![����дͼƬ����](image/20151226160137293.jpg)
+用i修改，先按i，修改
 
-�޸İ�esc����wq����
+![这里写图片描述](image/20151226160057537.jpg)
 
-Ȼ���ļ���i�޸ģ�������Ϣ���ύ��Ϣ
+![这里写图片描述](image/20151226160137293.jpg)
 
-![����дͼƬ����](image/20151226160608688.jpg)
+修改完，按esc，`:wq`保存
 
-��esc��wq����
+然后git会让你写修改commit，按i修改，`#`开头的是注释，commit是合并多个的。
 
-�ύ�������һ��
+假如我有三个提交
+		
+```
+commit : A
+commit : B
+commit : C
+
+```
+
+合并后我就可以写`commit : ABC`
+
+![这里写图片描述](image/20151226160608688.jpg)
+
+写完按esc，`：wq`保存
+
+提交就是最后一个
 
 
 

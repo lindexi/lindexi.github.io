@@ -50,15 +50,15 @@ button content可以使用一个元素，这个元素可以是Grid，我们可�
 把图放到项目
 
 ```
-                <Button Height="100" Width="100" Margin="10,10,10,10" Padding="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"> 
-                    <Button.Content>                       
-                            <Ellipse Margin="0,0,0,0" Height="90" Width="90">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="Assets/20151226160608688.jpg" />
-                                </Ellipse.Fill>
-                            </Ellipse>                                          
-                    </Button.Content>
-                </Button>
+    <Button Height="100" Width="100" Margin="10,10,10,10" Padding="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"> 
+        <Button.Content>                       
+            <Ellipse Margin="0,0,0,0" Height="90" Width="90">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Assets/20151226160608688.jpg" />
+                </Ellipse.Fill>
+            </Ellipse>                                          
+         </Button.Content>
+    </Button>
 ```
 
 注意，放在项目的图片，不是这么简单，具体如何使用，参见 [win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi/post/win10-uwp-访问解决方案文件/)
