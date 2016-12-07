@@ -285,6 +285,18 @@ CSDN \sep lindexi \sep windows.sc
 \frac{上}{下}
 ```
 
+### 无序列表
+
+```
+\begin{itemize}
+	\item 
+	\item 
+\end{itemize}
+```
+
+
+
+
 ### 根号
 
 ```
@@ -292,9 +304,7 @@ CSDN \sep lindexi \sep windows.sc
 
 ```
 
-插入公式：https://www.kancloud.cn/thinkphp/latex/41806
 
-http://mohu.org/info/symbols/symbols.htm
 
 ### 插入图片
 
@@ -442,6 +452,9 @@ svg转eps http://cn.office-converter.com/SVG-to-EPS
 \end{equation}
 ```
 
+插入公式：https://www.kancloud.cn/thinkphp/latex/41806
+
+http://mohu.org/info/symbols/symbols.htm
 
 #### 公式空格
 
