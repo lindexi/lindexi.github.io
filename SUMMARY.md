@@ -63,6 +63,7 @@
 * [win10 uwp 绘图  Line 控件使用](win10-uwp-绘图--line-控件使用.md)
 * [win10 uwp 存放网络图片到本地](win10-uwp-存放网络图片到本地.md)
 * [win10 uwp 判断本地ip](win10-uwp-判断本地ip.md)
+* [win10 uwp 弹起键盘不隐藏界面元素](win10-uwp-弹起键盘不隐藏界面元素.md)
 * [win10 uwp Markdown](win10-uwp-markdown.md)
 * [C\# 设计模式 责任链](c-设计模式-责任链.md)
 * [win10 uwp 显示SVG](win10-uwp-显示svg.md)
