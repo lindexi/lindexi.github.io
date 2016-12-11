@@ -1,5 +1,8 @@
-WPF checkbox文字下掉
-![这里写图片描述](http://i13.tietuku.cn/5d20587e74850fc8.png)
+# WPF checkbox文字下掉
+
+<!--more-->
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/2af64c0d-f144-4f44-985d-3e155a8209532016121185647.jpg)
 
 可以使用
 

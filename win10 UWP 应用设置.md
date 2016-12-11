@@ -1,4 +1,6 @@
-win10 UWP 应用设置
+# win10 UWP 应用设置
+
+<!--more-->
 
 单的把设置需要的，放到微软自带的LocalSettings
 

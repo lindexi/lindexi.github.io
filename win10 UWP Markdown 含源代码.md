@@ -1,4 +1,4 @@
-win10 UWP Markdown 含源代码
+# win10 UWP Markdown 含源代码
 ﻿Windows下没有比较好的Markdown编辑器
 
 我就自己写一个
@@ -6,6 +6,9 @@ win10 UWP Markdown 含源代码
 csdn的Markdown很好，就是我需要截图保存有麻烦
 
 需要把我的截图保存在本地，然后上传
+
+<!--more-->
+
 
 这个过程比较麻烦
 

@@ -1,5 +1,7 @@
 在程序写一个popup发现他会在置顶，在网上找了两大神代码http://www.cnblogs.com/Leaco/p/3164394.html
 
+<!--more-->
+
 http://blog.csdn.net/baijinwen/article/details/6159043
 
 继承 Popup
