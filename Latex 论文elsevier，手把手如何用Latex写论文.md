@@ -1,5 +1,7 @@
 这几天在开始写论文，准备发的是elsevier，这个网站的instruction有问题，下载的东西基本上好多的错误，所以我就写博客记录。
 
+<!--more-->
+
 首先看下：https://www.elsevier.com/authors/author-schemas/latex-instructions
 
 这里需要我们先安装Latex，我安装的是Ctex
