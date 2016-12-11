@@ -3,6 +3,8 @@
 Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其中一些有可视化，一些布局。
 一些控件例子：https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics
 
+<!--more-->
+
 我现在做的一个中文版的，很多都是照着微软写，除了注释
 
 我们先学微软做一个简单的frame，新建Page，
