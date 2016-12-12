@@ -78,6 +78,18 @@
         }
 ```
 
+## ImageSource 转byte[]
+
+ImageSource可以是BitmapImage、WriteableBitmap，如果是WriteableBitmap ，那么直接转换
+
+WriteableBitmap  转byte[]
+
+```
+bitmap.PixelBuffer.ToArray();
+```
+
+
+
 ## Image 转byte[]
 
 如果我们的ImageSource是BitmapImage,那么我们不能使用上面的办法，直接保存WriteableBitmap ，我们可以使用截图
@@ -97,7 +109,7 @@ private async Task<string> ToBase64(Image control)
 
 ```
 
-
+//WriteableBitmap 转 byte[]
 private async Task<string> ToBase64(WriteableBitmap bitmap)
 {
     var bytes = bitmap.PixelBuffer.ToArray();
@@ -156,9 +168,7 @@ https://codepaste.net/ijx28i
 
 
 
-## ImageSource 转byte[]
 
-ImageSource可以转为WriteableBitmap
 
 ## BitmapImage 转 WriteableBitmap
 
