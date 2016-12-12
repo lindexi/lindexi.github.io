@@ -17,9 +17,18 @@
 ## 保存WriteableBitmap到文件
 
 
+
+
+
 ## ImageSource 转byte[]
 
 ImageSource可以转为WriteableBitmap
+
+## BitmapImage 转 WriteableBitmap
+
+我使用http://www.cnblogs.com/cjw1115/p/5164327.html 大神的，直接转`WriteableBitmap bitmap = imageSource as WriteableBitmap;`bitmap为null，于是我在网上继续找。
+
+
 
 
 如果需要保存网络图片到本地，请到[win10 uwp 存放网络图片到本地](http://lindexi.oschina.io/lindexi/post/win10-uwp-存放网络图片到本地/)
