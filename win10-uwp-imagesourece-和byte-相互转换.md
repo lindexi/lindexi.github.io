@@ -80,6 +80,7 @@
 
 ## Image 转byte[]
 
+如果我们的ImageSource是BitmapImage,那么我们不能使用上面的办法，直接保存WriteableBitmap ，我们可以使用截图
 
 ```
 private async Task<string> ToBase64(Image control)
@@ -88,6 +89,14 @@ private async Task<string> ToBase64(Image control)
     await bitmap.RenderAsync(control);
     return await ToBase64(bitmap);
 }
+
+
+```
+
+如果ImageSource是WriteableBitmap 
+
+```
+
 
 private async Task<string> ToBase64(WriteableBitmap bitmap)
 {
