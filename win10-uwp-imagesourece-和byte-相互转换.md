@@ -164,8 +164,8 @@ private async Task<ImageSource> FromBase64(string base64)
     return output;
 }
 ```
-https://codepaste.net/ijx28i
 
+上面代码出处：https://codepaste.net/ijx28i 
 
 ## 从文件读 BitmapImage 
 
