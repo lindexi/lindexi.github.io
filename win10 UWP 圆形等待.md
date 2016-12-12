@@ -1,20 +1,24 @@
-win10 UWP 圆形等待
+# win10 UWP 圆形等待
 
 看到一个圆形好像微软ProgressRing
 
-![0_1321962945yCXF - 副本.gif](image/0_1321962945yCXF.gif)
+![0_1321962945yCXF - 副本.gif](http://7xqpl8.com1.z0.glb.clouddn.com/0_1321962945yCXF.gif)
 
 我们可以用自定义控件
 
-按ctrl+shift+a
+<!--more-->
 
-用户控件
+新建可以按ctrl+shift+a
+
+选用户控件
 
 我们可以用Rectangle做圆形边
 
-只要Rectangle RadiusX>0圆角
+只要Rectangle `RadiusX>0` RadiusX是圆角度
 
 因为每个Rectangle 都一样，我们可以资源
+
+资源我们写在Grid
 
 ```xaml
 
@@ -42,9 +46,9 @@ win10 UWP 圆形等待
 
 因为不知道这个要叫什么，就用右击资源
 
-![这里写图片描述](image/20161291187294.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141314.jpg)
 
-![这里写图片描述](image/20161291182112.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141329.jpg)
 
 vs默认RectangleStyle1
 
@@ -72,7 +76,9 @@ vs默认RectangleStyle1
 
 看起来Rectangle很大
 
-![这里写图片描述](image/201612911107238.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141358.jpg)
+
+<!-- ![这里写图片描述](image/201612911107238.png) -->
 
 把Height为20
 
@@ -84,7 +90,9 @@ vs默认RectangleStyle1
 
 ```
 
-![这里写图片描述](image/201612911111820.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141425.jpg)
+
+<!-- ![这里写图片描述](image/201612911111820.png) -->
 
 全部资源
 
@@ -126,7 +134,8 @@ vs默认RectangleStyle1
 
 ```
 
-![这里写图片描述](image/201612911134992.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141443.jpg)
+<!-- ![这里写图片描述](image/201612911134992.png) -->
 
 每个Rectangle 一个名字
 
@@ -186,7 +195,8 @@ Forever一直动
 
 ```
 
-![这里写图片描述](image/201612911161755.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141515.jpg)
+<!-- ![这里写图片描述](image/201612911161755.png) -->
 
 全部
 
