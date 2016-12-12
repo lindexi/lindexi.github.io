@@ -93,7 +93,7 @@ private async Task<string> ToBase64(Image control)
 
 ```
 
-如果ImageSource是WriteableBitmap 
+如果ImageSource是WriteableBitmap ，直接保存
 
 ```
 
