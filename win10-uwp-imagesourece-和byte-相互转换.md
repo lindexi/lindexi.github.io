@@ -184,7 +184,11 @@ https://codepaste.net/ijx28i
 
 ## BitmapImage 转 WriteableBitmap
 
-我使用http://www.cnblogs.com/cjw1115/p/5164327.html 大神的，直接转`WriteableBitmap bitmap = imageSource as WriteableBitmap;`bitmap为null，于是我在网上继续找。
+我使用http://www.cnblogs.com/cjw1115/p/5164327.html 大神的，直接转`WriteableBitmap bitmap = imageSource as WriteableBitmap;`bitmap为null，于是我在网上继续找，好像没看到UWP的可以转，只有win7的
+
+其实大神有说，Image的Source是WriteableBitmap
+
+UWP的BitmapImage 不能转换为byte[] 或WriteableBitmap
 
 
 
