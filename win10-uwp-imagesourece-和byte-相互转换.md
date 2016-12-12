@@ -16,6 +16,50 @@
 
 ## 保存WriteableBitmap到文件
 
+        private static async Task SaveWriteableBitmapImageFile(WriteableBitmap image, StorageFile file)
+        {
+            //BitmapEncoder 存放格式
+            Guid bitmapEncoderGuid = BitmapEncoder.JpegEncoderId;
+            string filename = file.Name;
+            if (filename.EndsWith("jpg"))
+            {
+                bitmapEncoderGuid = BitmapEncoder.JpegEncoderId;
+            }
+            else if (filename.EndsWith("png"))
+            {
+                bitmapEncoderGuid = BitmapEncoder.PngEncoderId;
+            }
+            else if (filename.EndsWith("bmp"))
+            {
+                bitmapEncoderGuid = BitmapEncoder.BmpEncoderId;
+            }
+            else if (filename.EndsWith("tiff"))
+            {
+                bitmapEncoderGuid = BitmapEncoder.TiffEncoderId;
+            }
+            else if (filename.EndsWith("gif"))
+            {
+                bitmapEncoderGuid = BitmapEncoder.GifEncoderId;
+            }
+            using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite, StorageOpenOptions.None))
+            {
+                BitmapEncoder encoder = await BitmapEncoder.CreateAsync(bitmapEncoderGuid, stream);
+                Stream pixelStream = image.PixelBuffer.AsStream();
+                byte[] pixels = new byte[pixelStream.Length];
+                await pixelStream.ReadAsync(pixels, 0, pixels.Length);
+                
+                encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Ignore,
+                          (uint)image.PixelWidth,
+                          (uint)image.PixelHeight,
+                          96.0,
+                          96.0,
+                          pixels);
+                //Windows.Graphics.Imaging.BitmapDecoder decoder = await Windows.Graphics.Imaging.BitmapDecoder.CreateAsync(imgstream);
+                //Windows.Graphics.Imaging.PixelDataProvider pxprd = await decoder.GetPixelDataAsync(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Straight, new Windows.Graphics.Imaging.BitmapTransform(), Windows.Graphics.Imaging.ExifOrientationMode.RespectExifOrientation, Windows.Graphics.Imaging.ColorManagementMode.DoNotColorManage);
+
+                await encoder.FlushAsync();
+            }
+        }
 
 
 
