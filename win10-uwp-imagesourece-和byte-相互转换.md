@@ -1,4 +1,4 @@
-# win10 uwp ImageSourece 和Byte[] 相互转换
+# win10 uwp 读取保存WriteableBitmap 、BitmapImage
 
 <!--more-->
 
@@ -167,6 +167,18 @@ private async Task<ImageSource> FromBase64(string base64)
 https://codepaste.net/ijx28i
 
 
+## 从文件读 BitmapImage 
+
+
+```
+        private async Task<BitmapImage> OpenBitmapImageFile(StorageFile file)
+        {
+            var fileStream = await file.OpenReadAsync();
+            var bitmap = new BitmapImage();
+            await bitmap.SetSourceAsync(fileStream);
+            return bitmap;
+        }
+```
 
 
 
