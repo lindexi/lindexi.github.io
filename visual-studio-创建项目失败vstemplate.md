@@ -14,6 +14,14 @@ vstemplate文件引用的向导类“Microsoft.VisualStudio.WinRT.TemplateWizard
 
 解决方法简单，在我们VisualStudio安装，C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP
 
+---
+感谢anngg2008 
+如果在CSharp文件夹没找到，请到`Common7\IDE\ProjectTemplatesCache\CSharp\Windows UAP*\BlankApplication\BlankApplication.vstemplate `
+
+`Common7\IDE\ProjectTemplates\CSharp\Windows UAP*\BlankApplication\BlankApplication.vstemplate`
+
+---
+
 可以找到我们的文件夹，一般是1033,如果有比较高的文件夹，那么都选择，进入，打开BlankApplication，把BlankApplication.vstemplatet拖到VisualStudio
 
 
