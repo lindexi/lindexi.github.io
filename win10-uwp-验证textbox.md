@@ -4,9 +4,13 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 
 我们可以用别人的库，我找到一个[大神](http://jamescroft.co.uk)写的库，很好用
 
+我们使用这个库可以定义很多验证，我记录我如何使用他这个库，还有如何去修改这个库。如何自定义控件做一个和大神做的一样的控件。
+
 <!--more-->
 
 ## Nuget
+
+我们用这个库是jamescroft写的，他上传到Nuget，我们可以去下载
 
 用Nuget搜索`WinUX.UWP.Xaml.Controls`
 
@@ -43,7 +47,7 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 
 我们要在资源定义，因为我们有多条验证
 
-先写
+先写，因为我们引用库和我的不知一空间
 		
 		
 ```
@@ -53,7 +57,7 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 
 ``` 
 
- 在资源
+ 在资源定义，我们需要多条，看起来好长，如果我们要用两次，那么还是写资源
 
 
 ```
@@ -539,11 +543,11 @@ public partial class ValidatingTextBox : TextBox
 
 ```
 
-我们设Style，没有Key，会所以的控件都使用我们写的Style
+我们设Style，没有Key，所有的控件都使用我们写的Style
 
 我们新建一个资源，只要里面有` <Style TargetType="controls:ValidatingTextBox">`
 
-我们用新建副本，直接复制TextBox的Style，不许要做什么修改。
+我们用新建副本，直接复制TextBox的Style，不需要做什么修改。
 
 我们在下面，修改显示
 
