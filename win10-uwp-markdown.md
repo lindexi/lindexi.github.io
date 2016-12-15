@@ -521,18 +521,96 @@
 
 ### 过滤器
 
-|描述|html|显示|
-|--|--|--|
-|日期转化为 XML 模式 将日期转化为 XML 模式 (ISO 8601) 的格式。| { { site.time | date_to_xmlschema } }| `2008-11-17T13:07:54-08:00`|
-|日期转化为 RFC-822 格式 将日期转化为 RFC-822 格式，用于 RSS 订阅。| { { site.time | date_to_rfc822 } } |`Mon, 17 Nov 2008 13:07:54 -0800`|
-|日期转化为短格式 将日期转化为短格式。| { { site.time | date_to_string } } | 17 Nov 2008|
-|日期转化为长格式 将日期转化为长格式。|{ { site.time | date_to_long_string } }|`17 November 2008`|
-|检索 选取键值对应的所有对象，返回一个数组。|{ { site.members | where:"graduation_year","2014" } }|
-|判断 选取表达式正确的所有对象，返回一个数组。|{ { site.members | where_exp:"item",
-"item.graduation_year == 2014" } }|
-|分组 根据所给属性将对象分组，返回一个数组。|{ { site.members | group_by:"graduation_year" } }|
-|URI 转码 URI 转码。|{ { “'foo, bar \\baz?'” | uri_escape } }|
-|统计字数 统计文章中的字数。|{ { page.content | number_of_words } }|
+<table> 
+   <thead> 
+    <tr> 
+     <th>描述</th> 
+     <th> <span class="filter">过滤器</span> 和 <span class="output">输出</span> </th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td> <p class="name"><strong>日期转化为 XML 模式</strong></p> <p>将日期转化为 XML 模式 (ISO 8601) 的格式。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.time | date_to_xmlschema } }</code> </p> <p> <code class="output">2008-11-17T13:07:54-08:00</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>日期转化为 RFC-822 格式</strong></p> <p>将日期转化为 RFC-822 格式，用于 RSS 订阅。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.time | date_to_rfc822 } }</code> </p> <p> <code class="output">Mon, 17 Nov 2008 13:07:54 -0800</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>日期转化为短格式</strong></p> <p>将日期转化为短格式。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.time | date_to_string } }</code> </p> <p> <code class="output">17 Nov 2008</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>日期转化为长格式</strong></p> <p>将日期转化为长格式。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.time | date_to_long_string } }</code> </p> <p> <code class="output">17 November 2008</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>检索</strong></p> <p>选取键值对应的所有对象，返回一个数组。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.members | where:&quot;graduation_year&quot;,&quot;2014&quot; } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>判断</strong></p> <p>选取表达式正确的所有对象，返回一个数组。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.members | where_exp:&quot;item&quot;, &quot;item.graduation_year == 2014&quot; } }</code> <code class="filter">{ { site.members | where_exp:&quot;item&quot;, &quot;item.graduation_year &lt; 2014&quot; } }</code> <code class="filter">{ { site.members | where_exp:&quot;item&quot;, &quot;item.projects contains 'foo'&quot; } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>分组</strong></p> <p>根据所给属性将对象分组，返回一个数组。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.members | group_by:&quot;graduation_year&quot; } }</code> </p> <p> <code class="output">[{&quot;name&quot;=&gt;&quot;2013&quot;, &quot;items&quot;=&gt;[...]},<br />{&quot;name&quot;=&gt;&quot;2014&quot;, &quot;items&quot;=&gt;[...]}]</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>XML 转码</strong></p> <p>对一些字符串转码，已方便显示在 XML 。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { page.content | xml_escape } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>CGI 转码</strong></p> <p> CGI 转码，用于 URL 中，将所有的特殊字符转化为 %XX 的形式。 </p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { “foo,bar;baz?” | cgi_escape } }</code> </p> <p> <code class="output">foo%2Cbar%3Bbaz%3F</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>URI 转码</strong></p> <p> URI 转码。 </p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { “'foo, bar \\baz?'” | uri_escape } }</code> </p> <p> <code class="output">foo,%20bar%20%5Cbaz?</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>统计字数</strong></p> <p>统计文章中的字数。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { page.content | number_of_words } }</code> </p> <p> <code class="output">1337</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>数组转换为句子</strong></p> <p>将数组转换为句子，列举标签时尤其有用。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { page.tags | array_to_sentence_string } }</code> </p> <p> <code class="output">foo, bar, and baz</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>Markdown 支持</strong></p> <p>将 Markdown 格式的字符串转换为 HTML 。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { page.excerpt | markdownify } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>Sass / SCSS 转换</strong></p> <p>将 Sass / SCSS 格式的字符串转换为 CSS</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { some_scss | scssify } }</code> </p> <p> <code class="filter">{ { some_sass | sassify } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>Slugify</strong></p> <p>将字符串转换为小写字母 URL “slug”。详见下面的参数。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { &quot;The _config.yml file&quot; | slugify } }</code> </p> <p> <code class="output">the-config-yml-file</code> </p> <p> <code class="filter">{ { &quot;The _config.yml file&quot; | slugify: 'pretty' } }</code> </p> <p> <code class="output">the-_config.yml-file</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>JSON 转换</strong></p> <p>将 Hash / 数组 格式的字符串转换为 JSON</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.data.projects | jsonify } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>排序</strong></p> <p>对数组排序，可选参数为：1.排序属性；2.顺序（正序或倒序）</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { page.tags | sort } }</code> </p> <p> <code class="filter">{ { site.posts | sort: 'author' } }</code> </p> <p> <code class="filter">{ { site.pages | sort: 'title', 'last' } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>样本</strong></p> <p>从数组中选取一个随意值。可选参数为：选取个数 </p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { site.pages | sample } }</code> </p> <p> <code class="filter">{ { site.pages | sample:2 } }</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>数组筛选</strong></p> <p>从一个数组中 Push, pop, shift, and unshift 元素。</p> <p>这些命令对原数组是<strong>无影响的</strong>。它们不会改变数组本身，而是创建副本后，对副本进行操作。</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { page.tags | push: 'Spokane' } }</code> </p> <p> <code class="output">['Seattle', 'Tacoma', 'Spokane']</code> </p> <p> <code class="filter">{ { page.tags | pop } }</code> </p> <p> <code class="output">['Seattle']</code> </p> <p> <code class="filter">{ { page.tags | shift } }</code> </p> <p> <code class="output">['Tacoma']</code> </p> <p> <code class="filter">{ { page.tags | unshift: &quot;Olympia&quot; } }</code> </p> <p> <code class="output">['Olympia', 'Seattle', 'Tacoma']</code> </p> </td> 
+    </tr> 
+    <tr> 
+     <td> <p class="name"><strong>Inspect</strong></p> <p>将对象转换为其字符串表示形式，用于调试</p> </td> 
+     <td class="align-center"> <p> <code class="filter">{ { some_var | inspect } }</code> </p> </td> 
+    </tr> 
+   </tbody> 
+</table>
 
 ### 转html
 
