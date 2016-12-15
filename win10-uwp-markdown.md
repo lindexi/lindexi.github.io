@@ -222,15 +222,34 @@
 |--|--| 
 | StorageFile | File 文件|
 | String | Title 标题|
-| DateTime | CreateTime|
-| DateTime | Time |
-| String   | Md5  |
-| String[] |category|
-| String   | Author |
-| String   | Excerpt |
-| String   | Content |
-| String   | References |
- 
+| DateTime | CreateTime 创建时间|
+| DateTime | Time  修改时间|
+| String   | Md5  文章和作者和创建时间、修改时间的md5|
+| String[] |category 标签|
+| String   | Author  作者|
+| String   | Excerpt 摘要，去掉HTML|
+| String   | Content 内容|
+| String   | References 最后文字|
+
+## 保存
+
+### 自动保存
+
+在用户停止输入或输入时间超过用户设置自动保存时间，自动保存。
+
+自动保存时锁住文件
+
+### 用户保存
+
+用户可以点击保存或使用快捷键。
+
+用户保存后，重新设置自动保存。
+
+### 编码
+
+保存的文件格式为上文件格式，
+
+
 ## 设置 
 
 ## 云
