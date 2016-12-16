@@ -44,3 +44,5 @@ public  string Property => ViewModel.ViewModel.CVTE;
 
 
 参见：http://stackoverflow.com/questions/15854708/how-can-i-bind-a-xaml-property-to-a-static-variable-in-another-class
+
+http://stackoverflow.com/questions/34701255/how-to-bind-to-attached-property-in-uwp
