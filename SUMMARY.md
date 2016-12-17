@@ -89,4 +89,5 @@
 * [win10 uwp 从Type 使用构造](win10-uwp-从type-使用构造.md)
 * [win10 uwp ImageSourece 和Byte\[\] 相互转换](win10-uwp-imagesourece-和byte-相互转换.md)
 * [win10 uwp 验证TextBox](win10-uwp-验证textbox.md)
+* [win10 uwp 右击选择GridViewItem](win10-uwp-右击选择gridviewitem.md)
 
