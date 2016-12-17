@@ -40,7 +40,7 @@ public  string Property => ViewModel.ViewModel.CVTE;
       <TextBlock Text="{x:Bind Property,Mode=OneWay}"></TextBlock>
 
 
-```
+``` 
 
 
 参见：http://stackoverflow.com/questions/15854708/how-can-i-bind-a-xaml-property-to-a-static-variable-in-another-class
