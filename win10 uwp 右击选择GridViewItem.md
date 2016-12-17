@@ -48,3 +48,14 @@
 如果使用个人控件（UserControl），那么请要有DataContext，不要覆盖。
 
 这样我们就可以得到GridViewItem
+
+但有时候，OriginalSource是ListViewItemPresenter，我们可以用一个简单方法，使用FrameworkElement
+
+我们修改代码
+        
+```
+ var student = (e.OriginalSource as FrameworkElement)?.DataContext as Student;
+
+```
+
+这样我们就可以得到，不需要去看DataTemplate
