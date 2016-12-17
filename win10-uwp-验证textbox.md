@@ -557,4 +557,4 @@ public partial class ValidatingTextBox : TextBox
 
 于是我们使用布局，直接放TextBlock，于是我们的控件做好。
 
-有一些比较难说我没有说，请去看代码 https://github.com/lindexi/WinUX-UWP-Toolkit/tree/master/WinUX/WinUX.UWP.Xaml.Controls/ValidatingTextBox
+有一些比较难说我没有说，请去看代码 http://git.oschina.net/lindexi/WinUX-UWP-Toolkit
