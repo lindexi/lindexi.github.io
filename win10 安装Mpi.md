@@ -41,3 +41,15 @@ $ mpiexec.mpich -np <num> ./h
 ```
 
 I use `mpiexec.mpich` run the code.`mpicc.mpich2 hello.c -o h` `mpiexec.mpich -np <num> ./h`
+
+可以安装mpi，从http://download.csdn.net/detail/lindexi_gd/9714817 下载，使用
+    
+```
+tar zvf  openmpi-1.6.5.tar.gz  
+cd openmpi-1.6.5
+./config
+sudo make & make install
+
+```
+
+
