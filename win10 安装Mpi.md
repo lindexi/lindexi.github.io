@@ -1,0 +1,43 @@
+# win10 安装Mpi
+
+<!--more-->
+
+首先我们需要安装Bash
+
+		
+```
+$ sudo apt-get install libcr-dev mpich2 mpich2-doc
+
+
+```
+
+写hello.c
+		
+```
+#include <mpi.h>
+#include <stdio.h>
+
+int main (int argc, char* argv[])
+{
+  int rank, size;
+
+  MPI_Init (&argc, &argv);      /* starts MPI */
+  MPI_Comm_rank (MPI_COMM_WORLD, &rank);        /* get current process id */
+  MPI_Comm_size (MPI_COMM_WORLD, &size);        /* get number of processes */
+  printf( "Hello world from process %d of %d\n", rank, size );
+  MPI_Finalize();
+  return 0;
+}
+
+```
+
+使用mpicc ，`[[INVALID],INVALID] ORTE_ERROR_LOG: A system-required executable either could not be found or was not executable by this user in file ess_singleton_module.c at line 231`
+
+		
+```
+$ mpicc.mpich2 hello.c -o h
+
+$ mpiexec.mpich -np <num> ./h
+```
+
+I use `mpiexec.mpich` run the code.`mpicc.mpich2 hello.c -o h` `mpiexec.mpich -np <num> ./h`
