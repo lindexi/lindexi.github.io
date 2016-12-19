@@ -1,4 +1,4 @@
-# 修改Pivot Head 颜色
+# win10 uwp 修改Pivot Head 颜色
 
 我们有十个Pivot，我们想修改所有的Pivot的颜色。那么我们可以在每个Pivot修改Template。
 
