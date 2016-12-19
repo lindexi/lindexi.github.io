@@ -42,3 +42,8 @@ content是我们按下快捷键的内容，\$ {1:this} 就是第一个输入内�
 就是按下hello，按下tab就会使用代码段。
 
 写好，我们保存在`C:\Users\<Use>\AppData\Roaming\Sublime Text 2\Packages\User` 后缀`.sublime-snippet`
+
+
+我们有时打开中文会乱码，我们可以ctrl+shift+p
+
+输入Package control:install 安装 CovertToUTF8
