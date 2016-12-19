@@ -8,6 +8,8 @@
 
 我们可以使用Margin移动，但这是wr说不要这样做。
 
+> We can move the control by Margin,but using this method is not recommended.
+
 我们可以在xaml写一个Button，然后就使用左键获取鼠标，这个可以去看 win10 uwp 获取按钮鼠标左键按下
 
 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%8E%B7%E5%8F%96%E6%8C%89%E9%92%AE%E9%BC%A0%E6%A0%87%E5%B7%A6%E9%94%AE%E6%8C%89%E4%B8%8B/
@@ -60,7 +62,7 @@ PointerPoint point = e.GetCurrentPoint(btn);
 我们需要设置附件属性，`btn.SetValue(Canvas.LeftProperty, x)`就是设置`Canvas.Left`
 		
 ```
-     private void Button_OnPointerMoved(object sender, PointerRoutedEventArgs e)
+        private void Button_OnPointerMoved(object sender, PointerRoutedEventArgs e)
         {
             Button btn=sender as Button;
             if (btn == null)
@@ -110,7 +112,25 @@ PointerPoint point = e.GetCurrentPoint(btn);
         }
 
 ```
+
+做好之后，我们发现实在奇怪
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/%E6%8B%96%E5%8A%A8%E6%8E%A7%E4%BB%B62016%E5%B9%B412%E6%9C%8818%E6%97%A5151534.gif)
 
+        
+```
+大神，请用力划。
+
+大神：我的控件哪去？
+
+控件：谁叫你那么用力
+
+Canvas：我的左边可以长度无限。
+
+……
+
+```
+
+好在[OneWindows](https://leoldev.wordpress.com/2016/12/18/uwp-manipulationdelta？蛤？/)的帮助
 
 参见：http://www.cnblogs.com/cjw1115/p/5323339.html
