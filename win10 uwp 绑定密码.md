@@ -56,7 +56,7 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 判断NewValue，如果是true，`passwordBox.PasswordChanged += PasswordChanged;`
 
-总的
+代码可以复制到一个文件，注意需要使用他所在的name，使用xmlns
 		
 ```
     public static class PasswordBoxHelper
@@ -151,6 +151,7 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 我们的ViewModel有一个属性password，注意我们使用Binding
 
+不需要去做修改，直接加上`view:PasswordBoxHelper.Attach="True" view:PasswordBoxHelper.Password="{Binding Password,Mode=TwoWay}"`
 		
 ```
  <PasswordBox  view:PasswordBoxHelper.Attach="True"
