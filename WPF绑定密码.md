@@ -1,4 +1,4 @@
-# WPF绑定密码
+# WPF 绑定密码
 
 我们发现我们无法绑定密码框的密码，PasswordBox的Password不能绑定。
 
