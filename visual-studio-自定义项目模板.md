@@ -184,6 +184,11 @@ devenv /resetuserdata
 我们可以看到如果我们新建一个模板，看到的名称和原来一样，那么如何自定义自己模板名称？其实我们可以修改`TemplateData`
 
 我们把`Name`改为自己的名字，把`Description`改为自己的对模板的修改或者别的，如“这是一个模板”。
+    
+```
+<Description  >这是一个模板</Description>
+
+```
 
 还有其他的，如果遇到不知道的，欢迎联系 lindexi_gd@163.com
 

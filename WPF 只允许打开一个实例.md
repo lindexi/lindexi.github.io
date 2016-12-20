@@ -6,6 +6,7 @@
 <!--more-->
 
 下面是一个简单方法
+
 ```
 
                     // 确保不存在程序的其他实例
@@ -28,7 +29,7 @@
 
 
 另一个方法
-		
+
 ```
             string mutexName = Properties.Resources.ProgramTitle + "Mutex";
             singleInstanceWatcher = new Mutex(false, mutexName, out createdNew);
