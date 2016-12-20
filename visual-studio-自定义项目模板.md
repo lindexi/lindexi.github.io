@@ -153,6 +153,40 @@
 
 除了手动复制还可以再命令行`devenv /setup`
 
+如果提示`'devenv' 不是内部或外部命令，也不是可运行的程序`
+
+    
+```
+cd C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE
+
+devenv /setup
+```
+
+如果你想新建一个模板，那么复制BlankApplication之类的，当然我说的是在`ProjectTemplates`新建，这时会没有权限，建议复制出来，修改好了再复制进去，其实和刚才不同的是，修改的还需要修改`BlankApplication.vstemplate`
+
+我们修改`TemplateID`为我们的，不使用原来的。
+
+如果出现`未能正确加载“Microsoft.VisualStudio.Editor.Implementation.EditorPackage”包`
+
+先重启下，然后如何还是不好，那么使用
+    
+```
+devenv /resetuserdata
+
+```
+
+### 修改图片
+
+我们可以修改显示的图标，显示在新建的图标，需要我们复制一个图标进去，然后`PreviewImage`作为我们复制的图标。
+
+### 修改Template名称
+
+我们可以看到如果我们新建一个模板，看到的名称和原来一样，那么如何自定义自己模板名称？其实我们可以修改`TemplateData`
+
+我们把`Name`改为自己的名字，把`Description`改为自己的对模板的修改或者别的，如“这是一个模板”。
+
+还有其他的，如果遇到不知道的，欢迎联系 lindexi_gd@163.com
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 
