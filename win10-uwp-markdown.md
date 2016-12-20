@@ -351,6 +351,8 @@
 
 代码片设置为仓库，存在Snippet文件夹，后缀为`.snippet`
 
+<table log-set-param="table_view" class="table-view log-set-param"><tr><th>输出后的效果</th><th>Markdown</th><th>快捷键</th></tr><tr><td>Bold</td><td>**text**</td><td>Ctrl/⌘ + B</td></tr><tr><td><i>Emphasize</i></td><td>*text*</td><td>Ctrl/⌘ + I</td></tr><tr><td>Strike-through</td><td>~~text~~</td><td>Ctrl + Alt + U</td></tr><tr><td>Link</td><td>[title](http://)</td><td>Ctrl/⌘ + K</td></tr><tr><td>Inline Code</td><td>`code`</td><td>Ctrl/⌘ + Shift + K</td></tr><tr><td>Image</td><td>![alt](http://)</td><td>Ctrl/⌘ + Shift + I</td></tr><tr><td>List</td><td>* item</td><td>Ctrl + L</td></tr><tr><td>Blockquote</td><td>&gt; quote</td><td>Ctrl + Q</td></tr><tr><td>H1</td><td># Heading</td><td><br/>　　</td></tr><tr><td>H2</td><td>## Heading</td><td>Ctrl/⌘ + H</td></tr><tr><td>H3</td><td>### Heading</td><td>Ctrl/⌘ + H (x2)</td></tr></table>
+
 ### 代码片
 
 用户可以设置代码片，代码片为用户输入字符后，按Tab显示的一段代码。
