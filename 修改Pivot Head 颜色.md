@@ -3,6 +3,7 @@
 我们有十个Pivot，我们想修改所有的Pivot的颜色。那么我们可以在每个Pivot修改Template。
 
 <!--more-->
+<!-- csdn -->
 
 这方法我就得不好。
 
