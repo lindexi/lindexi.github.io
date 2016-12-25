@@ -6,6 +6,8 @@ MVVM是一个强大的架构，基本从WPF，wr就提倡使用MVVM。他可以�
 
 <!--more-->
 
+
+
 MVVM是View、model、ViewModel合起来叫MVVM。View就是界面，我们看到的，一般是Page等。
 
 我们写界面很多用的xaml和cs合起来。他可以做出好看的效果。
@@ -254,6 +256,145 @@ locater是我在MVVMLight学的，大家可以使用这个方式。 -->
 
 ```
 
+然后我们需要让ViewModel继承的类
+		
+```
+public abstract class ViewModelBase
+{
+
+}
+
+```
+
+我们基本的ViewModel需要在属性更改通知，我之前写了一个类 https://github.com/lindexi/UWP/blob/master/uwp/src/ViewModel/NotifyProperty.cs
+
+我们需要继承这个
+
+原来跳转页面的参数是写在Page的OnNavigatedTo，但我们想让ViewModel知道我们跳转，我们的ViewModel通信需要INavigable
+		
+```
+    public interface INavigable
+    {
+        /// <summary>
+        ///     不使用这个页面
+        ///     清理页面
+        /// </summary>
+        /// <param name="obj"></param>
+        void OnNavigatedFrom(object obj);
+
+        /// <summary>
+        ///     跳转到
+        /// </summary>
+        /// <param name="obj"></param>
+        void OnNavigatedTo(object obj);
+    }
+
+```
+
+所有的ViewModel继承这个，为何让ViewModel继承他，是因为我们不想每次离开、使用都new 一个，我们使用的是一个，一旦我们不使用这个页面，使用From，这样让页面清理。可以提高我们的使用，在MasterDetail，总是切换页面，可以不需要实现那么多的ViewModel。我们还可以使用他来保存我们当前的使用，我们所输入，但是一旦输入多了，这个并不是很好用，主要看你是需要什么。
+
+如果我们的ViewModel有页面，可以跳转，我们要继承
+		
+```
+    public interface INavigato
+    {
+        Frame Content
+        {
+            set;
+            get;
+        }
+
+        void Navigateto(Type viewModel, object parameter);
+    }
+
+```
+Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel的type或key，输入参数。这是在一个页面里可以有跳转使用，假如我们使用的页面是一个MasterDetail，我们就需要两个页面，一个是列表，一个是内容，于是我们就可以使用他来跳转。
+
+
+
+我们在ViewModelBase把ViewModel包含的页面ViewModel数组
+		
+```
+        public List<ViewModelPage> ViewModel
+        {
+            set;
+            get;
+        } = new List<ViewModelPage>();
+
+```
+如果我们的页面LinModel存在多个可以跳转的页面AModel、BModel，我们就把他放进base.ViewModel，需要跳转，就遍历ViewModel，拿出和输入相同type、key的ViewModel，使用他的跳转，因为我们把ViewModel和View都放一个类，我们直接使用类的跳转就好。
+
+
+```
+    public abstract class ViewModelBase : NotifyProperty, INavigable, INavigato
+    {
+        public List<ViewModelPage> ViewModel
+        {
+            set;
+            get;
+        } = new List<ViewModelPage>();
+
+        public Frame Content
+        {
+            set;
+            get;
+        }
+
+        public abstract void OnNavigatedFrom(object obj);
+        public abstract void OnNavigatedTo(object obj);
+
+        public async void Navigateto(Type viewModel, object paramter)
+        {
+            _viewModel?.OnNavigatedFrom(null);
+            ViewModelPage view = ViewModel.Find(temp => temp.ViewModel.GetType() == viewModel);
+            await view.Navigate(Content, paramter);
+            _viewModel = view.ViewModel;
+        }
+        
+        //当前ViewModel
+        private ViewModelBase _viewModel;
+    }
+
+```
+
+我们这样写如何绑定，我们可以通过跳转页面传入ViewModel，我们需要在ViewModelPage的Navigate，传入对应的ViewModel
+		
+```
+            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                () =>
+                {
+                    content.Navigate(Page,ViewModel);
+                });
+
+```
+
+然后在页面
+		
+```
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            ViewModel = (LinModel) e.Parameter;
+        }
+
+```
+这时，我们需要DataContent就写在ViewModel的后面
+
+## 反射获取所有类
+
+我们如果使用的ViewModel是Main的，我们有跳转很页面，那么我们加一个功能就需要加一个ViewModel，我们使用一个已经做好的ViewModel还需要在添加功能时修改，这样在我们添加一个新功能需要修改很多地方，我们可以使用反射，在添加新功能不需要做对已经做好的ViewModel修改太多。
+
+我们需要一个识别类是属于我们某个ViewModel的方法，很简单，假如我们的ViewModel是LinModel，我们里面有了AModel和BModel
+        
+```
+
+
+```
+
+http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
+
+
 ## MasterDetail
 
-我们用我们上面写的来做一个MasterDetail，我之前做了一个简单
+我们用我们上面写的来做一个MasterDetail，我之前做了一个简单 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
+
