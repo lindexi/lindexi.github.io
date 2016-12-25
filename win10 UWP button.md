@@ -129,6 +129,7 @@ button可以设置属性，使用资源
 ![这里写图片描述](image/QQ截图20160103092022.png)
 
 可以看到
+
 ```xaml
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
@@ -285,3 +286,9 @@ button可以设置属性，使用资源
 ## 圆角按钮
 
 参见：[圆角按钮](http://lindexi.oschina.io/lindexi/post/win10-uwp-圆角按钮/)
+
+## 点击进度条按钮
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/bae3aa76-b425-4667-92dd-3e59e0987cbaProgressButton.gif)
+
+https://github.com/lindexi/uwp/tree/master/uwp/control/Button

@@ -437,6 +437,7 @@ ValidationRule只有一个属性，错误显示的Message
 public abstract bool IsValid(object value);
 
 ```
+
 然后我们可以开始做检查
 
 如DateTime
@@ -511,7 +512,8 @@ public partial class ValidatingTextBox : TextBox
 
 ```
 
-但我们需在ValidatingTextBox 		
+但我们需在ValidatingTextBox 	
+
 ```
     [TemplatePart(Name = "ValidationText", Type = typeof(TextBlock))]
     [TemplatePart(Name = "RemainingCharacters", Type = typeof(TextBlock))]
@@ -519,6 +521,7 @@ public partial class ValidatingTextBox : TextBox
 ```
 
 垃圾wr做这是做界面的人和做逻辑可以两个人，做界面只要知道有那些控件就好
+TemplatePart是告诉做界面，我的需要名字为Name，类型为什么的控件，你要做前台写这个控件。
 
 我们还需加事件
 		
