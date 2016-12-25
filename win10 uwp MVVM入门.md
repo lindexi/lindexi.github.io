@@ -387,9 +387,89 @@ Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel�
 我们需要一个识别类是属于我们某个ViewModel的方法，很简单，假如我们的ViewModel是LinModel，我们里面有了AModel和BModel
         
 ```
+    public class LinModelAttribute : Attribute
+    {
+        
+    }
 
+
+
+    [LinModelAttribute]
+    public class AModel:ViewModelBase
+    {
+        public override void OnNavigatedFrom(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void OnNavigatedTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class APage : Page
+    {
+        
+    }
+
+    public class LinModel:ViewModelBase
+    {
+        public LinModel()
+        {
+            var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
+            foreach (var temp in applacationAssembly.DefinedTypes
+             .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(LinModelAttribute))))
+            {
+                var viewmodel = temp.AsType().GetConstructor(Type.EmptyTypes).Invoke(null);
+                Type page=null;
+                try
+                {
+                    page= applacationAssembly.DefinedTypes.First(t => t.Name.Replace("Page", "") == temp.Name.Replace("Model", "")).AsType();
+                }
+                catch 
+                {
+                    //InvalidOperationException
+                    //提醒没有page
+                    //throw new Exception("没有"+temp.Name.Replace("Model","")+"Page");
+                }
+
+                ViewModel.Add(new ViewModelPage()
+                {
+                    ViewModel = viewmodel as ViewModelBase,
+                    Page = page
+                });
+            }
+        }
+
+        public override void OnNavigatedFrom(object obj)
+        {
+            
+        }
+
+        public override void OnNavigatedTo(object obj)
+        {
+        }
+    }
 
 ```
+
+我们可以使用
+        
+```
+            var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
+            foreach (var temp in applacationAssembly.DefinedTypes
+             .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(LinModelAttribute))))
+            {
+                var viewmodel = temp.AsType().GetConstructor(Type.EmptyTypes).Invoke(null);
+            }
+
+```
+实现ViewModel，但是我们需要得到Page，那么简单是命名，我们把AModel和APage命名好，从temp拿名称`page= applacationAssembly.DefinedTypes.First(t => t.Name.Replace("Page", "") == temp.Name.Replace("Model", "")).AsType();`就可以得到page，我们判断InvalidOperationException，如果是这个，那么用户命名错或没有Page
+
+如果你需要把ViewModel的命名后缀ViewModel，那么替换`temp.Name.Replace("ViewModel", "")`,如果没有这些，不需修改。这样我们添加新功能修改好少
+
+
 
 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 
