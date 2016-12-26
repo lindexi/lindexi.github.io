@@ -1014,12 +1014,152 @@ ContentModel.ReceiveMessage可以把key改为点击列表
 然后判断发送信息，发给内容，具体可以去看代码，如果有不懂请发邮件或在评论，这很简单
 
 
-
-
+我们写CodeStorageAttribute，这个是我们一个页面，他包含的ViewModel。
 
         
+```
+    [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
+    sealed class CodeStorageAttribute : Attribute
+    {
+       
+    }
+
+```
+
+我们在ListModel和ContentModel写CodeStorageAttribute
+
+        
+然后我们可以在CodeStorageModel 
+        
+```
+           var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
+            foreach (var temp in applacationAssembly.DefinedTypes
+                .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(CodeStorageAttribute))))
+            {
+                var viewmodel = temp.AsType().GetConstructor(Type.EmptyTypes).Invoke(null);
+                Type page = null;
+                try
+                {
+                    page =
+                        applacationAssembly.DefinedTypes.First(
+                            t => t.Name.Replace("Page", "") == temp.Name.Replace("Model", "")).AsType();
+                }
+                catch
+                {
+                    //InvalidOperationException
+                    //提醒没有page
+                    //throw new Exception("没有"+temp.Name.Replace("Model","")+"Page");
+                }
+
+                ViewModel.Add(new ViewModelPage( viewmodel as ViewModelBase,page));
+            }
+
+```
+
+我修改ISendMessage
+        
+```
+    public interface ISendMessage
+    {
+        EventHandler<Message> SendMessageHandler
+        {
+            set;
+            get;
+        }
+    }
+
+```
+
+判断我们的ViewModel是不是ISendMessage，页面是先上一级发送，所以我们把SendMessageHandler添加
+        
+```
+            foreach (var temp in ViewModel.Where(temp => temp.ViewModel is ISendMessage))
+            {
+                ((ISendMessage)temp.ViewModel).SendMessageHandler += (s, e) =>
+               {
+                   ReceiveMessage(e);
+               };
+            }
+
+```
+
+我们删除`public ContentModel ContentModel` `public ListModel ListModel`在ListPage和Content，我们直接使用索引
+
+在CodeStorageModel
+        
+```
+        public ViewModelBase this[string str]
+        {
+            get
+            {
+                foreach (var temp in ViewModel)
+                {
+                    if (temp.Key == str)
+                    {
+                        return temp.ViewModel;
+                    }
+                }
+                return null;
+            }
+        }
+
+```
+
+修改ListPage dateContent
+
+```
+DataContext="{Binding Source={StaticResource ViewModel},Path=CodeStorageModel[ListModel]}"
+
+```
+
+ContentPage 的dateContent
+        
+```
+    DataContext="{Binding Source={StaticResource ViewModel},Path=CodeStorageModel[ContentModel]}"
 
 
+```
+
+在CodeStorageModel OnNavigatedTo
+        
+```
+        public override void OnNavigatedTo(object obj)
+        {
+            DetailMaster.Narrow();
+            foreach (var temp in ViewModel)
+            {
+                temp.ViewModel.OnNavigatedTo(null);
+            }
+        }
+
+```
+
+这样我们就不需要去写一个ListModel在我们写CodeStorageModel，我们也不知道哪个页面会发送，不知哪个页面接收，我们直接在接收看信息发送的哪个，找出，使用他的接收
+        
+```
+        public void ReceiveMessage(Message message)
+        {
+            if (message.Key == "点击列表")
+            {
+                DetailMaster.MasterClick();
+            }
+            foreach (var temp in ViewModel)
+            {
+                if (temp.Key == message.Goal)
+                {
+                    var receive = temp.ViewModel as IReceiveMessage;
+                    receive?.ReceiveMessage(message);
+                }
+            }
+        }
+
+```
+
+我们可以做的页面的联系，我们不知道我们有哪些页面，如果看到我写错请评论
+
+全部源代码
+
+https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework
 
 参考：
 http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
