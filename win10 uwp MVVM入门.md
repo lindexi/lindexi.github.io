@@ -1,14 +1,14 @@
 # win10 uwp MVVM入门
 
-MVVM是一个强大的架构，基本从WPF，wr就提倡使用MVVM。他可以将界面和后台分离，让开发人员可以不关心界面是怎样，投入到后台代码编写。
+MVVM 是一个强大的架构，基本从 WPF ，wr就提倡使用 MVVM。他可以将界面和后台分离，让开发人员可以不关心界面是怎样，投入到后台代码编写。
 
-本文主要：如何在UWP使用MVVM，如何做一个自己的框架
+本文主要：如何在 UWP 使用 MVVM，如何做一个自己的框架
 
 <!--more-->
 
 
 
-MVVM是View、model、ViewModel合起来叫MVVM。View就是界面，我们看到的，一般是Page等。
+MVVM 是 View、model、ViewModel合起来叫MVVM。View就是界面，我们看到的，一般是Page等。
 
 我们写界面很多用的xaml和cs合起来。他可以做出好看的效果。
 
@@ -642,6 +642,8 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 到时我们在DetailMaster中实现MasterSendMessage传给MasterModel
 
 我们以我的密码本来说，我们有一个是左边是一列密码，右边点击是显示内容。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/e7f29c20-4d6b-4864-9af9-f58c3f045b77Framework.gif)
 
 
 
