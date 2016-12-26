@@ -568,7 +568,7 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
         /// <summary>
         /// 发送者
         /// </summary>
-        public string Source
+        public ViewModelBase Source
         {
             set;
             get;
