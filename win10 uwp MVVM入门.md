@@ -18,11 +18,15 @@ Model是核心逻辑，有些大神说，model只定义数据结构，有些大�
 
 如何让ViewModel抽象View，之后我们可以简单把写好的界面联系，我们是使用binding，这个是WPF强大的地方，我们的UWP也有。
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/2639f44f-463b-4fd1-b9e9-c01652649f28201612268535.jpg)
+
+如果希望知道如何要写MVVM，可以去看 http://www.cnblogs.com/indream/p/3602348.html
+
 我们下面说下绑定。
 
 ## 绑定
 
-我们有多种方式绑定ViewModel，最简单的方法，是在xaml.cs写一个ViewModel，假如我们的ViewModel叫LinModel，我们可以在xaml.cs写
+我们有多种方式绑定ViewModel，最简单的方法，是在xaml.cs写一个ViewModel，假如我们的ViewModel叫LinModel，我们可以在xaml.cs写类似下面的
 		
 ```
         public MainPage()
@@ -41,6 +45,8 @@ Model是核心逻辑，有些大神说，model只定义数据结构，有些大�
 ```
 
 我们也可以把ViewModel换成其他名字，遇到需要什么名称就使用最好的。
+
+注意我们的ViewModel new的地方
 
 我们的ViewModel的new，写在构造或直接写
 		
@@ -62,6 +68,7 @@ Model是核心逻辑，有些大神说，model只定义数据结构，有些大�
         }
 
 ```
+我们不需要去set，我们就改变一次。
 
 因为我们不需要使用public，我们就可以这样简单写ViewModel，记得我们的ViewModel new需要在`InitializeComponent`之前，DataContent需要在`InitializeComponent`之后
 
@@ -75,6 +82,8 @@ DataContext="{Binding RelativeSource={RelativeSource Self},Path=ViewModel}"
 ```
 
 这是一个简单的方法。
+
+我建议大家把DataContext写在xaml，为何这样，自己试试，需要你在DataContent写在xaml才有提示补全属性，这个好功能
 
 ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static的，也就是ViewModel可以实现的只有一个
 		
@@ -99,7 +108,7 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
 
 ```
 
-注意我们不能写在Page，如果写在Page，运行`Cannot find a Resource with the Name/Key `
+注意我们不能把DC写在Page，如果写在Page，运行`Cannot find a Resource with the Name/Key `
 
 我们用到staticResource，我们为了可以在页面使用DataContent，我们可以把静态写在app.xaml
 		
@@ -124,11 +133,11 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
 
 
 <Page
-    x:Class="JiHuangUWP.MainPage"
+    x:Class="Framework.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:JiHuangUWP"
-    xmlns:view="using:JiHuangUWP.ViewModel"
+    xmlns:local="using:Framework"
+    xmlns:view="using:Framework.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     DataContext="{Binding Source= {StaticResource LinModel},Path=ViewModel}"
@@ -156,7 +165,7 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
 
 ```
 
-我们要做cs使用
+我们要做cs使用ViewModel，可以简单用转换，因为我们从DataContext绑定，注意DC写的地方，千万不要在一开始写，如果发现你的DC是Null，那么你写的肯定不对
 		
 ```
             InitializeComponent();
@@ -380,6 +389,68 @@ Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel�
 ```
 这时，我们需要DataContent就写在ViewModel的后面
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122691528.jpg)
+
+好啦，我把这个做出模板，大家可以去下载 http://download.csdn.net/detail/lindexi_gd/9716003
+
+上面的模板适合于只有一个主界面，然后其他页面都是没有跳转。那么我们可以做一个静态的ViewModel，其他页面都直接从ViewModel中拿。
+
+假如我们有个页面APage，AModel，那么把AModel写在ViewModel
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122694227.jpg)
+
+我们可以使用在xaml DataContent绑定拿到，于是xaml.cs也简单可以拿到
+
+        
+```
+<Page
+    x:Class="Framework.View.APage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Framework.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource ViewModel},Path=AModel}"
+    mc:Ignorable="d">
+
+
+
+        public APage()
+        {
+            this.InitializeComponent();
+            ViewModel = (AModel) DataContext;
+        }
+
+        private AModel ViewModel
+        {
+            get;
+        }
+
+```
+每个页面直接通信都是主页面传进来，而页面直接是没有通信，只有一个主页面，主页面可以跳转多个页面。
+
+这是简单的汉堡。在我的应用，图床 https://www.microsoft.com/store/apps/9nblggh562r2  用到
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269471.jpg)
+
+开始是进入主页面，主页面有图床、信息、设置三个页面，于是这个三个页面都在主页面，而这三个页面都没有跳转页面，所以他们可以从MainViewModel拿到自己的ViewModel。他们的通信都是跳转主页面传给他们，三个页面没有传输信息。对于设置页面，我们是放在一个存储数据类，所以我们不需要传参数，直接从存储拿。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269517.jpg)
+
+
+但是这个还是没解决在一个ViewModel里面，存在多个ViewModel之间的通信。
+
+在我的私密密码本 
+https://www.microsoft.com/store/apps/9nblggh5cc3g
+
+我的创建密码页面需要和密码本联系，在创建密码创建一个密码，就把密码放到密码本
+
+所以我们上面的不能做到，我们需要添加一些新的。我们不可以让两个页面直接联系，我们需要让一个页面和他的上层联系，让上层发给他要联系页面。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d622016122695536.jpg)
+
+关于这个是如何做，大家可以看下面的MasterDetail，这个我放在后面，后面的才是好的。
+
 ## 反射获取所有类
 
 我们如果使用的ViewModel是Main的，我们有跳转很页面，那么我们加一个功能就需要加一个ViewModel，我们使用一个已经做好的ViewModel还需要在添加功能时修改，这样在我们添加一个新功能需要修改很多地方，我们可以使用反射，在添加新功能不需要做对已经做好的ViewModel修改太多。
@@ -477,4 +548,103 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 ## MasterDetail
 
 我们用我们上面写的来做一个MasterDetail，我之前做了一个简单 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
+
+我们需要做的：如何让两个页面通信
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d6220161226101426.jpg)
+
+我们的B页面要和A通信，我们让B发送信息到上一级页面，由上一级页面传给A。
+
+我们需要一个信息，他是有发送者，目标、发送内容，发送了什么
+
+        
+```
+    public class Message
+    {
+        public Message()
+        {
+
+        }
+        /// <summary>
+        /// 发送者
+        /// </summary>
+        public string Source
+        {
+            set;
+            get;
+        }
+        /// <summary>
+        /// 目标
+        /// </summary>
+        public string Goal
+        {
+            set;
+            get;
+        }
+
+        public object Content
+        {
+            set;
+            get;
+        }
+        /// <summary>
+        /// 发送什么信息
+        /// </summary>
+        public string Key
+        {
+            set;
+            get;
+        }
+    }
+
+```
+
+我们还需要ISendMessage、IReceiveMessage
+
+到时我们的MasterModel就会有一个ISendMessage属性，我们会在DetailMasterModel中给他，当然我们总是把DetailMasterModel作为属性，所以我们可能在使用他的类给MasterModel的ISendMessage一个值，这个就是IOC。
+
+这样做的原因，可以去看：http://blog.csdn.net/linux7985/article/details/44782623
+
+我们来写这两个，很简单
+        
+```
+    interface ISendMessage
+    {
+        void SendMessage(Message message);
+    }
+
+    interface IReceiveMessage
+    {
+        void ReceiveMessage(Message message);
+    }
+
+```
+
+我们使用的发送具体的是使用Master的，所以我们写MasterSendMessage
+        
+```
+    public class MasterSendMessage : ISendMessage
+    {
+        public MasterSendMessage(Action<Message> sendMessage)
+        {
+            _sendMessage = sendMessage;
+        }
+
+        public void SendMessage(Message message)
+        {
+            _sendMessage?.Invoke(message);
+        }
+        private Action<Message> _sendMessage;
+    }
+
+```
+
+到时我们在DetailMaster中实现MasterSendMessage传给MasterModel
+
+我们以我的密码本来说，我们有一个是左边是一列密码，右边点击是显示内容。
+
+
+
+参考：
+http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
 
