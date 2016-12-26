@@ -8,25 +8,25 @@ MVVM 是一个强大的架构，基本从 WPF ，wr就提倡使用 MVVM。他可
 
 
 
-MVVM 是 View、model、ViewModel合起来叫MVVM。View就是界面，我们看到的，一般是Page等。
+MVVM 是 View、Model、 ViewModel 合起来叫MVVM。 View 就是界面，我们看到的，一般是 page 等。
 
-我们写界面很多用的xaml和cs合起来。他可以做出好看的效果。
+我们写界面很多用的 xaml 和 cs 合起来。他可以做出好看的效果。
 
-ViewModel是界面的抽象，我们不知道界面有什么，但是我们提供给界面什么，这就是我们可以不管界面，抽象出来，model是不知道View。ViewModel可以简单单元测试，我们不需要打开界面。
+ ViewModel 是界面的抽象，我们不知道界面有什么，但是我们提供给界面什么，这就是我们可以不管界面，抽象出来， Model 是不知道 view 。 ViewModel 可以简单单元测试，我们不需要打开界面。
 
-Model是核心逻辑，有些大神说，model只定义数据结构，有些大神说model写核心逻辑，这个我不知道哪个对，我是把model写核心逻辑，如果错了，请告诉我。
+ model 是核心逻辑，有些大神说， Model 只定义数据结构，有些大神说 model 写核心逻辑，这个我不知道哪个对，我是把 model 写核心逻辑，如果错了，请告诉我。
 
-如何让ViewModel抽象View，之后我们可以简单把写好的界面联系，我们是使用binding，这个是WPF强大的地方，我们的UWP也有。
+如何让 ViewModel 抽象 view ，之后我们可以简单把写好的界面联系，我们是使用 binding ，这个是 WPF 强大的地方，我们的 UWP 也有。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/2639f44f-463b-4fd1-b9e9-c01652649f28201612268535.jpg)
 
-如果希望知道如何要写MVVM，可以去看 http://www.cnblogs.com/indream/p/3602348.html
+如果希望知道如何要写 MVVM ，可以去看 http://www.cnblogs.com/indream/p/3602348.html
 
 我们下面说下绑定。
 
 ## 绑定
 
-我们有多种方式绑定ViewModel，最简单的方法，是在xaml.cs写一个ViewModel，假如我们的ViewModel叫LinModel，我们可以在xaml.cs写类似下面的
+我们有多种方式绑定 ViewModel ，最简单的方法，是在xaml.cs 写一个 ViewModel ，假如我们的 ViewModel 叫 Linmodel ，我们可以在 xaml.cs 写类似下面的
 		
 ```
         public MainPage()
@@ -644,6 +644,380 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 我们以我的密码本来说，我们有一个是左边是一列密码，右边点击是显示内容。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/e7f29c20-4d6b-4864-9af9-f58c3f045b77Framework.gif)
+
+那么我们是使用一个ListModel和ContentModel，我们的数据是
+        
+```
+    public class KeySecret : NotifyProperty
+    {
+        public KeySecret()
+        {
+
+        }
+
+        public string Name
+        {
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _name;
+            }
+        }
+
+        public string Key
+        {
+            set
+            {
+                _key = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _key;
+            }
+        }
+
+
+
+        private string _key;
+
+        private string _name;
+    }
+
+```
+
+在ListModel有一个
+        
+```
+        public ObservableCollection<KeySecret> KeySecret
+        {
+            set
+            {
+                _keySecret = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _keySecret;
+            }
+        }
+
+        public ISendMessage SendMessage
+        {
+            set;
+            get;
+        }
+
+```
+
+在ContentModel有一个`public KeySecret Key`和接收。
+
+CodeStorageModel有DetailMaster、ContentModel ListModel
+
+其中DetailMaster控制界面，他的功能大家可以直接复制到自己的项目，不过还需要复制MasterDetailPage，复制好了，那么需要修改的是`<Frame x:Name="List" SourcePageType="local:ListPage"></Frame>` `<Frame x:Name="Content" SourcePageType="local:ContentPage"></Frame>`把一个换为自己的列表页，一个换为详情。如何使用，我会在后面说。
+
+在CodeStorageModel跳转需要设置ListModel跳转，我们一开始就显示，于是他也要，我们需要把MasterSendMessage实现，给list，这样就是一个IOC。
+
+        
+```
+            DetailMaster.Narrow();
+            MasterSendMessage temp=new MasterSendMessage(ReceiveMessage);
+            ListModel = new ListModel()
+            {
+                SendMessage = temp
+            };
+            ListModel.OnNavigatedTo(null);
+            ContentModel = new ContentModel();
+
+```
+
+大神说除了foreach，不能使用temp，我这时也用了temp，是想告诉大家不要在使用。
+
+
+这样我们需要在CodeStorageModel写一个接收，还记得DetailMasterModel在点击需要使用函数，我们接收有时有很多，我们需要判断他的key,如果是"点击列表"，那么我们需要布局显示。
+        
+```
+        public void ReceiveMessage(Message message)
+        {
+            if (message.Key == "点击列表")
+            {
+                DetailMaster.MasterClick();
+
+            }
+            if (message.Goal == nameof(ContentModel))
+            {
+                ContentModel.ReceiveMessage(message);
+            }
+        }
+
+```
+
+ContentModel.ReceiveMessage可以把key改为点击列表
+        
+```
+        public void ReceiveMessage(Message message)
+        {
+            if (message.Key == "点击列表")
+            {
+                Key=message.Content as KeySecret;
+            }
+        }
+
+```
+
+我们界面就不说了，直接去 https://github.com/lindexi/UWP/tree/cd1637bf31eb22a230390c205da93f840070c49d/uwp/src/Framework/Framework
+
+我要讲下修改，我们发现我们现在写的两个页面通信在MasterDetail有用，但是要确定我们的页面，这样不好，在上面我们说可以加功能不需要去修改写好的，我们需要做的是接收信息，不使用上面的。
+
+大家去看代码注意我是在新的master代码和现在的不同，注意链接
+
+如何使用我的MasterDetail框架，我下面和大家说。
+
+首先是复制
+
+        
+```
+    public class DetailMasterModel : NotifyProperty
+    {
+        public DetailMasterModel()
+        {
+            SystemNavigationManager.GetForCurrentView().BackRequested += BackRequested;
+            Narrow();
+        }
+
+        public int GridInt
+        {
+            set
+            {
+                _gridInt = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _gridInt;
+            }
+        }
+
+        public int ZFrame
+        {
+            set
+            {
+                _zFrame = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _zFrame;
+            }
+        }
+
+        public GridLength MasterGrid
+        {
+            set
+            {
+                _masterGrid = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _masterGrid;
+            }
+        }
+
+        public GridLength DetailGrid
+        {
+            set
+            {
+                _detailGrid = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _detailGrid;
+            }
+        }
+
+        public int ZListView
+        {
+            set
+            {
+                _zListView = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _zListView;
+            }
+        }
+
+        public bool HasFrame
+        {
+            set;
+            get;
+        }
+
+        public Visibility Visibility
+        {
+            set
+            {
+                _visibility = value;
+                OnPropertyChanged();
+            }
+            get
+            {
+                return _visibility;
+            }
+        }
+
+        public void MasterClick()
+        {
+            HasFrame = true;
+            Visibility = Visibility.Visible;
+            Narrow();
+        }
+
+        public void Narrow()
+        {
+            if (Window.Current.Bounds.Width < 720)
+            {
+                MasterGrid = new GridLength(1, GridUnitType.Star);
+                DetailGrid = GridLength.Auto;
+                GridInt = 0;
+                if (HasFrame)
+                {
+                    ZListView = 0;
+                }
+                else
+                {
+                    ZListView = 2;
+                }
+            }
+            else
+            {
+                MasterGrid = GridLength.Auto;
+                DetailGrid = new GridLength(1, GridUnitType.Star);
+                GridInt = 1;
+            }
+        }
+
+        private GridLength _detailGrid;
+
+        private int _gridInt;
+
+        private GridLength _masterGrid;
+
+        private Visibility _visibility = Visibility.Collapsed;
+
+        private int _zFrame;
+
+        private int _zListView;
+
+        private void BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            HasFrame = false;
+            Visibility = Visibility.Collapsed;
+            Narrow();
+        }
+    }
+
+```
+
+然后把它放到ViewModel
+
+        
+```
+        public DetailMasterModel DetailMaster
+        {
+            set;
+            get;
+        }
+
+```
+在ViewModel构造
+        
+```
+            DetailMaster = new DetailMasterModel();
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                AppViewBackButtonVisibility.Visible;
+            DetailMaster.Narrow();
+
+
+```
+
+然后在界面
+
+        
+```
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups >
+            <VisualStateGroup CurrentStateChanged="{x:Bind View.DetailMaster.Narrow}">
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters >
+                        <!--<Setter Target="Img.Visibility" Value="Collapsed"></Setter>-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="200">
+
+                        </AdaptiveTrigger>
+
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters >
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{x:Bind View.DetailMaster.MasterGrid,Mode=OneWay}"></ColumnDefinition>
+                <ColumnDefinition Width="{x:Bind View.DetailMaster.DetailGrid,Mode=OneWay}"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                  Canvas.ZIndex="{x:Bind View.DetailMaster.ZListView,Mode=OneWay}">
+                <!--<Grid Background="Black"></Grid>-->
+                <TextBlock Text="List" HorizontalAlignment="Center"></TextBlock>
+                <Frame x:Name="List" SourcePageType="local:ListPage"></Frame>
+            </Grid>
+            <Grid Grid.Column="{x:Bind View.DetailMaster.GridInt,Mode=OneWay}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                  Canvas.ZIndex="{x:Bind View.DetailMaster.ZFrame}">
+                <Image Source="ms-appx:///Assets/Strawberry_Adult_content_easyicon.net.png"></Image>
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Visibility="{x:Bind View.DetailMaster.Visibility,Mode=OneWay}">
+                    <TextBlock Text="content" HorizontalAlignment="Center"></TextBlock>
+                    <!--<Grid Background="#FF565500"></Grid>-->
+                    <Frame x:Name="Content" SourcePageType="local:ContentPage"></Frame>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+```
+
+注意把`<Frame x:Name="List" SourcePageType="local:ListPage"></Frame>`换为列表页面，和`<Frame x:Name="Content" SourcePageType="local:ContentPage"></Frame>`换为内容，` <Image Source="ms-appx:///Assets/Strawberry_Adult_content_easyicon.net.png"></Image>`换为自己的图片
+
+需要在xaml.cs写ViewModel为view，如果不是，那么自己换名。
+
+页面的联系使用`ISendMessage`，和接收，他向MasterDetailViewModel发信息，让ContentModel接收。
+
+我们需要和上面写的一样，传入MasterSendMessage给他，让他可以发送信息。
+
+然后判断发送信息，发给内容，具体可以去看代码，如果有不懂请发邮件或在评论，这很简单
+
+
+
+
+
+        
 
 
 
