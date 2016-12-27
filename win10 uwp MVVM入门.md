@@ -1,32 +1,52 @@
 # win10 uwp MVVM入门
 
-MVVM 是一个强大的架构，基本从 WPF ，wr就提倡使用 MVVM。他可以将界面和后台分离，让开发人员可以不关心界面是怎样，投入到后台代码编写。
+MVVM 是一个强大的架构，基本从 WPF 开始，wr（我说的就是微软）就提倡使用 MVVM。它可以将界面和后台分离，让开发人员可以不关心界面是怎样，全心投入到后台代码编写中。
 
-本文主要：如何在 UWP 使用 MVVM，如何做一个自己的框架
+然后在编写完后台代码后，可以快速和界面设计师做出来的界面绑定到一起，即使频繁修改界面也几乎不需要去修改后台代码。
+
+更让人喜欢的是，他可以让我们简单地进行单元测试，因为我们可以不打开界面进行测试功能，方便了我们的测试开发。
+
+UWP 虽然可以直接在xaml.cs 写逻辑但是我们是推荐使用 MVVM 框架，写一个自己的框架也很简单。
+
+本文主要：如何在 UWP 使用 MVVM，如何做一个自己的框架。
 
 <!--more-->
 
+MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
+ - View 就是界面。软件中，可以这样看，我们看到的都是界面，看不到的就是后台，在 UWP 中我们说的 View 一般是 `page` `UserControl ` 等。我们写界面时用 xaml 和 cs 结合起来，做出好看的效果。
 
-MVVM 是 View、Model、 ViewModel 合起来叫MVVM。 View 就是界面，我们看到的，一般是 page 等。
+ - ViewModel 是界面的抽象，这里我们不需要去理会界面长什么样，我只需要知道我们需要给界面提供什么。这就是说我们可以不管界面而将业务逻辑抽象出来。ViewModel 可以简单单元测试，因为我们不需要打开界面。
 
-我们写界面很多用的 xaml 和 cs 合起来。他可以做出好看的效果。
+ - Model 是核心逻辑，有些大神说， Model 只定义数据结构，有些大神说 model 写核心逻辑，这个就仁者见仁智者见智了。我是将核心逻辑写进 Model，如果觉得这样不对，欢迎讨论。
 
- ViewModel 是界面的抽象，我们不知道界面有什么，但是我们提供给界面什么，这就是我们可以不管界面，抽象出来， Model 是不知道 view 。 ViewModel 可以简单单元测试，我们不需要打开界面。
+怎么让 ViewModel 抽象 View，随后简单地把界面联系起来呢？
 
- model 是核心逻辑，有些大神说， Model 只定义数据结构，有些大神说 model 写核心逻辑，这个我不知道哪个对，我是把 model 写核心逻辑，如果错了，请告诉我。
-
-如何让 ViewModel 抽象 view ，之后我们可以简单把写好的界面联系，我们是使用 binding ，这个是 WPF 强大的地方，我们的 UWP 也有。
+使用 Binding 即可，这是 WPF 强大的地方，而 UWP 继承并发扬了这些特性。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/2639f44f-463b-4fd1-b9e9-c01652649f28201612268535.jpg)
 
-如果希望知道如何要写 MVVM ，可以去看 http://www.cnblogs.com/indream/p/3602348.html
+如果希望知道 MVVM 是如何写 ，戳此链接 [http://www.cnblogs.com/indream/p/3602348.html](http://www.cnblogs.com/indream/p/3602348.html)
 
 我们下面说下绑定。
 
 ## 绑定
 
-我们有多种方式绑定 ViewModel ，最简单的方法，是在xaml.cs 写一个 ViewModel ，假如我们的 ViewModel 叫 Linmodel ，我们可以在 xaml.cs 写类似下面的
+我们有多种方式绑定 ViewModel 。关于ViewModel实现的位置有下面几种。
+
+ - 写在xaml.cs，这是最简单的方式，可以使用代码或在xaml绑定DataContent和ViewModel
+
+ - 写成 xaml 静态资源，这个方式我们使用次数还是比较多，可以让Code不写代码就可以绑定 DataContent 和ViewModel
+
+ - 写在一个 ViewModel 静态类，我们把其他页面的 ViewModel 统一写到一个 MainViewModel ，而且他是静态或只有一个实例，这样可以在任何地方调用到。
+
+ - 写在 App.xaml 静态资源。这个方式和写在 xaml 差不多，只是可以在 xaml 设置 Page 的 DataContent 。
+
+ - 写在App.xaml一个静态 ViewModelLocate 包括用到的 ViewModel 。这个方式是 MVVMLight 做的，我模仿他的想法，推荐使用这个方法。
+
+下面我简单介绍这几种方式。
+
+最简单的方法，是在xaml.cs 写一个 ViewModel ，假如我们的 ViewModel 叫 Linmodel ，我们可以在 xaml.cs 写类似下面的
 		
 ```
         public MainPage()
@@ -44,11 +64,9 @@ MVVM 是 View、Model、 ViewModel 合起来叫MVVM。 View 就是界面，我�
 
 ```
 
-我们也可以把ViewModel换成其他名字，遇到需要什么名称就使用最好的。
+我们也可以把 ViewModel 换成其他名字，遇到需要具体什么名称就使用最好的。
 
-注意我们的ViewModel new的地方
-
-我们的ViewModel的new，写在构造或直接写
+注意我们的ViewModel 实现的地方一般是在`InitializeComponent`之前，也就是放在类的构造的最前或直接如下面一样
 		
 ```
         private LinModel ViewModel
@@ -59,7 +77,7 @@ MVVM 是 View、Model、 ViewModel 合起来叫MVVM。 View 就是界面，我�
 
 ```
 
-这个方式是6之后才有的，因为我们需要的ViewModel几乎不会修改，所以我们还可如下面
+这个方式是6之后才有的，初始化值可以写在自动属性定义。 因为我们需要的 ViewModel 几乎不会修改，所以我们还可如下面，去掉set 。很少会在实现 ViewModel 后在别的地方修改。但是我们在后面会看到，我们使用了页面导航传参，传的是 ViewModel ，这时我们就不能设置 set 去掉。但我们可以设置 `private set;`
 		
 ```
         private LinModel ViewModel
@@ -68,26 +86,31 @@ MVVM 是 View、Model、 ViewModel 合起来叫MVVM。 View 就是界面，我�
         }
 
 ```
-我们不需要去set，我们就改变一次。
 
-因为我们不需要使用public，我们就可以这样简单写ViewModel，记得我们的ViewModel new需要在`InitializeComponent`之前，DataContent需要在`InitializeComponent`之后
 
-他是初始化控件，如果我们的ViewModel的new写在初始化之后，那么就可能让我们控件找不到，当然DataContent在初始化之后才有，不然我们设置dc在初始化后还是会被重新刷。
+因为我们不需要使用 public ，我们就可以这样简单写 ViewModel ，除了需要记得我们的ViewModel 的实现需要在`InitializeComponent`之前，还需要记得 DataContent 需要在`InitializeComponent`之后。
 
-DataContent可以写在xaml，很简单 我们要修改ViewModel public
+
+DataContent 的另一个写法是写在 xaml ，很简单，这个方法我们要修改ViewModel 的访问`private`为`public`，下面代码写在页面`Page`
 		
 ```
 DataContext="{Binding RelativeSource={RelativeSource Self},Path=ViewModel}"
 
 ```
 
+RelativeSource 可以绑定到xaml.cs，我们就简单可以从 cs 获得 ViewModel
+
 这是一个简单的方法。
 
-我建议大家把DataContext写在xaml，为何这样，自己试试，需要你在DataContent写在xaml才有提示补全属性，这个好功能
+我建议大家把 DataContext 写在 xaml ，至于为何这样是我推荐的，卖个关子，大家自己试试，把 DataContext 写在xaml.cs和 xaml 中看下 xaml 的提示补全，就知道为何推荐这个方法。
 
-ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static的，也就是ViewModel可以实现的只有一个
+说完了简单方法，我们来说下
+ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 static 的属性，这个属性的类就是ViewModel本身，也就是 ViewModel 可以实现的只有一个。当然 static 不是必需的，我们依靠静态资源就可以绑定到 ViewModel 的属性，从而绑定 ViewModel 。
 		
 ```
+    <Page.Resources>
+        <view:LinModel x:Key="LinModel"></view:ViewModel>
+    </Page.Resources>
         <Grid DataContext="{Binding Source={StaticResource LinModel},Path=ViewModel}">
 
         </Grid>
@@ -103,14 +126,14 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
         {
             set;
             get;
-        }
+        }//让绑定可以访问 ViewModel ，其实这里我们也可以不使用static
     }
 
 ```
 
-注意我们不能把DC写在Page，如果写在Page，运行`Cannot find a Resource with the Name/Key `
+注意我们不能把 DC 写在 Page ，如果写在 Page ，运行`Cannot find a Resource with the Name/Key `
 
-我们用到staticResource，我们为了可以在页面使用DataContent，我们可以把静态写在app.xaml
+我们用到 staticResource ，我们为了可以在页面使用 DataContent ，我们可以把静态写在App.xaml
 		
 ```
 <Application
@@ -146,7 +169,7 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
 
 我们这个写法可以让cs不写代码，如果我们有多个相同页面，那么我们不可以使用这个办法。
 
-我们要把static去掉
+我们要把static去掉也是可以，这是这样我们在Code就不能使用LinModel.ViewModel 获得ViewModel。我们上面办法是可以不再Code写代码，所以去掉static，其实影响几乎没有
 		
 ```
     public class LinModel
@@ -165,7 +188,7 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
 
 ```
 
-我们要做cs使用ViewModel，可以简单用转换，因为我们从DataContext绑定，注意DC写的地方，千万不要在一开始写，如果发现你的DC是Null，那么你写的肯定不对
+那么去掉了 static ，是不是我们就没有办法在 xaml.cs 获得 ViewModel ？在软件开发中，怎么可以说不可能呢，我们有一个简单的方法。我们不是从 DataContext 绑定 ViewModel ，那么 DataContext 就是 ViewModel ，我们拿出 DataContext 转换，于是得到 ViewModel 。注意 DC 写的地方，千万不要在一开始写，如果发现你的 DC 是 Null ，那么你写的肯定不对
 		
 ```
             InitializeComponent();
@@ -173,7 +196,64 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
 
 ```
 
-这是一个简单方法，其实有一些比较难做，我将和大家说去做一个自己的框架
+这是一个简单方法，其实有一些比较难做，我将和大家说去做一个自己的框架。
+
+我们说完了在App.xaml 使用静态资源，还没说如何写一个类，包含我们的 ViewModel ，然后写出静态资源，我们所有的 ViewModel 都从他这里拿。
+
+我们下面开始说这个方法，这个方法是 MVVMLight 使用的，想要看 MVVMLight 入门的，请去看叔叔写的入门：http://www.cnblogs.com/manupstairs/p/4890300.html  
+
+我们定义个类，这个类叫 ViewModelLocater ，假如我们有两个 ViewModel ，一个是 AModel ，一个是 LinModel ，那么我们在 ViewModelLocater 写两个属性。
+        
+```
+        public AModel AModel
+        {
+            set;
+            get;
+        }
+
+        public LinModel LinModel
+        {
+            set;
+            get;
+        }
+
+```
+
+然后在 App.xaml 写静态 ViewModelLocater
+
+        
+```
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <view:ViewModelLocater x:Key="ViewModelLocater"></view:ViewModelLocater>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+```
+
+这样我们就可以在 APage 和 LinPage 的 Page 写 DataContent 绑定ViewModel
+
+        
+```
+<Page
+    x:Class="Framework.View.APage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Framework.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource ViewModelLocater},Path=AModel}"
+    mc:Ignorable="d">
+
+```
+
+这样，我们就不需要在每个 ViewModel 写一个和类型是 ViewModel 的属性。
+
+当然，这个方法还可以让所有的ViewModel继承一个类，做出ViewModel数组，保存所有的ViewModel，然后做一个索引，这样在添加一个新的ViewModel，我们只需要在数组添加一个，不需要添加一个属性。那么我们每添加一个ViewModel，还要去手动添加数组一个ViewModel实在就得不好，有没一个方法让我们的软件自动去把所有的ViewModel添加到数组？当然有，请看[反射获取所有类](#反射获取所有类)
 
 <!-- 我们可以写一个类，这个类保存所有的ViewModel，我们可以通过这个方式去让我们有多个Page使用相同的ViewModel不同的实现。
 
@@ -184,6 +264,137 @@ ViewModel我们可以写在xaml，xaml.cs不写代码，ViewModel需要有static
 ```
 
 locater是我在MVVMLight学的，大家可以使用这个方式。 -->
+
+<!-- 在MVVMLight，ViewModel是写ViewModellocater，关于他的，大家可以去看叔叔的高质量入门：http://www.cnblogs.com/manupstairs/p/4890300.html  基本看完就会。 -->
+
+## 反射获取所有类
+
+我们用使用反射，首先我们需要知道反射是什么？
+
+Reflection ，中文翻译为反射。
+
+这是 .Net 中获取运行时类型信息的方式，.Net 的应用程序由几个部分：‘程序集(Assembly)’、‘模块(Module)’、‘类型(class)’组成，而反射提供一种编程的方式，让程序员可以在程序运行期获得这几个组成部分的相关信息。
+
+所以我们可以使用反射获得软件的所有类，获取全部 ViewModel 类。我们可以在 ViewModelLocater 使用 ViewModel 数组，使用反射获得所有 ViewModel ，知道添加他们到数组。好处是：我们添加一个 ViewModel 类时，不需要去修改 ViewModelLocater 。
+
+
+
+我们需要一个识别 反射得到的类是属于我们 ViewModel 的方法，很简单，假如我们的 ViewModel 是 LinModel ，我们里面有了 AModel 和BModel。
+
+我们定义一个 Attribute ，让每个 ViewModel 都使用我们定义的 Attribute ，于是我们知道了哪些就是 ViewModel 。我们不使用判断反射得到的 Class 是不是继承 ViewModelBase 的原因是有一些 ViewModel 我们是不放在 ViewModelLocater ，我们只标识我们要放在 ViewModelLocater 的ViewModel
+        
+```
+    public class ViewModelLocaterAttribute : Attribute
+    {
+        
+    }
+
+
+
+    [ViewModelLocaterAttribute]
+    public class AModel:ViewModelBase
+    {
+        public override void OnNavigatedFrom(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void OnNavigatedTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class APage : Page
+    {
+        
+    }
+
+    //不放在ViewModelLocater
+    public class ListModel:ViewModelBase
+    {
+        public override void OnNavigatedFrom(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void OnNavigatedTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class ViewModelLocater:ViewModelBase
+    {
+        public ViewModelLocater()
+        {
+            var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
+            foreach (var temp in applacationAssembly.DefinedTypes
+             .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(LinModelAttribute))))
+            {
+                var viewmodel = temp.AsType().GetConstructor(Type.EmptyTypes).Invoke(null);
+                Type page=null;
+                try
+                {
+                    page= applacationAssembly.DefinedTypes.First(t => t.Name.Replace("Page", "") == temp.Name.Replace("Model", "")).AsType();
+                }
+                catch 
+                {
+                    //InvalidOperationException
+                    //提醒没有page
+                    //throw new Exception("没有"+temp.Name.Replace("Model","")+"Page");
+                }
+
+                ViewModel.Add(new ViewModelPage()
+                {
+                    ViewModel = viewmodel as ViewModelBase,
+                    Page = page
+                });
+            }
+        }
+
+        public override void OnNavigatedFrom(object obj)
+        {
+            
+        }
+
+        public override void OnNavigatedTo(object obj)
+        {
+        }
+    }
+
+```
+
+<!-- 我们可以使用
+        
+```
+            var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
+            foreach (var temp in applacationAssembly.DefinedTypes
+             .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(LinModelAttribute))))
+            {
+                var viewmodel = temp.AsType().GetConstructor(Type.EmptyTypes).Invoke(null);
+            }
+
+``` -->
+
+上面的做法还把 ViewModel 和 Page 绑起来，我们需要规定命名，规定命名就可以简单把 ViewModel 得到他的 Page 。
+
+我们从Application.Current.GetType().GetTypeInfo().Assembly 获得所有 Assembly ，然后使用applacationAssembly. DefinedTypes 得到类型，判断类型是不是有我们的Attribute`Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(CodeStorageAttribute))))`。
+
+如果是的话，我们就实现 ViewModel ，我们需要把 TypeInfo 转为 Type ，好在有一个方法`AsType()`，如果从 type 实现构造，可以去看我之前写的博客。
+
+我们实现 ViewModel 之后，我们需要把 ViewModel 对应的 Page 绑定，我们判断命名，如果名字符合，那么就绑定。命名的方式是 ViewModel 个格式是`xxModel`， page 是`xxPage`
+
+这个做法是一个框架：[caliburn.micro](http://caliburnmicro.com/)做的，他可以让我们不在 Page 写 DataContent 绑定 ViewModel 就和我绑定了 ViewModel ，使用的方法也是我上面说的方法。在这里我再次表达对H神敬意，是他让我开启了UWP的反射神器，从此走向深渊。
+
+<!-- 实现ViewModel，但是我们需要得到Page，那么简单是命名，我们把AModel和APage命名好，从temp拿名称`page= applacationAssembly.DefinedTypes.First(t => t.Name.Replace("Page", "") == temp.Name.Replace("Model", "")).AsType();`就可以得到page，我们判断InvalidOperationException，如果是这个，那么用户命名错或没有Page
+
+如果你需要把ViewModel的命名后缀ViewModel，那么替换`temp.Name.Replace("ViewModel", "")`,如果没有这些，不需修改。这样我们添加新功能修改好少 -->
+
+
+
+http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
+
 
 ## 自己的框架
 
@@ -451,98 +662,6 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 关于这个是如何做，大家可以看下面的MasterDetail，这个我放在后面，后面的才是好的。
 
-## 反射获取所有类
-
-我们如果使用的ViewModel是Main的，我们有跳转很页面，那么我们加一个功能就需要加一个ViewModel，我们使用一个已经做好的ViewModel还需要在添加功能时修改，这样在我们添加一个新功能需要修改很多地方，我们可以使用反射，在添加新功能不需要做对已经做好的ViewModel修改太多。
-
-我们需要一个识别类是属于我们某个ViewModel的方法，很简单，假如我们的ViewModel是LinModel，我们里面有了AModel和BModel
-        
-```
-    public class LinModelAttribute : Attribute
-    {
-        
-    }
-
-
-
-    [LinModelAttribute]
-    public class AModel:ViewModelBase
-    {
-        public override void OnNavigatedFrom(object obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void OnNavigatedTo(object obj)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class APage : Page
-    {
-        
-    }
-
-    public class LinModel:ViewModelBase
-    {
-        public LinModel()
-        {
-            var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
-            foreach (var temp in applacationAssembly.DefinedTypes
-             .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(LinModelAttribute))))
-            {
-                var viewmodel = temp.AsType().GetConstructor(Type.EmptyTypes).Invoke(null);
-                Type page=null;
-                try
-                {
-                    page= applacationAssembly.DefinedTypes.First(t => t.Name.Replace("Page", "") == temp.Name.Replace("Model", "")).AsType();
-                }
-                catch 
-                {
-                    //InvalidOperationException
-                    //提醒没有page
-                    //throw new Exception("没有"+temp.Name.Replace("Model","")+"Page");
-                }
-
-                ViewModel.Add(new ViewModelPage()
-                {
-                    ViewModel = viewmodel as ViewModelBase,
-                    Page = page
-                });
-            }
-        }
-
-        public override void OnNavigatedFrom(object obj)
-        {
-            
-        }
-
-        public override void OnNavigatedTo(object obj)
-        {
-        }
-    }
-
-```
-
-我们可以使用
-        
-```
-            var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
-            foreach (var temp in applacationAssembly.DefinedTypes
-             .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(LinModelAttribute))))
-            {
-                var viewmodel = temp.AsType().GetConstructor(Type.EmptyTypes).Invoke(null);
-            }
-
-```
-实现ViewModel，但是我们需要得到Page，那么简单是命名，我们把AModel和APage命名好，从temp拿名称`page= applacationAssembly.DefinedTypes.First(t => t.Name.Replace("Page", "") == temp.Name.Replace("Model", "")).AsType();`就可以得到page，我们判断InvalidOperationException，如果是这个，那么用户命名错或没有Page
-
-如果你需要把ViewModel的命名后缀ViewModel，那么替换`temp.Name.Replace("ViewModel", "")`,如果没有这些，不需修改。这样我们添加新功能修改好少
-
-
-
-http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 
 
 ## MasterDetail
