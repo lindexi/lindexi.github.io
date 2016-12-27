@@ -48,7 +48,7 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
 最简单的方法，是在xaml.cs 写一个 ViewModel ，假如我们的 ViewModel 叫 Linmodel ，我们可以在 xaml.cs 写类似下面的
 		
-```
+```C#
         public MainPage()
         {
             ViewModel = new LinModel();
@@ -68,7 +68,7 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
 注意我们的ViewModel 实现的地方一般是在`InitializeComponent`之前，也就是放在类的构造的最前或直接如下面一样
 		
-```
+```C#
         private LinModel ViewModel
         {
             set;
@@ -79,7 +79,7 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
 这个方式是6之后才有的，初始化值可以写在自动属性定义。 因为我们需要的 ViewModel 几乎不会修改，所以我们还可如下面，去掉set 。很少会在实现 ViewModel 后在别的地方修改。但是我们在后面会看到，我们使用了页面导航传参，传的是 ViewModel ，这时我们就不能设置 set 去掉。但我们可以设置 `private set;`
 		
-```
+```C#
         private LinModel ViewModel
         {
             get;
@@ -93,7 +93,7 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
 DataContent 的另一个写法是写在 xaml ，很简单，这个方法我们要修改ViewModel 的访问`private`为`public`，下面代码写在页面`Page`
 		
-```
+```C#
 DataContext="{Binding RelativeSource={RelativeSource Self},Path=ViewModel}"
 
 ```
@@ -107,14 +107,16 @@ RelativeSource 可以绑定到xaml.cs，我们就简单可以从 cs 获得 ViewM
 说完了简单方法，我们来说下
 ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 static 的属性，这个属性的类就是ViewModel本身，也就是 ViewModel 可以实现的只有一个。当然 static 不是必需的，我们依靠静态资源就可以绑定到 ViewModel 的属性，从而绑定 ViewModel 。
 		
-```
+```xml
     <Page.Resources>
         <view:LinModel x:Key="LinModel"></view:ViewModel>
     </Page.Resources>
         <Grid DataContext="{Binding Source={StaticResource LinModel},Path=ViewModel}">
 
         </Grid>
-
+```
+        
+```C#
     public class LinModel
     {
         public LinModel()
@@ -128,14 +130,13 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
             get;
         }//让绑定可以访问 ViewModel ，其实这里我们也可以不使用static
     }
-
 ```
 
 注意我们不能把 DC 写在 Page ，如果写在 Page ，运行`Cannot find a Resource with the Name/Key `
 
 我们用到 staticResource ，我们为了可以在页面使用 DataContent ，我们可以把静态写在App.xaml
 		
-```
+```xml
 <Application
     x:Class="JiHuangUWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -171,7 +172,7 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
 
 我们要把static去掉也是可以，这是这样我们在 Code 就不能使用LinModel.ViewModel 获得 ViewModel 。我们上面办法是可以不再 Code 写代码，所以去掉static，其实影响几乎没有
 		
-```
+```C#
     public class LinModel
     {
         public LinModel()
@@ -190,7 +191,7 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
 
 那么去掉了 static ，是不是我们就没有办法在 xaml.cs 获得 ViewModel ？在软件开发中，怎么可以说不可能呢，我们有一个简单的方法。我们不是从 DataContext 绑定 ViewModel ，那么 DataContext 就是 ViewModel ，我们拿出 DataContext 转换，于是得到 ViewModel 。注意 DC 写的地方，千万不要在一开始写，如果发现你的 DC 是 Null ，那么你写的肯定不对
 		
-```
+```C#
             InitializeComponent();
             ViewModel = (LinModel) DataContext;
 
@@ -204,7 +205,7 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
 
 我们定义个类，这个类叫 ViewModelLocater ，假如我们有两个 ViewModel ，一个是 AModel ，一个是 LinModel ，那么我们在 ViewModelLocater 写两个属性。
         
-```
+```C#
         public AModel AModel
         {
             set;
@@ -222,7 +223,7 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
 然后在 App.xaml 写静态 ViewModelLocater
 
         
-```
+```xml
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -238,7 +239,7 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
 这样我们就可以在 APage 和 LinPage 的 Page 写 DataContent 绑定ViewModel
 
         
-```
+```xml
 <Page
     x:Class="Framework.View.APage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -283,7 +284,7 @@ Reflection ，中文翻译为反射。
 
 我们定义一个 Attribute ，让每个 ViewModel 都使用我们定义的 Attribute ，于是我们知道了哪些就是 ViewModel 。我们不使用判断反射得到的 Class 是不是继承 ViewModelBase 的原因是有一些 ViewModel 我们是不放在 ViewModelLocater ，我们只标识我们要放在 ViewModelLocater 的ViewModel
         
-```
+```C#
     public class ViewModelLocaterAttribute : Attribute
     {
         
@@ -407,7 +408,7 @@ Reflection ，中文翻译为反射。
 
 我们这个类就需要下面很少的属性
 		
-```
+```C#
        public string Key
         {
             set;
@@ -435,7 +436,7 @@ Reflection ，中文翻译为反射。
 
 如果我们是在测试，没有 UI ，那么我们不跳转 Page ，请看代码
 		
-```
+```C#
         public async Task Navigate(Frame content, object paramter)
         {
             if (ViewModel == null)
@@ -458,7 +459,7 @@ Reflection ，中文翻译为反射。
 
 我们这个类需要`ViewModelBase viewModel, Type page`输入
 		
-```
+```C#
         public ViewModelPage(Type viewModel, Type page)
         {
             _viewModel = viewModel;
@@ -468,7 +469,7 @@ Reflection ，中文翻译为反射。
 ```
 或
 		
-```
+```C#
         public ViewModelPage(Type viewModel, Type page,string key=null)
         {
             _viewModel = viewModel;
@@ -479,7 +480,7 @@ Reflection ，中文翻译为反射。
 
 然后我们需要让 ViewModel 继承的类，他可以很简单，但是基本的几个功能可以跳转、可以被跳转、可以通信的功能还是写在他这里。
 		
-```
+```C#
 public abstract class ViewModelBase
 {
 
@@ -491,7 +492,7 @@ public abstract class ViewModelBase
 
 我们需要继承这个，除了这个之外，原来跳转页面的参数是写在Page的 OnNavigatedTo ，但我们想让 ViewModel 知道我们跳转，我们的 ViewModel 通信需要INavigable
 		
-```
+```C#
     public interface INavigable
     {
         /// <summary>
@@ -514,7 +515,7 @@ public abstract class ViewModelBase
 
 如果我们的 ViewModel 有页面，可以跳转，我们要继承
 		
-```
+```C#
     public interface INavigato
     {
         Frame Content
@@ -533,7 +534,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 我们在 ViewModelBase 把 ViewModel 包含的页面 ViewModel 数组
 		
-```
+```C#
         public List<ViewModelPage> ViewModel
         {
             set;
@@ -544,7 +545,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 如果我们的页面 LinModel 存在多个可以跳转的页面 AModel 、 BModel ，我们就把他放进base. ViewModel ，需要跳转，就遍历 ViewModel ，拿出和输入相同 type 、 key 的 ViewModel ，使用他的跳转，因为我们把 ViewModel 和 View 都放一个类，我们直接使用类的跳转就好。
 
 
-```
+```C#
     public abstract class ViewModelBase : NotifyProperty, INavigable, INavigato
     {
         public List<ViewModelPage> ViewModel
@@ -578,7 +579,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 我们这样写如何绑定，我们可以通过跳转页面传入 ViewModel ，我们需要在 ViewModelPage 的 Navigate ，传入对应的ViewModel
 		
-```
+```C#
             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                 () =>
                 {
@@ -587,9 +588,9 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 ```
 
-然后在页面
+然后在页面OnNavigatedTo的参数拿ViewModel，注意下面用的转换，如果参数不是LinModel就好出异常，一般我们拿的参数都是使用as。下面例子是故意这样写，在符合我们的规范，是不会存在炸了的情况。
 		
-```
+```C#
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -612,7 +613,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 我们可以使用在xaml  DataContent 绑定拿到，于是xaml. cs 也简单可以拿到
 
         
-```
+```xml
 <Page
     x:Class="Framework.View.APage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -676,7 +677,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 我们需要一个信息，他是有发送者，目标、发送内容，发送了什么
 
         
-```
+```C#
     public class Message
     {
         public Message()
@@ -725,7 +726,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 我们来写这两个，很简单
         
-```
+```C#
     interface ISendMessage
     {
         void SendMessage(Message message);
@@ -740,7 +741,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 我们使用的发送具体的是使用 Master 的，所以我们写MasterSendMessage
         
-```
+```C#
     public class MasterSendMessage : ISendMessage
     {
         public MasterSendMessage(Action<Message> sendMessage)
@@ -765,7 +766,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 那么我们是使用一个 ListModel 和 ContentModel ，我们的数据是
         
-```
+```C#
     public class KeySecret : NotifyProperty
     {
         public KeySecret()
@@ -810,7 +811,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 在 ListModel 有一个`ObservableCollection<KeySecret> KeySecret`
         
-```
+```C#
         public ObservableCollection<KeySecret> KeySecret
         {
             set
@@ -841,7 +842,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 在 CodeStorageModel 跳转需要设置 ListModel 跳转，我们一开始就显示，于是他也要，我们需要把 MasterSendMessage 实现，给 list ，这样就是一个 IOC 。
 
         
-```
+```C#
             DetailMaster.Narrow();
             MasterSendMessage temp=new MasterSendMessage(ReceiveMessage);
             ListModel = new ListModel()
@@ -858,7 +859,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 这样我们需要在 CodeStorageModel 写一个接收，还记得 DetailMasterModel 在点击需要使用函数，我们接收有时有很多，我们需要判断他的key,如果是"点击列表"，那么我们需要布局显示。
         
-```
+```C#
         public void ReceiveMessage(Message message)
         {
             if (message.Key == "点击列表")
@@ -876,7 +877,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ContentModel.ReceiveMessage 可以把 key 改为点击列表
         
-```
+```C#
         public void ReceiveMessage(Message message)
         {
             if (message.Key == "点击列表")
@@ -895,10 +896,10 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 如何使用我的 MasterDetail 框架，我下面和大家说。
 
-首先是复制
+首先是复制DetailMasterMode，关于这个是如何写，我在之前的博客有说，如果希望知道如何制作一个DetailMaster，戳此[链接](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/)
 
         
-```
+```C#
     public class DetailMasterModel : NotifyProperty
     {
         public DetailMasterModel()
@@ -1047,7 +1048,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 然后把它放到ViewModel
 
         
-```
+```C#
         public DetailMasterModel DetailMaster
         {
             set;
@@ -1055,9 +1056,9 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
         }
 
 ```
-在 ViewModel 构造
+在 ViewModel 构造使用`DetailMaster.Narrow();`还有标题栏`AppViewBackButtonVisibility`
         
-```
+```C#
             DetailMaster = new DetailMasterModel();
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
                 AppViewBackButtonVisibility.Visible;
@@ -1066,10 +1067,10 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-然后在界面
+然后在界面复制下面代码，同样是我之前文章讲到的，感兴趣请去看：http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
 
         
-```
+```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups >
             <VisualStateGroup CurrentStateChanged="{x:Bind View.DetailMaster.Narrow}">
@@ -1135,7 +1136,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 我们写 CodeStorageAttribute ，这个是我们一个页面，他包含的 ViewModel 。
 
         
-```
+```C#
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
     sealed class CodeStorageAttribute : Attribute
     {
@@ -1149,7 +1150,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
         
 然后我们可以在CodeStorageModel 
         
-```
+```C#
            var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
             foreach (var temp in applacationAssembly.DefinedTypes
                 .Where(temp => temp.CustomAttributes.Any(t => t.AttributeType == typeof(CodeStorageAttribute))))
@@ -1176,7 +1177,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 我修改ISendMessage
         
-```
+```C#
     public interface ISendMessage
     {
         EventHandler<Message> SendMessageHandler
@@ -1190,7 +1191,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 判断我们的 ViewModel 是不是 ISendMessage ，页面是先上一级发送，所以我们把 SendMessageHandler 添加
         
-```
+```C#
             foreach (var temp in ViewModel.Where(temp => temp.ViewModel is ISendMessage))
             {
                 ((ISendMessage)temp.ViewModel).SendMessageHandler += (s, e) =>
@@ -1205,7 +1206,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 在CodeStorageModel
         
-```
+```C#
         public ViewModelBase this[string str]
         {
             get
@@ -1225,14 +1226,14 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 修改ListPage dateContent
 
-```
+```C#
 DataContext="{Binding Source={StaticResource ViewModel},Path=CodeStorageModel[ListModel]}"
 
 ```
 
 ContentPage 的dateContent
         
-```
+```C#
     DataContext="{Binding Source={StaticResource ViewModel},Path=CodeStorageModel[ContentModel]}"
 
 
@@ -1240,7 +1241,7 @@ ContentPage 的dateContent
 
 在CodeStorageModel OnNavigatedTo
         
-```
+```C#
         public override void OnNavigatedTo(object obj)
         {
             DetailMaster.Narrow();
@@ -1254,7 +1255,7 @@ ContentPage 的dateContent
 
 这样我们就不需要去写一个 ListModel 在我们写 CodeStorageModel ，我们也不知道哪个页面会发送，不知哪个页面接收，我们直接在接收看信息发送的哪个，找出，使用他的接收
         
-```
+```C#
         public void ReceiveMessage(Message message)
         {
             if (message.Key == "点击列表")
@@ -1282,3 +1283,4 @@ https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework
 参考：
 http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
 
+<!-- ([a-z|A-Z]+)([^\x00-\xff]) -->
