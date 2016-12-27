@@ -32,11 +32,11 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
 ## 绑定
 
-我们有多种方式绑定 ViewModel 。关于ViewModel实现的位置有下面几种。
+我们有多种方式绑定 ViewModel 。关于 ViewModel 实现的位置有下面几种。
 
  - 写在xaml.cs，这是最简单的方式，可以使用代码或在xaml绑定DataContent和ViewModel
 
- - 写成 xaml 静态资源，这个方式我们使用次数还是比较多，可以让Code不写代码就可以绑定 DataContent 和ViewModel
+ - 写成 xaml 静态资源，这个方式我们使用次数还是比较多，可以让 Code 不写代码就可以绑定 DataContent 和ViewModel
 
  - 写在一个 ViewModel 静态类，我们把其他页面的 ViewModel 统一写到一个 MainViewModel ，而且他是静态或只有一个实例，这样可以在任何地方调用到。
 
@@ -167,9 +167,9 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
     mc:Ignorable="d">
 ```
 
-我们这个写法可以让cs不写代码，如果我们有多个相同页面，那么我们不可以使用这个办法。
+我们这个写法可以让 cs 不写代码，如果我们有多个相同页面，那么我们不可以使用这个办法。
 
-我们要把static去掉也是可以，这是这样我们在Code就不能使用LinModel.ViewModel 获得ViewModel。我们上面办法是可以不再Code写代码，所以去掉static，其实影响几乎没有
+我们要把static去掉也是可以，这是这样我们在 Code 就不能使用LinModel.ViewModel 获得 ViewModel 。我们上面办法是可以不再 Code 写代码，所以去掉static，其实影响几乎没有
 		
 ```
     public class LinModel
@@ -253,7 +253,7 @@ ViewModel 写在 xaml ，xaml.cs不写代码这个方式。 ViewModel 需要有 
 
 这样，我们就不需要在每个 ViewModel 写一个和类型是 ViewModel 的属性。
 
-当然，这个方法还可以让所有的ViewModel继承一个类，做出ViewModel数组，保存所有的ViewModel，然后做一个索引，这样在添加一个新的ViewModel，我们只需要在数组添加一个，不需要添加一个属性。那么我们每添加一个ViewModel，还要去手动添加数组一个ViewModel实在就得不好，有没一个方法让我们的软件自动去把所有的ViewModel添加到数组？当然有，请看[反射获取所有类](#反射获取所有类)
+当然，这个方法还可以让所有的 ViewModel 继承一个类，做出 ViewModel 数组，保存所有的 ViewModel ，然后做一个索引，这样在添加一个新的 ViewModel ，我们只需要在数组添加一个，不需要添加一个属性。那么我们每添加一个 ViewModel ，还要去手动添加数组一个 ViewModel 实在就得不好，有没一个方法让我们的软件自动去把所有的 ViewModel 添加到数组？当然有，请看[反射获取所有类](#反射获取所有类)
 
 <!-- 我们可以写一个类，这个类保存所有的ViewModel，我们可以通过这个方式去让我们有多个Page使用相同的ViewModel不同的实现。
 
@@ -392,21 +392,20 @@ Reflection ，中文翻译为反射。
 如果你需要把ViewModel的命名后缀ViewModel，那么替换`temp.Name.Replace("ViewModel", "")`,如果没有这些，不需修改。这样我们添加新功能修改好少 -->
 
 
-
-http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
+关于反射，戳此链接 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 
 
 ## 自己的框架
 
 我们开始说如何做一个自己的框架。
 
-在上面使用绑定的方法，我们可以看到，我们需要一个类来存放page和ViewModel，我们的ViewModel之间的通信比较难做，于是我们为了让开发简单，我们做一个简单的ViewModel，这个是核心，在程序运行就存在一个。
+在上面使用绑定的方法，我们可以看到，我们需要一个类来存放 page 和 ViewModel ，我们的 ViewModel 之间的通信比较难做，于是我们为了让开发简单，我们做一个简单的 ViewModel ，这个是核心，在程序运行就存在一个。
 
-我们写一个类，这个类是保存ViewModel和View
+我们写一个类，这个类是保存 ViewModel 和View
 
-这个类有`Type Page`页面，`ViewModelBase ViewModel`，如果我们有多个页使用相同ViewModel，我们需要使用key来知道
+这个类有`Type Page`页面，`ViewModelBase ViewModel`，如果我们有多个页使用相同 ViewModel ，我们需要使用 key 分开相同的ViewModel
 
-我们这个类就需要下面很少的
+我们这个类就需要下面很少的属性
 		
 ```
        public string Key
@@ -430,9 +429,11 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 
 ```
 
-但是大家也看到，这个需要在使用就实现ViewModel，如果我们想要在使用ViewModel才实现，那么我们需要`Type _viewModel`，从type构造可以去看 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/
+但是大家也看到，这个需要在使用前就实现 ViewModel ，如果我们想要在使用 ViewModel 才实现，那么我们需要`Type _viewModel`，从 type 进行构造可以去看我之前的博客 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/
 
-我们在这个类写方法Navigate
+我们在这个类写方法 Navigate 判断 ViewModel 是否实现，如果没有，那么从 type 进行构造。
+
+如果我们是在测试，没有 UI ，那么我们不跳转 Page ，请看代码
 		
 ```
         public async Task Navigate(Frame content, object paramter)
@@ -453,9 +454,9 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
         }
 
 ```
-我们在测试是没有UI，我们就不跳转，我们可能在后台，所以需要`await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal`
+我们在测试是没有 UI ，我们就不跳转。但是使用跳转可以是在后台，所以需要`await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal`，他可以让后台线程访问UI。
 
-我们这个类需要`ViewModelBase viewModel, Type page`输入或
+我们这个类需要`ViewModelBase viewModel, Type page`输入
 		
 ```
         public ViewModelPage(Type viewModel, Type page)
@@ -465,7 +466,7 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
         }
 
 ```
-
+或
 		
 ```
         public ViewModelPage(Type viewModel, Type page,string key=null)
@@ -476,7 +477,7 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 
 ```
 
-然后我们需要让ViewModel继承的类
+然后我们需要让 ViewModel 继承的类，他可以很简单，但是基本的几个功能可以跳转、可以被跳转、可以通信的功能还是写在他这里。
 		
 ```
 public abstract class ViewModelBase
@@ -486,11 +487,9 @@ public abstract class ViewModelBase
 
 ```
 
-我们基本的ViewModel需要在属性更改通知，我之前写了一个类 https://github.com/lindexi/UWP/blob/master/uwp/src/ViewModel/NotifyProperty.cs
+我们基本的 ViewModel 需要在属性更改通知，我之前写了一个类 https://github.com/lindexi/UWP/blob/master/uwp/src/ViewModel/NotifyProperty.cs
 
-我们需要继承这个
-
-原来跳转页面的参数是写在Page的OnNavigatedTo，但我们想让ViewModel知道我们跳转，我们的ViewModel通信需要INavigable
+我们需要继承这个，除了这个之外，原来跳转页面的参数是写在Page的 OnNavigatedTo ，但我们想让 ViewModel 知道我们跳转，我们的 ViewModel 通信需要INavigable
 		
 ```
     public interface INavigable
@@ -511,9 +510,9 @@ public abstract class ViewModelBase
 
 ```
 
-所有的ViewModel继承这个，为何让ViewModel继承他，是因为我们不想每次离开、使用都new 一个，我们使用的是一个，一旦我们不使用这个页面，使用From，这样让页面清理。可以提高我们的使用，在MasterDetail，总是切换页面，可以不需要实现那么多的ViewModel。我们还可以使用他来保存我们当前的使用，我们所输入，但是一旦输入多了，这个并不是很好用，主要看你是需要什么。
+所有的 ViewModel 继承这个，为何让 ViewModel 继承他，是因为我们不想每次离开、使用都new 一个，我们使用的是一个，一旦我们不使用这个页面，使用 From ，这样让页面清理。可以提高我们的使用，在 MasterDetail ，总是切换页面，可以不需要实现那么多的 ViewModel 。我们还可以使用他来保存我们当前的使用，我们所输入，但是一旦输入多了，这个并不是很好用，主要看你是需要什么。
 
-如果我们的ViewModel有页面，可以跳转，我们要继承
+如果我们的 ViewModel 有页面，可以跳转，我们要继承
 		
 ```
     public interface INavigato
@@ -528,11 +527,11 @@ public abstract class ViewModelBase
     }
 
 ```
-Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel的type或key，输入参数。这是在一个页面里可以有跳转使用，假如我们使用的页面是一个MasterDetail，我们就需要两个页面，一个是列表，一个是内容，于是我们就可以使用他来跳转。
+Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmodel 的 type 或 key ，输入参数。这是在一个页面里可以有跳转使用，假如我们使用的页面是一个 MasterDetail ，我们就需要两个页面，一个是列表，一个是内容，于是我们就可以使用他来跳转。
 
 
 
-我们在ViewModelBase把ViewModel包含的页面ViewModel数组
+我们在 ViewModelBase 把 ViewModel 包含的页面 ViewModel 数组
 		
 ```
         public List<ViewModelPage> ViewModel
@@ -542,7 +541,7 @@ Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel�
         } = new List<ViewModelPage>();
 
 ```
-如果我们的页面LinModel存在多个可以跳转的页面AModel、BModel，我们就把他放进base.ViewModel，需要跳转，就遍历ViewModel，拿出和输入相同type、key的ViewModel，使用他的跳转，因为我们把ViewModel和View都放一个类，我们直接使用类的跳转就好。
+如果我们的页面 LinModel 存在多个可以跳转的页面 AModel 、 BModel ，我们就把他放进base. ViewModel ，需要跳转，就遍历 ViewModel ，拿出和输入相同 type 、 key 的 ViewModel ，使用他的跳转，因为我们把 ViewModel 和 View 都放一个类，我们直接使用类的跳转就好。
 
 
 ```
@@ -577,7 +576,7 @@ Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel�
 
 ```
 
-我们这样写如何绑定，我们可以通过跳转页面传入ViewModel，我们需要在ViewModelPage的Navigate，传入对应的ViewModel
+我们这样写如何绑定，我们可以通过跳转页面传入 ViewModel ，我们需要在 ViewModelPage 的 Navigate ，传入对应的ViewModel
 		
 ```
             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
@@ -598,19 +597,19 @@ Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel�
         }
 
 ```
-这时，我们需要DataContent就写在ViewModel的后面
+这时，我们需要 DataContent 就写在 ViewModel 的后面
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122691528.jpg)
 
 好啦，我把这个做出模板，大家可以去下载 http://download.csdn.net/detail/lindexi_gd/9716003
 
-上面的模板适合于只有一个主界面，然后其他页面都是没有跳转。那么我们可以做一个静态的ViewModel，其他页面都直接从ViewModel中拿。
+上面的模板适合于只有一个主界面，然后其他页面都是没有跳转。那么我们可以做一个静态的 ViewModel ，其他页面都直接从 ViewModel 中拿。
 
-假如我们有个页面APage，AModel，那么把AModel写在ViewModel
+假如我们有个页面 APage ， AModel ，那么把 AModel 写在ViewModel
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122694227.jpg)
 
-我们可以使用在xaml DataContent绑定拿到，于是xaml.cs也简单可以拿到
+我们可以使用在xaml  DataContent 绑定拿到，于是xaml. cs 也简单可以拿到
 
         
 ```
@@ -644,12 +643,12 @@ Content 就是ViewModel可以跳转页面，我们的Navigateto提供viewmodel�
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269471.jpg)
 
-开始是进入主页面，主页面有图床、信息、设置三个页面，于是这个三个页面都在主页面，而这三个页面都没有跳转页面，所以他们可以从MainViewModel拿到自己的ViewModel。他们的通信都是跳转主页面传给他们，三个页面没有传输信息。对于设置页面，我们是放在一个存储数据类，所以我们不需要传参数，直接从存储拿。
+开始是进入主页面，主页面有图床、信息、设置三个页面，于是这个三个页面都在主页面，而这三个页面都没有跳转页面，所以他们可以从 MainViewModel 拿到自己的 ViewModel 。他们的通信都是跳转主页面传给他们，三个页面没有传输信息。对于设置页面，我们是放在一个存储数据类，所以我们不需要传参数，直接从存储拿。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269517.jpg)
 
 
-但是这个还是没解决在一个ViewModel里面，存在多个ViewModel之间的通信。
+但是这个还是没解决在一个 ViewModel 里面，存在多个 ViewModel 之间的通信。
 
 在我的私密密码本 
 https://www.microsoft.com/store/apps/9nblggh5cc3g
@@ -660,19 +659,19 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d622016122695536.jpg)
 
-关于这个是如何做，大家可以看下面的MasterDetail，这个我放在后面，后面的才是好的。
+关于这个是如何做，大家可以看下面的 MasterDetail ，这个我放在后面，后面的才是好的。
 
 
 
 ## MasterDetail
 
-我们用我们上面写的来做一个MasterDetail，我之前做了一个简单 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
+我们用我们上面写的来做一个 MasterDetail ，我之前做了一个简单 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
 
 我们需要做的：如何让两个页面通信
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d6220161226101426.jpg)
 
-我们的B页面要和A通信，我们让B发送信息到上一级页面，由上一级页面传给A。
+我们的 B 页面要和A通信，我们让B发送信息到上一级页面，由上一级页面传给A。
 
 我们需要一个信息，他是有发送者，目标、发送内容，发送了什么
 
@@ -718,9 +717,9 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ```
 
-我们还需要ISendMessage、IReceiveMessage
+我们还需要 ISendMessage 、IReceiveMessage
 
-到时我们的MasterModel就会有一个ISendMessage属性，我们会在DetailMasterModel中给他，当然我们总是把DetailMasterModel作为属性，所以我们可能在使用他的类给MasterModel的ISendMessage一个值，这个就是IOC。
+到时我们的 MasterModel 就会有一个 ISendMessage 属性，我们会在 DetailMasterModel 中给他，当然我们总是把 DetailMasterModel 作为属性，所以我们可能在使用他的类给 MasterModel 的 ISendMessage 一个值，这个就是 IOC 。
 
 这样做的原因，可以去看：http://blog.csdn.net/linux7985/article/details/44782623
 
@@ -739,7 +738,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ```
 
-我们使用的发送具体的是使用Master的，所以我们写MasterSendMessage
+我们使用的发送具体的是使用 Master 的，所以我们写MasterSendMessage
         
 ```
     public class MasterSendMessage : ISendMessage
@@ -758,13 +757,13 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ```
 
-到时我们在DetailMaster中实现MasterSendMessage传给MasterModel
+到时我们在 DetailMaster 中实现 MasterSendMessage 传给MasterModel
 
 我们以我的密码本来说，我们有一个是左边是一列密码，右边点击是显示内容。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/e7f29c20-4d6b-4864-9af9-f58c3f045b77Framework.gif)
 
-那么我们是使用一个ListModel和ContentModel，我们的数据是
+那么我们是使用一个 ListModel 和 ContentModel ，我们的数据是
         
 ```
     public class KeySecret : NotifyProperty
@@ -809,7 +808,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ```
 
-在ListModel有一个
+在 ListModel 有一个`ObservableCollection<KeySecret> KeySecret`
         
 ```
         public ObservableCollection<KeySecret> KeySecret
@@ -833,13 +832,13 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ```
 
-在ContentModel有一个`public KeySecret Key`和接收。
+在 ContentModel 有一个`public KeySecret Key`和接收。
 
-CodeStorageModel有DetailMaster、ContentModel ListModel
+ CodeStorageModel 有 DetailMaster 、ContentModel ListModel
 
-其中DetailMaster控制界面，他的功能大家可以直接复制到自己的项目，不过还需要复制MasterDetailPage，复制好了，那么需要修改的是`<Frame x:Name="List" SourcePageType="local:ListPage"></Frame>` `<Frame x:Name="Content" SourcePageType="local:ContentPage"></Frame>`把一个换为自己的列表页，一个换为详情。如何使用，我会在后面说。
+其中 DetailMaster 控制界面，他的功能大家可以直接复制到自己的项目，不过还需要复制 MasterDetailPage ，复制好了，那么需要修改的是`<Frame x:Name="List" SourcePageType="local:ListPage"></Frame>` `<Frame x:Name="Content" SourcePageType="local:ContentPage"></Frame>`把一个换为自己的列表页，一个换为详情。如何使用，我会在后面说。
 
-在CodeStorageModel跳转需要设置ListModel跳转，我们一开始就显示，于是他也要，我们需要把MasterSendMessage实现，给list，这样就是一个IOC。
+在 CodeStorageModel 跳转需要设置 ListModel 跳转，我们一开始就显示，于是他也要，我们需要把 MasterSendMessage 实现，给 list ，这样就是一个 IOC 。
 
         
 ```
@@ -854,10 +853,10 @@ CodeStorageModel有DetailMaster、ContentModel ListModel
 
 ```
 
-大神说除了foreach，不能使用temp，我这时也用了temp，是想告诉大家不要在使用。
+大神说除了 foreach ，不能使用 temp ，我这时也用了 temp ，是想告诉大家不要在使用。
 
 
-这样我们需要在CodeStorageModel写一个接收，还记得DetailMasterModel在点击需要使用函数，我们接收有时有很多，我们需要判断他的key,如果是"点击列表"，那么我们需要布局显示。
+这样我们需要在 CodeStorageModel 写一个接收，还记得 DetailMasterModel 在点击需要使用函数，我们接收有时有很多，我们需要判断他的key,如果是"点击列表"，那么我们需要布局显示。
         
 ```
         public void ReceiveMessage(Message message)
@@ -875,7 +874,7 @@ CodeStorageModel有DetailMaster、ContentModel ListModel
 
 ```
 
-ContentModel.ReceiveMessage可以把key改为点击列表
+ContentModel.ReceiveMessage 可以把 key 改为点击列表
         
 ```
         public void ReceiveMessage(Message message)
@@ -890,11 +889,11 @@ ContentModel.ReceiveMessage可以把key改为点击列表
 
 我们界面就不说了，直接去 https://github.com/lindexi/UWP/tree/cd1637bf31eb22a230390c205da93f840070c49d/uwp/src/Framework/Framework
 
-我要讲下修改，我们发现我们现在写的两个页面通信在MasterDetail有用，但是要确定我们的页面，这样不好，在上面我们说可以加功能不需要去修改写好的，我们需要做的是接收信息，不使用上面的。
+我要讲下修改，我们发现我们现在写的两个页面通信在 MasterDetail 有用，但是要确定我们的页面，这样不好，在上面我们说可以加功能不需要去修改写好的，我们需要做的是接收信息，不使用上面的。
 
-大家去看代码注意我是在新的master代码和现在的不同，注意链接
+大家去看代码注意我是在新的 master 代码和现在的不同，注意链接
 
-如何使用我的MasterDetail框架，我下面和大家说。
+如何使用我的 MasterDetail 框架，我下面和大家说。
 
 首先是复制
 
@@ -1056,7 +1055,7 @@ ContentModel.ReceiveMessage可以把key改为点击列表
         }
 
 ```
-在ViewModel构造
+在 ViewModel 构造
         
 ```
             DetailMaster = new DetailMasterModel();
@@ -1124,16 +1123,16 @@ ContentModel.ReceiveMessage可以把key改为点击列表
 
 注意把`<Frame x:Name="List" SourcePageType="local:ListPage"></Frame>`换为列表页面，和`<Frame x:Name="Content" SourcePageType="local:ContentPage"></Frame>`换为内容，` <Image Source="ms-appx:///Assets/Strawberry_Adult_content_easyicon.net.png"></Image>`换为自己的图片
 
-需要在xaml.cs写ViewModel为view，如果不是，那么自己换名。
+需要在xaml.cs写 ViewModel 为 view ，如果不是，那么自己换名。
 
-页面的联系使用`ISendMessage`，和接收，他向MasterDetailViewModel发信息，让ContentModel接收。
+页面的联系使用`ISendMessage`，和接收，他向 MasterDetailViewModel 发信息，让 ContentModel 接收。
 
-我们需要和上面写的一样，传入MasterSendMessage给他，让他可以发送信息。
+我们需要和上面写的一样，传入 MasterSendMessage 给他，让他可以发送信息。
 
 然后判断发送信息，发给内容，具体可以去看代码，如果有不懂请发邮件或在评论，这很简单
 
 
-我们写CodeStorageAttribute，这个是我们一个页面，他包含的ViewModel。
+我们写 CodeStorageAttribute ，这个是我们一个页面，他包含的 ViewModel 。
 
         
 ```
@@ -1145,7 +1144,7 @@ ContentModel.ReceiveMessage可以把key改为点击列表
 
 ```
 
-我们在ListModel和ContentModel写CodeStorageAttribute
+我们在 ListModel 和 ContentModel 写CodeStorageAttribute
 
         
 然后我们可以在CodeStorageModel 
@@ -1189,7 +1188,7 @@ ContentModel.ReceiveMessage可以把key改为点击列表
 
 ```
 
-判断我们的ViewModel是不是ISendMessage，页面是先上一级发送，所以我们把SendMessageHandler添加
+判断我们的 ViewModel 是不是 ISendMessage ，页面是先上一级发送，所以我们把 SendMessageHandler 添加
         
 ```
             foreach (var temp in ViewModel.Where(temp => temp.ViewModel is ISendMessage))
@@ -1202,7 +1201,7 @@ ContentModel.ReceiveMessage可以把key改为点击列表
 
 ```
 
-我们删除`public ContentModel ContentModel` `public ListModel ListModel`在ListPage和Content，我们直接使用索引
+我们删除`public ContentModel ContentModel` `public ListModel ListModel`在 ListPage 和 Content ，我们直接使用索引
 
 在CodeStorageModel
         
@@ -1253,7 +1252,7 @@ ContentPage 的dateContent
 
 ```
 
-这样我们就不需要去写一个ListModel在我们写CodeStorageModel，我们也不知道哪个页面会发送，不知哪个页面接收，我们直接在接收看信息发送的哪个，找出，使用他的接收
+这样我们就不需要去写一个 ListModel 在我们写 CodeStorageModel ，我们也不知道哪个页面会发送，不知哪个页面接收，我们直接在接收看信息发送的哪个，找出，使用他的接收
         
 ```
         public void ReceiveMessage(Message message)
