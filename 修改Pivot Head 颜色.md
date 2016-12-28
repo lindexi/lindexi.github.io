@@ -30,6 +30,10 @@
 ```
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/f3c2f4a3-94ae-40b4-b3c3-da73116eb75d2016121716265.jpg)
+
+参见：
+http://stackoverflow.com/questions/31797875/overriding-pivot-header-foreground-brushes-in-uwp-app-win-10-rtm-sdk
+
 <!-- 
 如果我们要修改很多个Pivot颜色
 
