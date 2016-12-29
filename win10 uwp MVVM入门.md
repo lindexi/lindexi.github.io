@@ -20,13 +20,17 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
  - Model 是核心逻辑，有些大神说， Model 只定义数据结构，有些大神说 model 写核心逻辑，这个就仁者见仁智者见智了。我是将核心逻辑写进 Model，如果觉得这样不对，欢迎讨论。
 
-怎么让 ViewModel 抽象 View，随后简单地把界面联系起来呢？
+但是我们现在的问题是怎么让 ViewModel 抽象 View，随后简单地把界面联系起来呢？
 
 使用 Binding 即可，这是 WPF 强大的地方，而 UWP 继承并发扬了这些特性。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/2639f44f-463b-4fd1-b9e9-c01652649f28201612268535.jpg)
 
 如果希望知道 MVVM 是如何写 ，戳此链接 [http://www.cnblogs.com/indream/p/3602348.html](http://www.cnblogs.com/indream/p/3602348.html)
+
+关于Model是属于哪些代码所放的地方，我找到一篇博客，在CodeProject，也是最近10月写的，依照他的逻辑，是支持Model写业务逻辑，ViewModel写表示逻辑的看法。请看下面图片，博客在：https://www.codeproject.com/Tips/813345/Basic-MVVM-and-ICommand-Usage-Example  
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/66fdbb58-f3fb-4036-a22e-6665a8cac0dd20161228185135.jpg)
 
 我们下面说下绑定。
 

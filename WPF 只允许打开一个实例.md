@@ -7,7 +7,7 @@
 
 下面是一个简单方法
 
-```
+```csharp
 
                     // 确保不存在程序的其他实例
                     singleInstanceWatcher = new Semaphore(
@@ -30,7 +30,7 @@
 
 另一个方法
 
-```
+```csharp
             string mutexName = Properties.Resources.ProgramTitle + "Mutex";
             singleInstanceWatcher = new Mutex(false, mutexName, out createdNew);
             if (!createdNew)
@@ -42,7 +42,7 @@
 ```
 
 		
-```
+```csharp
 bool createdNew;
 System.Threading.Mutex instance = new System.Threading.Mutex(true, "MutexName", out createdNew);
 if (createdNew)

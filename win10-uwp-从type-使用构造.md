@@ -3,6 +3,7 @@
 本文主要：如何从Type new一个对象
 
 <!--more-->
+<!-- csdn -->
 
 原本从WPF，要想new一个对象从type，可以使用`type.Assembly.CreateInstance(type.FullName);`
 
