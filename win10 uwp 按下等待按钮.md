@@ -17,7 +17,7 @@
 于是我们使用TemplatePart
 
 		
-```C#
+```csharp
     [TemplatePart(Name = "TextBlock", Type = typeof(TextBlock))]
     [TemplatePart(Name = "Progress", Type = typeof(Windows.UI.Xaml.Controls.ProgressRing))]
     public class ProgressButton : Windows.UI.Xaml.Controls.Button
@@ -53,7 +53,7 @@ Text是我们按钮的文字，Complete 是我们的后台是不是在执行，�
 代码：
 
 		
-```C#
+```csharp
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -274,7 +274,7 @@ namespace lindexi.uwp.control.Button.Control
 然后就可以使用 ProgressButton ,我写ProgressButton在control文件夹，我需要在命名空间`xmlns:control="using:lindexi.uwp.control.Button.Control"`
 
 		
-```C#
+```csharp
  <control:ProgressButton Text="确定"
                                  Complete="{x:Bind View.Complete,Mode=TwoWay}"
                                  Click="ButtonBase_OnClick"></control:ProgressButton>

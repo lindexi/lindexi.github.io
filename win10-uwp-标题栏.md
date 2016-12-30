@@ -22,8 +22,9 @@
 
 如果是的话我们可以设置StatusBar
 
+
 		
-```C#
+```csharp
              if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
             {
                 var applicationView = ApplicationView.GetForCurrentView();
@@ -43,7 +44,7 @@ statusbar.BackgroundColor如果设置透明为0，那么可能看不到系统显
 
 我们还可以在上面显示Text，设置`statusbar.ProgressIndicator.Text`然后显示，使用函数`ShowAsync`
 		
-```C#
+```csharp
 statusbar.ProgressIndicator.Text = "test statusbar";  
 statusbar.ProgressIndicator.ShowAsync();
 
