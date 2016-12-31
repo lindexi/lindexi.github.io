@@ -4,7 +4,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/be842536-5c96-47f4-a49d-354e749a826aProgressButton.gif)
 
-<!-- more -->
+<!--more-->
 
 我们使用自定义控件，首先新建一个类，我把它命名是ProgressButton
 

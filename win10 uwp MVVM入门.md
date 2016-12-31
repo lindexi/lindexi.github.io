@@ -1284,6 +1284,14 @@ ContentPage 的dateContent
 
 https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework
 
+不想每次都自己写很多类，可以下载我的模板 http://download.csdn.net/detail/lindexi_gd/9716003
+
+下载后放在 C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP 的 文件夹里，参见 http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/
+
+然后执行`devenv /setup`
+
+我们就可以在新建项目使用模板
+
 参考：
 http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
 
