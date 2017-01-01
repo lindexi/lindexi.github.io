@@ -15,7 +15,7 @@ $ sudo apt-get install libcr-dev mpich2 mpich2-doc
 写hello.c
 		
 
-```csharp
+```c
 # include <mpi.h>
 # include <stdio.h>
 
