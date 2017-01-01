@@ -14,7 +14,7 @@ https://blogs.msdn.microsoft.com/lucian
 
 这文章作者将会创建UWP在Raspberry Pi 2虽然这是一个使用天气API根据他闪灯。作者将会介绍Iot概念，如何使用C#。这里的作者自然不是我，作者：Frank La Vigne 。
 
-##检测霜
+## 检测霜
 春天他们会有霜，我们想要检测如果有霜我们就告诉，告诉使用亮灯。除了软件我们还需要硬件。我需要Raspberry Pi 2 Model B ，MicroSD card，LED light，无焊料的电路试验板，很多线。
 
 Raspberry Pi 2 Model B的介绍可以看下面的博客。我就发一张图，因为翻译不好。
@@ -34,7 +34,7 @@ Led 电阻 我将会连接led到Raspberry Pi 2 ，电压5V，会让LED坏，所�
 开始项目有点难，很多开发者移动代码不一定适合硬件，为了这个例子我做了一个很简单的LED闪动，实时从网上下载数据。需要下面这些硬件：led灯，无焊料的电路试验板，电缆。
  Raspberry Pi 2 Model B 有很多GPIO ，GPIO 是General Purpose Input/Output，如果想知道可以百度，当然我是觉得google才是比较好，具体翻墙我就不说，相信大家github host很快就可以干了百度。有一些接口是保留我们不能编程，那么不能使用的有标出来，可以看上面的图有哪些被引出不能够编程。
 
-##设计电路
+## 设计电路
 
 Led需要的电路可以看下图，电流动从pin1，标着3.3V的见上图的接口，3.3V对Led太大，所以我们需要一个电阻，然后电流流GPIO 5，根据引脚，从上面图我们可以看到是pin29。这个接口是可以编程让led变得“smart“，通过接口高电压和低电压，led亮一下暗一下。
 
@@ -55,13 +55,13 @@ Led需要的电路可以看下图，电流动从pin1，标着3.3V的见上图的
 
 在`MainPage.xaml.cs`，我们需要使用Windows.Devices.Gpio
 
-```
+```csharp
 using Windows.Devices.Gpio;
 ```
 
 我们可以很容易使用pin，下面是我们使用pin电压高，好像电压高不是翻译电压
 
-```
+```csharp
 var gpioController = GpioController.GetDefault();
 gpioPin = gpioController.OpenPin(5);
 gpioPin.Write(GpioPinValue.High);
@@ -69,20 +69,20 @@ gpioPin.Write(GpioPinValue.High);
 
 下面代码获取pin电压
 
-```
+```csharp
 var currentPinValue = gpioPin.Read();
 ```
 
 整个app需要 GPIO pins，我们把他写成员
 
-```
+```csharp
 private GpioPin gpioPin;
 private GpioPinValue gpioPinValue;
 ```
 
 我们在构造
 
-```
+```csharp
 private void InitializeGPIO()
 {
   var gpioController = GpioController.GetDefault();
@@ -100,7 +100,7 @@ private void InitializeGPIO()
 
 作者需要下载天气信息从网上，我的天气可以从[openweathermap.org/api](http://openweathermap.org/api)接收的是json，温度是k，我们可以使用
 
-```
+```csharp
 private async void LoadWeatherData()
 {
   double minTempDouble = await GetMinTempForecast();
@@ -119,7 +119,7 @@ private async void LoadWeatherData()
 ```
 如果天气不好我们就很多开始警报，看到的函数就是我们的警报
 
-```
+```csharp
 private void Blink(int interval)
 {
   blinkingTimer = new DispatcherTimer();
@@ -129,7 +129,7 @@ private void Blink(int interval)
 }
 ```
 
-```
+```csharp
 private void BlinkingTimer_Tick(
   object sender, object e)
 {
@@ -171,6 +171,8 @@ http://edi.wang/post/2016/4/3/windows-10-iot-sound-light
 http://edi.wang/post/2016/4/4/windows-10-iot-stepper-motor
 
 http://edi.wang/post/2016/4/10/windows-10-iot-azure-remote-light
+
+
 
 
 

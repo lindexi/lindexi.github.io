@@ -18,7 +18,8 @@ http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%8E%B7%E5%8F%96%E6%8C%89%E9%
 于是在Button_OnPointerMoved，我们获取移动的xy
 
 		
-```
+
+```csharp
 PointerPoint point = e.GetCurrentPoint(btn);
 
 ```
@@ -32,7 +33,8 @@ PointerPoint point = e.GetCurrentPoint(btn);
 我们把它给Margin
 
 		
-```
+
+```csharp
         private void Button_OnPointerMoved(object sender, PointerRoutedEventArgs e)
         {
             Button btn=sender as Button;
@@ -62,7 +64,8 @@ PointerPoint point = e.GetCurrentPoint(btn);
 
 我们需要设置附件属性，`btn.SetValue(Canvas.LeftProperty, x)`就是设置`Canvas.Left`
 		
-```
+
+```csharp
         private void Button_OnPointerMoved(object sender, PointerRoutedEventArgs e)
         {
             Button btn=sender as Button;
@@ -92,7 +95,8 @@ PointerPoint point = e.GetCurrentPoint(btn);
 我们可以使用手势，这个需要在控件设置`ManipulationMode="All"`，使用`ManipulationDelta`
 
 		
-```
+
+```csharp
         private void Button_OnManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
             Button btn = sender as Button;
@@ -119,7 +123,8 @@ PointerPoint point = e.GetCurrentPoint(btn);
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/%E6%8B%96%E5%8A%A8%E6%8E%A7%E4%BB%B62016%E5%B9%B412%E6%9C%8818%E6%97%A5151534.gif)
 
         
-```
+
+```csharp
 大神，请用力划。
 
 大神：我的控件哪去？
@@ -135,3 +140,4 @@ Canvas：我的左边可以长度无限。
 好在[OneWindows](https://leoldev.wordpress.com/2016/12/18/uwp-manipulationdelta？蛤？/)的帮助
 
 参见：http://www.cnblogs.com/cjw1115/p/5323339.html
+

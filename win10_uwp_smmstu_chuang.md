@@ -7,7 +7,7 @@
 
 可以简单使用post上传文件，我就做了一个工具，可以把图片上传，使用只需要
 
-```
+```csharp
             //传入文件
             smms.Model.Imageshack imageshack = new Imageshack()
             {
@@ -22,7 +22,7 @@
 
 我将会把我做的发现的和大家说
 
-##进行HttpClient post参数错误
+## 进行HttpClient post参数错误
 
 从“Windows.Web.Http.HttpStringContent”转换为“System.Net.Http.HttpContent”
 
@@ -34,7 +34,7 @@
 
 使用
 
-```
+```csharp
            Windows.Web.Http.HttpClient webHttpClient=
                 new Windows.Web.Http.HttpClient();
 
@@ -44,7 +44,7 @@
 ```
 
 
-##win10 uwp post 上传文件
+## win10 uwp post 上传文件
 
 我们可以使用HttpMultipartFormDataContent上传
 其中我们需要从文件转流，打开StorageFile，把它转换HttpStreamContent
@@ -70,16 +70,18 @@
 
 因为需要拿到上传图片
 
-```
+```csharp
 var str = await webHttpClient.PostAsync(new Uri(url), httpMultipartFormDataContent);
             ResponseString = str.Content.ToString();
             OnUploadedEventHandler?.Invoke(this,ResponseString);
 ```
 
-##所有代码
+## 所有代码
 
 https://github.com/lindexi/Imageshack/tree/master/smms
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 
 

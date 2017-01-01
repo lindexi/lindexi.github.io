@@ -8,20 +8,20 @@ rebase可以合并提交，使用简单
 
 先使用分支做更改
 
-```
+```csharp
 git branch 更改
 git checkout 更改
 ```
 
 提交更改
 
-```
+```csharp
 git commit 更改
 ```
 
 然后到主分支看最新提交
 
-```
+```csharp
 git checkout master
 git log
 ```
@@ -32,13 +32,13 @@ git log
 
 把更改合并master
 
-```
+```csharp
 git merge 更改
 ```
 
 用rebase把更改多个合为最后一个
 
-```
+```csharp
 git rebase -i 记下的提交
 ```
 
@@ -58,7 +58,8 @@ git rebase -i 记下的提交
 
 假如我有三个提交
 		
-```
+
+```csharp
 commit : A
 commit : B
 commit : C
@@ -72,6 +73,8 @@ commit : C
 写完按esc，`：wq`保存
 
 提交就是最后一个
+
+
 
 
 

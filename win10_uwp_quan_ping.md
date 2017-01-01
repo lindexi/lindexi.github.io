@@ -6,7 +6,7 @@ win10 可以全屏软件或窗口，窗口有一般、最小化、最大化。�
 
 下面是一个简单的例子，判断我们软件是不是全屏，如果是，就不全屏，代码在一个ToggleButton
 
-```
+```csharp
 ApplicationView view = ApplicationView.GetForCurrentView();
 
 bool isInFullScreenMode = view.IsFullScreenMode;
@@ -28,7 +28,7 @@ else
 
 如果窗口改变需要知道，可以注册`Window.Current.SizeChanged`
 
-```
+```csharp
 public class IsFullScreenModeTrigger : StateTriggerBase  
 {
     public IsFullScreenModeTrigger()
@@ -49,7 +49,7 @@ public class IsFullScreenModeTrigger : StateTriggerBase
 }
 ```
 
-```
+```xml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">  
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
@@ -77,7 +77,7 @@ public class IsFullScreenModeTrigger : StateTriggerBase
 
 我们可以设置`PreferredLaunchWindowingMode`，在我们应用打开
 
-```
+```csharp
 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
 ```
 ApplicationViewWindowingMode可以`Auto` ,`PreferredLaunchViewSize`设置窗口和`ApplicationView.PreferredLaunchViewSize`，如果没有设置`ApplicationView.PreferredLaunchViewSize`会使用上次关闭窗口， `FullScreen`
@@ -87,3 +87,5 @@ win10有很简单的API可以应用全屏，在电脑，我们经常用窗口，
 http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+

@@ -10,7 +10,8 @@ Jasoon 大神问，如何绑定静态属性。
 假如我们的ViewModel有一个静态属性
 
 		
-```
+
+```csharp
         public static string CVTE
         {
             set;
@@ -24,7 +25,8 @@ Jasoon 大神问，如何绑定静态属性。
 那么需要在空间
 
 		
-```
+
+```csharp
 xmlns:view="using:Bproperty.ViewModel"
 
 ```
@@ -33,12 +35,14 @@ xmlns:view="using:Bproperty.ViewModel"
 
 一个方法是在xaml.cs写一个属性，get为静态属性。
 		
-```
+
+```csharp
 public  string Property => ViewModel.ViewModel.CVTE;
 
 ```
 在xaml绑定xaml.cs属性
-```
+
+```xml
       <TextBlock Text="{x:Bind Property,Mode=OneWay}"></TextBlock>
 
 
@@ -55,7 +59,8 @@ public  string Property => ViewModel.ViewModel.CVTE;
 然后在xaml写
 
         
-```
+
+```csharp
 xmlns:view="using:Bproperty.ViewModel"
 
  <TextBlock Text="{x:Bind Path=(view:ViewModel.CVTE) }"
@@ -66,3 +71,4 @@ xmlns:view="using:Bproperty.ViewModel"
 参见：http://stackoverflow.com/questions/15854708/how-can-i-bind-a-xaml-property-to-a-static-variable-in-another-class
 
 http://stackoverflow.com/questions/34701255/how-to-bind-to-attached-property-in-uwp
+

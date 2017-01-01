@@ -1,6 +1,6 @@
 # win10 uwp 上传Nuget 让别人用我们的库
 
-##Nuget
+## Nuget
 
 
 我们的开发经常使用别人的dll，那么我们需要每次都从网上下载，然后复制到我们的项目，
@@ -13,7 +13,7 @@
 <!--more-->
 
 
-##下载
+## 下载
 
 首先下载
 
@@ -26,7 +26,7 @@ nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 我们把Nuget.exe放在Path，当然不知道Path,就放在我们要打包的工程文件夹
 
 
-##打包Nuget
+## 打包Nuget
 
 我们用MSBuild命令进入项目文件夹，如果找不到MsBuild就用cmd
 
@@ -38,13 +38,13 @@ nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 首先进入盘，我是在A盘，
 
-```
+```csharp
 a:
 ```
 
 然后进入文件夹
 
-```
+```csharp
 cd smms/smms
 ```
 
@@ -62,7 +62,7 @@ cd smms/smms
 
 里面有
 
-```
+```xml
 <?xml version="1.0"?>
 <package >
   <metadata>
@@ -134,7 +134,7 @@ description代为AssemblyDescription
 
 ![这里写图片描述](http://img.blog.csdn.net/20160705154419364)
 
-```
+```csharp
 问题: 删除示例 nuspec 值。
 说明: Tags 的值“Tag1 Tag2”是示例值，应将其删除。
 解决方案: 请替换为适当的值或删除它，然后重新生成程序包。
@@ -146,7 +146,7 @@ description代为AssemblyDescription
 
 把我们信息写后打包
 
-```
+```csharp
 nuget pack smms.csproj
 ```
 
@@ -159,7 +159,7 @@ nuget pack smms.csproj
 ![这里写图片描述](http://img.blog.csdn.net/20160705154503646)
 
 
-##上传
+## 上传
 
 首先有一个微软账号，登录 [https://www.nuget.org](https://www.nuget.org)
 
@@ -201,8 +201,9 @@ nuget pack smms.csproj
 
 参见：http://www.cnblogs.com/xiaoyaojian/p/4199735.html
 
-##命令行使用Nuget
+## 命令行使用Nuget
 
 参见：https://docs.nuget.org/consume/command-line-reference
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+

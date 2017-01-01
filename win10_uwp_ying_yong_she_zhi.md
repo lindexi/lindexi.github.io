@@ -5,7 +5,7 @@ win10 UWP 应用设置 简单的把设置需要的，放到微软自带的LocalS
 
 存放一个string
 
-```
+```csharp
 string str
 {
   set
@@ -25,8 +25,7 @@ string str
 
 如果设置在LocalSettings让程序太乱，有很多变量名称一样，可以使用新的ApplicationDataContainer
 
-```
-            string str = "";
+           string str = "";
             var t = ApplicationData.Current.LocalSettings.CreateContainer("str", ApplicationDataCreateDisposition.Always);
             t.Values["str"] = str;
             str = t.Values["str"] as string;

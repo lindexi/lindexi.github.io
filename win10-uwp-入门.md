@@ -25,7 +25,7 @@
 
 添加资源作为全局的ViewModel管理
 
-```
+```xml
     <Application.Resources>
         <ResourceDictionary>
             <viewModel:ViewModelLocator x:Key ="ViewModelLocator"></viewModel:ViewModelLocator>
@@ -40,7 +40,7 @@
 
 接着在ViewModelLocator添加属性
 
-```
+```csharp
  public ViewModel ViewModel => ServiceLocator.Current.GetInstance<ViewModel>();
 
 ```
@@ -49,7 +49,7 @@
 
 我们需要在ViewModelLocator的构造上用`SimpleIoc.Default.Register`
 
-```
+```csharp
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(()=>SimpleIoc.Default);
@@ -60,7 +60,7 @@
 
 接着打开MainPage.xaml，原来是在cs写我们的ViewModel实例，现在我们可以直接在xaml
 
-```
+```xml
     <Page.DataContext>
         <Binding Source="{StaticResource ViewModelLocator}" Path="ViewModel"></Binding>
     </Page.DataContext>
@@ -68,17 +68,17 @@
 
 当然我们可以换个方式
 
-```
+```csharp
     DataContext="{Binding Source={StaticResource ViewModelLocator}，Path=ViewModel}"
 
 
 ```
 
-##绑定
+## 绑定
 
 我们先在ViewModel中新建字段`_str`，我们绑定到xaml
 
-```
+```csharp
         public string Str
         {
             set
@@ -95,7 +95,7 @@
 
 ```
 
-```
+```xml
         <TextBlock Text="{Binding Path=Str,Mode=OneWay}"
                    HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 
@@ -103,7 +103,7 @@
 
 我们可以把命令绑定到ViewModel，写法垃圾
 
-```
+```csharp
         public ViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -127,7 +127,7 @@
 
 首先打开ViewModelLocator，在构造写一个帮我们传页面信息NavigationService
 
-```
+```csharp
             var navigationService = new NavigationService();
             navigationService.Configure("main",typeof(MainPage));
             navigationService.Configure("hig",typeof(HightClipPage));
@@ -138,7 +138,7 @@
 
 在需要跳转的函数
 
-```
+```csharp
         private void NavigateHigPage()
         {
             var navigateService = ServiceLocator.Current.GetInstance<INavigationService>();
@@ -157,3 +157,5 @@
 ## 参考
 
 http://www.cnblogs.com/manupstairs/
+
+

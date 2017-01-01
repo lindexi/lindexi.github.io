@@ -12,7 +12,7 @@
 
 我们简单在界面写一个TextBlock
 
-```
+```xml
 
         <TextBlock Margin="10,100,10,10"
                        Text="Lov ms"></TextBlock>
@@ -29,19 +29,19 @@
 
 我们去掉黑色，删除App.xaml.cs
 
-```
-#if DEBUG
+```csharp
+# if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
-#endif
+# endif
 
 ```
 
 大家可以看到我们的应用没有特殊字体，这时我们写一个我们系统不存在的字体`And Love St.ttf`
 
-```
+```xml
 
         <TextBlock Margin="10,100,10,10"
                    FontFamily="And Love St.ttf"
@@ -68,7 +68,7 @@
 
 我们的路径`Font/And Love St.ttf`名称`And Love st`
 
-```
+```xml
 
         <TextBlock Margin="10,100,10,10"
                    FontFamily="Font/And Love St.ttf#And Love st"
@@ -82,7 +82,7 @@
 
 当然也可以作为资源
 
-```
+```xml
 
     <Page.Resources>
         <FontFamily x:Key="Font" >Font/And Love St.ttf#And Love st</FontFamily>
@@ -90,7 +90,7 @@
 
 ```
 
-```
+```xml
 
         <TextBlock Margin="10,100,10,10"
                    FontFamily="Font/And Love St.ttf#And Love st"
@@ -99,3 +99,5 @@
 ```
 
  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+

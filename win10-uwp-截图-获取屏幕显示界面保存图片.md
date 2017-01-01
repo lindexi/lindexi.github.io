@@ -1,4 +1,4 @@
-#win10 uwp 截图 获取屏幕显示界面保存图片
+# win10 uwp 截图 获取屏幕显示界面保存图片
 
 本文主要讲如何保存我们的屏幕显示的，保存为图片，也就是截图，截我们应用显示的。
 <!--more-->
@@ -9,7 +9,7 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 然后我们可以使用`RenderTargetBitmap`保存我们屏幕Grid显示的
 
-```
+```csharp
 
             var bitmap = new RenderTargetBitmap();
             StorageFile file = await KnownFolders.PicturesLibrary.CreateFileAsync("1.jpg",
@@ -48,7 +48,7 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 我们把图片一部分不显示，截图下来看下不显示的是不是就不会在图片
 
-```
+```xml
        <Grid x:Name="Stamp" >
             <Image x:Name="image" Width="500"
                    Margin="200,10,10,10">
@@ -65,7 +65,7 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 假如我们不显示Grid
 
-```
+```xml
   <Grid Grid.Row="0" Background="White"></Grid>
 ```
 
@@ -73,7 +73,7 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 那么我们要显示我们的图片显示全，我们可以借用一个简单的控件
 
-```
+```xml
         <ScrollViewer VerticalScrollBarVisibility="Visible"
                       HorizontalScrollBarVisibility="Visible">
             <Grid x:Name="Stamp" >
@@ -92,13 +92,13 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 我们可以在滚动条写大小为很小，但是`Width="1"`就出错，我们不需要把他放在用户可视的，也就是放在最底层也是可以
 
-##水印
+## 水印
 
 UWP图片水印简单，我们需要一个Image和一个水印，水印在图片Zindex比他大
 
 我们在我们图片的同个Panel放一个TextBlock，然后TextBlock就是我们的水印。
 
-```
+```xml
 
             <Grid x:Name="Stamp">
                 <Image x:Name="image" Width="500"
@@ -120,7 +120,7 @@ UWP图片水印简单，我们需要一个Image和一个水印，水印在图片
 
 我想到渐变，这样每个颜色都有。LinearGradientBrush是渐变，我们需要每个字符都看到，我们把渐变改为从上到下。`EndPoint="0,1" StartPoint="0,0"`一个是开始的Point，一个是结束
 
-```
+```xml
 
                     <TextBlock.Foreground>
                         <LinearGradientBrush EndPoint="结束点X,结束点Y" StartPoint="开始点X,开始点Y">
@@ -137,7 +137,7 @@ UWP图片水印简单，我们需要一个Image和一个水印，水印在图片
 
 如果对大图感觉水印太小，可以用ViewBox。如果觉得我们水印要在中间，或下方或其他，那么我们需要把Image的宽度不设置，然后Grid也不设置高度和宽度。
 
-```
+```xml
 
         <ScrollViewer Width="10" Height="10"
             VerticalScrollBarVisibility="Visible"
@@ -164,3 +164,5 @@ UWP图片水印简单，我们需要一个Image和一个水印，水印在图片
 参见：http://www.zmy123.cn/?p=1257
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+

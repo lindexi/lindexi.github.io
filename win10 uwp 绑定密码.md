@@ -19,6 +19,7 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 通知使用`SetPassword(passwordBox, passwordBox.Password);`我们要先更新password，然后更新界面，但是我们设置password，会自动更新界面，一旦界面更新又更新password，这样不好，我们需要设置Updateing，如果是true，就是我们界面更新，直接更新password。如果是false，那么是password更新界面。于是我们在PasswordChanged，使用
 		
+
 ```csharp
                 SetIsUpdating(passwordBox, true);
                 SetPassword(passwordBox, passwordBox.Password);
@@ -30,6 +31,7 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 这个函数是我们定义的一个属性变化时，判断sender是不是PasswordBox，是的话，因为我们绑定是双向，所以先把`passwordBox.PasswordChanged -= PasswordChanged`取消，然后判断是不是更新了，如果更新了，也就是完成更新`if (!(bool)GetIsUpdating(passwordBox))`我们就把新的Value给`passwordBox.Password`，不管有没更新，我们需要`passwordBox.PasswordChanged += PasswordChanged`
 	
+
 ```csharp
         private static void OnPasswordPropertyChanged(DependencyObject sender,
          DependencyPropertyChangedEventArgs e)
@@ -59,6 +61,7 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 代码可以复制到一个文件，注意需要使用他所在的name，使用xmlns
 		
+
 ```csharp
     public static class PasswordBoxHelper
     {
@@ -162,6 +165,7 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 不需要去做修改，直接加上`view:PasswordBoxHelper.Attach="True" view:PasswordBoxHelper.Password="{Binding Password,Mode=TwoWay}"`
 		
+
 ```csharp
  <PasswordBox  view:PasswordBoxHelper.Attach="True"
                view:PasswordBoxHelper.Password="{Binding Password,Mode=TwoWay}"
@@ -172,4 +176,6 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 <script src="https://gist.github.com/lindexi/e4809b4b54a36db6aa166524c89fcebb.js"></script>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
+
+
 

@@ -17,6 +17,7 @@
 于是我们使用TemplatePart
 
 		
+
 ```csharp
     [TemplatePart(Name = "TextBlock", Type = typeof(TextBlock))]
     [TemplatePart(Name = "Progress", Type = typeof(Windows.UI.Xaml.Controls.ProgressRing))]
@@ -53,6 +54,7 @@ Text是我们按钮的文字，Complete 是我们的后台是不是在执行，�
 代码：
 
 		
+
 ```csharp
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -157,6 +159,7 @@ namespace lindexi.uwp.control.Button.Control
 我们在控件 OnApplyTemplate 拿到 _textBlock _proress 我们需要写一个Style
 
 		
+
 ```xml
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
@@ -264,6 +267,7 @@ namespace lindexi.uwp.control.Button.Control
 
 我们要使用按钮，需要在资源写
 		
+
 ```xml
     <Page.Resources>
         <ResourceDictionary Source="Control/ProgressButton.xaml"></ResourceDictionary>
@@ -274,6 +278,7 @@ namespace lindexi.uwp.control.Button.Control
 然后就可以使用 ProgressButton ,我写ProgressButton在control文件夹，我需要在命名空间`xmlns:control="using:lindexi.uwp.control.Button.Control"`
 
 		
+
 ```csharp
  <control:ProgressButton Text="确定"
                                  Complete="{x:Bind View.Complete,Mode=TwoWay}"
@@ -291,6 +296,7 @@ namespace lindexi.uwp.control.Button.Control
 在 Generic.xaml 合并字典
 
 		
+
 ```xml
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="ms-appx:///Control/ProgressButton.xaml"></ResourceDictionary>
@@ -305,3 +311,5 @@ namespace lindexi.uwp.control.Button.Control
 参见：http://www.cnblogs.com/ms-uap/p/5520872.html
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
+
+

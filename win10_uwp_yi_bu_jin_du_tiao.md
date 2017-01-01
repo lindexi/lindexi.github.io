@@ -18,7 +18,7 @@
 
          <ProgressBar Maximum="100" Value="{x:Bind View.Value,Mode=OneWay}" Height="20" Width="100"></ProgressBar>
 
-```
+```csharp
 
 绑定到我们的ViewModel，一般如果后台线程操作界面是不能直接，但是我用了
 
@@ -44,7 +44,7 @@
 
 ViewModel
 
-```
+```csharp
 
         public ViewModel()
 
@@ -194,7 +194,7 @@ ViewModel
 
  
 
-```
+```xml
 
          <Ellipse x:Name="Rount" Stroke="DeepSkyBlue" Height="100" Width="100" 
 
@@ -220,7 +220,7 @@ ViewModel
 
 假如我们的转换是固定的总长度，宽度，那么可以使用
 
-```
+```csharp
 
         public object Convert(object value, Type targetType, object parameter, string language)
 
@@ -256,7 +256,7 @@ ViewModel
 
 ![这里写图片描述](http://img.blog.csdn.net/20160810190545145)
 
-```
+```xml
 
 <UserControl
 
@@ -412,7 +412,7 @@ ViewModel
 
 我们使用
 
-```
+```xml
 
                                     <VisualState x:Name="Active">
 
@@ -436,7 +436,7 @@ ViewModel
 
 因为是修改，所以可以放在Resource
 
-```
+```xml
 
 <ProgressRing Width="200" Height="200" 
 
@@ -498,7 +498,7 @@ ViewModel
 
  
 
-```
+```xml
 
  <Storyboard TargetName="Rount">
 
@@ -564,7 +564,7 @@ Rount就是我们要修改的控件，我们看到这是在2就直接修改，�
 
 其实我们要让我们的元素移动，可以看林政大神的书
 
-```
+```xml
 
  
 
@@ -582,7 +582,7 @@ Rount就是我们要修改的控件，我们看到这是在2就直接修改，�
 
 在动画
 
-```
+```xml
 
                                               <DoubleAnimation Storyboard.TargetName="Rount"
 
@@ -603,3 +603,4 @@ Rount就是我们要修改的控件，我们看到这是在2就直接修改，�
 我们使用Rount，x，记得要给名字，然后两秒，从0到300，下面就是弹跳，我上面有说，这个在官方有说比我写还好，但是官方的我没法拿来
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+

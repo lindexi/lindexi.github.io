@@ -42,6 +42,7 @@
 ```
 
 		
+
 ```csharp
 bool createdNew;
 System.Threading.Mutex instance = new System.Threading.Mutex(true, "MutexName", out createdNew);
@@ -59,3 +60,4 @@ else
 
 
 http://www.cnblogs.com/z_lb/archive/2012/09/16/2687487.html
+

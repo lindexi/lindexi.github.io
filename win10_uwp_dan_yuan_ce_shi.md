@@ -29,20 +29,20 @@ C#->Windows->通用->单元测试应用
 
 在新建类加上
 
-```
+```csharp
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 ```
 
 在类定义前
 
-```
+```csharp
 [TestClass]
 ```
 
 在类里面加函数 clipboard_substitution
 函数需要在函数前
 
-```
+```csharp
  [TestMethod]
 ```
 
@@ -50,7 +50,7 @@ using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
 我们在测试单元写测试输入
 
-```
+```csharp
             var view =new produproperty.ViewModel.winmain(null);
             string text = "要替换文本";
             //把替换两个字替换为string
@@ -61,7 +61,7 @@ using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 ```
 然后写Assert
 
-```
+```csharp
             Assert.AreEqual("要string文本",view.text);
 ```
 右击运行
@@ -92,5 +92,7 @@ Assert是返回结果true方法是测试通过，如果是其他就不通过，A
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 
 

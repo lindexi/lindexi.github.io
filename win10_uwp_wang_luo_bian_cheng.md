@@ -52,7 +52,7 @@
 
 ## 带Header的WebRequest
 
-```
+```csharp
 HttpRequestMessage httpRequestMessage = new HttpRequestMessage(
     HttpMethod.Post, new Uri("http://www.contoso.com"));
 httpRequestMessage.Content = new HttpStringContent("hello, world");
@@ -61,7 +61,7 @@ httpRequestMessage.Headers.Append("X-My-Client","true");
 myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
 ```
 
-```
+```csharp
             var url = new Uri("http://www.baidu.com", UriKind.Absolute);
             var httpClient = new System.Net.Http.HttpClient();
             httpClient.DefaultRequestHeaders.Add("apikey", "123456");
@@ -73,7 +73,7 @@ myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
 
 ## 获取Buffer
 
-```
+```csharp
                 Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
                 IBuffer buffer = await http.GetBufferAsync(uri);
 
@@ -86,3 +86,4 @@ myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
 
  
  
+

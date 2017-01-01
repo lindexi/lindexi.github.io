@@ -402,7 +402,7 @@ MainPage.xaml
 
 ![这里写图片描述](image/2016191510.png)
 
-##发布
+## 发布
 
 https://dev.windows.com/zh-cn
 
@@ -487,3 +487,4 @@ produproperty_StoreKey.pfx
 ![这里写图片描述](image/2016191538.png)
 
 ![这里写图片描述](image/2016191538 (2).png)
+

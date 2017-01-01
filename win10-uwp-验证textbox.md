@@ -50,17 +50,18 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 先写，因为我们引用库和我的不知一空间
 		
 		
-```
+
+```csharp
      xmlns:validation="using:WinUX.Data.Validation"
      xmlns:rules="using:WinUX.Data.Validation.Rules"
      xmlns:controls="using:WinUX.Xaml.Controls"
 
-``` 
+```
 
  在资源定义，我们需要多条，看起来好长，如果我们要用两次，那么还是写资源
 
 
-```
+```xml
         <Grid.Resources>
             <validation:ValidationRules x:Key="UrlSample">
                 <validation:ValidationRules.Rules>
@@ -74,7 +75,7 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
  下面直接抄大神写的
 
 
-```
+```xml
      <controls:ValidatingTextBox IsMandatory="True" Header="Website" Text="http://www.jamescroft.co.uk" 
                                     MaxLength="50" 
                                     ValidationRules="{StaticResource Url}" 
@@ -104,14 +105,16 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 
 如果我们需要写输入错了提示
 		
-```
+
+```xml
      <rules:UrlValidationRule ErrorMessage="输入错"></rules:UrlValidationRule>
 ```
 
 如果需要使用正则，我们的验证复制，需要使用`RegexValidationRule`，在`Regex`写正则
 
 		
-```
+
+```xml
         <controls:ValidatingTextBox IsMandatory="True" Header="Website" Text="" 
                                     MaxLength="0" MandatoryValidationMessage="输入" 
                                     VerticalAlignment="Center">
@@ -141,7 +144,8 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 我们的TextBlock的名称`remainingCharacters`，在输入变化修改
 
 		
-```
+
+```csharp
         private void UpdateRemainingCharacters()
         {
             //判断不为空
@@ -169,7 +173,8 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 上面是大神写的，我建议可以简单一点。
 
 		
-```
+
+```csharp
         private void UpdateRemainingCharacters()
         {
             if (remainingCharacters != null)
@@ -201,7 +206,8 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 我们先判断是否要检查，如果不要检查，那么就返回对
 
 		
-```
+
+```csharp
 return !IsMandatory;
 
 ```
@@ -209,7 +215,8 @@ return !IsMandatory;
 如果要检查，我们的输入是空，我们要提示用户输入
 
 		
-```
+
+```csharp
             if (!this.IsMandatory && string.IsNullOrWhiteSpace(this.Text))
             {
                 ValidationTextBlock.Text = this.MandatoryValidationMessage;
@@ -227,14 +234,16 @@ ValidationTextBlock就是提示
 输入空，我们提示
 
 		
-```
+
+```csharp
 ValidationTextBlock.Text = this.MandatoryValidationMessage;
 
 ```
 
 总的
 		
-```
+
+```csharp
         public bool IsMandatoryFieldValid()
         {
             //不检查 || 输入不是空
@@ -264,7 +273,8 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 这时我们可以检查长度 `Text.Length > this.MaxLength` 如果大于长度，不通过
 
 		
-```
+
+```csharp
             bool[] isInvalid = { !this.IsMandatoryFieldValid() };
 
             if (!isInvalid[0])
@@ -290,7 +300,8 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 如果输入长度不大于最大，我们判断是否符合要求
 
 		
-```
+
+```csharp
                     if (ValidationRules != null)
                     {
                         foreach (var temp in ValidationRules.Rules)
@@ -309,7 +320,8 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 大神写的使用TakeWhile，这判断符合条件，如果符合，返回
 
 		
-```
+
+```csharp
            if (!isInvalid[0])
             {
                 if (this.MaxLength > 0)
@@ -362,7 +374,8 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 我们把上面写的做函数，输入改变我们使用
 
 		
-```
+
+```csharp
         private void OnTextChanged(object sender, TextChangedEventArgs args)
         {
             this.Update();
@@ -381,7 +394,8 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 ValidationRule只有一个属性，错误显示的Message
 
 		
-```
+
+```csharp
         private string _errorMessage;
 
         public string ErrorMessage
@@ -400,7 +414,8 @@ ValidationRule只有一个属性，错误显示的Message
 其实如果`_errorMessage`不存在，我们要返回默认的，不要返回"Field invalid."
 
 		
-```
+
+```csharp
         /// <summary>
         /// If the errorMessage is null  
         /// return DefaultErrorMessage
@@ -433,7 +448,8 @@ ValidationRule只有一个属性，错误显示的Message
 然后就是一个函数，判断是否通过
 
 		
-```
+
+```csharp
 public abstract bool IsValid(object value);
 
 ```
@@ -443,7 +459,8 @@ public abstract bool IsValid(object value);
 如DateTime
 
 		
-```
+
+```csharp
         public override bool IsValid(object value)
         {
             if (value == null)
@@ -466,7 +483,8 @@ public abstract bool IsValid(object value);
 decimal
 
 		
-```
+
+```csharp
         public override bool IsValid(object value)
         {
             if (value == null)
@@ -492,7 +510,8 @@ decimal
 
 我们使用继承TextBox做自己的控件
 		
-```
+
+```csharp
 public partial class ValidatingTextBox : TextBox
 
 ```
@@ -501,7 +520,8 @@ public partial class ValidatingTextBox : TextBox
 
 我们告诉后来写ControlTemplate 我们要remainingCharactersTextBlock ValidationTextBlock，我们给他名字 RemainingCharacters，ValidationText 我们就可以在OnApplyTemplate
 		
-```
+
+```csharp
         protected override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -514,7 +534,7 @@ public partial class ValidatingTextBox : TextBox
 
 但我们需在ValidatingTextBox 	
 
-```
+```csharp
     [TemplatePart(Name = "ValidationText", Type = typeof(TextBlock))]
     [TemplatePart(Name = "RemainingCharacters", Type = typeof(TextBlock))]
 
@@ -525,7 +545,8 @@ TemplatePart是告诉做界面，我的需要名字为Name，类型为什么的�
 
 我们还需加事件
 		
-```
+
+```csharp
        protected override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -561,3 +582,4 @@ TemplatePart是告诉做界面，我的需要名字为Name，类型为什么的�
 于是我们使用布局，直接放TextBlock，于是我们的控件做好。
 
 有一些比较难说我没有说，请去看代码 http://git.oschina.net/lindexi/WinUX-UWP-Toolkit
+

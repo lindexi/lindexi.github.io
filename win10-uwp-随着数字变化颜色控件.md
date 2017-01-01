@@ -1,4 +1,4 @@
-#win10 uwp 随着数字变化颜色控件
+# win10 uwp 随着数字变化颜色控件
 
 我朋友在做一个控件，是显示异常，那么异常多就变为颜色，大概就是下面的图，很简单
 <!--more-->
@@ -30,14 +30,14 @@
 
 首先把控件放在xaml，在后台放个int，然后绑定，接着修改这个int就可以看到颜色从绿到红，使用简单。
 
-```
+```xml
         <local:RoundFigureGradual N="{x:Bind N,Mode=OneWay}"></local:RoundFigureGradual>
 ```
 
 转换的代码
 
 
-```
+```csharp
     public class IntBrushConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string culture)
@@ -66,7 +66,7 @@
 
 在WPF我们使用常量可以使用
 
-```
+```xml
 <Page
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:sys="clr-namespace:System;assembly=mscorlib"  
@@ -84,7 +84,7 @@
 
 在UWP那简单，我们在Resource
 
-```
+```xml
  <x:Double x:Key="Height"> 200 </x:Double>
 
 ```
@@ -99,5 +99,7 @@
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 
 

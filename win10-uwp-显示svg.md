@@ -1,4 +1,4 @@
-#本文说如何显示SVG
+# 本文说如何显示SVG
 
 【】
 
@@ -14,7 +14,7 @@
 
 lindexi
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -47,7 +47,7 @@ lindexi
 
 自然我们需要写一个字符串去转换
 
-```
+```csharp
  private void Svgimage()
  {
  string str = @"<?xml version=""1.0"" encoding=""utf-8""?>
@@ -77,13 +77,13 @@ lindexi
 
 先使用命名`Mntone.SvgForXaml.UI.Xaml`
 
-```
+```csharp
 xmlns:svg="using:Mntone.SvgForXaml.UI.Xaml"
 ```
 
 然后绑定
 
-```
+```xml
  <Grid>
  <svg:SvgImage x:Name="Svg" Content="{x:Bind View.Svg,Mode=OneWay}"></svg:SvgImage>
  </Grid>
@@ -93,7 +93,7 @@ xmlns:svg="using:Mntone.SvgForXaml.UI.Xaml"
 
 那么我们可以给我们的svgImage一个`x:Name="Svg"`
 
-```
+```csharp
 file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/weather_sun.svg"));
 
 await Svg.LoadFileAsync(file);
@@ -103,7 +103,7 @@ await Svg.LoadFileAsync(file);
 
 我们写在我们页面关掉，其实这个并不是关掉，只是我们的页面不显示
 
-```
+```csharp
 protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 {
   Svg.SafeUnload();
@@ -116,7 +116,7 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 
 先让用户选择保存的文件，然后选择.jpg或.png
 
-```
+```csharp
 var picker = new FileSavePicker();
  picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
  picker.DefaultFileExtension = ".png";
@@ -129,7 +129,7 @@ var picker = new FileSavePicker();
 
 `SvgImageRendererFileFormat format;`可以`SvgImageRendererFileFormat.Bitmap`或者什么自己选
 
-```
+```csharp
 await SvgImageRenderer.RendererImageAsync(file, new SvgImageRendererSettings()
 {
  Document = content,
@@ -149,3 +149,4 @@ await SvgImageRenderer.RendererImageAsync(file, new SvgImageRendererSettings()
 因为已经有人写了，和我一样，驸马说他用过Svg to Xaml 做，我求请教了驸马大神，在github找到库，好像简单。
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+

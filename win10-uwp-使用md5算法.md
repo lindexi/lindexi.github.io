@@ -7,7 +7,7 @@
 
 在WPF，我们使用
 
-```
+```csharp
         private string get_MD5(string str)
         {
             System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
@@ -29,7 +29,7 @@ UWP的md5使用很简单
 
 首先
 
-```
+```csharp
 using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
@@ -38,7 +38,7 @@ using Windows.Storage.Streams;
 
 然后把输入的字符串转为md5二进制
 
-```
+```csharp
             Windows.Security.Cryptography.Core.HashAlgorithmProvider objAlgProv = Windows.Security.Cryptography.Core.HashAlgorithmProvider.OpenAlgorithm(Windows.Security.Cryptography.Core.HashAlgorithmNames.Md5);
             Windows.Security.Cryptography.Core.CryptographicHash md5 = objAlgProv.CreateHash();
             Windows.Storage.Streams.IBuffer buffMsg1 = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(str , Windows.Security.Cryptography.BinaryStringEncoding.Utf16BE);
@@ -53,21 +53,21 @@ using Windows.Storage.Streams;
 
 转为Base64
 
-```
+```csharp
 Windows.Security.Cryptography.CryptographicBuffer.EncodeToBase64String(buffHash1);
 
 ```
 
 转为Hex
 
-```
+```csharp
 CryptographicBuffer.EncodeToHexString(buffHash1);
 
 ```
 
 下面写出代码，测试通过，在站长工具转换结果一样
 
-```
+```csharp
         public static string Md5(string str)
         {
             HashAlgorithmProvider algorithm = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Md5);
@@ -80,4 +80,6 @@ CryptographicBuffer.EncodeToHexString(buffHash1);
 ```
 
 <script src="https://gist.github.com/lindexi/0ecf1d8de7a222cda5f058e74de335c1.js"></script>
+
+
 

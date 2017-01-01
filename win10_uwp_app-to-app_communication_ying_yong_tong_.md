@@ -16,13 +16,13 @@
 
 创建一个event 可以在用户发送，共享发送
 
-```
+```csharp
             DataTransferManager data_transfer_manager = DataTransferManager.GetForCurrentView();
             data_transfer_manager.DataRequested += DataTransferManager_DataRequested;
 ```
 当DataRequested，应用收到一个DataRequest，这个是DataPackage可以在里面写你要发送的信息。DataPackage必须写标题和数据，如果有描述也写
 
-```
+```csharp
         private static void DataTransferManager_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             DataRequest request = args.Request;
@@ -39,7 +39,7 @@
  - 文件
  - 自己弄的我也不知道是什么的可以共享的
 
-```
+```csharp
             //文本
             request.Data.SetText(text);
             //uri
@@ -56,7 +56,7 @@
 
 我们需要和用户说我们在做的数据
 
-```
+```csharp
             request.Data.Properties.Title = "标题";
             request.Data.Properties.Description = "我的博客blog.csdn.net/lindexi_gd";
 ```
@@ -64,12 +64,12 @@
 
 开始通信
 
-```
+```csharp
 DataTransferManager.ShowShareUI();
 ```
 有时候我们需要等待一些操作需要时间，不能马上就分享，我们可以使用
 
-```
+```csharp
             request.Data.Properties.Title = "标题";
             request.Data.Properties.Description = "我的博客blog.csdn.net/lindexi_gd";
 
@@ -113,7 +113,7 @@ ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
 页面传参数可以使用，`Frame frame.Navigate`(页面，参数)
 
 
-```
+```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
@@ -122,7 +122,7 @@ ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
 
 在App.xaml.cs
 
-```
+```csharp
         protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
         {
             Frame rootFrame = Window.Current.Content as Frame;
@@ -137,7 +137,7 @@ ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
 ```
 我们可以在OnNavigatedTo拿分享
 
-```
+```csharp
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             ShareOperation share_operation = e.Parameter as ShareOperation;
@@ -172,7 +172,7 @@ ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
 
 `QuickLink `·我们需要标题，图标，id
 
-```
+```csharp
             QuickLink quickLinkInfo = new QuickLink()
             {
                 Id = QuickLinkId,
@@ -197,7 +197,7 @@ ApplicationLink是`new Uri("ms-sdk-sharesourcecs:navigate?page=" + 页面名);`
 ![这里写图片描述](http://img.blog.csdn.net/20160405185522977)
 在app.xaml.cs
 
-```
+```csharp
         protected override void OnFileActivated(FileActivatedEventArgs args)
         {
            // args.Files
@@ -210,3 +210,5 @@ Files包含文件可以拿来
 原文：https://msdn.microsoft.com/en-us/windows/uwp/app-to-app/index
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+

@@ -1,4 +1,4 @@
-#win10 UWP 九幽数据分析
+# win10 UWP 九幽数据分析
 九幽数据统计是统计和分析数据来源，用户使用，先申请账号
 
 <!--more-->
@@ -25,7 +25,7 @@ http://www.windows.sc
 在App.xaml.cs
 
 
-```
+```csharp
 
         public App()
         {
@@ -57,7 +57,7 @@ http://www.windows.sc
 
 在OnLaunched加
 
-```
+```csharp
 
 track();
 
@@ -66,7 +66,7 @@ track();
 在OnSuspending加
 
 
-```
+```csharp
 
         private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
@@ -83,7 +83,7 @@ track();
 页面统计
 
 
-```
+```csharp
 
         protected override void OnNavigatedFrom(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
         {
@@ -101,7 +101,7 @@ track();
 统计次数
 
 
-```
+```csharp
 
 JYAnalytics.TrackEvent("StartTimes");
 
@@ -111,7 +111,7 @@ JYAnalytics.TrackEvent("StartTimes");
 统计StartTimes次数
 
 
-```
+```csharp
 
 string eventId=“open";//当前统计的事件
 string lable="打开blog.csdn.net/lindexi_gd";//描述当前id
@@ -122,7 +122,7 @@ JYAnalytics.TrackEvent(eventId,lable);
 统计错误
 
 
-```
+```csharp
 string error=”“；
 JYAnalytics.TrackError(error);
 
@@ -131,6 +131,8 @@ JYAnalytics.TrackError(error);
 在Package.appxmanifest功能
 Internet(客户端服务器)使用
 ![这里写图片描述](image/201611220506879.png)
+
+
 
 
 

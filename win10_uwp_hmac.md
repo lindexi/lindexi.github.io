@@ -41,3 +41,4 @@ Hmac 输入是 buffer，如果我们只有 byte 请使用 `CryptographicBuffer.C
 Hmac密钥 `obj_mac_prov.CreateKey(buff_key_material)`
 
 最后使用 ` CryptographicEngine.Sign(hmac_key, buff_msg);` 
+

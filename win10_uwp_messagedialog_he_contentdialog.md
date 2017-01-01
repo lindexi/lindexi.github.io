@@ -7,7 +7,7 @@
 
 我在MainPage，挂起`App.Current.Suspending += suspend;`
 
-```
+```csharp
         private async void suspend(object sender, Windows.ApplicationModel.SuspendingEventArgs e)
         {
             SuspendingDeferral deferral = e.SuspendingOperation.GetDeferral();
@@ -27,7 +27,7 @@
 
 `SuspendingDeferral deferral = e.SuspendingOperation.GetDeferral();`挂起还要做，直到`deferral.Complete();`
 
-```
+```csharp
             MessageDialog message_dialog = new MessageDialog("当前还在运行，确定退出", "退出");
             message_dialog.Commands.Add(new UICommand("确定", cmd => { }, "退出"));
             message_dialog.Commands.Add(new UICommand("取消", cmd => { }));
@@ -35,12 +35,12 @@
 
 两个按钮，一个确定，一个取消，可以UICommand ID作为点击后，是哪个按钮点击
 
-```
+```csharp
 MessageDialog.DefaultCommandIndex按ESC选择按钮
 MessageDialog.CancelCommandIndex按enter按钮
 ```
 
-```
+```csharp
             IUICommand result = await message_dialog.ShowAsync();
             if (result.Id as string == "退出")
             {
@@ -57,7 +57,7 @@ MessageDialog.CancelCommandIndex按enter按钮
 
 我们把MessageDialog换ContentDialog
 
-```
+```csharp
             ContentDialog content_dialog = new ContentDialog()
             {
                 Title = "退出",
@@ -74,7 +74,7 @@ MessageDialog.CancelCommandIndex按enter按钮
 
 ![这里写图片描述](http://img.blog.csdn.net/20160307212834443)
 
-```
+```xml
 <UserControl
     x:Class="produproperty.content"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -98,7 +98,7 @@ MessageDialog.CancelCommandIndex按enter按钮
 
 ```
 
-```
+```csharp
             ContentDialog content_dialog = new ContentDialog()
             {
                 Title = "退出",
@@ -118,3 +118,5 @@ MessageDialog.CancelCommandIndex按enter按钮
 
 参见：
 http://www.cnblogs.com/TianFang/p/4857205.html
+
+

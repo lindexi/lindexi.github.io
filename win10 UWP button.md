@@ -9,13 +9,13 @@ Button常用的就是点击
 
 我们可以在button的click写上
 
-```
+```xml
 <Button Content="确定" Click="Button_Click"/>
 ```
 
 在Button_Click按F12到代码写上点击按钮需要运行
 
-```
+```csharp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
               //这里写上点击按钮后触发
@@ -28,7 +28,7 @@ Button常用的就是点击
 
 在Button可以在Click写
 
-```
+```csharp
 Click="{x:Bind view.ce}"
 ```
 
@@ -36,7 +36,7 @@ Click="{x:Bind view.ce}"
 
 在用ViewModel需要在MainPage.xaml.cs写
 
-```
+```csharp
 viewModel view {set;get;}= new viewModel();
 
 ```
@@ -49,7 +49,7 @@ button content可以使用一个元素，这个元素可以是Grid，我们可�
 
 把图放到项目
 
-```
+```xml
     <Button Height="100" Width="100" Margin="10,10,10,10" Padding="0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"> 
         <Button.Content>                       
             <Ellipse Margin="0,0,0,0" Height="90" Width="90">
@@ -73,7 +73,7 @@ button content可以使用一个元素，这个元素可以是Grid，我们可�
 button可以设置属性，使用资源
 资源可以写在页面
 
-```
+```xml
     <Page.Resources>
         
     </Page.Resources>
@@ -81,7 +81,7 @@ button可以设置属性，使用资源
 
 所有按钮使用同样式
 
-```
+```xml
     <Page.Resources>
         <Style TargetType="Button">
             
@@ -93,7 +93,7 @@ button可以设置属性，使用资源
 
 按钮的背景
 
-```
+```xml
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="White"/>
@@ -103,7 +103,7 @@ button可以设置属性，使用资源
 
 指定一个样式，key
 
-```
+```xml
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="White"/>
@@ -118,7 +118,7 @@ button可以设置属性，使用资源
     </Page.Resources>
 ```
 
-```
+```xml
          <Button Content="默认"/>
          <Button Style="{StaticResource button}" Content="确定"/>
 ```
@@ -246,7 +246,7 @@ button可以设置属性，使用资源
 在装机必备移动到搜狐显示搜狐
 参考：http://blog.csdn.net/lindexi_gd/article/details/50166161
 
-```
+```xml
                         <Button Click="souhu_Click" ToolTipService.ToolTip="搜狐视频" Padding="0" >
                             <Button.Content>
                                 <Grid>
@@ -265,7 +265,7 @@ button可以设置属性，使用资源
 
 显示图片
 
-```
+```xml
                         <Button Click="souhu_Click" Padding="0" >
                             <Button.Content>
                                 <Grid>
@@ -292,3 +292,4 @@ button可以设置属性，使用资源
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/bae3aa76-b425-4667-92dd-3e59e0987cbaProgressButton.gif)
 
 https://github.com/lindexi/uwp/tree/master/uwp/control/Button
+

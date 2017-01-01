@@ -1,4 +1,4 @@
-#win10 uwp 保存用户选择文件夹
+# win10 uwp 保存用户选择文件夹
 
 如果我们每次把临时处理的文件保存，都要让用户选择一次，用户会不会觉得uwp垃圾？如果我们每次打开应用，都从某个文件读取，而这个文件不在应用目录和已知的目录，那么每次都需要用户选择，用户会不会觉得uwp垃圾？
 <!--more-->
@@ -13,14 +13,14 @@
 
 不知道FolderPicker需要FileTypeFilter，这个设计。我们需要给他一个值，开头是"."
 
-```
+```csharp
             FolderPicker pick=new FolderPicker();
             pick.FileTypeFilter.Add(".png");
 ```
 
 然后让用户选择，这里是异步，我们可以让用户选择，然后我们做我们的。
 
-```
+```csharp
 
             IAsyncOperation<StorageFolder> folderTask= pick.PickSingleFolderAsync();
             //做我们的
@@ -29,7 +29,7 @@
 
 我们可以省一点，让用户选择我们不做什么
 
-```
+```csharp
 
             var folder =await pick.PickSingleFolderAsync();
 
@@ -39,7 +39,7 @@
 
 判断选择我们需要把它放进FutureAccessList，放进去可以拿到token
 
-```
+```csharp
 
             if (folder != null)
             {
@@ -55,7 +55,7 @@
 
 先拿到本地文件夹
 
-```
+```csharp
 
             string folderStr = "account";
             StorageFolder folder = ApplicationData.Current.LocalFolder;
@@ -63,7 +63,7 @@
 
 创建一个文件夹account，因为如果是第一次我们就没有文件夹，如果不是我们就有
 
-```
+```csharp
 
             try
             {
@@ -77,7 +77,7 @@
 
 创建文件
 
-```
+```csharp
 
             StorageFile file = await folder.CreateFileAsync(
                 folderStr+".json", CreationCollisionOption.ReplaceExisting);
@@ -91,14 +91,14 @@
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=eb992e37cd0bd5c07ae125648f6328bb)
 
-```
+```csharp
 
   var json = JsonSerializer.Create();
 ```
  
 我们需要用StringBuilder来把json序列存放，如果直接用
 
-```
+```csharp
 
             json.Serialize(new JsonTextWriter(
                 new StreamWriter(await file.OpenStreamForWriteAsync())), Account);
@@ -110,7 +110,7 @@ Account就是我们的数据。
 
 我写的方法应该可以是可以把token保存的
 
-```
+```csharp
 
             StringBuilder str = new StringBuilder();
             StringWriter stream=new StringWriter(str);
@@ -131,7 +131,7 @@ Account就是我们的数据。
 
 读取就可以用json的
 
-```
+```csharp
 
                     StorageFile file = await folder.GetFileAsync(folderStr + ".json");
                     var json = JsonSerializer.Create();
@@ -143,11 +143,13 @@ folder要进去account
 
 我们从FutureAccessList拿文件
 
-```
+```csharp
 
              file = await StorageApplicationPermissions.FutureAccessList.GetFileAsync(Account.Token);
 
 ```
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 

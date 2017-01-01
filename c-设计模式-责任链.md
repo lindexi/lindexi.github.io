@@ -11,7 +11,7 @@
 
 首先我们需要一个接口`IHandle`接受我们的责任，在里面，最简单的责任链只有
 
-```
+```csharp
     public interface IHandle
     {
         IHandle Successor
@@ -40,7 +40,7 @@
 
 另一个，我们不知道我们什么时候实现主管、什么时候实现HR，我们责任链的位置重要，因为如果主管处理了，HR就可以不处理，那么我们需要顺序，一般在添加那里加上权限，这里写`Access`。我们在添加具体处理，一般判断我们的下一个处理是否存在，如果不存在，直接添加输入参数下一个处理，如果存在，判断权限大小，如果比他大就代换他，如果比他小，就给下一个处理。
 
-```
+```csharp
         public void AddSuccessor(IHandle successor)
         {
             if (Successor == null)
@@ -65,7 +65,7 @@
 
 我们发现如果把具体处理写为一个类，然后实现，这样每次使用函数`Request`都用成员，这样不太好，因为我们有功能扩展，所以我们把`ConcreteHandler`写为抽象，然后继承，写出主管等的类。
 
-```
+```csharp
     public class GHandle : ConcreteHandler
     {
         public override void Request(string str)
@@ -86,13 +86,15 @@
 ```
 
 
-##后退按钮使用责任链
+## 后退按钮使用责任链
 
 我看到堆栈炸了有人问我，为什么一按后退就炸。
 
 我看了他的源代码，他每个页面都把后退按钮点击事件+=他的方法。
 
 我们可以使用UWP的后退按钮
+
+
 
 
 

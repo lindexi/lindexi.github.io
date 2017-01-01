@@ -11,6 +11,7 @@
 于是在xaml.cs写一个 PointerPressed 函数，把它在构造添加给我们的 Button 的 PointerPressedEvent
 
 		
+
 ```C#
         public MainPage()
         {
@@ -36,6 +37,7 @@
 
 但是这不是一个好方法，我们可以使用GetCurrentPoint的IsLeftButtonPressed来知道我们是左键按下
 		
+
 ```C#
             var temp = e.GetCurrentPoint(sender as Button);
 
@@ -49,5 +51,7 @@
 如果我们只要左键，那么我们可以使用Tapped
 
 Tap可以获得是鼠标、按下的点，这在弹出时有用。
+
+
 
 

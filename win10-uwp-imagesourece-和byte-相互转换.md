@@ -5,7 +5,7 @@
 
 我们先写一个简单的xaml
 
-```
+```xml
        <Image x:Name="Img" Height="200" Width="200" 
               HorizontalAlignment="Center" Source="Assets/SplashScreen.png" ></Image>
         
@@ -65,7 +65,7 @@
 ## 从文件读WriteableBitmap
 
 
-```
+```csharp
         private static async Task<WriteableBitmap> OpenWriteableBitmapFile(StorageFile file)
         {
             using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read))
@@ -85,7 +85,7 @@ ImageSource可以是BitmapImage、WriteableBitmap，如果是WriteableBitmap ，
 
 WriteableBitmap  转byte[]
 
-```
+```csharp
 bitmap.PixelBuffer.ToArray();
 ```
 
@@ -95,7 +95,7 @@ bitmap.PixelBuffer.ToArray();
 
 如果我们的ImageSource是BitmapImage,那么我们不能使用上面的办法，直接保存WriteableBitmap ，我们可以使用截图
 
-```
+```csharp
 private async Task<string> ToBase64(Image control)
 {
     var bitmap = new RenderTargetBitmap();
@@ -108,7 +108,7 @@ private async Task<string> ToBase64(Image control)
 
 如果ImageSource是WriteableBitmap ，直接保存
 
-```
+```csharp
 
 //WriteableBitmap 转 byte[]
 private async Task<string> ToBase64(WriteableBitmap bitmap)
@@ -171,7 +171,7 @@ private async Task<ImageSource> FromBase64(string base64)
 ## 从文件读 BitmapImage 
 
 
-```
+```csharp
         private async Task<BitmapImage> OpenBitmapImageFile(StorageFile file)
         {
             var fileStream = await file.OpenReadAsync();
@@ -199,3 +199,4 @@ UWP的BitmapImage 不能转换为byte[] 或WriteableBitmap
 参见：http://www.cnblogs.com/cjw1115/p/5164327.html
 
 http://www.cnblogs.com/yuanforprogram/p/4819307.html
+

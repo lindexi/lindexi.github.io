@@ -33,7 +33,8 @@ CodePlex是微软开源项目网站，有很多人都在上面传代码，我们
 就得到Git地址，在自己项目，上传
 
 		
-```
+
+```csharp
 git remote add codeplex https://git01.codeplex.com/lindexiuwp   这里的地址是你自己地址
 
 git push codeplex master
@@ -46,7 +47,8 @@ git push codeplex master
 
 我们需要让别人知道我们项目，需要写一个Page，他的语法垃圾，我不想说，大家自己去学。
 		
-```
+
+```csharp
 ! Uwp
 
 常用代码和控件
@@ -125,4 +127,6 @@ Some controls and common codes
 http://www.cnblogs.com/gossip/archive/2012/06/26/2563587.html 
 
 参见 http://www.cnblogs.com/aspnet_csharp/archive/2012/04/20/2459099.html
+
+
 

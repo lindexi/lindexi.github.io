@@ -6,19 +6,19 @@
 
 首先用git bash 到我的一个仓库，作为需要合并的仓库
 
-```
+```csharp
 cd 仓库
 ```
 
 添加我要合并仓库
 
-```
-#git remote add 仓库 仓库可以是远程仓库
+```csharp
+# git remote add 仓库 仓库可以是远程仓库
 git remote add lindexi git@github.com:lindexi/lindexi.github.io.git
 ```
 从远程仓库下载，这时我们弄个新的
 
-```
+```csharp
 git branch lindexi
 git checkout lindexi
 git fetch lindexi
@@ -31,6 +31,8 @@ git checkout master
 git merge lindexi
 git branch -d lindexi
 ```
+
+
 
 
 

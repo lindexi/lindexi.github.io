@@ -16,6 +16,7 @@
 我们把所有的需要做多语言的字符串提取出来。假如我们有一个 TextBlock ，他有一个 Text 。我们有一个 TextBox 他有 Header ，我们需要把他们改为多语言。
 
 		
+
 ```xml
                 <TextBlock Text="lindexi"></TextBlock>
                 <TextBox Header="lindexi.oschina.io"></TextBox>
@@ -39,6 +40,7 @@
 写完 Resources 我们返回 xaml ，在 TextBlock 和 TextBox 使用Uid
 
 		
+
 ```xml
                <TextBlock x:Uid="lindexi" Text="lindexi"></TextBlock>
                <TextBox x:Uid="lindexioschinaio" Header="lindexi.oschina.io"></TextBox>
@@ -97,3 +99,4 @@
 https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPError=-2147217396
 
 http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps
+

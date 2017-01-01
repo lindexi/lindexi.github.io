@@ -7,7 +7,7 @@
 
 我们在前台
 
-```
+```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <WebView x:Name="Webview"/>
         <Button Content="手机" Click="WebPhone_OnClick"/>
@@ -20,7 +20,7 @@
 
 我把这些写按钮	
 
-```
+```csharp
         private void WebPhone_OnClick(object sender, RoutedEventArgs e)
         {
             var httpRequestMessage = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.Get, new Uri(Url));
@@ -32,7 +32,7 @@
 
 这里
 
-```
+```csharp
  var userAgent = "Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; WebView/3.0; Microsoft; Virtual) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10240 sample/1.0";
 ```
 
@@ -40,7 +40,7 @@
 
 所有代码
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -88,3 +88,4 @@ namespace WebViewUwp
 对于User设置可以参见：http://blog.csdn.net/adc_god/article/details/51951514
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+

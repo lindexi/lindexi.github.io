@@ -1,4 +1,4 @@
-#win10 uwp如何使用DataTemplate
+# win10 uwp如何使用DataTemplate
 
 【】
 
@@ -22,7 +22,7 @@
 
 
 
-##转换
+## 转换
 
 有时候我们绑定的类型和显示不同，例如我们绑定了一个`bool?`但是我们在ViewModel的类型是bool，那么我们就需要用转换器。转换器就是继承IValueConverter的一个类。
 
@@ -32,7 +32,7 @@ UWP的Convert和WPF差不多。
 
 首先是创建一个类，这个类继承IValueConverter，于是就有两个方法，我们要实现
 
-```
+```csharp
  public object Convert(object value, Type targetType,
             object parameter,
             string language);
@@ -45,7 +45,7 @@ UWP的Convert和WPF差不多。
 
 一般我们实现第一个就好，最简单的实现是直接转换。假如我们是需要把`bool？`转bool，那么一个简单方法是：
 
-```
+```csharp
         public object Convert(object value, Type targetType,
             object parameter,
             string language)
@@ -70,7 +70,7 @@ UWP的Convert和WPF差不多。
 
 在资源，如果是Page的xaml，那么就写在，如果只是这个转换器用在一个Grid，就写在Grid，我先用Page做例子
 
-```
+```xml
     <Page.Resources>
 
     </Page.Resources>
@@ -79,11 +79,11 @@ UWP的Convert和WPF差不多。
 
 我的转换器名称是：ConvertBooleanNull
 
-假如我们放在Model里，命名空间是 `项目.Model`，我们需要先在xmlns写`    xmlns:view="using:项目.Model"`，view就是一个变量，这个可以改为你需要的。
+假如我们放在Model里，命名空间是 `项目.Model`，我们需要先在xmlns写`    xmlns:view="using:项目.Model"`，view就是一个变量，这个可以改为你需要的。
 
 然后在静态资源`<view:ConvertBooleanNull x:Key="ConvertBooleanNull">   </view:ConvertBooleanNull>`
 
-```
+```xml
     <Page.Resources>
         <view:ConvertBooleanNull x:Key="ConvertBooleanNull">   </view:ConvertBooleanNull>
     </Page.Resources>
@@ -94,7 +94,7 @@ UWP的Convert和WPF差不多。
 
 假如我们控件绑定的是ViewModel的JiuYouImageShack，需要进行转换，就可以写
 
-```
+```xml
  <TextBox Text="{x:Bind View.JiuYouImageShack,Mode=OneWay,Converter={StaticResource ConvertBooleanNull}}"></TextBox>
 
 
@@ -104,12 +104,12 @@ UWP的Convert和WPF差不多。
 
 ## 绑定Event到Command
 
-```
+```xml
 <ListView>
     <Interactivity:Interaction.Behaviors>
          <Core:EventTriggerBehavior EventName="SelectionChanged">
-                   <Core:InvokeCommandAction Command="{Binding ShowDialog}" CommandParameter="{Binding ElementName=lv,Path=SelectedItem,Converter={StaticResource converter}}"/>
-         </Core:EventTriggerBehavior>
+                   <Core:InvokeCommandAction Command="{Binding ShowDialog}" CommandParameter="{Binding ElementName=lv,Path=SelectedItem,Converter={StaticResource converter}}"/>
+         </Core:EventTriggerBehavior>
     </Interactivity:Interaction.Behaviors>
 </ListView>
 
@@ -117,12 +117,14 @@ UWP的Convert和WPF差不多。
 
 UWP
 
-##UWP 默认应用打开文件
+## UWP 默认应用打开文件
 
-##UWP 文件md5
+## UWP 文件md5
 
-##UWP协议
+## UWP协议
 
 
  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 

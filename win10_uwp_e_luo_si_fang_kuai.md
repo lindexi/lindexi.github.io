@@ -1,4 +1,4 @@
-#俄罗斯方块
+# 俄罗斯方块
 
 俄罗斯方块是一个很经典的游戏，做一个UWP俄罗斯方块没有什么用，我想说的是移植，把经典游戏移植到UWP。
 <!--more-->
@@ -68,7 +68,7 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
 
 因为我们需要游戏按键，所以我们需要一个TextBox
 
-```
+```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBox Margin="10,10,10,10" Width="1" Height="1" KeyDown="keydown"></TextBox>
         <Canvas x:Name="canvas" Margin="10,10,10,10">
@@ -85,7 +85,7 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
 
 所以我们在
 
-```
+```csharp
             for (int i = 0; i < view.row; i++)
             {
                 for (int j = 0; j < view.col; j++)
@@ -111,7 +111,7 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
 
 这样我们的屏幕就有了200个方块，但是放进去我们会发现和我们上面的图不同，因为宽度和高度不同
 
-```
+```csharp
             canvas.Width = size * view.col;
             canvas.Height = size * view.row;
 ```
@@ -138,7 +138,7 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
 
 需要把rectangle变为颜色
 
-```
+```csharp
 
             foreach (grid temp in _model.grid_observable)
             {
@@ -156,7 +156,7 @@ MVVM的知识我说的不算对，也不算错，但从这个看也是可以。
 
 为了让solid一修改就可以告诉view
 
-```
+```csharp
     public class solid : notify_property
     {
         public solid(SolidColorBrush solid)
@@ -190,7 +190,7 @@ ViewModel能把后台的rectangle变颜色，那么我们view把颜色显示
 
 那么我们在代码
 
-```
+```csharp
                     _rectangle[i, j] = new Rectangle()
                     {
                         Width = size,
@@ -216,7 +216,7 @@ ViewModel能把后台的rectangle变颜色，那么我们view把颜色显示
 
 我们可以设置`Source = view`
 
-```
+```csharp
                     Binding bind = new Binding()
                     {
                         Path = new PropertyPath("solid_collection[" + (i * view.col + j) + "].solids"),
@@ -227,7 +227,7 @@ ViewModel能把后台的rectangle变颜色，那么我们view把颜色显示
 也可以`_rectangle[i, j].DataContext = view;`
 写完我们需要
 
-```
+```csharp
 _rectangle[i, j].SetBinding(Shape.FillProperty, bind);
 ```
 
@@ -246,7 +246,7 @@ Convert里面是转换类
 
 写到这，后面都是小白
 
-#俄罗斯方块
+# 俄罗斯方块
 
 我们先打开vs神器，之前下载vs安装，需要sdk，这个在安装自己弄。
 
@@ -256,7 +256,7 @@ Convert里面是转换类
 
 再新建一个类notify_property，接口INotifyPropertyChanged
 
-```
+```csharp
     /// <summary>
     /// 提供继承通知UI改变值
     /// </summary>
@@ -303,7 +303,7 @@ Convert里面是转换类
 
 我们需要做一个来保存
 
-```
+```csharp
     public enum block
     {
         straight, 
@@ -315,7 +315,7 @@ Convert里面是转换类
 
 那么我们需要一个来放我们的方块
 
-```
+```csharp
     public class grid : notify_property
     {
         public grid()
@@ -394,7 +394,7 @@ square(block block, int center)
 
 我们先做直线
 
-```
+```csharp
         public square(block block, int center)
         {
             _block = block;
@@ -420,7 +420,7 @@ square(block block, int center)
 
 我们来做t
 
-```
+```csharp
                     case block.t:
                         _grid[0].col = center;
                         _grid[0].row = 0;
@@ -435,7 +435,7 @@ square(block block, int center)
 
 square
 
-```
+```csharp
                    case block.square:
                         if (i <= 1)
                         {
@@ -453,7 +453,7 @@ square
 
 bent
 
-```
+```csharp
                     case block.bent:
                         if (i <= 1)
                         {
@@ -469,7 +469,7 @@ bent
 
 ![这里写图片描述](http://img.blog.csdn.net/20160505164635199)
 
-```
+```csharp
         public square(block block, int center)
         {
             _block = block;
@@ -526,7 +526,7 @@ bent
 
 这样看起来代码很多，这样不好，我们需要把每个放在一个函数
 
-```
+```csharp
         public square(block block, int center)
         {
             _block = block;
@@ -592,7 +592,7 @@ bent
 
 我们需要最大值
 
-```
+```csharp
         public int row
         {
             set
@@ -622,7 +622,7 @@ bent
 
 当前方块
 
-```
+```csharp
         public square _square
         {
             set;
@@ -632,7 +632,7 @@ bent
 
 新建方块
 
-```
+```csharp
         private void new_block()
         {
             block _block = (block)ran.Next(4);
@@ -645,7 +645,7 @@ bent
 
 每次下降
 
-```
+```csharp
         public void down()
         {
             if (_square == null)
@@ -657,7 +657,7 @@ bent
 
 我们在ViewModel
 
-```
+```csharp
         public viewModel()
         {
             solid_collection = new ObservableCollection<solid>();
@@ -718,7 +718,7 @@ bent
 
 如果model 
 
-```
+```csharp
             if (_square == null)
             {
                 new_block();
@@ -731,7 +731,7 @@ bent
 
 viewModel
 
-```
+```csharp
         public void down()
         {
             _model.down();
@@ -746,7 +746,7 @@ viewModel
 
 打开MainPage
 
-```
+```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBox Margin="10,10,10,10" Width="1" Height="1" KeyDown="keydown"></TextBox>
         <Canvas x:Name="canvas" Margin="10,10,10,10">
@@ -757,7 +757,7 @@ viewModel
 
 TextBox 我们需要按键
 
-```
+```csharp
         private viewModel view;
         public MainPage()
         {
@@ -770,7 +770,7 @@ rectangle绑定我们的界面
 
 绑定在上面有写了
 
-```
+```csharp
         private void rectangle()
         {
             view = new viewModel();
@@ -815,7 +815,7 @@ rectangle绑定我们的界面
 
 我们要让整个方块向下
 
-```
+```csharp
         public void down()
         {
             if (_square == null)
@@ -838,7 +838,7 @@ rectangle绑定我们的界面
 
 判断方块是不是要到的位置不可以，这句话是说判断是不是在grid里，位置超过最大可以的位置，或者小于0，位置是不是有方块。
 
-```
+```csharp
         private bool rectangle(square _square)
         {
             bool _rectangle = true;
@@ -869,7 +869,7 @@ rectangle绑定我们的界面
 
 我们先复制方块，然后让方块向下，判断是个方块是不是可以在他的位置，如果可以，复制回去。
 
-```
+```csharp
         public void down()
         {
             if (_square == null)
@@ -890,7 +890,7 @@ rectangle绑定我们的界面
 
 复制
 
-```
+```csharp
         public square clone()
         {
             square temp = new square(_block, 0);
@@ -904,7 +904,7 @@ rectangle绑定我们的界面
 ```
 运行我们可以看到方块能向下，在最下停下，但是不会出新方块，我们需要判断向下，如果没有可以位置，那么新方块
 
-```
+```csharp
         public void down()
         {
             if (_square == null)
@@ -934,7 +934,7 @@ rectangle绑定我们的界面
 
 我们需要把方块画在grid，那些我们无法移动的方块需要画在grid
 
-```
+```csharp
         private void draw()
         {
             int n = 0;
@@ -955,7 +955,7 @@ rectangle绑定我们的界面
 
 画完我们判断是不是可以删掉，判断一行是不是有方块，有就删掉
 
-```
+```csharp
         private void clean()
         {
             bool _rectangle = true;
@@ -988,7 +988,7 @@ rectangle绑定我们的界面
 
 左移col--，判断是否可以存在，可以，复制回去
 
-```
+```csharp
         public void move(bool left)
         {
             square temp = _square.clone();
@@ -1015,7 +1015,7 @@ rectangle绑定我们的界面
 
 我们去mainpage写
 
-```
+```csharp
         private void keydown(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
         {
             if (e.Key == VirtualKey.Up)
@@ -1039,7 +1039,7 @@ rectangle绑定我们的界面
 
 viewmode只是使用model
 
-```
+```csharp
         public void move(bool left)
         {
             _model.move(left);
@@ -1052,7 +1052,7 @@ viewmode只是使用model
 
 MainPage.xaml
 
-```
+```xml
 <Page
     x:Class="tetris.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -1072,11 +1072,11 @@ MainPage.xaml
 
 ```
 
-```
+```csharp
 // lindexi
 // 11:22
 
-#region
+# region
 
 using System.Runtime.CompilerServices;
 using Windows.System;
@@ -1088,7 +1088,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Shapes;
 
-#endregion
+# endregion
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
@@ -1170,7 +1170,7 @@ namespace tetris
 
 viewModel
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -1384,16 +1384,16 @@ namespace tetris
 
 model
 
-```
+```csharp
 // lindexi
 // 10:41
 
-#region
+# region
 
 using System;
 using System.Collections.ObjectModel;
 
-#endregion
+# endregion
 
 namespace tetris
 {
@@ -1920,3 +1920,5 @@ namespace tetris
     }
 }
 ```
+
+

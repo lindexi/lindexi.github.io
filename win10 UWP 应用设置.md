@@ -10,7 +10,7 @@ LocalSettings.Values可以存放几乎所有数据
 
 存放一个string
 
-```
+```csharp
 
 string str
 
@@ -46,7 +46,7 @@ string str
 
 如果设置在LocalSettings让程序太乱，有很多变量名称一样，可以使用新的ApplicationDataContainer
 
-```
+```csharp
 
             string str = "";
 
@@ -59,3 +59,4 @@ string str
 ```
 
 http://blog.csdn.net/lindexi_gd
+

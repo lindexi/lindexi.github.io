@@ -12,7 +12,7 @@
 
 进入一个放仓库的文件夹，然后复制他的远程Url
 
-```
+```csharp
 git clone --mirror Url
 
 我自己的镜像，假如要把我的https://github.com/lindexi/UWP.git 做镜像到本地
@@ -21,7 +21,7 @@ git clone --mirror https://github.com/lindexi/UWP.git
 
 这样就有本地镜像，我们需要更新他的时候用
 
-```
+```csharp
 git remote update
 
 ```
@@ -31,7 +31,7 @@ gogs的下载 https://github.com/gogits/gogs 下载完在Windows下打开
 
 打开需要用命令行
 
-```
+```csharp
 gogos.exe web
 
 ```
@@ -51,3 +51,4 @@ gogos.exe web
 默认就是24小时
 
 我最近在用gogs同步我的本地项目，然后用坚果云同步
+

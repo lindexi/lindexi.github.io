@@ -24,6 +24,7 @@
 
 
 		
+
 ```csharp
              if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
             {
@@ -44,6 +45,7 @@ statusbar.BackgroundColor如果设置透明为0，那么可能看不到系统显
 
 我们还可以在上面显示Text，设置`statusbar.ProgressIndicator.Text`然后显示，使用函数`ShowAsync`
 		
+
 ```csharp
 statusbar.ProgressIndicator.Text = "test statusbar";  
 statusbar.ProgressIndicator.ShowAsync();
@@ -53,3 +55,4 @@ statusbar.ProgressIndicator.ShowAsync();
 参见：http://uwpbox.com/status-bar-at-the-top-of-the-uwp-statusbar.html
 
 参见：http://www.cnblogs.com/tcjiaan/p/4783049.html
+

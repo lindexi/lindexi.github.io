@@ -10,7 +10,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 <!--more-->
 
-```
+```csharp
     public class page
     {
         public page()
@@ -58,7 +58,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 弄了一个类，本来应该叫page管理器，我叫baozitong
 输入title返回type
 
-```
+```csharp
        public static Type page(string title)
        {
            foreach (var temp in _page)
@@ -87,7 +87,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 界面splitview
 
-```
+```xml
         <ToggleButton Grid.Row="0" IsChecked="{Binding ElementName=split,Path=IsPaneOpen,Mode=TwoWay}" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"></ToggleButton>
         <SplitView x:Name="split" Grid.Row="1" IsPaneOpen="True">
             <SplitView.Pane>
@@ -103,7 +103,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         </SplitView>
 ```
 
-```
+```csharp
         private void nagivate(object sender, SelectionChangedEventArgs e)
         {
             //跳转navigate
@@ -112,20 +112,20 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 
 
-##Appbars and commands
-###App bar
+## Appbars and commands
+### App bar
 用于显示应用程序特定命令的工具栏。
-###App bar button
+### App bar button
 使用app bar风格按钮
 一个简单的按钮
 
-```
+```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center"/>
 ```
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/82963283.jpg)
 我们可以加上内容
 
-```
+```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center">
                 <Grid Width="48" Height="48" Margin="0,-8,0,-4">
                     <SymbolIcon Symbol="Memo"/>
@@ -136,7 +136,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/51594850.jpg)
 我们可以在按钮加浮出
 
-```
+```xml
             <AppBarButton Icon="OpenWith" Label="浮出">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
@@ -151,11 +151,11 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/93606598.jpg)
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/29257708.jpg)
-###App bar separator
+### App bar separator
 命令栏中的命令组。
 如果我们有很多按钮，我们可以使用
 
-```
+```xml
             <AppBarButton Content="林德熙"></AppBarButton>
             <AppBarSeparator></AppBarSeparator>
             <AppBarButton Content="csdn"></AppBarButton>
@@ -165,18 +165,18 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
  
 
-###App bar toggle button
+### App bar toggle button
 
 开关命名命令栏
 
 
-###Command bar
+### Command bar
 
 一种专门处理命令按钮栏按钮
 
 我们把刚才的按钮放在`<CommandBar>`
 
-```
+```xml
         <CommandBar>
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center">
                 <Grid Width="48" Height="48" Margin="0,-8,0,-4">
@@ -200,7 +200,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 我们也看到最后的按钮，如果有一些用不到，但是有用
 
-```
+```xml
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="没有授权"/>
                 <AppBarButton Label="红黑转载"/>
@@ -208,40 +208,40 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/15333552.jpg)
 
-##Buttons
+## Buttons
 
-###Button
+### Button
 
 响应用户输入和点击事件。
 
-```
+```xml
 <Button Margin="72,163,0,0" Content="请勿转载"></Button>
 ```
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/84807449.jpg)
 按钮点击可以使用`X:Bind`
 
-###Hyperlink
+### Hyperlink
 
 超链接
 
-```
+```xml
         <TextBlock HorizontalAlignment="Left" Margin="72,163,0,0" TextWrapping="Wrap"  VerticalAlignment="Top">
            <Hyperlink NavigateUri="http://blog.csdn.net/lindexi_gd"> 博客发在csdn </Hyperlink>，没有授权红黑转载，没有授权推酷转载
         </TextBlock>
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328093500345)
 
-###Repeat button
+### Repeat button
 
 用户点击不停响应。
 
 
-##Collection/data controls
+## Collection/data controls
 
-###Flip view
+### Flip view
 幻灯片播放
 
-```
+```xml
       <FlipView>
             <Image Source="Assets/QQ截图20160328094421.png"></Image>
             <Image Source="Assets/QQ截图20160328094435.png"></Image>
@@ -251,19 +251,19 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 http://www.cnblogs.com/Damai-Pang/p/5201206.html
 
-###Grid view
+### Grid view
 行列布局，可以水平滚动控件。
 
 
-###Items control
+### Items control
 提供UI指定数据模板
 
 
-###List view
+### List view
 在一个列表上的项目的集合,可以垂直滚动控件
 我们做一个viewmodel
 
-```
+```csharp
     public class viewmodel : notify_property
     {
         public viewmodel()
@@ -274,7 +274,7 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 我们依列表
 
-```
+```csharp
         public ObservableCollection<string> lindexi
         {
             set;
@@ -286,7 +286,7 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
         };
 ```
 
-```
+```xml
         <ListView ItemsSource="{x:Bind view.lindexi}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -297,25 +297,25 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328095934262)
-##Date and time controls
-###Calendar date picker
+## Date and time controls
+### Calendar date picker
 日历日期选择器
 ![这里写图片描述](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/images/controls/calendar-date-picker-open.png)
 ![这里写图片描述](http://img.blog.csdn.net/20160328100448795)
 
-###Calendar view
+### Calendar view
 日程表，让用户选择日期
 ![这里写图片描述](http://img.blog.csdn.net/20160328100619968)
 
-###Time picker
+### Time picker
 用户选择一个时间
 ![这里写图片描述](http://img.blog.csdn.net/20160328100844891)
 
-##Flyouts
-###Flyout
+## Flyouts
+### Flyout
 显示一条消息
 
-```
+```xml
         <Button Margin="200,153,0,0" Content="请勿转载">
             <Button.Flyout>
                 <Flyout>
@@ -328,10 +328,10 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328101517643)
 
-###Menu flyout
+### Menu flyout
 暂时显示命令或列出选项给用户选择
 
-```
+```xml
             <AppBarButton Icon="OpenWith" Label="浮出">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
@@ -343,31 +343,31 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
             </AppBarButton>
 ```
 
-###Popup menu
+### Popup menu
 弹出自己写的菜单
 
-###Tooltip
+### Tooltip
 提示
 
-```
+```xml
 <Button Content="Button" Click="请勿转载" 
         ToolTipService.ToolTip="没有授权红黑转" />
 ```
 
-##Images
-###Image
+## Images
+### Image
 图片
 
-```
+```xml
 <Image Source="Assets/QQ截图20160328094421.png"></Image>
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328102111052)
 
 如果需要gif可以 http://www.songsong.org/post/2015/10/11/ImageLib.html
-##Graphics and ink
-###InkCanvas
+## Graphics and ink
+### InkCanvas
 
-```
+```xml
 <InkCanvas></InkCanvas>
 ```
 
@@ -376,20 +376,20 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ![这里写图片描述](http://img.blog.csdn.net/20160328104717281)
 保存文件可以去edi.wang
 
-###Shapes
+### Shapes
 椭圆,矩形、线、贝塞尔曲线路径
 
-```
+```xml
             <Ellipse Fill="Black" Width="100" Margin="10,10,10,10" Height="200"></Ellipse>
 
 ```
 
-```
+```xml
             <Rectangle Fill="Black" Width="10" Height="100" Margin="10,10,10,10"></Rectangle>
 
 ```
 
-```
+```xml
            <Path Stroke="Black" StrokeThickness="10">
                 <Path.Data>
                     <PathGeometry>
@@ -412,19 +412,19 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 
 
 
-##Layout controls
-###Border
+## Layout controls
+### Border
 边框
-###Canvas
+### Canvas
 画板
-###Grid
+### Grid
 网格布局
-###StackPanel
+### StackPanel
 堆放布局
-###Scroll viewer
+### Scroll viewer
 滚动视图
 
-```
+```xml
             <ScrollViewer Height="20" VerticalScrollBarVisibility="Visible">
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text=" 林德熙"/>
@@ -433,10 +433,10 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
             </ScrollViewer>
 ```
 
-###Viewbox
+### Viewbox
 可以改变内容的长宽
 
-```
+```xml
                 <Viewbox Width="100">
                     <TextBlock Margin="10,10,10,10" Text="林德熙"></TextBlock>
                 </Viewbox>
@@ -449,13 +449,13 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328105901874)
 
-##Media controls
-###Media element
+## Media controls
+### Media element
 播放视频
 其实我之前用它播放音频https://github.com/lindexi/Markdown
 ![](http://img.blog.csdn.net/20160229103657266)
 
-```
+```csharp
         private async void speech(string str, MediaElement media_element)
         {
             SpeechSynthesizer synthesizer = new SpeechSynthesizer();
@@ -469,15 +469,15 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 还有没写好，全屏出问题，可以来我博客http://blog.csdn.net/lindexi_gd之后找到解决将会写一个，可能是预览版，在真机就出错
 
 
-###MediaTransportControls
+### MediaTransportControls
 控制播放
 
 
-##Navigation
-###Hub
+## Navigation
+### Hub
 全景视图控件
 
-```
+```xml
             <Hub>
                 <HubSection Header="林德熙"> 
                     <DataTemplate>
@@ -514,32 +514,32 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328154021083)
 
-##Progress controls
-###Progress bar
+## Progress controls
+### Progress bar
 进度条
 
-```
+```xml
  <ProgressBar Value="10" Height="100"></ProgressBar>
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328154251243)
 
-```
+```xml
         <ProgressBar Value="10" IsIndeterminate="True" Height="100"></ProgressBar>
 ```
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328154439319)
 
-###Progress ring
+### Progress ring
 
-```
+```xml
         <ProgressRing Width="100" IsActive="True"></ProgressRing>
 ```
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328154621201)
-##Text controls
-###Auto suggest box
+## Text controls
+### Auto suggest box
 
-```
+```xml
        <AutoSuggestBox PlaceholderText="输入林德熙" QueryIcon="Find" Margin="10,10,10,10" TextChanged="query" DisplayMemberPath="name" ></AutoSuggestBox>
 
 
@@ -547,19 +547,19 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 需要在后台https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328161238579)
-###Password box
+### Password box
 密码输入
 
-```
+```xml
         <PasswordBox Margin="10,10,10,10" Height="10" PlaceholderText="输入中文密码" IsPasswordRevealButtonEnabled="True"></PasswordBox>
 
 ```
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328162337609)
 
-###Rich edit box
+### Rich edit box
 
-```
+```xml
 <RichEditBox Name="redit" Grid.Row="3" Margin="10,10,10,10" ContextMenuOpening="OnContextMenuOpening">
             <FlyoutBase.AttachedFlyout>
                 <MenuFlyout>
@@ -596,19 +596,19 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 
 
-###Text block
+### Text block
 简单输出文本
 
-```
+```xml
         <TextBlock HorizontalAlignment="Left" Margin="72,163,0,0" Text="博客发在csdn ，没有授权红黑转载，没有授权推酷转载" TextWrapping="Wrap"  VerticalAlignment="Top" ></TextBlock>
 
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328162542065)
 
-###Text box
+### Text box
 用户输入文本
 
-```
+```xml
             <TextBox Margin="10,10,10,10" Height="10"></TextBox>
 
 ```
@@ -620,6 +620,8 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 现在委托csdn维权，没有授权的网站不要转载
 
 原文https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/controls-by-function
+
+
 
 
 

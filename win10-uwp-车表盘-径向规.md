@@ -37,7 +37,7 @@ Unit：下面写的字，我写了博客
 
 needle：指针，英文我就不翻译
 
-```
+```xml
             <controls:Gauge
                 x:Name="Gauge"
                 Value="10"
@@ -70,7 +70,7 @@ needle：指针，英文我就不翻译
 
 说到这我用xaml画Windows10，应该大家看到上面gif，我用了它图片，其实我用path
 
-```
+```xml
  <Grid Margin="10,10,10,10">
 
  <Path Stroke="Blue" StrokeThickness="1" Fill="#0078d6" Data="M0 12.49l35.7-4.9v34.5H0M40 6.91L87.3 0V41.8H40M0 45.74h35.7v34.6L0 75.34M40 46.2H87.3v41.4L40 80.9 "></Path>
@@ -106,6 +106,8 @@ needle：指针，英文我就不翻译
 使用代码：https://github.com/lindexi/UWP/tree/master/uwp/src/RadialGauge
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 
 
 

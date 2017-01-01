@@ -14,7 +14,7 @@
 
 使用
 
-```
+```csharp
            Windows.Web.Http.HttpClient webHttpClient=
                 new Windows.Web.Http.HttpClient();
 
@@ -22,6 +22,8 @@
                 new HttpStringContent("a");
             await webHttpClient.PostAsync(new Uri(url), httpString);
 ```
+
+
 
 
 

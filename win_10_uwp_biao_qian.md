@@ -28,7 +28,7 @@
 
 跳到让用户选择，这里如果让用户输入，使用有点难，可以使用用户在跳转输入，输入自动变为预设一样
 
-```
+```csharp
 源.Add(new Tag() {Id = "id",Label = "用户输入"});
 ```
 
@@ -46,13 +46,13 @@
 
 标签使用在跳转MainPage
 
-```
+```csharp
 if (e.NavigationMode == NavigationMode.Back)
 ```
 
 我们把选择保存
 
-```
+```csharp
 General.GetInstance().TagSelection
 ```
 
@@ -60,7 +60,7 @@ General.GetInstance().TagSelection
 
 我们搜索全部新加和被删除
 
-```
+```csharp
 var tagParagraph = (Paragraph) (from paragraph in TagRichTextBlock.Blocks
     where paragraph.Name.StartsWith("Tags")
     select paragraph).FirstOrDefault();
@@ -76,7 +76,7 @@ foreach (InlineUIContainer container in buttonsToRemove)
     tagParagraph.Inlines.Remove(container);
 ```
 
-```
+```csharp
                 IEnumerable<string> buttonIds = from item in tagParagraph.Inlines.Cast<InlineUIContainer>()
                     select ((Button) item.Child).Name;
 
@@ -120,7 +120,7 @@ foreach (InlineUIContainer container in buttonsToRemove)
 
 点击删除按钮，删除id
 
-```
+```csharp
             string tagId = ((Button) sender).Name;
             General.GetInstance()
                 .TagSelection.Tags.Remove(General.GetInstance().TagSelection.Tags.Single(item => item.Id.Equals(tagId)));
@@ -129,3 +129,4 @@ foreach (InlineUIContainer container in buttonsToRemove)
 
 
 源码：https://github.com/Depechie/TagList
+

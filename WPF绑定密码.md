@@ -8,7 +8,8 @@
 
 新建一个类PasswordHelper
 		
-```
+
+```csharp
     public static class PasswordHelper
     {
         public static readonly DependencyProperty PasswordProperty =
@@ -107,7 +108,8 @@
 
 然后在xaml
 		
-```
+
+```xml
 <PasswordBox local:PasswordHelper.Attach="True" 
                              local:PasswordHelper.Password="{Binding Password, Mode=TwoWay}" 
                              Width="180" Style="{DynamicResource PasswordBoxStyle}"/>
@@ -125,7 +127,8 @@ PASSWORDPROPERTY是附加属性，REGISTERATTACHED就是注册附加。
 
 判断设置的是不是Password
 		
-```
+
+```csharp
             PasswordBox passwordBox = sender as PasswordBox;
 
             if (passwordBox == null)
@@ -136,7 +139,8 @@ PASSWORDPROPERTY是附加属性，REGISTERATTACHED就是注册附加。
 ```
 判断改变的值，Old是true还是false，如果是true，那么之前用了事件，我们要把事件
 		
-```
+
+```csharp
 passwordBox.PasswordChanged -= PasswordChanged;
 
 ```
@@ -144,7 +148,8 @@ passwordBox.PasswordChanged -= PasswordChanged;
 
 判断要改变的，如果是true，我们就
 		
-```
+
+```csharp
 passwordBox.PasswordChanged += PasswordChanged;
 
 ```
@@ -162,7 +167,8 @@ passwordBox.PasswordChanged += PasswordChanged;
 <script src="https://gist.github.com/taylorleese/468331.js"></script>
 
 		
-```
+
+```csharp
 using System.Windows;
 using System.Windows.Controls;
 
@@ -249,3 +255,4 @@ namespace CustomControl
 }
 
 ```
+

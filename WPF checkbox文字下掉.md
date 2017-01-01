@@ -6,7 +6,7 @@
 
 可以使用
 
-```
+```xml
 <Style TargetType="CheckBox">
             <Setter Property="Margin" Value="10,10,10,10"></Setter>
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -23,3 +23,5 @@
 https://dotblogs.com.tw/v6610688/2014/04/21/xaml_checkbox_content_alignment&prev=searc
 
 博客blog.csdn.net/lindexi_gd
+
+

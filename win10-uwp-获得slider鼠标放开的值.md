@@ -1,4 +1,4 @@
-#win10 uwp 获得Slider拖动结束的值
+# win10 uwp 获得Slider拖动结束的值
 
 【】
 
@@ -7,5 +7,7 @@
 
 在WPF，我们可以使用`Thumb.DragCompleted`，连接：[http://stackoverflow.com/questions/723502/wpf-slider-with-an-event-that-triggers-after-a-user-drags](http://stackoverflow.com/questions/723502/wpf-slider-with-an-event-that-triggers-after-a-user-drags)，这个在UWP没有，所以我们没法使用这个。
 
-##UWP修改ProgressBar大小
+## UWP修改ProgressBar大小
+
+
 

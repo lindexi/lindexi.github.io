@@ -12,14 +12,14 @@ RSS简易信息聚合(也叫聚合内容)是一种RSS基于XML标准，在互联
 我的rss是使用SyndicationClient
 先创建SyndicationClient
 
-```
+```csharp
             Windows.Web.Syndication.SyndicationClient client = new Windows.Web.Syndication.SyndicationClient();
             Windows.Web.Syndication.SyndicationFeed feed;
 ```
 
 因为输URL可能是错的，所以微软就用try catch
 
-```
+```csharp
             //uri写在外面，为了在try之外不会说找不到变量
             Uri uri = null;
 
@@ -37,7 +37,7 @@ RSS简易信息聚合(也叫聚合内容)是一种RSS基于XML标准，在互联
 ```
 网络请求有很多异常，我们放在try 
 
-```
+```csharp
             try
             {
                 //模拟http 
@@ -60,7 +60,7 @@ RSS简易信息聚合(也叫聚合内容)是一种RSS基于XML标准，在互联
 
 我们写一个函数处理每个SyndicationItem
 
-```
+```csharp
         private void displayCurrentItem(Windows.Web.Syndication.SyndicationItem item)
         {
             string itemTitle = item.Title == null ? "No title" : item.Title.Text;
@@ -85,7 +85,7 @@ reminder是通知显示，把每个不为空的值放在StringBuilder
 
 界面MainPage
 
-```
+```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions >
             <RowDefinition >
@@ -114,7 +114,7 @@ reminder是通知显示，把每个不为空的值放在StringBuilder
 
 新建一个页面rss_page
 
-```
+```xml
     <Page.Resources>
         <Style x:Key="TextBlockStyle1" TargetType="TextBlock">
             <Setter Property="Margin" Value="10,10,10,10"/>
@@ -135,7 +135,7 @@ reminder是通知显示，把每个不为空的值放在StringBuilder
 
 在列表被点击
 
-```
+```csharp
         private void select(object sender, SelectionChangedEventArgs e)
         {
             Frame frame = Window.Current.Content as Frame;
@@ -145,7 +145,7 @@ reminder是通知显示，把每个不为空的值放在StringBuilder
 
 rss_page viewModel使用rssstr
 
-```
+```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             view = e.Parameter as rssstr;
@@ -158,7 +158,7 @@ rss_page viewModel使用rssstr
 
 rss_page不能滚动TextBlock，可以使用ScrollViewer
 
-```
+```xml
         <ScrollViewer Grid.Row="1">
             <TextBlock Style="{StaticResource TextBlockStyle1}" Grid.Row="1" Text="{x:Bind view.summary}" TextWrapping="Wrap"/>
         </ScrollViewer>
@@ -172,3 +172,5 @@ https://github.com/lindexi/lindexi_gd/tree/master/rss
 Http://blog.csdn.net/lindexi_gd
 
 ![这里写图片描述](http://img.blog.csdn.net/20160222155811716)
+
+

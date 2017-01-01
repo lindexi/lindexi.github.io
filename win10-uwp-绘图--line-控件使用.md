@@ -10,7 +10,7 @@
 
 我们先在一个页面新建一下，写下必要的代码。
 
-```
+```xml
        <Grid Margin="10,10,10,10">
             <Canvas>
                 
@@ -22,7 +22,7 @@
 首先我们需要确定直线坐标，用X1X2，Y1Y2来获得两个点，也就是直线。
 
 
-```
+```xml
  <Line X1="0" X2="200" Y1="10" Y2="200"></Line>
 
 ```
@@ -59,7 +59,7 @@ Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是�
 
 我们给他一个StrokeDashArray，这个值就是很多数，奇数的数就是显示宽度，偶数的就是不显示的宽度，读到最后的数就循环到最前。我们设置一个0.1一个0.2就会显示0.1的宽度，然后空0.2再显示0.1
 
-```
+```xml
                <Line X1="0" X2="200" Y1="10" Y2="200"
                       Stroke="Black" StrokeThickness="50"
                       StrokeDashArray="0.1 0.2">
@@ -81,13 +81,13 @@ Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是�
 
 我们还可以设置线段的开始图形，要知道，我们线段画比较大，那么看起来就是矩形，StrokeStartLineCap就可以让线段看起来好看
 
-```
+```csharp
 StrokeStartLineCap="Round"
 ```
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/a6d555d5-766d-4ca9-83d6-51270fdaac9520161125151939.jpg)
 
-```
+```csharp
 StrokeStartLineCap="Triangle"
 ```
 
@@ -96,6 +96,8 @@ StrokeStartLineCap="Triangle"
 线段两头尖的画法就是在设置后面的`StrokeEndLineCap`
 
  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 
 
 

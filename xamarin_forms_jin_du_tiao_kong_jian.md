@@ -45,7 +45,7 @@
 
 如果觉得上面说的还是不知道，可以看代码
 
-```
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -136,7 +136,7 @@ namespace CircularProgress
 
 我们把控件放MainPage.xaml
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -150,7 +150,7 @@ namespace CircularProgress
 
 我们让time进度加0.1每0.02s
 
-```
+```csharp
 namespace CircularProgress
 {
     public partial class MainPage : ContentPage
@@ -175,6 +175,8 @@ namespace CircularProgress
 不使用自定义渲染，可以在各个平台没有使用厉害的技术覆盖两个图做出从0-100%，可以使用不同角度表示0.001
 
 本文：http://blog.csdn.net/lindexi_gd
+
+
 
 
 

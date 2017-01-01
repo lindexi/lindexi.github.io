@@ -17,7 +17,7 @@ modulolinenumbers就是每多少行显示行数，每一页重新开始
 
 因为自带的有了，我就修改
 
-```
+```csharp
 \biboptions{numbers,sort&compress}
 
 ```
@@ -32,20 +32,24 @@ natbib 错误 `Option clash for package natbib.`是有多次使用
 打开`elsarticle.cls`
 
 修改
-```
+
+```csharp
 \RequirePackage[\@biboptions]{natbib}
 
 ```
-```
+
+```csharp
 \RequirePackage[numbers,sort&compress]{natbib}
 
 ```
 在导言
 
-```
+```csharp
 \newcommand{\ucite}[1]{\textsuperscript{\cite{#1}}}
 
 ```
 
 引用用`\ucite{1,2,3}`
+
+
 

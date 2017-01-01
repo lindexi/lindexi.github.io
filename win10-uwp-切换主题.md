@@ -1,4 +1,4 @@
-#win10 uwp 切换主题
+# win10 uwp 切换主题
 
 本文主要说如何在UWP切换主题，并且如何制作主题。
 
@@ -22,7 +22,7 @@
 
 然后我们在我们的资源写入几个资源
 
-```
+```xml
 <ResourceDictionary
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -36,7 +36,7 @@
 
 然后在黑暗也写相同key的资源
 
-```
+```xml
 <ResourceDictionary
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -52,7 +52,7 @@
 
 然后我们需要在前台把资源放在Page
 
-```
+```xml
  <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
@@ -75,7 +75,7 @@ ViewModel建立在ViewModel文件夹，一般少把类名称和文件夹一样
 
 viewModel
 
-```
+```csharp
  public class ViewModel : NotifyProperty
  {
  public ViewModel()
@@ -102,13 +102,13 @@ viewModel
 
 先在xaml.cs写
 
-```
+```csharp
  private ViewModel.ViewModel View { set; get; }=new ViewModel.ViewModel();
 ```
 
 然后在xaml
 
-```
+```xml
 <Page
  x:Class="NightDayThemeToggleButton.MainPage"
  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -122,7 +122,7 @@ viewModel
 
 我们要看到变化，在xaml使用
 
-```
+```xml
  <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
  <Grid Background="{ThemeResource SystemBackgroundAltHighBrush}">
  <ToggleSwitch HorizontalAlignment="Center" Toggled="ToggleSwitch_OnToggled"></ToggleSwitch>
@@ -132,7 +132,7 @@ viewModel
 
 SystemBackgroundAltHighBrush是我们两个资源的，其中一个是白天，一个不是
 
-```
+```csharp
  private void ToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
  {
  View.Theme = View.Theme == ElementTheme.Light ? ElementTheme.Dark :
@@ -159,7 +159,7 @@ NightDayThemeToggleButton
 
 做一个按钮，其实是修改
 
-```
+```xml
  <Style x:Key="NightDayThemeToggleButton" TargetType="CheckBox">
  <Setter Property="Background" Value="Transparent"/>
  <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
@@ -292,13 +292,13 @@ NightDayThemeToggleButton
 
 需要使用也简单，可以使用
 
-```
+```xml
 <CheckBox Margin="16,193,0,75" Style="{StaticResource NightDayThemeToggleButton}" IsChecked="{x:Bind AreChecked,Mode=TwoWay}"></CheckBox>
 ```
 
 这样复制我上面代码就好，如果想用我的控件，可以
 
-```
+```xml
 <local:NightDayThemeToggleButton ></local:NightDayThemeToggleButton>
 ```
 
@@ -308,7 +308,7 @@ NightDayThemeToggleButton
 
 然后我们可以看到
 
-```
+```xml
 <VisualState x:Name="UncheckedNormal">
 ```
 
@@ -316,7 +316,7 @@ NightDayThemeToggleButton
 
 接着在上面添加透明度从1到0或从0到1，大概就是这样做。
 
-###UWP 和系统一样的主题
+### UWP 和系统一样的主题
 
 UWP如果想保持主题和系统一样，随着系统主题，简单方法，在App.xaml，删除`RequestedTheme="Light"`
 
@@ -325,5 +325,7 @@ UWP如果想保持主题和系统一样，随着系统主题，简单方法，�
 http://stackoverflow.com/a/39898422/6116637
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+
 
 

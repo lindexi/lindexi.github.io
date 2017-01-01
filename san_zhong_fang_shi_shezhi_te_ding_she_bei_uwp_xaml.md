@@ -22,7 +22,7 @@
     </Grid>
 </Page> 
 
-##新建文件夹DeviceFamily-Type
+## 新建文件夹DeviceFamily-Type
 
 里面的type是我们的设备，手机：Mobile，桌面：Desktop，IOT
 
@@ -39,18 +39,18 @@
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438517385/deviceFamilyVS3_zrnft1.jpg)
 
 如果在手机运行，就会使用DeviceFamily-Mobile/MainPage.xaml，如果是其他，就会使用解决方案DeviceFamily/MainPage.xaml
-##在xaml文件加.DeviceFamily-Type
+## 在xaml文件加.DeviceFamily-Type
 第二种方式在xaml文件加.DeviceFamily-Type，我们创建一个新的xaml，MainPage.DeviceFamily-Mobile.xaml
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438517871/deviceFamilyVS4_syhdit.jpg)
 我们不能使用方法1和2在一个工程。
 
 我们打开mobil会使用MainPage.DeviceFamily-Mobile.xaml
 
-##InitializeComponent重载
+## InitializeComponent重载
 
 添加一个DeviceFamily-Type文件夹在里面写一个xaml会在MainPage.g.i.cs对InitializeComponent重载。
 
-```
+```csharp
 public void InitializeComponent(global::System.Uri resourceLocator)  
 {
     if (_contentLoaded)
@@ -70,7 +70,7 @@ public void InitializeComponent(global::System.Uri resourceLocator)
 
 ![这里写图片描述](http://res.cloudinary.com/dvi6ot1t1/image/upload/v1438520919/deviceFamilyVS5_gdgxb8.jpg)
 
-```
+```csharp
 public MainPage()  
 {
     if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
@@ -110,3 +110,5 @@ https://github.com/igrali/UWP-DeviceFamily
 http://www.cnblogs.com/mushroom/p/5080032.html
 
 http://igrali.com/2015/08/02/three-ways-to-set-specific-devicefamily-xaml-views-in-uwp/
+
+

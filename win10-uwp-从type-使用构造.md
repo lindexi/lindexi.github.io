@@ -10,3 +10,4 @@
 但是在UWP，需要使用`type.GetConstructor(Type.EmptyTypes).Invoke(parameters);`
 
 多谢durow，找了很久在他写的http://www.cnblogs.com/durow/p/4883556.html 刚好有这个
+

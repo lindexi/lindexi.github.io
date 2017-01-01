@@ -12,7 +12,7 @@
 
 - 添加控件的事件
 
-##添加控件
+## 添加控件
 
 
 可以使用以下任意方式添加控件
@@ -51,11 +51,11 @@
 
 双击TextBox
 
-```
+```xml
 <TextBox x:Name="textBox" TextWrapping="Wrap" Text="TextBox"/>
 ```
 
-##命名控件
+## 命名控件
 
 为了在代码改变控件，可以给控件名字，`x:Name`后面写控件名称，控件名称不能重复，不能数字开头
 
@@ -66,7 +66,7 @@
 
 在名称写上控件名
 
-##设置控件属性
+## 设置控件属性
 
 可以在属性选择控件属性
 
@@ -89,7 +89,7 @@
 
 ![](http://i12.tietuku.cn/3ce2d0efe79ef44f.png)
 
-##控件事件
+## 控件事件
 
 每个控件都有很多事件，可以使用Xaml，属性创建事件，创建事件的方法是事件处理，参见：https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview
 
@@ -100,7 +100,7 @@
 
 我们创建一个Click
 
-```
+```csharp
         private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             Button button=sender as Button;//sender 发送者
@@ -111,3 +111,4 @@
 ![](http://i12.tietuku.cn/2cc32155efa5e434.png)
 
 原文：https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro
+

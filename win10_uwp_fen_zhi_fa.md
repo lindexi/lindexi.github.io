@@ -28,7 +28,7 @@ $$
 
 EllipseGeometry是Geometry，看到Geometry大家会看到Path的Data，是的，我们可以使用
 
-```
+```csharp
                 Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path
                 {
                     Data = new EllipseGeometry()
@@ -37,7 +37,7 @@ EllipseGeometry是Geometry，看到Geometry大家会看到Path的Data，是的�
 
 为什么画点我会使用EllipseGeometry，因为我就需要一个点作为中心，X的大小和Y的，然后就是点
 
-```
+```csharp
                 Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path
                 {
                     Data = new EllipseGeometry()
@@ -55,7 +55,7 @@ EllipseGeometry是Geometry，看到Geometry大家会看到Path的Data，是的�
 
 实心：Fill = new SolidColorBrush(Colors.Gray)，因为我们可以使用简单Colors，如果需要RBG，那么可以使用
 
-```
+```csharp
                     Fill = new SolidColorBrush(new Color()
                     {
                         R = 0,
@@ -66,7 +66,7 @@ EllipseGeometry是Geometry，看到Geometry大家会看到Path的Data，是的�
 
 然而这样觉得还是不好，我们本来不用十进制
 
-```
+```csharp
                     Fill = new SolidColorBrush(new Color()
                     {
                         R = 0x23,
@@ -79,7 +79,7 @@ EllipseGeometry是Geometry，看到Geometry大家会看到Path的Data，是的�
 
 如果觉得上面代码多：
 
-```
+```csharp
 Fill = new SolidColorBrush(Color.FromArgb(0xff,0xff,0xa,0x2))
 ```
 
@@ -87,7 +87,7 @@ Fill = new SolidColorBrush(Color.FromArgb(0xff,0xff,0xa,0x2))
 
 我们现在已经弄好画点，但是空心没画
 
-```
+```csharp
 Stroke = new SolidColorBrush(Colors.Gray)
 ```
 
@@ -101,7 +101,7 @@ Stroke = new SolidColorBrush(Colors.Gray)
 
 连线
 
-```
+```csharp
             n = point.Count;
 
             PathFigure figures = new PathFigure();
@@ -135,7 +135,7 @@ Stroke = new SolidColorBrush(Colors.Gray)
 
 如果觉得这样太快了，我们可以弄个差
 
-```
+```csharp
             PathGeometry path_figure = new PathGeometry();
             for (int i = 0; i < point.Count; i++)
             {
@@ -162,3 +162,4 @@ PathFigure第一个点`StartPoint = point[i]`，LineSegment第二个，`path_seg
 做完我来运行
 
 ![这里写图片描述](http://img.blog.csdn.net/20160523191446249)
+

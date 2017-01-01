@@ -1,10 +1,10 @@
-#win10 uwp 布局
+# win10 uwp 布局
 <!--more-->
 
 一般我们的界面需要布局，UWP提供的布局控件多，如果觉得还不够，可以自己写。
 
 
-##Grid
+## Grid
 
 简单的布局控件是Grid，Grid是网格，我们可以设置行和列来布局
 
@@ -27,4 +27,6 @@ GridView
 panelspilter
 
 GridSplitter
+
+
 

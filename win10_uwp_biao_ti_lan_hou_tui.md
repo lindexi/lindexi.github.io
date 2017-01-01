@@ -15,9 +15,10 @@ pc可以在标题栏
 
 在`OnLaunched`
 
-```
+```csharp
 //最后
      Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += BackRequested;       Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
 
 ```
 BackRequested后退方法
+

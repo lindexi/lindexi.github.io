@@ -22,7 +22,7 @@
 
 我们属性
 
-```
+```csharp
 
  public DataTemplate MaleData { set; get; }
 
@@ -34,7 +34,7 @@
 
 我们需要override SelectTemplateCore，这时有两个，如果我们的 `ItemsPanel` 是 `ItemsStackPanel` 或 ItemsWrapGrid 我们就需要选择 `SelectTemplateCore(Object)` 。如果我们的 `VirtualizingStackPanel` 或其他的`WrapGrid` ，就是 `SelectTemplateCore(Object, DependencyObject)`
 
-```
+```csharp
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
             if (item is Male)
@@ -49,7 +49,7 @@
 
 先写出两个 DataTemplate ，一定要有key，然后在ListViewDataTemplateSelector放在FemaleData，MaleData，注意也要key，随便给个名称都好
 
-```
+```xml
         <DataTemplate x:Key="MaleData">
             <Grid>
                <Border>
@@ -84,7 +84,7 @@
 
 我们必须给key，然后使用`{StaticResource }`在listView也是使用
 
-```
+```xml
         <ListView ItemsSource="{x:Bind View.HumanWorld}"
                   ItemTemplateSelector="{StaticResource Selector}"></ListView>
 ```
@@ -98,3 +98,4 @@
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+

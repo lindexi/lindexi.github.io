@@ -20,7 +20,7 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 
 ![这里写图片描述](http://img.blog.csdn.net/20160426165506167)
 
-```
+```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -84,7 +84,7 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 
 我们在PrimaryTile
 
-```
+```csharp
     public class PrimaryTile
     {
         public string time
@@ -119,7 +119,7 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 
 创建一个文件夹`services` 新建`tileservice.cs` `toastservice.cs`
 
-```
+```csharp
     public class TileService
     {
         public static void SetBadgeCountOnTile(int count)
@@ -247,7 +247,7 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 
 ![这里写图片描述](http://img.blog.csdn.net/20160426165644698)
 
-```
+```csharp
     public class ToDoTask
     {
         public string Description
@@ -335,7 +335,7 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 ```
 `task.json`
 
-```
+```csharp
 {"Description":"A test task","Id":"9d6c3585-d0c2-4885-8fe0-f02727f8e483","IsComplete":true}     
 
 ```
@@ -344,7 +344,7 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 
 ![这里写图片描述](http://img.blog.csdn.net/20160426165719213)
 
-```
+```csharp
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
         public MainPage()
@@ -420,3 +420,5 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 http://blog.csdn.net/lindexi_gd
 
 https://mobileprogrammerblog.wordpress.com/2015/12/23/live-tiles-and-notifications-in-universal-windows-10-app/
+
+

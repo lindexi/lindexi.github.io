@@ -1,27 +1,27 @@
 # win10 uwp 简单MasterDetail
 
-#中文
+# 中文
 
-#[English](#English)
+# [English](#English)
 
 本文主要讲实现一个简单的界面，可以在窗口比较大显示列表和内容，窗口比较小时候显示列表或内容。也就是在窗口比较小的时候，点击列表会显示内容，点击返回会显示列表。
 <!--more-->
 
 先放图，很简单。
 
-开始的窗口是大，显示列表，因为开始没有点击列表就显示图片，点击列表显示内容，就是下面的图。
+开始的窗口是很大，可以两栏，其中左边显示列表，右边因为开始没有点击列表就显示图片，点击列表显示内容，就是下面的图。
 
 ![这里写图片描述](http://img.blog.csdn.net/20160806130421310)
 
 ![这里写图片描述](http://img.blog.csdn.net/20160806130438076)
 
-如果屏幕小，那么显示列表或内容
+如果屏幕小，那么只有一栏显示列表或内容
 
-当然可以看下垃圾wr的
+当然可以看下垃圾wr的，他画的图可以看出来，专业
 
 ![这里写图片描述](https://msdn.microsoft.com/zh-cn/windows/uwp/controls-and-patterns/images/patterns-md-stacked.png)
 
-然后发下我的，可以看到我的最垃圾
+然后发下我的图，可以看到我的最垃圾
 
 ![这里写图片描述](http://img.blog.csdn.net/20160806131345316)
 
@@ -29,27 +29,27 @@
 
 https://msdn.microsoft.com/windows/uwp/controls-and-patterns/master-details
 
-国内晓迪文章很好，但是对我渣渣很难。
+国内晓迪文章很好，但是文章对我渣渣很难知道如何做。
 
 本文是很简单的，一般和我一样渣都能大概知道。
 
-代码其实我在很大的压力会议写的，不到一个钟，写完修改，和大家说，我写的很简单，可以修改我代码，可以自己写
+代码是我在很大的压力会议上写的，不到一个钟，写完修改，和大家说。我写的很简单，可以修改我代码，可以自己写，下面我来说下如何写。
 
-我们首先一个Grid，分为两栏，其中一栏为List，一栏为Content
+我们首先需要一个Grid，分为两栏，其中一栏为List，一栏为Content
 
-在大屏，也就是我们可以把Grid两栏显示，基本就是Frame导航就好了。
+在大屏宽度，也就是我们可以把Grid两栏显示，基本就是Frame导航就好了。
 
-如果屏幕小，我们合并为一个Grid，使用顺序，对，List和Content的Zindex设置他们的位置，Zindex比较大的会显示，也就是判断是否存在Content，存在就显示他，不存在，显示List。
+如果屏幕小，我们合并为一个Grid一栏，那么我们只能显示列表或内容。我们可以使用顺序，对，List和Content的Zindex就是设置他们的位置，Zindex比较大的会显示，也就是判断是否存在Content，存在就显示他，不存在，显示List。
 
-应该可以看懂。
+应该可以看懂，如果看不懂欢迎发邮件来喷。
 
 现在来说Frame导航。
 
-##UWP 导航
+## UWP 导航
 
 Content是一个Frame和一个Image的Grid
 
-```
+```xml
             <Grid Grid.Column="{x:Bind View.GridInt,Mode=OneWay}" x:Name="Img" 
                   Canvas.ZIndex="{x:Bind View.ZFrame,Mode=OneWay}">
                 <Image  Source="../Assets/images.jpg"
@@ -65,7 +65,7 @@ Content是一个Frame和一个Image的Grid
 
 页面传参数很简单，首先是Frame
 
-```
+```csharp
 FrameNavigate(typeof(页), 参数);
 ```
 
@@ -73,7 +73,7 @@ FrameNavigate(typeof(页), 参数);
 
 在页面
 
-```
+```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var 参数= e.Parameter as 传输的参数;
@@ -83,11 +83,11 @@ FrameNavigate(typeof(页), 参数);
 
 如果要保存我们的页面，不要导航都新建，在构造` NavigationCacheMode = NavigationCacheMode.Enabled;`
 
-##List点击
+## List点击
 
 我们创建数据Model，我们使用MVVM
 
-```
+```csharp
     public class AddressBook
     {
         public string Id { set; get; }
@@ -102,7 +102,7 @@ FrameNavigate(typeof(页), 参数);
 
 我们在里面
 
-```
+```csharp
         public ObservableCollection<AddressBook> EccryptAddress { set; get; }
 ```
 
@@ -110,7 +110,7 @@ FrameNavigate(typeof(页), 参数);
 
 然后我们需要在View写，让我们的数据显示
 
-```
+```xml
                 <ListView ItemClick="{x:Bind View.MasterClick}"
                       IsItemClickEnabled="True"
                       ItemsSource="{x:Bind View.EccryptAddress}"
@@ -127,7 +127,7 @@ FrameNavigate(typeof(页), 参数);
 
 当然需要我们在view.xaml.cs
 
-```
+```csharp
         public MasterDetailPage()
         {
             View = new DetailMasterModel();
@@ -139,7 +139,7 @@ FrameNavigate(typeof(页), 参数);
 
 我们给ListView我们ViewModel的数据，这样就可以显示，我们使用ItemClick可以得到ListView被点击，当然要`IsItemClickEnabled="True"`
 
-```
+```csharp
         public void MasterClick(object o, ItemClickEventArgs e)
         {
             AddressBook temp = e.ClickedItem as AddressBook;
@@ -158,18 +158,18 @@ FrameNavigate(typeof(页), 参数);
 
 因为点击所以我们的Frame有内容 HasFrame=true;
 
-##后退按钮
+## 后退按钮
 
 在App写
 
-```
+```csharp
             Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
 
 ```
 
 我们在ViewModel 
 
-```
+```csharp
             SystemNavigationManager.GetForCurrentView().BackRequested += BackRequested;
 
 ```
@@ -182,11 +182,11 @@ FrameNavigate(typeof(页), 参数);
 
 我们需要手机按后退也是 `Windows.Phone.UI.Input.HardwareButtons.BackPressed`
 
-##页面更改大小
+## 页面更改大小
 
 我们获得页面大小修改，可以简单
 
-```
+```xml
        <VisualStateManager.VisualStateGroups >
             <VisualStateGroup CurrentStateChanged="{x:Bind View.NarrowVisual}">
                 <VisualState>
@@ -212,7 +212,7 @@ FrameNavigate(typeof(页), 参数);
         </VisualStateManager.VisualStateGroups>
 ```
 
-```
+```csharp
         public void NarrowVisual(object sender, VisualStateChangedEventArgs e)
         {
             Narrow();
@@ -229,7 +229,7 @@ Window.Current.Bounds.Width放在函数，就可以得到我们的窗口大小�
 
 我推荐是使用第一个，因为第二个我们必须修改前台就修改ViewModel
 
-##修改显示
+## 修改显示
 
 我们先判断我们现在屏幕，显示两个还是显示List一个，如果是显示两个，那么我们不需要什么，当然我们需要给默认。
 
@@ -253,7 +253,7 @@ Window.Current.Bounds.Width放在函数，就可以得到我们的窗口大小�
 
 那么我们在界面变化的是否，是否知道我们显示内容还是显示列表，这时就是我们得HasFrame，依靠这个选择ZIndex
 
-##修改我代码
+## 修改我代码
 
 现在需要说下，如何修改我的代码，作为你需要。
 
@@ -272,7 +272,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
 很简单使用。
 
 
-##源码
+## 源码
 
 接着我们来说下我源代码怎么做。
 
@@ -286,7 +286,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
 
 我写List需要使用Grid，因为背景透明，其实我在List也可以用背景，但是我想我会在List做弹出，最后想着用Grid
 
-```
+```xml
  <Grid
                 Background="White"
                 Canvas.ZIndex="{x:Bind View.ZListView,Mode=OneWay}">
@@ -294,7 +294,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
 
 在List
 
-```
+```xml
             <Grid Grid.Column="{x:Bind View.GridInt,Mode=OneWay}"
                   Canvas.ZIndex="{x:Bind View.ZFrame,Mode=OneWay}">
 ```
@@ -305,7 +305,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
 
 下面说下English，其实是Google翻译，因为我这个遇到一个用英文问我的人，不知道是不是，反正就直接翻译
 
-#English
+# English
 
 I make a Easy MasterDetail to use.It's very easy,and I has not yet been see the other easier that it.
 
@@ -324,3 +324,5 @@ We can change the model for your class and write ObservableCollection.In `Master
 If something perplexes you,mailto lindexi_gd@163.com.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+

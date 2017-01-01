@@ -26,7 +26,7 @@
 
 我们可以使用
 
-```
+```csharp
         public static void RecursionReverse(Stack<Puke> stack)
         {
             if (stack.Count == 0)
@@ -58,7 +58,7 @@
 
 我们开始是判断我们的栈是不空，如果是我们就返回，然后我们使用t把我们栈拿出一个，然后递归，这时判断是不是t是最后一个，这样就是t出就是没有，没有的话我们就是对一个反转，反转还是他，所以我们就把t放入。放入我们就不需要继续。如果t后还有，我们就用g拿出栈的一个，反转，然后把t压，反转，压入g，结束。
 
-```
+```csharp
 import java.util.Stack ;
 
 public class HelloWorld{
@@ -131,3 +131,5 @@ public class HelloWorld{
 	}
 }
 ```
+
+

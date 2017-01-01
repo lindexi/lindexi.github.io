@@ -20,7 +20,7 @@ Sumlime 还可以创建代码行，做法也很简单。
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/d021ae55-501f-4838-a9a0-f09ee95a83b82016121992723.jpg)
 
 
-```
+```xml
 < snippet>
 	< content><![CDATA[
 Hello, ${1:this} is a ${2:snippet}.
@@ -47,3 +47,5 @@ content是我们按下快捷键的内容，\$ {1:this} 就是第一个输入内�
 我们有时打开中文会乱码，我们可以ctrl+shift+p
 
 输入Package control:install 安装 CovertToUTF8
+
+

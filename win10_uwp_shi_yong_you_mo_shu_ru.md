@@ -8,7 +8,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
 做法简单，我们有垃圾微软的`InkCanvas `需要我们在页面
 
-```
+```xml
 <Grid>
   <InkCanvas x:Name="ink_canvas"/>
 </Grid>
@@ -22,7 +22,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
 为了画出上面的图，我们可以设置`ink_canvas.InkPresenter.InputDeviceTypes= CoreInputDeviceTypes.Mouse;`如果我们有鼠标还要在手机运行，我们可以来`|`然后写手机。
 
-```
+```csharp
         public MainPage()
         {
             this.InitializeComponent();
@@ -36,7 +36,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
 画出的线我们也可以设置
 
-```
+```csharp
             InkDrawingAttributes attribute = ink_canvas.InkPresenter.CopyDefaultDrawingAttributes();
 
             attribute.Color = Windows.UI.Colors.Crimson;//颜色
@@ -51,7 +51,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 我们可以给用户选择他当前使用橡皮擦、铅笔还是他需要的。
 我们给用户按钮铅笔，橡皮擦
 
-```
+```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid>
             <Grid.RowDefinitions>
@@ -71,7 +71,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
     </Grid>
 ```
 
-```
+```csharp
         private void eraser(object sender, RoutedEventArgs e)
         {
             ink_canvas.InkPresenter.InputProcessingConfiguration.Mode =
@@ -90,7 +90,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
 保存墨迹
 
-```
+```csharp
             FileSavePicker picker = new FileSavePicker
             {
                 SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary
@@ -118,7 +118,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
 陈染大神的保存，我们上面保存是gif
 
-```
+```csharp
  //声明一个流来存储墨迹信息
     IRandomAccessStream stream = new InMemoryRandomAccessStream();
     //保存墨迹信息到流
@@ -159,7 +159,7 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
 
 保存的东西可以加载
 
-```
+```csharp
            //创建一个文件选择器
            var picker = new Windows.Storage.Pickers.FileOpenPicker
            {
@@ -181,13 +181,13 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
 
 我们写完一个字需要清理我们笔画
 
-```
+```csharp
 ink.InkPresenter.StrokeContainer.Clear();
 ```
 
 ## 手写识别
 
-```
+```csharp
     //手写识别
     var container = new InkRecognizerContainer();
     //使用墨迹识别
@@ -205,7 +205,7 @@ ink.InkPresenter.StrokeContainer.Clear();
    首先安装该工具扩展，然后引用InkToolbar Control.dll，接着在View中声明控件:
    
 
-```
+```csharp
 xmlns:ink="using:Microsoft.Labs.InkToolbarControl"
  
  
@@ -227,7 +227,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 那么我们可以使用
 
-```
+```csharp
             var container = new InkRecognizerContainer();
             foreach (var temp in container.GetRecognizers())
             {
@@ -253,7 +253,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 告诉用户需要输入
 
-```
+```csharp
             Language language = SpeechRecognizer.SystemSpeechLanguage;
             speechRecognizer = new SpeechRecognizer(language);
 
@@ -282,3 +282,4 @@ http://stackoverflow.com/questions/32153880/how-to-render-inkcanvas-to-an-image-
 https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+

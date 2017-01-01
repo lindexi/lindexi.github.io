@@ -34,7 +34,7 @@ CTex的下载可以在网上搜索或使用我网盘，如果我网盘没法使�
 
 我们开始使用官方的模板，官方下载位置 [https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip](https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip)可以看到里面没有`ecrc.sty`在我们编译的时候就出错
 
-```
+```csharp
 File `ecrc.sty' not found.
 ```
 
@@ -70,7 +70,7 @@ File `ecrc.sty' not found.
 
 然后我们在外面写`\tnotetext[标识]{Content}`，也就是页面下的内容，这里我写的是垃圾微软，可以看到Content可以很长，而我们还有t3没写，没写的没显示
 
-```
+```csharp
 \tnotetext[t1]{This document is a collaborative effort.}
 \tnotetext[t2]{The second title footnote which is a longer
 	longer than the first one and with an intention to fill
@@ -83,7 +83,7 @@ File `ecrc.sty' not found.
 
 作者的格式是
 
-```
+```csharp
 %% \author[label1,label2]{<author name>}
 %% \address[label1]{<address>}
 %% \address[label2]{<address>}
@@ -95,7 +95,7 @@ Latex用`\\`换行，在我们的地址比较长，可以用这换行
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=a1b9c47f89679369883919fc05be1d6f)
 
-```
+```csharp
 \author[lindexiAddress]{lindexi\_gd \corref{cor1} \fnref{fn1} }
 \ead{lindexi\_gd@163.com}
 
@@ -130,7 +130,7 @@ Latex用`\\`换行，在我们的地址比较长，可以用这换行
 
 然后就是我们的摘要
 
-```
+```csharp
 \begin{abstract}
 摘要写在这
 \end{abstract}
@@ -140,7 +140,7 @@ Latex用`\\`换行，在我们的地址比较长，可以用这换行
 
 关键字写在
 
-```
+```csharp
 
 \begin{keyword}
 
@@ -148,7 +148,7 @@ Latex用`\\`换行，在我们的地址比较长，可以用这换行
 ```
 不同的关键字使用`\sep`分开
 
-```
+```csharp
 \begin{keyword}
 
 CSDN \sep lindexi \sep windows.sc
@@ -160,9 +160,9 @@ CSDN \sep lindexi \sep windows.sc
 
 我们就在正文开始写，遇到问题是如何插入图片，插入算法，图片位置不对，这写我都找了连接
 
-###输入列表
+### 输入列表
 
-```
+```csharp
 \begin{enumerate}[标号]
 
 ```
@@ -170,7 +170,7 @@ CSDN \sep lindexi \sep windows.sc
 
 我们可以在列表嵌套
 
-```
+```csharp
 \begin{enumerate}[a)]
 	\item This item has roman numeral counter.
 	\item Another one before we close the third level.
@@ -197,7 +197,7 @@ CSDN \sep lindexi \sep windows.sc
 
 然后写参考的
 
-```
+```csharp
 \begin{thebibliography}{00}
 	
 	\bibitem[每次参考自动写的内容，作者，如果遇到括号不写]{label} 参见lindexi
@@ -207,14 +207,14 @@ CSDN \sep lindexi \sep windows.sc
 
 在文章遇到我们需要参考
 
-```
+```csharp
 \citet{label}
 ```
 这样就好，如果我们没写作者看起来不好
 
 如果没写作者，只要一个[1]那么在正文
 
-```
+```csharp
 \citep{label}
 
 另一方式
@@ -226,7 +226,7 @@ CSDN \sep lindexi \sep windows.sc
 
 假如我们的一个引用
 
-```
+```csharp
 \begin{thebibliography}{00}    
     
     \bibitem{lindexi 1} lindexi_gd csdn.
@@ -246,13 +246,13 @@ CSDN \sep lindexi \sep windows.sc
 
 ### 斜体
 
-```
+```csharp
 \emph{内容}
 ```
 
 ### 粗体
 
-```
+```csharp
 \textbf{}
 ```
 
@@ -260,14 +260,14 @@ CSDN \sep lindexi \sep windows.sc
 
 左对齐
 
-```
+```csharp
   \begin{flushleft}
   	
   \end{flushleft}
 ```
 居中
 
-```
+```csharp
  \begin{center}
  	
  \end{center}
@@ -275,7 +275,7 @@ CSDN \sep lindexi \sep windows.sc
 
 右对齐
 
-```
+```csharp
   \begin{flushright}
 	
   \end{flushright}
@@ -283,13 +283,13 @@ CSDN \sep lindexi \sep windows.sc
 
 ### 分数
 
-```
+```csharp
 \frac{上}{下}
 ```
 
 ### 无序列表
 
-```
+```csharp
 \begin{itemize}
 	\item 
 	\item 
@@ -301,7 +301,7 @@ CSDN \sep lindexi \sep windows.sc
 
 ### 根号
 
-```
+```csharp
 \sqrt{}
 
 ```
@@ -314,7 +314,7 @@ CSDN \sep lindexi \sep windows.sc
 
 我们需要先引用 float
 
-```
+```csharp
 \usepackage{graphicx}
 
 
@@ -323,7 +323,7 @@ CSDN \sep lindexi \sep windows.sc
 
 在引用图片写上
 
-```
+```csharp
 \begin{figure}这里用取消美学[!htb]
 	\includegraphics{fig1.png}
 	\caption{Problem Description }
@@ -335,7 +335,7 @@ CSDN \sep lindexi \sep windows.sc
 
 如果是esp，需要`\epsfig`
 
-```
+```csharp
 \begin{figure}[h]
   \centerline
   {
@@ -359,7 +359,7 @@ http://blog.csdn.net/bingfengxiao/article/details/6650096
 
 使用\vfill换行，\hfill 并排
 
-```
+```csharp
 \begin{figure*} 
 	 \centering 
 	 
@@ -408,11 +408,11 @@ http://blog.csdn.net/lsg32/article/details/8121417
 
 http://www.ctex.org/documents/latex/graphics/node109.html
 
-###使用eps
+### 使用eps
 
 引用epsfig
 
-```
+```csharp
 \usepackage{graphicx}
 
 \usepackage{epsfig} 
@@ -420,7 +420,7 @@ http://www.ctex.org/documents/latex/graphics/node109.html
 
 打开cmd，进入图片路径， 使用epstopdf 
 
-```
+```csharp
 epstopdf 图.eps
 ```
 
@@ -428,7 +428,7 @@ epstopdf 图.eps
 
 不需要写后缀名
 
-```
+```csharp
 \includegraphics[width=7cm,height=7cm]{f1}
 ```
 
@@ -436,7 +436,7 @@ epstopdf 图.eps
 
 重新为图片编号：http://www.52yfjc.com/2014/show.asp?id=887
 
-###Visio转eps
+### Visio转eps
 
 在线wmf转eps https://cloudconvert.com/wmf-to-eps
 
@@ -480,7 +480,7 @@ http://blog.csdn.net/garfielder007/article/details/51646604
 
 http://blog.csdn.net/lqhbupt/article/details/8723478
 
-```
+```csharp
 \begin{algorithm}
 	\caption{} 
 	\label{a}
@@ -494,7 +494,7 @@ http://blog.csdn.net/lqhbupt/article/details/8723478
 
 如果需要设置期刊的名
 
-```
+```csharp
 \journalname{期刊名}
 ```
 
@@ -519,6 +519,8 @@ https://yunpan.cn/OcvKHKAiBNIZDi  访问密码 1100
 参见：https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex
 
 http://hubl82.blog.163.com/blog/static/1267694852013459412617/
+
+
 
 
 

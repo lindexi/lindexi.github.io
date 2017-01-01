@@ -5,11 +5,11 @@ win10 UWP 剪贴板 Clipboard使用Windows.ApplicationModel.DataTransfer.Clipboa
 
 设置文本
 
-```
+```csharp
 DataPackage dataPackage = new DataPackage();
 ```
 
-```
+```csharp
             dataPackage.SetText("文本");
             Clipboard.SetContent(dp);
 ```
@@ -19,12 +19,12 @@ DataPackage dataPackage = new DataPackage();
 
 检查剪贴板包含文本
 
-```
+```csharp
 DataPackageView con = Windows.ApplicationModel.DataTransfer.Clipboard.GetContent();
 if (con.Contains(StandardDataFormats.Text))
 ```
 
-```
+```csharp
             DataPackageView con = Windows.ApplicationModel.DataTransfer.Clipboard.GetContent();
             string str = string.Empty;
             if (con.Contains(StandardDataFormats.Text))
@@ -35,7 +35,7 @@ if (con.Contains(StandardDataFormats.Text))
 
 获取图片
 
-```
+```csharp
             if (con.Contains(StandardDataFormats.Bitmap))
             {
                 RandomAccessStreamReference img = await con.GetBitmapAsync();
@@ -66,7 +66,7 @@ if (con.Contains(StandardDataFormats.Text))
 
 获取文件
 
-```
+```csharp
  if (con.Contains(StandardDataFormats.StorageItems))
             {
                 var filelist = await con.GetStorageItemsAsync();
@@ -79,7 +79,7 @@ if (con.Contains(StandardDataFormats.Text))
 
 IStorageItem 转 StorageFile
 
-```
+```csharp
                      if (t.IsOfType(StorageItemTypes.File))
                     {
                         StorageFile storageFile = storageItem as StorageFile;
@@ -93,3 +93,4 @@ http://www.cnblogs.com/tcjiaan
 http://www.cnblogs.com/chengxingliang/archive/2013/01/21/2857718.html
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
