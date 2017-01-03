@@ -1,12 +1,16 @@
 # WPF 绑定密码
 
-我们发现我们无法绑定密码框的密码，PasswordBox的Password不能绑定。
+我们发现我们无法绑定密码框的密码，PasswordBox 的 Password 不能绑定。
+
+我们想做 MVVM ，我们需要绑定密码，不能使用前台 xaml.cs 监听 密码改变得到密码的值，传到 ViewModel 。
+
+本文提供一个简单方法来绑定 WPF 的 PasswordBox 的 Password 。这种方法不仅在 WPF 可以使用，在 UWP 也可以使用。关于 UWP 绑定密码，可以在我博客 [win10 uwp 绑定密码](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%BB%91%E5%AE%9A%E5%AF%86%E7%A0%81/) 查看。
 
 <!--more-->
 
-我在网上找的很多大神给出的可以解决，我找了一个简单方法。
+我在网上找的很多大神给出的可以解决绑定密码的方法，下面是我找的一个简单方法。
 
-新建一个类PasswordHelper
+首先需要新建一个类 PasswordHelper ，他是一个静态类，当然不是静态也没关系，但是一般写静态的可以让我们少犯错，因为我们所有属性等都是需要静态的。
 		
 
 ```csharp
@@ -106,7 +110,7 @@
 ```
 
 
-然后在xaml
+写完我们就可以使用他，使用很简单，在我们需要密码框的页面的xaml 上写两行新的代码就好。
 		
 
 ```xml
@@ -116,16 +120,16 @@
 
 ```
 
-其中，Password是ViewModel的PassWord，很简单我们把PasswordBox 绑定到ViewModel。
+其中，Password 是 ViewModel 的PassWord，很简单我们把PasswordBox 绑定到ViewModel。
 
 
-PASSWORDPROPERTY是附加属性，REGISTERATTACHED就是注册附加。
+PASSWORDPROPERTY是附加属性，REGISTERATTACHED 就是注册附加。
 
 我们附加属性是回调，当属性变化使用函数。
 
 我们需要设置Attach，设置时调用`static void Attach(DependencyObject sender,           DependencyPropertyChangedEventArgs e)`
 
-判断设置的是不是Password
+在 Attach 触发，首先要判断设置的 sender 是不是 Password
 		
 
 ```csharp
@@ -256,3 +260,4 @@ namespace CustomControl
 
 ```
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
