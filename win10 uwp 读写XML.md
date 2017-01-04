@@ -1,16 +1,18 @@
 # win10 uwp 读写XML
 
-读写XML 在UWP做了一些修改，但和之前 WPF 的方法没有大的区别。
+UWP 对 读写 XML做了一些修改，但和之前 WPF 的方法没有大的区别。
 
+我们先来说下什么是 XML ，
 XML 其实是 树结构，可以表达复杂的结构，所以在定制要求高的、或其他方面如json 做不到的结构，那么一般就使用XML，如果XML的数据结构都做不到，那么基本上也难找到其他的结构。
 
-XML 的优点是读写很简单，也支持定制。缺点是复杂，当然这也是他的优点，可以在网络传输，如果使用XML，相对的传输大小会比 Json 多两倍。所以是不是要用到这么高级的结构，还是看需要。
+XML 的优点是读写很简单，也支持定制。缺点是复杂，当然这也是他的优点。在网络传输数据，如果使用XML，相对的传输大小会比 Json 多两倍。所以是不是要用到这么高级的结构，还是看需要。
 
-wr 很喜欢用 XML，可以看到我们的项目，*.csproj 和页面 xaml 都是XML，当然Html也是，Xml 其实还可以用作本地数据库，所以XML 还是很重要。
+wr 很喜欢用 XML，可以看到我们的项目，*.csproj 和页面 xaml 都是XML，当然Html也是，Xml 其实还可以用作本地数据库，所以 XML 还是很重要。
 
-本文就提供简单的方法来读写 XML 。放在前面的方法是比较垃圾的方法，放在后面的才是我希望大家使用的。
+本文就提供简单的方法来读写 XML 。提供方法有两个，放在前面的方法是比较垃圾的方法，放在后面的才是我希望大家使用的。
 
 <!--more-->
+<!-- csdn -->
 
 ## xml 语法
 
@@ -43,9 +45,13 @@ XML声明由以下几个部分组成：
 
 如果希望知道更多，请看：[http://www.cnblogs.com/yaoyinglong/p/xml.html](http://www.cnblogs.com/yaoyinglong/p/xml.html)
 
+下面就是一个 xml 的读写方法。
+
 ## XmlDocument 
 
-创建 XmlDocument ，创建 XmlDocument 有三个方法，首先是从 StorageFile 创建。
+我们可以使用 XmlDocument 来读写 xml。
+
+一开始需要创建 XmlDocument ，创建 XmlDocument 有三个方法，首先是从 StorageFile 创建。
 		
 ```csharp
             XmlDocument.LoadFromFileAsync(file);   
@@ -53,7 +59,7 @@ XML声明由以下几个部分组成：
 
 ```
 
-注意要等待。
+注意要等待。 
 
 第二方法：从Uri创建，`XmlDocument.LoadFromUriAsync(uri);   `
 
@@ -69,7 +75,7 @@ XML声明由以下几个部分组成：
 
 注意str是字符串。
 
-获取某个标签，假如我们获取的是 Page.xaml 的 TextBlock ，那么我们可以遍历一次 doc.FirstChild
+如果想在 xml 中获取某个标签，假如我们获取的是 Page.xaml 的 TextBlock ，那么我们可以遍历一次 doc.FirstChild
 
 		
 ```csharp
@@ -87,7 +93,7 @@ XML声明由以下几个部分组成：
 
 大概是一个垃圾办法，我在下面写一个简单的方法，一般放在最前写的就是最垃圾的方法。
 
-然后获取了标签，我们还想获取属性，IXmlNode 的 Attributes 就是所有的属性，假如我们想得到 TextBlock 的 Name ，那么可以使用
+获取了标签，我们还想获取属性，我们可以使用 IXmlNode 的 Attributes 。Attributes 就是所有的属性，假如我们想得到 TextBlock 的 Name ，那么可以使用
 
 		
 ```csharp
