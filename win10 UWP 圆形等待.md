@@ -1,24 +1,22 @@
 # win10 UWP 圆形等待
 
-看到一个圆形好像微软ProgressRing
+看到一个圆形好像微软 ProgressRing 控件
 
 ![0_1321962945yCXF - 副本.gif](http://7xqpl8.com1.z0.glb.clouddn.com/0_1321962945yCXF.gif)
 
-我们可以用自定义控件
+如何去做这个控件，我们可以用自定义控件
 
 <!--more-->
 
-新建可以按ctrl+shift+a
+新建一个用户控件，可以按 ctrl+shift+a 打开后，选用户控件
 
-选用户控件
+我们可以用 Rectangle 做圆形边
 
-我们可以用Rectangle做圆形边
+只要 Rectangle  `RadiusX>0` RadiusX是圆角度
 
-只要Rectangle `RadiusX>0` RadiusX是圆角度
+因为每个 Rectangle 都一样，我们可以资源
 
-因为每个Rectangle 都一样，我们可以资源
-
-资源我们写在Grid
+资源我们写在 Grid
 
 ```xaml
 
@@ -30,11 +28,11 @@
 
 ```
 
-设置Rectangle 在中间
+<!-- 设置 Rectangle  在中间 -->
 
-资源设置需要选TargetType
+资源设置需要选 TargetType 
 
-我们是Rectangle
+我们是 Rectangle ，于是我们还有给他一个 key
 
 ```xaml
 
@@ -50,9 +48,9 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141329.jpg)
 
-vs默认RectangleStyle1
+vs默认就帮我写了 RectangleStyle1
 
-每个项需要
+每个项需要设置属性，使用 Setter 
 
 ```xaml
 
@@ -74,13 +72,13 @@ vs默认RectangleStyle1
 
 ```
 
-看起来Rectangle很大
+我们跑一下，看起来 Rectangle 很大
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141358.jpg)
 
 <!-- ![这里写图片描述](image/201612911107238.png) -->
 
-把Height为20
+为看起来比较小，把 Height 改为 20
 
 ```xaml
 
@@ -94,7 +92,7 @@ vs默认RectangleStyle1
 
 <!-- ![这里写图片描述](image/201612911111820.png) -->
 
-全部资源
+全部资源可以看下面，直接复制是可以
 
 ```xaml
 
@@ -122,11 +120,11 @@ vs默认RectangleStyle1
 
 ```
 
-我们做10个Rectangle 
+我们做10个 Rectangle  
 
-使用RectangleStyle1 在Rectangle `style="{StaticResource RectangleStyle1}"`
+使用 RectangleStyle1 在 Rectangle 使用 `style="{StaticResource RectangleStyle1}"`
 
-中间是白色比较好
+可以看到我们除了中间，其他都和原来一样。中间是白色比较好，添加 Ellipse 。
 
 ```xaml
 
@@ -137,9 +135,9 @@ vs默认RectangleStyle1
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141443.jpg)
 <!-- ![这里写图片描述](image/201612911134992.png) -->
 
-每个Rectangle 一个名字
+每个 Rectangle  需要一个名字
 
-我们想要xaml动，可以
+我们想要 xaml 的控件会动，可以使用
 
 ```xaml
 
@@ -185,9 +183,9 @@ vs默认RectangleStyle1
 
 ```
 
-Forever一直动
+Forever 是从开始一直动
 
-使用控件
+我们就写完了我们的控件，如果需要使用控件，就直接写下面代码。注意 local 是我们的命名空间，我们的控件就放在方案的目录，不放在其他文件夹，命名空间也是和方案默认一样。
 
 ```xaml
 
@@ -198,7 +196,7 @@ Forever一直动
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141515.jpg)
 <!-- ![这里写图片描述](image/201612911161755.png) -->
 
-全部
+全部代码
 
 ```xaml
 
@@ -459,6 +457,8 @@ MainPage
 代码：https://github.com/lindexi/lindexi_gd/tree/master/roundload
 
 参考：http://blog.csdn.net/qqamoon/article/details/7001693
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 
 
