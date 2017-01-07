@@ -238,7 +238,19 @@ UWP的 BitmapImage 不能转换为 byte[] 或 WriteableBitmap 。这句话是错
 
 代码：https://github.com/lindexi/UWP/tree/master/uwp/src/ImageMoseClick
 
+## Dpi
 
+        
+```csharp
+var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/lindexi.png"));
+ using (IRandomAccessStream stream = await file.OpenReadAsync())
+ {                
+     BitmapDecoder decoder = await BitmapDecoder.CreateAsync(BitmapDecoder.PngDecoderId, stream); 
+     var DpiX = decoder.DpiX;
+     var DpiY = decoder.DpiY;                 
+ }
+
+```
 
 如果需要保存网络图片到本地，请到[win10 uwp 存放网络图片到本地](http://lindexi.oschina.io/lindexi/post/win10-uwp-存放网络图片到本地/)
 
