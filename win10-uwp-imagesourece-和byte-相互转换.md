@@ -15,7 +15,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a2016121293717.jpg)
 
-## 保存WriteableBitmap到文件
+## 保存 WriteableBitmap 到文件
 
         private static async Task SaveWriteableBitmapImageFile(WriteableBitmap image, StorageFile file)
         {
@@ -62,7 +62,7 @@
             }
         }
 
-## 从文件读WriteableBitmap
+## 从文件读 WriteableBitmap 
 
 
 ```csharp
@@ -81,7 +81,7 @@
 
 ## ImageSource 转byte[]
 
-ImageSource可以是BitmapImage、WriteableBitmap，如果是WriteableBitmap ，那么直接转换
+ImageSource可以是 BitmapImage 、WriteableBitmap，如果是WriteableBitmap ，那么直接转换
 
 WriteableBitmap  转byte[]
 
@@ -93,7 +93,7 @@ bitmap.PixelBuffer.ToArray();
 
 ## Image 转byte[]
 
-如果我们的ImageSource是BitmapImage,那么我们不能使用上面的办法，直接保存WriteableBitmap ，我们可以使用截图
+如果我们的 ImageSource 是 BitmapImage ,那么我们不能使用上面的办法，直接保存 WriteableBitmap  ，我们可以使用截图
 
 ```csharp
 private async Task<string> ToBase64(Image control)
@@ -106,7 +106,9 @@ private async Task<string> ToBase64(Image control)
 
 ```
 
-如果ImageSource是WriteableBitmap ，直接保存
+如果 ImageSource 是 WriteableBitmap  ，直接保存
+
+我们使用 byte[] 在传输时不好，不能用在 http 传输上（不是一定的不能），所以我们就把它转为base64，我提供了很多方法把数组转 base64 ,把文件转为 base64 。代码是 https://codepaste.net/ijx28i 抄的。
 
 ```csharp
 
@@ -185,18 +187,77 @@ private async Task<ImageSource> FromBase64(string base64)
 
 ## BitmapImage 转 WriteableBitmap
 
-我使用http://www.cnblogs.com/cjw1115/p/5164327.html 大神的，直接转`WriteableBitmap bitmap = imageSource as WriteableBitmap;`bitmap为null，于是我在网上继续找，好像没看到UWP的可以转，只有win7的
+我使用http://www.cnblogs.com/cjw1115/p/5164327.html 大神的，直接转`WriteableBitmap bitmap = imageSource as WriteableBitmap;`bitmap为null，于是我在网上继续找，好像没看到 UWP 的可以转，只有win7的
 
-其实大神有说，Image的Source是WriteableBitmap
+其实大神有说，Image的 Source是 WriteableBitmap ，于是他就能转。
 
-UWP的BitmapImage 不能转换为byte[] 或WriteableBitmap
+UWP的 BitmapImage 不能转换为 byte[] 或 WriteableBitmap 。这句话是错的。
 
+----
 
+2017年1月4日21:45:37 
 
+----
+
+我后来过了几个月，发现我们的 BitmapImage 可以转 byte[] 
+
+我们可以通过拿 BitmapImage 的 UriSource 把它转为 WriteableBitmap ，可以使用截图获得 BitmapImage。
+
+如果想要使用  BitmapImage 的 UriSource 转为 WriteableBitmap，需要 WriteableBitmapEx 。他是在 WPF 就被大家喜欢的库。如何安装 WriteableBitmapEx ，其实有了Nuget 基本没问题。
+
+搜索 WriteableBitmapEx  Nuget
+
+然后搜索到了，我们要什么，好像我也不知道。
+
+我就知道可以使用 `  WriteableBitmap image = await BitmapFactory.New(1, 1).FromContent((BitmapImage).UriSource);`
+
+那么转 byte[] 如何做，有了 WriteableBitmap ，下面的我也不知道，不要问我。
+
+如果使用 BitmapImage 图片是 SetSource，那么我也不会。
+
+## 获取图片中鼠标点击的颜色
+
+获取鼠标点击的那个点，图片的颜色。那么图片之外，界面呢？其实我们还可以把界面截图，然后获取。
+
+那么我们需要首先在 Image 使用 Tap ，假如图片 source 是 BitmapImage
+
+前提安装 WriteableBitmapEx ，假如我们的 ViewModel有一个 BitmapImage 的图片 Image ，于是我们可以使用
+        
+```csharp
+            var position = e.GetPosition(sender as UIElement); //鼠标点击的在哪
+
+            WriteableBitmap image = await BitmapFactory.New(1, 1).FromContent((View.Image).UriSource); //我上面说的如何把 BitmapImage 转 WriteableBitmapEx
+            
+            var temp = image.GetPixel((int) position.X, (int) position.Y);
+
+            string str = $"R: {temp.R} G: {temp.G} B: {temp.B} ";
+
+```
+
+获得图片中鼠标点击的颜色。这个方法有时炸了，都是 255 。
+
+代码：https://github.com/lindexi/UWP/tree/master/uwp/src/ImageMoseClick
+
+## Dpi
+
+        
+```csharp
+var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/lindexi.png"));
+ using (IRandomAccessStream stream = await file.OpenReadAsync())
+ {                
+     BitmapDecoder decoder = await BitmapDecoder.CreateAsync(BitmapDecoder.PngDecoderId, stream); 
+     var DpiX = decoder.DpiX;
+     var DpiY = decoder.DpiY;                 
+ }
+
+```
 
 如果需要保存网络图片到本地，请到[win10 uwp 存放网络图片到本地](http://lindexi.oschina.io/lindexi/post/win10-uwp-存放网络图片到本地/)
 
 参见：http://www.cnblogs.com/cjw1115/p/5164327.html
 
 http://www.cnblogs.com/yuanforprogram/p/4819307.html
+
+http://stackoverflow.com/questions/41439543/how-can-i-get-the-pixel-color-of-an-image-at-the-current-pointer-position-in-a-u
+
 
