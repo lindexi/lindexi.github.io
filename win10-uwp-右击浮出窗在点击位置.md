@@ -1,8 +1,7 @@
 # win10 uwp 右击浮出窗在点击位置
 
-【】
-
 本文主要让MenuFlyout出现在我们右击位置。
+
 <!--more-->
 
 我们一般使用的MenuFlyout写在前台，写在Button里面，但是可能我们的MenuFlyout显示的位置和我们想要的不一样。
@@ -33,7 +32,7 @@ MenuFlyout可以在后台写，当然写在前台也可以。
             </ListView.ItemTemplate>
         </ListView>
 
-后台写
+后台写获取鼠标位置、把浮出窗放在鼠标位置
 
        private void GridColection_OnRightTapped(object sender, RightTappedRoutedEventArgs e)
         {
