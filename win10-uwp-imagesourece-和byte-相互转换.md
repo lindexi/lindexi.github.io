@@ -203,6 +203,7 @@ UWP的 BitmapImage 不能转换为 byte[] 或 WriteableBitmap 。这句话是错
 
 我们可以通过拿 BitmapImage 的 UriSource 把它转为 WriteableBitmap ，可以使用截图获得 BitmapImage。
 
+
 如果想要使用  BitmapImage 的 UriSource 转为 WriteableBitmap，需要 WriteableBitmapEx 。他是在 WPF 就被大家喜欢的库。如何安装 WriteableBitmapEx ，其实有了Nuget 基本没问题。
 
 搜索 WriteableBitmapEx  Nuget
@@ -236,6 +237,42 @@ UWP的 BitmapImage 不能转换为 byte[] 或 WriteableBitmap 。这句话是错
 
 获得图片中鼠标点击的颜色。这个方法有时炸了，都是 255 。
 
+<!-- 
+
+如果想要使用  BitmapImage 的 UriSource 转为 WriteableBitmap，需要 WriteableBitmapEx 。他是在 WPF 就被大家喜欢的库。如何安装 WriteableBitmapEx ，其实有了Nuget 基本没问题。
+
+搜索 WriteableBitmapEx  Nuget
+
+然后搜索到了，我们要什么，好像我也不知道。
+
+我就知道可以使用 `  WriteableBitmap image = await BitmapFactory.New(1, 1).FromContent((BitmapImage).UriSource);`
+
+那么转 byte[] 如何做，有了 WriteableBitmap ，下面的我也不知道，不要问我。
+
+如果使用 BitmapImage 图片是 SetSource，那么我也不会。
+
+## 获取图片中鼠标点击的颜色
+
+获取鼠标点击的那个点，图片的颜色。那么图片之外，界面呢？其实我们还可以把界面截图，然后获取。
+
+那么我们需要首先在 Image 使用 Tap ，假如图片 source 是 BitmapImage
+
+前提安装 WriteableBitmapEx ，假如我们的 ViewModel有一个 BitmapImage 的图片 Image ，于是我们可以使用
+        
+```csharp
+            var position = e.GetPosition(sender as UIElement); //鼠标点击的在哪
+
+            WriteableBitmap image = await BitmapFactory.New(1, 1).FromContent((View.Image).UriSource); //我上面说的如何把 BitmapImage 转 WriteableBitmapEx
+            
+            var temp = image.GetPixel((int) position.X, (int) position.Y);
+
+            string str = $"R: {temp.R} G: {temp.G} B: {temp.B} ";
+
+```
+
+获得图片中鼠标点击的颜色。这个方法有时炸了，都是 255 。
+
+ -->
 代码：https://github.com/lindexi/UWP/tree/master/uwp/src/ImageMoseClick
 
 ## Dpi
@@ -261,3 +298,4 @@ http://www.cnblogs.com/yuanforprogram/p/4819307.html
 http://stackoverflow.com/questions/41439543/how-can-i-get-the-pixel-color-of-an-image-at-the-current-pointer-position-in-a-u
 
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
