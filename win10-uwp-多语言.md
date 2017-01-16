@@ -2,7 +2,7 @@
 
 
 <!--more-->
-
+<!-- csdn -->
 ## Multilingual App Toolkit
 
 首先下载工具 Multilingual App Toolkit 可以到 https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkitv40 下载，如果发现他不能下载，可以去[csdn](http://download.csdn.net/detail/lindexi_gd/9726257)我上传的资源下载。

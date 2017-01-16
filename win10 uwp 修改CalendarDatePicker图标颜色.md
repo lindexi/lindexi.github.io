@@ -1,5 +1,8 @@
 CalendarDatePicker 是一个好用的东西，但是我发现想要修改他右边的那个图标，显示日历的图标颜色，没有这个选项。
 
+<!--more-->
+<!-- csdn -->
+
 如果不知道我说的是哪个，请看下面的图。
 
 ![这里写图片描述](http://img.blog.csdn.net/20170103153113813?watermark/3/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGluZGV4aV9nZA==/font/5a6L5L2T/fontsize/200/fill/I0JBQkFCMA==/dissolve/70/gravity/West)

@@ -69,6 +69,8 @@ http://www.cnblogs.com/wpali
 
 https://hjc.im UWP可以使用流氓win32
 
+http://www.cnblogs.com/KudouShinichi/
+
 http://blog.mzikmund.com/2016/03/winrt-gotcha-one-shot-timer-backgroundtask-does-not-unregister-after-the-one-shot/
 
 https://www.mgenware.com/blog
