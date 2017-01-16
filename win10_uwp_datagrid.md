@@ -37,6 +37,7 @@
 
 ##
  
+现在可以使用： https://github.com/MyToolkit/MyToolkit/wiki/DataGrid
  
  国外 https://liftcodeplay.com/2015/10/24/datagrid-alternatives-in-uwp/
  

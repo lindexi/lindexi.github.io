@@ -87,3 +87,6 @@ myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
  
  
 
+## HttpClient 使用 Cookie 
+
+参见：https://stackoverflow.com/questions/41599384/httpclient-cookie-issue

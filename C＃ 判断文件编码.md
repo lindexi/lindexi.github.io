@@ -256,3 +256,4 @@ http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html
 
 http://blog.codingnow.com/2010/06/detect_utf-8_gbk.html
 
+https://msdn.microsoft.com/en-us/library/dd374101(VS.85).aspx
