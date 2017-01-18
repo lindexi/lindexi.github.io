@@ -8,7 +8,7 @@
 
 
 
-一开始我们需要一个界面
+一开始我们需要一个界面，就放两个TextBlock 一个是源，一个目标。我们拖动源到目标。
 
 
 ```xml
@@ -24,14 +24,17 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="30">
+
             <Border BorderBrush="Azure" BorderThickness="2">
                 <TextBlock x:Name="TextSource" 
-                           Text="I'm the first textblock" 
+                           Text="我是源" 
                            CanDrag="True" 
                            DragStarting="Txtsource_OnDragStarting"  />
             </Border>
-            <Border BorderBrush="Azure" BorderThickness="2" Margin="20" AllowDrop="True" >
-                <TextBlock x:Name="TextTarget" Text="I'm the second textblock" Drop="Txttarget_OnDrop"
+            <Border Margin="20" BorderBrush="Azure" BorderThickness="2"
+                    AllowDrop="True" >
+                <TextBlock x:Name="TextTarget" Text="目标TextBlock" 
+                           Drop="Txttarget_OnDrop"
                            Height="50" Width="400"  
                            AllowDrop="True" 
                            DragEnter="Txttarget_OnDragEnter"/>
@@ -43,7 +46,9 @@
   
 ```
 
-在xaml.cs 需要3个事件
+在xaml.cs 需要3个事件，开始拖放，拖放，拖放进入。
+
+其中拖放进入是设置鼠标显示的字和其他的东西，可以不要这个函数，不会影响功能。
 
 
 ```csharp
@@ -83,7 +88,9 @@
         }
 ```
 
-代码：http://download.csdn.net/detail/lindexi_gd/9739764
+代码：[http://download.csdn.net/detail/lindexi_gd/9739764](http://download.csdn.net/detail/lindexi_gd/9739764) 可以的话给点积分。
+
+问题原文：
 
 https://stackoverflow.com/questions/41662650/how-to-move-text-from-one-textblock-to-another-textblock-using-drag-and-drop-in
 
