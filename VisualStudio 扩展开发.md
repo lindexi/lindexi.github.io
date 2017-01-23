@@ -1,17 +1,18 @@
 # VisualStudio 扩展开发
 
+本文主要：如何开发一个 visual Studio 扩展，其实扩展也叫插件。
 
 <!--more-->
 
 
 
-首先需要安装 Visual Studio SDK
+首先需要安装 Visual Studio SDK ，安装不需要其它的工具就可以，直接使用vs安装包。
 
-我的是 Visual Studio 2015 ，所以我到这个页面：https://msdn.microsoft.com/en-us/library/bb166441
+我的是 Visual Studio 2015 ，所以我到这个页面：https://msdn.microsoft.com/en-us/library/bb166441 看教程。
 
 垃圾wr（我说的就是微软），找个东西好难
 
-首先是需要安装 SDK ，如果一开始没有安装的话，那么在控制面板，修改 VS ，然后选择工具安装。
+首先是需要安装 SDK ，如果一开始没有安装的话，那么在控制面板，找到 vS 右击，修改 VS ，然后选择工具安装。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291648.jpg)
 
@@ -19,15 +20,15 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291724.jpg)
 
-我的是中文，可能翻译不一样，不过相信这一点压力也没有。
+我的是中文，可能翻译不一样，不过相信这一点压力对大家没有什么。
 
 
 
-然后如何做插件，主要是看 http://dotneteers.net/blogs/divedeeper/archive/2008/01/06/LearnVSXNowPart3.aspx ，还有国内的大神翻译：http://www.cnblogs.com/default/archive/2010/02/27/1674832.html 这里是一系列。
+然后就来说下如何做插件，主要教程是看： http://dotneteers.net/blogs/divedeeper/archive/2008/01/06/LearnVSXNowPart3.aspx ，除了国外的还有国内的大神翻译：http://www.cnblogs.com/default/archive/2010/02/27/1674832.html 这里是一系列。
 
-那么我将会写一个简单的方法去做一个 Command ，可以将 VS 工程的所有文件判断编码。
+那么我将会来说下使用一个简单的方法去做一个 Command ，功能是可以判断 VS 工程的所有文件编码。
 
-首先是新建一个插件项目，打开 vs ，新建一个 VSIXProject 
+首先是新建一个插件项目。打开 vs ，新建一个 VSIXProject 
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291848.jpg)
 
@@ -35,7 +36,7 @@
 
 那么新建完 VSIXProject 我们就开始编写按钮，虽然说是按钮，其实是菜单，在这里，全部的按钮都是和菜单一样。
 
-那么我们直接新建 Command ，注意他的位置是在哪
+那么我们直接新建 Command ，注意他的位置是在哪。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711292118.jpg)
 
@@ -45,7 +46,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711292847.jpg)
 
-首先打开 *.vsct 在 Symbols 添加 id ，我们添加 EncodingNormalizerMenu ，EncodingNormalizerId2，他们的值随意给。
+首先打开 *.vsct 在 Symbols 添加 id ，我们添加 EncodingNormalizerMenu ，EncodingNormalizerId2，他们的值随意给。关于这个 GUID 或者其它的，其实我也不懂。
 
 
 ```xml
@@ -60,9 +61,7 @@
     </GuidSymbol>
 ```
 
-然后是创建菜单
-
-在`<Command>`下面使用`<Menus>`
+然后是创建菜单 在`<Command>`下面使用`<Menus>`
 
 
 ```xml
@@ -83,7 +82,7 @@
   
 ```
 
-然后修改 Groups ，修改 Parent 的 guid 为 Menu 的，修改 id 为 Menu 的
+然后修改 Groups ，修改 Parent 的 guid 为 Menu 的，修改 id 为 Menu 的。不一样就不在一个菜单。
 
 
 ```xml
@@ -94,13 +93,12 @@
     </Groups>
 ```
 
-然后添加按钮，注意按钮需要 id 、priority、CommandName 和之前的不一样。
+然后添加按钮，注意按钮需要 id 、priority、CommandName 和之前默认的不一样。
 
-添加了按钮，我们需要添加事件，在 .cs 构造
+添加了按钮，我们需要添加事件，在 .cs 构造 
+我们使用 CommandID 绑定，我们需要知道 按钮在哪个组，我们直接使用 CommandSet 还需要知道 按钮的 id ，第一个按钮是 0x0100 就是CommandId，第二个是 0x0101 ，于是就写 `new CommandID(CommandSet, 0x0101)` 使用第二个按钮
 
-我们使用 CommandID 绑定，我们需要知道 按钮在哪个组，我们直接使用 CommandSet 还需要知道 按钮的 id ，第一个按钮是 0x0100 就是CommandId，第二个是 0x0101 ，于是就写 `new CommandID(CommandSet, 0x0101)`
-
-关联事件使用，MenuItemCallback 事件作为按钮点击使用函数。
+那么使用了按钮，我们需要关联事件使用，我的 MenuItemCallback 事件作为按钮点击使用函数。
 
 
 ```csharp
@@ -108,12 +106,12 @@
                 commandService.AddCommand(menuItem);
 ```
 
-接着就是需要加上文件编码检查，在我之前写的 C# 判断文件编码 有说道如何做。
+代码全部在[全球同性交友平台](https://github.com/iip-easi/EncodingNormalior)，上面写的代码在 EncodingNormalizerVsx/EncodingNormalizer.cs
+
+接着就是需要加上文件编码检查，在我之前写的 C# 判断文件编码 博客有说道如何检测文件编码。
 
 
-如果需要自定义配置，那么 http://www.cnblogs.com/winkingzhang 提供一个方法，我使用了他的方法，很简单。
-
-还有垃圾wr的方法 https://github.com/Microsoft/VSSDK-Extensibility-Samples/blob/646de671c1a65ca49e9fce397baefe217e9123e8/Options_Page/Readme.md
+我们需要保存一些设置，那么如何自定义配置的界面，把配置页面放在工具->选项，可以参见 http://www.cnblogs.com/winkingzhang 提供的方法，我使用了他的方法，很简单。还有垃圾wr的方法 https://github.com/Microsoft/VSSDK-Extensibility-Samples/blob/646de671c1a65ca49e9fce397baefe217e9123e8/Options_Page/Readme.md
 
 
 首先打开 *Package.cs ，不过我们需要新建一个类 DefinitionPage ，不需要在这个类写什么。
