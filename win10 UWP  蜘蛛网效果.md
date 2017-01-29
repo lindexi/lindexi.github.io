@@ -124,7 +124,7 @@ line.StrokeThickness=最大宽度 * （最大距离-距离）/最大距离
 
 private DispatcherTimer _time
 ```
-
+Time_Tick就写移动点和线的代码
 
 ## 全部代码
 
