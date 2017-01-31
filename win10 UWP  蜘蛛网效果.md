@@ -6,6 +6,10 @@
 
 那么我来告诉大家如何做这个效果。
 
+第一步是在 Canvas 画点，第二步是让点移动，第三步是画线
+
+<!--more-->
+
 ## 在 Canvas 画一个点
 
 我们画点可以使用 Ellipse 我们给他宽和高，Fill，就可以画出来。需要加在 Canvas ，可以使用`canvas.Children.Add(ellipse)`
@@ -306,7 +310,100 @@ namespace Bsgame
     }
 }
 
+```
+
+可以看到性能很差，于是把连线去掉，显示点不显示连接
+
+```csharp
+        private void RandomStaf(object sender, object e)
+        {
+            Storyboard board = new Storyboard();
+            board.Duration = new Duration(TimeSpan.FromSeconds(1));
+            board.Completed += RandomStaf;
+            DoubleAnimationUsingKeyFrames animation;
+            foreach (var temp in _staf)
+            {
+                double f = temp.X;
+
+                temp.X += temp.Vx * 10;
+                if (temp.X > _width - 100)
+                {
+                    temp.X = _width - 100;
+                }
+                else if (temp.X < 0)
+                {
+                    temp.X = 0;
+                }
+
+
+
+                animation = EllPoile(f, temp.X);
+                Storyboard.SetTarget(animation, temp.Point);
+                Storyboard.SetTargetProperty(animation, "(Canvas.Left)");
+                board.Children.Add(animation);
+
+                f = temp.Y;
+                temp.Y += temp.Vy * 10;
+
+                if (temp.Y > _height - 100)
+                {
+                    temp.Y = _height - 100;
+                }
+                else if (temp.Y < 0)
+                {
+                    temp.Y = 0;
+                }
+
+                animation = EllPoile(f, temp.Y);
+                Storyboard.SetTarget(animation, temp.Point);
+                Storyboard.SetTargetProperty(animation, "(Canvas.Top)");
+
+                if (temp.X >= _width - 100 || temp.Y >= _height - 100
+                      || temp.X <= 0 || temp.Y <= 0)
+                {
+                    temp.X = ran.Next((int)_width);
+                    temp.Y = ran.Next((int)_height);
+                }
+                board.Children.Add(animation);
+                temp.Time -= 10;
+
+                animation = EllPoile(10, 15);
+                Storyboard.SetTarget(animation, temp.Point);
+                Storyboard.SetTargetProperty(animation, "Height");
+                board.Children.Add(animation);
+
+                animation = EllPoile(10, 15);
+                Storyboard.SetTarget(animation, temp.Point);
+                Storyboard.SetTargetProperty(animation, "Width");
+                board.Children.Add(animation);
+
+                animation = new DoubleAnimationUsingKeyFrames();
+                EasingDoubleKeyFrame frame = new EasingDoubleKeyFrame();
+                frame.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0));
+                frame.Value = 0;
+                animation.KeyFrames.Add(frame);
+
+                frame = new EasingDoubleKeyFrame();
+                frame.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0.5));
+                frame.Value = 180;
+                animation.KeyFrames.Add(frame);
+
+                frame = new EasingDoubleKeyFrame();
+                frame.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromSeconds(1));
+                frame.Value = 0;
+                animation.KeyFrames.Add(frame);
+                Storyboard.SetTarget(animation, temp.Point.RenderTransform);
+                Storyboard.SetTargetProperty(animation, "(CompositeTransform.Rotation)");
+                board.Children.Add(animation);
+
+            }
+            board.Begin();
+
+        }
 
 ```
+
+
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
