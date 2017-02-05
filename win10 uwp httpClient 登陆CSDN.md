@@ -19,7 +19,7 @@
 
 
 ```csharp
-              AccountCimage account = AppId.AccoutCimage;
+            AccountCimage account = AppId.AccoutCimage;
             //https://stackoverflow.com/questions/41599384/httpclient-cookie-issue
             CookieContainer cookies = new CookieContainer();
 
