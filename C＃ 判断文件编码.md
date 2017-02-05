@@ -3,7 +3,6 @@
 我们的项目中会包含有很多文件，但是可能我们没有注意到的，我们的文件的编码不一定是utf-8，所以可能在别人电脑运行时出现乱码。最近在做一个项目，这个项目可以把我们的文件夹里的所有文本，判断他们是什么编码，如果不是用户规定的编码，那么就告诉用户，是否要把它规范为设置的编码。
 
 <!--more-->
-<!-- csdn -->
 
 我们常用的编码有 UTF-8 和 GBK ，所以这就是我们的重点关注编码，可惜现在没有一个好的办法区别 UTF-8 和 GBK 。
 
@@ -47,11 +46,11 @@
         }
 ```
 
-那么对于没有带签名的文件，我们如何判断，其实我找了现在很多大神的博客，他们都认为这个是没有一个可行的方法，精确判断，所以我们只能通过一个近似的方法来判断。
+那么对于没有带签名的文件，我们如何判断？其实我找了现在很多大神的博客，他们都认为这个是没有一个可行的方法，精确判断。所以我们只能通过一个近似的方法来判断。
 
 找了很久，发现了一个很好的算法，对于文件长度不是3的倍数，和包含有中文、ASCII字符的 GBK 编码文件，几乎不会与UTF8混淆。
 
-我们统计属于GBK的byte个数和属于UTF8的byte个数，比较两个个数，如果countGBK 大于 countUtf8 那么编码就是 GBK，否则是 UTF8。如果相同，gg，所以我们需要一个置信度变量。
+我们统计属于 GBK 的 byte 个数和属于UTF8的byte个数，比较两个个数，如果countGBK 大于 countUtf8 那么编码就是 GBK，否则是 UTF8。如果相同，gg，所以我们需要一个置信度变量。
 
 看起来我们需要好多变量，于是写一个类
 
@@ -86,7 +85,7 @@ namespace EncodingNormalior.Model
 }
 ```
 
-那么如何统计文件中属于 GBK的byte个数
+那么如何统计文件中属于 GBK的 byte 个数
 
 我们需要知道 GBK 的编码，对于一般的 ASCII 字符，使用一个 byte 和ASCII一样，如果一个文件都是 ASCII 字符，那么GBK 编码和 ASCII 的都一样，我们统计得到属于 GBK的byte个数为0。对于其他的字符，使用两个 byte 表示。
 
@@ -258,3 +257,5 @@ http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html
 http://blog.codingnow.com/2010/06/detect_utf-8_gbk.html
 
 https://msdn.microsoft.com/en-us/library/dd374101(VS.85).aspx
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
