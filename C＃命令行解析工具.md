@@ -10,6 +10,137 @@
 
 [林选臣](http://www.cnblogs.com/linxuanchen/p/c-sharp-command-line-argument-parser.html)大神写的，他的方法很简单。
 
+首先复制两个类到项目
+
+
+```csharp
+      public class CommandLineArgumentParser
+    {
+        private readonly List<CommandLineArgument> _arguments;
+
+        public CommandLineArgumentParser(string[] args)
+        {
+            _arguments = new List<CommandLineArgument>();
+
+            for (var i = 0; i < args.Length; i++)
+            {
+                _arguments.Add(new CommandLineArgument(_arguments, i, args[i]));
+            }
+        }
+
+        public static CommandLineArgumentParser Parse(string[] args)
+        {
+            return new CommandLineArgumentParser(args);
+        }
+
+        public CommandLineArgument Get(string argumentName)
+        {
+            return _arguments.FirstOrDefault(p => p == argumentName);
+        }
+
+        public IEnumerable<CommandLineArgument> GetEnumerator()
+        {
+            foreach (var temp in _arguments)
+            {
+                yield return temp;
+            }
+        }
+
+        public bool Has(string argumentName)
+        {
+            return _arguments.Count(p => p == argumentName) > 0;
+        }
+    }
+
+    public class CommandLineArgument
+    {
+        private readonly List<CommandLineArgument> _arguments;
+
+        private readonly string _argumentText;
+
+        private readonly int _index;
+
+        internal CommandLineArgument(List<CommandLineArgument> args, int index, string argument)
+        {
+            _arguments = args;
+            _index = index;
+            _argumentText = argument;
+        }
+
+        public CommandLineArgument Next
+        {
+            get
+            {
+                if (_index < _arguments.Count - 1)
+                {
+                    return _arguments[_index + 1];
+                }
+
+                return null;
+            }
+        }
+
+        public CommandLineArgument Previous
+        {
+            get
+            {
+                if (_index > 0)
+                {
+                    return _arguments[_index - 1];
+                }
+
+                return null;
+            }
+        }
+
+        public CommandLineArgument Take()
+        {
+            return Next;
+        }
+
+        public IEnumerable<CommandLineArgument> Take(int count)
+        {
+            var list = new List<CommandLineArgument>();
+            var parent = this;
+            for (var i = 0; i < count; i++)
+            {
+                var next = parent.Next;
+                if (next == null)
+                    break;
+
+                list.Add(next);
+
+                parent = next;
+            }
+
+            return list;
+        }
+
+        public static implicit operator string(CommandLineArgument argument)
+        {
+            return argument?._argumentText;
+        }
+
+        public override string ToString()
+        {
+            return _argumentText;
+        }
+    }
+
+
+```
+
+然后在主函数
+
+
+```csharp
+    var arguments = CommandLineArgumentParser.Parse(args);
+```
+
+如果要
+
+
+
 第二个方法需要使用 Nuget
 
 
