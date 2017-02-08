@@ -91,6 +91,20 @@ Assert是返回结果true方法是测试通过，如果是其他就不通过，A
 |AreSame|两个值相同|
 
 
+## WPF 单元测试
+
+对于 WPF 的单元测试，可以新建一个控制台项目，然后右击引用
+
+![](https://ooo.0o0.ooo/2017/02/07/58998e2e7d476.jpg)
+
+添加 Microsoft.VisualStudio.QualityTools.UnitTestFramework 然后其他和UWP一样。
+
+注意命名空间 `using Microsoft.VisualStudio.TestTools.UnitTesting;`
+
+然后把测试类写公开，其他和 UWP 一样
+
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 
