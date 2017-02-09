@@ -281,6 +281,72 @@ DefinitionPage 就是我上面定义的选项
 
 如果发现有自己做的和我讲的不同，那么一定是有一点我没说道，去我的github看我做的。
 
+## 获取工程所有项目
+
+我开始使用`dte.Solution.Projects`但是放在文件夹的项目获取不到，所以使用堆栈提供的方法。
+
+这个方法写在[C＃ 解析 sln 文件](http://lindexi.oschina.io/lindexi/post/C-%E8%A7%A3%E6%9E%90-sln-%E6%96%87%E4%BB%B6/) 可是 vs 说找到不 Microsoft.Build.dll 所以这个方法还是不可以的。那么如何从 dte 获取所有项目？我找到一个大神博客：http://www.wwwlicious.com/2011/03/29/envdte-getting-all-projects-html/
+
+开始判断是不是文件夹，如果是的话，递归函数获取文件夹所有项目。
+
+我以为文件夹不是 `Project` 但是后来发现，工程的文件夹也是 `Project` 文件夹可以通过`ProjectKinds.vsProjectKindSolutionFolder`判断。
+
+那么如何获得 文件夹所有文件夹和项目，其实 `Project` 有 ProjectItems 可以获取。
+
+于是可以使用这个方法
+
+
+```csharp
+        private static List<Project> GetSolutionFolderProjects(Project solutionFolder)
+        {
+            List<Project> list = new List<Project>();
+            for (var i = 1; i <= solutionFolder.ProjectItems.Count; i++)
+            {
+                var subProject = solutionFolder.ProjectItems.Item(i).SubProject;
+                if (subProject == null)
+                {
+                    continue;
+                }
+
+                // If this is another solution folder, do a recursive call, otherwise add
+                if (subProject.Kind == ProjectKinds.vsProjectKindSolutionFolder)
+                {
+                    list.AddRange(GetSolutionFolderProjects(subProject));
+                }
+                else
+                {
+                    list.Add(subProject);
+                }
+            }
+
+            return list;
+        }
+```
+
+一开始判断是不是文件夹，如果是就使用 GetSolutionFolderProjects 得到所有的项目，这样就可以获得工程所有项目。
+
+
+```csharp
+  foreach (var temp in dte.Solution.Projects)
+  {
+    if (temp is Project)
+    {
+        if (((Project) temp).Kind == ProjectKinds.vsProjectKindSolutionFolder)
+        {
+           project.AddRange( GetSolutionFolderProjects((Project) temp));
+        }
+        else
+        {
+           project.Add((Project)temp);
+        }
+    }
+
+  }
+```
+
+
+
+
 
 参见：http://blog.csdn.net/liuruxin/article/details/17955363
 
