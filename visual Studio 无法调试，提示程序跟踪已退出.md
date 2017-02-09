@@ -10,6 +10,10 @@ vs点击启动时，出现了一下提示
   程序“[12648] *.vshost.exe”已退出，返回值为 -1073741819 (0xc0000005) 'Access violation'。
 ```
 
+<!-- csdn -->
+<!--more-->
+
+
 这让我无法打码，于是发现同学的vs的设置和我的有那些不同，最后发现了，在工程属性，Debug页面里，没有勾选 `启用本地调试`。
 
 如果是英文版，那么就是 Properties 上打开 Debug 页面，debug页面就是调试页面，勾选 `Enable unmanaged code debugging`

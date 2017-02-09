@@ -2,7 +2,7 @@
 
 本文将使用 Path 画一个聊天气泡。
 
-
+<!-- csdn -->
 <!--more-->
 
 内容是看到 大神写的 [WPF绘制简单常用的Path](http://www.cnblogs.com/tsliwei/p/5609035.html)，想到 UWP 画图是不是也一样，于是做的一个抄袭的 Path
