@@ -45,7 +45,24 @@
 
 代码一样，但是写的地方不一样，可以看到现在的上标就好看了。
 
-这个问题暂时还没找到是为什么，但一定是垃圾WR弄的，于是我又可以去喷他了。如果有时间我去测下 UWP 的看是不是这样。
+
+UWP 上标也一样。为什么写在 Xaml 间隔会那么大，是不是WR弄的？其实试试下面代码，注意不要格式化，直接写的样子和我的一样试试。
+
+
+```csharp
+          <TextBlock x:Name="TextBlock">
+            <TextBlock.Inlines>
+                <Run Text="y=x"/><Run Text="2" BaselineAlignment="TextTop"
+                 FontSize="8"/>
+            </TextBlock.Inlines>
+        </TextBlock>
+```
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/7abeb606-6faa-4f1e-ae7d-e19918db24e1QQ截图201702101503252017210153833.jpg)
+
+原因就是Run卸载两行，会把换行给记下，于是间隔就大了，写在一起的Run就不会出现这个距离。
+
+但是我的 格式化会把Run放在下一行，所以可能我这里看的好的，在你这就会换行，看起来上标就有了距离。
 
 我把他传上 csdn ，大家可以下载来验证。
 
