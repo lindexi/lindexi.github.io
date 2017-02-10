@@ -344,7 +344,9 @@ DefinitionPage 就是我上面定义的选项
   }
 ```
 
+<script src="https://gist.github.com/lindexi/3105bd0f0c5225bec4aa476f84dd29db.js"></script>
 
+代码：https://gist.github.com/lindexi/3105bd0f0c5225bec4aa476f84dd29db
 
 
 
