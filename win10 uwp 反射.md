@@ -4,24 +4,20 @@
 
 反射是强大的好用的，我们可以添加新功能不修改之前的代码，通过使用反射得到。
 
-但是在WPF的反射我们在UWP如何才能获的程序集所有类，本文下面和大家说如何做。
+本文下面和大家说如何做一个和WPF一样的反射功能，如何才能获的 UWP 程序集所有类。
 
 <!--more-->
 <!-- csdn -->
 
 ## uwp 程序集所有类
 
-我们可以使用
+我们可以使用下面代码获得程序集所有的类
 		
 
 ```csharp
 Application.Current.GetType().GetTypeInfo().Assembly
 
 ```
-
-获得程序集所有的类
-
-		
 
 ```csharp
             foreach (var temp in applacationAssembly.DefinedTypes)
@@ -73,6 +69,20 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 ```
 那么我们可以使用type得到ViewModel，参见http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/ 
+
+## WPF 反射获得所有类
+
+
+```csharp
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            foreach (var temp in assembly.GetTypes())
+            {
+
+
+            }
+```
+
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
 
