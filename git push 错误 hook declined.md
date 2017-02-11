@@ -43,7 +43,25 @@ error: failed to push some refs to 'http://127.0.0.1:3000/lindexi/gogs.git'
 
 于是我修改 E盘的路径到我现在使用的路径，就好了。
 
-如果对于 gogs 仓库在上传时出现的问题，也可以联系我：lindexi_gd@163.com
+这问题是 update 钩子指向错误的路径。
+
+简单的方法是：
+
+进入控制板，重新生成所有仓库的 Update 钩子。这样就好了。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/4b3afb91-e4b6-4548-a7e0-ab239e814a372017211153253.jpg)
+
+那么对于备份了 gogs 要恢复，需要如何做？
+
+ 1. 修改 custom/conf/app.ini 
+
+ 把 repository 路径修改现在的路径，同样修改日志
+
+ 2. 打开 gogs ，进入管理页面
+
+ 重新生成所有仓库的 Update 钩子
+
+如果对于 gogs 仓库在上传时出现的问题，可以去看[gogs故障](https://gogs.io/docs/intro/troubleshooting)，也可以联系我：lindexi_gd@163.com
 
 一般有时间我会去看看。
 
