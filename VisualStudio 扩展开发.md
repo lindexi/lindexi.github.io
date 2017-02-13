@@ -7,6 +7,7 @@
 <!--more-->
 我写这博客时候，是我在开发一个插件：[编码规范工具](https://marketplace.visualstudio.com/items?itemName=lindexigd.vs-extension-18109)。记录的是我从不知道到发布插件，如果遇到了开发中的问题，欢迎交流。
 
+## 安装 Visual Studio SDK
 
 首先需要安装 Visual Studio SDK ，安装不需要其它的工具就可以，直接使用vs安装包。
 
@@ -35,6 +36,8 @@
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291848.jpg)
 
 新建之后居然发现有一个  index.html 我开始还以为是 写html 来着，还好不是，这个 index.html 只是卖萌的而已。
+
+## 添加菜单
 
 那么新建完 VSIXProject 我们就开始编写按钮，虽然说是按钮，其实是菜单，在这里，全部的按钮都是和菜单一样。
 
@@ -112,6 +115,7 @@
 
 接着就是需要加上文件编码检查，在我之前写的 C# 判断文件编码 博客有说道如何检测文件编码。
 
+## 增加选项
 
 我们需要保存一些设置，那么如何自定义配置的界面，把配置页面放在工具->选项，可以参见 http://www.cnblogs.com/winkingzhang 提供的方法，我使用了他的方法，很简单。还有垃圾wr的方法 https://github.com/Microsoft/VSSDK-Extensibility-Samples/blob/646de671c1a65ca49e9fce397baefe217e9123e8/Options_Page/Readme.md
 
@@ -252,15 +256,17 @@ DefinitionPage 就是我上面定义的选项
 
 从零做一个扩展，可以参见：http://www.cnblogs.com/stg609/p/3711443.html
 
+## 传到商店
+
 做完了功能，我们需要发布扩展，我们要把按钮加上好看的 ico 。
 
 首先，下载一张图。
 
-把图片改为 32bits 16x16。
+把图片改为 32bits 16x16。修改图片可以使用 http://www.easyicon.net/ 在线转换。
 
-放到工程，我放在 Resource ，我给他名称 code_711px_16_easyicon.net.png
+图片放到工程，我放在 Resource ，我给他名称 code_711px_16_easyicon.net.png
 
-打开 *.vsct ，在 Symbols 添加 一个GUID，需要名称和ID
+打开 *.vsct ，在 Symbols 添加 一个GUID。这需要给他名称和ID
 
 
 ```xml
@@ -283,9 +289,11 @@ DefinitionPage 就是我上面定义的选项
 
 如果发现有自己做的和我讲的不同，那么一定是有一点我没说道，去我的github看我做的。
 
+图片可以把多个图片放在一起，于是按照一个图片 16x16 读取，这就是多个`IDSymbol`做的。
+
 ## 获取工程所有项目
 
-我开始使用`dte.Solution.Projects`但是放在文件夹的项目获取不到，所以使用堆栈提供的方法。
+我需要获取用户工程的所有项目，我开始使用`dte.Solution.Projects`但是放在文件夹的项目获取不到，所以使用堆栈提供的方法。
 
 这个方法写在[C＃ 解析 sln 文件](http://lindexi.oschina.io/lindexi/post/C-%E8%A7%A3%E6%9E%90-sln-%E6%96%87%E4%BB%B6/) 可是 vs 说找到不 Microsoft.Build.dll 所以这个方法还是不可以的。那么如何从 dte 获取所有项目？我找到一个大神博客：http://www.wwwlicious.com/2011/03/29/envdte-getting-all-projects-html/
 
