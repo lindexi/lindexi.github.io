@@ -2,8 +2,10 @@
 
 本文主要：如何开发一个 visual Studio 扩展，其实扩展也叫插件。
 
-<!--more-->
+那么就是如何开发一个 vs插件。
 
+<!--more-->
+我写这博客时候，是我在开发一个插件：[编码规范工具](https://marketplace.visualstudio.com/items?itemName=lindexigd.vs-extension-18109)。记录的是我从不知道到发布插件，如果遇到了开发中的问题，欢迎交流。
 
 
 首先需要安装 Visual Studio SDK ，安装不需要其它的工具就可以，直接使用vs安装包。
