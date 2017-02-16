@@ -6,8 +6,6 @@
 
 <!--more-->
 
-<!-- csdn -->
-
 原先使用的方法`dte.Solution.Projects`但是放在文件夹的项目获取不到，所以使用堆栈提供的方法。
 
 首先添加引用  `Microsoft.Build` 注意版本
