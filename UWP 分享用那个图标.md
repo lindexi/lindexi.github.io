@@ -2,7 +2,7 @@
 
 有两个图标，如果让你选，你会用哪个图标做分享？
 
-![](https://cdn-images-1.medium.com/max/1400/1*TqFrTQhRzRVtGy2JGS29YA.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/1-TqFrTQhRzRVtGy2JGS29YA.png)
 
 <!--more-->
 
