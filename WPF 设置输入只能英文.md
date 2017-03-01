@@ -3,8 +3,6 @@
 有时输入只能让用户输入英文，那么如何设置输入只能英文？
 <!--more-->
 
-<!-- csdn -->
-
 首先在xaml 写一个 TextBox ，给他一个名字。
 
 
@@ -25,6 +23,14 @@
                 InputMethod.SetPreferredImeState(txt,InputMethodState.Off);
 
 ```
+
+当然也可以在页面写
+
+
+```csharp
+            <TextBox InputMethod.IsInputMethodEnabled="False"></TextBox>
+```
+
 
 注意用户可以粘贴中文，可以检测用户是否输入有中文。
 
