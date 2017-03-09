@@ -17,6 +17,12 @@
 
 反射是做什么？反射其实应用在对于类型差不多，但是需要对修改时不需要修改多处的代码使用。
 
+ - 可以使用反射动态地创建类型的实例，将类型绑定到现有对象，或从现有对象中获取类型
+
+ - 应用程序需要在运行时从某个特定的程序集中载入一个特定的类型，以便实现某个任务时可以用到反射
+
+ - 反射主要应用与类库，这些类库需要知道一个类型的定义，以便提供更多的功能。
+
 在我写的[MVVM](./win10-uwp-MVVM%E5%85%A5%E9%97%A8/)，就使用反射获得ViewModel，这样添加ViewModel 不需要修改写的代码。
 
 反射可以添加类型不需要修改代码，这是很好的，但是反射性能比较差，在需要使用的时候才使用反射，不要每次都使用。
@@ -100,13 +106,15 @@ Application.Current.GetType().GetTypeInfo().Assembly
             }
 ```
 
+
+
 ### 获得类型
 
 1. typeof
 
 
 ```csharp
-    Type type=typeof(类型);
+    Type type = typeof(类型);
 ```
 
 
@@ -117,7 +125,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 
 ```csharp
-    类型 t=new 类型();
+    类型 t = new 类型();
 
     Type type=t.GetType();
 ```
@@ -137,22 +145,22 @@ Application.Current.GetType().GetTypeInfo().Assembly
 创建对象的方法很多
 
 ```csharp
-   Assembly assembly= Assembly.Load("Assembly");
+   Assembly assembly = Assembly.Load("Assembly");
 
-   Type type=assembly.GetType("Example");
+   Type type = assembly.GetType("Example");
 
-   object obj=Activator.CreateInstance(type);
+   object obj =Activator.CreateInstance(type);
 ```
 可以传入参数，参数可以传入多个
 
 ```csharp
-    object obj=Activator.CreateInstance(type,参数);
+    object obj = Activator.CreateInstance(type,参数);
 ```
 
 另一个方法
 
 ```csharp
-     object obj=type.Assembly.CreateInstance(type.FullName);
+     object obj = type.Assembly.CreateInstance(type.FullName);
 ```
 
 ### 获得方法
@@ -161,15 +169,15 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 
 ```csharp
-    MethodInfo[] listMethodInfo=type.GetMethods();
+    MethodInfo[] listMethodInfo = type.GetMethods();
 ```
 
 使用方法
 
 
 ```csharp
-     object obj=Activator.CreateInstance(type);
-    MethodInfo methodInfo=type.GetMethod("方法");
+     object obj =Activator.CreateInstance(type);
+     MethodInfo methodInfo = type.GetMethod("方法");
      methodInfo.Invoke(obj,null);  //参数1类型为object[]，代表方法的对应参数，输入值为null代表没有参数
 ```
 
@@ -177,11 +185,11 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 
 ```csharp
-   object obj=Activator.CreateInstance(type);
+   object obj =Activator.CreateInstance(type);
 
-   PropertyInfo propertyInfo=obj.GetProperty("Name");    //获取Name属性对象
+   PropertyInfo propertyInfo = obj.GetProperty("Name");    //获取Name属性对象
 
-   var name=propertyInfo.GetValue(obj,null）;            //获取Name属性的值
+   var name = propertyInfo.GetValue(obj,null）;            //获取Name属性的值
 
    propertyInfo.SetValue(obj,"cvte",null);                //设置Name属性
 ```
@@ -191,7 +199,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 
 ```csharp
-    object[] typeAttributes=type.GetCustomAttributes(false);   
+    object[] typeAttributes =type.GetCustomAttributes(false);   
 ```
 
 
@@ -219,6 +227,8 @@ Application.Current.GetType().GetTypeInfo().Assembly
 虽然说了很多，但很多都是大神讲的，于是
 
 推荐大神讲的反射：http://www.cnblogs.com/wangshenhe/p/3256657.html
+
+https://www.codeproject.com/Articles/55710/Reflection-in-NET
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
