@@ -223,8 +223,9 @@
             }
 ```
 
+本文还没写好，如果有问题，请联系我
 
-
+http://www.cnblogs.com/free722/archive/2011/04/04/2005275.html
 
 http://stackoverflow.com/questions/25979264/understanding-the-wpf-dispatcher-begininvoke
 
