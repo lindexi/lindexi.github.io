@@ -1,5 +1,11 @@
 # win10 uwp 获得元素绝对坐标
 
+有时候需要获得一个元素，相对窗口的坐标，在修改他的位置可以使用。
+
+那么 UWP 如何获得元素坐标？
+
+可以使用下面的方法
+
 <!--more-->
 <!-- csdn -->
 
@@ -27,6 +33,19 @@
 ```
 
 上面代码就可以获得元素坐标
+
+那么如何获得他相对其他元素的坐标？
+
+假如需要获得元素相对他的上坐标，这时可以看下面代码
+
+
+```csharp
+            var t = MainTextBlock.TransformToVisual((UIElement)MainTextBlock.Parent);
+            Point screenCoords = t.TransformPoint(new Point(0, 0));
+```
+
+
+
 
 参见：http://stackoverflow.com/questions/12387449/how-to-get-the-absolute-position-of-an-element/12388558#12388558
 
