@@ -14,6 +14,8 @@ wr 很喜欢用 XML，可以看到我们的项目，*.csproj 和页面 xaml 都�
 
 本文就提供简单的方法来读写 XML 。提供方法有两个，放在前面的方法是比较垃圾的方法，放在后面的才是我希望大家使用的。
 
+如果遇到了 C# 或 UWP 读取 xml 返回的 Node 是空，那么请检查命名空间，关于命名空间内容，请继续看博客。
+
 <!--more-->
 <!-- csdn -->
 
@@ -113,6 +115,9 @@ XML声明由以下几个部分组成：
 如果你想用 Linq 去查而不使用循环，那么我希望你看到下面的 [Linq读写 XML](# Linq 读写 XML)再写代码，我下面有一个简单的方法。
 
 如何去写入或创建节点，请看：http://www.cnblogs.com/zery/p/3362480.html 
+
+需要注意的是，如果属性有明明空间，那么刚才的方法是比较难用的。
+
 
 
 ## Linq 读写 XML
@@ -231,6 +236,60 @@ http://blog.csdn.net/cdjcong/article/details/8473539
 http://blog.csdn.net/ht_zhaoliubin/article/details/38900275
 
 http://www.cnblogs.com/zery/p/3362480.html
+
+
+关于命名空间：https://msdn.microsoft.com/en-us/library/aa468565.aspx?f=255&MSPPError=-2147217396
+
+## WPF 读XML
+
+可以 XmlDocument 读 xml ，如果遇到命名空间问题
+
+建议：XmlNamespaceManager 
+
+假设一个属性存在命名控件，必须使用 XmlNamespaceManager ，如果没有，SelectSingleNode 返回空。
+
+那么可以使用  XmlNamespaceManager ，但是需要知道 xml 的内容，因为需要拿到空间。
+
+新建一个 XmlNamespaceManager ：
+
+
+```csharp
+    new XmlNamespaceManager(document.NameTable)
+            {
+
+            };
+```
+
+但是需要设置空间，`XmlNamespaceManager.AddNamespace("随意名称", NamespaceURI);`
+
+如果看不懂上面写的，请看例子
+
+
+假如要读取项目xml，也就是C#项目文件
+
+
+```xml
+    <?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+</Project>
+```
+
+
+可以使用
+
+
+```csharp
+            XmlDocument document = new XmlDocument();
+            document.Load("1.xml");
+            var temp = new XmlNamespaceManager(document.NameTable)
+            {
+
+            };
+            temp.AddNamespace("xm", document.DocumentElement.NamespaceURI);
+            XmlNode root = document.SelectSingleNode("xm:Project",temp);
+            XmlNode t = root.SelectSingleNode("xm:Import",temp);
+```
 
 
 
