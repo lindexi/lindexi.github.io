@@ -21,28 +21,6 @@
 
 `Uri.EscapeDataString` `WebUtility.UrlEncode` `WebUtility.HtmlEncode` 对应的是
 `Uri.UnescapeDataString` `WebUtility.UrlDecode` `WebUtility.HtmlDecode`
-<!-- 
-可以使用
-
-
-```csharp
-    Uri.EscapeDataString(str) 
-```
-
-转回来
-
-```csharp
-    Uri.UnescapeDataString(str)
-```
-
-还可以使用
-
-
-```csharp
-     WebUtility.UrlEncode
-```
-
-但是两个得到是不同的 -->
 
 对字符串：“~+ =!@$#^&*http://lindexi.oschina.io”
 
