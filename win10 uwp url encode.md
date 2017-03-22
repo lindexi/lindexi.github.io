@@ -1,8 +1,14 @@
 # win10 uwp url encode
 
-有时候需要向网络传一些中文或其他不支持的东西，这时需要 url encode
+我最近图床使用中文图片上传，地址出现错误。
 
-有时候需要把`<` 转`&lt;` ，这些本文都会告诉你，如何转换
+原因是URL不支持中文，所以需要把中文转URL可以认识字符，那么如何转？
+
+我发现有好多个方法去转，下面将会告诉大家我知道所有方法。
+
+<!-- 有时候需要向网络传一些中文或其他不支持的东西，这时需要 url encode -->
+
+<!-- 有时候需要把`<` 转`&lt;` ，这些本文都会告诉你，如何转换 -->
 
 <!--more-->
 <!-- csdn -->
@@ -22,7 +28,8 @@
 `Uri.EscapeDataString` `WebUtility.UrlEncode` `WebUtility.HtmlEncode` 对应的是
 `Uri.UnescapeDataString` `WebUtility.UrlDecode` `WebUtility.HtmlDecode`
 
-对字符串：“~+ =!@$#^&*http://lindexi.oschina.io”
+先写一个测试使用代码，看看对
+对字符串：“~+ =!@$#^&*http://lindexi.oschina.io”转换的到的是什么
 
 通过 Uri.EscapeUriString 返回 “~+%20=!@$#%5E&*http://lindexi.oschina.io”
 
@@ -31,11 +38,11 @@ WebUtility.UrlEncode 返回  “%7E%2B+%3D!%40%24%23%5E%26*http%3A%2F%2Flindexi.
 
 他们都是标准，关于区别，请看 http://stackoverflow.com/a/11236038/6116637
 
-对于中文，使用两个得到是一样
+<!-- 对于中文，使用两个得到是一样 -->
 
-WebUtility.HtmlEncode 可以转 `&#` 。
+WebUtility.HtmlEncode 可以转 `&#` ，所以需要在UWP进行这个转换就可以使用函数。
 
-如果希望继续看三个转换有哪些不同，请看下面
+如果希望继续看三个转换有哪些不同，请看下面，我做了不同字符使用三个函数获得的。
 
 
 |　| Uri.EscapeUriString|Uri.EscapeDataString|WebUtility.UrlEncode|WebUtility.HtmlEncode|

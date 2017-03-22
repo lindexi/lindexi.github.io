@@ -57,14 +57,17 @@ Windows10 UWP 要访问博客，可以使用Windows.Web.Http.HttpClient
 
 ```
 
-在前台有一个TextBlock，名字tb
+在前台有一个TextBlock，名字tb 和 按钮
 
-按钮
 
-按钮点击触发上面，访问博客，把内容放在tb
+按钮点击触发上面代码，访问博客，得到的内容放在tb
+
+界面看起就是
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732119010.jpg)
 
+
+除了 httpClient 还可以使用
 HttpWebRequest
 
 ```C#
