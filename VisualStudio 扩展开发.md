@@ -359,6 +359,10 @@ DefinitionPage 就是我上面定义的选项
 
 代码：https://gist.github.com/lindexi/3105bd0f0c5225bec4aa476f84dd29db
 
+## 升级 2017
+
+如果有之前扩展需要升级，参见https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017
+
 
 
 参见：http://blog.csdn.net/liuruxin/article/details/17955363
