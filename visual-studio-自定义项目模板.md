@@ -1,13 +1,16 @@
 # Visual Studio 自定义项目模板
 
-经常我们需要新建一个项目，然后新建我们的View文件夹，ViewModel文件夹，Model文件夹，还有把我们的ViewModelBase放入我们的VIewModel，如果还用框架，还需要加上好多。
+经常需要新建一个项目，项目有很多重复的东西，如然后新建View文件夹，ViewModel文件夹，Model文件夹，还有把我们的ViewModelBase放入ViewModel，如果还用框架，还需要加上好多。
+
+还需要在每个文件夹加上声明，于是每次做的重复的就有很多。
+
 <!--more-->
 
-而我一般还有用九幽统计，需要修改好多东西，每新建一个项目都要做这个，这样我觉得不好，在网上看到了自定义模板，不过垃圾微软官方说的好差，看不懂，看了老周的，还是觉得不懂，我就自己来。
+而我一般还有用九幽统计，需要修改好多东西，每新建一个项目都要做这个，这样我觉得不好，在网上看到了自定义模板，不过垃圾微软官方说的好差，看不懂，看了老周的，还是觉得不懂，我就自己来创建一个试试。
 
-我们需要打开我们目录：C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP
+第一步需要打开我们目录：C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP 
 
-里面有文件夹，一般我们打开最后一个，我也不知道你看到我这篇，垃圾微软把它改为最大多少，所以，一个一个来，我现在打开1033，（1033是老周博客写的）我的其实还有更后的，这个如果都是数字，就选最大的。
+可以看到里面有很多个文件夹，一般我们打开最后一个，我也不知道你看到我这篇，垃圾微软把它改为最大多少，所以，一个一个来，我现在打开1033，（1033是老周博客写的）我的其实还有更后的，这个如果都是数字，就选最大的。
 
 ---
 
@@ -19,25 +22,30 @@
 
 ---
 
-我们先把文件夹复制到我们用户文档或者自己程序的项目位置，然后压缩一份保存，因为怕自己弄坏
+第二步是把文件夹复制到桌面或其他离回收站比较近的地方，然后压缩一份保存。因为怕自己弄坏了。
+<!-- 我们先把文件夹复制到我们用户文档或者自己程序的项目位置，然后压缩一份保存，因为怕自己弄坏 -->
 
-然后我们用Visual Studio打开文件，记住，要打开.csproj要用文件 打开。
+然后我们用 Visual Studio 打开文件，记住，要打开 .csproj 是要用 vs 的菜单 文件->打开。
 
-我们先打开BlankApplication里BlankApplication.vstemplate
+我们先打开 BlankApplication 里的 BlankApplication.vstemplate
 
-我们要修改是我们项目包含文件TemplateContent就是我们项目包含的文件
+我们要修改是 项目包含文件，把需要包括的文件放进去， TemplateContent 就是我们项目包含的文件
 
 ![这里写图片描述](http://img.blog.csdn.net/20160902105740743)
 
-我们包含项目Application.csproj，但是我们后面`ReplaceParameters="true"`我们会把东西代换，代换的我在后面讲。
+可以看到需要包含项目 Application.csproj，这个值后面 写了`ReplaceParameters="true"`，这就是我们会把东西代换，代换的我在后面讲。
 
-然后就是我们的项目包含文件，`<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>`我们从本地找到`App.xaml`文件，放在新建项目的`App.xaml`放入之前需要代换，因为`ReplaceParameters="true"`
+然后就是项目包含文件，如 App.xaml `<ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>`
 
-那我们会代什么，我们打开`App.xaml`
+上面代码意识：从本地找到`App.xaml`文件，放在新建项目的`App.xaml`。因为放入之前需要代换，于是加上`ReplaceParameters="true"`
+
+<!-- 那我们会代什么，我们打开`App.xaml` -->
+
+那么代换是把什么换为什么？先看看文档做了哪些改变
 
 ![这里写图片描述](http://img.blog.csdn.net/20160902110135270)
 
-看到`$safeprojectname$`这就是我们代换的，可以代换
+看到`$safeprojectname$`这就是我们代换的项目名，于是接下来讲下可以代换的有哪些
 
 <table Responsive="true"><tr Responsive="true"><th><p>
                 <span id="mt17" class="sentence" data-guid="03144cce1fcdacdbe993e5266c0bf3f3" data-source="Parameter" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">
@@ -133,27 +141,35 @@
                 <span id="mt54" class="sentence" data-guid="ff973168b9c603228da0de366494f6df" data-source="The current year in the format YYYY." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">以 YYYY 格式表示的当前年份。</sentenceText></span>
               </p></td></tr></table>
 
-我们在添加我们的文件，如果需要放在项目的文件夹，我们需要`<ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>`写一个位置相对
+我们在添加我们的文件，如果需要放在项目的文件夹，而不是根目录，那么需要写`<ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>`在TargetFileName写上路径。
 
-写完我们打开`Application.csproj`ItemGroup是我们项目文件，我们需要写入我们的文件是编译还是内容，我们添加很多是编译
+写完我们打开 `Application.csproj` ，他和一般的 .csproj 一样， ItemGroup 是项目文件，我们需要写入我们的文件是编译还是内容，添加文件很多是编译 Compile 。假如添加 NotifyProperty ，可以这样写
 
 `<Compile Include="ViewModel\NotifyProperty.cs" />`
 
-如果我们需要文件夹，里没有内容，我们可以
+如果我们需要文件夹，空白的文件夹，我们可以这样写
 
 ```xml
     <Folder Include="Model\" />
 ```
 
-这样保存，复制`C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP\2052\BlankApplication`这个位置需要和你复制出的位置一样。
+把需要添加的文件和文件夹写完，进行保存。
 
-需要管理员
+然后把文件夹复制到`C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP\2052\BlankApplication` 这个位置需要和你复制出的位置一样。也就是数字 2052 对应的你复制出来的路径。
 
-我们新建项目如果出找不到文件，打开`C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplatesCache`相同位置，把文件复制，因为这个是临时，VisualStudio会在文件夹读，一般关掉VisualStudio会好，但是后来有人说这样不好，我们就手动把文件复制
+复制进去需要管理员。
 
-除了手动复制还可以再命令行`devenv /setup`
+然后关闭vs，再打开vs，注意需要把vs关闭看下任务管理，杀vs进程。然后新进项目，这时可以看到新建的模板。
 
-如果提示`'devenv' 不是内部或外部命令，也不是可运行的程序`
+如果想新建模板，不是替换 BlankApplication ，可以修改`TemplateID`为我们的，不使用原来的。不把原来的 BlankApplication 文件夹覆盖。打开vs 新建就可以看到自己新建的。
+
+
+
+新建项目如果没有找到刚才做的项目，那么可以打开`C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplatesCache`对应刚才相同位置。把文件复制，然后关闭vs，重新打开就可以看到。
+
+除了手动复制还可以使用命令行输入 `devenv /setup`
+
+如果提示`'devenv' 不是内部或外部命令，也不是可运行的程序`，在命令行输入
 
     
 
@@ -163,13 +179,13 @@ cd C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE
 devenv /setup
 ```
 
-如果你想新建一个模板，那么复制BlankApplication之类的，当然我说的是在`ProjectTemplates`新建，这时会没有权限，建议复制出来，修改好了再复制进去，其实和刚才不同的是，修改的还需要修改`BlankApplication.vstemplate`
 
-我们修改`TemplateID`为我们的，不使用原来的。
+
+
 
 如果出现`未能正确加载“Microsoft.VisualStudio.Editor.Implementation.EditorPackage”包`
 
-先重启下，然后如何还是不好，那么使用
+先重启下，如果还是不好，那么使用
     
 
 ```csharp
