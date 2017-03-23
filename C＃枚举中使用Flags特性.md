@@ -73,6 +73,20 @@
   }
 ```
 
+需要知道在以前，写枚举的值，不是二进制，现在C#7可使用二进制
+
+
+```csharp
+        [Flags]
+    public enum Show
+    {
+        A = 0b00000001,
+        B = 0b00000010,
+        C = 0b00000100,
+        D = 0b00001000,
+    }
+```
+
 
 参见：http://www.cnblogs.com/jhxk/articles/1738831.html
 
