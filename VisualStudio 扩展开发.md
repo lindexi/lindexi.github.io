@@ -363,7 +363,31 @@ DefinitionPage 就是我上面定义的选项
 
 如果有之前扩展需要升级，参见https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017
 
+1. 安装 vs2017 需要添加扩展
 
+ 关于vs2017 可以到我网盘下载，参见：http://lindexi.oschina.io/lindexi/post/C-7.0/
+
+1. 打开 Nuget 升级，把所有提示升级的都升级。
+
+ ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202746.jpg)
+
+1. 打开 source.extension.vsixmanifest
+
+ 选 InstallationTarget 包括各版本
+
+ ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202935.jpg)
+
+ ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202922.jpg)
+
+1. 打开属性，修改路径
+
+ 启动外部程序`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe`
+
+ ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323203341.jpg)
+
+1. 启动项目
+
+1. 把插件共享 https://visualstudiogallery.msdn.microsoft.com/site/upload/view
 
 参见：http://blog.csdn.net/liuruxin/article/details/17955363
 
