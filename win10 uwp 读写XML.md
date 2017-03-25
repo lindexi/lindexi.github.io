@@ -54,17 +54,20 @@ XML声明由以下几个部分组成：
 
 ## XmlDocument 
 
-我们可以使用 XmlDocument 来读写 xml。
+在 UWP 如果需要 读取解析xml 
+我们可以使用 XmlDocument 。
 
 一开始需要创建 XmlDocument ，创建 XmlDocument 有三个方法，首先是从 StorageFile 创建。
 		
 ```csharp
-            XmlDocument.LoadFromFileAsync(file);   
+            XmlDocument.LoadFromFileAsync(file);   读取xml
 
 
 ```
 
-注意要等待。 
+注意要等待。
+
+
 
 第二方法：从Uri创建，`XmlDocument.LoadFromUriAsync(uri);   `
 
@@ -79,6 +82,8 @@ XML声明由以下几个部分组成：
 ```
 
 注意str是字符串。
+
+读取xml之后需要解析。
 
 如果想在 xml 中获取某个标签，假如我们获取的是 Page.xaml 的 TextBlock ，那么我们可以遍历一次 doc.FirstChild
 
