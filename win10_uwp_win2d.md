@@ -52,6 +52,70 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 - 图形显影效应
 
 
+## 使用
+
+打开 vs，创建项目，这里把项目叫 UmmyShirouValeri
+
+打开Nuget，搜索 win2d 安装
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
+
+
+打开 MainPage.xaml ，添加命名
+
+
+```xml
+    <Page
+    x:Class="UmmyShirouValeri.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UmmyShirouValeri"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    mc:Ignorable="d">
+```
+
+添加命名之后，如果需要显示win2d，那么需要使用控件显示
+
+
+```csharp
+            <canvas:CanvasControl x:Name="canvas" ClearColor="Black"></canvas:CanvasControl>
+
+```
+
+先运行一下
+
+一般可以按 F5 运行，按 ctrl+break 取消生成
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262081.jpg)
+
+看起来什么没有，但是有了颜色，如果可以看到这个，那么程序是安装成功，如果错误，那么可能安装的包错误
+
+### 添加文字
+
+需要在 canvas 的 Draw 添加函数，可以在这里画出图案，文字，于是` <canvas:CanvasControl x:Name="canvas" ClearColor="Black" Draw="Canvas_OnDraw"></canvas:CanvasControl>` 在 MainPage.xaml.cs 写函数`Canvas_OnDraw`
+
+
+```csharp
+        private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
+        {
+            var draw = args.DrawingSession;
+            draw.DrawText("lindexi",new Vector2(100,100),Color.FromArgb(0xFF,100,100,100));
+        }
+```
+
+args.DrawingSession 提供很多方法，可以在这些方法写文字。
+
+如果需要写文字，可以使用 `draw.DrawText` ，方法提供很多参数，一般可以使用这个方法设置显示位置，显示颜色。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201422.jpg)
+
+和上面同样功能，可以不使用Vector2，`draw.DrawText("lindexi",100,100,Color.FromArgb(0xFF,100,100,100));`
+
+
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 
