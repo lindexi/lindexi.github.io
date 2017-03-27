@@ -113,6 +113,144 @@ args.DrawingSession 提供很多方法，可以在这些方法写文字。
 
 和上面同样功能，可以不使用Vector2，`draw.DrawText("lindexi",100,100,Color.FromArgb(0xFF,100,100,100));`
 
+如果需要设置字体宽度，可以使用
+
+
+```csharp
+            draw.DrawText("lindexi", 100, 100, 500, 50, Color.FromArgb(0xFF, 100, 100, 100), new CanvasTextFormat()
+            {
+                FontSize = 100
+            });
+```
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201856.jpg)
+
+### 清理
+
+因为 win2d 不会自己清理，一般在页面切换，清理
+
+打开 MainPage.xaml ，添加
+
+
+```xml
+    <Page
+    x:Class="UmmyShirouValeri.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UmmyShirouValeri"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    Unloaded="Page_OnUnloaded"
+    mc:Ignorable="d">
+```
+
+打开  MainPage.xaml.cs ，在函数 Page_OnUnloaded
+
+
+```csharp
+    
+        private void Page_OnUnloaded(object sender, RoutedEventArgs e)
+        {
+            canvas.RemoveFromVisualTree();
+            canvas = null;
+        }
+```
+
+需要记得，这个很重要
+
+### 这个标题不知道写什么
+
+搞事，一定要
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017%25E5%25B9%25B43%25E6%259C%258827%25E6%2597%25A5%252008005.gif)
+
+那么这是如何做的？
+
+如果需要重新画，如何做？
+
+想要让他重画，使用`canvas.Invalidate();` 就会重新调用Canvas_OnDraw
+
+在构造使用 
+
+
+```csharp
+                DispatcherTimer t=new DispatcherTimer();
+            t.Interval=new TimeSpan(1000);
+            t.Tick += (s, e) =>
+            {
+                canvas.Invalidate();
+            };
+            t.Start();
+```
+
+这样就可以隔 1000 毫秒重画
+
+
+```csharp
+            private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
+        {
+            var draw = args.DrawingSession;
+            draw.DrawText("lindexi", Ran.Next(10,100), Ran.Next(10, 100), 500, 50, Color.FromArgb(0xFF, 100, 100, 100), new CanvasTextFormat()
+            {
+                FontSize = 100
+            });
+
+            draw.DrawLine(Ran.Next(10,100),Ran.Next(10,100),Ran.Next(100,1000),Ran.Next(100,1000),Color.FromArgb(0xFF,25,100,100));
+        }
+
+        private Random Ran { set; get; } = new Random();
+
+```
+
+就可以看到上面的效果
+
+是不是觉得还不好看，试试
+
+
+```csharp
+         private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
+        {
+            var draw = args.DrawingSession;
+            draw.DrawText("lindexi", Ran.Next(10, 100), Ran.Next(10, 100), 500, 50, r(), new CanvasTextFormat()
+            {
+                FontSize = 100
+            });
+
+            for (int i = 0; i < 10; i++)
+            {
+                draw.DrawLine(Ran.Next(10, 100), Ran.Next(10, 100), Ran.Next(100, 1000), Ran.Next(100, 1000), r());
+            }
+
+            Color r()
+            {
+                return Color.FromArgb(0xFF, rc(), rc(), rc());
+            }
+
+            byte rc()
+            {
+                return (byte)(Ran.NextDouble() * 255);
+            }
+        }
+
+```
+
+需要在vs2017 才可以跑，如果希望下载vs2017 ，可以到我网盘下载
+
+链接：http://pan.baidu.com/s/1skXDc3z 密码：70d6
+
+如果度盘链接没法使用，请联系我。
+
+btsync：BTZR4YIPCLUUEL2BKDACVGLC3473MEWDN
+
+
+### 如何画线
+
+刚才已经代码有画线的
+
+draw.DrawLine（x1，y1，x2，y2，颜色）
+
+可以设置线条宽度、样式
+
 
 
 
