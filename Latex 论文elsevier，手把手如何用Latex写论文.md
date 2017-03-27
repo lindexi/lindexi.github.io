@@ -500,21 +500,34 @@ http://blog.csdn.net/lqhbupt/article/details/8723478
 
 下载：
 basic-miktex-2.9.6069-x64
-https://yunpan.cn/OcvKmfknLnEsnJ  访问密码 0943
+<!-- https://yunpan.cn/OcvKmfknLnEsnJ  访问密码 0943 -->
+链接：http://pan.baidu.com/s/1slnnoPB 密码：wcaw
+
+Btsync:B74YC6AIP6J2CNK2CNTCXGG3NVGGMTTXO
 
 CTeX
-https://yunpan.cn/OcvKmJ8EINEN22  访问密码 7fa9
+<!-- https://yunpan.cn/OcvKmJ8EINEN22  访问密码 7fa9 -->
+http://pan.baidu.com/s/1jHB7LIm
+
 
 TeXStudio
-https://yunpan.cn/OcvKmVsRytDq7Z  访问密码 5ef5
+<!-- https://yunpan.cn/OcvKmVsRytDq7Z  访问密码 5ef5 -->
+链接：http://pan.baidu.com/s/1pLCZL5h 密码：hb29
+
+Btsync:BBXDB6T3LBPYJ6CVXTV7V6226FGXHXOFP
 
 https://sourceforge.net/projects/texstudio/?source=typ_redirect
 
 ecrc.sty
-https://yunpan.cn/OcvKHgsSHJMaFc  访问密码 2cef
+<!-- https://yunpan.cn/OcvKHgsSHJMaFc  访问密码 2cef -->
+http://download.csdn.net/download/lindexi_gd/9646187
+
 
 ecrc-template.tex
-https://yunpan.cn/OcvKHKAiBNIZDi  访问密码 1100
+<!-- https://yunpan.cn/OcvKHKAiBNIZDi  访问密码 1100 -->
+http://pan.baidu.com/s/1mi3CzJq
+
+Btsync: BQ2XFET5YROHGWVN2NZNQ4X5VTKEKLO4C
 
 参见：https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex
 
