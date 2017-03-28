@@ -242,11 +242,75 @@ btsync：BTZR4YIPCLUUEL2BKDACVGLC3473MEWDN
 
 ### 如何画线
 
-刚才已经代码有画线的
+刚才已经代码有画线的，也许已经看见
 
 draw.DrawLine（x1，y1，x2，y2，颜色）
 
-可以设置线条宽度、样式
+除了可以设置线所在的地方，可以设置线条宽度、样式
+
+### 添加图片
+
+添加图片可以`draw.DrawImage` 画出图片，之前需要有图片，需要的是`CanvasBitmap`，如何获得这个？
+
+可以通过
+
+
+```csharp
+    CanvasBitmap.CreateFromBytes()
+    CanvasBitmap.CreateFromColors()
+    CanvasBitmap.LoadAsync()
+```
+
+这些方法得到。
+
+注意：传入的`ICanvasResourceCreator`就是 CanvasControl
+
+下面使用 LoadAsync 传入工程的图片
+
+
+```csharp
+            private void Canvas_OnDrawAsync(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
+        {
+            var draw = args.DrawingSession;
+            draw.DrawText("lindexi", Ran.Next(10, 100), Ran.Next(10, 100), 500, 50, r(), new CanvasTextFormat()
+            {
+                FontSize = 100
+            });
+
+            for (int i = 0; i < 10; i++)
+            {
+                draw.DrawLine(Ran.Next(10, 100), Ran.Next(10, 100), Ran.Next(100, 1000), Ran.Next(100, 1000), r());
+            }
+            if (img != null)
+            {
+                draw.DrawImage(img, Ran.Next(10, 1000), rc());
+            }
+            else
+            {
+                Img().Wait();
+            }
+
+            Color r()
+            {
+                return Color.FromArgb(0xFF, rc(), rc(), rc());
+            }
+
+            byte rc()
+            {
+                return (byte)(Ran.NextDouble() * 255);
+            }
+
+            async Task Img()
+            {
+                img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));
+            }
+        }
+
+```
+
+
+创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));`
+
 
 
 

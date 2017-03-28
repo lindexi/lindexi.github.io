@@ -507,7 +507,6 @@ Btsync:B74YC6AIP6J2CNK2CNTCXGG3NVGGMTTXO
 
 CTeX
 <!-- https://yunpan.cn/OcvKmJ8EINEN22  访问密码 7fa9 -->
-http://pan.baidu.com/s/1jHB7LIm
 
 
 TeXStudio
@@ -528,6 +527,8 @@ ecrc-template.tex
 http://pan.baidu.com/s/1mi3CzJq
 
 Btsync: BQ2XFET5YROHGWVN2NZNQ4X5VTKEKLO4C
+
+http://download.csdn.net/detail/lindexi_gd/9795700
 
 参见：https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex
 
