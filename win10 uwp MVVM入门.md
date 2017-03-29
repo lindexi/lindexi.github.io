@@ -11,7 +11,6 @@ UWP 虽然可以直接在xaml.cs 写逻辑但是我们是推荐使用 MVVM 框�
 本文主要：如何在 UWP 使用 MVVM，如何做一个自己的框架。
 
 <!--more-->
-<!-- csdn -->
 
 MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
