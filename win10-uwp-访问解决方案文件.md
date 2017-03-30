@@ -15,11 +15,11 @@
 var file=await  StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/1.png")); 
 ```
 
-那么我们访问我们解决方案加的ms-appx就是解决方案的绝对路径，如果我们相对于我们xaml的路径也是可以
+那么我们访问我们解决方案加的 ms-appx 就是解决方案的绝对路径，如果我们相对于我们xaml的路径也是可以
 
-如果需要访问我们应用中的本地数据local，临时文件temp等，可以使用 ms-appdate:// 后面加/ local、temp
+如果需要访问我们应用中的本地数据 local ，临时文件 temp 等，可以使用 ms-appdate:// 后面加/ local、temp
 
-如果我们本地有1.png 放在local
+如果我们本地有 1.png 放在 local
 
 我们可以使用
 
@@ -32,6 +32,10 @@ var file=await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdate://
 参见：[https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/hh965322(v=win.10).aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/hh965322\(v=win.10\).aspx)
 
 关于git http://blog.csdn.net/marktheone/article/details/52062888
+
+## WPF 访问解决方案文件
+
+WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF使用 参见 https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
