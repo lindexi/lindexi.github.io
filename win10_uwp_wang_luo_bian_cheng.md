@@ -1,6 +1,6 @@
 # win10 uwp 网络编程
 <!--more-->
-【】
+<!-- csdn -->
 
  我们来弄简单协议
  
@@ -90,3 +90,7 @@ myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
 ## HttpClient 使用 Cookie 
 
 参见：https://stackoverflow.com/questions/41599384/httpclient-cookie-issue
+
+如果不想自己写，请看 https://github.com/chenrensong/WebSocket.UWP
+
+https://github.com/rdavisau/sockets-for-pcl
