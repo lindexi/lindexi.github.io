@@ -83,11 +83,11 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 先运行一下
 
-一般可以按 F5 运行，按 ctrl+break 取消生成
+一般可以按 F5 运行，如果觉得太早了，出现没有写好的，那么请按 ctrl+break 取消生成
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262081.jpg)
 
-看起来什么没有，但是有了颜色，如果可以看到这个，那么程序是安装成功，如果错误，那么可能安装的包错误
+按下F5这时看起来什么没有，但是有了颜色，如果可以看到这个，那么程序是安装成功，如果错误，那么可能安装的包错误
 
 ### 添加文字
 
@@ -154,6 +154,8 @@ args.DrawingSession 提供很多方法，可以在这些方法写文字。
 ```
 
 需要记得，这个很重要
+
+为何需要这样，参见：[避免内存泄漏](http://validvoid.net/win2d-avoiding-memory-leaks/)
 
 ### 这个标题不知道写什么
 
@@ -310,6 +312,9 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
 
 创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));`
+
+创建使用的uri参见：win10 uwp 访问解决方案文件
+
 
 
 
