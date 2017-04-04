@@ -2,11 +2,13 @@
 
 我们可以使用`PointerPressed`获得鼠标右键按下，但是我们如何获得左键？
 
+UWP 左键按下经常获取不到，本文：如何获得鼠标按下
+
 <!--more-->
 
 其实 UWP 已经没有 MouseLeftButtonDown ，于是我们可以使用一个简单方法去获取鼠标左键按下。
 
-我们在 xaml 写一个 Button，给他名称MyButton
+我们在 xaml 写一个 Button，给他名称 MyButton
 
 于是在 xaml.cs 写一个 PointerPressed 函数，把它在构造添加给我们的 Button 的 PointerPressedEvent
 
