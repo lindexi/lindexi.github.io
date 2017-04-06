@@ -26,9 +26,9 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/2639f44f-463b-4fd1-b9e9-c01652649f28201612268535.jpg)
 
-如果希望知道 MVVM 是如何写 ，戳此链接 [http://www.cnblogs.com/indream/p/3602348.html](http://www.cnblogs.com/indream/p/3602348.html)
+如果希望知道 MVVM 是如何写，为何需要使用 MVVM ，戳此链接 [http://www.cnblogs.com/indream/p/3602348.html](http://www.cnblogs.com/indream/p/3602348.html)
 
-关于Model是属于哪些代码所放的地方，我找到一篇博客，在CodeProject，也是最近10月写的，依照他的逻辑，是支持Model写业务逻辑，ViewModel写表示逻辑的看法。请看下面图片，博客在：https://www.codeproject.com/Tips/813345/Basic-MVVM-and-ICommand-Usage-Example  
+关于 Model 是属于哪些代码所放的地方，我找到一篇博客，在 CodeProject，也是最近10月写的，依照他的逻辑，是支持 Model 写业务逻辑，ViewModel 写表示逻辑的看法。请看下面图片，博客在：https://www.codeproject.com/Tips/813345/Basic-MVVM-and-ICommand-Usage-Example  
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/66fdbb58-f3fb-4036-a22e-6665a8cac0dd20161228185135.jpg)
 
