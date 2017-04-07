@@ -87,5 +87,22 @@ https://liftcodeplay.com
 
 http://blogs.u2u.be/diederik/ 微软社区工作者
 
+http://www.franksworld.com/
 
+http://jameszhan.github.io
 
+http://blog.csdn.net/github_36704374
+
+http://blog.csdn.net/u011033906
+
+http://www.romasz.net/
+
+http://www.cnblogs.com/RodChong
+
+https://codeblog.jonskeet.uk/
+
+https://ericlippert.com/
+
+http://codes-sources.commentcamarche.net/
+
+https://blog.kulman.sk/
