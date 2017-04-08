@@ -19,13 +19,13 @@
 
  - `FullScreenSystemOverlayMode` 全屏响应手势的模式，包括手势可调用系统覆盖（标题 任务栏）， 边缘手势可调用临时 UI，而此UIElement反过来可调用对于该边缘的系统覆盖
 
- - 获取窗口 ID，使用 applicationView.Id
+ - 获取窗口 ID，使用 applicationView.Id ，对于UWP可以使用多个窗口，因为需要区分是哪个窗口，所以就可以使用这个。
 
- - 如何判断是否进入全屏？使用 applicationView.IsFullScreenMode 。和他相同的 applicationView.IsFullScreen 但是这个不推荐
+ - 如何判断是否进入全屏？使用 applicationView.IsFullScreenMode 。判断是否全屏的功能，和他相同的 applicationView.IsFullScreen 也可以，但是这个不推荐
 
- - 如何获得窗口处于锁屏？ applicationView.IsOnLockScreen
+ - 如何获得窗口处于锁屏？ applicationView.IsOnLockScreen 我自己尝试锁屏但是依旧无法获得，如果知道这个是什么，请告诉我。
 
- - 如何设置可以不截图？有些应用需要有秘密，不可以被截图，可以使用`applicationView.IsScreenCaptureEnabled` 如果设置 false，所有应用难以对程序截图
+ - 如何设置可以不截图？有些应用需要有秘密，不可以被截图，可以使用`applicationView.IsScreenCaptureEnabled` 如果设置 false，所有应用难以对程序截图。如果对于显示密码或其他的页面，是要求打开这个设置，也就是在输入密码时，是需要设置不可截图，如果设置了，那么截图是黑色，无法获得。在不显示密码时，可以设置为 true，这时可以截图。
 
  首先做一个简单的按钮，在点击他就设置为false，不可截图。在点击前，使用 Q 截图，发现可以
 
@@ -38,6 +38,8 @@
  如果设置了，可以看到，但是不可以获取，可以对信息安全要求高的程序进行使用，但是设置了性能可能没有之前好。
 
  关于不可截图，代码：https://code.msdn.microsoft.com/windowsapps/Disable-screen-capture-00efe630
+
+ 这个对于应用内截图是不是还可以使用，我还没去试，如果有大神做了，可以的话，请告诉。
 
  - 如何获取窗口是横向显示？applicationView.Orientation 可以获取窗口是宽度大于高度，也就是横向，还是相反。
 
