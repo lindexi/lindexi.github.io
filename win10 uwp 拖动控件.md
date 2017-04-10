@@ -122,7 +122,7 @@ PointerPoint point = e.GetCurrentPoint(btn);
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/%E6%8B%96%E5%8A%A8%E6%8E%A7%E4%BB%B62016%E5%B9%B412%E6%9C%8818%E6%97%A5151534.gif)
 
-        
+ 942 -865 -37
 
 ```csharp
 大神，请用力划。

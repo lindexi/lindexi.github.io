@@ -33,6 +33,8 @@ C#->Windows->通用->单元测试应用
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 ```
 
+最新版 是 `using Microsoft.VisualStudio.TestTools.UnitTesting;`
+
 在类定义前
 
 ```csharp
