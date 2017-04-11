@@ -118,6 +118,30 @@ UWP的Convert和WPF差不多。
 ```
 
 
+## 绑定 ObservableCollection
+
+如果绑定的 ItemSource 是一般的 List ，那么在 List 内容改变无法看到，界面修改
+
+需要修改 List 内容，修改页面，添加一个新的 item 可以在页面添加一个 项，不是在初始的时候进行修改，可以使用方法：
+
+1. 在修改之后 使用 listView.Itemsource=list 的方法，重新给 Itemsource ，这是不推荐的，因为之后可能在代码写很多添加或移除，于是都需要写这个。
+
+1. 绑定的 List 改 ObservableCollection ，这样就可以在绑定内容修改时修改 界面。
+
+第二个是推荐的，在使用 列表，经常使用的是 ObservableCollection ，注意，他是一个泛型，必须添加类型。
+
+但是有时候可能关心他是如何做的，关心的原因：没有实现 AddRange，也就是 ObservableCollection 对一次添加多个项比较难，需要一个一个来。
+
+对于定义控件，可能也需要，如何绑定一个 List 可以知道已经修改。
+
+其实 ObservableCollection 继承 INotifyCollectionChanged ，于是可以获得列表修改，一旦自己定义继承 INotifyCollectionChanged 列表，可以做到和 ObservableCollection 差不多的样子。
+
+先把东西分来说：一个是如何定义一个和 ObservableCollection 差不多，可以绑定界面，修改就自动让界面修改。一个是如何定义控件，可以获得列表改变。
+
+先说第一个，其中只需要定义的列表 INotifyCollectionChanged 就可以让界面跟着修改，如果自己写的没有修改，那么是自己写错了，看起来 INotifyCollectionChanged 实现不是很简单。
+
+第二个，可以使用依赖属性，在获得值判断 e.NewValue 是 INotifyCollectionChanged ，获得 CollectionChanged 的添加新项就可以。
+
 ## UWP 文件md5
 
 ## UWP协议

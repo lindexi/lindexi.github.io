@@ -122,7 +122,6 @@ PointerPoint point = e.GetCurrentPoint(btn);
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/%E6%8B%96%E5%8A%A8%E6%8E%A7%E4%BB%B62016%E5%B9%B412%E6%9C%8818%E6%97%A5151534.gif)
 
- 942 -865 -37
 
 ```csharp
 大神，请用力划。
@@ -141,3 +140,4 @@ Canvas：我的左边可以长度无限。
 
 参见：http://www.cnblogs.com/cjw1115/p/5323339.html
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
