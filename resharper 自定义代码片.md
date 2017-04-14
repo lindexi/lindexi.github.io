@@ -151,6 +151,34 @@ https://www.jetbrains.com/help/resharper/2016.2/Templates__Creating_and_Editing_
 
 在一个新建工程输入快捷键，就可以输入我们写的
 
+## 常用功能
+
+接下来介绍一下功能
+
+[Resharper 如何把类里的类移动到其他文件](Resharper 如何把类里的类移动到其他文件.md)
+
+如何在 Resharper  忽略文件？
+
+有一些文件需要忽略，不让他分析，因为这文件太多错误，但是是必要的，可以打开Resharper 设置
+
+选择 Code Inspection ，设置，添加例外文件。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017413103255.jpg)
+
+添加例外文件可以指点哪些文件忽略，可以忽略某个文件，很简单，如果有不懂请告诉我。
+
+
+
+如何显示空格
+
+显示有多少空格，有些代码可能存在看不见的字`\u0012`，如果有这些，你以为是空格。
+
+所以需要显示空格，按 ctrl+r+w
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017413103548.jpg)
+
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 

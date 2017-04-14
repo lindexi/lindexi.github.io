@@ -299,9 +299,11 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
                   Canvas.ZIndex="{x:Bind View.ZFrame,Mode=OneWay}">
 ```
 
-我们需要做一点修改，在我们的内容没有，我们是不需要返回键的，那么这时的返回键可以作为按两次退出，这个可以看http://blog.csdn.net/xuzhongxuan/article/details/49962705
+我们需要做一点修改，在我们的内容没有，我们是不需要返回键的，那么这时的返回键可以作为按两次退出，这个可以看 `http://blog.csdn.net/xuzhongxuan/article/details/49962705`
 
-如果我们按返回，但是我们撸了一半，假如我们是页面跳转，不使用我源码，那么加上NavigationCacheMode ，保存页面，这样不会让页面现在的选择重新
+如果我们按返回，但是我们撸了一半，假如我们是页面跳转，不使用我源码，那么加上 NavigationCacheMode ，保存页面，这样不会让页面现在的选择重新
+
+
 
 下面说下English，其实是Google翻译，因为我这个遇到一个用英文问我的人，不知道是不是，反正就直接翻译
 
