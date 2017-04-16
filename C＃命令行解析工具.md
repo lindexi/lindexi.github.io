@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 第一个方法：
 
 [林选臣](http://www.cnblogs.com/linxuanchen/p/c-sharp-command-line-argument-parser.html)大神写的，他的方法很简单。

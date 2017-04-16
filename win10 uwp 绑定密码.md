@@ -5,6 +5,8 @@ win10 下，密码框无法绑定到ViewModel，Password是不可以绑定。
 我们可以自己使用简单方法去绑定。
 
 <!--more-->
+
+<div id="toc"></div>
 <!-- csdn -->
 
 我们之前在WPF 使用[绑定密码框](http://lindexi.oschina.io/lindexi/post/WPF-绑定密码/)，我写了一篇，关于如何绑定，我提供一个我自己试了可以的类。

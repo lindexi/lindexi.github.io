@@ -7,6 +7,8 @@ warning MSB3246: 解析的文件包含错误图像、无元数据或不可访问
 其中`*.dll`就是一个dll名称，那么遇到这个问题，不是修复vs就能做好的，我找了好久，在堆栈炸了找到一个可以用的方法
 <!--more-->
 
+<div id="toc"></div>
+
 1. 检查`.nuget\packages`的包，假如报错的`*.dll`是`System.Numerics.Vectors.WindowsRuntime.dll`那么找到`System.Numerics.Vectors.WindowsRuntime`文件夹
 
  ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=5d6484b1ed6be44a36183ba6eca782db)

@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 下面排名是我发现大神的时候，越早发现的大神放在越前。
 
  - 东邪独孤 http://www.cnblogs.com/tcjiaan/ 

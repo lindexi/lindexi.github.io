@@ -3,6 +3,8 @@
 本文主要：获取文件大小
 <!--more-->
 
+<div id="toc"></div>
+
         private async Task<ulong> FileSize(Windows.Storage.StorageFile file)
         {
             var size = await file.GetBasicPropertiesAsync();

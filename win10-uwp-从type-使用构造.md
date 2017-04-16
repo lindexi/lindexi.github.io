@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 原本从 WPF ，要想 new 一个对象从 type ，可以使用`type.Assembly.CreateInstance(type.FullName);`
 
 但是在 UWP ，需要使用`type.GetConstructor(Type.EmptyTypes).Invoke(parameters);`

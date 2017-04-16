@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 http://blog.csdn.net/baijinwen/article/details/6159043
 
 继承 Popup

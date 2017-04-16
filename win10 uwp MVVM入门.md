@@ -12,6 +12,8 @@ UWP 虽然可以直接在xaml.cs 写逻辑但是我们是推荐使用 MVVM 框�
 
 <!--more-->
 
+<div id="toc"></div>
+
 MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
  - View 就是界面。软件中，可以这样看，我们看到的都是界面，看不到的就是后台，在 UWP 中我们说的 View 一般是 `page` `UserControl ` 等。我们写界面时用 xaml 和 cs 结合起来，做出好看的效果。

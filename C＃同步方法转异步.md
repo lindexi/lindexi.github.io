@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 ```csharp
   
   public async Task DelayAsync()

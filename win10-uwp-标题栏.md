@@ -5,6 +5,8 @@
 我们可以自定义标题栏，和不显示标题栏。
 
 <!--more-->
+
+<div id="toc"></div>
 <!-- csdn -->
 
 下面的代码写在 OnLaunched 函数

@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 win10可以很简单在我们的app使用自然输入，这篇文章主要翻译[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/)  一些内容是参见[陈染大神](http://www.wangchenran.com/win10uwp%E5%BC%80%E5%8F%91-ink.html)
 
 做法简单，我们有垃圾微软的`InkCanvas `需要我们在页面

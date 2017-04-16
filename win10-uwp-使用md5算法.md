@@ -7,6 +7,8 @@ uwp的 md5 和 WPF 的使用差不多。
 
 <!--more-->
 
+<div id="toc"></div>
+
 在 WPF ，我们使用
 
 ```csharp

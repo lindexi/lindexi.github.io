@@ -4,6 +4,8 @@
 微软的ContentDialog不是一直有，而是UWP新的，可以使用Content放用户控件，使用很好，但是一点不好的是，默认的一点击下面按钮就会退出。
 <!--more-->
 
+<div id="toc"></div>
+
 我们有时候需要ContentDialog用户输入，而用户没有输入我们想要的，给用户提示，不退出
 
 那么要解决ContentDialog自动退出有两个方法：

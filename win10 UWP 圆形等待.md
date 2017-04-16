@@ -8,6 +8,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 新建一个用户控件，可以按 ctrl+shift+a 打开后，选用户控件
 
 我们可以用 Rectangle 做圆形边

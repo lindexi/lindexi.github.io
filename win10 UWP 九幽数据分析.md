@@ -3,6 +3,8 @@
 九幽数据统计是统计和分析数据来源，用户使用，先申请账号
 
 <!--more-->
+
+<div id="toc"></div>
 <!-- csdn -->
 
 http://www.windows.sc

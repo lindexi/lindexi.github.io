@@ -3,6 +3,8 @@
 HMAC是密钥相关的哈希运算消息认证码，输入密钥和信息。
 <!--more-->
 
+<div id="toc"></div>
+
 在uwp，Hmac在很多网络使用，我最近写qiniu SDK，把原来C#改为UWP，需要使用HMAC。
 
 上传文件时需要填写 form ，这是官方要求的

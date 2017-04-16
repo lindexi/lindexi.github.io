@@ -5,6 +5,8 @@ Button是一个常用控件，有很多和wpf一样，可以看《深入浅出WP
 
 <!--more-->
 
+<div id="toc"></div>
+
 Button常用的就是点击
 
 我们可以在button的click写上

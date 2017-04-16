@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 首先我们需要安装Bash
 
 		

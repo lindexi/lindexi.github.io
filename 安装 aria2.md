@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 系统是 Centos 6 32
 
 首先安装 nettle ,注意版本

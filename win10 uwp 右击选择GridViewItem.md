@@ -5,6 +5,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 于是我们需要在 GridView 的 SelectionMode 为 Single ，IsRightTapEnabled 为True
 
 假如我们给的 ItemSsource  的类型是`List<Student>`，那我们可以通过简单方法得到右击的 Student 。

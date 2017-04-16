@@ -13,6 +13,8 @@ Resharper的代码预知和VisualStudio的代码片相似，但是他可以知�
 
 <!--more-->
 
+<div id="toc"></div>
+
 原本我的VisualStudio也是可以自定义代码片，在工具选择代码片，导入自己写的代码片。
 
 安装了Resharper 2016.2会隐藏VisualStudio的代码片。

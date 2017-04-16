@@ -6,6 +6,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 于是我找到下面的文章，发现了好多个方法。
 
 http://stackoverflow.com/questions/567757/how-do-i-distinguish-between-binary-and-text-files

@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 UWP有一个功能，可以截图，RenderTargetBitmap
 
 我们首先写一个Grid，我们需要给他名字，我这里给他`Stamp`，需要名称可以让我们在后面使用截图用到元素。

@@ -10,6 +10,8 @@ csdn的Markdown很好，就是我需要截图保存有麻烦
 
 <!--more-->
 
+<div id="toc"></div>
+
 
 这个过程比较麻烦
 

@@ -6,6 +6,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 下面是一个简单方法
 
 ```csharp

@@ -2,6 +2,8 @@ RSS简易信息聚合(也叫聚合内容)是一种RSS基于XML标准，在互联
 
 <!--more-->
 
+<div id="toc"></div>
+
 今天在win10.me看到一个rss，不知道是什么东西，打开看到
 ![这里写图片描述](http://img.blog.csdn.net/20160222151447588)
 

@@ -10,6 +10,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 ## 在 Canvas 画一个点
 
 我们画点可以使用 Ellipse 我们给他宽和高，Fill，就可以画出来。需要加在 Canvas ，可以使用`canvas.Children.Add(ellipse)`

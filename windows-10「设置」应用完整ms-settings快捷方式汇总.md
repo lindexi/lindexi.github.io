@@ -1,5 +1,7 @@
 <!--more-->
 
+<div id="toc"></div>
+
 <table border="0" width="100%">
 <thead>
 <tr>

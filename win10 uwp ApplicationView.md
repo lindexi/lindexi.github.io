@@ -3,6 +3,8 @@
 本文和大家介绍一个重要的类，他可以用来设置窗口，如设置启动大小，设置是否允许截图，是否进入全屏，所有和窗口有关的，都可以在他这里设置。
 
 <!--more-->
+
+<div id="toc"></div>
 <!-- csdn -->
 
 可以使用简单获取` ApplicationView applicationView = ApplicationView.GetForCurrentView();` ，注意，他是不能构造创建

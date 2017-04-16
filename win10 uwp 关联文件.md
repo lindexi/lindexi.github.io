@@ -3,6 +3,8 @@
 有时候应用需要打开后缀名为x的文件，那么如何从文件打开应用？
 
 <!--more-->
+
+<div id="toc"></div>
 <!-- csdn -->
 
 首先，需要打开 Package.appxmanifest

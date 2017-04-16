@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 最简单的方法是 foreach
 
 

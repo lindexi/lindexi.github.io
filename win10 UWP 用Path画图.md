@@ -5,6 +5,8 @@
 <!-- csdn -->
 <!--more-->
 
+<div id="toc"></div>
+
 内容是看到 大神写的 [WPF绘制简单常用的Path](http://www.cnblogs.com/tsliwei/p/5609035.html)，想到 UWP 画图是不是也一样，于是做的一个抄袭的 Path
 
 直接使用图片

@@ -6,6 +6,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 而我一般还有用九幽统计，需要修改好多东西，每新建一个项目都要做这个，这样我觉得不好，在网上看到了自定义模板，不过垃圾微软官方说的好差，看不懂，看了老周的，还是觉得不懂，我就自己来创建一个试试。
 
 第一步需要打开我们目录：C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP 

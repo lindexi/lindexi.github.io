@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 ## UWP使用第三方字体
 
 首先我们需要字体，这个字体下载，网上很多。[http://font.chinaz.com/](http://font.chinaz.com/)我在这网站下载，如果有人知道他的网站字体不是完全授权，请和我说，我就删除我的应用字体。

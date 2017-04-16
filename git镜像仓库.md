@@ -7,6 +7,8 @@
 普通的git clone不能下载所有分支，想要简单的git clone所有分支，可以用镜像方法
 
 <!--more-->
+
+<div id="toc"></div>
 <!-- csdn -->
 
 做一个镜像仓库很简单。

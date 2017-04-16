@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 单的把设置需要的，放到微软自带的LocalSettings
 
 LocalSettings.Values可以存放几乎所有数据

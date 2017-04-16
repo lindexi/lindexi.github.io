@@ -6,6 +6,8 @@ gogs 仓库无法上传，一个原因是移动了gogs，如果把gogs放在移�
 
 <!--more-->
 
+<div id="toc"></div>
+
 在 push 的提示：
 
 

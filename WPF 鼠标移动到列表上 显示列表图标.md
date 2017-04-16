@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 在列表新建一个图标，添加 Visibility
 
 `Visibility="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"`

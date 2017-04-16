@@ -3,6 +3,8 @@
 UWP可以使用打电话功能，在PC是用Skype，在手机是直接使用电话功能。
 <!--more-->
 
+<div id="toc"></div>
+
 UWP可以通过Skype打电话，那么如何通过应用间通讯，很简单使用Launcher。
 
 Skype电话使用的URI是`Skype:(电话号)?call` `Skype:(skype id)?call`格式

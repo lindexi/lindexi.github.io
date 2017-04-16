@@ -3,6 +3,8 @@
 win10 UWP 剪贴板 Clipboard使用Windows.ApplicationModel.DataTransfer.Clipboard
 <!--more-->
 
+<div id="toc"></div>
+
 设置文本
 
 ```csharp

@@ -10,6 +10,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 <!--more-->
 
+<div id="toc"></div>
+
 ```csharp
     public class page
     {

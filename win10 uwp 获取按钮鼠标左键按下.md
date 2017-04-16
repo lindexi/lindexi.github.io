@@ -6,6 +6,8 @@ UWP 左键按下经常获取不到，本文：如何获得鼠标按下
 
 <!--more-->
 
+<div id="toc"></div>
+
 其实 UWP 已经没有 MouseLeftButtonDown ，于是我们可以使用一个简单方法去获取鼠标左键按下。
 
 我们在 xaml 写一个 Button，给他名称 MyButton

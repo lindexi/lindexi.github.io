@@ -12,6 +12,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 这里图片我用BitmapImage，Uri是输入网络的
 
 ## 下载图片

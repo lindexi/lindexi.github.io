@@ -2,6 +2,8 @@
 
 
 <!--more-->
+
+<div id="toc"></div>
 <!-- csdn -->
 ## Multilingual App Toolkit
 

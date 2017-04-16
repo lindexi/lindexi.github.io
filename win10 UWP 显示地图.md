@@ -2,6 +2,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 微软自带的地图很简单
 
 第一步引用地图`xmlns:Map="using:Windows.UI.Xaml.Controls.Maps"`

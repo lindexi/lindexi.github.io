@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 其实垃圾wr给了一个类，我们可以用这个类获得用户选择过的文件、文件夹。我们可以保存用户选择过的文件和文件夹。
 
 这个类在`Windows.Storage.AccessCache`，可以使用最近使用或一个比较大的存储，最近使用StorageItemMostRecentlyUsedList 只有存储25个，我这里就不说。如果需要存多点，我们可以使用 FutureAccessList ，使用`StorageApplicationPermissions.FutureAccessList` 可以存储1k个文件或文件夹，但垃圾wr给了我们这个东西，就不知道为何他就给1k而不是无限。

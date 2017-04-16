@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 我们先写一个简单的xaml
 
 ```xml

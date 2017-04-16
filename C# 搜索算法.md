@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<div id="toc"></div>
+
 <!--cdsn-->
 
 ## Bdf 算法
