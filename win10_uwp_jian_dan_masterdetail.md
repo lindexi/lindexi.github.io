@@ -276,7 +276,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
 
 接着我们来说下我源代码怎么做。
 
-我首先新建Model，放下随意的，然后在ViewModel使用ObservableCollection，当然给他的也是随意的
+我首先新建 Model，放下随意的类，作为显示的内容，然后在ViewModel使用ObservableCollection，当然给他的也是随意的
 
 在界面我们需要Grid，这时我绑定了GridLength，设置这个简单。
 
@@ -284,7 +284,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
 
 我绑定是用x:Bind，要OneWay
 
-我写List需要使用Grid，因为背景透明，其实我在List也可以用背景，但是我想我会在List做弹出，最后想着用Grid
+我写 List 需要使用 Grid 控制他的位置和背景，因为 List 背景透明，其实我在 List 也可以用背景，但是我想我会在 List 做弹出，最后想着用 Grid
 
 ```xml
  <Grid
@@ -299,10 +299,15 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
                   Canvas.ZIndex="{x:Bind View.ZFrame,Mode=OneWay}">
 ```
 
-我们需要做一点修改，在我们的内容没有，我们是不需要返回键的，那么这时的返回键可以作为按两次退出，这个可以看 `http://blog.csdn.net/xuzhongxuan/article/details/49962705`
+我们需要做一点修改，在我们的内容没有，我们是不需要返回键的，那么这时的返回键可以作为按两次退出，这个可以看 `http://blog.csdn.net/xuzhongxuan/article/details/49962705`，实际就是写一个字段存储来判断在一段时间是否点击两次。
 
 如果我们按返回，但是我们撸了一半，假如我们是页面跳转，不使用我源码，那么加上 NavigationCacheMode ，保存页面，这样不会让页面现在的选择重新
 
+## 左右的列表和内容的相互操作
+
+如果需要使用左右两边相互操作，一般建议使用 MVVM 然后绑定 ViewModel ，通过 ViewModel 可以直接操作两边，因为 ViewModel 知道左右的数据。这也是我建议的。
+
+关于 MVVM 可以看这个博客 http://lindexi.oschina.io/lindexi//post/win10-uwp-MVVM%E5%85%A5%E9%97%A8/
 
 
 下面说下English，其实是Google翻译，因为我这个遇到一个用英文问我的人，不知道是不是，反正就直接翻译

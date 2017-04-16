@@ -1,5 +1,7 @@
 # 安装 aria2
 
+<!--more-->
+
 系统是 Centos 6 32
 
 首先安装 nettle ,注意版本
