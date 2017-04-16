@@ -7,7 +7,7 @@
 
 <div id="toc"></div>
 
-假如我们的文件叫 file
+假如我们的文件叫 file，那么如何判断他是否存在，可以使用下面方法
 
 ```csharp
             string str = "file";
@@ -22,13 +22,13 @@
             }
 ```
 
-发现已经有大神写了http://www.cnblogs.com/bomo/p/4934447.html
+发现已经有大神写了 http://www.cnblogs.com/bomo/p/4934447.html
 
 我上面写的异常其实不对，因为exception会获得全部异常，如果文件存在，也是会报异常如果文件被写或者什么原因，看了大神的博客使用`FileNotFoundException`我们可以通过异常知道文件不存在。
 
 但是异常效率太低
 
-看到使用遍历
+所以下面方法可以看到使用遍历
 
 ```csharp
 public async Task<bool> isFilePresent(string fileName)
@@ -60,7 +60,7 @@ public async Task<bool> isFilePresent(string fileName)
             }
 ```
 
-我们还可以
+我们还可以使用下面方法
 
 ```csharp
             StorageFolder folder = ApplicationData.Current.LocalFolder;

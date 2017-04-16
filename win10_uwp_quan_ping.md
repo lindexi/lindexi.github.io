@@ -6,7 +6,7 @@ win10 可以全屏软件或窗口，窗口有一般、最小化、最大化。�
 
 <div id="toc"></div>
 
-下面是一个简单的例子，判断我们软件是不是全屏，如果是，就不全屏，代码在一个ToggleButton
+下面是一个简单的例子，判断我们软件是不是全屏，如果是，就不全屏，代码在一个 ToggleButton 的点击
 
 ```csharp
 ApplicationView view = ApplicationView.GetForCurrentView();
@@ -49,7 +49,10 @@ public class IsFullScreenModeTrigger : StateTriggerBase
         SetActive(view.IsFullScreenMode);
     }
 }
+
 ```
+
+
 
 ```xml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">  
@@ -77,7 +80,7 @@ public class IsFullScreenModeTrigger : StateTriggerBase
 ```
 在我们应用变为全屏，textblock就会`In full screen mode`
 
-我们可以设置`PreferredLaunchWindowingMode`，在我们应用打开
+我们可以设置`PreferredLaunchWindowingMode`，在我们应用打开设置窗口大小
 
 ```csharp
 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
@@ -87,6 +90,8 @@ ApplicationViewWindowingMode可以`Auto` ,`PreferredLaunchViewSize`设置窗口�
 win10有很简单的API可以应用全屏，在电脑，我们经常用窗口，手机经常使用全屏。
 
 http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/
+
+对于窗口大小，参见：win10_uwp_she_zhi_qi_dong_chuang_kou_da_xiao_huo_q.md
 
 ## C++ 全屏
 
