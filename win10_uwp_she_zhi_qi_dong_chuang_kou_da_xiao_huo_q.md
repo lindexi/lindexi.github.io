@@ -80,18 +80,20 @@ ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(200, 100));
         </VisualStateManager.VisualStateGroups>
 ```
 
-在后台绑定变化，我写在View的变窄。
+在后台绑定变化，我写在View的变窄，这样写有比较好的效率，一般需要获得是在窗口变化大，如果变化小，不需要进行获得。
 
-然后在View写我们拿到窗口大小
+然后在 View 写我们拿到窗口大小
 
 ```csharp
         public void NarrowVisual(object sender, VisualStateChangedEventArgs e)
         {
-            //Window.Current.Bounds.Width
+            //Window.Current.Bounds.Width  
             //Window.Current.Bounds.Height
         }
 
 ```
+
+上面代码是 MasterDetail 使用的，参见 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
