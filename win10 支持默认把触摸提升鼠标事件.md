@@ -1,0 +1,27 @@
+# win10 支持默认把触摸提升鼠标事件
+
+在 WPF 经常需要重写一套触摸事件，没有UWP的Pointer那么好用。
+
+如果一直都觉得 WPF 的触摸做的不好，或想解决 WPF 的触摸问题，但是没有方法，那么请看下面。
+
+<!--more-->
+
+只要新建框架为 .net 4.7以上，运行的系统是`Windows 10 Creators Update` 就可以。
+
+打开新建的工程，设置框架。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017417165611.jpg)
+
+然后打开App.config，添加支持把触摸和笔到鼠标
+
+
+```csharp
+     <runtime>
+        <AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.EnablePointerSupport=true"/>
+    </runtime>
+```
+需要知道，这个特性不支持实时的笔迹。
+
+因为笔迹需要运行在UI线程，会导致比较差的性能。
+
+参见：https://msdn.microsoft.com/en-us/library/mt800336(v=vs.110).aspx
