@@ -140,6 +140,8 @@ await SvgImageRenderer.RendererImageAsync(file, new SvgImageRendererSettings()
 
 ![这里写图片描述](http://img.blog.csdn.net/20160731160141698)
 
+在最新版本，ms支持svg，参见：https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.imaging.svgimagesource
+
 
 参见：http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/
 
