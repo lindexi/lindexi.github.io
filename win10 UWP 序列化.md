@@ -4,6 +4,7 @@
 
 <!--more-->
 <!-- csdn -->
+<div id="toc"></div>
 
 .NET Framework 提供了两个序列化技术：
 
