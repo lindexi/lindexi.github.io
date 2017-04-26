@@ -4,7 +4,6 @@
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
 
 我们在xaml创建一个Pivot
 		
