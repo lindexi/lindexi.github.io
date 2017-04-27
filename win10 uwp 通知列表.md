@@ -5,7 +5,6 @@
 本文：知道什么是通知的列表，如何去写一个通知列表。
 
 <!--more-->
-<!-- csdn -->
 
 在 C# 很少直接使用数组，因为数组难以指定类型，需要指定类型的，一般都会使用 `List<T>` 。而 List 我就叫他列表，继承 ICollection 的类，一般就可以叫列表。
 
@@ -45,7 +44,7 @@
 
 首先在给 Source 值的时候，会自动判断是不是有 INotifyCollectionChanged ，如果是的话，自动监听。
 
-因为 ListView 的 Source 大概就是这样
+因为 ListView 的 Source 大概就是这样，下面代码和真的 Source 是不一样，但是大概也是这样的
 
 
 ```csharp
@@ -138,7 +137,7 @@
 
 可以看到界面就是进行变换，就这么简单写通知列表。
 
-代码：
+代码：http://download.csdn.net/detail/lindexi_gd/9826807
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F%25E5%2588%2597%25E8%25A1%25A8.gif)
 

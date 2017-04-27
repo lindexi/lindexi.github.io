@@ -11,15 +11,15 @@ win10 下，密码框无法绑定到ViewModel，Password是不可以绑定。
 
 我们之前在WPF 使用[绑定密码框](http://lindexi.oschina.io/lindexi/post/WPF-绑定密码/)，我写了一篇，关于如何绑定，我提供一个我自己试了可以的类。
 
-首先，我们新建一个类，这个类是让PasswordBox 可以绑定Password。
+首先，我们新建一个类，这个类是让 PasswordBox 可以绑定Password。
 
-UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和之前一样。
+UWP让 PasswordBox 可以绑定Password 的一个方法，其实我使用的和之前一样。
 
 我们新建静态类，附件属性，只是和之前有的小不一样。
 
-我们先写一个函数`PasswordChanged`这个函数是Password 变化使用的，我们先判断sender是不是PasswordBox，是的话我们就通知密码改变。
+我们先写一个函数`PasswordChanged`这个函数是 Password 变化使用的，我们先判断sender 是不是 PasswordBox ，是的话我们就通知密码改变。
 
-通知使用`SetPassword(passwordBox, passwordBox.Password);`我们要先更新password，然后更新界面，但是我们设置password，会自动更新界面，一旦界面更新又更新password，这样不好，我们需要设置Updateing，如果是true，就是我们界面更新，直接更新password。如果是false，那么是password更新界面。于是我们在PasswordChanged，使用
+通知使用`SetPassword(passwordBox, passwordBox.Password);`我们要先更新password，然后更新界面，但是我们设置password，会自动更新界面，一旦界面更新又更新 password，这样不好，我们需要设置 Updateing，如果是 true，就是我们界面更新，直接更新 password 。如果是 false，那么是 password 更新界面。于是我们在 PasswordChanged ，修改依赖属性，必须添加是否后台修改密码 IsUpdating ，如果是后台添加就需要设置他为 true，目的是可以让前台修改通知，后台修改忽略，不然出现无限循环就不好。
 		
 
 ```csharp
@@ -31,7 +31,7 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 然后写` private static void OnPasswordPropertyChanged(DependencyObject sender,        DependencyPropertyChangedEventArgs e)`
 
-这个函数是我们定义的一个属性变化时，判断sender是不是PasswordBox，是的话，因为我们绑定是双向，所以先把`passwordBox.PasswordChanged -= PasswordChanged`取消，然后判断是不是更新了，如果更新了，也就是完成更新`if (!(bool)GetIsUpdating(passwordBox))`我们就把新的Value给`passwordBox.Password`，不管有没更新，我们需要`passwordBox.PasswordChanged += PasswordChanged`
+这个函数是我们定义的一个属性变化时，判断 sender 是不是 PasswordBox ，是的话，因为我们绑定是双向，所以先把`passwordBox.PasswordChanged -= PasswordChanged`取消，然后判断是不是更新了，如果更新了，也就是完成更新`if (!(bool)GetIsUpdating(passwordBox))`我们就把新的Value给`passwordBox.Password`，不管有没更新，我们需要`passwordBox.PasswordChanged += PasswordChanged`
 	
 
 ```csharp
@@ -53,15 +53,15 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 ```
 
-我们还需要一个`Attach`判断用户是不是要绑定，如果是false，就是和原来，不绑定
+我们还需要一个`Attach`判断用户是不是要绑定，如果是 false ，就是和原来，不绑定
 
-我们需要判断sender是PasswordBox，好像不是的话我们不需要做下，因为都是静态，使用事件绑定，用的是sender
+我们需要判断 sender 是 PasswordBox ，好像不是的话我们不需要做下，因为都是静态，使用事件绑定，用的是 sender ，关于 Sender 和 Origin 其实是不同的，不过在这里就使用 sender，不是路由事件。
 
-我们判断，在使用OldValue是不是true，如果是的话，我们先把`passwordBox.PasswordChanged -= PasswordChanged`，不是的话不能`passwordBox.PasswordChanged -= PasswordChanged`
+我们判断，在使用 OldValue 是不是true，如果是的话，我们先把`passwordBox.PasswordChanged -= PasswordChanged`，不是的话不能`passwordBox.PasswordChanged -= PasswordChanged` ，因为之前不是已经添加了，所以不可以再移除，即使添加了，也不会出错。这样在修改密码就可以通过函数知道密码已经修改，通过已经修改的密码更新到附加属性，就可以让附加属性得到密码，绑定附加属性，就可以让vm得到值，于是这个核心就是这么简单。
 
-判断NewValue，如果是true，`passwordBox.PasswordChanged += PasswordChanged;`
+判断NewValue，如果是true，`passwordBox.PasswordChanged += PasswordChanged;`，这时就是绑定了，以后修改了密码就可以知道了。
 
-代码可以复制到一个文件，注意需要使用他所在的name，使用xmlns
+代码可以复制到一个文件，注意需要使用他所在的name，使用xmlns引用需要用到
 		
 
 ```csharp
@@ -163,9 +163,11 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
 
 ```
 
-我们的 ViewModel 有一个属性 password ，注意我们使用Binding
+我们的 ViewModel 有一个属性 password ，注意我们使用 Binding 把他绑定到 PasswordBox 的密码。绑定的过程
 
 不需要去做修改，直接加上`view:PasswordBoxHelper.Attach="True" view:PasswordBoxHelper.Password="{Binding Password,Mode=TwoWay}"`
+
+代码很简单，也就是把 不可绑定的 Password 改为下面的属性
 		
 
 ```csharp
@@ -174,6 +176,12 @@ UWP让PasswordBox 可以绑定Password 的一个方法，其实我使用的和�
                  >
 
 ```
+
+注意需要引用命名，好像属性比较长，但是我也没有好方法让他比较好看
+
+附加属性使用的比较多，是不是需要我来写一个博客说下什么是附加属性。
+
+对于 WPF 几乎和rt一样的 附加属性，如果没有找到 好的博客，直接去看 wpf就好啦，我在使用发现不需要去学新的东西就可以使用。
 
 <script src="https://gist.github.com/lindexi/e4809b4b54a36db6aa166524c89fcebb.js"></script>
 

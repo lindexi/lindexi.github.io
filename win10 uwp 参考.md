@@ -106,6 +106,8 @@
 
  - jamescroft http://jamescroft.co.uk 我们在做WinUx，他是微软的大神
 
+ - http://edi.wang/
+
  - http://www.sambeauvois.be/
 
  - http://www.dkhalife.com
