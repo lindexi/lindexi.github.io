@@ -25,15 +25,15 @@
     </Grid>
 ```
 
-因为很多WPF程序都是放在 Window 不是放在页，所以为了在UWP和WPF使用的都是相同，可以用FrameworkElement代替 Page 于是在页面任何地方都可以放。
+因为很多WPF程序都是放在 Window 不是放在页，所以为了在 UWP 和WPF使用的都是相同，可以用FrameworkElement代替 Page 于是在页面任何地方都可以放。
 
-可以这个方法有个缺点，无法在页面使用 DataContext 绑定，只能在 资源后面的 Grid 使用。因为资源是有顺序，Page 在资源之前，于是 Page 就无法绑定。在WPF的也一样。
+可是这个方法有个缺点，无法在页面使用 DataContext 绑定，只能在 资源后面的 Grid 使用。因为资源是有顺序，Page 在资源之前，于是 Page 就无法绑定。在WPF的也一样。
 
 如果只有一个页面，而且使用的地方也是在 页面的内容，那么建议使用这个方法。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201743091652.jpg)
 
-另一个方法是把他写到 app
+另一个方法是把他写到 app ，代码就是
 
 
 ```xml
