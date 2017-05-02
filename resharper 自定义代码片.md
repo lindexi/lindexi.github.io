@@ -1,12 +1,12 @@
 # resharper 自定义代码片
 
-我们在做一件事前，需要先做工具，工具好，最后我们做事也快。
+我们在做一件事前，需要先做工具，工具好，最后我们做事也快。这个过程需要的时间也是值得的。
 
 我们在C#下使用的工具，有一个神器，Resharper，他可以帮修改代码、重构，做很多重复的事。
 
-而Resharper还不能全和我们需要的一样，如代码片，他自带的代码片叫Live Template.
+而Resharper 虽然强大，但是还不能全和我们需要的一样，如代码片，有些需要或经常使用的代码还是没有，需要自己去写，他自带的代码片叫 Live Template.
 
-Resharper的代码预知和VisualStudio的代码片相似，但是他可以知道当前输入
+Resharper的代码预知和 VisualStudio 的代码片相似，但是他可以知道当前输入
 是变量还是属性，这样就比原来的好用。
 
 本文主要：如何修改Resharper代码片，自定义代码片
@@ -15,13 +15,15 @@ Resharper的代码预知和VisualStudio的代码片相似，但是他可以知�
 
 <div id="toc"></div>
 
-原本我的VisualStudio也是可以自定义代码片，在工具选择代码片，导入自己写的代码片。
+原本我的 VisualStudio 也是可以自定义代码片，在工具选择代码片，导入自己写的代码片。
 
-安装了Resharper 2016.2会隐藏VisualStudio的代码片。
+安装了 Resharper 2016.2 会隐藏 VisualStudio 的代码片。
 
-resharper提供了很有用的代码片，但是我们还是觉得不够，这时我们需要自己编辑Resharper代码片。
+resharper 提供了很有用的代码片，但是我们还是觉得不够，这时我们需要自己编辑 Resharper 代码片。
 
-打开Resharper > Tool > Templates Explor
+我将会告诉大家，如果在 resharper 定义自己需要的 代码片 。
+
+打开 Resharper > Tool > Templates Explor
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205413.jpg)
 
@@ -33,11 +35,11 @@ resharper提供了很有用的代码片，但是我们还是觉得不够，这�
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205827.jpg)
 
-可以添加新的代码片，我们新建一个
+可以添加新的代码片，我们新建一个，接下来准备做一个简单的东西。
 
-和vs的一样，除了不变的文字，对于需要改变的变量，使用用`$变量$`，对于变量相同，会在输入换为相同单词，而不同的变量，可以按Enter跳到下一个，当然一旦按Enter就是确定这个单词。
+和vs的一样，除了不变的文字，对于需要改变的变量，使用`$变量$`。在输入的时候，对于变量相同，会在输入之后换为相同单词，而不同的变量，可以按 Enter 跳到下一个，当然一旦按 Enter 就是确定这个单词。
 
-例如我们想写一个
+例如我们想写一个ViewModel经常写的代码
 
 ```csharp
         public string Url
@@ -58,9 +60,9 @@ resharper提供了很有用的代码片，但是我们还是觉得不够，这�
 ```
 
 其中所有的属性`public`是固定的，但是类型不是，我们给类型一个变量`$string$`，
-可以看到Url是变量名，不同的，我们给一个变量，$name$
+可以看到 Url 是变量名，不同的，我们给一个变量，$name$
 
-可以看到，这变量，有Url需要我们写三遍，而且还需要写set、get，所以我们需要写一个简单的模板，直接使用。
+可以看到，这变量，有 Url 需要我们写三遍，而且还需要写set、get，所以我们需要写一个简单的模板，直接使用。
 
 接下来我就直接写出一个可以使用的
 
@@ -88,7 +90,7 @@ private $string$ _$name$$END$;
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/136fe646-e19f-446e-99e9-0159fa8e5fca2016123193729.jpg)
 
-这一个就是在代码按ps就会使用属性加上`OnPropertyChanged();`
+这一个就是在代码按 ps 就会使用属性加上`OnPropertyChanged();`
 
 
 还有特殊的变量`$END$`，变量作用在用户写完就是跳到END位置。
@@ -109,7 +111,7 @@ private $string$ _$name$$END$;
 
 要让变量名小写，我们可以使用`macr`
 
-在我们写出一个变量，可以在左边出现mar
+在我们写出一个变量，可以在左边出现 mar
 
 我们修改下模板
 
