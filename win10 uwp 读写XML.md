@@ -16,7 +16,6 @@ wr 很喜欢用 XML，可以看到我们的项目，*.csproj 和页面 xaml 都�
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
 
 ## xml 语法
 
