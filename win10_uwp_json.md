@@ -115,7 +115,7 @@
 
 当然我还加上九幽的插件，九幽有几个插件可以获得我们应用数据，我们启动我们关闭，还有广告很好用
 
-我们使用Nuget主要下载Newtonsoft.Json
+我们使用 Nuget 主要下载 Newtonsoft.Json
 
 我们转序可以使用
 
@@ -196,6 +196,112 @@ for (uint i = 0; i < root.Count; i++) {
   }
 ```
 
+
+## 序列枚举
+
+对于枚举的序列化和一般的变量不同，当前 StorageFile 也是不可以转换的。
+
+
+例如有一个枚举
+
+
+```csharp
+    public enum Foo
+    {
+        lindexi,
+        jiuyou,
+        oschina,
+        mslaji,
+        yam,
+    }
+```
+
+进行序列
+
+
+```csharp
+             List<Foo> foo=new List<Foo>()
+            {
+                Foo.lindexi,
+                Foo.oschina
+            };
+
+            string str = JsonConvert.SerializeObject(foo);
+```
+
+
+结果是 
+
+
+```csharp
+    [0,2]
+```
+
+那么进行反序列会出现和原先一样的结果
+
+但是如果尝试使用其他的枚举，不会出现错误，枚举的数量比原先多的一般就不会出现
+
+
+```csharp
+                var t = JsonConvert.DeserializeObject<List<KeyboardNavigationMode>>(str);
+
+```
+原来的是 Foo ，现在改为 KeyboardNavigationMode 结果还是一样
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201754151047.jpg)
+
+如果是数值的，容易出现这个错误那么如何使用枚举的字符串？
+
+在需要使用的枚举类添加 JsonConverter
+
+
+```csharp
+     [JsonConverter(typeof(StringEnumConverter))]
+    public enum Foo
+    {
+        lindexi,
+        jiuyou,
+        oschina,
+        mslaji,
+        yam,
+    }
+```
+
+得到结果
+
+
+```csharp
+    ["lindexi","oschina"]
+```
+
+但是如果使用的枚举不是自己写的，如使用  Key 枚举，这个是ms写的，不可以在枚举加上，这时可以在属性加上
+
+例如有个属性 
+
+
+```csharp
+         
+            List<Foo> foo = new List<Foo>()
+            {
+                Foo.lindexi,
+                Foo.oschina
+            };   
+```
+
+可以在属性转换时用 
+
+```csharp
+                string str = JsonConvert.SerializeObject(foo,new StringEnumConverter());
+
+```
+
+这样可以做到和上面一样的方法
+
+
+如果需要转换中文 
+参见：http://www.cnblogs.com/DomoYao/p/Json.html
+
+参见：http://blog.csdn.net/lovegonghui/article/details/50248455
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
