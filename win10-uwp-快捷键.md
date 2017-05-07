@@ -1,3 +1,5 @@
+
+
 <!--more-->
 
 <div id="toc"></div>
@@ -13,4 +15,6 @@ AcceleratorKey
 参见：https://msdn.microsoft.com/en-us/library/windows/apps/xaml/Hh868161(v=win.10).aspx#keyboard_shortcuts
 
 https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868246.aspx
+
+快捷键需要业界一样，不能自己做标准，[Keyboard shortcuts in Windows - Windows Help](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
 
