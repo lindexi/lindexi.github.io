@@ -5,19 +5,28 @@ win10 UWP 剪贴板 Clipboard使用`Windows.ApplicationModel.DataTransfer.Clipbo
 
 <div id="toc"></div>
 
-设置文本
 
+## 设置文本
+
+在UWP把字符串添加到剪贴板使用代码很少。
+
+第一个创建 DataPackage，无聊添加图片还是什么都是使用 DataPackage
 ```csharp
-DataPackage dataPackage = new DataPackage();
+ DataPackage dataPackage = new DataPackage();
 ```
+
+然后把文件设置 DataPackage ，因为剪贴板只能设置 DataPackage ，所以即使添加字符串，也是使用 DataPackage
 
 ```csharp
             dataPackage.SetText("文本");
             Clipboard.SetContent(dp);
 ```
 
+设置图片的方法也是相同。
 
-获取文本
+但是 75351663 大神说，设置之前需要清空剪贴板，不然之前数据成为垃圾内存，我自己没有去试，但是加一句代码也没什么，建议设置之前清空。
+
+## 获取文本
 
 检查剪贴板包含文本
 
@@ -35,7 +44,7 @@ if (con.Contains(StandardDataFormats.Text))
             }
 ```
 
-获取图片
+## 获取图片
 
 ```csharp
             if (con.Contains(StandardDataFormats.Bitmap))
@@ -66,7 +75,7 @@ if (con.Contains(StandardDataFormats.Text))
             }
 ```
 
-获取文件
+## 获取文件
 
 ```csharp
  if (con.Contains(StandardDataFormats.StorageItems))

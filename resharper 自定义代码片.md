@@ -159,7 +159,7 @@ https://www.jetbrains.com/help/resharper/2016.2/Templates__Creating_and_Editing_
 
 接下来介绍一下功能
 
-[Resharper 如何把类里的类移动到其他文件](Resharper 如何把类里的类移动到其他文件.md)
+[Resharper 如何把类里的类移动到其他文件](../Resharper 如何把类里的类移动到其他文件.md)
 
 如何在 Resharper  忽略文件？
 
