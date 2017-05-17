@@ -11,7 +11,9 @@
 
 ## 折线图
 
-折线图需要知道的是 Legend
+接下来讲的matlab如何设置图形的图例和x轴的距离
+
+折线图的图例需要知道的是 Legend ，使用他可以进行设置
 
 
 ```csharp
@@ -37,6 +39,12 @@
         'Best'               least conflict with data in plot
         'BestOutside'        least unused space outside plot
 ```
+
+如何设置x轴大小？
+
+可以通过`set(gca,'xtick',1:1:100);`代码设置从1开始，结束100，解释一下
+
+`set(gca,'xtick',开始:两个点之间:结束);`
 
 ## 直方图
 
