@@ -7,7 +7,6 @@
 整理一下：半个钟时间，找到两个表格中，在2017年更新的专栏。这就是需求。
 
 <!--more-->
-<!-- csdn -->
 
 我开始分开需求，第一步，读取数据，读取两个表的数据。第二步获取博客更新时间，博客更新时间就是最近的文章的发布时间。第三步，把结果写到文件里。
 
@@ -159,6 +158,8 @@
 去重不可以使用博客专栏标题，因为存在重复。
 
 如果大家有写质量高的文章，想推荐到csdn首页，可以联系我哦……我会在梦姐面前多多美言
+
+[2017 CSDN博客专栏评选](http://blog.csdn.net/blogdevteam/article/details/71710010)  
 
 参见：[使用HtmlAgilityPack XPath 表达式抓取博客园数据 - 晓风拂月 - 博客园](http://www.cnblogs.com/xffy1028/archive/2011/12/01/2270430.html)
 [Html Agility Pack基础类介绍及运用 - itmuse - 博客园](http://www.cnblogs.com/ITmuse/archive/2010/05/29/1747199.html)
