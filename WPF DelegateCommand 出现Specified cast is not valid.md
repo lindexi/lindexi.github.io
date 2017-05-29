@@ -3,7 +3,6 @@
 使用 DelegateCommand 出现 Specified cast is not valid
 
 <!--more-->
-<!-- csdn -->
 
 最近写快捷键需要 DelegateCommand ，于是用了 `DelegateCommand<double> ` ，运行时出现 Specified cast is not valid 
 
