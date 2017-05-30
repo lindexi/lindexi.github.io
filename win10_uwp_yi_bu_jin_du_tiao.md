@@ -1,6 +1,7 @@
 # win10 uwp 异步进度条
 
- 本文主要讲我设计的几个进度条，还有如何使用异步控制进度条，如何使用动画做进度。
+本文主要讲我设计的几个进度条，还有如何使用异步控制进度条，如何使用动画做进度。
+
 <!--more-->
 
 <div id="toc"></div>
@@ -8,7 +9,7 @@
  进度条可以参见：http://edi.wang/post/2016/2/25/windows-10-uwp-modal-progress-dialog
  
 
- 进度条其实异步就是使用后台变化，然后value绑定
+ 进度条其实异步就是使用后台变化，然后 value 绑定，异步绑定很简单，参见绑定的文章。
 
  
 
@@ -16,15 +17,15 @@
 
  
 
- ```
+```
 
          <ProgressBar Maximum="100" Value="{x:Bind View.Value,Mode=OneWay}" Height="20" Width="100"></ProgressBar>
 
+```
+
+绑定到我们的 ViewModel ，一般如果后台线程操作界面是不能直接，但是我用了下面代码，把异步的线程放在同步
+
 ```csharp
-
-绑定到我们的ViewModel，一般如果后台线程操作界面是不能直接，但是我用了
-
- ```
 
              await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
@@ -38,60 +39,39 @@
 
 ```
 
- 
 
-代码参见：[https://github.com/lindexi/UWP/tree/master/uwp/control/Progress](https://github.com/lindexi/UWP/tree/master/uwp/control/Progress)，项目所有代码都会发出
+代码参见：[https://github.com/lindexi/UWP/tree/master/uwp/control/Progress](https://github.com/lindexi/UWP/tree/master/uwp/control/Progress)，项目所有代码都会发出，所以可以看我的网站
 
-我们使用Task异步，我们因为没有什么耗时的，就`Task.Delay(1000).Wait();`我们进度会等一秒，当然自己也可以设置多些。也可以写 `await Task.Dalay(1000);`
+我们使用 Task 异步，我们因为没有什么耗时的，就`Task.Delay(1000).Wait();`我们进度会等一秒，当然自己也可以设置多些。也可以写 `await Task.Dalay(1000);`
 
 ViewModel
 
 ```csharp
 
         public ViewModel()
-
         {
 
             new Task(() =>
-
             {
-
                 while (Value < 90)
-
                 {
-
                     Value += 10;
-
                     Task.Delay(1000).Wait();
-
                 }
-
             }).Start();
-
         }
 
         public double Value
-
         {
-
             set
-
             {
-
                 _value = value;
-
                 OnPropertyChanged();
-
             }
-
             get
-
             {
-
                 return _value;
-
             }
-
         }
 
         private double _value;
@@ -104,29 +84,23 @@ ViewModel
 
  
 
- ##圆形进度条
+## 圆形进度条
 
  
 
- 参见：http://www.cnblogs.com/ms-uap/p/4641419.html
+参见：http://www.cnblogs.com/ms-uap/p/4641419.html
 
  
 
- 先说怎么用我的，首先去我源代码https://github.com/lindexi/UWP，打开我的进度条文件夹，里面有View文件夹
+先说怎么用我的，首先去我源代码https://github.com/lindexi/UWP，打开我的进度条文件夹，里面有View文件夹
 
  
 
- 我在View有一个控件`RountProgress`复制他到你的解决方案，如果我的控件大小和你不一样，很简单调整，我就不说。
+我在View有一个控件`RountProgress`复制他到你的解决方案，如果我的控件大小和你不一样，很简单调整，我就不说。
 
  
 
- 那么我的控件只需要指定Value就好啦，Value其实是从0到100，如果叫别的应该好，但是我不改，如果你觉得不想要，自己改
-
- 
-
- 
-
- 
+那么我的控件只需要指定Value就好啦，Value其实是从0到100，如果叫别的应该好，但是我不改，如果你觉得不想要，自己改
 
 ```   
    xmlns:view="using:lindexi.uwp.control.RountProgress.View"
@@ -134,39 +108,39 @@ ViewModel
 
 ```
 
- ![这里写图片描述](http://img.blog.csdn.net/20160810164207135)
+![这里写图片描述](http://img.blog.csdn.net/20160810164207135)
 
  
 
- 我来说下怎么做
+我来说下怎么做
 
  
 
- 我们要知道StrokeDashArray，这个是一个数组，是循环的，也就是依此读取，知道超过长度。
+我们要知道StrokeDashArray，这个是一个数组，是循环的，也就是依此读取，知道超过长度。
 
  
 
- 首先我们需要有Thickness，宽度，StrokeDashArray的每一个都是宽度的倍数
+首先我们需要有Thickness，宽度，StrokeDashArray的每一个都是宽度的倍数
 
  
 
- 首先取第一个元素，把这个元素乘以宽度，作为显示的大小，然后取第二个元素，乘以宽度，作为不显示的大小
+首先取第一个元素，把这个元素乘以宽度，作为显示的大小，然后取第二个元素，乘以宽度，作为不显示的大小
 
  
 
- 然后循环获取第三个……，如果不存在第三个，那么循环拿第一做第三，n=n==max?0:n+1，n就是第n个元素
+然后循环获取第三个……，如果不存在第三个，那么循环拿第一做第三，n=n==max?0:n+1，n就是第n个元素
 
  
 
- 一个显示一个不显示，循环
+一个显示一个不显示，循环
 
  
 
- 记得长度乘以是`值*宽度`
+记得长度乘以是`值*宽度`
 
  
 
- 那么我们如果有一个`值*宽度`的到大小比我们的宽度还大，那么就会截断。
+那么我们如果有一个`值*宽度`的到大小比我们的宽度还大，那么就会截断。
 
  
 
@@ -203,9 +177,6 @@ ViewModel
                  StrokeThickness="3" 
 
                  RenderTransformOrigin="0.5,0.5"/>
-
-                 
-
 ```
 
 那么我们第一个值 `(总长度100 - 宽度3) \* PI / 宽度3`
@@ -484,7 +455,7 @@ ViewModel
 
  
 
- ##动画
+ ## 动画
 
  
 
@@ -492,11 +463,11 @@ ViewModel
 
  
 
- 我们可以看到我们的元素位置可以修改Margin，那么如何在动画修改Margin
+我们可以看到我们的元素位置可以修改 Margin，那么如何在动画修改Margin
 
  
 
- UWP动画Margin可以
+ UWP 动画 Margin可以
 
  
 

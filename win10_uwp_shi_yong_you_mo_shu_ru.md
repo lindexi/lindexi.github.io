@@ -6,9 +6,9 @@
 
 <div id="toc"></div>
 
-win10可以很简单在我们的app使用自然输入，这篇文章主要翻译[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/)  一些内容是参见[陈染大神](http://www.wangchenran.com/win10uwp%E5%BC%80%E5%8F%91-ink.html)
+win10 可以很简单在我们的 app 使用自然输入，这篇文章主要翻译[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/)  一些内容是参见[陈染大神](http://www.wangchenran.com/win10uwp%E5%BC%80%E5%8F%91-ink.html)
 
-做法简单，我们有垃圾微软的`InkCanvas `需要我们在页面
+做法简单，我们有垃圾微软的`InkCanvas `，这个控件可以手写，需要我们在页面使用他：
 
 ```xml
 <Grid>
@@ -16,13 +16,13 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 </Grid>
 ```
 
-然后我们就可以写出我们的字，下面的不是我写的，是垃圾微软的。
+然后我们就可以写出我们的字，试试使用鼠标在程序写字。下面的不是我写的，是垃圾微软的。
 
 ![这里写图片描述](http://az648995.vo.msecnd.net/win/2015/09/1_ink.png)
 
-`InkPresenter`可以获取InkCanvas基础对象，可以设置输入为笔，触摸，鼠标，上面那个是从微软拿来，因为我是在用电脑。
+`InkPresenter`可以获取 InkCanvas 基础对象，可以设置输入为笔，触摸，鼠标，上面那个是从微软拿来，因为我是在用电脑。
 
-为了画出上面的图，我们可以设置`ink_canvas.InkPresenter.InputDeviceTypes= CoreInputDeviceTypes.Mouse;`如果我们有鼠标还要在手机运行，我们可以来`|`然后写手机。
+为了画出上面的图，我们可以设置`ink_canvas.InkPresenter.InputDeviceTypes= CoreInputDeviceTypes.Mouse;`如果我们有鼠标还要在手机运行，我们可以来`|`然后写手机，这样就可以使用多个方法。
 
 ```csharp
         public MainPage()
@@ -34,9 +34,9 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
 
 ![这里写图片描述](http://img.blog.csdn.net/20160412164054442)
 
-如果我们需要输入笔和鼠标`ink_canvas.InkPresenter.InputDeviceTypes= CoreInputDeviceTypes.Mouse|CoreInputDeviceTypes.Pen;`
+如果我们需要输入笔和鼠标 `ink_canvas.InkPresenter.InputDeviceTypes= CoreInputDeviceTypes.Mouse|CoreInputDeviceTypes.Pen;` ，关于这个枚举，参见[C＃枚举中使用Flags特性](http://lindexi.oschina.io/lindexi//post/C-%E6%9E%9A%E4%B8%BE%E4%B8%AD%E4%BD%BF%E7%94%A8Flags%E7%89%B9%E6%80%A7/)
 
-画出的线我们也可以设置
+画出的线我们也可以设置 线大小，颜色，请看代码
 
 ```csharp
             InkDrawingAttributes attribute = ink_canvas.InkPresenter.CopyDefaultDrawingAttributes();
@@ -72,6 +72,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
         </Grid>
     </Grid>
 ```
+点击时，修改笔为橡皮擦或其他的，只需要设置当前的笔
 
 ```csharp
         private void eraser(object sender, RoutedEventArgs e)
@@ -87,9 +88,9 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
         }
 ```
 
-点击橡皮可以擦掉，但是有些诡异，大家可以自己去写
+点击橡皮可以擦掉，但是有些诡异，大家可以自己去写，自己去玩，就知道
 
-
+接下来告诉大家，如何
 保存墨迹
 
 ```csharp
@@ -118,7 +119,7 @@ win10可以很简单在我们的app使用自然输入，这篇文章主要翻译
             }
 ```
 
-陈染大神的保存，我们上面保存是gif
+陈染大神的保存，我们上面保存是 gif
 
 ```csharp
  //声明一个流来存储墨迹信息
@@ -159,7 +160,7 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
 }
 ```
 
-保存的东西可以加载
+保存的东西可以加载，需要加载第一步是获得文件
 
 ```csharp
            //创建一个文件选择器
@@ -178,10 +179,11 @@ private async Task<byte[]> ConvertImagetoByte(IRandomAccessStream fileStream)
                await InkCanvas.InkPresenter.StrokeContainer.LoadAsync(file);
            }
 ```
+如何获得文件参见：[win10 uwp 保存用户选择文件夹](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E4%BF%9D%E5%AD%98%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9%E6%96%87%E4%BB%B6%E5%A4%B9/)
 
 ## UWP 手写清理笔画
 
-我们写完一个字需要清理我们笔画
+我们写完一个字需要清理我们笔画，可以使用clear
 
 ```csharp
 ink.InkPresenter.StrokeContainer.Clear();
@@ -197,14 +199,14 @@ ink.InkPresenter.StrokeContainer.Clear();
     //获取识别结果  InkRecognitionResult 对象中还能获取候选字
     var txt = result[0].GetTextCandidates()[0];
 ```
-手写识别来自http://www.wangchenran.com/win10uwp开发-ink.html
+手写识别来自 [http://www.wangchenran.com/win10uwp开发-ink.html](http://www.wangchenran.com/win10uwp开发-ink.html)
 
 但是我们每次需要使用`InkCanvas`需要使用很多按钮，微软给了我们`Ink Toolbar `可以简单使用。
-扩展下载：https://visualstudiogallery.msdn.microsoft.com/58194dfe-df44-4c4e-893a-1eca40675269
+扩展下载：[https://visualstudiogallery.msdn.microsoft.com/58194dfe-df44-4c4e-893a-1eca40675269](https://marketplace.visualstudio.com/items?itemName=InkToolbarControlTeam.InkToolbarcontrolforUniversalWindowsapps)
 
 ![这里写图片描述](http://img.blog.csdn.net/20160901165925839) 
 
-   首先安装该工具扩展，然后引用InkToolbar Control.dll，接着在View中声明控件:
+首先安装该工具扩展，然后引用InkToolbar Control.dll，接着在View中声明控件:
    
 
 ```csharp
@@ -219,6 +221,7 @@ TargetInkCanvas="{x:Bind InkCanvas}"
  
 VerticalAlignment="Top" HorizontalAlignment="Right" />
 ```
+
 `TargetInkCanvas`属性bind到要设置的`InkCanvas`上即可。
 
 ## 无法识别手写
@@ -251,7 +254,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 首先我们需要设置语言
 
-需要的识别，可以使用web
+需要的识别，可以使用 web
 
 告诉用户需要输入
 
@@ -284,4 +287,3 @@ http://stackoverflow.com/questions/32153880/how-to-render-inkcanvas-to-an-image-
 https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
-
