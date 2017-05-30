@@ -57,4 +57,46 @@ UWP应用获得焦点可以使用`Window.Current.Activated`，事件参数有几
 
 参见：http://grogansoft.com/blog/?p=1269
 
+## 如何判断应用是否获得焦点
+
+有时候需要判断应用是否获得焦点，我的图床软件判断当前应用有焦点就自动复制。
+
+但是不可以通过 `Window.Current.CoreWindow.Visible` 判断窗口是否获得焦点，这个值判断是窗口是否最小或，在手机可以使用这个，但是在pc不可以，因为可能我是打开其他的软件。
+
+为了在UWP 判断窗口是否获得焦点，简单的方法是使用上面的代码在失去焦点获得，从而设置一个本地值，让他知道是否获得焦点。
+
+
+```csharp
+         private void Current_Activated(object sender, WindowActivatedEventArgs e)
+        {
+            _visibility = e.WindowActivationState != CoreWindowActivationState.Deactivated;
+        }
+
+
+         private bool _visibility = true;
+
+```
+但是还需要加上 当窗口的可见变化时的
+
+
+```csharp
+                Window.Current.VisibilityChanged += Current_VisibilityChanged;
+        private void Current_VisibilityChanged(object sender, VisibilityChangedEventArgs e)
+        {
+            _visibility = e.Visible;
+        }
+```
+如果是在一个页面或一个控件使用上面的代码，注意，因为函数被加到一个静态的值，所以这个控件或page不会被释放，因为一直有引用。
+如果经常进行导航，而且都是新建页面，那么会创建很多页面。
+
+这些页面不会释放，于是内存占用越来越大，所以需要进行释放，方法是在视觉树取消时，从静态值删除函数。
+
+```csharp
+         private void Unloaded(object sender, RoutedEventArgs e)
+        {
+            Window.Current.VisibilityChanged -= Current_VisibilityChanged;
+            Window.Current.Activated -= Current_Activated;
+        }
+```
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
