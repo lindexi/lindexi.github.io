@@ -12,13 +12,13 @@
 
 毛玻璃可以使用 win2D  方法，也可以使用 Compositor 。
 
-使用 win2d 得到控件毛玻璃，而使用 Compositor 可以获得窗口毛玻璃。
+使用 win2d 得到软件内控件毛玻璃，而使用 Compositor 可以获得窗口毛玻璃。
 
-先来说下如何使用 Compositor 做窗口毛玻璃。
+先来说下如何使用 Compositor 做窗口毛玻璃，感觉小伙伴感兴趣的是窗口毛玻璃。
 
 ## Compositor 创建毛玻璃
 
-先写最简单的页面，只有一个 Grid， 给他名称 GlassHost
+先写最简单的页面，只有一个 Grid， 给他名称 GlassHost，这个控件用于显示毛玻璃
 
 
 ```csharp
@@ -26,7 +26,7 @@
 
 ```
 
-然后在构造函数使用InitializeFrostedGlass
+然后在构造函数使用InitializeFrostedGlass，这个函数用于在一个控件显示毛玻璃
 
 ```csharp
     
@@ -81,6 +81,8 @@
 如何去掉标题栏，上面的博客也有说，于是我就不多说啦。
 
 ## win2D
+
+下面介绍使用 win2d 做毛玻璃
 
 使用 win2D 方法，需要使用 Nuget 安装
 
