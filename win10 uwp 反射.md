@@ -95,6 +95,40 @@ Application.Current.GetType().GetTypeInfo().Assembly
 ```
 那么我们可以使用type得到ViewModel，参见http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/ 
 
+## 判断类型继承
+
+经常需要判断 UWP 的类是否继承接口，如果需要判断继承接口，可以使用下面代码
+
+1. 判断类型是否接口
+
+
+```csharp
+    type.GetTypeInfo().IsInterface
+```
+就可以判断是否接口
+
+接口的判断继承和类不同，接口判断使用
+
+
+```csharp
+    type.IsAssignableFrom(a.GetType());
+```
+上面的代码可以写为
+
+
+```csharp
+    type.IsInstanceOfType(a)
+```
+
+如果不是接口，可以使用下面代码
+
+
+```csharp
+    a.GetType().GetTypeInfo().IsSubclassOf(type);
+```
+
+
+
 ## WPF 反射获得所有类
 
 
