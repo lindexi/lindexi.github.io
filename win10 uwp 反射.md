@@ -111,7 +111,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 
 ```csharp
-    type.IsAssignableFrom(a.GetType());
+    type.IsAssignableFrom(a.GetType().GetTypeInfo());
 ```
 上面的代码可以写为
 
