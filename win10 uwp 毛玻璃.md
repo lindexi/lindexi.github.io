@@ -302,6 +302,8 @@
 
 参见：https://stackoverflow.com/questions/31987817/how-to-make-frosted-glass-effect-in-windows-10-universal-app
 
+[Acrylic material - UWP app developer | Microsoft Docs](https://docs.microsoft.com/en-us/windows/uwp/style/acrylic)
+
 http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm
 
 [（UWP）应用窗口实现毛玻璃效果 - 简书](http://www.jianshu.com/p/3b49fd3d7edb)
