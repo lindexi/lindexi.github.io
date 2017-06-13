@@ -111,6 +111,8 @@ ViewBox 是一个好用的东西，但是在他缩小的时候，可能有一些
 
 大法的缩略图，是在用户输入完成在做新的图片，尝试移动一个图片，在移动中，缩略图是不显示的。
 
+呆磨：http://download.csdn.net/detail/lindexi_gd/9868941
+
 参见：[How to fix VisualBrush lost line?](https://stackoverflow.com/q/44495238/6116637)
 
 [how to avoid a single pixel line disappear in wpf?](https://stackoverflow.com/q/29552339/6116637)

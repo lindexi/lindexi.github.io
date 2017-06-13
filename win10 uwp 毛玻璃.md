@@ -179,6 +179,8 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531212439.jpg)
 
+如果需要修改模糊，请把 BlurAmount 修改为你想要的
+
 上面的代码就是主要的，接下来就是做上图的效果
 
 首先xaml代码：
