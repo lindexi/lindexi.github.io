@@ -104,3 +104,6 @@
     file.Attributes.HasFlag(FileAttributes.Hidden)
 ```
 
+[wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
+
+[wpf动画——缓动动画Animation Easing - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/11/2680579.html)
