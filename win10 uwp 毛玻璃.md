@@ -302,6 +302,12 @@
 关于拖动使用裁剪显示后面的图，我就不多说了，实际代码看起来很多，但是不是很难，我就不说拉。
 
 
+请看下面的效果，这就是不停修改 BlurAmount 得到。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E7%258E%25BB%25E7%2592%25832017%25E5%25B9%25B46%25E6%259C%25881%25E6%2597%25A5%2520205721.gif)
+
+代码很简单，所以我就不说。
+
 参见：https://stackoverflow.com/questions/31987817/how-to-make-frosted-glass-effect-in-windows-10-universal-app
 
 [Acrylic material](https://docs.microsoft.com/en-us/windows/uwp/style/acrylic)
