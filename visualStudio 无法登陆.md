@@ -26,7 +26,7 @@ No home tenant info found.
 
 如果有人用VS登AzureCN的账户导致VS无法登陆MS账户，可以删除C:\Users\【username】\AppData\Local\.IdentityService文件里所有内容以还原VS账户设置
 
-感谢：[wangjiaxiang.net](wangjiaxiang.net) 提供的方法
+感谢：[王嘉祥](wangjiaxiang.net) 提供的方法
 
 参见：[VS2017 直接使用账户登录 Azure](https://www.azure.cn/documentation/articles/aog-portal-management-qa-vs2017-login/)
 
