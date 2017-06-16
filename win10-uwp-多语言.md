@@ -102,3 +102,4 @@ https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPEr
 
 http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps
 
+但是微软做的多语言太垃圾了，所以我需要使用一个比较好的方法，我现在的项目使用的就是一个很好的方法，尝试把他放在 UWP ，看可不可以。

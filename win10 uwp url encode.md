@@ -1,5 +1,9 @@
 # win10 uwp url encode
 
+开发中，经常遇到使用中午无法作为 URL 传输的情况，如果想把 中文作为 URL 传输，那么需要对中文进行转换。
+
+UWP 提供一些方法让我们很容易把 中文转为 URL ，但是转换还是有一些坑。
+
 我最近图床使用中文图片上传，地址出现错误。
 
 原因是URL不支持中文，所以需要把中文转URL可以认识字符，那么如何转？
@@ -8,7 +12,7 @@
 
 <!-- 有时候需要向网络传一些中文或其他不支持的东西，这时需要 url encode -->
 
-<!-- 有时候需要把`<` 转`&lt;` ，这些本文都会告诉你，如何转换 -->
+<!-- 有时候需要把 ，这些本文都会告诉你，如何转换 -->
 
 <!--more-->
 
@@ -16,8 +20,7 @@
 <!-- csdn -->
 
 可以使用的函数有三个
-
-`Uri.EscapeDataString` `WebUtility.UrlEncode` `WebUtility.HtmlEncode`
+`Uri.EscapeDataString` `WebUtility.UrlEncode` `WebUtility.HtmlEncode` 都可以进行转换，但是这三个是不同的。
 
 对于中文，`Uri.EscapeDataString` `WebUtility.UrlEncode`转换得到是一样。
 
@@ -25,10 +28,10 @@
 对于符号，`Uri.EscapeDataString` `WebUtility.UrlEncode` 有一点不同。
 
 
-`WebUtility.HtmlEncode` 做的转换很少，是将html源文件中不容许出现的字符进行编码
+`WebUtility.HtmlEncode` 做的转换很少，是将 html 源文件中不容许出现的字符进行编码，于是他的作用是比较小的。
 
 `Uri.EscapeDataString` `WebUtility.UrlEncode` `WebUtility.HtmlEncode` 对应的是
-`Uri.UnescapeDataString` `WebUtility.UrlDecode` `WebUtility.HtmlDecode`
+`Uri.UnescapeDataString` `WebUtility.UrlDecode` `WebUtility.HtmlDecode`，如果从中文转 URL 就可以用他们弄回来。
 
 先写一个测试使用代码，看看对
 对字符串：“~+ =!@$#^&*http://lindexi.oschina.io”转换的到的是什么
@@ -42,7 +45,7 @@ WebUtility.UrlEncode 返回  “%7E%2B+%3D!%40%24%23%5E%26*http%3A%2F%2Flindexi.
 
 <!-- 对于中文，使用两个得到是一样 -->
 
-WebUtility.HtmlEncode 可以转 `&#` ，所以需要在UWP进行这个转换就可以使用函数。
+WebUtility.HtmlEncode 可以转 `&#` ，把 `<` 转`&lt;`，`>`转`&gt;` 所以需要在UWP进行这个转换就可以使用函数。
 
 如果希望继续看三个转换有哪些不同，请看下面，我做了不同字符使用三个函数获得的。
 
@@ -65,9 +68,9 @@ WebUtility.HtmlEncode 可以转 `&#` ，所以需要在UWP进行这个转换就�
 |a |a|a |a |a|
 |b |b|b |b |b|
 |: |:|%3A |%3A |:|
-|' |'|%27 |%27 |&#39;|
-|< |%3C|%3C |%3C |&lt;|
-|> |%3E|%3E |%3E |&gt;|
+|' |'|%27 |%27 |`&#39;`|
+|< |%3C|%3C |%3C |`&lt;`|
+|> |%3E|%3E |%3E |`&gt;`|
 |[ |[|%5B |%5B |[|
 |] |]|%5D |%5D |]|
 |/ |/|%2F |%2F |/|
