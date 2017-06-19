@@ -104,6 +104,23 @@
     file.Attributes.HasFlag(FileAttributes.Hidden)
 ```
 
+## 触发鼠标事件
+
+触发鼠标点下事件，可以使用下面代码
+
+```csharp
+element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
+            {
+                RoutedEvent = Mouse.MouseDownEvent
+            });
+```
+
+## TextBlock 换行
+
+使用 `&#10;`
+
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 
 [wpf动画——缓动动画Animation Easing - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/11/2680579.html)
+
+

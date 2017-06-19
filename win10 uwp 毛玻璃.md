@@ -8,8 +8,6 @@
 
 <!--more-->
 
-<!-- csdn -->
-
 毛玻璃可以使用 win2D  方法，也可以使用 Compositor 。
 
 使用 win2d 得到软件内控件毛玻璃，而使用 Compositor 可以获得窗口毛玻璃。
@@ -84,7 +82,7 @@
 
 下面介绍使用 win2d 做毛玻璃
 
-使用 win2D 方法，需要使用 Nuget 安装
+使用 win2D 方法，需要使用 Nuget 安装，如果速度太慢，推荐使用博客园的镜像
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201753121840.jpg)
 
@@ -94,13 +92,13 @@
 
 接下来告诉大家如何做上图的效果。
 
-但是可以看到，上面的图做了其他的，为了显示最短的代码，下面先来做效果。
+但是可以看到，上面的图做了其他的，如拖动时显示后面的图片。为了显示最短的代码，让大家知道毛玻璃是如何做的，下面先来做效果。
 
 第一步，获得显示的图片
 
 参见：[win10 uwp 截图 获取屏幕显示界面保存图片](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E6%88%AA%E5%9B%BE-%E8%8E%B7%E5%8F%96%E5%B1%8F%E5%B9%95%E6%98%BE%E7%A4%BA%E7%95%8C%E9%9D%A2%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87/)
 
-于是在界面显示一个图片，界面的左边就是图片，右边就是毛玻璃，于是界面代码
+于是在界面显示一个图片，界面的左边就是图片，右边就是毛玻璃。之所以需要获得图片的截图是因为毛玻璃需要输入源，于是界面代码如下
 
 
 ```csharp
@@ -109,17 +107,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Margin="10 10 10 10">
+             必须把图片的路径修改为自己工程的路径，需要在工程存在图片
             <Image x:Name="Image" Source="Assets/2017年5月31日 210702.jpg" Stretch="UniformToFill" />
         </Grid>
         <Grid Grid.Column="1" Margin="10 10 10 10">
             <xaml:CanvasControl x:Name="Canvas" CreateResources="Canvas_CreateResources" Draw="Canvas_Draw" />
         </Grid>
 ```
-需要对显示截图，把图片做效果，然后显示
+毛玻璃效果写在 CanvasControl ，
+需要对显示截图，把图片做效果。然后把得到的效果显示
 
-但是在什么时候截图？
+但是在什么时候截图？也就是什么时候才是截图最好的时候？
 
-可以在 CreateResources 进行截图
+我认为可以在 CreateResources 事件进行截图，请看代码
 
 
 ```csharp
@@ -131,19 +131,19 @@
         async Task CreateResourcesAsync(CanvasControl sender)
         {
             // give it a little bit delay to ensure the image is load, ideally you want to Image.ImageOpened event instead
-            await Task.Delay(200);
+            await Task.Delay(200);  这是等待图片加载，因他发生在控件初始之后，而图片加载发生在图片控件初始的时候，但是图片加载需要时间，所以这里等待一下。我觉得这是比较差的方法
 
             using (var stream = new InMemoryRandomAccessStream())
             {
                 // get the stream from the background image
-                var target = new RenderTargetBitmap();
+                var target = new RenderTargetBitmap(); 这就是截图
                 await target.RenderAsync(Image);
 
                 var pixelBuffer = await target.GetPixelsAsync();
                 var pixels = pixelBuffer.ToArray();
 
                 var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, stream);
-                encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint) target.PixelWidth, (uint) target.PixelHeight, 96, 96, pixels);
+                encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint) target.PixelWidth, (uint) target.PixelHeight, 96 如果 dpi 不是96 那么这里需要写实际的，为了简单，我就不写如何获得dpi, 96, pixels);
 
                 await encoder.FlushAsync();
                 stream.Seek(0);
@@ -154,7 +154,7 @@
         }
 ```
 
-第二步就是把图片进行效果
+第二步就是把图片进行效果，代码很少
 
 
 ```csharp
@@ -308,10 +308,20 @@
 
 代码很简单，所以我就不说。
 
+## 最简单方法
+
+当然，还有最简单的代码，只需要一句话，请看文档 
+[Acrylic material](https://docs.microsoft.com/en-us/windows/uwp/style/acrylic)
+因为不知道微软是否还更改，所以我就不写了。
+
+为了说明代码的简单，我需要给个例子，上面那么长的代码，现在只需要一行
+
+```csharp
+<Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
+```
+
 参见：https://stackoverflow.com/questions/31987817/how-to-make-frosted-glass-effect-in-windows-10-universal-app
 
-[Acrylic material](https://docs.microsoft.com/en-us/windows/uwp/style/acrylic)
- 
 http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm
 
 [（UWP）应用窗口实现毛玻璃效果 - 简书](http://www.jianshu.com/p/3b49fd3d7edb)
