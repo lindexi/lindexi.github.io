@@ -71,7 +71,7 @@ CanConvert
 
 读取 一个值，把他转 long ，然后使用上面的函数转换 DateTime ，为什么这里使用的是  long.Parse ，因为保证输入的json是对的，如果json不对，那么直接告诉错误才是好的做法。
 
-和读函数反过来，需要把 属性转json的字符串。
+和读函数反过来，需要把 属性转json的字符串，可以从参数看到，需要转换的值是 value ，这里使用强转，因为知道了他的类型。writer 可以直接写入 很多类型
 
 ```csharp
       public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
