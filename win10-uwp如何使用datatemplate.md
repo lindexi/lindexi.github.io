@@ -26,13 +26,13 @@
 
 ## 转换
 
-有时候我们绑定的类型和显示不同，例如我们绑定了一个`bool?`但是我们在ViewModel的类型是bool，那么我们就需要用转换器。转换器就是继承IValueConverter的一个类。
+有时候我们绑定的类型和显示不同，例如我们绑定了一个`bool?`但是我们在 ViewModel 的类型是 bool，那么我们就需要用转换器。转换器就是继承 IValueConverter 的一个类。
 
-UWP的Convert和WPF差不多。
+UWP的 Convert 和 WPF 差不多。
 
-数据转换一个简单方法是另外在ViewModel写一个属性，这个属性用于转换变量，然后在前台绑定，但是这样做不好，于是我们比较好的一个做法是做转换器，转换器是一个类，我们需要实现它才能使用，在我们常用的做法是把它写staticResource
+数据转换一个简单方法是另外在 ViewModel 写一个属性，这个属性用于转换变量，然后在前台绑定，但是这样做不好，于是我们比较好的一个做法是做转换器，转换器是一个类，我们需要实现它才能使用，在我们常用的做法是把它写staticResource
 
-首先是创建一个类，这个类继承IValueConverter，于是就有两个方法，我们要实现
+首先是创建一个类，这个类继承IValueConverter，于是就有两个方法，我们要实现两个方法，一个是从数据源转换到 xaml ，一个是反过来。
 
 ```csharp
  public object Convert(object value, Type targetType,
@@ -66,11 +66,11 @@ UWP的Convert和WPF差不多。
 
 ```
 
-在我的[变大数字颜色按钮](https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure) 代码在https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure 有用到转换，是把数字转颜色
+在我的[变大数字颜色按钮](https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure) 代码在 https://github.com/lindexi/UWP/tree/master/uwp/control/RountGradualFigure 有用到转换，是把数字转颜色
 
-我们要使用写的转换器，就需要在xaml写静态资源，我们也可以把他放在viewModel，但是我们先说下放在xaml的。
+我们要使用写的转换器，就需要在 xaml 写静态资源，我们也可以把他放在 viewModel，但是我们先说下放在 xaml 的。
 
-在资源，如果是Page的xaml，那么就写在，如果只是这个转换器用在一个Grid，就写在Grid，我先用Page做例子
+在资源，如果是 Page 的 xaml，那么就写在`Page.Resources`，如果只是这个转换器用在一个Grid，就写在Grid，我先用Page做例子。当然写为 `FrameworkElement.Resources` 就几乎在所有控件都可以使用。
 
 ```xml
     <Page.Resources>
@@ -81,9 +81,11 @@ UWP的Convert和WPF差不多。
 
 我的转换器名称是：ConvertBooleanNull
 
-假如我们放在Model里，命名空间是 `项目.Model`，我们需要先在xmlns写`    xmlns:view="using:项目.Model"`，view就是一个变量，这个可以改为你需要的。
+假如我们放在 Model 里，命名空间是 `项目.Model`，我们需要先在 xmlns 写`    xmlns:view="using:项目.Model"`，view 就是一个变量，这个可以改为你需要的。于是在需要使用的地方就可以使用 view 表示所在空间。
 
-然后在静态资源`<view:ConvertBooleanNull x:Key="ConvertBooleanNull">   </view:ConvertBooleanNull>`
+然后在静态资源使用下面代码`<view:ConvertBooleanNull x:Key="ConvertBooleanNull">   </view:ConvertBooleanNull>`
+
+所有的代码请看下面
 
 ```xml
     <Page.Resources>
@@ -94,7 +96,7 @@ UWP的Convert和WPF差不多。
 
 在需要使用的控件，假如我们控件绑定是`x:bind`，那么在Converter需要`Converter={StaticResource ConvertBooleanNull}`
 
-假如我们控件绑定的是ViewModel的JiuYouImageShack，需要进行转换，就可以写
+假如我们控件绑定的是 ViewModel 的 JiuYouImageShack，需要进行转换，就可以写
 
 ```xml
  <TextBox Text="{x:Bind View.JiuYouImageShack,Mode=OneWay,Converter={StaticResource ConvertBooleanNull}}"></TextBox>
@@ -102,9 +104,13 @@ UWP的Convert和WPF差不多。
 
 ```
 
+需要知道，`x:bind`默认是 OneTime 而 `Binding` 默认是 OneWay 
+
 参见：http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html
 
 ## 绑定Event到Command
+
+如果希望绑定事件，可以使用 下面代码
 
 ```xml
 <ListView>
@@ -141,6 +147,8 @@ UWP的Convert和WPF差不多。
 先说第一个，其中只需要定义的列表 INotifyCollectionChanged 就可以让界面跟着修改，如果自己写的没有修改，那么是自己写错了，看起来 INotifyCollectionChanged 实现不是很简单。
 
 第二个，可以使用依赖属性，在获得值判断 e.NewValue 是 INotifyCollectionChanged ，获得 CollectionChanged 的添加新项就可以。
+
+参见：[win10 uwp 通知列表](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8/)
 
 ## UWP 文件md5
 

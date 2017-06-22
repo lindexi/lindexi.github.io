@@ -4,10 +4,12 @@
 
 那么就是如何开发一个 vs插件。
 
+本文也记录了我调试 VisualStudio 半个月过程遇到的坑。
+
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
+
 我写这博客时候，是我在开发一个插件：[编码规范工具](https://marketplace.visualstudio.com/items?itemName=lindexigd.vs-extension-18109)。记录的是我从不知道到发布插件，如果遇到了开发中的问题，欢迎交流。
 
 ## 安装 Visual Studio SDK

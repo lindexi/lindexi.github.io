@@ -4,8 +4,15 @@
 
 适合于WPF的绑定和UWP的绑定。
 
+我告诉大家很多个方法，所有的方法都有自己的优点和缺点，可以依靠自己喜欢的用法使用。当然，可以在新手面前秀下，一个页面一个绑定方法。
+
 <!--more-->
-<!-- csdn -->
+
+开始是从最简单的来说起。
+
+## 资源绑定
+
+### page 资源绑定
 
 最简单的绑定是写在资源。
 
@@ -15,7 +22,7 @@
         <viewModel:ViewModel x:Key="ViewModel"></viewModel:ViewModel>
     </Page.Resources>
 ```
-这时就可以在Grid绑定
+这时就可以在Grid绑定，当然缺点就是 后台代码无法直接使用，需要经过转换才可以使用。
 
 
 ```xml
@@ -25,13 +32,17 @@
     </Grid>
 ```
 
-因为很多WPF程序都是放在 Window 不是放在页，所以为了在 UWP 和WPF使用的都是相同，可以用FrameworkElement代替 Page 于是在页面任何地方都可以放。
+因为很多WPF程序都是把界面放在 Window 而不是放在页，所以为了在 UWP 和WPF使用的都是相同。可以用 FrameworkElement 代替 Page 。因为所有控件几乎都继承于 FrameworkElement 于是在页面任何地方都可以放这句话，不需要多余修改。所以刚才的 `Page.Resources` 就可以修改为 `FrameworkElement.Resources`
 
-可是这个方法有个缺点，无法在页面使用 DataContext 绑定，只能在 资源后面的 Grid 使用。因为资源是有顺序，Page 在资源之前，于是 Page 就无法绑定。在WPF的也一样。
+可是这个方法有个缺点，无法在页面 Page 元素上使用 DataContext 绑定，只能在 资源后面的 Grid 使用。因为资源是有顺序，Page 在资源之前，于是 Page 就无法绑定。在WPF的也一样。提示的错误参见下图。
 
 如果只有一个页面，而且使用的地方也是在 页面的内容，那么建议使用这个方法。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201743091652.jpg)
+
+如果需要在 Page 的元素也绑定到 ViewModel ，那么可以参见下面的方法。
+
+### app 资源绑定
 
 另一个方法是把他写到 app ，代码就是
 
@@ -46,13 +57,16 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201743091744.jpg)
 
-我的想法，如果是 ViewModel ，那么写在这里，对于MVVM的ViewModel ，MainPage 对应的 ViewModel 建议写在这里。
+我的想法，如果是 ViewModel ，那么写在这里，对于 MVVM 的 ViewModel ，MainPage 对应的 ViewModel 建议写在这里。
 
-如果写在这，代码使用 `(ViewModel) App.Current.Resources["ViewModel"] ` 就可以获得，也就是在任意的代码都可以使用这个方法获得。
+如果写在这，代码使用 `(ViewModel) App.Current.Resources["ViewModel"] ` 就可以获得，也就是在任意的代码都可以使用这个方法获得。参见：[win10 uwp 后台获取资源](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%90%8E%E5%8F%B0%E8%8E%B7%E5%8F%96%E8%B5%84%E6%BA%90/)
 
+这个方法的优点：
 在程序运行时都可以得到 ViewModel ，这是这方法适合的地方。
 
 当然缺点是，如果你写了很多个 ViewModel 在资源，在程序运行都会占内存，也不会释放，所以一般建议只写ViewModel ，不要写多个。
+
+### DataContext 新建资源
 
 如果对于一个 ViewModel  只有一个页面使用，那么可以不需要写在 App ，因为这样会让其它的页面都可以访问
 
@@ -67,7 +81,9 @@
 
 这个方法可以让ViewModel和页面都在一个时间，也就是关闭了页面，也就自动关了 ViewModel ，说了这么多，好像还没说如何在代码使用 viewModel 。上面的所有方法在代码使用 ViewModel 都相同。
 
-先定义属性 ViewModel ，然后在 构造写从 DataContext 转换。记得写最后
+### 后台代码获得资源
+
+先定义属性 ViewModel ，然后在 构造写从 DataContext 转换。记得写构造函数的最后，在 InitializeComponent 的后面。
 
 
 ```csharp
@@ -76,7 +92,7 @@
         public MainPage()
         {
             this.InitializeComponent();
-            ViewModel = (ViewModel) DataContext;
+            ViewModel = (ViewModel) DataContext; //这是 cast 方法，直接转换，不要使用 as 的方法。
         }
 
         private ViewModel ViewModel { set; get; }
@@ -86,6 +102,8 @@
 为何需要把 ViewModel 转换写在最后，我就不继续解释。
 
 关于为何使用 cast 而不是 as ，因为已经确定了现在使用的类型就是 ViewModel ，我也需要使用的是 ViewModel 不是其他，如果有人改了其它的类型，我必须报错，于是就使用 cast ，如果使用了 Cast 那么看日志比较容易看到是那里写错。
+
+## 代码定义资源
 
 除了在 xaml 定义DataContext，一个常用方法是在 代码定义
 
@@ -108,7 +126,9 @@
 
 如果只在代码写新建 ViewModel ，不定义 DataContext ，把他写在 xaml ，那么就可以获得提示。
 
-这里的 提示，在输入的时候，写一个变量会提示这个变量，自动给你选。没有提示容易写错代码，而且变量改名了，xaml不会随着改。
+### 代码定义，xaml绑定
+
+这里的 提示 指的是，在 xaml 输入的时候，写一个变量不需要完全自己写。和后台代码一样，会提示这个变量，自动给你选。没有提示容易写错代码，而且变量改名了，xaml不会随着改。
 
 
 ```csharp
