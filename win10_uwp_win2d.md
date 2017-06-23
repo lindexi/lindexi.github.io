@@ -317,6 +317,30 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
 创建使用的uri参见：[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/)
 
+## 设置 win2d 背景
+
+win2d 会忽略在 xaml 设置的背景
+
+```csharp
+        <xaml:CanvasControl x:Name="canvas" Background="Brown" Draw="Canvas_OnDraw"></xaml:CanvasControl>
+
+```
+
+上面的代码不会把win2d 的背景设置，因为 win2d 需要设置 `ClearColor `
+
+如果想把 win2d 的背景颜色设置为 白色，那么可以使用下面代码
+
+```csharp
+        <xaml:CanvasControl x:Name="canvas" ClearColor="White" Draw="Canvas_OnDraw"></xaml:CanvasControl>
+
+```
+
+如果在一次刷新需要设置 win2d 的颜色，那么可以使用 下面代码
+
+```csharp
+            sender.ClearColor = Colors.White;
+
+```
 
 ## 更多参见
 
