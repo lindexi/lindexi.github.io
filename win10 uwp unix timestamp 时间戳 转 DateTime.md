@@ -30,7 +30,52 @@
 
 如果就是这么简单代码，我就不会写博客专门来说。
 
-我遇到一个问题，我拿到的是 json ，里面的时间是 unix timestamp ，我需要把 long 的时间转换 DateTime ，但是我不喜欢在使用的时候再经过转换，能够在写的时候，把所有的 unix timestamp 自动转换为 DateTime？我找到一个简单方法，可以从 Json 转换过程，直接把 DateTime 和 unix timestamp  相互转换，方法很简单。
+我遇到一个问题，我拿到的是 json ，里面的时间是 unix timestamp ，我需要把 long 的时间转换 DateTime ，但是我不喜欢在使用的时候再经过转换，能够在写的时候，把所有的 unix timestamp 自动转换为 DateTime？
+
+用代码来说，过程就是：
+
+1. json 转换得到对象
+
+1. 对象进行转换，但是这时发现需要重新写一个类，这个类和原来的类只有类型不一样，其他都一样。看起来代码不优雅。
+
+```csharp
+  var json=new Json(" {"created_utc":1498037127}");//下面的类都是我为了说明写的，实际无法在 vs 跑过
+
+  Foo foo=json.Convert();//json 转换得到对象
+  //但是这时 foo 的类型是
+
+  class Foo
+  {
+      long created_utc;
+
+  }
+
+  //而实际需要的是
+  class Foo1
+  {
+      DateTime created_utc;
+
+  }
+
+  //那么就需要写一个东西把 Foo 转换 Foo1，看起来不优雅
+
+  //那么直接读 Json  进行修改可以不 ，答案是不可以的，因为我如果有一个类是
+
+  class Foo
+  {
+      long created_utc;
+
+      List<Foo> list;//他是一个我也不知道可能存在多少的数组
+  }
+
+  //如果是这个，需要读json，那么需要很长时间才可以写出来
+
+  //写完之后，发现有另一个类似的东西，他也需要这样，那么程序员就需要不停做这个，没有技术含量的东西
+```
+
+看完了上面的问题，是不是想到，json有一个优雅方法可以做到，是的，他可以自己写转换器。
+
+我找到一个简单方法，可以从 Json 转换过程，直接把 DateTime 和 unix timestamp  相互转换，方法很简单。
 
 问题在：https://stackoverflow.com/q/44643498/6116637
 
