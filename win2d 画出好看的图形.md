@@ -223,4 +223,6 @@ _points 就是所有画出的点，_stone 就是告诉说，如何画，因为�
 
 感觉这个星期的时间很快，我仔细想了从 2015 年开始 UWP 的研究到现在，实际我一个软件都没做出来，就是在写写博客。如果你觉得有哪个地方不想去看，或者垃圾微软写的不太好的，但你不想去研究的，就可以告诉我，我去研究一下，如果我学会了，我就会写一篇博客，虽然我写出来肯定比不上微软的。
 
+代码：[https://github.com/lindexi/UWP/tree/master/uwp/control/win2d/Dclutterpalan](https://github.com/lindexi/UWP/tree/master/uwp/control/win2d/Dclutterpalan)
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
