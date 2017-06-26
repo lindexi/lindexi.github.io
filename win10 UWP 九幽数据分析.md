@@ -5,7 +5,6 @@
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
 
 http://www.windows.sc
 

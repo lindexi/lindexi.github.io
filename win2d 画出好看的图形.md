@@ -221,6 +221,17 @@ _points 就是所有画出的点，_stone 就是告诉说，如何画，因为�
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201762321046.jpg)
 
+是不是觉得这样已经完成？实际上不要忘记很重要一步，win2d在不使用需要自己手动把他从视觉树释放，所以在后台代码页面跳出使用下面代码
+
+```csharp
+
+        private void Page_OnUnloaded(object sender, RoutedEventArgs e)
+        {
+            canvas.RemoveFromVisualTree();
+            canvas = null;
+        }
+```
+
 感觉这个星期的时间很快，我仔细想了从 2015 年开始 UWP 的研究到现在，实际我一个软件都没做出来，就是在写写博客。如果你觉得有哪个地方不想去看，或者垃圾微软写的不太好的，但你不想去研究的，就可以告诉我，我去研究一下，如果我学会了，我就会写一篇博客，虽然我写出来肯定比不上微软的。
 
 代码：[https://github.com/lindexi/UWP/tree/master/uwp/control/win2d/Dclutterpalan](https://github.com/lindexi/UWP/tree/master/uwp/control/win2d/Dclutterpalan)
