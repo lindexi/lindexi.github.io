@@ -4,16 +4,15 @@
 
 那么 UWP 如何获得元素坐标？
 
-可以使用下面的方法
+我提供了一个方法，可以获得元素的坐标。
 
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
 
 首先需要获得元素，如果没有获得元素，那么如何得到他的坐标？
 
-假如xaml 是这样
+假如 xaml 是这样，而我需要获得 MainTextBlock 相对窗口的坐标
 
 
 ```csharp
@@ -22,7 +21,7 @@
     </Grid>
 ```
 
-那么获得元素绝对坐标可以这样写
+那么获得元素绝对坐标可以这样写，绝对坐标的意思就是元素相对窗口的坐标。
 
 
 ```csharp
@@ -34,7 +33,7 @@
         }
 ```
 
-上面代码就可以获得元素坐标
+上面代码就可以获得元素坐标，坐标相对于窗口
 
 那么如何获得他相对其他元素的坐标？
 
@@ -46,7 +45,13 @@
             Point screenCoords = t.TransformPoint(new Point(0, 0));
 ```
 
+于是可以看到 `TransformToVisual` 传入的是哪个元素，就是获得相对于这个元素的坐标。
 
+获得元素的坐标有什么用？可以用在如 Flyout的定位，如果使用了  ToggleButton ，他没有自己 Flyout ，所以就需要在其他地方定义一个 Flyout 然后通过获得控件位置显示出来。如何指定 Flyout 的位置参见 [win10 uwp 右击浮出窗在点击位置 ](http://blog.csdn.net/lindexi_gd/article/details/52724410)
+
+所以就可以让浮出窗在需要显示的按钮上显示，下面的图片是我偷一个大神的，他就是使用这个方法做出来。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017627974.jpg)
 
 
 参见：http://stackoverflow.com/questions/12387449/how-to-get-the-absolute-position-of-an-element/12388558#12388558
