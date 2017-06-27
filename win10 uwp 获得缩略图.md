@@ -148,7 +148,7 @@
 
 ![](http://wx4.sinaimg.cn/large/005VX1Eagy1fh027j7qutg30z10nyu11.gif)
 
-![](http://wx1.sinaimg.cn/mw690/005VX1Eagy1fh026g7k0ej30z10nyag1.jpg)
+<!-- ![](http://wx1.sinaimg.cn/mw690/005VX1Eagy1fh026g7k0ej30z10nyag1.jpg) -->
 
 首先是界面代码，可以看到界面就一个播放和一个进度条
 
