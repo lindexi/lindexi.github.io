@@ -146,7 +146,9 @@
 
 接下来就是做下面的软件，进度条显示拖动到的视频小图
 
-![](http://wx4.sinaimg.cn/large/005VX1Eagy1fh027j7qutg30z10nyu11.gif)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B46%25E6%259C%258827%25E6%2597%25A5%25202929.gif)
+
+<!-- ![](http://wx4.sinaimg.cn/large/005VX1Eagy1fh027j7qutg30z10nyu11.gif) -->
 
 <!-- ![](http://wx1.sinaimg.cn/mw690/005VX1Eagy1fh026g7k0ej30z10nyag1.jpg) -->
 
