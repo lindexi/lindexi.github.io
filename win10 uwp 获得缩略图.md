@@ -144,7 +144,7 @@
 
 这样就可以获得指定时间的页面，因为得到是 IInputStream ，所以需要把他转为 bitmapImage ，这样才可以设置为图片
 
-接下来就是做下面的软件，进度条显示拖动到的视频小图
+接下来就是做下面的软件，在播放视频的时候，拖动进度条，就会显示对应的视频缩略图，如拖到指定时间，就显示这一时间的视频缩略图
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B46%25E6%259C%258827%25E6%2597%25A5%25202929.gif)
 
@@ -170,14 +170,16 @@
 
 ```
 
-然后就是如何从文件设置
+然后就是如何进行播放视频，因为上面代码已经从可以选到文件，于是就可以使用从文件播放的方式，让播放器使用文件。代码很简单，MIME 可以忽略，直接给空，当然要求文件是 mp4 ，如果文件是其他的，那么给空，播放器解析也许出错。
 
 ```csharp
             MediaElement.SetSource(await file.OpenAsync(FileAccessMode.Read), "");
 
+            如果文件类型不是 mp4 ，请用下面代码
+            MediaElement.SetSource(await file.OpenAsync(FileAccessMode.Read), file.ContentType); 
 ```
 
-在点击进度条，就可以获得当前的值，然后计算在视频中的时间，截图
+在点击进度条，就可以获得当前的值，然后计算在视频中的时间，通过这个时间，进行截图。
 
 ```csharp
             var slider = (Slider) sender;
@@ -186,7 +188,7 @@
 ```
 获取视频总时间可以使用 NaturalDuration 
 
-获得需要的时间，就可以使用上面代码进行截图
+获得需要的时间，就可以使用上面代码进行截图，其中 File 就是刚才选的文件
 
 ```csharp
             var thumbnail = await GetThumbnailAsync(File, n);
@@ -197,7 +199,7 @@
             bitmapImage.SetSource(randomAccessStream);
 ```
 
-但是还需要显示，这里使用 Flyout 
+但是还需要显示，这里使用 Flyout ，给他一个图片控件，用于显示
 
 ```csharp
             Flyout flyout = new Flyout();
@@ -254,7 +256,7 @@
         }
 ```
 
-感谢 [李继龙](https://kljzndx.github.io/My-Blog/) 和新浪图床，因为上面的截图太大了，所以只能用新浪的
+感谢 [李继龙](https://kljzndx.github.io/My-Blog/)
 
 参见：https://stackoverflow.com/a/37314446/6116637
 
