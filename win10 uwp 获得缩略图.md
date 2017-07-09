@@ -2,8 +2,9 @@
 
 有时候需要获得文件或视频的缩略图。
 
+本文提供两个方法，用于获得文件的缩略图和截取视频指定时间的显示图片。
+
 <!--more-->
-<!-- csdn -->
 
 ## 文件缩略图
 
@@ -22,6 +23,8 @@
             bitmapImage.SetSource(randomAccessStream);
             Image.Source = bitmapImage;
 ```
+
+可以看到 `GetScaledImageAsThumbnailAsync` 的参数提供多种方式进行截图，如果知道了文件的类型，就可以使用对应的方式进行显示。需要知道的是 thumbnail 得到的是一个流，就需要把他转换为 BitmapImage 显示。
 
 我接下来获取文件夹内所有文件的缩略图显示出来
 
@@ -115,7 +118,7 @@
 
 ## 视频小图
 
-如果需要获得视频的某一个页面，那么可以使用下面代码
+如果需要获得视频的某一个页面，那么可以使用下面代码，首先是获得视频文件，计算指定时间的视频截图，这时不需要进行播放视频就可以从文件直接获得指定时间的显示图片。
 
 ```csharp
             FileOpenPicker openPicker = new FileOpenPicker();
@@ -142,7 +145,7 @@
         }
 ```
 
-这样就可以获得指定时间的页面，因为得到是 IInputStream ，所以需要把他转为 bitmapImage ，这样才可以设置为图片
+这样就可以获得指定时间的页面，因为得到图像是 IInputStream ，所以需要把他转为 bitmapImage ，这样才可以设置为图片。这个方法只需要传入视频的文件，大法支持很多个视频类型，只要有系统解析的，就可以支持，暂时我还不知道他支持的是哪些文件。
 
 接下来就是做下面的软件，在播放视频的时候，拖动进度条，就会显示对应的视频缩略图，如拖到指定时间，就显示这一时间的视频缩略图
 
@@ -163,14 +166,14 @@
            </Grid>
 ```
 
-后台代码很多都使用上面的代码，需要知道的有两个，第一个是`OnPointerReleased` 需要添加在构造函数
+后台代码很多都使用上面的代码，需要知道的有两个代码。第一个是`OnPointerReleased` 需要添加在构造函数，因为滑动进度会吃了 PointerReleased ，如果不把下面的代码写入，就使用上面界面的代码，可以看到点击的函数不会进去。但是如果加了下面的代码，就可以获得点击的事件。在 UWP 没有区分触摸和鼠标点击，都使用 Pointer 来说是点击结束或者点击。
 
 ```csharp
             Slider.AddHandler(PointerReleasedEvent, new PointerEventHandler(UIElement_OnPointerReleased), true);
 
 ```
 
-然后就是如何进行播放视频，因为上面代码已经从可以选到文件，于是就可以使用从文件播放的方式，让播放器使用文件。代码很简单，MIME 可以忽略，直接给空，当然要求文件是 mp4 ，如果文件是其他的，那么给空，播放器解析也许出错。
+需要知道的第二个就是如何进行播放视频，因为上面代码已经从可以选到文件，于是就可以使用从文件播放的方式，让播放器使用文件。代码很简单，对于需要的 MIME 可以忽略，直接给空。如果对他给空，当然要求文件是 mp4 。如果文件是其他的，建议不要给空，播放器解析也许出错。
 
 ```csharp
             MediaElement.SetSource(await file.OpenAsync(FileAccessMode.Read), "");
@@ -186,9 +189,9 @@
             var n = slider.Value / slider.Maximum;
             n = MediaElement.NaturalDuration.TimeSpan.TotalMilliseconds * n;
 ```
-获取视频总时间可以使用 NaturalDuration 
+获取视频总时间可以使用 NaturalDuration ，我需要把他转换时间，使用的代码同样很简单
 
-获得需要的时间，就可以使用上面代码进行截图，其中 File 就是刚才选的文件
+获得需要的时间，就可以使用上面代码进行截图，其中 File 就是刚才选的文件，如果已经播放了，实际还有其它的方法，但是本文说的是文件截图。
 
 ```csharp
             var thumbnail = await GetThumbnailAsync(File, n);
@@ -199,7 +202,7 @@
             bitmapImage.SetSource(randomAccessStream);
 ```
 
-但是还需要显示，这里使用 Flyout ，给他一个图片控件，用于显示
+好像代码已经完成了，但是在哪里显示？为了可以显示，这里使用 Flyout ，给他一个图片控件，用于显示。
 
 ```csharp
             Flyout flyout = new Flyout();
@@ -216,7 +219,7 @@
             flyout.ShowAt(slider);
 ```
 
-去掉 flyout 背景很简单，我就不说啦，于是所有代码
+去掉 flyout 背景很简单，我就不说啦，于是所有代码都写在这，不要找我要工程
 
 ```csharp
         private async void UIElement_OnPointerReleased(object sender, PointerRoutedEventArgs e)
