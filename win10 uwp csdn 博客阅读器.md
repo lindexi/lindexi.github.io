@@ -33,3 +33,5 @@
 看起来软件的功能很简单，做起来基本没有遇到什么难的地方，但是界面我做的不好看，我觉得这个功能应该放在 之前的 csdn 阅读软件。不过因为今天已经到了吃饭的时间，我需要回去了，所以就没有做。这个软件是为了我可以在手机看 csdn 博客，因为是 UWP ，在手机上也可以使用。
 
 本来想告诉大家，这个软件是如何做的，但是感觉这个会用很长时间，于是我就不多说啦，反正代码已经开源，大家可以去看看。
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
