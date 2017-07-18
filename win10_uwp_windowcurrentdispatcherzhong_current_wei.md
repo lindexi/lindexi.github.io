@@ -34,11 +34,11 @@
 要么改用HttpClient类的异步方法来请求，是Windows.Web.Http下面的类，非.net core类型
 
 
-![](image/win10_uwp Window_Current_Dispatcher中Current为null/1.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017718194348.jpg)
 
-![](image/win10_uwp Window_Current_Dispatcher中Current为null/2.png)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201771819441.jpg)
 
-![](image/win10_uwp Window_Current_Dispatcher中Current为null/3.jpg)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017718194411.jpg)
 
 简单方法：
 
