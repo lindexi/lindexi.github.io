@@ -13,11 +13,11 @@
 
 设置了`HorizontalContentAlignment`没有变化
 
-于是找了很久，有一个方法可以设置
+于是找了很久，有一个方法可以设置，下面将会说这个方法
 
-新建一个 PasswordBox 控件，编辑模板
+新建一个 PasswordBox 控件，编辑模板，可以看到 vs 自动写出很多代码
 
-可以看到这样代码
+可以看到这样代码，需要自己去找一下
 
 
 ```csharp
@@ -25,8 +25,8 @@
     
     <ScrollViewer x:Name="ContentElement" AutomationProperties.AccessibilityView="Raw" HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" IsTabStop="False" IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" Margin="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Grid.Row="1" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" ZoomMode="Disabled"/>
 ```
-
-修改这句就好，使用下面代码
+但是需要修改的只有`HorizontalAlignment`，
+修改这句就好，使用下面代码 代替上面的代码
 
 
 ```csharp
@@ -36,7 +36,7 @@
 
 ```
 
-修改他的 `HorizontalAlignment` 修改为 Center 就是上面的图，密码中间。
+修改他的 `HorizontalAlignment` 修改为 Center ，密码控件就是上面的图，密码中间。
 
 https://stackoverflow.com/questions/42805582/setting-the-alignment-of-a-passwordbox-in-uwp
 
