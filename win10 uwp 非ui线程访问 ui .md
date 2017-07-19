@@ -22,8 +22,6 @@
 为何不设置为 High ，参见
 [CoreDispatcherPriority](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.CoreDispatcherPriority)
 
-第一个方法不推荐，因为可能存在 Current = null 的错误，请看[win10 uwp Window.Current.Dispatcher中Current为null](http://lindexi.oschina.io/lindexi//post/win10-uwp-Window.Current.Dispatcher%E4%B8%ADCurrent%E4%B8%BAnull/)
-
 那么比较推荐的一个方法是在一个用户控件或者Page之类的，如果在里面使用了异步线程需要访问 ui 的属性，那么可以使用下面代码
 
 ```csharp
