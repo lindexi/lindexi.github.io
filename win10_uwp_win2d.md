@@ -20,6 +20,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 一些链接：
 如果找到bug可以通过 http://github.com/Microsoft/Win2D/issues
+
 团队博客：http://blogs.msdn.com/b/win2d
 
 
