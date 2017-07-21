@@ -30,7 +30,7 @@ UWP 下如何发邮件？可以使用`mailto:xx?subject=*`方式发送？
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/f182d3db-d997-4f86-801b-fde591612fa7201721995041.jpg)
 
-如果指定一个联系人让用户发送，如开发者，可以使用：
+如果指定一个联系人让用户发送，如开发者，可以直接写自己的邮箱
 
 ```csharp
             contact = new Contact()
@@ -49,9 +49,7 @@ UWP 下如何发邮件？可以使用`mailto:xx?subject=*`方式发送？
 
 然后需要填写主题，内容。可以添加附件，注意附件添加是 StorageFile 。
 
-
-
-
+可以看到，需要写的代码很多，我需要
 写一个类来发送，首先使用`Windows.ApplicationModel.Email`
 
 
@@ -70,7 +68,7 @@ UWP 下如何发邮件？可以使用`mailto:xx?subject=*`方式发送？
             emailMessage.Body = messageBody;
 ```
 
-
+如果需要使用附件，
 如何读取 StorageFile ？
 
 
