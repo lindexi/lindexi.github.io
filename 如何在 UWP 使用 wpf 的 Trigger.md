@@ -4,8 +4,6 @@
 
 <!--more-->
 
-<!-- csdn -->
-
 ## 安装 Behaviors
 
 请使用 Nuget 安装，可以输入下面的代码进行安装
@@ -26,20 +24,22 @@ Install-Package Microsoft.Xaml.Behaviors.Uwp.Managed
 ```csharp
 <Button>
   <Image>
-    <Style TargetType="Image">
-       <Trigger Property="IsEnabled" Value="Flase">
+    <Image.Style>
+      <Style TargetType="Image">
+       <Style.Triggers Property="IsEnabled" Value="False">
          <Setter Property="Opacity" Value="0.5"></Setter>
-        </Trigger>
-    </Style>
+        </Style.Triggers>
+      </Style>
+    <Image.Style/>
   </Image>
 </Button>
 ```
 
-在 Button IsEnabled 设置透明，但是 UWP 不支持
+在 Button IsEnabled 设置图片的透明，但是 UWP 不支持，所以需要使用别的方法。
 
 ## UWP 使用 Trigger
 
-上面的代码可以很简单用 DataTriggerBehavior 来做
+上面的代码可以很简单用 DataTriggerBehavior 来做。需要知道的是 DataTriggerBehavior 是 Behaviors 的一个东西，所以需要安装之后才可以使用。请看下面的代码。
 
 ```csharp
      <Button x:Name="MyButton" Margin="10,10,10,10" Width="140" Height="80">
@@ -53,6 +53,16 @@ Install-Package Microsoft.Xaml.Behaviors.Uwp.Managed
         </Button>
 ```
 
+这里的代码不能直接复制使用，需要先添加命名空间和寻找一张图片，因为图片使用的是`Assets/动漫.jpg` ，所以需要把他修改为你的图片的所在，如何写参见[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/)
+
+```csharp
+命名空间
+
+ xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+ xmlns:core="using:Microsoft.Xaml.Interactions.Core" 
+```
+
+不需要在后台写什么，直接运行可以看到在
 按钮可以使用时的图片
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017727204046.jpg)
