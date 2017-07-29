@@ -5,7 +5,6 @@ git subtree 是不错的东西，用于 git 管理子项目。
 本文记录我遇到问题和翻译[网上](https://stackoverflow.com/a/18608538/6116637)的答案。
 
 <!--more-->
-<!-- csdn -->
 
 当我开始 pull 的时候，使用下面的代码
 

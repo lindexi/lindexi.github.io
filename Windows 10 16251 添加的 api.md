@@ -1,10 +1,12 @@
 # Windows 10 16251 添加的 api
 
+本文主要讲微软最新的sdk添加的功能，暂时还不能下载，到 7月29 ，现在可以下载是 16232 ，支持Neon效果。
+
+实际上设置软件最低版本为 16232 就自动支持 Neon 效果。
+
 主要添加了 AppDataPaths SystemDataPaths 等
 
 <!--more-->
-
-<!-- csdn -->
 
 Windows 
 
