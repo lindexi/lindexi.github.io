@@ -1,4 +1,4 @@
-
+# 快捷键
 
 <!--more-->
 
@@ -11,6 +11,8 @@ AcceleratorKey
 
 
 ```
+
+[【Windows 10 应用开发】使用快捷访问键 - 东邪独孤 - 博客园](http://www.cnblogs.com/tcjiaan/p/7019369.html)
 
 参见：https://msdn.microsoft.com/en-us/library/windows/apps/xaml/Hh868161(v=win.10).aspx#keyboard_shortcuts
 
