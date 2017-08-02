@@ -105,7 +105,7 @@ UWP 下如何发邮件？可以使用`mailto:xx?subject=*`方式发送？
 
 
 
-如果默认不是wr的，那么发送邮件可以出错，于是可以使用另一个方式：
+如果默认不是wr的，那么发送邮件可以出错，不是所有的软件都支持，于是可以使用另一个方式：
 
 `mailto:{email}?subject={subject}&body={messageBody}`
 
@@ -119,7 +119,7 @@ UWP 发送邮件内容如何换行，messageBody 用的是 html ，所以使用 
 ```csharp
         private async Task UniversallyEmail(string email, string subject, string messageBody)
         {
-            messageBody = Uri.EscapeDataString(messageBody);
+            messageBody = Uri.EscapeDataString(messageBody); 用于换行
             string url = $"mailto:{email}?subject={subject}&body={messageBody}";
             await Launcher.LaunchUriAsync(new Uri(url));
         }
