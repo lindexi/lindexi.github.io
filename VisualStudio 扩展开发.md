@@ -120,6 +120,62 @@
 
 接着就是需要加上文件编码检查，在我之前写的 C# 判断文件编码 博客有说道如何检测文件编码。
 
+关于 EncodingNormalizer 为何需要写私有构造以及他的代码为何是需要使用下面的结构，因为这时ms自己加的，我就不去改他了。默认创建的文件就是：
+
+```csharp
+       public static void Initialize(Package package)
+        {
+            Instance = new EncodingNormalizer(package);
+        }
+
+        public static EncodingNormalizer Instance { get; private set; }
+
+              private EncodingNormalizer(Package package)
+        {
+            if (package == null)
+            {
+                throw new ArgumentNullException("package");
+            }
+
+            this.package = package;
+
+            var commandService = ServiceProvider.GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            if (commandService != null)
+            {
+               //这里写按钮
+                  menuItem = new MenuCommand(this.MenuItemCallback, menuCommandID);
+                commandService.AddCommand(menuItem);
+            }
+        }
+
+```
+
+文件的其他都是后面加的，所以可以看到，需要添加的按钮写的在构造的哪里，而且打开 xxPagexx 的文件可以发现，这个创建就在 Initialize 使用，也就是下面的代码调用
+
+```csharp
+    public sealed class EncodingNormalizerPackage : Package
+    {
+        /// <summary>
+        ///     EncodingNormalizerPackage GUID string.
+        /// </summary>
+        public const string PackageGuidString = "ffc5dabf-5ded-4433-8225-73b47e154210";
+
+        #region Package Members
+
+        /// <summary>
+        ///     Initialization of the package; this method is called right after the package is sited, so this is the place
+        ///     where you can put all the initialization code that rely on services provided by VisualStudio.
+        /// </summary>
+        protected override void Initialize()
+        {
+            EncodingNormalizer.Initialize(this);
+            base.Initialize();
+        }
+    }
+```
+
+所以在开始传入自己，因为传入之后可以通过 ServiceProvider.GetService 获得按钮添加的位置，之后就在他这里添加按钮的对应事件，添加时需要使用和按钮一样的id，这里建议写一个变量。
+
 ## 增加选项
 
 我们需要保存一些设置，那么如何自定义配置的界面，把配置页面放在工具->选项，可以参见 http://www.cnblogs.com/winkingzhang 提供的方法，我使用了他的方法，很简单。还有垃圾wr的方法 https://github.com/Microsoft/VSSDK-Extensibility-Samples/blob/646de671c1a65ca49e9fce397baefe217e9123e8/Options_Page/Readme.md

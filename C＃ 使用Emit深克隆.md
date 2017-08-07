@@ -76,6 +76,75 @@ ret
         }
 ```
 
+如果测试了这个方法，那么会发现，这个方法对于这个方法不可以见的类就会出现`MethodAccessException`，所以传入的类需要这个方法可以直接用。
+
+```csharp
+//A.dll
+public class Foo
+{
+
+}
+
+CloneObjectWithIL(foo1,foo2);
+
+//B.dll
+        private static void CloneObjectWithIL<T>(T source, T los)
+
+这时无法使用
+```
+
+之外，对于静态属性，使用上面代码也是会出错，因为静态的属性的访问没有权限，所以请看修改后的。
+
+```csharp
+    /// <summary>
+    /// 提供快速的对象深复制
+    /// </summary>
+    public static class Clone
+    {
+        /// <summary>
+        /// 提供使用 IL 的方式快速对象深复制
+        /// 要求本方法具有T可访问
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source">源</param>
+        /// <param name="los">从源复制属性</param>
+        /// <exception cref="MethodAccessException">如果输入的T没有本方法可以访问，那么就会出现这个异常</exception>
+        // ReSharper disable once InconsistentNaming
+        public static void CloneObjectWithIL<T>(T source, T los)
+        {
+            //参见 http://lindexi.oschina.io/lindexi/post/C-%E4%BD%BF%E7%94%A8Emit%E6%B7%B1%E5%85%8B%E9%9A%86/
+            if (CachedIl.ContainsKey(typeof(T)))
+            {
+                ((Action<T, T>) CachedIl[typeof(T)])(source, los);
+                return;
+            }
+            var dynamicMethod = new DynamicMethod("Clone", null, new[] { typeof(T), typeof(T) });
+            ILGenerator generator = dynamicMethod.GetILGenerator();
+
+            foreach (var temp in typeof(T).GetProperties().Where(temp => temp.CanRead && temp.CanWrite))
+            {
+                //不复制静态类属性
+                if (temp.GetAccessors(true)[0].IsStatic)
+                {
+                    continue;
+                }
+                
+                generator.Emit(OpCodes.Ldarg_1);// los
+                generator.Emit(OpCodes.Ldarg_0);// s
+                generator.Emit(OpCodes.Callvirt, temp.GetMethod);
+                generator.Emit(OpCodes.Callvirt, temp.SetMethod);
+            }
+            generator.Emit(OpCodes.Ret);
+            var clone = (Action<T, T>) dynamicMethod.CreateDelegate(typeof(Action<T, T>));
+            CachedIl[typeof(T)] = clone;
+            clone(source, los);
+        }
+
+        private static Dictionary<Type, Delegate> CachedIl { set; get; } = new Dictionary<Type, Delegate>();
+    }
+
+```
+
 如果需要复制一个类到一个新类，可以使用这个代码
 
 ```csharp
