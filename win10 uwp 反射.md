@@ -107,11 +107,12 @@ Application.Current.GetType().GetTypeInfo().Assembly
 ```
 就可以判断是否接口
 
-接口的判断继承和类不同，接口判断使用
+接口的判断继承和类不同，接口判断使用下面的方式。这里 type 是一个类型，而 a 就是一个实例。
 
 
 ```csharp
     type.IsAssignableFrom(a.GetType().GetTypeInfo());
+
 ```
 上面的代码可以写为
 
