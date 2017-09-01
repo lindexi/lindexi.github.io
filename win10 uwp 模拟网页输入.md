@@ -15,7 +15,7 @@
     webView.NavigationCompleted += webView_NavigationCompletedAsync;
 ```
 
-然后就可以在 加载完成的函数 获得加载完成网页的源代码。
+在模拟输入之前，如果需要在 UWP 使用 Webview 获取网页源代码，那么需要在 加载完成的函数 使用下面的代码来 获得加载完成网页的源代码。
 
 ```csharp
 private async void webView_NavigationCompletedAsync(WebView sender, WebViewNavigationCompletedEventArgs args)
