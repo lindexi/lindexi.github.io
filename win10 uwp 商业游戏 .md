@@ -108,5 +108,87 @@
 
 ## 界面
 
-游戏的界面很重要，但是我就写一个简单的界面。我先给界面的截图，可以看到这个界面很简单，就是
+游戏的界面很重要，但是我就写一个简单的界面。我先给界面的截图，可以看到这个界面很简单，就是一个列表和一些按钮
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791101021.jpg)
+
+列表有个问题，如何做表头，实际我也没办法，于是用了下面的代码
+
+```csharp
+                <ListView Grid.Row="1" ItemsSource="{x:Bind View.PropertyStorage}"
+                          SelectedItem="{Binding CarloPiperIsaacProperty,Mode=TwoWay}">
+                    <FrameworkElement.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </FrameworkElement.Resources>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"></ColumnDefinition>
+                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                                <ColumnDefinition Width="15*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="名称"></TextBlock>
+                            <TextBlock Grid.Column="1" Text="价格"></TextBlock>
+                            <TextBlock Grid.Column="2" Text="仓库拥有"></TextBlock>
+                            <TextBlock Grid.Column="3" Text="买入价钱"></TextBlock>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="view:Property">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                    <ColumnDefinition Width="15*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <FrameworkElement.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                    </Style>
+                                </FrameworkElement.Resources>
+                                <TextBlock Text="{x:Bind Name}"></TextBlock>
+                                <TextBlock Grid.Column="1" Text="{x:Bind Price,Mode=OneWay}"></TextBlock>
+                                <TextBlock Grid.Column="2" Text="{x:Bind Num,Mode=OneWay}"></TextBlock>
+                                <TextBlock Grid.Column="3" Text="{x:Bind AshliLyverGeraldo,Mode=OneWay}"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+```
+
+上面代码为了让列表不压缩宽，于是就需要使用 ItemContainerStyle ，请看代码
+
+```csharp
+                 <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+```
+
+为了让列表所有文字都居中，不想写给每个文字，但是列表之外的文字就不居中，于是修改列表内文字的居中就可以使用下面代码
+
+```csharp 
+
+
+
+                 <FrameworkElement.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                    </Style>
+                                </FrameworkElement.Resources>
+```
+
+这样在列表内的文字就会居中，而列表外的文字就不会居中。
+
+如果在列表使用 x:bind 那么需要使用 DataType 来告诉绑定的类型，所以需要数据的类型是什么，不然就无法通过。所以在写列表之前还需要定义好数据，于是让我来告诉大家这个游戏需要的数据。
