@@ -21,7 +21,6 @@
 
 
 
-
 快捷键参见：https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/XamlUIBasics/cs/AppUIBasics/Common/NavigationHelper.cs
 
 参见：https://msdn.microsoft.com/en-us/library/windows/apps/xaml/Hh868161(v=win.10).aspx#keyboard_shortcuts
@@ -29,8 +28,6 @@
 https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh868246.aspx
 
 快捷键需要业界一样，不能自己做标准，[Keyboard shortcuts in Windows - Windows Help](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
-
-
 
 原文：http://juniperphoton.net/2015/12/04/how-to-achieve-global-keyboard-shortcuts-in-uwp-apps-2/
 
