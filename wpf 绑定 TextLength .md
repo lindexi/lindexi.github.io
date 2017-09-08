@@ -139,3 +139,4 @@
 
 ```
 
+源代码：[[免费]WpfTextLengthdc-CSDN下载](http://download.csdn.net/download/lindexi_gd/9968341)

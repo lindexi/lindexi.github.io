@@ -192,3 +192,9 @@
 这样在列表内的文字就会居中，而列表外的文字就不会居中。
 
 如果在列表使用 x:bind 那么需要使用 DataType 来告诉绑定的类型，所以需要数据的类型是什么，不然就无法通过。所以在写列表之前还需要定义好数据，于是让我来告诉大家这个游戏需要的数据。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201797183335.jpg)
+
+## 感谢
+
+落書き  https://www.pixiv.net/member_illust.php?mode=medium&illust_id=64830430
