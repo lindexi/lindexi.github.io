@@ -25,7 +25,6 @@ http://blog.csdn.net/cherylnatsu/article/details/6412898
 我在项目：https://github.com/lindexi/EncodingNormalior   遇到这个问题，我希望让用户自己添加规则，如果遇到规则之外的，那么判断使用上面的检测 '\0' 方法，当然，遇到了 Utf-16 编码，还是没有发现好的解决办法。
 
 
+另外还发现一个判断文件的方法是读文件的前两个字节，但是这个方法很多都无法判断。
 
-
-
-
+[在C#中如何确定一个文件是不是文本文件，以及如何确定一个文件的类型](https://fresky.github.io/2014/04/21/how-to-determine-the-file-type-in-csharp/)
