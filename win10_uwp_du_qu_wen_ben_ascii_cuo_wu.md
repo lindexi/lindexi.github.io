@@ -39,19 +39,19 @@
 
 用了我csdn博客置顶代码，就直接乱码 所有中文代为 "?" 
 
-查了一下WPF使用默认可以读，也就是我们保存时GBK，查询到Encoding没有GBK，没有默认
+查了一下WPF使用默认可以读，也就是我们保存时GBK，查询到Encoding没有GBK，没有默认的，所以看起来这个问题不是简单就可以通过。
 
 于是我就在网上找，很久没找到，但是找到http://www.cnblogs.com/yffswyf/p/4826207.html，写到一半我就不想写，好难
 
-在网上看到Encoding.GetEncoding（0）默认，于是我找了GetEncoding，原来有string，那么`Encoding gbk = Encoding.GetEncoding("GBK");`
+在网上看到Encoding.GetEncoding（0）就是默认编码，于是我找了 GetEncoding，原来有string，那么`Encoding gbk = Encoding.GetEncoding("GBK");`是否就是可以，运行代码
 
 报错
  'GBK' is not a supported encoding name. 
  
- 看来这个也不可以，我觉得我要写个转换
+看来这个也不可以，我觉得我要写个转换
  
 最后发现
-https://bbs.uwp.ac.cn/?/article/43
+https://bbs.uwp.ac.cn/?/article/43 有大神的方法，请看下面代码。
 
 ```csharp
 //使用CodePagesEncodingProvider去注册扩展编码。
@@ -60,7 +60,7 @@ Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 Encoding encodingGbk =Encoding.GetEncoding("GBK");
 ```
 
-我们在读取之前判断我们的编码，这个简单可以使用
+我们在读取之前判断文件的编码，按照不同编码进行不同编码的读取，这个简单判断可以使用这段代码判断
 
 ```csharp
         private static Encoding AutoEncoding(byte[] bom)
@@ -94,9 +94,9 @@ Encoding encodingGbk =Encoding.GetEncoding("GBK");
 
 这没有GBK所以我们只好通过一个垃圾方法。
 
-用Windows.Storage.FileIO.ReadTextAsync如果错误了，就使用GBK读，还错误，那么就是文件错了。
+用`Windows.Storage.FileIO.ReadTextAsync`如果错误了，就使用GBK读，还错误，那么就是文件错了。
 
-编码的错报的ArgumentOutOfRangeException。我们可以Catch，用GBK就是上面写的。
+编码的错报的ArgumentOutOfRangeException。我们可以Catch，用`GBK`读文本，这样如果读取错误就是文件错了。
 
 
 全部代码
