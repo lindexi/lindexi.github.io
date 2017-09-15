@@ -129,3 +129,5 @@
 然后把代码写到 FooPropertyChangedCallback 就可以了
 
 代码很简单，我就不写所有代码
+
+代码：[[免费]ListViewBindLastItem 1.0-CSDN下载](http://download.csdn.net/download/lindexi_gd/9979367)
