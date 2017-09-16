@@ -195,6 +195,58 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201797183335.jpg)
 
+然后就需要开始绑定进去了，不过这时发现游戏需要的数据很简单，暂时我就不继续写代码，如果需要代码，请看 [VarietyHiggstGushed](https://github.com/lindexi/UWP/tree/master/uwp/src/VarietyHiggstGushed)
+
+## 添加图标
+
+可以看到，上面的界面没有图标，看起来不好看，所以需要给他添加一些图标。图标可以到 [http://www.iconfont.cn/](http://www.iconfont.cn/) 下载，在这里下载需要注意版权问题，不过我的这个在下载的时候就有看了，好像是不需要给钱。
+
+首先把图片放在 Assest 文件夹，然后就可以设置出来了。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791617817.jpg)
+
+```csharp
+            <Grid>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <FrameworkElement.Resources>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Margin" Value="10,10,10,10"></Setter>
+                        </Style>
+                    </FrameworkElement.Resources>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="ms-appx:///Assets/天.png" Height="20" Width="20"></Image>
+                        <TextBlock Text="天数"></TextBlock>
+                        <TextBlock Text="{x:Bind View.PinkieDuchesneGeraldo,Mode=OneWay}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="ms-appx:///Assets/仓库.png" Height="20" Width="20"></Image>
+                        <TextBlock Text="仓库容量"></TextBlock>
+                        <TextBlock Text="{x:Bind View.JwStorage.Transit,Mode=OneWay}"/>
+                        <TextBlock Text="/"></TextBlock>
+                        <TextBlock Text="{x:Bind View.JwStorage.TransitStorage,Mode=OneWay}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="金钱"></TextBlock>
+                        <TextBlock Text="{x:Bind View.JwStorage.TranStoragePrice,Mode=OneWay}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+```
+
+可以看到图片的写法 Source 的值是使用`ms-appx`，这里就是从资源获得，如果希望知道这个代码是如何写，我有博客[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/) 里面就告诉大家如何写。
+
+注意需要设置图片的大小，可以运行程序，然后开始设置，这样界面就可以看到修改，但是需要保存才可以看到。
+
+可以看到原来的代码是 [VarietyHiggstGushed](https://github.com/lindexi/UWP/commit/3f58dbee64d0a7b42768c1acdecb6812fc789ac5#diff-e941c1b41207d1fb99a9b5bc32e2d30b) 买东西的界面看起来不好
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017916171231.jpg)
+
+下面就需要修改这个，修改为一个好看的
+
+
+
 ## 感谢
 
 落書き  https://www.pixiv.net/member_illust.php?mode=medium&illust_id=64830430
