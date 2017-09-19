@@ -25,7 +25,7 @@ var f = await fp.PickSingleFolderAsync();
 
 上面代码有3个地方错误。
 
-1. 需要知道的，在 FileTypeFilter 添加的是具体的类型，不能使用 "*" 
+1. 需要知道的，在 FileTypeFilter 添加的是具体的类型，不能使用 "`*`" 
 
  即使设置为特殊类型，但是文件夹没有这类型的文件也是可以。
 
