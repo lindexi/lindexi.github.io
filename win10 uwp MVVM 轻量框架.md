@@ -291,7 +291,7 @@ Install-Package lindexi.wpf.Framework
 
 ## ViewModel
 
-需要写一个简单的基类作为 ViewModel ，这个类几乎没有内容，如果是一个几乎没有内容的，那么需要写一个接口
+需要写一个简单的基类作为 ViewModel ，这个类几乎没有内容，如果是一个几乎没有内容的，那么需要写一个接口，表示这是一个 ViewModel ，这样可以用于反射获得 ViewModel 。
 
 
 ```csharp
@@ -306,7 +306,7 @@ Install-Package lindexi.wpf.Framework
 
 如果有类继承这个接口，就可以说这就是 ViewModel ，因为 C# 不可以多继承，所以和其他框架一起使用时，需要 ViewModel 继承其他的类，那么就可以使用继承接口。
 
-这里 ViewModel 是可以跳转的，这是这个框架做不好的地方，让 ViewModel 需要跳转，所以就有跳转进入的和跳转出的两个函数。还需要判断当前 ViewModel 是否可用，也就是很多和页面相同。
+这里 ViewModel 是可以跳转的，这是这个框架做不好的地方，让 ViewModel 需要跳转，所以就有跳转进入的和跳转出的两个函数。还需要判断当前 ViewModel 是否可用，也就是很多和页面相同，只是重新在 ViewModel 写了，于是一个可跳转的ViewModel 就需要继承 INavigable 和实现两个函数。一般使用的 ViewModel 都是可跳转的。如果使用的 ViewModel 可以继承类，那么建议继承 ViewModelBase ，请看代码。
 
 
 ```csharp
@@ -461,3 +461,106 @@ Install-Package lindexi.wpf.Framework
         }
     }
 ```
+
+那么一个负责跳转的页面，也就是有多个内部页面的窗口的 ViewModel 是建议继承 NavigateViewModel ，这样他就可以对其他 ViewModel 跳转。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017919195927.jpg)
+
+于是主页面的 ViewModel 就可以继承 NavigateViewModel ，可以在调试模式下不传入 Frame 并且在属性生成、条件编译符添加 NOGUI 就可以进行单元测试，各种页面跳转的测试。 ViewModel 可以拿到主要方法是 Navigate ，可以让一个 ViewModel 跳转，请看代码
+
+```csharp
+            Navigate(typeof(AModel), null);
+
+```
+
+跳转可以加入参数，可以指定是使用哪个 Frame 跳转，如果没有指定 Frame 就会从 Content 跳转。使用跳转不需要担心异步线程，因为这里使用同步，如果异步线程使用 Navigate 也不会出现什么问题，但是我不确定在所有异步可以使用，尽量在主线程使用。
+
+一般的 ViewModel 继承 ViewModelMessage 就可以使用消息，如果支持跳转的 ViewModel 继承 NavigateViewModel ，这里继承 ViewModelMessage 。如果一个继承消息的 viewModel 可以使用两个方法，这个在下面告诉大家。
+
+## 如何发消息
+
+如果有继承 ViewModelMessage ，发送消息很简单，只需要使用函数 Send 发送需要发送的消息就可以。
+
+例如我有左侧列表，需要向右侧发送消息，那么简单的 ViewModel 代码就是包含两个页面，然后跳转他们
+
+```csharp
+    public class ViewModel : NavigateViewModel
+    {
+         public override void OnNavigatedTo(object sender, object obj)
+         {
+                ViewModel = new List<ViewModelPage>();
+                ViewModel.Add(new ViewModelPage(typeof(AModel)));
+                ViewModel.Add(new ViewModelPage(typeof(BModel))
+                {
+                    Key = "右侧"
+                });
+
+                Navigate(typeof(AModel), null);
+                Navigate(typeof(BModel), null, new Frame());
+        }
+    }
+```
+
+然后AModel 向着 BModel 发送消息
+
+```csharp
+    public class AModel : ViewModelMessage
+    {
+        public string Name { get; set; } = "csdn";
+
+        public override void OnNavigatedFrom(object sender, object obj)
+        {
+            return;
+        }
+
+        public override void OnNavigatedTo(object sender, object obj)
+        {
+
+            
+        }
+
+        public void Foo()
+        {
+            Send(new Message(this)
+            {
+                Content = Name,
+                Goal = new PredicateKeyViewModel("右侧")
+            });
+        }
+    }
+```
+
+上面的代码就可以发送消息到 BModel ，为何他知道消息是发到 BModel ，因为消息指定了发送到哪。
+
+消息可以指定内容，指定发送到哪个 ViewModel ，如果没有指定，那就是发给他的上一个 ViewModel ，也就是跳转他的。指定可以使用 Key 指定，上面代码就是使用 Key 指定。也可以使用 PredicateInheritViewModel 指定对应的 ViewModel 需要继承什么类型，当然消息只会发送给一个 ViewModel 所以不会发送给多个，暂时框架没有做发送给多个。如果觉得当前的判断还是和需要的不同，那么可以使用 PredicateViewModel 自定义一个判断，只要符合需要，就发送消息给这个 ViewModel 。
+
+可以看到上面的代码，对 AModel 不需要关心消息如何发送和 BModel 接到消息如何处理，于是消息处理可以在 BModel 写，但是如果消息是不同的，可能 AModel 发送一个 Name 给 右侧，也可能发送其它的消息给右侧，那么如何让右侧知道 AModel 发送的是什么？实际上可以使用指定 Key 来让 右侧知道发送的消息。
+
+```csharp
+      public void Foo()
+        {
+            Send(new Message(this)
+            {
+                Key = "name",
+                Content = Name,
+                Goal = new PredicateKeyViewModel("右侧")
+            });
+        }
+```
+
+于是 BModel 就可以通过 Key 来判断当前发送的消息是什么。
+
+那么 BModel 收到消息是不写一个 switch 判断，如果消息少可以这样写，如果消息多，这样写就需要很多代码，框架是让 ViewModel 代码变少，如果看到这样写让 BModel 需要很多代码，那么就需要修改。
+
+## 处理
+
+上面是如何发送消息，那么这里需要处理消息，如果消息写在 ViewModel 处理，那么 ViewModel 需要很多代码。那么如何处理代码？
+
+实际发送的消息都不是 Message 需要创建一个消息的类，表示这是什么消息。因为使用 Message 是 Content 这没有具体类型，发送消息需要自己的类型，所以需要创建一个自己的消息。
+
+```csharp
+public class xxMessage:Message
+```
+
+这样就可以指定处理是除了哪个消息
+

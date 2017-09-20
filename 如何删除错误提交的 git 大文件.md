@@ -7,7 +7,7 @@
 <!--more-->
 <!-- csdn -->
 
-如果需要删除 git 的历史记录，使用方法很简单，请看 [Git如何永久删除文件(包括历史记录) - shines77 - 博客园](http://www.cnblogs.com/shines77/p/3460274.html ) 。当然这个方法需要很长时间，因为提交大文件的时间不长，所以可以使用太子的方法 [彻底删除 Git 仓库中的文件避免占用大量磁盘空间 - walterlv](https://walterlv.oschina.io/git/2017/09/18/delete-a-file-from-whole-git-history.html )
+如果需要删除 git 的历史记录，使用方法很简单，请看 [Git如何永久删除文件(包括历史记录) - shines77 - 博客园](http://www.cnblogs.com/shines77/p/3460274.html ) 。当然这个方法需要很长时间，因为提交大文件的时间不长，所以可以使用walterlv的方法 [彻底删除 Git 仓库中的文件避免占用大量磁盘空间 - walterlv](https://walterlv.oschina.io/git/2017/09/18/delete-a-file-from-whole-git-history.html )
 
 于是远程仓库删好了，但是本地仓库还是有小伙伴拉下来，于是如何让本地的小伙伴可以使用最新的仓库？
 

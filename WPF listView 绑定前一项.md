@@ -1,9 +1,31 @@
-# WPF listView 绑定前一项
+# win10 uwp listView 绑定前一项
 
 大神问，如何在 ListView 绑定前一项，于是我下面告诉大家如何在 ListView 绑定前一项
 
 <!--more-->
 <!-- csdn -->
+
+## WPF 绑定前一项
+
+可以使用绑定的 RelativeSource 就可以绑定前一项，请看代码
+
+```csharp
+        <ListView >
+            <ListViewItem>
+                <ListViewItem.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}">
+                                
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListViewItem.Style>
+            </ListViewItem>
+        </ListView>
+```
+
+## UWP 绑定前一项
 
 如果需要在ListView 让每个项绑定前一个项的内容，那么就是本文要说的。
 
