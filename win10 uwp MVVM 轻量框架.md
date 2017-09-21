@@ -564,3 +564,114 @@ public class xxMessage:Message
 
 这样就可以指定处理是除了哪个消息
 
+例如有一个左侧列表，用于导航，也就是普通的菜单，那么左边列表的 ViewModel 是 NavigationPanelModel ，请看下面的图
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017730155441.jpg)
+
+最左边的就是 NavigationPanelModel ，那么这时 NavigationPanelModel 需要进行跳转，但是 NavigationPanelModel 不包含其他 ViewModel 包含其他 ViewModel 的是主页面的。所以这时就可以使用发送消息来跳转。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20179219635.jpg)
+
+点击 NavigationPanelModel 的选项时，可以通过发送一个消息到 ViewModel ，让 ViewModel 跳转。
+
+于是开始定义一个消息，这个消息叫 NavigateMessage 就是导航消息，需要告诉 ViewModel 导航到哪个页面。可以看下面的代码
+
+```csharp
+    internal class NavigateMessage : Message
+    {
+        public NavigateMessage(ViewModelBase source) : base(source)
+        {
+        }
+
+        public NavigateMessage(ViewModelBase source, string viewModel) : base(source)
+        {
+            ViewModel = viewModel;
+        }
+
+        /// <summary>
+        ///     跳转到的页面
+        /// </summary>
+        public string ViewModel { get; set; }
+    }
+```
+
+写好了消息，就需要在 ViewModel 写如何导航，因为消息如果没有写发送到哪，默认就是发送到上一级，所以 ViewModel 就可以收到消息。如果导航直接在 ViewModel 写，那么 ViewModel 的代码就太多，最好的方法就是我推荐的，自己写处理。定义一个类来处理。如果需要定义一个类来处理，这个类需要使用 Composite ，因为在 NavigateViewModel 会在页面跳转自动拿所有的 Composite 放在自己的处理，所以只要继承 Composite 不需要做其它的，就可以发送消息时自动处理。这个做法只有 NavigateViewModel 有，在之后我可能会把他放在一个类。
+
+请看 NavigateViewModel 自动获得处理的代码
+
+```csharp
+
+         Assembly assembly = Assembly.GetCallingAssembly();
+            foreach (
+                var temp in
+                assembly.GetTypes()
+                    .Where(
+                        temp =>
+                            temp.IsSubclassOf(typeof(Composite)) &&
+                            !temp.IsAssignableFrom(typeof(ICombinationComposite)) &&
+                            !temp.IsSubclassOf(typeof(CombinationComposite)) &&
+                            temp != typeof(CombinationComposite)))
+            {
+                Composite.Add(temp.Assembly.CreateInstance(temp.FullName) as Composite);
+            }
+
+        
+```
+
+可以看到他是通过反射获得所有的处理，刚才的处理导航可以看下面的代码
+
+```csharp
+    internal class NagivateComposite : Composite
+    {
+        public NagivateComposite()
+        {
+            Message = typeof(NavigateMessage);
+        }
+
+        public override void Run(ViewModelBase source, IMessage e)
+        {
+            var viewModel = source as IKeyNavigato;
+            var message = e as NavigateMessage;
+            if (message != null)
+            {
+                viewModel?.Navigate(message.ViewModel, null);
+            }
+        }
+    }
+```
+
+因为 NavigateViewModel 继承 IKeyNavigato， INavigateable ，所以就不需要判断是否 NavigateViewModel ，而 IKeyNavigato 通过 key 来找到要对应导航。另一个 INavigateable 表示支持导航，请看代码。
+
+```csharp
+  /// <summary>支持跳转</summary>
+  public interface INavigateable : IViewModel
+  {
+    /// <summary>提供跳转的控件</summary>
+    Frame Content { get; set; }
+
+    /// <summary>正在跳转事件</summary>
+    event EventHandler<ViewModelPage> Navigating;
+
+    /// <summary>跳转完成</summary>
+    event EventHandler<ViewModelPage> Navigated;
+
+    /// <summary>跳转到页面</summary>
+    /// <param name="viewModel"></param>
+    /// <param name="parameter"></param>
+    /// <param name="content"></param>
+    void Navigate(Type viewModel, object parameter, Frame content);
+  }
+```
+
+使用 INavigateable 可以指定跳转使用 Frame 所以就有一些耦合
+
+### 合在一起的消息
+
+可以从上面的导航看到，如果写一个消息，就可以写一个消息的处理，使用在构造写`Message`为对应处理消息类型。但是这个方法存在一个问题，如果很简单的代码，那么写两个类，看起来代码太多。
+
+是否在发一个消息就知道他的处理，或者知道他发给什么类就做什么处理，可以。
+
+为了减少代码，框架写了一个类 CombinationComposite 这个类可以定义消息和处理，也就是发送消息是这个类，到达指定的 ViewModel 还是使用这个类。而框架还提供泛型`CombinationComposite<T, U> : Composite, IMessage, ICombinationComposite        where U : IMessage where T : IViewModel` 泛型可以在里面不需要转换。
+
+如果发送的消息是知道做什么，那么可以使用 CombinationComposite ，下面是发送给一个存在 Name 的 ViewModel 把他的 Name 改为 `github` 
+
