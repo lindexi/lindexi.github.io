@@ -23,6 +23,8 @@
 
 接着开始做游戏的主页面，请注意，在写的时候，一个页面都是对应一个视图。可以看到在写的时候，不需要去管两个页面之间的逻辑。当然现在也无法管。
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792392012.jpg)
+
 可以知道游戏的主页面需要有仓库、买东西的店铺、买东西的地方和工厂。
 
 那么需要想游戏是如何玩的。
@@ -254,5 +256,9 @@
 
 
 ## 感谢
+
+[walterlv](https://walterlv.github.io/ )
+
+[JAKE](http://niuyanjie.oschina.io/blog/ )
 
 落書き  https://www.pixiv.net/member_illust.php?mode=medium&illust_id=64830430
