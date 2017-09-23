@@ -552,6 +552,8 @@ Install-Package lindexi.wpf.Framework
 
 那么 BModel 收到消息是不写一个 switch 判断，如果消息少可以这样写，如果消息多，这样写就需要很多代码，框架是让 ViewModel 代码变少，如果看到这样写让 BModel 需要很多代码，那么就需要修改。
 
+需要知道，所有的消息都是 IMessage 所以可以自己定义自己需要的消息。
+
 ## 处理
 
 上面是如何发送消息，那么这里需要处理消息，如果消息写在 ViewModel 处理，那么 ViewModel 需要很多代码。那么如何处理代码？
@@ -608,7 +610,7 @@ public class xxMessage:Message
                     .Where(
                         temp =>
                             temp.IsSubclassOf(typeof(Composite)) &&
-                            !temp.IsAssignableFrom(typeof(ICombinationComposite)) &&
+                            !typeof(ICombinationComposite).IsAssignableFrom(temp) &&
                             !temp.IsSubclassOf(typeof(CombinationComposite)) &&
                             temp != typeof(CombinationComposite)))
             {
@@ -674,4 +676,259 @@ public class xxMessage:Message
 为了减少代码，框架写了一个类 CombinationComposite 这个类可以定义消息和处理，也就是发送消息是这个类，到达指定的 ViewModel 还是使用这个类。而框架还提供泛型`CombinationComposite<T, U> : Composite, IMessage, ICombinationComposite        where U : IMessage where T : IViewModel` 泛型可以在里面不需要转换。
 
 如果发送的消息是知道做什么，那么可以使用 CombinationComposite ，下面是发送给一个存在 Name 的 ViewModel 把他的 Name 改为 `github` 
+
+于是定义一个存在 Name 的 ViewModel 可以定义一个接口，接口的写法一般就是继承这个接口的 ViewModel 就存在 Name 所以就可以发送给指定存在这个接口的
+
+```csharp
+    public interface INameViewModel : IViewModel
+    {
+        string Name { set; get; }
+    }
+```
+
+然后创建 AModel 让 AModel 继承这个接口
+
+```csharp
+    public class AModel : ViewModelMessage,INameViewModel
+    {
+        public override void OnNavigatedFrom(object sender, object obj)
+        {
+
+        }
+
+        public override void OnNavigatedTo(object sender, object obj)
+        {
+
+        }
+
+        public string Name { get; set; }
+    }
+```
+
+然后创建一个 ViewModel ，他包含 AModel 和 LinModel 然后LinModel就会发送消息让 AModel 修改他的名字
+
+```csharp
+           NoGui.NOGUI = true;
+            ViewModel viewModel = new ViewModel();
+            viewModel.NavigatedTo(null, null);
+            var linModel = new LinModel();
+            var amodel = new AModel();
+            viewModel.ViewModel = new List<ViewModelPage>()
+            {
+                new ViewModelPage(linModel),
+                new ViewModelPage(amodel)
+            };
+
+            viewModel.Navigate(amodel, null);
+            viewModel.Navigate(linModel, null);
+
+            linModel.Name();
+
+```
+
+需要定一个消息，是发送名称，请看下面是如何写
+
+```csharp
+    public class NameMessage : Message
+    {
+        public string Name { get; set; }
+
+        public NameMessage(string name, ViewModelBase source) : base(source)
+        {
+            Name = name;
+        }
+    }
+```
+
+于是发送消息就只需要创建消息然后使用基类的方法
+
+```csharp
+          var name = "csdn";
+            Send(new NameMessage(name, this));
+```
+
+这时在 AModel 的 ReceiveMessage 收到消息
+
+尝试在这里处理
+
+```csharp
+    public class AModel : ViewModelMessage, INameViewModel
+    {
+        public override void OnNavigatedFrom(object sender, object obj)
+        {
+
+        }
+
+        public override void OnNavigatedTo(object sender, object obj)
+        {
+
+        }
+
+        public override void ReceiveMessage(object sender, IMessage message)
+        {
+            Name = ((NameMessage) message).Name;
+        }
+
+        public string Name { get; set; }
+    }
+
+```
+
+但是如果写一个处理的类，那么在 ViewModel 添加，那么就不会在 AModel 收到消息，AModel 在没有处理才可能收到。
+
+```csharp
+    public class NameComposite : Composite
+    {
+        public NameComposite()
+        {
+            Message = typeof(NameMessage);
+        }
+
+        public override void Run(IViewModel source, IMessage message)
+        {
+        }
+    }
+```
+
+如果写了一个除了消息的，那么在 Run 就可以收到消息，这时的 source 就是 AModel ，可以获得ViewModel 和消息就可以处理。
+
+```csharp
+    public class NameComposite : Composite
+    {
+        public NameComposite()
+        {
+            Message = typeof(NameMessage);
+        }
+
+        public override void Run(IViewModel source, IMessage message)
+        {
+            ((INameViewModel) source).Name = ((NameMessage) message).Name;
+        }
+    }
+```
+
+这样处理不需要知道 ViewModel 是什么，只需要看他是 INameViewModel 存在这个的，就进行设置，因为只有这个消息才会进来，所以可以认为就是这类型。
+
+但是对于简单的消息，如果都这样写，看起来代码很多，但是这样的代码可以让处理不知道具体的类，消息也是不知道自己发送到哪，发送的类不需要知道具体需要做的类，把消息和处理分开虽然可以减少很多的问题。但是这样看起来代码有些多，可以使用另一个方法，如果消息和处理是在写就确定。
+
+```csharp
+    public class NameCombinationComposite : CombinationComposite
+    {
+        public NameCombinationComposite(ViewModelBase source, string name) : base(source)
+        {
+            _run = (viewModel, message) =>
+            {
+                ((INameViewModel) viewModel).Name = name;
+            };
+        }
+    }
+```
+
+上面这个类就是包括发送消息和自己处理，需要在使用把消息换为这个类，所以需要做的修改很少。这个类还有一个泛型，这个可以不需要转换，现在这个组合的，需要的代码很少，于是就发送消息到具有名称的类，修改这个类的名称为输入的名。看起来的代码很简单，只需要写构造。
+
+```csharp
+        public void Name()
+        {
+            var name = "csdn";
+            Send(new NameCombinationComposite(this, name)
+            {
+                Goal = new PredicateInheritViewModel(typeof(INameViewModel))
+            });
+        }
+```
+
+如果使用泛型的，代码看起来会比较简单
+
+```csharp
+    public class NameCombinationComposite : CombinationComposite<INameViewModel, NameCombinationComposite>
+    {
+        public NameCombinationComposite(ViewModelBase source, string name) : base(source)
+        {
+            _run = (viewModel, message) =>
+            {
+                viewModel.Name = name;
+            };
+        }
+    }
+```
+
+处理还提供一个构造方法，可以使用这个构造方法在使用的地方注入如何做。请看第三个方法来修改 AModel 可以写在发出消息
+
+
+```csharp
+    public class NameCombinationComposite : CombinationComposite
+    {
+        public NameCombinationComposite(ViewModelBase source, string name) : base(source)
+        {
+            _run = (viewModel, message) =>
+            {
+                ((INameViewModel) viewModel).Name = name;
+            };
+        }
+
+        public NameCombinationComposite(Action<ViewModelBase, object> run, ViewModelBase source) : base(run, source)
+        {
+
+        }
+    }
+
+          public void Name()
+        {
+            var name = "csdn";
+            Send(new NameCombinationComposite((source, o) =>
+            {
+                ((INameViewModel) source).Name = name;
+            }, this)
+            {
+                Goal = new PredicateInheritViewModel(typeof(INameViewModel))
+            });
+        }
+```
+
+如果不想自己定义一个处理类，那么请看下面的写法
+
+```csharp
+         public void Name()
+        {
+            var name = "csdn";
+            Send(new CombinationComposite((source, o) =>
+            {
+                ((INameViewModel) source).Name = name;
+            }, this)
+            {
+                Goal = new PredicateInheritViewModel(typeof(INameViewModel))
+            });
+        }
+```
+
+如果知道了使用的类的类型，那么可以使用泛型处理
+
+```csharp
+        public void Name()
+        {
+            var name = "csdn";
+            Send(new CombinationComposite<INameViewModel, IMessage>((source, o) =>
+            {
+                 source.Name = name;
+            }, this)
+            {
+                Goal = new PredicateInheritViewModel(typeof(INameViewModel))
+            });
+        }
+```
+
+可以看到这里不需要使用消息，那么简单的方法是换一个
+
+```csharp
+        public void Name()
+        {
+            var name = "csdn";
+            Send(new CombinationComposite<INameViewModel>(source =>
+            {
+                 source.Name = name;
+            }, this));
+        }
+```
+
+因为默认的寻找就是找到这个指定类型的 INameViewModel 的，所以就不需要写判断，这样可以看到，从原来的很多代码，需要两个类，到只需要一个类，到在消息这里就可以写。这个过程可以让代码变少，但是这个过程让原来不需要知道的类型也在这里知道，如果需要做一个比较简单的，那么建议使用组合的，如果相对比较复杂，那么建议写两个类。
 
