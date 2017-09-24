@@ -5,11 +5,18 @@
 本文介绍我做的框架，这是一个轻量的框架，可以同时使用其它的框架，用于多个页面之间，多个 ViewModel 之间的通信。
 
 <!--more-->
+
+<div id="toc"></div>
+
 <!-- csdn -->
 
 一般的通信是一个页面内存在多个子页面，而且经常需要对多个页面进行通信，为了降低多个页面的耦合度，于是我就做了自己的框架。这个框架比较简单，很多地方都抄袭了MVVMLight，所以是他的轻量版。
 
-暂时我把框架放在 Nuget ，因为还没写文档，所以暂时不告诉大家地址啦。
+暂时我把框架放在 Nuget ，提供 UWP 和 WPF 的下载。
+
+UWP：[lindexi.uwp.Framework 1.0.15512](https://www.nuget.org/packages/lindexi.uwp.Framework/1.0.15512 )
+
+wpf: [lindexi.wpf.Framework 1.1.1155](https://www.nuget.org/packages/lindexi.wpf.Framework/ )
 
 ## 多页面存在的问题
 
@@ -91,13 +98,19 @@
 
 下面我来告诉大家如何使用这个框架。
 
-首先创建一个 WPF 或 UWP 程序，现在我还没在 Nuget 做好 UWP 的，不过可以通过下载我的源代码方式使用。
+首先创建一个 WPF 或 UWP 程序，可以通过 Nuget 安装或下载我的源代码方式使用。
 
-然后可以通过 nuget 下载框架。
+下面告诉大家如何使用Nuget安装，如果是 wpf 的，那么请使用下面的代码
 
 
 ```csharp
 Install-Package lindexi.wpf.Framework  
+```
+
+如果是 uwp ，那么请使用下面代码
+
+```csharp
+Install-Package lindexi.uwp.Framework -Version 1.0.15512
 ```
 
 或者下载源代码 [https://github.com/lindexi/UWP/tree/master/uwp/src/Framework](https://github.com/lindexi/UWP/tree/master/uwp/src/Framework)
@@ -931,4 +944,20 @@ public class xxMessage:Message
 ```
 
 因为默认的寻找就是找到这个指定类型的 INameViewModel 的，所以就不需要写判断，这样可以看到，从原来的很多代码，需要两个类，到只需要一个类，到在消息这里就可以写。这个过程可以让代码变少，但是这个过程让原来不需要知道的类型也在这里知道，如果需要做一个比较简单的，那么建议使用组合的，如果相对比较复杂，那么建议写两个类。
+
+上面就已经是简单的使用了，如果需要更多的，那么请看代码。现在还有很多地方没有做好，所以欢迎你告诉我有哪些地方可以如何去写。
+
+源代码：[https://github.com/lindexi/UWP/tree/master/uwp/src/Framework](https://github.com/lindexi/UWP/tree/master/uwp/src/Framework)
+
+## 感谢
+
+[walterlv](https://walterlv.github.io/ )
+
+[JAKE](http://niuyanjie.oschina.io/blog/ )
+
+[张高兴 UWP IOT 大神 - 博客园](http://www.cnblogs.com/zhanggaoxing/default.html?page=1)
+
+[杨宇杰](https://okcthouder.github.io/)
+
+[快乐 就在你的心 的博客](https://kljzndx.github.io/kljzndx/)
 

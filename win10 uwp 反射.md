@@ -54,7 +54,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 那么我们如何获得属于ViewModel的类，如果我们没有继承base，那我们有简单方法。
 
-		
+
 
 ```csharp
     public class ViewModelAssembly:Attribute
@@ -67,7 +67,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 ```
 我们可以通过Attribute，查看是否有，如果有，就是ViewModel
 
-		
+
 
 ```csharp
             foreach (var temp in applacationAssembly.DefinedTypes)
@@ -82,7 +82,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 当然我们还修改下，因为我们不需要写那么多
 
-		
+
 
 ```csharp
             var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
