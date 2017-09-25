@@ -121,9 +121,10 @@ Install-Package lindexi.uwp.Framework -Version 1.0.15512
 
 我将会使用一个简单的例子告诉大家如何使用。
 
-首先是创建 ViewModel ，创建的 ViewModel 可以分为两个，如果是一个包括有其他的 ViewModel 如主页面，那么请继承 NavigateViewModel 。
+首先是创建 ViewModel ，创建的 ViewModel 可以分为两个。一个是 ViewModel 一个是 AModel。
 
-然后需要在页面使用特性 ViewModel ，告诉这个页面使用哪个 viewModel
+如果是一个包括有其他的 ViewModel 如主页面，那么请继承 NavigateViewModel 。
+然后需要在页面使用特性 ViewModel ，告诉这个页面使用哪个 viewModel，通过反射就可以拿到 ViewModel 对应的页面，当然这不是一定要的。
 
 
 ```csharp
@@ -137,7 +138,7 @@ Install-Package lindexi.uwp.Framework -Version 1.0.15512
     } 
 ```
 
-我把主 ViewModel 叫 ViewModel ，可以在 ViewModel 这样写
+我把主 ViewModel 叫 ViewModel ，可以在 ViewModel 这样写，使用属性把他包含的 ViewModel 加起来，然后把这些放到自己的 ViewModel 列表，因为我是使用在 Page 上使用特性，所以用反射把所有页都加载。
 
 
 ```csharp
@@ -198,7 +199,7 @@ Install-Package lindexi.uwp.Framework -Version 1.0.15512
     } 
 ```
 
-如果是 A 页面的 ViewModel ，这个页面没有包含其他的页面，那么可以继承 ViewModelBase ，于是简单的代码
+如果是 A 页面的 ViewModel ，这个页面没有包含其他的页面，那么可以继承 ViewModelBase ，于是简单的代码就是添加一个属性，让这个属性可以被修改。
 
 
 ```csharp
@@ -218,6 +219,7 @@ Install-Package lindexi.uwp.Framework -Version 1.0.15512
 ```
 
 如果 A 页面是需要发送消息的，那么请使用 ViewModelMessage 这样就可以使用发送。
+下面就是在AModel跳转发送信息给ViewModel，于是就把自己发送到上一层。
 
 
 ```csharp
@@ -487,6 +489,8 @@ Install-Package lindexi.uwp.Framework -Version 1.0.15512
 ```
 
 跳转可以加入参数，可以指定是使用哪个 Frame 跳转，如果没有指定 Frame 就会从 Content 跳转。使用跳转不需要担心异步线程，因为这里使用同步，如果异步线程使用 Navigate 也不会出现什么问题，但是我不确定在所有异步可以使用，尽量在主线程使用。
+
+当然跳转还有支持在没有UI下的没有Frame的跳转，不过这个会在下面告诉大家，如果使用没有Frame的跳转，需要小心，因为这样就不会自动把 ViewModel 跳转出。
 
 一般的 ViewModel 继承 ViewModelMessage 就可以使用消息，如果支持跳转的 ViewModel 继承 NavigateViewModel ，这里继承 ViewModelMessage 。如果一个继承消息的 viewModel 可以使用两个方法，这个在下面告诉大家。
 
@@ -948,6 +952,8 @@ public class xxMessage:Message
 上面就已经是简单的使用了，如果需要更多的，那么请看代码。现在还有很多地方没有做好，所以欢迎你告诉我有哪些地方可以如何去写。
 
 源代码：[https://github.com/lindexi/UWP/tree/master/uwp/src/Framework](https://github.com/lindexi/UWP/tree/master/uwp/src/Framework)
+
+现在已经有几个项目在使用这个框架，其中有现在公司的小项目和[win10 uwp 商业游戏](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F/ ) [图床](ms-windows-store://pdp/?productid=9nblggh562r2) 打怪挂机 都在使用这个框架
 
 ## 感谢
 
