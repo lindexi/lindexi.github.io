@@ -5,8 +5,6 @@
 <!--more-->
 <div id="toc"></div>
 
-<!-- csdn -->
-
 首先需要知道一些 Nuget 打包需要知道的，请看 [win10 uwp 上传Nuget 让别人用我们的库](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E4%B8%8A%E4%BC%A0Nuget-%E8%AE%A9%E5%88%AB%E4%BA%BA%E7%94%A8%E6%88%91%E4%BB%AC%E7%9A%84%E5%BA%93/ )
 
 但是 UWP 的包和上面说的有一些不同，需要对打包做一些修改。
@@ -237,3 +235,5 @@ install-package Package -Source E:\1\NrzlmhRzvy
      </files>
 </package>
 ```
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
