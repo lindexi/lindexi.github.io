@@ -128,7 +128,15 @@ Application.Current.GetType().GetTypeInfo().Assembly
     a.GetType().GetTypeInfo().IsSubclassOf(type);
 ```
 
+## 获得特性
 
+例如已经拿到 `TypeInfo` ，他的扩展方法可以拿到特定的特性，一般获得特性就是这个方法，请看代码。
+
+```csharp
+ var attribute = type.GetCustomAttribute<LindexiAttribute>();
+```
+
+上面代码用于获得在对应类型的`LindexiAttribute`特性，于是就可以获得特性的实例，直接使用特性的属性就可以。
 
 ## WPF 反射获得所有类
 
