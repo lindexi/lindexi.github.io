@@ -138,6 +138,10 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 上面代码用于获得在对应类型的`LindexiAttribute`特性，于是就可以获得特性的实例，直接使用特性的属性就可以。
 
+## [设置 .NET Native 运行时指令以支持反射（尤其适用于 UWP） - walterlv](https://walterlv.github.io/uwp/2017/09/21/reflection-using-dotnet-native-runtime-directive.html )
+
+解决 Relase 上无法使用反射的问题
+
 ## WPF 反射获得所有类
 
 
@@ -243,7 +247,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 
 ```csharp
-    object[] typeAttributes =type.GetCustomAttributes(false);   
+    object[] typeAttributes = type.GetCustomAttributes(false);   
 ```
 
 
