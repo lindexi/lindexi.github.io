@@ -29,7 +29,7 @@
 
 需要获得类型的所有属性，虽然这里用了反射，但是只是用一次，因为这里用反射获得方法是在写IL代码，写完可以很多次使用，可能第一次的速度不快，但是之后的速度和自己写代码编译的速度是差不多，所以建议使用这个方法。可以自己去使用 dot trace 去查看性能，我自己看到的是性能很好。
 
-拿出所有属性可以读写的代码` foreach (var temp in typeof(T).GetProperties().Where(temp=>temp.CanRead&&temp.CanWrite))`
+拿出所有属性可以读写的代码`foreach (var temp in typeof(T).GetProperties().Where(temp=>temp.CanRead&&temp.CanWrite))`
 
 查看 IL 需要先把第一个参数放在左边，第二个参数放在右边，调用第二个参数的 get 设置第一个参数的set对应的属性看起来的正常代码就是
 
@@ -177,7 +177,7 @@ CloneObjectWithIL(foo1,foo2);
 
 
 
-            Cvte.Paint.Clone.CloneObjectWithIL(foo, foo1);
+            Clone.CloneObjectWithIL(foo, foo1);
             foo1.TestA1.Name == foo.TestA1.Name
 
             foo.Name = "";
@@ -185,6 +185,27 @@ CloneObjectWithIL(foo1,foo2);
 
             foo1.TestA1.Name == foo.TestA1.Name
 
+```
+
+那么上面的代码在什么时候可以使用？实际如果在一个创建的类需要复制基类的属性，那么使用这个方法是很好，例如在 Model 会创建一些类，而在 ViewModel 有时候需要让这些类添加一些属性，如 `Checked` ，那么需要重新复制 Model 的属性，如果一个个需要自己写属性复制，那么开发速度太慢。所以这时候可以使用这个方法。
+
+例如基类是 `Base` ，继承类是`Derived `，请看下面代码
+
+```csharp
+public class Base
+{
+    public string BaseField;
+}
+
+public class Derived : Base
+{
+    public string DerivedField;
+}
+
+Base base = new Base();
+//some alother code
+Derived derived = new Derived();
+CloneObjectWithIL(base, derived);
 ```
 
 如果需要复制一个类到一个新类，可以使用这个代码
@@ -234,5 +255,7 @@ CloneObjectWithIL(foo1,foo2);
 http://www.c-sharpcorner.com/uploadfile/puranindia/reflection-and-reflection-emit-in-C-Sharp/
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20178885325.jpg)
+
+https://stackoverflow.com/a/46580446/6116637
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
