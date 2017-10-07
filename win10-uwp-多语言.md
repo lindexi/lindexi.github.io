@@ -17,8 +17,6 @@
 
 我们把所有的需要做多语言的字符串提取出来。假如我们有一个 TextBlock ，他有一个 Text 。我们有一个 TextBox 他有 Header ，我们需要把他们改为多语言。
 
-		
-
 ```xml
                 <TextBlock Text="lindexi"></TextBlock>
                 <TextBox Header="lindexi.oschina.io"></TextBox>
