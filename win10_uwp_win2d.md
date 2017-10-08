@@ -6,6 +6,8 @@
 <div id="toc"></div>
 <!-- csdn -->
 
+<!-- stickie -->
+
 ## 介绍
 
 Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用硬件加速，主要是GPU的强大计算。他可以使用C#或C++写应用商店应用，包括UWP或windows 8.1手机或电脑。他利用强大的Direct2D，无缝集合windows的Xaml，可以使用强大的渲染得到漂亮界面。
