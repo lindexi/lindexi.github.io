@@ -23,6 +23,8 @@
 
 接着开始做游戏的主页面，请注意，在写的时候，一个页面都是对应一个视图。可以看到在写的时候，不需要去管两个页面之间的逻辑。当然现在也无法管。
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792392012.jpg)
+
 可以知道游戏的主页面需要有仓库、买东西的店铺、买东西的地方和工厂。
 
 那么需要想游戏是如何玩的。
@@ -195,6 +197,276 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201797183335.jpg)
 
+然后就需要开始绑定进去了，不过这时发现游戏需要的数据很简单，暂时我就不继续写代码，如果需要代码，请看 [VarietyHiggstGushed](https://github.com/lindexi/UWP/tree/master/uwp/src/VarietyHiggstGushed)
+
+## 添加图标
+
+可以看到，上面的界面没有图标，看起来不好看，所以需要给他添加一些图标。图标可以到 [http://www.iconfont.cn/](http://www.iconfont.cn/) 下载，在这里下载需要注意版权问题，不过我的这个在下载的时候就有看了，好像是不需要给钱。
+
+首先把图片放在 Assest 文件夹，然后就可以设置出来了。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791617817.jpg)
+
+```csharp
+            <Grid>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <FrameworkElement.Resources>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Margin" Value="10,10,10,10"></Setter>
+                        </Style>
+                    </FrameworkElement.Resources>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="ms-appx:///Assets/天.png" Height="20" Width="20"></Image>
+                        <TextBlock Text="天数"></TextBlock>
+                        <TextBlock Text="{x:Bind View.PinkieDuchesneGeraldo,Mode=OneWay}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="ms-appx:///Assets/仓库.png" Height="20" Width="20"></Image>
+                        <TextBlock Text="仓库容量"></TextBlock>
+                        <TextBlock Text="{x:Bind View.JwStorage.Transit,Mode=OneWay}"/>
+                        <TextBlock Text="/"></TextBlock>
+                        <TextBlock Text="{x:Bind View.JwStorage.TransitStorage,Mode=OneWay}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="金钱"></TextBlock>
+                        <TextBlock Text="{x:Bind View.JwStorage.TranStoragePrice,Mode=OneWay}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+```
+
+可以看到图片的写法 Source 的值是使用`ms-appx`，这里就是从资源获得，如果希望知道这个代码是如何写，我有博客[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/) 里面就告诉大家如何写。
+
+注意需要设置图片的大小，可以运行程序，然后开始设置，这样界面就可以看到修改，但是需要保存才可以看到。
+
+可以看到原来的代码是 [VarietyHiggstGushed](https://github.com/lindexi/UWP/commit/3f58dbee64d0a7b42768c1acdecb6812fc789ac5#diff-e941c1b41207d1fb99a9b5bc32e2d30b) 买东西的界面看起来不好
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017916171231.jpg)
+
+下面就需要修改这个，修改为一个好看的
+
+可以使用 ContentDialog 弹出一个好看的界面
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791720859.jpg)
+
+那么如何做这个界面，简单的方法是做一个用户控件，这个控件的界面很简单，但是后台需要写一些属性，这个属性就是买入的当前，买入最大值，对应还有卖出的。
+
+于是这个界面的后台代码就是几个属性，还有在设置 ViewModel 时更新属性
+
+```csharp
+  public sealed partial class JediahPage : UserControl
+    {
+        public JediahPage()
+        {
+            this.InitializeComponent();
+        }
+
+        public StorageModel ViewModel
+        {
+            get { return _viewModel; }
+            set
+            {
+                _viewModel = value;
+                //最大可以买
+                NewLansheehyBrunaSharon = (int) Math.Floor(_viewModel.JwStorage.TranStoragePrice /
+                                                           _viewModel.CarloPiperIsaacProperty.Price);
+                var sresidue = _viewModel.JwStorage.TransitStorage - _viewModel.JwStorage.Transit;
+                NewLansheehyBrunaSharon = NewLansheehyBrunaSharon > sresidue ? sresidue : NewLansheehyBrunaSharon;
+                AimeeLansheehyBrunaSharon = _viewModel.CarloPiperIsaacProperty.Num;
+            }
+        }
+
+        public static readonly DependencyProperty NewLansheehyBrunaSharonNumProperty = DependencyProperty.Register(
+            "NewLansheehyBrunaSharonNum", typeof(int), typeof(JediahPage), new PropertyMetadata(default(int)));
+
+        public int NewLansheehyBrunaSharonNum
+        {
+            get { return (int) GetValue(NewLansheehyBrunaSharonNumProperty); }
+            set { SetValue(NewLansheehyBrunaSharonNumProperty, value); }
+        }
+
+        public static readonly DependencyProperty NewLansheehyBrunaSharonProperty = DependencyProperty.Register(
+            "NewLansheehyBrunaSharon", typeof(int), typeof(JediahPage), new PropertyMetadata(default(int)));
+
+        public int NewLansheehyBrunaSharon
+        {
+            get { return (int) GetValue(NewLansheehyBrunaSharonProperty); }
+            set { SetValue(NewLansheehyBrunaSharonProperty, value); }
+        }
+
+        public static readonly DependencyProperty AimeeLansheehyBrunaSharonNumProperty = DependencyProperty.Register(
+            "AimeeLansheehyBrunaSharonNum", typeof(int), typeof(JediahPage), new PropertyMetadata(default(int)));
+
+        public int AimeeLansheehyBrunaSharonNum
+        {
+            get { return (int) GetValue(AimeeLansheehyBrunaSharonNumProperty); }
+            set { SetValue(AimeeLansheehyBrunaSharonNumProperty, value); }
+        }
+
+        public static readonly DependencyProperty AimeeLansheehyBrunaSharonProperty = DependencyProperty.Register(
+            "AimeeLansheehyBrunaSharon", typeof(int), typeof(JediahPage), new PropertyMetadata(default(int)));
+
+        private StorageModel _viewModel;
+
+        public int AimeeLansheehyBrunaSharon
+        {
+            get { return (int) GetValue(AimeeLansheehyBrunaSharonProperty); }
+            set { SetValue(AimeeLansheehyBrunaSharonProperty, value); }
+        }
+
+        public event EventHandler Close;
+
+        private void NewLansheehy(object sender, RoutedEventArgs e)
+        {
+            ViewModel.LansheehyBrunaSharon = NewLansheehyBrunaSharonNum;
+            ViewModel.NewLansheehyBrunaSharon();
+            Close?.Invoke(this, null);
+        }
+
+        private void AimeeLansheehy(object sender, RoutedEventArgs e)
+        {
+            ViewModel.LansheehyBrunaSharon = AimeeLansheehyBrunaSharonNum;
+            ViewModel.AimeeLansheehyBrunaSharon();
+            Close?.Invoke(this, null);
+        }
+
+        private void MnewBruna(object sender, RoutedEventArgs e)
+        {
+            NewLansheehyBrunaSharonNum = NewLansheehyBrunaSharon;
+        }
+
+        private void MaimeeBruna(object sender, RoutedEventArgs e)
+        {
+            AimeeLansheehyBrunaSharonNum = AimeeLansheehyBrunaSharon;
+        }
+
+        private void CloseButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close?.Invoke(this, null);
+        }
+    }
+```
+
+界面代码很简单
+
+```csharp
+    <Grid >
+        <Grid Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="64*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Button FontFamily="Segoe MDL2 Assets" Content="&#xE10A;" HorizontalAlignment="Right"
+                        Click="CloseButton_OnClick">
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="64*" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="100*" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <TextBlock Text="{x:Bind ViewModel.CarloPiperIsaacProperty.Name}"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="ms-appx:///Assets/仓库.png" Height="20" Width="20"></Image>
+                            <TextBlock Text="仓库拥有:"></TextBlock>
+                            <TextBlock Text="{x:Bind ViewModel.CarloPiperIsaacProperty.Num}"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Width="300" Grid.Row="2">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="$"></TextBlock>
+                            <TextBlock Text="买入价格"></TextBlock>
+                            <TextBlock Text="{x:Bind ViewModel.CarloPiperIsaacProperty.AshliLyverGeraldo,Converter={StaticResource ConverDoubleStr}}"></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Right">
+                            <TextBlock Text="$"></TextBlock>
+                            <TextBlock Text="市场价格"></TextBlock>
+                            <TextBlock Text="{x:Bind ViewModel.CarloPiperIsaacProperty.Price}"></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="74*" />
+                            <RowDefinition Height="85*" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="307*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Slider Margin="10,10,10,10"
+                                    Value="{x:Bind NewLansheehyBrunaSharonNum,Mode=TwoWay,Converter={StaticResource ResourceKey=Convert}}"
+                                    Maximum="{x:Bind NewLansheehyBrunaSharon}">
+                            </Slider>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                <Button Content="max" Click="MnewBruna"></Button>
+                                <Button Content="买入" Click="NewLansheehy"></Button>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="59*" />
+                                <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                            <Slider Margin="10,10,10,10"
+                                    Value="{x:Bind AimeeLansheehyBrunaSharonNum,Mode=TwoWay,Converter={StaticResource Convert}}"
+                                    Maximum="{x:Bind AimeeLansheehyBrunaSharon}">
+
+                            </Slider>
+                            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                <Button Content="max" Click="MaimeeBruna"></Button>
+                                <Button Content="卖出" Click="AimeeLansheehy"></Button>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+```
+
+可以看到需要两个转换器，一个是把字符串转 double 一个是显示 double 保留小数后两位，这个实现很简单，我就不说了。那么接下来就是使用这个界面，使用方法请看下面。
+
+```csharp
+            var temp = new JediahPage()
+            {
+                ViewModel = View,
+            };
+            ContentDialog contentDialog = new ContentDialog()
+            {
+                Content = temp,
+                IsPrimaryButtonEnabled = false,
+                IsSecondaryButtonEnabled = false,
+            };
+
+            temp.Close += (s, args) => contentDialog.Hide();
+
+            await contentDialog.ShowAsync();
+```
+
+主要注意把 close 事件写在显示前，然后去掉默认的按钮。
+
+大概这样就可以运行了，其他的代码不是重要的，所以就不说啦。现在我把游戏发在微软商店，点击[下载](ms-windows-store://pdp/?productid=9pb0286g2ldr)。
+
+
+
 ## 感谢
+
+[walterlv](https://walterlv.github.io/ )
+
+[JAKE](http://niuyanjie.oschina.io/blog/ )
 
 落書き  https://www.pixiv.net/member_illust.php?mode=medium&illust_id=64830430
