@@ -5,7 +5,6 @@
 那么如何把这个压缩包彻底从 git 删除？
 
 <!--more-->
-<!-- csdn -->
 
 如果需要删除 git 的历史记录，使用方法很简单，请看 [Git如何永久删除文件(包括历史记录) - shines77 - 博客园](http://www.cnblogs.com/shines77/p/3460274.html ) 。当然这个方法需要很长时间，因为提交大文件的时间不长，所以可以使用walterlv的方法 [彻底删除 Git 仓库中的文件避免占用大量磁盘空间 - walterlv](https://walterlv.oschina.io/git/2017/09/18/delete-a-file-from-whole-git-history.html )
 
@@ -51,3 +50,4 @@ git gc --prune=now
 
 感谢[walterlv](https://walterlv.oschina.io/ )
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
