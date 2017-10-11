@@ -332,8 +332,12 @@
         }
 ```
 
+<script src='https://gitee.com/lindexi/codes/m90sfzgdwqvk6j81au2y445/widget_preview?title=%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C+Canvas_Draw+2'></script>
+
 这个效果我放在 [商业游戏](ms-windows-store://pdp/?productid=9pb0286g2ldr) 可以玩一下，代码开源[https://github.com/lindexi/UWP/tree/master/uwp/src/VarietyHiggstGushed](https://github.com/lindexi/UWP/tree/master/uwp/src/VarietyHiggstGushed)
 
 参见：[使用win2d实现萤火虫粒子效果 - Nukepayload2 - 博客园](http://www.cnblogs.com/Nukepayload2/p/uwp_fireflyparticlesys_vbnet.html )
+
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

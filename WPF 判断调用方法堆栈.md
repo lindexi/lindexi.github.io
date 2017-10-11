@@ -76,3 +76,43 @@
 
 实际使用`t.IsSubclassOf(typeof(GqpluGkmoanvp))`有些多余，但是写了也可以
 
+下面是我封装的一个方法，用于判断当前调用是否在某个类里的某个方法
+
+```csharp
+       public static bool CheckStackClassMethod(Type @class, string method)
+        {
+            var stackTrace = new StackTrace();
+            var n = stackTrace.FrameCount;
+            for (int i = 1; i < n; i++)
+            {
+                var f = stackTrace.GetFrame(i).GetMethod();
+                if (f.Name.Equals(method))
+                {
+                    var t = f.DeclaringType;
+                    if (t == @class)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+```
+
+代码放在[WPF 判断调用方法堆栈](https://gitee.com/lindexi/codes/qigv3dt12js9ywoakpbu631 )
+
+<script src='https://gitee.com/lindexi/codes/qigv3dt12js9ywoakpbu631/widget_preview?title=CheckStackClassMethod'></script>
+
+使用这个方法，可以把调用修改为下面代码
+
+```csharp
+       public void Foo()
+        {
+            if (CheckStackClassMethod(typeof(GqpluGkmoanvp), ".d"))
+            {
+                Console.WriteLine("构造使用");
+            }
+        }
+```
+
+感谢 [walterlv](https://walterlv.oschina.io/ )
