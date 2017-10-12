@@ -43,7 +43,7 @@
                 }
                 Console.WriteLine(stackTrace.GetFrame(i).GetMethod().Name);
             }
-        }
+
 ```
 
 建议把上面的代码复制到一个项目，自己跑一下就知道了
@@ -116,3 +116,5 @@
 ```
 
 感谢 [walterlv](https://walterlv.oschina.io/ )
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101220537.jpg)
