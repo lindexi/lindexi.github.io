@@ -157,4 +157,71 @@
 参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
 
 
+### 初始化出现默认值类型与属性类型不同
+
+定义的依赖属性是需要默认值类型和定义的一样，在一般的代码，可以使用隐式转换，但是在定义不可以使用。
+
+例如使用类型是 double 实际给的是 int ，就会在运行出现`ArgumentException`
+
+```csharp
+        public static readonly DependencyProperty FooProperty = DependencyProperty.Register(
+            "Foo", typeof(double), typeof(MainWindow), new PropertyMetadata(2));
+
+        public double Foo
+        {
+            get { return (double) GetValue(FooProperty); }
+            set { SetValue(FooProperty, value); }
+        }
+```
+
+虽然定义`double a=2;`是对的，但是在这里定义的 `2`默认是错误的，需要写`2d`才是对的
+
+### 修改属性名称
+
+默认的代码片生成代码的属性名称是字符串，但是字符串有个缺点，如果修改了变量名，那么界面绑定就无法找到。
+
+建议把字符串换为C# 6.0 带来的新特性
+
+```csharp
+       public static readonly DependencyProperty FooProperty = DependencyProperty.Register(
+            nameof(Foo), typeof(double), typeof(MainWindow), new PropertyMetadata(2d));
+
+        public double Foo
+        {
+            get { return (double) GetValue(FooProperty); }
+            set { SetValue(FooProperty, value); }
+        }
+```
+
+通过修改代码片就可以做到，如何修改请看 [resharper 自定义代码片](http://lindexi.oschina.io/lindexi//post/resharper-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87/ )
+
+下面就是修改后的代码
+
+```csharp
+public static readonly $dependencyProperty$ $propertyName$Property = $dependencyProperty$.Register(
+  nameof($propertyName$), typeof($propertyType$), typeof($containingType$), new PropertyMetadata(default($propertyType$)));
+
+public $propertyType$ $propertyName$
+{
+  get { return ($propertyType$) GetValue($propertyName$Property); }
+  set { SetValue($propertyName$Property, value); }
+```
+
+可以直接粘贴进去Resharper的代码
+
+或者导入我的设置，点击[下载](http://7xqpl8.com1.z0.glb.clouddn.com/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A71685E00E-67E5-4343-A467-84862A1EE502.DotSettings)
+
+如果想要使用的是 C# 7 的特性，可以修改代码片，或者点击[下载](http://7xqpl8.com1.z0.glb.clouddn.com/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A72E6789E0-E16E-4B2F-896B-671CC1F21B11.DotSettings)导入
+
+```csharp
+public static readonly $dependencyProperty$ $propertyName$Property = $dependencyProperty$.Register(
+  nameof($propertyName$), typeof($propertyType$), typeof($containingType$), new PropertyMetadata(default($propertyType$)));
+
+public $propertyType$ $propertyName$
+{
+  get => ($propertyType$) GetValue($propertyName$Property);
+  set => SetValue($propertyName$Property, value);
+}
+```
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
