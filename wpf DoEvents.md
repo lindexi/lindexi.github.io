@@ -122,6 +122,27 @@
 
 在使用方法的时候拖动窗口，可能让窗口卡死。
 
+复现步骤：
+
+修改上面呆磨代码，加上`OnLoaded`，里面使用`Dispatcher.Invoke`，然后运行拖动窗口，这时窗口卡死 
+
+```csharp
+        public MainWindow()
+        {
+            InitializeComponent();
+            DataContext = this;
+            Loaded += OnLoaded;
+        }
+
+        private async void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            await Task.Delay(2000);
+            Dispatcher.Invoke(() => { }, DispatcherPriority.Background);
+        }
+```
+
+但是这时使用 Alt+Tab 到其他窗口，然后回来，可以看到窗口正常
+
 ## 推荐方法
 
 实际上垃圾wr是不是要让开发者去写这样的方法？实际上垃圾wr已经做了这个东西，但是没有直接告诉开发者，请尝试使用下面的代码代替上面呆磨
