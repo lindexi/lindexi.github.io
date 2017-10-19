@@ -74,12 +74,35 @@
     }
 ```
 
-实际使用`t.IsSubclassOf(typeof(GqpluGkmoanvp))`有些多余，但是写了也可以
+实际使用`t.IsSubclassOf(typeof(GqpluGkmoanvp))`有些多余，但是写了也可以。因为如果写在构造，那么就会先调用基类的构造方法，所以已经会出现判断到基类的构造方法。
+
+例如有下面的类，在构造方法调用`Foo`，那么调用堆栈就是 `Foo`-`A1`-`A`
+
+```csharp
+public class A1:A
+{
+    public A1()
+    {
+        Foo();
+    }
+}
+
+public class A
+{
+
+}
+```
 
 下面是我封装的一个方法，用于判断当前调用是否在某个类里的某个方法
 
 ```csharp
-       public static bool CheckStackClassMethod(Type @class, string method)
+         /// <summary>
+        /// 查看调用这个方式是否在某个类的某个方法
+        /// </summary>
+        /// <param name="class"></param>
+        /// <param name="method"></param>
+        /// <returns></returns>
+        public static bool CheckStackClassMethod(Type @class, string method)
         {
             var stackTrace = new StackTrace();
             var n = stackTrace.FrameCount;
@@ -89,7 +112,7 @@
                 if (f.Name.Equals(method))
                 {
                     var t = f.DeclaringType;
-                    if (t == @class)
+                    if (t == @class || t.IsSubclassOf(@class) || (@class.IsInterface && @class.IsAssignableFrom(t)))
                     {
                         return true;
                     }
@@ -103,6 +126,8 @@
 
 <script src='https://gitee.com/lindexi/codes/qigv3dt12js9ywoakpbu631/widget_preview?title=CheckStackClassMethod'></script>
 
+因为传入的类型可能是接口，所以类型判断就需要加上接口继承的，所有代码已经给了大家。
+
 使用这个方法，可以把调用修改为下面代码
 
 ```csharp
@@ -115,6 +140,10 @@
         }
 ```
 
+我使用这个方法，在不想开发者调用的
+
 感谢 [walterlv](https://walterlv.oschina.io/ )
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101220537.jpg)
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

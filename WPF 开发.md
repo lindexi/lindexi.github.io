@@ -6,6 +6,78 @@
 
 <div id="toc"></div>
 
+## 单例应用在多实例用户无法使用
+
+如果使用NamedPipeServerStream、`Mutex`做单实例，需要传入字符串，这时如果传入一个固定的字符串，会在多用户的时候无法使用。
+
+因为如果在一个用户启动的软件，那么就注册了这个字符串，在另一个用户就无法启动。解决方法是传入`Environment.UserName`。
+
+在构造函数传入`Environment.UserName`有关的字符串就可以在一个用户进行单例，其他用户打开是自己的软件。
+
+```csharp
+public partial class App
+{
+    #region Constants and Fields
+
+    /// <summary>The event mutex name.</summary>
+    private const string UniqueEventName = "{GUID}";
+
+    /// <summary>The unique mutex name.</summary>
+    private const string UniqueMutexName = "{GUID}"; //这里需要加 Environment.UserName
+
+    /// <summary>The event wait handle.</summary>
+    private EventWaitHandle eventWaitHandle;
+
+    /// <summary>The mutex.</summary>
+    private Mutex mutex;
+
+    #endregion
+
+    #region Methods
+
+    /// <summary>The app on startup.</summary>
+    /// <param name="sender">The sender.</param>
+    /// <param name="e">The e.</param>
+    private void AppOnStartup(object sender, StartupEventArgs e)
+    {
+        bool isOwned;
+        this.mutex = new Mutex(true, UniqueMutexName, out isOwned);
+        this.eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset, UniqueEventName);
+
+        // So, R# would not give a warning that this variable is not used.
+        GC.KeepAlive(this.mutex);
+
+        if (isOwned)
+        {
+            // Spawn a thread which will be waiting for our event
+            var thread = new Thread(
+                () =>
+                {
+                    while (this.eventWaitHandle.WaitOne())
+                    {
+                        Current.Dispatcher.BeginInvoke(
+                            (Action)(() => ((MainWindow)Current.MainWindow).BringToForeground()));
+                    }
+                });
+
+            // It is important mark it as background otherwise it will prevent app from exiting.
+            thread.IsBackground = true;
+
+            thread.Start();
+            return;
+        }
+
+        // Notify other instance so it could bring itself to foreground.
+        this.eventWaitHandle.Set();
+
+        // Terminate this instance.
+        this.Shutdown();
+    }
+
+    #endregion
+}
+```
+
 ## 非托管使用托管委托
 
 如果有一个 C++ 写的dll，他需要一个函数指针，在C#使用，就可以传入委托。
