@@ -301,7 +301,7 @@ https://www.codeproject.com/Articles/55710/Reflection-in-NET
 
 那么在C#如何判断一个类继承了接口，和一个类实现了接口？
 
-使用方法是用 接口的IsAssignableFrom
+使用方法是用 接口的[IsAssignableFrom](https://docs.microsoft.com/zh-cn/dotnet/api/system.type.isassignablefrom?view=netframework-4.7.1)进行判断
 
 
 ```csharp
@@ -311,6 +311,69 @@ https://www.codeproject.com/Articles/55710/Reflection-in-NET
 ```
 
 这时返回的是 true。
+
+实际上 `IsAssignableFrom` 不仅可以用在接口，还可以用在类型，无论是什么的判断，这个方法的意思是，传入的类型是否继承于这个类型。所以只要判断继承，就可以使用这个方法。
+
+请看下面例子，存在类型`Room`、`Kitchen`、`Bedroom`、`Guestroom`、`MasterBedroom` 继承关系如下
+
+```csharp
+class Room
+{
+}
+
+class Kitchen : Room
+{
+}
+
+class Bedroom : Room
+{
+}
+
+class Guestroom : Bedroom
+{
+}
+
+class MasterBedroom : Bedroom
+{
+}
+
+
+```
+
+这时使用下面的代码判断继承
+
+```csharp
+            Room room1 = new Room();
+            Kitchen kitchen1 = new Kitchen();
+            Bedroom bedroom1 = new Bedroom();
+            Guestroom guestroom1 = new Guestroom();
+            MasterBedroom masterbedroom1 = new MasterBedroom();
+
+            Type room1Type = room1.GetType();
+            Type kitchen1Type = kitchen1.GetType();
+            Type bedroom1Type = bedroom1.GetType();
+            Type guestroom1Type = guestroom1.GetType();
+            Type masterbedroom1Type = masterbedroom1.GetType();
+
+            Console.WriteLine("room assignable from kitchen: {0}", room1Type.IsAssignableFrom(kitchen1Type));
+            Console.WriteLine("bedroom assignable from guestroom: {0}", bedroom1Type.IsAssignableFrom(guestroom1Type));
+            Console.WriteLine("kitchen assignable from masterbedroom: {0}", kitchen1Type.IsAssignableFrom(masterbedroom1Type));
+
+```
+
+可以看到有下面的输出
+
+```csharp
+// room assignable from kitchen: True
+// bedroom assignable from guestroom: True
+// kitchen assignable from masterbedroom: False
+```
+
+只要存在继承，那么就是返回true，如果不存在，那么返回false
+
+如果自己和自己比较？如`Console.WriteLine("room assignable from room: {0}", typeof(Room).IsAssignableFrom(typeof(Room)));` 会返回true
+
+如果类型 A 继承 B ，无论B是接口还是类，`B.IsAssignableFrom(A)` 返回 true 。如果 A 和 B 类型相同，那么同样返回 true
 
 但是 IsAssignableFrom 使用的是类型，如果有一个类实现，可以尝试下面代码
 
