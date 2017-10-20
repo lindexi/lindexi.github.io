@@ -7,6 +7,8 @@
 
 <!-- csdn -->
 
+<!-- 标签：wpf,性能优化 -->
+
 这个问题是在我写[wpf DoEvents](https://lindexi.oschina.io/lindexi/post/wpf-DoEvents.html )发现的，因为`Dispatcher.Invoke`可以让界面刷新，但是在拖动窗口会让窗口冻结。
 
 所以一个建议的方法是使用`Dispatcher.InvokeAsync` ，如果需要深入了解，请看我师傅的文章[深入了解 WPF Dispatcher 的工作原理](https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-invoke-async.html )
