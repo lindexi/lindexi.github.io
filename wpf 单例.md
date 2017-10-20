@@ -59,7 +59,9 @@ if (_mutex.WaitOne(TimeSpan.Zero, true))
         }
 ```
 
-但是如果不能启动，就需要启动原来启动的程序。这里使用一个特殊方法，先创建一个类，可以发送消息给原先的程序
+但是如果不能启动，就需要启动原来启动的程序。这里使用一个特殊方法，先创建一个类，可以发送消息给原先的程序。需要知道，在windows上，程序和系统通信都是使用消息，通过模拟消息就可以让其他程序做出特殊的效果，如让他放在窗口最前。
+
+如果需要发送消息，那么需要使用下面的方法。下面代码注册了一个自己的消息，这样在自己的程序可以判断`WM_SHOWME`来把自己给用户。
 
 ```csharp
     internal class NativeMethods
@@ -73,7 +75,7 @@ if (_mutex.WaitOne(TimeSpan.Zero, true))
     }
 ```
 
-接着修改主函数，在已经启动一个程序，就让他打开
+接着修改主函数，在已经启动一个程序，就让他打开。这个方法就是发送一个特殊的消息，只有自己的程序知道这个消息是显示。
 
 ```csharp
         static void Main()
@@ -97,7 +99,7 @@ if (_mutex.WaitOne(TimeSpan.Zero, true))
         }
 ```
 
-然后发送消息需要让程序自己监听，于是打开 MainWindow.xaml.cs 添加下面的代码
+然后发送消息需要让程序自己监听，于是打开 MainWindow.xaml.cs 添加下面的代码，如果监听消息是让自己显示，那么就打开自己。
 
 ```csharp
         protected override void OnSourceInitialized(EventArgs e)
@@ -125,6 +127,8 @@ if (_mutex.WaitOne(TimeSpan.Zero, true))
         private static Mutex _mutex = new Mutex(true, "lindexi" + Environment.UserName);
 
 ```
+
+实际文章就想说如何在多用户系统使用单例。
 
 参见：[Writing a custom Main() method for WPF applications — The Stochastic Game](https://ludovic.chabant.com/devblog/2010/04/20/writing-a-custom-main-method-for-wpf-applications/ )
 
