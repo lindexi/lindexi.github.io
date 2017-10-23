@@ -1,21 +1,27 @@
 # win10 UWP 剪贴板 Clipboard
 
-win10 UWP 剪贴板 Clipboard使用`Windows.ApplicationModel.DataTransfer.Clipboard`
+本文告诉大家如何使用剪贴板 Clipboard。
 <!--more-->
 
 <div id="toc"></div>
 
+win10 UWP 剪贴板 Clipboard使用`Windows.ApplicationModel.DataTransfer.Clipboard`，提供 UWP 与其他程序的通信，目标程序可以使用 UWP 程序也可以使用以前的程序。
+
+下面告诉大家如何去设置和获取剪贴板的内容。
+
+剪贴板的存放使用的是`DataPackage`，里面提供一些默认的方法，因为`DataPackage`在放数据前需要指定数据的id，也就是一个字符串。实际DataPackage可以放任意类型。下面告诉大家如何设置文本。
 
 ## 设置文本
 
 在UWP把字符串添加到剪贴板使用代码很少。
 
-第一个创建 DataPackage，无聊添加图片还是什么都是使用 DataPackage
+第一个创建 DataPackage，无论添加图片还是什么都是使用 DataPackage ，只有他可以放到剪贴板。
+
 ```csharp
  DataPackage dataPackage = new DataPackage();
 ```
 
-然后把文件设置 DataPackage ，因为剪贴板只能设置 DataPackage ，所以即使添加字符串，也是使用 DataPackage
+然后把文本设置 DataPackage ，因为剪贴板只能设置 DataPackage ，所以即使添加字符串，也是使用 DataPackage
 
 ```csharp
             dataPackage.SetText("文本");
@@ -26,7 +32,16 @@ win10 UWP 剪贴板 Clipboard使用`Windows.ApplicationModel.DataTransfer.Clipbo
 
 但是 75351663 大神说，设置之前需要清空剪贴板，不然之前数据成为垃圾内存，我自己没有去试，但是加一句代码也没什么，建议设置之前清空。
 
+如果需要设置任意类型，请使用`SetData`，这时设置类型可以是随意。但是可能设置不成功。
+
+```csharp
+                var data = new DataPackage();
+                    data.SetData("字符串","内容");
+```
+
 ## 获取文本
+
+如果需要获取文本，一般在开始都判断是否包含文本。一般在需要拿到文本之前，使用`Contains`判断是否存在某个类型，而`Contains`的参数是字符串，可以使用`StandardDataFormats`来获得这些字符串。因为 UWP 的剪贴板是系统的，所以需要兼容以前的软件，以前的软件对剪贴板使用是传入字符串和内容，所以就需要使用字符串去拿。微软封装好了一些内容，这样在设置、获取内容就不需要自己指定字符串和通过内容到本地类型。
 
 检查剪贴板包含文本
 
@@ -45,6 +60,20 @@ if (con.Contains(StandardDataFormats.Text))
 ```
 
 ## 获取图片
+
+如果只是需要获得图片并且显示图片，可以使用下面的代码
+
+```csharp
+        private async Task SetClipimage(DataPackageView data)
+        {
+            RandomAccessStreamReference file = await data.GetBitmapAsync();
+            BitmapImage image = new BitmapImage();
+            await image.SetSourceAsync(await file.OpenReadAsync());
+            Image.Source = image;
+        }
+```
+
+但是需要把剪贴板的图片写入到本地，那么需要使用下面的代码
 
 ```csharp
             if (con.Contains(StandardDataFormats.Bitmap))
@@ -96,6 +125,8 @@ IStorageItem 转 StorageFile
                         StorageFile storageFile = storageItem as StorageFile;  
                     }
 ```
+
+在以前的软件，可以用过剪贴板获得任意内容，而uwp只能获得有限的内容，如果需要获得以前软件的特殊内容，那么请使用`GetDataAsync`，这个方法不建议用。
 
 参考：
 
