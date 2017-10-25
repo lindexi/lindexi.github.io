@@ -3,7 +3,6 @@ CalendarDatePicker 是一个好用的东西，但是我发现想要修改他右�
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
 
 如果不知道我说的是哪个，请看下面的图。
 
