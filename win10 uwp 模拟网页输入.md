@@ -31,7 +31,7 @@ private async void webView_NavigationCompletedAsync(WebView sender, WebViewNavig
 ```csharp
 private async void EnterTextAsync(string text,string enterText)
 {
-    var functionString = string.Format(@"document.getElementsByClassName('{0}}')[0].innerText = '{1}';",text, enterText);
+    var functionString = string.Format(@"document.getElementsByClassName('{0}')[0].innerText = '{1}';",text, enterText);
     await webView.InvokeScriptAsync("eval", new string[] { functionString });
 }
 ```
@@ -43,12 +43,55 @@ private async void EnterTextAsync(string text,string enterText)
 ```csharp
 private async void SimulateClickAsync(string button)
 {
-    var functionString = string.Format(@"ddocument.getElementsByClassName('{0}')[0].click();",button);
+    var functionString = string.Format(@"document.getElementsByClassName('{0}')[0].click();",button);
     await webView.InvokeScriptAsync("eval", new string[] { functionString });
 }
 ```
 
+如果需要填写表单 form 那么前面使用的`innerText`需要修改为value，建议打开 edge 在控制命令输入，尝试一个正确的输入
+
 更多的请去了解 js 的知识
+
+### UWP webView 模拟登陆 csdn
+
+下面给大家一个叫简单方法模拟登陆csdn
+
+```csharp
+          GeekWebView.Navigate(new Uri("http://passport.csdn.net/"));
+
+            GeekWebView.NavigationCompleted += OnNavigationCompleted;
+
+
+            F = async () =>
+            {
+
+                var functionString = string.Format(@"document.getElementsByName('username')[0].value='{0}';", "lindexi_gd@163.com");
+                await GeekWebView.InvokeScriptAsync("eval", new string[] { functionString });
+                functionString = string.Format(@"document.getElementsByName('password')[0].value='{0}';", "密码");
+                await GeekWebView.InvokeScriptAsync("eval", new string[] { functionString });
+
+                functionString = string.Format(@"document.getElementsByClassName('logging')[0].click();");
+                await GeekWebView.InvokeScriptAsync("eval", new string[] { functionString });
+            };
+
+        private Action F { set; get; }
+
+        private void OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            F();
+        }
+```
+
+## 使用 cookie
+
+如果需要使用 cookie 那么请加上下面的代码
+
+```csharp
+            Windows.Web.Http.Filters.HttpBaseProtocolFilter filter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
+
+```
+
+只要写上这句话就好了
 
 参见：https://stackoverflow.com/questions/44685469/programatically-press-a-button-in-a-website-from-an-app-in-a-phone/44692971
 
