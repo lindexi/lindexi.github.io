@@ -1,5 +1,6 @@
 # win10 uwp httpClient 登陆CSDN
 
+本文告诉大家如何模拟登陆csdn，这个方法可以用于模拟登陆其他网站。
 <!-- csdn -->
 <!--more-->
 
@@ -7,7 +8,7 @@
 
 ## HttpClient 使用 Cookie
 
-我们可以使用下面代码让 HttpClient 使用 Cookie
+我们可以使用下面代码让 HttpClient 使用 Cookie ，有了这个才可以保存登陆，不然登陆成功下次访问网页还是没登陆。
 
 
 ```csharp
@@ -18,23 +19,106 @@
             HttpClient http = new HttpClient(handler);
 ```
 
+虽然已经有`Cookie`，但是还缺少一些请求需要带的头，因为浏览器是会告诉网站，需要的`Accept`，为了假装这是一个浏览器，所以就需要添加`Accept` 和`Accept-Encoding` `Accept-Language` `User-Agent`
 
+## 添加 Accept
+
+下面的代码可以添加`Accept`，这里后面的字符串可以自己使用浏览器查看，复制。
+
+```csharp
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+```
+
+## 添加 Accept-Encoding
+
+```csharp
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Encoding", "gzip, deflate, br");
+
+```
+
+如果有 `gzip` 就需要解压，这个现在不太好弄，建议不要加。
+
+## 添加 Accept-Language
+
+```csharp
+            http.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Language", "zh-CN,zh;q=0.8");
+
+```
+
+## 添加 User-Agent
+
+```csharp
+http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
+```
+
+更多`User-Agent`请看[win10 uwp 如何让WebView标识win10手机](https://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%A6%82%E4%BD%95%E8%AE%A9WebView%E6%A0%87%E8%AF%86win10%E6%89%8B%E6%9C%BA.html )
+
+## 发送数据
+
+如果需要使用 Post 或 get 发送数据，那么可以使用`HttpContent`做出数据，提供的类型有`StringContent`、`FormUrlEncodedContent`等。
+
+其中`StringContent`最简单，而`FormUrlEncodedContent`可以自动转换。
+
+```csharp
+            str = $"username={account.UserName}&password={account.Key}&lt={lt}&execution={execution}&_eventId=submit";
+            str = str.Replace("@", "%40");
+
+            HttpContent content = new StringContent(str, Encoding.UTF8);
+```
+
+上面代码就是使用 `StringContent` 可以看到需要自己转换特殊字符，当然一个好的方法是使用 urlencoding 转换。
+
+如果使用`FormUrlEncodedContent`就不需要做转换
+
+```csharp
+          content=new FormUrlEncodedContent(new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("username",account.UserName),
+                new KeyValuePair<string, string>("password",account.Key),
+                new KeyValuePair<string, string>("lt",lt),
+                new KeyValuePair<string, string>("execution",execution),
+                new KeyValuePair<string, string>("_eventId","submit")
+            });
+```
+
+如果需要上传文件，那么需要使用`MultipartFormDataContent`
+
+```csharp
+            content = new MultipartFormDataContent();
+            ((MultipartFormDataContent)content).Headers.Add("name", "file1");
+           
+            ((MultipartFormDataContent)content).Headers.Add("filename", "20170114120751.png");
+            var stream = new StreamContent(await File.OpenStreamForReadAsync());
+            ((MultipartFormDataContent)content).Add(stream);
+```
+    
+
+## 模拟登陆csdn
+
+于是下面就是模拟登陆
+
+1. 获得账号信息
 
 ```csharp
             AccountCimage account = AppId.AccoutCimage;
-            //https://stackoverflow.com/questions/41599384/httpclient-cookie-issue
-            CookieContainer cookies = new CookieContainer();
+
+```
+
+2. cookie
+
+```csharp
+        CookieContainer cookies = new CookieContainer();
 
             HttpClientHandler handler = new HttpClientHandler();
             handler.CookieContainer = cookies;
             HttpClient http = new HttpClient(handler);
-            var url = new Uri("https://passport.csdn.net/account/login");
-            //https://passport.csdn.net/?service=http://write.blog.csdn.net/
-            //HttpRequestHeader.
-            //http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"));
-            //http.DefaultRequestHeaders.AcceptEncoding.Add(StringWithQualityHeaderValue.Parse("gzip, deflate, br"));
-            //http.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"));
+```
 
+3. 获得登陆需要的流水号
+
+```csharp
+  var url = new Uri("https://passport.csdn.net/account/login");
+   
             http.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
             //http.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Encoding", "gzip, deflate, br");
             http.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Language", "zh-CN,zh;q=0.8");
@@ -49,17 +133,19 @@
             var lt = regex.Match(str).Groups[1].Value;
             regex = new Regex("type=\"hidden\" name=\"execution\" value=\"(\\w+)\"");
             var execution = regex.Match(str).Groups[1].Value;
+```
+
+4. 登陆
+
+```csharp
 
             str = $"username={account.UserName}&password={account.Key}&lt={lt}&execution={execution}&_eventId=submit";
             str = str.Replace("@", "%40");
 
             HttpContent content = new StringContent(str, Encoding.UTF8);
 
-            //((StringContent)content).Headers
-            //username=lindexi_gd%40163.com&password=Huc_3113006277&lt=LT-541277-RgRpxUYUjiMNRYpXclGBNBy0pInajL&execution=e10s1&_eventId=submit
-            //username=lindexi_gd%40163.com&password=Huc_3113006277&lt=LT-541546-HzhKAKoaeftqtL6EtiCQYXrC3d716w&execution=e1s1&_eventId=submit
+      
             str = await content.ReadAsStringAsync();
-            //content=new
             content=new FormUrlEncodedContent(new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("username",account.UserName),//.Replace("@", "%40")),
@@ -72,23 +158,23 @@
 
             str = await (await http.PostAsync(url, content)).Content.ReadAsStringAsync();
 
-            //str = await http.GetStringAsync(url);
-            //foreach (Cookie temp in handler.CookieContainer.GetCookies(url))
-            //{
-            //    handler.CookieContainer.SetCookies(new Uri("http://write.blog.csdn.net/"),temp.ToString());
-            //}
+```
 
-            //var temp = handler.CookieContainer.GetCookies(url);
+5. 查看登陆
 
-            //handler.CookieContainer.GetCookies()
-            url = new Uri("http://write.blog.csdn.net/");
+
+```csharp
+   url = new Uri("http://write.blog.csdn.net/");
             str = await http.GetStringAsync(url);
 
-            //content=new MultipartContent();
-            //((MultipartContent)content)
-            content = new MultipartFormDataContent();
+```
+
+6. 上传文件
+
+```csharp
+           content = new MultipartFormDataContent();
             ((MultipartFormDataContent)content).Headers.Add("name", "file1");
-            //((MultipartFormDataContent)content)
+           
             ((MultipartFormDataContent)content).Headers.Add("filename", "20170114120751.png");
             var stream = new StreamContent(await File.OpenStreamForReadAsync());
             ((MultipartFormDataContent)content).Add(stream);
@@ -97,43 +183,32 @@
             var message = await http.PostAsync(url, content);
             if (message.StatusCode == HttpStatusCode.OK)
             {
-                //str = await message.Content.ReadAsStringAsync();
-                //message.Content.ReadAsStreamAsync()
                 ResponseImage(message);
             }
-```
 
-
-```csharp
-        private async void ResponseImage(HttpResponseMessage message)
-        {
-            //using (MemoryStream memoryStream = new MemoryStream())
-            //{
-            //    int length = 1024;
-            //    byte[] buffer = new byte[length];
-            //    using (GZipStream zip = new GZipStream(await message.Content.ReadAsStreamAsync(), CompressionLevel.Optimal))
-            //    {
-            //        int n;
-            //        while ((n = zip.Read(buffer, 0, length)) > 0)
-            //        {
-            //            memoryStream.Write(buffer, 0, n);
-            //        }
-            //    }
-
-            //    using (StreamReader stream = new StreamReader(memoryStream))
-            //    {
-            //        string str = stream.ReadToEnd();
-            //    }
-            //}
-
-            using (StreamReader stream = new StreamReader(await message.Content.ReadAsStreamAsync()))
+         private async void ResponseImage(HttpResponseMessage message)
+         {
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                string str = stream.ReadToEnd();
-            }
-            //System.IO.Compression.DeflateStream
+                int length = 1024;
+                byte[] buffer = new byte[length];
+                using (GZipStream zip = new GZipStream(await message.Content.ReadAsStreamAsync(), CompressionLevel.Optimal))
+                {
+                    int n;
+                    while ((n = zip.Read(buffer, 0, length)) > 0)
+                    {
+                       memoryStream.Write(buffer, 0, n);
+                    }
+                }
 
+                using (StreamReader stream = new StreamReader(memoryStream))
+                {
+                    string str = stream.ReadToEnd();
+                }
+            }
         }
 ```
+
 
 ### 使用 WebView 模拟登陆 csdn
 
@@ -165,7 +240,7 @@
         }
 ```
 
-请把密码修改为自己的密码
+当然，这时需要修改登陆信息，我上面写的是我的。如果遇到有验证码，那么这个方法是不可使用，因为输入验证码暂时还没法做。
 
 
 
