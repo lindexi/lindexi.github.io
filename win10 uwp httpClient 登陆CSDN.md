@@ -99,25 +99,20 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
 
 1. 获得账号信息
 
-```csharp
             AccountCimage account = AppId.AccoutCimage;
 
-```
 
 2. cookie
 
-```csharp
-        CookieContainer cookies = new CookieContainer();
+            CookieContainer cookies = new CookieContainer();
 
             HttpClientHandler handler = new HttpClientHandler();
             handler.CookieContainer = cookies;
             HttpClient http = new HttpClient(handler);
-```
 
 3. 获得登陆需要的流水号
 
-```csharp
-  var url = new Uri("https://passport.csdn.net/account/login");
+            var url = new Uri("https://passport.csdn.net/account/login");
    
             http.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
             //http.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Encoding", "gzip, deflate, br");
@@ -133,11 +128,9 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
             var lt = regex.Match(str).Groups[1].Value;
             regex = new Regex("type=\"hidden\" name=\"execution\" value=\"(\\w+)\"");
             var execution = regex.Match(str).Groups[1].Value;
-```
 
 4. 登陆
 
-```csharp
 
             str = $"username={account.UserName}&password={account.Key}&lt={lt}&execution={execution}&_eventId=submit";
             str = str.Replace("@", "%40");
@@ -158,20 +151,16 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
 
             str = await (await http.PostAsync(url, content)).Content.ReadAsStringAsync();
 
-```
 
 5. 查看登陆
 
 
-```csharp
    url = new Uri("http://write.blog.csdn.net/");
             str = await http.GetStringAsync(url);
 
-```
 
 6. 上传文件
 
-```csharp
            content = new MultipartFormDataContent();
             ((MultipartFormDataContent)content).Headers.Add("name", "file1");
            
@@ -207,7 +196,6 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
                 }
             }
         }
-```
 
 
 ### 使用 WebView 模拟登陆 csdn
