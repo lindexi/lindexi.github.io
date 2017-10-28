@@ -66,7 +66,99 @@
 
 ## 使用`Task.Wait` 时需要小心死锁
 
+
+### 不会出现死锁的代码
+
+直接在UI使用`Task.Run`
+
+```csharp
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            var n = Task.Run(() =>
+              {
+                  return 2;
+              }).Result;
+        }
+```
+
+使用`Task.Delay`
+
+```csharp
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            Task.Delay(100).Wait();
+        }
+
+```
+
+即使使用方法，里面使用 io 也不会死锁
+
+```csharp
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            DoAsync().Wait();
+        }
+
+
+        private async Task DoAsync()
+        {
+
+            await ApplicationData.Current.LocalFolder.CreateFileAsync("lin", CreationCollisionOption.ReplaceExisting);
+        }
+```
+
+
+### 会出现死锁的写法
+
+在UI使用异步会创建线程的方法
+
+```csharp
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            DoAsync().Wait();
+        }
+
+
+        async Task DoAsync()
+        {
+            await Task.Run(() => { });
+        }
+```
+
+```csharp
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            DoAsync().Wait();
+        }
+
+
+        async Task DoAsync()
+        {
+            await Task.Delay(100);
+        }
+```
+
+```csharp
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            DoAsync().Wait();
+        }
+
+
+
+        private async Task DoAsync()
+        {
+            await Task.Run( () =>
+            {
+                ApplicationData.Current.LocalFolder.CreateFileAsync("123",
+                    CreationCollisionOption.ReplaceExisting).GetResults();
+            });
+        }
+```
+
 参见：[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://walterlv.gitee.io/post/deadlock-in-task-wait.html )
+
+
 
 value task
 
