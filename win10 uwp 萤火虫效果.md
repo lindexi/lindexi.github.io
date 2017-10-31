@@ -6,7 +6,6 @@
 
 <!--more-->
 <div id="toc"></div>
-<!-- csdn -->
 
 ## 安装 win2d 
 
