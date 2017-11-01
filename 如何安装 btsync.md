@@ -69,7 +69,141 @@ btsync 把自己的电脑作为网盘，不限空间流量，适合局域网同�
 
 ## Centos 6 安装
 
-如果需要安装特定版本，1.4 就可以参见本文提供的链接
+本文告诉大家如何安装特点的 1.4 版本。
+
+首先上传解压的文件，我使用的是 btsync_i386-1.4.111 ，直接上传到服务器任意的文件夹
+
+然后使用下面的代码解压
+
+```csharp
+tar xvf btsync_i386-1.4.111.tar.gz
+```
+
+于是文件 btsync 就解压出来了。如果运行出现下面的问题，那么用 yum 就可以安装
+
+```csharp
+ /lib/ld-linux.so.2: bad ELF interpreter: No such file or directory
+
+```
+
+安装的方法
+
+```csharp
+yum -y install glibc.i686
+
+```
+
+安装完成可以运行 btsync 不过需要获得配置，如果没配置就难以从网页打开
+
+```csharp
+./btsync --dump-sample-config > btsync.conf
+
+```
+
+然后使用 vi 就可以打开配置，可以修改配置的默认端口
+
+```csharp
+vi btsync.conf
+```
+
+可以看到下面的配置
+
+```csharp
+{
+  "device_name": "My Sync Device",
+  "listening_port" : 0, // 0 - randomize port 这是软件监听端口，不是网页的端口
+
+/* storage_path dir contains auxilliary app files if no storage_path field: .sync dir created in the directory
+   where binary is located. otherwise user-defined directory will be used */
+// "storage_path" : "/home/user/.sync",
+
+/* set location of pid file */
+// "pid_file" : "/var/run/btsync/btsync.pid",
+
+/* use UPnP for port mapping */
+  "use_upnp" : true,
+
+/* limits in kB/s. 0 - no limit */
+  "download_limit" : 0,
+  "upload_limit" : 0,
+
+/* proxy configuration */
+// "proxy_type" : "socks4", // Valid types: "socks4", "socks5", "http_connect". Any other value means no proxy
+// "proxy_addr" : "192.168.1.2", // IP address of proxy server.
+// "proxy_port" : 1080,
+// "proxy_auth" : false, // Use authentication for proxy. Note: only username/password for socks5 (RFC 1929) is supported, and it is not really secure
+// "proxy_username" : "user",
+// "proxy_password" : "password",
+
+  "webui" :
+  {
+    "listen" : "0.0.0.0:8888" // remove field to disable WebUI 修改这里可以打开网页，监听端口可以修改
+
+/* preset credentials. Use password or password_hash */
+  ,"login" : "admin"//网页需要添加账号密码，请自己设置
+  ,"password" : "password"//这是密码
+//  ,"password_hash" : "some_hash" // password hash in crypt(3) format
+//  ,"allow_empty_password" : false // Defaults to true
+/* ssl configuration */
+//  ,"force_https" : true // disable http 如果需要使用 https 那么取消注释
+//  ,"ssl_certificate" : "/path/to/cert.pem" 这时需要添加证书
+//  ,"ssl_private_key" : "/path/to/private.key"
+
+/* directory_root path defines where the WebUI Folder browser starts (linux only). Default value is / */
+//  ,"directory_root" : "/home/user/MySharedFolders/"
+
+/* dir_whitelist defines which directories can be shown to user or have folders added (linux only)
+   relative paths are relative to directory_root setting */
+//  ,"dir_whitelist" : [ "/home/user/MySharedFolders/personal", "work" ]
+  }
+
+/* !!! if you set shared folders in config file WebUI will be DISABLED !!!
+   shared directories specified in config file  override the folders previously added from WebUI. */
+/*, 如果删除注释，就不可以用网页，直接代码设置分享的文件夹
+  "shared_folders" :
+  [
+    {
+      "secret" : "MY_SECRET_1", // required field - use --generate-secret in command line to create new secret
+      "dir" : "/home/user/bittorrent/sync_test", // * required field
+      "use_relay_server" : true, //  use relay server when direct connection fails
+      "use_tracker" : true,
+      "use_dht" : false, //使用 dht，这个一般需要打开
+      "search_lan" : true,//局域网
+      "use_sync_trash" : true, // enable SyncArchive to store files deleted on remote devices
+      "overwrite_changes" : false, // restore modified files to original version, ONLY for Read-Only folders
+      "known_hosts" : // specify hosts to attempt connection without additional search
+      [
+        "192.168.1.2:44444" //预定义主机
+      ]
+    }
+  ]
+*/
+
+/* Advanced preferences can be added to config file. Info is available at http://sync-help.bittorrent.com */
+
+}
+
+```
+
+## 国内如何下载
+
+如果需要在国内使用，那么需要指定预定义主机。btsync可以使用dht进行下载，他的难就在于发现第一个节点。如果发现了一个节点，就可以通过他得到其他的节点。预定义主机就是自己已经知道存在的一个主机。
+
+可以通过代理访问到外面的节点，然后保存他，之后不使用代理也可以下载。或者设置发现的主机，这样通过这个可以得到其它的节点。
+
+首先创建一个文件夹，然后点击设置
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111191010.jpg)
+
+例如我添加字体文件，点击设置
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111191141.jpg)
+
+打开dht和添加主机，这时不需要设置代理就可以下载，不过需要等很久
+
+如果需要设置代理，那么需要注意默认用的是 socket4 需要设置为支持的代理。
+
+设置主机可以使用我的：23.105.201.4 端口 21782 ，如果还是无法下载那么可以联系我
 
 参见：[BitTorrent Sync Installer 1.4.111](http://getos.org/btsync/14111.html )
 
