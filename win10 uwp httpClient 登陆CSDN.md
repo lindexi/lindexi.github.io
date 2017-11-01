@@ -53,6 +53,17 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
 
 更多`User-Agent`请看[win10 uwp 如何让WebView标识win10手机](https://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%A6%82%E4%BD%95%E8%AE%A9WebView%E6%A0%87%E8%AF%86win10%E6%89%8B%E6%9C%BA.html )
 
+## ContentType
+
+如果设置 ContentType 需要在发送的内容进行添加
+
+```csharp
+            content = new StringContent("{\"loginName\":\"lindexi\",\"password\":\"csdn\",\"autoLogin\":false}")
+            {
+                Headers = { ContentType = new MediaTypeHeaderValue("application/json") }
+            };
+```
+
 ## 发送数据
 
 如果需要使用 Post 或 get 发送数据，那么可以使用`HttpContent`做出数据，提供的类型有`StringContent`、`FormUrlEncodedContent`等。
