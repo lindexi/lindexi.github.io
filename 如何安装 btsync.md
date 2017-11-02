@@ -207,3 +207,10 @@ vi btsync.conf
 
 参见：[BitTorrent Sync Installer 1.4.111](http://getos.org/btsync/14111.html )
 
+https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html?utm_source=tuicool&utm_medium=referral
+
+## 搭建预定义主机
+
+可以购买一个服务器，然后在服务器开启 btsync 这时记录他的 ip 和监听端口，监听端口是软件监听端口。于是这就是预定义主机，需要在他这里同步一些文件，然后设置开启 dht ，这样可以让他去寻找一些节点。
+
+在自己的电脑上，使用预定义主机，开启dht就可以从预定义主机拿到其他节点，所以就可以访问其它的资源。
