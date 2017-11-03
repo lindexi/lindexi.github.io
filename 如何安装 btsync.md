@@ -214,3 +214,5 @@ https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html?utm_source=tuico
 可以购买一个服务器，然后在服务器开启 btsync 这时记录他的 ip 和监听端口，监听端口是软件监听端口。于是这就是预定义主机，需要在他这里同步一些文件，然后设置开启 dht ，这样可以让他去寻找一些节点。
 
 在自己的电脑上，使用预定义主机，开启dht就可以从预定义主机拿到其他节点，所以就可以访问其它的资源。
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

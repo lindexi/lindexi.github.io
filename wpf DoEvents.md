@@ -120,7 +120,7 @@
 
 ## 存在的坑
 
-这里的坑是 PushFrame 的坑，关于他的原理，请看 https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-push-frame.html
+这里的坑是 PushFrame 的坑，关于他的原理，请看 [https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-push-frame.html](https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-push-frame.html)
 
 如果点击确定按钮之后，再次点击确定按钮，那么就会出现很多个重复的数。如果使用这个方法，那么需要禁用确定按钮，小心用户多次点击。
 
