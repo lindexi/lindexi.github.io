@@ -6,6 +6,8 @@
 <div id="toc"></div>
 <!-- csdn -->
 
+<!-- stickie -->
+
 ## 介绍
 
 Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用硬件加速，主要是GPU的强大计算。他可以使用C#或C++写应用商店应用，包括UWP或windows 8.1手机或电脑。他利用强大的Direct2D，无缝集合windows的Xaml，可以使用强大的渲染得到漂亮界面。
@@ -348,6 +350,8 @@ win2d 会忽略在 xaml 设置的背景
 win2d 毛玻璃：[win10 uwp 毛玻璃](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83/)
 
 [win2d 画出好看的图形](http://lindexi.oschina.io/lindexi/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2/)
+
+[win10 uwp 萤火虫效果](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C/ )
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017888552.jpg)
 

@@ -1,0 +1,94 @@
+# C＃ 字符串首字符大写
+
+我找到一些把字符串首字符大写的方法。
+
+<!--more-->
+<!-- csdn -->
+
+假如需要把字符串 "red" 转换为 "Red"，把 "red house" 转为 "Red house" 或者单词的第一个大写，下面就是我从网上看到的技术。
+
+```csharp
+public static string FirstCharToUpper(string input)
+{
+    if (String.IsNullOrEmpty(input))
+        throw new ArgumentException("ARGH!");
+    return input.First().ToString().ToUpper() + input.Substring(1);
+}
+```
+
+这个方法就是拿到第一个字符，然后加上后面的字符，可以看到这个方法需要三个字符串在内存。
+
+```csharp
+public string FirstLetterToUpper(string str)
+{
+    if (str == null)
+        return null;
+
+    if (str.Length > 1)
+        return char.ToUpper(str[0]) + str.Substring(1);
+
+    return str.ToUpper();
+}
+```
+这个方法也是需要两个字符串。
+
+下面的方法大概大家比较少会去发现，就是 CultureInfo 的方法
+
+```csharp
+CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
+```
+
+这个方法是比较好方法，假如我输入"red house" 那么就会转换为 "Red House"
+
+上面的方法还可以使用这个方法
+
+```csharp
+CultureInfo("en-US").TextInfo.ToTitleCase("red house");
+```
+
+
+如果需要使用拼接，可以使用这个方法
+
+```csharp
+s.Remove(1).ToUpper() + s.Substring(1) 
+```
+
+上面这个方法不会把 "red house" 转换为 "Red House"
+
+下面给大家一个性能比较好的方法
+
+```csharp
+        char[] a = s.ToCharArray();
+        a[0] = char.ToUpper(a[0]);
+        return new string(a);
+```
+
+如果需要很多字符串都这样把第一个大写，可以使用下面方法
+
+```csharp
+string str = "red house";
+            Console.WriteLine(System.Text.RegularExpressions.Regex.Replace(str, "^[a-z]", m => m.Value.ToUpper()));
+```
+
+和上面方法一样写法，可以使用另外的函数
+
+```csharp
+Regex.Replace(str, @"^\w", t => t.Value.ToUpper());
+```
+
+如果希望有最好的速度，那么请用下面方法
+
+```csharp
+public static unsafe string ToUpperFirst(this string str)
+{
+    if (str == null) return null;
+    string ret = string.Copy(str);
+    fixed (char* ptr = ret) 
+        *ptr = char.ToUpper(*ptr);
+    return ret;
+}
+```
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017917102022.jpg)
+
+https://stackoverflow.com/q/4135317/6116637

@@ -10,6 +10,9 @@
 
 <div id="toc"></div>
 
+<!-- 标签: uwp,wpf,反射 -->
+
+
 先来说下反射。
 
 .Net  最小单位是装配件，什么是装配件？其实就是 dll  或 exe 。.Net 程序包括 程序集 ，模块 ， 类型 这几个。反射可以在程序运行得到这几个组成部分的相关信息。
@@ -54,7 +57,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 那么我们如何获得属于ViewModel的类，如果我们没有继承base，那我们有简单方法。
 
-		
+
 
 ```csharp
     public class ViewModelAssembly:Attribute
@@ -67,7 +70,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 ```
 我们可以通过Attribute，查看是否有，如果有，就是ViewModel
 
-		
+
 
 ```csharp
             foreach (var temp in applacationAssembly.DefinedTypes)
@@ -82,7 +85,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 当然我们还修改下，因为我们不需要写那么多
 
-		
+
 
 ```csharp
             var applacationAssembly = Application.Current.GetType().GetTypeInfo().Assembly;
@@ -128,7 +131,19 @@ Application.Current.GetType().GetTypeInfo().Assembly
     a.GetType().GetTypeInfo().IsSubclassOf(type);
 ```
 
+## 获得特性
 
+例如已经拿到 `TypeInfo` ，他的扩展方法可以拿到特定的特性，一般获得特性就是这个方法，请看代码。
+
+```csharp
+ var attribute = type.GetCustomAttribute<LindexiAttribute>();
+```
+
+上面代码用于获得在对应类型的`LindexiAttribute`特性，于是就可以获得特性的实例，直接使用特性的属性就可以。
+
+## [设置 .NET Native 运行时指令以支持反射（尤其适用于 UWP） - walterlv](https://walterlv.github.io/uwp/2017/09/21/reflection-using-dotnet-native-runtime-directive.html )
+
+解决 Relase 上无法使用反射的问题
 
 ## WPF 反射获得所有类
 
@@ -235,7 +250,7 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 
 ```csharp
-    object[] typeAttributes =type.GetCustomAttributes(false);   
+    object[] typeAttributes = type.GetCustomAttributes(false);   
 ```
 
 
@@ -289,7 +304,7 @@ https://www.codeproject.com/Articles/55710/Reflection-in-NET
 
 那么在C#如何判断一个类继承了接口，和一个类实现了接口？
 
-使用方法是用 接口的IsAssignableFrom
+使用方法是用 接口的[IsAssignableFrom](https://docs.microsoft.com/zh-cn/dotnet/api/system.type.isassignablefrom?view=netframework-4.7.1)进行判断
 
 
 ```csharp
@@ -299,6 +314,69 @@ https://www.codeproject.com/Articles/55710/Reflection-in-NET
 ```
 
 这时返回的是 true。
+
+实际上 `IsAssignableFrom` 不仅可以用在接口，还可以用在类型，无论是什么的判断，这个方法的意思是，传入的类型是否继承于这个类型。所以只要判断继承，就可以使用这个方法。
+
+请看下面例子，存在类型`Room`、`Kitchen`、`Bedroom`、`Guestroom`、`MasterBedroom` 继承关系如下
+
+```csharp
+class Room
+{
+}
+
+class Kitchen : Room
+{
+}
+
+class Bedroom : Room
+{
+}
+
+class Guestroom : Bedroom
+{
+}
+
+class MasterBedroom : Bedroom
+{
+}
+
+
+```
+
+这时使用下面的代码判断继承
+
+```csharp
+            Room room1 = new Room();
+            Kitchen kitchen1 = new Kitchen();
+            Bedroom bedroom1 = new Bedroom();
+            Guestroom guestroom1 = new Guestroom();
+            MasterBedroom masterbedroom1 = new MasterBedroom();
+
+            Type room1Type = room1.GetType();
+            Type kitchen1Type = kitchen1.GetType();
+            Type bedroom1Type = bedroom1.GetType();
+            Type guestroom1Type = guestroom1.GetType();
+            Type masterbedroom1Type = masterbedroom1.GetType();
+
+            Console.WriteLine("room assignable from kitchen: {0}", room1Type.IsAssignableFrom(kitchen1Type));
+            Console.WriteLine("bedroom assignable from guestroom: {0}", bedroom1Type.IsAssignableFrom(guestroom1Type));
+            Console.WriteLine("kitchen assignable from masterbedroom: {0}", kitchen1Type.IsAssignableFrom(masterbedroom1Type));
+
+```
+
+可以看到有下面的输出
+
+```csharp
+// room assignable from kitchen: True
+// bedroom assignable from guestroom: True
+// kitchen assignable from masterbedroom: False
+```
+
+只要存在继承，那么就是返回true，如果不存在，那么返回false
+
+如果自己和自己比较？如`Console.WriteLine("room assignable from room: {0}", typeof(Room).IsAssignableFrom(typeof(Room)));` 会返回true
+
+如果类型 A 继承 B ，无论B是接口还是类，`B.IsAssignableFrom(A)` 返回 true 。如果 A 和 B 类型相同，那么同样返回 true
 
 但是 IsAssignableFrom 使用的是类型，如果有一个类实现，可以尝试下面代码
 
@@ -310,6 +388,8 @@ https://www.codeproject.com/Articles/55710/Reflection-in-NET
 这个方法也可以获得类是否继承接口。
 
 参见： [在C#中判断某个类是否实现了某个接口 ](https://leonax.net/p/3697/determine-if-a-class-implements-a-certain-interface/)
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792392836.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
 
