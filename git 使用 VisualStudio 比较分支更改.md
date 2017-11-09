@@ -80,9 +80,3 @@ git difftool relase dev -- . ':!resource'
 ```
 
 这个命令需要注意，`-- . ':!要忽略的文件夹'` 除了中文，其它的都是需要添加的。
-
-如果不想每次都这样写，另一个方法是打开`.gitattributes`文件夹，在需要的类型后面添加`diff`
-
-```csharp
-
-```
