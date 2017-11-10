@@ -142,10 +142,44 @@ await SvgImageRenderer.RendererImageAsync(file, new SvgImageRendererSettings()
 
 在最新版本，ms支持svg，参见：https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.imaging.svgimagesource
 
+所以在一个 Image控件加入源就好，不需要去做其他的代码。
 
 参见：http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/
 
 代码：https://github.com/lindexi/UWP/tree/master/uwp/src/ScalableVectorGraphic
+
+## win2d 使用 svg
+
+现在 win2d 支持 svg 1.1 ，直接在 win2d 使用svg请看下面代码
+
+首先是加载图片，例如 xx.svg
+
+
+```csharp
+var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/xx.svg"));
+```
+
+然后开始创建 CanvasSvgDocument ，这个类可以用来显示 svg ，但是他有静态方法创建
+
+```csharp
+using (var stream = await file.OpenReadAsync())
+{
+    svgDocument = await CanvasSvgDocument.LoadAsync(sender, stream);
+}
+```
+
+然后可以显示处理或者修改svg图片，下面的代码写在 Draw 函数。如果不知道这个函数是哪个，请看我的[博客](https://lindexi.github.io/lindexi/post/win10-uwp-win2d.html)
+
+```csharp
+args.DrawingSession.DrawSvg(svgDocument, sender.Size);
+```
+
+修改他可以使用 SetColorAttribute 等进行修改，请看 [Win2D 1.21.0 – SVG, improved HDR support, and bugfixes – Win2D Team Blog](https://blogs.msdn.microsoft.com/win2d/2017/06/26/win2d-1-21-0-svg-improved-hdr-support-and-bugfixes/#comment-5565 )
+
+```csharp
+var t = svgDocument.FindElementById("right_eye");
+t.SetColorAttribute("fill", Colors.Red);
+```
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
 
