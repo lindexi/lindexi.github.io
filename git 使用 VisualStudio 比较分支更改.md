@@ -66,6 +66,10 @@ git config --global merge.tool visualstudio
 
 需要修改自己的文件所在，一般可以搜索找到。
 
+如果想使用一个简单的方法，可以打开 VisualStudio 团队设置，然后设置使用 VisualStudio 
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/623b6fff-6d11-0112-9b3c-6b76f86a3bea%2F2017111423046.jpg)
+
 ## 忽略对比的文件夹
 
 如果在 git 提交中，存在某个文件都是资源，在对比中，不停需要去看这些文件，感觉想把git卸了。但是git那么厉害，是不是有一个方法可以做到，忽略某个文件夹的更改。是的，下面我来告诉大家如何忽略这个文件夹。
