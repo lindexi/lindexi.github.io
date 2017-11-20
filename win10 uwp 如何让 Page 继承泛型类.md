@@ -165,4 +165,48 @@
 
 所以 page 不可以继承泛型，但是可以继承接口，所以在框架可以使用这个方法让 Page 继承一个泛型的类，这样可以减少代码
 
+实际使用的 IPage 的代码
+
+```csharp
+   public interface IPage: IFrameworkElement
+    {
+        UIElement Content { get; set; }
+        Frame Frame { get; }
+        NavigationCacheMode NavigationCacheMode { get; set; }
+        AppBar TopAppBar { get; set; }
+        AppBar BottomAppBar { get; set; }
+    }
+
+    public interface IFrameworkElement
+    {
+        TriggerCollection Triggers { get; }
+        ResourceDictionary Resources { get; set; }
+        object Tag { get; set; }
+        string Language { get; set; }
+        double ActualWidth { get; }
+        double ActualHeight { get; }
+        double Width { get; set; }
+        double Height { get; set; }
+        double MinWidth { get; set; }
+        double MaxWidth { get; set; }
+        double MinHeight { get; set; }
+        double MaxHeight { get; set; }
+        HorizontalAlignment HorizontalAlignment { get; set; }
+        VerticalAlignment VerticalAlignment { get; set; }
+        Thickness Margin { get; set; }
+        string Name { get; set; }
+        Uri BaseUri { get; }
+        object DataContext { get; set; }
+        Style Style { get; set; }
+        DependencyObject Parent { get; }
+        FlowDirection FlowDirection { get; set; }
+        event RoutedEventHandler Loaded;
+        event RoutedEventHandler Unloaded;
+        event SizeChangedEventHandler SizeChanged;
+        event EventHandler<object> LayoutUpdated;
+        object FindName(string name);
+        void SetBinding(DependencyProperty dp, BindingBase binding);
+    }
+```
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
