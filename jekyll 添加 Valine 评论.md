@@ -43,6 +43,7 @@
         appKey:'App Key',
         notify:true,
         path: '{{ page.url }}',
+        placeholder:'在这里写评论——林德熙'
     })
 </script>
 ```

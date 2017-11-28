@@ -5,7 +5,7 @@
 <!--more-->
 <!-- csdn -->
 
-首先需要下载 dotPeek ，可以到官网下载 [dotPeek: Free .NET Decompiler & Assembly Browser by JetBrains](https://www.jetbrains.com/decompiler/) 还可以到 csdn 下载
+首先需要下载 dotPeek ，可以到官网下载 [dotPeek: Free .NET Decompiler & Assembly Browser by JetBrains](https://www.jetbrains.com/decompiler/) 还可以到 csdn [下载](http://download.csdn.net/download/lindexi_gd/10133189 )
 
 首先打开 dotPeek 然后点击启动符号服务器，所有符号。
 
@@ -40,5 +40,7 @@
 在 win10 下，调试的代码是没有注释的，但是可以对比 dotpeek 的代码来看，一般他里面的代码就是有注释的，反编译的代码和 dotPeek 看到代码有些地方是不同的，但是实际功能是一样的。但是微软源代码使用的框架可能和自己的不一样，看起来代码还是不相同。
 
 最好是自己去下载微软源代码，然后把他放在一个仓库，这样可以看到不同的框架修改的代码。
+
+因为 UWP 编译使用 .netNative ，很多底层都是使用 C++ 写的，所以无法对 UWP 进行反编译
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
