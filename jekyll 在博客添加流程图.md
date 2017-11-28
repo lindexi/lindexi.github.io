@@ -50,14 +50,16 @@
 ```
 
 <div class="flow">
-st=>start: Start
-e=>end
-ldata=>operation: 进入csdn
+<textarea class="flowcode">
+st=>start: Start 
+e=>end           
+ldata=>operation: 进入csdn 
 
-st->ldata->e
+st->ldata->e 
+</textarea>
 </div>
 
- 
+ st=>start: Start \n e=>end \n ldata=>operation: 进入csdn \n st->ldata->e 
 
 
 
