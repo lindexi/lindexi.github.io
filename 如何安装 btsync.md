@@ -5,7 +5,6 @@
 <!--more-->
 <div id="toc"></div>
 
-<!-- csdn -->
 <!-- 标签：btsync -->
 
 btsync 是分布式网盘

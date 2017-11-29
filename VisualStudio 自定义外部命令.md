@@ -7,7 +7,6 @@
 <!--more-->
 <div id="toc"></div>
 
-<!-- csdn -->
 
 ## 添加命令
 
