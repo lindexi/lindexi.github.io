@@ -81,7 +81,7 @@ UWP的 Convert 和 WPF 差不多。
 
 我的转换器名称是：ConvertBooleanNull
 
-假如我们放在 Model 里，命名空间是 `项目.Model`，我们需要先在 xmlns 写`    xmlns:view="using:项目.Model"`，view 就是一个变量，这个可以改为你需要的。于是在需要使用的地方就可以使用 view 表示所在空间。
+假如我们放在 Model 里，命名空间是 `项目.Model`，我们需要先在 xmlns 写`xmlns:view="using:项目.Model"`，view 就是一个变量，这个可以改为你需要的。于是在需要使用的地方就可以使用 view 表示所在空间。
 
 然后在静态资源使用下面代码`<view:ConvertBooleanNull x:Key="ConvertBooleanNull">   </view:ConvertBooleanNull>`
 

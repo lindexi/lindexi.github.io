@@ -5,7 +5,6 @@
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
 
 假如有一个类
 

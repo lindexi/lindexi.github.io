@@ -1,7 +1,6 @@
 # win10 uwp httpClient 登陆CSDN
 
 本文告诉大家如何模拟登陆csdn，这个方法可以用于模拟登陆其他网站。
-<!-- csdn -->
 <!--more-->
 
 <div id="toc"></div>
