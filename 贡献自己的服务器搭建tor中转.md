@@ -7,12 +7,3 @@
 
 </div>
 
-<script type="text/javascript">
-	   $(document).ready(function() 
-	   {
-             var src = document.getElementById('src').innerText;
-	         document.getElementById('src').innerHTML = utf8to16(base64decode(src));
-                  });
-
-
-</script>
