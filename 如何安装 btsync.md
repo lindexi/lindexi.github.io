@@ -215,4 +215,10 @@ https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html?utm_source=tuico
 
 在自己的电脑上，使用预定义主机，开启dht就可以从预定义主机拿到其他节点，所以就可以访问其它的资源。
 
+如果是在校园网，可以通过 btsync 分享资源，做法是开放一台中转服务器，服务器是不关机的，或者基本都是开的，而且ip不会变化，如果ip会变化，就需要使用特殊方法。首先记录下自己的服务器ip地址和端口号，端口就是监听端口，然后把这个告诉大家，让大家添加预定义主机。这样就可以通过这个获取到所有人的 btsync ，通过这个就可以传输资源。
+
+如果 ip 会变化，那么可以使用 meibu 提供的方法，请看 [http://meibu.com/](http://meibu.com/ )，注册之后就可以使用域名，于是用域名的方法设置服务器就好啦。
+
+如果发现你的局域网无法使用，欢迎联系我。 
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
