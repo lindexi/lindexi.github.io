@@ -71,7 +71,7 @@
     </rss>
 ```
 
-需要注意这里的时间都是这样写`Wed, 29 Nov 2017 00:00:00 +0800`，所以可以使用自动生成。如果使用的是 jekyll 大概可以直接复制我下面代码到 rss 文件，需要把`\{`替换为`{`。
+需要注意这里的时间都是这样写`Wed, 29 Nov 2017 00:00:00 +0800`，所以可以使用自动生成。如果使用的是 jekyll 大概可以直接复制我下面代码到 rss 文件，需要把`\{`替换为`{`。实际上去我希望你去我的项目复制文件。
 
 ```csharp
 <?xml version="1.0" encoding="UTF-8"?>
@@ -84,21 +84,21 @@
     <pubDate>\{\{ site.time | date_to_rfc822 \}\}</pubDate>
     <lastBuildDate>\{\{ site.time | date_to_rfc822 \}\}</lastBuildDate>
     <generator>Jekyll v\{\{ jekyll.version \}\}</generator>
-    \{% for post in site.posts limit:10 %\}
+    \{ % for post in site.posts limit:10 %\}
       <item>
         <title>\{\{ post.title | xml_escape \}\}</title>
         <description>\{\{ post.content | xml_escape \}\}</description>
         <pubDate>\{\{ post.date | date_to_rfc822 \}\}</pubDate>
         <link>\{\{ post.url | prepend: site.baseurl | prepend: site.url \}\}</link>
         <guid isPermaLink="true">\{\{ post.url | prepend: site.baseurl | prepend: site.url \}\}</guid>
-        \{% for tag in post.tags %\}
+        \{ % for tag in post.tags %\}
         <category>\{\{ tag | xml_escape \}\}</category>
-        \{% endfor %\}
-        \{% for cat in post.categories %\}
+        \{ % endfor %\}
+        \{ % for cat in post.categories %\}
         <category>\{\{ cat | xml_escape \}\}</category>
-        \{% endfor %\}
+        \{ % endfor %\}
       </item>
-    \{% endfor %\}
+    \{ % endfor %\}
   </channel>
 </rss>
 
