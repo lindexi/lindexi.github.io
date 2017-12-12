@@ -6,7 +6,13 @@ Q# 是微软的量子语言，很厉害，所以本文告诉大家如何入门�
 
 <!-- csdn -->
 
-首先需要下载一些东西，打开[Microsoft Quantum Development Kit - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit )下载扩展，无法扩展无法下载，请到我上传的[csdn](http://download.csdn.net/download/lindexi_gd/10155909)下载
+## 介绍
+
+很多新的计数机技术都在很多年前就有人提出，量子计算就是其中一个。量子计算在 1980 年就被 Richard Feynman 和 Yuri Manin 提出，因为量子比较特殊，所以难以被人们的容易接受，而且因为计算机的价格比较高所以大家比较少可以测试和开发。现在微软弄了Q#和模拟器，大家可以开始学习如何使用量子计算，这是一个简单的语言，可以很多的使用 C# 的方式。不过还是有一些不同的地方，在使用之前，需要了解很多量子的东西。
+
+## 下载环境
+
+首先需要下载一些东西，打开[Microsoft Quantum Development Kit - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit )下载扩展。扩展无法下载，请到我上传的[csdn](http://download.csdn.net/download/lindexi_gd/10155909)下载
 
 需要确定自己的 VisualStudio 是 VisualStudio 2017
 
@@ -20,18 +26,21 @@ git clone https://github.com/Microsoft/Quantum.git
 
 如果发现自己无法访问，那么可以使用 gitee 进行克隆，新建一个项目选择远程链接，这样就好。
 
-
 打开 QsharpLibraries.sln 可以发现提示缺少库，一般是没有 F# ，需要安装一下。
 
-然后还原nuget，需要一些时间，这时关闭博客园的nuget他没有这些。然后打开每个项目的引用，这样点击一下找不到的引用，就可以自动引用。
+但是这时会发现，项目无法编译，需要还原Nuget，还原的时间还是可以等去弄一些咖啡。注意这时需要关闭博客园的 Nuget ，他没有这些东西，如果使用了他了，就需要清理文件夹。
 
-接着选择 TeleportationSample 项目，右击他为启动。
+因为垃圾 VS 不能帮你把库引用，所以需要在还原成功打开每个项目的引用，点击一下找不到的引用，这时会自动引用。
 
-按下 F5 就可以看到输出
+## 测试
+
+如果发现所有库都安装，那么就可以开始编译，选择 TeleportationSample 项目，右击他为启动。
+
+按下 F5 就可以看到输出，如果可以看到下面的输出，那么你的环境就弄好了
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712122104.jpg)
 
-请看 [Setting up the Q# development environment | Microsoft Docs](https://docs.microsoft.com/zh-cn/quantum/quantum-installconfig?view=qsharp-preview )
+请看 [Setting up the Q# development environment ](https://docs.microsoft.com/zh-cn/quantum/quantum-installconfig?view=qsharp-preview )
 
 本文只是告诉大家如何搭建环境，实际没有告诉大家如何写Q#，在我后面有时间在写
 
