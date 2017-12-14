@@ -78,6 +78,25 @@ public partial class App
 }
 ```
 
+## 高版本的 WPF 引用低版本类库导致无法启动
+
+如果在一个 .net 4.0 的 WPF 程序引用一个 .net 2.0 的库，那么就会让程序无法运行，解决方法添加`useLegacyV2RuntimeActivationPolicy`
+
+打开 app.config 添加`useLegacyV2RuntimeActivationPolicy="true"`
+
+下面是 app.config 代码
+
+```csharp
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<startup useLegacyV2RuntimeActivationPolicy="true">
+  <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+</startup>
+</configuration>
+```
+
+参见：[WPF 软件引用其他类库启动无反应问题 - 灰色年华 - CSDN博客](http://blog.csdn.net/barry_hui/article/details/78758405 )
+
 ## 非托管使用托管委托
 
 如果有一个 C++ 写的dll，他需要一个函数指针，在C#使用，就可以传入委托。
