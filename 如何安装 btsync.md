@@ -172,7 +172,7 @@ vi btsync.conf
       "overwrite_changes" : false, // restore modified files to original version, ONLY for Read-Only folders
       "known_hosts" : // specify hosts to attempt connection without additional search
       [
-        "192.168.1.2:44444" //预定义主机
+        "192.168.1.2:123" //预定义主机
       ]
     }
   ]

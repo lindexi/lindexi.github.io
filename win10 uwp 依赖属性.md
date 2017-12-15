@@ -174,6 +174,8 @@
 
 但是这个方法会出现内存泄露，可以使用 RemoveValueChanged 清除，为了使用清除，需要写一个函数。
 
+不需要担心清除一个不存在的委托，一般在使用 AddValueChanged 之前都使用 RemoveValueChanged 清除
+
 参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
 
 
