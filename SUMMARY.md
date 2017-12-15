@@ -303,7 +303,6 @@
 * [开源项目](开源项目.md)
 * [jekyll 如何加密博客 防止抓取](jekyll 如何加密博客 防止抓取.md)
 * [WPF 使用不安全代码快速从数组转 WriteableBitmap](WPF 使用不安全代码快速从数组转 WriteableBitmap.md)
-* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
 * [C# 代码占用的空间](C＃ 代码占用的空间.md)
 * [博客](博客.md)
 * [如何使用 Q#](如何使用 Q#.md)
@@ -311,3 +310,5 @@
 * [WPF 开发](WPF 开发.md)
 * [win10 uwp 依赖属性](win10 uwp 依赖属性.md)
 * [如何安装 btsync](如何安装 btsync.md)
+* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
+* [让 AE 输出 MPEG ](让 AE 输出 MPEG .md)
