@@ -277,7 +277,6 @@
 * [安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources](安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources.md)
 * [WPF popup置顶](WPF popup置顶.md)
 * [WPF 程序生成类库错误](WPF 程序生成类库错误.md)
-* [C# 7.0](c-70.md)
 * [win10 uwp 隐藏实时可视化](win10_uwp_yin_cang_shi_shi_ke_shi_hua.md)
 * [win10 uwp 如何让 Page 继承泛型类](win10 uwp 如何让 Page 继承泛型类.md)
 * [wpf PreviewTextInput 在鼠标输入获得 \u0003](wpf PreviewTextInput 在鼠标输入获得 u0003.md)
@@ -312,3 +311,4 @@
 * [如何安装 btsync](如何安装 btsync.md)
 * [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
 * [让 AE 输出 MPEG ](让 AE 输出 MPEG .md)
+* [C# 7.0](c-70.md)
