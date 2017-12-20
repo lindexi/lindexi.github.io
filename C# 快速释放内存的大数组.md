@@ -89,6 +89,77 @@
 
 反过来，StructureToPtr 是对指定指针写入指定的类型，同样也是需要确定这个类型的大小，如可以写入 char 但是不可以写入 string。这就是对数组读写的方法。
 
+那么遍历的时候什么输出一些诡异的值，实际上因为没有初始化，里面的值是不确定的。我觉得用这个做随机数也不错。
+
+使用 Marshal 是比较安全，因为 ms 做了很多处理，但是也会让程序闪退，如下面的代码
+
+```csharp
+        private static void Foo()
+        {
+            int n = 100000;//长度
+            IntPtr buffer = Marshal.AllocHGlobal(sizeof(int) * n);
+
+            try
+            {
+                var t = buffer + (n * 10) * sizeof(int);
+                var p = Marshal.PtrToStructure<int>(t);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            Marshal.FreeHGlobal(buffer);
+        }
+```
+
+会出现异常 System.AccessViolationException，这个异常是无法 catch 的，所以使用的时候最好封装一下
+
+```csharp
+“System.AccessViolationException”类型的未经处理的异常在 未知模块
+尝试读取或写入受保护的内存。这通常指示其他内存已损坏
+```
+
+如果需要 catch 那么请在 app.config 添加下面的代码
+
+```csharp
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <runtime>
+    <legacyCorruptedStateExceptionsPolicy enabled="true" />
+  </runtime>
+</configuration>
+```
+
+然后在 Main 函数添加 HandleProcessCorruptedStateExceptions ，请看代码
+
+```csharp
+        [HandleProcessCorruptedStateExceptions]
+        static void Main(string[] args)
+        {
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+
+            for (int i = 0; i < 100000; i++)
+            {
+                try
+                {
+                    Foo();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                   
+                }
+            }
+            Console.WriteLine("完成");
+            Console.ReadKey();
+        }
+```
+
+这时可以看到进入 UnhandledException ，但是无法接住，软件还是会崩溃
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220152536.jpg)
+
 ### 释放内存
 
 那么如何释放内存？因为这个申请是没有经过管理的，如果没有手动释放，那么就出现内存泄露。
