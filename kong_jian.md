@@ -292,7 +292,6 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
     }
 ```
 
-
 ```csharp
         public ObservableCollection<string> lindexi
         {
@@ -319,20 +318,26 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 ## Date and time controls
 ### Calendar date picker
+
 日历日期选择器
+
 ![这里写图片描述](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/images/controls/calendar-date-picker-open.png)
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328100448795)
 
 ### Calendar view
 日程表，让用户选择日期
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328100619968)
 
 ### Time picker
 用户选择一个时间
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328100844891)
 
 ## Flyouts
 ### Flyout
+
 显示一条消息
 
 ```xml
@@ -346,9 +351,11 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </Button.Flyout>
         </Button>
 ```
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328101517643)
 
 ### Menu flyout
+
 暂时显示命令或列出选项给用户选择
 
 ```xml
@@ -364,9 +371,11 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 
 ### Popup menu
+
 弹出自己写的菜单
 
 ### Tooltip
+
 提示
 
 ```xml
@@ -376,6 +385,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 ## Images
 ### Image
+
 图片
 
 ```xml
@@ -383,7 +393,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328102111052)
 
-如果需要gif可以 http://www.songsong.org/post/2015/10/11/ImageLib.html
+如果需要gif，请使用 10586 以上或[http://www.songsong.org/post/2015/10/11/ImageLib.html](http://www.songsong.org/post/2015/10/11/ImageLib.html )
+
 ## Graphics and ink
 ### InkCanvas
 
@@ -394,7 +405,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 手写
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328104717281)
-保存文件可以去edi.wang
+
+保存文件可以去 [edi.wang](http://edi.wang/) 大神的博客，或我的[win10 uwp 使用油墨输入 ](https://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BD%BF%E7%94%A8%E6%B2%B9%E5%A2%A8%E8%BE%93%E5%85%A5.html )、老周的[将墨迹保存到图像](http://www.cnblogs.com/tcjiaan/p/8010845.html )
 
 ### Shapes
 椭圆,矩形、线、贝塞尔曲线路径

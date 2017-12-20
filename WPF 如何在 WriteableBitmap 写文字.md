@@ -97,6 +97,8 @@
 
 因为我没有设置文字大小和显示的大小，所以看起来文字就没有那么清晰
 
+但是说这个方法的速度比较好，实际也是很差
+
 最近看到一个对 OpenGL 封装的 SharpGL ，感觉还不错，如果需要比较高的速度，那么推荐使用这个库
 
 [SharpGL(Opengl)入门之纹理星球 - BIT祝威 - 博客园](http://www.cnblogs.com/bitzhuwei/archive/2013/05/21/Opengl_Sharpgl_dragtextured_planet_drag_drop.html )

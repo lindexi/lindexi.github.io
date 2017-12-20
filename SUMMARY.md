@@ -311,7 +311,7 @@
 * [如何使用 Q#](如何使用 Q#.md)
 * [博客](博客.md)
 * [使用 IncrediBuild 提升 VisualStudio 编译速度](使用 IncrediBuild 提升 VisualStudio 编译速度.md)
-* [WPF 如何在 WriteableBitmap 写文字](WPF 如何在 WriteableBitmap 写文字.md)
 * [C# 快速释放内存的大数组](C# 快速释放内存的大数组.md)
 * [win10 uwp 验证输入 自定义用户控件](win10-uwp-验证textbox.md)
 * [控件](kong_jian.md)
+* [WPF 如何在 WriteableBitmap 写文字](WPF 如何在 WriteableBitmap 写文字.md)
