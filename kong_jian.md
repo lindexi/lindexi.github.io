@@ -1,15 +1,15 @@
 # 控件
 
 Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其中一些有可视化，一些布局。
-一些控件例子：https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics
+一些控件例子：[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics )
 
 <!--more-->
 
 <div id="toc"></div>
 
-我现在做的一个中文版的，很多都是照着微软写，除了注释
+我现在学了一下，给微软做一个中文版的，基本代码都是从微软那里复制，除了注释。
 
-我们先学微软做一个简单的frame，新建Page，
+我们先学微软做一个简单的 frame ，新建 Page ，
 里面放title和跳转页
 
 ```csharp
@@ -54,11 +54,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         private string _title;
     }
 ```
-我们需要把所有页放到一个类，本来这个类可以不弄，直接放Page
-使用索引
-最后我还是想给宝资通打广告
-弄了一个类，本来应该叫page管理器，我叫baozitong
-输入title返回type
+
+我们需要把所有页放到一个类，本来这个类可以不弄，直接放 Page 使用索引，但是最后我还是想给宝资通打广告，于是弄了一个类，本来应该叫 page 管理器，我叫 baozitong ，他只有输入 title 返回 type ，因为导航只能使用 type 不能给对象
 
 ```csharp
        public static Type page(string title)
@@ -85,9 +82,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
            }
        };
 ```
-每次添加page可以在baozitong._page new page
 
-界面splitview
+每次添加`page`可以在`baozitong._page` 写添加的页面
+
+接着请看界面 splitview 
 
 ```xml
         <ToggleButton Grid.Row="0" IsChecked="{Binding ElementName=split,Path=IsPaneOpen,Mode=TwoWay}" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"></ToggleButton>
@@ -118,14 +116,16 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ### App bar
 用于显示应用程序特定命令的工具栏。
 ### App bar button
-使用app bar风格按钮
-一个简单的按钮
+
+使用app bar风格按钮，下面来写一个简单的按钮
 
 ```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center"/>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/82963283.jpg)
-我们可以加上内容
+
+我们可以加上内容，这里不可以添加 Content 但是可以添加图标
 
 ```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center">
@@ -135,8 +135,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 </Grid>
             </AppBarButton>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/51594850.jpg)
-我们可以在按钮加浮出
+
+我们可以在按钮加浮出，请看代码
 
 ```xml
             <AppBarButton Icon="OpenWith" Label="浮出">
@@ -153,6 +155,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/93606598.jpg)
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/29257708.jpg)
+
 ### App bar separator
 命令栏中的命令组。
 如果我们有很多按钮，我们可以使用
