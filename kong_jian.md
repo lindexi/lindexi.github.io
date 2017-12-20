@@ -157,8 +157,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/29257708.jpg)
 
 ### App bar separator
+
 命令栏中的命令组。
-如果我们有很多按钮，我们可以使用
+
+如果我们有很多按钮，我们可以使用下面的代码把按钮分开
 
 ```xml
             <AppBarButton Content="林德熙"></AppBarButton>
@@ -201,9 +203,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </AppBarButton>
         </CommandBar>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/32449489.jpg)
 
-我们也看到最后的按钮，如果有一些用不到，但是有用
+我们也看到最后的按钮，那些用户不是很容易就需要使用的，但是还是有用的按钮就可以放在这里，请看下面
 
 ```xml
             <CommandBar.SecondaryCommands>
@@ -211,6 +214,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 <AppBarButton Label="红黑转载"/>
             </CommandBar.SecondaryCommands>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/15333552.jpg)
 
 ## Buttons
@@ -222,8 +226,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```xml
 <Button Margin="72,163,0,0" Content="请勿转载"></Button>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/84807449.jpg)
-按钮点击可以使用`X:Bind`
+
+按钮点击可以使用`X:Bind`，而不是使用命令，这个方法可以绑定 ViewModel 的方法，方法可以添加参数，也可以不添加。
 
 ### Hyperlink
 
@@ -234,17 +240,20 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
            <Hyperlink NavigateUri="http://blog.csdn.net/lindexi_gd"> 博客发在csdn </Hyperlink>，没有授权红黑转载，没有授权推酷转载
         </TextBlock>
 ```
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328093500345)
 
 ### Repeat button
 
 用户点击不停响应。
 
-
 ## Collection/data controls
 
 ### Flip view
+
 幻灯片播放
+
+现在这个类不是很好，暂时也没有发现比较好的做法，因为他无法在播放所有的页之后，回到第一页。
 
 ```xml
       <FlipView>
@@ -252,21 +261,26 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             <Image Source="Assets/QQ截图20160328094435.png"></Image>
       </FlipView>
 ```
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328094747930)
 
-http://www.cnblogs.com/Damai-Pang/p/5201206.html
+[http://www.cnblogs.com/Damai-Pang/p/5201206.html](http://www.cnblogs.com/Damai-Pang/p/5201206.html)
 
 ### Grid view
+
 行列布局，可以水平滚动控件。
 
 
 ### Items control
+
 提供UI指定数据模板
 
 
 ### List view
+
 在一个列表上的项目的集合,可以垂直滚动控件
-我们做一个viewmodel
+
+我们做一个viewmodel，添加列表，这时可以用于绑定，其他关于这个控件，请看 [win10 UWP ListView ](https://lindexi.github.io/lindexi/post/win10-UWP-ListView.html )
 
 ```csharp
     public class viewmodel : notify_property
@@ -277,7 +291,7 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
         }
     }
 ```
-我们依列表
+
 
 ```csharp
         public ObservableCollection<string> lindexi
@@ -302,6 +316,7 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328095934262)
+
 ## Date and time controls
 ### Calendar date picker
 日历日期选择器
