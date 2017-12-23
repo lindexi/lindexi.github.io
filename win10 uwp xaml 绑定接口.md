@@ -91,4 +91,14 @@
 
 为什么上面的代码无法使用，现在我还不知道。
 
+我找到了下面的观点
+
+> The data binding team discussed adding support for interfaces a while ago but ended up not implementing it because we could not come up with a good design for it. The problem was that interfaces don't have a hierarchy like object types do. Consider the scenario where your data source implements both `IMyInterface1` and `IMyInterface2` and you have DataTemplates for both of those interfaces in the resources: which DataTemplate do you think we should pick up?
+
+> When doing implicit data templating for object types, we first try to find a `DataTemplate` for the exact type, then for its parent, grandparent and so on. There is very well defined order of types for us to apply. When we talked about adding support for interfaces, we considered using reflection to find out all interfaces and adding them to the end of the list of types. The problem we encountered was defining the order of the interfaces when the type implements multiple interfaces.
+
+> The other thing we had to keep in mind is that reflection is not that cheap, and this would decrease our perf a little for this scenario.
+
+> So what's the solution? You can't do this all in XAML, but you can do it easily with a little bit of code. The `ItemTemplateSelector` property of `ItemsControl` can be used to pick which `DataTemplate` you want to use for each item. In the `SelectTemplate` method for your template selector, you receive as a parameter the item you will template. Here, you can check for what interface it implements and return the `DataTemplate` that matches it.
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
