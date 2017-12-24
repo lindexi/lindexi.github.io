@@ -1,13 +1,13 @@
 # WPF 从文件加载字体
 
-本文告诉大家从文件加载字体。
+本文告诉大家从文件加载字体。在wpf 使用 fontfamily 显示指定的 ttf 显示字体。
 
 <!--more-->
 <!-- csdn -->
 
 假如有字体在 `C:\Projects\MyProj\free3of9.ttf` ，可以使用  PrivateFontCollection 添加字体。
 
-下面的代码就可以使用本地的 free3of9.ttf 
+下面的代码就可以使用本地的 free3of9.ttf ，需要注意添加的 FontFamily 是需要知道字体名，和传入 PrivateFontCollection 才可以使用。
 
 ```csharp
 PrivateFontCollection collection = new PrivateFontCollection();
@@ -16,7 +16,7 @@ FontFamily fontFamily = new FontFamily("Free 3 of 9", collection);
 Font font = new Font(fontFamily, height);
 ```
 
-另一个方法是去掉字体的后缀名
+另一个方法是去掉字体的后缀名，直接写在 FontFamily ，我比较希望使用下面的方法
 
 ```csharp
 FontFamily fontFamily = new FontFamily(@"C:\Projects\MyProj\#free3of9");

@@ -287,7 +287,6 @@
 * [cant found Microsoft.VSSDK.BuildTools.15.0.26201](cant found Microsoft.VSSDK.BuildTools.15.0.26201.md)
 * [VisualStudio 自定义外部命令](VisualStudio 自定义外部命令.md)
 * [Resharper 如何把类里的类移动到其他文件](Resharper 如何把类里的类移动到其他文件.md)
-* [win10 uwp 如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
 * [win10 uwp httpClient 登陆CSDN](win10 uwp httpClient 登陆CSDN.md)
 * [贡献自己的服务器搭建tor中转](贡献自己的服务器搭建tor中转.md)
 * [win10 uwp 让焦点在点击在页面空白处时回到textbox中](win10 uwp 让焦点在点击在页面空白处时回到textbox中.md)
@@ -318,3 +317,4 @@
 * [C# 如何写 DEBUG 输出](C# 如何写 DEBUG 输出.md)
 * [C# 快速释放内存的大数组](C# 快速释放内存的大数组.md)
 * [win10 uwp xaml 绑定接口](win10 uwp xaml 绑定接口.md)
+* [win10 uwp 如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
