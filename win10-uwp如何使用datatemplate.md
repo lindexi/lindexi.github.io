@@ -150,9 +150,47 @@ UWP的 Convert 和 WPF 差不多。
 
 参见：[win10 uwp 通知列表](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8/)
 
-## UWP 文件md5
+## DataTemplate 绑定 ViewModel
 
-## UWP协议
+假如有一个 ViewModel 他有一个列表和字段
 
+```csharp
+   public List<string> Foo { set; get; } = new List<string>() { "1" };
+
+    public string Name { get; set; } = "lindex";
+```
+
+那么在页面写一个列表
+
+```csharp
+<Grid x:Name="Grid">      
+
+    <ListView ItemsSource="{Binding Foo}">
+        <ListView.ItemTemplate>
+            <DataTemplate >
+                <TextBlock Text="{Binding}"></TextBlock>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</Grid>
+```
+
+可以看到页面显示一个元素，但是如何想让 TextBlock 绑定 Name 怎么做？
+
+因为 Grid 的数据绑定 ViewModel，所以在 WPF 可以使用 `Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}` 的写法绑定到指定的元素，所以获得数据，但是 UWP 不能这样写，可以使用下面的代码
+
+```csharp
+  <ListView ItemsSource="{Binding Foo}">
+        <ListView.ItemTemplate>
+            <DataTemplate >
+                <TextBlock Text="{Binding ElementName=Grid,Path=DataContext.Name}"></TextBlock>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+```
+
+这样就可以绑定 ViewModel ，所以就可以使用属性
+
+[https://stackoverflow.com/a/47957417/6116637](https://stackoverflow.com/a/47957417/6116637 )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
