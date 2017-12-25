@@ -70,38 +70,41 @@
     </rss>
 ```
 
-需要注意这里的时间都是这样写`Wed, 29 Nov 2017 00:00:00 +0800`，所以可以使用自动生成。如果使用的是 jekyll 大概可以直接复制我下面代码到 rss 文件，需要把`\{`替换为`{`。实际上去我希望你去我的项目复制文件。
+需要注意这里的时间都是这样写`Wed, 29 Nov 2017 00:00:00 +0800`，所以可以使用自动生成。如果使用的是 jekyll 大概可以直接复制我下面代码到 rss 文件。实际上去我希望你去我的项目复制文件。
+
+{% raw %}
 
 ```csharp
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>\{\{ site.title | xml_escape \}\}</title>
-    <description>\{\{ site.description | xml_escape \}\}</description>
-    <link>\{\{ site.url \}\}\{\{ site.baseurl \}\}/</link>
-    <atom:link href="\{\{ "/feed.xml" | prepend: site.baseurl | prepend: site.url \}\}" rel="self" type="application/rss+xml"/>
-    <pubDate>\{\{ site.time | date_to_rfc822 \}\}</pubDate>
-    <lastBuildDate>\{\{ site.time | date_to_rfc822 \}\}</lastBuildDate>
-    <generator>Jekyll v\{\{ jekyll.version \}\}</generator>
-    \{ % for post in site.posts limit:10 %\}
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% for post in site.posts limit:10 %}
       <item>
-        <title>\{\{ post.title | xml_escape \}\}</title>
-        <description>\{\{ post.content | xml_escape \}\}</description>
-        <pubDate>\{\{ post.date | date_to_rfc822 \}\}</pubDate>
-        <link>\{\{ post.url | prepend: site.baseurl | prepend: site.url \}\}</link>
-        <guid isPermaLink="true">\{\{ post.url | prepend: site.baseurl | prepend: site.url \}\}</guid>
-        \{ % for tag in post.tags %\}
-        <category>\{\{ tag | xml_escape \}\}</category>
-        \{ % endfor %\}
-        \{ % for cat in post.categories %\}
-        <category>\{\{ cat | xml_escape \}\}</category>
-        \{ % endfor %\}
+        <title>{{ post.title | xml_escape }}</title>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% for tag in post.tags %}
+        <category>{{ tag | xml_escape }}</category>
+        {% endfor %}
+        {% for cat in post.categories %}
+        <category>{{ cat | xml_escape }}</category>
+        {% endfor %}
       </item>
-    \{ % endfor %\}
+    {% endfor %}
   </channel>
 </rss>
 
 ```
+{% endraw %}
 
 需要在 `_config.yml` 设置 site.description 等
 
