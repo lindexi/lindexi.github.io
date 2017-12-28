@@ -33,7 +33,7 @@ btsync 把自己的电脑作为网盘，不限空间流量，适合局域网同�
 
 如何使用？
 
-首先下载安装，然后随意给一个名称。[点击下载](https://pan.baidu.com/s/1cBg69S)，如果百度无法下载，可以到[这里](http://download.csdn.net/detail/lindexi_gd/9792343)，下载如果无法下载可以联系我
+首先下载安装，然后随意给一个名称。[点击下载 密码: ns6u](链接: https://pan.baidu.com/s/1c1CFkw4 )，如果百度无法下载，可以到[这里](http://download.csdn.net/detail/lindexi_gd/9792343)，下载如果无法下载可以联系我
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412536.jpg)
 
