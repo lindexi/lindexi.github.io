@@ -152,29 +152,24 @@
 
 ```csharp
    class Options
-
    {
 
         // 短参数名称，长参数名称，是否是可选参数，默认值，帮助文本等
 
-        // 第一个参数-d
+        // 第一个参数-d 如果使用比较高的 .net 那么第一个参数可能是 char 而不是字符串
 
         [Option("d", "dir", Required = true, HelpText = "PGN Directory to read.")]
-
         public string PgnDir { get; set; }
 
         // 第二个参数-s
 
         [Option("s", "step", DefaultValue = 30, HelpText = "The maximum steps in PGN game to process.")]
-
         public int MaxStep { get; set; }
 
        
 
         [HelpOption]
-
         public string GetUsage()
-
         {
 
             // 应该可以根据前面的参数设置自动生成使用说明的，这里没有使用
@@ -186,9 +181,7 @@
             usage.AppendLine("-d PgnDir [-s MaxSteps=30]");
 
             return usage.ToString();
-
         }
-
 }
 ```
 
@@ -200,7 +193,6 @@
 var options = new Options();
 
 if (Parser.Default.ParseArguments(args, options))
-
 {
 
      string pgnDir = options.PgnDir;
@@ -212,7 +204,6 @@ if (Parser.Default.ParseArguments(args, options))
      // 本例中参数比较简单，稍微有点大材小用了
 
 }
-
 else  
 {
 //转化失败
@@ -231,5 +222,7 @@ else
 参见：http://www.cnblogs.com/linxuanchen/p/c-sharp-command-line-argument-parser.html
 
 http://www.cnblogs.com/speeding/archive/2012/08/07/2626066.html
+
+[安利一款命令行参数](https://walterlv.github.io/post/microsoft-extensions-commandlineutils.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
