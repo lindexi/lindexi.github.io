@@ -84,4 +84,18 @@ csc /platform:anycpu filename.cs
 
 [使 32 位程序使用大于 2GB 的内存 - walterlv](https://walterlv.github.io/windows/2017/09/12/32bit-application-use-large-memory.html )
 
+如果发现引用了 dll 出现了下面的错误
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20181917348.jpg)
+
+那么就需要检查是不是软件的环境和 dll 的环境不一样，如 软件是 x86 dll 是 x64就会出现这个问题。
+
+如果 dll 不是 .net 的，那么可以使用下面的代码查看他环境
+
+```csharp
+dumpbin /headers foo.dll
+```
+
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
