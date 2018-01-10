@@ -108,6 +108,8 @@ UWP的 Convert 和 WPF 差不多。
 
 参见：http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html
 
+[[UWP]了解IValueConverter - dino.c - 博客园](http://www.cnblogs.com/dino623/p/IValueConverter.html )
+
 ## 绑定Event到Command
 
 如果希望绑定事件，可以使用 下面代码
