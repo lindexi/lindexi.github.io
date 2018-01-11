@@ -11,7 +11,7 @@
 
 英文 No mapping for the Unicode character exists in the target multi-byte code page
 
-这个问题看来很简单，不就是编码错误，可以我就弄了一晚上
+这个问题看来很简单，不就是编码错误，最后我就弄了一晚上
 
 我先换个说法，让大家容易搜索到
 

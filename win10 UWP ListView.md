@@ -31,6 +31,22 @@
                        ScrollViewer.VerticalScrollMode="Disabled">
 ```
 
+## 使用从左到右放元素
+
+实际上 ItemsPanelTemplate 可以放很多个类型，如 WrapGrid 和 ItemsWrapGrid ，下面我告诉大家如何做出这个效果
+
+```csharp
+  <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid Orientation="Horizontal"></ItemsWrapGrid>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>                                                                                                            
+```
+
+这时可以设置元素的宽度，或者高度，这样可以做出下面的效果。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201811121814.jpg)
+
 ## 选中显示元素
 
 有一些元素是要 Item 选中显示，不选中不显示
