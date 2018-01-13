@@ -324,3 +324,4 @@
 * [win10 UWP ListView ](win10 UWP ListView.md)
 * [win10 uwp 商业游戏 ](win10 uwp 商业游戏 .md)
 * [win10 uwp 商业游戏 1.1.5](win10 uwp 商业游戏 1.1.5.md)
+* [win10 uwp slider 隐藏显示数值](win10 uwp Slide 隐藏显示数值.md)
