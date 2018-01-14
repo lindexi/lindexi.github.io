@@ -308,7 +308,6 @@
 * [如何安装 btsync](如何安装 btsync.md)
 * [上传代码 CodePlex](上传代码 CodePlex.md)
 * [win10 uwp 如何判断一个对象被移除](win10 uwp 如何判断一个对象被移除.md)
-* [win10 uwp DataContext ](win10 uwp DataContext .md)
 * [C＃命令行解析工具](C＃命令行解析工具.md)
 * [如何写毕业论文 表格](如何写毕业论文 表格.md)
 * [C＃ Find vs FirstOrDefault](C＃ Find vs FirstOrDefault.md)
@@ -327,3 +326,4 @@
 * [win10 uwp 如何使用DataTemplate](win10-uwp如何使用datatemplate.md)
 * [C＃ 写系统日志](WPF 写系统日志.md)
 * [WPF 使用RPC调用其他进程](WPF 使用RPC调用其他进程.md)
+* [win10 uwp DataContext ](win10 uwp DataContext .md)
