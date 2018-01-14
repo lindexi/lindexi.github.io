@@ -288,7 +288,6 @@
 * [C# 7.0](c-70.md)
 * [如何入门 C++ AMP 教程](如何入门 C++ AMP 教程.md)
 * [安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources](安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources.md)
-* [win10 uwp 依赖属性](win10 uwp 依赖属性.md)
 * [解决 vs 出现Error MC3000 给定编码中的字符无效](解决 vs 出现Error MC3000 给定编码中的字符无效.md)
 * [解决 VS 跳转定义和 Resharper 重复](解决 VS 跳转定义和 Resharper 重复.md)
 * [让 AE 输出 MPEG ](让 AE 输出 MPEG .md)
@@ -327,3 +326,4 @@
 * [C＃ 写系统日志](WPF 写系统日志.md)
 * [WPF 使用RPC调用其他进程](WPF 使用RPC调用其他进程.md)
 * [win10 uwp DataContext ](win10 uwp DataContext .md)
+* [win10 uwp 依赖属性](win10 uwp 依赖属性.md)
