@@ -326,5 +326,5 @@
 * [WPF 使用RPC调用其他进程](WPF 使用RPC调用其他进程.md)
 * [win10 uwp 依赖属性](win10 uwp 依赖属性.md)
 * [win10 uwp 萤火虫效果](win10 uwp 萤火虫效果.md)
-* [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到 VS2017 新项目格式.md)
 * [win10 uwp 横向 AppBarButton](win10 uwp 横向 AppBarButton.md)
+* [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到 VS2017 新项目格式.md)
