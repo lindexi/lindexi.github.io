@@ -314,7 +314,6 @@
 * [C＃ 枚举转字符串](C＃ 枚举转字符串.md)
 * [win10 使用 SMB v1](win10 使用 SMB v1.md)
 * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF 编译为 AnyCPU 和 x86 有什么区别.md)
-* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
 * [win10 uwp 读取文本GBK错误](win10_uwp_du_qu_wen_ben_ascii_cuo_wu.md)
 * [win10 UWP ListView ](win10 UWP ListView.md)
 * [win10 uwp slider 隐藏显示数值](win10 uwp Slide 隐藏显示数值.md)
@@ -327,4 +326,5 @@
 * [win10 uwp 依赖属性](win10 uwp 依赖属性.md)
 * [win10 uwp 萤火虫效果](win10 uwp 萤火虫效果.md)
 * [win10 uwp 横向 AppBarButton](win10 uwp 横向 AppBarButton.md)
+* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
 * [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到 VS2017 新项目格式.md)
