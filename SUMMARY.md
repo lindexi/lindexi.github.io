@@ -248,7 +248,6 @@
 * [wpf DoEvents ](wpf-DoEvents.md)
 * [WPF ListBox 的选择](WPF ListBox 的选择.md)
 * [win10 uwp 使用 LayoutTransformer](win10 uwp 使用 LayoutTransformer.md)
-* [高效率工具](高效率工具.md)
 * [wpf 如何使用 Magick.NET 播放 gif 图片](wpf 如何使用 Magick.NET 播放 gif 图片.md)
 * [WPF 一个性能比较好的 gif 解析库](WPF 一个性能比较好的 gif 解析库.md)
 * [win10 uwp 异步转同步](win10 uwp 异步转同步.md)
@@ -330,3 +329,4 @@
 * [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到 VS2017 新项目格式.md)
 * [Sublime Text 安装中文、英文字体](Sublime Text 安装中文、英文字体.md)
 * [Sublime Text 好用的插件](Sublime Text 好用的插件.md)
+* [高效率工具](高效率工具.md)

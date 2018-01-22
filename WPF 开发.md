@@ -78,6 +78,15 @@ public partial class App
 }
 ```
 
+## 当鼠标滑过一个被禁用的元素时，让ToolTip 显示
+
+设置`ToolTipService.ShowOnDisabled`为 true
+
+```csharp
+<Button ToolTipService.ShowOnDisabled="True">  
+```
+
+
 ## 高版本的 WPF 引用低版本类库导致无法启动
 
 如果在一个 .net 4.0 的 WPF 程序引用一个 .net 2.0 的库，那么就会让程序无法运行，解决方法添加`useLegacyV2RuntimeActivationPolicy`
