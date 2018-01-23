@@ -3,7 +3,6 @@
 有时候需要把网络的  unix timestamp 转为 C# 的 DateTime ，在 UWP 可以如何转换？
 
 <!--more-->
-<!-- csdn -->
 
 转换函数可以使用下面的代码
 
