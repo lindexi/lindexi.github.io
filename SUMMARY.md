@@ -321,7 +321,6 @@
 * [win10 uwp 依赖属性](win10 uwp 依赖属性.md)
 * [win10 uwp 萤火虫效果](win10 uwp 萤火虫效果.md)
 * [win10 uwp 横向 AppBarButton](win10 uwp 横向 AppBarButton.md)
-* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
 * [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到 VS2017 新项目格式.md)
 * [Sublime Text 安装中文、英文字体](Sublime Text 安装中文、英文字体.md)
 * [Sublime Text 好用的插件](Sublime Text 好用的插件.md)
@@ -332,3 +331,5 @@
 * [使用 Resharper 快速做适配器](使用 Resharper 快速做适配器.md)
 * [WPF 开发](WPF 开发.md)
 * [win10 uwp 标题栏](win10-uwp-标题栏.md)
+* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
+* [win10 uwp Fluent Design System 实践](win10 uwp Fluent Design System 实践.md)
