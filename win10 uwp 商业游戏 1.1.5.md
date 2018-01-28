@@ -251,9 +251,13 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 <!-- 草药坊 雕刻 食物 武器 材料 水果 种子-->
 
+下面开始写一个新的游戏，叫修炼，这个游戏很简单，就是点击添加修为，暂时就这个。因为今天的 VS 炸了，所以暂时没有使用 UWP 也打不开之前的游戏，所以就重新写一个。
+
 ## 修炼游戏
 
-下面来写一个修炼游戏，这是一个挂机游戏。
+下面告诉大家如何写修炼游戏，这是一个挂机游戏，需要用户不停点击。
+
+游戏很简单，估计看一下就知道怎么做。
 
 ### 定义接口
 
@@ -630,7 +634,7 @@ LUK幸运
 
         public HnlcDbtdhsdjModel()
         {
-            
+
         }
 
         public override void OnNavigatedFrom(object sender, object obj)
@@ -657,6 +661,300 @@ LUK幸运
 ### 界面
 
 先让大家看一下界面
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812811243.jpg)
+
+界面很简单，我直接写代码。大家也看到这个代码使用的 WPF 写的，因为现在VS无法编译UWP，所以我就先使用 WPF 来做游戏
+
+需要在主页面添加下面的代码让游戏可以到这里
+
+```csharp
+        var hnlcDbtdhsdjPage = new HnlcDbtdhsdjPage();
+            var hnlcDbtdhsdjModel = new HnlcDbtdhsdjModel();
+            hnlcDbtdhsdjModel.NavigatedTo(this, null);
+            hnlcDbtdhsdjPage.ViewModel = hnlcDbtdhsdjModel;
+            hnlcDbtdhsdjPage.DataContext = hnlcDbtdhsdjModel;
+            ShlwjKzwfkuhrz.Navigate(hnlcDbtdhsdjPage);
+```
+
+这里的 ShlwjKzwfkuhrz 就是写在界面的 Frame ，在 WPF 需要设置隐藏上面的按钮，因这个按钮很差
+
+下面就是游戏的界面，可以看到界面之后一个 ListView 作为显示技能和人物信息
+
+```csharp
+<Page x:Class="TpwlxnpDfyecpeoh.View.HnlcDbtdhsdjPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TpwlxnpDfyecpeoh.View"
+      xmlns:viewModel="clr-namespace:TpwlxnpDfyecpeoh.ViewModel"
+      xmlns:tpwlxnpDfyecpeoh="clr-namespace:TpwlxnpDfyecpeoh"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="HnlcDbtdhsdjPage">
+    <Page.Resources>
+        <Style x:Key="HztDmaer" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10,10,10,10"></Setter>
+        </Style>
+    </Page.Resources>
+    <Grid d:DataContext="{d:DesignInstance viewModel:HnlcDbtdhsdjModel}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid HorizontalAlignment="Right">
+                <StackPanel Margin="10,10,10,10" Orientation="Horizontal">
+                    <TextBlock Text="当前修为"></TextBlock>
+                    <TextBlock Text="{Binding KppnuhKxkpxdee.KtrKvmvvnj,Mode=OneWay}"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListView ItemsSource="{Binding DexqurhctSjyfozae}" HorizontalAlignment="Stretch"
+                      BorderBrush="Transparent" BorderThickness="0"
+                      HorizontalContentAlignment="Stretch">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                    <Border x:Name="Bd" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="tpwlxnpDfyecpeoh:DexqurhctSjyfozae">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <TextBlock Style="{StaticResource HztDmaer}" Text="{Binding HnukhltvKfdrpokjz}"></TextBlock>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource HztDmaer}" Text="当前的值"></TextBlock>
+                                    <TextBlock Style="{StaticResource HztDmaer}" Text="{Binding DklvubnuiTeqch}"></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource HztDmaer}" Text="升级需要修为"></TextBlock>
+                                    <TextBlock Style="{StaticResource HztDmaer}" Text="{Binding DmyikbmfDeb}"></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Column="3">
+                                <Button Margin="10,10,10,10" Content="升级"></Button>
+                            </Grid>
+                            <Grid Grid.Column="4">
+                                <Button Margin="10,10,10,10" Content="点击"></Button>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
+
+```
+
+### 点击升级
+
+界面做完之后需要让按钮点击可以绑定后台，但是可以看到，界面绑定的值没有刷新，因为之前写属性都是没有通知，所以界面的属性都没有刷新，为了让界面可以刷新，所以需要修改属性的值
+
+```csharp
+    class TdsumTzwok : NotifyProperty, IDfeppzyTmofs
+    {
+        private long _ktrKvmvvnj = 0;
+        private int _khbfhHtuxwwrn = 1;
+        private int _kahdxouTrifmznz = 1;
+        private int _snmTiet = 1;
+        private int _dyjgSjdbgm = 1;
+
+        public TdsumTzwok()
+        {
+        }
+
+        public long KtrKvmvvnj
+        {
+            get { return _ktrKvmvvnj; }
+            set
+            {
+                _ktrKvmvvnj = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int KhbfhHtuxwwrn
+        {
+            get { return _khbfhHtuxwwrn; }
+            set
+            {
+                _khbfhHtuxwwrn = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int KahdxouTrifmznz
+        {
+            get { return _kahdxouTrifmznz; }
+            set
+            {
+                _kahdxouTrifmznz = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int SnmTiet
+        {
+            get { return _snmTiet; }
+            set
+            {
+                _snmTiet = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int DyjgSjdbgm
+        {
+            get { return _dyjgSjdbgm; }
+            set
+            {
+                _dyjgSjdbgm = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+```
+
+实际上人物的属性可以不做设置，因为可以通过更新人物属性来更新。
+
+```csharp
+    public abstract class DexqurhctSjyfozae : NotifyProperty
+    {
+        /// <summary>
+        /// 当前的值
+        /// </summary>
+        public double DklvubnuiTeqch
+        {
+            get => _dklvubnuiTeqch;
+            set
+            {
+                _dklvubnuiTeqch = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// 升级需要多少修为
+        /// </summary>
+        public double DmyikbmfDeb
+        {
+            get => _dmyikbmfDeb;
+            set
+            {
+                _dmyikbmfDeb = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string HnukhltvKfdrpokjz
+        {
+            get => _hnukhltvKfdrpokjz;
+            set
+            {
+                _hnukhltvKfdrpokjz = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// 升级之后做什么
+        /// </summary>
+        public abstract void DqqTsb();
+
+        private double _dklvubnuiTeqch;
+        private double _dmyikbmfDeb;
+        private string _hnukhltvKfdrpokjz;
+    }
+
+```
+
+现在开始绑定界面
+
+因为 WPF 不能做 xbind 到函数，所以我就使用 Click 点击拿到技能升级
+
+```csharp
+                                <Button Margin="10,10,10,10" Content="升级" Click="HzmzKgeu_OnClick"></Button>
+
+```
+
+```csharp
+        private void HzmzKgeu_OnClick(object sender, RoutedEventArgs e)
+        {
+            var frameworkElement = (FrameworkElement)sender;
+
+            if (frameworkElement.DataContext is DexqurhctSjyfozae dexqurhctSjyfozae)
+            {
+                ViewModel.KdfoeDoct(dexqurhctSjyfozae);
+            }
+        }
+```
+
+这样写就是拿到 DataContext 给 ViewModel 让他判断当前的修为是否可以升级
+
+下面的代码写在 ViewModel 判断如何可以升级就升级，不可以就告诉用户。但是如何告诉用户现在还没写
+
+```csharp     
+  public void KdfoeDoct(DexqurhctSjyfozae dexqurhctSjyfozae)
+        {
+            if (KppnuhKxkpxdee.KtrKvmvvnj >= dexqurhctSjyfozae.DmyikbmfDeb)
+            {
+                KppnuhKxkpxdee.KtrKvmvvnj -= (long) Math.Ceiling(dexqurhctSjyfozae.DmyikbmfDeb);
+                dexqurhctSjyfozae.DqqTsb();
+            }
+            else
+            {
+                
+            }
+        }
+```
+
+写好了升级，还有点击，下面开始写点击
+
+```csharp
+                                <Button Margin="10,10,10,10" Content="点击" Click="DlsuqHmopxh_OnClick"></Button>
+```
+
+```csharp
+       private void DlsuqHmopxh_OnClick(object sender, RoutedEventArgs e)
+        {
+            var frameworkElement = (FrameworkElement)sender;
+
+            if (frameworkElement.DataContext is IKdgvtziaSfs kdgvtziaSfs)
+            {
+                kdgvtziaSfs.DdwTynktxyx();
+            }
+        }
+```
+
+大概写好了，直接从代码转换，判断是否可以点击，如何支持点击，就触发点击
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E5%2595%2586%25E4%25B8%259A%25E6%25B8%25B8%25E6%2588%258F%2520%25E5%259B%25BE%25E7%2589%2587%2520DjqwhkKwxfit.gif)
+
+现在的游戏已经可以玩了，于是我就把他放在了 CSDN 上，大家可以尝试玩一下。
 
 
 
