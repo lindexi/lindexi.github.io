@@ -251,6 +251,194 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 <!-- 草药坊 雕刻 食物 武器 材料 水果 种子-->
 
+## 修炼游戏
+
+下面来写一个修炼游戏，这是一个挂机游戏。
+
+人物有属性，修为。通过修为可以用来提升技能、自己的属性。而修为可以使用点击来获得，所以不停的点击的游戏。
+
+那么先写一个人物接口，因为还不知道人物类需要什么东西，如何加上商业游戏，所以就写接口，定义接口的好处是可以通过别的地方给使用地方值。这样不依赖实现是比较好的。
+
+假如换了个游戏，而这个游戏没有这里想要的人物类，如何加上原有游戏的？通过接口就可以。
+
+```csharp
+    interface IDfeppzyTmofs
+    {
+        
+    }
+```
+
+人物接口需要实现，所以写一个类来实现，最后这个类是不需要的
+
+```csharp
+
+    class TdsumTzwok : IDfeppzyTmofs
+    {
+
+    }
+```
+
+人物类需要属性表示修为，因为这个值可能很大，所以就不使用 int ，请看下面
+
+```csharp
+    interface IDfeppzyTmofs
+    {
+        long KtrKvmvvnj { set; get; }
+    }
+```
+
+这时在 TdsumTzwok 使用 Resharper 自动添加属性
+
+```csharp
+    class TdsumTzwok : IDfeppzyTmofs
+    {
+        public long KtrKvmvvnj { get; set; }
+    }
+```
+
+然后开始写  ViewModel ，这里只需要一个 ViewModel 
+
+```csharp
+    class HnlcDbtdhsdjModel:ViewModelMessage
+    {
+        public override void OnNavigatedFrom(object sender, object obj)
+        {
+            
+        }
+
+        public override void OnNavigatedTo(object sender, object obj)
+        {
+            
+        }
+    }
+```
+
+同时创建页面
+
+```csharp
+    [ViewModel(ViewModel = typeof(HnlcDbtdhsdjModel))]
+    public partial class HnlcDbtdhsdjPage : Page
+    {
+        public HnlcDbtdhsdjPage()
+        {
+            InitializeComponent();
+        }
+    }
+```
+
+然后定义技能，技能包括有升级修为的技能和升级属性的技能
+
+暂时人物的属性就设置为力量、防御、精神力、魔力…… 好像很多的值
+
+在网上找到的推荐是
+
+```csharp
+STR力量（攻击力） 
+AGI敏捷
+VIT耐力（防御力） 
+INT智力（魔法攻击力防御力）
+DEX命中
+LUK幸运
+悟性
+```
+
+在国产游戏找到的属性
+
+ - 气血——角色当前生命值/角色当前生命值上限/角色总生命值上限，气血值为0时角色死亡
+ - 法力——角色当前法力值/角色当前法力值上限/角色总法力值上限，施放技能需要消耗法力
+ - 怒气——角色当前怒气值/角色总怒气值，施放绝技需要消耗怒气值
+ - 根骨——影响气血上限、怒气、气血回复速度、怒气回复速度
+ - 精力——影响法力上限、怒气、法力回复速度、怒气回复速度
+ - 力量——影响最小物理攻击、最大物理攻击、物理防御
+ - 智力——影响最小法术攻击、最大法术攻击、法术防御
+ - 敏捷——影响物理命中、法术命中、物理躲避、法术躲避
+ - 修炼——加入帮会后，可在帮会书院处进行修炼来增加修炼等级
+ - 修为——在师门训练师处用经验、银两和银票提升技能等级可提升修为等级
+ - 幸运——影响怪物死亡时物品的掉落，幸运值高更大概率掉落好物品
+ - 格挡——影响完全抵消本次物理攻击的几率，格挡越高，完全抵消本次物理攻击的概率越大
+ - 破盾——影响无视格挡的几率，破盾越高无视格挡的几率越高
+ - 物理攻击、法术攻击——玩家的两项攻击值，攻击值越大对人或怪的伤害越大
+ - 物理防御、法术防御——玩家的两项防御值，防御值越大受到的伤害越低
+ - 物理躲避、法术躲避——玩家的两项躲避值，数值越大躲避他人攻击的成功率越大
+ - 物理致命、法术致命——玩家的两项致命值，数值越大施放技能时打出致命一击的概率越大
+ - 物理命中、法术命中——玩家的两项命中值，数值越大杀人或怪时失手的概率越低
+
+现在就不写这么多，先写力量、防御、精神力、魔力的值
+
+```csharp
+  interface IDfeppzyTmofs
+    {
+        long KtrKvmvvnj { set; get; }
+
+        /// <summary>
+        /// 力量
+        /// </summary>
+        int KhbfhHtuxwwrn { set; get; }
+
+        /// <summary>
+        /// 防御
+        /// </summary>
+        int KahdxouTrifmznz { set; get; }
+
+        /// <summary>
+        /// 精神力
+        /// </summary>
+        int SnmTiet { get; set; }
+
+        /// <summary>
+        /// 魔力
+        /// </summary>
+        int DyjgSjdbgm { set; get; }
+    }
+```
+
+同时在人物类也需要写这个代码，不过不到2秒，我就写好了
+
+```csharp
+  class TdsumTzwok : IDfeppzyTmofs
+    {
+        public long KtrKvmvvnj { get; set; }
+        public int KhbfhHtuxwwrn { get; set; }
+        public int KahdxouTrifmznz { get; set; }
+        public int SnmTiet { get; set; }
+        public int DyjgSjdbgm { get; set; }
+    }
+```
+
+接着在 ViewModel 写人物属性
+
+```csharp
+    class HnlcDbtdhsdjModel : ViewModelMessage
+    {
+
+        /// <summary>
+        /// 获取设置 人物 
+        /// </summary>
+        public IDfeppzyTmofs KppnuhKxkpxdee
+        {
+            set
+            {
+                _kppnuhKxkpxdee = value;
+                OnPropertyChanged();
+            }
+            get => _kppnuhKxkpxdee;
+        }
+
+        private IDfeppzyTmofs _kppnuhKxkpxdee;
+
+        public override void OnNavigatedFrom(object sender, object obj)
+        {
+
+        }
+
+        public override void OnNavigatedTo(object sender, object obj)
+        {
+
+        }
+    }
+```
+
+这是使用代码片做出来的，关于代码片，请看[resharper 自定义代码片](./resharper-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87.html )
 
 ## 相关文章
 
