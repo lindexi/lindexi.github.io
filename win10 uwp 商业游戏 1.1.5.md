@@ -255,6 +255,8 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 下面来写一个修炼游戏，这是一个挂机游戏。
 
+### 定义接口
+
 人物有属性，修为。通过修为可以用来提升技能、自己的属性。而修为可以使用点击来获得，所以不停的点击的游戏。
 
 那么先写一个人物接口，因为还不知道人物类需要什么东西，如何加上商业游戏，所以就写接口，定义接口的好处是可以通过别的地方给使用地方值。这样不依赖实现是比较好的。
@@ -296,6 +298,8 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
     }
 ```
 
+### 创建界面
+
 然后开始写  ViewModel ，这里只需要一个 ViewModel 
 
 ```csharp
@@ -327,6 +331,8 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 ```
 
 然后定义技能，技能包括有升级修为的技能和升级属性的技能
+
+### 定义属性
 
 暂时人物的属性就设置为力量、防御、精神力、魔力…… 好像很多的值
 
@@ -362,6 +368,8 @@ LUK幸运
  - 物理躲避、法术躲避——玩家的两项躲避值，数值越大躲避他人攻击的成功率越大
  - 物理致命、法术致命——玩家的两项致命值，数值越大施放技能时打出致命一击的概率越大
  - 物理命中、法术命中——玩家的两项命中值，数值越大杀人或怪时失手的概率越低
+
+<!-- 暴击、暴击值 -->
 
 现在就不写这么多，先写力量、防御、精神力、魔力的值
 
@@ -439,6 +447,218 @@ LUK幸运
 ```
 
 这是使用代码片做出来的，关于代码片，请看[resharper 自定义代码片](./resharper-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87.html )
+
+### 定义技能
+
+写了属性还需要写技能，技能 DexqurhctSjyfozae ，包括了修为和属性，技能都可以升级，技能可以通过修为拿到。第一个技能是点击一次获得1技能。升级需要10修为，升1级，点击一次添加一点修为。
+
+看起来这个代码很简单
+
+先定义技能基类 DexqurhctSjyfozae ，技能包括当前的值，升级需要多少修为，升级之后可以做什么
+
+```csharp
+    internal abstract class DexqurhctSjyfozae
+    {
+        /// <summary>
+        /// 当前的值
+        /// </summary>
+        public double DklvubnuiTeqch { get; set; }
+
+        /// <summary>
+        /// 升级需要多少修为
+        /// </summary>
+        public double DmyikbmfDeb { get; set; }
+
+        public string HnukhltvKfdrpokjz { get; set; }
+
+        /// <summary>
+        /// 升级之后做什么
+        /// </summary>
+        public abstract void DqqTsb();
+    }
+
+```
+
+先做一个类来继承，这个类是点击添加修为
+
+```csharp
+    class HisjfnnzSqsbtuuqq:DexqurhctSjyfozae
+    {
+        public HisjfnnzSqsbtuuqq()
+        {
+            HnukhltvKfdrpokjz = "点击添加修为";
+
+            DmyikbmfDeb = 10;
+
+            DklvubnuiTeqch = 1;
+        }
+
+        public override void DqqTsb()
+        {
+               DklvubnuiTeqch += 1;
+        }
+    }
+
+```
+
+可以看到点击添加修为的时候，发现不知道怎么把修为给人添加。所以需要构造添加 IDfeppzyTmofs ，这样点击的时候才可以添加添加修为
+
+```csharp
+        public IDfeppzyTmofs Dfeppzy { get; }
+
+        public HisjfnnzSqsbtuuqq(IDfeppzyTmofs dfeppzy)
+        {
+            Dfeppzy = dfeppzy;
+
+            HnukhltvKfdrpokjz = "点击添加修为";
+
+            DmyikbmfDeb = 10;
+
+            DklvubnuiTeqch = 1;
+        }
+```
+
+但是点击如何写？实际上需要一个点击接口，所有继承点击的都需要使用
+
+```csharp
+ interface IKdgvtziaSfs
+    {
+        void DdwTynktxyx();
+    }
+```
+
+下面使用 HisjfnnzSqsbtuuqq 继承 IKdgvtziaSfs ，在点击的时候添加修为
+
+```csharp
+  public class HisjfnnzSqsbtuuqq : DexqurhctSjyfozae, IKdgvtziaSfs
+    {
+        public HisjfnnzSqsbtuuqq(IDfeppzyTmofs dfeppzy)
+        {
+            Dfeppzy = dfeppzy;
+
+            HnukhltvKfdrpokjz = "点击添加修为";
+
+            DmyikbmfDeb = 10;
+
+            DklvubnuiTeqch = 1;
+        }
+
+        public IDfeppzyTmofs Dfeppzy { get; }
+
+        public override void DqqTsb()
+        {
+            DklvubnuiTeqch += 1;
+        }
+
+
+        public void DdwTynktxyx()
+        {
+            Dfeppzy.KtrKvmvvnj += (long)Math.Floor(DklvubnuiTeqch);
+        }
+    }
+```
+
+### 开始写游戏
+
+现在已经准备好了，下面就是写游戏的时候
+
+在 ViewModel 添加一个列表，表示技能
+
+```csharp
+        public ObservableCollection<DexqurhctSjyfozae> DexqurhctSjyfozae
+        {
+            set 
+            {
+                _dexqurhctSjyfozae = value;
+                OnPropertyChanged();
+            }
+            get => _dexqurhctSjyfozae;
+        }
+
+        private ObservableCollection<DexqurhctSjyfozae> _dexqurhctSjyfozae;
+```
+
+在跳转添加创建人物、技能
+
+```csharp
+        public override void OnNavigatedTo(object sender, object obj)
+        {
+            KppnuhKxkpxdee = new TdsumTzwok();
+            var hisjfnnzSqsbtuuqq = new HisjfnnzSqsbtuuqq(KppnuhKxkpxdee);
+
+            DexqurhctSjyfozae = new ObservableCollection<DexqurhctSjyfozae>()
+            {
+                hisjfnnzSqsbtuuqq,
+            };
+        }
+```
+
+因为现在的代码比较乱，所以我把所有代码写出来
+
+```csharp
+    public class HnlcDbtdhsdjModel : ViewModelMessage
+    {
+        /// <summary>
+        /// 获取设置技能 
+        /// </summary>
+        public ObservableCollection<DexqurhctSjyfozae> DexqurhctSjyfozae
+        {
+            set
+            {
+                _dexqurhctSjyfozae = value;
+                OnPropertyChanged();
+            }
+            get => _dexqurhctSjyfozae;
+        }
+
+        private ObservableCollection<DexqurhctSjyfozae> _dexqurhctSjyfozae;
+
+        /// <summary>
+        /// 获取设置 人物 
+        /// </summary>
+        public IDfeppzyTmofs KppnuhKxkpxdee
+        {
+            set
+            {
+                _kppnuhKxkpxdee = value;
+                OnPropertyChanged();
+            }
+            get => _kppnuhKxkpxdee;
+        }
+
+        private IDfeppzyTmofs _kppnuhKxkpxdee;
+
+        public HnlcDbtdhsdjModel()
+        {
+            
+        }
+
+        public override void OnNavigatedFrom(object sender, object obj)
+        {
+
+        }
+
+        public override void OnNavigatedTo(object sender, object obj)
+        {
+            KppnuhKxkpxdee = new TdsumTzwok();
+            var hisjfnnzSqsbtuuqq = new HisjfnnzSqsbtuuqq(KppnuhKxkpxdee);
+
+            DexqurhctSjyfozae = new ObservableCollection<DexqurhctSjyfozae>()
+            {
+                hisjfnnzSqsbtuuqq,
+            };
+        }
+    }
+
+```
+
+命名在我自己写的时候都是有做好的，但是因为是发出来的，所以命名都使用工具替换，所以大家看到的命名都是很不符合英文。
+
+### 界面
+
+先让大家看一下界面
+
+
 
 ## 相关文章
 
