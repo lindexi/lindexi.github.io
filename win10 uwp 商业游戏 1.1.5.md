@@ -954,7 +954,7 @@ LUK幸运
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E5%2595%2586%25E4%25B8%259A%25E6%25B8%25B8%25E6%2588%258F%2520%25E5%259B%25BE%25E7%2589%2587%2520DjqwhkKwxfit.gif)
 
-现在的游戏已经可以玩了，于是我就把他放在了 CSDN 上，大家可以尝试玩一下。
+现在的游戏已经可以玩了，于是我就把他放在了 [CSDN](http://download.csdn.net/download/lindexi_gd/10228261 ) 上，大家可以尝试玩一下。
 
 
 
