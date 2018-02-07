@@ -151,7 +151,6 @@
 * [Visual Studio 自定义项目模板](visual-studio-自定义项目模板.md)
 * [visual studio 2015 warning MSB3246](visual-studio-2015-warning-msb3246.md)
 * [win10 sdk 是否向下兼容](win10 sdk 是否向下兼容.md)
-* [解决 Win10 UWP 无法使用 ss 连接](解决 Win10 UWP 无法使用 ss 连接.md)
 * [C＃同步方法转异步](C＃同步方法转异步.md)
 * [visual Studio 无法调试，提示程序跟踪已退出](visual Studio 无法调试，提示程序跟踪已退出.md)
 * [win10 uwp 进度条 Marquez ](win10 uwp 进度条 Marquez .md)
@@ -342,3 +341,4 @@
 * [dotnet 设计规范 · 数组定义](dotnet 设计规范 · 数组定义.md)
 * [dotnet 设计规范 · 抽象定义](dotnet 设计规范 · 抽象定义.md)
 * [dotnet 设计规范 · 结构体定义](dotnet 设计规范 · 结构体定义.md)
+* [解决 Win10 UWP 无法使用 ss 连接](解决 Win10 UWP 无法使用 ss 连接.md)
