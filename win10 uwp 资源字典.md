@@ -5,6 +5,8 @@
 <!--more-->
 <!-- csdn -->
 
+<div id="toc"></div>
+
 本文主要翻译[ResourceDictionary and XAML resource references - UWP app developer ](https://docs.microsoft.com/zh-cn/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references )，里面的代码我重新写了一下，有一些不相同。
 
 一般资源在 xaml 定义，定义的地方可以是在 Page ，请看下面的代码
@@ -159,3 +161,87 @@
 
 但是如果在 KlgnkTbyt.xaml 也定义了一个在第一个字典也存在的 Key ？ 会找到什么？实际上资源可以被重新定义，在后面的定义会覆盖前面的，所以如果有两个从重复定义，会使用后面一个。
 
+## 主题资源
+
+上面用的是静态的资源，如果需要跟着主题修改的资源就是主题资源。实际上主题字典和资源字典是相同的，不同在于定义。下面来创建一个不同颜色的主题
+
+```csharp
+<!-- ShunTaosqtqal.xaml -->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TkfoajhxcHbzw">
+
+    <SolidColorBrush x:Key="brush" Color="Red"/>
+
+</ResourceDictionary>
+
+<!-- DfwDcfgjr.xaml -->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TkfoajhxcHbzw">
+
+    <SolidColorBrush x:Key="brush" Color="blue"/>
+
+</ResourceDictionary>
+```
+
+然后在引用的资源的时候使用 ThemeDictionaries ，请看下面
+
+```csharp
+<Page
+    x:Class="TkfoajhxcHbzw.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary Source="ShunTaosqtqal.xaml.xaml" x:Key="Light"/>
+                <ResourceDictionary Source="DfwDcfgjr.xaml" x:Key="Dark"/>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <TextBlock Foreground="{StaticResource brush}" Text="林德熙" VerticalAlignment="Center"/>
+</Page>
+```
+
+现在使用暗主题的时候，显示的文字就会是蓝色，不过暗主题使用蓝色是比较不好的。
+
+关于主题切换，请看[切换主题 (https://lindexi.gitee.io/post/win10-uwp-%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98.html )
+
+## 共享的资源
+
+所有定义资源的类都需要可以共享，因为会有很多个地方引用相同的资源，如果对于一个不可以共享的元素，如TextBlock 就不能定义为资源。
+
+如果一个元素不能在逻辑树存在多个地方，那么这个元素就是不可共享的，所以几乎所有自己从 Object 定义的类都是可共享的，而所有从 FrameworkElement 继承的类都是不可共享的。
+
+一般建议共享的资源：
+
+ - Styles 和 templates ， Style  和其他继承 FrameworkTemplate 可以共享
+
+  - Brushes 和继承他的类
+
+  - 包括 Storyboard 的动画
+
+  - 点集
+
+  - 数组
+
+  - UI 相关的结构，如 Thickness 和 CornerRadius
+
+  - xaml 固有类型，x:Boolean、x:String、x:Double 这些
+
+  - 转换器
+
+ 如果是自己定义的类，需要类有默认的构造函数。
+
+## 用户控件
+
+用户控件具有特殊的寻找资源范围，他的寻找范围一般都是用户控件本身的资源，对于用户控件之外的资源一般都是无法寻找。因为他有自己实现。但是在用户控件外面调用用户控件，给他的属性设置资源，就可以使用 App.xaml 定义的资源。
+
+## 资源定义
+
+最后需要告诉大家，资源的定义一般都是把共有的资源定义为字典。把全局需要使用的资源定义在 app.xaml ，因为如果在每个相同的页面都定义一次，那么在进入页面就需要重复资源，这样会浪费内存。创建资源也需要时间。但是如果在 App.xaml 定义太多资源，会降低软件的启动速度。所以建议是在 App.xaml 定义合适的资源。
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 

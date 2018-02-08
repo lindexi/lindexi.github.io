@@ -18,7 +18,7 @@
 
 例如添加内容是打开 git 、打开资源管理器、打开 git blame
 
-|Title|Command|Arguments|Initial directory|
+|des|Title|Command|Arguments|Initial directory|
 |--|--|--|--|
 |在此仓库运行| Git Bash|	`C:\Program Files\Git\git-bash.exe`|	`"--cd=$(SolutionDir)/.."`|	`"$(SolutionDir)/.."`|
 |在资源管理器中打开仓库|	`C:\Windows\explorer.exe`	|`/select,"$(SolutionDir)\.."`|	`"$(SolutionDir)\.."`|
