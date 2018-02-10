@@ -323,7 +323,6 @@
 * [win10 UWP ListView ](win10 UWP ListView.md)
 * [git cannot lock ref](git cannot lock ref.md)
 * [win10 uwp 商业游戏 ](win10 uwp 商业游戏 .md)
-* [ win10 uwp MVVM 语义耦合](win10 uwp MVVM 语义耦合.md)
 * [开源项目](开源项目.md)
 * [win10 uwp 显示SVG](win10 uwp 显示SVG.md)
 * [WPF 高性能笔](WPF 高性能笔.md)
@@ -343,3 +342,4 @@
 * [win 消息](win 消息.md)
 * [C＃ 枚举转字符串](C＃ 枚举转字符串.md)
 * [win10 uwp 截图 获取屏幕显示界面保存图片](win10-uwp-截图-获取屏幕显示界面保存图片.md)
+* [ win10 uwp MVVM 语义耦合](win10 uwp MVVM 语义耦合.md)
