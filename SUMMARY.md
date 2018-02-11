@@ -307,7 +307,6 @@
 * [使用 Resharper 快速做适配器](使用 Resharper 快速做适配器.md)
 * [WPF 开发](WPF 开发.md)
 * [win10 uwp 标题栏](win10-uwp-标题栏.md)
-* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
 * [win10 uwp Fluent Design System 实践](win10 uwp Fluent Design System 实践.md)
 * [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到 VS2017 新项目格式.md)
 * [win10 uwp 让焦点在点击在页面空白处时回到textbox中](win10 uwp 让焦点在点击在页面空白处时回到textbox中.md)
@@ -343,3 +342,4 @@
 * [C＃ 枚举转字符串](C＃ 枚举转字符串.md)
 * [win10 uwp 截图 获取屏幕显示界面保存图片](win10-uwp-截图-获取屏幕显示界面保存图片.md)
 * [ win10 uwp MVVM 语义耦合](win10 uwp MVVM 语义耦合.md)
+* [git 需要知道的1000个问题](git 需要知道的1000个问题.md)

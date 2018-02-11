@@ -86,6 +86,13 @@ public partial class App
 <Button ToolTipService.ShowOnDisabled="True">  
 ```
 
+## 注册全局事件
+
+如果需要注册一个类型的全局事件，如拿到 TextBox 的全局输入，那么可以使用下面代码
+
+```csharp
+EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new RoutedEventHandler(方法));
+```
 
 ## 高版本的 WPF 引用低版本类库导致无法启动
 
