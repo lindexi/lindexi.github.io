@@ -305,7 +305,6 @@
 * [win10 uwp unix timestamp 时间戳 转 DateTime](win10 uwp unix timestamp 时间戳 转 DateTime.md)
 * [jekyll 添加 Valine 评论](jekyll 添加 Valine 评论.md)
 * [使用 Resharper 快速做适配器](使用 Resharper 快速做适配器.md)
-* [WPF 开发](WPF 开发.md)
 * [win10 uwp 标题栏](win10-uwp-标题栏.md)
 * [win10 uwp Fluent Design System 实践](win10 uwp Fluent Design System 实践.md)
 * [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到 VS2017 新项目格式.md)
@@ -343,3 +342,5 @@
 * [win10 uwp 截图 获取屏幕显示界面保存图片](win10-uwp-截图-获取屏幕显示界面保存图片.md)
 * [ win10 uwp MVVM 语义耦合](win10 uwp MVVM 语义耦合.md)
 * [git 需要知道的1000个问题](git 需要知道的1000个问题.md)
+* [WPF 开发](WPF 开发.md)
+* [WPF 播放 gif](WPF 播放 gif.md)
