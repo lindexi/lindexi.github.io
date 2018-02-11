@@ -6,6 +6,7 @@
 <div id="toc"></div>
 
 <!-- csdn -->
+<!-- 标签：WPF，gif -->
 
 最近在做 gif 播放，发现 gif 播放需要很多内存，于是就使用  Magick.NET 播放，但是这个方式也需要很多的内存。播放一张 [uwp 萤火虫](https://lindexi.github.io/lindexi/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html) 需要 600 M 内存。但是我还是把方法记下。
 
@@ -117,5 +118,7 @@
 ```
 
 可以尝试这个类进行播放，使用方法是设置 File 然后`Play`，可以看到这个方法需要使用的内存有 600M ，还不停gc所以这个方式不是我推荐。
+
+其他播放gif的方法请看[WPF 播放 gif](https://lindexi.github.io/lindexi/post/WPF-%E6%92%AD%E6%94%BE-gif.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
