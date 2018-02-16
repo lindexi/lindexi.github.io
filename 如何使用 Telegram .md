@@ -17,6 +17,8 @@ Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 �
 
 [https://www.microsoft.com/store/productId/9NZTWSQNTD0S](https://www.microsoft.com/store/productId/9NZTWSQNTD0S)
 
+或者下载电脑版[telegram pc中文版](http://www.pc6.com/softview/SoftView_473364.html )
+
 打开之后需要连接，这时一般是连接不上，所以需要点击设置，然后看到连接的方式是 Default ，点击这个文字就可以看到下面的界面
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221112959.jpg)
