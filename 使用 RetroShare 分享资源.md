@@ -108,6 +108,38 @@ BqwSlkwc3AQABgtNeSBjb21wdXRlcgUQo2AlwcviPIIb4VqmER3krAcDSF/D
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221151439.jpg)
 
+## 获得资源
+
+所有的 p2p 软件在开始获得好友的时候都是有点难，但是在获得之后就可以进入小圈，所以这时就不要担心找不到资源。
+
+一个简单的方法是通过 Telegram 的组织进入小圈子，里面有个机器人，他可以拉你进入群。
+
+加入 Telegram 的方法是点击下面的链接
+
+[Telegram: cn retroshare](https://t.me/cnretroshare )
+
+关于 Telegram 请看 [如何使用 Telegram ](./如何使用 Telegram.html)
+
+进入之后私聊机器人，把首页自己的公钥告诉机器人就可以。这时机器人会回复你群的公钥，在首页添加朋友粘贴进公钥就可以添加了。
+
+## 注册多个账户
+
+如果开始注册的账户写错了，那么可以重新注册一个账户，只需要多打开一个 RetroShare 就可以看到这个界面
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154320.jpg)
+
+点击 New Profile 就可以创建一个新的账户
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154353.jpg)
+
+在这里输入用户名和两次密码，然后不停移动鼠标
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154436.jpg)
+
+直到最后的进入到 20% 或以上，就可以点击下一步
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154622.jpg)
+
 推荐：[RetroShare 帮助](https://gongzisun.github.io/ )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
