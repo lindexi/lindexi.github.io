@@ -72,4 +72,42 @@ BqwSlkwc3AQABgtNeSBjb21wdXRlcgUQo2AlwcviPIIb4VqmER3krAcDSF/D
 
 不要问我的命名为什么是乱写的，因为我那时候是随便打出来的
 
+## 分享文件
+
+现在就是大家最想看的部分，如何分享自己的资源和如何下载别人的资源。点击 Files 文件然后就可以看到下面的界面
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221125359.jpg)
+
+点击 Config share folder 就可以选择要分享的文件夹。我这里选择了一个很大的文件夹，这时点击确定需要校验很久。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221125543.jpg)
+
+▲**点击 Add New 添加文件**
+
+注意后面有几个可以点的按钮，第一个按钮是这个文件夹是否可以被其他人搜索到，第二个是匿名，第三个是这个文件夹是否出现在好友的文件列表。
+
+第三个按钮如果打勾，那么就可以在下面这个界面看到
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221125910.jpg)
+
+下面来告诉大家如何下载资源
+
+## 搜索资源
+
+实际上的 RetroShare 可以搜索到好友的分享资源和好友的好友分享的资源，所以这个功能很厉害，我搜索了一下就可以找到资源。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221151058.jpg)
+
+但是在搜索之前还需要大家有好友才可以。
+
+搜索到资源之后通过双击想要的资源就可以进行下载。
+
+但是这时候会发现下载的资源放在的文件夹是在 C 盘，所以下面告诉大家如何设置默认的下载文件夹。
+
+点击 Preferences 可以看到下面的界面，里面有两个文件夹可以设置，实际上只需要设置 Incoming Directory 就可以了，把他设为自己的下载文件夹。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221151439.jpg)
+
 推荐：[RetroShare 帮助](https://gongzisun.github.io/ )
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
