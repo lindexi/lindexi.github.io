@@ -112,11 +112,11 @@ BgdsaW5kZXhpBRC3DdSbE/nTzcqH4QZCbnrDBwMqmtc=
 
 现在就是大家最想看的部分，如何分享自己的资源和如何下载别人的资源。点击 Files 文件然后就可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221125359.jpg)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221163546.jpg)
 
 点击 Config share folder 就可以选择要分享的文件夹。我这里选择了一个很大的文件夹，这时点击确定需要校验很久。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221125543.jpg)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822116350.jpg)
 
 ▲**点击 Add New 添加文件**
 
@@ -161,6 +161,14 @@ BgdsaW5kZXhpBRC3DdSbE/nTzcqH4QZCbnrDBwMqmtc=
 进入之后私聊机器人，把首页自己的公钥告诉机器人就可以。这时机器人会回复你群的公钥，在首页添加朋友粘贴进公钥就可以添加了。
 
 如果这个也不想做，或者 Telegram 无法使用，那么另一个方法是加我为好友，然后我来邀请你。可以发送邮件给我或者直接QQ告诉我都可以。
+
+这时我会邀请你进入小圈
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221162834.jpg)
+
+点击确定就可以进入，进入之后如果想加朋友，那么可以通过右击发送自己的证书，这样小伙伴就可以添加
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221162952.jpg)
 
 推荐：[RetroShare 帮助](https://gongzisun.github.io/ )
 
