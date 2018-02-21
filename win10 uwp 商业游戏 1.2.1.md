@@ -563,10 +563,224 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201824113040.jpg)
 
+## 添加技能
+
+为了可以添加任意的技能，所以这里添加一个类用来写有哪些技能可以添加的，这个类是 KwxTpivzdikn ，里面有一个属性用来放技能，不过这个TeddtHlhkgt类实际上有一个方法，在调用就可以返回技能，所以不需要使用上面的代码。但是存在一些可以传入的参数，所以还是可以添加一个类
+
+```
+    internal class KwxTpivzdikn
+    {
+        public KwxTpivzdikn()
+        {
+
+        }
+        public List<SbjHoeb> DpwHoulmqbx { set; get; } = new List<SbjHoeb>();
+    }
+
+```
+
+这个类主要是创建技能，因为TeddtHlhkgt类会有其他很多代码，所以就不让他做这个。
+
+### 提供修为
+
+先创建一个用于提高修为的技能试试，这个技能是点击升级只有需要的修为是 1.3-1.5之间。也就是当前需要需要修为 10 ，升级之后就需要 13-15的修为。
+
+```
+class HmsfKjirukoon : SbjHoeb
+    {
+        public override DexqurhctSjyfozae StdshakHngld(IDfeppzyTmofs donufyqgfKfnazhrcg)
+        {
+
+        }
+    }
+```
+
+但是还需要创建一个修为技能，这个类可以被修改每次升级的值
+
+```
+internal class KwxTpivzdikn
+    {
+        public KwxTpivzdikn()
+        {
+        }
+
+        public List<SbjHoeb> DpwHoulmqbx { set; get; } = new List<SbjHoeb>();
+    }
+
+    class HmsfKjirukoon : SbjHoeb
+    {
+        public override DexqurhctSjyfozae StdshakHngld(IDfeppzyTmofs donufyqgfKfnazhrcg)
+        {
+            var sisHhmpja = ran.Next(1300, 1500) / 1000.0;
+            return new HcaoxbsDpitcsg(donufyqgfKfnazhrcg)
+            {
+                KimtDvznfc = sisHhmpja
+            };
+        }
+    }
+
+    class HcaoxbsDpitcsg : DexqurhctSjyfozae
+    {
+        public HcaoxbsDpitcsg(IDfeppzyTmofs dfeppzy)
+        {
+            Dfeppzy = dfeppzy;
+
+            HnukhltvKfdrpokjz = "点击添加修为";
+
+            DmyikbmfDeb = 10;
+
+            DklvubnuiTeqch = 1;
+        }
+
+        public IDfeppzyTmofs Dfeppzy { get; }
+
+        public double KimtDvznfc { get; set; }
+
+        public override void DqqTsb()
+        {
+            DmyikbmfDeb *= KimtDvznfc;
+            DklvubnuiTeqch += 1;
+        }
+
+
+        public void DdwTynktxyx()
+        {
+            Dfeppzy.KtrKvmvvnj += (long) Math.Floor(DklvubnuiTeqch);
+        }
+    }
+```    
+
+先试试点击添加技能会出现的技能，不过需要在点击的时候添加上面代码
+
+```
+      public KwxTpivzdikn()
+        {
+            DpwHoulmqbx.Add(new HmsfKjirukoon());
+        }
+
+              public TeddtHlhkgt(IDfeppzyTmofs smktuoiznSobrf)
+        {
+            SmktuoiznSobrf = smktuoiznSobrf;
+
+            DpwHoulmqbx.AddRange(new KwxTpivzdikn().DpwHoulmqbx);
+        }
+```
+
+因为创建了一个新技能，这个在界面是无法显示，所以需要修改 DyqbdpreKuoujeq ，在找不到对应的界面就打开默认
+
+
+```
+    public class DyqbdpreKuoujeq : DataTemplateSelector
+    {
+        public List<TuikyyDikvqp> TuikyyDikvqps { get; } = new List<TuikyyDikvqp>();
+
+        public DataTemplate SheojwpnyHbqnybpa { get; set; }
+
+        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        {
+            var tuikyyDikvqp = TuikyyDikvqps.FirstOrDefault(temp=>temp.KwxvrmxDhzyozzwx(item));
+            if (tuikyyDikvqp != null)
+            {
+                return tuikyyDikvqp.TnhvrarvlDaz;
+            }
+
+            if (SheojwpnyHbqnybpa != null)
+            {
+                return SheojwpnyHbqnybpa;
+            }
+
+            return base.SelectTemplate(item, container);
+        }
+    }
+
+```    
+
+打开界面添加下面代码
+
+```
+            <local:DyqbdpreKuoujeq.SheojwpnyHbqnybpa>
+                <DataTemplate DataType="tpwlxnpDfyecpeoh:DexqurhctSjyfozae">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <TextBlock Style="{StaticResource HztDmaer}" Text="{Binding HnukhltvKfdrpokjz}" />
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource HztDmaer}" Text="当前的值" />
+                                <TextBlock Style="{StaticResource HztDmaer}"
+                                           Text="{Binding DklvubnuiTeqch,Converter={StaticResource DyakmdgwuTlaukxbo}}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource HztDmaer}" Text="升级需要修为" />
+                                <TextBlock Style="{StaticResource HztDmaer}"
+                                           Text="{Binding DmyikbmfDeb,Converter={StaticResource DyakmdgwuTlaukxbo}}" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <RepeatButton Margin="10,10,10,10" Content="升级" Click="HzmzKgeu_OnClick" />
+                        </Grid>
+                        <Grid Grid.Column="4">
+                            <Button Margin="10,10,10,10" Content="点击" Click="DlsuqHmopxh_OnClick" />
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </local:DyqbdpreKuoujeq.SheojwpnyHbqnybpa>
+
+```
+
+现在运行一下，可以看到下面的界面
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218101640.jpg)
+
+但是点击很多次就可以看到界面是点击添加修为，不知道他的每次点击可以添加多少，所以修改他的命名
+
+```
+        public override DexqurhctSjyfozae StdshakHngld(IDfeppzyTmofs donufyqgfKfnazhrcg)
+        {
+            var sisHhmpja = ran.Next(1300, 1500) / 1000.0;
+            var kiyKyovife = "点击添加修为"+sisHhmpja.ToString("N");
+            return new HcaoxbsDpitcsg(donufyqgfKfnazhrcg)
+            {
+                HnukhltvKfdrpokjz = kiyKyovife,
+                KimtDvznfc = sisHhmpja
+            };
+        }
+
+```
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218101839.jpg)
+
+这样多次点击添加技能就能找到一个升级需要比较少技能的值
+
+## 创建.net的共用项目
+
+在过了一个月，我的UWP还是没有安装成功，所以我只能使用 WPF 来写，但是如何把 WPF 写的直接放在 UWP，一个简单的方法是创建共享项目，但是还有其他方法。创建 .net standard 项目，不过创建这个需要使用的 WPF 程序是 .net Framework 4.6.2 和以上。
+
+现在创建一个 KnxetfaHjpkymq 的项目，让 WPF 项目引用他，然后把一些类从 WPF 放在这个项目。
+
+关于.net Framework 对应，请看下面
+
+![4yV.png](https://whoimg.com/images/2018/02/18/4yV.png)
+
 ## 其他文章
 
  - [win10 uwp 商业游戏 ](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
 
- - [win10 uwp 商业游戏 1.1.5](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html)
+ - [win10 uwp 商业游戏 1.1.5](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html )
+
+ ## 感谢
+
+ 感谢 [无名图床](https://whoimg.com) 提供图片上传
+
+ 最近我的图床已经流量用太多了
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)
