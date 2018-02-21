@@ -17,7 +17,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201821317278.jpg)
 
-点击创建新通道
+点击创建新通道，然后输入服务器和端口
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018213172725.jpg)
 
@@ -25,7 +25,13 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018213172748.jpg)
 
+设置完成点保存，然后开启
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018213145741.jpg)
+
 ## ssh 代理
+
+最简单的方法是在命令输入 ssh 加上代理，不过这个方法容易失败
 
 在使用 ssh 的时候可以加上代理，方法是在控制台输入下面的代码
 
@@ -34,6 +40,8 @@ ssh -D 代理端口 服务器 -p 端口
 ```
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018213172918.jpg)
+
+如果需要指定端口，请加上 `-p 端口`
 
 ## 连接代理
 
