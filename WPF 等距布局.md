@@ -2,6 +2,10 @@
 
 本文告诉大家如何使用 WPF 的自定义布局做等距布局。
 
+<!--more-->
+<!-- csdn -->
+<!-- 标签：wpf，布局 -->
+
 实际做的效果很简单，因为在开发我容易就用到了等距的控件。等距控件就是在指定的宽度下，平均把控件放在水平的地方，这样相等于 StackPanel 的水平，但是没有做水平压缩。在这个控件，无论在水平放多少个控件，都会在相同的高度把他们放下。如果里面的控件的宽度不相同，那么这些控件拿到的可以使用的宽度都是相同。
 
 请看下面的图片
@@ -110,5 +114,9 @@
     }
 
 ```    
+
+源代码：[WPF 等距布局-CSDN下载](http://download.csdn.net/download/lindexi_gd/10254406 )
+
+因为现在的 csdn 是需要下载积分，所以我会把一些资源放到 RetroShare ，这是一个很好的分享工具，如何使用请看[使用 RetroShare 分享资源 ](https://lindexi.oschina.io/lindexi/post/%E4%BD%BF%E7%94%A8-RetroShare-%E5%88%86%E4%BA%AB%E8%B5%84%E6%BA%90.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

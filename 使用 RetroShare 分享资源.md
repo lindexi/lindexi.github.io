@@ -54,7 +54,7 @@ RetroShare 这个软件的使用还是有一点难度的，他不需要向服务
 
 打开软件可以看到下面的图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154622.jpg)
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822121155.jpg)
 
 中间的代码就是自己的信息，可以把这个信息发给其他小伙伴，然后他就可以添加你为好友
 
