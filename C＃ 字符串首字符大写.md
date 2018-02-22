@@ -15,7 +15,9 @@ public static string FirstCharToUpper(string input)
 }
 ```
 
-这个方法就是拿到第一个字符，然后加上后面的字符，可以看到这个方法需要三个字符串在内存。需要解释一下的就是为什么明明看到只有两个字符串变量怎么会有三个字符串？实际上这里的第一个字符串是`input.First().ToString().ToUpper()` 第二个字符串是`input.Substring(1)`，第三个是前面两个加起来的，在方法运行完就删除了第一个字符串和第二个字符串。如果这个方法执行次数很多，那么就需要不停清除字符串。
+这个方法就是拿到第一个字符，然后加上后面的字符，可以看到这个方法需要三个字符串在内存。需要解释一下的就是为什么明明看到只有两个字符串变量怎么会有三个字符串？实际上这里的第一个字符串是 `input.First().ToString()` ，
+第二个字符串是 `input.First().ToString().ToUpper()` ，ToUpper 就是会创建一个字符串。
+第三个字符串是 `input.Substring(1)`，这几个字符串在方法运行完就会被去掉。如果这个方法执行次数很多，那么就需要不停清除字符串。
 
 ```csharp
 public string FirstLetterToUpper(string str)
