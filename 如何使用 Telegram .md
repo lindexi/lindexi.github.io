@@ -1,4 +1,4 @@
-# 如何使用 Telegram 
+# 如何使用 Telegram
 
 Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 这个软件。
 
