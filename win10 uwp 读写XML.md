@@ -7,7 +7,7 @@ XML 其实是 树结构，可以表达复杂的结构，所以在定制要求高
 
 XML 的优点是读写很简单，也支持定制。缺点是复杂，当然这也是他的优点。在网络传输数据，如果使用XML，相对的传输大小会比 Json 多两倍。所以是不是要用到这么高级的结构，还是看需要。
 
-wr 很喜欢用 XML，可以看到我们的项目，*.csproj 和页面 xaml 都是XML，当然Html也是，Xml 其实还可以用作本地数据库，所以 XML 还是很重要。
+wr 很喜欢用 XML，可以看到我们的项目，`*.csproj` 和页面 xaml 都是XML，当然Html也是，Xml 其实还可以用作本地数据库，所以 XML 还是很重要。
 
 本文就提供简单的方法来读写 XML 。提供方法有两个，放在前面的方法是比较垃圾的方法，放在后面的才是我希望大家使用的。
 
@@ -214,11 +214,11 @@ value 是 null，就删除属性。
 
 ```
 
-写完保存` doc.Save(await file.OpenStreamForWriteAsync());`
+写完保存`doc.Save(await file.OpenStreamForWriteAsync());`
 
 XDocument 和 WPF 的CUID都一样，如果需要删除或其他的方法，请去找WPF的方法。
 
-我使用 XDocument 把 *.csproj 的所有文件拿出来，代码：https://gist.github.com/lindexi/813e4b7111c16ac7b8a5149f44226e30
+我使用 XDocument 把 `*.csproj ` 的所有文件拿出来，代码：[https://gist.github.com/lindexi/813e4b7111c16ac7b8a5149f44226e30](https://gist.github.com/lindexi/813e4b7111c16ac7b8a5149f44226e30)
 
 <script src="https://gist.github.com/lindexi/813e4b7111c16ac7b8a5149f44226e30.js"></script>
 
@@ -294,6 +294,34 @@ http://www.cnblogs.com/zery/p/3362480.html
             XmlNode t = root.SelectSingleNode("xm:Import",temp);
 ```
 
+## WPF 读写 xaml
 
+实际上 wpf 读写和 UWP 相同，所以就不在这里多说了。
+
+那么如何写出下面的代码
+
+```csharp
+<?xml version="1.0" encoding="utf-16"?>
+<_XPXML Note="">
+  <_InvTrans IC="010006" />
+</_XPXML>
+```
+
+可以使用这个方法
+
+```csharp
+           XDocument doc = new XDocument();
+            XElement node = new XElement("_XPXML");
+            node.SetAttributeValue("Note", "");
+            var invTrans = new XElement("_InvTrans");
+            node.Add(invTrans);
+            invTrans.SetAttributeValue("IC", "010006");
+
+            doc.Add(node);
+
+            StringBuilder str = new StringBuilder();
+            TextWriter stream = new StringWriter(str);
+            doc.Save(stream);
+```
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
