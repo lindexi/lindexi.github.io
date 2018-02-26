@@ -10,8 +10,6 @@
 
 <!--more-->
 
-<!-- csdn -->
-
 找不到一个 packages 的文件，或程序集，那么一般就是 nuget 的坑。
 
 可以打开 EncodingNormalior\packages 文件夹，删除所有的文件，然后重新编译。
