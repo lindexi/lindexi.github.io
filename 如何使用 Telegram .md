@@ -4,7 +4,6 @@ Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 �
 
 <!-- 标签 ：软件，Telegram，聊天软件 -->
 
-<!-- csdn -->
 <!--more-->
 
 在使用之前，需要保证自己已经开了梯子，如果没有梯子，那么就无法使用这个工具。
@@ -26,5 +25,7 @@ Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 �
 这时从原来的 Auto 设置为 http 代理，然后输入梯子的地址就可以了。
 
 注册这个软件很简单，需要输入手机然后点击获取验证码，界面都是英文不过相信大家很容易就注册
+
+如果实在找不到梯子，那么请联系我，我可以给你一个梯子
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
