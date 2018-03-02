@@ -4,7 +4,6 @@
 
 <!--more-->
 <!-- csdn -->
-<!-- 草稿 -->
 
 <!-- 标签：win10,uwp,调试,VisualStudio,VisualStudio调试 -->
 
@@ -25,5 +24,9 @@
 这时选择自己的软件进行调试，注意在第一条语句停止
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20183211213.jpg)
+
+如果不需要从第一条语句，但是断点无法使用，那么点击断点选择源代码不同
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201832111629.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
