@@ -20,13 +20,13 @@ UWP是什么我在这里就不说，本文主要是介绍如何入门UWP，也�
 
 首先需要申请一个微软账号，没有账号是没法上传软件。
 
-申请可以看：http://blog.csdn.net/lindexi_gd/article/details/50329121
+申请账号请看：http://blog.csdn.net/lindexi_gd/article/details/50329121
 
 之后我们可以在官网下载vs，这个不需要多说，但是vs安装一般使用自定义，选择全平台，把所有可以打钩加上，当然安卓什么跨平台就不要。
 
-忘了，其实我们还需要windows10 系统。
+如果要开发 UWP 当然需要一个 Win10 的系统，打开设置更新开启开发者才可以。
 
-学习开发一般学Hellow，那么国内看到一篇比较好的 http://www.ceix.me/suibi/uwp开发学习笔记-1-hello-world
+学习开发一般学 Hellow，那么国内看到一篇比较好的博客，请看 [http://www.ceix.me/suibi/uwp开发学习笔记-1-hello-world](http://www.ceix.me/suibi/uwp开发学习笔记-1-hello-world)
 
 官方 https://msdn.microsoft.com/zh-cn/windows/uwp/get-started/create-a-hello-world-app-xaml-universal
 

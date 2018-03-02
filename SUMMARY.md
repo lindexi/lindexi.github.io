@@ -1,7 +1,6 @@
 # Summary
 
 * [C#将dll打包到程序中](C#将dll打包到程序中.md)
-* [default](default.md)
 * [win10 uwp 语音](win10_uwp_yu_yin.md)
 * [win10-uwp-用广告赚钱](win10-uwp-用广告赚钱.md)
 * [win10 uwp 颜色转换](win10-uwp-颜色转换.md)
