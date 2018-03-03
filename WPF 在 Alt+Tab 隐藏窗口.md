@@ -5,11 +5,19 @@
 <!--more-->
 <!-- csdn -->
 
+现在的 WPF 程序只要设置了不在任务栏显示，而且设置窗口`Visibility="Hidden"`就可以不在切换窗口显示窗口。设置方法可以是在 xaml 添加下面代码
+
+```csharp
+ShowInTaskbar="False" Visibility="Hidden"
+```
+
+但是如大家见到，如果存在 BitmapCache 和 一个隐藏的窗口，那么就会在锁屏之后软件无法渲染，请看[github](https://github.com/easiwin/wpf-issues/tree/master/BitmapCache) ，所以不要使用这个方法。那么除了这个方法外还有什么方法？
+
+实际上在切换窗口不显示窗口要求窗口是：`WS_EX_TOOLWINDOW` 或其他窗口的子窗口，但是可以看到 Toast 不是其他窗口的子窗口，所以只能设置窗口。
+
 因为只要设置窗口是`WS_EX_TOOLWINDOW`就不会在切换窗口显示，所以需要使用一些特殊的代码。
 
-在切换窗口不显示窗口要求窗口是：`WS_EX_TOOLWINDOW` 或其他窗口的子窗口，但是可以看到 Toast 不是其他窗口的子窗口，所以只能设置窗口。
-
-首先在窗口的 Load 之后拿到窗口句柄
+首先在窗口的 Load 之后拿到窗口句柄，注意不是在 SourceInitialized 之后添加的
 
 ```csharp
         public ToastWindow()
@@ -99,11 +107,5 @@
 ```
 
 参见：https://stackoverflow.com/a/551847/6116637
-
-如果需要在任务栏不显示，那么可以使用下面代码
-
-```csharp
-ShowInTaskbar = false
-```
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
