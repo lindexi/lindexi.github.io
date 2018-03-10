@@ -18,6 +18,8 @@ Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 �
 
 或者下载电脑版[telegram pc中文版](http://www.pc6.com/softview/SoftView_473364.html )
 
+[Telegram 1.2.6 x64-CSDN下载](https://download.csdn.net/download/lindexi_gd/10284176 )
+
 打开之后需要连接，这时一般是连接不上，所以需要点击设置，然后看到连接的方式是 Default ，点击这个文字就可以看到下面的界面
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221112959.jpg)
@@ -26,7 +28,7 @@ Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 �
 
 注册这个软件很简单，需要输入手机然后点击获取验证码，界面都是英文不过相信大家很容易就注册
 
-如果实在找不到梯子，那么请联系我，我可以给你一个梯子
+如果实在找不到[梯子](http://lindexi.ml:8080/index.php/s/XIFmwCNbF7nFywN) ，那么请联系我，我可以给你一个梯子
 
 欢迎大家参加 UWP 开发的组 [https://t.me/joinchat/ILgVXw88t3d0VxrpHG6pZA](https://t.me/joinchat/ILgVXw88t3d0VxrpHG6pZA)
 
