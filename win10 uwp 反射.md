@@ -214,6 +214,16 @@ Application.Current.GetType().GetTypeInfo().Assembly
      object obj = type.Assembly.CreateInstance(type.FullName);
 ```
 
+### 反射私有构造方法
+
+上面说的没有告诉大家如何在 C# 反射私有构造方法创建，下面来告诉大家如何写
+
+首先需要获得构造函数，如果构造函数不是 public 那么就需要使用下面代码获得
+
+```csharp
+
+```
+
 ### 获得方法
 
 获得类型方法
