@@ -1,8 +1,13 @@
+
 # win10 uwp 切换主题
 
 本文主要说如何在UWP切换主题，并且如何制作主题。
 
 <!--more-->
+
+
+
+<div id="toc"></div>
 
 一般我们的应用都要有多种颜色，一种是正常的白天颜色，一种是晚上的黑夜颜色，还需要一种辅助的高对比颜色。这是微软建议的，一般应用都要包含的颜色。
 
@@ -142,7 +147,7 @@ SystemBackgroundAltHighBrush是我们两个资源的，其中一个是白天，�
 
 运行可以看到点击就变成白天颜色，再点击就变为黑暗，这就是uwp切换主题，这样主题颜色很少，只有两个。
 
-参见：https://embracez.xyz/xaml-uwp-themes/
+参见：[https://embracez.xyz/xaml-uwp-themes/](https://embracez.xyz/xaml-uwp-themes/ )
 
 
 我们总是会使用白天，夜间模式，那么我们需要切换主题，UWP切换主题简单
@@ -155,7 +160,7 @@ NightDayThemeToggleButton
 
 我做的还有游戏键，这些都是可以简单使用的控件
 
-这些控件放在https://github.com/lindexi/UWP，大家可以拿下来用。
+这些控件放在[https://github.com/lindexi/UWP，大家可以拿下来用。](https://github.com/lindexi/UWP，大家可以拿下来用。 )
 
 做一个按钮，其实是修改
 
@@ -304,7 +309,7 @@ NightDayThemeToggleButton
 
 上面用到两张图片，一张是白天，一张是夜晚
 
-首先我们是编辑副本，不知道这个在哪的可以去看我的入门http://blog.csdn.net/lindexi_gd/article/details/52041944，里面有很多连接
+首先我们是编辑副本，不知道这个在哪的可以去看我的入门[http://blog.csdn.net/lindexi_gd/article/details/52041944，里面有很多连接](http://blog.csdn.net/lindexi_gd/article/details/52041944，里面有很多连接 )
 
 然后我们可以看到
 
@@ -322,10 +327,13 @@ UWP如果想保持主题和系统一样，随着系统主题，简单方法，�
 
 因为在UWP，没有给他一个值，就会和系统一样，但是在我们app运行，改变系统主题，我们就没办法立刻就随着系统改，这个我们不需要去想，因为在之后，垃圾wr自己去弄
 
-http://stackoverflow.com/a/39898422/6116637
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+[http://stackoverflow.com/a/39898422/6116637](http://stackoverflow.com/a/39898422/6116637 )
 
 
 
 
+
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

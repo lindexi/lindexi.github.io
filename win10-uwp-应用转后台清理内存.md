@@ -1,7 +1,13 @@
+
 # win10 uwp 应用转后台清理内存
 
 我在写小说阅读器，把每个打开的文件的内容读到内存，因为小说都很小，所以放在内存不怕太大，但是我如果打开了一本小说，再打开一本，我不会把先打开的小说的内容清除掉，在内存。所以一旦我打开多小说的时候，内存就会用比较多，这样觉得不好，不过垃圾wr给我们一个事件，这个我会在下面说。
+
 <!--more-->
+
+
+
+<div id="toc"></div>
 
 我们很多应用会在前台用很多资源，例如我们的界面，在转入后台可以清理很多资源，如果判断用户不是马上就转回的，我们可以用新的`EnteredBackground`使用简单。在我的小说里面有写，我来看看我是怎么写。
 
@@ -73,12 +79,15 @@
 `AppMemoryUsageDecreased`我们应用内存等级下降，在我们使用内存从大到小使用，这个在我们清理很多缓存可以让我们知道不用清理，一般用是在`AppMemoryUsageIncreased` 有个任务CleanTask，把我们的缓存清理，然后我们有个bool，一旦`AppMemoryUsageDecreased`我们就设为true，那么我们的CleanTask判断true就停下。
 
 
-源代码：https://github.com/lindexi/NovelRead
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+源代码：[https://github.com/lindexi/NovelRead](https://github.com/lindexi/NovelRead )
 
 
 
 
 
 
+
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

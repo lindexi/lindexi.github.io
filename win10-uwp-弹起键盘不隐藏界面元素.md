@@ -1,8 +1,13 @@
+
 # win10 uwp 弹起键盘不隐藏界面元素
 
 本文主要讲，在我们使用手机输入的时候，会因为手机的虚拟键盘隐藏了一些界面的元素。我们有一个简单的方法让虚拟键盘不隐藏界面元素。
 
 <!--more-->
+
+
+
+<div id="toc"></div>
 
 我们需要的界面元素是在显示了虚拟键盘后的空间能全部显示，如果不能的话，还是会被隐藏的。
 
@@ -64,7 +69,10 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/0a7537fb-9ef0-49f8-b934-6cb779e8754bwp_ss_20161204_00022016124202039.jpg)
 
-http://www.cnblogs.com/manupstairs/p/5738387.html
+[http://www.cnblogs.com/manupstairs/p/5738387.html](http://www.cnblogs.com/manupstairs/p/5738387.html )
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

@@ -1,8 +1,14 @@
+
 # win10 uwp 多语言
 
+<!-- 不发布 -->
 
 <!--more-->
 
+
+
+<div id="toc"></div>
+<!-- csdn -->
 ## Multilingual App Toolkit
 
 首先下载工具 Multilingual App Toolkit 可以到 https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkitv40 下载，如果发现他不能下载，可以去[csdn](http://download.csdn.net/detail/lindexi_gd/9726257)我上传的资源下载。
@@ -14,8 +20,6 @@
 当然，如果是台湾或其他地区的朋友，用自己地区的语言编写是我建议的，这时就需要去查看文档。
 
 我们把所有的需要做多语言的字符串提取出来。假如我们有一个 TextBlock ，他有一个 Text 。我们有一个 TextBox 他有 Header ，我们需要把他们改为多语言。
-
-		
 
 ```xml
                 <TextBlock Text="lindexi"></TextBlock>
@@ -55,7 +59,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/7fbd5d52-1ce3-4cd7-a438-1795c3f8517e2016123119328.jpg)
 
-我们选英语和中文 ，参见 https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/mt607079.aspx
+我们选英语和中文 ，参见 [https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/mt607079.aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/mt607079.aspx )
 
 然后我们可以看到多了 .xlf 文件
 
@@ -94,9 +98,14 @@
 
 多谢 李继龙 大神
 
-参见：http://www.cnblogs.com/yanxiaodi/p/5091970.html
+参见：[http://www.cnblogs.com/yanxiaodi/p/5091970.html](http://www.cnblogs.com/yanxiaodi/p/5091970.html )
 
-https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPError=-2147217396
+[https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPError=-2147217396 )
 
-http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps
+[http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps](http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps )
 
+但是微软做的多语言太垃圾了，所以我需要使用一个比较好的方法，我现在的项目使用的就是一个很好的方法，尝试把他放在 UWP ，看可不可以。
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

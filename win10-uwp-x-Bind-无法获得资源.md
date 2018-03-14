@@ -1,0 +1,63 @@
+
+# win10 uwp x:Bind 无法获得资源
+
+本文告诉大家，如果在 使用 x:Bind 转换器写在资源，而运行出现找不到资源的错误，如果解决。
+在运行的时候，出现`System.Runtime.InteropServices.COMException Cannot find a resource with the given key`
+
+<!--more-->
+
+
+<!-- csdn -->
+
+这个问题就是资源寻找路径问题，因为 Binding 是性能比较差，他的资源是从他的自己，如果找不到，就到他的上一级，直到找到或没有。但是 `x:bind` 的资源寻找和 Bind 不同，他是在元素的最顶级元素和应用资源寻找。假如有一个用户控件 Foo ，那么打开他的代码，可以看到这样的代码
+
+```csharp
+public global::Windows.UI.Xaml.Data.IValueConverter LookupConverter(string key)
+{
+    if (this.localResources == null)
+    {
+        global::Windows.UI.Xaml.FrameworkElement rootElement;
+        this.converterLookupRoot.TryGetTarget(out rootElement);
+        this.localResources = rootElement.Resources;
+        this.converterLookupRoot = null;
+    }
+    return (global::Windows.UI.Xaml.Data.IValueConverter) (this.localResources.ContainsKey(key) ? this.localResources[key] : global::Windows.UI.Xaml.Application.Current.Resources[key]);
+}
+```
+
+这就是说，元素资源从根元素找。页面的根元素就是页面本身，用户控件就是他自己本身，可以打开一个 xaml 页面，看到的第一个标签就是根元素。如果无法找到资源，会在应用资源寻找，如果找不到，就报错 System.Runtime.InteropServices.COMException 。应用资源是写在 App.xaml 的资源，所以如果希望使用`x:bind`可以获得资源，或者把资源写在根元素，或者写在应用。
+
+假如有元素 `Slider` 他需要资源转换器，那么转换器需要在哪定义，请看下面的代码
+
+```csharp
+                 <Slider Margin="10,10,10,10" Value="{x:Bind xx,Mode=TwoWay,Converter={StaticResource Convert}}" >
+                        <Slider.Resources>
+                            <local:DoubleConvert x:Name="Convert"></local:DoubleConvert>
+                        </Slider.Resources>
+                    </Slider>
+```
+
+这样写运行会错误，说未指定，因为资源找不到，因为资源寻找不是从元素开始寻找，他是从最顶级元素开始，所以如果让上面的代码可以运行，需要把资源定义在顶级元素。上面的代码可以做修改，让他可以运行
+
+```csharp
+    <UserControl.Resources>
+        <local:DoubleConvert x:Name="Convert"></local:DoubleConvert>
+    </UserControl.Resources>
+        <Slider Margin="10,10,10,10" Value="{x:Bind xx,Mode=TwoWay,Converter={StaticResource Convert}}" >
+                     
+         </Slider>
+
+```
+
+或者把资源写在 app.xaml 也是可以，但是写在这里的资源不会回收，会一直在内存。如果在这里写很多资源，启动速度会很慢。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017915191724.jpg)
+
+
+[win10 uwp 后台获取资源](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%90%8E%E5%8F%B0%E8%8E%B7%E5%8F%96%E8%B5%84%E6%BA%90/)
+
+参见：[https://stackoverflow.com/a/39735867/6116637](https://stackoverflow.com/a/39735867/6116637 )
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

@@ -1,16 +1,17 @@
+
 # win10 uwp 存放网络图片到本地
 
 有时候我们的网络很垃圾，我的的UWP要在第一次打开网络图片，就把图片存放到本地，下次可以从本地打开。
-
 有时候用户使用的是流量网络，不能每次都联网下载。
-
 我们不得在应用存放用户打开的图片。
-
 这就是先把图片下载，然后显示出来，存放到本地，接着下次要使用就可以从本地获取。
-
 最好这个和我们用户是透明，我们不知道图片在哪，是本地还是网络，只要给一个Uri就有一个图片。
 
 <!--more-->
+
+
+
+<div id="toc"></div>
 
 这里图片我用BitmapImage，Uri是输入网络的
 
@@ -26,9 +27,9 @@
 
 ```csharp
 
-                Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
+                Windows.Web.[Http.HttpClient](Http.HttpClient ) [http](http ) = new Windows.Web.[Http.HttpClient();](Http.HttpClient(); )
 
-                IBuffer buffer = await http.GetBufferAsync(uri);
+                IBuffer buffer = await [http.GetBufferAsync(uri);](http.GetBufferAsync(uri); )
 
                 BitmapImage img = new BitmapImage();
 
@@ -174,7 +175,7 @@ Uwp使用Md5，可以去看我写的文章
 
             return await GetLoacalFolderImage(uri) ??
 
-                   await GetHttpImage(uri);
+                   await Get[HttpImage(uri);](HttpImage(uri); )
 
         }
 
@@ -232,9 +233,9 @@ Uwp使用Md5，可以去看我写的文章
 
             {
 
-                Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
+                Windows.Web.[Http.HttpClient](Http.HttpClient ) [http](http ) = new Windows.Web.[Http.HttpClient();](Http.HttpClient(); )
 
-                IBuffer buffer = await http.GetBufferAsync(uri);
+                IBuffer buffer = await [http.GetBufferAsync(uri);](http.GetBufferAsync(uri); )
 
                 BitmapImage img = new BitmapImage();
 
@@ -376,6 +377,9 @@ Nuget搜索`lindexi.uwp.src.ImageStorage`
 Install-Package lindexi.uwp.src.ImageStorage
 ```
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
