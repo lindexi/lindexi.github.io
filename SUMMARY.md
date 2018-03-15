@@ -628,7 +628,7 @@
 
  * [WPF 解决 ViewBox  不显示线的问题](WPF-解决-ViewBox-不显示线的问题.md)
 
- * [WPF 解决 xaml 设计显示异常](WPF-解决-xaml-设计显示异常.md)
+ * [UWP WPF 解决 xaml 设计显示异常](UWP-WPF-解决-xaml-设计显示异常.md)
 
  * [WPF 解决弹出模态窗口关闭后，主窗口不在最前](WPF-解决弹出模态窗口关闭后，主窗口不在最前.md)
 
@@ -645,6 +645,8 @@
  * [WPF 绑定密码](WPF-绑定密码.md)
 
  * [Xamarin Forms 进度条控件](Xamarin-Forms-进度条控件.md)
+
+ * [xaml 添加 region](xaml-添加-region.md)
 
  * [一个好的程序员](一个好的程序员.md)
 

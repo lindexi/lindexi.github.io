@@ -1,5 +1,5 @@
 
-# WPF 解决 xaml 设计显示异常
+# UWP WPF 解决 xaml 设计显示异常
 
 本文告诉大家如何解决 xaml 设计显示异常
 
@@ -12,9 +12,15 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018314111735.jpg)
 
+或者
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201831585054.jpg)
+
 简单的方法是禁用项目代码，在左下角可以找到这个按钮
 
 另一个方法是设置判断当前是否在设计，如果是就直接返回，一般写在构造函数
+
+## WPF
 
 例如我创建一个用户控件 TsjcyubtnTtqtjem 那么就可以在构造函数添加下面代码
 
@@ -45,7 +51,22 @@
 
 上面代码实际使用 `DesignerProperties.GetIsInDesignMode` 判断当前是否设计，如果是就返回，然后关闭这个类再打开一般就可以继续写的时候获得界面。
 
+## UWP
 
+在 UWP 可以通过`Windows.ApplicationModel.DesignMode.DesignModeEnabled`判断，或者通过`DesignMode.DesignMode2Enabled`判断，因为 DesignMode2Enabled 需要秋季更新以上的才可以使用。
+
+```csharp
+        public AssBjPage()
+        {
+            this.InitializeComponent();
+            if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
+            {
+                return;
+            }
+        }
+```
+
+上面的代码需要在所有的引用控件加上，一般的微软控件不需要，因为他里面有加上
 
 
 
