@@ -232,6 +232,8 @@
 
  * [win10 uwp url encode](win10-uwp-url-encode.md)
 
+ * [win10 uwp xaml 兼容多个版本条件编译](win10-uwp-xaml-兼容多个版本条件编译.md)
+
  * [win10 uwp xaml 绑定接口](win10-uwp-xaml-绑定接口.md)
 
  * [win10 uwp x:Bind 无法获得资源](win10-uwp-x-Bind-无法获得资源.md)
