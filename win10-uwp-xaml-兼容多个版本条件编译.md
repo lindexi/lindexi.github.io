@@ -142,6 +142,8 @@ IsApiContractPresent 是在当前系统和低于当前系统返回 true ，IsApi
 
 如果在一个绑定一个使用了 contract5Present 的控件，那么在绑定的属性需要使用 contract5Present 不然微软的 VisualStudio 不然让你使用。
 
+需要告诉大家，感觉说的 VisualStudio 在 Xaml 报告的错误，实际上这是Resharper的
+
 参见
 
 [Conditional XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml )

@@ -536,6 +536,8 @@
 
  * [win10 uwp 自定义控件 SplitViewItem](win10-uwp-自定义控件-SplitViewItem.md)
 
+ * [win2d 图片水印](win2d-图片水印.md)
+
  * [win2d 画出好看的图形](win2d-画出好看的图形.md)
 
  * [Windows 10 16251 添加的 api](Windows-10-16251-添加的-api.md)
