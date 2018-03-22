@@ -352,6 +352,8 @@
 
  * [win10 uwp 让焦点在点击在页面空白处时回到textbox中](win10-uwp-让焦点在点击在页面空白处时回到textbox中.md)
 
+ * [win10 uwp 设置 HttpClient 浏览器标识](win10-uwp-设置-HttpClient-浏览器标识.md)
+
  * [win10 UWP 访问网页](win10-UWP-访问网页.md)
 
  * [win10 uwp 读写csv ](win10-uwp-读写csv-.md)
