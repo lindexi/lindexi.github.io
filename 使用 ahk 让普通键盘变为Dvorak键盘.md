@@ -7,7 +7,6 @@
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017819214.jpg)
 
 <!--more-->
-<!-- csdn -->
 
 首先需要下载 ahk ，可以通过[AutoHotkey](https://autohotkey.com/)下载。
 
