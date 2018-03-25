@@ -4,7 +4,6 @@
 
 
 <!--more-->
-<!-- csdn -->
 
 ## 下载 wordpress
 
