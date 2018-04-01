@@ -440,6 +440,65 @@ await "不告诉你";
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102848.jpg)
 
+## if this == null
+
+一般看到下面的代码都觉得是不可能
+
+```csharp
+if (this == null) Console.WriteLine("this is null");
+```
+
+如果在 if 里面都能使用 this == null 成立，那么一定是vs炸了。实际上这个代码还是可以运行。
+
+在一般的函数，如 Foo ，在调用就需要使用`f.Foo()`的方法，方法里 this 就是 f ，如果 `f == null` 那么在调用方法就直接不让运行，如何到方法里的判断
+
+```csharp
+f.Foo(); //如果 f 为空，那么这里就不执行
+
+void Foo()
+{
+   // 如果 this 为空，怎么可以调用这个方法
+   if (this == null) Console.WriteLine("this is null");
+}
+```
+
+实际上是可以做的，请看[（C#）if (this == null)？你在逗我，this 怎么可能为 null！用 IL 编译和反编译看穿一切 - walterlv](https://walterlv.github.io/post/this-could-be-null.html )
+
+如上面博客，关键在修改`callvirt `为 `call`，直接修改 IL 可以做出很多特殊的写法。
+
+那么这个可以用在哪里？可以用在防止大神反编译，如需要使用下面逻辑
+
+```csharp
+//执行的代码
+
+//不执行的代码
+```
+
+```csharp
+if(true)
+{
+   //执行的代码
+}
+else
+{
+   //不执行的代码 
+}
+```
+
+但是直接写 true 很容易让反编译看到不使用代码，而且在优化代码会被去掉，所以可以使用下面代码
+
+```csharp
+if(this == null)
+{
+   //执行的代码
+}
+else
+{
+   //不执行的代码 
+}
+```
+    
+
 
 
 

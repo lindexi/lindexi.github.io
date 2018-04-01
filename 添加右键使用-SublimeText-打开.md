@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：SublimeText -->
 
 可以复制下面的代码到一个记事本，然后保存为 `sublime_addright.reg`，双击打开就可以。

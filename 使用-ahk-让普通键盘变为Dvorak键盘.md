@@ -8,7 +8,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 首先需要下载 ahk ，可以通过[AutoHotkey](https://autohotkey.com/)下载。
 
