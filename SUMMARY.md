@@ -10,6 +10,8 @@
 
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)
 
+ * [C# GUID ToString ](C-GUID-ToString-.md)
+
  * [C# ValueTuple 原理](C-ValueTuple-原理.md)
 
  * [C# 不能用于文件名的字符](C-不能用于文件名的字符.md)
