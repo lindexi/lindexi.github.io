@@ -47,6 +47,8 @@ System.Console.WriteLine(Guid.NewGuid().ToString("P"));
 
 参见：[全局唯一标识符 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E7%AC%A6 )
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2Fyande.re%2520443795%2520sample%2520bikini%2520goto_jun%2520kaneshiro_sora%2520momijidani_nozomi%2520noguchi_takayuki%2520swimsuits%2520tenshi_no_three_piece%2521201841104040.jpg)
+
 
 
 
