@@ -72,6 +72,62 @@
  }
 ```
 
+如果直接运行，会发现报告`System.Runtime.Serialization.SerializationException:“未找到反序列化“lindexi.Csdn.CsdnNotFoundException”类型对象的构造函数`
+
+解决方法是创建一个构造函数，写入这个函数就不需要再写其他的代码。
+
+```csharp
+        protected CsdnNotFoundException([NotNull] SerializationInfo info, StreamingContext context) : base(info,
+            context)
+        {
+        }
+```
+
+如果有一些特殊的属性需要自己设置，建议创建一个默认构造函数，和两个方法，因为使用上面的方法不会序列化自己定义的属性。
+
+```csharp
+ [Serializable]
+ public class CsdnNotFoundException : RemotingException, ISerializable
+ {
+    public CsdnNotFoundException()
+    {
+    	//默认构造，可以在反射创建
+    }
+
+ 	public CsdnNotFoundException(string str) :
+ 	       base(str)
+ 	{
+
+ 	}      
+
+ 	      protected CsdnNotFoundException([NotNull] SerializationInfo info, StreamingContext context) 
+ 	      //: base(info, context) 不使用基类的原因是基类会报告 找不到 ClassName 和其他很多的坑
+        {
+            //反序列化创建
+
+            Message = (string) info.GetValue(MessageSerialization, typeof(string));
+        } 
+
+        // 重写消息，用于在构造设置值
+        public override string Message { get; }
+
+        // 用于在构造拿到消息的值
+        private const string MessageSerialization = "Message";
+
+        // 重写这个方法，在序列化调用
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue(MessageSerialization, Message);
+        }
+ }
+```
+
+在 GetObjectData 拿到必要的属性，这个需要自己把需要的属性写入。然后在构造函数重写`[NotNull] SerializationInfo info, StreamingContext context`方法的，可以拿到值
+
+因为上面的代码用到 Message ，需要重写这个属性，因为默认是只读，不能在构造函数设置。
+
+是不是觉得很复杂，实际上简单的方法是通过 json 在GetObjectData把类转换为json，在构造转换为类。
+
 [How to: Create an Exception Type That Can be Thrown by Remote Objects](https://msdn.microsoft.com/en-us/library/s9fyb186(v=vs.100).aspx )
 
 
