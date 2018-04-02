@@ -6,6 +6,8 @@
 
  * [.net remoting 使用事件](net-remoting-使用事件.md)
 
+ * [.net remoting 抛出异常](net-remoting-抛出异常.md)
+
  * [.net Standard](net-Standard.md)
 
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)
