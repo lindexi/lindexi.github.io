@@ -58,6 +58,22 @@
 
 如果需要在 .net remoting 使用异常，那么需要自己创建一个异常，继承 RemotingException
 
+## 反序列
+
+因为默认的 RemotingException 没有反序列，所以需要添加 Serializable 特性
+
+```csharp
+ [Serializable]
+ public class CsdnNotFoundException : RemotingException
+ {
+ 	public CsdnNotFoundException(string str) :
+ 	       base(str)
+ 	{
+
+ 	}       
+ }
+```
+
 微软建议继承`ISerializable`，标记特性
 
 ```csharp
@@ -128,7 +144,14 @@
 
 是不是觉得很复杂，实际上简单的方法是通过 json 在GetObjectData把类转换为json，在构造转换为类。
 
+## ISerializable
+
+那么为什么在使用 Serializable 特性还需要继承 ISerializable ，因为继承 ISerializable 就可以在一个构造函数`xx([NotNull] SerializationInfo info, StreamingContext context)`进行处理和处理如何序列化。处理如何序列化可以提高性能，因为自己知道哪些需要序列化，哪些不需要。
+
+关于 ISerializable 请看 [c# - What is the point of the ISerializable interface? - Stack Overflow](https://stackoverflow.com/questions/810974/what-is-the-point-of-the-iserializable-interface )
+
 [How to: Create an Exception Type That Can be Thrown by Remote Objects](https://msdn.microsoft.com/en-us/library/s9fyb186(v=vs.100).aspx )
+
 
 
 
