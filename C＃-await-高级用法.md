@@ -30,7 +30,41 @@ await "林德熙逗比";
 
 ## 原理
 
+在 .net 4.5 之后，框架默认提供 async 和 await 的语法糖，这时千万不要认为进入 await 就会进入一个新的线程，实际上不一定会进入一个新的线程才会调用 await 。
 
+那么 await 的语法糖写的是什么？实际上就是以前的 Begin xx 和 End xx 的语法糖。
+
+古时候的写法：
+
+```csharp
+foo.Beginxx();
+
+foo.Endxx(传入委托);
+```
+
+这样大家就无法在一个流程写完，需要分为两个东西，而在 Continus with 下，就需要传入委托。如果委托里又使用了异步，那么又需要传入委托
+
+```csharp
+       task.ContinueWith(_ =>
+            {
+                Task t1 = new Task(() => { });
+                t1.ContinueWith((t2) =>
+                {
+                    //可以看到如果进入很多的委托
+                });
+            });
+```
+
+所以这时就使用了 await ，可以让大家按照顺序写。
+
+```csharp
+await task;
+Task t1 = new Task(() => { });
+await t1;
+//可以看到这时不需要进入委托
+```
+
+实际上 await 是在编译时支持的，请看[进阶篇：以IL为剑，直指async/await - 布鲁克石 - 博客园](http://www.cnblogs.com/brookshi/p/5240510.html )
 
 ## 使用
 

@@ -250,6 +250,15 @@
 
 [IScrollInfo tutorial part IV – BenCon's WebLog](https://blogs.msdn.microsoft.com/bencon/2006/12/09/iscrollinfo-tutorial-part-iv/ )
 
+## 其他源代码分析
+
+[.net Framework 源代码 · ScrollViewer](https://lindexi.gitee.io/post/.net-Framework-%E6%BA%90%E4%BB%A3%E7%A0%81-ScrollViewer.html )
+
+[.net源码分析 – List<T> - 布鲁克石 - 博客园](http://www.cnblogs.com/brookshi/p/5353021.html )
+    
+[一站式WPF--依赖属性（DependencyProperty）一 - 周永恒 - 博客园](http://www.cnblogs.com/Zhouyongh/archive/2009/09/10/1564099.html )
+
+
 
 
 
