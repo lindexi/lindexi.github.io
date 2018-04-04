@@ -66,6 +66,8 @@ await t1;
 
 实际上 await 是在编译时支持的，请看[进阶篇：以IL为剑，直指async/await - 布鲁克石 - 博客园](http://www.cnblogs.com/brookshi/p/5240510.html )
 
+而且千万不要认为 await 一定会进入一个新的线程，实际上他只是把需要写在多处的代码，可以按照流写下载，和写同步代码一样。如果感兴趣 await 不一定会进入一个新的线程请看 [There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html )
+
 ## 使用
 
 因为 await 需要找到一个 GetAwaiter 函数，这个函数即使是扩展方法也可以，所以其实上面的代码是这样写的
@@ -156,6 +158,10 @@ HeabdsdnbKevx 就是一个可以等待的类型
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018211154944.jpg)
 
 现在我准备在 object 加一个扩展方法，所有类型都可以等待，然后把这个扩展方法的 namespace 写为 System ，这样大家就不知道这个是我写的，过了一年我就告诉大家这是 C# 的特性，所有的类都可以等待。但是这个特性需要开光才可以使用，你们直接建的项目没有开光所以没法使用这个特性。
+
+## 相关博客
+
+[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://walterlv.github.io/post/deadlock-in-task-wait.html )
 
 
 
