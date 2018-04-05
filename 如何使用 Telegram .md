@@ -28,7 +28,7 @@ Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 �
 
 注册这个软件很简单，需要输入手机然后点击获取验证码，界面都是英文不过相信大家很容易就注册
 
-如果实在找不到[梯子](http://lindexi.ml:8080/index.php/s/XIFmwCNbF7nFywN) ，那么请联系我，我可以给你一个梯子
+如果实在找不到[梯子](http://lindexi.ml:8080/index.php/s/o4NVQTBF6eEuLJe) ，那么请联系我，我可以给你一个梯子
 
 或者直接复制下面的代码：[tg://socks?server=tg1.ssrr.cloud&port=80&user=user&pass=passwd](tg://socks?server=tg1.ssrr.cloud&port=80&user=user&pass=passwd) 发送到 Telegram 然后点击这个链接 
 
