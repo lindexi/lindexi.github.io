@@ -232,6 +232,8 @@
 
  * [win10 uwp ping](win10-uwp-ping.md)
 
+ * [win10 uwp release 因为 Entry Point Not Found 无法启动](win10-uwp-release-因为-Entry-Point-Not-Found-无法启动.md)
+
  * [win10 UWP RSS阅读器](win10-UWP-RSS阅读器.md)
 
  * [win10 uwp slider 隐藏显示数值](win10-uwp-slider-隐藏显示数值.md)
