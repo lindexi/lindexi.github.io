@@ -166,6 +166,8 @@
 
 参见：[src/Money.php · 趋势软件/capital - 码云 Gitee.com](https://gitee.com/trendsoftorg/capital/blob/master/src/Money.php )
 
+![](https://i.loli.net/2018/04/08/5ac9ffa67477f.jpg)
+
 
 
 

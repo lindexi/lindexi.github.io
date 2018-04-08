@@ -152,6 +152,7 @@
 
 [How to: Create an Exception Type That Can be Thrown by Remote Objects](https://msdn.microsoft.com/en-us/library/s9fyb186(v=vs.100).aspx )
 
+![](https://i.loli.net/2018/04/08/5ac9ffb44217b.jpg)
 
 
 

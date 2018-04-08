@@ -35,6 +35,14 @@
 
 在 WPF 可以通过 Stylus 收集按下和移动这些，但是大家也知道，路由事件是需要时间比较长的，可能在 Ink 收到之前，就有其他元素收到，他在收到的做了很多其他的业务，这时就会影响笔的画。为了在用户一按下就开始画，需要用到黑科技。所有的 UIElement 都有 Pulgin ，这个属性可以从 UIElement 拿到原始的触摸，这样可以比路由事件更快拿到用户按下。从这里拿到的触摸可能是在其他线程。
 
+## 如何画出 Stroke
+
+从上面收集到点，从点转换为 StylusPoint 加入 StylusPointCollection 然后创建 Stroke ，把 Stroke 转换为 Geometry ，通过 DrawingVisual 画出来。
+
+中间的 StylusPointCollection 创建 Stroke 是多余的，所以
+
+源代码：[StrokeRenderer.cs](https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/MS/Internal/Ink/StrokeRenderer.cs,1670af750bda3057 )
+
 ## StylusPlugIns 
 
 如果需要做出[高性能的笔](https://lindexi.gitee.io/post/WPF-%E9%AB%98%E6%80%A7%E8%83%BD%E7%AC%94.html) 那么就需要了解 [StylusPlugIns](https://docs.microsoft.com/en-us/dotnet/api/system.windows.input.stylusplugins?view=netframework-4.7.1)

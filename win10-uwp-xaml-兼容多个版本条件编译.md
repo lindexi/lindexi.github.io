@@ -150,6 +150,8 @@ IsApiContractPresent 是在当前系统和低于当前系统返回 true ，IsApi
 
 [UWP 判断系统版本](http://www.cnblogs.com/hupo376787/p/7766139.html )
 
+![](https://i.loli.net/2018/04/08/5ac9ffd774738.jpg)
+
 
 
 

@@ -231,6 +231,23 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 使用 `&#10;`
 
+## 在 xaml 绑定索引空格
+
+如果一个索引需要传入空格，那么在 xaml 使用下面代码是无法绑定
+
+```csharp
+{Binding MyCollection[foo bar]}
+```
+
+需要使用下面代码
+
+```csharp
+{Binding MyCollection[[foo&x20;bar]]}
+```
+
+[Binding to an index with space in XAML – Ivan Krivyakov](https://ikriv.com/blog/?p=1143 )
+
+
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 
 [wpf动画——缓动动画Animation Easing - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/11/2680579.html)

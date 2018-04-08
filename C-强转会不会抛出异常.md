@@ -51,6 +51,8 @@ System.OverflowException:“Arithmetic operation resulted in an overflow.”
 
 那么如何判断 Infinity ？ 使用`float.IsInfinity`或 `double.IsInfinity` 都可以判断。
 
+![](https://i.loli.net/2018/04/08/5ac9ff8833a18.jpg)
+
 
 
 
