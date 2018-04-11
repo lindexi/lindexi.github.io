@@ -94,6 +94,8 @@
 
  * [C＃枚举中使用Flags特性](C＃枚举中使用Flags特性.md)
 
+ * [dot net core 使用 IPC 进程通信](dot-net-core-使用-IPC-进程通信.md)
+
  * [dotnet core 黑科技·String.IndexOf 性能](dotnet-core-黑科技·String.IndexOf-性能.md)
 
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
