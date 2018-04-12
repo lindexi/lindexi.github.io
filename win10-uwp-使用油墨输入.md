@@ -251,15 +251,13 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 现在很多人都是使用语音输入，把文字转为语音我已经写了一篇博客。
 
-我们需要先有麦克风
+我们需要先有麦克风，需要权限
 
 ![这里写图片描述](http://img.blog.csdn.net/20160416103452875)
 
-首先我们需要设置语言
+首先我们需要设置语言，因为需要的识别，可以使用 web 的接口，所以就需要添加麦克风、网络的权限。
 
-需要的识别，可以使用 web
-
-告诉用户需要输入
+下面的代码就是告诉用户需要输入的内容，然后进行转换。
 
 ```csharp
             Language language = SpeechRecognizer.SystemSpeechLanguage;

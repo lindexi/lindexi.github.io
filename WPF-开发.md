@@ -81,6 +81,26 @@ public partial class App
 }
 ```
 
+## 标记方法被使用
+
+使用 UsedImplicitly 特性可以标记一个没有被引用的方法为反射使用，这时就不会被优化删除。
+
+```csharp
+public class Foo
+{
+    [UsedImplicitly]
+    public Foo()
+    {
+        //反射调用
+    }
+
+    public Foo(string str)
+    {
+        //被引用
+    }
+}
+```
+
 ## 当鼠标滑过一个被禁用的元素时，让ToolTip 显示
 
 设置`ToolTipService.ShowOnDisabled`为 true
