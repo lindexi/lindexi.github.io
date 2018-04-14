@@ -306,6 +306,8 @@
 
  * [win10 uwp 如何判断一个对象被移除](win10-uwp-如何判断一个对象被移除.md)
 
+ * [win10 uwp 如何开始写 uwp 程序](win10-uwp-如何开始写-uwp-程序.md)
+
  * [win10 uwp 如何打包Nuget给其他人](win10-uwp-如何打包Nuget给其他人.md)
 
  * [win10 uwp 如何拖动一个TextBlock的文字到另一个TextBlock ](win10-uwp-如何拖动一个TextBlock的文字到另一个TextBlock-.md)
