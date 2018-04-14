@@ -96,6 +96,8 @@
 
  * [dot net core 使用 IPC 进程通信](dot-net-core-使用-IPC-进程通信.md)
 
+ * [dot net core 使用 usb](dot-net-core-使用-usb.md)
+
  * [dot net double 数组转 float 数组](dot-net-double-数组转-float-数组.md)
 
  * [dotnet core 黑科技·String.IndexOf 性能](dotnet-core-黑科技·String.IndexOf-性能.md)
