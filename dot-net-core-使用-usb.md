@@ -116,6 +116,22 @@ var usbDeviceFinder = new UsbDeviceFinder(vid: 0xFF21, pid: 0x1F02);
 
 读取也有很多个重载，这里使用的是 读取数据存放的数组，超时时间，读取到的长度。
 
+如果需要异步读写，代码有些多
+
+```csharp
+         var offset = 0;
+            var length = sejDqhaquwy.Length;
+            var timeout = 2000;
+            writer.SubmitAsyncTransfer(sejDqhaquwy, offset, length, timeout, out var transferContext);
+            transferContext.Wait(out var transferredCount);//等待
+```
+
+等待的方式不是使用 await 而是通过  AsyncWaitHandle 等待。
+
+## LGPL
+
+需要知道这个库的协议是 LGPL 也就是使用了这个库就需要开放源代码
+
 更多参考请看 [LibUsbDotNet LibUsbDotNet/LibUsbDotNet](https://github.com/LibUsbDotNet/LibUsbDotNet/tree/master/stage/Examples )
 
 ![](https://i.loli.net/2018/04/08/5aca00040c556.jpg)
