@@ -4,7 +4,7 @@
 
 <!--more-->
 <!-- csdn -->
-<!-- 标签：dot-net-core,usb -->
+<!-- 标签：dot-net-core,usb,dotnet -->
 <div id="toc"></div>
 
 首先需要打开 Nuget 安装 CoreCompat.LibUsbDotNet ，这是一个usb连接的库。

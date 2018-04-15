@@ -5,6 +5,8 @@
 <!--more--> 
 <!-- csdn -->
 
+<!-- 标签：C#,dotnet -->
+
 最近在开发[Avalonia](https://github.com/AvaloniaUI/Avalonia ) ，有大神告诉我，下面的代码可以这样写
 
 ```csharp
