@@ -7,6 +7,8 @@
 
 
 
+<!-- 标签：C#,dotnet,Emit -->
+
 关于表达式树复制，参见 [Fast Deep Copy by Expression Trees (C#) - CodeProject](https://www.codeproject.com/Articles/1111658/Fast-Deep-Copy-by-Expression-Trees-C-Sharp)
 
 在开始读本文之前，我推荐两个博客 [读懂IL代码就这么简单 (一) - Zery - 博客园](http://www.cnblogs.com/zery/p/3366175.html) [秒懂C#通过Emit动态生成代码 - 匠心十年 - 博客园](http://www.cnblogs.com/gaochundong/archive/2013/06/01/csharp_emit_generate_assembly.html)

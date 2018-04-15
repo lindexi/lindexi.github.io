@@ -8,6 +8,8 @@
 
 <!-- csdn -->
 
+<!-- 标签：C#，await，dotnet -->
+
 昨天看到[太子](https://walterlv.github.io/)写了一段代码，我开始觉得他修改了编译器，要不然下面的代码怎么可以编译通过
 
 ```csharp

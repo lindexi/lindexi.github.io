@@ -10,7 +10,7 @@
 
 这是 Windows 的bug ，不过从上面的描述，也许大家还不知道这个问题是什么。不过我把他放在 github ，所以大家可以看到这个问题具体是什么。
 
-可以运行代码：[wpf-issues/ChildWindows ](https://github.com/easiwin/wpf-issues/tree/master/ChildWindows )
+可以运行代码：[wpf-issues/ChildWindows ](https://github.com/dotnet-campus/wpf-issues/tree/master/ChildWindows )
 
 在上面的网站有详细的视频告诉大家是如何做的就可以看到这个问题。
 
