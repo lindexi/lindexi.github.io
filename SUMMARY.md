@@ -172,6 +172,8 @@
 
  * [UWP 分享用那个图标](UWP-分享用那个图标.md)
 
+ * [UWP 和 WPF 对比](UWP-和-WPF-对比.md)
+
  * [UWP 开发中，需要知道的1000个问题](UWP-开发中，需要知道的1000个问题.md)
 
  * [Visual studio C# 代码使用 NotNull](Visual-studio-C-代码使用-NotNull.md)
@@ -341,6 +343,8 @@
  * [win10 uwp 毛玻璃](win10-uwp-毛玻璃.md)
 
  * [win10 uwp 气泡](win10-uwp-气泡.md)
+
+ * [win10 uwp 渲染原理 DirectComposition 渲染](win10-uwp-渲染原理-DirectComposition-渲染.md)
 
  * [win10 UWP 用Path画图](win10-UWP-用Path画图.md)
 
