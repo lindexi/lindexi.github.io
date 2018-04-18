@@ -44,7 +44,7 @@
 
 如果使用 DirectComposition 需要修改之前的界面代码，那么是一个很大的工作，好在使用 DirectComposition 可以支持以前的界面代码。而且 DirectComposition 可以对之前写的界面代码进行组合和动画，从而做出好看的界面。所以可以通过 DirectComposition 对界面进行美化不需要修改原有的代码。
 
-参见：[Why use DirectComposition? (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh449195(v=vs.85).aspx )
+参见：[Why use DirectComposition](https://msdn.microsoft.com/en-us/library/windows/desktop/hh449195(v=vs.85).aspx )
 
 
 
