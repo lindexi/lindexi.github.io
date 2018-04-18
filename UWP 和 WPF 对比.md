@@ -66,23 +66,33 @@ UWP 发布的时候，因为使用的是 WinRT ，而 WPF 使用的是 COM ，�
 
 但是 UWP 是支持触摸的，鼠标、键盘。
 
+对于 触摸的支持，uwp 是做的很好的，不仅支持了 4.7.1 的指针消息而且还内部支持很多手势。
+
+对于AR的输入，uwp也是支持的。
+
 ## 界面
 
-虽然 WPF 和 UWP 都使用 xaml 做界面，但是渲染是不相同的。 WPF 的渲染都是使用托管代码计算，然后通过通道使用 DirectX 9 渲染。渲染完成给 DWM 选择是否显示。但是 WPF 没有使用 DirectX 9 的性能，所以渲染是比较慢的。
+虽然 WPF 和 UWP 都使用 xaml 做界面，但是渲染是不相同的。 WPF 的渲染都是使用托管代码计算，然后通过通道使用 DirectX 9 渲染。渲染完成给 DWM 选择是否显示。但是 WPF 没有使用 DirectX 9 的性能，所以渲染是比较慢的。听说 WPF 可以使用 dx11 dx12都是使用优化级别是 fl9 。
 
 我尝试使用 WriteableBitmap 渲染，结果性能比 WPF 渲染快。
 
-但是 UWP 的渲染很快，因为他使用[DirectComposition](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh437376.aspx )直接渲染，使用 DX11 渲染。不使用 DWM 选择。而且渲染的代码都是编译本地，比较多使用 DX11 ，但是对于很多硬件都支持 dx12 。
+但是 UWP 的渲染很快，因为他使用[DirectComposition](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh437376.aspx )直接渲染，使用 DX11 渲染。DirectComposition 是通过集成 DWM 渲染的。组合的图形和动画通过 DirectComposition 构建然后传到 DWM 渲染到屏幕。所以使用 DirectComposition 不需要特殊的渲染框架。而且渲染的代码都是编译本地，比较多使用 DX11 ，但是对于很多硬件都支持 dx12 。
+
+那么 DWM 的作用是什么，实际上从[博客](https://msdn.microsoft.com/magazine/dn745861 )可以看到 DWM 实际作用 Windows 组合引擎或合成程序，需要每个窗口把显示的内容给屏外表面或缓冲区，缓冲区是系统给每个顶层窗口分配的，所有的 GDI、D3D、D2D 到先渲染到这里。然后 DWM 决定如何显示，是组合窗口还是做特效，最后再把缓存放到显卡。
+
+参见：[Why use DirectComposition? (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh449195(v=vs.85).aspx )
 
 ## 定制
 
-虽然开始的 WPF 定制不好，但是现在的 WPF 定制是很好的，可以使用 Host 加入其他的程序，可以使用 dx 加入。
+虽然开始的 WPF 定制不好，但是现在的 WPF 定制是很好的，可以使用 Host 加入其他的程序，可以使用 dx 加入。如何在 WPF 使用 dx 是相对比较难的，但是可以使用 SharpDx 和 SharpGL 使用 dx 和 opg。
 
 但是 UWP 的定制虽然像 UWP 但是限制很多，一个就是他的源代码看不到，其他的就是很多功能无法使用，如 Adorner 和继承属性。
 
 ## 样式
 
 虽然看起来 WPF 和 UWP 的样式定义是一样的，但是 UWP 没有了功能很好的 Trigger 和样式继承。这样 UWP 的功能就没有 WPF 那么容易定制。
+
+而且 WPF 和 UWP 的设计器经常无法使用，不过两个都可以在运行修改样式。但是在运行时可以 WPF 可以通过 Snoop 查看元素的值，但是 UWP 不可以，所以调试 UWP 界面还是比较难。
 
 ## 调试
 
@@ -111,6 +121,10 @@ WPF 是比较成熟的，现在已经有 10 多年，有很多库，而且遇到
 
 
 参见：[UWP vs. WPF · jbe2277/waf Wiki](https://github.com/jbe2277/waf/wiki/UWP-vs.-WPF )
+
+## 感谢
+
+特别感谢 Naruto Mouri 指出文章的不足
 
 ![](https://i.loli.net/2018/04/08/5ac9fff835cfe.jpg)
 
