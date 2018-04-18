@@ -12,6 +12,8 @@
 
 在软件的渲染一直都是两个阵营，一个是使用直接渲染模式。直接渲染的例子是使用 Direct2D 和 Direct3D ，而直接通过 Dx api 的方式当然需要使用 C++ 和底层的 API ，这开发效率比较差。
 
+
+
 参考：
 
 [借助 C++ 进行 Windows 开发 - 使用 Windows 组合引擎实现高性能窗口分层](https://msdn.microsoft.com/magazine/dn745861 )
