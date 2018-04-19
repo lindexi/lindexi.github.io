@@ -6,15 +6,18 @@
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：WPF，D2D,DirectX -->
 
 本文是一个系列
 
- - [WPF 使用 Direct2D1 画图](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE.html )
+ - [WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
+
+ - [WPF 使用 Direct2D1 画图 绘制基本图形](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE-%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2.html )
 
 本文的组织参考[Direct2D](http://www.cnblogs.com/grenet/category/507059.html )，对大神表示感谢。
+
+在开始前先告诉大家为何需要使用 Direct2D ，虽然 WPF 也是基于 DX 进行渲染，但是 WPF 做了很多兼容处理，所以没有比直接使用 Direct2D 的性能高。经过测试，在使用下面的所有代码，占用 CPU 几乎都是 0% ，因为没有布局、透明和事件处理，所以速度是很快。
 
 ## 点
 
@@ -41,7 +44,7 @@ Point2F 也是一个结构体，所以和 Point 类型差不多
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184191049105692.jpg)
 
-上面的代码运行在[WPF 使用 Direct2D1 画图](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE.html )文章的 OnRendering 方法，为了让大家也可以试试下面的代码，建议大家先去看这篇博客。
+上面的代码运行在[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )文章的 OnRendering 方法，为了让大家也可以试试下面的代码，建议大家先去看这篇博客。
 
 关于笔刷会在后面说
 
@@ -76,7 +79,7 @@ public StrokeStyleProperties(CapStyle startCap, CapStyle endCap, CapStyle dashCa
 Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has failed with error: 一起使用的对象必须创建自相同的工厂实例。 (异常来自 HRESULT:0x88990012) Tags=(0,0).”
 ```
 
-所以需要修改[WPF 使用 Direct2D1 画图](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE.html )文章的代码，把 D2DFactory 写为字段
+所以需要修改[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )文章的代码，把 D2DFactory 写为字段
 
 ```csharp
    public MainWindow()
@@ -325,14 +328,14 @@ public unsafe void DrawText(string text, TextFormat textFormat, RectF layoutRect
 
 ![](https://i.loli.net/2018/04/19/5ad83f4ecdf15.gif)
 
-需要先创建 textFormat 需要告诉使用怎么字形，和字体大小
+需要先创建 textFormat 需要告诉使用哪个字形，和字体大小
 
 ```csharp
             var textFormat = dWriteFactory.CreateTextFormat("宋体", 20);
 
 ```
 
-下面就是画出文字
+下面就是画出文字，文字换行可以使用`\n`，复杂的换行请使用文字重载方法，这里我就不说了
 
 ```csharp
             _renderTarget.BeginDraw();
@@ -345,6 +348,8 @@ public unsafe void DrawText(string text, TextFormat textFormat, RectF layoutRect
 需要说的是 Windows API Code Pack 1.1 已经很久没更新，而且有错误，所以建议使用 [SharpDX](http://www.sharpdx.org/) 
 
 参见：[Using Direct2D with WPF - CodeProject](https://www.codeproject.com/Articles/113991/Using-Direct-D-with-WPF )
+
+https://jeremiahmorrill.wordpress.com/2011/02/14/a-critical-deep-dive-into-the-wpf-rendering-system/ 
 
 
 
