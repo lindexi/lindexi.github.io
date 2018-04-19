@@ -596,7 +596,9 @@
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
 
- * [WPF 使用 Direct2D1 画图](WPF-使用-Direct2D1-画图.md)
+ * [WPF 使用 Direct2D1 画图 绘制基本图形](WPF-使用-Direct2D1-画图-绘制基本图形.md)
+
+ * [WPF 使用 Direct2D1 画图入门](WPF-使用-Direct2D1-画图入门.md)
 
  * [wpf 使用 Dispatcher.Invoke 冻结窗口](wpf-使用-Dispatcher.Invoke-冻结窗口.md)
 

@@ -1,5 +1,5 @@
 
-# WPF 使用 Direct2D1 画图
+# WPF 使用 Direct2D1 画图入门
 
 本文来告诉大家如何在 WPF 使用 D2D 画图。
 
@@ -7,6 +7,7 @@
 
 
 <!-- csdn -->
+<div id="toc"></div>
 <!-- 标签：WPF，D2D,DirectX -->
 
 ## 什么是 D2D
