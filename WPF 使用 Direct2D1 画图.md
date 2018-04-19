@@ -1,9 +1,10 @@
-# WPF 使用 Direct2D1 画图
+# WPF 使用 Direct2D1 画图入门
 
 本文来告诉大家如何在 WPF 使用 D2D 画图。
 
 <!--more-->
 <!-- csdn -->
+<div id="toc"></div>
 <!-- 标签：WPF，D2D,DirectX -->
 
 ## 什么是 D2D
@@ -262,5 +263,7 @@ var renderTarget = d2DFactory.CreateHwndRenderTarget(new D2D.RenderTargetPropert
 ## 更多博客
 
 [为何使用 DirectComposition](https://lindexi.oschina.io/lindexi/post/%E4%B8%BA%E4%BD%95%E4%BD%BF%E7%94%A8-DirectComposition.html )
+
+C++ 的 Direct2D 请看 [Direct2D](http://www.cnblogs.com/graphics/category/412802.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
