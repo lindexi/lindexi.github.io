@@ -19,7 +19,7 @@
 
 ## Direct2D运行需求
 
-这是我从大神的博客看到，如果需要运行 Direct2D 那么就需要在 win7 之后才可以。
+这是我从大神的博客看到，如果需要运行 Direct2D 那么就需要在 win7 之后才可以。所以在现在几乎可以直接运行，很少有人会使用 win7 以下的设备。
 
 ## 安装
 
@@ -27,9 +27,13 @@
 
 Nuget 搜索 WindowsAPICodePackDirectX 就可以安装，如果不知道安装哪个，请点击[WindowsAPICodePackDirectX](https://www.nuget.org/packages/WindowsAPICodePackDirectX )
 
+这个库只是 x64 的库，所以想要运行还需要设置环境。
+
 ## 环境
 
-如果直接使用这个库是无法运行，下面的代码只是作为大家快速入门，不能用于产品。安装这个库可以用在 x64 但是不能用在 x86 而且需要创建 App.config 文件添加下面代码
+如果直接使用这个库是无法运行，下面的代码只是作为大家快速入门，不能用于产品。安装这个库可以用在 x64 的进程，但是不能用在 x86 进程。
+
+而且这个库不能直接在 dot net framework 4.5 的环境运行，需要创建 App.config 文件添加下面代码。需要注意，请修改创建项目使用 dot net framework 4.5 而不是更高的版本。
 
 ```csharp
 <?xml version="1.0" encoding="utf-8" ?>
@@ -41,8 +45,9 @@ Nuget 搜索 WindowsAPICodePackDirectX 就可以安装，如果不知道安装�
 </configuration>
 ```
 
+那么如何让软件使用 x64 进程？尝试右击项目点击属性，在生成页面就可以看到平台目标，选择 x64 就会编译 x64 的软件。
 
-那么如何让软件使用 x64 ，实际上右击项目属性，在生成就可以看到 anycpu 把他修改为 x64 就好了。
+如果对于平台目标感觉有兴趣，请看[WPF 编译为 AnyCPU 和 x86 有什么区别](https://lindexi.gitee.io/post/WPF-%E7%BC%96%E8%AF%91%E4%B8%BA-AnyCPU-%E5%92%8C-x86-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html )
 
 ## 创建工厂
 
@@ -53,9 +58,9 @@ using D2D = Microsoft.WindowsAPICodePack.DirectX.Direct2D1;
 
 ```
 
-这样下面就不需要写那么多代码
+这样下面就不需要写那么多代码，因为所有使用`Microsoft.WindowsAPICodePack.DirectX.Direct2D1`的都可以使用 `D2D` 来找到，这样下面的代码大家直接复制就可以运行。
 
-如果需要使用 Direct2D1 那么就需要先创建工厂。
+在使用 Direct2D1 的第一步就是创建工厂。
 
 虽然工厂有很多重载，不过这里不会告诉大家，因为只是快速入门，如果需要知道参数的意思就请自己多看文章。
 
@@ -71,9 +76,11 @@ using D2D = Microsoft.WindowsAPICodePack.DirectX.Direct2D1;
         }
 ```
 
+把代码写在 Loaded 是因为下面需要拿到窗口。
+
 ## 获得窗口
 
-从上面代码大家也许会说为什么需要在 Load 才写，因为需要拿到窗口，在 Load 之后拿才不会是空
+从上面代码大家也许会说为什么需要在 Load 才写，因为需要拿到窗口，在 Load 之后拿才不会是空。窗口创建虽然不是只在 Loaded 拿才可以，不过为了代码比较简单，于是写在 Loaded ，这时拿到一般就是可以使用。
 
 使用下面代码就可以拿到窗口
 
@@ -121,14 +128,18 @@ var renderTarget = d2DFactory.CreateHwndRenderTarget(new D2D.RenderTargetPropert
 
 ## 写线段
 
+上面说了主要就是拿 RenderTarget ，因为拿到 RenderTarget 就和拿到 DrawContext 一样，自己尝试点一下 RenderTarget 就可以看到很多画图的方法，在里面画图的性能很高。
+
 那么尝试对RenderTarget写入线段
 
-因为需要知道在什么时候才进行渲染，所以先添加下面代码
+因为需要知道在什么时候才进行渲染，所以先添加下面代码。在 CompositionTarget 拿到渲染就是一个耗性能的过程，但是为了让 DX 渲染和 WPF 时间一样，所以需要在这个事件进行渲染。主要不要让这个方法执行时间比较长，除了画出来就不要做其他的。
 
 ```csharp
             CompositionTarget.Rendering += OnRendering;
 
 ```
+
+想要画出一条线，需要知道线的两个点，和线的颜色，宽度。但是在 RenderTarget 传入线的样式需要使用下面的方法。注意传入的值是 ColorF 而且三个值都是[0,1]，所以对普通的颜色传入需要计算。
 
 创建笔刷的方法
 
@@ -153,13 +164,15 @@ var renderTarget = d2DFactory.CreateHwndRenderTarget(new D2D.RenderTargetPropert
             _renderTarget.EndDraw();
 ```
 
+渲染需要先 BeginDraw 然后画出，最后调用 EndDraw 画出来。注意，如果运行看不到画出的，那么请先看一下是不是调了多次 BeginDraw 没有匹配 EndDraw 。
+
 尝试运行就可以看到下面界面
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018418215519377.jpg)
 
 这时看一下 CPU ，几乎不需要。
 
-下面来做很小修改，写出一个会动的图
+下面来做很小修改，写出一个会动的图，下面的代码放在最后。
 
 ![](https://i.loli.net/2018/04/18/5ad745c728813.gif)
 
@@ -252,6 +265,8 @@ var renderTarget = d2DFactory.CreateHwndRenderTarget(new D2D.RenderTargetPropert
 ## 更多博客
 
 [为何使用 DirectComposition](https://lindexi.oschina.io/lindexi/post/%E4%B8%BA%E4%BD%95%E4%BD%BF%E7%94%A8-DirectComposition.html )
+
+C++ 的 Direct2D 请看 [Direct2D](http://www.cnblogs.com/graphics/category/412802.html )
 
 
 

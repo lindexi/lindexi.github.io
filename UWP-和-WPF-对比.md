@@ -54,13 +54,17 @@ UWP 在 2015 年发布，那时还没有 dot net core 1.0
 
 需要知道，在 4.5之后 WPF 才修复很多 bug ，提升性能，能不支持 xp 就不要支持 xp。
 
-UWP 发布的时候，因为使用的是 WinRT ，而 WPF 使用的是 COM ，所以UWP不支持以前系统，最低是 win10.
+UWP 发布的时候，因为使用的是 WinRT ，虽然底层和 WPF 一样使用的是 COM 但是添加了很多以前系统不支持的特性。微软为了减少开发或者基于某些考虑，于是UWP不支持以前系统，最低是 win10.
 
 ## 平台
 
-虽然 WPF 很厉害，但是发布的时候几乎没有人知道多平台，所以 WPF 只能支持桌面和 windows 平板。但是现在有 [Avalonia](https://github.com/avaloniaUI/Avalonia) 和 [Xamarin WPF](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/wpf )
+虽然 WPF 很厉害，但是发布的时候几乎没有人知道多平台，所以 WPF 只能支持桌面和 windows 平板。但是现在有 [Avalonia](https://github.com/avaloniaUI/Avalonia) 和 [Xamarin WPF](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/wpf )，这两个都是可以支持很多平台，如 mac 和 Linux ，需要说的是，我一个在开发 Xamarin 的小伙伴说，WPF 是一个恐怖的工程，他不觉得很快就可以把Xamarin WPF放在实际项目。
 
-全平台 UWP 支持PC， Notebook， Tablet， Phone， Xbox， IoT， Surface Hub，需要说的最后一个大家不用支持，因为说了10年还没有卖。
+但是 [Avalonia](https://github.com/avaloniaUI/Avalonia) 只要可以注入渲染就可以使用，输入部分做很少修改就可以在很多平台跑，虽然几个小伙伴告诉我他的树莓派无法运行 [Avalonia](https://github.com/avaloniaUI/Avalonia) ，不过对于一个开源软件，要修改还是很简单。
+
+对比 WPF ，全平台 UWP 支持PC， Notebook， Tablet， Phone， Xbox， IoT， Surface Hub，需要说的最后一个大家不用支持，因为说了10年还没有卖。但是 UWP 支持的都是 微软的系统，对于 Mac 和 Linux 暂时是无法支持的。如果开发的客户需要使用 Mac 和 Linux ，自己不想开发多个代码就不可以选择 UWP 。
+
+但是如果需要性能和支持好的触摸，建议选择 UWP ，不过 UWP 的坑还是好多。
 
 ## 输入
 
@@ -99,6 +103,10 @@ UWP 发布的时候，因为使用的是 WinRT ，而 WPF 使用的是 COM ，�
 ## 调试
 
 在 WPF 如果有一个代码抛异常，那么 VisualStudio 很容易告诉大家是哪里异常，因为 VisualStudio 也是 WPF 写的。但是如果 dot net core 抛异常，那么 VisualStudio 很难告诉但是哪里异常，不过 UWP 是 dot net core 写的，所以 UWP 的异常很难知道是哪里异常，特别是界面异常，经常告诉大家出现一个未知的异常。
+
+对比 WPF，现在的微软开放了部分 dot net framework 的源代码，在 WPF ，即使没有源代码，自己反编译也可以看到。但是在 UWP ，没有源代码，而且难以反编译，如果遇到坑都不知道是不是微软的代码写的。
+
+需要说的是 UWP 用的 dot net core 是开放源代码的，如果大家想读代码可以在 github 搜索 dot net core 就可以下载。
 
 ## 安装
 
