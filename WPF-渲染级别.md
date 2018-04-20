@@ -31,6 +31,8 @@
 
 参见：[Graphics Rendering Tiers](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/graphics-rendering-tiers )
 
+[RenderCapability.Tier Property (System.Windows.Media)](https://docs.microsoft.com/en-us/dotnet/api/system.windows.media.rendercapability.tier?view=netframework-4.7.2#System_Windows_Media_RenderCapability_Tier )
+
 
 
 

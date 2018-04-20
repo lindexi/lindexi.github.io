@@ -24,7 +24,9 @@
 
 最近在做渲染优化，更多博客请看 [http://lindexi.gitee.io](http://lindexi.gitee.io )
 
+[WPF 渲染级别](https://lindexi.oschina.io/lindexi/post/WPF-%E6%B8%B2%E6%9F%93%E7%BA%A7%E5%88%AB.html )
 
+[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
 
 
 
