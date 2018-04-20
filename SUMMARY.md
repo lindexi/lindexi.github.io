@@ -602,6 +602,8 @@
 
  * [wpf 使用 Dispatcher.Invoke 冻结窗口](wpf-使用-Dispatcher.Invoke-冻结窗口.md)
 
+ * [WPF 使用 SharpDX](WPF-使用-SharpDX.md)
+
  * [WPF 使用RPC调用其他进程](WPF-使用RPC调用其他进程.md)
 
  * [WPF 使用不安全代码快速从数组转 WriteableBitmap](WPF-使用不安全代码快速从数组转-WriteableBitmap.md)

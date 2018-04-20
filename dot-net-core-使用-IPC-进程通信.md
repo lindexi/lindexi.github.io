@@ -220,6 +220,8 @@ Serializer.Serialize(pipe, 实例);
         }
 ```
 
+如果使用 wcf 请看 [.NET Core调用WCF的最佳实践](https://www.cnblogs.com/lishilei0523/archive/2018/04/19/8886483.html )
+
 
 
 
