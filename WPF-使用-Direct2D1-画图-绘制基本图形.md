@@ -15,6 +15,8 @@
 
  - [WPF 使用 Direct2D1 画图 绘制基本图形](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE-%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2.html )
 
+ - [WPF 使用 SharpDX](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX.html )
+
 本文的组织参考[Direct2D](http://www.cnblogs.com/grenet/category/507059.html )，对大神表示感谢。
 
 在开始前先告诉大家为何需要使用 Direct2D ，虽然 WPF 也是基于 DX 进行渲染，但是 WPF 做了很多兼容处理，所以没有比直接使用 Direct2D 的性能高。经过测试，在使用下面的所有代码，占用 CPU 几乎都是 0% ，因为没有布局、透明和事件处理，所以速度是很快。
