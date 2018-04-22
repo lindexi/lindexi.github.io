@@ -412,6 +412,38 @@ F1
 
 是不是觉得很多有人这样写，下面让大家看一个很少人会知道的科技，感谢[walterlv](https://walterlv.github.io/ )
 
+## 重写运算返回
+
+很少人知道实际上重写 `==` 可以返回任意的类型，而不是只有 bool ，请看下面代码
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018422105951305.jpg)
+
+是可以编译通过的，因为我重写运算
+
+```csharp
+   class Foo
+    {
+        public int Count { get; set; }
+     
+        public static string operator ==(Foo f1, Foo f2)
+        {
+            if (f1?.Count == f2?.Count)
+            {
+                return "lindexi";
+            }
+
+            return "";
+        }
+
+        public static string operator !=(Foo f1, Foo f2)
+        {
+            return "";
+        }
+    }
+```
+
+可以重写的运算很多，返回值可以自己随意定义。
+
 ## await 任何类型
 
 ```csharp
@@ -496,5 +528,7 @@ else
 ```
     
 实际在微软代码也是这样写，点击[string](https://referencesource.microsoft.com/#mscorlib/system/string.cs,507 )可以看到微软代码
+
+如果希望看讲课，请点击 https://r302.cc/Ejl1wN
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
