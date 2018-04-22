@@ -4,6 +4,7 @@
 
 <!--more-->
 <!-- csdn -->
+<div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX -->
 
 本文是一个系列，希望大家从第一篇开始看
@@ -14,8 +15,11 @@
 
  - [WPF 使用 SharpDX](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX.html )
 
+ - [WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 
 
 如果只是使用 SharpDX 使用窗口渲染，就无法使用其它的 WPF 控件，实际使用经常只是使用 SharpDX 加快一些渲染，很多元素都是不需要。
+
+如果拿来 HWND 做渲染，那么 WPF 只是提供一个窗口，这和 WPF 的设计，高效而且灵活不符合，所以本文就来告诉大家如何使用 SharpDx 高性能渲染同时使用 WPF 的元素。
 
 微软为了大家方便使用 Direct2D 就添加了 D3DImage ，虽然这个元素不是很好用。
 
@@ -48,6 +52,10 @@
 ```
 
 从上面可以看到D3DImage的方法，他在 WPF 和其他元素没有不一样的。
+
+因为没有直接从 Direct2D 到 D3D 显示的方法，下面需要告诉大家如何在 D3D11 显示 Direct2D 然后通过相同的格式转 D3D9 最后把缓冲区指针显示。
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018422932386479.jpg)
 
 ## D3D 设备
 
@@ -210,6 +218,263 @@ using D3D9 = SharpDX.Direct3D9;
 
 ## 画出来
 
-下面就来尝试使用 D2D.RenderTarget 画出一个矩形，代码写在 CompositionTarget.Rendering 
+下面就来尝试使用 D2D.RenderTarget 画出一个矩形，代码写在 CompositionTarget.Rendering ，画出来的代码和之前的一样
+
+```csharp
+     private void CompositionTarget_Rendering(object sender, EventArgs e)
+        {
+            _d2DRenderTarget.BeginDraw();
+
+            OnRender(_d2DRenderTarget);
+
+            _d2DRenderTarget.EndDraw();
+
+            _d3D.Lock();
+
+            _d3D.AddDirtyRect(new Int32Rect(0, 0, _d3D.PixelWidth, _d3D.PixelHeight));
+
+            _d3D.Unlock();
+
+    
+        }
+
+        private void OnRender(D2D.RenderTarget renderTarget)
+        {
+            var brush = new D2D.SolidColorBrush(_d2DRenderTarget, new RawColor4(1, 0, 0, 1));
+
+            renderTarget.Clear(null);
+
+            renderTarget.DrawRectangle(new RawRectangleF(_x, _y, _x + 10, _y + 10), brush);
+
+            _x = _x + _dx;
+            _y = _y + _dy;
+            if (_x >= ActualWidth - 10 || _x <= 0)
+            {
+                _dx = -_dx;
+            }
+
+            if (_y >= ActualHeight - 10 || _y <= 0)
+            {
+                _dy = -_dy;
+            }
+        }
+
+        private float _x;
+        private float _y;
+        private float _dx = 1;
+        private float _dy = 1;
+```
+
+主要和原来不同的是需要 AddDirtyRect 告诉重新渲染，不然不会显示
+
+
+现在修改一下前台界面，尝试添加一些代码
+
+```csharp
+        <Grid>
+            <Grid Background="Goldenrod">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="在图片下方"></TextBlock>
+            </Grid>
+
+            <Image>
+                <Image.Source>
+                    <interop:D3DImage x:Name="KsyosqStmckfy"></interop:D3DImage>
+                </Image.Source>
+            </Image>
+
+            <Grid Background="Bisque" VerticalAlignment="Bottom">
+                <TextBlock Margin="0,10,0,0" HorizontalAlignment="Center"  Text="在图片上方，所以看不见矩形"></TextBlock>
+                <TextBlock Margin="0,100,0,100" HorizontalAlignment="Center" VerticalAlignment="Center" Text="欢迎来我博客lindexi.gitee.io"></TextBlock>
+            </Grid>
+        </Grid>
+```
+
+下面就是运行的图片
+
+![](http://img.blog.csdn.net/20180421180424248?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGluZGV4aV9nZA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+建议复制一下我的代码，在自己的vs粘贴，尝试跑一下，然后继续看博客。
+
+所有代码
+
+```csharp
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            _d3D = KsyosqStmckfy;
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CreateAndBindTargets();
+        }
+
+        private void CompositionTarget_Rendering(object sender, EventArgs e)
+        {
+            _d2DRenderTarget.BeginDraw();
+
+            OnRender(_d2DRenderTarget);
+
+            _d2DRenderTarget.EndDraw();
+
+            _d3D.Lock();
+
+            _d3D.AddDirtyRect(new Int32Rect(0, 0, _d3D.PixelWidth, _d3D.PixelHeight));
+
+            _d3D.Unlock();
+
+    
+        }
+
+        private void OnRender(D2D.RenderTarget renderTarget)
+        {
+            var brush = new D2D.SolidColorBrush(_d2DRenderTarget, new RawColor4(1, 0, 0, 1));
+
+            renderTarget.Clear(null);
+
+            renderTarget.DrawRectangle(new RawRectangleF(_x, _y, _x + 10, _y + 10), brush);
+
+            _x = _x + _dx;
+            _y = _y + _dy;
+            if (_x >= ActualWidth - 10 || _x <= 0)
+            {
+                _dx = -_dx;
+            }
+
+            if (_y >= ActualHeight - 10 || _y <= 0)
+            {
+                _dy = -_dy;
+            }
+        }
+
+        private float _x;
+        private float _y;
+        private float _dx = 1;
+        private float _dy = 1;
+
+        private D3D9.Texture _renderTarget;
+
+        private D3DImage _d3D;
+
+        private D2D.RenderTarget _d2DRenderTarget;
+
+        private void CreateAndBindTargets()
+        {
+            var width = Math.Max((int) ActualWidth, 100);
+            var height = Math.Max((int) ActualHeight, 100);
+
+            var renderDesc = new D3D11.Texture2DDescription
+            {
+                BindFlags = D3D11.BindFlags.RenderTarget | D3D11.BindFlags.ShaderResource,
+                Format = DXGI.Format.B8G8R8A8_UNorm,
+                Width = width,
+                Height = height,
+                MipLevels = 1,
+                SampleDescription = new DXGI.SampleDescription(1, 0),
+                Usage = D3D11.ResourceUsage.Default,
+                OptionFlags = D3D11.ResourceOptionFlags.Shared,
+                CpuAccessFlags = D3D11.CpuAccessFlags.None,
+                ArraySize = 1
+            };
+
+            var device = new D3D11.Device(DriverType.Hardware, D3D11.DeviceCreationFlags.BgraSupport);
+
+            var renderTarget = new D3D11.Texture2D(device, renderDesc);
+
+            var surface = renderTarget.QueryInterface<DXGI.Surface>();
+
+            var d2DFactory = new D2D.Factory();
+
+            var renderTargetProperties =
+                new D2D.RenderTargetProperties(new D2D.PixelFormat(DXGI.Format.Unknown, D2D.AlphaMode.Premultiplied));
+
+            _d2DRenderTarget = new D2D.RenderTarget(d2DFactory, surface, renderTargetProperties);
+
+            SetRenderTarget(renderTarget);
+
+            device.ImmediateContext.Rasterizer.SetViewport(0, 0, (int) ActualWidth, (int) ActualHeight);
+
+            CompositionTarget.Rendering += CompositionTarget_Rendering;
+        }
+
+        private void SetRenderTarget(D3D11.Texture2D target)
+        {
+            var format = TranslateFormat(target);
+            var handle = GetSharedHandle(target);
+
+            var presentParams = GetPresentParameters();
+            var createFlags = D3D9.CreateFlags.HardwareVertexProcessing | D3D9.CreateFlags.Multithreaded |
+                              D3D9.CreateFlags.FpuPreserve;
+
+            var d3DContext = new D3D9.Direct3DEx();
+            var d3DDevice = new D3D9.DeviceEx(d3DContext, 0, D3D9.DeviceType.Hardware, IntPtr.Zero, createFlags,
+                presentParams);
+
+            _renderTarget = new D3D9.Texture(d3DDevice, target.Description.Width, target.Description.Height, 1,
+                D3D9.Usage.RenderTarget, format, D3D9.Pool.Default, ref handle);
+
+            using (var surface = _renderTarget.GetSurfaceLevel(0))
+            {
+                _d3D.Lock();
+                _d3D.SetBackBuffer(D3DResourceType.IDirect3DSurface9, surface.NativePointer);
+                _d3D.Unlock();
+            }
+        }
+
+        private static D3D9.PresentParameters GetPresentParameters()
+        {
+            var presentParams = new D3D9.PresentParameters();
+
+            presentParams.Windowed = true;
+            presentParams.SwapEffect = D3D9.SwapEffect.Discard;
+            presentParams.DeviceWindowHandle = NativeMethods.GetDesktopWindow();
+            presentParams.PresentationInterval = D3D9.PresentInterval.Default;
+
+            return presentParams;
+        }
+
+        private IntPtr GetSharedHandle(D3D11.Texture2D texture)
+        {
+            using (var resource = texture.QueryInterface<DXGI.Resource>())
+            {
+                return resource.SharedHandle;
+            }
+        }
+
+        private static D3D9.Format TranslateFormat(D3D11.Texture2D texture)
+        {
+            switch (texture.Description.Format)
+            {
+                case SharpDX.DXGI.Format.R10G10B10A2_UNorm:
+                    return D3D9.Format.A2B10G10R10;
+                case SharpDX.DXGI.Format.R16G16B16A16_Float:
+                    return D3D9.Format.A16B16G16R16F;
+                case SharpDX.DXGI.Format.B8G8R8A8_UNorm:
+                    return D3D9.Format.A8R8G8B8;
+                default:
+                    return D3D9.Format.Unknown;
+            }
+        }
+    }
+
+    public static class NativeMethods
+    {
+        [DllImport("user32.dll", SetLastError = false)]
+        public static extern IntPtr GetDesktopWindow();
+    }
+```
+
+[WPF 使用 SharpDx 画图 1.1-CSDN下载](https://download.csdn.net/download/lindexi_gd/10365799 )
+
+参见：
+
+[在 WinForm 中使用 Direct2D - CYJB - 博客园](http://www.cnblogs.com/cyjb/p/Direct2DControl.html )
+
+[Multithreaded Direct2D Apps (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/jj569217(v=vs.85).aspx )
+
+[Improving the performance of Direct2D apps (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372260(v=vs.85).aspx )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
