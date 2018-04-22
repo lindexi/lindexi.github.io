@@ -415,6 +415,38 @@ F1
 
 是不是觉得很多有人这样写，下面让大家看一个很少人会知道的科技，感谢[walterlv](https://walterlv.github.io/ )
 
+## 重写运算返回
+
+很少人知道实际上重写 `==` 可以返回任意的类型，而不是只有 bool ，请看下面代码
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018422105951305.jpg)
+
+是可以编译通过的，因为我重写运算
+
+```csharp
+   class Foo
+    {
+        public int Count { get; set; }
+     
+        public static string operator ==(Foo f1, Foo f2)
+        {
+            if (f1?.Count == f2?.Count)
+            {
+                return "lindexi";
+            }
+
+            return "";
+        }
+
+        public static string operator !=(Foo f1, Foo f2)
+        {
+            return "";
+        }
+    }
+```
+
+可以重写的运算很多，返回值可以自己随意定义。
+
 ## await 任何类型
 
 ```csharp
@@ -499,6 +531,8 @@ else
 ```
     
 实际在微软代码也是这样写，点击[string](https://referencesource.microsoft.com/#mscorlib/system/string.cs,507 )可以看到微软代码
+
+如果希望看讲课，请点击 [https://r302.cc/Ejl1wN](https://r302.cc/Ejl1wN )
 
 
 
