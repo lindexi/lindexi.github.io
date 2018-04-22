@@ -18,6 +18,8 @@
 
  - [WPF 使用 SharpDX](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX.html )
 
+ - [WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html )  
+
 先介绍一下 SharpDx ，一个底层封装的 DirectX 库，支持 AnyCpu ，支持 Direct3D9, Direct3D11, Direct3D12，Direct2D1。支持 win32 程序和商店程序。
 
 ## 环境
