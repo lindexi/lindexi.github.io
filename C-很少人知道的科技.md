@@ -534,6 +534,8 @@ else
 
 如果希望看讲课，请点击 [https://r302.cc/Ejl1wN](https://r302.cc/Ejl1wN )
 
+欢迎加入 dotnet 职业技术学院 https://t.me/dotnet_campus 使用 Telegram 方法请看 [如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
+
 
 
 
