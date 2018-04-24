@@ -610,6 +610,8 @@
 
  * [WPF 使用不安全代码快速从数组转 WriteableBitmap](WPF-使用不安全代码快速从数组转-WriteableBitmap.md)
 
+ * [WPF 使用封装的 SharpDx 控件](WPF-使用封装的-SharpDx-控件.md)
+
  * [WPF 修改按钮按下的颜色](WPF-修改按钮按下的颜色.md)
 
  * [C＃ 写系统日志](C＃-写系统日志.md)
