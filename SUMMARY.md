@@ -714,6 +714,8 @@
 
  * [使用 Resharper 快速做适配器](使用-Resharper-快速做适配器.md)
 
+ * [使用 Resharper 特性](使用-Resharper-特性.md)
+
  * [使用 RetroShare 分享资源](使用-RetroShare-分享资源.md)
 
  * [docfx 做一个和微软一样的文档平台](docfx-做一个和微软一样的文档平台.md)

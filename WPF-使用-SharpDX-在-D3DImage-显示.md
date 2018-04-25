@@ -20,6 +20,8 @@
 
  - [WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 
 
+ - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
+
 如果只是使用 SharpDX 使用窗口渲染，就无法使用其它的 WPF 控件，实际使用经常只是使用 SharpDX 加快一些渲染，很多元素都是不需要。
 
 如果拿来 HWND 做渲染，那么 WPF 只是提供一个窗口，这和 WPF 的设计，高效而且灵活不符合，所以本文就来告诉大家如何使用 SharpDx 高性能渲染同时使用 WPF 的元素。
@@ -304,7 +306,7 @@ using D3D9 = SharpDX.Direct3D9;
 
 ```csharp
         xmlns:interop="clr-namespace:System.Windows.Interop;assembly=PresentationCore"
-        
+
             <Image x:Name="DcwtTmmwvcr">
                 <Image.Source>
                     <interop:D3DImage x:Name="KsyosqStmckfy"></interop:D3DImage>

@@ -20,11 +20,13 @@
 
  - [WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 
 
+ - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
+
 在[WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html#%E7%94%BB%E5%87%BA%E6%9D%A5 )我告诉大家如何在 WPF 使用，但是代码都是写在一个 MainPage ，所以下面我把代码封装一下，放在一个类。
 
 我的代码可以复制一下放在自己的工程使用，现在我还不想做 Nuget 因为这个类还有性能问题。
 
-使用这个类作为 Image 的 Source 会占用 3% 的 CPU
+使用这个类作为 Image 的 Source 会占用 3% 的 CPU ，而且这个类没有注释，关于这个类是如何写的请看[WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 。
 
 我会把这个类的代码放在文章最后，方便大家复制。
 
