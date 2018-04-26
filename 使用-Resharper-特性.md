@@ -287,6 +287,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425164248513.jpg)
 
+[C#/.NET 中的契约 - walterlv](https://walterlv.github.io/post/contracts-in-csharp.html#resharper-%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%A5%91%E7%BA%A6-attribute )
 
 [Code Annotation Attributes](https://www.jetbrains.com/help/resharper/Reference__Code_Annotation_Attributes.html )
 
