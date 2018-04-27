@@ -10,6 +10,8 @@
 
  * [.net Standard](net-Standard.md)
 
+ * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
+
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
