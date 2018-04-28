@@ -47,6 +47,14 @@ Convert.ToInt32("0xaa", 16) == Convert.ToInt32("aa", 16)
 
 这个方法大家可以直接拿去使用。
 
+如果输入没有带`0x`那么另一个方法是 int.Parse ，因为这个方法可以设置如何转换，注意需要不带`0x`如果带了就出现异常
+
+```csharp
+int.Parse("aa", System.Globalization.NumberStyles.HexNumber)
+```
+
+[How to: Convert Between Hexadecimal Strings and Numeric Types ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types )
+
 
 
 
