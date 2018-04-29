@@ -7,9 +7,8 @@
 <!--more-->
 
 
-<!-- csdn -->
 
-<!-- 标签：C#，.net Framework，源代码分析，wpf，ScrollViewer ，dotnet-->
+<!-- 标签：C#，.net Framework，源代码分析，wpf，ScrollViewer ，dotnet -->
 
 <div id="toc"></div>
 
