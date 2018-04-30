@@ -5,8 +5,7 @@
 
 <div id="toc"></div>
 <!-- csdn -->
-
-<!-- stickie -->
+<!-- 标签：uwp,win2d -->
 
 ## 介绍
 
@@ -318,7 +317,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
 创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));`
 
-创建使用的uri参见：[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/)
+创建使用的uri参见：[win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
 
 ## 设置 win2d 背景
 
@@ -347,11 +346,13 @@ win2d 会忽略在 xaml 设置的背景
 
 ## 其他博客
 
-win2d 毛玻璃：[win10 uwp 毛玻璃](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83/)
+win2d 毛玻璃：[win10 uwp 毛玻璃](https://lindexi.gitee.io/post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83.html )
 
-[win2d 画出好看的图形](http://lindexi.oschina.io/lindexi/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2/)
+[win2d 画出好看的图形](https://lindexi.gitee.io/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2.html )
 
-[win10 uwp 萤火虫效果](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C/ )
+[win10 uwp 萤火虫效果](https://lindexi.gitee.io/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
+
+[win2d 图片水印](https://lindexi.gitee.io/post/win2d-%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0.html )
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017888552.jpg)
 
