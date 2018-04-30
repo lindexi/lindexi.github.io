@@ -252,6 +252,8 @@
 
  * [win10 uwp url encode](win10-uwp-url-encode.md)
 
+ * [win10 uwp win2d CanvasVirtualControl](win10-uwp-win2d-CanvasVirtualControl.md)
+
  * [win10 uwp xaml 兼容多个版本条件编译](win10-uwp-xaml-兼容多个版本条件编译.md)
 
  * [win10 uwp xaml 绑定接口](win10-uwp-xaml-绑定接口.md)
@@ -562,6 +564,8 @@
 
  * [win10 uwp 自定义控件 SplitViewItem](win10-uwp-自定义控件-SplitViewItem.md)
 
+ * [win2d CanvasRenderTarget vs CanvasBitmap](win2d-CanvasRenderTarget-vs-CanvasBitmap.md)
+
  * [win2d 图片水印](win2d-图片水印.md)
 
  * [win2d 画出好看的图形](win2d-画出好看的图形.md)
@@ -649,6 +653,8 @@
  * [WPF 拖动滚动](WPF-拖动滚动.md)
 
  * [wpf 拦截异常 让多线程异常不会让程序闪退](wpf-拦截异常-让多线程异常不会让程序闪退.md)
+
+ * [WPF 拼音输入法](WPF-拼音输入法.md)
 
  * [WPF 控件继承树](WPF-控件继承树.md)
 
