@@ -610,6 +610,8 @@
 
  * [WPF 使用 SharpDX 在 D3DImage 显示](WPF-使用-SharpDX-在-D3DImage-显示.md)
 
+ * [WPF 使用 SharpDx 异步渲染](WPF-使用-SharpDx-异步渲染.md)
+
  * [WPF 使用 SharpDX](WPF-使用-SharpDX.md)
 
  * [WPF 使用RPC调用其他进程](WPF-使用RPC调用其他进程.md)
