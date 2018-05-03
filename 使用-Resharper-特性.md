@@ -79,9 +79,17 @@
 
 如果使用这个参数写了 `{0}` 就会告诉你需要参数，如果写的数值很多，那么就会告诉你需要写多少输入。
 
+## UsedImplicitlyAttribute
+
+表示一个函数、属性是不被显式使用，如反射或其他方式使用，标记了这个特性就不会说接口没有被使用。
+
+## MeansImplicitUseAttribute
+
+让一个函数、属性不会被认为没有 unused ，标记了就会因为不被使用警告。这个特性效果和 UsedImplicitlyAttribute 差不多。
+
 ## NotifyPropertyChangedInvocatorAttribute
 
-这个用在 WPF 的通知，表示一个函数是用来通知值更新的。一般用在 OnPropertyChanged ，自动帮你添加。
+这个用在 WPF 的通知，表示一个函数是用来通知值更新的。这个特性用在 OnPropertyChanged ，自动帮你添加。
 
 ## ValueProviderAttribute
 

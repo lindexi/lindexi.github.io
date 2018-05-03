@@ -36,6 +36,12 @@ Telegram是一款加密的实时通讯软件，本文告诉大家如何使用 �
 
 欢迎大家参加 UWP 开发的组 [https://t.me/joinchat/ILgVXw88t3d0VxrpHG6pZA](https://t.me/joinchat/ILgVXw88t3d0VxrpHG6pZA)
 
+直接点击下面链接可以设置 Telegram ，如果发现无法设置，请告诉我
+
+[tg://socks?server=139.199.3.190&port=23333&user=playssr.tk&pass=playssr.tk](tg://socks?server=139.199.3.190&port=23333&user=playssr.tk&pass=playssr.tk)
+
+[tg://socks?server=140.82.3.212&port=998&user=dogess.xyz&pass=free](tg://socks?server=140.82.3.212&port=998&user=dogess.xyz&pass=free)
+
 
 
 
