@@ -19,6 +19,8 @@
 
  - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
 
+ - [WPF 使用 SharpDx 异步渲染](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.html )
+
 如果只是使用 SharpDX 使用窗口渲染，就无法使用其它的 WPF 控件，实际使用经常只是使用 SharpDX 加快一些渲染，很多元素都是不需要。
 
 如果拿来 HWND 做渲染，那么 WPF 只是提供一个窗口，这和 WPF 的设计，高效而且灵活不符合，所以本文就来告诉大家如何使用 SharpDx 高性能渲染同时使用 WPF 的元素。
