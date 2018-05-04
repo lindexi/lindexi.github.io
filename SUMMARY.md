@@ -668,6 +668,8 @@
 
  * [WPF 省市县3级联动](WPF-省市县3级联动.md)
 
+ * [WPF 禁用实时触摸](WPF-禁用实时触摸.md)
+
  * [WPF 程序生成类库错误](WPF-程序生成类库错误.md)
 
  * [WPF 等距布局](WPF-等距布局.md)
@@ -677,6 +679,8 @@
  * [wpf 绑定 TextLength ](wpf-绑定-TextLength-.md)
 
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
+
+ * [WPF 获得触摸精度和触摸点](WPF-获得触摸精度和触摸点.md)
 
  * [WPF 获得触笔悬停元素上](WPF-获得触笔悬停元素上.md)
 
