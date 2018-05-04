@@ -22,13 +22,15 @@
 
  - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
 
+ - [WPF 使用 SharpDx 异步渲染](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.html )
+
 虽然上一篇告诉大家如何使用封装的 SharpDx 控件，但是大家也看到了核心是使用`CompositionTarget`告诉刷新的。
 
 这个方法适合不停变化的控件，如果是很少刷新的控件使用这个方法会降低 WPF 的性能。
 
 因为 CompositionTarget 刷新数太快了，而且每次都需要重复刷新一个图片，显示的性能比不过自带的控件。
 
-## 创建类
+## 使用方法
 
 因为使用 SharpDx 在 WPF 除了使用 D3DImage 还可以使用 D3D11Image 但是这个需要分开 x86 和 x64 。现在使用的方法是把 D3DImage 作为图片画出来，如果使用 D3D11Image 也没有什么性能提升。
 
@@ -36,14 +38,17 @@
 
 这里因为封装没有告诉需要刷新的大小，所以只能每次都全部刷新，这样的性能使用 FrameworkElement 不会降低。
 
-下面创建一个类，继承 FrameworkElement
+下面创建一个类，继承 SharpDxMaynumaSejair ，这个 SharpDxMaynumaSejair 是继承 FrameworkElement 而不是图片，这个类的代码放在文章最后，使用这个类可以异步渲染。
+
 
 ```csharp
     public abstract class SharpDxMaynumaSejair : FrameworkElement
 
 ```
 
-这个类需要有一个函数 OnRender 给基类继承
+请随意写一个类继承 SharpDxMaynumaSejair 并且添加重写的 OnRender 函数。
+
+下面是 SharpDxMaynumaSejair 类的 OnRender 方法，通过继承他就可以使用 SharpDx 画出来。
 
 ```csharp
 protected abstract void OnRender(SharpDX.Direct2D1.RenderTarget renderTarget);
@@ -51,9 +56,19 @@ protected abstract void OnRender(SharpDX.Direct2D1.RenderTarget renderTarget);
 
 其他的代码和[WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用的差不多
 
+直接通过 OnRender 就可以进行渲染，但是 OnRender 是被触发的，触发的方法是调用基类 `Rendering` 函数，调用了这个函数会进入异步的 SharpDx 渲染，渲染完成再通过 WPF 渲染画出来。
+
+因为不需要使用 CompositionTarget.Rendering 渲染，所以可以提高 WPF 刷新速度。
+
+这个类可以在执行渲染计算复杂使用，假如需要渲染出 10000 个椭圆，而且有很多重叠，而且不需要立刻渲染。那么就可以使用本文的这个类，这个类可以在调用时异步渲染，不会卡 UI 线程，在 SharpDx 渲染完成再通过 WPF 渲染，这时 WPF 渲染也就是画出图片，性能比画出 10000 个椭圆快很多。通过这个方法可以提高渲染性能，提高软件打开的性能。
+
+但是通过这个方法建议软件是 x64 因为需要很多内存。
+
+下面来告诉大家本文这个类的原理。
+
 ## 绑定
 
-如果需要使用 SharpDx 需要把 SharpDX.Direct3D11 和 D3DImage 绑定，调用不能在这个控件的 Load 前，不然无法拿到大小。
+如果需要使用 SharpDx 需要把 SharpDX.Direct3D11 和 D3DImage 绑定，调用时不能在这个控件的 Load 前，不然无法拿到大小。
 
 下面这个方法和[WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用相同，所以我就直接写代码不解释了。
 
@@ -120,7 +135,7 @@ protected abstract void OnRender(SharpDX.Direct2D1.RenderTarget renderTarget);
 
 虽然已经写好 D3DImage 但是如何显示？
 
-继承 FrameworkElement 可以重写 OnRender 这个函数和自己定义的不相同，虽然我把自己定义的函数也是和他使用相同的命名。看到下面代码也许就知道我说的是什么。
+继承 FrameworkElement 可以重写 OnRender 。通过 OnRender 可以画出图片，而 D3Dimage 就是 ImageSource，虽然可以看到我自己定义的也是 OnRender， 这个函数和自己定义的不相同，虽然我把自己定义的函数也是和他使用相同的命名。看到下面代码也许就知道我说的是什么。
 
 需要注意，如果因为`_d3D.PixelWidth`为0抛出异常，那么就可能是绑定的时候在 Load 之前，需要修改一下代码。
 
