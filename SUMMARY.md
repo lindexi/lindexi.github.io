@@ -310,6 +310,8 @@
 
  * [win10 UWP 圆形等待](win10-UWP-圆形等待.md)
 
+ * [win10 uwp 如何创建修改保存位图](win10-uwp-如何创建修改保存位图.md)
+
  * [win10 uwp 如何判断一个对象被移除](win10-uwp-如何判断一个对象被移除.md)
 
  * [win10 uwp 如何在DataTemplate绑定方法](win10-uwp-如何在DataTemplate绑定方法.md)
