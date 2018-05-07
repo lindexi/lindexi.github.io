@@ -160,7 +160,7 @@ using (IRandomAccessStream stream = await inputFile.OpenAsync(FileAccessMode.Rea
 先在界面创建一个 Image 控件，然后在后台添加代码显示
 
 ```csharp
-
+      <Image x:Name="MaixallnayMesejas"></Image>
 ```
 
 ```csharp

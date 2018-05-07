@@ -26,6 +26,7 @@ xml 一开始一般就是 文档声明
 <?xml version="1.0" encoding="编码方式" standalone="yes|no"?>
 
 ```
+
 XML声明放在XML文档的第一行
 
 XML声明由以下几个部分组成：
@@ -50,10 +51,9 @@ XML声明由以下几个部分组成：
 
 ## XmlDocument 
 
-在 UWP 如果需要 读取解析xml 
-我们可以使用 XmlDocument 。
+在 UWP 如果需要 读取解析xml 我们可以使用 XmlDocument 。
 
-一开始需要创建 XmlDocument ，创建 XmlDocument 有三个方法，首先是从 StorageFile 创建。
+一开始需要创建 XmlDocument ，创建 XmlDocument 有三个方法，首先是从 StorageFile 创建。本文下面的 file 就是一个 StorageFile ，获得 StorageFile 的方法参见[win10 UWP读写文件 - CSDN博客](https://blog.csdn.net/lindexi_gd/article/details/49007841 )
 		
 ```csharp
             XmlDocument.LoadFromFileAsync(file);   读取xml
@@ -61,13 +61,18 @@ XML声明由以下几个部分组成：
 
 ```
 
-注意要等待。
+注意要等待，而不是直接使用这句话，等待的方法是添加 `await` 。
 
+```csharp
+ var file = GetStorageFile(); // 获得文件的方法有很多，请使用一个方法获得需要读取的文件，如 FileOpenPicker 或访问应用文件
+ await XmlDocument.LoadFromFileAsync(file);  // 读取xml
+```
 
+通过这个方法就可以拿到加载的文件内容转换的 xml 。
 
-第二方法：从Uri创建，`XmlDocument.LoadFromUriAsync(uri);   `
+第二方法：从Uri创建，`XmlDocument.LoadFromUriAsync(uri);   `，和上面的方法一样，需要等待。
 
-第三方法：先创建一个 XmlDocument 然后使用 Load
+第三方法：先创建一个 XmlDocument 然后使用 Load 函数加载。
 		
 ```csharp
             
@@ -77,15 +82,15 @@ XML声明由以下几个部分组成：
 
 ```
 
-注意str是字符串。
+注意str是字符串，也就是从文件或其他地方拿到的一个字符串。如果字符串的 xml 格式错误会出现异常。
 
 读取xml之后需要解析。
 
-如果想在 xml 中获取某个标签，假如我们获取的是 Page.xaml 的 TextBlock ，那么我们可以遍历一次 doc.FirstChild
+如果想在 xml 中获取某个标签，假如我们获取的是 Page.xaml 的 TextBlock ，那么我们可以遍历一次 doc.FirstChild 拿到。这里的 doc 就是从刚才读取的时候拿到的。
 
 		
 ```csharp
-            var grid=doc.FirstChild.ChildNodes;
+            var grid = doc.FirstChild.ChildNodes;
             for (var i = 0; i < grid.Count; i++)
             {
                 var temp = grid[i];
@@ -99,7 +104,7 @@ XML声明由以下几个部分组成：
 
 大概是一个垃圾办法，我在下面写一个简单的方法，一般放在最前写的就是最垃圾的方法。
 
-获取了标签，我们还想获取属性，我们可以使用 IXmlNode 的 Attributes 。Attributes 就是所有的属性，假如我们想得到 TextBlock 的 Name ，那么可以使用
+获取了标签，我们还想获取属性，我们可以使用 IXmlNode 的 Attributes 。Attributes 就是所有的属性，假如我们想得到 TextBlock 的 Name ，那么可以使用`attribute.NodeName`判断当前的值是不是需要
 
 		
 ```csharp
@@ -117,7 +122,7 @@ XML声明由以下几个部分组成：
 
 如何去写入或创建节点，请看：http://www.cnblogs.com/zery/p/3362480.html 
 
-需要注意的是，如果属性有明明空间，那么刚才的方法是比较难用的。
+需要注意的是，如果属性有命名空间，那么刚才的方法是比较难用的。
 
 
 
@@ -125,7 +130,7 @@ XML声明由以下几个部分组成：
 
 这个是我推荐的方法。
 
-首先来说下如何从文件创建 xml ，我们需要使用
+首先来说下如何从文件创建 xml ，我们需要使用 `XDocument` ，这里的 file 同样是 StorageFile ，感谢[yueguogaoshan](https://my.csdn.net/yueguogaoshan ) 提出了我这里没有告诉大家 file 是从哪里获得。
 		
 ```csharp
             XDocument doc = XDocument.Load(new StreamReader(
@@ -133,7 +138,7 @@ XML声明由以下几个部分组成：
 
 ```
 
-如果需要从字符串创建，那么使用
+如果需要从字符串创建，那么使用 StringReader 传入字符串。
 		
 ```csharp
 XDocument.Load(new StringReader(str));
@@ -152,7 +157,8 @@ XDocument.Load(new StringReader(str));
             var textBlockList = page.Descendants(XName.Get("TextBlock", name));
 
 ```
-注意，我们的 Descendants 参数是 XName，需要使用命名空间，一开始我就不知道需要命名空间，总是没找到 TextBlock 。希望大家在网上看到的博客写的是 string 记住我们的 Descendants 参数是 XName 。
+
+注意，我们的 Descendants 参数是 XName，需要使用命名空间，一开始我就不知道需要命名空间，总是没找到 TextBlock 。希望大家在网上看到的博客写的是 string 字符串，需要记住我们的 Descendants 参数是 XName ，因为两个类型支持隐式转换，所以开始不知道可以传入。
 
 因为我们 xaml 的 TextBlock 是使用命名空间，和简单的 xml 不同，当然，xml 也是可以使用命名空间。其实不可以去责怪大神们没有写 Descendants 的参数是 XName ，因为我们基本遇到的 XML 都不会用到 命名空间。
 
@@ -206,7 +212,7 @@ value 是 null，就删除属性。
 那么我们可以使用
 		
 ```csharp
-                            var node=new XElement("node");
+                            var node = new XElement("node");
                             node.SetAttributeValue("name","lindexi");
                             doc.Root.Add(node);
 
@@ -243,15 +249,13 @@ XDocument 和 WPF 的CUID都一样，如果需要删除或其他的方法，请�
 
 ## WPF 读XML
 
-可以 XmlDocument 读 xml ，如果遇到命名空间问题
+可以使用 XmlDocument 读 xml ，如果遇到命名空间问题就建议使用 XmlNamespaceManager ，在 WPF 的读写有一些不同。
 
-建议：XmlNamespaceManager 
+假设一个属性存在命名空间，必须使用 XmlNamespaceManager 。如果没有使用，SelectSingleNode 函数返回空。
 
-假设一个属性存在命名控件，必须使用 XmlNamespaceManager ，如果没有，SelectSingleNode 返回空。
+在拿到 XmlNamespaceManager 之前需要知道 xml 的内容，通过读取 xml 内容可以知道元素的 XmlNamespaceManager ，使用 `document.NameTable` 可以拿到命名空间。
 
-那么可以使用  XmlNamespaceManager ，但是需要知道 xml 的内容，因为需要拿到空间。
-
-新建一个 XmlNamespaceManager ：
+新建一个 XmlNamespaceManager 的方法是拿到 document.NameTable ，这里的 document 就是 XmlDocument ，获得 XmlDocument 的方法和 UWP 差不多，大家可以看本文最后的例子。
 
 
 ```csharp
@@ -261,7 +265,7 @@ XDocument 和 WPF 的CUID都一样，如果需要删除或其他的方法，请�
             };
 ```
 
-但是需要设置空间，`XmlNamespaceManager.AddNamespace("随意名称", NamespaceURI);`
+如果需要设置自己的命名空间，可以使用这个`XmlNamespaceManager.AddNamespace("随意名称", NamespaceURI);`
 
 如果看不懂上面写的，请看例子
 
@@ -277,7 +281,7 @@ XDocument 和 WPF 的CUID都一样，如果需要删除或其他的方法，请�
 ```
 
 
-可以使用
+可以使用下面代码
 
 
 ```csharp
