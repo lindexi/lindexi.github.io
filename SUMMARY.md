@@ -236,6 +236,8 @@
 
  * [win10 UWP Markdown 含源代码](win10-UWP-Markdown-含源代码.md)
 
+ * [win10 uwp MetroLog 入门](win10-uwp-MetroLog-入门.md)
+
  * [win10 uwp MVVM 语义耦合](win10-uwp-MVVM-语义耦合.md)
 
  * [win10 uwp MVVM 轻量框架](win10-uwp-MVVM-轻量框架.md)
