@@ -222,6 +222,8 @@ Serializer.Serialize(pipe, 实例);
 
 如果使用 wcf 请看 [.NET Core调用WCF的最佳实践](https://www.cnblogs.com/lishilei0523/archive/2018/04/19/8886483.html )
 
+如果需要使用 grpc 请看[.net core grpc 实现通信](https://www.cnblogs.com/alan-lin/archive/2018/05/07/9000642.html )
+
 
 
 

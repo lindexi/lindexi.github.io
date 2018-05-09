@@ -20,6 +20,8 @@
 
  * [C# 不能用于文件名的字符](C-不能用于文件名的字符.md)
 
+ * [C# 判断两条直线距离](C-判断两条直线距离.md)
+
  * [C# 判断系统版本](C-判断系统版本.md)
 
  * [C# 动态加载卸载 DLL](C-动态加载卸载-DLL.md)
@@ -29,6 +31,8 @@
  * [C# 如何写 DEBUG 输出](C-如何写-DEBUG-输出.md)
 
  * [C# 如何在项目引用x86 x64的非托管代码](C-如何在项目引用x86-x64的非托管代码.md)
+
+ * [C# 已知点和向量，求距离的点](C-已知点和向量，求距离的点.md)
 
  * [C# 强转会不会抛出异常](C-强转会不会抛出异常.md)
 
@@ -121,6 +125,8 @@
  * [git rebase 合并多个提交](git-rebase-合并多个提交.md)
 
  * [git subtree pull 错误 Working tree has modifications](git-subtree-pull-错误-Working-tree-has-modifications.md)
+
+ * [git 上传当前分支](git-上传当前分支.md)
 
  * [git 使用 VisualStudio 比较分支更改](git-使用-VisualStudio-比较分支更改.md)
 
