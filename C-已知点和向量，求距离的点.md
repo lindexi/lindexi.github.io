@@ -13,7 +13,29 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018581454142946.jpg)
 
-首先把 v 转换单位向量
+首先把 v 规范化，规范化的意识是向量的摸变为1
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185101542383756.jpg)
+
+画一张图来就是把图片灰色向量修改为黑色向量
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185101542523183.jpg)
+
+那么 B 的计算可以转换为求 B 的向量
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018510154558411.jpg)
+
+这时的 B 向量可以使用下面的公式
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018510154712864.jpg)
+
+因为 B 的坐标和 B 向量是相同，所以 B 的坐标就是
+
+$$
+B=(A_x,A_y)+(L·V'_x,L·V'_y) \\
+ =(A_x+L·V'_x,A_y+L·V'_y)
+$$
+
 
 
 
