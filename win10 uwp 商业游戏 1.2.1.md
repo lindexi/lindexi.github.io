@@ -3,7 +3,6 @@
 上一个游戏已经告诉大家如何写多个游戏，现在继续写这个无聊的游戏。
 
 <!--more-->
-<!-- csdn -->
 <div id="toc"></div>
 
 希望大家在看这篇文章之前先看[ win10 uwp 商业游戏](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html)，在这个文章告诉了大家如何创建游戏。
@@ -773,14 +772,22 @@ internal class KwxTpivzdikn
 
 ## 其他文章
 
- - [win10 uwp 商业游戏 ](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
+ - [win10 uwp 商业游戏](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html )
 
- - [win10 uwp 商业游戏 1.1.5](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html )
+ - [win10 uwp 商业游戏 1.1.5](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html )
 
- ## 感谢
+## 感谢
 
- 感谢 [无名图床](https://whoimg.com) 提供图片上传
+感谢 [无名图床](https://whoimg.com) 提供图片上传
 
- 最近我的图床已经流量用太多了
+最近我的[图床](https://www.microsoft.com/store/productId/9NBLGGH562R2)已经流量用太多了
+
+不过我更新了图床的界面，现在的界面很好看了
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201859125215290.jpg)
+
+[点击下载](https://www.microsoft.com/store/productId/9NBLGGH562R2)
+
+图床可以用来快速上传图片到服务器，用来写博客放图片
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)
