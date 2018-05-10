@@ -6,19 +6,17 @@
 <!--more-->
 
 
-<!-- 标签: dot net core , 进程通信，IPC，pipe-->
+<!-- 标签: dot net core , 进程通信，IPC，pipe -->
 
 一般都是使用 WCF 或 remoting 做远程通信，但是 dot net core 不支持 WCF 所以暂时我就只能使用 管道通信。
 
 ## 原理
 
-管道通信使用的是 Pipe 需要启动一对才可以
+管道通信使用的是 Pipe 需要启动一对服务器和客户端才可以使用。在 NamedPipeServerStream 启动之后可以接受其他 NamedPipeClientStream 连接。
 
-在 NamedPipeServerStream 启动之后可以接受其他 NamedPipeClientStream 连接。
+因为现在已经使用了 await 了，所以建议全部都可以写异步，古老的程序员喜欢使用回调，但是现在的程序员还是建议使用 await 比较好，因为比较容易用。
 
-因为现在已经使用了 await 了，所以建议全部都可以写异步。
-
-创建的 NamedPipeServerStream 需要告诉管道的命名，和通信方式，通信可以分为单向和双向，大家使用枚举去看一下就可以知道。
+创建的 NamedPipeServerStream 需要告诉管道的命名，和通信方式，通信可以分为单向和双向，大家使用枚举去看一下就可以知道。我来创建一个管道名是`lindexi`，可以双向通信的管道。
 
 ```csharp
             var pipe = new NamedPipeServerStream("lindexi", PipeDirection.InOut);
@@ -31,7 +29,7 @@
             await pipe.WaitForConnectionAsync();
 ```
 
-等待了连接之后，就可以发送数据
+等待了连接之后，就可以发送数据，发生的数据使用的是字节发送，所以需要转换编码。
 
 ```csharp
             string str = "发送消息";

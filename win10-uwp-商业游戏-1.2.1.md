@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
 
 希望大家在看这篇文章之前先看[ win10 uwp 商业游戏](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html)，在这个文章告诉了大家如何创建游戏。
@@ -776,15 +775,23 @@ internal class KwxTpivzdikn
 
 ## 其他文章
 
- - [win10 uwp 商业游戏 ](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
+ - [win10 uwp 商业游戏](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html )
 
- - [win10 uwp 商业游戏 1.1.5](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html )
+ - [win10 uwp 商业游戏 1.1.5](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html )
 
- ## 感谢
+## 感谢
 
- 感谢 [无名图床](https://whoimg.com) 提供图片上传
+感谢 [无名图床](https://whoimg.com) 提供图片上传
 
- 最近我的图床已经流量用太多了
+最近我的[图床](https://www.microsoft.com/store/productId/9NBLGGH562R2)已经流量用太多了
+
+不过我更新了图床的界面，现在的界面很好看了
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201859125215290.jpg)
+
+[点击下载](https://www.microsoft.com/store/productId/9NBLGGH562R2)
+
+图床可以用来快速上传图片到服务器，用来写博客放图片
 
 
 

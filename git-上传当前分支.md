@@ -45,6 +45,8 @@
  - upstream/tracking  上传当前跟踪分支
  - current  上传当前分支
 
+ 实际上还有更多，请看[Git - git-config Documentation](https://git-scm.com/docs/git-config.html#git-config-pushdefault )
+
 [https://stackoverflow.com/q/14031970/6116637](https://stackoverflow.com/q/14031970/6116637 )
 
 
