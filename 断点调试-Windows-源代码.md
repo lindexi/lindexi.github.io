@@ -180,6 +180,35 @@
 
 虽然我告诉了大家这些方法用来断点调试，但是我无法说大家一定可以使用我的方法看到源代码，有一些源代码是无法拿到的，有一些是没有符号。
 
+看到这里大家是否好奇为什么我在调试 InitStylusPointDescription ？ 因为我的 WPF 在一个特殊的屏幕点击就会崩溃，我拿到了 Dump ，看到了托管异常
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018511212473343.jpg)
+
+我使用了 dnspy 定位了堆栈，然后远程调试，加载了符号，进入源代码查看了这个函数
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112126196916.jpg)
+
+我发现是在这一行代码崩溃的
+
+```csharp
+      StylusPointPropertyInfo pointPropertyInfo = new StylusPointPropertyInfo(new StylusPointProperty(guid, false), iMin, iMax, (StylusPointPropertyUnit) iUnits, flResolution);
+```
+
+我进入了 StylusPointPropertyInfo 构造函数
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112127405999.jpg)
+
+很快就看到抛异常的代码
+
+```csharp
+      if (maximum < minimum)
+        throw new ArgumentException(MS.Internal.PresentationCore.SR.Get("Stylus_InvalidMax"), nameof (maximum));
+```
+
+这里 maximum 是 0xFFFFFFFF 因为这里是 int 判断，最大值 -1 所以返回 false ，在 usb 论坛找到工具
+
+发现是插入屏幕描述符是错的，所以就让硬件去修改。
+
 
 
 
