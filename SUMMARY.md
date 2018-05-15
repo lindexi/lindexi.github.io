@@ -646,6 +646,8 @@
 
  * [WPF 只允许打开一个实例](WPF-只允许打开一个实例.md)
 
+ * [WPF 可获得焦点属性](WPF-可获得焦点属性.md)
+
  * [WPF 在 Alt+Tab 隐藏窗口](WPF-在-Alt-Tab-隐藏窗口.md)
 
  * [wpf 如何使用 Magick.NET 播放 gif 图片](wpf-如何使用-Magick.NET-播放-gif-图片.md)
