@@ -372,6 +372,8 @@
 
  * [win10 UWP 等级控件](win10-UWP-等级控件.md)
 
+ * [win10 uwp 线程池](win10-uwp-线程池.md)
+
  * [win10 uwp 绑定 OneWay 无法使用](win10-uwp-绑定-OneWay-无法使用.md)
 
  * [win10 uwp 绑定密码](win10-uwp-绑定密码.md)
