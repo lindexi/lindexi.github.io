@@ -49,7 +49,7 @@ WPF 的可获得焦点元素是 Focusable，这个属性是所有继承 `IInputE
  - Viewport3D
  - WrapPanel
 
-如果觉得上面的类很多，
+如果觉得上面的类很多，无法记住，那么简单的方法是记下默认是 True 的类：具有交互的控件；默认是 False 的类：没有交互，仅供显示或布局的元素。
 
 参见：[#623 – Focusable Property Indicates Whether a Control Can Receive Focus](https://wpf.2000things.com/2012/08/13/623-focusable-property-indicates-whether-a-control-can-receive-focus/ )
 

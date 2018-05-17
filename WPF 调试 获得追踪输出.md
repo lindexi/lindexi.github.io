@@ -58,6 +58,6 @@
 
 [C# Logging using Trace and DebugView](http://dickvdbrink.github.io/c%23/2015/01/09/CSharp-Logging-using-Trace-and-DebugView.html )
 
-[#1,212 – Viewing WPF Trace Output Outside of Visual Studio | 2,000 Things You Should Know About WPF](https://wpf.2000things.com/2017/06/29/1212-viewing-wpf-trace-output-outside-of-visual-studio/#comment-61387 )
+[Viewing WPF Trace Output Outside of Visual Studio](https://wpf.2000things.com/2017/06/29/1212-viewing-wpf-trace-output-outside-of-visual-studio/#comment-61387 )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
