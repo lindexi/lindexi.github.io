@@ -61,7 +61,7 @@
 
 [C# Logging using Trace and DebugView](http://dickvdbrink.github.io/c%23/2015/01/09/CSharp-Logging-using-Trace-and-DebugView.html )
 
-[#1,212 – Viewing WPF Trace Output Outside of Visual Studio | 2,000 Things You Should Know About WPF](https://wpf.2000things.com/2017/06/29/1212-viewing-wpf-trace-output-outside-of-visual-studio/#comment-61387 )
+[Viewing WPF Trace Output Outside of Visual Studio](https://wpf.2000things.com/2017/06/29/1212-viewing-wpf-trace-output-outside-of-visual-studio/#comment-61387 )
 
 
 
