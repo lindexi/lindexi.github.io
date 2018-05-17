@@ -652,6 +652,8 @@
 
  * [WPF 在 Alt+Tab 隐藏窗口](WPF-在-Alt-Tab-隐藏窗口.md)
 
+ * [WPF 好看的矢量图标](WPF-好看的矢量图标.md)
+
  * [wpf 如何使用 Magick.NET 播放 gif 图片](wpf-如何使用-Magick.NET-播放-gif-图片.md)
 
  * [WPF 如何在 WriteableBitmap 写文字](WPF-如何在-WriteableBitmap-写文字.md)
@@ -713,6 +715,8 @@
  * [WPF 设置纯软件渲染](WPF-设置纯软件渲染.md)
 
  * [WPF 设置输入只能英文](WPF-设置输入只能英文.md)
+
+ * [WPF 调试 获得追踪输出](WPF-调试-获得追踪输出.md)
 
  * [WPF 资源冻结](WPF-资源冻结.md)
 
