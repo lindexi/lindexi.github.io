@@ -1,5 +1,5 @@
 
-# win10 支持默认把触摸提升鼠标事件
+# win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息
 
 在 WPF 经常需要重写一套触摸事件，没有UWP的Pointer那么好用。
 如果一直都觉得 WPF 的触摸做的不好，或想解决 WPF 的触摸问题，但是没有方法，那么请看下面。
@@ -8,13 +8,13 @@
 
 
 
-只要新建框架为 .net 4.7以上，运行的系统是`Windows 10 Creators Update` 就可以。
+只要新建框架为 .net 4.7 以上，运行的系统是`Windows 10 Creators Update` 就可以。
 
 打开新建的工程，设置框架。
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017417165611.jpg)
 
-然后打开App.config，添加支持把触摸和笔到鼠标
+然后打开 App.config，添加支持把触摸和笔到鼠标
 
 
 ```csharp
@@ -22,11 +22,30 @@
         <AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.EnablePointerSupport=true"/>
     </runtime>
 ```
+
 需要知道，这个特性不支持实时的笔迹。
 
 因为笔迹需要运行在UI线程，会导致比较差的性能。
 
+开启了这个属性就可以使用 Pointer 消息。
+
+因为有小伙伴说使用了我上面代码无法打开 Pointer 消息，我看了他代码，发现他写错了，所以我把全部  App.config 代码写出来。
+
+```csharp
+<?xml version="1.0" encoding="utf-8"?>
+
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7" />
+  </startup>
+  <runtime>
+    <AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.EnablePointerSupport=true" />
+  </runtime>
+</configuration>
+```
+
 参见：[https://msdn.microsoft.com/en-us/library/mt800336(v=vs.110).aspx](https://msdn.microsoft.com/en-us/library/mt800336(v=vs.110).aspx )
+
 
 
 
