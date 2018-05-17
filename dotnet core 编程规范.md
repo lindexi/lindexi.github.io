@@ -3,7 +3,6 @@
 本文实际只是翻译  .NET Core foundational libraries 官方文档的编码风格。
 
 <!--more-->
-<!-- csdn -->
 
 在 [.NET Core foundational libraries](https://github.com/dotnet/corefx )项目使用的编程规范默认就是 VisualStudio 默认样式。
 
