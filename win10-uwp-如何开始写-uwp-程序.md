@@ -7,7 +7,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
 
 本文来告诉大家如何创建一个简单的程序
@@ -68,7 +67,7 @@
 
 大概所有的入门博客都会告诉大家如何写一个 hellow ，我这里也是这样告诉大家。
 
-打开 MainPage.xaml ，一般使用双击
+打开 MainPage.xaml ，一般使用双击文件的方法
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018414162710847.jpg)
 
@@ -76,7 +75,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184141627479596.jpg)
 
-在下面的代码，估计需要滚动才可以看到
+在下面的代码，估计需要滚动才可以看到，因为我默认设置是打开代码而不是设计，如果安装默认的 VisualStudio 显示的是一半设计，下面一半是代码，所以需要滚动代码才可以看到下面代码。
 
 ```csharp
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -84,7 +83,9 @@
     </Grid>
 ```
 
-添加文本 hellow
+我不会告诉大家每个控件的意思，我建议快速复制粘贴代码，尝试运行，对于代码的意思可以后面慢慢看。
+
+添加文本 hellow ，添加文本的方法是使用 TextBlock ，至于对于 Text 文本之外的其他属性，我就不多说了。这些属性大家可以使用控制面板的属性窗口看到很多设置，去试试控件的设置然后运行看效果。
 
 ```csharp
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -96,7 +97,7 @@
 
 尝试修改文字为你自己想要的，然后运行。
 
-实际上桌面开发的入门难度相对比较大，因为需要学很多东西。如果学比较深，那么需要的时间是比较长的。
+实际上桌面开发的入门难度相对比较大，因为需要学很多东西。如果学比较深，那么需要的时间是比较长的。在 UWP 开发，建议界面使用 xaml 来写，什么是 xaml ，就是文件后缀是 xaml 的文件。
 
 大概需要学 C# 的知识，现在已经到了 C# 7 ，所以新的功能是需要学。
 
@@ -104,11 +105,13 @@
 
 实际上 dot net core 就已经需要学很久了，但是开发时还需要学 VisualStudio 和一些插件的使用。我看到有些小伙伴写代码的速度实在太慢，还有调试的能力也很差，因为他不会使用 VisualStudio ，如果学会使用，那么开发速度很快很多。除了 VisualStudio 还需要去了解一些常用的工具，请看[高效率工具](https://lindexi.gitee.io/post/%E9%AB%98%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7.html )
 
-另外软件开发还有基础的部分，关于数据结构、基础算法、设计模式都需要去学一下。但是必须告诉大家的是，关于数据结构千万要学 dot net 提供的数据结构而不是对于每个数据结构都去自己写，自己写轮子在 dot net 开发认为是新手。尽量使用 dot net 提供的算法才是一个高手需要做的。
+另外软件开发还有基础的部分，关于数据结构、基础算法、设计模式都需要去学一下。但是必须告诉大家的是，关于数据结构千万要学 dot net 提供的数据结构而不是对于每个数据结构都去自己写，如果自己写轮子在 dot net 开发大神看来这就是新手。尽量使用 dot net 提供的算法才是一个高手需要做的。
+
+更多的 UWP 博客请直接看我的博客，csdn博客：https://blog.csdn.net/lindexi_gd 个人博客： https://lindexi.gitee.io 在国内我是写 UWP 博客最多的人，但是文章水平比较低，如果发现我博客写的不好懂，请告诉我
 
 如果遇到任何的问题，欢迎加入一些 dot net 交流的群交流。
 
-欢迎大家加入我的组织 [telegrma](https://t.me/dotnet_campus) [如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
+欢迎大家加入我的组织 [telegrma](https://t.me/dotnet_campus) ，如果发现无法加入，请看[如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
 
 
