@@ -666,6 +666,8 @@
 
  * [WPF 如何调试 binding](WPF-如何调试-binding.md)
 
+ * [WPF 封装 dotnet remoting 调用其他进程](WPF-封装-dotnet-remoting-调用其他进程.md)
+
  * [WPF 延迟加载](WPF-延迟加载.md)
 
  * [WPF 开发](WPF-开发.md)
