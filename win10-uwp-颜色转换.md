@@ -1,10 +1,53 @@
 
 # win10 uwp 颜色转换
 
+本文告诉大家如何从字符串转颜色，从颜色转字符串
+
+<!--more-->
 
 
 <!-- csdn -->
-<!-- 草稿 -->
+
+## 字符串转颜色
+
+在 WPF 可以使用下面的代码把十六进制的颜色字符串转颜色
+
+```csharp
+            Color color = (Color) ColorConverter.ConvertFromString("#FFDFD991");
+
+```
+
+```csharp
+string hex = "#FFFFFF";  
+Color color = System.Drawing.ColorTranslator.FromHtml(hex); 
+```
+
+但是 UWP 没这个方法，所以需要自己写一个方法
+
+```csharp
+        public SolidColorBrush GetSolidColorBrush(string hex)
+        {
+            hex = hex.Replace("#", string.Empty);
+            byte a = (byte) (Convert.ToUInt32(hex.Substring(0, 2), 16));
+            byte r = (byte) (Convert.ToUInt32(hex.Substring(2, 2), 16));
+            byte g = (byte) (Convert.ToUInt32(hex.Substring(4, 2), 16));
+            byte b = (byte) (Convert.ToUInt32(hex.Substring(6, 2), 16));
+            return new SolidColorBrush(Windows.UI.Color.FromArgb(a, r, g, b));
+        }
+```
+
+## 颜色转字符串
+
+如果需要从颜色转字符串是很简单
+
+```csharp
+Color.ToString()
+```
+
+上面的代码就可以输出字符串
+
+![](https://i.loli.net/2018/04/08/5aca000c4b395.jpg)
+
 
 
 
