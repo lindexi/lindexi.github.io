@@ -3,7 +3,6 @@
 本文来告诉大家如何在 WPF 使用 D2D 画图。
 
 <!--more-->
-<!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：WPF，D2D,DirectX -->
 
@@ -15,13 +14,22 @@
 
  - [WPF 使用 SharpDX](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX.html )
 
+ - [WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 
+
+ - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
+
+ - [WPF 使用 SharpDx 异步渲染](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.html )
+
+
 ## 什么是 D2D
 
 实际上现在很多小伙伴对于渲染性能就是听到 DirectX 才会去搜索这个博客。我在博客园看到很少的博客讲到这个。即使有也很少会说如何使用 WPF 的。
 
 那么 D2D 是一个提高性能的方法，具体是怎么做？基于 Direct3D 可以使用硬件加速的功能，即使在没有显卡，进行软渲染的性能也是比 GDI 快，但是渲染静态的还是建议使用 GDI。
 
-现在的 WPF 底层使用的渲染是 Dx9 或 Dx11 Dx12 优化  fl9 所以性能实际上和直接使用 D2D 是差不多，但是 WPF 没有充分使用DX，所以如果自己写的性能会比较高。
+现在的 WPF 底层使用的渲染是 Dx9 渲染 或使用 Dx11 Dx12 优化  fl9 渲染，所以性能实际上和直接使用 D2D 是差不多，但是 WPF 没有充分使用DX，所以如果自己写的性能会比较高。
+
+因为 WPF 渲染使用的是 Dx9 或虽然使用了 Dx11 Dx12 但是优化是 fl9 ，所以在现在很多设备无法使用全部的性能。
 
 ## Direct2D运行需求
 
