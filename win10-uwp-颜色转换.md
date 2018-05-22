@@ -36,6 +36,106 @@ Color color = System.Drawing.ColorTranslator.FromHtml(hex);
         }
 ```
 
+如果有小伙伴传入一个不带透明的，那么上面的代码就会出现异常，因为不带透明的颜色只有 6 个字符，所以就无法使用上面的代码，我修改了下面代码可以转换颜色
+
+```csharp
+       public SolidColorBrush GetSolidColorBrush(string hex)
+        {
+            hex = hex.Replace("#", string.Empty);
+
+            bool existAlpha = hex.Length == 8;
+
+            if (!existAlpha && hex.Length != 6)
+            {
+                throw new ArgumentException("输入的hex不是有效颜色");
+            }
+
+            int n = 0;
+            byte a;
+            if (existAlpha)
+            {
+                n = 2;
+                a = (byte) ConvertHexToByte(hex, 0);
+            }
+            else
+            {
+                a = 0xFF;
+            }
+
+            var r = (byte) ConvertHexToByte(hex, n);
+            var g = (byte) ConvertHexToByte(hex, n + 2);
+            var b = (byte) ConvertHexToByte(hex, n + 4);
+            return new SolidColorBrush(Windows.UI.Color.FromArgb(a, r, g, b));
+        }
+
+        private static uint ConvertHexToByte(string hex, int n)
+        {
+            return Convert.ToUInt32(hex.Substring(n, 2), 16);
+        }
+```
+
+大家可以从上面代码发现 ConvertHexToByte 这就是 16 进制转 int 的方法，请看[C# 16 进制字符串转 int](https://lindexi.gitee.io/post/C-16-%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC-int.html )
+
+但是存在这样写的颜色 `#FD92` `#DAC` 的颜色，所以还需要继续修改一下算法
+
+```csharp
+       public SolidColorBrush GetSolidColorBrush(string hex)
+        {
+            hex = hex.Replace("#", string.Empty);
+
+            //#FFDFD991
+            //#DFD991
+            //#FD92
+            //#DAC
+
+            bool existAlpha = hex.Length == 8 || hex.Length == 4;
+            bool isDoubleHex = hex.Length == 8 || hex.Length == 6;
+
+            if (!existAlpha && hex.Length != 6 && hex.Length != 3)
+            {
+                throw new ArgumentException("输入的hex不是有效颜色");
+            }
+
+            int n = 0;
+            byte a;
+            int hexCount = isDoubleHex ? 2 : 1;
+            if (existAlpha)
+            {
+                n = hexCount;
+                a = (byte) ConvertHexToByte(hex, 0, hexCount);
+                if (!isDoubleHex)
+                {
+                    a = (byte) (a * 16 + a);
+                }
+            }
+            else
+            {
+                a = 0xFF;
+            }
+
+            var r = (byte) ConvertHexToByte(hex, n, hexCount);
+            var g = (byte) ConvertHexToByte(hex, n + hexCount, hexCount);
+            var b = (byte) ConvertHexToByte(hex, n + 2 * hexCount, hexCount);
+            if (!isDoubleHex)
+            {
+                //#FD92 = #FFDD9922
+
+                r = (byte) (r * 16 + r);
+                g = (byte) (g * 16 + g);
+                b = (byte) (b * 16 + b);
+            }
+
+            return new SolidColorBrush(Windows.UI.Color.FromArgb(a, r, g, b));
+        }
+
+        private static uint ConvertHexToByte(string hex, int n, int count = 2)
+        {
+            return Convert.ToUInt32(hex.Substring(n, count), 16);
+        }
+```
+
+如果想看微软的转换，请看 [https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Media/Parsers.cs](https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Media/Parsers.cs )
+
 ## 颜色转字符串
 
 如果需要从颜色转字符串是很简单
