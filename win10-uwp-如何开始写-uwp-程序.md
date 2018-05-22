@@ -8,7 +8,6 @@
 
 
 <div id="toc"></div>
-
 本文来告诉大家如何创建一个简单的程序
 
 ## 安装 VisualStudio 

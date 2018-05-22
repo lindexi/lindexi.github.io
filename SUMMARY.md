@@ -182,6 +182,8 @@
 
  * [sublime Text 正则替换](sublime-Text-正则替换.md)
 
+ * [SublimeText 粘贴图片保存到本地](SublimeText-粘贴图片保存到本地.md)
+
  * [UWP 分享用那个图标](UWP-分享用那个图标.md)
 
  * [UWP 和 WPF 对比](UWP-和-WPF-对比.md)
