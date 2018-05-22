@@ -136,6 +136,12 @@ Color color = System.Drawing.ColorTranslator.FromHtml(hex);
 
 如果想看微软的转换，请看 [https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Media/Parsers.cs](https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Media/Parsers.cs )
 
+可以复制的源代码：
+
+<script src="https://gist.github.com/lindexi/36c5e223ff77cfb8adc4909dec1576b5.js"></script>
+
+如果你没有在上面看到代码，请点击 <https://gist.github.com/lindexi/36c5e223ff77cfb8adc4909dec1576b5 >
+
 ## 颜色转字符串
 
 如果需要从颜色转字符串是很简单
