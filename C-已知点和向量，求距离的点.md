@@ -8,6 +8,8 @@
 
 <!-- csdn -->
 
+<!-- math -->
+
 已经知道了一个点 P 和他运动方向 v ，就可以通过这个求出距离点 P 为 d 的点 B。
 
 
@@ -39,6 +41,13 @@ $$
 
 
 
+<script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
 
 
 
