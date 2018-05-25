@@ -758,6 +758,8 @@
 
  * [使用 IncrediBuild 提升 VisualStudio 编译速度](使用-IncrediBuild-提升-VisualStudio-编译速度.md)
 
+ * [使用 Pandoc 把 Markdown 转 Docx](使用-Pandoc-把-Markdown-转-Docx.md)
+
  * [使用 Resharper 快速做适配器](使用-Resharper-快速做适配器.md)
 
  * [使用 Resharper 特性](使用-Resharper-特性.md)
