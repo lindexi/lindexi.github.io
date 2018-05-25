@@ -154,6 +154,8 @@
 
  * [控件](控件.md)
 
+ * [Latex 公式速查](Latex-公式速查.md)
+
  * [Latex 去掉行号](Latex-去掉行号.md)
 
  * [Latex 论文elsevier，手把手如何用Latex写论文](Latex-论文elsevier，手把手如何用Latex写论文.md)
