@@ -34,7 +34,7 @@ CTex的下载可以在网上搜索或使用我网盘，如果我网盘没法使�
 
 是不是感觉比WinEdt好，如果感觉好的话，那么就去下载，可以到官网[www.texstudio.org](www.texstudio.org)如果上不了就在我这里下。
 
-我们开始使用官方的模板，官方下载位置 [https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip](https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip)可以看到里面没有`ecrc.sty`在我们编译的时候就出错
+我们开始使用官方的模板，官方下载位置 [elsarticle-template.zip](https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip) 可以看到里面没有`ecrc.sty`在我们编译的时候就出错
 
 ```csharp
 File `ecrc.sty' not found.
@@ -44,9 +44,9 @@ File `ecrc.sty' not found.
 
 可以去下载我的`ecrc.sty`，下载放在最后，大家如果发现无法下载，就联系我
 
-这个在于我们打开的模板是`ecrc-template.tex`，在官网有下载，[https://www.elsevier.com/__data/assets/text_file/0007/56878/ecrc-template.tex](https://www.elsevier.com/__data/assets/text_file/0007/56878/ecrc-template.tex)
+这个在于我们打开的模板是`ecrc-template.tex`，在官网有下载，[ecrc-template.tex](https://www.elsevier.com/__data/assets/text_file/0007/56878/ecrc-template.tex)
 
-打开之后发现还需要Elsevier-logo-3p.pdf, SDlogo-3p.pdf, Elsevier-logo-5p.pdf and SDlogo-5p.pdf ，都可以在官网下载，下载后需要下载elsarticle.cls，同样官方，[https://www.elsevier.com/__data/assets/text_file/0005/56903/elsarticle.cls](https://www.elsevier.com/__data/assets/text_file/0005/56903/elsarticle.cls)
+打开之后发现还需要Elsevier-logo-3p.pdf, SDlogo-3p.pdf, Elsevier-logo-5p.pdf and SDlogo-5p.pdf ，都可以在官网下载，下载后需要下载elsarticle.cls，同样官方，[elsarticle.cls](https://www.elsevier.com/__data/assets/text_file/0005/56903/elsarticle.cls)
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=af60a44f45f5a6a31bac45018e8f42ef)
 
