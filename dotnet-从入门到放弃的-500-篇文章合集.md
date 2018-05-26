@@ -1,5 +1,5 @@
 
-# dotnet 从入门到放弃的 500 篇博客合集
+# dotnet 从入门到放弃的 500 篇文章合集
 
 本文是记录我从入门到放弃写的博客
 
@@ -10,7 +10,7 @@
 
 博客包括 C#、WPF、UWP、dotnet core 、git 和 VisualStudio 和一些算法，所有博客使用 docx 保存
 
-下载：[dotnet 从入门到放弃的 500 篇博客合集-CSDN下载](https://download.csdn.net/download/lindexi_gd/10438477 )
+下载：[dotnet 从入门到放弃的 500 篇合集-CSDN下载](https://download.csdn.net/download/lindexi_gd/10438477 )
 
 C# 的博客
 
