@@ -159,6 +159,8 @@ $\Alpha , \Beta , \Gamma ,\Lambda$
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525192815195.jpg)
 
+Latex 公式的其他声调
+
 ```csharp
 \grave{a}  \dot{a}  \ddot{a}  \breve{a} \bar{a}  \vec{a}  \widehat{A}  \widetilde{A}
 ```
