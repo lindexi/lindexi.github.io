@@ -1,8 +1,11 @@
+# Latex 论文elsevier，手把手如何用Latex写论文
+
 这几天在开始写论文，准备发的是elsevier，这个网站的instruction有问题，下载的东西基本上好多的错误，所以我就写博客记录。
 
 <!--more-->
 
 <div id="toc"></div>
+<!-- 标签：Latex -->
 
 首先看下：https://www.elsevier.com/authors/author-schemas/latex-instructions
 
@@ -456,6 +459,8 @@ svg转eps http://cn.office-converter.com/SVG-to-EPS
 \end{equation}
 ```
 
+[Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
+
 插入公式：https://www.kancloud.cn/thinkphp/latex/41806
 
 http://mohu.org/info/symbols/symbols.htm
@@ -536,7 +541,7 @@ http://download.csdn.net/detail/lindexi_gd/9795700
 
 http://hubl82.blog.163.com/blog/static/1267694852013459412617/
 
-
+更多数学公式请看 [Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
 
 
 
