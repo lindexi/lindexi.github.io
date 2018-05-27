@@ -1,36 +1,14 @@
 
 # Latex 论文elsevier，手把手如何用Latex写论文
 
+这几天在开始写论文，准备发的是elsevier，这个网站的instruction有问题，下载的东西基本上好多的错误，所以我就写博客记录。
 
 <!--more-->
 
 
 
 <div id="toc"></div>
-
-首先看下：[https://www.elsevier.com/authors/author-schemas/latex-instructions](https://www.elsevier.com/authors/author-schemas/latex-instructions )
-
-这里需要我们先安装Latex，我安装的是Ctex
-
-CTex的下载可以在网上搜索或使用我网盘，如果我网盘没法使用请和我说：[lindexi_gd@163.com](mailto:lindexi_gd@163.com)
-
-我们首先安装Ctex，一路下一步，注意可以安装到D盘，不一定需要C盘。
-
-然后就是`basic-miktex-2.9.6069-x64`这里你不一定安装64位，下载可以到[http://miktex.org/](http://miktex.org/) 下载，也可以到我网盘下载，如果不能下载请和我说
-
-安装完CTeX如果使用报错
-
->CTeX 系统找不到指定的文件
-
-大概的方法是打开Execution Modes在Options
-
-![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=cbd5295a82030a015ea0a318299d1b4e)
-
-然后这几天在开始写论文，准备发的是elsevier，这个网站的instruction有问题，下载的东西基本上好多的错误，所以我就写博客记录。
-
-<!--more-->
-
-<div id="toc"></div>
+<!-- 标签：Latex -->
 
 首先看下：[https://www.elsevier.com/authors/author-schemas/latex-instructions](https://www.elsevier.com/authors/author-schemas/latex-instructions )
 
@@ -484,6 +462,8 @@ svg转eps [http://cn.office-converter.com/SVG-to-EPS](http://cn.office-converter
 \end{equation}
 ```
 
+[Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
+
 插入公式：[https://www.kancloud.cn/thinkphp/latex/41806](https://www.kancloud.cn/thinkphp/latex/41806 )
 
 [http://mohu.org/info/symbols/symbols.htm](http://mohu.org/info/symbols/symbols.htm )
@@ -564,7 +544,7 @@ Btsync: BQ2XFET5YROHGWVN2NZNQ4X5VTKEKLO4C
 
 [http://hubl82.blog.163.com/blog/static/1267694852013459412617/](http://hubl82.blog.163.com/blog/static/1267694852013459412617/ )
 
-
+更多数学公式请看 [Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
 
 
 
