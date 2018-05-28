@@ -168,7 +168,7 @@ xaml：
 
 请看：[DataGrid XAML Control - Windows Community Toolkit](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/datagrid )
 
-
+[DataGrid](https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc189753(v=vs.95) )
 
 ## 表格控件
 

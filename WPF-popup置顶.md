@@ -1,38 +1,11 @@
 
 # WPF popup置顶
 
+在程序写一个popup发现他会在置顶，在网上找了两大神代码，就使用他的代码
 
 <!--more-->
 
 
-
-<div id="toc"></div>
-
-[http://www.cnblogs.com/Leaco/p/3164394.html](http://www.cnblogs.com/Leaco/p/3164394.html )
-
-[http://blog.csdn.net/baijinwen/article/details/6159043](http://blog.csdn.net/baijinwen/article/details/6159043 )
-
-只需要把下面的类放到自己的软件，然后把使用 popup 替换为 CCPopup 就不会让popup置顶
-
-```csharp
-    public class CCPopup : Popup
-    {
-        public static DependencyProperty TopmostProperty = Window.TopmostProperty.AddOwner(typeof(CCPopup), new FrameworkPropertyMetadata(false, OnTopmostChanged));
-        public bool Topmost
-        {
-            get { return (bool)GetValue(TopmostProperty); }
-            set { SetValue(TopmostProperty, value); }
-        }
-        private static void OnTopmostChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            (obj as CCPopup).UpdateWindow();
-        }
-        protected override void OnOpened(EventArgs e)
-        {
-            UpdateWindow();
-      在程序写一个popup发现他会在置顶，在网上找了两大神代码，就使用他的代码
-
-<!--more-->
 
 <div id="toc"></div>
 
@@ -86,6 +59,10 @@
     }
     
 ```
+
+代码：<script src="https://gist.github.com/flq/903202.js"></script>
+
+如果看不到上面代码，请点击 <https://gist.github.com/flq/903202>
 
 
 ## 另外的已知问题
