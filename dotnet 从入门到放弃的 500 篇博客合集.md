@@ -3,7 +3,6 @@
 本文是记录我从入门到放弃写的博客
 
 <!--more-->
-<!-- csdn -->
 
 博客包括 C#、WPF、UWP、dotnet core 、git 和 VisualStudio 和一些算法，所有博客使用 docx 保存
 
