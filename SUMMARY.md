@@ -308,6 +308,8 @@
 
  * [win10 uwp 判断设备类型](win10-uwp-判断设备类型.md)
 
+ * [win10 uwp 动态修改ListView元素布局](win10-uwp-动态修改ListView元素布局.md)
+
  * [win10 UWP 动画](win10-UWP-动画.md)
 
  * [win10 uwp 参考](win10-uwp-参考.md)
@@ -609,6 +611,8 @@
  * [WPF checkbox文字下掉](WPF-checkbox文字下掉.md)
 
  * [WPF DelegateCommand 出现Specified cast is not valid](WPF-DelegateCommand-出现Specified-cast-is-not-valid.md)
+
+ * [WPF Frame 的 DataContext 不能被 Page 继承](WPF-Frame-的-DataContext-不能被-Page-继承.md)
 
  * [wpf GifBitmapDecoder 解析 gif 格式](wpf-GifBitmapDecoder-解析-gif-格式.md)
 
