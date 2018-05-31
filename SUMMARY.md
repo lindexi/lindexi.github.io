@@ -604,6 +604,8 @@
 
  * [windows 10预览版升级win10 7月29 10240.16384](windows-10预览版升级win10-7月29-10240.16384.md)
 
+ * [Windows Community Toolkit 3.0 新功能](Windows-Community-Toolkit-3.0-新功能.md)
+
  * [windows-10「设置」应用完整ms-settings快捷方式汇总](windows-10「设置」应用完整ms-settings快捷方式汇总.md)
 
  * [win 10 UWP 标签](win-10-UWP-标签.md)
@@ -647,6 +649,8 @@
  * [WPF 使用 SharpDx 异步渲染](WPF-使用-SharpDx-异步渲染.md)
 
  * [WPF 使用 SharpDX](WPF-使用-SharpDX.md)
+
+ * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
 
  * [WPF 使用RPC调用其他进程](WPF-使用RPC调用其他进程.md)
 
