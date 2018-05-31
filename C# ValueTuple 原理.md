@@ -157,7 +157,7 @@ private hidebysig static valuetype [mscorlib]System.ValueTuple`2<string, string>
 
 第二个需要知道的，ValueTuple 是值类型，所以他的默认值不是 null 而是 `default(xx)`，在C# 7.2 支持使用关键字，所以不需要去写 `defalut(xx,xx)`
 
-关于 ValueTuple 变量名的定义也是很难说的，有的小伙伴觉得需要使用 Axx 的方式命名，但是很多小伙伴觉得使用 aaBa 的命名更好，所以暂时对于他的命名，大家觉得什么方式好请告诉我
+关于 ValueTuple 变量名的定义也是很难说的，有的小伙伴觉得需要使用 Axx 的方式命名，但是很多小伙伴觉得使用 aaBa 的命名更好，所以暂时对于他的命名使用 aaBa 的方法，大家觉得什么方式好请告诉我
 
 参见：[ Exploring Tuples as a Library Author](http://blog.marcgravell.com/2017/04/exploring-tuples-as-library-author.html )
 
