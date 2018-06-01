@@ -3,7 +3,7 @@
 本文告诉大家一个令人震惊的消息，Windows Community Toolkit 有一个大更新，现在的版本是 3.0 。最大的提升就是 WinForm 和 WPF 程序可以使用部分 UWP 控件。
 
 <!--more-->
-<!-- csdn -->
+<!-- 标签：WPF，UWP，dotnet -->
 
 本文翻译[Announcing Windows Community Toolkit v3.0](https://blogs.windows.com/buildingapps/2018/05/30/announcing-windows-community-toolkit-v3-0/#kkTu1mUiPIFADOzj.97 )，因为水平比较渣，请大家不要喷太多。
 
@@ -51,7 +51,6 @@ xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
 ```
 
 这个API支持让你控制视线输入在界面如何处理，如果对这个有兴趣，请点击[链接](https://aka.ms/eyetrackingforwindows )来学习更多内容。官方的文档请点击[链接](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary )
-
 
 ## 平台检查
 

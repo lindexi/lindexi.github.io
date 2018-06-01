@@ -168,6 +168,18 @@ Latex 公式的其他声调
 <!-- ![](image/Latex 公式速查/Latex 公式速查17.png) -->
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525192951476.jpg)
 
+|语法 | 效果 |注释|
+|--|--|
+|`\bar{x}` | $\bar{x}$ |上划线|
+|`\acute{x}`|$\acute{x}$| |
+|`\check{x}`|$\check{x}$ | | 
+|`\grave{x}`|$\grave{x}$ | | 
+|`\breve{x}`|$\breve{x}$ | | 
+|`\ddot{x}`|$\ddot{x}$ | | 
+|`\dot{x}`|$\dot{x}$ | | 
+|`\hat{x}`|$\hat{x}$ | | 
+|`\tilde{x}`|$\tilde{x}$ | | 
+
 ## 上标下标
 
 上标使用`^`，下标使用`_`
@@ -178,6 +190,14 @@ a^2+L_a=doubi
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251731516956.jpg)
 
+如果上标或下标后需要添加多个字符，那么请使用花括号把多个字符放一起
+
+```csharp
+a^{x+y}+L_{dexi} = doubi
+```
+
+$a^{x+y}+L_{dexi} = doubi$
+
 ## 平方根
 
 输入命令为：`\sqrt`，n 次方根相应地为: `\sqrt[n]`，如果只需要符号请使用`\surd`
@@ -185,6 +205,8 @@ a^2+L_a=doubi
 ```csharp
 \sqrt{a^2}-\sqrt[5]{a}=\surd{a}
 ```
+
+$\sqrt{a^2}-\sqrt[5]{a}=\surd{a}$
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251733578522.jpg)
 
@@ -241,6 +263,45 @@ x\cdot y
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525185856758.jpg)
 
+
+|语法 | 效果 |注释|
+|--|--|
+|`\sin\theta`|$\sin\theta$ | | 
+|`\cos\theta`|$\cos\theta$ | | 
+|`\tan\theta`|$\tan\theta$ | | 
+|`\arcsin\frac{L}{i}`|$\arcsin\frac{L}{i}$ | | 
+|`\arccos\frac{n}{D}`|$\arccos\frac{n}{D}$ | | 
+|`\arctan\frac{e}{x}`|$\arctan\frac{e}{x}$ | | 
+|`\sinh l`|$\sinh l$ | | 
+|`\cosh i`|$\cosh i$ | | 
+|`\tanh n`|$\tanh n$ | | 
+|`\operatorname{sh}d`|$\operatorname{sh}d$ | | 
+|`\operatorname{argsh}e`|$\operatorname{argsh}e$ | | 
+|`\operatorname{ch}x`|$\operatorname{ch}x$ | | 
+|`\operatorname{argch}i`|$\operatorname{argch}i$ | | 
+|`\operatorname{th}i`|$\operatorname{th}i$ | | 
+|`\operatorname{argth}m`|$\operatorname{argth}m$ | | 
+|`\lim_{\Delta x\to 0}x`|$\lim_{\Delta x\to 0}x$ | | 
+|`\max H`|$\max H$ | | 
+|`\min L`|$\min L$ | | 
+|`\inf s`|$\inf s$ | | 
+|`\sup t`|$\sup t$ | | 
+|`\exp\!t`|$\exp\!t$ | | 
+|`\ln X`|$\ln X$ | | 
+|`\lg X`|$\lg X$ | | 
+|`\log X`|$\log X$ | | 
+|`\log_\alpha X`|$\log_\alpha X$ | | 
+|`\ker x`|$\ker x$ | | 
+|`\deg x`|$\deg x$ | | 
+|`\gcd(T,U,V,W,X)`|$\gcd(T,U,V,W,X)$ | | 
+|`\Pr x`|$\Pr x$ | | 
+|`\det x`|$\det x$ | | 
+|`\hom x`|$\hom x$ | | 
+|`\arg x`|$\arg x$ | | 
+|`\dim x`|$\dim x$ | | 
+|`\lim_{t\to n}T`|$\lim_{t\to n}T$ | |
+
+
 ## 极限
 
 ```csharp
@@ -249,6 +310,18 @@ x\cdot y
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查2.png) -->
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525190142683.jpg)
+
+## 微分
+
+|语法 | 效果 |注释|
+|--|--|
+|`\pmod{m}`|$\pmod{m}$ | | 
+|`a \bmod b`|$a \bmod b$ | | 
+|`\nabla`|$\nabla$ | | 
+|`\partial x`|$\partial x$ | | 
+|`\mathrm{d}x`|$\mathrm{d}x$ | | 
+|`\dot x`|$\dot x$ | | 
+|`\ddot y`|$\ddot y$ | | 
 
 ## 分数
 
@@ -432,6 +505,51 @@ a \geq b \ge a
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251942265272.jpg)
 
+|语法 | 效果 |注释|
+|--|--|
+|`\forall`|$\forall$ | 全满足| 
+|`\exists`|$\exists$ | 存在| 
+|`\empty`|$\empty$ | | 
+|`\emptyset`|$\emptyset$ | 空集| 
+|`\varnothing`|$\varnothing$ |空集 | 
+|`\in`|$\in$ | 包含| 
+|`\ni`|$\ni$ | 被包含| 
+|`\not\in`|$\not\in$ |不包含 | 
+|`\notin`|$\notin$ | | 
+|`\subset`|$\subset$ | 子集 | 
+|`\subseteq`|$\subseteq$ | 真子集| 
+|`\supset`|$\supset$ | | 
+|`\supseteq`|$\supseteq$ | | 
+|`\cap`|$\cap$ | | 
+|`\bigcap`|$\bigcap$ | | 
+|`\cup`|$\cup$ | | 
+|`\bigcup`|$\bigcup$ | | 
+|`\biguplus`|$\biguplus$ | | 
+|`\sqsubset`|$\sqsubset$ | | 
+|`\sqsubseteq`|$\sqsubseteq$ | | 
+|`\sqsupset`|$\sqsupset$ | | 
+|`\sqsupseteq`|$\sqsupseteq$ | | 
+|`\sqcap`|$\sqcap$ | | 
+|`\sqcup`|$\sqcup$ | | 
+|`\bigsqcup`|$\bigsqcup$ | | 
+
+
+|语法 | 效果 |注释|
+|--|--|
+|`\land`|$\land$ | | 
+|`\wedge`|$\wedge$ | | 
+|`\bigwedge`|$\bigwedge$ | | 
+|`\bar{q} \to p`|$\bar{q} \to p$ | | 
+|`\lor`|$\lor$ | | 
+|`\vee`|$\vee$ | | 
+|`\bigvee`|$\bigvee$ | | 
+|`\lnot`|$\lnot$ | | 
+|`\neg q`|$\neg q$ | | 
+|`\setminus`|$\setminus$ | | 
+|`\smallsetminus`|$\smallsetminus$ | | 
+|`\sqrt{3}`|$\sqrt{3}$ | | 
+|`\sqrt[n]{3}`|$\sqrt[n]{3}$ | | 
+
 ## 二元运算符
 
 ```csharp
@@ -572,6 +690,126 @@ $$
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查26.png) -->
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201852520827850.jpg)
+
+
+|语法 | 效果 |注释|
+|--|--|
+|`\Delta ABC\sim\Delta XYZ`|$\Delta ABC\sim\Delta XYZ$ | | 
+|`\sqrt{3}\approx1.732050808\ldots`|$\sqrt{3}\approx1.732050808\ldots$ | | 
+|`\simeq`|$\simeq$ | | 
+|`\cong`|$\cong$ | | 
+|`\dot=`|$\dot=$ | | 
+|`\ggg`|$\ggg$ | | 
+|`\gg`|$\gg$ | | 
+|`>`|$>$ | | 
+|`\ge`|$\ge$ | | 
+|`\geqq`|$\geqq$ | | 
+|`=`|$=$ | | 
+|`\leq`|$\leq$ | | 
+|`\leqq`|$\leqq$ | | 
+|`\ll`|$\ll$ | | 
+|`\lll`|$\lll$ | | 
+|`(x-y)^2\equiv(-x+y)^2\equiv x^2-2xy+y^2`|$(x-y)^2\equiv(-x+y)^2\equiv x^2-2xy+y^2$ | | 
+|`x\not\equiv N`|$x\not\equiv N$ | | 
+|`x\ne A`|$x\ne A$ | 不等于 | 
+|`x\neq C`|$x\neq C$ | | 
+|`t\propto v`|$t\propto v$ | | 
+|`\pm`|$\pm$ | | 
+|`\mp`|$\mp$ | | 
+|`\Diamond`|$\Diamond$ | 菱形| 
+|`\Box`|$\Box$ |正方形 | 
+|`\Delta`|$\Delta$ | | 
+|`\triangle`|$\triangle$ | | 
+|`\angle\Alpha\Beta\Gamma`|$\angle{\alpha \beta \Gamma}$ | | 
+|`\sin\!\frac{\pi}{3}=\sin60^\operatorname{\omicron}=\frac{\sqrt{3}}{2}`| $\sin \frac{\pi}{3} = \sin60^{\operatorname{\omicron}} =\frac{\sqrt{3}}{2}$ | | 
+|`\perp`|$\perp$ | | 
+|`\leftarrow`|$\leftarrow$ | | 
+|`\gets`|$\gets$ | | 
+|`\rightarrow`|$\rightarrow$ | | 
+|`\to`|$\to$ | | 
+|`\leftrightarrow`|$\leftrightarrow$ | | 
+|`\longleftarrow`|$\longleftarrow$ | | 
+|`\longrightarrow`|$\longrightarrow$ | | 
+|`\mapsto`|$\mapsto$ | | 
+|`\longmapsto`|$\longmapsto$ | | 
+|`\hookrightarrow`|$\hookrightarrow$ | | 
+|`\hookleftarrow`|$\hookleftarrow$ | | 
+|`\nearrow`|$\nearrow$ | |  
+|`\searrow`|$\searrow$ | | 
+|`\swarrow`|$\swarrow$ | | 
+|`\nwarrow`|$\nwarrow$ | | 
+|`\uparrow`|$\uparrow$ | | 
+|`\downarrow`|$\downarrow$ | | 
+|`\updownarrow`|$\updownarrow$ | | 
+|`\rightharpoonup`|$\rightharpoonup$ | | 
+|`\rightharpoondown`|$\rightharpoondown$ | | 
+|`\leftharpoonup`|$\leftharpoonup$ | | 
+|`\leftharpoondown`|$\leftharpoondown$ | | 
+|`\upharpoonleft`|$\upharpoonleft$ | | 
+|`\upharpoonright`|$\upharpoonright$ | | 
+|`\downharpoonleft`|$\downharpoonleft$ | | 
+|`\downharpoonright`|$\downharpoonright$ | | 
+|`\Leftarrow`|$\Leftarrow$ | | 
+|`\Rightarrow`|$\Rightarrow$ | | 
+|`\Leftrightarrow`|$\Leftrightarrow$ | | 
+|`\Longleftarrow`|$\Longleftarrow$ | | 
+|`\Longrightarrow`|$\Longrightarrow$ | | 
+|`\Longleftrightarrow (or \iff)`|$\Longleftrightarrow (or \iff)$ | | 
+|`\Uparrow`|$\Uparrow$ | | 
+|`\Downarrow`|$\Downarrow$ | | 
+|`\Updownarrow`|$\Updownarrow$ | | 
+|`\eth`|$\eth$ | | 
+|`\S`|$\S$ | | 
+|`\P`|![](http://7xqpl8.com1.z0.glb.clouddn.com/246a4e2c-cc8f-497d-860a-7e7287ae38cf2016129195613.jpg) | | 
+|`\%`|$\%$ | | 
+|`\dagger`|$\dagger$ | | 
+|`\ddagger`|$\ddagger$ | | 
+|`\star`|$\star$ | | 
+|`*`|$*$ | | 
+|`\ldots`|$\ldots$ | | 
+|`\smile`|$\smile$ | | 
+|`\frown`|$\frown$ | | 
+|`\wr`|$\wr$ | | 
+|`\oplus`|$\oplus$ | | 
+|`\bigoplus`|$\bigoplus$ | | 
+|`\otimes`|$\otimes$ | | 
+|`\bigotimes`|$\bigotimes$ | | 
+|`\times`|$\times$ | | 
+|`\cdot`|$\cdot$ | | 
+|`\div`|$\div$ | | 
+|`\circ`|$\circ$ | | 
+|`\bullet`|$\bullet$ | | 
+|`\bigodot`|$\bigodot$ | | 
+|`\boxtimes`|$\boxtimes$ | | 
+|`\boxplus`|$\boxplus$ | | 
+|`\triangleleft`|$\triangleleft$ | | 
+|`\triangleright`|$\triangleright$ | | 
+|`\infty`|$\infty$ | 无穷 | 
+|`\bot`|$\bot$ | | 
+|`\top`|$\top$ | | 
+|`\vdash`|$\vdash$ | | 
+|`\vDash`|$\vDash$ | | 
+|`\Vdash`|$\Vdash$ | | 
+|`\models`|$\models$ | | 
+|`\lVert`|$\lVert$ | | 
+|`\rVert`|$\rVert$ | | 
+|`\imath`|$\imath$ | | 
+|`\hbar`|$\hbar$ | | 
+|`\ell`|$\ell$ | | 
+|`\mho`|$\mho$ | | 
+|`\Finv`|$\Finv$ | | 
+|`\Re`|$\Re$ | | 
+|`\Im`|$\Im$ | | 
+|`\wp`|$\wp$ | | 
+|`\complement`|$\complement$ | | 
+|`\diamondsuit`|$\diamondsuit$ | | 
+|`\heartsuit`|$\heartsuit$ | | 
+|`\clubsuit`|$\clubsuit$ | | 
+|`\spadesuit`|$\spadesuit$ | | 
+|`\Game`|$\Game$ | | 
+|`\flat`|$\flat$ | | 
+|`\natural`|$\natural$ | | 
+|`\sharp`|$\sharp$ | | 
 
 ## 定界符
 
