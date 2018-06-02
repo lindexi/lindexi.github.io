@@ -644,6 +644,8 @@
 
  * [wpf 使用 Dispatcher.Invoke 冻结窗口](wpf-使用-Dispatcher.Invoke-冻结窗口.md)
 
+ * [WPF 使用 Edge 浏览器](WPF-使用-Edge-浏览器.md)
+
  * [WPF 使用 SharpDX 在 D3DImage 显示](WPF-使用-SharpDX-在-D3DImage-显示.md)
 
  * [WPF 使用 SharpDx 异步渲染](WPF-使用-SharpDx-异步渲染.md)
