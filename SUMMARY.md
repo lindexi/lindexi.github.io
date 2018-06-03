@@ -356,6 +356,8 @@
 
  * [win10 uwp 异步转同步](win10-uwp-异步转同步.md)
 
+ * [win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序](win10-uwp-手把手教你使用-asp-dotnet-core-做-cs-程序.md)
+
  * [win10 uwp 打开文件管理器选择文件](win10-uwp-打开文件管理器选择文件.md)
 
  * [win10 uwp 拖动控件](win10-uwp-拖动控件.md)
