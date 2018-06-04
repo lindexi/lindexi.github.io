@@ -274,6 +274,8 @@
 
  * [win10 uwp win2d CanvasVirtualControl](win10-uwp-win2d-CanvasVirtualControl.md)
 
+ * [win10 uwp win2d 特效](win10-uwp-win2d-特效.md)
+
  * [win10 uwp win2d 离屏渲染](win10-uwp-win2d-离屏渲染.md)
 
  * [win10 uwp xaml 兼容多个版本条件编译](win10-uwp-xaml-兼容多个版本条件编译.md)
