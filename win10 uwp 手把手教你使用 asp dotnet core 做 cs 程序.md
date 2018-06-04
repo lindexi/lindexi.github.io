@@ -35,6 +35,8 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863101016355)
 
+如果完全没有开发过 UWP 程序，那么请看[win10 uwp 如何开始写 uwp 程序 - CSDN博客](https://blog.csdn.net/lindexi_gd/article/details/80373159 )
+
 ### dotnet standard 
 
 创建一个 dotnet standard 可以让多个项目使用，在这里放一些类的定义。这个项目叫 Model ，名字不是随便叫的。
