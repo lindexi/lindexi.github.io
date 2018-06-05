@@ -149,6 +149,7 @@
         {
             await Task.Run(() =>
             {
+                // 下面代码可能在 CanvasControl_OnDraw 画出 CanvasRenderTarget 会出现 0x88990012 异常，解决方法请看文章最后
                 CanvasDevice device = CanvasDevice.GetSharedDevice();
                 CanvasRenderTarget offscreen = new CanvasRenderTarget(device, width: 100, height: 100, dpi: 96);
                 using (CanvasDrawingSession ds = offscreen.CreateDrawingSession())
@@ -178,6 +179,10 @@
 [Offscreen drawing](http://microsoft.github.io/Win2D/html/Offscreen.htm )
 
 [win2d CanvasRenderTarget vs CanvasBitmap](https://lindexi.gitee.io/post/win2d-CanvasRenderTarget-vs-CanvasBitmap.html )
+
+注意，暗影吉他手告诉我，在 Button_OnClick 的第一句话`CanvasDevice device = CanvasDevice.GetSharedDevice();`，使用 `CanvasDevice.GetSharedDevice()` 是错误写法。在`CanvasControl_OnDraw`里面使用用这个device创建的 CanvasRenderTarget 会弹 `0x88990012` 异常(Objects used together must be created from the same factory instance)。应该在CreateResources里面得到device。在我的设备上面的代码是可以运行，所以暂时不修改。
+
+多谢暗影吉他手发现问题
 
 
 
