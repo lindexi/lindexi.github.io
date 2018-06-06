@@ -274,6 +274,8 @@
 
  * [win10 uwp win2d CanvasVirtualControl](win10-uwp-win2d-CanvasVirtualControl.md)
 
+ * [win10 uwp win2d 使用 Path 绘制界面](win10-uwp-win2d-使用-Path-绘制界面.md)
+
  * [win10 uwp win2d 特效](win10-uwp-win2d-特效.md)
 
  * [win10 uwp win2d 离屏渲染](win10-uwp-win2d-离屏渲染.md)
