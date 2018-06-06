@@ -61,6 +61,12 @@
 
 实际上上面的测试代码很简单，大家也可以自己写出来。
 
+参见：[Viewports and content (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dn423906(v=vs.85).aspx )
+
+[Ink input (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/mt592874(v=vs.85).aspx )
+
+[Ink input (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/mt592874(v=vs.85).aspx )
+
 
 
 

@@ -184,6 +184,8 @@
 
 多谢暗影吉他手发现问题
 
+参见：[Win2D 官方文章系列翻译 - 幕后绘制 - void² - 博客园](https://www.cnblogs.com/validvoid/p/win2d-offscreen-drawing.html )
+
 
 
 
