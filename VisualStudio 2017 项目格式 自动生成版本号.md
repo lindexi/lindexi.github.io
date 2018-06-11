@@ -59,6 +59,14 @@
 </Project>
 ```
 
+因为 `bin\$(Configuration)\$(TargetFramework)` 可以使用 `$(OutputPath)` 替换，上面的代码可以修改为
+
+```csharp
+   <PropertyGroup>
+    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+```
+
 ## 防止警告生成的文件
 
 一些生成的文件会让 VisualStudio 编译时警告，使用下面代码可以让 VisualStudio 不分析生成的文件
