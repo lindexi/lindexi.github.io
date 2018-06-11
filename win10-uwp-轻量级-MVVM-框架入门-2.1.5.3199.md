@@ -35,6 +35,14 @@
 
 这个框架是适合有一个主界面和多个子页面的程序，而且适合多个子页面之间有通信，包括子页面让另一个页面跳转等的框架。
 
+先创建一个 ViewModel 类，表示这是主界面。
+
+```csharp
+    public class ViewModel : NavigateViewModel
+```
+
+然后在 MainPage 添加 ViewModel ，因为需要做导航，所以需要在前台添加 Frame 用来做导航。
+
 
 
 
