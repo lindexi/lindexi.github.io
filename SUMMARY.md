@@ -18,6 +18,8 @@
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
 
+ * [C# TimeSpan 时间计算](C-TimeSpan-时间计算.md)
+
  * [C# ValueTuple 原理](C-ValueTuple-原理.md)
 
  * [C# 不能用于文件名的字符](C-不能用于文件名的字符.md)
@@ -207,6 +209,8 @@
  * [Visual Studio 自定义项目模板](Visual-Studio-自定义项目模板.md)
 
  * [VisualStduio 打断点调试和不打断点调试有什么区别](VisualStduio-打断点调试和不打断点调试有什么区别.md)
+
+ * [VisualStudio 2017 项目格式 自动生成版本号](VisualStudio-2017-项目格式-自动生成版本号.md)
 
  * [VisualStudio csproj 添加 ItemGroup 的 Service ](VisualStudio-csproj-添加-ItemGroup-的-Service-.md)
 
@@ -427,6 +431,8 @@
  * [win10 uwp 资源字典](win10-uwp-资源字典.md)
 
  * [win10 uwp 起源Origin 含源代码](win10-uwp-起源Origin-含源代码.md)
+
+ * [win10 uwp 轻量级 MVVM 框架入门 2.1.5.3199](win10-uwp-轻量级-MVVM-框架入门-2.1.5.3199.md)
 
  * [win10 uwp 进度条 Marquez ](win10-uwp-进度条-Marquez-.md)
 
@@ -835,6 +841,8 @@
  * [开源项目](开源项目.md)
 
  * [微软框架下载](微软框架下载.md)
+
+ * [手把手教你读 dotnet framework 源代码](手把手教你读-dotnet-framework-源代码.md)
 
  * [手机1520 win8.1升级win10](手机1520-win8.1升级win10.md)
 
