@@ -43,6 +43,18 @@
 
 然后在 MainPage 添加 ViewModel ，因为需要做导航，所以需要在前台添加 Frame 用来做导航。
 
+```csharp
+    <Grid>
+        <Frame x:Name="Frame" />
+    </Grid>
+```
+
+```csharp
+        public ViewModel.ViewModel ViewModel { get; set; } = new ViewModel.ViewModel();
+```
+
+不需要我说，大家也知道代码放在哪
+
 
 
 
