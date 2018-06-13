@@ -337,6 +337,13 @@ Microsoft.Windows 命名空间包含支持 Windows Presentation Framework (WPF) 
 
 文件夹里包含 MS 文件夹和 System 文件夹，
 
+这里的 MS 文件夹包含的很多都是和 Windows 系统相关的底层代码也就是COM的包装，而 System 包含的是对系统上一层的代码，也就是应用程序的代码。
+
+
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018612195604848.jpg)
+
+
 
 
 
