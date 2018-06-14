@@ -194,6 +194,9 @@
 
 从上面代码可以发现，实际 DaydrearNenawerlai 没有被优化掉，还是有这个方法。
 
+参见：[.net IL 指令速查 - 飞鸟123 - 博客园](https://www.cnblogs.com/flyingbirds123/archive/2011/01/29/1947626.html )
+
+
 
 
 
