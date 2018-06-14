@@ -172,6 +172,8 @@
 
  * [MobaXterm 使用代理](MobaXterm-使用代理.md)
 
+ * [PTA 6-2 多项式求值](PTA-6-2-多项式求值.md)
+
  * [README](README.md)
 
  * [Resharper 如何把类里的类移动到其他文件](Resharper-如何把类里的类移动到其他文件.md)
