@@ -303,6 +303,8 @@ UWP 检测编码可以使用这个库
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201752215058.jpg)
 
+[如何检测或判断一个文件或字节流（无BOM）是什么编码类型 - 路过秋天 - 博客园](https://www.cnblogs.com/cyq1162/p/9183424.html )
+
 
 
 
