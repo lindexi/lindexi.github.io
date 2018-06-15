@@ -156,6 +156,8 @@
 
  * [git镜像仓库](git镜像仓库.md)
 
+ * [How to use code to exit the application in UWP](How-to-use-code-to-exit-the-application-in-UWP.md)
+
  * [jekyll 在博客添加流程图](jekyll-在博客添加流程图.md)
 
  * [jekyll 如何加密博客 防止抓取](jekyll-如何加密博客-防止抓取.md)
@@ -443,6 +445,8 @@
  * [win10 uwp 进度条 Marquez ](win10-uwp-进度条-Marquez-.md)
 
  * [win10 uwp 进度条 WaveProgressControl](win10-uwp-进度条-WaveProgressControl.md)
+
+ * [win10 uwp 退出程序](win10-uwp-退出程序.md)
 
  * [win10 uwp 选颜色](win10-uwp-选颜色.md)
 
