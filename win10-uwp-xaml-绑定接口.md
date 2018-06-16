@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 早上[快乐 就在你的心](https://kljzndx.github.io/My-Blog/ )问了我一个问题，他使用的属性是显式继承，但是无法在xaml绑定
 
