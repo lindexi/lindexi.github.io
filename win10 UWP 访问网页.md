@@ -7,7 +7,7 @@
 <div id="toc"></div>
 <!-- csdn -->
 
-Windows10 UWP 要访问博客，可以使用`Windows.Web.Http.HttpClient`
+Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`
 
 ```C#
 
