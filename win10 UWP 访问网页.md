@@ -7,7 +7,9 @@
 <div id="toc"></div>
 <!-- csdn -->
 
-Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`
+Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`，下面尝试访问一下我的博客 <http://blog.csdn.net/lindexi_gd/article/details/50392343>
+
+我先在 xaml 添加一个 TextBlock ，这个 TextBlock 是 `tb` 用来拿到我访问页面拿到的内容
 
 ```C#
 
@@ -61,9 +63,9 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`
 
 ```
 
-在前台有一个TextBlock，名字 tb 和 按钮,按钮点击触发上面代码，访问博客，得到的内容放在 tb
+在前台有一个TextBlock，名字是 tb ，界面还有一个 按钮，按钮点击触发上面代码，访问博客，得到的内容放在 tb 显示
 
-界面看起就是
+这时按下 F5 运行，可以看到下面的界面
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732119010.jpg)
 
@@ -122,6 +124,110 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`
 ```
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732119047.jpg)
+
+需要注意 `Windows.Web.Http.HttpClient` 和 `System.Net.Http.HttpClient` 是不相同，请看[揭秘Windows10 UWP中的httpclient接口[2] - 蘑菇先生 - 博客园](https://www.cnblogs.com/mushroom/p/5079964.html ) 和 void 大神写的 [详解 UWP (通用 Windows 平台) 中的两种 HttpClient API](https://validvoid.net/demystifying-httpclient-apis-in-the-uwp/ )
+
+## 设置代理
+
+现在的 UWP 程序只能使用 IE 的代理，而不能自定义代理，虽然存在 httpClientHandler.Proxy 可以设置 IWebProxy ，我也尝试写了自己的本地代理，但是没有访问
+
+```csharp
+    public class WebProxy : IWebProxy
+    {
+        /// <inheritdoc />
+        public Uri GetProxy(Uri destination)
+        {
+            return new Uri("socks5://127.0.0.1:10112");
+        }
+
+        /// <inheritdoc />
+        public bool IsBypassed(Uri host)
+        {
+            return false;
+        }
+
+        /// <inheritdoc />
+        public ICredentials Credentials { get; set; }
+    }
+```
+
+我在 GetProxy 使用断点，在使用下面代码运行，没有进入刚才写的函数
+
+```csharp
+            var httpClientHandler = new HttpClientHandler();
+            httpClientHandler.UseProxy = true;
+            httpClientHandler.Proxy = new WebProxy();
+
+            var httpClient = new HttpClient(httpClientHandler);
+
+            var str = await httpClient.GetStringAsync(new Uri("https://www.google.com"));
+
+            Debug.WriteLine(str);
+```
+
+## WebView
+
+还有一个简单的方法是使用 WebView 就是 Edge 浏览器，所以通过浏览器可以做出更强大的效果。
+
+先在界面添加一个按钮和控件
+
+```csharp
+        <WebView x:Name="TraymorxasluPoocigur"></WebView>
+        <Button HorizontalAlignment="Center" Content="确定" Click="FersamaltaiJearxaltray_OnClick"></Button>
+```
+
+在按钮点击的时候，尝试下面几个方式访问网页
+
+```csharp
+        private void FersamaltaiJearxaltray_OnClick(object sender, RoutedEventArgs e)
+        {
+            TraymorxasluPoocigur.Navigate(new Uri("http://lindexi.github.io"));
+        }
+```
+
+访问解决方案资源
+
+```csharp
+        private void FersamaltaiJearxaltray_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                TraymorxasluPoocigur.Navigate(new Uri("ms-appx:///林德熙.html"));
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception.Message);
+            }
+        }
+```
+
+参见：[win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
+
+访问本地的文件
+
+```csharp
+                var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///林德熙.html"));
+
+                var folder = ApplicationData.Current.LocalFolder;
+
+                var str = await FileIO.ReadTextAsync(file);
+
+                file = await folder.CreateFileAsync("林德熙.html", CreationCollisionOption.ReplaceExisting);
+
+                await FileIO.WriteTextAsync(file, str);
+
+                TraymorxasluPoocigur.Navigate(new Uri("ms-appdata:///local/林德熙.html"));
+```
+
+访问字符串
+
+```csharp
+                var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///林德熙.html"));
+
+                var str = await FileIO.ReadTextAsync(file);
+
+                TraymorxasluPoocigur.NavigateToString(str);
+```
 
 参见：
 [win10 uwp 模拟网页输入](https://lindexi.oschina.io/lindexi/post/win10-uwp-%E6%A8%A1%E6%8B%9F%E7%BD%91%E9%A1%B5%E8%BE%93%E5%85%A5.html )
