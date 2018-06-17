@@ -3,7 +3,8 @@
 有人问，复制一个类所有属性到另一个类有多少方法？这也就是问深克隆有多少个方法，容易想的有三个。直接复制，反射复制，序列化复制。但是性能比较快的有表达式树复制 IL复制两个，本文主要讲最后一个
 
 <!--more-->
-<!-- csdn -->
+
+<!-- 标签：C#,dotnet,Emit -->
 
 关于表达式树复制，参见 [Fast Deep Copy by Expression Trees (C#) - CodeProject](https://www.codeproject.com/Articles/1111658/Fast-Deep-Copy-by-Expression-Trees-C-Sharp)
 

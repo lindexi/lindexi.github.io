@@ -6,11 +6,11 @@
 
 <div id="toc"></div>
 
-UWP有一个功能，可以截图，RenderTargetBitmap
+UWP有一个功能，可以截图，截图使用的类是 RenderTargetBitmap
 
 我们首先写一个Grid，我们需要给他名字，我这里给他`Stamp`，需要名称可以让我们在后面使用截图用到元素。
 
-然后我们可以使用`RenderTargetBitmap`保存我们屏幕Grid显示的
+然后我们可以使用`RenderTargetBitmap`保存我们屏幕Grid显示的元素，请看下面代码
 
 ```csharp
 
@@ -36,11 +36,11 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 ```
 
-` await bitmap.RenderAsync(Stamp);`能把一个UIelement显示转为图片，不过这个图片我们需要用`BitmapEncoder`才可以保存为我们的图片
+`await bitmap.RenderAsync(Stamp);` 能把一个UIelement显示转为图片，不过这个图片我们需要用 `BitmapEncoder` 才可以保存为我们的图片
 
-`BitmapEncoder`可以保存为bmp、jpg、gif、png
+`BitmapEncoder`可以保存为bmp、jpg、gif、png，上面代码保存为 jpg ，但是一般保存为 png 比较好
 
-保存需要使用`SetPixelData` `BitmapPixelFormat pixelFormat, BitmapAlphaMode alphaMode, System.UInt32 width, System.UInt32 height, System.Double dpiX, System.Double dpiY, [Range(0, int.MaxValue)] System.Byte[] pixels`
+保存需要使用`SetPixelData` `BitmapPixelFormat pixelFormat, BitmapAlphaMode alphaMode, System.UInt32 width, System.UInt32 height, System.Double dpiX, System.Double dpiY, [Range(0, int.MaxValue)] System.Byte[] pixels` 参数大概可以使用我的代码，不过上面代码使用的  dpi 不是 96 可能在不同的用户保存的图片不同。不过因为他截图的图片 像素本来就不是和其他的用户相同，所以使用这个方式保存是可以的。
 
 
 我们在Grid放一个Image，然后可以看到，我们的原图
@@ -49,7 +49,7 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 ![这里写图片描述](http://img.blog.csdn.net/20160919160057373)
 
-我们把图片一部分不显示，截图下来看下不显示的是不是就不会在图片
+我们把图片一部分不显示，截图下来看下不显示的是不是就不会在图片。也就是截图是不是只截显示的元素
 
 ```xml
        <Grid x:Name="Stamp" >
@@ -66,13 +66,13 @@ UWP有一个功能，可以截图，RenderTargetBitmap
 
 ![这里写图片描述](http://img.blog.csdn.net/20160919161220562)
 
-假如我们不显示Grid
+假如我们不显示Grid，使用的方法就是让 Grid 被另一个 Grid 挡住，这时对被挡住的Grid截图，看是否还可以拿到 Grid 显示的内容。
 
 ```xml
   <Grid Grid.Row="0" Background="White"></Grid>
 ```
 
-我们的Grid被一个Grid，背景为白色的遮盖，结果没影响
+截图之后可以看到结果没影响
 
 那么我们要显示我们的图片显示全，我们可以借用一个简单的控件
 
@@ -165,6 +165,8 @@ UWP图片水印简单，我们需要一个Image和一个水印，水印在图片
 ```
 
 参见：http://www.zmy123.cn/?p=1257
+
+因为保存的图片比较大，我在找压缩图片的算法，找到了这个博客 [用C#开发一个WinForm版的批量图片压缩工具 - CSDN博客](http://blog.csdn.net/chinacsharper/article/details/9865491 ) 还有 [GDI+ 如何将图片绘制成圆形的图片 - CSDN博客](http://blog.csdn.net/chinacsharper/article/details/50854852 )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 

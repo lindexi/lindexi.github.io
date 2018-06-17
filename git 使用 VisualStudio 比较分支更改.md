@@ -4,9 +4,8 @@
 
 默认的 VisualStudio 比较文件比 github 的用起来好很多，那么如何使用 VisualStudio 作为代码比较？
 
-
+<!-- 标签：git -->
 <!--more-->
-<!-- csdn -->
 
 尝试打开一下 VS ，随意进行对比两个文件。需要找到一个工具，这个工具放在 TeamFoundation 文件夹里，我这里是 VisualStudio 2017 于是我的路径是`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\vsDiffMerge.exe` 可以打开自己的文件夹进行搜索，找到这个软件。
 
@@ -85,8 +84,4 @@ git difftool relase dev -- . ':!resource'
 
 这个命令需要注意，`-- . ':!要忽略的文件夹'` 除了中文，其它的都是需要添加的。
 
-如果不想每次都这样写，另一个方法是打开`.gitattributes`文件夹，在需要的类型后面添加`diff`
-
-```csharp
-
-```
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 

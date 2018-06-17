@@ -1,8 +1,11 @@
+# Latex 论文elsevier，手把手如何用Latex写论文
+
 这几天在开始写论文，准备发的是elsevier，这个网站的instruction有问题，下载的东西基本上好多的错误，所以我就写博客记录。
 
 <!--more-->
 
 <div id="toc"></div>
+<!-- 标签：Latex -->
 
 首先看下：https://www.elsevier.com/authors/author-schemas/latex-instructions
 
@@ -34,7 +37,7 @@ CTex的下载可以在网上搜索或使用我网盘，如果我网盘没法使�
 
 是不是感觉比WinEdt好，如果感觉好的话，那么就去下载，可以到官网[www.texstudio.org](www.texstudio.org)如果上不了就在我这里下。
 
-我们开始使用官方的模板，官方下载位置 [https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip](https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip)可以看到里面没有`ecrc.sty`在我们编译的时候就出错
+我们开始使用官方的模板，官方下载位置 [elsarticle-template.zip](https://www.elsevier.com/__data/assets/file/0007/56842/elsarticle-template.zip) 可以看到里面没有`ecrc.sty`在我们编译的时候就出错
 
 ```csharp
 File `ecrc.sty' not found.
@@ -44,9 +47,9 @@ File `ecrc.sty' not found.
 
 可以去下载我的`ecrc.sty`，下载放在最后，大家如果发现无法下载，就联系我
 
-这个在于我们打开的模板是`ecrc-template.tex`，在官网有下载，[https://www.elsevier.com/__data/assets/text_file/0007/56878/ecrc-template.tex](https://www.elsevier.com/__data/assets/text_file/0007/56878/ecrc-template.tex)
+这个在于我们打开的模板是`ecrc-template.tex`，在官网有下载，[ecrc-template.tex](https://www.elsevier.com/__data/assets/text_file/0007/56878/ecrc-template.tex)
 
-打开之后发现还需要Elsevier-logo-3p.pdf, SDlogo-3p.pdf, Elsevier-logo-5p.pdf and SDlogo-5p.pdf ，都可以在官网下载，下载后需要下载elsarticle.cls，同样官方，[https://www.elsevier.com/__data/assets/text_file/0005/56903/elsarticle.cls](https://www.elsevier.com/__data/assets/text_file/0005/56903/elsarticle.cls)
+打开之后发现还需要Elsevier-logo-3p.pdf, SDlogo-3p.pdf, Elsevier-logo-5p.pdf and SDlogo-5p.pdf ，都可以在官网下载，下载后需要下载elsarticle.cls，同样官方，[elsarticle.cls](https://www.elsevier.com/__data/assets/text_file/0005/56903/elsarticle.cls)
 
 ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=af60a44f45f5a6a31bac45018e8f42ef)
 
@@ -456,6 +459,8 @@ svg转eps http://cn.office-converter.com/SVG-to-EPS
 \end{equation}
 ```
 
+[Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
+
 插入公式：https://www.kancloud.cn/thinkphp/latex/41806
 
 http://mohu.org/info/symbols/symbols.htm
@@ -536,7 +541,7 @@ http://download.csdn.net/detail/lindexi_gd/9795700
 
 http://hubl82.blog.163.com/blog/static/1267694852013459412617/
 
-
+更多数学公式请看 [Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
 
 
 

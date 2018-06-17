@@ -94,7 +94,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
 
-如何去背景请看[win10 UWP ListView](http://lindexi.oschina.io/lindexi//post/win10-UWP-ListView/ )
+如何去背景请看[win10 UWP ListView](https://lindexi.gitee.io/post/win10-UWP-ListView.html )
 
 就是把`ListViewItem`复制，然后去掉`ListViewItemBackgroundPointerOver` 和 `SelectedBackground` `SelectedPointerOverBackground` 就好了。实际把很多属性去掉就可以做出比较好的效果，但是选中的修改颜色还需要后台写。这是我修改的 Template 可以直接复制使用。
 
@@ -156,7 +156,7 @@
         }
 ```
 
-下面就是如何使用这个类，首先需要在 xaml 先写出两个 DataTemplate 。需要注意的是`DataTemplate` 和选择器都是资源，因为资源的获取是有顺序，所以需要先写`DataTemplate`，而且需要给`DataTemplate`一个 key 。然后在写`ListViewDataTemplateSelector`，把刚才写的`DataTemplate`放在`ListViewDataTemplateSelector`的属性FemaleData，MaleData 。注意`ListViewDataTemplateSelector`也需要key，关于资源的寻找，参见[win10 uwp x:Bind 无法获得资源](http://lindexi.oschina.io/lindexi//post/win10-uwp-xBind-%E6%97%A0%E6%B3%95%E8%8E%B7%E5%BE%97%E8%B5%84%E6%BA%90/ )
+下面就是如何使用这个类，首先需要在 xaml 先写出两个 DataTemplate 。需要注意的是`DataTemplate` 和选择器都是资源，因为资源的获取是有顺序，所以需要先写`DataTemplate`，而且需要给`DataTemplate`一个 key 。然后在写`ListViewDataTemplateSelector`，把刚才写的`DataTemplate`放在`ListViewDataTemplateSelector`的属性FemaleData，MaleData 。注意`ListViewDataTemplateSelector`也需要key，关于资源的寻找，参见[win10 uwp x:Bind 无法获得资源](https://lindexi.gitee.io/post/win10-uwp-xBind-%E6%97%A0%E6%B3%95%E8%8E%B7%E5%BE%97%E8%B5%84%E6%BA%90.html)
 一定要有key，然后在ListViewDataTemplateSelector放在FemaleData，MaleData，注意也要key，随便给个名称都好。
 
 ```xml
@@ -208,7 +208,7 @@
 
 如果需要所有源代码，请[联系](mailto:lindexi_gd@163.com)我因为现在csdn上传需要审查，总是无法上传
 
-参见：[win10 uwp 如何使用DataTemplate](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8DataTemplate/ )
+参见：[win10 uwp 如何使用DataTemplate](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8DataTemplate.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 

@@ -9,9 +9,9 @@
 本来在我一个白天晚上按钮，使用图片，图片不清晰
 ![这里写图片描述](http://img.blog.csdn.net/20160729180053912)
 
-这些图片在http://www.zcool.com.cn/，不知道是不是不能直接用
+这些图片在[http://www.zcool.com.cn/](http://www.zcool.com.cn/)下载，不知道是不是不能直接用
 
-我们需要一个看起来不会模糊，因为矢量图，所以我们就使用svg，其实png也是，但是他播放模糊。lindexi
+我们需要一个看起来不会模糊的图，一般都是选矢量图。因为矢量图格式很多，但是比较容易找到的图很少，所以我们就使用svg，其实png也是，但是他播放模糊。lindexi
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -36,7 +36,7 @@
 
 我们开始使用Image，但是没有显示
 
-于是网上有一个库Mntone.SvgForXaml，https://github.com/mntone/SvgForXaml，我们用Nuget
+于是网上有一个库Mntone.SvgForXaml，[https://github.com/mntone/SvgForXaml](https://github.com/mntone/SvgForXaml)，我们用Nuget
 
 ![这里写图片描述](http://img.blog.csdn.net/20160729185702468)
 

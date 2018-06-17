@@ -214,6 +214,16 @@ Application.Current.GetType().GetTypeInfo().Assembly
      object obj = type.Assembly.CreateInstance(type.FullName);
 ```
 
+### 反射私有构造方法
+
+上面说的没有告诉大家如何在 C# 反射私有构造方法创建，下面来告诉大家如何写
+
+首先需要获得构造函数，如果构造函数不是 public 那么就需要使用下面代码获得
+
+```csharp
+
+```
+
 ### 获得方法
 
 获得类型方法
@@ -232,6 +242,22 @@ Application.Current.GetType().GetTypeInfo().Assembly
      methodInfo.Invoke(obj,null);  //参数1类型为object[]，代表方法的对应参数，输入值为null代表没有参数
 ```
 
+###  使用存在 ref 和 out 的函数
+
+如果反射存在 out 参数的函数，那么需要使用 parameters 方法来调用。
+
+如果有一个方法是 foo(out string str) 那么可以使用下面的方法来调用
+
+```csharp
+ var method = type.GetMethod("foo")
+ var parameters = new object[]{""};
+ method.Invoke(null, parameters);//null 需要修改为需要的类
+
+ string str = parameters[0];//这个方式可以拿到值
+```
+
+如果是 ref 也是相同的方法。
+
 ### 获得属性
 
 
@@ -245,6 +271,23 @@ Application.Current.GetType().GetTypeInfo().Assembly
    propertyInfo.SetValue(obj,"cvte",null);                //设置Name属性
 ```
 
+## 静态字段
+
+如果需要使用反射获得静态属性，可以使用下面的代码
+
+```csharp
+type.GetField("foo",
+                    BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static).GetValue(null) //输出 lindexi
+```
+
+foo 的定义请看下面
+
+```csharp
+static class Foo
+{
+    private static readonly string foo="lindexi";  
+}
+```
 
 ### 获得Attribute
 

@@ -5,12 +5,10 @@
 
 ```csharp
     严重性 代码  说明  项目  文件  行   禁止显示状态
-错误      Failed to load 'C:\程序\EncodingNormalior\packages\Microsoft.VSSDK.BuildTools.15.0.26201\tools\VSSDK\bin\VSCT.exe' Assembly. 未能加载文件或程序集“file:///C:\公司\EncodingNormalior\packages\Microsoft.VSSDK.BuildTools.15.0.26201\tools\VSSDK\bin\VSCT.exe”或它的某一个依赖项。系统找不到指定的文件。   EncodingNormalizerVsx
+错误      Failed to load 'C:\程序\EncodingNormalior\packages\Microsoft.VSSDK.BuildTools.15.0.26201\tools\VSSDK\bin\VSCT.exe' Assembly. 未能加载文件或程序集“file:///C:\程序\EncodingNormalior\packages\Microsoft.VSSDK.BuildTools.15.0.26201\tools\VSSDK\bin\VSCT.exe”或它的某一个依赖项。系统找不到指定的文件。   EncodingNormalizerVsx
 ```
 
 <!--more-->
-
-<!-- csdn -->
 
 找不到一个 packages 的文件，或程序集，那么一般就是 nuget 的坑。
 

@@ -10,6 +10,83 @@
 
 开始是从最简单的来说起。
 
+## 需要知道的
+
+### 用户控件
+
+如果有使用用户控件，那么容易被这个坑啦，如果发现自己的绑定失败了，那么需要看一下是不是因为用户控件绑定和其他控件不相同。
+
+先创建一个用户控件 LuenqxuhkRrjbzcf ，这是一个空白的用户控件，只需要修改背景色
+
+```csharp
+    <Grid Background="Coral">
+        <TextBlock Text="lindexi.oschina.io" Margin="135,103,-135,-103"></TextBlock>
+    </Grid>
+```
+
+然后在首页添加这个控件
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018114144020.jpg)
+
+```csharp
+        <local:LuenqxuhkRrjbzcf ></local:LuenqxuhkRrjbzcf>
+```
+
+这时可以看到控件显示，然后把他的 Visbilibity 绑定到 ViewModel 的属性，这时的属性的值是 Collapsed ，所以添加到首页的控件是看不到的
+
+```csharp
+    public class ViewModel
+    {
+        public Visibility AuynPsfqq { get; set; } = Visibility.Collapsed;
+    }
+```
+
+```csharp
+        <local:LuenqxuhkRrjbzcf Visibility="{Binding AuynPsfqq}"></local:LuenqxuhkRrjbzcf>
+
+```
+
+这时可以发现，运行看不到控件，但是如果在用户控件设置了 DataContex 那么绑定就找不到源
+
+```csharp
+        private void LuenqxuhkRrjbzcf_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = this;
+        }
+```
+
+接下来添加两个按钮在首页，一个是设置用户控件的 DataContext ，一个删除，这时可以看到界面出现变化
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%252011123339.gif)
+
+```csharp
+<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="203*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <local:LuenqxuhkRrjbzcf x:Name="IonMjheadyz" Visibility="{Binding AuynPsfqq}" ></local:LuenqxuhkRrjbzcf>
+        <Grid Grid.Row="1">
+            <Button Margin="10,0,0,0" Content="设置用户控件" Click="NefjxuqelLriklu_OnClick"></Button>
+            <Button Content="删除" HorizontalAlignment="Right" Click="SfpgucmgtYserkpend_OnClick" Margin="0,27,86,88"></Button>
+        </Grid>
+        </Grid>
+```
+
+```csharp
+        private void NefjxuqelLriklu_OnClick(object sender, RoutedEventArgs e)
+        {
+            IonMjheadyz.DataContext = this;
+        }
+
+        private void SfpgucmgtYserkpend_OnClick(object sender, RoutedEventArgs e)
+        {
+            IonMjheadyz.ClearValue(DataContextProperty);
+        }
+```
+    
+因为 DataContext 是依赖属性，如果设置依赖属性，那么就是使用自己的值，如果没有就使用上一级的值。绑定的数据就从 DataContext 拿，所以给用户控件设置 DataContext 就会让界面的绑定找不到值，所以绑定失败。
+
 ## 资源绑定
 
 ### page 资源绑定

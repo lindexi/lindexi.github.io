@@ -69,7 +69,7 @@ statusbar.ProgressIndicator.ShowAsync();
 
 参见：http://uwpbox.com/status-bar-at-the-top-of-the-uwp-statusbar.html
 
-参见：http://www.cnblogs.com/tcjiaan/p/4783049.html
+参见：[http://www.cnblogs.com/tcjiaan/p/4783049.html](http://www.cnblogs.com/tcjiaan/p/4783049.html)
 
 ![](http://i.wotula.com/wp.png)
 

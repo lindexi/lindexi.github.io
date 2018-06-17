@@ -1,15 +1,15 @@
 # 控件
 
 Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其中一些有可视化，一些布局。
-一些控件例子：https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics
+一些控件例子：[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics )
 
 <!--more-->
 
 <div id="toc"></div>
 
-我现在做的一个中文版的，很多都是照着微软写，除了注释
+我现在学了一下，给微软做一个中文版的，基本代码都是从微软那里复制，除了注释。
 
-我们先学微软做一个简单的frame，新建Page，
+我们先学微软做一个简单的 frame ，新建 Page ，
 里面放title和跳转页
 
 ```csharp
@@ -54,11 +54,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         private string _title;
     }
 ```
-我们需要把所有页放到一个类，本来这个类可以不弄，直接放Page
-使用索引
-最后我还是想给宝资通打广告
-弄了一个类，本来应该叫page管理器，我叫baozitong
-输入title返回type
+
+我们需要把所有页放到一个类，本来这个类可以不弄，直接放 Page 使用索引，但是最后我还是想给宝资通打广告，于是弄了一个类，本来应该叫 page 管理器，我叫 baozitong ，他只有输入 title 返回 type ，因为导航只能使用 type 不能给对象
 
 ```csharp
        public static Type page(string title)
@@ -85,9 +82,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
            }
        };
 ```
-每次添加page可以在baozitong._page new page
 
-界面splitview
+每次添加`page`可以在`baozitong._page` 写添加的页面
+
+接着请看界面 splitview 
 
 ```xml
         <ToggleButton Grid.Row="0" IsChecked="{Binding ElementName=split,Path=IsPaneOpen,Mode=TwoWay}" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"></ToggleButton>
@@ -118,14 +116,16 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ### App bar
 用于显示应用程序特定命令的工具栏。
 ### App bar button
-使用app bar风格按钮
-一个简单的按钮
+
+使用app bar风格按钮，下面来写一个简单的按钮
 
 ```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center"/>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/82963283.jpg)
-我们可以加上内容
+
+我们可以加上内容，这里不可以添加 Content 但是可以添加图标
 
 ```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center">
@@ -135,8 +135,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 </Grid>
             </AppBarButton>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/51594850.jpg)
-我们可以在按钮加浮出
+
+我们可以在按钮加浮出，请看代码
 
 ```xml
             <AppBarButton Icon="OpenWith" Label="浮出">
@@ -153,9 +155,12 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/93606598.jpg)
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/29257708.jpg)
+
 ### App bar separator
+
 命令栏中的命令组。
-如果我们有很多按钮，我们可以使用
+
+如果我们有很多按钮，我们可以使用下面的代码把按钮分开
 
 ```xml
             <AppBarButton Content="林德熙"></AppBarButton>
@@ -198,9 +203,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </AppBarButton>
         </CommandBar>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/32449489.jpg)
 
-我们也看到最后的按钮，如果有一些用不到，但是有用
+我们也看到最后的按钮，那些用户不是很容易就需要使用的，但是还是有用的按钮就可以放在这里，请看下面
 
 ```xml
             <CommandBar.SecondaryCommands>
@@ -208,6 +214,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 <AppBarButton Label="红黑转载"/>
             </CommandBar.SecondaryCommands>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/15333552.jpg)
 
 ## Buttons
@@ -219,8 +226,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```xml
 <Button Margin="72,163,0,0" Content="请勿转载"></Button>
 ```
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/84807449.jpg)
-按钮点击可以使用`X:Bind`
+
+按钮点击可以使用`X:Bind`，而不是使用命令，这个方法可以绑定 ViewModel 的方法，方法可以添加参数，也可以不添加。
 
 ### Hyperlink
 
@@ -231,17 +240,20 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
            <Hyperlink NavigateUri="http://blog.csdn.net/lindexi_gd"> 博客发在csdn </Hyperlink>，没有授权红黑转载，没有授权推酷转载
         </TextBlock>
 ```
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328093500345)
 
 ### Repeat button
 
 用户点击不停响应。
 
-
 ## Collection/data controls
 
 ### Flip view
+
 幻灯片播放
+
+现在这个类不是很好，暂时也没有发现比较好的做法，因为他无法在播放所有的页之后，回到第一页。
 
 ```xml
       <FlipView>
@@ -249,21 +261,26 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             <Image Source="Assets/QQ截图20160328094435.png"></Image>
       </FlipView>
 ```
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328094747930)
 
-http://www.cnblogs.com/Damai-Pang/p/5201206.html
+[http://www.cnblogs.com/Damai-Pang/p/5201206.html](http://www.cnblogs.com/Damai-Pang/p/5201206.html)
 
 ### Grid view
+
 行列布局，可以水平滚动控件。
 
 
 ### Items control
+
 提供UI指定数据模板
 
 
 ### List view
+
 在一个列表上的项目的集合,可以垂直滚动控件
-我们做一个viewmodel
+
+我们做一个viewmodel，添加列表，这时可以用于绑定，其他关于这个控件，请看 [win10 UWP ListView ](https://lindexi.github.io/lindexi/post/win10-UWP-ListView.html )
 
 ```csharp
     public class viewmodel : notify_property
@@ -274,7 +291,6 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
         }
     }
 ```
-我们依列表
 
 ```csharp
         public ObservableCollection<string> lindexi
@@ -299,22 +315,29 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328095934262)
+
 ## Date and time controls
 ### Calendar date picker
+
 日历日期选择器
+
 ![这里写图片描述](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/images/controls/calendar-date-picker-open.png)
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328100448795)
 
 ### Calendar view
 日程表，让用户选择日期
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328100619968)
 
 ### Time picker
 用户选择一个时间
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328100844891)
 
 ## Flyouts
 ### Flyout
+
 显示一条消息
 
 ```xml
@@ -328,9 +351,11 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
             </Button.Flyout>
         </Button>
 ```
+
 ![这里写图片描述](http://img.blog.csdn.net/20160328101517643)
 
 ### Menu flyout
+
 暂时显示命令或列出选项给用户选择
 
 ```xml
@@ -346,9 +371,11 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 
 ### Popup menu
+
 弹出自己写的菜单
 
 ### Tooltip
+
 提示
 
 ```xml
@@ -358,6 +385,7 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 
 ## Images
 ### Image
+
 图片
 
 ```xml
@@ -365,7 +393,8 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 ```
 ![这里写图片描述](http://img.blog.csdn.net/20160328102111052)
 
-如果需要gif可以 http://www.songsong.org/post/2015/10/11/ImageLib.html
+如果需要gif，请使用 10586 以上或[http://www.songsong.org/post/2015/10/11/ImageLib.html](http://www.songsong.org/post/2015/10/11/ImageLib.html )
+
 ## Graphics and ink
 ### InkCanvas
 
@@ -376,7 +405,8 @@ http://www.cnblogs.com/Damai-Pang/p/5201206.html
 手写
 
 ![这里写图片描述](http://img.blog.csdn.net/20160328104717281)
-保存文件可以去edi.wang
+
+保存文件可以去 [edi.wang](http://edi.wang/) 大神的博客，或我的[win10 uwp 使用油墨输入 ](https://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BD%BF%E7%94%A8%E6%B2%B9%E5%A2%A8%E8%BE%93%E5%85%A5.html )、老周的[将墨迹保存到图像](http://www.cnblogs.com/tcjiaan/p/8010845.html )
 
 ### Shapes
 椭圆,矩形、线、贝塞尔曲线路径

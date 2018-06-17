@@ -207,7 +207,6 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 
 我们先判断是否要检查，如果不要检查，那么就返回对
 
-		
 
 ```csharp
 return !IsMandatory;
@@ -216,8 +215,6 @@ return !IsMandatory;
 
 如果要检查，我们的输入是空，我们要提示用户输入
 
-		
-
 ```csharp
             if (!this.IsMandatory && string.IsNullOrWhiteSpace(this.Text))
             {
@@ -225,24 +222,20 @@ return !IsMandatory;
             }
 
 ```
-ValidationTextBlock就是提示
 
-我们判断，如果输入不是空，就返回，规则判断。
+上面代码的 ValidationTextBlock 就是提示
 
-于是我们改为 如果不检查或输入是不空的，返回true，继续规则
+我们判断，如果输入不是空，就返回规则判断。
 
-如果检查并输入空，我们继续
+于是我们改为 如果不检查或输入是不空的，返回true。如果输入不是为空，继续使用规则代码
 
-输入空，我们提示
-
-		
 
 ```csharp
 ValidationTextBlock.Text = this.MandatoryValidationMessage;
 
 ```
 
-总的
+总的代码请看：
 		
 
 ```csharp
@@ -270,11 +263,9 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 
 ## 长度
 
-我们通过检查验证，我们继续
+我们通过检查验证，我们继续判断，这时我们可以检查长度 `Text.Length > this.MaxLength` ，如果大于长度，不通过，提示用户。
 
-这时我们可以检查长度 `Text.Length > this.MaxLength` 如果大于长度，不通过
 
-		
 
 ```csharp
             bool[] isInvalid = { !this.IsMandatoryFieldValid() };
@@ -299,9 +290,8 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 
 ## 判断
 
-如果输入长度不大于最大，我们判断是否符合要求
+如果输入长度不大于最大可以接受的输入，我们判断是否符合要求，这样写是因为判断长度的速度比后面的判断快
 
-		
 
 ```csharp
                     if (ValidationRules != null)
@@ -319,9 +309,8 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 
 ```
 
-大神写的使用TakeWhile，这判断符合条件，如果符合，返回
+大神写的使用TakeWhile，这函数判断所有的值符合条件。
 
-		
 
 ```csharp
            if (!isInvalid[0])
@@ -373,9 +362,7 @@ ValidationTextBlock.Text = this.MandatoryValidationMessage;
 
 我们需要把判断放到IsInvalid，`IsInvalid = isInvalid[0];`
 
-我们把上面写的做函数，输入改变我们使用
-
-		
+我们把上面写的做函数，输入改变我们使用更新来做判断。因为这个函数是所有的输入都调用，所以可能规则比较慢就会让用户难以输入。
 
 ```csharp
         private void OnTextChanged(object sender, TextChangedEventArgs args)
@@ -449,7 +436,6 @@ ValidationRule只有一个属性，错误显示的Message
 
 然后就是一个函数，判断是否通过
 
-		
 
 ```csharp
 public abstract bool IsValid(object value);
@@ -458,9 +444,8 @@ public abstract bool IsValid(object value);
 
 然后我们可以开始做检查
 
-如DateTime
+如 DateTime 的判断
 
-		
 
 ```csharp
         public override bool IsValid(object value)
@@ -482,9 +467,9 @@ public abstract bool IsValid(object value);
 
 ```
 
-decimal
+还有数字 decimal 判断
 
-		
+
 
 ```csharp
         public override bool IsValid(object value)
@@ -520,7 +505,7 @@ public partial class ValidatingTextBox : TextBox
 
 我们上面用了`remainingCharacters` `ValidationTextBlock` 我们需要把它显示
 
-我们告诉后来写ControlTemplate 我们要remainingCharactersTextBlock ValidationTextBlock，我们给他名字 RemainingCharacters，ValidationText 我们就可以在OnApplyTemplate
+我们告诉后来写 ControlTemplate 我们要`remainingCharactersTextBlock` `ValidationTextBlock`这两个，我们给 xaml 写的资源名字 RemainingCharacters，ValidationText ，我们就可以在 OnApplyTemplate 获得这两个属性
 		
 
 ```csharp
@@ -534,7 +519,7 @@ public partial class ValidatingTextBox : TextBox
 
 ```
 
-但我们需在ValidatingTextBox 	
+但我们需在ValidatingTextBox 的类上面写下面的代码，告诉 xaml 需要有这两个属性，虽然不写也是不会报错的，但是一般都会写。	
 
 ```csharp
     [TemplatePart(Name = "ValidationText", Type = typeof(TextBlock))]
@@ -542,10 +527,10 @@ public partial class ValidatingTextBox : TextBox
 
 ```
 
-垃圾wr做这是做界面的人和做逻辑可以两个人，做界面只要知道有那些控件就好
-TemplatePart是告诉做界面，我的需要名字为Name，类型为什么的控件，你要做前台写这个控件。
+垃圾wr做这是是支持做界面的人和做逻辑可以两个。，做界面只要知道有那些控件就好
+TemplatePart 是告诉做界面，我的需要名字为 Name，类型为什么的控件，你要做前台写这个控件。
 
-我们还需加事件
+写完了界面，我们还需加事件，获得文字修改
 		
 
 ```csharp
@@ -569,9 +554,9 @@ TemplatePart是告诉做界面，我的需要名字为Name，类型为什么的�
 
 ```
 
-我们设Style，没有Key，所有的控件都使用我们写的Style
+我们设Style，他没有Key，这样所有的控件都使用我们写的 Style
 
-我们新建一个资源，只要里面有` <Style TargetType="controls:ValidatingTextBox">`
+我们新建一个资源，只要里面有`<Style TargetType="controls:ValidatingTextBox">`
 
 我们用新建副本，直接复制TextBox的Style，不需要做什么修改。
 

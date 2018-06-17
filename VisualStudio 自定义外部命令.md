@@ -7,7 +7,6 @@
 <!--more-->
 <div id="toc"></div>
 
-<!-- csdn -->
 
 ## 添加命令
 
@@ -19,10 +18,10 @@
 
 例如添加内容是打开 git 、打开资源管理器、打开 git blame
 
-|Title|Command|Arguments|Initial directory|
+|des|Title|Command|Arguments|Initial directory|
 |--|--|--|--|
 |在此仓库运行| Git Bash|	`C:\Program Files\Git\git-bash.exe`|	`"--cd=$(SolutionDir)/.."`|	`"$(SolutionDir)/.."`|
-|在资源管理器中打开仓库|	`C:\Windows\explorer.exe`	|`/select,"$(SolutionDir)\.."`|	`"$(SolutionDir)\.."`|
+|在资源管理器中打开仓库|	`C:\Windows\explorer.exe`	|`/select,"$(SolutionDir)\."`|	`"$(SolutionDir)\."`|
 |追溯这个文件|	`C:\Program Files\TortoiseGit\bin\TortoiseGitBlame.exe`|	`"$(ItemPath)"` |`/line:$(CurLine)`	|`"$(ItemDir)"`|
 |显示此文件的日志|	`C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe`|	`/command:log /path:"$(ItemPath)"`	|`"$(ItemDir)"`|
 

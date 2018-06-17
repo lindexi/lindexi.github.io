@@ -12,7 +12,7 @@
 
 在 UWP 和 wpf ，如果需要创建自己的依赖属性，可以使用代码片，在 VisualStudio 可以使用 `propdp `输入两个 tab 就可以输入依赖属性。
 
-如果有安装 resharper 那么请使用 `dep` 加两个 tab 输入依赖属性。
+<!-- 如果有安装 resharper 那么请使用 `dep` 加两个 tab 输入依赖属性。
 
 一般的依赖属性都是除了类型和名称，其他都一样。如创建一个类型是 string 的 Foo ，请看下面代码。
 
@@ -20,11 +20,45 @@
 
 ```
 
-可以看到 wpf 和 UWP 代码几乎一样。
+可以看到 wpf 和 UWP 代码几乎一样。 -->
 
 本文最后提供修改的代码片，可以解决变量名修改出现的界面绑定不刷新。
 
 
+## UWP
+
+### 什么时候可以获取继承的依赖属性
+
+依赖属性一般是不在构造函数写获取继承的属性的值，因为一般这时拿到的值都是没有继承，请看下面的代码
+
+创建一个用户控件 LuenqxuhkRrjbzcf ，在他的构造函数和加载完成事件添加获得 DataContext 的值
+
+```csharp
+
+  构造： var t = DataContext;
+
+          private void LuenqxuhkRrjbzcf_Loaded(object sender, RoutedEventArgs e)
+        {
+            var t = DataContext;
+        }
+
+```
+
+然后把他加入到其他页面，这个页面设置了 DataContext ，但是运行在构造的断点可以看到拿到的值是空
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%2520111233392018114151411.jpg)
+
+但是可以在加载完成函数拿到
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%2520111233392018114151439.jpg)
+
+那么是在什么时候才可以拿到依赖属性的值？
+
+依赖属性需要在加逻辑树才可以拿到值，所以在加入逻辑树之后，构造函数是类创建，所以这时不能拿依赖属性的值。
+
+### 自定义可继承依赖属性
+
+我找了很久，发现 uwp 不支持 FrameworkPropertyMetadata 所以无法自己定义可以继承的依赖属性
 
 ## WPF 
 
@@ -173,6 +207,8 @@
 这个方法就是获得属性的值更改
 
 但是这个方法会出现内存泄露，可以使用 RemoveValueChanged 清除，为了使用清除，需要写一个函数。
+
+不需要担心清除一个不存在的委托，一般在使用 AddValueChanged 之前都使用 RemoveValueChanged 清除
 
 参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
 

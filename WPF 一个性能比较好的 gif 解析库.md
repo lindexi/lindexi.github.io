@@ -4,6 +4,8 @@
 
 <!--more-->
 <!-- csdn -->
+<!-- 标签：WPF，gif -->
+<div id="toc"></div>
 
 先给大家看一下播放下面这个图片需要的内存。
 
@@ -99,6 +101,8 @@
                 }
             });
 ```
+
+我把最近写的 gif 使用方法写到一个博客，欢迎大家来看这个博客 [WPF 播放 gif](https://lindexi.github.io/lindexi/post/WPF-%E6%92%AD%E6%94%BE-gif.html )
 
 参见：[水印第三版 ~ 变态水印（这次用Magick.NET来实现，附需求分析和源码） - 毒逆天 - 博客园](http://www.cnblogs.com/dunitian/p/5895133.html#undefined )
 

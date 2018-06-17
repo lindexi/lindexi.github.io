@@ -5,8 +5,7 @@
 
 <div id="toc"></div>
 <!-- csdn -->
-
-<!-- stickie -->
+<!-- 标签：uwp,win2d -->
 
 ## 介绍
 
@@ -259,7 +258,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
 添加图片可以`draw.DrawImage` 画出图片，之前需要有图片，需要的是`CanvasBitmap`，如何获得这个？
 
-可以通过
+可以通过下面的三个方法拿到图片
 
 
 ```csharp
@@ -267,8 +266,6 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
     CanvasBitmap.CreateFromColors()
     CanvasBitmap.LoadAsync()
 ```
-
-这些方法得到。
 
 注意：传入的`ICanvasResourceCreator`就是 CanvasControl
 
@@ -279,6 +276,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
             private void Canvas_OnDrawAsync(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
         {
             var draw = args.DrawingSession;
+            // 这是文字
             draw.DrawText("lindexi", Ran.Next(10, 100), Ran.Next(10, 100), 500, 50, r(), new CanvasTextFormat()
             {
                 FontSize = 100
@@ -294,6 +292,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
             }
             else
             {
+                // 这是危险写法，请看 [win10 uwp 异步转同步](https://lindexi.gitee.io/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html )
                 Img().Wait();
             }
 
@@ -309,6 +308,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
             async Task Img()
             {
+                // 加载图片
                 img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));
             }
         }
@@ -318,18 +318,18 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
 创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));`
 
-创建使用的uri参见：[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/)
+创建使用的uri参见：[win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
 
 ## 设置 win2d 背景
 
-win2d 会忽略在 xaml 设置的背景
+win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法设置背景，会在 win2d 忽略
 
 ```csharp
         <xaml:CanvasControl x:Name="canvas" Background="Brown" Draw="Canvas_OnDraw"></xaml:CanvasControl>
 
 ```
 
-上面的代码不会把win2d 的背景设置，因为 win2d 需要设置 `ClearColor `
+上面的代码不会把win2d 的背景设置，因为 win2d 需要设置 `ClearColor `，来画出背景
 
 如果想把 win2d 的背景颜色设置为 白色，那么可以使用下面代码
 
@@ -347,11 +347,15 @@ win2d 会忽略在 xaml 设置的背景
 
 ## 其他博客
 
-win2d 毛玻璃：[win10 uwp 毛玻璃](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83/)
+[鱼哥的 win2d 知乎专栏](https://zhuanlan.zhihu.com/p/37101680 )
 
-[win2d 画出好看的图形](http://lindexi.oschina.io/lindexi/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2/)
+win2d 毛玻璃：[win10 uwp 毛玻璃](https://lindexi.gitee.io/post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83.html )
 
-[win10 uwp 萤火虫效果](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C/ )
+[win2d 画出好看的图形](https://lindexi.gitee.io/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2.html )
+
+[win10 uwp 萤火虫效果](https://lindexi.gitee.io/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
+
+[win2d 图片水印](https://lindexi.gitee.io/post/win2d-%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0.html )
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017888552.jpg)
 

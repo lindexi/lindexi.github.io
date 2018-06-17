@@ -5,7 +5,6 @@
 <!--more-->
 <div id="toc"></div>
 
-<!-- csdn -->
 <!-- 标签：btsync -->
 
 btsync 是分布式网盘
@@ -34,7 +33,7 @@ btsync 把自己的电脑作为网盘，不限空间流量，适合局域网同�
 
 如何使用？
 
-首先下载安装，然后随意给一个名称。[点击下载](https://pan.baidu.com/s/1cBg69S)，如果百度无法下载，可以到[这里](http://download.csdn.net/detail/lindexi_gd/9792343)，下载如果无法下载可以联系我
+首先下载安装，然后随意给一个名称。[点击下载 密码: ns6u](链接: https://pan.baidu.com/s/1c1CFkw4 )，如果百度无法下载，可以到[这里](http://download.csdn.net/detail/lindexi_gd/9792343)，下载如果无法下载可以联系我
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412536.jpg)
 
@@ -173,7 +172,7 @@ vi btsync.conf
       "overwrite_changes" : false, // restore modified files to original version, ONLY for Read-Only folders
       "known_hosts" : // specify hosts to attempt connection without additional search
       [
-        "192.168.1.2:44444" //预定义主机
+        "192.168.1.2:123" //预定义主机
       ]
     }
   ]
@@ -195,15 +194,9 @@ vi btsync.conf
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111191010.jpg)
 
-例如我添加字体文件，点击设置
-
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111191141.jpg)
-
-打开dht和添加主机，这时不需要设置代理就可以下载，不过需要等很久
+例如我添加字体文件，点击设置 打开dht和添加主机，这时不需要设置代理就可以下载，不过需要等很久
 
 如果需要设置代理，那么需要注意默认用的是 socket4 需要设置为支持的代理。
-
-设置主机可以使用我的：23.105.201.4 端口 21782 ，如果还是无法下载那么可以联系我
 
 参见：[BitTorrent Sync Installer 1.4.111](http://getos.org/btsync/14111.html )
 
@@ -220,5 +213,11 @@ https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html?utm_source=tuico
 如果 ip 会变化，那么可以使用 meibu 提供的方法，请看 [http://meibu.com/](http://meibu.com/ )，注册之后就可以使用域名，于是用域名的方法设置服务器就好啦。
 
 如果发现你的局域网无法使用，欢迎联系我。 
+
+## ZeroTier
+
+最简单的方式是使用 ZeroTier ，如何使用请看
+
+[ZeroTier – 无配置，零基础「内网穿透」随时随地连回家/学校/办公室 [跨平台] - 小众软件](https://www.appinn.com/zerotier-one/ )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

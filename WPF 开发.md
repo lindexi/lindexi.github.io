@@ -78,6 +78,61 @@ public partial class App
 }
 ```
 
+## 标记方法被使用
+
+使用 UsedImplicitly 特性可以标记一个没有被引用的方法为反射使用，这时就不会被优化删除。
+
+```csharp
+public class Foo
+{
+    [UsedImplicitly]
+    public Foo()
+    {
+        //反射调用
+    }
+
+    public Foo(string str)
+    {
+        //被引用
+    }
+}
+```
+
+## 当鼠标滑过一个被禁用的元素时，让ToolTip 显示
+
+设置`ToolTipService.ShowOnDisabled`为 true
+
+```csharp
+<Button ToolTipService.ShowOnDisabled="True">  
+```
+
+## 注册全局事件
+
+如果需要注册一个类型的全局事件，如拿到 TextBox 的全局输入，那么可以使用下面代码
+
+```csharp
+EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new RoutedEventHandler(方法));
+```
+
+## 高版本的 WPF 引用低版本类库导致无法启动
+
+如果在一个 .net 4.0 的 WPF 程序引用一个 .net 2.0 的库，那么就会让程序无法运行，解决方法添加`useLegacyV2RuntimeActivationPolicy`
+
+打开 app.config 添加`useLegacyV2RuntimeActivationPolicy="true"`
+
+下面是 app.config 代码
+
+```csharp
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<startup useLegacyV2RuntimeActivationPolicy="true">
+  <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/>
+</startup>
+</configuration>
+```
+
+参见：[WPF 软件引用其他类库启动无反应问题 - 灰色年华 - CSDN博客](http://blog.csdn.net/barry_hui/article/details/78758405 )
+
 ## 非托管使用托管委托
 
 如果有一个 C++ 写的dll，他需要一个函数指针，在C#使用，就可以传入委托。
@@ -192,6 +247,23 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 ## TextBlock 换行
 
 使用 `&#10;`
+
+## 在 xaml 绑定索引空格
+
+如果一个索引需要传入空格，那么在 xaml 使用下面代码是无法绑定
+
+```csharp
+{Binding MyCollection[foo bar]}
+```
+
+需要使用下面代码
+
+```csharp
+{Binding MyCollection[[foo&x20;bar]]}
+```
+
+[Binding to an index with space in XAML – Ivan Krivyakov](https://ikriv.com/blog/?p=1143 )
+
 
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 
