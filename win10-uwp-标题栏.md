@@ -23,6 +23,19 @@
 
 ## 修改颜色
 
+通过下面的方法可以修改颜色 
+
+```csharp
+ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = Color.FromArgb(0xFF, 140, 206, 205);
+            ApplicationView.GetForCurrentView().TitleBar.ButtonForegroundColor = Color.FromArgb(0xFF, 250, 250, 250);
+            ApplicationView.GetForCurrentView().TitleBar.InactiveForegroundColor = Color.FromArgb(0xFF, 250, 250, 250);
+```
+
+除了上面的颜色，还有其他的一些颜色可以修改。建议是把颜色写在 xaml 然后后台去拿。
+
+请看 [UWP中实现自定义标题栏](http://www.cnblogs.com/durow/p/4897773.html )
+
 ## 透明标题栏 系统状态栏
 
 手机是系统状态栏，如果不设置，会是白条，看起来不好。

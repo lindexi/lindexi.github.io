@@ -1,7 +1,7 @@
 
 # win10 UWP 全屏
 
-win10 可以全屏软件或窗口，窗口有一般、最小化、最大化。我们有新的API设置我们软件是全屏，是窗口。我们可以使用`ApplicationView`让我们软件全屏，取消。
+win10 可以全屏软件或窗口，窗口有一般、最小化、最大化。我们有新的API设置我们软件是全屏，是窗口。我们可以使用`ApplicationView`让我们软件全屏或取消。
 
 <!--more-->
 
@@ -25,6 +25,7 @@ else
     view.TryEnterFullScreenMode();
 }
 ```
+
 `IsFullScreenMode`为true，现在应用全屏
 
 `ExitFullScreenMode`退出全屏
@@ -81,26 +82,45 @@ public class IsFullScreenModeTrigger : StateTriggerBase
     </StackPanel>
 </Grid>  
 ```
-在我们应用变为全屏，textblock就会`In full screen mode`
+
+在我们应用变为全屏，textblock就会显示 `In full screen mode`
 
 我们可以设置`PreferredLaunchWindowingMode`，在我们应用打开设置窗口大小
 
 ```csharp
 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
 ```
-ApplicationViewWindowingMode可以`Auto` ,`PreferredLaunchViewSize`设置窗口和`ApplicationView.PreferredLaunchViewSize`，如果没有设置`ApplicationView.PreferredLaunchViewSize`会使用上次关闭窗口， `FullScreen`
+
+ApplicationViewWindowingMode可以`Auto` ,`PreferredLaunchViewSize`设置窗口和`ApplicationView.PreferredLaunchViewSize`，如果没有设置`ApplicationView.PreferredLaunchViewSize`会使用上次关闭窗口， 如`FullScreen`
 
 win10有很简单的API可以应用全屏，在电脑，我们经常用窗口，手机经常使用全屏。
 
-[http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/](http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/ )
+参见：[http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/](http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/ )
 
-对于窗口大小，参见：win10_uwp_she_zhi_qi_dong_chuang_kou_da_xiao_huo_q.md
+<!-- 对于窗口大小，参见：win10_uwp_she_zhi_qi_dong_chuang_kou_da_xiao_huo_q.md -->
+
+## VB 全屏
+
+在点击按钮的时候设置 UWP 窗口在原来全屏的时候变为窗口显示，在窗口显示变为全屏
+
+```csharp
+    Sub FullScreenButton() Handles Button.Click
+        Dim isFullScreen = ApplicationView.GetForCurrentView.IsFullScreenMode
+
+        If isFullScreen Then
+            ApplicationView.GetForCurrentView.ExitFullScreenMode()
+        Else
+            ApplicationView.GetForCurrentView.TryEnterFullScreenMode()
+        End If
+    End Sub
+```
+
 
 ## C++ 全屏
 
 <script src="https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082.js"></script>
 
-[https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082](https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082 )
+参见：[https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082](https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082 )
 
 
 

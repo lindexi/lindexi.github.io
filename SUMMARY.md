@@ -18,6 +18,8 @@
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
 
+ * [C# Task.Run 和 Task.Factory.StartNew 区别](C-Task.Run-和-Task.Factory.StartNew-区别.md)
+
  * [C# TimeSpan 时间计算](C-TimeSpan-时间计算.md)
 
  * [C# ValueTuple 原理](C-ValueTuple-原理.md)
@@ -865,6 +867,8 @@
  * [杀程序员祭天](杀程序员祭天.md)
 
  * [正则表达式30分钟入门教程](正则表达式30分钟入门教程.md)
+
+ * [沙堆模型](沙堆模型.md)
 
  * [添加右键使用 SublimeText 打开](添加右键使用-SublimeText-打开.md)
 
