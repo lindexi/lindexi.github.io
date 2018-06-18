@@ -18,6 +18,8 @@
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
 
+ * [C# powshell 调用](C-powshell-调用.md)
+
  * [C# Span 入门](C-Span-入门.md)
 
  * [C# Task.Run 和 Task.Factory.StartNew 区别](C-Task.Run-和-Task.Factory.StartNew-区别.md)
