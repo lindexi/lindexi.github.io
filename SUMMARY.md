@@ -18,6 +18,8 @@
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
 
+ * [C# Span 入门](C-Span-入门.md)
+
  * [C# Task.Run 和 Task.Factory.StartNew 区别](C-Task.Run-和-Task.Factory.StartNew-区别.md)
 
  * [C# TimeSpan 时间计算](C-TimeSpan-时间计算.md)
