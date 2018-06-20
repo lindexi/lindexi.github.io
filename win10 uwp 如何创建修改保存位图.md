@@ -80,6 +80,8 @@ using (IRandomAccessStream stream = await inputFile.OpenAsync(FileAccessMode.Rea
             }
 ```
 
+这个方法就是把 softwareBitmap 转换为 Stream 的方法
+
 如果在保存需要对图片进行编辑，可以使用 BitmapTransform 进行变换，请看代码
 
 ```csharp
@@ -297,6 +299,24 @@ dataInBytes[bufferLayout.StartIndex + bufferLayout.Stride * i + 4 * j + 3] // A
             }
         }
 ```
+
+## 转换 CanvasBitmap
+
+使用 `CanvasBitmap.CreateFromSoftwareBitmap ` 可以从 SoftwareBitmap 转换为 CanvasBitmap 
+
+```csharp
+var canvasBitmap = CanvasBitmap.CreateFromSoftwareBitmap(device, softwareBitmap);
+```
+
+需要注意，如果 SoftwareBitmap 的像素格式比较诡异，那么不一定能创建
+
+<table><tr><th>sourceBitmap's BitmapPixelFormat</th><th>CanvasBitmap's Format</th></tr><tr><td>BitmapPixelFormat.Unknown</td><td>unsupported</td></tr><tr><td>BitmapPixelFormat.Rgba16</td><td>DirectXPixelFormat.R16G16B16A16UIntNormalized</td></tr><tr><td>BitmapPixelFormat.Rgba8</td><td>DirectXPixelFormat.R8G8B8A8UIntNormalized</td></tr><tr><td>BitmapPixelFormat.Gray16</td><td>unsupported</td></tr><tr><td>BitmapPixelFormat.Gray8</td><td>DirectXPixelFormat.A8UIntNormalized</td></tr><tr><td>BitmapPixelFormat.Bgra8</td><td>DirectXPixelFormat.B8G8R8A8UIntNormalized</td></tr><tr><td>BitmapPixelFormat.Nv12</td><td>unsupported</td></tr><tr><td>BitmapPixelFormat.Yuy2</td><td>unsupported</td></tr></table>
+
+参见：[CanvasBitmap.CreateFromSoftwareBitmap Method
+](https://microsoft.github.io/Win2D/html/M_Microsoft_Graphics_Canvas_CanvasBitmap_CreateFromSoftwareBitmap.htm
+)
+
+
 
 [Create, edit, and save bitmap images - UWP app developer ](https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/imaging )
 

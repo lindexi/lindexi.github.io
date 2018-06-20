@@ -1,4 +1,4 @@
-# C# 控制台创建 Sharpdx 窗口
+# C# 从零开始写 SharpDx 应用 控制台创建 Sharpdx 窗口
 
 本文告诉大家如何在控制台使用 SharpDx 创建窗口。
 
