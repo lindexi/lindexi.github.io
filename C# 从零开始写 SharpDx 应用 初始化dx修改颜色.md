@@ -7,7 +7,7 @@
 <!-- 标签：D2D,DirectX,SharpDX -->
 <div id="toc"></div>
 
-<!-- 草稿 -->
+本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
 
 在[C# 控制台创建 Sharpdx 窗口](https://lindexi.oschina.io/lindexi/post/C-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )已经创建了一个窗口，现在需要在这个窗口画一些图片
 
