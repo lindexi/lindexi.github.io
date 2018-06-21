@@ -56,7 +56,7 @@
 
 第二个在 ViewModel 的属性是 JaslorbafelStojou 但是 xaml 写的是 JaslorbafelStoj ，如果这时看到了输出，就会看到下面代码
 
-```csharp
+```
 System.Windows.Data Error: 40 : BindingExpression path error: 'JaslorbafelStoj' property not found on 'object' ''ViewModel' (HashCode=16468652)'. BindingExpression:Path=JaslorbafelStoj; DataItem='ViewModel' (HashCode=16468652); target element is 'TextBlock' (Name=''); target property is 'Text' (type 'String')
 ```
 
@@ -102,7 +102,7 @@ System.Windows.Data Error: 40 : BindingExpression path error: 'JaslorbafelStoj' 
 
 这时运行代码可以看到输出
 
-```csharp
+```
 [Write]System.Windows.Data Error: 40 : 
 [WriteLine]BindingExpression path error: 'JaslorbafelStoj' property not found on 'object' ''ViewModel' (HashCode=16468652)'. BindingExpression:Path=JaslorbafelStoj; DataItem='ViewModel' (HashCode=16468652); target element is 'TextBlock' (Name=''); target property is 'Text' (type 'String')
 ```

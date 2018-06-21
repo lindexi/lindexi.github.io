@@ -7,7 +7,6 @@
 
 
 <!-- csdn -->
-<!-- 草稿 -->
 <div id="toc"></div>
 
 ## CanvasGeometry
@@ -73,6 +72,20 @@
 <!-- ![](image/win10 uwp win2d 使用 Path 绘制界面/win10 uwp win2d 使用 Path 绘制界面1.png) -->
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186691524212.jpg)
+
+## 画线
+
+从上面的例子已经告诉大家如何画线，使用 BeginFigure 添加起点，然后使用 AddLine 把上一个点和输入的连成直线。
+
+```csharp
+           using (var canvasPathBuilder = new CanvasPathBuilder(args.DrawingSession))
+            {
+                // 这里可以画出 Path 或写出文字 lindexi.github.io
+                canvasPathBuilder.BeginFigure(100, 100);
+                canvasPathBuilder.AddLine(200, 100);
+                canvasPathBuilder.EndFigure(CanvasFigureLoop.Open);
+            }
+```
 
 ## 例子
 
