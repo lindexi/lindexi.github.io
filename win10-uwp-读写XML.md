@@ -21,7 +21,7 @@ xml 一开始一般就是 文档声明
 
 文档声明就是
 
-		
+
 ```csharp
 <?xml version="1.0" encoding="编码方式" standalone="yes|no"?>
 
@@ -88,7 +88,7 @@ XML声明由以下几个部分组成：
 
 如果想在 xml 中获取某个标签，假如我们获取的是 Page.xaml 的 TextBlock ，那么我们可以遍历一次 doc.FirstChild 拿到。这里的 doc 就是从刚才读取的时候拿到的。
 
-		
+
 ```csharp
             var grid = doc.FirstChild.ChildNodes;
             for (var i = 0; i < grid.Count; i++)
@@ -149,7 +149,7 @@ XDocument.Load(new StringReader(str));
 
 我们还是来读一个 xaml ，假如我们想拿出所有的 TextBlock ，那么我们有简单的方法。
 
-		
+
 ```csharp
             var page = doc.Root;
             var name = page.Name.NamespaceName;

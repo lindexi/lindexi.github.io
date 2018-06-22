@@ -168,6 +168,8 @@
 
  * [git镜像仓库](git镜像仓库.md)
 
+ * [How to parse version range](How-to-parse-version-range.md)
+
  * [How to use code to exit the application in UWP](How-to-use-code-to-exit-the-application-in-UWP.md)
 
  * [jekyll 在博客添加流程图](jekyll-在博客添加流程图.md)
