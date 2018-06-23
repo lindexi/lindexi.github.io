@@ -8,7 +8,7 @@ This post will tell you how to parse the version range string to reference versi
 
 
 <!-- csdn -->
-<!-- 标签：C# ，dotnetcore-->
+<!-- 标签：C# ，dotnetcore -->
 
 The format for reference version is like this
 
