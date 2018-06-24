@@ -467,6 +467,18 @@ System.IO.FileNotFoundException occurred
 
 所以只需要不管这个异常就可以
 
+## XmlIgnore 
+
+这个特性表示类的某个属性需要在序列忽略，也就是不使用这个属性
+
+在 xml 序列忽略某个属性就需要在这个属性设置 `[XmlIgnore]` ，请看代码
+
+```csharp
+        [XmlIgnore]
+        public string KawbishumaVaslufeeyairrea { get; set; } = "lindexi.github";
+```
+
+
 参见：
 
 [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - walterlv](https://walterlv.github.io/post/known-nuget-properties-in-csproj.html )
