@@ -7,6 +7,8 @@
 <!-- 标签：D2D,DirectX,SharpDX -->
 <div id="toc"></div>
 
+<!-- math -->
+
 本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
 
 在 [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](https://lindexi.oschina.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E5%88%9D%E5%A7%8B%E5%8C%96dx%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2.html ) 创建了资源，在这个博客的代码继续写
@@ -302,8 +304,58 @@ private D3D11.InputElement[] _inputElements = new D3D11.InputElement[]
         }
 ```
 
+## 设置 ViewPort 
+
+在开始画之前需要先设置 ViewPort ，在 DirectX 使用的坐标是 Normalized Device Coordinates 左上角是 $-1,-1$，右下角是 $1,1$ ，创建私有变量用来放 ViewPort 代码
+
+```csharp
+      private Viewport _viewport;
+
+        private void InitializeDeviceResources()
+        {
+           // 其他被忽略的代码
+
+            _viewport = new Viewport(0, 0, Width, Height);
+            _d3DDeviceContext.Rasterizer.SetViewport(_viewport);
+        }
+```
+
+## 画出顶点
+
+在 Draw 画出顶点
+
+```csharp
+        private void Draw()
+        {
+            _d3DDeviceContext.OutputMerger.SetRenderTargets(_renderTargetView);
+            _d3DDeviceContext.ClearRenderTargetView(_renderTargetView, ColorToRaw4(Color.Coral));
+
+            _d3DDeviceContext.InputAssembler.SetVertexBuffers(0,
+                new D3D11.VertexBufferBinding(_triangleVertexBuffer, Utilities.SizeOf<Vector3>(), 0));
+            _d3DDeviceContext.Draw(_vertices.Length, 0);
+
+            _swapChain.Present(1, PresentFlags.None);
+
+            RawColor4 ColorToRaw4(Color color)
+            {
+                const float n = 255f;
+                return new RawColor4(color.R / n, color.G / n, color.B / n, color.A / n);
+            }
+        }
+```
+
+上面代码 SetVertexBuffers 是告诉 `_d3DDeviceContext` 使用顶点缓存，第二个参数就是告诉每个顶点的长度
+
+使用 `_d3DDeviceContext.Draw` 可以从顶点缓存画出，第二个参数就是指定画出的偏移，从那个顶点开始画，第一个参数是画多少个。如输入 `3,2` 就是从第2个开始画三个
+
+运行代码
+
 参见：[SharpDX Beginners Tutorial Part 4: Drawing a triangle - Johan Falk](http://www.johanfalk.eu/blog/sharpdx-beginners-tutorial-part-4-drawing-a-triangle )
 
 更多博客请看 [SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
+
+![](https://i.loli.net/2018/06/24/5b2f3cb357b4a.jpg)
+
+感谢[三千](https://www.pixiv.net/member_illust.php?mode=medium&illust_id=62951506)提供图片
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
