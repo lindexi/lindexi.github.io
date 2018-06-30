@@ -142,6 +142,8 @@
 
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
 
+ * [dotnet 设计规范 · 抽象类](dotnet-设计规范-·-抽象类.md)
+
  * [dotnet 设计规范 · 数组定义](dotnet-设计规范-·-数组定义.md)
 
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)

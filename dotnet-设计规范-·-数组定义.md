@@ -1,7 +1,7 @@
 
 # dotnet 设计规范 · 数组定义
 
-本文告诉大家数组定义需要知道的原创，本文翻译 [docs  dotnet](https://github.com/dotnet/docs/blob/master/docs/standard/design-guidelines/arrays.md )
+本文告诉大家数组定义需要知道的规范，本文翻译 [docs  dotnet](https://github.com/dotnet/docs/blob/master/docs/standard/design-guidelines/arrays.md )
 
 <!--more-->
 
