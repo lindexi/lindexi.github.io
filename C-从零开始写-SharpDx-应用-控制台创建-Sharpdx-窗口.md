@@ -1,16 +1,15 @@
 
 # C# 从零开始写 SharpDx 应用 控制台创建 Sharpdx 窗口
 
-本文告诉大家如何在控制台使用 SharpDx 创建窗口，这是一个底层的博客，我会用很多博客告诉大家如何从控制台创建一个高性能渲染程序。
+本文告诉大家如何在控制台使用 SharpDx 创建窗口，这是一个底层的博客，我会用很多博客告诉大家如何从控制台创建一个高性能渲染程序
 
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
-<!-- 标签：D2D,DirectX,SharpDX -->
+<!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
 
-如果想看更多关于底层渲染的博客，请点击[渲染 系列](https://lindexi.github.io/lindexi/post/D2D.html )
+如果想看更多关于底层渲染的博客，请点击[渲染系列](https://lindexi.github.io/lindexi/post/D2D.html )
 
 首先创建一个控制台程序，选择 dotnet framework 为 4.5 这样就可以保证下面安装的库可以使用
 

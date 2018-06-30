@@ -7,7 +7,7 @@
 
 
 <!-- csdn -->
-<!-- 标签：D2D,DirectX,SharpDX -->
+<!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
 <div id="toc"></div>
 
 本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
