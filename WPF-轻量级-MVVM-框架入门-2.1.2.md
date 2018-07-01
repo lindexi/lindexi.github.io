@@ -328,6 +328,8 @@
 
 通过发送消息就可以把消息发送到界面
 
+代码：[WPF 轻量级 MVVM 框架入门 2.1.2-CSDN下载](https://download.csdn.net/download/lindexi_gd/10510505 )
+
 参见：
 
 [win10 uwp MVVM入门](https://lindexi.gitee.io/post/win10-uwp-MVVM%E5%85%A5%E9%97%A8.html )
@@ -335,6 +337,8 @@
 [win10 uwp MVVM 轻量框架](https://lindexi.gitee.io/post/win10-uwp-MVVM-%E8%BD%BB%E9%87%8F%E6%A1%86%E6%9E%B6.html )
 
 [win10 uwp MVVM 语义耦合](https://lindexi.gitee.io/post/win10-uwp-MVVM-%E8%AF%AD%E4%B9%89%E8%80%A6%E5%90%88.html )
+
+![](https://i.loli.net/2018/07/01/5b38378f43731.jpg)
 
 
 
