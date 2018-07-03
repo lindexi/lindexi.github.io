@@ -708,6 +708,8 @@
 
  * [WPF 使用封装的 SharpDx 控件](WPF-使用封装的-SharpDx-控件.md)
 
+ * [WPF 修改图片颜色](WPF-修改图片颜色.md)
+
  * [WPF 修改按钮按下的颜色](WPF-修改按钮按下的颜色.md)
 
  * [C＃ 写系统日志](C＃-写系统日志.md)
@@ -877,6 +879,8 @@
  * [安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources](安装visualStudio-出现-cant-install-Microsoft.TeamFoundation.OfficeIntegration.Resources.md)
 
  * [开源项目](开源项目.md)
+
+ * [微软技术支持联系方式](微软技术支持联系方式.md)
 
  * [微软框架下载](微软框架下载.md)
 
