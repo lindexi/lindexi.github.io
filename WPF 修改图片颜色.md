@@ -201,7 +201,264 @@
 
 代码：[WPF 修改图片颜色 1.2-CSDN下载](https://download.csdn.net/download/lindexi_gd/10517437 )
 
+现在的程序看起来还不能使用，尝试添加几个依赖属性，用来修改图片的颜色
 
+<!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色3.png) -->
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018741612135373.jpg)
+
+可以点击这里下载程序
+
+[WPF 修改图片](http://7xqpl8.com1.z0.glb.clouddn.com/WallmadeJexawoPejakairkas.exe)
+
+首先在 xaml 添加几个控件
+
+```csharp
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="485*" />
+            <ColumnDefinition Width="308*" />
+        </Grid.ColumnDefinitions>
+        <Image x:Name="Image" />
+        <Grid Grid.Column="1">
+            <Grid VerticalAlignment="Center">
+                <FrameworkElement.Resources>
+                    <Style TargetType="Slider">
+                        <Setter Property="Width" Value="100" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                        <Setter Property="Margin" Value="10,10,10,10" />
+                        <Setter Property="Minimum" Value="-255" />
+                        <Setter Property="Maximum" Value="255" />
+                    </Style>
+
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Margin" Value="10,10,10,10" />
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                    </Style>
+
+                    <local:DoubleConvert x:Key="DoubleConvert" />
+                </FrameworkElement.Resources>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock>蓝色</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0">绿色</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0">红色</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0">透明度</TextBlock>
+
+                <!-- 蓝色 -->
+                <Slider Grid.Row="0" Grid.Column="1" Value="{Binding Path=Blue,Mode=TwoWay}" />
+                <!-- 绿色 -->
+                <Slider Grid.Row="1" Grid.Column="1" Value="{Binding Path=Green,Mode=TwoWay}" />
+                <!-- 红色 -->
+                <Slider Grid.Row="2" Grid.Column="1" Value="{Binding Path=Red,Mode=TwoWay}" />
+                <!-- 透明度 -->
+                <Slider Grid.Row="3" Grid.Column="1" Value="{Binding Path=Alpha,Mode=TwoWay}" />
+
+                <!-- 蓝色 -->
+                <TextBlock Grid.Row="0" Grid.Column="2"
+                           Text="{Binding Path=Blue,Mode=OneWay,Converter={StaticResource DoubleConvert}}" />
+                <!-- 绿色 -->
+                <TextBlock Grid.Row="1" Grid.Column="2"
+                           Text="{Binding Path=Green,Mode=OneWay,Converter={StaticResource DoubleConvert}}" />
+                <!-- 红色 -->
+                <TextBlock Grid.Row="2" Grid.Column="2"
+                           Text="{Binding Path=Red,Mode=OneWay,Converter={StaticResource DoubleConvert}}" />
+                <!-- 透明度 -->
+                <TextBlock Grid.Row="3" Grid.Column="2"
+                           Text="{Binding Path=Alpha,Mode=OneWay,Converter={StaticResource DoubleConvert}}" />
+            </Grid>
+            <Grid VerticalAlignment="Bottom">
+                <Button Margin="10,10,10,10" Content="替换图片" Click="Button_OnClick" />
+            </Grid>
+        </Grid>
+    </Grid>
+
+```
+
+注意在页面设置数据
+
+```xml
+DataContext="{Binding RelativeSource={RelativeSource Self}}"
+```
+
+然后打开 cs 添加代码
+
+```csharp
+      private WriteableBitmap _writeableBitmap;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            Image.Margin = new Thickness(10, 10, 10, 10);
+
+            var stream = Application.GetResourceStream(new Uri("pack://application:,,,/1.jpg")).Stream;
+
+            ChangeImage(stream);
+
+            DataContext = this;
+        }
+
+        public static readonly DependencyProperty BlueProperty = DependencyProperty.Register(
+            "Blue", typeof(double), typeof(MainWindow),
+            new PropertyMetadata(default(double), (s, e) => ((MainWindow) s).ChangeArray()));
+
+        public double Blue
+        {
+            get { return (double) GetValue(BlueProperty); }
+            set { SetValue(BlueProperty, value); }
+        }
+
+        public static readonly DependencyProperty GreenProperty = DependencyProperty.Register(
+            "Green", typeof(double), typeof(MainWindow),
+            new PropertyMetadata(default(double), (s, e) => ((MainWindow) s).ChangeArray()));
+
+        public double Green
+        {
+            get { return (double) GetValue(GreenProperty); }
+            set { SetValue(GreenProperty, value); }
+        }
+
+        public static readonly DependencyProperty RedProperty = DependencyProperty.Register(
+            "Red", typeof(double), typeof(MainWindow),
+            new PropertyMetadata(default(double), (s, e) => ((MainWindow) s).ChangeArray()));
+
+        public double Red
+        {
+            get { return (double) GetValue(RedProperty); }
+            set { SetValue(RedProperty, value); }
+        }
+
+        public static readonly DependencyProperty AlphaProperty = DependencyProperty.Register(
+            "Alpha", typeof(double), typeof(MainWindow),
+            new PropertyMetadata(default(double), (s, e) => ((MainWindow) s).ChangeArray()));
+
+        public double Alpha
+        {
+            get { return (double) GetValue(AlphaProperty); }
+            set { SetValue(AlphaProperty, value); }
+        }
+
+        private void ChangeImage(Stream stream)
+        {
+            var bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.StreamSource = stream;
+            bitmapImage.EndInit();
+
+            var formatConvertedBitmap = new FormatConvertedBitmap();
+
+            formatConvertedBitmap.BeginInit();
+
+            formatConvertedBitmap.Source = bitmapImage;
+
+            formatConvertedBitmap.DestinationFormat = PixelFormats.Bgra32;
+
+            formatConvertedBitmap.EndInit();
+
+            _writeableBitmap = new WriteableBitmap(formatConvertedBitmap);
+
+            ChangeArray();
+        }
+
+        private unsafe void ChangeArray()
+        {
+            var writeableBitmap = _writeableBitmap;
+
+            if (writeableBitmap == null)
+            {
+                return;
+            }
+
+            writeableBitmap.Lock();
+
+            var length = writeableBitmap.PixelWidth * writeableBitmap.PixelHeight *
+                         writeableBitmap.Format.BitsPerPixel / 8;
+
+            var backBuffer = (byte*) writeableBitmap.BackBuffer;
+
+            var byteList = new byte[length];
+
+            for (int i = 0; i + 4 < length; i = i + 4)
+            {
+                var blue = backBuffer[i];
+                var green = backBuffer[i + 1];
+                var red = backBuffer[i + 2];
+                var alpha = backBuffer[i + 3];
+
+                blue += (byte) Blue;
+                green += (byte) Green;
+                red += (byte) Red;
+                alpha += (byte) Alpha;
+
+                byteList[i] = blue;
+                byteList[i + 1] = green;
+                byteList[i + 2] = red;
+                byteList[i + 3] = alpha;
+            }
+
+            writeableBitmap.Unlock();
+
+
+            writeableBitmap = new WriteableBitmap(writeableBitmap.PixelWidth, writeableBitmap.PixelHeight, 96, 96,
+                writeableBitmap.Format, writeableBitmap.Palette);
+
+            writeableBitmap.Lock();
+
+            writeableBitmap.WritePixels(new Int32Rect(0, 0, writeableBitmap.PixelWidth, writeableBitmap.PixelHeight),
+                byteList, writeableBitmap.BackBufferStride, 0);
+
+            writeableBitmap.AddDirtyRect(new Int32Rect(0, 0, writeableBitmap.PixelWidth, writeableBitmap.PixelHeight));
+            writeableBitmap.Unlock();
+
+            Image.Source = writeableBitmap;
+        }
+
+
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "jpg(*.jpg)|*.jpg";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                var stream = openFileDialog.OpenFile();
+                ChangeImage(stream);
+            }
+        }
+
+    public class DoubleConvert : IValueConverter
+    {
+        /// <inheritdoc />
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is double n)
+            {
+                return n.ToString("0.00");
+            }
+
+            return DependencyProperty.UnsetValue;
+        }
+
+        /// <inheritdoc />
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return null;
+        }
+    }
+```
+
+代码：[WPF 修改图片颜色 2.5-CSDN下载](https://download.csdn.net/download/lindexi_gd/10519934 )
 
 参见：
 
