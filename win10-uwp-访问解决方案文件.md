@@ -45,6 +45,8 @@ var file=await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdate://
 
 WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF使用 参见 [https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396 )
 
+具体请看 [WPF 使用 VisualStudio 2017 项目文件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-VisualStudio-2017-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6.html )
+
 ## C# 访问解决方案文件
 
 如果是命令行，那么可以使用 Resource 放文件，然后读取

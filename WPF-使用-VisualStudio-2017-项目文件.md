@@ -84,6 +84,8 @@
 
 参见：[Pack URIs in WPF ](https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/pack-uris-in-wpf )
 
+[win10 uwp 访问解决方案文件](https://blog.csdn.net/lindexi_gd/article/details/52639803 )
+
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186121956141913.jpg)
 
 
