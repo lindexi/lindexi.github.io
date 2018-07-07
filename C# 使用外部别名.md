@@ -6,11 +6,13 @@
 <!-- csdn -->
 <div id="toc"></div>
 
-在看过 [C# 很少人知道的科技](https://blog.csdn.net/lindexi_gd/article/details/79617425 )的小伙伴就知道，我告诉了大家一些快捷键。
+在看过 [C# 很少人知道的科技](https://blog.csdn.net/lindexi_gd/article/details/79617425 )的小伙伴就知道，我告诉了大家一些关键字，都是很少人发现。
+
+在上一篇文章说到 extern 关键字，只是很简单告诉大家用来做区分两个不同 dll 有相同的命名空间和类，可以使用这个关键字。
 
 在遇到了存在两个 dll 都有相同的命名空间，而且有相同的类的时候，如何同时使用这两个 dll 的类。
 
-这里有两个库 JallzuZowsobouNaboro 和 BemzarGasfourouraCunimor 这两个库有相同的类 Foo 只是里面的函数不相同
+这里有两个库 JallzuZowsobouNaboro 和 BemzarGasfourouraCunimor 这两个库有相同的类 Foo 只是里面的函数不相同。那么如何才可以使用自己需要的 dll 的函数
 
 ```csharp
 
