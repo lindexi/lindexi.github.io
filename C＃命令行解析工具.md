@@ -216,7 +216,40 @@ else
 }
 ```
 
+上面的代码是老的版本，现在更新 2.2.0 版本是需要修改代码
 
+```csharp
+    class Options
+    {
+        // 短参数名称，长参数名称，是否是可选参数，默认值，帮助文本等
+
+        [Option('d', "dir", Required = true, HelpText = "PGN Directory to read.")]
+        public string PgnDir { get; set; }
+
+        // 第二个参数-s
+
+        [Option('s', "step", HelpText = "The maximum steps in PGN game to process.")]
+        public int MaxStep { get; set; }
+    }
+```
+
+原来的 DefaultValue 修改为 Default ，可以传入任何类型
+
+在 Main 函数需要修改代码
+
+```csharp
+            CommandLine.Parser.Default.ParseArguments<Options>(args)
+                .WithParsed(options =>
+                {
+                    var step = options.MaxStep;
+                })
+                .WithNotParsed(errorList =>
+                {
+                    
+                });
+```
+
+在 WithParsed 就是解析成功的委托，在 WithNotParsed 就是解析失败的
 
 如何使用参见：[http://www.cnblogs.com/speeding/archive/2012/08/07/2626066.html](http://www.cnblogs.com/speeding/archive/2012/08/07/2626066.html )
 
