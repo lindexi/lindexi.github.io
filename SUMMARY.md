@@ -222,6 +222,8 @@
 
  * [Roslyn 静态分析](Roslyn-静态分析.md)
 
+ * [Rosyln 如何使用 MSBuild Copy 复制文件](Rosyln-如何使用-MSBuild-Copy-复制文件.md)
+
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
 
  * [Sublime Text 好用的插件](Sublime-Text-好用的插件.md)
