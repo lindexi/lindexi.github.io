@@ -95,8 +95,6 @@ PointerPoint point = e.GetCurrentPoint(btn);
 
 我们可以使用手势，这个需要在控件设置`ManipulationMode="All"`，使用`ManipulationDelta`
 
-		
-
 ```csharp
         private void Button_OnManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
