@@ -28,6 +28,8 @@
 
  * [C# ValueTuple 原理](C-ValueTuple-原理.md)
 
+ * [C# winforms 输入颜色转换颜色名](C-winforms-输入颜色转换颜色名.md)
+
  * [C# 不能用于文件名的字符](C-不能用于文件名的字符.md)
 
  * [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](C-从零开始写-SharpDx-应用-初始化dx修改颜色.md)

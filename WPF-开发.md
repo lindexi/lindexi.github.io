@@ -225,6 +225,20 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
 
 那么在 Release 上为何还可以把程序集放在输出文件夹呢？因为我也不知道原因，如果你知道的话，那么请告诉我一下。
 
+## 使用十进制设置颜色
+
+在 xaml 如果需要使用 十进制设置颜色，请使用下面代码
+
+```csharp
+    <SolidColorBrush x:Key="LikeGreen">
+        <SolidColorBrush.Color>
+            <Color R="100" G="200" B="30" A="100"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+```
+
+[https://stackoverflow.com/a/47952098/6116637](https://stackoverflow.com/a/47952098/6116637 )
+
 ## WPF 判断文件是否隐藏
 
 可以设置一些文件是隐藏文件，那么 WPF 如何判断 FileInfo 是隐藏文件？
