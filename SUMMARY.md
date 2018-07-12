@@ -224,6 +224,10 @@
 
  * [Rosyln 如何使用 MSBuild Copy 复制文件](Rosyln-如何使用-MSBuild-Copy-复制文件.md)
 
+ * [Rosyln 如何基于 Microsoft.NET.Sdk 制作源代码包](Rosyln-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
+
+ * [Rosyln 如何获得一个类的引用](Rosyln-如何获得一个类的引用.md)
+
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
 
  * [Sublime Text 好用的插件](Sublime-Text-好用的插件.md)
