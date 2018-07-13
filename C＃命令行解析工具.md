@@ -132,16 +132,21 @@
 
 ```
 
-然后在主函数
+然后在主函数使用转换
 
 
 ```csharp
     var arguments = CommandLineArgumentParser.Parse(args);
 ```
 
-如果要
 
+如果需要获得参数的信息，可以使用下面代码
 
+```csharp
+var f = arguments.Get("--lindexi").Take();
+```
+
+如命令输入`--lindexi doubi`，上面代码就可以拿到`doubi`，虽然使用这个库的写法不是很好，但是性能很好。下面告诉大家使用另一个方法，十分容易写，但是性能比较差。
 
 第二个方法需要使用 Nuget
 
