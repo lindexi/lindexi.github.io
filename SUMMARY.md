@@ -742,6 +742,8 @@
 
  * [WPF 在 Alt+Tab 隐藏窗口](WPF-在-Alt-Tab-隐藏窗口.md)
 
+ * [WPF 在 DrawingContext 的 push 如何使用](WPF-在-DrawingContext-的-push-如何使用.md)
+
  * [WPF 好看的矢量图标](WPF-好看的矢量图标.md)
 
  * [wpf 如何使用 Magick.NET 播放 gif 图片](wpf-如何使用-Magick.NET-播放-gif-图片.md)
