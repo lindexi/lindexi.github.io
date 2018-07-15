@@ -782,6 +782,8 @@
 
  * [WPF 播放 gif](WPF-播放-gif.md)
 
+ * [WPF 渲染原理](WPF-渲染原理.md)
+
  * [WPF 渲染级别](WPF-渲染级别.md)
 
  * [WPF 省市县3级联动](WPF-省市县3级联动.md)
