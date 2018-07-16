@@ -327,6 +327,30 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 ```
 那么这个消息是怎么发送，在`UIElement.InvalidateVisual`函数会调用`MediaContext.PostRender`这里就发送自定义消息，于是就可以开始渲染
 
+在消息循环是会不断获取消息，这里说的渲染是包括两个方面，一个是 WPF 把内容画到窗口，也就是上面说的自定义消息，还有另一个就是把窗口内容画在屏幕。这两个都是依靠 Windows 消息，只是第一个消息是 WPF 自己发给自己，也就是自己玩的。从 Dispatcher 拿到自定义的消息，就开始执行视觉树的对象，调用对应的绘制，这里是收集到绘制原语，也就是告诉显卡可以怎么画。在底层是通过 `System.Windows.Media.Composition.DUCE` 的 Channel 把数据发送到渲染线程，渲染线程就是使用 Dx 进行绘制。在 Dx 画是使用 MilCore 从渲染线程连接到 Dx 画出来的
+
+在窗口画完之后，会通过 WM_PAINT 告诉 DWM 可以画出窗口 
+
+那么这里 DWM 是什么？请看下面
+
+## 桌面窗口管理
+
+在 Windows 系统，很重要的就是 DWM（Desktop Window Manager）可以把窗口画到屏幕，并且支持窗口做半透明和其他的对其他窗口的视觉处理。
+
+需要知道，发送 WM_PAINT 消息只能通过系统发送而不能通过应用发送，也就是上面说的通过 WM_PAINT 告诉 DWM 可以画出窗口，不是软件主动告诉系统，而是系统会不断刷新。
+
+详细的 WM_PAINT 请看 [WM_PAINT详解和WM_ERASEBKGND - CSDN博客](https://blog.csdn.net/rankun1/article/details/50596634 )
+
+更多请看 [Desktop Window Manager](https://docs.microsoft.com/en-us/windows/desktop/dwm/dwm-overview ) 
+
+## 从控件画出来到屏幕显示
+
+虽然上面写了很多，但是好多小伙伴都不会仔细去看，所以本渣就在这里重新把过程说一遍。需要知道，这里说的省略很多细节，上面的也是有很多细节没有告诉大家。
+
+
+
+
+关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 
 [WPF起步(上) --- WPF是如何把图像画到屏幕上 - CSDN博客](https://blog.csdn.net/eparg/article/details/1930357 )
 
@@ -338,7 +362,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 [WPF Architecture ](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture )
 
+[WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
+
+[WM_PAINT详解和WM_ERASEBKGND - CSDN博客](https://blog.csdn.net/rankun1/article/details/50596634 )
+
 [Sharing Message Loops Between Win32 and WPF ](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/sharing-message-loops-between-win32-and-wpf )
+
+[WM_PAINT message ](https://docs.microsoft.com/zh-cn/windows/desktop/gdi/wm-paint )
 
 
 
