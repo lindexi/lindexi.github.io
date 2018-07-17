@@ -262,6 +262,8 @@
 
  * [VisualStudio csproj 添加 ItemGroup 的 Service ](VisualStudio-csproj-添加-ItemGroup-的-Service-.md)
 
+ * [VisualStudio 使用三个方法启动最新 C# 功能](VisualStudio-使用三个方法启动最新-C-功能.md)
+
  * [VisualStudio 修改配色](VisualStudio-修改配色.md)
 
  * [VisualStudio 合并代码文件](VisualStudio-合并代码文件.md)
