@@ -142,6 +142,8 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201866856257482.jpg)
 
+参见：[第四章(图形篇2) 几何图形CanvasGeometry](https://zhuanlan.zhihu.com/p/39906163 )
+
 
 
 

@@ -480,6 +480,8 @@
 
  * [win10 uwp 读写XML](win10-uwp-读写XML.md)
 
+ * [win10 uwp 调用 Microsoft.Windows.Photos_8wekyb3d8bbwe 应用](win10-uwp-调用-Microsoft.Windows.Photos_8wekyb3d8bbwe-应用.md)
+
  * [win10 uwp 调试软件启动](win10-uwp-调试软件启动.md)
 
  * [win10 uwp 资源字典](win10-uwp-资源字典.md)
