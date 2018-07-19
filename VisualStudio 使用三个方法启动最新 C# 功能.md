@@ -22,7 +22,7 @@
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187162041124256.jpg)
 
-现在就可以使用最新的 C# 做出奇诡的业务
+现在就可以使用最新的 C# 做出奇诡的业务，但是不告诉你除了在 Debug 需要设计还需要切换 Release 也设置，不然在 Debug 下可以使用，但是在 Release 就无法用最新的 C# 代码
 
 ## 第二个方法
 
