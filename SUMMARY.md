@@ -224,13 +224,15 @@
 
  * [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](Roslyn-NameSyntax-的-ToString-和-ToFullString-的区别.md)
 
+ * [Roslyn 使用 Directory.Build.props 文件定义编译](Roslyn-使用-Directory.Build.props-文件定义编译.md)
+
+ * [Roslyn 如何使用 MSBuild Copy 复制文件](Roslyn-如何使用-MSBuild-Copy-复制文件.md)
+
+ * [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](Roslyn-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
+
+ * [Roslyn 如何获得一个类的引用](Roslyn-如何获得一个类的引用.md)
+
  * [Roslyn 静态分析](Roslyn-静态分析.md)
-
- * [Rosyln 如何使用 MSBuild Copy 复制文件](Rosyln-如何使用-MSBuild-Copy-复制文件.md)
-
- * [Rosyln 如何基于 Microsoft.NET.Sdk 制作源代码包](Rosyln-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
-
- * [Rosyln 如何获得一个类的引用](Rosyln-如何获得一个类的引用.md)
 
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
 

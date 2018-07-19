@@ -46,6 +46,12 @@
 
 因为 UWP 编译使用 .netNative ，很多底层都是使用 C++ 写的，所以无法对 UWP 进行反编译
 
+## 下载
+
+[dotPeek32 2018.1.3 CSDN下载](https://download.csdn.net/download/lindexi_gd/10550260 )
+
+[dotPeek64 2018.1.3 CSDN下载](https://download.csdn.net/download/lindexi_gd/10550249 )
+
 
 
 
