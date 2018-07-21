@@ -4,6 +4,7 @@
 
 <!--more-->
 <!-- csdn -->
+<div id="toc"></div>
 
 在看到这两篇博客 [UWP 浏览本地图片及对图片的裁剪 - CSDN博客](https://blog.csdn.net/github_36704374/article/details/60334156 ) ，[uwp圆形头像以及选取本地图片当作头像 - CSDN博客](https://blog.csdn.net/c1518589418/article/details/80102264#commentsedit )都使用到 Launcher 启动 `Microsoft.Windows.Photos_8wekyb3d8bbwe` 传入参数处理图，但是这里的 `Microsoft.Windows.Photos_8wekyb3d8bbwe` 是什么？
 
