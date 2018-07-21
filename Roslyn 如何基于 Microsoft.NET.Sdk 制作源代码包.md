@@ -231,6 +231,10 @@ namespace lindexi
 
 所以在使用这个包就可以自动添加代码
 
+### 自定义打包
+
+虽然本金鱼在上面告诉大家这些变量的名字都需要保持和我说的一样，但是实际大家都想自定义
+
 知道了原理是不是大家就可以写出其他代码，例如我的代码有两个文件 `lindexi.cs` 和 `walterlv.cs` 难道我需要使用两个代码
 
 ```csharp
@@ -302,6 +306,6 @@ namespace lindexi
 
 这个问题已经告诉了垃圾微软，不知道会不会在 VisualStudio 去修复。
 
-如果大家使用了上面说道的工具，就不需要了解这么多，做源代码包很简单
+资源问题坑了[黄腾霄](https://huangtengxiao.gitee.io/ )两天，坑了我一天，所以我才把这个问题在这里和大家说，如果大家使用了上面说道的工具，就不需要了解这么多，做源代码包很简单
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
