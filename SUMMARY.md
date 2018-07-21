@@ -362,6 +362,8 @@
 
  * [win10 uwp 使用动画修改 Grid column 的宽度](win10-uwp-使用动画修改-Grid-column-的宽度.md)
 
+ * [win10 uwp 使用资源在后台创建控件](win10-uwp-使用资源在后台创建控件.md)
+
  * [win10 uwp 依赖属性](win10-uwp-依赖属性.md)
 
  * [win10 uwp 修改CalendarDatePicker图标颜色](win10-uwp-修改CalendarDatePicker图标颜色.md)
