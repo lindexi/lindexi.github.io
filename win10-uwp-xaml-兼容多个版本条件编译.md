@@ -144,6 +144,8 @@ IsApiContractPresent 是在当前系统和低于当前系统返回 true ，IsApi
 
 需要告诉大家，感觉说的 VisualStudio 在 Xaml 报告的错误，实际上这是Resharper的
 
+如果觉得自己需要写的软件的版本比支持条件编译的版本还低，而且也不想写太多条件编译，请看[使用 Microsoft.UI.Xaml 解决 UWP 控件和对老版本 Windows 10 的兼容性问题 - walterlv](https://walterlv.github.io/post/getting-started-with-microsoft-ui-xaml.html )
+
 参见
 
 [Conditional XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml )
