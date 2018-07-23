@@ -236,6 +236,8 @@
 
  * [Roslyn 如何获得一个类的引用](Roslyn-如何获得一个类的引用.md)
 
+ * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
+
  * [Roslyn 静态分析](Roslyn-静态分析.md)
 
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
