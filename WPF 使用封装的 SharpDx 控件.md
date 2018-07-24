@@ -5,7 +5,7 @@
 <!--more-->
 <!-- csdn -->
 <div id="toc"></div>
-<!-- 标签：WPF,D2D,DirectX,SharpDX -->
+<!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->
 
 本文是一个系列，希望大家从第一篇开始看
 

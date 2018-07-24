@@ -4,13 +4,14 @@
 
 <!--more-->
 <!-- csdn -->
+<!-- 标签：WPF,渲染 -->
 
 设置 WPF 使用软件渲染的方法是在 .net framework 3.5 之后才可以的。使用方法很简单，在 Loaded 之后，添加下面代码
 
 ```csharp
-                HwndSource hwndSource = PresentationSource.FromVisual(this) as HwndSource;
-                HwndTarget hwndTarget = hwndSource.CompositionTarget;
-                hwndTarget.RenderMode = RenderMode.SoftwareOnly;
+HwndSource hwndSource = PresentationSource.FromVisual(this) as HwndSource;
+HwndTarget hwndTarget = hwndSource.CompositionTarget;
+hwndTarget.RenderMode = RenderMode.SoftwareOnly;
 ```
 
 默认的 RenderMode 是 默认，也就是如果判断有硬件就在硬件渲染，如果没有就在 CPU 渲染。

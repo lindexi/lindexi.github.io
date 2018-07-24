@@ -6,7 +6,7 @@
 <!-- csdn -->
 
 <!-- <div id="toc"></div> -->
-<!-- 标签：uwp,win2d -->
+<!-- 标签：uwp,win2d,渲染 -->
 
 在之前的入门教程[win10 uwp win2d](https://lindexi.gitee.io/post/win10-uwp-win2d.html )我直接用的是`CanvasControl`，实际上可以使用的画布还有下面两个
 
