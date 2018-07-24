@@ -7,7 +7,7 @@
 
 
 <div id="toc"></div>
-<!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
+<!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D,渲染 -->
 
 如果想看更多关于底层渲染的博客，请点击[渲染系列](https://lindexi.github.io/lindexi/post/D2D.html )
 

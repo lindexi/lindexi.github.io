@@ -7,7 +7,7 @@
 
 
 <!-- csdn -->
-<!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
+<!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D,渲染 -->
 <div id="toc"></div>
 
 <!-- math -->

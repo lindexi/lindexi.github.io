@@ -7,7 +7,7 @@
 
 
 <div id="toc"></div>
-<!-- 标签：WPF，D2D,DirectX -->
+<!-- 标签：WPF，D2D,DirectX，渲染 -->
 
 本文是一个系列
 

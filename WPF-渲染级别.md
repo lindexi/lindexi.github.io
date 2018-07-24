@@ -7,6 +7,7 @@
 
 
 <!-- csdn -->
+<!-- 标签：WPF,渲染 -->
 
 使用 System.Windows.Media.RenderCapability 可以拿到 WPF 的渲染级别
 

@@ -9,6 +9,8 @@
 <!-- csdn -->
 <div id="toc"></div>
 
+<!-- 标签：win2d,uwp,渲染 -->
+
 ## CanvasGeometry
 
 在 win2d ，可以使用 DrawGeometry 的方式画出几何。而路径 Path 就是一种 Geometry 。传入的 CanvasGeometry 参数是不能通过实例创建，需要使用静态工厂创建。

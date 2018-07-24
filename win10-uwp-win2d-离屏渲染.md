@@ -7,7 +7,7 @@
 
 
 <!-- csdn -->
-<!-- 标签：uwp,win2d -->
+<!-- 标签：uwp,win2d,渲染 -->
 
 实际上之前我已经写过一篇博客关于 CanvasRenderTarget ，离屏渲染需要使用到 CanvasRenderTarget 。
 

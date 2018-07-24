@@ -8,7 +8,7 @@
 
 <div id="toc"></div>
 
-<!-- 标签：uwp,DirectComposition，win2d -->
+<!-- 标签：uwp,DirectComposition，win2d,渲染 -->
 
 在 Windows  Vista 就引入了一个服务，桌面窗口管理器[Desktop Window Manager](https://msdn.microsoft.com/en-us/library/windows/desktop/aa969540(v=vs.85).aspx )，虽然从[借助 C++ 进行 Windows 开发](https://msdn.microsoft.com/magazine/dn745861 )博客可以看到 DWM 不是一个好的方法，但是比之前好。
 
