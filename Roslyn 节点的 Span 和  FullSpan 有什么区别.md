@@ -182,6 +182,8 @@ Console.WriteLine(NawraSaw);
 
 对于不同的结点的 Span 是不会存在值的冲突，但是对于 FullSpan 是存在多个节点的覆盖。
 
+实际上使用 Span 转换字符串和使用 FullSpan 转换字符串的方法就和使用 ToString 差不多，请看 [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](https://lindexi.github.io/lindexi/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html )
+
 参见：[Use the .NET Compiler Platform SDK syntax model](https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/work-with-syntax )
 
 [Roslyn](https://github.com/dotnet/roslyn/wiki/Roslyn-Overview )
