@@ -45,6 +45,8 @@
 
 所以 ToFullString 拿到的变量使用 Trim 就是 ToString 拿到的变量
 
+如果好奇本文开始说的  Green 是什么，请看 [理解 Roslyn 中的红绿树（Red-Green Trees） - walterlv](https://walterlv.github.io/post/the-red-green-tree-of-roslyn.html )
+
 
 
 

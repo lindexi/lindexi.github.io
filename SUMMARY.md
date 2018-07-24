@@ -230,6 +230,8 @@
 
  * [Roslyn 使用 Directory.Build.props 文件定义编译](Roslyn-使用-Directory.Build.props-文件定义编译.md)
 
+ * [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](Roslyn-使用-WriteLinesToFile-解决参数过长无法传入.md)
+
  * [Roslyn 如何使用 MSBuild Copy 复制文件](Roslyn-如何使用-MSBuild-Copy-复制文件.md)
 
  * [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](Roslyn-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
@@ -403,6 +405,8 @@
  * [win10 uwp 图标制作器](win10-uwp-图标制作器.md)
 
  * [win10 UWP 圆形等待](win10-UWP-圆形等待.md)
+
+ * [win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪](win10-uwp-在-Canvas-放一个超过大小的元素会不会被裁剪.md)
 
  * [win10 uwp 好看的时间选择控件](win10-uwp-好看的时间选择控件.md)
 
