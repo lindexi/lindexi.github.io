@@ -20,7 +20,7 @@ hwndTarget.RenderMode = RenderMode.SoftwareOnly;
 
 除了想降低性能，估计没有人会设置这个。
 
-最近在做渲染优化，更多博客请看 http://lindexi.gitee.io
+最近在做渲染优化，更多博客请看 [渲染相关](https://lindexi.oschina.io/lindexi/post/%E6%B8%B2%E6%9F%93.html )
 
 [WPF 渲染级别](https://lindexi.oschina.io/lindexi/post/WPF-%E6%B8%B2%E6%9F%93%E7%BA%A7%E5%88%AB.html )
 
