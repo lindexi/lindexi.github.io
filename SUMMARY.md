@@ -150,6 +150,8 @@
 
  * [dotnet core 编程规范](dotnet-core-编程规范.md)
 
+ * [dotnet core 通过修改文件头的方式隐藏控制台窗口](dotnet-core-通过修改文件头的方式隐藏控制台窗口.md)
+
  * [dotnet core 黑科技·String.IndexOf 性能](dotnet-core-黑科技·String.IndexOf-性能.md)
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
@@ -229,6 +231,8 @@
  * [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](Roslyn-NameSyntax-的-ToString-和-ToFullString-的区别.md)
 
  * [Roslyn 使用 Directory.Build.props 文件定义编译](Roslyn-使用-Directory.Build.props-文件定义编译.md)
+
+ * [Roslyn 使用 Target 替换占位符方式生成 nuget 打包](Roslyn-使用-Target-替换占位符方式生成-nuget-打包.md)
 
  * [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](Roslyn-使用-WriteLinesToFile-解决参数过长无法传入.md)
 
