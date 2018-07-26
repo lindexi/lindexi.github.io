@@ -1,6 +1,6 @@
 # WPF 渲染原理
 
-本文告诉大家 WPF 从开发者告诉如何画图像到在屏幕显示的过程
+在 WPF 最主要的就是渲染，因为 WPF 是一个界面框架。想用一篇博客就能告诉大家完整的 WPF 渲染原理是不可能的。本文告诉大家 WPF 从开发者告诉如何画图像到在屏幕显示的过程。本文是从一个很高的地方来看渲染的过程，在本文之后会添加很多博客来告诉大家渲染的细节。
 
 <!--more-->
 <!-- csdn -->
@@ -12,7 +12,7 @@
 
 从 WPF 画图像到屏幕显示是比较复杂的，本渣也不敢说这就是 WPF 的做法，但是看了很多博客，好像都是这么说的，看了代码，好像 WPF 是这样写的。
 
-本文只告诉大家一个模块 milcore ，这个模块是 WPF 的三大核心模块，请让我偷一个图片，下面的图片是从[WPF Architecture](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture ) 找到
+本文的所讲的核心不在 milcore ，这个模块是 WPF 的三大核心模块，请让我偷一个图片，下面的图片是从[WPF Architecture](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture ) 找到
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018715163555502.jpg)
 
@@ -20,11 +20,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 在 WPF 最顶层，显示就是使用 DrawingContext 也就是继承 FrameworkElement 然后重写 OnRender 方法，这就是给普通开发者最底层的画图像方法，这就是在框架的顶层，在这的上面就不属于底层框架的。如在显示上面封装的 Image 等这些。
 
-那么在调用 OnRender 画出内容，是不是 WPF 会立刻显示，如果大家有看 [WPF 使用 Direct2D1 画图入门](https://blog.csdn.net/lindexi_gd/article/details/80387784 )就会发现在渲染是调用 CompositionTarget.Rendering 才知道是什么时候渲染，因为 WPF 是分开渲染和交互，实际的 OnRender 画出的内容的代码是指导渲染，也就是告诉 WPF 如何渲染。那么 WPF 在什么时候渲染就是代码不知道的。为什么 WPF 需要这样做还需要从 WPF 的组成开始说起。
+那么在调用 OnRender 画出内容，是不是 WPF 会立刻显示，如果大家有看 [WPF 使用 Direct2D1 画图入门](https://blog.csdn.net/lindexi_gd/article/details/80387784 )就会发现在渲染是调用 CompositionTarget.Rendering 才知道是什么时候渲染，因为 WPF 是分开渲染和交互，实际的 OnRender 画出的内容的代码是指导渲染，也就是告诉 WPF 如何渲染。那么 WPF 在什么时候渲染就是代码不知道的。为什么 WPF 需要这样做还需要从 WPF 的体系结构开始说起。
 
-我在下面偷了一张图，图片是从[Overview of Windows Presentation Foundation (WPF) Architecture](https://www.c-sharpcorner.com/UploadFile/819f33/overview-of-windows-presentation-foundation-wpf-architectu/ )找到，在 WPF 可以分为三层。第一层就是 WPF 的托管层，这一层的代码都是托管代码。第二层就是 WPF 的非托管层，包括刚才告诉大家的模块。最后一层就是系统核心元素层。下面简单介绍一下 WPF 的框架
+我在下面偷了一张图，图片是从[Overview of Windows Presentation Foundation (WPF) Architecture](https://www.c-sharpcorner.com/UploadFile/819f33/overview-of-windows-presentation-foundation-wpf-architectu/ )找到，在 WPF 可以分为三层。第一层就是 WPF 的托管层，这一层的代码都是托管代码。第二层就是 WPF 的非托管层，包括刚才告诉大家的模块。最后一层就是系统核心元素层。下面简单介绍一下 WPF 的体系结构
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187151612442426.jpg)
+
+如果觉得对 WPF 的体系结构已经足够了解，那么请跳到下一节。
 
 ### 托管层
 
@@ -40,7 +42,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 非托管层用来进行高性能的 DX 渲染和连接非托管层
 
-- milCore.dll 用来作为 WPF 的组合引擎，这时一个使用本地代码编译的库，包含最主要的 Media Integration Layer (MIL) ，作用是封装 Dx 的接口支持 2D 和 3D 的渲染，使用本地代码编译是为了获得最好的性能，而且用在 WPF 上层和底层的 DirextX 和 User32 的接口之间。
+- milCore.dll 用来作为 WPF 的组合引擎，这时一个使用本地代码编译的库，包含最主要的媒体集成层 Media Integration Layer (MIL) 的基础支持，作用是封装 Dx 的接口支持 2D 和 3D 的渲染，使用本地代码编译是为了获得最好的性能，而且用在 WPF 上层和底层的 DirextX 和 User32 的接口之间。值的一说的是在 Windows Vista 的桌面窗口管理器(Desktop Windows Manager，DWM)就是使用milcore.dll渲染桌面的。
 
 - WindowsCodecs.dll 这时另一个底层的图片支持代码，用来支持 WPF 旋转、放大图片等，这是一个使用本地代码编译的，提供了很多图片的加密解密，可以让 WPF 把图片画在屏幕
 
@@ -50,7 +52,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 - User32 提供内存和进程分割，这是一个通用的 API 不止是 WPF 使用，这个库决定一个元素可以在屏幕的哪里显示，也就是窗口显示的最底层的代码就在这。但是这个代码只提供让窗口在哪里显示，如何显示就需要下面的代码
 
-- DirectX 这就是 WPF 渲染的最底层的库，可以渲染 WPF 的几乎所有控件，需要注意 WPF 使用的是 Dx9 或 Dx12 fl9 没有充分使用 Dx 进行画出现代的窗口
+- DirectX 这就是 WPF 渲染的最底层的库，可以渲染 WPF 的几乎所有控件，需要注意 WPF 使用的是 Dx9 或 Dx12 fl9 没有充分使用 Dx 进行画出现代的窗口。
 
 - GDI 这个代码依赖显卡，是进行 CPU 渲染的接口，提供了绘制原语和提高质量
 
@@ -58,6 +60,9 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 - Device Drivers 设备驱动程序是在系统特殊的用来驱动一些硬件
 
+在下面使用到的代码实际都是从最上层拿到的，只有最上层的代码，微软才会开放。而关键的 milCore 代码我还拿不到，只能通过 WinDbg 拿到调用的堆栈。现在还没有完全知道 milCore 的过程，所以也不会在本文告诉大家。
+
+本文的顺序是从消息调度到开发者使用 OnRender 方法给绘制原语，再到如何把绘制原语给渲染线程的过程。从渲染线程调用 milCore ，在通过 milCore 调用 DirectX 的过程就先简单说过。从 DirectX 绘制完成到屏幕显示的过程也是简单告诉大家。
 
 ## 消息循环
 
@@ -347,8 +352,25 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 虽然上面写了很多，但是好多小伙伴都不会仔细去看，所以本渣就在这里重新把过程说一遍。需要知道，这里说的省略很多细节，上面的也是有很多细节没有告诉大家。
 
+在渲染的时候，是需要通过多个方式把渲染的任务放在 Dispather 里，在 WPF 应用内是可以通过 InvalidateVisual 的方法通知，而系统也在不断发送消息告诉一个应用开始渲染。
 
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理0.png) -->
 
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187259253718)
+
+在 Dispatcher 收到消息之后就可以把渲染任务放在队列，按照优先级一个个出队
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理1.png) -->
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187259612416)
+
+这时在 Dispatcher 内部通过渲染的调用就会通过 DispatcherOperation 执行对应的任务
+
+渲染的任务是通过`mscorlib.dll!System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, object state)`触发，从 mscorlib 再次调进 WindowBase ，再从  WindowBase 的 `WindowsBase.dll!System.Windows.Threading.ExceptionWrapper.InternalRealCall(System.Delegate callback, object args, int numArgs)` 调用 ` PresentationFramework.dll!System.Windows.Window.ShowHelper(object booleanBox)` 也就是显示的最近的代码
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理2.png) -->
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201872593025761)
 
 关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 
@@ -367,6 +389,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 [WM_PAINT详解和WM_ERASEBKGND - CSDN博客](https://blog.csdn.net/rankun1/article/details/50596634 )
 
 [Sharing Message Loops Between Win32 and WPF ](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/sharing-message-loops-between-win32-and-wpf )
+
+[1.3 WPF体系结构 - 51CTO.COM](http://book.51cto.com/art/200908/145309.htm )
 
 [WM_PAINT message ](https://docs.microsoft.com/zh-cn/windows/desktop/gdi/wm-paint )
 
