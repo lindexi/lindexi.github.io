@@ -412,6 +412,8 @@
 
  * [win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪](win10-uwp-在-Canvas-放一个超过大小的元素会不会被裁剪.md)
 
+ * [win10 uwp 在 VisualStudio 部署失败，找不到 Windows Phone 可能的原因](win10-uwp-在-VisualStudio-部署失败，找不到-Windows-Phone-可能的原因.md)
+
  * [win10 uwp 好看的时间选择控件](win10-uwp-好看的时间选择控件.md)
 
  * [win10 uwp 如何创建修改保存位图](win10-uwp-如何创建修改保存位图.md)
