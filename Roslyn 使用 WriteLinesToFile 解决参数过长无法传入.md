@@ -76,6 +76,46 @@
 
 在另一个 Target 就是调用辅助程序，需要知道在参数传入的是`$(MSBuildProjectDirectory)`路径的，原因就是刚才写入的文件相对的就是项目所在的文件夹，所以需要从项目所在的文件夹才可以拿到这个文件。
 
+如果是想把文件写在一个临时的文件夹，那么建议使用	`$(IntermediateOutputPath)`文件夹，这个`$(IntermediateOutputPath)`文件夹就是 `obj` 文件夹，建议在这个文件夹里再创建一个文件夹用来放临时的文件。
+
+需要注意，文件同样可以写在`PropertyGroup`里，只是在`PropertyGroup`的引用是使用`$`请看下面代码
+
+```diff
+-  <ItemGroup>
+-    <TextFile Include="Items.txt" />
+-  </ItemGroup>
++  <PropertyGroup>
++    <TextFile>Items.txt</TextFile>
++  </PropertyGroup>
+   <Target Name="WriteToFile">
+-    <WriteLinesToFile File="@(TextFile)" Lines="@(Compile)" Overwrite="true" />
++    <WriteLinesToFile File="$(TextFile)" Lines="@(Compile)" Overwrite="true" />
+   </Target>
+```
+
+因为 PropertyGroup 的内容是不存在 Include 特性，所以需要使用上面的方法
+
+如果写入的文件的文件夹是不存在，就需要先创建，如写入的是 `lindexi\foo.txt` 就需要先判断`lindexi`文件夹是否存在，如果没有判断直接使用就会出现下面代码
+
+```csharp
+严重性	代码	说明	项目	文件	行	禁止显示状态
+错误	MSB3491	未能向文件“obj\Debug\netcoreapp2.0\lindexi\Items.txt”写入命令行。未能找到路径“C:\lindexi\framework\lindexi.Mvvm.framework\obj\Debug\netcoreapp2.0\lindexi\Items.txt”的一部分。	framework	C:\Users\lindexi\.nuget\packages\lindexi.Mvvm.framework\0.1.52-alpha\build\lindexi.Mvvm.framework.targets	11	
+
+``` 
+
+简单创建文件夹的方法是使用 MakeDir 请看下面代码
+
+```xml
+   <PropertyGroup>
+     <TextDirectory>lindexi/</TextDirectory>
+     <TextFile>$(TextDirectory)Items.txt</TextFile>
+   </PropertyGroup>
+   <Target Name="WriteToFile">
+     <MakeDir Condition="!Exists($(TextDirectory))" Directories="$(TextDirectory)"></MakeDir>
+     <WriteLinesToFile File="$(TextFile)" Lines="@(Compile)" Overwrite="true" />
+   </Target>
+```
+
 参见：
 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://walterlv.gitee.io/post/known-properties-in-csproj.html )
 
