@@ -14,6 +14,8 @@
 
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)
 
+ * [C# const 和 readonly 有什么区别](C-const-和-readonly-有什么区别.md)
+
  * [C# double 好用的扩展](C-double-好用的扩展.md)
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
