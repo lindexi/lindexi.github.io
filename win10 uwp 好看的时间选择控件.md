@@ -11,29 +11,29 @@
 
 ![](https://i.loli.net/2018/06/15/5b23b83d42083.gif)
 
-首先需要安装 Nuget ，搜索 `DeanChalk.UWP.TimePicker` 或输入`Install-Package DeanChalk.UWP.TimePicker -Version 1.0.0`
+首先需要安装 Nuget ，搜索 `DeanChalk.UWP.TimePicker` 或输入`Install-Package DeanChalk.UWP.TimePicker -Version 1.0.0` 安装必要的库
 
-然后打开 xaml 先引用然后才可以使用
+几乎所有在 xaml 引用其他大佬的库都需要先添加引用，这里需要添加的引用请看下面代码
 
 ```csharp
     xmlns:deanChalk="using:DeanChalk.UWP.TimePicker"
 
 ```
 
-使用方法很简单
+在加上引用之后要使用这个新的控件是非常简单，只需要下面一句代码
 
 ```csharp
          <deanChalk:TimePicker x:Name="TimePicker" BorderThickness="0"></deanChalk:TimePicker>
 
 ```
 
-这时可以把 TimePicker 的 Time 和原生的 TimePicker 绑定
+这时可以把 TimePicker 的 Time 和原生的 TimePicker 绑定，当然现在绑定了时间控件还不能运行
 
 ```csharp
          <TimePicker Margin="10,10,10,10" HorizontalAlignment="Center" Time="{x:Bind TimePicker.Time,Mode=TwoWay}"></TimePicker>
 ```
 
-如果先运行代码，那么请复制我的代码
+如果要运行代码，那么请复制我的代码
 
 ```csharp
      <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -49,7 +49,7 @@
 
 ```
 
-不需要后台代码，这时运行就可以看到上面的图片
+上面的代码是不需要后台代码，大家只要把代码复制在 MainPage.xaml 文件运行就可以看到上面的图片
 
 这里点击按钮退出软件请看 [How to use code to exit the application in UWP](https://lindexi.oschina.io/lindexi/post/How-to-use-code-to-exit-the-application-in-UWP.html )
 
