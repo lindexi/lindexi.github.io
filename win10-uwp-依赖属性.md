@@ -10,19 +10,7 @@
 
 <div id="toc"></div>
 
-<!-- csdn -->
-
 在 UWP 和 wpf ，如果需要创建自己的依赖属性，可以使用代码片，在 VisualStudio 可以使用 `propdp `输入两个 tab 就可以输入依赖属性。
-
-<!-- 如果有安装 resharper 那么请使用 `dep` 加两个 tab 输入依赖属性。
-
-一般的依赖属性都是除了类型和名称，其他都一样。如创建一个类型是 string 的 Foo ，请看下面代码。
-
-```csharp
-
-```
-
-可以看到 wpf 和 UWP 代码几乎一样。 -->
 
 本文最后提供修改的代码片，可以解决变量名修改出现的界面绑定不刷新。
 
@@ -281,6 +269,8 @@ public $propertyType$ $propertyName$
   set => SetValue($propertyName$Property, value);
 }
 ```
+
+![](https://i.loli.net/2018/07/29/5b5d61367fc0c.jpg)
 
 
 

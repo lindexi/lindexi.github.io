@@ -235,7 +235,7 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 参见：
 [win10 uwp 模拟网页输入](https://lindexi.oschina.io/lindexi/post/win10-uwp-%E6%A8%A1%E6%8B%9F%E7%BD%91%E9%A1%B5%E8%BE%93%E5%85%A5.html )
 
-[如何使用 C# 爬虫获得专栏博客更新排行](http://lindexi.oschina.io/lindexi//post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-C-%E7%88%AC%E8%99%AB%E8%8E%B7%E5%BE%97%E4%B8%93%E6%A0%8F%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E6%8E%92%E8%A1%8C/ )
+[如何使用 C# 爬虫获得专栏博客更新排行 - CSDN博客](https://blog.csdn.net/lindexi_gd/article/details/72516802 )
 
 
 
