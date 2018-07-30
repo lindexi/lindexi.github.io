@@ -25,6 +25,30 @@
 
 如果想知道为什么你安装了一个 Nuget 就可以帮你修改请看[如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - walterlv](https://walterlv.github.io/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html )
 
+虽然知道了使用这个方法可以隐藏控制台，但是这里还是需要告诉大家一些原理。
+
+在使用 C# 编译器，可以通过 csc 加上一个开关 `/t:` 告诉 csc 当前编译出来的是 控制台界面还是图形界面。通过下面不同的代码可以创建不同的软件
+
+```csharp
+/t:exe 创建控制台软件
+/t:winexe 创建图形界面软件
+```
+创建的软件的文件如 exe 或 dll 都是 PE 文件，在 PE 文件有一个 Subsystem 的字段表示了这个 PE 文件是控制台软件还是图形界面。在 PE 文件通过 `Subsystem` 可以告诉系统，现在打开的软件是控制台软件还是图形界面软件，这个值有很多个表示，其中可以使用`IMAGE_SUBSYSTEM_WINDOWS_GUI`表示这是一个 GUI 软件，通过`IMAGE_SUBSYSTEM_WINDOWS_CUI`可以表示这是一个控制台软件。
+
+所以只需要通过修改 PE 文件的方式去告诉系统，这个软件是图形软件，就不会显示控制台。
+
+更多关于 PE 文件请看 [windows PE文件结构及其加载机制 - CSDN博客](https://blog.csdn.net/liuyez123/article/details/51281905 )
+
+[PE文件结构详解 - CSDN博客](https://blog.csdn.net/huanjieshuijing/article/details/5874365 )
+
+[Windows下Console和Win32程序差异-HelloWorld-51CTO博客](http://blog.51cto.com/vanshell/422909 )
+
+[深入理解 Win32 PE 文件格式 - 国立秀才 - 博客园](https://www.cnblogs.com/guolixiucai/p/4809820.html )
+
+更多阅读
+
+[你应该知道的程序集版本 - WeihanLi - 博客园](https://www.cnblogs.com/weihanli/p/assembly-version.html )
+
 
 
 
