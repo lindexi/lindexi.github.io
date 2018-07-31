@@ -123,6 +123,8 @@ $$
         }
 ```
 
+上面代码的 `A.IsZero()` 就是判断 A 是不是为 0 ，在 C# 很难判断 double 是不是为 0 所以需要这个方法
+
 
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 
