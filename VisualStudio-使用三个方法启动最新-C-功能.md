@@ -33,13 +33,13 @@
 
 打开项目的 csproj 文件，在一个`PropertyGroup`随便一个地方添加下面代码
 
-```csharp
+```
 <LangVersion>latest</LangVersion>
 ```
 
 看起来的代码就是
 
-```csharp
+```
  <PropertyGroup>
     <TargetFrameworks>netcoreapp2.0;net47</TargetFrameworks>
     <LangVersion>latest</LangVersion>

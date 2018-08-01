@@ -126,7 +126,7 @@
 
 如果使用了上面的代码可以看到，这个界面按钮是不存在按下的动画，因为没有写 `VisualStateManager` 现在打开 SormarMapay.xaml 在 AlbumContentGrid 添加下面代码
 
-```csharp
+```
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal">
