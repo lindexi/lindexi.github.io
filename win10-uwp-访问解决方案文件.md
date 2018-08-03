@@ -51,7 +51,7 @@ WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF�
 
 
 ```csharp
-    new MemoryStream(resource.res))
+    new MemoryStream(resource.res)
 ```
 
 
