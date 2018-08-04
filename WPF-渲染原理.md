@@ -84,7 +84,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 从上面代码可以看到主要的是 CriticalAttach 函数，请看代码
 
 ```csharp
-   internal IntPtr CriticalAttach(IntPtr hwnd)
+    internal IntPtr CriticalAttach(IntPtr hwnd)
     {
       // 忽略代码
       NativeMethods.WndProc newWndProc = new NativeMethods.WndProc(this.SubclassWndProc); // 创建处理消息

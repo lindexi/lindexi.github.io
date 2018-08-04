@@ -152,6 +152,8 @@
 
  * [dot net double 数组转 float 数组](dot-net-double-数组转-float-数组.md)
 
+ * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
+
  * [dotnet core 编程规范](dotnet-core-编程规范.md)
 
  * [dotnet core 通过修改文件头的方式隐藏控制台窗口](dotnet-core-通过修改文件头的方式隐藏控制台窗口.md)

@@ -7,6 +7,7 @@
 
 
 <!-- csdn -->
+<!-- 标签：Roslyn,MSBuild,编译器 -->
 
 本文是 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 的文章，在阅读本文之前，希望已经知道了大多数关于 msbuild 的知识
 
@@ -294,7 +295,7 @@ StanalurJikecair:
 
 ```
 
-
+![](https://i.loli.net/2018/08/04/5b64febec0b8a.jpg)
 
 
 
