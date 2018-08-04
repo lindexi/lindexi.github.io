@@ -240,6 +240,8 @@
 
  * [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](Roslyn-使用-WriteLinesToFile-解决参数过长无法传入.md)
 
+ * [Roslyn 在项目文件使用条件判断](Roslyn-在项目文件使用条件判断.md)
+
  * [Roslyn 如何使用 MSBuild Copy 复制文件](Roslyn-如何使用-MSBuild-Copy-复制文件.md)
 
  * [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](Roslyn-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
