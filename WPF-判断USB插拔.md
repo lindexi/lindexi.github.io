@@ -35,6 +35,108 @@
 
 这里的 WM.DEVICECHANGE 就是 537 ，关于其他的消息请看[win 消息](https://lindexi.gitee.io/post/win-%E6%B6%88%E6%81%AF.html )
 
+如果需要获得更多的 USB 信息就建议安装 WpfUsbMonitor 通过这个可以简单知道 USB 是否插入
+
+<!-- ![](image/WPF 判断USB插拔/WPF 判断USB插拔0.png) -->
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201885141035318)
+
+使用这个的方法很简单，请看下面代码
+
+```csharp
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            var usbMonitor = new UsbMonitor(this);
+            usbMonitor.UsbUpdate += UsbMonitor_UsbUpdate;
+        }
+
+        private void UsbMonitor_UsbUpdate(object sender, UsbEventArgs e)
+        {
+           Debug.WriteLine($@"
+USB    { e.Action.ToString()}
+USB 名 {e.Name}
+USB 类别{e.Class}
+USB GUID{e.ClassGuid}");
+        }
+```
+
+如果不想安装库，只是需要知道是插入还是拔出，可以使用 WMI 的方法，需要安装 System.Management 更多关于这方面请看 [WPF 读取硬件序列号](https://lindexi.oschina.io/lindexi/post/WPF-%E8%AF%BB%E5%8F%96%E7%A1%AC%E4%BB%B6%E5%BA%8F%E5%88%97%E5%8F%B7.html )
+
+```csharp
+       public MainWindow()
+        {
+            InitializeComponent();
+
+            ManagementEventWatcher watcher = new ManagementEventWatcher();
+            WqlEventQuery query = new WqlEventQuery("SELECT * FROM Win32_VolumeChangeEvent WHERE EventType = 2 or EventType = 3");
+
+            watcher.EventArrived += (s, e) =>
+            {
+                string driveName = e.NewEvent.Properties["DriveName"].Value.ToString();
+                EventType eventType = (EventType) (Convert.ToInt16(e.NewEvent.Properties["EventType"].Value));
+
+                string eventName = Enum.GetName(typeof(EventType), eventType);
+
+                Console.WriteLine("{0}: {1} {2}", DateTime.Now, driveName, eventName);
+            };
+
+            watcher.Query = query;
+            watcher.Start();
+        }
+
+        public enum EventType
+        {
+            Inserted = 2,
+            Removed = 3
+        }
+
+```
+
+如果需要知道是哪个设备进行插拔，可以使用下面方法
+
+```csharp
+     public MainWindow()
+        {
+            InitializeComponent();
+
+            WqlEventQuery insertQuery = new WqlEventQuery("SELECT * FROM __InstanceCreationEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_USBHub'");
+
+            ManagementEventWatcher insertWatcher = new ManagementEventWatcher(insertQuery);
+            insertWatcher.EventArrived += (s, e) =>
+            {
+                Console.WriteLine("插入设备");
+
+                var instance = (ManagementBaseObject) e.NewEvent["TargetInstance"];
+                var description = instance.Properties["Description"];
+
+                Console.WriteLine(description.Name + " = " + description.Value);
+
+                var deviceId = instance.Properties["DeviceID"];
+                Console.WriteLine(deviceId.Name + " = " + deviceId.Value);
+            
+            };
+            insertWatcher.Start();
+
+            WqlEventQuery removeQuery = new WqlEventQuery("SELECT * FROM __InstanceDeletionEvent WITHIN 2 WHERE TargetInstance ISA 'Win32_USBHub'");
+            ManagementEventWatcher removeWatcher = new ManagementEventWatcher(removeQuery);
+            removeWatcher.EventArrived += (s, e) =>
+            {
+                Console.WriteLine("移除设备");
+
+                var instance = (ManagementBaseObject) e.NewEvent["TargetInstance"];
+                var description = instance.Properties["Description"];
+
+                Console.WriteLine(description.Name + " = " + description.Value);
+
+                var deviceId = instance.Properties["DeviceID"];
+                Console.WriteLine(deviceId.Name + " = " + deviceId.Value);
+            };
+            removeWatcher.Start();
+        }
+```
+
 
 
 
