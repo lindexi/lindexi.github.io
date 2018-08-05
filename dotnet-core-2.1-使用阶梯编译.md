@@ -31,7 +31,7 @@
 ```diff
   {
 +      "runtimeOptions": 
-+     {
++      {
 +        "configProperties": 
 +        {
 +          "System.Runtime.TieredCompilation": true
