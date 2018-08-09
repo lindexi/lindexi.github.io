@@ -193,6 +193,140 @@ Soap 序列化程序不支持序列化一般类型: System.EventHandler\`1[Syste
 实际上使用的时候就比直接使用需要加一个新的类，而且不能直接使用`EventHandler<string>` 
 
 为什么不能使用 `EventHandler<string>`  原因是 SoapServerFormatterSinkProvider 不支持泛型，可以使用 BinaryServerFormatterSinkProvider 的方法
+
+下面是总结的使用事件需要注意的点
+
+ - 最好不要使用辣么大做委托
+
+ - 如果需要使用泛型的委托，请设置 `BinaryServerFormatterSinkProvider` 序列方法
+
+ - 最好使用一个本地类让远程进程可见的方法，将远程进程的事件转换为本地的事件
+
+虽然给了一些需要注意的点，但是如果可以按照下面方式进行开发，会少很多坑。
+
+## 开发建议
+
+如果已经在封装好的框架进行开发，在很多的时候，就和使用本地的代码一样。但是对于事件和委托就需要做一层处理。
+
+所以这时就建议开发时写一对类，抽出功能接口的方法。
+
+写一对类的意思就是原来例如是 Xx 类，现在就需要抽出 IXx 接口，使用这个接口来代替原有的类。
+
+例如最简单的功能，我需要通过一个方法触发一个事件，请看下面
+
+```csharp
+    public class XxEventHandle
+    {
+        public void CallHandle()
+        {
+            Progress?.Invoke(null,"123");
+        }
+
+        public event EventHandler<string> Progress;
+    }
+```
+
+现在觉着的方法不清真，想要将这个方法放在另一个进程运行，就需要先将这个类抽出接口
+
+```csharp
+    public interface IRemoteEventHandle
+    {
+        void CallHandle();
+        event EventHandler<string> Progress;
+    }
+```
+
+然后将这个类拆为两个类，一个是 Remote 的运行在远程进程，另一个是 Native 运行在本机。但是对于远程进程是完全知道 Remote 和 Native 的。
+
+<!-- ![](image/.net remoting 使用事件/.net remoting 使用事件1.png) -->
+
+![](https://i.loli.net/2018/08/07/5b6979c41dcd6.jpg)
+
+这时需要先将这几个类都移动到一个新项目，然后右击这个项目属性生成，让生成序列化程序集为开
+
+<!-- ![](image/.net remoting 使用事件/.net remoting 使用事件0.png) -->
+
+![](https://i.loli.net/2018/08/07/5b694bf6020c8.jpg)
+
+```csharp
+System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用非公共或静态方法。”
+```
+
+建议新建的两个类是写在一个文件，而且需要让两个类继承 `MarshalByRefObject` 和接口 `IRemoteEventHandle` ，并且只允许本地的`NativeEventHandle`在构造传入远程的类。
+
+在`RemoteEventHandle`需要添加特性`Serializable`，而另一个特性`Remote`是我自己写的，用来判断这个类是在另一个进程运行，在另一个进程运行就会加载这些类
+
+在用户使用的都是 `IRemoteEventHandle` 而这个接口实例是 `NativeEventHandle` 类，在拿到的事件需要先使用 `NativeEventHandle` 的公开方法去监听 `RemoteEventHandle` 的事件。
+
+```csharp
+    [Remote]
+    [Serializable]
+    public class RemoteEventHandle : MarshalByRefObject, IRemoteEventHandle
+    {
+        public void CallHandle()
+        {
+            Console.WriteLine("调用事件");
+            Progress?.Invoke(null, "欢迎访问我博客 http://blog.csdn.net/lindexi_gd");
+        }
+
+        public event EventHandler<string> Progress;
+    }
+
+    public class NativeEventHandle : MarshalByRefObject, IRemoteEventHandle
+    {
+        /// <inheritdoc />
+        public NativeEventHandle(RemoteEventHandle remoteJesteRinoowi)
+        {
+            RemoteEventHandle = remoteJesteRinoowi;
+        }
+
+        public void CallHandle()
+        {
+            // 使用 NativeEventHandle 的公开方法去拿到 RemoteEventHandle 的事件
+            // 原因 事件需要将代码发送到另一个进程，这就需要让远程支持这个方法的序列化
+            // 如果直接让上层的代码 += 方法就会因为另一个进程不知道上层的代码的序列化出现异常
+            // 为了解决这个问题，就需要先使用这个类定义的方法，这样就可以序列化这个类，让远程知道调用的事件是哪个函数
+            // 然后在这个类的方法再次调用这个类的事件，这时在上层的代码使用了这个类的事件也是没问题，因为这时代码已经是在本地运行，就和原来的事件一样
+            // 原理是使用序列化方法调用，所以需要让方法为公开
+            RemoteEventHandle.Progress += RemoteEventHandle_Progress;
+            RemoteEventHandle.CallHandle();
+        }
+
+        public void RemoteEventHandle_Progress(object sender, string e)
+        {
+            // 如果这个方法是 private 的，就会出现 System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用非公共或静态方法。”
+            Progress?.Invoke(sender, e);
+        }
+
+        public event EventHandler<string> Progress;
+
+        private RemoteEventHandle RemoteEventHandle { get; }
+    }
+```
+
+对于刚才的`Remote`特性请看下面，建议使用[WPF 封装 dotnet remoting 调用其他进程](https://lindexi.gitee.io/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
+
+```csharp
+    /// <summary>
+    ///     共享使用的类，这个类会在远程进程创建
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class)]
+    public class RemoteAttribute : Attribute
+    {
+    }
+```
+
+那么如何在 remoting 使用回调？
+
+原来的开发可能有一些委托回调，如果在 remoting 是不支持使用委托回调的方法，只能通过事件的方法。如果要作为委托，需要写很多代码，这里我就不说了。所有的回调都可以使用事件的方法转换。
+
+如原来的类是有函数回调
+
+```csharp
+        public void SetCallBack(EventHandler callback)
+```
+
+那么如何使用这个回调，实际上在 Remote 将回调转事件就可以
 	
 
 
