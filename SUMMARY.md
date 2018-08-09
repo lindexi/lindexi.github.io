@@ -498,6 +498,8 @@
 
  * [win10 uwp 萤火虫效果](win10-uwp-萤火虫效果.md)
 
+ * [win10 uwp 装机必备应用 含源代码](win10-uwp-装机必备应用-含源代码.md)
+
  * [win10 uwp 让焦点在点击在页面空白处时回到textbox中](win10-uwp-让焦点在点击在页面空白处时回到textbox中.md)
 
  * [win10 uwp 设置 HttpClient 浏览器标识](win10-uwp-设置-HttpClient-浏览器标识.md)
