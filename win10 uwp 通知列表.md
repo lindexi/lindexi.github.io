@@ -139,7 +139,7 @@
 
 代码：http://download.csdn.net/detail/lindexi_gd/9826807
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F%25E5%2588%2597%25E8%25A1%25A8.gif)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F%25E5%2588%2597%25E8%25A1%25A8.gif)
 
 本文同时放在九幽[win10 uwp 通知列表 | Win10.CM](http://www.win10.cm/?p=1224)和自己的[博客](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8/)
 

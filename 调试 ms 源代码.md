@@ -9,15 +9,15 @@
 
 首先打开 dotPeek 然后点击启动符号服务器，所有符号。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798184736.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798184736.jpg)
 
 然后点击工具设置，可以看到这个页面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798185154.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798185154.jpg)
 
 然后打开 VS 工具选项，在调试设置符号，刚才已经复制了，现在添加就好
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20179819559.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20179819559.jpg)
 
 然后还需要去掉微软的服务和本地缓存
 
@@ -27,7 +27,7 @@
 
 只需要在一些函数使用断点，然后堆栈跳转，假如我在 MouseDown 写一个断点，在触发按下，点击堆栈，可以看到外部代码。右击外部代码显示，这样就可以看到 垃圾wr 做的，双击他，可以跳到一个页面，点击加载就可以。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017915151312.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017915151312.jpg)
 
 这时候可以看到 dotPeek 在反编译，这个时间比较长，需要去做一些你喜欢做的事情，回来就可以发现 dotPeek 反编译好而且你看到 ms 源代码，这时候可以尝试源代码断点，但是不是所有地方都可以断点。
 

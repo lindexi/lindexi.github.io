@@ -2,7 +2,7 @@
 
 通过自定义命令，可以在 VisualStudio 加上一些自定义命令，可以快速启动 git 或者做其他的事情
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017102417838.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017102417838.jpg)
 
 <!--more-->
 <div id="toc"></div>
@@ -12,9 +12,9 @@
 
 首先打开工具 外部命令，点击添加，然后在弹出的窗口输入下面内容
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024171253.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024171253.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017102417130.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017102417130.jpg)
 
 例如添加内容是打开 git 、打开资源管理器、打开 git blame
 
@@ -31,11 +31,11 @@
 1. 在对话框中点击 [添加命令]，添加 Tools→外部命令 12345……(就是你之前步骤里显示的那个顺序，从 1 开始计数)；
 1. 点击修改，改个显示的名字，调整下前后顺序。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024175519.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024175519.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024175526.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024175526.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024175552.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024175552.jpg)
 
 ## 在 VisualStudio 添加 Blame
 
@@ -51,11 +51,11 @@
 
 1. 输入标题，标题可以随意写。命令就是 path 安装路径，参数写`$(ItemPath)`
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101010119.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101010119.jpg)
 
 1. 点击添加或移除按钮 自定义
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171010101234.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171010101234.jpg)
 
 1. 添加命令 这里选择工具的外部命令4，外部命令和添加命令所在有关，我这里添加的是第4个
 

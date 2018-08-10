@@ -12,11 +12,11 @@
 
 如果想使用 Resharper 特性，首先需要安装一些类。最简单方法是随便写一个类，然后继承`INotifyPropertyChanged`按 alt+Enter选择 Implement InotifyPropertyChanged ，请看下面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184251127266332.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184251127266332.jpg)
 
 现在 Resharper 会问你是不是要在项目添加特性，点击确定
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425112939438.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018425112939438.jpg)
 
 可以看到项目有 Annotations.cs ，这个类就是特性
 
@@ -26,17 +26,17 @@
 
 表示属性或参数可能为空，返回值可能为空。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184251132503207.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184251132503207.jpg)
 
 使用了这个特性，就可以告诉 Resharper 在使用这个属性、参数之前需要先判断是不是空。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425113574576.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018425113574576.jpg)
 
 ## NotNullAttribute
 
 和上面的不同，这个表示这个参数属性不为空。但是如果是公开的接口，还是需要判断。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184251138269628.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184251138269628.jpg)
 
 标记了参数 NotNull 是告诉调用的时候不要传入为空，函数还是需要判断传入是否空。
 
@@ -46,7 +46,7 @@
 
 表示一个列表的所有参数都不为空
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184251150427793.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184251150427793.jpg)
 
 如果判断一个项为空，就会提示这个为true，一般用在函数返回
 
@@ -54,7 +54,7 @@
 
 和上面不同，表示列表可能存空的
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425115133496.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018425115133496.jpg)
 
 如果不判断是否空的就使用，会告诉可能这个参数异常，这个很多人都在函数返回使用
 
@@ -126,7 +126,7 @@
     }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184251410312081.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184251410312081.jpg)
 
 除了标记在类 LocalizationRequiredAttribute 也可以标记属性
 
@@ -140,7 +140,7 @@
     }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201842514121763.jpg)
+![](http://image.acmx.xyz/lindexi%2F201842514121763.jpg)
 
 ## CannotApplyEqualityOperatorAttribute
 
@@ -151,7 +151,7 @@
     public class DwdThfck
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425141438995.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018425141438995.jpg)
 
 一般用在两个不能用来判断大小和相等的类。
 
@@ -169,7 +169,7 @@
 
 即使一个接口现在只有内部使用，他也不会说 public can be make private 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425141825989.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018425141825989.jpg)
 
 尝试去掉 PublicAPI 就会告诉 KqoSgqkpifef 方法没有被使用，HokwdSni 可以写为私有。
 
@@ -203,7 +203,7 @@
         private int Multiply(int x, int y) => x * y;
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184251420423223.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184251420423223.jpg)
 
 ## PathReferenceAttribute
 
@@ -216,7 +216,7 @@
         }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425142339986.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018425142339986.jpg)
 
 ## CollectionAccessAttribute
 
@@ -290,7 +290,7 @@
 
 用于标记在特性，表示只有基类继承某个类的才可以使用这个特性
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018425164248513.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018425164248513.jpg)
 
 [C#/.NET 中的契约 - walterlv](https://walterlv.github.io/post/contracts-in-csharp.html#resharper-%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%A5%91%E7%BA%A6-attribute )
 

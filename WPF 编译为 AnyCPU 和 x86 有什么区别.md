@@ -17,7 +17,7 @@
 
 这是在右击属性，选择首选32位才会使用的方法，必须使用 .net framework 4.5 以上才可以使用。在这个编译下，程序运行都是 32 位。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171225151314.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171225151314.jpg)
 
 在 32 位系统下，运行 32 位程序
 
@@ -86,7 +86,7 @@ csc /platform:anycpu filename.cs
 
 如果发现引用了 dll 出现了下面的错误
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20181917348.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20181917348.jpg)
 
 那么就需要检查是不是软件的环境和 dll 的环境不一样，如 软件是 x86 dll 是 x64就会出现这个问题。
 

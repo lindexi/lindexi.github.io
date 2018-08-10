@@ -17,9 +17,9 @@ vsDiffMerge.exe 文件1 文件2
 
 就可以看到，软件从 VisualStudio 进行对比
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017118185826.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017118185826.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711819136.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711819136.jpg)
 
 
 如果使用的是 Powershell ，那么可以输入 cmd 进入命令行
@@ -67,7 +67,7 @@ git config --global merge.tool visualstudio
 
 如果想使用一个简单的方法，可以打开 VisualStudio 团队设置，然后设置使用 VisualStudio 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/623b6fff-6d11-0112-9b3c-6b76f86a3bea%2F2017111423046.jpg)
+![](http://image.acmx.xyz/623b6fff-6d11-0112-9b3c-6b76f86a3bea%2F2017111423046.jpg)
 
 ## 忽略对比的文件夹
 

@@ -78,7 +78,7 @@ namespace PearveJalnouChearkachinearDocea
 
 <!-- ![](image/C# 使用外部别名/C# 使用外部别名1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018721444516524.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018721444516524.jpg)
 
 使用 外部别名 的关键是右击引用的属性，修改别名，把他修改为一个新的字符。
 

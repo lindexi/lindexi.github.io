@@ -26,13 +26,13 @@ MVVM 是 View、Model、 ViewModel 合起来的称呼。
 
 使用 Binding 即可，这是 WPF 强大的地方，而 UWP 继承并发扬了这些特性。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/2639f44f-463b-4fd1-b9e9-c01652649f28201612268535.jpg)
+![](http://image.acmx.xyz/2639f44f-463b-4fd1-b9e9-c01652649f28201612268535.jpg)
 
 如果希望知道 MVVM 是如何写，为何需要使用 MVVM ，戳此链接 [http://www.cnblogs.com/indream/p/3602348.html](http://www.cnblogs.com/indream/p/3602348.html)
 
 关于 Model 是属于哪些代码所放的地方，我找到一篇博客，在 CodeProject，也是最近10月写的，依照他的逻辑，是支持 Model 写业务逻辑，ViewModel 写表示逻辑的看法。请看下面图片，博客在：https://www.codeproject.com/Tips/813345/Basic-MVVM-and-ICommand-Usage-Example  
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/66fdbb58-f3fb-4036-a22e-6665a8cac0dd20161228185135.jpg)
+![](http://image.acmx.xyz/66fdbb58-f3fb-4036-a22e-6665a8cac0dd20161228185135.jpg)
 
 我们下面说下绑定。
 
@@ -631,7 +631,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 ```
 这时，我们需要 DataContent 就写在 ViewModel 的后面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122691528.jpg)
+![](http://image.acmx.xyz/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122691528.jpg)
 
 好啦，我把这个做出模板，大家可以去下载 http://download.csdn.net/detail/lindexi_gd/9716003
 
@@ -639,7 +639,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 假如我们有个页面 APage ， AModel ，那么把 AModel 写在ViewModel
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122694227.jpg)
+![](http://image.acmx.xyz/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122694227.jpg)
 
 我们可以使用在xaml  DataContent 绑定拿到，于是xaml. cs 也简单可以拿到
 
@@ -674,11 +674,11 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 这是简单的汉堡。在我的应用，图床 https://www.microsoft.com/store/apps/9nblggh562r2  用到
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269471.jpg)
+![](http://image.acmx.xyz/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269471.jpg)
 
 开始是进入主页面，主页面有图床、信息、设置三个页面，于是这个三个页面都在主页面，而这三个页面都没有跳转页面，所以他们可以从 MainViewModel 拿到自己的 ViewModel 。他们的通信都是跳转主页面传给他们，三个页面没有传输信息。对于设置页面，我们是放在一个存储数据类，所以我们不需要传参数，直接从存储拿。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269517.jpg)
+![](http://image.acmx.xyz/a7e7aea0-a434-41b7-82fd-a213384f4d62201612269517.jpg)
 
 
 但是这个还是没解决在一个 ViewModel 里面，存在多个 ViewModel 之间的通信。
@@ -690,7 +690,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 所以我们上面的不能做到，我们需要添加一些新的。我们不可以让两个页面直接联系，我们需要让一个页面和他的上层联系，让上层发给他要联系页面。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d622016122695536.jpg)
+![](http://image.acmx.xyz/a7e7aea0-a434-41b7-82fd-a213384f4d622016122695536.jpg)
 
 关于这个是如何做，大家可以看下面的 MasterDetail ，这个我放在后面，后面的才是好的。
 
@@ -702,7 +702,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 我们需要做的：如何让两个页面通信
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/a7e7aea0-a434-41b7-82fd-a213384f4d6220161226101426.jpg)
+![](http://image.acmx.xyz/a7e7aea0-a434-41b7-82fd-a213384f4d6220161226101426.jpg)
 
 我们的 B 页面要和A通信，我们让B发送信息到上一级页面，由上一级页面传给A。
 
@@ -797,7 +797,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 我们以我的密码本来说，我们有一个是左边是一列密码，右边点击是显示内容。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/e7f29c20-4d6b-4864-9af9-f58c3f045b77Framework.gif)
+![](http://image.acmx.xyz/e7f29c20-4d6b-4864-9af9-f58c3f045b77Framework.gif)
 
 那么我们是使用一个 ListModel 和 ContentModel ，我们的数据是
         

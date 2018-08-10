@@ -14,7 +14,7 @@ WPF 的可获得焦点元素是 Focusable，这个属性是所有继承 `IInputE
 
 如果反编译 WPF 可以看到默认的值是 false ，但不是所有的控件都是 false ，下面我来告诉大家哪些控件默认是 false ，哪些是 true，方便大家快速去查元素
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185151537382265.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185151537382265.jpg)
 
 默认是 true 的类
 

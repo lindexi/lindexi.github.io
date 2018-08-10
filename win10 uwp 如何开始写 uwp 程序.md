@@ -20,7 +20,7 @@
 
 然后选择 通用 windows 开发，其他的选项可以选也可以忽略。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184141612579935.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184141612579935.jpg)
 
 注意不要去修改默认安装的，因为 VisualStudio 必须安装在 C 盘，如果安装在其他的盘可能无法运行。
 
@@ -28,19 +28,19 @@
 
 在安装之后，大概是第二天，点击文件新建就可以看到这个界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184141615352914.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184141615352914.jpg)
 
 点击空白项目就可以创建，记得设置软件名和解决方案名，存放的位置。
 
 点击确定就可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184141616397927.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184141616397927.jpg)
 
 需要注意，目标版本就是当前编译面对的版本，但是最低版本指的是需要支持的版本。
 
 如果选择的目标版本越高，理论可以使用的接口越多，如果选择的最低版本很低，那么就必须使用越低的接口。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018414162014647.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018414162014647.jpg)
 
 所以一般我都不会选很低的版本，需要说的是，如果想要支持亚克力，那么就需要选择最低版本 16299 ，因为现在是入门，所以建议选择最高版本。
 
@@ -48,7 +48,7 @@
 
 很多小伙伴不知道启动流程，实际上在开发的时候就需要使用一个启动流程。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018414162242577.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018414162242577.jpg)
 
 在开始启动的时候加载的是一张静态的图片，在用户点击应用的时候就可以显示。然后立刻跳转到动态的图片，一般都是做一个动画。这样用户就可以看到软件正在运行，不会觉得软件启动很慢。
 
@@ -66,11 +66,11 @@
 
 打开 MainPage.xaml ，一般使用双击文件的方法
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018414162710847.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018414162710847.jpg)
 
 然后可以看到这个界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184141627479596.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184141627479596.jpg)
 
 在下面的代码，估计需要滚动才可以看到，因为我默认设置是打开代码而不是设计，如果安装默认的 VisualStudio 显示的是一半设计，下面一半是代码，所以需要滚动代码才可以看到下面代码。
 

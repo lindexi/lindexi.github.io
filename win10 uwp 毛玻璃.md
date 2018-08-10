@@ -51,7 +51,7 @@
 
 这样就可以看到毛玻璃效果
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531204634.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531204634.jpg)
 
 这个代码是从 http://www.jianshu.com/p/3b49fd3d7edb 复制的
 
@@ -85,11 +85,11 @@
 
 使用 win2D 方法，需要使用 Nuget 安装，如果速度太慢，推荐使用博客园的镜像
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201753121840.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201753121840.jpg)
 
 这个方法可以获得控件的毛玻璃，但是不可以获得窗口毛玻璃
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E6%25AF%259B%25E7%258E%25BB%25E7%2592%2583.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E6%25AF%259B%25E7%258E%25BB%25E7%2592%2583.gif)
 
 接下来告诉大家如何做上图的效果。
 
@@ -178,7 +178,7 @@
 ```
 现在看起来就是
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531212439.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531212439.jpg)
 
 如果需要修改模糊，请把 BlurAmount 修改为你想要的
 
@@ -305,7 +305,7 @@
 
 请看下面的效果，这就是不停修改 BlurAmount 得到。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E7%258E%25BB%25E7%2592%25832017%25E5%25B9%25B46%25E6%259C%25881%25E6%2597%25A5%2520205721.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E7%258E%25BB%25E7%2592%25832017%25E5%25B9%25B46%25E6%259C%25881%25E6%2597%25A5%2520205721.gif)
 
 代码很简单，所以我就不说。
 

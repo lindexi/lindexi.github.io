@@ -12,11 +12,11 @@
 
 安装win2d的方法请使用 Nuget 下载的方法，参见：[win10 uwp win2d](http://lindexi.oschina.io/lindexi//post/win10-uwp-win2d/ )
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
 
 下面先让大家看一下效果图再告诉大家如何做
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252016.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252016.gif)
 
 ## 创建界面
 
@@ -41,7 +41,7 @@
 
 在指定的范围之内，随机取一个点，这个点作为目的的点。于是当前的值就开始移动向目的的点，移动的过程存在速度。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252016201710891854.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252016201710891854.jpg)
 
 从这里可以知道，这个类需要下面这些属性
 
@@ -263,7 +263,7 @@
 
 如何对图层做模糊？在win2d有很多效果，先尝试把点画出来，效果图：
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%2520161.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%2520161.gif)
 
 需要知道所有的效果都是可以直接画出来，我用的方法很简单，就直接写代码
 

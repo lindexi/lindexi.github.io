@@ -55,19 +55,19 @@ while (!this.__disposed)
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20188915134246)
+![](http://image.acmx.xyz/lindexi%2F20188915134246)
 
 获取触摸流程循环是通过 `penimc2_v0400.dll` 来拿到触摸收集进程收集到的点。
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018891514031)
+![](http://image.acmx.xyz/lindexi%2F2018891514031)
 
 在程序开始运行到`UnsafeNativeMethods.GetPenEvent(this._handles[0], this._pimcResetHandle.Value, out num, out stylusPointerId, out cPackets, out cbPacket, out pPackets)`线程就会在这里等待，一旦屏幕任何部分收到触摸信息，就会继续。线程等待的方法是因为在构造函数使用了 `CreateResetEvent` 创建信号量，创建信号量传入 `GetPenEvent` 在收到用户触摸时才释放，于是线程才可以继续运行。
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201889152326728)
+![](http://image.acmx.xyz/lindexi%2F201889152326728)
 
 上面的代码是只处理存在 一个 PenContext 的情况，如果存在多个 PenContext 就会运行 `UnsafeNativeMethods.GetPenEventMultiple(this._handles.Length, this._h
 t num, out stylusPointerId, out cPackets, out cbPacket, out pPackets)
@@ -80,9 +80,9 @@ for (;;)
 	int num;// 表示事件，事件是数值
 	// 707：PenInRange
 	// 708：PenOutOfRange
-    // 709：PenDown
-    // 710：PenUp
-    // 711：Packets
+	// 709：PenDown
+	// 710：PenUp
+	// 711：Packets
 	int stylusPointerId;
 	int cPackets;
 	int cbPacket;
@@ -215,7 +215,7 @@ if (array != null)
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效3.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201889165035286)
+![](http://image.acmx.xyz/lindexi%2F201889165035286)
 
 禁用 PenContext 的方法是调用 `PenContext.Disable` ，这个方法传入一个 bool 告诉是否关闭 `WorkerThread` 这里都是使用 false ，这里核心就是 `_penThreadPenContext.RemovePenContext(this)` 这里的 `RemovePenContext` 会调用 `PenThreadWorker.WorkerRemovePenContext` 这个函数不是立刻运行移除，这个函数先添加 `_workerOperation` 然后释放 `_pimcResetHandle` 等待 Stylus Input 处理完成再继续。
 
@@ -309,7 +309,7 @@ WispLogic.cs
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效4.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201881010271273)
+![](http://image.acmx.xyz/lindexi%2F201881010271273)
 
 因为在 WispLogic 的 RefreshTablets 先禁用了 PenContexts 但是在更新 UpdateTablets 返回的是空数组，于是重新打开 PenContexts 就找不到触摸屏，所以就触摸失效
 

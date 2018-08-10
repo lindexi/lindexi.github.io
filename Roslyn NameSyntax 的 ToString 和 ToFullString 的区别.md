@@ -8,23 +8,23 @@
 
 从代码可以看到 NameSyntax 的 ToString 和 ToFullString 方法是调用 Green 的 ToString 和 ToFullString ，所以具体还需要进入 Green 看是如何写
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018714927294075.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018714927294075.jpg)
 
 <!-- ![](image/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别0.png) -->
 
 这里 NameSyntax 的 Green 是 GreenNode ，从 代码可以看到两个方法的区别
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018714929553566.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018714929553566.jpg)
 
 <!-- ![](image/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别1.png) -->
 
 使用 ToFullString 会添加前后的空白代码，使用 ToString 的就会去掉前后空白代码，如获取 `using lindexi.wpf.Framework` 的代码，使用两个不同的函数可以获得不同的值
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018714935172735.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018714935172735.jpg)
 
 <!-- ![](image/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018714936138557.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018714936138557.jpg)
 
 <!-- ![](image/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别3.png) -->
 
@@ -32,11 +32,11 @@
 
 如类型 `class lindexi : doubi` ，使用两个不同的函数可以看到不同的变量
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018714948184727.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018714948184727.jpg)
 
 <!-- ![](image/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别4.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018714949408765.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018714949408765.jpg)
 
 <!-- ![](image/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别/Roslyn NameSyntax 的 ToString 和 ToFullString 的区别5.png) -->
 

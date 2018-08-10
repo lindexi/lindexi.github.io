@@ -16,7 +16,7 @@
    
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a2016121293717.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a2016121293717.jpg)
 
 用到的图片是我新建自带的。
 

@@ -11,7 +11,7 @@
 
 例如有一个框架，在框架的代码都没有任何的耦合，如 View 的界面和 ViewModel 是分开在两个工程，而且只有 View 引用 ViewModel  ，这样从静态的代码分析可以说，ViewModel 没有耦合 View 。但这是不是真的就没有耦合？实际上可能还是有语义的耦合。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20182910446.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20182910446.jpg)
 
 在小伙伴使用框架，但是对 MVVM 的理解不是很深的时候，就容易写出下面的代码
 

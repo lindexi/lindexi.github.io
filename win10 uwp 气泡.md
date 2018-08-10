@@ -13,9 +13,9 @@
 
 可以看到，气泡就是一个和 Grid 差不多的东西，只是有边框，边框是一个气泡
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201755145936.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201755145936.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017551502.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017551502.jpg)
 
 如何去写一个外框？
 
@@ -27,13 +27,13 @@
 
 我做了一些修改，先做一个像这样的气泡
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175515140.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175515140.jpg)
 
 
 
 气泡分为两部分，一个是尖头一个矩形
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175515350.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175515350.jpg)
 
 可以看到，尖头大小可以固定，但是矩形必须使用子控件的大小
 
@@ -43,13 +43,13 @@
 
 假设尖头宽度 10 高度 5 ，那么可以看到第一个点是 （0，5） 第二个点是 （5，0） 第三个点是 （10，5）
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201755165744.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201755165744.jpg)
 
 需要知道， WPF 使用的布局不是和以前课本说的一样
 
 但是除了尖头，还需要添加矩形的距离
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175517242.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175517242.jpg)
 
 添加的距离是矩形宽度的一半减去5，看到这里一般不会觉得有困难。
 
@@ -57,7 +57,7 @@
 
 接下来就是计算矩形的值，矩形的值就是 x=0 y=5 ，宽度 100 高度 50
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175517557.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175517557.jpg)
 
 计算出来，就需要画出来。
 
@@ -437,7 +437,7 @@ BorderBrush 也是自己设置的 ，BorderThickness 也是，于是继续设置
 
 这样就好了，里面的控件可以是任何的，你想要的，如Grid ，textBox
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175517277.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20175517277.jpg)
 
 现在看起来就是这样
 

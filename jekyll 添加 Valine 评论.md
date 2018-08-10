@@ -22,15 +22,15 @@
 
 注册之后创建应用
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112694519.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112694519.jpg)
 
 点击设置
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112694643.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112694643.jpg)
 
 点击key可以看到自己的 appid
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112694739.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112694739.jpg)
 
 然后复制自己的App ID、App Key，下面我代码的App ID、App Key就用自己的替换
 
@@ -50,7 +50,7 @@
 
 现在就可以试试自己的博客是否开了评论
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112610743.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711231645122017112610743.jpg)
 
 
 [Valine -- 一款极简的评论系统 ](https://ioliu.cn/2017/add-valine-comments-to-your-blog/ )

@@ -21,7 +21,7 @@
         }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171221193314.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171221193314.jpg)
 
 这个方法在 CoreApplication ，使用的时候可以传入参数，在软件打开的时候可以拿到这个参数
 
@@ -49,7 +49,7 @@
 
 添加了这句代码就可以在软件启动进入调试
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018228141535.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018228141535.jpg)
 
 [How to Restart your App Programmatically - Building Apps for WindowsBuilding Apps for Windows](https://blogs.windows.com/buildingapps/2017/07/28/restart-app-programmatically/#WfIzq58ZwbzmwMMd.97 )
 

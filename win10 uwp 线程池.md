@@ -65,7 +65,7 @@
 
 很多时候的线程模型就是需要运行很多并行代码，在运行完成再运行串行的代码。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018515193336896.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018515193336896.jpg)
 
 这时就需要使用线程池运行代码，还需要等待代码运行完成
 

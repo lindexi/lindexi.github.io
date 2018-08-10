@@ -71,11 +71,11 @@ SublimeText 或 记事本，用来编辑文件
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187201611165012.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187201611165012.jpg)
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187201610533377.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187201610533377.jpg)
 
 从图片可以看到压缩这个文件的压缩包的名字可以随便写，但是建议格式是 包的 id 加上 包的版本号，这样在垃圾 VisualStudio 才可以找到，不然总是会出现找不到包
 
@@ -83,13 +83,13 @@ SublimeText 或 记事本，用来编辑文件
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包3.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187201614114962.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187201614114962.jpg)
 
 在我设置了 nupkg 文件所在的文件夹之后，就可以在 VisualStudio 点击浏览，可以找到打出来的 nuget 包
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187201613171545.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187201613171545.jpg)
 
 现在需要在这个空白的 nuget 包添加多一些东西
 
@@ -107,7 +107,7 @@ SublimeText 或 记事本，用来编辑文件
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包4.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018720162148740.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018720162148740.jpg)
 
 打开 build 文件夹，创建两个文件，需要注意这两个文件的文件名都需要保持和我一样，如果你修改为其他的文件名，没有开过光就无法使用
 
@@ -118,7 +118,7 @@ lindexi.targets
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包5.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187201622196718.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187201622196718.jpg)
 
 现在还不需要在这两个文件里面写东西，先来写一下需要引用的源代码
 
@@ -186,13 +186,13 @@ namespace lindexi
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包6.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018720163773964.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018720163773964.jpg)
 
 安装之后可以看到 VisualStudio 多了一个文件
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包7.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187201638185824.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187201638185824.jpg)
 
 在主函数写下面代码，运行可以看到
 
@@ -203,7 +203,7 @@ namespace lindexi
 
 <!-- ![](image/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包/Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包8.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187201639203907.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187201639203907.jpg)
 
 现在可以告诉大家源码包就这样做好了，使用这个方式就可以把自己的库作为源代码发给大家，这样即使很小的工具都可以做为一个nuget，而且安装也不需要担心 dll 太多软件启动比较慢。
 

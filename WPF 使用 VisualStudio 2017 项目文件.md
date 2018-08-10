@@ -11,7 +11,7 @@
 
 <!-- ![](image/WPF 使用 VisualStudio 2017 项目文件/WPF 使用 VisualStudio 2017 项目文件0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187583113333.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187583113333.jpg)
 
 注意需要查看图片的属性，如果图片的生成不是 Resources 那么在使用下面的代码还是找不到
 
@@ -42,7 +42,7 @@
 
 <!-- ![](image/WPF 使用 VisualStudio 2017 项目文件/WPF 使用 VisualStudio 2017 项目文件1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201875838422774.jpg)
+![](http://image.acmx.xyz/lindexi%2F201875838422774.jpg)
 
 现在需要访问 B 项目的 NearzooRasterCairralJeajismowwir.jpg 就需要使用`pack://application:,,,/B;component/NearzooRasterCairralJeajismowwir.jpg`，格式就是`pack://application:,,,/程序集;component/相对B项目的文件`，需要注意右击看文件是不是 Resources 如果不是还是无法找到
 
@@ -54,7 +54,7 @@
 
 <!-- ![](image/WPF 使用 VisualStudio 2017 项目文件/WPF 使用 VisualStudio 2017 项目文件2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201875841112878.jpg)
+![](http://image.acmx.xyz/lindexi%2F201875841112878.jpg)
 
 所以发现自己找不到资源，可能是项目名字和程序集不相同，需要右击查看程序集
 
@@ -83,6 +83,6 @@
 
 [win10 uwp 访问解决方案文件](https://blog.csdn.net/lindexi_gd/article/details/52639803 )
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186121956141913.jpg)
+![](http://image.acmx.xyz/lindexi%2F20186121956141913.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

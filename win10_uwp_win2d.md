@@ -59,7 +59,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 打开Nuget，搜索 win2d 安装
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
 
 
 打开 MainPage.xaml ，添加命名`xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"`。在本文后面，我可能会使用`xmlns:xaml="using:Microsoft.Graphics.Canvas.UI.Xaml"` ，两个是相同的，因为本文我写了大概有半年，所以里面的代码有很多是不相同。
@@ -89,7 +89,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 一般可以按 F5 运行。如果觉得太早了，自己的代码还出现没有写好的，那么请按 ctrl+break 取消生成。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262081.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262081.jpg)
 
 按下F5这时看起来什么没有，但是有了颜色，如果可以看到这个，那么程序是安装成功，如果错误，那么可能安装的包错误。
 
@@ -115,7 +115,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 如果使用了 `draw.DrawText` ，这个方法提供的重载很多，方法提供很多参数，一般可以使用这个方法设置显示位置，显示颜色。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201422.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201422.jpg)
 
 和上面同样功能，可以不使用Vector2，使用这个代码也是一样`draw.DrawText("lindexi",100,100,Color.FromArgb(0xFF,100,100,100));`
 
@@ -128,7 +128,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
                 FontSize = 100
             });
 ```
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201856.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201856.jpg)
 
 需要告诉大家的是，上面的代码是为了让大家快速跑起来，很多细节都没有告诉大家。如 DrawingSession 的使用需要 using 。在设置字体宽度 `new CanvasTextFormat` 使用之后需要释放。
 
@@ -186,7 +186,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 搞事，一定要
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017%25E5%25B9%25B43%25E6%259C%258827%25E6%2597%25A5%252008005.gif)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017%25E5%25B9%25B43%25E6%259C%258827%25E6%2597%25A5%252008005.gif)
 
 那么这是如何做的？
 
@@ -521,7 +521,7 @@ win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法
 
 <!-- ![](image/win10_uwp_win2d/win10_uwp_win2d0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201862165039707)
+![](http://image.acmx.xyz/lindexi%2F201862165039707)
 
 这时我可以叠加一张其他的图片，而且在第一张图片里面挖出文字，如下图，就是我使用下面代码写出来的。我用文字从一张图片挖去一块区域，让他显示，然后叠加到第二章图片。
 
@@ -561,7 +561,7 @@ win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法
 
 <!-- ![](image/win10_uwp_win2d/win10_uwp_win2d1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201862165817512)
+![](http://image.acmx.xyz/lindexi%2F201862165817512)
 
 参见：[第二章 画布渲染目标CanvasRenderTarget](https://zhuanlan.zhihu.com/p/37128817 )
 
@@ -583,6 +583,6 @@ win2d 毛玻璃：[win10 uwp 毛玻璃](https://lindexi.gitee.io/post/win10-uwp-
 
 [win2d 图片水印](https://lindexi.gitee.io/post/win2d-%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0.html )
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017888552.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017888552.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

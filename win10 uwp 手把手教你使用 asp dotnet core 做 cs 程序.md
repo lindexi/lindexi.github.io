@@ -14,11 +14,11 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186310321749)
+![](http://image.acmx.xyz/lindexi%2F20186310321749)
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018631041941)
+![](http://image.acmx.xyz/lindexi%2F2018631041941)
 
 点击安装，可以去睡觉，明天再看我的博客。因为 VisualStudio 的安装是很慢的，如果发现因为自己的网站无法访问，需要代理，可以发邮件给我，我发一个代理给你。
 
@@ -32,7 +32,7 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序4.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863101016355)
+![](http://image.acmx.xyz/lindexi%2F201863101016355)
 
 如果完全没有开发过 UWP 程序，那么请看[win10 uwp 如何开始写 uwp 程序 - CSDN博客](https://blog.csdn.net/lindexi_gd/article/details/80373159 )
 
@@ -42,7 +42,7 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序5.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863101440177)
+![](http://image.acmx.xyz/lindexi%2F201863101440177)
 
 ### dotnet core
 
@@ -50,7 +50,7 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186310643602)
+![](http://image.acmx.xyz/lindexi%2F20186310643602)
 
 随意给这个项目一个名字，然后点击确定
 
@@ -58,7 +58,7 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序3.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186310820847)
+![](http://image.acmx.xyz/lindexi%2F20186310820847)
 
 现在就创建好了所有项目
 
@@ -68,13 +68,13 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序6.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863113156536)
+![](http://image.acmx.xyz/lindexi%2F201863113156536)
 
 在 UWP 项目，引用的叫引用，在 asp dotnet core 项目，引用叫依赖项，只需要右击项目，点击添加就可以看到引用
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序7.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863113314594)
+![](http://image.acmx.xyz/lindexi%2F201863113314594)
 
 现在使用新的 VisualStudio 打开相同的解决方案，这样才可以进行调试 asp dotnet core 的同时调试 UWP 项目
 
@@ -105,37 +105,37 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序8.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186311411698)
+![](http://image.acmx.xyz/lindexi%2F20186311411698)
 
 选择EF的控制器，请看下面图片。使用这个控制器，就会自动下载 EF 而且帮你设置好很多类，最简单的方法是这样写。如果想知道具体的每个类意思就需要自己去看文档，推荐[ASP.NET Core 中文文档目录](http://www.cnblogs.com/dotNETCoreSG/p/aspnetcore-index.html )
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序9.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186311420520)
+![](http://image.acmx.xyz/lindexi%2F20186311420520)
 
 这时需要告诉 VisualStudio 使用哪个模型类，和上下文，实际上如果刚才的引用已经写好，而且有 RoqawzemJajene 那么这一步是十分简单的。如果没有按照上面的方法来，那么这一步可能就无法继续。本文下面的也就无法继续。如果实在不知道怎么弄，欢迎在评论告诉我。
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序10.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186311453412)
+![](http://image.acmx.xyz/lindexi%2F20186311453412)
 
 点击下拉，可以找到 RoqawzemJajene 这个类
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序11.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863114640971)
+![](http://image.acmx.xyz/lindexi%2F201863114640971)
 
 点击了之后会看到没有数据上下文，点击最后的加号就可以自动帮你弄好
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序12.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186311486844)
+![](http://image.acmx.xyz/lindexi%2F20186311486844)
 
 现在可以看到和下图差不多的界面，点击添加就可以等着 VisualStudio 帮你添加一些项目了
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序13.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863114841951)
+![](http://image.acmx.xyz/lindexi%2F201863114841951)
 
 现在 VisualStudio 会帮你创建两个类
 
@@ -269,7 +269,7 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序14.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201863115715595)
+![](http://image.acmx.xyz/lindexi%2F201863115715595)
 
 请看上图 RoqawzemJajenesController 就是控制器，TopetowLallteContext 就是数据，里面包含了数据定义。现代的程序员是很少写古老的 sql ，因为很难维护，而且容易写错。只需要直接对`DbSet<RoqawzemJajene> RoqawzemJajene`列表做修改就可以。对于很多个人项目，不使用 sql 来读写数据库也是没问题。但是对于大型的项目还是需要 sql ，所以有空去学一下还是可以。
 
@@ -328,7 +328,7 @@
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序16.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018631449338203.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018631449338203.jpg)
 
 因为不需要使用浏览器，所以去掉启动浏览器。需要记下端口，这个端口在下面的 UWP 项目使用。
 
@@ -342,7 +342,7 @@ http://localhost:64043/
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序15.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018631448299982.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018631448299982.jpg)
 
 ## UWP 连接
 
@@ -473,7 +473,7 @@ using System.Net.Http;
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序17.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018631518397888.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018631518397888.jpg)
 
 通过简单的 Get 的方法访问 URL 可以使用下面代码，参见 [win10 UWP GET Post - CSDN博客](https://blog.csdn.net/lindexi_gd/article/details/50838740 )
 
@@ -516,7 +516,7 @@ using System.Net.Http;
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序18.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018631525516356.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018631525516356.jpg)
 
 现在就完成了 UWP 程序的连接
 
@@ -594,7 +594,7 @@ using System.Net.Http;
 
 <!-- ![](image/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序/win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序19.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018631550581396.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018631550581396.jpg)
 
 如果刚才的代码有地方没有写对，如 stringContent 没有添加下面代码
 

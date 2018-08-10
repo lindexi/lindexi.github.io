@@ -11,7 +11,7 @@
 
 出现这个错误是因为 app.xaml 的生成是 ApplicationDefinition ，所以可以右击项目的  app.xaml 文件，在属性生成选择 page
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201753104937.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201753104937.jpg)
 
 参见：http://blog.csdn.net/hefeng_aspnet/article/details/17245205
 

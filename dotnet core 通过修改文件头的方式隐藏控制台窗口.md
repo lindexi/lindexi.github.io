@@ -18,7 +18,7 @@
 
 <!-- ![](image/dotnet core 通过修改文件头的方式隐藏控制台窗口/dotnet core 通过修改文件头的方式隐藏控制台窗口0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187242045550)
+![](http://image.acmx.xyz/lindexi%2F20187242045550)
 
 如果想知道为什么你安装了一个 Nuget 就可以帮你修改请看[如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - walterlv](https://walterlv.github.io/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html )
 

@@ -68,7 +68,7 @@
         }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720205318.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720205318.jpg)
 
 可以看到，画出来的线是模糊的，于是看了微软的代码
 
@@ -101,11 +101,11 @@
 
 缩小看到的图片是这样
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720205458.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720205458.jpg)
 
 那么放大时就是下面这张图
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720205544.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720205544.jpg)
 
 所以需要在放大时，也画一个像素，
 这个方法就是本文，所以这是在翻译，只是没有使用对所有的文字翻译，来自工藤大神的方法。
@@ -150,7 +150,7 @@
 
 可以看到线是清晰的
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720201831.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017720201831.jpg)
 
 参见：https://stackoverflow.com/a/45189552/6116637
 

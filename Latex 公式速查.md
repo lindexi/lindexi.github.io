@@ -65,7 +65,7 @@ Form (\ref{lindexi}), we can know lindexi is doubi
 \end{document}
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251719338891.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251719338891.jpg)
 
 因为安装 Latex 环境还是比较难的，所以我推荐一个在线编辑 <https://cn.sharelatex.com> ，这里可以不用配置环境。
 
@@ -99,7 +99,7 @@ Form (\ref{lindexi}), we can know lindexi is doubi
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251725263041.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251725263041.jpg)
 
 ## 希腊字母
 
@@ -109,7 +109,7 @@ Form (\ref{lindexi}), we can know lindexi is doubi
 
 $\alpha,\beta, \gamma,\lambda,\xi,\pi,\mu,\Phi,\Omega$
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251729258312.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251729258312.jpg)
 
 大写字符就是把第一个字符大写
 
@@ -119,7 +119,7 @@ $\alpha,\beta, \gamma,\lambda,\xi,\pi,\mu,\Phi,\Omega$
 
 $\Alpha , \Beta , \Gamma ,\Lambda$
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251730237391.jpg) 
+![](http://image.acmx.xyz/lindexi%2F20185251730237391.jpg) 
 
 小写希腊字母
 
@@ -137,7 +137,7 @@ $\Alpha , \Beta , \Gamma ,\Lambda$
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查15.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251924562659.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251924562659.jpg)
 
 大写希腊字母
 
@@ -157,7 +157,7 @@ $\Alpha , \Beta , \Gamma ,\Lambda$
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查16.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525192815195.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525192815195.jpg)
 
 Latex 公式的其他声调
 
@@ -166,7 +166,7 @@ Latex 公式的其他声调
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查17.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525192951476.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525192951476.jpg)
 
 |语法 | 效果 |注释|
 |--|--|
@@ -188,7 +188,7 @@ Latex 公式的其他声调
 a^2+L_a=doubi
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251731516956.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251731516956.jpg)
 
 如果上标或下标后需要添加多个字符，那么请使用花括号把多个字符放一起
 
@@ -208,7 +208,7 @@ $a^{x+y}+L_{dexi} = doubi$
 
 $\sqrt{a^2}-\sqrt[5]{a}=\surd{a}$
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251733578522.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251733578522.jpg)
 
 ## 水平线
 
@@ -218,7 +218,7 @@ $\sqrt{a^2}-\sqrt[5]{a}=\surd{a}$
 \overline{lindexi.oschina.io}+\underline{lindexi.github.io}
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251735474848.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251735474848.jpg)
 
 水平线也就上划线和下划线
 
@@ -230,7 +230,7 @@ $\sqrt{a^2}-\sqrt[5]{a}=\surd{a}$
 \overbrace{blog.csdn.net/lindexi_gd}_{lindexi} + \underbrace{lindexi.github.io}_{doubi}
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525185157410.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525185157410.jpg)
 
 ## 向量
 
@@ -240,7 +240,7 @@ $\sqrt{a^2}-\sqrt[5]{a}=\surd{a}$
 \vec a \quad \vec{ab}  \quad \overleftarrow{ab}  \quad \overrightarrow{lindexi} 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251853101738.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251853101738.jpg)
 
 ## 圆点
 
@@ -251,7 +251,7 @@ x\cdot y
 ```
 <!-- ![](Latex 公式速查/Latex 公式速查1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251857133215.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251857133215.jpg)
 
 ## 三角函数
 
@@ -261,7 +261,7 @@ x\cdot y
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525185856758.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525185856758.jpg)
 
 
 |语法 | 效果 |注释|
@@ -309,7 +309,7 @@ x\cdot y
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查2.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525190142683.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525190142683.jpg)
 
 ## 微分
 
@@ -332,7 +332,7 @@ y=\frac{x}{b}
 ```
 <!-- ![](image/Latex 公式速查/Latex 公式速查3.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525191521894.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525191521894.jpg)
 
 ## 二项系数
 
@@ -343,14 +343,14 @@ y=\frac{x}{b}
 ```
 <!-- ![](image/Latex 公式速查/Latex 公式速查4.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525196151450.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525196151450.jpg)
 
 ```csharp
 { 第一项 \atop 第二项 }
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查5.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525196271036.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525196271036.jpg)
 
 注意，第一项 和括号需要有空格，第二项和括号要有空格
 
@@ -364,7 +364,7 @@ y=\frac{x}{b}
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查6.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201852519844417.jpg)
+![](http://image.acmx.xyz/lindexi%2F201852519844417.jpg)
 
 求和运算符 `\sum`
 
@@ -373,7 +373,7 @@ y=\frac{x}{b}
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查7.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525191012430.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525191012430.jpg)
 
 乘积运算符 `\prod`
 
@@ -382,7 +382,7 @@ y=\frac{x}{b}
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查8.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251911161747.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251911161747.jpg)
 
 ## 括号
 
@@ -397,7 +397,7 @@ y=\frac{x}{b}
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查9.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251915159300.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251915159300.jpg)
 
 ## 点
 
@@ -410,7 +410,7 @@ lindexi \ldots doubi
 ```
 <!-- ![](image/Latex 公式速查/Latex 公式速查10.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251916416320.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251916416320.jpg)
 
 垂直
 
@@ -419,7 +419,7 @@ lindexi \vdots doubi
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查11.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525191817281.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525191817281.jpg)
 
 对角
 
@@ -429,7 +429,7 @@ lindexi \ddots doubi
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查13.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251919293216.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251919293216.jpg)
 
 居中
 
@@ -439,7 +439,7 @@ lindexi \cdots doubi
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查12.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251918523771.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251918523771.jpg)
 
 ## 数组
 
@@ -450,7 +450,7 @@ lindexi \cdots doubi
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查14.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251921113888.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251921113888.jpg)
 
 ## 二元关系符
 
@@ -463,7 +463,7 @@ a \leq b \le a
 ```
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查18.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251931328841.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251931328841.jpg)
 
 大于等于 `\geq` `\ge`
 
@@ -473,12 +473,12 @@ a \geq b \ge a
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查19.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251932209901.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251932209901.jpg)
 
 全等于 `\equiv`
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查20.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525193332067.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525193332067.jpg)
 
 ### 等于
 
@@ -486,7 +486,7 @@ a \geq b \ge a
 相似 sim \sim \\ 约等于 approx \approx \\ 不等于 neq 或 ne \neq 
 ```
 <!-- ![](image/Latex 公式速查/Latex 公式速查21.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251937351241.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251937351241.jpg)
 
 ### 集合
 
@@ -496,14 +496,14 @@ a \geq b \ge a
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查22.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251940519944.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251940519944.jpg)
 
 ```csharp
 包含 in \in ni \ni owns \owns \\ 不包含 notin \notin
 ```
 <!-- ![](image/Latex 公式速查/Latex 公式速查23.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251942265272.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251942265272.jpg)
 
 |语法 | 效果 |注释|
 |--|--|
@@ -572,11 +572,11 @@ wr \wr
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查24.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251956108902.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251956108902.jpg)
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查25.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185251956249060.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185251956249060.jpg)
 
 ## 箭头
 
@@ -689,7 +689,7 @@ $$
 $$
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查26.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201852520827850.jpg)
+![](http://image.acmx.xyz/lindexi%2F201852520827850.jpg)
 
 
 |语法 | 效果 |注释|
@@ -760,7 +760,7 @@ $$
 |`\Updownarrow`|$\Updownarrow$ | | 
 |`\eth`|$\eth$ | | 
 |`\S`|$\S$ | | 
-|`\P`|![](http://7xqpl8.com1.z0.glb.clouddn.com/246a4e2c-cc8f-497d-860a-7e7287ae38cf2016129195613.jpg) | | 
+|`\P`|![](http://image.acmx.xyz/246a4e2c-cc8f-497d-860a-7e7287ae38cf2016129195613.jpg) | | 
 |`\%`|$\%$ | | 
 |`\dagger`|$\dagger$ | | 
 |`\ddagger`|$\ddagger$ | | 
@@ -814,14 +814,14 @@ $$
 ## 定界符
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查27.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525208512372.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525208512372.jpg)
 
 ## 二元否定关系符
 
 
 <!-- ![](image/Latex 公式速查/Latex 公式速查28.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018525209548089.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018525209548089.jpg)
 
 
 ## 感谢

@@ -14,7 +14,7 @@
 
 本文告诉大家如何做出下面的控件，可以看到这使用的是 ListView ，但是第一个元素显示和其他的元素不同，看起来就是面包屑导航
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017930193749.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017930193749.jpg)
 
 需要定义第一个元素和其他元素的代码，于是使用 Path 做出来，因为本文不是说如何使用 Path 所以就不多说，直接写代码。
 
@@ -92,7 +92,7 @@
 
 但是这样看起来还是不是我要的，把鼠标放上去，发现出现背景
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
 
 如何去背景请看[win10 UWP ListView](https://lindexi.gitee.io/post/win10-UWP-ListView.html )
 

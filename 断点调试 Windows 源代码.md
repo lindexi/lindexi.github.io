@@ -36,7 +36,7 @@
 按一下运行就可以看到下面的异常，但是大家想知道这个异常是在底层哪里抛出的？
 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112020404476.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112020404476.jpg)
 
 如果这时在我的设备，可以看到调用堆栈，我双击一下就可以进去代码
 
@@ -48,7 +48,7 @@
 
 打开 https://referencesource.microsoft.com/ 可以看到 Download 点击进入就可以看到这个界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112029396770.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112029396770.jpg)
 
 自己需要什么版本就下载什么版本，不过我是把所有的版本都下载，然后创建 git 管理，这样需要哪个版本就可以快速切换
 
@@ -58,7 +58,7 @@
 
 通过右击解决方案，点击属性，可以看到可以设置源代码
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112031382786.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112031382786.jpg)
 
 我就把我下载的源代码解压到 God 文件夹的 source 文件夹，也就是图片最后一行，我就这样添加了代码。
 
@@ -80,11 +80,11 @@
 
 如果发现 dotpeek 的加载的代码太少了，如没有找到 WindowsBase 就需要在 GAC 添加代码
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112037396069.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112037396069.jpg)
 
 点击 OpenFromGAC 就可以在 GAC 寻找代码，如果需要调试 WPF 代码，那么 WindowsBase 是必须添加的
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112038533331.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112038533331.jpg)
 
 ## 加载符号
 
@@ -92,11 +92,11 @@
 
 如果开始没有加载符号，在调试就需要打开点击工具 调试-> 窗口->模块
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018511204032550.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018511204032550.jpg)
 
 如果看到自己没有加载符号，就需要右击这个模块，点击加载符号
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112041295487.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112041295487.jpg)
 
 这时点击了就可以去喝咖啡，因为需要等待 dotpeek 创建符号，打开 dotpeek 可以看到进度，是非常慢的
 
@@ -124,7 +124,7 @@
 
 有时候发现虽然已经按照我说的做了，还是无法进入堆栈代码，而且弹出了这个选项，让你去找文件
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112042458107.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112042458107.jpg)
 
 这时就需要使用 dotpeek 找到对应的代码，然后导出工程
 
@@ -132,7 +132,7 @@
 
 如果自己有导出，那么把这个工程添加到设置源代码
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112031382786.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112031382786.jpg)
 
 ## 断点调试
 
@@ -140,19 +140,19 @@
 
 点击调试->新建断点，例如下面需要调试 `PenContext.InitStylusPointDescription` 函数，就需要在断点写入 类名.函数名
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112049637.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112049637.jpg)
 
 这个函数在第一次触摸时触发，所以使用这个断点就可以在第一次触摸进去
 
 运行程序，如果在断点可以看到一个红色的点，表示这个断点是可以进去
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112052133574.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112052133574.jpg)
 
 如果看到一个黑点，表示这个断点无法进入，这时尝试加载符号，需要注意，必须要使用 dotPeek 符号服务器才可以加载，这时需要开着 dotpeek 只要加载第一次符号，之后加载还是很快
 
 这时试试触摸一下，就可以看到跳转到这个函数
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112054106370.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112054106370.jpg)
 
 下面就可以高兴对这个类的函数进行断点，但是不是全部语句都可以添加断点，因为调试的源代码是 Release 会优化很多代码。
 
@@ -164,15 +164,15 @@
 
 首先拖入已经编译好的 exe 到 dnspy
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112058431625.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112058431625.jpg)
 
 然后点击拖入的 exe 点击运行就可以调试这个 exe 了，但是这里是告诉大家如何调试源代码，首先寻找到需要调试的代码
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201851121163535.jpg)
+![](http://image.acmx.xyz/lindexi%2F201851121163535.jpg)
 
 还是告诉大家如何调试 PenContext.InitStylusPointDescription ，因为我知道 PenContext 在哪，于是我就一级级展开，找到 InitStylusPointDescription 函数，在这个函数按下 F9 没错，他的快捷键和 VisualStudio 差不多，这时按下 F5 调试程序
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201851121312292.jpg)
+![](http://image.acmx.xyz/lindexi%2F201851121312292.jpg)
 
 在使用这个软件还可以在自己的代码断点，然后按 F11 进入微软框架代码查看他是怎么做的。
 
@@ -180,11 +180,11 @@
 
 看到这里大家是否好奇为什么我在调试 InitStylusPointDescription ？ 因为我的 WPF 在一个特殊的屏幕点击就会崩溃，我拿到了 Dump ，看到了托管异常
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018511212473343.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018511212473343.jpg)
 
 我使用了 dnspy 定位了堆栈，然后远程调试，加载了符号，进入源代码查看了这个函数
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112126196916.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112126196916.jpg)
 
 我发现是在这一行代码崩溃的
 
@@ -194,7 +194,7 @@
 
 我进入了 StylusPointPropertyInfo 构造函数
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185112127405999.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185112127405999.jpg)
 
 很快就看到抛异常的代码
 

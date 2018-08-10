@@ -14,7 +14,7 @@
 
 本文的所讲的核心不在 milcore ，这个模块是 WPF 的三大核心模块，请让我偷一个图片，下面的图片是从[WPF Architecture](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture ) 找到
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018715163555502.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018715163555502.jpg)
 
 WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milcore，在开始本文之前需要告诉大家，实际 WPF 只是一个 UI 框架，那么一个框架最主要的是什么，就是交互和显示，本文不会告诉大家任何显示的原理，只是告诉大家如何显示
 
@@ -24,7 +24,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 我在下面偷了一张图，图片是从[Overview of Windows Presentation Foundation (WPF) Architecture](https://www.c-sharpcorner.com/UploadFile/819f33/overview-of-windows-presentation-foundation-wpf-architectu/ )找到，在 WPF 可以分为三层。第一层就是 WPF 的托管层，这一层的代码都是托管代码。第二层就是 WPF 的非托管层，包括刚才告诉大家的模块。最后一层就是系统核心元素层。下面简单介绍一下 WPF 的体系结构
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187151612442426.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187151612442426.jpg)
 
 如果觉得对 WPF 的体系结构已经足够了解，那么请跳到下一节。
 
@@ -356,13 +356,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187259253718)
+![](http://image.acmx.xyz/lindexi%2F20187259253718)
 
 在 Dispatcher 收到消息之后就可以把渲染任务放在队列，按照优先级一个个出队
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187259612416)
+![](http://image.acmx.xyz/lindexi%2F20187259612416)
 
 这时在 Dispatcher 内部通过渲染的调用就会通过 DispatcherOperation 执行对应的任务
 
@@ -370,7 +370,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201872593025761)
+![](http://image.acmx.xyz/lindexi%2F201872593025761)
 
 关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 

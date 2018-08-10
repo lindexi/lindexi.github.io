@@ -63,7 +63,7 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111205923.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111205923.jpg)
 
 中间的 ListView 就来绑定按钮，绑定的按钮参见：[win10 UWP ListView](https://lindexi.oschina.io/lindexi/post/win10-UWP-ListView.html )
 
@@ -126,7 +126,7 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201811121814.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201811121814.jpg)
 
 但是按钮按下的时候需要告诉上一层的消息，这时可以使用发送消息方法
 
@@ -248,7 +248,7 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 这样就可以在点击新建游戏的时候看到跳转到市场
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111213321.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111213321.jpg)
 
 <!-- 草药坊 雕刻 食物 武器 材料 水果 种子-->
 
@@ -663,7 +663,7 @@ LUK幸运
 
 先让大家看一下界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812811243.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812811243.jpg)
 
 界面很简单，我直接写代码。大家也看到这个代码使用的 WPF 写的，因为现在VS无法编译UWP，所以我就先使用 WPF 来做游戏
 
@@ -953,7 +953,7 @@ LUK幸运
 
 大概写好了，直接从代码转换，判断是否可以点击，如何支持点击，就触发点击
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E5%2595%2586%25E4%25B8%259A%25E6%25B8%25B8%25E6%2588%258F%2520%25E5%259B%25BE%25E7%2589%2587%2520DjqwhkKwxfit.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E5%2595%2586%25E4%25B8%259A%25E6%25B8%25B8%25E6%2588%258F%2520%25E5%259B%25BE%25E7%2589%2587%2520DjqwhkKwxfit.gif)
 
 现在的游戏已经可以玩了，于是我就把他放在了 [CSDN](http://download.csdn.net/download/lindexi_gd/10228261 ) 上，大家可以尝试玩一下。
 

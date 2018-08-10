@@ -59,7 +59,7 @@
 
 因为没有直接从 Direct2D 到 D3D 显示的方法，下面需要告诉大家如何在 D3D11 显示 Direct2D 然后通过相同的格式转 D3D9 最后把缓冲区指针显示。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018422932386479.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018422932386479.jpg)
 
 ## D3D 设备
 

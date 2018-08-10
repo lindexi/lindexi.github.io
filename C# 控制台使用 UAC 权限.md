@@ -11,7 +11,7 @@
 
 <!-- ![](image/C# 控制台使用 UAC 权限/C# 控制台使用 UAC 权限0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018751952201949.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018751952201949.jpg)
 
 在 WPF 使用 UAC 也是一样的方法。
 

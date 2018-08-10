@@ -159,13 +159,13 @@
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 画三角/C# 从零开始写 SharpDx 应用 画三角0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018624954287879.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018624954287879.jpg)
 
 然后创建一个文本文件，注意文本的名字，一个是  PixelShader.hlsl 另一个是 VertexShader.hlsl ，需要点击新建项才可以创建文本。为什么需要使用文本，因为这样编译选项就不需要自己选
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 画三角/C# 从零开始写 SharpDx 应用 画三角1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018624956132829.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018624956132829.jpg)
 
 现在就创建了两个文件，请看自己的工程是否存在下面两个文件
 
@@ -173,13 +173,13 @@
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 画三角/C# 从零开始写 SharpDx 应用 画三角2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201862495749347.jpg)
+![](http://image.acmx.xyz/lindexi%2F201862495749347.jpg)
 
 现在需要右击两个文件 `PixelShader.hlsl` 和 `VertexShader.hlsl ` 属性，选择输出
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 画三角/C# 从零开始写 SharpDx 应用 画三角3.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018624101541463.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018624101541463.jpg)
 
 打开 `VertexShader.hlsl` 并且写入下面代码
 

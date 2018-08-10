@@ -21,7 +21,7 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018732045136233.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018732045136233.jpg)
 
 读取解决方案的图片
 
@@ -97,7 +97,7 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187320571094.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187320571094.jpg)
 
 ## 读取数组
 
@@ -197,7 +197,7 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20187321933857.jpg)
+![](http://image.acmx.xyz/lindexi%2F20187321933857.jpg)
 
 代码：[WPF 修改图片颜色 1.2-CSDN下载](https://download.csdn.net/download/lindexi_gd/10517437 )
 
@@ -205,11 +205,11 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色3.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018741612135373.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018741612135373.jpg)
 
 可以点击这里下载程序
 
-[WPF 修改图片](http://7xqpl8.com1.z0.glb.clouddn.com/WallmadeJexawoPejakairkas.exe)
+[WPF 修改图片](http://image.acmx.xyz/WallmadeJexawoPejakairkas.exe)
 
 首先在 xaml 添加几个控件
 

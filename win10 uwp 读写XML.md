@@ -166,7 +166,7 @@ XDocument.Load(new StringReader(str));
 
 那么我们就可以简单从 xaml 拿出所有的 TextBlock ，不管他放在多少个 Grid 里。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/e53972be-081c-4087-9ea1-bff50ae213b8201714201632.jpg)
+![](http://image.acmx.xyz/e53972be-081c-4087-9ea1-bff50ae213b8201714201632.jpg)
 
 看到上面的图片，放了5层的 TextBlock 也可以拿到。
 

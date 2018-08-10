@@ -255,7 +255,7 @@ CloneObjectWithIL(base, derived);
 
 http://www.c-sharpcorner.com/uploadfile/puranindia/reflection-and-reflection-emit-in-C-Sharp/
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20178885325.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20178885325.jpg)
 
 https://stackoverflow.com/a/46580446/6116637
 

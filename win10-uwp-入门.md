@@ -10,7 +10,7 @@
 
 右击项目，管理Nuget，搜索MVVM
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/bb831a25-a924-4819-aa80-5b273267c5a120161127165650.jpg)
+![](http://image.acmx.xyz/bb831a25-a924-4819-aa80-5b273267c5a120161127165650.jpg)
 
 安装第二个。他包含了运行的类库，我们将会使用里面的一些类。关于lib包含的库，参见：http://www.cnblogs.com/manupstairs/p/4890300.html
 

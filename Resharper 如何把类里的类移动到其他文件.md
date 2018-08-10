@@ -26,7 +26,7 @@
 
 然后选择 B ，按 ctrl+shift+R
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732420813.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732420813.jpg)
 
 移动到其他文件，第一个
 
