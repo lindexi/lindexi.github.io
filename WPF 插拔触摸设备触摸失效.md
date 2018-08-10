@@ -36,34 +36,34 @@
 			}.Start();
 ```
 
-这个线程的实际代码是 `ThreadProc` 函数，在这个函数的第一句话是设置这个线程的线程名为`Stylus Input`然后进入一个循环
+这个线程的实际代码是 `ThreadProc` 函数，在这个函数的第一句话是设置这个线程的线程名为`Stylus Input` 然后进入一个循环
 
 ```csharp
 while (!this.__disposed)
 {
 	// 初始化触摸设备代码
 
-	for (;;)
-	{
-		// 这是第二层循环
+    for (;;)
+    {
+		// 这是获取触摸流程循环
 		// 获取用户触摸代码
-	}
+    }
 }
 ```
 
-这个 `ThreadProc` 有两层循环，第一层循环用于在初始化触摸设备，用于更新 `PenContext` 的值。第二层循环用于拿到用户触摸相关。很多的时候，在用户正常使用的流程只是运行第一层循环一次，之后在用户触摸的时候就通过第二层循环拿到值。
+这个 `ThreadProc` 有两层循环，初始化流程循环用于在初始化触摸设备，用于更新 `PenContext` 的值。获取触摸流程循环用于拿到用户触摸相关。很多的时候，在用户正常使用的流程只是运行初始化流程循环一次，之后在用户触摸的时候就通过获取触摸流程循环拿到值。本文下面就会使用初始化流程循环指代第一层循环，使用获取触摸流程循环指代第二层循环。
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效0.png) -->
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20188915134246)
 
-第二层循环是通过 `penimc2_v0400.dll` 来拿到触摸收集进程收集到的点。
+获取触摸流程循环是通过 `penimc2_v0400.dll` 来拿到触摸收集进程收集到的点。
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效1.png) -->
 
 ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018891514031)
 
-在程序开始运行到`UnsafeNativeMethods.GetPenEvent(this._handles[0], this._pimcResetHandle.Value, out num, out stylusPointerId, out cPackets, out cbPacket, out pPackets)`线程就会在这里等待，直到用户通过触摸屏触摸，这个函数才结束。线程等待的方法是因为在构造函数使用了 `CreateResetEvent` 创建信号量，创建信号量传入 `GetPenEvent` 在收到用户触摸时才释放，于是线程才可以继续运行。
+在程序开始运行到`UnsafeNativeMethods.GetPenEvent(this._handles[0], this._pimcResetHandle.Value, out num, out stylusPointerId, out cPackets, out cbPacket, out pPackets)`线程就会在这里等待，一旦屏幕任何部分收到触摸信息，就会继续。线程等待的方法是因为在构造函数使用了 `CreateResetEvent` 创建信号量，创建信号量传入 `GetPenEvent` 在收到用户触摸时才释放，于是线程才可以继续运行。
 
 <!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效2.png) -->
 
@@ -71,7 +71,7 @@ while (!this.__disposed)
 
 上面的代码是只处理存在 一个 PenContext 的情况，如果存在多个 PenContext 就会运行 `UnsafeNativeMethods.GetPenEventMultiple(this._handles.Length, this._h
 t num, out stylusPointerId, out cPackets, out cbPacket, out pPackets)
-` 的方法。这里的代码需要简单的介绍
+` 的方法，这个方法和 `GetPenEvent` 一样在没有收到触摸信息时会卡住，一旦屏幕任何部分收到触摸信息，就会继续。这里的代码需要简单的介绍
 
 ```csharp
 for (;;)
@@ -93,7 +93,7 @@ for (;;)
 	{
 		if (!UnsafeNativeMethods.GetPenEvent(this._handles[0], this._pimcResetHandle.Value, out num, out stylusPointerId, out cPackets, out cbPacket, out pPackets))
 		{
-			// 如果更新触摸了，这里会返回，从第二层循环
+			// 如果更新触摸屏，这里会返回，到初始化流程循环
 
 			break;
 		}
@@ -103,6 +103,8 @@ for (;;)
 	// 如果有比较多个 PenContext 就使用下面代码
 	else if (!UnsafeNativeMethods.GetPenEventMultiple(this._handles.Length, this._handles, this._pimcResetHandle.Value, out num2, out num, out stylusPointerId, out cPackets, out cbPacket, out pPackets))
 	{
+		// 如果更新触摸屏，这里会返回，到初始化流程循环
+
 		break;
 	}
 	if (num != 1)
@@ -132,9 +134,9 @@ for (;;)
 
 这个代码看起来可以很好工作，但是不要忘了，如果有用户在不停出现插拔触摸屏，会出现什么？
 
-在`GetPenEvent`和`GetPenEventMultiple`都会让线程卡住，直到用户拔出触摸屏，这时函数返回 false 于是返回第一层循环进入更新触摸的代码。
+因为 `GetPenEvent` 和 `GetPenEventMultiple` 都只有在触摸屏收到触摸信息或者 `_pimcResetHandle` 被释放会返回，而在用户拔出触摸屏时，触摸屏是没有收到触摸信息，于是 `GetPenEvent` 和 `GetPenEventMultiple` 不会因为收到触摸信息返回。在 `GetPenEvent` 和 `GetPenEventMultiple` 收到触摸信息返回的是 true 而在释放 `_pimcResetHandle` 返回的是 false 于是上面代码就根据这个方法判断返回，如果是因为释放 `_pimcResetHandle` 就是因为更新了 `_workerOperation` 从初始化流程循环可以运行 `_workerOperation` 而不是等待触摸，这个过程在用户插拔触摸屏很有用。
 
-从上面的代码可以直到，更新触摸的代码只会执行一次
+从上面的代码可以知道，更新触摸的代码只会执行一次，因为在初始化流程循环会使用一个数组复制`_workerOperation`并且清空，然后运行。这个过程使用了锁，于是更新触摸的代码只会执行一次。
 
 ```csharp
 PenThreadWorker.WorkerOperation[] array = null;
@@ -162,9 +164,32 @@ if (array != null)
 
 那么第二个问题，这个 `_workerOperation` 是从哪里赋值的？实际上调用 `WorkerAddPenContext` 函数或调用 `WorkerRemovePenContext` 函数时，就会修改这个值。这个函数就是在触摸屏插拔的时候触发。
 
-在所有的设备修改都会触发 windows 消息，在`HwndWrapper.WndProc`可以收到 Windows 消息
+下面是尝试在各个 `_workerOperation` 加入和运行的时候输出的日志
 
-如果收到的消息是 `WM_TABLET_ADDED` 或 `WM_TABLET_DELETED` 就会在`SystemResources.SystemThemeFilterMessage` 调用 `InvalidateTabletDevices` 刷新触摸屏
+```csharp
+// 拔
+14:51:24.458 WorkerGetTabletsInfo
+14:51:24.462 Clear
+14:51:24.468 WorkerRemovePenContext
+14:51:24.472 Clear
+14:51:24.475 WorkerGetTabletsInfo
+14:51:24.480 Clear
+14:51:24.493 WorkerReleaseTabletLocks
+14:51:24.499 Clear
+// 插
+14:51:25.623 WorkerGetTabletInfo
+14:51:25.628 Clear
+14:51:25.632 WorkerAcquireTabletLocks
+14:51:25.640 Clear
+14:51:25.648 WorkerCreateContext
+14:51:25.657 Clear
+14:51:25.671 WorkerAddPenContext
+14:51:25.677 Clear
+```
+
+在所有的设备修改都会触发 windows 消息，在 `HwndWrapper.WndProc` 可以收到 Windows 消息
+
+如果收到的消息是 `WM_TABLET_ADDED` 或 `WM_TABLET_DELETED` 就会在 `SystemResources.SystemThemeFilterMessage` 调用 `InvalidateTabletDevices` 刷新触摸屏
 
 ```csharp
     private static IntPtr SystemThemeFilterMessage(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
@@ -194,13 +219,16 @@ if (array != null)
 
 禁用 PenContext 的方法是调用 `PenContext.Disable` ，这个方法传入一个 bool 告诉是否关闭 `WorkerThread` 这里都是使用 false ，这里核心就是 `_penThreadPenContext.RemovePenContext(this)` 这里的 `RemovePenContext` 会调用 `PenThreadWorker.WorkerRemovePenContext` 这个函数不是立刻运行移除，这个函数先添加 `_workerOperation` 然后释放 `_pimcResetHandle` 等待 Stylus Input 处理完成再继续。
 
-是否还记得刚才的 `ThreadProc` 第二层循环，在用户没有触摸时，假设只有一个 PenContext 会在 `GetPenEvent` 等待，等待的方法是通过  `_pimcResetHandle` ，现在在 `WorkerRemovePenContext` 函数释放了，于是 `GetPenEvent` 就会返回。这里返回是 false 于是退出第二层循环，进入第一层循环，这时的 `_workerOperation` 有一个值 `WorkerOperationRemoveContext`。在第一层循环使用 `WorkerOperationRemoveContext.OnDoWork` 通过 DoWork 使用 `RemovePenContext` 移除。这里就是 `RemovePenContext` 移除 `PenContext` 的过程。
+是否还记得刚才的 `ThreadProc` 获取触摸流程循环，在用户没有触摸时，假设只有一个 PenContext 会在 `GetPenEvent` 等待，等待的方法是通过  `_pimcResetHandle` ，现在在 `WorkerRemovePenContext` 函数释放了，于是 `GetPenEvent` 就会返回。这里返回是 false 于是退出获取触摸流程循环，进入初始化流程循环，这时的 `_workerOperation` 有一个值 `WorkerOperationRemoveContext`。在初始化流程循环使用 `WorkerOperationRemoveContext.OnDoWork` 通过 DoWork 使用 `RemovePenContext` 移除。这里就是 `RemovePenContext` 移除 `PenContext` 的过程。
 
-因为上面说了很多细节，但是从代码看，这个流程从主线程通过先添加 `_workerOperation` 加入如何处理的代码，然后通过释放 `_pimcResetHandle` 让处理输入的线程退出第二层循环，在第一层循环处理。
+因为上面说了很多细节，但是从代码看，这个流程从主线程通过先添加 `_workerOperation` 加入如何处理的代码，然后通过释放 `_pimcResetHandle` 让处理输入的线程退出获取触摸流程循环，在初始化流程循环处理。
 
 收集当前的 PenContext 是使用 `WispTabletDevices.UpdateTablets` 请看代码
 
 ```csharp
+
+WispLogic.cs
+
 		private void RefreshTablets()
 		{
 			foreach (PenContexts penContexts in this.__penContextsMap.Values)
@@ -213,9 +241,10 @@ if (array != null)
 				penContexts2.Enable();
 			}
 		}
+
 ```
 
-在 UpdateTablets 实际是调用 `UpdateTabletsImpl` 这里有一句代码是 `penThread.WorkerGetTabletsInfo` ，而`penThread.WorkerGetTabletsInfo`是调用`penThreadWorker.WorkerGetTabletsInfo` 这里会释放 `_pimcResetHandle` ，也就是在 `ThreadProc` 的第二层循环就会退出。
+在 UpdateTablets 实际是调用 `UpdateTabletsImpl` 这里有一句代码是 `penThread.WorkerGetTabletsInfo` ，而 `penThread.WorkerGetTabletsInfo` 是调用`penThreadWorker.WorkerGetTabletsInfo` 这里会释放 `_pimcResetHandle` ，也就是在 `ThreadProc` 的获取触摸流程循环就会退出。
 
 ```csharp
 		[SecurityCritical]
@@ -235,7 +264,7 @@ if (array != null)
 		}
 ```
 
-这里 WorkerOperationGetTabletsInfo 就是更新的代码，这里使用 COM 通过[CoCreateInstance](https://blog.csdn.net/a1875566250/article/details/7885905 ) 新建 PimcManager 通过 ` PenThreadWorker.GetTabletInfoHelper` 拿到 `_tabletDevicesInfo` 请看代码
+这里 WorkerOperationGetTabletsInfo 就是更新的代码，这里使用 COM 通过[CoCreateInstance](https://blog.csdn.net/a1875566250/article/details/7885905 ) 新建 PimcManager 通过 `PenThreadWorker.GetTabletInfoHelper` 拿到 `_tabletDevicesInfo` 请看代码
 
 ```csharp
             protected override void OnDoWork()
@@ -274,18 +303,26 @@ if (array != null)
  
 ```
 
-如果在 `GetTabletInfoHelper` 出现 `COMException` 就会返回空的数组，因为无法拿到触摸设备，在 WPF 触摸失效。
+如果在 `GetTabletInfoHelper` 出现 `COMException` 或 `ArgumentException`就会返回空的数组，因为无法拿到触摸设备，在 WPF 触摸失效。
+
+下面的图片就是在普通的插拔触摸屏和快速插拔触摸屏时不同的输出，可以看到在快速插拔的时候在  `GetTabletInfoHelper` 出现了 `ArgumentException` 这时就会让 WPF 无法触摸
+
+<!-- ![](image/WPF 插拔触摸设备触摸失效/WPF 插拔触摸设备触摸失效4.png) -->
+
+![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201881010271273)
+
+因为在 WispLogic 的 RefreshTablets 先禁用了 PenContexts 但是在更新 UpdateTablets 返回的是空数组，于是重新打开 PenContexts 就找不到触摸屏，所以就触摸失效
 
 ## 代码存在的问题
 
-在上面所说的 `GetTabletInfoHelper` 出现 `COMException` 返回数组会出现异常会让 WPF 触摸失效。因为在用户插入触摸屏时触发了 TabletAdded 消息，在之后用户触摸时不会有其他的插拔触摸相关消息。所以在第一次收到`WM_TABLET_ADDED`做初始化时，如果出现了 `COMException` 返回空数组就会失去初始化时机。
+在上面所说的 `GetTabletInfoHelper` 出现 `COMException` 返回数组会出现异常会让 WPF 触摸失效。因为在用户插入触摸屏时触发了 TabletAdded 消息，在之后用户触摸时不会有其他的插拔触摸相关消息。所以在第一次收到`WM_TABLET_ADDED`做初始化时，如果出现了 `COMException` 等返回空数组就会失去初始化时机。
 
 第二个问题是因为消息循环和获得输入的线程是两个线程，两个线程之间比较难做到同步，特别是使用释放 `_pimcResetHandle` 的方法让输入线程重新调用 `_workerOperation` ，在插拔触摸屏需要触发多个 Windows 消息，几乎每个消息都需要插入一个  `_workerOperation` 并且使用等待的方式。只要出现线程调度没有处理好，就会出现原来需要添加的 PenContext 没有添加，这时就无法获得触摸。
 
 除了调度的时机，在 `Stylus Input` 线程是使用 `_pimcResetHandle.Value` 在 `GetPenEvent` 等函数进行等待。而 `_workerOperation` 如 `WorkerGetTabletsInfo` 是从主线程的消息循环进入的，这个函数是将 `WorkerOperationGetTabletsInfo` 加入到  `_workerOperation`  然后释放 `_pimcResetHandle.Value` 通过释放  `_pimcResetHandle.Value` 在 `Stylus Input` 线程就可以从 `GetPenEvent` 等函数返回，这时进入循环执行 `_workerOperation` ，然后主线程在等待  `WorkerOperationGetTabletsInfo` 的完成才可以继续代码。这样也就是原来的主线程是需要通过释放 `_pimcResetHandle.Value` 让 `Stylus Input` 线程运行一段代码，并且主线程需要等待 `Stylus Input` 线程运行完成才可以继续。而我看了里面的代码，实在没必要让这些代码在 `Stylus Input` 线程运行。现在 WPF 这些代码的性能会比直接在主线程运行要低，因为代码运行的时间是 主线程释放 `_pimcResetHandle` 等待 `Stylus Input` 线程运行完成，等待 `Stylus Input` 线程运行完成需要等待 CPU 调度 `Stylus Input` 线程运行代码，还需要等待 `Stylus Input` 线程运行完成之后设置`AutoResetEvent`这个等待的时间相对直接在主线程运行是长很多，而且只要 CPU 一直不调度 `Stylus Input` 线程就需要一直等，不如重新创建线程。
 
 
-第三个问题是在 `PenThreadWorker` 的 `ThreadProc` 的第二层循环只判断 `_handles.Length == 1` 时调用 GetPenEvent 其他的时候调用 `GetPenEventMultiple`  也就是在 `_handles.Length` 为 0 时也是调用 `GetPenEventMultiple` 这从开发的 API 设计上看，如果没有 `_handles` 也就是没有 PenContext 就不应该进入 `GetPenEventMultiple` 函数。建议是没有 `_handles` 使用另外的函数进行等待。
+第三个问题是在 `PenThreadWorker` 的 `ThreadProc` 的获取触摸流程循环只判断 `_handles.Length == 1` 时调用 GetPenEvent 其他的时候调用 `GetPenEventMultiple`  也就是在 `_handles.Length` 为 0 时也是调用 `GetPenEventMultiple` 这从开发的 API 设计上看，如果没有 `_handles` 也就是没有 PenContext 就不应该进入 `GetPenEventMultiple` 函数。建议是没有 `_handles` 使用另外的函数进行等待。
 
 这里为什么在 `_handles.Length` 不是 1 需要使用 `GetPenEventMultiple` 而不是直接返回的原因是觉得创建线程的代价太高，或如果不进入等待的函数就会进入循环，不停进入循环。实际上这里在 `_handles` 没有值就是用户没有触摸屏，用户插入触摸屏的时间是很少的，没有几个用户一天没事都在插入拔出触摸屏，所以在用户插入触摸屏时再创建一个新的线程，在用户拔出触摸屏去掉这个线程是可以的。 通过这样做减少在这个线程等待的时间，防止用户的软件因为在 `GetPenEventMultiple` 没有释放触摸失效。 
 
