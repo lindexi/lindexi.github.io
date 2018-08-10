@@ -802,6 +802,8 @@
 
  * [WPF 开发](WPF-开发.md)
 
+ * [WPF 开发自动删除软件](WPF-开发自动删除软件.md)
+
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
@@ -817,6 +819,8 @@
  * [WPF 控件继承树](WPF-控件继承树.md)
 
  * [WPF 提高性能](WPF-提高性能.md)
+
+ * [WPF 插拔触摸设备触摸失效](WPF-插拔触摸设备触摸失效.md)
 
  * [WPF 播放 gif](WPF-播放-gif.md)
 
