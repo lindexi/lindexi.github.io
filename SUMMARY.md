@@ -738,6 +738,8 @@
 
  * [WPF 一个性能比较好的 gif 解析库](WPF-一个性能比较好的-gif-解析库.md)
 
+ * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
+
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
 
  * [WPF 使用 Direct2D1 画图 绘制基本图形](WPF-使用-Direct2D1-画图-绘制基本图形.md)
@@ -851,6 +853,8 @@
  * [UWP WPF 解决 xaml 设计显示异常](UWP-WPF-解决-xaml-设计显示异常.md)
 
  * [WPF 解决弹出模态窗口关闭后，主窗口不在最前](WPF-解决弹出模态窗口关闭后，主窗口不在最前.md)
+
+ * [WPF 触摸到事件](WPF-触摸到事件.md)
 
  * [WPF 设置纯软件渲染](WPF-设置纯软件渲染.md)
 
