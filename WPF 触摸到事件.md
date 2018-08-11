@@ -246,3 +246,52 @@ internal sealed class PenContexts
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件1.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2018810175638248)
+
+图片的实线就是表示直接在方法内调用，而虚线表示是在这个方法执行完的下一步，也就是不是方法直接调用。
+
+创建 PenContext 需要 penContextInfo 是从 WorkerOperationCreateContext 拿到，底层是调用 IPimcTablet2 拿到需要的值
+
+```csharp
+	internal interface IPimcTablet2
+	{
+		// 其他代码
+
+		void CreateContext(IntPtr handle, [MarshalAs(UnmanagedType.Bool)] bool fEnable, uint timeout, out IPimcContext2 IPimcContext, out int key, out long commHandle);
+	}
+```
+
+```csharp
+					// 下面 _pimcTablet 是 IPimcTablet2
+					this._pimcTablet.CreateContext(this._hwnd, true, 250u, out var pimcContext, out var contextId, out var num);
+					PenContextInfo result;// 这是结构体
+					result.ContextId = contextId;
+					result.PimcContext = new SecurityCriticalDataClass<IPimcContext2>(pimcContext);
+					result.CommHandle = new SecurityCriticalDataClass<IntPtr>(new IntPtr(num));
+					result.WispContextKey = UnsafeNativeMethods.QueryWispContextKey(pimcContext);
+					this._result = result;
+```
+
+
+这里很重要的两个值是 `IPimcContext` 和 `commHandle` 在创建 PenContext 主要就需要这两个值，在 PenContext 的字段是 `_pimcContext` `_commHandle` 在上面的获得触摸的过程就需要这两个值
+
+触摸的代码很重要就是拿到 `_handle` 的值，这个值在 `PenThreadWorker.AddPenContext` 创建，实际就是拿 PenContext 的值，请看代码
+
+```csharp
+		internal bool AddPenContext(PenContext penContext)
+		{
+		 	var list = _penContexts;	
+		 	list.Add(penContext);
+			UnsafeNativeMethods.CheckedLockWispObjectFromGit(penContext.WispContextKey);
+			_pimcContexts = new IPimcContext2[list.Count];
+			_penContexts = new WeakReference[list.Count];
+			_handles = new IntPtr[list.Count];
+			_wispContextKeys = new uint[list.Count];
+			foreach(var temp in list)
+			{				
+				_handles[i] = temp.CommHandle;
+				_pimcContexts[i] = temp._pimcContext.Value;
+				_penContexts[i] = new WeakReference(temp);
+				_wispContextKeys[i] = temp.WispContextKey;
+			}
+		}
+```
