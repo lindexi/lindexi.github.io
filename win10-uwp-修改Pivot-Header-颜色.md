@@ -22,7 +22,7 @@
 
 这样的Header是默认颜色
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/be842536-5c96-47f4-a49d-354e749a826a20161229152841.jpg)
+![](http://image.acmx.xyz/be842536-5c96-47f4-a49d-354e749a826a20161229152841.jpg)
 
 我们想修改颜色，可以使用
 
@@ -35,7 +35,7 @@
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f3c2f4a3-94ae-40b4-b3c3-da73116eb75d2016121716265.jpg)
+![](http://image.acmx.xyz/f3c2f4a3-94ae-40b4-b3c3-da73116eb75d2016121716265.jpg)
 
 参见：
 [http://stackoverflow.com/questions/31797875/overriding-pivot-header-foreground-brushes-in-uwp-app-win-10-rtm-sdk](http://stackoverflow.com/questions/31797875/overriding-pivot-header-foreground-brushes-in-uwp-app-win-10-rtm-sdk )

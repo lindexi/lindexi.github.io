@@ -130,11 +130,11 @@ using (IRandomAccessStream stream = await inputFile.OpenAsync(FileAccessMode.Rea
 
 现在在前台添加两个按钮，一个用于打开文件，另一个用来保存图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201856104247321.jpg)
+![](http://image.acmx.xyz/lindexi%2F201856104247321.jpg)
 
 随便选一个 jpg 文件，然后保存，可以看到保存了新的格式
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018561044427178.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018561044427178.jpg)
 
 在 UWP 可以使用上面的方法修改图片格式
 
@@ -222,7 +222,7 @@ SoftwareBitmap outputBitmap = SoftwareBitmap.CreateCopyFromBuffer(
 
 创建这个接口有什么用，先不告诉大家，因为用了不安全，需要在项目属性，生成，可以使用不安全
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201856113191940.jpg)
+![](http://image.acmx.xyz/lindexi%2F201856113191940.jpg)
 
 我来告诉大家如何从代码创建 SoftwareBitmap ，读写像素。
 

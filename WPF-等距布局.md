@@ -13,17 +13,17 @@
 
 请看下面的图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218111032.jpg)
+![](http://image.acmx.xyz/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218111032.jpg)
 
 上面图片是存在 6 个按钮的，所有的按钮使用的宽度都是一样
 
 现在修改为 3 个按钮，可以看到说有按钮都是相同
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218111254.jpg)
+![](http://image.acmx.xyz/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218111254.jpg)
 
 现在加两个宽度很小的文本，可以看到文本可以的宽度和按钮一样
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218111430.jpg)
+![](http://image.acmx.xyz/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218111430.jpg)
 
 下面让我告诉大家这个控件是如何做。
 

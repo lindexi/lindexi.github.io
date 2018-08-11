@@ -15,7 +15,7 @@
 
 渐变的颜色可以尝试打开任意一个控件，查看属性，就可以知道渐变的效果
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201877208328920.jpg)
+![](http://image.acmx.xyz/lindexi%2F201877208328920.jpg)
 
 渐变效果是渐变开始点，渐变结束点作为线性的渐变，也就是从点的开始到点的结束渐变。
 
@@ -25,7 +25,7 @@
 
 <!-- ![](image/win2d 渐变颜色/win2d 渐变颜色0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201877201512286.jpg)
+![](http://image.acmx.xyz/lindexi%2F201877201512286.jpg)
 
 请看图，使用的渐变是从(100,10)到(1000,1000)，元素是从(300,100)开始画，元素的宽度是 300 高度是 200 ，所以实际上元素使用的渐变不是从开始的渐变开始算，而是拿到渐变的对应元素所在颜色
 
@@ -78,7 +78,7 @@
 
 这时创建一个矩形使用颜色，先设置他的坐标是 200，200，在点击按钮的时候移动矩形，可以看到矩形在移动的时候颜色在变化
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/win2d%E9%A2%9C%E8%89%B2.gif)
+![](http://image.acmx.xyz/win2d%E9%A2%9C%E8%89%B2.gif)
 
 
 ```csharp
@@ -91,7 +91,7 @@
 
 <!-- ![](image/win2d 渐变颜色/win2d 渐变颜色1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018772041229030.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018772041229030.jpg)
 
 例如矩形是已知的，想要让矩形从上到下是渐变，就可以使用下面代码
 
@@ -164,7 +164,7 @@ xaml
 
 <!-- ![](image/win2d 渐变颜色/win2d 渐变颜色2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018772050143580.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018772050143580.jpg)
 
 使用这个颜色需要使用 CanvasRadialGradientBrush ，在创建的使用需要传入 CanvasResourceCreator 因为在 win2d 控件的画函数，所以使用下面代码
 

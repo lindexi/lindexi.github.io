@@ -36,11 +36,11 @@
 
 然后把他加入到其他页面，这个页面设置了 DataContext ，但是运行在构造的断点可以看到拿到的值是空
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%2520111233392018114151411.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%2520111233392018114151411.jpg)
 
 但是可以在加载完成函数拿到
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%2520111233392018114151439.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%2520111233392018114151439.jpg)
 
 那么是在什么时候才可以拿到依赖属性的值？
 
@@ -255,9 +255,9 @@ public $propertyType$ $propertyName$
 
 可以直接粘贴进去Resharper的代码
 
-或者导入我的设置，点击[下载](http://7xqpl8.com1.z0.glb.clouddn.com/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A71685E00E-67E5-4343-A467-84862A1EE502.DotSettings)
+或者导入我的设置，点击[下载](http://image.acmx.xyz/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A71685E00E-67E5-4343-A467-84862A1EE502.DotSettings)
 
-如果想要使用的是 C# 7 的特性，可以修改代码片，或者点击[下载](http://7xqpl8.com1.z0.glb.clouddn.com/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A72E6789E0-E16E-4B2F-896B-671CC1F21B11.DotSettings)导入
+如果想要使用的是 C# 7 的特性，可以修改代码片，或者点击[下载](http://image.acmx.xyz/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A72E6789E0-E16E-4B2F-896B-671CC1F21B11.DotSettings)导入
 
 ```csharp
 public static readonly $dependencyProperty$ $propertyName$Property = $dependencyProperty$.Register(

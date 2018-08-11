@@ -33,7 +33,7 @@
 
 在我们的解决方案新建一个文件夹，我们这里在手机Mobile
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-4-6/21773005.jpg)
+![](http://image.acmx.xyz/16-4-6/21773005.jpg)
 
 我们在新建DeviceFamily-Mobile新建xaml，MainPage
 

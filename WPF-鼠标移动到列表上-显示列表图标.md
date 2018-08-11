@@ -35,7 +35,7 @@
 ```
 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%88%97%E8%A1%A8%E4%B8%8A.gif)
+![](http://image.acmx.xyz/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%88%97%E8%A1%A8%E4%B8%8A.gif)
 
 获取当前列表项，使用`{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=(ItemsControl.AlternationIndex),Mode=OneWay,Converter={StaticResource NumberAddOne}}`。注意 AlternationCount 如果没设不会显示
 
@@ -75,7 +75,7 @@
 
 为何添加上面转化，这个程序员和客户对于数组的开始是不同的。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/90d81d04-5aeb-42a3-adc2-8bc3f0d458b1201722210250.jpg)
+![](http://image.acmx.xyz/90d81d04-5aeb-42a3-adc2-8bc3f0d458b1201722210250.jpg)
 
 
 <!-- for(var i = 57;i>0;i--)

@@ -12,7 +12,7 @@
 
 实际上本文是在使用一个好用的软件 [希沃白板](http://easinote.seewo.com/) 的时候发现在里面很难输入拼音来做课堂活动。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018430111201441.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018430111201441.jpg)
 
 因为现在没有找到一个软件可以用来输入拼音的，快速的输入。输入音调是比较难的，所以我就重新做了一个输入法。
 
@@ -81,7 +81,7 @@
 
 右击引用，点击程序集、框架，就可以看到 System.Windows.Forms ，请看图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184301122315730.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184301122315730.jpg)
 
 引用了之后就可以使用下面的方法拿到按键
 
@@ -118,7 +118,7 @@ var key = keyData.ToString().ToLower();
 
 所以对于`a,e,i,o,u,v`才需要输入法转换，对于其他的就直接输入就好了。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184301135348021.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184301135348021.jpg)
 
 那么如何让用户的按键无法直接输入到对应的程序，就需要使用下面的函数
 
@@ -151,7 +151,7 @@ System.Windows.Forms.SendKeys.SendWait(string str)
 
 判断用户输入的是不是`a,e,i,o,u,v`，发现不是就直接发送输入。如果是就不发送任何输入，让用户选需要的是哪个
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018116195923.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018116195923.jpg)
 
 这是我把它显示出来，代码还需要一个属性，表示当前是不是存在用户没有选的字符。如果存在，下一次输入的是[0,9]就是用户选的字符，因为只要5个可以选，对于大于5和0的就直接发送输入。当前对于现在很多输入法，都是按空格选第一个，这里也是需要判断用户输入的是不是空格。
 

@@ -10,9 +10,9 @@
 
 一般在很多网站都可以看到这个图标，这就是rss，他可以把最新的文章发给你。如果自己的博客没有添加 rss 那么大家需要打开博客才可以发现你写了新的文章，所以建议在博客添加。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017127131016.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017127131016.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017127131032.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017127131032.jpg)
 
 在配置之前，需要知道 rss 的格式，实际上 rss 的格式可以看 [www.w3school.com.cn/rss/rss_syntax.asp](www.w3school.com.cn/rss/rss_syntax.asp) ，但是使用的很简单。
 

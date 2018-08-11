@@ -30,7 +30,7 @@
 
 我接下来获取文件夹内所有文件的缩略图显示出来
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20176272002.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20176272002.jpg)
 
 首先是界面代码
 
@@ -151,7 +151,7 @@
 
 接下来就是做下面的软件，在播放视频的时候，拖动进度条，就会显示对应的视频缩略图，如拖到指定时间，就显示这一时间的视频缩略图
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B46%25E6%259C%258827%25E6%2597%25A5%25202929.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B46%25E6%259C%258827%25E6%2597%25A5%25202929.gif)
 
 <!-- ![](http://wx4.sinaimg.cn/large/005VX1Eagy1fh027j7qutg30z10nyu11.gif) -->
 

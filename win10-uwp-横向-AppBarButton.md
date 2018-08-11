@@ -19,7 +19,7 @@
 
 但是如果要做出下面的图片的样子，就需要修改`Style`，下面我来告诉大家如何做出下面图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017102154055.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017102154055.jpg)
 
 首先在资源写下面的`Style`，建议写在 Page 的资源，这样在整个页面都可以指定
 

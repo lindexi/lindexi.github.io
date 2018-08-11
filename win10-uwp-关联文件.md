@@ -13,7 +13,7 @@
 
 <!-- ![](image/win10 uwp 关联文件/win10 uwp 关联文件0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV+BQA28wYAAQAEAK4+AQBmQwIAaOgJAOjZ/2017223193546.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV+BQA28wYAAQAEAK4+AQBmQwIAaOgJAOjZ/2017223193546.jpg)
 
 添加一个功能，需要写的最少的项是名称，文件类型两个。
 
@@ -85,7 +85,7 @@ UWP 从文件显示图片很简单，打开放在img就好。
 
 现在尝试运行一下这个项目，然后找到一张 jpg 图片，右击打开方式选择这个项目，这时就可以看到 UWP 应用显示图片。可以看到关联的代码很简单，实际上也是很简单
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV+BQA28wYAAQAEAK4+AQBmQwIAaOgJAOjZ/%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80.gif)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV+BQA28wYAAQAEAK4+AQBmQwIAaOgJAOjZ/%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80.gif)
 
 
 刚才只是用最简单的方式写了显示的名称，但是一个好看的应用，需要在关联文件加上图片。

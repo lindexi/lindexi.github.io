@@ -11,7 +11,7 @@
 
 一般发布的软件都会选优化代码，点击属性选择生成就可以看到优化代码
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792713825.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792713825.jpg)
 
 假如有方法 Foo ，这个方法里面写了一些特殊代码，不想让编译器优化，那么可以如何做？
 
@@ -32,7 +32,7 @@ private void MethodWhichShouldNotBeOptimized()
 
 最近看到这篇文章讲的很好 [深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分） - walterlv](https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-invoke-async.html ) 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792713624.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792713624.jpg)
 
 
 

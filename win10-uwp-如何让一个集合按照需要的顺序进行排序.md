@@ -64,7 +64,7 @@ IList<int> sort = new List<int>()
 
 可以看到这两个方法的速度都比较好，之前使用的是清除整个列表才添加，可以看到这个方法的速度比上面两个方法差。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792391832.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792391832.jpg)
 
 
 

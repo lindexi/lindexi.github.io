@@ -34,7 +34,7 @@ Windows Registry Editor Version 5.00
 
 如果不小心使用SublimeText打开的，右击出现乱码，那么可以通过在注册表修改值。打开运行，输入`regedit`进入注册表，可以看到注册表可以输入路径，输入`HKEY_CLASSES_ROOT\*\shell\SublimeText3`修改值
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201834175414.jpg)
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201834175414.jpg)
 
 
 

@@ -2,7 +2,7 @@
 # win10 uwp 进度条 WaveProgressControl
 
 昨天看到了有个大神做出好看的进度条样式，于是我就去抄袭他的代码，但是发现看不懂，于是本文主要翻译就是大神说这个控件如何做。
-![](http://7xqpl8.com1.z0.glb.clouddn.com/0f822922-f86b-98e3-4682-30bbe3160e6a%2Fenyb.gif)
+![](http://image.acmx.xyz/0f822922-f86b-98e3-4682-30bbe3160e6a%2Fenyb.gif)
 
 <!--more-->
 
@@ -12,11 +12,11 @@
 
 上面的控件实际就是两个圆，然后 Compositor 让背景显示在里面的圆。因为可以使用下面图片的方式，看起来就是从一个圆里出现背景。实际就是背景移动图片，可以看到图片移动的时候，看里面的圆的背景，就是上面那张图的样子。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/0f822922-f86b-98e3-4682-30bbe3160e6a%2Fbrmx.gif)
+![](http://image.acmx.xyz/0f822922-f86b-98e3-4682-30bbe3160e6a%2Fbrmx.gif)
 
 也就是在图片的上移就是进度，可以用 Percent 来知道现在的进度，然后计算显示的高度，很容易就计算出上移。然后图片可以通过 Adobe Illustrator 工具来做，打开 Zig Zag 效果就可以做出这个图片。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/0f822922-f86b-98e3-4682-30bbe3160e6a%2F201791016335.jpg)
+![](http://image.acmx.xyz/0f822922-f86b-98e3-4682-30bbe3160e6a%2F201791016335.jpg)
 
 注意图片从左到右播放再重新播放，看起来不会出现断的图片。
 

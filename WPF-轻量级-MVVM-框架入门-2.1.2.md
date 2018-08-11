@@ -180,7 +180,7 @@
 
 <!-- ![](image/WPF 轻量级 MVVM 框架入门 2.1.2/WPF 轻量级 MVVM 框架入门 2.1.20.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018630153375515.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018630153375515.jpg)
 
 本文使用的是上面的第一个方式拿到 ViewModel 所以需要在 A 页面添加一些代码获得 ViewModel 。
 

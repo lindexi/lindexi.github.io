@@ -15,7 +15,7 @@
 
 <!-- ![](image/C# 控制台创建 Sharpdx 窗口/C# 控制台创建 Sharpdx 窗口0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018618211811713.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018618211811713.jpg)
 
 ## 下载
 

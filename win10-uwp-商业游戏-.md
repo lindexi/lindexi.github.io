@@ -24,7 +24,7 @@
 
 接着开始做游戏的主页面，请注意，在写的时候，一个页面都是对应一个视图。可以看到在写的时候，不需要去管两个页面之间的逻辑。当然现在也无法管。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792392012.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792392012.jpg)
 
 可以知道游戏的主页面需要有仓库、买东西的店铺、买东西的地方和工厂。
 
@@ -113,7 +113,7 @@
 
 游戏的界面很重要，但是我就写一个简单的界面。我先给界面的截图，可以看到这个界面很简单，就是一个列表和一些按钮
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791101021.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791101021.jpg)
 
 列表有个问题，如何做表头，实际我也没办法，于是用了下面的代码
 
@@ -196,7 +196,7 @@
 
 如果在列表使用 x:bind 那么需要使用 DataType 来告诉绑定的类型，所以需要数据的类型是什么，不然就无法通过。所以在写列表之前还需要定义好数据，于是让我来告诉大家这个游戏需要的数据。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201797183335.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201797183335.jpg)
 
 然后就需要开始绑定进去了，不过这时发现游戏需要的数据很简单，暂时我就不继续写代码，如果需要代码，请看 [VarietyHiggstGushed](https://github.com/lindexi/UWP/tree/master/uwp/src/VarietyHiggstGushed)
 
@@ -206,7 +206,7 @@
 
 首先把图片放在 Assest 文件夹，然后就可以设置出来了。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791617817.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791617817.jpg)
 
 ```csharp
             <Grid>
@@ -244,13 +244,13 @@
 
 可以看到原来的代码是 [VarietyHiggstGushed](https://github.com/lindexi/UWP/commit/3f58dbee64d0a7b42768c1acdecb6812fc789ac5#diff-e941c1b41207d1fb99a9b5bc32e2d30b) 买东西的界面看起来不好
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017916171231.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017916171231.jpg)
 
 下面就需要修改这个，修改为一个好看的
 
 可以使用 ContentDialog 弹出一个好看的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791720859.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201791720859.jpg)
 
 那么如何做这个界面，简单的方法是做一个用户控件，这个控件的界面很简单，但是后台需要写一些属性，这个属性就是买入的当前，买入最大值，对应还有卖出的。
 

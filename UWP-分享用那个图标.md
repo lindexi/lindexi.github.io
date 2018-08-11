@@ -2,7 +2,7 @@
 # UWP 分享用那个图标
 
 有两个图标，如果让你选，你会用哪个图标做分享？
-![](http://7xqpl8.com1.z0.glb.clouddn.com/1-TqFrTQhRzRVtGy2JGS29YA.png)
+![](http://image.acmx.xyz/1-TqFrTQhRzRVtGy2JGS29YA.png)
 
 <!--more-->
 

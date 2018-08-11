@@ -31,23 +31,23 @@ RetroShare 这个软件的使用还是有一点难度的，他不需要向服务
 
 下面这张图是偷的，因为我已经注册好了
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822112240.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822112240.jpg)
 
 不过我发现可以注册多个账户，方法是只需要多打开一个 RetroShare 就可以看到这个界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154320.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154320.jpg)
 
 点击 New Profile 就可以创建一个新的账户
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154353.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154353.jpg)
 
 在这里输入用户名和两次密码，然后不停移动鼠标
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154436.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154436.jpg)
 
 直到最后的进入到 20% 或以上，就可以点击下一步
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154622.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221154622.jpg)
 
 
 ## 添加好友
@@ -56,13 +56,13 @@ RetroShare 这个软件的使用还是有一点难度的，他不需要向服务
 
 打开软件可以看到下面的图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822121155.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822121155.jpg)
 
 中间的代码就是自己的信息，可以把这个信息发给其他小伙伴，然后他就可以添加你为好友
 
 下面试试添加我为好友，首先点击 Add Friend
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221124959.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221124959.jpg)
 
 粘贴下面的代码
 
@@ -83,31 +83,31 @@ QIIQaIZvbC3YBp7h5nqg+VAb8yECDne8aNK7BZWmQi6YkGuH3X41h0lh2Qvo4jG+
 BgtNeSBjb21wdXRlcgUQZo7z5oldc5A82kGQmlF7+gcDdOl1
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155128.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155128.jpg)
 
 这样就可以添加好友
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155154.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155154.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155225.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155225.jpg)
 
 但是这时候还需要好友同意才可以添加，如果有人添加我好友，那么我可以在邮件看到
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155311.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155311.jpg)
 
 点击邮件
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155352.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155352.jpg)
 
 或点击 Log 也可以看到
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155451.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155451.jpg)
 
 点击接受好友就可以添加
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155519.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155519.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155530.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221155530.jpg)
 
 现在就可以在网络看到添加的好友
 
@@ -115,11 +115,11 @@ BgtNeSBjb21wdXRlcgUQZo7z5oldc5A82kGQmlF7+gcDdOl1
 
 现在就是大家最想看的部分，如何分享自己的资源和如何下载别人的资源。点击 Files 文件然后就可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221163546.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221163546.jpg)
 
 点击 Config share folder 就可以选择要分享的文件夹。我这里选择了一个很大的文件夹，这时点击确定需要校验很久。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822116350.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822116350.jpg)
 
 ▲**点击 Add New 添加文件**
 
@@ -127,7 +127,7 @@ BgtNeSBjb21wdXRlcgUQZo7z5oldc5A82kGQmlF7+gcDdOl1
 
 第三个按钮如果打勾，那么就可以在下面这个界面看到分享的文件，可以直接点击下载，如果是在同个局域网，那么速度很快
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822116310.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822116310.jpg)
 
 下面来告诉大家如何下载资源
 
@@ -135,11 +135,11 @@ BgtNeSBjb21wdXRlcgUQZo7z5oldc5A82kGQmlF7+gcDdOl1
 
 实际上的 RetroShare 可以搜索到好友的分享资源和好友的好友分享的资源，所以这个功能很厉害，我搜索了一下就可以找到资源。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221151058.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221151058.jpg)
 
 但是在搜索之前还需要大家有好友才可以。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221161456.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221161456.jpg)
 
 搜索到资源之后通过双击想要的资源就可以进行下载。
 
@@ -147,7 +147,7 @@ BgtNeSBjb21wdXRlcgUQZo7z5oldc5A82kGQmlF7+gcDdOl1
 
 点击 Preferences 可以看到下面的界面，里面有两个文件夹可以设置，实际上只需要设置 Incoming Directory 就可以了，把他设为自己的下载文件夹。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221151439.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221151439.jpg)
 
 ## 获得资源
 
@@ -167,11 +167,11 @@ BgtNeSBjb21wdXRlcgUQZo7z5oldc5A82kGQmlF7+gcDdOl1
 
 这时我会邀请你进入小圈
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221162834.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221162834.jpg)
 
 点击确定就可以进入，进入之后如果想加朋友，那么可以通过右击发送自己的证书，这样小伙伴就可以添加
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221162952.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018221162952.jpg)
 
 推荐：[RetroShare 帮助](https://gongzisun.github.io/ )
 

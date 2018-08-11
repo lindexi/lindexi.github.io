@@ -35,9 +35,9 @@
 
 如果是带 BOM 的文件，带 BOM 就是带签名，我们可以看到在 VisualStudio 的 文件-高级保存 有 UTF-8 带签名和 UTF-8 编码。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fce442cf-cf99-421e-8fd2-768b101f2bcd201711094251.jpg)
+![](http://image.acmx.xyz/fce442cf-cf99-421e-8fd2-768b101f2bcd201711094251.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fce442cf-cf99-421e-8fd2-768b101f2bcd201711094313.jpg)
+![](http://image.acmx.xyz/fce442cf-cf99-421e-8fd2-768b101f2bcd201711094313.jpg)
 
 那么带签名的意思是什么，这个和历史有关，我们做出了太多编码，有时无法解析文件的编码，如我们在记事本写上联通，再次打开会是乱码的原因一样，为了让文件自己告诉是什么编码，我们就取文件的前四个 byte ，用于让文件说出自己的编码。
 
@@ -301,7 +301,7 @@ namespace EncodingNormalior.Model
 
 UWP 检测编码可以使用这个库
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201752215058.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201752215058.jpg)
 
 [如何检测或判断一个文件或字节流（无BOM）是什么编码类型 - 路过秋天 - 博客园](https://www.cnblogs.com/cyq1162/p/9183424.html )
 

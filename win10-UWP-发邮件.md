@@ -26,11 +26,11 @@ UWP 下如何发邮件？可以使用`mailto:xx?subject=*`方式发送？
 
 让用户选择有email的联系，不选择一个联系全部。这句话说的是，在用户选择联系人之后，让他选择联系人的一个项。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f182d3db-d997-4f86-801b-fde591612fa7201721995012.jpg)
+![](http://image.acmx.xyz/f182d3db-d997-4f86-801b-fde591612fa7201721995012.jpg)
 
 选择联系人，选择一个邮箱
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f182d3db-d997-4f86-801b-fde591612fa7201721995041.jpg)
+![](http://image.acmx.xyz/f182d3db-d997-4f86-801b-fde591612fa7201721995041.jpg)
 
 如果指定一个联系人让用户发送，如开发者，可以直接写自己的邮箱
 

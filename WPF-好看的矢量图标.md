@@ -13,11 +13,11 @@
 
 例如我找到了一个好看的图标
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185161419393396.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185161419393396.jpg)
 
 我只需要点击下面的下载就可以了
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185161420355419.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185161420355419.jpg)
 
 推荐使用 Brush 的方式，或者直接 Canvas 的方式。有大神说，显示图片的性能会比显示 Brush Path 好，但是显示图片需要关注dpi等，而且作为静态的资源，实际上 Brush 占用内存和图片是不能直接相比的。
 
@@ -292,7 +292,7 @@
 
 按下 F5 就可以看到下面的图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20185161425559526.jpg)
+![](http://image.acmx.xyz/lindexi%2F20185161425559526.jpg)
 
 
 

@@ -42,7 +42,7 @@ git clone [https://github.com/Microsoft/Quantum.git](https://github.com/Microsof
 
 按下 F5 就可以看到输出，如果可以看到下面的输出，那么你的环境就弄好了
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712122104.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712122104.jpg)
 
 请看 [Setting up the Q# development environment ](https://docs.microsoft.com/zh-cn/quantum/quantum-installconfig?view=qsharp-preview )
 

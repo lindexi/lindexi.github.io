@@ -2,7 +2,7 @@
 # WPF 拖动滚动
 
 有时候需要这个效果，触摸向下可以向下滑动，不需要鼠标滑轮。
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV+BQA28wYAAQAEAK4+AQBmQwIAaOgJAOjZ/panel2017311092024.gif)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV+BQA28wYAAQAEAK4+AQBmQwIAaOgJAOjZ/panel2017311092024.gif)
 
 <!--more-->
 

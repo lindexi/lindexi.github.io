@@ -125,7 +125,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center"/>
 ```
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/82963283.jpg)
+![](http://image.acmx.xyz/16-3-28/82963283.jpg)
 我们可以加上内容
 
 ```xml
@@ -136,7 +136,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 </Grid>
             </AppBarButton>
 ```
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/51594850.jpg)
+![](http://image.acmx.xyz/16-3-28/51594850.jpg)
 我们可以在按钮加浮出
 
 ```xml
@@ -151,9 +151,9 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </AppBarButton>
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/93606598.jpg)
+![](http://image.acmx.xyz/16-3-28/93606598.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/29257708.jpg)
+![](http://image.acmx.xyz/16-3-28/29257708.jpg)
 ### App bar separator
 命令栏中的命令组。
 如果我们有很多按钮，我们可以使用
@@ -164,7 +164,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             <AppBarButton Content="csdn"></AppBarButton>
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/87280713.jpg)
+![](http://image.acmx.xyz/16-3-28/87280713.jpg)
 
  
 
@@ -199,7 +199,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </AppBarButton>
         </CommandBar>
 ```
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/32449489.jpg)
+![](http://image.acmx.xyz/16-3-28/32449489.jpg)
 
 我们也看到最后的按钮，如果有一些用不到，但是有用
 
@@ -209,7 +209,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 <AppBarButton Label="红黑转载"/>
             </CommandBar.SecondaryCommands>
 ```
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/15333552.jpg)
+![](http://image.acmx.xyz/16-3-28/15333552.jpg)
 
 ## Buttons
 
@@ -220,7 +220,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```xml
 <Button Margin="72,163,0,0" Content="请勿转载"></Button>
 ```
-![](http://7xqpl8.com1.z0.glb.clouddn.com/16-3-28/84807449.jpg)
+![](http://image.acmx.xyz/16-3-28/84807449.jpg)
 按钮点击可以使用`X:Bind`
 
 ### Hyperlink

@@ -98,7 +98,7 @@ await canvasRenderTarget.SaveAsync(await file.OpenAsync(FileAccessMode.ReadWrite
 
 现在这个功能写在图床
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018318182752.jpg)
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018318182752.jpg)
 
 
 

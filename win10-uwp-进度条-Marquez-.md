@@ -2,7 +2,7 @@
 # win10 uwp 进度条 Marquez 
 
 本文将告诉大家，如何做一个带文字的进度条，这个进度条可以用在游戏，现在我做的挂机游戏就使用了他。
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2FMarquez.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2FMarquez.gif)
 
 <!--more-->
 
@@ -12,7 +12,7 @@
 
 如何做上图的效果，实际需要的是两个控件，一个是显示文字 的 TextBlock  一个是进度条。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201764111545.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201764111545.jpg)
 
 那么如何让 文字和左边的距离变化？使用 TranslateTransform
 

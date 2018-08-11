@@ -2,7 +2,7 @@
 # win10 uwp 按下等待按钮
 
 我们经常需要一个按钮，在按下时，后台执行Task，这时不能再次按下按钮。
-![](http://7xqpl8.com1.z0.glb.clouddn.com/be842536-5c96-47f4-a49d-354e749a826aProgressButton.gif)
+![](http://image.acmx.xyz/be842536-5c96-47f4-a49d-354e749a826aProgressButton.gif)
 
 <!--more-->
 

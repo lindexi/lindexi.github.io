@@ -16,7 +16,7 @@
 共享需要过时的 SMB1 协议，而此协议是不安全的，可能会使你的系统遭受攻击。你的系统需要 SMB2 或更高版本。
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201818172624.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201818172624.jpg)
 
 原因是 SMB1 是不安全的，所以微软在 win10 系统就不给使用，如果需要使用，需要使用管理员打开 Powershell 输入下面代码
 

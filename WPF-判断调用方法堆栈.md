@@ -147,7 +147,7 @@ public class A
 
 感谢 [walterlv](https://walterlv.oschina.io/ )
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101220537.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101220537.jpg)
 
 
 

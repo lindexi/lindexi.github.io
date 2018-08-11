@@ -149,15 +149,15 @@
 
 先启动 WPF 程序，然后启动控制台
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018411837142177.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018411837142177.jpg)
 
 这时点击按钮之后就打开控制台可以看到控制台可以收到消息
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018411838156388.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018411838156388.jpg)
 
 然后 WPF 也收到控制台发过来的消息
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018411838491360.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018411838491360.jpg)
 
 ## 序列化
 

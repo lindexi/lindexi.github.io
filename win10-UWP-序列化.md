@@ -19,7 +19,7 @@
 
 首先需要定义一个类，这个类作为保存的类，需要使用特性 Serializable
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017420192248.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017420192248.jpg)
 
 然后使用 `binaryFormatter` 他可以写入流
 
@@ -78,7 +78,7 @@ Yaml序列化
 
 首先搜索 YamlDotNet ，安装
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201742019318.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201742019318.jpg)
 
 这里使用参见 [http://www.cnblogs.com/RicCC/archive/2010/03/01/serialization-data-format.html](http://www.cnblogs.com/RicCC/archive/2010/03/01/serialization-data-format.html )
 

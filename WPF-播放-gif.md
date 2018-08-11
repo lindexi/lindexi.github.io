@@ -71,7 +71,7 @@
 
 打开 .sln 文件，然后按 F5 运行，可以看到占用内存在 120M ，在运行一定时间，回收内存，占用内存70M，而CPU几乎都不需要。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018%25E5%25B9%25B42%25E6%259C%258810%25E6%2597%25A5%2520151339.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018%25E5%25B9%25B42%25E6%259C%258810%25E6%2597%25A5%2520151339.gif)
 
 参见：[http://hi.baidu.com/mych/blog/item/1eb14f545f12a752564e00be.html](http://hi.baidu.com/mych/blog/item/1eb14f545f12a752564e00be.html )
 

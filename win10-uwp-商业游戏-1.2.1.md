@@ -244,7 +244,7 @@
         }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201824105713.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201824105713.jpg)
 
 现在可以看到，添加技能这个存在点击按钮，但是不需要点击，只有升级。所以如何修改？下面来告诉大家使用列表模板
 
@@ -563,7 +563,7 @@
 
 可以看到，现在的运行就是
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201824113040.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201824113040.jpg)
 
 ## 添加技能
 
@@ -741,7 +741,7 @@ internal class KwxTpivzdikn
 
 现在运行一下，可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218101640.jpg)
+![](http://image.acmx.xyz/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218101640.jpg)
 
 但是点击很多次就可以看到界面是点击添加修为，不知道他的每次点击可以添加多少，所以修改他的命名
 
@@ -759,7 +759,7 @@ internal class KwxTpivzdikn
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218101839.jpg)
+![](http://image.acmx.xyz/cc09f7ce-2059-5d67-bc56-036f04c13efa%2F2018218101839.jpg)
 
 这样多次点击添加技能就能找到一个升级需要比较少技能的值
 
@@ -787,7 +787,7 @@ internal class KwxTpivzdikn
 
 不过我更新了图床的界面，现在的界面很好看了
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201859125215290.jpg)
+![](http://image.acmx.xyz/lindexi%2F201859125215290.jpg)
 
 [点击下载](https://www.microsoft.com/store/productId/9NBLGGH562R2)
 

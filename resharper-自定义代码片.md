@@ -24,15 +24,15 @@ resharper 提供了很有用的代码片，但是我们还是觉得不够，这�
 
 打开 Resharper > Tool > Templates Explor
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205413.jpg)
+![](http://image.acmx.xyz/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205413.jpg)
 
 选择语言
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205450.jpg)
+![](http://image.acmx.xyz/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205450.jpg)
 
 选择一个修改的代码片，选择编辑
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205827.jpg)
+![](http://image.acmx.xyz/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122205827.jpg)
 
 可以添加新的代码片，我们新建一个，接下来准备做一个简单的东西。
 
@@ -87,7 +87,7 @@ private $string$ _$name$$END$;
 
 写完我们设置按键
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/136fe646-e19f-446e-99e9-0159fa8e5fca2016123193729.jpg)
+![](http://image.acmx.xyz/136fe646-e19f-446e-99e9-0159fa8e5fca2016123193729.jpg)
 
 这一个就是在代码按 ps 就会使用属性加上`OnPropertyChanged();`
 
@@ -134,11 +134,11 @@ private $string$ _$field$;
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122213645.jpg)
+![](http://image.acmx.xyz/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122213645.jpg)
 
 点击属性选择，我们可以让输入的变量，修改范围
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122213830.jpg)
+![](http://image.acmx.xyz/76a67ab5-7429-4e23-8bd2-6d6d68755c8e2016122213830.jpg)
 
 输入Name是`Suggest name variable`输入名称为变量名
 
@@ -166,7 +166,7 @@ private $string$ _$field$;
 
 选择 Code Inspection ，设置，添加例外文件。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017413103255.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017413103255.jpg)
 
 添加例外文件可以指点哪些文件忽略，可以忽略某个文件，很简单，如果有不懂请告诉我。
 
@@ -178,7 +178,7 @@ private $string$ _$field$;
 
 所以需要显示空格，按 ctrl+r+w
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017413103548.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017413103548.jpg)
 
 
 

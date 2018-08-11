@@ -81,13 +81,13 @@
 
 <!-- ![](image/C# 循环的判断会进来几次/C# 循环的判断会进来几次0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186149522247.jpg)
+![](http://image.acmx.xyz/lindexi%2F20186149522247.jpg)
 
 我添加了断点，在断点输出 123 然后运行
 
 <!-- ![](image/C# 循环的判断会进来几次/C# 循环的判断会进来几次1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201861495586116.jpg)
+![](http://image.acmx.xyz/lindexi%2F201861495586116.jpg)
 
 这时我发现运行没有输出 123 也就是函数没有进来，我再次添加断点，跟着函数也没有访问
 

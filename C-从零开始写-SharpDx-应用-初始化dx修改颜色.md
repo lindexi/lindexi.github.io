@@ -189,7 +189,7 @@ using SharpDX.Direct3D;
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 初始化dx修改颜色/C# 从零开始写 SharpDx 应用 初始化dx修改颜色0.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201872164929884.jpg)
+![](http://image.acmx.xyz/lindexi%2F201872164929884.jpg)
 
 ## 修改颜色
 

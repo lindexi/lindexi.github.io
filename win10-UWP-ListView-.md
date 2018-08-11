@@ -49,7 +49,7 @@
 
 这时可以设置元素的宽度，或者高度，这样可以做出下面的效果。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201811121814.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201811121814.jpg)
 
 ## 选中显示元素
 
@@ -185,7 +185,7 @@
 
 这个方法是比较差的，但是可以使用
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017%25E5%25B9%25B44%25E6%259C%258818%25E6%2597%25A5%2520090629.gif)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017%25E5%25B9%25B44%25E6%259C%258818%25E6%2597%25A5%2520090629.gif)
 
 参见：[http://stackoverflow.com/questions/43461819/the-listviewitem-style-cant-trigger-unselected](http://stackoverflow.com/questions/43461819/the-listviewitem-style-cant-trigger-unselected )
 

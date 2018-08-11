@@ -14,7 +14,7 @@
 
 一开始先发一张图片给大家看，本文就是告诉大家如何做出下面这张图的效果。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017623202940.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017623202940.jpg)
 
 本文的算法是学习 山人大大的博客 http://blog.csdn.net/johnsuna/article/details/7981521 ，在他上面做一点修改做出来的。
 
@@ -225,7 +225,7 @@ _points 就是所有画出的点，_stone 就是告诉说，如何画，因为�
 
 尝试跑一下，点击一次按钮就会有不同的图形，是不是感觉世界都是假的。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201762321046.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201762321046.jpg)
 
 是不是觉得这样已经完成？实际上不要忘记很重要一步，win2d在不使用需要自己手动把他从视觉树释放，所以在后台代码页面跳出使用下面代码
 

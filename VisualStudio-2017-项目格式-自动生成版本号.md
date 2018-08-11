@@ -115,7 +115,7 @@
 
 参见：[Roland Weigelt - How to Disable Warnings in Generated C# Files of UWP Apps](https://weblogs.asp.net/rweigelt/disable-warnings-in-generated-c-files-of-uwp-app )
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186112028468851.jpg)
+![](http://image.acmx.xyz/lindexi%2F20186112028468851.jpg)
 
 
 

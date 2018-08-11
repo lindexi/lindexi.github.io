@@ -18,7 +18,7 @@
 
 假设收到的数据是 data ，里面的前两个 byte 是不需要的，格式是
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018528102650406.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018528102650406.jpg)
 
 也就是需要复制出第2个到第5个byte出来，转换这个数据反序。
 

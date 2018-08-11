@@ -70,7 +70,7 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 
 这时按下 F5 运行，可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732119010.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732119010.jpg)
 
 
 除了 httpClient 还可以使用 `HttpWebRequest` ，请看下面
@@ -126,7 +126,7 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732119047.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732119047.jpg)
 
 需要注意 `Windows.Web.Http.HttpClient` 和 `System.Net.Http.HttpClient` 是不相同，请看[揭秘Windows10 UWP中的httpclient接口[2] - 蘑菇先生 - 博客园](https://www.cnblogs.com/mushroom/p/5079964.html ) 和 void 大神写的 [详解 UWP (通用 Windows 平台) 中的两种 HttpClient API](https://validvoid.net/demystifying-httpclient-apis-in-the-uwp/ )
 

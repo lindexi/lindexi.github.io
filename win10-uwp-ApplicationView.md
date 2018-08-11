@@ -33,11 +33,11 @@
 
  首先做一个简单的按钮，在点击他就设置为false，不可截图。在点击前，使用 Q 截图，发现可以
 
- ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017429512.jpg)
+ ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017429512.jpg)
 
  点击之后，截图看到的
 
- ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201742962.jpg)
+ ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201742962.jpg)
 
  如果设置了，可以看到，但是不可以获取，可以对信息安全要求高的程序进行使用，但是设置了性能可能没有之前好。
 
@@ -67,9 +67,9 @@
 
  - 设置标题栏颜色 applicationView.TitleBar 可以获得标题栏，可以通过设置属性自定义标题栏
 
-   - BackgroundColor ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20174292037.jpg)
+   - BackgroundColor ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20174292037.jpg)
 
-   - ButtonBackgroundColor ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20174292343.jpg)
+   - ButtonBackgroundColor ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20174292343.jpg)
 
  - 获取窗口可见区 applicationView.VisibleBounds ，通过 applicationView.VisibleBoundsChanged 可以知道隐藏或显示标题栏会改变窗口可见大小的方法
 

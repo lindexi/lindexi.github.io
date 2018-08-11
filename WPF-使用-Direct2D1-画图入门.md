@@ -185,7 +185,7 @@ var renderTarget = d2DFactory.CreateHwndRenderTarget(new D2D.RenderTargetPropert
 
 尝试运行就可以看到下面界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018418215519377.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018418215519377.jpg)
 
 这时看一下 CPU ，几乎不需要。
 

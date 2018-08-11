@@ -3,7 +3,7 @@
 
 可能看到 git 提交是文本，就认为他无法使用表情图片，实际上 git 提交是可以添加表情。
 本文告诉大家如何做出下面图片提交
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201772019141.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201772019141.jpg)
 
 <!--more-->
 

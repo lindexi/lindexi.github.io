@@ -12,10 +12,10 @@
 
 打开 Nuget 安装 Microsoft.Toolkit.Win32.UI.Controls ，需要同意许可
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201861174809142.jpg)
+![](http://image.acmx.xyz/lindexi%2F201861174809142.jpg)
 
 <!-- ![](image/WPF 使用 Edge 浏览器/WPF 使用 Edge 浏览器0.png) -->
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018611747372558.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018611747372558.jpg)
 
 打开主页面，在 xaml 添加下面代码
 
@@ -42,7 +42,7 @@
 
 <!-- ![](image/WPF 使用 Edge 浏览器/WPF 使用 Edge 浏览器1.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201861175161261.jpg)
+![](http://image.acmx.xyz/lindexi%2F201861175161261.jpg)
 
 如果不想在 xaml 写任何的代码，也可以通过下面代码添加
 
@@ -73,7 +73,7 @@
 
  <!-- ![](image/WPF 使用 Edge 浏览器/WPF 使用 Edge 浏览器4.png) -->
 
-  ![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201862105019597)
+  ![](http://image.acmx.xyz/lindexi%2F201862105019597)
 
 ## 存在的问题
 
@@ -109,7 +109,7 @@
 
 <!-- ![](image/WPF 使用 Edge 浏览器/WPF 使用 Edge 浏览器2.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201862104737741)
+![](http://image.acmx.xyz/lindexi%2F201862104737741)
 
 但是运行的时候就看不到按钮了，所以存在层级问题，这个问题是在08年就有大神说到的问题。
 
@@ -117,7 +117,7 @@
 
 <!-- ![](image/WPF 使用 Edge 浏览器/WPF 使用 Edge 浏览器3.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201862105019597)
+![](http://image.acmx.xyz/lindexi%2F201862105019597)
 
 无论在什么层级放 WebView ，他的层级都是窗口最高
 
@@ -180,7 +180,7 @@
 
 <!-- ![](image/WPF 使用 Edge 浏览器/WPF 使用 Edge 浏览器6.png) -->
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20186211323328)
+![](http://image.acmx.xyz/lindexi%2F20186211323328)
 
 我尝试使用 `Panel.ZIndex` 但是无法修改顺序
 

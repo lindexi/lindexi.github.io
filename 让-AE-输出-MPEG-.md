@@ -11,17 +11,17 @@
 
 首先打开一个合成，点击添加渲染，可以看到下面的页面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215165340.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215165340.jpg)
 
 点击输出模块可以看到现在没有一个选项使用 MPEG ，所以需要先安装软件 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017121516556.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017121516556.jpg)
 
 安装 [QuickTime](http://download.csdn.net/download/lindexi_gd/10160598 ) 就可以，在安装之后需要重新启动 AE 然后点击输出选择 MOV 就可以找到这个，请看下面的图
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215165911.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215165911.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171215175417.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171215175417.jpg)
 
 我有很多 ae 素材，分享 btsync: B6GHG2CEBGZ4TK4SDWHRB7NBSIJCH7B5E
 
@@ -31,25 +31,25 @@
 
 1. 打开软件选择新建
 
-   ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519343.jpg)
+   ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519343.jpg)
 
 1. 导入视频，在弹出的文件选择需要压缩的视频
 
 1. 裁剪，如果不需要裁剪就点确定
 
-   ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017121517235201712151962.jpg)
+   ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017121517235201712151962.jpg)
 
 1. 点格式选择输出
 
-   ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519659.jpg)
+   ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519659.jpg)
 
 1. 选择保存文件   
 
-   ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519744.jpg)
+   ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519744.jpg)
 
 1. 点击编码，然后点开始
 
-   ![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519815.jpg)   
+   ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171215172352017121519815.jpg)   
 这样就可以把视频压缩，一般选择 mp4 其他的不需要选择，用这个软件可以做出比较清晰的视频
 
 如果需要素材，可以问我要

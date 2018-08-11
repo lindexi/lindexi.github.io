@@ -52,7 +52,7 @@ D:\林德熙\代码\测试代码\CemfeetoQewasXaiki\CemfeetoQewasXaiki.csproj : 
 
 重新生成项目，可以看到文件夹存在文件
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018710103796940.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018710103796940.jpg)
 
 如果刚才没有创建 文件，复制时找不到文件，就会出现在重新编译出现无法编译
 

@@ -113,7 +113,7 @@ while (x == y)
 
 原文：[coding-style.md](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md )
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018571237288065.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018571237288065.jpg)
 
 
 

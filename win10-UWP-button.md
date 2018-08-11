@@ -288,7 +288,7 @@ button可以设置属性，使用资源
 
 ## 点击进度条按钮
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/bae3aa76-b425-4667-92dd-3e59e0987cbaProgressButton.gif)
+![](http://image.acmx.xyz/bae3aa76-b425-4667-92dd-3e59e0987cbaProgressButton.gif)
 
 [https://github.com/lindexi/uwp/tree/master/uwp/control/Button](https://github.com/lindexi/uwp/tree/master/uwp/control/Button )
 

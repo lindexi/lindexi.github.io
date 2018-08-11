@@ -2,7 +2,7 @@
 # win10 UWP 圆形等待
 
 看到一个圆形好像微软 ProgressRing 控件
-![0_1321962945yCXF - 副本.gif](http://7xqpl8.com1.z0.glb.clouddn.com/0_1321962945yCXF.gif)
+![0_1321962945yCXF - 副本.gif](http://image.acmx.xyz/0_1321962945yCXF.gif)
 如何去做这个控件，我们可以用自定义控件
 
 <!--more-->
@@ -47,9 +47,9 @@
 
 因为不知道这个要叫什么，就用右击资源
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141314.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141314.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141329.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141329.jpg)
 
 vs默认就帮我写了 RectangleStyle1
 
@@ -77,7 +77,7 @@ vs默认就帮我写了 RectangleStyle1
 
 我们跑一下，看起来 Rectangle 很大
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141358.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141358.jpg)
 
 <!-- ![这里写图片描述](image/201612911107238.png) -->
 
@@ -91,7 +91,7 @@ vs默认就帮我写了 RectangleStyle1
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141425.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141425.jpg)
 
 <!-- ![这里写图片描述](image/201612911111820.png) -->
 
@@ -135,7 +135,7 @@ vs默认就帮我写了 RectangleStyle1
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141443.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141443.jpg)
 <!-- ![这里写图片描述](image/201612911134992.png) -->
 
 每个 Rectangle  需要一个名字
@@ -196,7 +196,7 @@ Forever 是从开始一直动
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141515.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212141515.jpg)
 <!-- ![这里写图片描述](image/201612911161755.png) -->
 
 全部代码

@@ -22,7 +22,7 @@
 
 下载完成直接打开就好，然后开始创建一个空白的 WPF 程序，在按下按钮的时候添加信息，说按下按钮。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018516145883346.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018516145883346.jpg)
 
 创建的 WPF 使用简单的界面，直接放一个按钮
 
@@ -47,13 +47,13 @@
 
 刚才是不是打开了一个软件，尝试在 VisualStudio 找到刚才 WPF 输出的文件夹，双击打开刚刚的程序，这时点击一下，看看 DebugView 显示什么
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201851615428160.jpg)
+![](http://image.acmx.xyz/lindexi%2F201851615428160.jpg)
 
 所以在程序多写一些 Trace ，这样用户说程序很诡异就可以快速使用 DebugView 在用户那里看到程序的输出。
 
 如果发现自己的程序没有输出，那么右击项目属性，看看下面是否取消
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F201851615734398.jpg)
+![](http://image.acmx.xyz/lindexi%2F201851615734398.jpg)
 
 参见：
 

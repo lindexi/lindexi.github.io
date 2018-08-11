@@ -94,7 +94,7 @@ public static unsafe string ToUpperFirst(this string str)
 }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017917102022.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017917102022.jpg)
 
 我认为，在字符串大写这个算法，不需要去找性能最好的，需要找的是最容易让别人看懂的才是最好的。
 

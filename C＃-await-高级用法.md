@@ -132,7 +132,7 @@ HeabdsdnbKevx 就是一个可以等待的类型
 
 这时可以看到，`Console.WriteLine("csdn");`不会运行，因为这时如果在 `OnCompleted` 函数打断点就可以看到，执行`await "林德熙逗比"`之后就进入`OnCompleted` 函数。从上面的原理可以知道，这个函数传入的参数就是两个`await`或 `await`和函数结束之间的代码。如果需要让`Console.WriteLine("csdn");`运行，那么只需要在`OnCompleted`运行参数
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018211153416.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018211153416.jpg)
 
 ```csharp
    public void OnCompleted(Action continuation)
@@ -141,7 +141,7 @@ HeabdsdnbKevx 就是一个可以等待的类型
         }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018211154415.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018211154415.jpg)
 
 但是作为一个挖坑专业的大神，怎么可以就扩展 string ，下面我把 int 进行扩展
 
@@ -157,7 +157,7 @@ HeabdsdnbKevx 就是一个可以等待的类型
 
 随意写一个值，然后进行等待
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018211154944.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018211154944.jpg)
 
 现在我准备在 object 加一个扩展方法，所有类型都可以等待，然后把这个扩展方法的 namespace 写为 System ，这样大家就不知道这个是我写的，过了一年我就告诉大家这是 C# 的特性，所有的类都可以等待。但是这个特性需要开光才可以使用，你们直接建的项目没有开光所以没法使用这个特性。
 
@@ -249,7 +249,7 @@ BotujawWorpay结束
 
 在执行的函数遇到第一个 `await` 就会返回，这样就可以继续执行函数下面的代码
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F2018613944481469.jpg)
+![](http://image.acmx.xyz/lindexi%2F2018613944481469.jpg)
 <!-- ![](image/C＃ await 高级用法/C＃ await 高级用法0.png) -->
 
 

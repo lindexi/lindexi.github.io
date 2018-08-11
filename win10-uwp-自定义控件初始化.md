@@ -56,7 +56,7 @@
 
 然后运行，查看他们的属性值是否修改
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20176169376.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20176169376.jpg)
 
 可以看到在构造函数时，属性没有获得值。
 

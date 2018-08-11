@@ -25,7 +25,7 @@
 抱歉，我不能写入wp-config.php文件
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201832125330.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201832125330.jpg)
 
 那么需要拷贝这个内容，注意在文件最后添加 `?>`
 
@@ -58,7 +58,7 @@ vi  wp-config.php
 
 这时可以看到一些奇怪的代码，不过直接返回安装的页面，也就是`http://你的网站/` 就可以看到这个页面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20183213250.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20183213250.jpg)
 
 写自己的账号密码就好
 

@@ -50,7 +50,7 @@
 
 首先创建一个 UWP 项目，注意选择比较高的目标。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184221150375871.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184221150375871.jpg)
 
 ## 如何写显示
 
@@ -137,7 +137,7 @@ namespace HmeucHsvv
 
 上面代码有一些注释，通过这个方式就可以创建一个显示矩形
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184222018324337.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184222018324337.jpg)
 
 实际上从上面代码很容易就知道，只需要一个类继承`IFrameworkView, IFrameworkViewSource`，然后使用`CreateView`返回他自己，这时这个类就可以显示。
 
@@ -198,7 +198,7 @@ namespace HmeucHsvv
 
 那么 SpriteVisual 设置的笔刷是什么，他可以设置三个不同的笔刷。第一个就是刚才给大家看的 CompositionColorBrush ，这是一个纯色笔刷。 第二个是比较复杂的，可以使用特效的 CompositionEffectBrush 笔刷，最后一个是 CompositionSurfaceBrush 可以和 dx 交互数据。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184222024298849.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184222024298849.jpg)
 
 从上面代码实际只是画了普通的矩形，如果要写文字，画线，那么怎么办。这时就需要使用 CompositionSurfaceBrush ，这是最复杂的。通过这个类可以使用 d2d 来画，在 UWP 简单使用的方法是 win2d 所以下面告诉大家如何使用 win2d 来画。
 
@@ -283,7 +283,7 @@ namespace HmeucHsvv
 
 现在的界面就是两个矩形
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184222047529494.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184222047529494.jpg)
 
 所有的代码
 
@@ -404,7 +404,7 @@ namespace HmeucHsvv
             }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/lindexi%2F20184222056348323.jpg)
+![](http://image.acmx.xyz/lindexi%2F20184222056348323.jpg)
 
 还有如何使用动画和特效，我这里就不说了。
 

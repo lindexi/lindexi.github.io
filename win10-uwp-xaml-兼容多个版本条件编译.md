@@ -28,11 +28,11 @@ xaml 条件编译（Conditional XAML）就是 [ApiInformation.IsApiContractPrese
                    contract5Present:Text="最新的系统"></TextBlock>
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018318154646.jpg)
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018318154646.jpg)
 
 因为xaml条件编译是在创意者更新 15063 支持的，所以需要先右击属性，设置最低版本为 15063，然后才可以编译
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018318154958.jpg)
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018318154958.jpg)
 
 因为我的系统是 16299 所以运行就是显示最新的系统，如果是在 15063 的系统运行，因为我自己没运行，所以运行显示的我也不知道。
 
@@ -100,7 +100,7 @@ IsApiContractPresent 是在当前系统和低于当前系统返回 true ，IsApi
 
 这时编译直接说不可以使用
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201831816240.jpg)
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201831816240.jpg)
 
 那么使用条件编译就可以让他编译通过
 

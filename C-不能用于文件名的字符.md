@@ -9,7 +9,7 @@
 
 <div id="toc"></div>
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222143910.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222143910.jpg)
 
 那么具体是包括哪些符号不能作为文件名？
 

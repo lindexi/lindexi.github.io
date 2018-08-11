@@ -18,7 +18,7 @@
 
 在启动时，就会打开调试器，于是就可以调试exe启动。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171030174351.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171030174351.jpg)
 
 如果添加了上面的代码无法使用，那么可以判断现在是否调试，如果没有，就等待
 
@@ -33,7 +33,7 @@ while (!System.Diagnostics.Debugger.IsAttached)
 
 [https://stackoverflow.com/q/9896857/6116637](https://stackoverflow.com/q/9896857/6116637 )
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017117185341.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017117185341.jpg)
 
 
 

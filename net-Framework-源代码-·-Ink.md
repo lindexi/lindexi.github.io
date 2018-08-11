@@ -55,7 +55,7 @@
 
 在收到抬起的时候，可以看到 StylusPlugIns 拿到的时间比元素收到的快 15 毫秒，在笔迹里，如果能快 15 毫秒是给用户体验很好。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201832281435.jpg)
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201832281435.jpg)
 
 而且在移动的时候，可以看到 StylusPlugIns 收到移动的次数比从元素拿到的多，所以可以画出更加好看的线。
 
