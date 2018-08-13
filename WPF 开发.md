@@ -106,6 +106,21 @@ public class Foo
 <Button ToolTipService.ShowOnDisabled="True">  
 ```
 
+## 获取当前域用户
+
+在 WPF 找到当前登陆的用户使用下面代码
+
+```csharp
+using System.Security.Principal;
+
+// 其他代码
+
+            WindowsIdentity windowsIdentity = WindowsIdentity.GetCurrent();
+            string crentUserAd = windowsIdentity.Name;
+```
+
+输出 `crentUserAd` 可以看到 `设备\\用户` 的格式
+
 ## 注册全局事件
 
 如果需要注册一个类型的全局事件，如拿到 TextBox 的全局输入，那么可以使用下面代码
