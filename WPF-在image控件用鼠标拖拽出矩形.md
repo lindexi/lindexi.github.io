@@ -87,6 +87,8 @@
 
 如果对于高手，我建议使用 `RenderTransform` 的方式而不是使用 `Margin` 这里使用这个方法只是看起来简单
 
+因为性能最差 Canvas.SetLeft Canvas.SetTop，性能中等 Margin，性能最好 RenderTransform 当然使用 RenderTransform 的方法没有使用 Margin 那样容易了解
+
 
 
 
