@@ -263,7 +263,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 ![](http://image.acmx.xyz/lindexi%2F2018815113656530)
 
-函数 CoalesceAndQueueStylusEvent 主要是添加一些参数，然后调用 QueueStylusEvent 函数将触摸的参数放在 `_queueStylusEvents` 也就是一个队列。在将参数放在队列之后通过下面代码告诉主线程
+函数 CoalesceAndQueueStylusEvent 主要是添加一些参数，然后调用 QueueStylusEvent 函数将触摸的参数放在 `_queueStylusEvents` 也就是一个队列。在触摸线程使用入栈的方式，然后通过 Dispatcher 告诉主线程。
 
 ```csharp
 		private void QueueStylusEvent(RawStylusInputReport report)
@@ -281,10 +281,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 ![](http://image.acmx.xyz/lindexi%2F2018815114225799)
 
-
-这里的 `_dlgInputManagerProcessInput` 就是调用 `InputManagerProcessInput` 方法
-
-在 InputManagerProcessInput 就是主线程开始获取触摸的参数
+主线程从 `_dlgInputManagerProcessInput` 就是调用 `InputManagerProcessInput` 方法，是使用出队的方式拿到触摸线程的触摸。上面的图片写了入栈实际上是入队。
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件9.png) -->
 
@@ -292,21 +289,9 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 在 InputManagerProcessInput 主要就是创建 InputReportEventArgs 然后传入 InputManagerProcessInputEventArgs 通过这个函数调用 `InputManager` 的 ProcessInput 从上面图片可以看到是如何调用
 
-```csharp
-		public bool ProcessInput(InputEventArgs input)
-		{
-			if (input == null)
-			{
-				throw new ArgumentNullException("input");
-			}
-			this.PushMarker();
-			this.PushInput(input, null);
-			this.RequestContinueProcessingStagingArea();
-			return this.ProcessStagingArea();
-		}
-```
+这里的 `InputManager` 的 ProcessInput 会通过 ProcessStagingArea 转路由事件。
 
-在 ProcessStagingArea 就会调用 UIElement 的 RaiseEvent 也就是到了路由事件，这里有一些细节，如在触摸传入的数据是如何拿出来，如何从触摸的点找到对应的元素进行路由。
+这里有一些细节，如在触摸传入的数据是如何拿出来，如何从触摸的点找到对应的元素进行路由。
 
 在 WispLogic 的 InputManagerProcessInput 就是主线程从`QueueStylusEvent`放在`_queueStylusEvents`的参数拿出来的函数。下面就是去掉了细节代码
 
