@@ -377,6 +377,10 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 
+参见：
+
+[一站式WPF--Window（一） - 周永恒 - 博客园](https://www.cnblogs.com/Zhouyongh/archive/2009/11/30/1613628.html )
+
 [WPF起步(上) --- WPF是如何把图像画到屏幕上 - CSDN博客](https://blog.csdn.net/eparg/article/details/1930357 )
 
 [深入了解 WPF Dispatcher 的工作原理（PushFrame 部分） - walterlv](https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-push-frame.html )
