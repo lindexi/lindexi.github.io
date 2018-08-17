@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
@@ -117,7 +116,7 @@ namespace TrrluujHlcdyqa
 
 上面的代码从 https://stackoverflow.com/a/22881532/6116637 学的
 
-更多关于 Roslyn 请看我的博客 
+更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
 
 参见：
 

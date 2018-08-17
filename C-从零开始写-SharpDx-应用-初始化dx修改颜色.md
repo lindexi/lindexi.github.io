@@ -12,11 +12,11 @@
 
 本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
 
-在[C# 控制台创建 Sharpdx 窗口](https://lindexi.oschina.io/lindexi/post/C-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )已经创建了一个窗口，现在需要在这个窗口画一些图片
+在[C# 控制台创建 Sharpdx 窗口](https://lindexi.oschina.io/lindexi/post/C-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )已经创建了一个窗口，现在需要在这个窗口初始化。因为是从零开始写，所以需要非常多细节，我觉得一篇文章是很难全部告诉大家，所以分为了系列的文章。从零开始写有利于大家了解一个渲染框架是如何做出来，并且从底层优化渲染，当然这个方法就是学习的时间会比较长。我会在文章去掉很多细节放在后面的博客讲，让大家先知道总体是如何做的。
 
 ## 创建资源
 
-第一步是需要添加一个方法 `InitializeDeviceResources` 用来初始化资源
+第一步是需要添加一个方法 `InitializeDeviceResources` 用来初始化资源，这里初始化的就是设备的资源。在 dx 的渲染是需要紧密绑定设备。
 
 这个方法就是写在`KikuSimairme`类里，关于这个类的代码在[C# 控制台创建 Sharpdx 窗口](https://lindexi.oschina.io/lindexi/post/C-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )
 
@@ -28,11 +28,11 @@
         }
 ```
 
-创建一个可以画出来的类需要先创建显示模式描述，通过显示描述创建交换链描述，交换链描述创建设备和交换链，通过交换链和设备可以创建可以画出来的类，在这个类就可以画出无聊的图形
+创建一个可以画出来的类需要先创建显示模式描述，通过显示描述创建交换链描述，交换链描述创建设备和交换链，通过交换链和设备可以创建可以画出来的类，在这个类就可以画出无聊的图形，按照创建的顺序，我将文章分为多个部分，下面先来窗口模式描述
 
 ### 模式描述
 
-首先需要创建一个描述显示模式，请看下面代码
+首先需要创建一个描述显示模式，模式描述使用的是 `ModeDescription` 类，可以使用 new 的方式创建。在 dx 里很多的类都只能通过工厂创建，可以通过 new 创建的类一般都是描述的类。为什么需要描述的类？因为如果直接创建一个类需要传入大量的参数，那么这个写法将会很难，而且存在很多属性，只可以在构造的时候进行设置，不能在构造之后设置。为了方便开发，所以就将多个参数分为不同的类，这些类就是描述类。下面创建的是模式显示描述
 
 ```csharp
 using SharpDX.Direct3D;
@@ -49,11 +49,11 @@ using SharpDX.DXGI;
         }
 ```
 
-通过 ModeDescription 就可以描述，前两个参数是表示缓存的大小，在很多的情况，这个值都和显示的大小相同。
+通过 ModeDescription 就可以描述创建的模式是什么，前两个参数是表示缓存的大小，在很多的情况，这个值都和显示的大小相同。
 
-第三个参数就是表示刷新率，这里使用的就是 `60/1` 也就是 60hz 
+第三个参数就是表示刷新率，这里使用的就是 `1/60` 也就是 60hz 
 
-最后一个参数设置的是像素格式，这里使用 8 位的 RGBA 格式，使用一个无符号的 32 位整数表示
+最后一个参数设置的是像素格式，这里使用 8 位的 RGBA 格式，使用一个无符号的 32 位整数表示，在设置格式是很重要，请仔细看自己的设置，因为我就告诉了一位小伙伴看着他将模式的格式写错了。如果有安装 Resharper 就可以按下 RGBA 快速找到这个属性
 
 更多关于 ModeDescription 请看 [DXGI_MODE_DESC](https://msdn.microsoft.com/en-us/library/windows/desktop/bb173064(v=vs.85).aspx )
 
@@ -61,7 +61,7 @@ using SharpDX.DXGI;
 
 ### 交换链描述
 
-下面可以来创建交换链的描述，请使用这个代码
+下面可以来创建交换链的描述，交换链就是用来交换后台缓冲和显示的类，创建这个类需要先创建描述类，创建的方法是使用 new 的方式创建`SwapChainDescription`类，同样是为了减少创建交换链的输入参数，所以将很多参数放在这个类，创建描述类的时候就需要将上面创建的模式描述类传进来，请使用这个代码
 
 ```csharp
 
@@ -82,6 +82,8 @@ using SharpDX.DXGI;
             };
 ```
 
+先来解释一下参数。
+
 交换链的 ModeDescription 就是上面定义的 backBufferDesc 
 
 多重采用 SampleDescription 用来优化图片，是一种用于采样和平衡渲染像素的创建亮丽色彩变化之间的平滑过渡的一种技术，这里设置等级 1 也就是关闭多重采样，需要传入两个参数一个是Count 指定每个像素的采样数量，一个是Quality指定希望得到的质量级别，参见[DXGI_SAMPLE_DESC structure](https://msdn.microsoft.com/en-us/library/windows/desktop/bb173072(v=vs.85).aspx )，在这里质量级别越高，占用的系统资源就越多。
@@ -92,7 +94,7 @@ Usage 设置 CPU 访问缓冲的权限，这里设置可以访问 RenderTarget �
 
 OutputHandle 获取渲染窗口句柄
 
-IsWindowed 这个值设置是否希望是全屏，如果是 true 就是窗口。现在软件还没写好，所以这时全屏可能就无法退出，我就设置了全屏，本金鱼有两个屏幕，所以可以让软件退出
+IsWindowed 这个值设置是否希望是全屏，如果是 true 就是窗口。现在软件还没写好，如果这时全屏可能就无法退出，建议先设置这个值为 true 不然难以直接退出。但是我还是设置了全屏，原因是本金鱼有两个屏幕，所以可以让软件退出
 
 现在已经创建交换链，但是我里面很多设置没有告诉大家还有哪些可以设置
 
@@ -102,7 +104,7 @@ IsWindowed 这个值设置是否希望是全屏，如果是 true 就是窗口。
 
 ### 私有变量
 
-下面可以创建私有变量
+刚才是在 `InitializeDeviceResources` 方法里创建描述，但是创建了描述之后是需要创建出一些具体的类，这些类不能只放在 `InitializeDeviceResources` 方法，需要将这些类放在私有变量，这样在这个类的其他地方才可以拿到，请看代码
 
 ```csharp
 using D3D11 = SharpDX.Direct3D11;
@@ -258,7 +260,7 @@ using SharpDX.Direct3D;
     }
 ```
 
-还需要设置一下清理
+在完成了上面的代码之后，还需要做清理，在 dx 使用的资源都需要手动释放。需要注意释放的顺序，本文在这里不告诉大家释放的顺序是如何确定，所以希望先复制下面代码进行释放。
 
 ```csharp
 public void Dispose()
@@ -271,7 +273,7 @@ public void Dispose()
 }
 ```
 
-现在按一下 F5 就可以运行，看到一个绿色的窗口
+现在按一下 F5 就可以运行，看到一个绿色的窗口。本文也就告诉了大家如何初始化窗口，在初始化窗口之后离在窗口画东西还需要一步，那就是创建 ViewPort 视口，详细请点击[C# 从零开始写 SharpDx 应用 画三角](https://lindexi.github.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html ) 
 
 所有代码
 
@@ -377,7 +379,19 @@ namespace NawbemcemXadre
 
 参见：[SharpDX Beginners Tutorial Part 3: Initializing DirectX - Johan Falk](http://www.johanfalk.eu/blog/sharpdx-beginners-tutorial-part-3-initializing-directx )
 
-在下一篇博客[C# 从零开始写 SharpDx 应用 画三角](https://lindexi.github.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html )将会告诉大家如何创建 视口 ViewPort，视口定义了我们渲染到屏幕上的面积。
+[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
+
+[WPF 底层渲染](https://blog.csdn.net/column/details/24324.html )
+
+[Direct3D 11入门级知识介绍](https://blog.csdn.net/pizi0475/article/details/7786348 )
+
+[Direct3D设备](https://blog.csdn.net/nightelve/article/details/6460477 )
+
+[D3D11_CREATE_DEVICE_FLAG enumeration](https://msdn.microsoft.com/en-us/library/windows/desktop/ff476107(v=vs.85).aspx )
+
+上一篇 [C# 从零开始写 SharpDx 应用 控制台创建 Sharpdx 窗口](https://lindexi.oschina.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )
+
+下一篇 [C# 从零开始写 SharpDx 应用 画三角](https://lindexi.github.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html ) 将会告诉大家如何创建 视口 ViewPort，视口定义了我们渲染到屏幕上的面积。
 
 
 

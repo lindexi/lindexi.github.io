@@ -167,9 +167,11 @@ using SharpDX.Windows;
 
 ```
 
-虽然已经创建窗口，但是现在还没有内容，在下一篇，我将会告诉大家如何在这个窗口修改颜色。更多SharpDx博客请到[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
+虽然已经创建窗口，但是现在还没有内容，在下一篇[C# 从零开始写 SharpDx 应用 初始化dx修改颜色](https://lindexi.oschina.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E5%88%9D%E5%A7%8B%E5%8C%96dx%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2.html )，我将会告诉大家如何在这个窗口修改颜色。更多SharpDx博客请到[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
 
 参见：[SharpDX Beginners Tutorial Part 1: Setting up a SharpDX project in Visual Studio 2013 - Johan Falk](http://www.johanfalk.eu/blog/sharpdx-tutorial-part-1-setting-up-a-sharpdx-project-in-visual-studio-2013 )
+
+下一篇 [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](https://lindexi.oschina.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E5%88%9D%E5%A7%8B%E5%8C%96dx%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2.html )
 
 
 
