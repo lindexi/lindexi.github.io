@@ -119,6 +119,8 @@ Set-ExecutionPolicy RemoteSigned
 
 [PowerShell入门（八）：函数、脚本、作用域 - Luke Zhang - 博客园](https://www.cnblogs.com/ceachy/archive/2013/02/26/PoweShell_Function_Script_Scope.html )
 
+![](https://i.loli.net/2018/08/19/5b78d02917a19.jpg)
+
 
 
 

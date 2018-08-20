@@ -54,6 +54,8 @@ int.Parse("aa", System.Globalization.NumberStyles.HexNumber)
 
 [How to: Convert Between Hexadecimal Strings and Numeric Types ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types )
 
+![](https://i.loli.net/2018/08/19/5b78cf969217e.jpg)
+
 
 
 

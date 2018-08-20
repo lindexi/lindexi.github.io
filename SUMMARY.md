@@ -38,6 +38,8 @@
 
  * [C# 从零开始写 SharpDx 应用 画三角](C-从零开始写-SharpDx-应用-画三角.md)
 
+ * [C# 传入 params object 长度](C-传入-params-object-长度.md)
+
  * [C# 使用外部别名](C-使用外部别名.md)
 
  * [C# 使用相同权限调用 cmd 传入命令](C-使用相同权限调用-cmd-传入命令.md)

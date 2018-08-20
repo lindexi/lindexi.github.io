@@ -327,6 +327,8 @@ System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用
 ```
 
 那么如何使用这个回调，实际上在 Remote 将回调转事件就可以
+
+![](https://i.loli.net/2018/08/19/5b78cf22846d2.jpg)
 	
 
 
