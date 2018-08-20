@@ -118,8 +118,14 @@
    </Target>
 ```
 
+我在测试的项目写了很长的参数，这个参数只能通过写入到文件的方式传输，不能通过参数的方法传输。测试项目请点击 [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入 1.0-CSDN下载](https://download.csdn.net/download/lindexi_gd/10616166 ) 
+
+<!-- 下载文件 NekasNugouMedapai -->
+
 参见：
 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://walterlv.gitee.io/post/known-properties-in-csproj.html )
+
+![](https://i.loli.net/2018/08/20/5b7aab757d2f9.jpg)
 
 
 
