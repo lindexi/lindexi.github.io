@@ -1,6 +1,6 @@
 # C# 传入 params object 长度
 
-刚刚 LiesAuer 大神问了一个问题，如果在 params object 传入 object 数组，那么拿到的值是的长度是多少
+刚刚 [LiesAuer](www.liesauer.net) 大神问了一个问题，如果在 params object 传入 object 数组，那么拿到的值是的长度是多少
 
 我做了测试在传入不同的值可能拿到不同的长度
 
