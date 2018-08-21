@@ -28,7 +28,7 @@
 
 为了让 Target 运行需要给 Target 一个 Name ，还需要告诉 VisualStudio 什么时候运行这个 Target ，于是就使用`BeforeTargets="CoreCompile"` 告诉 VisualStudio 在开始编译之前就执行
 
-当然，上面的写法只是为了方便第一次接触 Roslyn 的小伙伴，如果看到了这里还是有很多内容不知道，请先看我博客其他关于 Roslyn 的博客。
+当然，上面的写法只是为了方便第一次接触 Roslyn 的小伙伴，如果看到了这里还是有很多内容不知道，请先看[手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html )。
 
 现在的问题是，调用 Exec 能传入的参数就是被微软限制大小，我的`Compile`编译文件有 10000000000000 个，于是就有很多文件无法传参数进去，这时我就无法在编译之前把代码修改掉，让项目可以成功运行，这样本渣还怎么去坑一个团队。
 
