@@ -248,9 +248,13 @@ Soap 序列化程序不支持序列化一般类型: System.EventHandler\`1[Syste
 
 ![](https://i.loli.net/2018/08/07/5b694bf6020c8.jpg)
 
+如果打开了序列化程序集之后还出现下面异常
+
 ```csharp
 System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用非公共或静态方法。”
 ```
+
+出现这个异常有几个原因，如果只是为了解决这个异常来看本文，请看下方。
 
 建议新建的两个类是写在一个文件，而且需要让两个类继承 `MarshalByRefObject` 和接口 `IRemoteEventHandle` ，并且只允许本地的`NativeEventHandle`在构造传入远程的类。
 
@@ -327,6 +331,88 @@ System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用
 ```
 
 那么如何使用这个回调，实际上在 Remote 将回调转事件就可以
+
+## 修复异常
+
+如果发现 `System.Runtime.Remoting.RemotingException` 就需要找是否出现下面的问题
+
+第一个问题是调用了非公共的方法，包括静态或非静态的方法。这个过程是发生在序列化的过程。序列化无法调用非公共的方法。
+
+出现的异常请看下面
+
+```csharp
+System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用非公共或静态方法。”
+```
+
+很多时候在触发事件时会出现这个异常，原因是如果出现了事件的回调，那么就可能因为回调使用的是本地私有的方法让回调无法使用。
+
+如下面的代码
+
+```csharp
+   [Serializable]
+    public class RemoteEventHandle : MarshalByRefObject, IRemoteEventHandle
+    {
+        public void CallHandle()
+        {
+            Console.WriteLine("调用事件");
+            Progress?.Invoke(null, "欢迎访问我博客 http://blog.csdn.net/lindexi_gd");
+        }
+
+        public event EventHandler<string> Progress;
+    }
+
+    public interface IRemoteEventHandle
+    {
+        void CallHandle();
+        event EventHandler<string> Progress;
+    }
+
+    public class NativeEventHandle : MarshalByRefObject, IRemoteEventHandle
+    {
+        /// <inheritdoc />
+        public NativeEventHandle(RemoteEventHandle remoteJesteRinoowi)
+        {
+            RemoteEventHandle = remoteJesteRinoowi;
+            RemoteEventHandle.Progress += RemoteEventHandle_Progress;
+        }
+
+        public void CallHandle()
+        {
+            // 使用 NativeEventHandle 的公开方法去拿到 RemoteEventHandle 的事件
+            // 原因 事件需要将代码发送到另一个进程，这就需要让远程支持这个方法的序列化
+            // 如果直接让上层的代码 += 方法就会因为另一个进程不知道上层的代码的序列化出现异常
+            // 为了解决这个问题，就需要先使用这个类定义的方法，这样就可以序列化这个类，让远程知道调用的事件是哪个函数
+            // 然后在这个类的方法再次调用这个类的事件，这时在上层的代码使用了这个类的事件也是没问题，因为这时代码已经是在本地运行，就和原来的事件一样
+            // 原理是使用序列化方法调用，所以需要让方法为公开
+            RemoteEventHandle.CallHandle();
+        }
+
+        public void RemoteEventHandle_Progress(object sender, string e)
+        {
+            // 如果这个方法是 private 的，就会出现 System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用非公共或静态方法。”
+            Progress?.Invoke(sender, e);
+        }
+
+        public event EventHandler<string> Progress;
+
+        private RemoteEventHandle RemoteEventHandle { get; }
+    }
+```
+
+在本地的事件监听，使用了本地的代码 `RemoteEventHandle_Progress` 很多时候写事件的监听都使用私有的方法，如下面代码
+
+```csharp
+        private void RemoteEventHandle_Progress(object sender, string e)
+
+```
+ 
+如果将 public 修改为 private 就会出现 `System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用非公共或静态方法。”` 原因是事件需要序列化方法。
+
+<!-- ![](image/.net remoting 使用事件/.net remoting 使用事件2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018822112741795)
+
+因为在 NativeEventHandle 是将 `RemoteEventHandle_Progress` 序列化传到 `RemoteEventHandle` 使用事件，在事件触发时通过序列化动态代理调用 `RemoteEventHandle_Progress` 方法。如果这个方法不是公开的，那么动态代理调用就会因为没有访问权限无法调用，这时就出现了 `权限被拒绝: 无法远程调用非公共或静态方法` 所以解决方法就是所有事件的函数都需要设置为 public 才可以。
 
 ![](https://i.loli.net/2018/08/19/5b78cf22846d2.jpg)
 	
