@@ -108,6 +108,12 @@
         }
 ```
 
+那么需要降权运行某个程序怎么办？
+
+可以使用 `Process.Start("explorer")` 然后参数传入 `xx.exe` 运行，另外执行时还存在另一个问题，如果发现双击可以运行程序，但是调用 `Process.Start` 无法启动程序，请看下面的博客
+
+[Process执行路径 - haungtengxiao](https://xinyuehtx.github.io/post/Process%E6%89%A7%E8%A1%8C%E8%B7%AF%E5%BE%84.html )
+
 
 
 
