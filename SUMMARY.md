@@ -256,6 +256,8 @@
 
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
+ * [Roslyn 通过 Target 修改编译的文件](Roslyn-通过-Target-修改编译的文件.md)
+
  * [Roslyn 静态分析](Roslyn-静态分析.md)
 
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
