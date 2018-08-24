@@ -443,6 +443,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 
+课件 [WPF 渲染原理](https://r302.cc/p2m3ea)
+
 参见：
 
 [一站式WPF--Window（一） - 周永恒 - 博客园](https://www.cnblogs.com/Zhouyongh/archive/2009/11/30/1613628.html )
