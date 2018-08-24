@@ -8,17 +8,21 @@
 
 <!-- 标签：WPF,渲染 -->
 
-<!-- 草稿 -->
-
 从 WPF 画图像到屏幕显示是比较复杂的，本渣也不敢说这就是 WPF 的做法，但是看了很多博客，好像都是这么说的，看了代码，好像 WPF 是这样写的。
 
-本文的所讲的核心不在 milcore ，这个模块是 WPF 的三大核心模块，请让我偷一个图片，下面的图片是从[WPF Architecture](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture ) 找到
+本文将会分为三个不同的层来讲，第一层就是 WPF 的总体结构，第二层是消息循环相关，第三层是在 dx 渲染到屏幕。
+
+## WPF 组成
+
+因为 WPF 是一个 UI 框架，作为一个框架最主要的是交互和显示。本文只告诉大家渲染的原理。但是本文不会告诉大家任何关于渲染的算法，只是告诉大家渲染的过程如何从 WPF 元素显示到屏幕。
+
+下面的图片是从[WPF Architecture](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture ) 找到
 
 ![](http://image.acmx.xyz/lindexi%2F2018715163555502.jpg)
 
-WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milcore，在开始本文之前需要告诉大家，实际 WPF 只是一个 UI 框架，那么一个框架最主要的是什么，就是交互和显示，本文不会告诉大家任何显示的原理，只是告诉大家如何显示
+WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础层
 
-在 WPF 最顶层，显示就是使用 DrawingContext 也就是继承 FrameworkElement 然后重写 OnRender 方法，这就是给普通开发者最底层的画图像方法，这就是在框架的顶层，在这的上面就不属于底层框架的。如在显示上面封装的 Image 等这些。
+在 WPF 最顶层，也就是给开发者使用的元素，元素的显示就是使用 DrawingContext 告诉 WPF 需要如何渲染。最简单的方法也就是继承 FrameworkElement 然后重写 OnRender 方法，通过 OnRender 方法画出最基础的界面。这就是在框架的顶层，在这的上面就不属于底层框架的。如在显示上面封装的 Image 等这些。
 
 那么在调用 OnRender 画出内容，是不是 WPF 会立刻显示，如果大家有看 [WPF 使用 Direct2D1 画图入门](https://blog.csdn.net/lindexi_gd/article/details/80387784 )就会发现在渲染是调用 CompositionTarget.Rendering 才知道是什么时候渲染，因为 WPF 是分开渲染和交互，实际的 OnRender 画出的内容的代码是指导渲染，也就是告诉 WPF 如何渲染。那么 WPF 在什么时候渲染就是代码不知道的。为什么 WPF 需要这样做还需要从 WPF 的体系结构开始说起。
 
@@ -125,6 +129,10 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
             return retVal;
         }
 ```
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理4.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018824143053905)
 
 所以核心就是 SetWindowLongPtrWndProc 调用 SetWindowLongWrapper 设置获得消息
 
@@ -267,9 +275,17 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
  }
 ```
 
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理5.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018824143248706)
+
 最核心的处理消息就是 Dispatcher 的 WndProcHook 这个方法实际上只是调用 ProcessQueue 方法。
 
-在 SubclassWndProc 掉用的`dispatcher.Invoke( DispatcherPriority.Send,_dispatcherOperationCallback,param)`就是调用`WndProcHook` 函数传入参数 
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理6.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018824143341860)
+
+在 SubclassWndProc 调用的`dispatcher.Invoke( DispatcherPriority.Send,_dispatcherOperationCallback,param)`就是调用`WndProcHook` 函数传入参数 
 
 如果收到了画窗口的消息，就会把这个消息发送给DWM，通过DWM把窗口画的内容画到屏幕。
 
@@ -292,6 +308,10 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
     }
 ```
 
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理7.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018824143426746)
+
 通过 DUCE.CompositionNode.SetContent 调用 `channel.SendCommand` 就可以发送到渲染线程
 
 ```csharp
@@ -306,6 +326,10 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
         channel.SendCommand((byte*) &visualSetcontent, sizeof (DUCE.MILCMD_VISUAL_SETCONTENT));
       }
 ```
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理9.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018824143551331)
 
 那么这个渲染是如何触发，实际上在`Dispatcher.ProcessQueue`调用，在上面已经有告诉大家 ProcessQueue 是在 WndProcHook 触发的
 
@@ -330,11 +354,42 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
         }
  
 ```
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理8.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201882414350316)
+
 那么这个消息是怎么发送，在`UIElement.InvalidateVisual`函数会调用`MediaContext.PostRender`这里就发送自定义消息，于是就可以开始渲染
 
 在消息循环是会不断获取消息，这里说的渲染是包括两个方面，一个是 WPF 把内容画到窗口，也就是上面说的自定义消息，还有另一个就是把窗口内容画在屏幕。这两个都是依靠 Windows 消息，只是第一个消息是 WPF 自己发给自己，也就是自己玩的。从 Dispatcher 拿到自定义的消息，就开始执行视觉树的对象，调用对应的绘制，这里是收集到绘制原语，也就是告诉显卡可以怎么画。在底层是通过 `System.Windows.Media.Composition.DUCE` 的 Channel 把数据发送到渲染线程，渲染线程就是使用 Dx 进行绘制。在 Dx 画是使用 MilCore 从渲染线程连接到 Dx 画出来的
 
-在窗口画完之后，会通过 WM_PAINT 告诉 DWM 可以画出窗口 
+在渲染线程收集到的都是绘制原语，绘制原语就是在 Visual 底层调用的DrawingContext 传入的方法
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理10.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018824143724132)
+
+这一部分没有完全跟源代码，如果有哪些地方和实际不相同，请告诉我
+
+渲染线程拿到了绘制原语就可以进行绘制，绘制的过程需要进行处理图片和一些基础形状，大概的过程请看下面
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理11.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201882414397412)
+
+这时到了 Dx 才会使用显卡进行渲染，并且绘制的是窗口指针。也就是窗口绘制完成在屏幕还是无法看到的。
+
+在绘制的时候需要使用 MIL 解码一些图片和一些形状才可以用到 dx 进行渲染
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理12.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20188241440119)
+
+在窗口画完之后，会通过 `WM_PAINT` 告诉 DWM 可以画出窗口。但是现代的应用是不需要在窗口刷新的过程通过 windows 消息发送到 DWM 才进行窗口刷新。只有在窗口存在部分不可见，如窗口有一部分在屏幕之外，从屏幕外移到屏幕内，或者窗口最小化到显示才需要通过 windows 告诉 DWM 刷新。
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理13.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20188241442531)
 
 那么这里 DWM 是什么？请看下面
 
@@ -342,9 +397,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 在 Windows 系统，很重要的就是 DWM（Desktop Window Manager）可以把窗口画到屏幕，并且支持窗口做半透明和其他的对其他窗口的视觉处理。
 
-需要知道，发送 WM_PAINT 消息只能通过系统发送而不能通过应用发送，也就是上面说的通过 WM_PAINT 告诉 DWM 可以画出窗口，不是软件主动告诉系统，而是系统会不断刷新。
+需要知道，发送 `WM_PAINT` 消息只能通过系统发送而不能通过应用发送，也就是上面说的通过 `WM_PAINT` 告诉 DWM 可以画出窗口，不是软件主动告诉系统，而是系统会不断刷新。
 
-详细的 WM_PAINT 请看 [WM_PAINT详解和WM_ERASEBKGND - CSDN博客](https://blog.csdn.net/rankun1/article/details/50596634 )
+对于不可见的窗口，在 DWM 是不会发送 `WM_PAINT` 到这个窗口。
+
+详细的 `WM_PAINT` 请看 [WMPAINT详解和WMERASEBKGND - CSDN博客](https://blog.csdn.net/rankun1/article/details/50596634 )
+
+在 Windows 8 之后就无法手动设置关闭 DWM 的合成，只有在 windows 7 和以前的系统才可以设置关闭合成。通过 DWM 合成技术可以将每个绘制的窗口认为是一个位图，通过对位图处理添加阴影等，做出好看界面。
 
 更多请看 [Desktop Window Manager](https://docs.microsoft.com/en-us/windows/desktop/dwm/dwm-overview ) 
 
@@ -372,6 +431,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 
 ![](http://image.acmx.xyz/lindexi%2F201872593025761)
 
+总的渲染结构请看下图
+
+<!-- ![](image/WPF 渲染原理/WPF 渲染原理3.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018824142840517)
+
+
 关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 
 参见：
@@ -397,6 +463,10 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和 milco
 [1.3 WPF体系结构 - 51CTO.COM](http://book.51cto.com/art/200908/145309.htm )
 
 [WM_PAINT message ](https://docs.microsoft.com/zh-cn/windows/desktop/gdi/wm-paint )
+
+[Custom Window Frame Using DWM ](https://docs.microsoft.com/en-us/windows/desktop/dwm/customframe )
+
+[Performance Considerations and Best Practices ](https://docs.microsoft.com/en-us/windows/desktop/dwm/bestpractices-ovw )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
 
