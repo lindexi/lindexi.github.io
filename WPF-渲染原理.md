@@ -406,6 +406,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 详细的 `WM_PAINT` 请看 [WMPAINT详解和WMERASEBKGND - CSDN博客](https://blog.csdn.net/rankun1/article/details/50596634 )
 
+如果系统没有发送 `WM_PAINT` 到应用，屏幕怎么知道窗口需要刷新？实际通过[Drawing Without the WM\_PAINT Message](https://docs.microsoft.com/en-us/windows/desktop/gdi/drawing-without-the-wm-paint-message ) 的方法就可以做到。
+
 在 Windows 8 之后就无法手动设置关闭 DWM 的合成，只有在 windows 7 和以前的系统才可以设置关闭合成。通过 DWM 合成技术可以将每个绘制的窗口认为是一个位图，通过对位图处理添加阴影等，做出好看界面。
 
 更多请看 [Desktop Window Manager](https://docs.microsoft.com/en-us/windows/desktop/dwm/dwm-overview ) 
@@ -440,6 +442,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 ![](http://image.acmx.xyz/lindexi%2F2018824142840517)
 
+渲染需要经过消息循环和 Dispatcher 循环，也就是渲染的方法不是直接通过控件调用渲染。控件是通过发送消息经过消息循环再调用到控件的 OnRender 方法。再 OnRender 方法里，经过 Drawing 方法输出绘制原语到渲染线程。渲染线程经过 MIL 和 Dx 渲染界面到窗口。屏幕管理更新窗口让用户在屏幕可以看到、
 
 关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 
@@ -472,6 +475,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 [Custom Window Frame Using DWM ](https://docs.microsoft.com/en-us/windows/desktop/dwm/customframe )
 
 [Performance Considerations and Best Practices ](https://docs.microsoft.com/en-us/windows/desktop/dwm/bestpractices-ovw )
+
+[Drawing Without the WM\_PAINT Message](https://docs.microsoft.com/en-us/windows/desktop/gdi/drawing-without-the-wm-paint-message )
 
 
 

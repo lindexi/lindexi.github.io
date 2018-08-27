@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
 <div id="toc"></div>
 
