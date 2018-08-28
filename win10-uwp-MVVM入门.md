@@ -877,7 +877,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 在 CodeStorageModel 跳转需要设置 ListModel 跳转，我们一开始就显示，于是他也要，我们需要把 MasterSendMessage 实现，给 list ，这样就是一个 IOC 。
 
-        
+
 
 ```csharp
             DetailMaster.Narrow();
@@ -935,9 +935,9 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 如何使用我的 MasterDetail 框架，我下面和大家说。
 
-首先是复制DetailMasterMode，关于这个是如何写，我在之前的博客有说，如果希望知道如何制作一个DetailMaster，戳此[链接](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/)
+首先是复制DetailMasterMode，关于这个是如何写，我在之前的博客有说，如果希望知道如何制作一个DetailMaster，戳此[链接](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail.html)
 
-        
+
 
 ```csharp
     public class DetailMasterModel : NotifyProperty
@@ -1085,9 +1085,9 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-然后把它放到ViewModel
+然后把它放到 ViewModel
 
-        
+
 
 ```csharp
         public DetailMasterModel DetailMaster
@@ -1109,9 +1109,9 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-然后在界面复制下面代码，同样是我之前文章讲到的，感兴趣请去看：[http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/ )
+然后在界面复制下面代码，同样是我之前文章讲到的，感兴趣请去看：[win10 uwp 简单MasterDetail](https://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail.html )
 
-        
+
 
 ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -1176,9 +1176,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 然后判断发送信息，发给内容，具体可以去看代码，如果有不懂请发邮件或在评论，这很简单
 
 
-我们写 CodeStorageAttribute ，这个是我们一个页面，他包含的 ViewModel 。
-
-        
+我们写 CodeStorageAttribute ，这个是我们一个页面，通过这个特性就可以找到对应的 ViewModel ，当然需要在对应的 ViewModel 添加这个特性。
 
 ```csharp
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
@@ -1189,10 +1187,10 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-我们在 ListModel 和 ContentModel 写CodeStorageAttribute
+我们在 ListModel 和 ContentModel 写 CodeStorageAttribute 这样就可以通过反射的方式找到
 
-        
-然后我们可以在CodeStorageModel 
+
+然后我们可以在 CodeStorageModel 使用反射的方法添加对应的页面
         
 
 ```csharp
@@ -1220,7 +1218,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-我修改ISendMessage
+我修改 ISendMessage 添加一个事件
         
 
 ```csharp
@@ -1249,9 +1247,9 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-我们删除`public ContentModel ContentModel` `public ListModel ListModel`在 ListPage 和 Content ，我们直接使用索引
+我们删除`public ContentModel ContentModel` `public ListModel ListModel`在 ListPage 和 Content ，我们直接使用索引。这样如果需要很多个页面就不需要添加很多个属性。
 
-在CodeStorageModel
+在 CodeStorageModel 添加了下面代码，这样可以通过 xaml 绑定传入字符串
         
 
 ```csharp
@@ -1272,23 +1270,22 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-修改ListPage dateContent
+修改 ListPage 的 dateContent 为下面代码
 
 ```csharp
 DataContext="{Binding Source={StaticResource ViewModel},Path=CodeStorageModel[ListModel]}"
 
 ```
 
-ContentPage 的dateContent
+ContentPage 的 dateContent 用来绑定指定的 `ContentModel` ，绑定的方法是通过传入字符串的方式，请看代码
         
 
 ```csharp
     DataContext="{Binding Source={StaticResource ViewModel},Path=CodeStorageModel[ContentModel]}"
 
-
 ```
 
-在CodeStorageModel OnNavigatedTo
+在 CodeStorageModel 的 OnNavigatedTo 方法添加下面代码
         
 
 ```csharp
@@ -1325,19 +1322,23 @@ ContentPage 的dateContent
 
 ```
 
-我们可以做的页面的联系，我们不知道我们有哪些页面，如果看到我写错请评论
+通过这个方法可以做到页面之间没有耦合，使用约定的方式连接多个页面。
 
 全部源代码
 
 [https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework](https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework )
 
+
+
 不想每次都自己写很多类，可以下载我的模板 [http://download.csdn.net/detail/lindexi_gd/9716003](http://download.csdn.net/detail/lindexi_gd/9716003 )
 
-下载后放在 C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP 的 文件夹里，参见 [http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/](http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/ )
+下载后放在 `C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP` 的 文件夹里，参见 [http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/](http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/ )
 
 然后执行`devenv /setup`
 
 我们就可以在新建项目使用模板
+
+课件：[https://r302.cc/B96jVQ](https://r302.cc/B96jVQ )
 
 参考：
 [http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html](http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html )
