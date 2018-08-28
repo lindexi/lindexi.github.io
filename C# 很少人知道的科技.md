@@ -529,7 +529,7 @@ else
     
 实际在微软代码也是这样写，点击[string](https://referencesource.microsoft.com/#mscorlib/system/string.cs,507 )可以看到微软代码
 
-如果希望看讲课，请点击 https://r302.cc/Ejl1wN
+课件链接： https://r302.cc/J4gxOX
 
 欢迎加入 dotnet 职业技术学院 https://t.me/dotnet_campus 使用 Telegram 方法请看 [如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
