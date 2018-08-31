@@ -7,7 +7,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：dotnetcore -->
 
 ## 什么是阶梯编译
@@ -48,6 +47,9 @@
 
 
 [Tiered Compilation Preview in .NET Core 2.1 ](https://blogs.msdn.microsoft.com/dotnet/2018/08/02/tiered-compilation-preview-in-net-core-2-1/ )
+
+<!-- 奥利奥\TIM图片20180824091727.jpg -->
+![](https://i.loli.net/2018/08/24/5b7f5cdebe8a8.jpg)
 
 
 

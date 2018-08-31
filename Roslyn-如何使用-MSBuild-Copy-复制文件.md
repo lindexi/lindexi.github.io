@@ -167,6 +167,10 @@ xx\lindexi.txt;xx\lindexi.gitee.io.txt
 
 [如何使用 MSBuild Target（Exec）中的控制台输出 - walterlv](https://walterlv.github.io/post/exec-task-of-msbuild-target.html )
 
+更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
+
+参见：[专栏：Roslyn 入门 - CSDN博客](https://blog.csdn.net/column/details/23159.html )
+
 
 
 

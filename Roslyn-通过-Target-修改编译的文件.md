@@ -117,6 +117,10 @@
 <!-- TIM图片20180824091722.jpg -->
 ![](https://i.loli.net/2018/08/24/5b7f5cd130375.jpg)
 
+更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
+
+参见：[专栏：Roslyn 入门 - CSDN博客](https://blog.csdn.net/column/details/23159.html )
+
 
 
 

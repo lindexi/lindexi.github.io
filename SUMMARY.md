@@ -166,6 +166,8 @@
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
 
+ * [dotnet remoting 的 Channel 详解](dotnet-remoting-的-Channel-详解.md)
+
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
 
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
@@ -255,6 +257,8 @@
  * [Roslyn 如何获得一个类的引用](Roslyn-如何获得一个类的引用.md)
 
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
+
+ * [Roslyn 通过 nuget 统一管理信息](Roslyn-通过-nuget-统一管理信息.md)
 
  * [Roslyn 通过 Target 修改编译的文件](Roslyn-通过-Target-修改编译的文件.md)
 
@@ -749,6 +753,8 @@
  * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
+
+ * [WPF 从零开始开发 dotnet Remoting 程序](WPF-从零开始开发-dotnet-Remoting-程序.md)
 
  * [WPF 使用 Direct2D1 画图 绘制基本图形](WPF-使用-Direct2D1-画图-绘制基本图形.md)
 
