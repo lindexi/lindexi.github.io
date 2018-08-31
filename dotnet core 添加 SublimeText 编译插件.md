@@ -3,7 +3,7 @@
 因为 SublimeText 有很多插件都是使用 Py 写的，而我想使用 dotnet core 给 SublimeText 写一个编译插件，也就是在我使用 Markdown 的时候可以点击编译，将 Markdown 转 doc 或者做其他的。
 
 <!--more-->
-<!-- csdn -->
+<!-- 标签：dotnetcore,sublimetext -->
 
 在 SublimeText 有一个功能就是使用 Tools 的 `Build System` 添加新的 `Build` 通过点击`new Build System` 就可以新建一个用 `sublime-build` 结束的文件
 
@@ -62,7 +62,9 @@
 
 在刚才的项目写文件是因为在 SublimeText 的控制台看到的是如下界面
 
-![](image/dotnet core 添加 SublimeText 编译插件/dotnet core 添加 SublimeText 编译插件0.png)
+<!-- ![](image/dotnet core 添加 SublimeText 编译插件/dotnet core 添加 SublimeText 编译插件0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201882985320829)
 
 对于所有的中文都没有显示，所以写入文件就可以从文件里看，可以看到传入的文件是不会和 SublieText 显示一样
 
