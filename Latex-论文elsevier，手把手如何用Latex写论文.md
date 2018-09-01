@@ -10,6 +10,8 @@
 <div id="toc"></div>
 <!-- 标签：Latex -->
 
+关于使用 Latex 的好处请看[使用LaTeX写论文 - CSDN博客](https://blog.csdn.net/jiafgn/article/details/73065589 )
+
 在开始的时候需要先安装工具
 
 ## 下载
@@ -266,7 +268,9 @@ l.64 {\Pifont{psy}
 
 然后打开 basic-miktex 的文件夹的`miktex\bin\x64\initexmf.exe` 例如我的 basic-miktex 文件夹安装在 `E:\Program Files\MiKTeX 2.9` 我就可以通过 `E:\Program Files\MiKTeX 2.9\miktex\bin\x64\initexmf.exe` 打开
 
-打开 `initexmf.exe` 的方式是通过命令行的方式打开，通过命令行进入 basic-miktex 的文件夹的`dvips\config`文件夹，然后输入下面代码
+另一个方式是通过 MiKTeX 的包管理器安装 symbol 就可以解决，如果无法联网请看[离线安装Miktex/CTEX的宏包Package-02015678](http://02015678.lofter.com/post/1cd5b3ca_6fa6e34 )
+
+打开 `initexmf.exe` 的方式是通过命令行的方式打开，通过命令行进入 basic-miktex 的文件夹的`dvips\config`文件夹，然后输入下面代码。注意路径是我的安装路径，需要修改路径为你自己的路径。
 
 
 ```csharp
@@ -559,6 +563,20 @@ CSDN \sep lindexi \sep windows.sc
 
 还有其他选项，这些我们现在不需要，直接改5p就好`\documentclass[5p,times]{elsarticle}`
 
+这里是设置使用的模板，可以设置是否分栏、页边距、默认的字体类型及大小
+
+可以选的这些
+
+```csharp
+\documentclass[preprint,review,12pt]{elsarticle}
+\documentclass[final,1p,times]{elsarticle}
+\documentclass[final,1p,times,twocolumn]{elsarticle}
+\documentclass[final,3p,times]{elsarticle}
+\documentclass[final,3p,times,twocolumn]{elsarticle}
+\documentclass[final,5p,times]{elsarticle}
+\documentclass[final,5p,times,twocolumn]{elsarticle}
+```
+
 ### 引用
 
 我们的论文会参见很多人的，那么添加一个人或删一个引用，可能需要修改文章，而且因为排序问题可能需要修改文章的很多代码。不过在 Latex 有自动的方式，自动修改引用的序号。使用这个方法十分简单。参考需要写在页面的最下，在 `\end{document}` 的上方。在写引用之前需要搜索删除 `\bibliography{<your-bib-database>}` 这个代码
@@ -616,6 +634,10 @@ CSDN \sep lindexi \sep windows.sc
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文34.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F20189112406128)
+
+关于参考文献请看[latex 自定义bst文件 - CSDN博客](https://blog.csdn.net/tinkle181129/article/details/49822171 )
+
+将多个引用使用 `-` 连起来，如 `[1][2][3]` 转 `[1-3` 请看[latex中同一处引用多篇文献 - CSDN博客](https://blog.csdn.net/lqhbupt/article/details/49925911 )
 
 ### 斜体
 
@@ -856,6 +878,10 @@ svg转eps [http://cn.office-converter.com/SVG-to-EPS](http://cn.office-converter
 
 [Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
 
+### 表格
+
+关于表格请看 [使用latex撰写elsevier论文，latex表格，插图以及调用的安装包 - CSDN博客](https://blog.csdn.net/robert_chen1988/article/details/51700219 )
+
 ### 插入算法
 
 参见 [LaTeX算法排版例子 - CSDN博客](https://blog.csdn.net/lqhbupt/article/details/8723478 )
@@ -915,6 +941,11 @@ Btsync:BBXDB6T3LBPYJ6CVXTV7V6226FGXHXOFP
 <!-- https://yunpan.cn/OcvKHgsSHJMaFc  访问密码 2cef -->
 [ecrc.sty-CSDN下载](https://download.csdn.net/download/lindexi_gd/9646187 )
 
+### elsarticle-template
+
+官方的艾斯维尔文件是编译不通过，下面是我添加了文件的版本
+
+[elsarticle-template 包含文件-CSDN下载](https://download.csdn.net/download/lindexi_gd/10639564 )
 
 ### ecrc-template.tex
 <!-- https://yunpan.cn/OcvKHKAiBNIZDi  访问密码 1100 -->
@@ -923,6 +954,67 @@ Btsync:BBXDB6T3LBPYJ6CVXTV7V6226FGXHXOFP
 Btsync: BQ2XFET5YROHGWVN2NZNQ4X5VTKEKLO4C
 
 [ecrc-template-CSDN下载](http://download.csdn.net/detail/lindexi_gd/9795700)
+
+### lineno.sty
+
+[下载 lineno.sty -CSDN下载](https://download.csdn.net/download/lindexi_gd/10639569 )
+
+[官方 lineno.sty](https://www.ge.infn.it/~gemmec/SuppNote2012/lineno.sty )
+
+### lineno.tex
+
+[下载lineno.tex -CSDN下载](https://download.csdn.net/download/lindexi_gd/10639571 )
+
+这是 lineno.tex 官方版本[点击下载](https://ctan.org/tex-archive/macros/latex/contrib/lineno?lang=en )
+
+### lineno
+
+[下载lineno.zip -CSDN下载](https://download.csdn.net/download/lindexi_gd/10639574 )
+
+The LaTeX package lineno.sty provides line numbers on paragraphs
+
+### natbib.sty
+
+[下载natbib.sty -CSDN下载](https://download.csdn.net/download/lindexi_gd/10639753 )
+
+[官方下载](http://web.hku.hk/~gdli/natbibsty.txt )
+
+### pifont.sty
+
+这个文件需要放在 miktex 安装文件夹的 tex\latex\psnfss\ 覆盖，用于解决
+
+```csharp
+Font U/psy/m/n/10=psyr at 10.0pt not loadable: Metric (TFM) file not found.
+```
+
+但是会让一些字体无法看到
+
+[下载pifont.sty -CSDN下载](https://download.csdn.net/download/lindexi_gd/10639767 )
+
+另一个解决方法是通过 miktex 安装 symbol 库就可以解决。
+
+从开始菜单找到 Package Manager (Admin) 打开，可以看到下面界面
+
+<!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文36.png) -->
+
+![](https://i.loli.net/2018/09/01/5b8a35577e130.jpg)
+
+在里面搜索 symbol 按下回车搜索，可以看到下面界面，点击第一个右击安装
+
+<!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文37.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201891144513552)
+
+<!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文38.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20189114474348)
+
+安装完成可以看到下面界面，下面是我通过在本地的 `E:\package ` 做安装文件夹在本地安装，因为我无法联网安装
+
+<!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文39.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201891144731213)
+
 
 
 参见：[https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex](https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex )
