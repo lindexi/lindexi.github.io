@@ -9,3 +9,5 @@
 ## 触摸
 
 触摸是比较特殊，因为触摸是需要另一个线程收集触摸信息
+
+关于触摸请看 [WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
