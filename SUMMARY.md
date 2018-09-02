@@ -822,6 +822,8 @@
 
  * [WPF 开发自动删除软件](WPF-开发自动删除软件.md)
 
+ * [WPF 开发自动开机启动程序](WPF-开发自动开机启动程序.md)
+
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)

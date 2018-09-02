@@ -143,6 +143,8 @@ lindexi.targets
 
 使用这个方法就可以通过安装 nuget 的方式修改信息。
 
+代码 [Roslyn 通过 nuget 统一管理信息-CSDN下载](https://download.csdn.net/download/lindexi_gd/10641158 )
+
 
 
 
