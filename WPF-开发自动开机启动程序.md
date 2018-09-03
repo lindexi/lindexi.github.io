@@ -44,6 +44,8 @@
 
 现在就可以让软件在开机自动启动。
 
+参见 [使用 C# 代码创建快捷方式文件 - walterlv](https://walterlv.com/post/create-shortcut-file-using-csharp.html )
+
 ![](https://i.loli.net/2018/09/02/5b8b8a8e69248.jpg)
 
 
