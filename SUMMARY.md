@@ -252,6 +252,8 @@
 
  * [Roslyn 如何使用 MSBuild Copy 复制文件](Roslyn-如何使用-MSBuild-Copy-复制文件.md)
 
+ * [Roslyn 如何在 Target 引用 xaml 防止文件没有编译](Roslyn-如何在-Target-引用-xaml-防止文件没有编译.md)
+
  * [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](Roslyn-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
 
  * [Roslyn 如何获得一个类的引用](Roslyn-如何获得一个类的引用.md)
