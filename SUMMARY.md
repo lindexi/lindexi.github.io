@@ -232,6 +232,8 @@
 
  * [README](README.md)
 
+ * [Resharper 去掉注释拼写](Resharper-去掉注释拼写.md)
+
  * [Resharper 如何把类里的类移动到其他文件](Resharper-如何把类里的类移动到其他文件.md)
 
  * [resharper 自定义代码片](resharper-自定义代码片.md)
