@@ -343,6 +343,18 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 
 设置基线的方法是添加 Baseline = true ，建议在原来的方法添加，然后使用不同的方法看哪个方法的速度比较快
 
+在输出会添加一列 `Scaled` 用于表示这个方法对比基线的速度，他的时间是基线的多少。如上面代码的运行会输出
+
+|  Method |      Mean |     Error |    StdDev | Scaled |
+|-------- |----------:|----------:|----------:|-------:|
+|  Time50 |  50.46 ms | 0.0779 ms | 0.0729 ms |   0.50 |
+| Time100 | 100.39 ms | 0.0762 ms | 0.0713 ms |   1.00 |
+| Time150 | 150.48 ms | 0.0986 ms | 0.0922 ms |   1.50 |
+
+这里的 Scaled 就是对比基线方法的时间
+
+更多关于基线请看 [Benchmark and Job Baselines ](https://benchmarkdotnet.org/articles/features/baselines.html )
+
 ## 分类
 
 如果在一个类的测试方法有不同的类型，而只需要测试某几个类型的就需要使用本文的方法
