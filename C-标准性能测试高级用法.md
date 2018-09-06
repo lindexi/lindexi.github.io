@@ -326,6 +326,8 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 
 ## 基线
 
+基线可以用在三个不同的地方，最简单的是方法，另外可以用在分类和不同环境。
+
 因为测试的时间在不同的设备的时间都不相同，如何判断一个方法优化之后是比原来好？方法就是把原来的方法作为基线，这样可以对比不同的方法的速度
 
 如有三个不同的方法，选一个作为基线
@@ -352,6 +354,59 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 | Time150 | 150.48 ms | 0.0986 ms | 0.0922 ms |   1.50 |
 
 这里的 Scaled 就是对比基线方法的时间
+
+如果在不同的分类下需要做不同的标准，就可以在 BenchmarkCategory 添加 Baseline 告诉在哪个分类使用哪个方法作为标准。如下面的代码，设置 Fast 类和 Slow 类使用不同的标准 
+
+```csharp
+    [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]
+    [CategoriesColumn]
+    public class IntroCategoryBaseline
+    {
+        [BenchmarkCategory("Fast"), Benchmark(Baseline = true)]
+        public void Time50() => Thread.Sleep(50);
+
+        [BenchmarkCategory("Fast"), Benchmark]
+        public void Time100() => Thread.Sleep(100);
+
+        [BenchmarkCategory("Slow"), Benchmark(Baseline = true)]
+        public void Time550() => Thread.Sleep(550);
+
+        [BenchmarkCategory("Slow"), Benchmark]
+        public void Time600() => Thread.Sleep(600);
+    }
+```
+
+运行的输出，可以看到对于不同的分类用的是不同的方法
+
+|  Method | Categories |      Mean |     Error |    StdDev | Scaled |
+|-------- |----------- |----------:|----------:|----------:|-------:|
+|  Time50 |       Fast |  50.46 ms | 0.0745 ms | 0.0697 ms |   1.00 |
+| Time100 |       Fast | 100.47 ms | 0.0955 ms | 0.0893 ms |   1.99 |
+|         |            |           |           |           |        |
+| Time550 |       Slow | 550.48 ms | 0.0525 ms | 0.0492 ms |   1.00 |
+| Time600 |       Slow | 600.45 ms | 0.0396 ms | 0.0331 ms |   1.09 |
+
+基线除了可以测试方法的基线，还可以测试环境。如我的代码需要在 `Clr` `Mono` `Core` 三个不同环境运行，这时我想知道对比 Clr 环境，其他两个环境的性能。可以使用 JobBaseline 的方式。
+
+```csharp
+    [ClrJob(baseline: true)]
+    [MonoJob]
+    [CoreJob]
+    public class IntroJobBaseline
+    {
+        [Benchmark]
+        public int SplitJoin() 
+            => string.Join(",", new string[1000]).Split(',').Length;
+    }
+```
+
+这时输出可以看到 Clr 运行的是标准，在 Core 运行时间是在 Clr 运行的 0.67 通过这个方法就知道在不同的环境相同的方法的测试
+
+|    Method | Runtime |     Mean |     Error |    StdDev | Scaled | ScaledSD |
+|---------- |-------- |---------:|----------:|----------:|-------:|---------:|
+| SplitJoin |     Clr | 19.42 us | 0.2447 us | 0.1910 us |   1.00 |     0.00 |
+| SplitJoin |    Core | 13.00 us | 0.2183 us | 0.1935 us |   0.67 |     0.01 |
+| SplitJoin |    Mono | 39.14 us | 0.7763 us | 1.3596 us |   2.02 |     0.07 |
 
 更多关于基线请看 [Benchmark and Job Baselines ](https://benchmarkdotnet.org/articles/features/baselines.html )
 
