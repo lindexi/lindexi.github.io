@@ -478,6 +478,10 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 [Drawing Without the WM\_PAINT Message](https://docs.microsoft.com/en-us/windows/desktop/gdi/drawing-without-the-wm-paint-message )
 
+[Win32知识之窗口绘制窗口第一讲](https://www.cnblogs.com/iBinary/p/9576439.html )
+
+[win32程序之窗口程序以及消息机制](https://www.cnblogs.com/iBinary/p/9580268.html )
+
 
 
 
