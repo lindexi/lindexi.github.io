@@ -62,6 +62,8 @@
 
  * [C# 如何在项目引用x86 x64的非托管代码](C-如何在项目引用x86-x64的非托管代码.md)
 
+ * [C# 字典 Dictionary 的 TryGetValue 与先判断 ContainsKey 然后 Get 的性能对比](C-字典-Dictionary-的-TryGetValue-与先判断-ContainsKey-然后-Get-的性能对比.md)
+
  * [C# 对 byte 数组进行模式搜索](C-对-byte-数组进行模式搜索.md)
 
  * [C# 已知点和向量，求距离的点](C-已知点和向量，求距离的点.md)
