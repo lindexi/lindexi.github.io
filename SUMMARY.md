@@ -280,6 +280,8 @@
 
  * [SublimeText 粘贴图片保存到本地](SublimeText-粘贴图片保存到本地.md)
 
+ * [UWP IRandomAccessStream 与 Stream 互转](UWP-IRandomAccessStream-与-Stream-互转.md)
+
  * [UWP 分享用那个图标](UWP-分享用那个图标.md)
 
  * [UWP 和 WPF 对比](UWP-和-WPF-对比.md)
