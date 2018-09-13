@@ -218,6 +218,8 @@
 
  * [jekyll 添加 Valine 评论](jekyll-添加-Valine-评论.md)
 
+ * [Jenkins 配置自动合并 release 分支到 master 分支](Jenkins-配置自动合并-release-分支到-master-分支.md)
+
  * [控件](控件.md)
 
  * [Latex 公式速查](Latex-公式速查.md)
