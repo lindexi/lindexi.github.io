@@ -1,6 +1,7 @@
 
 # win10 UWP 标题栏后退
 
+本文告诉大家如何在 UWP 标题栏添加后退按钮
 
 <!--more-->
 
@@ -9,31 +10,45 @@
 <div id="toc"></div>
 
 
-设置里，标题栏有后退按钮
+设置里，标题栏有后退按钮，请看下图
 
-![这里写图片描述](http://img.blog.csdn.net/20160201125801185)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160201125801185) -->
 
-在win平板，可以有后退键，手机也有
+![](http://image.acmx.xyz/lindexi%2F20189142075776)
 
-pc可以在标题栏，打开设置可以看到的那个
+<!-- ![](image/win10_uwp_biao_ti_lan_hou_tui/win10_uwp_biao_ti_lan_hou_tui0.png) -->
 
+在win平板，可以有后退键，手机也有，但是手机的是物理的，平板的和 PC 的后退是在标题栏做的
 
-![这里写图片描述](http://img.blog.csdn.net/20160201130404911)
-
-如果需要在PC打开，请在`OnLaunched`添加下面代码
+如果需要在标题栏显示后退按钮，需要使用下面代码
 
 ```csharp
-//最后
-     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += BackRequested;     //添加事件  Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
-
+     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
 ```
+
+<!-- ![](image/win10_uwp_biao_ti_lan_hou_tui/win10_uwp_biao_ti_lan_hou_tui1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20189142092410)
+
+在用户点击标题栏的后退按钮的时候，可以通过下面代码拿到事件
+
+```csharp
+	     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += BackRequested; 
+```
+
+注意 BackRequested 是自己写的函数。
+
+可以通过 BackRequested 的参数 handle 阻止在手机按下后退键让应用隐藏。
 
 BackRequested 后退方法，如何获得参见：[c# 设计模式 责任链.md](c-设计模式-责任链.md) 注意不要在每个页面的构造都使用添加事件，如果这样子，那么就会出现按一下后退出现你想不到的异常。好的做法是在 Load 添加，Unload 去掉。如果这句代码添加在 ViewModel 需要自己在 ViewModel 关闭去掉添加事件。
 
-AppViewBackButtonVisibility 可以设置是否显示后退按钮
+如果是手机可以通过引用手机的 sdk 使用下面的代码拿到硬件按钮的返回
 
-上面的显示后退
-其实可以写在任何需要显示后退的地方，注意：如果是异步线程，需要把他放在同步线程
+```csharp
+Windows.Phone.UI.Input.HardwareButtons.BackPressed
+```
+
+具体代码请看 [Windows-universal-samples/Samples/BackButton at master · Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackButton )
 
 
 
