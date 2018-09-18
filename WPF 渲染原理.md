@@ -445,6 +445,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 课件 [WPF 渲染原理](https://r302.cc/p2m3ea)
 
+更多 WPF 渲染请看 [渲染相关](https://lindexi.gitee.io/post/%E6%B8%B2%E6%9F%93.html )
+
 参见：
 
 [一站式WPF--Window（一） - 周永恒 - 博客园](https://www.cnblogs.com/Zhouyongh/archive/2009/11/30/1613628.html )
