@@ -266,6 +266,8 @@
 
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
+ * [Roslyn 通过 Nuget 管理公司配置](Roslyn-通过-Nuget-管理公司配置.md)
+
  * [Roslyn 通过 nuget 统一管理信息](Roslyn-通过-nuget-统一管理信息.md)
 
  * [Roslyn 通过 Target 修改编译的文件](Roslyn-通过-Target-修改编译的文件.md)
