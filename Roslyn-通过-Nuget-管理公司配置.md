@@ -22,9 +22,11 @@
 
 而且我的团队也有新人加入，我告诉他需要添加一些配置，但是每次的提交我都需要关注，是不是公司名没写对
 
-最近我学到 Roslyn 的方法，通过 Nuget 添加配置，下面让我手把手告诉大家如何做一个配置
+最近我学到 Roslyn 的方法，通过 Nuget 添加配置，下面让我手把手告诉大家如何做一个配置。在上一篇文章[Roslyn 通过 nuget 统一管理信息](https://lindexi.oschina.io/lindexi/post/Roslyn-%E9%80%9A%E8%BF%87-nuget-%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF.html )告诉了大家如何通过手动写文件的方式做一个 nuget 包，本文来告诉大家通过 VisualStudio 创建工程的方式打包。
 
-先通过 VisualStudio 创建一个 dotnet core 项目，实际不需要创建项目也可以做到，不创建项目通过手动做nuget也是可以做到
+对比两篇博客，会发现通过 VisualStudio 打包的方式会更加简单。
+
+先通过 VisualStudio 创建一个 dotnet core 项目，这个项目实际不需要代码。
 
 创建了一个项目之后需要在这个项目里面添加一些文件，假设创建的项目的名字是 lindexi 在这个项目创建 Assets 文件夹，然后在文件夹里面创建 lindexi.props 文件
 
@@ -98,7 +100,46 @@
 
 ![](http://image.acmx.xyz/lindexi%2F20189182171657)
 
-在写到这里我才发现原来已经在之前写了 [Roslyn 通过 nuget 统一管理信息](https://lindexi.oschina.io/lindexi/post/Roslyn-%E9%80%9A%E8%BF%87-nuget-%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF.html ) 这篇博客，所以本文就写到这
+当前现在还没做完，如果这时创建了一个 dotnet framework 4.5 的项目，会发现这个包无法安装，因为这个包的依赖是 dotnet core 2.1 ，所以需要添加一些代码让这个包可以在 dotnet framework 使用
+
+右击编辑项目文件，修改 TargetFramework 为多个，请看代码
+
+```
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp2.0;net35</TargetFrameworks>
+    <Version>1.6.0</Version>
+    <Description>林德熙是逗比</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Assets\**" Pack="True" PackagePath="build\" />
+    <None Include="Assets\**" Pack="True" PackagePath="buildMultiTargeting\" />
+  </ItemGroup>
+
+</Project>
+
+```
+
+这里将原来的 TargetFramework 修改为 TargetFrameworks 添加了其他的框架，具体可以使用的请看[从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
+
+现在打出来的包还有影响到安装这个包的项目，还需要在项目文件做一些更改，请看代码
+
+```
+    <IsTool>true</IsTool>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+```
+
+具体上面的代码的意思请看[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - walterlv](https://walterlv.com/post/known-nuget-properties-in-csproj.html )
+
+[从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
+
+[Roslyn 通过 nuget 统一管理信息](https://lindexi.oschina.io/lindexi/post/Roslyn-%E9%80%9A%E8%BF%87-nuget-%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF.html ) 
 
 
 
