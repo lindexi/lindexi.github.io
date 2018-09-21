@@ -234,6 +234,8 @@
 
  * [MobaXterm 使用代理](MobaXterm-使用代理.md)
 
+ * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
+
  * [PTA 6-2 多项式求值](PTA-6-2-多项式求值.md)
 
  * [README](README.md)
@@ -251,6 +253,8 @@
  * [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](Roslyn-NameSyntax-的-ToString-和-ToFullString-的区别.md)
 
  * [Roslyn 使用 Directory.Build.props 文件定义编译](Roslyn-使用-Directory.Build.props-文件定义编译.md)
+
+ * [Roslyn 使用 Directory.Build.props 管理多个项目配置](Roslyn-使用-Directory.Build.props-管理多个项目配置.md)
 
  * [Roslyn 使用 Target 替换占位符方式生成 nuget 打包](Roslyn-使用-Target-替换占位符方式生成-nuget-打包.md)
 
@@ -901,6 +905,8 @@
  * [WPF 轻量级 MVVM 框架入门 2.1.2](WPF-轻量级-MVVM-框架入门-2.1.2.md)
 
  * [WPF 高性能笔](WPF-高性能笔.md)
+
+ * [WPF 高速书写 StylusPlugIn 原理](WPF-高速书写-StylusPlugIn-原理.md)
 
  * [WPF 鼠标移动到列表上 显示列表图标](WPF-鼠标移动到列表上-显示列表图标.md)
 

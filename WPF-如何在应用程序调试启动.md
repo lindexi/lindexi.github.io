@@ -8,6 +8,7 @@
 
 
 <!-- csdn -->
+<!-- 标签：WPF，VisualStudio，调试 -->
 
 首先打开 App.xaml.cs 然后在构造函数添加下面代码
 

@@ -64,7 +64,21 @@ System.InvalidOperationException:“由于不存在此事件的公共添加方�
             }
 ```
 
+参见 [https://stackoverflow.com/a/6423886/6116637](https://stackoverflow.com/a/6423886/6116637 )
 
+如果可能遇到类型转换的异常`System.ArgumanetException:'Object of type 'System.EventHandler1[System.EventArgs]' cannot be converted to type 'System.EventHandler'. `，请看[.NET/C# 使用反射注册事件 - walterlv](https://walterlv.com/post/add-event-handler-using-reflection.html )
+
+更多反射请看
+
+[win10 uwp 反射](https://lindexi.gitee.io/post/win10-uwp-%E5%8F%8D%E5%B0%84.html )
+
+[.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - walterlv](https://walterlv.com/post/create-delegate-to-improve-reflection-performance.html )
+
+[设置 .NET Native 运行时指令以支持反射（尤其适用于 UWP） - walterlv](https://walterlv.com/uwp/2017/09/21/reflection-using-dotnet-native-runtime-directive.html )
+
+[.NET/C# 使用反射调用含 ref 或 out 参数的方法 - walterlv](https://walterlv.com/post/handle-ref-or-out-arguments-using-reflection.html )
+
+[.NET/C# 推荐一个我设计的缓存类型（适合缓存反射等耗性能的操作，附用法） - walterlv](https://walterlv.com/post/design-a-cache-pool.html )
 
 
 
