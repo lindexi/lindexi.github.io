@@ -8,6 +8,8 @@
 
 <!-- csdn -->
 
+<!-- 标签：nuget，dotnet,dotnetcore -->
+
 本文不会告诉大家如何去制作一个 nuget 库，只是在大家已经打出来 nuget 之后如何将这个轮子发布到 nuget ，本文用 nuget.org 作为例子，如果是自己搭建的，那么我也不知道自己搭建的会做成什么
 
 首先打开 nuget.org 进行登陆，就是因为登陆 nuget 实在太慢我才去学如何通过命令行的方法发布
@@ -102,6 +104,8 @@ dotnet nuget push *.nupkg -k 刚才复制的key -s [https://api.nuget.org/v3/ind
 [How to Publish a NuGet Package ](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package )
 
 [dotnet nuget push command - .NET Core CLI ](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push?tabs=netcore21 )
+
+课件 [https://r302.cc/RmLrp4](https://r302.cc/RmLrp4 )
 
 
 
