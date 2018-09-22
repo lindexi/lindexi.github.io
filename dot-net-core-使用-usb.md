@@ -127,6 +127,25 @@ var usbDeviceFinder = new UsbDeviceFinder(vid: 0xFF21, pid: 0x1F02);
 
 等待的方式不是使用 await 而是通过  AsyncWaitHandle 等待。
 
+## 串口通信
+
+如果需要在 dotnet core 引用 System.IO.Ports 可以在程序包管理器输入下面代码
+
+```csharp
+Install-Package System.IO.Ports -Source [https://dotnet.myget.org/F/dotnet-core/api/v3/index.json](https://dotnet.myget.org/F/dotnet-core/api/v3/index.json )
+```
+
+或者设置 Nuget 的源添加 https://dotnet.myget.org/F/dotnet-core/api/v3/index.json 然后寻找 System.IO.Ports 安装
+
+请看 [https://dotnet.myget.org/feed/dotnet-core/package/nuget/System.IO.Ports](https://dotnet.myget.org/feed/dotnet-core/package/nuget/System.IO.Ports )
+
+或者输入下面代码
+
+```csharp
+Install-Package System.IO.Ports
+```
+
+
 ## LGPL
 
 需要知道这个库的协议是 LGPL 也就是使用了这个库就需要开放源代码

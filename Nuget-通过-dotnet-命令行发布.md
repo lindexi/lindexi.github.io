@@ -99,13 +99,13 @@ dotnet nuget push *.nupkg -k 刚才复制的key -s [https://api.nuget.org/v3/ind
 
 这样在编译之后调用这个批处理就可以将文件夹内的 nuget 上传，通过这个方式和 Jenkins 自动打包就可以自动发布 nuget 而且这个方式可以防止用户自己上传过程因为编译了不对的分支让其他用户以为自己写出坑
 
-![](https://mmbiz.qpic.cn/mmbiz_gif/O0xtFGCiaLmsxaUI6Zv702Zh9bXLK72UAqJ4dstYXf8J3MYFTYUx6wsicTFHKxWFQp0MueiasZovUupflzTOWdsMQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1 )
-
 [How to Publish a NuGet Package ](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package )
 
 [dotnet nuget push command - .NET Core CLI ](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push?tabs=netcore21 )
 
-课件 [https://r302.cc/RmLrp4](https://r302.cc/RmLrp4 )
+点击查看课件
+
+[![](http://image.acmx.xyz/lindexi%2F201892111425403)](https://r302.cc/RmLrp4)
 
 
 

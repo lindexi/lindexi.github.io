@@ -63,6 +63,34 @@ public static void ActivatePopup(Popup popup)
 
 这个问题已经反馈 https://connect.microsoft.com/VisualStudio/feedback/details/389998/wpf-popup-messes-with-ime-switching ，微软已经修复
 
+## 修复在 Popup 输入法不跟随
+
+在 Popup 里的 TextBox 输入可能出现输入法未跟随编辑框，这时需要调用 Win32 的方法
+
+```csharp
+[DllImport("User32.dll")]
+public static extern IntPtr SetFocus(IntPtr hWnd);
+
+IntPtr GetHwnd(Popup popup)
+{
+    HwndSource source = (HwndSource)PresentationSource.FromVisual(popup.Child);
+    return source.Handle;
+}
+```
+
+在 TextBox 获得焦点的时候调用下面代码
+
+```csharp
+xxPopup.GotFocus += Popup_GotFocus;
+
+        private void Popup_GotFocus(object sender, RoutedEventArgs e)
+        {
+            // WPF BUG Fix：TextBox 在 Popup 中，IME 备选框不跟随
+            Win32.SetFocus(GetHwnd(RenamePopup.Child));
+        }
+
+```
+
 
 
 
