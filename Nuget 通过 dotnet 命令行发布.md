@@ -96,12 +96,12 @@ dotnet nuget push *.nupkg -k 刚才复制的key -s https://api.nuget.org/v3/inde
 
 这样在编译之后调用这个批处理就可以将文件夹内的 nuget 上传，通过这个方式和 Jenkins 自动打包就可以自动发布 nuget 而且这个方式可以防止用户自己上传过程因为编译了不对的分支让其他用户以为自己写出坑
 
-![](https://mmbiz.qpic.cn/mmbiz_gif/O0xtFGCiaLmsxaUI6Zv702Zh9bXLK72UAqJ4dstYXf8J3MYFTYUx6wsicTFHKxWFQp0MueiasZovUupflzTOWdsMQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1 )
-
 [How to Publish a NuGet Package ](https://docs.microsoft.com/en-us/nuget/create-packages/publish-a-package )
 
 [dotnet nuget push command - .NET Core CLI ](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push?tabs=netcore21 )
 
-课件 https://r302.cc/RmLrp4
+点击查看课件
+
+[![](http://image.acmx.xyz/lindexi%2F201892111425403)](https://r302.cc/RmLrp4)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
