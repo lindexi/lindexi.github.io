@@ -529,6 +529,40 @@ else
     
 实际在微软代码也是这样写，点击[string](https://referencesource.microsoft.com/#mscorlib/system/string.cs,507 )可以看到微软代码
 
+## 重载的运算符
+
+实际上我可以将 null 强转某个类，创建一个新的对象，请看代码
+
+```csharp
+Fantastic fantastic = (FantasticInfo) null;
+fantastic.Foo();
+```
+
+这里的 FantasticInfo 和 Fantastic 没有任何继承关系，而且调用 Foo 不会出现空引用，也就是 fantastic 是从一个空的对象创建出来的。
+
+是不是觉得上面的科技很黑，实际原理没有任何黑的科技，请看代码
+
+```csharp
+    public class Fantastic
+    {
+        private Fantastic()
+        {
+        }
+
+        public static implicit operator Fantastic(FantasticInfo value) => new Fantastic();
+
+        public void Foo()
+        {
+        }
+    }
+
+    public class FantasticInfo
+    {
+    }
+```
+
+通过这个方式可以让开发者无法直接创建 Fantastic 类，而且在不知道 FantasticInfo 的情况无法创建 Fantastic 也就是让大家需要了解 FantasticInfo 才可以通过上面的方法创建，具体请看[只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式） - walterlv](https://walterlv.com/post/hide-your-constructor.html )
+
 课件链接： https://r302.cc/J4gxOX
 
 欢迎加入 dotnet 职业技术学院 https://t.me/dotnet_campus 使用 Telegram 方法请看 [如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
