@@ -1,25 +1,23 @@
 
-# C# 反射拿到属性方法
+# C# 使用反射获取私有属性的方法
 
-本文告诉大家多个不同的方法使用反射获得属性
+本文告诉大家多个不同的方法使用反射获得私有属性，最后通过测试性能发现所有的方法的性能都差不多
 
 <!--more-->
 
 
 <!-- csdn -->
 
-最简单方法是通过 PropertyInfo 的方法，通过 PropertyInfo 有三个不同的方法拿到属性的值
-
-先添加一个测试的类
+在开始之前先添加一个测试的类
 
 ```csharp
         public class Foo
         {
-            private string F { set; get; }
+            private string F { set; get; } = "123";
         }
 ```
 
-如果需要拿到 Foo 的 属性 F 可以通过 PropertyInfo 直接拿到
+如果需要拿到 Foo 的 属性 F 可以通过 PropertyInfo 直接拿到，从一个类拿到对应的 PropertyInfo 可以通过下面的代码
 
 ```csharp
            var foo = new Foo();
@@ -59,7 +57,15 @@
             }
 ```
 
-现在就获得了 PropertyInfo 通过这个属性可以拿到属性，这里拿到属性有三个不同的方法，请看下面
+现在就获得了 PropertyInfo 通过这个属性可以拿到类的属性，这里拿到属性有三个不同的方法
+
+ - GetValue
+
+ - GetGetMethod
+
+ - GetAccessor
+
+其中最简单的是通过 GetValue 的方法，请看下面
 
 ### GetValue
 
@@ -80,6 +86,10 @@
  MethodInfo getter = property.GetGetMethod(nonPublic: true);
  var f = getter.Invoke(foo, null);
 ```
+
+通过 GetGetMethod 可以拿到 MethodInfo 方法，如果对属性的返回值是可见的，如上面的 Foo 是使用 string 作为属性的类，可以通过创建委托的方式提高性能。
+
+如果对于属性的返回值是不可见的，也就是返回值是拿不到的，就无法通过创建委托的方式提高性能。
 
 ### GetAccessor
 
@@ -146,8 +156,10 @@
 
 |                                              Method |  Categories |         Mean |        Error |       StdDev |
 |---------------------------------------------------- |------------ |-------------:|-------------:|-------------:|
-|                            &#39;GetProperty 调用一次反射获取属性&#39; |   1次调用,反射性能 |     205.5 ns |     2.882 ns |     2.555 ns |
-|                          &#39;GetProperty 调用100次反射获取属性&#39; | 100次调用,反射性能 |  20,059.9 ns |   121.177 ns |   113.349 ns |
+|                            &#39;GetProperty 调用1次反射&#39; |   1次调用 |     205.5 ns |     2.882 ns |     2.555 ns |
+|                          &#39;GetProperty 调用100次反射&#39; | 100次调用 |  20,059.9 ns |   121.177 ns |   113.349 ns |
+
+
 
 因为 GetValue 没有使用缓存的方法，而缓存也只是缓存 PropertyInfo 的值，于是在下面测试 GetGetMethod 的方法，这个方法在跑100次就添加了缓存
 
@@ -194,8 +206,10 @@
 
 |                                              Method |  Categories |         Mean |         Error |        StdDev |
 |---------------------------------------------------- |------------ |-------------:|--------------:|--------------:|
-|   &#39;GetPropertGetAccessorMethodInfo 调用一次通过获取属性get方法&#39; |   1次调用,反射性能 |     191.6 ns |     0.7641 ns |     0.6774 ns |
-| &#39;GetPropertGetAccessorMethodInfo 调用100次通过获取属性get方法&#39; | 100次调用,反射性能 |  10,341.9 ns |   134.9177 ns |   126.2021 ns |
+|   &#39;GetPropertGetAccessorMethodInfo 调用一次&#39; |   1次调用 |     191.6 ns |     0.7641 ns |     0.6774 ns |
+| &#39;GetPropertGetAccessorMethodInfo 调用100次&#39; | 100次调用 |  10,341.9 ns |   134.9177 ns |   126.2021 ns |
+
+
 
 相对于 GetValue 没有带缓存的 GetGetMethod 带缓存的性能是 GetValue 的一倍，也就是找到 PropertyInfo 占用的时间如果能减少，就可以提高速度。
 
@@ -203,9 +217,11 @@
 
 |                                                 Method |  Categories |         Mean |        Error |       StdDev |
 |------------------------------------------------------- |------------ |-------------:|-------------:|-------------:|
-|               &#39;GetPropertyGetAccessor 调用一次通过获取属性get方法&#39; |   1次调用,反射性能 | 206,282.4 ns | 4,051.754 ns | 5,939.008 ns |
-|         &#39;GetPropertyGetAccessor 调用100次的通过获取属性get方法&#39; | 100次调用,反射性能 | 222,227.4 ns | 4,354.600 ns | 6,906.857 ns |
-| &#39;GetPropertGetAccessorMethodInfo 带缓存调用100次通过获取属性get方法&#39; | 100次调用,反射性能 |  10,352.2 ns |   141.629 ns |   132.480 ns |
+|               &#39;GetPropertyGetAccessor 调用一次&#39; |   1次调用 | 206,282.4 ns | 4,051.754 ns | 5,939.008 ns |
+|         &#39;GetPropertyGetAccessor 调用100次&#39; | 100次调用 | 222,227.4 ns | 4,354.600 ns | 6,906.857 ns |
+| &#39;GetPropertGetAccessorMethodInfo 带缓存调用100次&#39; | 100次调用 |  10,352.2 ns |   141.629 ns |   132.480 ns |
+
+
 
 可以看到 GetPropertyGetAccessor 方法在初始化的时间很长，而带缓存的调用和 GetGetMethod 的方法调用的时间几乎一样长
 
