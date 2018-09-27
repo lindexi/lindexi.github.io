@@ -179,4 +179,16 @@ dotnet ef database update
 
 用 Sqlite 可以简单将数据保存在服务器，只需要定期保存文件就可以，这个文件可以放在 Window 进行调试，也就是在 Window 和 Linux 可以使用相同的 Sqlite 这样开发很简单
 
+从 Linux 服务器下载 sqlite 文件，推荐使用 sqlite expert 工具打开 sqlite 文件
+
+<!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器16.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018927213928437)
+
+点击打开数据库文件，点击对应的数据就可以看到写进入的，不需要通过写 sql 语句就可以创建一个表，在表里添加列
+
+<!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器17.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201892721404323)
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
