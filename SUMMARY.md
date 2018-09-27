@@ -162,6 +162,8 @@
 
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
 
+ * [dotnet core 使用 sqlite 部署到 Centos 服务器](dotnet-core-使用-sqlite-部署到-Centos-服务器.md)
+
  * [dotnet core 添加 SublimeText 编译插件](dotnet-core-添加-SublimeText-编译插件.md)
 
  * [dotnet core 编程规范](dotnet-core-编程规范.md)
