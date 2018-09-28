@@ -154,7 +154,7 @@ dotnet ef database update
 
 ![](http://image.acmx.xyz/lindexi%2F201892721287551)
 
-在部署到 Linux 之前，需要设置端口和 ip 通过在 Program 类添加设置 `UseUrls("http://0.0.0.0:5000")` 就可以
+在部署到 Linux 之前，需要设置端口和 ip 才可以在本地访问服务器的程序，在 ASP.NET Core 设置端口的方法很简单，通过在 Program 类添加设置 `UseUrls("http://0.0.0.0:5000")` 就可以
 
 ```csharp
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -165,17 +165,19 @@ dotnet ef database update
 
 上面的方法是可以让运行的 asp dotnet core 程序监听 5000 端口
 
-现在可以将所有文件上传到 Linux 服务器，如何上传文件到服务器请自己谷歌
+现在可以将所有文件上传到 Linux 服务器，如何上传文件到服务器请自己谷歌，上传的是代码，实际上我是复制 `CataiLerlasur` 文件夹到服务器
 
-上传之后进入对应的文件夹，也就是 `CataiLerlasur.csproj` 所在的文件夹，运行 `dotnet run` 就可以
+上传之后在 Linux 进入对应的文件夹，也就是 `CataiLerlasur.csproj` 所在的文件夹，运行 `dotnet run` 就可以。在运行 dotnet run 之前需要先安装完成 dotnet core 才可以，如何安装请看[Install .NET Core SDK  CentOS ](https://www.microsoft.com/net/download/linux-package-manager/centos/sdk-current )
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器14.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2018927213232378)
 
+在运行 `dotnet run` 就完成了在服务器部署了，现在可以在本地访问刚才的程序
+
 在浏览器打开服务器的 ip 和端口号，输入 url 就可以看到访问的时候和本地调试一样的数据
 
-这时的数据保存在 sqlite 文件，尝试将本地的 sqlite 文件替换到服务器，可以看到再次访问之后两条数据
+这时的数据保存在 sqlite 文件，尝试将本地的 sqlite 文件替换到服务器，可以看到再次访问之后两条数据，也就是备份的时候只需要备份数据库就可以，数据库就是一个文件。如果想将自己的程序放在其他的服务器运行，也只需要复制整个文件夹就可以
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器15.png) -->
 
