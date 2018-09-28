@@ -5,6 +5,8 @@
 <!--more-->
 <!-- csdn -->
 
+<!-- 标签： dotnetcore,aspdotnetcore,asp,数据库,sqlite -->
+
 ## 创建项目
 
 本文是在 Windows 使用 VisualStudio 开发，通过 VisualStudio 可以快速创建一个 asp dotnet core 程序
@@ -111,6 +113,8 @@ dotnet ef database update
 ![](http://image.acmx.xyz/lindexi%2F2018927211716111)
 
 现在可以看到项目多了一个文件 `csdn.db` 和 Migrations 文件夹
+
+上面两句代码是的意思是创建迁移版本，更新数据。更多请看[Entity Framework Core 之数据库迁移 ](https://www.cnblogs.com/GuZhenYin/p/8579420.html )
 
 ## 部署服务器
 
