@@ -276,6 +276,8 @@
 
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
+ * [Roslyn 通过 Nuget 引用源代码 在 VS 智能提示正常但是无法编译](Roslyn-通过-Nuget-引用源代码-在-VS-智能提示正常但是无法编译.md)
+
  * [Roslyn 通过 Nuget 管理公司配置](Roslyn-通过-Nuget-管理公司配置.md)
 
  * [Roslyn 通过 nuget 统一管理信息](Roslyn-通过-nuget-统一管理信息.md)
