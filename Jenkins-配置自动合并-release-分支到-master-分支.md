@@ -100,6 +100,8 @@ t/lindexi/github
 
 具体设置请看 [Using GIT deploy key in Jenkins](https://blogs.perficient.com/2014/03/26/using-git-deploy-key-in-jenkins-written-by-tom-tang/ )
 
+[使用jenkins+gitlab进行CI - haungtengxiao](https://huangtengxiao.gitee.io/post/%E4%BD%BF%E7%94%A8jenkins+gitlab%E8%BF%9B%E8%A1%8CCI.html )
+
 ![](https://i.loli.net/2018/09/13/5b9a46e200df2.jpg)
 
 

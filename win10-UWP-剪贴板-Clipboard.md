@@ -1,7 +1,7 @@
 
 # win10 UWP 剪贴板 Clipboard
 
-本文告诉大家如何使用剪贴板 Clipboard。
+本文告诉大家如何使用剪贴板 Clipboard 读取剪贴板和放内容在剪贴板
 
 <!--more-->
 
@@ -9,7 +9,7 @@
 
 <div id="toc"></div>
 
-win10 UWP 剪贴板 Clipboard使用`Windows.ApplicationModel.DataTransfer.Clipboard`，提供 UWP 与其他程序的通信，目标程序可以使用 UWP 程序也可以使用以前的程序。
+在 win10 UWP 可以通过 `Windows.ApplicationModel.DataTransfer.Clipboard` 是剪贴板，剪贴板可以用来与其他程序的通信，目标程序可以使用 UWP 程序也可以使用以前的程序。
 
 下面告诉大家如何去设置和获取剪贴板的内容。
 

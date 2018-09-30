@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
 
 在看过 [C# 很少人知道的科技](https://blog.csdn.net/lindexi_gd/article/details/79617425 )的小伙伴就知道，我告诉了大家一些关键字，都是很少人发现。
