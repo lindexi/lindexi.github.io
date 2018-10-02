@@ -57,7 +57,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 打开 vs，创建项目，这里把项目叫 UmmyShirouValeri ，名字是用我的命名输入法写出来的。
 
-打开Nuget，搜索 win2d 安装
+打开Nuget 搜索 win2d 安装
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
 
