@@ -38,6 +38,8 @@ btsync 把自己的电脑作为网盘，不限空间流量，适合局域网同�
 
 官网是 [https://www.resilio.com](https://www.resilio.com/platforms/desktop/)
 
+[Resilio-Sync btsync x64 2.6.1-CSDN下载](https://download.csdn.net/download/lindexi_gd/10705179 )
+
 ![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412536.jpg)
 
 我接下来分享的都会在 btsync ，那么如何分享？
