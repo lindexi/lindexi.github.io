@@ -1,17 +1,17 @@
 # win10 uwp win2d 入门 看这一篇就够了
 
-本文主要翻译，可能带有一定的主观性和局限性，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，可以在我博客评论 http://blog.csdn.net/lindexi_gd
+本文主要翻译微软官方的文档和添加一些在开发过程比较多小伙伴问的问题，可能带有一定的主观性和局限性，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，欢迎在我博客评论 
+
 <!--more-->
 
 <div id="toc"></div>
+
 <!-- csdn -->
 <!-- 标签：uwp,win2d -->
 
 ## 介绍
 
-Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用硬件加速，主要是GPU的强大计算。他可以使用C#或C++写应用商店应用，包括UWP或windows 8.1手机或电脑。他利用强大的Direct2D，无缝集合windows的Xaml，可以使用强大的渲染得到漂亮界面。
-
-使用他可以将界面交给GPU，让CPU集中计算我们的算法
+Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 的 API 通过这个库实现的效果可以充分利用硬件加速，用 GPU 强大的计算能力做出华丽界面。通过 Win2d 可以使用 C# 或 C++ 写应用商店应用，包括 UWP 或 windows 8.1 应用，可以在手机或电脑运行，但是现在不支持 WPF 和 WinForms 开发。在底层 Win2d 利用强大的 Direct2D 而且无缝集合 Windows 的 Xaml，可以使用强大的渲染得到漂亮界面，同时有好看的 API 函数。使用 Win2d 的一个好处是让渲染在 GPU 计算，在 CPU 全力计算业务功能。
 
 我们可以通过Nuget来得到win2d，Nuget的windows10版win2d:[http://www.nuget.org/packages/Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp)，Nuget的windows 8.1版win2d:http://www.nuget.org/packages/Win2D.win81
 
@@ -22,7 +22,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 一些链接：
 如果找到bug可以通过 <http://github.com/Microsoft/Win2D/issues> 告诉微软
 
-团队博客：http://blogs.msdn.com/b/win2d
+团队博客：<http://blogs.msdn.com/b/win2d>
 
 
 ## 特性
