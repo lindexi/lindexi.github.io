@@ -13,11 +13,11 @@
 
 Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 的 API 通过这个库实现的效果可以充分利用硬件加速，用 GPU 强大的计算能力做出华丽界面。通过 Win2d 可以使用 C# 或 C++ 写应用商店应用，包括 UWP 或 windows 8.1 应用，可以在手机或电脑运行，但是现在不支持 WPF 和 WinForms 开发。在底层 Win2d 利用强大的 Direct2D 而且无缝集合 Windows 的 Xaml，可以使用强大的渲染得到漂亮界面，同时有好看的 API 函数。使用 Win2d 的一个好处是让渲染在 GPU 计算，在 CPU 全力计算业务功能。
 
-我们可以通过Nuget来得到win2d，Nuget的windows10版win2d:[http://www.nuget.org/packages/Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp)，Nuget的windows 8.1版win2d:http://www.nuget.org/packages/Win2D.win81
+我们可以通过 Nuget 来安装 win2d 库，Nuget的windows10版win2d:[http://www.nuget.org/packages/Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp)，Nuget的windows 8.1版win2d:http://www.nuget.org/packages/Win2D.win81
 
-如何使用可以参见微软示例<http://github.com/Microsoft/Win2D-samples>
+如何使用可以参见微软示例 <http://github.com/Microsoft/Win2D-samples> 或继续看本文
 
-在下面我们会说如何快速使用。大概看了这个博客就可以入门了，因为使用是很简单。
+在本文下面会告诉大家如何快速使用 Win2d 做出好看界面，大概看了这个博客就可以了解 Win2d 是如何写的，因为 Win2d 的使用是很简单。
 
 一些链接：
 如果找到bug可以通过 <http://github.com/Microsoft/Win2D/issues> 告诉微软
@@ -55,9 +55,9 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 
 ## 使用
 
-打开 vs，创建项目，这里把项目叫 UmmyShirouValeri ，名字是用我的命名输入法写出来的。
+打开 vs，创建 UWP 项目，这里把项目叫 UmmyShirouValeri ，名字是用我的[命名输入法](ms-windows-store://pdp/?productid=9P8LNZRNJX85)写出来的。
 
-打开Nuget 搜索 win2d 安装
+打开 Nuget 搜索 win2d 安装
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
 
