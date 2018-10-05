@@ -93,13 +93,13 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 
 按下F5这时看起来什么没有，但是有了颜色，如果可以看到这个，那么程序是安装成功，如果错误，那么可能安装的包错误。
 
-如果发现自己的包无法使用，那么请同时升级 Win2d 和 `Microsoft.NETCore.UniversalWindowsPlatform` 最新
+如果发现自己的包无法使用，那么请同时升级 Win2d 和 `Microsoft.NETCore.UniversalWindowsPlatform` 最新，升级 UWP 项目使用最新的
 
 ### 添加文字
 
-需要在 canvas 的 Draw 添加函数，可以在这里画出图案，文字，于是使用这句添加在 xaml ` <canvas:CanvasControl x:Name="canvas" ClearColor="Black" Draw="Canvas_OnDraw"></canvas:CanvasControl>` 。在 MainPage.xaml.cs 写函数`Canvas_OnDraw`
+需要在 canvas 的 Draw 添加函数，可以在这里画出图案，文字，于是使用这句添加在 xaml ` <canvas:CanvasControl x:Name="canvas" ClearColor="Black" Draw="Canvas_OnDraw"></canvas:CanvasControl>` 。在 MainPage.xaml.cs 写函数 `Canvas_OnDraw` 这样就可以在后台代码做出好看界面
 
-核心就是 `Draw="Canvas_OnDraw"` ，在 MainPage.xaml.cs 函数请看代码
+实际上上面的代码的核心就是 `Draw="Canvas_OnDraw"` 通过这个代码可以在 MainPage.xaml.cs 函数请看代码
 
 ```csharp
         private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
@@ -109,7 +109,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
         }
 ```
 
-上面的代码在坐标（100，100）写出文字 "lindexi" ，设置了我也不知道的颜色。
+上面的代码在坐标（100，100）写出文字 "lindexi" 文字的颜色设置了我也不知道的颜色。
 
 在写文字就需要用到 args.DrawingSession 提供很多方法，可以在这些方法写文字的有两个，本文使用的是里面最简单的一个。
 
