@@ -117,7 +117,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201422.jpg)
 
-和上面同样功能，可以不使用Vector2，使用这个代码也是一样`draw.DrawText("lindexi",100,100,Color.FromArgb(0xFF,100,100,100));`
+和上面同样功能，可以不使用Vector2，使用这个代码也是一样`draw.DrawText("lindexi", 100, 100, Color.FromArgb(0xFF,100,100,100));`
 
 如果需要设置字体宽度，可以使用 CanvasTextFormat 来做。
 
@@ -166,6 +166,8 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
     mc:Ignorable="d">
 ```
 
+上面代码的核心是 `Unloaded="Page_OnUnloaded"` 通过 Unloaded 可以知道页面关闭
+
 打开  MainPage.xaml.cs ，在函数 Page_OnUnloaded 添加下面代码，就是把 Win2d 从视觉树移除
 
 
@@ -192,7 +194,8 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 
 如果需要重新画，如何做？
 
-想要让他重画，使用`canvas.Invalidate();` 就会重新调用Canvas_OnDraw
+在 Win2d 的 CanvasControl 只会在初始化的时候调用一次 Draw 事件，如果想要做动画，如何多次调用？
+想要让他重画，使用 `canvas.Invalidate();` 就会重新调用 Canvas_OnDraw 
 
 在构造使用下面代码让win2d不停重画。
 
@@ -207,11 +210,11 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
             t.Start();
 ```
 
-这样就可以隔 1000 毫秒重画。需要知道使用这个方法是让大家可以用到之前的技能，有小伙伴告诉我，如果写一篇博客里面用到的都是大家默认的技能，那么很少有人可以看下去，所以我尽量使用大家都知道的技能来做。这里是告诉大家，如果想要触发 Draw 就需要调用 `canvas.Invalidate();` 调用这个函数可以在不可控的一个时间触发`Draw`，所以无法稳定指定时间重画。在本文的后面会告诉大家如何做动画。
+这样就可以隔 1000 毫秒重画。需要知道使用这个方法是让大家可以用到之前的技能，有小伙伴告诉我，如果写一篇博客里面用到的都不是大家默认的技能，那么很少有人可以看下去，所以我尽量使用大家都知道的技能来做。这里是告诉大家，如果想要触发 Draw 就需要调用 `canvas.Invalidate();` 调用这个函数可以在不可控的一个时间触发`Draw`，所以无法稳定指定时间重画。在本文的后面会告诉大家如何做动画。
 
 
 ```csharp
-            private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
+         private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
         {
             var draw = args.DrawingSession;
             draw.DrawText("lindexi", Ran.Next(10,100), Ran.Next(10, 100), 500, 50, Color.FromArgb(0xFF, 100, 100, 100), new CanvasTextFormat()
@@ -258,7 +261,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 
 ```
 
-需要在vs2017 才可以跑，如果希望下载vs2017 ，可以到我网盘下载
+需要在vs2017 才可以跑，如果希望下载 vs2017 ，可以到我网盘下载
 
 链接：http://pan.baidu.com/s/1skXDc3z 密码：70d6
 
@@ -267,7 +270,6 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 btsync：BTZR4YIPCLUUEL2BKDACVGLC3473MEWDN
 
 如果需要使用 Win2d 使用动画，请看 [win10 uwp win2d CanvasVirtualControl](https://lindexi.gitee.io/post/win10-uwp-win2d-CanvasVirtualControl.html )
-
 
 ### 如何画线
 
