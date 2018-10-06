@@ -283,20 +283,19 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
 ### 添加图片
 
-添加图片可以`draw.DrawImage` 画出图片，之前需要有图片，需要的是`CanvasBitmap`，如何获得这个？
+添加图片可以通过 `draw.DrawImage` 画出图片，在画之前需要有图片，这里的图片的类是 `CanvasBitmap` 下面来告诉大家如何从文件或 URL 二进制转换图片
 
 可以通过下面的三个方法拿到图片
 
-
 ```csharp
-    CanvasBitmap.CreateFromBytes()
-    CanvasBitmap.CreateFromColors()
-    CanvasBitmap.LoadAsync()
+    CanvasBitmap.CreateFromBytes() // 从 bytes 数组创建
+    CanvasBitmap.CreateFromColors() // 创建纯色的图片
+    CanvasBitmap.LoadAsync()       // 通过 URL 或文件创建
 ```
 
-注意：传入的`ICanvasResourceCreator`就是 CanvasControl
+注意：传入的 `ICanvasResourceCreator` 就是 CanvasControl 也就是一个页面如果存在多个 CanvasControl 在哪个 CanvasControl 使用的图片就需要在哪个创建
 
-下面使用 LoadAsync 传入工程的图片，比较期望的方法是在 Canvas_OnCreateResources 事件里面加载图片。但是这里为了演示方便就直接在 Canvas_OnDrawAsync 创建图片。
+下面使用 LoadAsync 传入工程的图片，比较期望的方法是在 `Canvas_OnCreateResources` 事件里面加载图片。但是这里为了演示方便就直接在 `Canvas_OnDrawAsync` 创建图片。
 
 
 ```csharp
@@ -320,6 +319,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
             else
             {
                 // 这是危险写法，请看 [win10 uwp 异步转同步](https://lindexi.gitee.io/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html )
+                
                 Img().Wait();
             }
 
@@ -343,9 +343,9 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 ```
 
 
-创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));`
+创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));` 加载，需要注意加载的文件需要是内容
 
-创建使用的uri参见：[win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
+创建使用的 uri 参见：[win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
 
 ## 创建资源
 
