@@ -361,7 +361,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
                             Draw="Canvas_OnDraw"></xaml:CanvasControl> 
 ```
 
-在后台代码 Canvas_OnCreateResources 就可以用来创建资源。
+在后台代码 `Canvas_OnCreateResources` 就可以用来创建资源，在这个方法可以异步创建资源，只有在这里创建资源完成之后才会调用 Draw 方法。
 
 ```csharp
         private void Canvas_OnCreateResources(CanvasControl sender, CanvasCreateResourcesEventArgs args)
@@ -406,7 +406,7 @@ win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法
 
 ```
 
-上面的代码不会把win2d 的背景设置，因为 win2d 需要设置 `ClearColor `，来画出背景
+上面的代码不会把 win2d 的背景设置，因为 win2d 需要设置 `ClearColor` 来画出背景
 
 如果想把 win2d 的背景颜色设置为 白色，那么可以使用下面代码
 
@@ -564,6 +564,8 @@ win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法
 <!-- ![](image/win10_uwp_win2d/win10_uwp_win2d1.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F201862165817512)
+
+如果想知道 Win2d 的特效有哪些请看 [win10 uwp win2d 特效](https://lindexi.gitee.io/lindexi/post/win10-uwp-win2d-%E7%89%B9%E6%95%88.html )
 
 参见：[第二章 画布渲染目标CanvasRenderTarget](https://zhuanlan.zhihu.com/p/37128817 )
 
