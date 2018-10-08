@@ -1,7 +1,7 @@
 
 # 如何安装 btsync
 
-本文告诉大家如何在 windows 和 Linux 安装使用 Btsync ，而且分享一些小东西给大家
+本文告诉大家如何在 windows 和 Linux 安装使用 [Btsync](https://www.resilio.com) 而且分享一些小东西给大家
 
 <!--more-->
 
@@ -29,14 +29,19 @@ btsync 把自己的电脑作为网盘，不限空间流量，适合局域网同�
 
 4. 支持多种网络形态——可以“公网上互相同步”，也可以是“局域网内相互同步”。
 
-5.【没有】审查
+5. 【没有】审查
 
+现在 Btsync 也叫 resilio 同步工具
 
 ## windows 安装
 
 如何使用？
 
 首先下载安装，然后随意给一个名称。[点击下载 密码: ns6u](链接: https://pan.baidu.com/s/1c1CFkw4 )，如果百度无法下载，可以到[这里](http://download.csdn.net/detail/lindexi_gd/9792343)，下载如果无法下载可以联系我
+
+官网是 [https://www.resilio.com](https://www.resilio.com/platforms/desktop/)
+
+[Resilio-Sync btsync x64 2.6.1-CSDN下载](https://download.csdn.net/download/lindexi_gd/10705179 )
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412536.jpg)
 

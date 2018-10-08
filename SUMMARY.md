@@ -10,6 +10,8 @@
 
  * [.net Standard](net-Standard.md)
 
+ * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
+
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
 
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)

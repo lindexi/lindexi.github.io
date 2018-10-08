@@ -1,32 +1,31 @@
 
 # win10 uwp win2d 入门 看这一篇就够了
 
-本文主要翻译，可能带有一定的主观性和局限性，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，可以在我博客评论 [http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
+本文主要翻译微软官方的文档和添加一些在开发过程比较多小伙伴问的问题，可能带有一定的主观性和局限性，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，欢迎在我博客评论 
 
 <!--more-->
 
 
 
 <div id="toc"></div>
+
 <!-- csdn -->
 <!-- 标签：uwp,win2d -->
 
 ## 介绍
 
-Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用硬件加速，主要是GPU的强大计算。他可以使用C#或C++写应用商店应用，包括UWP或windows 8.1手机或电脑。他利用强大的Direct2D，无缝集合windows的Xaml，可以使用强大的渲染得到漂亮界面。
+Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 的 API 通过这个库实现的效果可以充分利用硬件加速，用 GPU 强大的计算能力做出华丽界面。通过 Win2d 可以使用 C# 或 C++ 写应用商店应用，包括 UWP 或 windows 8.1 应用，可以在手机或电脑运行，但是现在不支持 WPF 和 WinForms 开发。在底层 Win2d 利用强大的 Direct2D 而且无缝集合 Windows 的 Xaml，可以使用强大的渲染得到漂亮界面，同时有好看的 API 函数。使用 Win2d 的一个好处是让渲染在 GPU 计算，在 CPU 全力计算业务功能。
 
-使用他可以将界面交给GPU，让CPU集中计算我们的算法
+我们可以通过 Nuget 来安装 win2d 库，Nuget的windows10版win2d:[http://www.nuget.org/packages/Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp)，Nuget的windows 8.1版win2d:[http://www.nuget.org/packages/Win2D.win81](http://www.nuget.org/packages/Win2D.win81 )
 
-我们可以通过Nuget来得到win2d，Nuget的windows10版win2d:[http://www.nuget.org/packages/Win2D.uwp](http://www.nuget.org/packages/Win2D.uwp)，Nuget的windows 8.1版win2d:[http://www.nuget.org/packages/Win2D.win81](http://www.nuget.org/packages/Win2D.win81 )
+如何使用可以参见微软示例 <http://github.com/Microsoft/Win2D-samples> 或继续看本文
 
-如何使用可以参见微软示例<http://github.com/Microsoft/Win2D-samples>
-
-在下面我们会说如何快速使用。大概看了这个博客就可以入门了，因为使用是很简单。
+在本文下面会告诉大家如何快速使用 Win2d 做出好看界面，大概看了这个博客就可以了解 Win2d 是如何写的，因为 Win2d 的使用是很简单。
 
 一些链接：
 如果找到bug可以通过 <http://github.com/Microsoft/Win2D/issues> 告诉微软
 
-团队博客：[http://blogs.msdn.com/b/win2d](http://blogs.msdn.com/b/win2d )
+团队博客：<http://blogs.msdn.com/b/win2d>
 
 
 ## 特性
@@ -59,9 +58,9 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 ## 使用
 
-打开 vs，创建项目，这里把项目叫 UmmyShirouValeri ，名字是用我的命名输入法写出来的。
+打开 vs，创建 UWP 项目，这里把项目叫 UmmyShirouValeri ，名字是用我的[命名输入法](ms-windows-store://pdp/?productid=9P8LNZRNJX85)写出来的。
 
-打开Nuget 搜索 win2d 安装
+打开 Nuget 搜索 win2d 安装
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
 
@@ -97,13 +96,13 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 按下F5这时看起来什么没有，但是有了颜色，如果可以看到这个，那么程序是安装成功，如果错误，那么可能安装的包错误。
 
-如果发现自己的包无法使用，那么请同时升级 Win2d 和 `Microsoft.NETCore.UniversalWindowsPlatform` 最新
+如果发现自己的包无法使用，那么请同时升级 Win2d 和 `Microsoft.NETCore.UniversalWindowsPlatform` 最新，升级 UWP 项目使用最新的
 
 ### 添加文字
 
-需要在 canvas 的 Draw 添加函数，可以在这里画出图案，文字，于是使用这句添加在 xaml ` <canvas:CanvasControl x:Name="canvas" ClearColor="Black" Draw="Canvas_OnDraw"></canvas:CanvasControl>` 。在 MainPage.xaml.cs 写函数`Canvas_OnDraw`
+需要在 canvas 的 Draw 添加函数，可以在这里画出图案，文字，于是使用这句添加在 xaml ` <canvas:CanvasControl x:Name="canvas" ClearColor="Black" Draw="Canvas_OnDraw"></canvas:CanvasControl>` 。在 MainPage.xaml.cs 写函数 `Canvas_OnDraw` 这样就可以在后台代码做出好看界面
 
-核心就是 `Draw="Canvas_OnDraw"` ，在 MainPage.xaml.cs 函数请看代码
+实际上上面的代码的核心就是 `Draw="Canvas_OnDraw"` 通过这个代码可以在 MainPage.xaml.cs 函数请看代码
 
 ```csharp
         private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
@@ -113,7 +112,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
         }
 ```
 
-上面的代码在坐标（100，100）写出文字 "lindexi" ，设置了我也不知道的颜色。
+上面的代码在坐标（100，100）写出文字 "lindexi" 文字的颜色设置了我也不知道的颜色。
 
 在写文字就需要用到 args.DrawingSession 提供很多方法，可以在这些方法写文字的有两个，本文使用的是里面最简单的一个。
 
@@ -121,7 +120,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201422.jpg)
 
-和上面同样功能，可以不使用Vector2，使用这个代码也是一样`draw.DrawText("lindexi",100,100,Color.FromArgb(0xFF,100,100,100));`
+和上面同样功能，可以不使用Vector2，使用这个代码也是一样`draw.DrawText("lindexi", 100, 100, Color.FromArgb(0xFF,100,100,100));`
 
 如果需要设置字体宽度，可以使用 CanvasTextFormat 来做。
 
@@ -170,6 +169,8 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
     mc:Ignorable="d">
 ```
 
+上面代码的核心是 `Unloaded="Page_OnUnloaded"` 通过 Unloaded 可以知道页面关闭
+
 打开  MainPage.xaml.cs ，在函数 Page_OnUnloaded 添加下面代码，就是把 Win2d 从视觉树移除
 
 
@@ -196,7 +197,8 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 如果需要重新画，如何做？
 
-想要让他重画，使用`canvas.Invalidate();` 就会重新调用Canvas_OnDraw
+在 Win2d 的 CanvasControl 只会在初始化的时候调用一次 Draw 事件，如果想要做动画，如何多次调用？
+想要让他重画，使用 `canvas.Invalidate();` 就会重新调用 Canvas_OnDraw 
 
 在构造使用下面代码让win2d不停重画。
 
@@ -211,11 +213,11 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
             t.Start();
 ```
 
-这样就可以隔 1000 毫秒重画。需要知道使用这个方法是让大家可以用到之前的技能，有小伙伴告诉我，如果写一篇博客里面用到的都是大家默认的技能，那么很少有人可以看下去，所以我尽量使用大家都知道的技能来做。这里是告诉大家，如果想要触发 Draw 就需要调用 `canvas.Invalidate();` 调用这个函数可以在不可控的一个时间触发`Draw`，所以无法稳定指定时间重画。在本文的后面会告诉大家如何做动画。
+这样就可以隔 1000 毫秒重画。需要知道使用这个方法是让大家可以用到之前的技能，有小伙伴告诉我，如果写一篇博客里面用到的都不是大家默认的技能，那么很少有人可以看下去，所以我尽量使用大家都知道的技能来做。这里是告诉大家，如果想要触发 Draw 就需要调用 `canvas.Invalidate();` 调用这个函数可以在不可控的一个时间触发`Draw`，所以无法稳定指定时间重画。在本文的后面会告诉大家如何做动画。
 
 
 ```csharp
-            private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
+         private void Canvas_OnDraw(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
         {
             var draw = args.DrawingSession;
             draw.DrawText("lindexi", Ran.Next(10,100), Ran.Next(10, 100), 500, 50, Color.FromArgb(0xFF, 100, 100, 100), new CanvasTextFormat()
@@ -262,7 +264,7 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 
 ```
 
-需要在vs2017 才可以跑，如果希望下载vs2017 ，可以到我网盘下载
+需要在vs2017 才可以跑，如果希望下载 vs2017 ，可以到我网盘下载
 
 链接：http://pan.baidu.com/s/1skXDc3z 密码：70d6
 
@@ -271,7 +273,6 @@ Win2d是一个很简单使用的底层图形Windows Runtime API，可以使用�
 btsync：BTZR4YIPCLUUEL2BKDACVGLC3473MEWDN
 
 如果需要使用 Win2d 使用动画，请看 [win10 uwp win2d CanvasVirtualControl](https://lindexi.gitee.io/post/win10-uwp-win2d-CanvasVirtualControl.html )
-
 
 ### 如何画线
 
@@ -285,20 +286,19 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 
 ### 添加图片
 
-添加图片可以`draw.DrawImage` 画出图片，之前需要有图片，需要的是`CanvasBitmap`，如何获得这个？
+添加图片可以通过 `draw.DrawImage` 画出图片，在画之前需要有图片，这里的图片的类是 `CanvasBitmap` 下面来告诉大家如何从文件或 URL 二进制转换图片
 
 可以通过下面的三个方法拿到图片
 
-
 ```csharp
-    CanvasBitmap.CreateFromBytes()
-    CanvasBitmap.CreateFromColors()
-    CanvasBitmap.LoadAsync()
+    CanvasBitmap.CreateFromBytes() // 从 bytes 数组创建
+    CanvasBitmap.CreateFromColors() // 创建纯色的图片
+    CanvasBitmap.LoadAsync()       // 通过 URL 或文件创建
 ```
 
-注意：传入的`ICanvasResourceCreator`就是 CanvasControl
+注意：传入的 `ICanvasResourceCreator` 就是 CanvasControl 也就是一个页面如果存在多个 CanvasControl 在哪个 CanvasControl 使用的图片就需要在哪个创建
 
-下面使用 LoadAsync 传入工程的图片，比较期望的方法是在 Canvas_OnCreateResources 事件里面加载图片。但是这里为了演示方便就直接在 Canvas_OnDrawAsync 创建图片。
+下面使用 LoadAsync 传入工程的图片，比较期望的方法是在 `Canvas_OnCreateResources` 事件里面加载图片。但是这里为了演示方便就直接在 `Canvas_OnDrawAsync` 创建图片。
 
 
 ```csharp
@@ -322,6 +322,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
             else
             {
                 // 这是危险写法，请看 [win10 uwp 异步转同步](https://lindexi.gitee.io/post/win10-uwp-%E5%BC%82%E6%AD%A5%E8%BD%AC%E5%90%8C%E6%AD%A5.html )
+                
                 Img().Wait();
             }
 
@@ -345,9 +346,9 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 ```
 
 
-创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));`
+创建图片使用`img = await CanvasBitmap.LoadAsync(canvas, new Uri("ms-appx:///Assets/SplashScreen.png"));` 加载，需要注意加载的文件需要是内容
 
-创建使用的uri参见：[win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
+创建使用的 uri 参见：[win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
 
 ## 创建资源
 
@@ -363,7 +364,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
                             Draw="Canvas_OnDraw"></xaml:CanvasControl> 
 ```
 
-在后台代码 Canvas_OnCreateResources 就可以用来创建资源。
+在后台代码 `Canvas_OnCreateResources` 就可以用来创建资源，在这个方法可以异步创建资源，只有在这里创建资源完成之后才会调用 Draw 方法。
 
 ```csharp
         private void Canvas_OnCreateResources(CanvasControl sender, CanvasCreateResourcesEventArgs args)
@@ -408,7 +409,7 @@ win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法
 
 ```
 
-上面的代码不会把win2d 的背景设置，因为 win2d 需要设置 `ClearColor `，来画出背景
+上面的代码不会把 win2d 的背景设置，因为 win2d 需要设置 `ClearColor` 来画出背景
 
 如果想把 win2d 的背景颜色设置为 白色，那么可以使用下面代码
 
@@ -566,6 +567,8 @@ win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法
 <!-- ![](image/win10_uwp_win2d/win10_uwp_win2d1.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F201862165817512)
+
+如果想知道 Win2d 的特效有哪些请看 [win10 uwp win2d 特效](https://lindexi.gitee.io/lindexi/post/win10-uwp-win2d-%E7%89%B9%E6%95%88.html )
 
 参见：[第二章 画布渲染目标CanvasRenderTarget](https://zhuanlan.zhihu.com/p/37128817 )
 
