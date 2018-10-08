@@ -574,6 +574,8 @@
 
  * [win10 uwp 音频](win10-uwp-音频.md)
 
+ * [Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件](Win10-使用-GHO-安装出现-UWP-软件打开闪退-应用商店无法安装软件.md)
+
  * [win10 使用 SMB v1](win10-使用-SMB-v1.md)
 
  * [win10 安装Mpi](win10-安装Mpi.md)
