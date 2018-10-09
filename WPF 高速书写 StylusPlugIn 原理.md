@@ -116,7 +116,11 @@ Point point = new Point((double)data[data.Length - inputArrayLengthPerPoint], (d
 
 <!-- ![](image/WPF 高速书写 StylusPlugIn 原理/WPF 高速书写 StylusPlugIn 原理0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018930203356206)
+<!-- ![](http://image.acmx.xyz/lindexi%2F2018930203356206) -->
+
+<!-- ![](image/WPF 高速书写 StylusPlugIn 原理/WPF 高速书写 StylusPlugIn 原理2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018108203514549)
 
 然后调用 HittestPlugInCollection 找到命中的 stylusPlugInCollection 这里的命中测试和 WPF 的元素命中测试不相同，在于即使有元素挡住也会命中
 
@@ -144,7 +148,146 @@ Point point = new Point((double)data[data.Length - inputArrayLengthPerPoint], (d
 
 关于 `PenContexts.AddStylusPlugInCollection` 在什么时候被调用，请看下面，这里的调用逻辑还是比较复杂，现在先假设已经添加了 `_plugInCollectionList` 只需要对里面的元素计算
 
+从上面代码可以看到判断是否某个 `StylusPlugInCollection` 可以使用的方式是判断对应的第一个找到命中测试成功的元素。从上面的代码可以知道，一个 UIElement 可以对应一个 StylusPlugInCollection 而在本文下一节将会告诉大家的添加 StylusPlugIn 到输入就会讲到，在添加 StylusPlugInCollection 的时候就会进行一次层级排序，保证最前面的 StylusPlugInCollection 对应的 UIElement 是层级最高的
 
+也就是如果存在两个元素，这两个元素都有 StylusPlugInCollection 而且两个元素重叠，那么点击到元素重叠的部分就会返回层级高的元素对应的 StylusPlugInCollection 而不会使用层级低的
+
+在 StylusPlugInCollection 的 IsHit 方法是通过先转换点到相同的变换，然后判断是否在元素的矩形内。
+
+这里的 `_rc` 是使用窗口的测量单位 In window root measured units 
+
+```csharp
+        /// <summary> 
+        /// Check whether a point hits the element
+        /// This method is called from the real-time context. 
+        /// </summary> 
+        /// <param name="pt">a point to check
+        /// <returns>true if the point is within the bound of the element; false otherwise</returns> 
+        internal bool IsHit(Point pt)
+        {
+            Point ptElement = pt;
+            _viewToElement.TryTransform(ptElement, out ptElement); 
+            return _rc.Contains(ptElement);
+        } 
+```
+
+这里的 `_rc` 是在 UpdateRect 函数拿元素的 RenderSize 请看代码
+
+```csharp
+            if (_element.IsArrangeValid && _element.IsEnabled && _element.IsVisible && _element.IsHitTestVisible) 
+            {
+                _rc = new Rect(new Point(), _element.RenderSize);// _element.GetContentBoundingBox(); 
+            }
+            else
+            {
+            	_rc = new Rect(); // empty rect so we don't hittest it.
+            }
+```
+
+从上面的代码可以看到判断的方法很简单，所以性能很好
+
+在获得 StylusPlugInCollection 之后返回 InvokeStylusPluginCollection 函数
+
+<!-- ![](image/WPF 高速书写 StylusPlugIn 原理/WPF 高速书写 StylusPlugIn 原理3.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018108203932919)
+
+如果找到了 StylusPlugInCollection 而且 `wispStylusDevice.CurrentNonVerifiedTarget` 不存在，就创建 RawStylusInput 然后调用 `StylusPlugInCollection.FireRawStylusInput` 请看代码
+
+```csharp
+internal void InvokeStylusPluginCollection(RawStylusInputReport inputReport) 
+{
+	StylusPlugInCollection pic = TargetPlugInCollection(inputReport); 
+	if (pic != null)
+	{
+		RawStylusInput rawStylusInput = new RawStylusInput(inputReport, pic);
+		// We are on the pen thread, just call directly
+		pic.FireRawStylusInput(rawStylusInput);
+	}
+}
+```
+
+如果是在第一次进入，也就是在 Down 的时候还会在 InvokeStylusPluginCollection 进入额外的代码，但是本文这里忽略掉第一次进入
+
+调用 FireRawStylusInput 传入 RawStylusInput 就会自动在 StylusPlugInCollection 找到对应的 StylusPlugIn 调用 StylusPlugIn 的 RawStylusInput 方法
+
+```csharp
+                        for (int i = 0; i < this.Count; i++) 
+                        {
+                            StylusPlugIn plugIn = base[i];
+                            // set current plugin so any callback data gets an owner.
+                            args.CurrentNotifyPlugIn = plugIn; 
+                            plugIn.RawStylusInput(args);
+                        } 
+```
+
+不要看在 plugIn 是调用一个方法 RawStylusInput 传入参数，需要知道在 PenThreadWorker 的 FireEvent 方法就转换了参数，在 PenThreadWorker 的 ProcessInput 方法传入了 RawStylusActions 对应按下和移动
+
+```csharp
+		internal void OnPenDown(PenContext penContext, int tabletDeviceId, int stylusPointerId, int[] data, int timestamp)
+		{
+			this.ProcessInput(RawStylusActions.Down, penContext, tabletDeviceId, stylusPointerId, data, timestamp);
+		}
+
+		internal void OnPenUp(PenContext penContext, int tabletDeviceId, int stylusPointerId, int[] data, int timestamp)
+		{
+			this.ProcessInput(RawStylusActions.Up, penContext, tabletDeviceId, stylusPointerId, data, timestamp);
+		}
+
+		internal void OnPackets(PenContext penContext, int tabletDeviceId, int stylusPointerId, int[] data, int timestamp)
+		{
+			this.ProcessInput(RawStylusActions.Move, penContext, tabletDeviceId, stylusPointerId, data, timestamp);
+		}
+```
+
+所以传入了 RawStylusInput 可以通过 RawStylusActions 判断调用的方法
+
+```csharp
+
+// StylusPlugIn
+       internal void RawStylusInput(RawStylusInput rawStylusInput) 
+        {
+            // Only fire if plugin is enabled and hooked up to plugincollection. 
+            
+            switch( rawStylusInput.Report.Actions ) 
+            {
+                case RawStylusActions.Down:
+                    OnStylusDown(rawStylusInput);
+                    break; 
+                case RawStylusActions.Move:
+                    OnStylusMove(rawStylusInput); 
+                    break; 
+                case RawStylusActions.Up:
+                    OnStylusUp(rawStylusInput); 
+                    break;
+            }
+            
+        } 
+```
+
+这样就调用了对应的方法，重写的时候就会发现，可以重写上面的几个方法，在 StylusPlugIn 类的 OnStylusDown 三个方法都是虚方法
+
+```csharp
+        protected virtual void OnStylusDown(RawStylusInput rawStylusInput)
+        { 
+        }
+        
+        protected virtual void OnStylusMove(RawStylusInput rawStylusInput) 
+        {
+        } 
+        
+        protected virtual void OnStylusUp(RawStylusInput rawStylusInput) 
+        { 
+        }
+```
+
+<!-- ![](image/WPF 高速书写 StylusPlugIn 原理/WPF 高速书写 StylusPlugIn 原理4.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018108212117763)
+
+从上面的调用可以看到 StylusPlugIn 从触摸到调用的函数很少，如果要做到高性能就需要使用这个方法
+
+## 添加 StylusPlugIn 到输入
 
 在默认的 UIElement 是不创建 StylusPlugInCollection 的，只有在第一次使用 StylusPlugInCollection 的时候才会创建，创建的时候 StylusPlugInCollection 的构造函数需要传入创建的 UIElement 而添加对应的  StylusPlugIn 就是在对应的 UIElement 的创建的构造函数添加记录本地的 `_element = element` 这里还不添加事件
 
