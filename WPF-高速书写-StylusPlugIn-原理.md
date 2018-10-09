@@ -2,12 +2,14 @@
 # WPF 高速书写 StylusPlugIn 原理
 
 本文告诉大家 WPF 的 StylusPlugIn 为什么能做高性能书写，在我的上一篇博客和大家介绍了 WPF 的触摸原理，但是没有详细告诉大家如何通过触摸原理知道如何去做一个高速获得触摸的应用，所以本文就在上一篇博客的基础继续告诉大家底层的原理
-如果觉得原理很无论，就直接关闭本文，因为本文都是理论，不会告诉大家如何做高性能书写
+如果觉得原理很无聊，就直接关闭本文，因为本文都是理论，不会告诉大家如何做高性能书写
 
 <!--more-->
 
 
 <!-- csdn -->
+
+<!-- 标签：WPF，源代码分析，笔迹 -->
 
 在 WPF 如果想要做高性能的书写，就需要足够快获得用户的触摸输入，而如果直接拿到的是路由的输入就会存在下面的问题
 
@@ -431,6 +433,18 @@ private void UpdatePenContextsState()
 将原来的 StylusPlugInCollection 的 UpdatePenContextsState 分为 stylusPlugInCollectionBase 的 UpdateState 方法
 
 在 WispStylusPlugInCollection 、 PointerStylusPlugInCollection 调用 UpdateState 和  StylusPlugInCollection 的 UpdatePenContextsState 方法差不多，所以本文就使用 UpdatePenContextsState 和大家说
+
+## 使用 StylusPlugIn 的好处
+
+从本文可以知道，只有在使用了 StylusPlugIn 才会在触摸的时候在 `PenContexts.InvokeStylusPluginCollection` 调用对应的方法
+
+这时调用 StylusPlugIn 是在触摸线程也就是 [Stylus Input](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html) 线程运行，可以解决此时在主线程执行耗时的函数的时候，无法快速处理触摸
+
+另一个是从命中测试上看，每次的命中测试都不需要经过复杂的视觉树，而是直接通过元素更改时，按照元素层级放在一个列表，通过判断列表每个元素的矩形判断触摸的点是否在矩形内，这里的命中测试的速度会比普通的元素的命中测试要快很多。
+
+如果一个元素使用了 StylusPlugIn 会在触摸的时候最快获得触摸信息，而不需要等待路由事件。
+
+这样就可以让 StylusPlugIn 在触摸被 WPF 影响的事件到最少
 
 ## 代码
 
