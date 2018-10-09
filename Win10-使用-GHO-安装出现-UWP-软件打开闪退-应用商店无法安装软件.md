@@ -15,7 +15,11 @@
 
 在用户的设备可以打开应用商店和 Edge 但是无法打开之前安装的 View3D 应用和 Whitman 应用
 
-![](https://i.loli.net/2018/10/08/5bbb0b646ff4e.jpg)
+<!-- ![](https://i.loli.net/2018/10/08/5bbb0b646ff4e.jpg) -->
+
+<!-- ![](image/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018108173558582)
 
 点击设置更新发现无法更新，错误码是 0x80070422
 
@@ -43,7 +47,11 @@
 
 继续查看日志发现也是相同的问题
 
-![](https://i.loli.net/2018/10/08/5bbb17f03dad7.jpg)
+<!-- ![](https://i.loli.net/2018/10/08/5bbb17f03dad7.jpg) -->
+
+<!-- ![](image/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018108173822639)
 
 ## 解决方法
 
@@ -68,6 +76,8 @@
 [Windows 10 does not install updates Error 0x80070422 - Microsoft Community](https://answers.microsoft.com/en-us/windows/forum/windows_10-update-winpc/windows-10-does-not-install-updates-error/80fcf8c8-21d7-4e22-bceb-1dd88255658b )
 
 [Fix Windows Update errors](https://support.microsoft.com/en-us/help/10164/fix-windows-update-errors )
+
+[Microsoft Store Apps fail to start if default registry or file permissions modified](https://support.microsoft.com/en-us/help/2798317/microsoft-store-apps-fail-to-start-if-default-registry-or-file-permiss )
 
 
 
