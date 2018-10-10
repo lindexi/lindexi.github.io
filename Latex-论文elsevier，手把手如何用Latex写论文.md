@@ -297,6 +297,7 @@ l.64 {\Pifont{psy}
 
 我在TeXStudio打开，发现没有错误。
 
+如果受不了安装 Latex 的环境，可以使用在线的 [Online LaTeX Editor](https://www.overleaf.com/project ) 写论文
 
 下载：
 
@@ -315,6 +316,13 @@ l.64 {\Pifont{psy}
 顺便推荐一个软件：[Tickeys](http://www.yingdev.com/projects/tickeys)这个软将可以让我们打字有声音，晚上打字用这个软件感觉好。
 
 实际很少有人在安装的过程会遇到这么多问题。
+
+## 设置镜像
+
+参见 [TeX环境安装 · shifujun/UESTCthesis](https://github.com/shifujun/UESTCthesis/wiki/TeX%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85 )
+
+[TeX Live 2018安装流程](https://zhuanlan.zhihu.com/p/36240727)
+
 
 ## 开始写论文
 
@@ -638,6 +646,37 @@ CSDN \sep lindexi \sep windows.sc
 关于参考文献请看[latex 自定义bst文件 - CSDN博客](https://blog.csdn.net/tinkle181129/article/details/49822171 )
 
 将多个引用使用 `-` 连起来，如 `[1][2][3]` 转 `[1-3` 请看[latex中同一处引用多篇文献 - CSDN博客](https://blog.csdn.net/lqhbupt/article/details/49925911 )
+
+### 引用异常
+
+如果LaTex报错(但生成的PDF文件正确)，报告下面代码
+
+```csharp
+Package natbib Error: Bibliography not compatible with author-year citations. (natbib) 
+    Press <return> to continue in numerical citation style.
+```
+
+这个错误就是文献条目的格式不对，和“作者-年”的引用格式不兼容，可能是有的文献缺少author或year字段，无法作为“作者-年”引用格式，解决方法有两个
+
+1. 确保所有文献条目均含有author字段和year字段；
+
+1. 在调用natbib宏包时，使用numbers参数，如
+
+```csharp
+    \usepackage[square, comma, sort&compress, numbers]{natbib}
+```
+
+如果已经添加了 natbib 引用，检查是否加上了日期
+
+```csharp
+    \usepackage[authoryear,comma,sort&compress,square,numbers]{natbib}
+```
+
+这里的代码就添加了 `authoryear` 要求引用有年份的信息，只需要去掉就可以
+
+如果使用 `\usepackage [numbers]{natbib}` 提示 `Option clash for package natbib.` 就是添加了两次 `natbib` 包，而且两次使用不同的设置
+
+简单的解决方法是搜索文档看有哪些地方存在 `natbib` 的引用，删除之前的代码就可以
 
 ### 斜体
 
