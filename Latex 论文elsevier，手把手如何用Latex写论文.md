@@ -294,6 +294,7 @@ l.64 {\Pifont{psy}
 
 我在TeXStudio打开，发现没有错误。
 
+如果受不了安装 Latex 的环境，可以使用在线的 [Online LaTeX Editor](https://www.overleaf.com/project ) 写论文
 
 下载：
 
