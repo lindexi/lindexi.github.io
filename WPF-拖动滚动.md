@@ -39,6 +39,8 @@
 
 其实就是设置`PanningMode="VerticalOnly"`
 
+参见 [WPF 可触摸移动的ScrollViewer控件 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/9766324.html )
+
 
 
 
