@@ -2,6 +2,8 @@
 
 本文告诉大家一个令人震惊的消息，Windows Community Toolkit 有一个大更新，现在的版本是 3.0 。最大的提升就是 WinForm 和 WPF 程序可以使用部分 UWP 控件。
 
+而且可以在 WPF 和 WinForms 使用微软最新 Edge 浏览器
+
 <!--more-->
 <!-- 标签：WPF，UWP，dotnet -->
 
