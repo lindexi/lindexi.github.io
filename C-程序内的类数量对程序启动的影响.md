@@ -129,6 +129,27 @@ namespace LecuryouWuruhempa
 
 所以如果一个类不被引用，即使一个工程里有很多的类，对软件的启动影响几乎没有影响
 
+接着还是和之前一样，不过修改为空控制台项目引用 dll 这个 dll 里面有 1000 个类
+
+空白的项目是 KejerbopaNekereyeresereJemayRouxouqou.exe 引用的 dll 是 MeeLearlerepeda.exe 可以看到有 1000 个类还是比较大
+
+<!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响3.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181012103919886)
+
+同样测试三次
+
+```
+引用1000个类的dll 空控制台窗口运行时间
+
+第一次：113ms
+第二次：103ms
+第三次：117ms
+```
+
+从上面数据可以看到，几乎没有任何影响
+
+
 
 
 
