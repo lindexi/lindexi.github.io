@@ -894,6 +894,8 @@
 
  * [WPF 自定义 TextBoxView 的 Margin 大小](WPF-自定义-TextBoxView-的-Margin-大小.md)
 
+ * [WPF 获得当前输入法语言区域](WPF-获得当前输入法语言区域.md)
+
  * [WPF 获得触摸精度和触摸点](WPF-获得触摸精度和触摸点.md)
 
  * [WPF 获得触笔悬停元素上](WPF-获得触笔悬停元素上.md)
