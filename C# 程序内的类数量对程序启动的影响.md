@@ -71,6 +71,8 @@ namespace KejerbopaNekereyeresereJemayRouxouqou
 
 然后使用下面代码创建随机的类
 
+{% raw %}
+
 ```csharp
         private static void RelawcereMirouxayTibe()
         {
@@ -102,6 +104,8 @@ namespace LecuryouWuruhempa
         }
 
 ```
+
+{% endraw %}
 
 这样就可以创建 1000 个类，创建一个空白的控制台项目，引用这些类
 
