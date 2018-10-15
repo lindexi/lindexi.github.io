@@ -39,6 +39,8 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2018101585313249)
 
+具体请看 [https://stackoverflow.com/a/3025944/6116637](https://stackoverflow.com/a/3025944/6116637 )
+
 ## 使用系统的图标
 
 通过 SystemIcons 可以使用系统的图标，首先需要在界面放一个 PictureBox 控件，我修改这个控件的命名 `_image` 通过下面代码可以让这个控件显示系统提示错误的图标
@@ -51,6 +53,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2018101584938619)
 
+参见 [https://stackoverflow.com/a/4868459/6116637](https://stackoverflow.com/a/4868459/6116637 )
 
 ## 禁止用户修改窗口大小
 
@@ -68,6 +71,8 @@
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题1.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2018101585055784)
+
+具体请看 [https://stackoverflow.com/a/5416394/6116637](https://stackoverflow.com/a/5416394/6116637 )
 
 ## 隐藏标题栏的图标
 
