@@ -57,11 +57,27 @@ nuget.exe spec
 
 另外我还需要添加一些文件
 
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包0.png) -->
+
+![](https://i.loli.net/2018/10/15/5bc407623254b.jpg)
+
 具体打包请看 [win10 uwp 如何打包Nuget给其他人](https://lindexi.gitee.io/post/win10-uwp-%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85Nuget%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA.html )
 
 而使用 VisualStudio 新项目格式打出 Nuget 包的方法很简单，首先是创建一个 dotnet core 项目，使用这个项目演示
 
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包1.png) -->
+
+![](https://i.loli.net/2018/10/15/5bc4077c1c972.jpg)
+
 右击解决方案，打包，然后打开项目的`bin\Debug`文件夹，就可以看到打出来 nuget 包
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112052382)
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包3.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112112209)
 
 当然这个粗糙的包还可以做一些修改，例如修改这个包的 id 在 新的项目格式会使用 AssemblyName 作为默认的包的 id 来尝试修改这个值看打出来的包是什么
 
@@ -75,15 +91,71 @@ nuget.exe spec
   </PropertyGroup>
 ```
 
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包4.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112130992)
+
 这时右击项目打包就会在 `bin\Debug` 文件夹找到 lindexi.1.0.0.nupkg 文件
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包5.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018101511215649)
 
 如果想要自己定义一个 nuget 包的 id 和 AssemblyName 不相同，可以通过修改 PackageId 的方式，具体请看[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - walterlv](https://walterlv.com/post/known-nuget-properties-in-csproj.html )
 
 这时还可以右击项目属性，通过 VisualStudio 修改属性，如我修改了描述
 
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包6.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112224371)
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包7.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112259646)
+
 那么如何验证打出来的包是可以使用的？做法很简单，就是使用 Nuget 安装本地的包的方式
 
+右击项目管理 Nuget 包
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包8.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018101511234592)
+
+点击设置
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包9.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018101511246876)
+
+点击添加一个本地的包，修改输出包的文件夹
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包10.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112432959)
+
+切换本地包
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包11.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112451513)
+
+点击浏览
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包12.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112512931)
+
+点击刚才创建的包
+
+<!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包13.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181015112528247)
+
+这时就可以看到刚才快速创建的包
+
 [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - walterlv](https://walterlv.com/post/known-nuget-properties-in-csproj.html )
+
+课件 [使用新项目格式快速打出Nuget包](https://r302.cc/QmKly0 )
 
 
 

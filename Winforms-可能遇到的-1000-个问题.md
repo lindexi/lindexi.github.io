@@ -35,9 +35,9 @@
 
 下面的图片是修改之后
 
-<!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题4.png) -->
+<!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101585313249)
+![](http://image.acmx.xyz/lindexi%2F2018101593416619)
 
 具体请看 [https://stackoverflow.com/a/3025944/6116637](https://stackoverflow.com/a/3025944/6116637 )
 
@@ -85,17 +85,17 @@
         }
 ```
 
-<!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题2.png) -->
-
 默认软件的左上角是有图标，请看下图
-
-![](http://image.acmx.xyz/lindexi%2F2018101585313249)
-
-设置为 false 就看不到
 
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题5.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2018101585516689)
+
+设置为 false 就看不到
+
+<!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题7.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201810159359115)
 
 
 
