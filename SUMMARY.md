@@ -420,6 +420,8 @@
 
  * [win10 uwp 使用 LayoutTransformer](win10-uwp-使用-LayoutTransformer.md)
 
+ * [win10 uwp 使用 Microsoft.Graph 发送邮件](win10-uwp-使用-Microsoft.Graph-发送邮件.md)
+
  * [win10 uwp 使用动画修改 Grid column 的宽度](win10-uwp-使用动画修改-Grid-column-的宽度.md)
 
  * [win10 uwp 使用资源在后台创建控件](win10-uwp-使用资源在后台创建控件.md)
