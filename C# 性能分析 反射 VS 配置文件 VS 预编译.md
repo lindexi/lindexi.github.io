@@ -47,6 +47,19 @@ namespace LecuryouWuruhempa
 
 ```
 
+预编译如果使用委托创建，测试数据会比直接 new 的慢很多
+
+<!-- ![](image/C# 性能分析 反射 VS 配置文件 VS 预编译/C# 性能分析 反射 VS 配置文件 VS 预编译1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201810169372573)
+
+| Method          |        Mean |      Error |      StdDev | Scaled | ScaledSD |
+| --------------- | ----------: | ---------: | ----------: | -----: | -------: |
+| 预编译-new      |    28.48 us |  0.3682 us |   0.3445 us |   1.00 |     0.00 |
+| 预编译-委托创建 |    61.55 us |  1.1327 us |   1.0595 us |   2.16 |     0.04 |
+| 配置文件        | 2,098.50 us | 40.6163 us |  48.3508 us |  73.70 |     1.87 |
+| 反射特定的类    | 3,236.56 us | 63.3132 us | 126.4434 us | 113.67 |     4.59 |
+
 我通过设置了基线是预编译，可以看到通过配置文件创建的方式比预编译慢 75 倍，而通过反射特定的类是慢 100 多倍
 
 其他测试请看 [C# 直接创建多个类和使用反射创建类的性能](https://lindexi.oschina.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html )
@@ -199,6 +212,35 @@ namespace LecuryouWuruhempa
 
             stoomairHem = "";
 
+            memtichooBowbosir.Clear();
+
+            memtichooBowbosir.Append(@"            List<Func<object>> lairchurBirchalrotro = new List<Func<object>>()
+            {
+");
+
+            foreach (var temp in direhelXideNa)
+            {
+                memtichooBowbosir.Append($"                () => new {temp}(),");
+                memtichooBowbosir.Append("\r\n");
+            }
+
+            memtichooBowbosir.Append("            };");
+
+            stoomairHem = $@"
+         [Benchmark(Description = ""委托创建"")]
+         public void LemjobesuDijisleci()
+        {{
+
+            _jooyiSouse.Clear();
+
+{memtichooBowbosir.ToString()}
+
+             foreach (var temp in lairchurBirchalrotro)
+            {{
+                _jooyiSouse.Add(temp());
+            }}
+        }}";
+
 
             var drairdreBibearnou = @"
         [Benchmark(Description = ""反射特定的类"")]
@@ -250,6 +292,5 @@ namespace LecuryouWuruhempa
 ```
 
 {% endraw %}
-
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
