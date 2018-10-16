@@ -79,6 +79,8 @@ using BenchmarkDotNet.Running;
 
 通过运行 ReecelnaxeaDrasilouhalLaigeci 方法就可以在运行的文件夹找到创建的文件夹，将这个文件夹复制到测试的工程就可以
 
+{% raw %}
+
 ```csharp
         private static void ReecelnaxeaDrasilouhalLaigeci()
         {
@@ -249,6 +251,8 @@ namespace LecuryouWuruhempa
         }
 
 ```
+
+{% endraw %}
 
 
 
