@@ -50,6 +50,19 @@ namespace LecuryouWuruhempa
 
 ```
 
+预编译如果使用委托创建，测试数据会比直接 new 的慢很多
+
+<!-- ![](image/C# 性能分析 反射 VS 配置文件 VS 预编译/C# 性能分析 反射 VS 配置文件 VS 预编译1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201810169372573)
+
+| Method          |        Mean |      Error |      StdDev | Scaled | ScaledSD |
+| --------------- | ----------: | ---------: | ----------: | -----: | -------: |
+| 预编译-new      |    28.48 us |  0.3682 us |   0.3445 us |   1.00 |     0.00 |
+| 预编译-委托创建 |    61.55 us |  1.1327 us |   1.0595 us |   2.16 |     0.04 |
+| 配置文件        | 2,098.50 us | 40.6163 us |  48.3508 us |  73.70 |     1.87 |
+| 反射特定的类    | 3,236.56 us | 63.3132 us | 126.4434 us | 113.67 |     4.59 |
+
 我通过设置了基线是预编译，可以看到通过配置文件创建的方式比预编译慢 75 倍，而通过反射特定的类是慢 100 多倍
 
 其他测试请看 [C# 直接创建多个类和使用反射创建类的性能](https://lindexi.oschina.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html )
@@ -201,6 +214,35 @@ namespace LecuryouWuruhempa
         }";
 
             stoomairHem = "";
+
+            memtichooBowbosir.Clear();
+
+            memtichooBowbosir.Append(@"            List<Func<object>> lairchurBirchalrotro = new List<Func<object>>()
+            {
+");
+
+            foreach (var temp in direhelXideNa)
+            {
+                memtichooBowbosir.Append($"                () => new {temp}(),");
+                memtichooBowbosir.Append("\r\n");
+            }
+
+            memtichooBowbosir.Append("            };");
+
+            stoomairHem = $@"
+         [Benchmark(Description = ""委托创建"")]
+         public void LemjobesuDijisleci()
+        {{
+
+            _jooyiSouse.Clear();
+
+{memtichooBowbosir.ToString()}
+
+             foreach (var temp in lairchurBirchalrotro)
+            {{
+                _jooyiSouse.Add(temp());
+            }}
+        }}";
 
 
             var drairdreBibearnou = @"
