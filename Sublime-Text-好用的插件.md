@@ -17,6 +17,16 @@
 
 [jisaacks/GitGutter: A Sublime Text 2/3 plugin to see git diff in gutter](https://github.com/jisaacks/GitGutter )
 
+## 从资源管理器打开当前的文件
+
+通过点击 Preferences 的 Key Bindings 可以打开另一个窗口，输入下面的代码保存关掉就可以使用热键 `ctrl+alt+e` 从资源管理器打开当前的文件
+
+```csharp
+{ "keys": ["ctrl+alt+e"], "command": "open_dir", 
+    "args": {"dir": "$file_path", "file": "$file_name"} }
+```
+
+如果是一个行而且后面没有 json 代码就不需要在最后添加逗号
 
 
 

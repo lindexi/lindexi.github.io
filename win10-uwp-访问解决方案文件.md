@@ -19,7 +19,7 @@
 ```
 
 ```csharp
-var file=await  StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/1.png")); 
+var file = await  StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/1.png")); 
 ```
 
 那么我们访问我们解决方案加的 ms-appx 就是解决方案的绝对路径，如果我们相对于我们xaml的路径也是可以
@@ -43,7 +43,7 @@ var file=await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdate://
 
 ## WPF 访问解决方案文件
 
-WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF使用 参见 [https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396 )
+WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF使用 `pack://application:,,,/` 的方法 参见 [https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396 )
 
 具体请看 [WPF 使用 VisualStudio 2017 项目文件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-VisualStudio-2017-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6.html )
 
