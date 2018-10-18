@@ -15,7 +15,6 @@
            var thread = new Thread(() =>
             {
                 _visualTarget = new VisualTarget(xx);
-                
 
                 _visualTarget.RootVisual = 创建的 Visual;
             });
