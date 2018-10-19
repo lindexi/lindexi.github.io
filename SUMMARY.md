@@ -420,6 +420,8 @@
 
  * [win10 UWP 你写我读](win10-UWP-你写我读.md)
 
+ * [win10 uwp 使用 asp dotnet core 做图床服务器客户端](win10-uwp-使用-asp-dotnet-core-做图床服务器客户端.md)
+
  * [win10 uwp 使用 Geometry resources 在 xaml](win10-uwp-使用-Geometry-resources-在-xaml.md)
 
  * [win10 uwp 使用 LayoutTransformer](win10-uwp-使用-LayoutTransformer.md)
