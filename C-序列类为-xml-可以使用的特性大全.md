@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
 
 最近我在把项目文件修改为 VisualStudio 2017 的格式，请看[从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )，这时虽然可以自动打包，但是我还是需要生成 Nuspec 文件，所以本文就是记录我在从 csproj 文件创建 nuspec 文件遇到的转换
@@ -489,6 +488,8 @@ System.IO.FileNotFoundException occurred
 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件 - walterlv](https://walterlv.github.io/post/introduce-new-style-csproj-into-net-framework.html )
 
 [c# - XmlSerializer giving FileNotFoundException at constructor - Stack Overflow](https://stackoverflow.com/questions/1127431/xmlserializer-giving-filenotfoundexception-at-constructor )
+
+![](http://image.acmx.xyz/lindexi%2F201810199941411)
 
 
 

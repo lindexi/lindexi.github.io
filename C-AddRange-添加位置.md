@@ -9,7 +9,6 @@
 
 
 <div id="toc"></div>
-<!-- csdn -->
 
 假如有一个 代码，看起来是下面的，很简单，把一个 list b 放进list a
 
