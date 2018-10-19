@@ -65,14 +65,26 @@
         public string UploadFile([FromForm]CukaiZexiridror rarmelHopidrearLis)
 ```
 
-注意参数是从 Form 拿到
+这里有一个细节是参数 rarmelHopidrearLis 是从 Form 拿到，这样就需要在 UWP 程序使用 MultipartFormDataContent 的方法上传，这里的 CukaiZexiridror 类包含了两个属性，一个是 Name 一个是上传的文件
 
-拿到了之后可以访问本地的一个文件夹，然后将文件写入这个文件夹
+```csharp
+    public class CukaiZexiridror
+    {
+        public IFormFile File { set; get; }
+        public string Name { get; set; }
+    }
+```
+
+这里的 MultipartFormDataContent 的内容需要包含一个 string 内容和一个 Stream 内容，还需要设置对应的 Name 请看本文下方的方法
+
+在调用方法拿到 rarmelHopidrearLis 可以访问本地的一个文件夹，然后将文件写入这个文件夹
 
 ```csharp
             var nefaycisirJisrea = Directory.GetCurrentDirectory();
             var demmiraWurrupooHasur = Path.Combine(nefaycisirJisrea, "Image");
 ```
+
+上面代码使用 GetCurrentDirectory 拿到一个文件夹，这个项目不发了用在实际使用的一个原因就是这里拿到的文件夹建议是管理起来，而不是直接拿到一个文件夹。
 
 这里先判断是否存在文件夹，如果文件夹不存在，就创建文件夹
 
@@ -94,7 +106,7 @@
             }
 ```
 
-从上传的文件写入到服务器可以使用下面代码
+从上传的文件写入到服务器可以使用下面代码，这里的 IFormFile 提供了 CopyTo 可以复制到一个 Stream 调用这个方法就可以让用户创建文件，但是这个方法也有一个问题就是不支持断点续传，同时也不支持大的文件
 
 ```csharp
             using (var massesuhouHarle = new FileStream(gowkusayJomalltrur, FileMode.Create))
@@ -102,6 +114,8 @@
                 rarmelHopidrearLis.File.CopyTo(massesuhouHarle);
             }
 ```
+
+很简单的代码就可以保存用户上传的文件，下面就是需要保存文件的路径
 
 将文件的路径写入到数据库
 
@@ -152,6 +166,8 @@
             return "上传完成";
         }
 ```
+
+上传的代码很简单，同时下载的代码就更加简单，核心就是通过 File 方法返回
 
 在服务器的下载代码是通过 get 的方法
 

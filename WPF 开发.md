@@ -293,6 +293,22 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 [Binding to an index with space in XAML – Ivan Krivyakov](https://ikriv.com/blog/?p=1143 )
 
+## 使用 Task ContinueWith 在主线程
+
+在有时候使用 Task 的 Delay 之后想要返回主线程，可以使用 ContinueWith 的方法，请看代码
+
+```csharp
+            Task.Delay(TimeSpan.FromSeconds(5)).ContinueWith
+            (
+                _ => Foo()
+                // 如果 Foo 不需要在主线程，请注释下面一段代码
+                , TaskScheduler.FromCurrentSynchronizationContext()
+            );
+```
+
+核心是 TaskScheduler.FromCurrentSynchronizationContext 方法
+
+如果 Foo 不需要在主线程，就可以删除 TaskScheduler.FromCurrentSynchronizationContext 代码
 
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 
