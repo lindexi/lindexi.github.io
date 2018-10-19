@@ -3,7 +3,6 @@
 本文告诉大家如何使用序列类，以及序列时可以用到的特性，特性的作用和一些容易被问的问题
 
 <!--more-->
-<!-- csdn -->
 <div id="toc"></div>
 
 最近我在把项目文件修改为 VisualStudio 2017 的格式，请看[从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )，这时虽然可以自动打包，但是我还是需要生成 Nuspec 文件，所以本文就是记录我在从 csproj 文件创建 nuspec 文件遇到的转换
@@ -486,6 +485,8 @@ System.IO.FileNotFoundException occurred
 [将 WPF、UWP 以及其他各种类型的旧样式的 csproj 文件迁移成新样式的 csproj 文件 - walterlv](https://walterlv.github.io/post/introduce-new-style-csproj-into-net-framework.html )
 
 [c# - XmlSerializer giving FileNotFoundException at constructor - Stack Overflow](https://stackoverflow.com/questions/1127431/xmlserializer-giving-filenotfoundexception-at-constructor )
+
+![](http://image.acmx.xyz/lindexi%2F201810199941411)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 

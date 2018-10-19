@@ -9,7 +9,7 @@
 
 在我的博客里，需要添加下面的js到博客，可以打开 js.html 添加下面的代码。如果是自己定义的主题，需要在博客可以访问的地方添加下面的代码
 
-```csharp
+```
 <script src="//cdn.bootcss.com/raphael/2.2.0/raphael-min.js"></script>
 <script src="//cdn.bootcss.com/flowchart/1.6.3/flowchart.js"></script>
 
