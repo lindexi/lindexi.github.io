@@ -39,7 +39,7 @@
 
 ```csharp
 
-            var folder =await pick.PickSingleFolderAsync();
+            var folder = await pick.PickSingleFolderAsync();
 
 ```
 
@@ -53,13 +53,13 @@
             {
                 Folder = folder;
                 Address = folder.Path;
-                Token=StorageApplicationPermissions.FutureAccessList.Add(folder);
+                Token = StorageApplicationPermissions.FutureAccessList.Add(folder);
             }
 ```
 
 我们想拿出文件或文件夹，需要token，我们需要把token放到我们本地文件的位置。
 
-我放在 account/account.json 
+我放在 `account/account.json` 文件里
 
 先拿到本地文件夹
 
