@@ -936,6 +936,8 @@
 
  * [WPF 轻量级 MVVM 框架入门 2.1.2](WPF-轻量级-MVVM-框架入门-2.1.2.md)
 
+ * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
+
  * [WPF 高性能笔](WPF-高性能笔.md)
 
  * [WPF 高速书写 StylusPlugIn 原理](WPF-高速书写-StylusPlugIn-原理.md)
