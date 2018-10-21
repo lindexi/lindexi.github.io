@@ -82,7 +82,7 @@ using SharpDX.DXGI;
 
 交换链的 ModeDescription 就是上面定义的 backBufferDesc 
 
-多重采用 SampleDescription 用来优化图片，是一种用于采样和平衡渲染像素的创建亮丽色彩变化之间的平滑过渡的一种技术，这里设置等级 1 也就是关闭多重采样，需要传入两个参数一个是Count 指定每个像素的采样数量，一个是Quality指定希望得到的质量级别，参见[DXGI_SAMPLE_DESC structure](https://msdn.microsoft.com/en-us/library/windows/desktop/bb173072(v=vs.85).aspx )，在这里质量级别越高，占用的系统资源就越多。
+多重采用 SampleDescription 用来优化图片，是一种用于采样和平衡渲染像素的创建亮丽色彩变化之间的平滑过渡的一种技术，这里设置等级 1 也就是1重采样，需要传入两个参数一个是Count 指定每个像素的采样数量，一个是Quality指定希望得到的质量级别，参见[DXGI_SAMPLE_DESC structure](https://msdn.microsoft.com/en-us/library/windows/desktop/bb173072(v=vs.85).aspx )，在这里质量级别越高，占用的系统资源就越多。
 
 Usage 设置 CPU 访问缓冲的权限，这里设置可以访问 RenderTarget 输出，请看 [DXGI_USAGE](https://msdn.microsoft.com/en-us/library/windows/desktop/bb173078(v=vs.85).aspx )
 
@@ -96,7 +96,8 @@ IsWindowed 这个值设置是否希望是全屏，如果是 true 就是窗口。
 
 这里有很多都需要在微软官方才可以看到，因为本文是简单的博客，不会在本文介绍。
 
-为什么需要设置交换链？因为在刚才已经说了防止用户看到闪烁需要使用两个缓冲，如何把前台缓冲区和后台缓冲区交换就需要用到交换链。
+为什么需要设置交换链？为了显示平滑的界面，需要至少两个缓冲区，一个用户前台显示，一个后缓冲区用于下一帧的绘制，在绘制完一帧后通过交换前、后缓冲区对应的指针来显示新一帧，交换就需要用到交换链来做。
+
 
 ### 私有变量
 
@@ -160,7 +161,7 @@ using SharpDX.Direct3D;
 
 交换链在Direct3D中为一个设备渲染目标的集合。每一个设备都有至少一个交换链，而多个交换链能够被多个设备所创建。
 
-有了交换链和设备可以在缓冲区画出图形，画图形需要使用`RenderTargetView`，为了在其他函数可以使用，这里需要把这个类写在私有变量
+有了交换链和设备可以在缓冲区画出图形，画图形需要使用`RenderTargetView` 渲染目标视图，为了在其他函数可以使用，这里需要把这个类写在私有变量
 
 ```csharp
         private D3D11.RenderTargetView _renderTargetView;
@@ -220,6 +221,14 @@ using SharpDX.Direct3D;
 这里为了画出颜色，使用 ColorToRaw4 的类，因为 RawColor4 是传入颜色是 [0,1]，但是很多代码使用的是[0,255]，为了让颜色比较容易写，我就写了这个类。
 
 在`_d3DDeviceContext.OutputMerger.SetRenderTargets(_renderTargetView);` 设置了刚才创建的`_renderTargetView`激活，在每次我们想渲染一个特定的渲染目标的时候，必须在所有的绘制的函数调用之前对它进行设置。
+
+关于 OutputMerger 需要偷一张图来说明管道，通过 SetRenderTargets 也就是相当于调用了 `immediate_context_->OMSetRenderTargets` 绑定渲染目标，这样就将渲染目标绑定到渲染管线
+
+<!-- ![](image/C# 从零开始写 SharpDx 应用 初始化dx修改颜色/C# 从零开始写 SharpDx 应用 初始化dx修改颜色1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181020172328699)
+
+更多关于渲染管线请看 [渲染管线 - 冠位仓鼠 - CSDN博客](https://blog.csdn.net/u010333737/article/details/78556583?utm_source=blogxgwz1 )
 
 第二句代码` _d3DDeviceContext.ClearRenderTargetView(_renderTargetView, ColorToRaw4(Color.Coral));`清理`_renderTargetView`设置颜色，把他放在第一个缓冲。在 dx 有两个缓冲，一个是看不见的，一个是显示的。第一个缓冲就是显示的，第二个就是在第一个显示的时候画出来，于是不停交换，让用户看到一个画好的缓冲。通过这个方法用户可以看到动画
 
@@ -378,6 +387,10 @@ namespace NawbemcemXadre
 [SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
 
 [WPF 底层渲染](https://blog.csdn.net/column/details/24324.html )
+
+[Directx11入门之D3D程序初始化 - 九野的博客 - CSDN博客](https://blog.csdn.net/acmmmm/article/details/79369294 )
+
+[Directx11入门之第五章 渲染管线 - 九野的博客 - CSDN博客](https://blog.csdn.net/acmmmm/article/details/79394416 )
 
 [Direct3D 11入门级知识介绍](https://blog.csdn.net/pizi0475/article/details/7786348 )
 
