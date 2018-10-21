@@ -3,7 +3,6 @@
 最近在看到小伙伴直接使用 Guid.ToString ，我告诉他需要使用 Guid.ToString("N") ，为什么需要使用 N ，因为默认的是 D 会出现连字符。
 
 <!--more-->
-<!-- csdn -->
 
 Guid 是 Globally Unique Identifier 全局唯一标识符，是一种由算法生成的唯一标识是微软的UUID标准的实现。
 

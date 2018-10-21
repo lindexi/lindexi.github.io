@@ -4,14 +4,14 @@
 Email:[lindexi_gd@163.com](mailto:lindexi_gd@163.com)
 
 
-[blog](http://blog.csdn.net/lindexi_gd/) | [Github](http://github.com/lindexi/) | 关于我
+
+| [blog](http://blog.csdn.net/lindexi_gd/) | [Github](http://github.com/lindexi/) | 关于我 |
 
 
 <!-- 如果使用就是不发布 -->
 <!-- 不发布 -->
 
 欢迎大家访问我的文章，我这里有系列文章关于 UWP 开发。因为没有整理好顺序，如果是希望入门学习，请到[uwp入门](https://blog.csdn.net/column/details/winuwp.html )
-
 
 
 文章包含：
