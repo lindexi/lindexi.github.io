@@ -536,6 +536,8 @@
 
  * [win10 uwp 绑定静态属性](win10-uwp-绑定静态属性.md)
 
+ * [win10 uwp 自定义控件入门](win10-uwp-自定义控件入门.md)
+
  * [win10 uwp 自定义控件初始化](win10-uwp-自定义控件初始化.md)
 
  * [win10 uwp 获取指定的文件 AQS](win10-uwp-获取指定的文件-AQS.md)
