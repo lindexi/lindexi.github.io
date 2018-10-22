@@ -141,6 +141,15 @@ Failed to assign to property 'Windows.UI.Xaml.ResourceDictionary.Source' because
 
 我通过去拿一个不存在的控件，拿到的是空判断是空就抛出异常
 
+如果此时运行了代码，在 OnApplyTemplate 添加断点，会发现这个函数无法进来，原因是 Board 控件的构造函数还忘记写下面的代码
+
+```csharp
+        public Board()
+        {
+            this.DefaultStyleKey = typeof(Board);
+        }
+```
+
 通过这个方法就可以拿到在 xaml 定义的控件，拿到了之后就可以在代码修改，如何修改请看下面
 
 ## 布局
