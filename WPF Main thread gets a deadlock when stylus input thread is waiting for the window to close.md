@@ -1,26 +1,26 @@
 # WPF Main thread gets a deadlock when stylus input thread is waiting for the window to close
 
-We found two way that can make the main thread locked. And we can not write any code to solve it and it can only be circumvented.
+We found two way that can make the main thread locked. And it can only be circumvented without any other solutions.
 
-The easiest way is to wait for the window in the main thread to close in the stylus input thread.
+The easiest way to reproduce this issue is to wait for the window in the main thread to close in the stylus input thread.
 
 <!--more-->
 <!-- csdn -->
 
-We have found two ways, the first way always happens, and the second way is probability.
+We have found two ways, the first way always happens, and the second way is probabilistic.
 
 Before we tell you about it, we need to tell you something about the touch thread and why it can make the main thread wait forever.
 
 ## Theory
 
-In WPF we need stylus input thread to get the input message from the screen.
+In WPF the stylus input thread gets the input event when the user touches the screen.
 
-In stylus input thread, it will enter the `ThreadProc` that has a loop and the loop will never exit until the application exited.
+There is a `ThreadProc` method running in the stylus input thread and this method has a loop inside which will never end until the application exists.
 
 ```csharp
 void ThreadProc()
 {
-    // the loop that never exit
+    // the loop that never ends
     while (!__disposed)
     {
 
