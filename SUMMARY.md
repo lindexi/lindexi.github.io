@@ -788,6 +788,8 @@
 
  * [win10 uwp listView 绑定前一项](win10-uwp-listView-绑定前一项.md)
 
+ * [WPF Main thread gets a deadlock when stylus input thread is waiting for the window to close](WPF-Main-thread-gets-a-deadlock-when-stylus-input-thread-is-waiting-for-the-window-to-close.md)
+
  * [WPF popup置顶](WPF-popup置顶.md)
 
  * [wpf PreviewTextInput 在鼠标输入获得 \u0003](wpf-PreviewTextInput-在鼠标输入获得-u0003.md)
@@ -813,6 +815,8 @@
  * [wpf 使用 Dispatcher.Invoke 冻结窗口](wpf-使用-Dispatcher.Invoke-冻结窗口.md)
 
  * [WPF 使用 Edge 浏览器](WPF-使用-Edge-浏览器.md)
+
+ * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
 
  * [WPF 使用 SharpDX 在 D3DImage 显示](WPF-使用-SharpDX-在-D3DImage-显示.md)
 
@@ -849,6 +853,8 @@
  * [WPF 在 DrawingContext 的 push 如何使用](WPF-在-DrawingContext-的-push-如何使用.md)
 
  * [WPF 在image控件用鼠标拖拽出矩形](WPF-在image控件用鼠标拖拽出矩形.md)
+
+ * [WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](WPF-在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待.md)
 
  * [WPF 好看的矢量图标](WPF-好看的矢量图标.md)
 
@@ -1031,6 +1037,8 @@
  * [安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources](安装visualStudio-出现-cant-install-Microsoft.TeamFoundation.OfficeIntegration.Resources.md)
 
  * [开源项目](开源项目.md)
+
+ * [微软 Tech Summit 技术暨生态大会课程 · 基于 Roslyn 打造高性能预编译框架](微软-Tech-Summit-技术暨生态大会课程-·-基于-Roslyn-打造高性能预编译框架.md)
 
  * [微软技术支持联系方式](微软技术支持联系方式.md)
 
