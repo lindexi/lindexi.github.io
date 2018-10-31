@@ -1,4 +1,4 @@
-# WPF Main thread deadlock when stylus input thread wait for the window closed
+# WPF Main thread gets a deadlock when stylus input thread is waiting for the window to close
 
 We found two way that can make the main thread locked. And we can not write any code to solve it and it can only be circumvented.
 
@@ -88,6 +88,8 @@ And we should run the code to remove PenContext in touch thread and the main thr
 
 The main thread should wait the touch thread finished removing PenContext. If the touch thread never remove PenContext, the main thread will never continue.
 
+The demo program about it is in the [github](https://github.com/dotnet-campus/wpf-issues/tree/master/MainThreadDeadlockWithStylusInputThread/MainThreadDeadlockWhenTouchThreadWaitForWindowClosed).
+
 ## The first way
 
 The first way is adding a StylusPlugIn and in OnStylusUp waiting for a window created in the main window to close.
@@ -147,6 +149,8 @@ We create FooWindow and FooStylusPlugIn in main windows and we also need to crea
 We can run this code and touch the main window and then we will find the button in the main window can not be clicked.
 
 The reason about it is the OnStylusUp in FooStylusPlugIn is running in stylus input thread and it running in the second layer loop in ThreadProc. And it needs to go to the first layer loop to remove the PenContext when a window closed. The touch thread is waiting for the main thread close a window and the main thread is waiting for the touch thread remove PenContext.
+
+
 
 ## The second way
 

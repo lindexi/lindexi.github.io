@@ -144,6 +144,8 @@ void ThreadProc()
 
 在主线程需要等待触摸线程运行移除 PenContext 代码，触摸线程需要等待主线程关闭窗口，这时两个线程就无响应
 
+所有的代码在 [github](https://github.com/dotnet-campus/wpf-issues/tree/master/MainThreadDeadlockWithStylusInputThread/MainThreadDeadlockWhenTouchThreadWaitForWindowClosed)
+
 ## 方法二
 
 在触摸触发的过程中，出现了窗口的关闭，会让主线程卡住
