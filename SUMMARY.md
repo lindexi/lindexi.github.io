@@ -266,6 +266,8 @@
 
  * [不使用数据结构反转栈](不使用数据结构反转栈.md)
 
+ * [Roslyn how to use WriteLinesToFile to write the semicolons to file](Roslyn-how-to-use-WriteLinesToFile-to-write-the-semicolons-to-file.md)
+
  * [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](Roslyn-NameSyntax-的-ToString-和-ToFullString-的区别.md)
 
  * [Roslyn 使用 Directory.Build.props 文件定义编译](Roslyn-使用-Directory.Build.props-文件定义编译.md)
