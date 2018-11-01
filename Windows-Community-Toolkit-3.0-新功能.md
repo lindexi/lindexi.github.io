@@ -56,6 +56,8 @@ xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
 
 这个API支持让你控制视线输入在界面如何处理，如果对这个有兴趣，请点击[链接](https://aka.ms/eyetrackingforwindows )来学习更多内容。官方的文档请点击[链接](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/gaze/gazeinteractionlibrary )
 
+更多视线输入请看[Gaze Your Way Through Eye Tracking Technology](https://www.iqsdirectory.com/resources/gaze-your-way-through-eye-tracking-technology/ )
+
 ## 平台检查
 
 因为现在有支持[多平台](https://walterlv.github.io/post/configure-projects-to-target-multiple-platforms.html )的 csproj ，所以在写代码时经常需要判断当前是在哪个平台。
