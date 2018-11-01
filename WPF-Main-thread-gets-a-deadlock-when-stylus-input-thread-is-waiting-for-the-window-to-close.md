@@ -2,27 +2,27 @@
 # WPF Main thread gets a deadlock when stylus input thread is waiting for the window to close
 
 We found two way that can make the main thread locked. And we can not write any code to solve it and it can only be circumvented.
-The easiest way is to wait for the window in the main thread to close in the stylus input thread.
+The easiest way to reproduce this issue is to wait for the window in the main thread to close in the stylus input thread.
 
 <!--more-->
 
 
 <!-- csdn -->
 
-We have found two ways, the first way always happens, and the second way is probability.
+We have found two ways, the first way always happens, and the second way is probabilistic.
 
 Before we tell you about it, we need to tell you something about the touch thread and why it can make the main thread wait forever.
 
 ## Theory
 
-In WPF we need stylus input thread to get the input message from the screen.
+The stylus input thread gets the input event when the user touches the screen.
 
-In stylus input thread, it will enter the `ThreadProc` that has a loop and the loop will never exit until the application exited.
+There is a `ThreadProc` method running in the stylus input thread and this method has a loop inside which will never end until the application exists.
 
 ```csharp
 void ThreadProc()
 {
-    // the loop that never exit
+    // The loop that never ends.
     while (!__disposed)
     {
 
@@ -30,139 +30,134 @@ void ThreadProc()
 }
 ```
 
-There are two layer loop in `TheadProc`. It can add or remove PenContext in the first layer loop. And the second layer loop will be locked by PENIMC until something release the thread lock or the user touch the screen. 
+There are nested two loops in the `ThreadProc` method. In the outside one, it adds and removes `PenContext` and in the inside one, it will be blocked by the `PENIMC` and can be continued when the user touches the screen.
 
 ```csharp
 void ThreadProc()
 {
     while (!__disposed)
     {
-    	// The first layer loop
-    	// To remove or add PenContext
+    	// The outside loop
+    	// To remove or add the PenContext
 
     	while (true)
     	{
-    		// the second layer loop
-    		// it will be locked by PENIMC
+    		// The inside loop
+    		// Tt will be blocked by the PENIMC
     		if(!Penimc.UnsafeNativeMethods.GetPenEvent(/*the thread locker*/))
     		{
-    			// if the thread lock `_pimcResetHandle` be release, it will enter this branch and break the second layer loop and then goto the first layer loop.
+    			// If the `_pimcResetHandle` is released, this if branch will enter so the inside loop will end with the `break` and the code runs back to the outside loop.
     			break;
     		}
 
-    		FireEvent(/*send the touch message*/);
+    		FireEvent(/*fire the touch events*/);
     	}
     }
 }
 ```
 
-It needs to call `HwndSource.DisposeStylusInputProvider` when the window closed. And the call stack is from the message loop to `PenContext.Disable` and the code is below.
+When a window is closed, it calls `HwndSource.DisposeStylusInputProvider` and this causes the `PenContext.Disable` be calling with the calling stack trace showing below.
 
-```csharp
- 	PresentationCore.dll!System.Windows.Input.PenThreadWorker.WorkerRemovePenContext(System.Windows.Input.PenContext penContext) 
-	PresentationCore.dll!System.Windows.Input.PenContext.Disable(bool shutdownWorkerThread) 
- 	PresentationCore.dll!System.Windows.Input.PenContexts.Disable(bool shutdownWorkerThread) 
- 	PresentationCore.dll!System.Windows.Input.StylusWisp.WispLogic.UnRegisterHwndForInput(System.Windows.Interop.HwndSource hwndSource) 
- 	PresentationCore.dll!System.Windows.Interop.HwndStylusInputProvider.Dispose() 
+```
+System.Windows.Input.PenThreadWorker.WorkerRemovePenContext(System.Windows.Input.PenContext penContext) 
+System.Windows.Input.PenContext.Disable(bool shutdownWorkerThread) 
+System.Windows.Input.PenContexts.Disable(bool shutdownWorkerThread) 
+System.Windows.Input.StylusWisp.WispLogic.UnRegisterHwndForInput(System.Windows.Interop.HwndSource hwndSource) 
+System.Windows.Interop.HwndStylusInputProvider.Dispose() 
 ```
 
-Let us see the `PenThreadWorker.WorkerRemovePenContext` that run in main thread.
+Let us see the `PenThreadWorker.WorkerRemovePenContext` that run in the main thread.
 
 ```csharp
-    internal bool WorkerRemovePenContext(PenContext penContext)
-    {
+internal bool WorkerRemovePenContext(PenContext penContext)
+{
+    var operationRemoveContext = new PenThreadWorker.WorkerOperationRemoveContext(penContext, this);
 
-      var operationRemoveContext = new PenThreadWorker.WorkerOperationRemoveContext(penContext, this);
-     
-      _workerOperation.Add((PenThreadWorker.WorkerOperation) operationRemoveContext);
-      // release _pimcResetHandle lock 
-      UnsafeNativeMethods.RaiseResetEvent(this._pimcResetHandle.Value);
-      // waiting the operationRemoveContext finished
-      operationRemoveContext.DoneEvent.WaitOne();
-      operationRemoveContext.DoneEvent.Close();
-      return operationRemoveContext.Result;
-    }
+    _workerOperation.Add((PenThreadWorker.WorkerOperation) operationRemoveContext);
+    // Release the _pimcResetHandle lock 
+    UnsafeNativeMethods.RaiseResetEvent(this._pimcResetHandle.Value);
+    // Wait for the operationRemoveContext to finish
+    operationRemoveContext.DoneEvent.WaitOne();
+    operationRemoveContext.DoneEvent.Close();
+    return operationRemoveContext.Result;
+}
 ```
 
-We can know somthing in the code. The main thread release the `_pimcResetHandle` lock and it can make the ThreadProc break the second layer loop and goto the the first layer loop to remove the PenContext.
+From the code above we can learn that the main thread releases the `_pimcResetHandle` and it makes the `ThreadProc` breaking the inside loop and go back to the outside one to remove the `PenContext`.
 
-And we should run the code to remove PenContext in touch thread and the main thread should wating the operationRemoveContext finished.
-
-The main thread should wait the touch thread finished removing PenContext. If the touch thread never remove PenContext, the main thread will never continue.
-
-The demo program about it is in the [github](https://github.com/dotnet-campus/wpf-issues/tree/master/MainThreadDeadlockWithStylusInputThread/MainThreadDeadlockWhenTouchThreadWaitForWindowClosed).
+Normally we should run the code in the stylus input thread to remove the `PenContext` and keep the main thread waiting for the `operationRemoveContext` to finish. But if the stylus input thread never remove the `PenContext` and the main thread waits for it, the main thread will never continue.
 
 ## The first way
 
-The first way is adding a StylusPlugIn and in OnStylusUp waiting for a window created in the main window to close.
+The first way is to write a custom class implementing `StylusPlugIn` and wait for a window to close in the `OnStylusUp` method.
 
-We should add a window class that is an empty class.
+Let's create a new empty window named `FooWindow`.
 
-
-```csharp
-    public class FooWindow : Window
-    {
-
-    }
-```
-
-And we should create a class FooStylusPlugIn that inherit StylusPlugIn. The FooStylusPlugIn override the OnStylusUp and waiting for a window close in OnStylusUp.
 
 ```csharp
-   public class FooStylusPlugIn : StylusPlugIn
-    {
-        public FooStylusPlugIn(FooWindow fooWindow)
-        {
-            FooWindow = fooWindow;
-        }
+public class FooWindow : Window
+{
 
-        public FooWindow FooWindow { get; }
-
-        /// <inheritdoc />
-        protected override void OnStylusUp(RawStylusInput rawStylusInput)
-        {
-            FooWindow.Dispatcher.Invoke(() => FooWindow.Close());
-            base.OnStylusUp(rawStylusInput);
-        }
-    }
+}
 ```
 
-We create FooWindow and FooStylusPlugIn in main windows and we also need to create a button in xaml that can make us know whether the main thread is running.
+Then we create a `FooStylusPlugIn` class to implement the `StylusPlugIn` with overriding the `OnStylusUp` method. We add some code to wait for the window to close by calling `Invoke` which will wait by pumping a new message loop.
 
 ```csharp
-   public partial class MainWindow : Window
+public class FooStylusPlugIn : StylusPlugIn
+{
+    public FooStylusPlugIn(FooWindow fooWindow)
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-            _fooWindow = new FooWindow();
-            StylusPlugIns.Add(new FooStylusPlugIn(_fooWindow));
-            _fooWindow.Show();
-        }
-
-        private void Button_OnClick(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private FooWindow _fooWindow;
+    	FooWindow = fooWindow;
     }
+
+    public FooWindow FooWindow { get; }
+
+    /// <inheritdoc />
+    protected override void OnStylusUp(RawStylusInput rawStylusInput)
+    {
+        FooWindow.Dispatcher.Invoke(() => FooWindow.Close());
+        base.OnStylusUp(rawStylusInput);
+    }
+}
 ```
 
-We can run this code and touch the main window and then we will find the button in the main window can not be clicked.
+To combine both the critical codes above, we write some codes in the `MainWindow`. The `FooWindow` is instanced in the constructor and the `StylusPlugIn` is plugged in it. We also make a button in the XAML that can let us know whether the main thread is still running or not.
 
-The reason about it is the OnStylusUp in FooStylusPlugIn is running in stylus input thread and it running in the second layer loop in ThreadProc. And it needs to go to the first layer loop to remove the PenContext when a window closed. The touch thread is waiting for the main thread close a window and the main thread is waiting for the touch thread remove PenContext.
+```csharp
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+        _fooWindow = new FooWindow();
+        StylusPlugIns.Add(new FooStylusPlugIn(_fooWindow));
+        _fooWindow.Show();
+    }
+
+    private void Button_OnClick(object sender, RoutedEventArgs e)
+    {
+    }
+
+    private FooWindow _fooWindow;
+}
+```
+
+Run the project, touch the main window, and you'll find that the main window never responds to your interaction. Try to click the button to view the responding and you'll soon verify what I'm talking.
+
+The reason is that the `OnStylusUp` in `FooStylusPlugIn` is running in the stylus input thread which is also running the inside loop of the `ThreadProc` method. It needs to go back to the outside loop to remove the `PenContext` when a window is closed. The stylus input thread is waiting for the main thread to close a window and the main thread is also waiting for the stylus input thread remove PenContext. Thus, the deadlock occurred.
 
 
 
 ## The second way
 
-When touch occured and at the same time the window  closed that will make the main thread be lock.
+If a touch happens exactly during a window closing, the main thread will enter a lock.
 
-The difference between the first method and the second method is that the first way will lock the main thread and the touch thread but the second way will only lock the main thread.
+The difference between the first method and the second method is that the first one will lock both the main thread and the stylus input thread but the second one will only lock the main thread.
 
-We can know from the theory that we should remove the PenContext in the first layer loop. The touch thread is firing the touch message exact when we run the code to remove PenContext in touch thread. As you can see we need to run the code to remove PenContext in the first layer loop but now the code is firing the touch message in the second loop.
+From the theory, we know that the `PenContext` should be removed correctly in the outside loop. But in the second way, the stylus input thread is firing the touch event exactly when we run the code to remove the `PenContext` in the stylus input thread. As you can see we need to run the code to remove `PenContext` in the outside loop but at this moment the code is firing the touch event in the second loop.
 
-If the touch thread is firing the touch message that means the `_pimcResetHandle` lock is released. Although the main thread also release the lock but we can not go to the first layer loop to remove the PenContext and the main thread can not never wait for the PenContext removed finished.
+The firing of the touch event means the `_pimcResetHandle` is released. Although the main thread has also released the lock the code cannot run to the outside loop to remove the `PenContext` and the main thread can no longer wait for the moment when the `PenContext` removal is finished.
 
 
 ```csharp
@@ -170,30 +165,34 @@ void ThreadProc()
 {
     while (!__disposed)
     {
-      	// The first layer loop
-    	// To remove or add PenContext
-    	// The main thread is waiting for it finished.
+      	// The outside loop
+    	// To remove or add the PenContext
+    	// The main thread is waiting for its finishing.
     	RemovePenContext();
 
     	while (true)
     	{
-    		// the second layer loop
-    		// it will be locked by PENIMC
-    		if(!Penimc.UnsafeNativeMethods.GetPenEvent(/*wait lock*/))
+    		// The inside loop
+    		// Tt will be blocked by the PENIMC
+    		if(!Penimc.UnsafeNativeMethods.GetPenEvent(/*wait the lock*/))
     		{
-    			// if the thread lock `_pimcResetHandle` be released, it will enter this branch and break the second layer loop and then goto the first layer loop.
+    			// If the `_pimcResetHandle` is released, this if branch will enter so the inside loop will end with the `break` and the code runs back to the outside loop.
     			break;
     		}
 
-    		FireEvent(/*send the touch message*/); // the code is running in this line
+    		FireEvent(/*fire the touch events*/); // the code is running in this line
     		// and the `_pimcResetHandle` is released.
-    		// the main thread release the `_pimcResetHandle` but the code can not go to RemovePenContext for it can not break. 
+    		// the main thread release the `_pimcResetHandle` but the code can not go to RemovePenContext for it will no longer break. 
     	}
     }
 }
 ```
 
-The main thread release lock but the touch thread need not wait for the lock. The touch thread can not go to the code to remove PenContext and the main thread will never wait for the PenContext removed finished.
+The main thread has released the lock but the stylus input thread doesn't need to wait for the lock. The stylus input thread cannot go back to the outside loop to remove the `PenContext` and main thread can no longer wait for the moment when the `PenContext` removal is finished.
+
+Thanks to [walterlv](https://walterlv.com/) for proofreading the English translation of this post.
+
+感谢 [吕毅](https://walterlv.com/) 对本文的英文翻译进行校对。
 
 
 
