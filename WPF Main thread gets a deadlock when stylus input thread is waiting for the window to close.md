@@ -145,7 +145,7 @@ Run the project, touch the main window, and you'll find that the main window nev
 
 The reason is that the `OnStylusUp` in `FooStylusPlugIn` is running in the stylus input thread which is also running the inside loop of the `ThreadProc` method. It needs to go back to the outside loop to remove the `PenContext` when a window is closed. The stylus input thread is waiting for the main thread to close a window and the main thread is also waiting for the stylus input thread remove PenContext. Thus, the deadlock occurred.
 
-
+The demo in [github](https://github.com/dotnet-campus/wpf-issues/tree/master/MainThreadDeadlockWithStylusInputThread/MainThreadDeadlockWhenTouchThreadWaitForWindowClosed)
 
 ## The second way
 
