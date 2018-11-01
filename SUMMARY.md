@@ -286,6 +286,8 @@
 
  * [Roslyn 如何获得一个类的引用](Roslyn-如何获得一个类的引用.md)
 
+ * [Roslyn 将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比](Roslyn-将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比.md)
+
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
  * [Roslyn 通过 Nuget 引用源代码 在 VS 智能提示正常但是无法编译](Roslyn-通过-Nuget-引用源代码-在-VS-智能提示正常但是无法编译.md)
