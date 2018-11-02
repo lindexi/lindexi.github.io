@@ -592,6 +592,8 @@
 
  * [win10 uwp 通知列表](win10-uwp-通知列表.md)
 
+ * [win10 uwp 通过 win2d 画出笔迹](win10-uwp-通过-win2d-画出笔迹.md)
+
  * [win10 uwp 重启软件](win10-uwp-重启软件.md)
 
  * [win10 uwp 非ui线程访问 ui ](win10-uwp-非ui线程访问-ui-.md)
