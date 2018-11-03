@@ -842,6 +842,8 @@
 
  * [WPF 修改按钮按下的颜色](WPF-修改按钮按下的颜色.md)
 
+ * [WPF 内部的5个窗口之 MediaContextNotificationWindow](WPF-内部的5个窗口之-MediaContextNotificationWindow.md)
+
  * [C＃ 写系统日志](C＃-写系统日志.md)
 
  * [WPF 判断USB插拔](WPF-判断USB插拔.md)
