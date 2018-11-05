@@ -377,6 +377,30 @@ Nuget搜索`lindexi.uwp.src.ImageStorage`
 Install-Package lindexi.uwp.src.ImageStorage
 ```
 
+## Microsoft.Toolkit.Uwp
+
+当前图片缓存的功能已经合并到 Microsoft.Toolkit.Uwp 工具，不过里面已经看不到我写的代码了，所以变得更加好用
+
+在最低版本为 16299 之后可以通过 nuget 找到 Microsoft.Toolkit.Uwp 安装，然后可以使用下面的代码判断如果图片已经保存在本地，就从本地读取图片。如果图片没有保存到本地，就从网络下载
+
+```csharp
+// 图片可以保存多久的时间
+ImageCache.Instance.CacheDuration = TimeSpan.FromHours(24);
+
+// 最多可以在内存存放多少张图片
+ImageCache.Instance.MaxMemoryCacheCount = 100;
+
+var distantUri = new Uri("http://www.myserver.com/image.jpg");
+
+// 如果图片没有在缓存里，将会下载图片。如果图片在缓存里，直接返回图片
+var bitmapImage = await ImageCache.Instance.GetFromCacheAsync(distantUri);
+
+// 清理缓存
+await ImageCache.Instance.ClearAsync(); 
+```
+
+[ImageCache](https://docs.microsoft.com/en-us/windows/communitytoolkit/helpers/imagecache )
+
 
 
 

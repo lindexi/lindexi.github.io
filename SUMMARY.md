@@ -248,6 +248,8 @@
 
  * [matlab 画图](matlab-画图.md)
 
+ * [Microsoft .NET框架程序设计 笔记](Microsoft-.NET框架程序设计-笔记.md)
+
  * [MobaXterm 使用代理](MobaXterm-使用代理.md)
 
  * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
@@ -431,6 +433,8 @@
  * [win10 uwp 使用 Geometry resources 在 xaml](win10-uwp-使用-Geometry-resources-在-xaml.md)
 
  * [win10 uwp 使用 LayoutTransformer](win10-uwp-使用-LayoutTransformer.md)
+
+ * [win10 uwp 使用 Matrix3DProjection 进行 3d 投影](win10-uwp-使用-Matrix3DProjection-进行-3d-投影.md)
 
  * [win10 uwp 使用 Microsoft.Graph 发送邮件](win10-uwp-使用-Microsoft.Graph-发送邮件.md)
 
