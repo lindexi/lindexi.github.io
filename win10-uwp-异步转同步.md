@@ -84,7 +84,7 @@
         }
 ```
 
-使用`Task.Delay`
+使用`Task.Delay`等待
 
 ```csharp
         private void Button_OnClick(object sender, RoutedEventArgs e)
@@ -94,7 +94,7 @@
 
 ```
 
-即使使用方法，里面使用 io 也不会死锁
+即使使用方法，里面使用 io 也有可能死锁
 
 ```csharp
         private void Button_OnClick(object sender, RoutedEventArgs e)
@@ -105,7 +105,8 @@
 
         private async Task DoAsync()
         {
-
+            // 调用这个方法在 10.0.17134 / 10.0.16299 概率的死锁
+            // 在 10.0.17763 基本就会死锁
             await ApplicationData.Current.LocalFolder.CreateFileAsync("lin", CreationCollisionOption.ReplaceExisting);
         }
 ```

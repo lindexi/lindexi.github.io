@@ -314,6 +314,8 @@
 
  * [SublimeText 粘贴图片保存到本地](SublimeText-粘贴图片保存到本地.md)
 
+ * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
+
  * [UWP IRandomAccessStream 与 Stream 互转](UWP-IRandomAccessStream-与-Stream-互转.md)
 
  * [UWP 分享用那个图标](UWP-分享用那个图标.md)
