@@ -76,6 +76,12 @@ cmd> msbuild /p:Platform=x86
 
 现在就可以编译 DEBUG 下的 x86 程序了
 
+如果需要编译同时输出，可以尝试下面的代码。下面的 AppxPackageDir 是填写 AppxPackageDir 的文件夹路径，请将这个值修改为自己需要的。
+
+```bash
+/p:AppxBundlePlatforms="x86|x64|ARM" /p:AppxPackageDir="D:\lindexi\AppxPackages\\" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:platform="x86" /p:configuration="release" /p:VisualStudioVersion="15.0" 
+```
+
 
 
 
