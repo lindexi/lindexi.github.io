@@ -1,4 +1,4 @@
-# win10 uwp win2d CanvasVirtualControl
+# win10 uwp win2d CanvasVirtualControl 与 CanvasAnimatedControl
 
 本文来告诉大家 CanvasVirtualControl ，在什么时候使用这个控件。
 
