@@ -408,7 +408,7 @@
 
  * [win10 uwp url encode](win10-uwp-url-encode.md)
 
- * [win10 uwp win2d CanvasVirtualControl](win10-uwp-win2d-CanvasVirtualControl.md)
+ * [win10 uwp win2d CanvasVirtualControl 与 CanvasAnimatedControl](win10-uwp-win2d-CanvasVirtualControl-与-CanvasAnimatedControl.md)
 
  * [win10 uwp win2d 使用 Path 绘制界面](win10-uwp-win2d-使用-Path-绘制界面.md)
 
@@ -937,6 +937,8 @@
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
 
  * [WPF 自定义 TextBoxView 的 Margin 大小](WPF-自定义-TextBoxView-的-Margin-大小.md)
+
+ * [WPF 获取下载内容长度](WPF-获取下载内容长度.md)
 
  * [WPF 获得当前输入法语言区域](WPF-获得当前输入法语言区域.md)
 

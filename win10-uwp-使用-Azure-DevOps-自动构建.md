@@ -1,7 +1,7 @@
 
 # win10 uwp 使用 Azure DevOps 自动构建
 
-通过 Azure DevOps 可以做到自动构建程序，设置发布任务，自动进行测试
+通过 Azure DevOps 可以做到自动构建程序，覆盖计划、创建、编程、测试、部署、发布、托管、共享等各个环节，适用于大多数的语言、平台。
 本文继续使用图床为例告诉大家如何使用 Azure DevOps 自动构建
 
 <!--more-->
@@ -9,7 +9,9 @@
 
 <!-- csdn -->
 
-首先是点击创建一个项目
+从谷歌搜 Azure DevOps 即可找到 Azure DevOps 的网站 [https://dev.azure.com](https://dev.azure.com)，这里支持使用微软的账号或 github 的账号登陆。
+
+假设已经登陆了账号，首先点击创建一个项目
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建0.png) -->
 
