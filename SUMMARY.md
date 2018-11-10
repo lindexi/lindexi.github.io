@@ -770,6 +770,8 @@
 
  * [win10 uwp 自定义控件 SplitViewItem](win10-uwp-自定义控件-SplitViewItem.md)
 
+ * [win2d CanvasCommandList 使用方法](win2d-CanvasCommandList-使用方法.md)
+
  * [win2d CanvasRenderTarget vs CanvasBitmap](win2d-CanvasRenderTarget-vs-CanvasBitmap.md)
 
  * [win2d 图片水印](win2d-图片水印.md)
