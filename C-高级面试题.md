@@ -1,0 +1,143 @@
+
+# C# 高级面试题
+
+很少会有人可以答对，如果你遇到一个来面试的人实在嚣张，就可以用本文的题去打击
+本文内容就看着玩，请不要在严肃的面试中问题这样的题目
+
+<!--more-->
+
+
+<!-- csdn -->
+
+如果面试到一个人可以回答出下面的题目也不能证明他的技术很强，只能说明他了解很多C#相关，或者他看过我的博客
+
+## 循环下面的代码
+
+请在下面的代码的注释处填写代码，让函数 Foo 里面的代码输出
+
+```csharp
+        static void Main(string[] args)
+        {
+            // 请在此处写代码，调用 Foo 函数内的输出代码
+        }
+
+        private static void Foo()
+        {
+            try
+            {
+                while (true)
+                {
+                }
+            }
+            finally
+            {
+                Console.WriteLine("尝试调用 Foo 函数执行这一句代码");
+            }
+        }
+```
+
+参考答案
+
+使用一个线程调用的方式，调用之后结束线程，此时就会输出
+
+```csharp
+        static void Main(string[] args)
+        {
+            // 请在此处写代码，调用 Foo 函数内的输出代码
+
+            var thread = new Thread(Foo);
+            thread.Start();
+            Task.Delay(100).Wait();
+            thread.Abort();// 这时就会结束循环
+
+            Console.Read();
+        }
+```
+
+## 从空转换
+
+请写出 IFoo 和 Foo 的实现，让下面的代码不会抛出空异常
+
+```csharp
+        static void Main(string[] args)
+        {
+            Foo foo = (IFoo) null;
+            foo.Name = "lindexi";
+
+            Console.Read();
+        }
+```
+
+参考答案
+
+```csharp
+    class IFoo
+    {
+
+    }
+
+    class Foo
+    {
+        public string Name { get; set; }
+
+        public static implicit operator Foo(IFoo foo)
+        {
+            return new Foo();
+        }
+    }
+```
+
+## 等待不存在的类
+
+请添加新的类的代码让下面的代码编译通过
+
+```csharp
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            Foo foo = await (object) null;
+            foo.Name = "lindexi";
+
+            Console.Read();
+        }
+    }
+
+    public class Foo
+    {
+        public string Name { get; set; }
+    }
+```
+
+参考答案
+
+```csharp
+   public class HeabdsdnbKevx : INotifyCompletion
+    {
+        public bool IsCompleted { get; }
+
+        public Foo GetResult()
+        {
+            return new Foo();
+        }
+
+        /// <inheritdoc />
+        public void OnCompleted(Action continuation)
+        {
+        }
+    }
+
+    public static class RelelnisSou 
+    {
+        public static HeabdsdnbKevx GetAwaiter(this object obj)
+        {
+            return new HeabdsdnbKevx();
+        }
+    }
+```
+
+
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
