@@ -104,6 +104,7 @@ while (!this.__disposed)
 ```csharp
 		internal void OnPenDown(PenContext penContext, int tabletDeviceId, int stylusPointerId, int[] data, int timestamp)
 		{
+			// 下面两个函数和这个函数的不同在于 RawStylusActions.Down 其他都是相同
 			this.ProcessInput(RawStylusActions.Down, penContext, tabletDeviceId, stylusPointerId, data, timestamp);
 		}
 
@@ -142,6 +143,8 @@ while (!this.__disposed)
 ![](http://image.acmx.xyz/lindexi%2F2018815115135159)
 
 现在就将事件传入到 ProcessInput 并且告诉 `RawStylusActions` 这个函数会调用 `WispLogic` 的 ProcessInput 在这里使用函数的原因是为了传入的时候加上 `_inputSource` 这里的 `WispLogic` 可能是 StylusLogic 现在的代码就到了比较熟悉的 StylusLogic 函数
+
+> WispLogic 的 Wisp 是 Windows Inking Service Platform 用来在系统和输入设备之间通信
 
 在 `WispLogic` 的 `ProcessInput` 会包装输入的参数为 `RawStylusInputReport` 现在这个参数还不需要知道是按下还是移动
 
@@ -208,10 +211,16 @@ internal sealed class PenContext
 ```csharp
 internal sealed class PenContexts
 {
+	    // 包含了很多个 PenContext 对一个输入设备创建一个 PenContext 注意这里说的是报给系统的数量，一个物理设备可以报给系统1000000000000个输入
 		private PenContext[] _contexts;
 
+		// 这个函数调用了会添加 _contexts 的值
 		internal void AddContext(uint index)
 		{
+			// 拿到局部的字段，作为一个变量，可以减少字段的引用
+			// 推荐在一个复杂的类，如果函数用到了字段或属性，就使用局部的变量引用这个字段
+			// 这个写法在框架里面很多使用
+
 			PenContext[] array = _contexts;
 			PenContext penContext = this._stylusLogic.TabletDevices[(int)index].As<WispTabletDevice>().CreateContext(this._inputSource.Value.CriticalHandle, this);
 			array[(int)index] = penContext;
@@ -286,7 +295,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 ![](http://image.acmx.xyz/lindexi%2F201881511310278)
 
-具体 StylusPlugIn 的调用本文就不多讲，在调用完成 InvokeStylusPluginCollection 也就是先告诉了很多类触摸了，现在就到了告诉路由事件的时候了。在 WispLogic 的 ProcessInputReport 函数调用 InvokeStylusPluginCollection 完成就会调用 CoalesceAndQueueStylusEvent 这个方法就是从触摸消息转路由的第一个方法，从上面代码可以说明 StylusPlugIn 的执行是比路由事件快，所以要做到比较快的触摸就需要使用这个方法
+具体 StylusPlugIn 的调用本文就不多讲，在调用完成 InvokeStylusPluginCollection 也就是先告诉了很多类触摸了，现在就到了告诉路由事件的时候了。在 WispLogic 的 ProcessInputReport 函数调用 InvokeStylusPluginCollection 完成就会调用 CoalesceAndQueueStylusEvent 这个方法就是从触摸消息转路由的第一个方法，从上面代码可以说明 StylusPlugIn 的执行是比路由事件快，所以要做到比较快的触摸就需要使用这个方法。更多关于 StylusPlugIn 请看 [WPF 高速书写 StylusPlugIn 原理](https://lindexi.gitee.io/post/WPF-%E9%AB%98%E9%80%9F%E4%B9%A6%E5%86%99-StylusPlugIn-%E5%8E%9F%E7%90%86.html )
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件6.png) -->
 
@@ -421,6 +430,8 @@ internal void FireRawStylusInput(RawStylusInput args)
 ```csharp
        if (StylusLogic.IsPointerStackEnabled)
 		{
+			// 在 dotnet framework 4.7 之后可以尝试使用 Pointer 消息，这时可以就会进入这个逻辑
+			// 本文不会详细告诉告诉大家 PointerLogic 里面的代码
 			StylusLogic._currentStylusLogic = new PointerLogic(InputManager.UnsecureCurrent);
 		}
 		else
@@ -429,7 +440,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 		}
 ```
 
-本文不告诉大家 PointerLogic 相关的方法，这里假如是创建 `WispLogic` 就会进入构造，这里只是简单的初始化属性
+本文不告诉大家 PointerLogic 相关的方法，如何开启 Pointer 消息请看[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://lindexi.gitee.io/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6-%E6%89%93%E5%BC%80-Pointer-%E6%B6%88%E6%81%AF.html )，这里假如是创建 `WispLogic` 就会进入构造，这里只是简单的初始化属性
 
 在 HwndStylusInputProvider.HwndStylusInputProvider 除了创建 StylusLogic 还调用 RegisterHwndForInput 这里传入的是 InputManager HwndSource 通过这两个创建 WispTabletDevices 、 PenContexts 并且通过 IPimcManager2 拿到值
 
@@ -526,12 +537,19 @@ internal void FireRawStylusInput(RawStylusInput args)
 		}
 ```
 
-课件请点击：[https://r302.cc/1eXyB8](https://r302.cc/1eXyB8 )
+课件
 
+[![](http://image.acmx.xyz/lindexi%2F20181113105010622)](https://r302.cc/DKzkRX)
 
 参见：[WPF应用程序中输入系统介绍 - CSDN博客](https://blog.csdn.net/tanmengwen/article/details/8128992 )
 
 [一站式WPF--Window（一） - 周永恒 - 博客园](https://www.cnblogs.com/Zhouyongh/archive/2009/11/30/1613628.html )
+
+[WPF 高速书写 StylusPlugIn 原理](https://lindexi.gitee.io/post/WPF-%E9%AB%98%E9%80%9F%E4%B9%A6%E5%86%99-StylusPlugIn-%E5%8E%9F%E7%90%86.html )
+
+[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://lindexi.gitee.io/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6-%E6%89%93%E5%BC%80-Pointer-%E6%B6%88%E6%81%AF.html )
+
+[WPF 禁用实时触摸](https://lindexi.gitee.io/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html )
 
 
 
