@@ -2,7 +2,7 @@
 
 本文讲的是把git在最新2.9.2，合并pull两个不同的项目，出现的问题
 
-如何去解决`fatal: refusing to merge unrelated histories`
+如何去解决 `fatal: refusing to merge unrelated histories` 合并两个不同历史的仓库
 
 <!--more-->
 
