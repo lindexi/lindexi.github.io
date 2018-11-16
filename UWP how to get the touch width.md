@@ -76,5 +76,3 @@ We also can use ContactRectRaw in Properties.
 ```
 
 Try to run the code and touch the application and you can watch the output windows that prints the touch width.
-
-B
