@@ -494,6 +494,8 @@
 
  * [win10 uwp 在 VisualStudio 部署失败，找不到 Windows Phone 可能的原因](win10-uwp-在-VisualStudio-部署失败，找不到-Windows-Phone-可能的原因.md)
 
+ * [win10 uwp 在 xaml 让 TextBlock 换行](win10-uwp-在-xaml-让-TextBlock-换行.md)
+
  * [win10 uwp 好看的时间选择控件](win10-uwp-好看的时间选择控件.md)
 
  * [win10 uwp 如何创建修改保存位图](win10-uwp-如何创建修改保存位图.md)
