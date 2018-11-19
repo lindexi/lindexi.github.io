@@ -3,7 +3,6 @@
 本文告诉大家经常使用的 NameSyntax 拿到值的 ToString 和 ToFullString 方法的区别
 
 <!--more-->
-<!-- csdn -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
 从代码可以看到 NameSyntax 的 ToString 和 ToFullString 方法是调用 Green 的 ToString 和 ToFullString ，所以具体还需要进入 Green 看是如何写

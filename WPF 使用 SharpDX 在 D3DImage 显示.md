@@ -3,7 +3,6 @@
 本文告诉大家如何使用 SharpDX 在 D3DImage 显示。在上一篇[WPF 使用 SharpDX](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX.html )只是使用窗口，也就是无法使用其它的 WPF 控件。所以这一篇就来告诉大家如何使用 WPF 控件和使用 SharpDX 。
 
 <!--more-->
-<!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->
 

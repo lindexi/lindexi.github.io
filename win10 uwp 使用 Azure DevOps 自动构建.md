@@ -5,7 +5,8 @@
 本文继续使用图床为例告诉大家如何使用 Azure DevOps 自动构建
 
 <!--more-->
-<!-- csdn -->
+
+<!-- 标签：uwp,DevOps,AzureDevOps -->
 
 从谷歌搜 Azure DevOps 即可找到 Azure DevOps 的网站 [https://dev.azure.com](https://dev.azure.com)，这里支持使用微软的账号或 github 的账号登陆。
 
