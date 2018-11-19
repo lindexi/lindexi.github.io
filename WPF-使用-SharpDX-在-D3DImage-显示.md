@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->
 

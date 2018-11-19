@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：UWP,VisualStudio,msbuild -->
 
 在有一些时候，如使用持续集成的时候就不能通过 VisualStudio 的方式编译 UWP 程序，需要使用命令行的方式编译。

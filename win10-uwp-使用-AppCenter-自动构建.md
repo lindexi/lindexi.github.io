@@ -7,7 +7,7 @@
 <!--more-->
 
 
-<!-- csdn -->
+<!-- 标签：uwp,DevOps,AzureDevOps -->
 
 首先打开 [https://appcenter.ms/](https://appcenter.ms/) 使用微软的账号或 github 账号登陆
 
