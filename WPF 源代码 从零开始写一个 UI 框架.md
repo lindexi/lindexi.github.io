@@ -34,6 +34,9 @@
 
 在开始之前，需要引用画布的概念。假设一个界面就是一个画布，这个画布的左上角就是(0,0)的点，坐标就是从左向右 x 变大，从上到下 y 变大。具体请看下图。
 
+<!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018111919201102)
 
 再引入元素的概念，元素的边框就是一个矩形，元素将可以在自己的矩形之内使用绘制原语画出元素。元素的概念属于框架级的，也就是原生是没有这个概念，原生只有绘制原语的概念。
 
@@ -52,7 +55,24 @@
 需要注意本文下面实现的是简单版的 DrawingContext 里面包含了 WPF 布局的部分代码
 
 ```csharp
+    public class DrawingContext
+    {
+        /// <inheritdoc />
+        public DrawingContext(Point elementPoint, Board board)
+        {
+            ElementPoint = elementPoint;
+            Board = board;
+        }
 
+        public Point ElementPoint { get; }
+
+        public Board Board { get; }
+
+        public void DrawEllipse(Point point, double radiusX, double radiusY, Color? pen, Color? brush)
+        {
+            
+        }
+    }
 ```
 
 从上面代码可以看到，这个 DrawingContext 包含了以下属性。这里是为了提供为其他语言的小伙伴可以知道设计 DrawingContext 需要哪些内容 
@@ -67,7 +87,21 @@
 定义一个画布 Board 这个画布里面拥有直接调用原生的绘制原语的方法，画布里面可以包含元素。定义的代码请看下面
 
 ```csharp
+    public class Board
+    {
+        public List<Element> ElementList { get; } = new List<Element>();
 
+        public IPlatformVisual PlatformVisual { get; set; }
+
+        public void InvalidateVisual()
+        {
+            foreach (var temp in ElementList)
+            {
+                var dc = new DrawingContext(temp.Point, this);
+                temp.OnRender(dc);
+            }
+        }
+    }
 ```
 
 画布包含的属性列表是
@@ -82,12 +116,19 @@
 
 这里的原生的绘制的类，是需要根据不同的平台来做的，有一些平台，如 OPG 是只有调用方法，于是就需要自己封装一个类包含这些方法，进行注入。
 
-从上面的代码可以看到，画布的渲染方法需要被调用才可以绘制，实际的 WPF 框架也是这样，在 WPF 是通过 dx 的垂直同步或者 WM_Paint 消息进行绘制的。在 WPF 可以通过监听 xxxxxxxTarget 事件获得 WPF 进行渲染。
+从上面的代码可以看到，画布的渲染方法 InvalidateVisual 需要被调用才可以绘制，实际的 WPF 框架也是这样，在 WPF 是通过 dx 的垂直同步或者 `WM_Paint` 消息进行绘制的。在 WPF 可以通过监听 CompositionTarget.Rendering 事件获得 WPF 进行渲染。
 
 因为使用了元素，为了写出画布的渲染方法需要先告诉大家元素的定义。
 
 ```csharp
+    public class Element
+    {
+        public Point Point { get; set; }
 
+        public virtual void OnRender(DrawingContext dc)
+        {
+        }
+    }
 ```
 
 元素的定义属性只有元素的坐标，元素的方法也只有渲染方法
@@ -95,14 +136,35 @@
 现在开始填充画板的渲染方法代码，和元素的渲染方法代码
 
 ```csharp
+    public interface IPlatformVisual
+    {
+        void DrawEllipse(Point point, double radiusX, double radiusY, Color? pen, Color? brush);
+    }
 
+    public class Board
+    {
+        public void DrawEllipse(Point point, double radiusX, double radiusY, Color? pen, Color? brush)
+        {
+            PlatformVisual.DrawEllipse(point, radiusX, radiusY, pen, brush);
+        }
+    }
 ```
 
-元素提供的是虚方法，可以被其他的元素重写
+元素的渲染是通过 DrawingContext 渲染，在 DrawEllipse 方法需要将元素给的画出来的坐标加上元素的坐标，然后就直接调用 Board 的方法
 
 ```csharp
+    public class DrawingContext
+    {
+
+        public void DrawEllipse(Point point, double radiusX, double radiusY, Color? pen, Color? brush)
+        {
+            point = new Point(ElementPoint.X + point.X, ElementPoint.Y + point.Y);
+            Board.DrawEllipse(point, radiusX, radiusY, pen, brush);
+        }
+    }
 
 ```
+
 
 
 现在一个最简单的 UI 框架已经完成，虽然还没有写输入的代码，验证这个 UI 框架是否可行，可以使用真实的代码跑一下。
@@ -111,9 +173,33 @@
 
 第一步就是封装一下 win2d 的代码，这样 win2d 的概念在下面也就不会提及了。即使有提交也只是 win2d 的 [CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html) 刚才封装的画板的渲染方法，需要支持元素在某个坐标绘制写了很多代码，而在 win2d 因为存在了[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)只需要使用很少量的代码就可以做到，因为[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)支持在里面绘制，然后在 Canvas 的任意坐标画出[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html) 这样就可以完成画布的渲染方法。
 
-```csharp
+这里的 IPlatformVisual 就是平台的元素渲染接口，本文使用 win2d 需要继承这个接口实现一个类
 
+```csharp
+   public class DrawVisual : IPlatformVisual
+    {
+        /// <inheritdoc />
+        public void DrawEllipse(Point point, double radiusX, double radiusY, Color? pen, Color? brush)
+        {
+            DrawVisualList.Add(ds =>
+            {
+                if (pen != null)
+                {
+                    ds.DrawEllipse((float) point.X, (float) point.Y, (float) radiusX, (float) radiusY, pen.Value);
+                }
+
+                if (brush != null)
+                {
+                    ds.FillEllipse((float) point.X, (float) point.Y, (float) radiusX, (float) radiusY, brush.Value);
+                }
+            });
+        }
+
+        public List<Action<CanvasDrawingSession>> DrawVisualList { get; } = new List<Action<CanvasDrawingSession>>();
+    }
 ```
+
+这个 DrawVisual 类的实现是将调用的方法暂时放在列表，等待调用才画出。在不同的平台可以使用不同的实现，只要调用了对应的方法就可以在界面画出就可以
 
 第二步是创建一个元素继承元素，创建的元素就叫椭圆，这个元素就是画出椭圆。
 
