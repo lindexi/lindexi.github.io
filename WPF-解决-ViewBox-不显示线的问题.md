@@ -82,7 +82,7 @@ ViewBox 是一个好用的东西，但是在他缩小的时候，可能有一些
 
 这样可以返回一个 BitmapImage ，于是就得到从输入一个控件到输出一个图片
 
-通过上面的方法，可以使用和 VisualBrush 的方法，把控件转为图片，但是效率没有 visualBrush 那么高。不过效率大概比 VisualBrush 时间大概多不到 50 毫秒在1280*720P的控件。当然我的配置比较高也有关，TransformedBitmap 的代码是在 GPU 计算的，而截图是在 UI 线程，所以需要注意一下。
+通过上面的方法，可以使用和 VisualBrush 的方法，把控件转为图片，但是效率没有 visualBrush 那么高。不过在 `1280*720P` 的控件效率大概比 VisualBrush 时间大概多不到 50 毫秒。当然我的配置比较高也有关，TransformedBitmap 的代码是在 GPU 计算的，而截图是在 UI 线程，所以需要注意一下。
 
 总的代码就是：
 
