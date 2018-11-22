@@ -912,6 +912,8 @@
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
 
+ * [WPF 托盘显示](WPF-托盘显示.md)
+
  * [WPF 拖动时出现 Invalid FORMATETC structure](WPF-拖动时出现-Invalid-FORMATETC-structure.md)
 
  * [WPF 拖动滚动](WPF-拖动滚动.md)
