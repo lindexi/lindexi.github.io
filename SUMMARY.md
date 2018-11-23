@@ -1032,6 +1032,8 @@
 
  * [博客](博客.md)
 
+ * [国内好用的 DNS 列表](国内好用的-DNS-列表.md)
+
  * [图论 Warshall 和Floyd 矩阵传递闭包](图论-Warshall-和Floyd-矩阵传递闭包.md)
 
  * [在 Windows 下那些好用的调试软件](在-Windows-下那些好用的调试软件.md)
