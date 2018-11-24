@@ -78,4 +78,52 @@ cmd> msbuild /p:Platform=x86
 /p:AppxBundlePlatforms="x86|x64|ARM" /p:AppxPackageDir="D:\lindexi\AppxPackages\\" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:platform="x86" /p:configuration="release" /p:VisualStudioVersion="15.0" 
 ```
 
+如果需要输出可以上传的包，需要先在本地链接到应用商店，然后执行下面代码
+
+```bash
+msbuild /t:restore /t:Publish /p:Configuration=Release /p:AppxPackageDir="D:\lindexi\AppxPackages\\" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundlePlatforms="x86|x64|arm"
+```
+
+如果是需要编译其他的解决方案，也就是当前的工作文件夹不在指定的项目文件夹，可以在 msbuild 后面添加解决方案的路径。注意这个路径需要使用 `csproj` 文件
+
+```bash
+msbuild "D:\lindexi\UWP\Foo.csproj" /t:restore /t:Publish /p:Configuration=Release /p:AppxPackageDir="D:\lindexi\AppxPackages\\" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundlePlatforms="x86|x64|arm"
+```
+
+如果是在服务器端编译，推荐先清理一下，然后再重新编译
+
+清理的命令，请注意，如果需要带路径，对于清理命令需要加上 sln 文件
+
+```bash
+msbuild  /t:clean
+
+// 带路径
+msbuild "E:\lindexi\UWP\Foo.sln" /t:clean
+```
+
+还原 Nuget 包
+
+```bash
+msbuild /t:restore 
+
+// 带路径
+msbuild "E:\lindexi\UWP\Foo.sln" /t:restore
+```
+
+重新编译
+
+```bash
+msbuild "D:\lindexi\UWP\Foo.csproj" /t:rebuild /t:Publish /p:Configuration=Release /p:AppxPackageDir="D:\lindexi\AppxPackages\\" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundlePlatforms="x86|x64|arm"
+```
+
+例如在集成工具使用，实际大多数的集成工具默认都有配置 UWP 的编译，具体请看 [win10 uwp 使用 Azure DevOps 自动构建 - lindexi - CSDN博客](https://blog.csdn.net/lindexi_gd/article/details/84252226 ) [win10 uwp 使用 AppCenter 自动构建 - lindexi - CSDN博客](https://blog.csdn.net/lindexi_gd/article/details/84252406 )
+
+在集成工具需要自己写编译的流程的时候，推荐下面的步骤
+
+1. `git clean -xdf` 保证清理 
+1. `msbuild /t:clean` 如果有了 git 的清理，实际也就不需要使用 `msbuild` 的清理，只是防止有逗比上传了 obj 文件夹
+1. `msbuild /t:restore` 欢迎 nuget 包，注意添加自己的 nuget 网站，如果自己用了内部的 nuget 就需要自己添加
+1. `msbuild /t:rebuild /t:Publish /p:Configuration=Release /p:AppxPackageDir="D:\lindexi\AppxPackages\\" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundlePlatforms="x86|x64|arm"` 创建可以上传的文件，注意需要先链接应用商店，然后再将代码上传到 git 才可以创建出可以发到应用商店的文件。这时使用本地的测试证书也可以
+1. `git clean` 再次清理文件，如果自己的 AppxPackageDir 文件夹在工程所在的文件夹，这时就不要使用 git clean 了
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
