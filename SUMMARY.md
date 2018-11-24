@@ -16,6 +16,8 @@
 
  * [C# 7.0 使用下划线忽略使用的变量](C-7.0-使用下划线忽略使用的变量.md)
 
+ * [C# 7.2 通过 in 和 readonly struct 减少方法值复制提高性能](C-7.2-通过-in-和-readonly-struct-减少方法值复制提高性能.md)
+
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)
 
  * [C# const 和 readonly 有什么区别](C-const-和-readonly-有什么区别.md)
