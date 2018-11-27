@@ -1,11 +1,9 @@
 
 # win10 UWP Controls by function
 
-Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其中一些有可视化，一些布局。
-一些控件例子：[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics )
+Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 我现在做的一个中文版的，很多都是照着微软写，除了注释
-我们先学微软做一个简单的frame，新建Page，
-里面放title和跳转页
+我们先学微软做一个简单的frame，新建Page，里面放title和跳转页
 
 <!--more-->
 
@@ -55,11 +53,9 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         private string _title;
     }
 ```
-我们需要把所有页放到一个类，本来这个类可以不弄，直接放Page
-使用索引
-最后我还是想给宝资通打广告
-弄了一个类，本来应该叫page管理器，我叫baozitong
-输入title返回type
+我们需要把所有页放到一个类，本来这个类可以不弄，直接放 Page 列表，使用索引，最后我还是想给宝资通打广告，所以弄了一个类，本来应该叫page管理器，于是现在修改为 baozitong 。
+
+输入title返回type 也就是页面的 Type 可以用来跳转
 
 ```csharp
        public static Type page(string title)
@@ -77,7 +73,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
        {
            set;
            get;
-       }=new List<page>()
+       } = new List<page>()
        {
            new page()
            {
@@ -86,9 +82,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
            }
        };
 ```
-每次添加page可以在baozitong._page new page
 
-界面splitview
+每次添加page可以在 `baozitong._page` 添加新的页面，通过 `new page()` 的方式添加
+
+界面是一个简单的 splitview 请看代码
 
 ```xml
         <ToggleButton Grid.Row="0" IsChecked="{Binding ElementName=split,Path=IsPaneOpen,Mode=TwoWay}" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"></ToggleButton>
@@ -116,16 +113,23 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 
 ## Appbars and commands
+
 ### App bar
+
 用于显示应用程序特定命令的工具栏。
+
 ### App bar button
+
 使用app bar风格按钮
+
 一个简单的按钮
 
 ```xml
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center"/>
 ```
+
 ![](http://image.acmx.xyz/16-3-28/82963283.jpg)
+
 我们可以加上内容
 
 ```xml
@@ -137,7 +141,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </AppBarButton>
 ```
 ![](http://image.acmx.xyz/16-3-28/51594850.jpg)
-我们可以在按钮加浮出
+
+我们可以在按钮加浮出的效果
 
 ```xml
             <AppBarButton Icon="OpenWith" Label="浮出">
@@ -151,12 +156,17 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </AppBarButton>
 ```
 
+运行代码可以看到下面的界面
+
 ![](http://image.acmx.xyz/16-3-28/93606598.jpg)
 
 ![](http://image.acmx.xyz/16-3-28/29257708.jpg)
+
 ### App bar separator
+
 命令栏中的命令组。
-如果我们有很多按钮，我们可以使用
+
+如果我们有很多按钮，我们可以使用 AppBarSeparator 进行分割
 
 ```xml
             <AppBarButton Content="林德熙"></AppBarButton>
@@ -201,7 +211,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 ![](http://image.acmx.xyz/16-3-28/32449489.jpg)
 
-我们也看到最后的按钮，如果有一些用不到，但是有用
+我们也看到最后的按钮，如果有按钮不是常用的，就可以放在 SecondaryCommands 进行折叠
 
 ```xml
             <CommandBar.SecondaryCommands>
@@ -209,6 +219,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 <AppBarButton Label="红黑转载"/>
             </CommandBar.SecondaryCommands>
 ```
+
 ![](http://image.acmx.xyz/16-3-28/15333552.jpg)
 
 ## Buttons
@@ -220,8 +231,10 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```xml
 <Button Margin="72,163,0,0" Content="请勿转载"></Button>
 ```
+
 ![](http://image.acmx.xyz/16-3-28/84807449.jpg)
-按钮点击可以使用`X:Bind`
+
+按钮点击可以使用`X:Bind`绑定 ViewModel 的方法
 
 ### Hyperlink
 
@@ -232,16 +245,17 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
            <Hyperlink NavigateUri="http://blog.csdn.net/lindexi_gd"> 博客发在csdn </Hyperlink>，没有授权红黑转载，没有授权推酷转载
         </TextBlock>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328093500345)
 
 ### Repeat button
 
 用户点击不停响应。
 
+和 Button 不同的在于，用户按住 Repeat button 会不断触发点击的事件
 
 ## Collection/data controls
 
 ### Flip view
+
 幻灯片播放
 
 ```xml
@@ -250,21 +264,30 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             <Image Source="Assets/QQ截图20160328094435.png"></Image>
       </FlipView>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328094747930)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328094747930) -->
 
-[http://www.cnblogs.com/Damai-Pang/p/5201206.html](http://www.cnblogs.com/Damai-Pang/p/5201206.html )
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function3.png) -->
+
+![](https://i.loli.net/2018/11/26/5bfbdc74adc23.jpg)
+
+
+更好看的效果请看 [分享大麦UWP版本开发历程-01.响应式轮播顶部焦点图 - 大麦胖哥 - 博客园](http://www.cnblogs.com/Damai-Pang/p/5201206.html )
 
 ### Grid view
+
 行列布局，可以水平滚动控件。
 
 
 ### Items control
+
 提供UI指定数据模板
 
 
 ### List view
-在一个列表上的项目的集合,可以垂直滚动控件
-我们做一个viewmodel
+
+在一个列表上的项目的集合，可以垂直或水平滚动的控件
+
+在演示如何使用之前，先创建一个 viewmodel 用来放数据
 
 ```csharp
     public class viewmodel : notify_property
@@ -275,7 +298,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         }
     }
 ```
-我们依列表
+
+如果绑定的属性列表需要在值发生添加的时候动态修改界面的列表，需要使用 ObservableCollection 获得通过[win10 uwp 通知列表](https://lindexi.gitee.io/post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8.html )的方法
 
 ```csharp
         public ObservableCollection<string> lindexi
@@ -289,6 +313,8 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         };
 ```
 
+在界面绑定 ViewModel 的属性
+
 ```xml
         <ListView ItemsSource="{x:Bind view.lindexi}">
             <ListView.ItemTemplate>
@@ -299,24 +325,47 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         </ListView>
 ```
 
-![这里写图片描述](http://img.blog.csdn.net/20160328095934262)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328095934262) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function4.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018112619448552)
+
 ## Date and time controls
+
 ### Calendar date picker
+
 日历日期选择器
-![这里写图片描述](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/images/controls/calendar-date-picker-open.png)
-![这里写图片描述](http://img.blog.csdn.net/20160328100448795)
+
+![](http://image.acmx.xyz/lindexi%2F2018112619393562)
+
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328100448795) -->
 
 ### Calendar view
+
 日程表，让用户选择日期
-![这里写图片描述](http://img.blog.csdn.net/20160328100619968)
+
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328100619968) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194222738)
 
 ### Time picker
+
 用户选择一个时间
-![这里写图片描述](http://img.blog.csdn.net/20160328100844891)
+
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328100844891) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194313564)
 
 ## Flyouts
+
 ### Flyout
-显示一条消息
+
+这是浮出控件，简单的使用是用来显示一条消息
 
 ```xml
         <Button Margin="200,153,0,0" Content="请勿转载">
@@ -329,9 +378,13 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
             </Button.Flyout>
         </Button>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328101517643)
+
+![](http://image.acmx.xyz/lindexi%2F20181126194153688)
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function0.png) -->
 
 ### Menu flyout
+
 暂时显示命令或列出选项给用户选择
 
 ```xml
@@ -347,10 +400,12 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 
 ### Popup menu
+
 弹出自己写的菜单
 
 ### Tooltip
-提示
+
+提示，使用方法和 Flyout 差不多
 
 ```xml
 <Button Content="Button" Click="请勿转载" 
@@ -358,16 +413,24 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 
 ## Images
+
 ### Image
+
 图片
 
 ```xml
 <Image Source="Assets/QQ截图20160328094421.png"></Image>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328102111052)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328102111052) -->
 
-如果需要gif可以 [http://www.songsong.org/post/2015/10/11/ImageLib.html](http://www.songsong.org/post/2015/10/11/ImageLib.html )
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function5.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018112619443717)
+
+如果需要gif的图片显示请看 [http://www.songsong.org/post/2015/10/11/ImageLib.html](http://www.songsong.org/post/2015/10/11/ImageLib.html )
+
 ## Graphics and ink
+
 ### InkCanvas
 
 ```xml
@@ -376,10 +439,18 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 手写
 
-![这里写图片描述](http://img.blog.csdn.net/20160328104717281)
-保存文件可以去edi.wang
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328104717281) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function6.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194452388)
+
+更多关于笔迹请看 [win10 uwp 使用油墨输入](https://blog.csdn.net/lindexi_gd/article/details/51119878 )
+
+保存文件可以去 edi.wang 的博客看
 
 ### Shapes
+
 椭圆,矩形、线、贝塞尔曲线路径
 
 ```xml
@@ -407,24 +478,51 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 </Path.Data>
             </Path>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328104402311)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328104402311) -->
 
-![这里写图片描述](http://img.blog.csdn.net/20160328104416904)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328104416904) -->
 
-![这里写图片描述](http://img.blog.csdn.net/20160328104446701)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328104446701) -->
 
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function7.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194546865)
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function8.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194556519)
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function9.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018112619465737)
 
 
 ## Layout controls
+
 ### Border
-边框
+
+边框，里面只能包含一个控件，如果包含的是 Grid 等容器就可以在容器里面放其他的控件
+
 ### Canvas
+
 画板
+
+里面的控件使用 Canvas 的左上角作为 (0,0) 此后使用 Margin 等计算坐标
+
 ### Grid
+
 网格布局
+
+可以将控件放到指定的行列，属于很常用的控件
+
 ### StackPanel
+
 堆放布局
+
+关于 Grid 和 StackPanel 的布局请看 [学习UWP开发-Grid和StackPanel表格布局](https://blog.csdn.net/u010168422/article/details/50998784 )
+
 ### Scroll viewer
+
 滚动视图
 
 ```xml
@@ -437,6 +535,7 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 ```
 
 ### Viewbox
+
 可以改变内容的长宽
 
 ```xml
@@ -450,13 +549,18 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                     <TextBlock Margin="10,10,10,10" Text="林德熙"></TextBlock>
                 </Viewbox>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328105901874)
+
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328105901874) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function10.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194635434)
 
 ## Media controls
+
 ### Media element
+
 播放视频
-其实我之前用它播放音频[https://github.com/lindexi/Markdown](https://github.com/lindexi/Markdown )
-![](http://img.blog.csdn.net/20160229103657266)
 
 ```csharp
         private async void speech(string str, MediaElement media_element)
@@ -469,15 +573,26 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         }
 ```
 
-还有没写好，全屏出问题，可以来我博客[http://blog.csdn.net/lindexi_gd之后找到解决将会写一个，可能是预览版，在真机就出错](http://blog.csdn.net/lindexi_gd之后找到解决将会写一个，可能是预览版，在真机就出错 )
+语音分析的功能需要在权限打开麦克风，上面代码是将文本读出来
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function11.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194736481)
+
+其实我之前用它播放音频，使用的项目请看 [https://github.com/lindexi/Markdown](https://github.com/lindexi/Markdown )
+
+这个项目还有没写好，在全屏出问题，关于这个项目使用的技术请看 http://blog.csdn.net/lindexi_gd 之后找到解决将会写新的博客
 
 
 ### MediaTransportControls
+
 控制播放
 
 
 ## Navigation
+
 ### Hub
+
 全景视图控件
 
 ```xml
@@ -515,22 +630,41 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
                 </HubSection>
             </Hub>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328154021083)
+
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328154021083) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function12.png) -->
+
+![](https://i.loli.net/2018/11/26/5bfbdda364dcc.jpg)
 
 ## Progress controls
+
 ### Progress bar
+
 进度条
+
+进度条分为带进度的和不带进度的
 
 ```xml
  <ProgressBar Value="10" Height="100"></ProgressBar>
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328154251243)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328154251243) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function13.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126194913444)
+
+通过设置属性 IsIndeterminate 可以设置为不带进度的进度条
 
 ```xml
         <ProgressBar Value="10" IsIndeterminate="True" Height="100"></ProgressBar>
 ```
 
-![这里写图片描述](http://img.blog.csdn.net/20160328154439319)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328154439319) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function14.png) -->
+
+![](https://i.loli.net/2018/11/26/5bfbddd51ed7c.jpg)
 
 ### Progress ring
 
@@ -538,8 +672,20 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
         <ProgressRing Width="100" IsActive="True"></ProgressRing>
 ```
 
-![这里写图片描述](http://img.blog.csdn.net/20160328154621201)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328154621201) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function15.png) -->
+
+![](https://i.loli.net/2018/11/26/5bfbde08cbb2b.jpg)
+
+更多进度条请看 
+
+[win10 uwp 进度条 Marquez](https://lindexi.gitee.io/post/win10-uwp-%E8%BF%9B%E5%BA%A6%E6%9D%A1-Marquez.html )
+
+[win10 uwp 进度条 WaveProgressControl](https://lindexi.gitee.io/post/win10-uwp-%E8%BF%9B%E5%BA%A6%E6%9D%A1-WaveProgressControl.html )
+
 ## Text controls
+
 ### Auto suggest box
 
 ```xml
@@ -547,10 +693,16 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 
 ```
-需要在后台[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox )
+需要在后台写一些代码，请看 [https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox )
 
-![这里写图片描述](http://img.blog.csdn.net/20160328161238579)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328161238579) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function16.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126195126391)
+
 ### Password box
+
 密码输入
 
 ```xml
@@ -558,7 +710,11 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 ```
 
-![这里写图片描述](http://img.blog.csdn.net/20160328162337609)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328162337609) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function17.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126195139731)
 
 ### Rich edit box
 
@@ -600,15 +756,21 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 
 ### Text block
+
 简单输出文本
 
 ```xml
         <TextBlock HorizontalAlignment="Left" Margin="72,163,0,0" Text="博客发在csdn ，没有授权红黑转载，没有授权推酷转载" TextWrapping="Wrap"  VerticalAlignment="Top" ></TextBlock>
 
 ```
-![这里写图片描述](http://img.blog.csdn.net/20160328162542065)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328162542065) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function18.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126195226522)
 
 ### Text box
+
 用户输入文本
 
 ```xml
@@ -616,13 +778,19 @@ Windows的XAML UI框架提供了很多控件，支持用户界面开发库。其
 
 ```
 
-![这里写图片描述](http://img.blog.csdn.net/20160328162825523)
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160328162825523) -->
+
+<!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function19.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20181126195241312)
 
 博客：[http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
 
 现在委托csdn维权，没有授权的网站不要转载
 
-原文[https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/controls-by-function](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/controls-by-function )
+原文 [https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/controls-by-function](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/controls-by-function )
+
+一些控件例子 [https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics )
 
 
 
