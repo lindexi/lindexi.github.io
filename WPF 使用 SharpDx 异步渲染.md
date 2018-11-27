@@ -500,6 +500,8 @@ protected abstract void OnRender(SharpDX.Direct2D1.RenderTarget renderTarget);
 
 ```
 
+更多渲染博客请看 [WPF 底层渲染](https://blog.csdn.net/lindexi_gd/column/info/24324 )
+
 特别感谢 
 
 [Direct2D - 随笔分类 - 万仓一黍 - 博客园](http://www.cnblogs.com/grenet/category/507059.html )
