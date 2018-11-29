@@ -29,6 +29,8 @@
 
 所以做动画的时候需要不停触发重新渲染就使用 CanvasAnimatedControl ，关于这个控件，请看[win10 uwp 萤火虫效果](https://lindexi.gitee.io/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
 
+[Win2D 中的游戏循环：CanvasAnimatedControl](https://blog.csdn.net/WPwalter/article/details/84585594 )
+
 ## CanvasVirtualControl
 
 和 CanvasAnimatedControl 频繁重新画不相同的，在 CanvasVirtualControl 的使用范围是很少刷新
