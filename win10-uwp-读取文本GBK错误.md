@@ -69,7 +69,7 @@ https://bbs.uwp.ac.cn/?/article/43 有大神的方法，请看下面代码。
 //使用CodePagesEncodingProvider去注册扩展编码。
 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 //注册GBK编码
-Encoding encodingGbk =Encoding.GetEncoding("GBK");
+Encoding encodingGbk = Encoding.GetEncoding("GBK");
 ```
 
 如果找不到 CodePagesEncodingProvider ，请在nuget搜索`System.Text.Encoding.CodePages`，如果找不到 GBK ，那么请使用 GB3212 代替。
