@@ -862,6 +862,8 @@
 
  * [WPF 使用封装的 SharpDx 控件](WPF-使用封装的-SharpDx-控件.md)
 
+ * [WPF 修改 ItemContainerStyle 鼠标移动到未选中项效果和选中项背景](WPF-修改-ItemContainerStyle-鼠标移动到未选中项效果和选中项背景.md)
+
  * [WPF 修改图片颜色](WPF-修改图片颜色.md)
 
  * [WPF 修改按钮按下的颜色](WPF-修改按钮按下的颜色.md)
