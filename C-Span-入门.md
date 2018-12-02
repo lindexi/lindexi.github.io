@@ -148,6 +148,8 @@
 
 [C# - All About Span: Exploring a New .NET Mainstay](https://msdn.microsoft.com/en-us/magazine/mt814808.aspx )
 
+[通俗易懂，C#如何安全、高效地玩转任何种类的内存之Span(一)](https://www.cnblogs.com/justmine/p/10006621.html )
+
 
 
 
