@@ -308,4 +308,26 @@ namespace lindexi
 
 资源问题坑了[黄腾霄](https://huangtengxiao.gitee.io/ )两天，坑了我一天，所以我才把这个问题在这里和大家说，如果大家使用了上面说道的工具，就不需要了解这么多，做源代码包很简单
 
+## 解决 xaml 找不到方法问题
+
+如果使用的是 WPF 程序，就需要额外添加一些代码，在 csproj 文件的开始和最后添加这样的代码
+
+可以解决找不到xx类，或找不到 xx 方法或 `CS1061` xx 未包含 xx 的定义，并且找不到可接受的第一个 xx 参数的可访问扩展方法
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Condition="Exists('obj\xxx.csproj.nuget.g.props') " Project="obj\$(MSBuildProjectName).csproj.nuget.g.props" />
+
+  其他代码
+
+  <Import Condition="Exists('obj\xxx.csproj.nuget.g.targets') " Project="obj\$(MSBuildProjectName).csproj.nuget.g.targets" />
+</Project>
+```
+
+这里 xxx.csproj.nuget.g.targets 的 xxx 就是项目名，注意此时不能使用 `$(MSBuildProjectName)` 代替项目名，因为在编译过程是 `xxx_一段我看不懂的字符_wpftmp.csproj` 而不是直接的 `xxx` 项目
+
+也就是 `$(MSBuildProjectName).csproj.nuget.g.targets)` 是不对的，因为 `$(MSBuildProjectName)` 是延迟计算，在 Import 还没有计算出来值
+
+[MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://walterlv.com/post/problems-of-msbuild-and-nuget.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
