@@ -310,6 +310,8 @@
 
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
 
+ * [SourceYard 制作源代码包](SourceYard-制作源代码包.md)
+
  * [Sublime Text 好用的插件](Sublime-Text-好用的插件.md)
 
  * [Sublime Text 安装中文、英文字体](Sublime-Text-安装中文、英文字体.md)
