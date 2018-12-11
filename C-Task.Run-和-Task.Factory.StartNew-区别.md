@@ -115,6 +115,8 @@ Task.Factory.StartNew(foo,
     CancellationToken.None, TaskCreationOptions.DenyChildAttach, TaskScheduler.Default);
 ```
 
+实际上 `Task.Run(foo)` 可以认为是对 `Task.Factory.StartNew` 封装，使用简单的默认的参数。如果需要自己定义很多参数，就请使用 `Task.Factory.StartNew` 定义参数。
+
 
 
 
