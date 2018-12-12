@@ -344,6 +344,8 @@
 
  * [VisualStudio 2017 项目格式 自动生成版本号](VisualStudio-2017-项目格式-自动生成版本号.md)
 
+ * [VisualStudio 2019 尝试使用 C# 8.0 新的方式](VisualStudio-2019-尝试使用-C-8.0-新的方式.md)
+
  * [VisualStudio csproj 添加 ItemGroup 的 Service ](VisualStudio-csproj-添加-ItemGroup-的-Service-.md)
 
  * [VisualStudio 使用三个方法启动最新 C# 功能](VisualStudio-使用三个方法启动最新-C-功能.md)
