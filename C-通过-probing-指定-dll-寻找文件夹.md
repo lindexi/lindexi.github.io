@@ -34,7 +34,7 @@ abc\12\doubi.dll
 
 如果有两个不同的dll需要放在两个不同的文件夹，如 walter.dll 需要放在 walter 文件夹
 
-在 `<probing privatePath="abc\12" />` 里面使用分号表示不同的文件夹
+在 `<probing privatePath="abc\12" />` 里面使用分号表示不同的文件夹 `probing privatePath="abc\12;walter"` 不同的文件夹之间用分号分开
 
 ```csharp
 <?xml version="1.0" encoding="utf-8" ?>
@@ -47,7 +47,11 @@ abc\12\doubi.dll
 </configuration>
 ```
 
-这个 App.config 在编译之后会在输出文件夹找到 `xx.exe.config` 也就是通过修改这个文件可以在编译之后修改 dll 的文件夹
+这个 App.config 在编译之后会在被修改为 `程序集名.exe.config` 在输出文件夹找到 `xx.exe.config` 可以通过修改这个文件在编译之后修改 dll 的寻找文件夹
+
+如果是对于 C++ 的 dll 需要做特殊引用，如需要区分 x86 和 x64 请看 [C# 如何在项目引用x86 x64的非托管代码](https://lindexi.gitee.io/post/C-%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E5%BC%95%E7%94%A8x86-x64%E7%9A%84%E9%9D%9E%E6%89%98%E7%AE%A1%E4%BB%A3%E7%A0%81.html )
+
+不能直接添加一个 x86 文件和一个 x64 文件夹，通过 privatePath 同时指定文件夹的方式
 
 
 
