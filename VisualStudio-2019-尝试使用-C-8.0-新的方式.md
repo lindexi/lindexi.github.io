@@ -211,6 +211,8 @@ warning CS8602: Possible dereference of a null reference.
 
 参见：[Take C# 8.0 for a spin](https://blogs.msdn.microsoft.com/dotnet/2018/12/05/take-c-8-0-for-a-spin/ )
 
+[[翻译]初试C# 8.0 - WAKU - 博客园](https://www.cnblogs.com/waku/p/10094691.html )
+
 
 
 
