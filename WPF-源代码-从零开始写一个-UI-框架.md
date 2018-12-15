@@ -217,18 +217,47 @@
 第二步是创建一个元素继承元素，创建的元素就叫椭圆，这个元素就是画出椭圆。
 
 ```csharp
-
+    public class Ellipse : Element
+    {
+        public override void OnRender(DrawingContext dc)
+        {
+            dc.DrawEllipse(new Point(10, 10), 5, 5, null, Colors.Black);
+        }
+    }
 ```
 
-第三步尝试在画板画出元素
+第三步尝试在画板画出元素，创建一个 Board 出来，这就是画布。然后给画布注入渲染平台，也就是 `board.PlatformVisual = new DrawVisual()` 然后添加进入元素，接着调用 InvalidateVisual 方法触发绘制
 
 ```csharp
+            var board = new Board();
 
+            board.PlatformVisual = new DrawVisual();
+
+            board.ElementList.Add(new Ellipse());
+
+            board.InvalidateVisual();
 ```
 
-运行一下，已经可以看到最简单的UI框架的元素已经完成
+为了真的进行绘制，需要在 Win2D 的绘制方法做一点处理，因为调用 InvalidateVisual 是制作委托的方法进行绘制，也就是在 Board 里面调用元素的 OnRender 方法实际在 OnRender 方法调用 DrawVisual 的 DrawEllipse 不是立刻绘制到 win2d 而是将绘制存放到 DrawVisualList 里面，在实际的 Win2D 绘制的时候就需要拿到绘制，下面是 Win2D 的画布的 Draw 事件的代码
 
-但是元素是有基础元素和组合元素，上面所说的元素都是基础元素，基础元素就只包括绘制原语绘制出来的一个图形。
+```csharp
+       private void Canvas_OnDraw(CanvasControl sender, CanvasDrawEventArgs args)
+        {
+            using (var ds = args.DrawingSession)
+            {
+                foreach (var temp in ((DrawVisual) board.PlatformVisual).DrawVisualList)
+                {
+                    temp(ds);
+                }
+            }
+        }
+```
+
+运行一下，已经可以看到最简单的UI框架的元素已经完成，只是在 WPF 中调用 DrawContext 也不是进行立刻绘制，是需要发送到另一个线程进行绘制，和上面使用的方法差不多。调用绘制方法是存放如何绘制，只有在另一个线程才是读取绘制如何绘制画出元素。
+
+那么为什么需要经过 DrawingContext 的中转？请看下面的介绍，因为不是所有小伙伴都可以看懂 C# 的代码，所以就尽量使用说明的方式而不是真的写一个 UI 框架
+
+刚才只是实现了画布和元素的绘制，但是元素是有基础元素和组合元素，上面所说的元素都是基础元素，基础元素就只包括绘制原语绘制出来的一个图形。
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架4.png) -->
 
