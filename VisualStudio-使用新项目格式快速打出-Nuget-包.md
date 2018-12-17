@@ -159,6 +159,7 @@ nuget.exe spec
 
 [![](http://image.acmx.xyz/lindexi%2F20181115145816608)](https://r302.cc/xejeg0)
 
+[Create and publish a .NET Standard package using Visual Studio on Windows](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio )
 
 
 

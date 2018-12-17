@@ -93,6 +93,8 @@
 
 参见：[专栏：Roslyn 入门 - CSDN博客](https://blog.csdn.net/column/details/23159.html )
 
+[NuGet pack and restore as MSBuild targets](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets )
+
 
 
 
