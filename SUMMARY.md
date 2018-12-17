@@ -320,6 +320,8 @@
 
  * [sublime Text 正则替换](sublime-Text-正则替换.md)
 
+ * [SublimeText 快速打开当前文件的文件夹](SublimeText-快速打开当前文件的文件夹.md)
+
  * [SublimeText 粘贴图片保存到本地](SublimeText-粘贴图片保存到本地.md)
 
  * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
@@ -553,6 +555,8 @@
  * [win10 uwp 毛玻璃](win10-uwp-毛玻璃.md)
 
  * [win10 uwp 气泡](win10-uwp-气泡.md)
+
+ * [win10 uwp 求两个矩形相连的几何](win10-uwp-求两个矩形相连的几何.md)
 
  * [win10 uwp 渲染原理 DirectComposition 渲染](win10-uwp-渲染原理-DirectComposition-渲染.md)
 
