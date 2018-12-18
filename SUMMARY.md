@@ -844,6 +844,8 @@
 
  * [WPF 一个性能比较好的 gif 解析库](WPF-一个性能比较好的-gif-解析库.md)
 
+ * [WPF 一个空的 WPF 程序有多少个窗口](WPF-一个空的-WPF-程序有多少个窗口.md)
+
  * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
