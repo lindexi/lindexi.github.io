@@ -982,6 +982,8 @@
 
  * [WPF 解决 ListView 的滚动条不显示](WPF-解决-ListView-的滚动条不显示.md)
 
+ * [WPF 解决 PathTooLongException 路径太长](WPF-解决-PathTooLongException-路径太长.md)
+
  * [WPF 解决 ViewBox  不显示线的问题](WPF-解决-ViewBox-不显示线的问题.md)
 
  * [UWP WPF 解决 xaml 设计显示异常](UWP-WPF-解决-xaml-设计显示异常.md)
