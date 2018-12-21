@@ -482,6 +482,12 @@
 
 [https://github.com/dotnet/wpf/issues](https://github.com/dotnet/wpf/issues )
 
+课程视频
+
+<!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架36.png) -->
+
+[![](http://image.acmx.xyz/lindexi%2F20181221165716594)](https://r302.cc/jLj33n)
+
 
 
 
