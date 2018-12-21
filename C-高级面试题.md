@@ -136,6 +136,27 @@
     }
 ```
 
+再高级一点，写出下面的代码
+
+```csharp
+        static async Task Main(string[] args)
+        {
+            await await await await await await await await await await await await
+                await await await await await await await "林德熙是逗比";
+        }
+```
+
+其实很简单，也就是将 GetResult 修改一下，在上面的代码修改
+
+```csharp
+        public string GetResult()
+        {
+            return "林德熙是逗比";
+        }
+```
+
+因为返回值是 string 所以又可以继续等待
+
 
 
 
