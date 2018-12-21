@@ -454,6 +454,10 @@ await "不告诉你";
 
 这个代码是可以编译通过的，但是只有在我的设备，然后看了这个[博客](https://lindexi.gitee.io/post/C-await-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html )，可能你也可以在你的设备编译
 
+```csharp
+await await await await await await await await await await await await await await await await await await await await await await await "林德熙逗比";
+```
+
 ## 变量名使用中文
 
 实际上在C#支持所有 Unicode ，所以变量名使用中文也是可以的，而且可以使用特殊的字符
