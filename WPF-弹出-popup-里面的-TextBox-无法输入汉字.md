@@ -91,6 +91,35 @@ xxPopup.GotFocus += Popup_GotFocus;
 
 ```
 
+## 在 WinForms 弹出的 WPF 的 TextBox 无法输入问题
+
+刚刚 Siberia 问了我一个问题，为什么 WinForms 弹出的 WPF 的文本框无法输入数字，但是可以输入其他的内容
+
+一开始我认为的是绑定的问题，如果一个控件绑定了另一个控件，或者有后台代码绑定，有另一个控件绑定了输入框都有方法让用户输入的数字不显示
+
+如果是我在调试，我会先拿到 TextChanged 事件，看是不显示还是没有接收到输入
+
+另外需要判断当前的焦点是否在 TextBox 上
+
+按照这个方法会发现有焦点，但是没有 TextChanged 收到输入，这时因为 WinForms 弹出的 WPF 程序消息循环的键盘事件的问题，对于中文的输入，有输入法在 HasKeyboardFocusCore 拿到输入，但是如果数字不经过输入法就在 WinForms 收到数字
+
+解决的方法是调用 EnableModelessKeyboardInterop 传入 WPF 就可以
+
+```csharp
+Window winWPF = new Window();  //WinWPF为想要显示的WPF窗体。
+System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop(winWPF);     
+winWPF.Show(); 
+
+```
+
+[WPF 禁用TextBox的触摸后自动弹出虚拟键盘 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/archive/2018/12/21/10154433.html )
+
+[解决Winform中弹出WPF窗体不能在文本框中输入的问题 - 飞鹰的专栏 - CSDN博客](https://blog.csdn.net/feiying008/article/details/9928441 )
+
+[Windows 窗体和 WPF 互操作性输入 - 小而美 - CSDN博客](https://blog.csdn.net/lovexiaoxiao/article/details/8862334 )
+
+[ElementHost.EnableModelessKeyboardInterop(Window) Method (System.Windows.Forms.Integration)](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.integration.elementhost.enablemodelesskeyboardinterop?view=netframework-4.7.2 )
+
 
 
 
