@@ -848,6 +848,8 @@
 
  * [WPF 一个空的 WPF 程序有多少个窗口](WPF-一个空的-WPF-程序有多少个窗口.md)
 
+ * [WPF 从 DrawingVisual 转 BitmapImage 图片](WPF-从-DrawingVisual-转-BitmapImage-图片.md)
+
  * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
