@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：.net remoting,rpc,wpf -->
 
 <div id="toc"></div>

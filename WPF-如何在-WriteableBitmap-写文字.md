@@ -105,6 +105,10 @@
 
 [SharpGL(Opengl)入门之纹理星球 - BIT祝威 - 博客园](http://www.cnblogs.com/bitzhuwei/archive/2013/05/21/Opengl_Sharpgl_dragtextured_planet_drag_drop.html )
 
+[使用不安全代码将 Bitmap 位图转为 WPF 的 ImageSource 以获得高性能和持续小的内存占用 - walterlv的专栏 - CSDN博客](https://blog.csdn.net/WPwalter/article/details/78619679 )
+
+[基于WriteableBitmap对象类采用擦写内存方式，低开销更新WPF Image UI控件 - Ivan_Whisper的博客 - CSDN博客](https://blog.csdn.net/Ivan_Whisper/article/details/80312586 )
+
 
 
 
