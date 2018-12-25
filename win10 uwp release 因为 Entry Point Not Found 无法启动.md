@@ -3,7 +3,6 @@
 本文告诉大家如果在使用 release 编译时，无法启动应用，出现 Entry Point Not Found 如何让应用运行。
 
 <!--more-->
-<!-- csdn -->
 
 ```csharp
 程序“[30760] xx.exe”已退出，返回值为 -1073741511 (0xc0000139) 'Entry Point Not Found'。

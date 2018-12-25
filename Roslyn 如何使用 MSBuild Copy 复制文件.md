@@ -3,7 +3,6 @@
 本文告诉大家如何在 MSBuild 里使用 Copy 复制文件
 
 <!--more-->
-<!-- csdn -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
 需要知道 Rosyln 是 MSBuild 的 dotnet core 版本。
@@ -20,7 +19,7 @@
 
 需要注意，不要把 Copy 直接写在 Project 下，如下面的代码
 
-```csharp
+```
 <Project Sdk="Microsoft.NET.Sdk">
      <!-- 忽略代码 -->
    <Copy SourceFiles="lindexi.txt" DestinationFolder="LetirNuhe\" ></Copy>

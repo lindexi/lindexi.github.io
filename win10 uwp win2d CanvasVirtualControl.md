@@ -2,13 +2,12 @@
 
 本文来告诉大家 CanvasVirtualControl ，在什么时候使用这个控件。
 
-<!--more-->
 <!-- csdn -->
 
 <!-- <div id="toc"></div> -->
 <!-- 标签：uwp,win2d,渲染 -->
 
-在之前的入门教程[win10 uwp win2d](https://lindexi.gitee.io/post/win10-uwp-win2d.html )我直接用的是`CanvasControl`，实际上可以使用的画布还有下面两个
+在之前的入门教程[win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )我直接用的是`CanvasControl`，实际上可以使用的画布还有下面两个
 
  - [CanvasAnimatedControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm )
 
@@ -79,6 +78,8 @@ void VirtualControl_SizeChanged(object sender, SizeChangedEventArgs e)
 ```
 
 ## 其他博客
+
+[win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
 
 win2d 毛玻璃：[win10 uwp 毛玻璃](https://lindexi.gitee.io/post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83.html )
 
