@@ -13,7 +13,7 @@
 
 ## 安装
 
-首先需要使用 Nuget 安装 win2d ，安装参见[win10 uwp win2d](https://lindexi.gitee.io/post/win10-uwp-win2d.html )
+首先需要使用 Nuget 安装 win2d ，安装参见[win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
 
 如果没有更新 dot net core 那么在运行可能会出现下面异常`System.TypeLoadException: Requested Windows Runtime type 'Microsoft.Graphics.Canvas.Text.CanvasTextLayout' is not registered`
 
@@ -99,6 +99,8 @@ await canvasRenderTarget.SaveAsync(await file.OpenAsync(FileAccessMode.ReadWrite
 现在这个功能写在图床
 
 ![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018318182752.jpg)
+
+[win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
 
 
 
