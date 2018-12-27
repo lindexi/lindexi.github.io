@@ -934,6 +934,8 @@
 
  * [WPF 开发自动开机启动程序](WPF-开发自动开机启动程序.md)
 
+ * [WPF 开启 ScrollViewer 的触摸滚动](WPF-开启-ScrollViewer-的触摸滚动.md)
+
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
@@ -961,6 +963,8 @@
  * [WPF 渲染级别](WPF-渲染级别.md)
 
  * [WPF 源代码 从零开始写一个 UI 框架](WPF-源代码-从零开始写一个-UI-框架.md)
+
+ * [WPF 的 ManipulationCompleted 事件可能什么时候触发](WPF-的-ManipulationCompleted-事件可能什么时候触发.md)
 
  * [WPF 省市县3级联动](WPF-省市县3级联动.md)
 
