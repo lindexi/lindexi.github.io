@@ -260,6 +260,8 @@
 
  * [MobaXterm 使用代理](MobaXterm-使用代理.md)
 
+ * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
+
  * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
 
  * [PTA 6-2 多项式求值](PTA-6-2-多项式求值.md)
@@ -851,6 +853,8 @@
  * [WPF 从 DrawingVisual 转 BitmapImage 图片](WPF-从-DrawingVisual-转-BitmapImage-图片.md)
 
  * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
+
+ * [WPF 从文件创建图片的方法](WPF-从文件创建图片的方法.md)
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
 
