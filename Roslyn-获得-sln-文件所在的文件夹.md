@@ -4,9 +4,9 @@
 
 
 我找了很久没有发现 SolutionDir 这个定义，所以只能通过一个不通用的方法找到
-<!-- 标签：Roslyn,MSBuild,编译器 -->
 <!-- csdn -->
 <!-- more -->
+<!-- 标签：Roslyn,MSBuild,编译器 -->
 在之前的项目可以使用 PreBuildEvent 的方式指定编译之前事件，新的项目格式也可以支持这个方法，只是支持不是很好
 我就遇到在 Jenkins 无法编译通过，因为 PreBuildEvent 指定的 `$(SolutionDir)` 是空
 在新的项目格式，找了很久都没有找到 `$(SolutionDir)` 的定义和找到运行的 sln 文件的定义的方法
