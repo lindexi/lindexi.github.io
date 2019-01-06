@@ -40,6 +40,8 @@
 
  * [C# 不能用于文件名的字符](C-不能用于文件名的字符.md)
 
+ * [C# 从 short 转 byte 方法](C-从-short-转-byte-方法.md)
+
  * [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](C-从零开始写-SharpDx-应用-初始化dx修改颜色.md)
 
  * [C# 从零开始写 SharpDx 应用 画三角](C-从零开始写-SharpDx-应用-画三角.md)
