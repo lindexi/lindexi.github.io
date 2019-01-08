@@ -974,6 +974,8 @@
 
  * [WPF 播放 gif](WPF-播放-gif.md)
 
+ * [WPF 最小的代码使用 DynamicRenderer 书写](WPF-最小的代码使用-DynamicRenderer-书写.md)
+
  * [WPF 渲染原理](WPF-渲染原理.md)
 
  * [WPF 渲染级别](WPF-渲染级别.md)
@@ -1009,6 +1011,8 @@
  * [WPF 解决 ListView 的滚动条不显示](WPF-解决-ListView-的滚动条不显示.md)
 
  * [WPF 解决 PathTooLongException 路径太长](WPF-解决-PathTooLongException-路径太长.md)
+
+ * [WPF 解决 StylusPlugIn 点击穿透问题](WPF-解决-StylusPlugIn-点击穿透问题.md)
 
  * [WPF 解决 ViewBox  不显示线的问题](WPF-解决-ViewBox-不显示线的问题.md)
 
