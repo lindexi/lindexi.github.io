@@ -7,6 +7,7 @@
 
 
 <!-- csdn -->
+<!-- 标签：WPF，笔迹 -->
 
 先创建一个 UIElement 自定义一个，因为 DynamicRenderer 继承于 StylusPlugIn 需要使用 UIElement 的 StylusPlugIns 属性才能添加他
 

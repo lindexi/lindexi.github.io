@@ -7,6 +7,7 @@
 
 
 <!-- csdn -->
+<!-- 标签：WPF，笔迹 -->
 
 如果写一个简单的 StylusPlugIn 附加到元素上，可以很快知道我说的问题
 
@@ -169,6 +170,10 @@
 第一个方法是需要在其他所有元素上面添加 StylusPlugIn 有代码耦合
 
 第二个方法需要等待主线程收到消息，在笔迹就出现点击的时候出现了闪烁，因为触摸线程比主线程先收到点击
+
+代码 [WPF 解决 StylusPlugIn 点击穿透问题-CSDN下载](https://download.csdn.net/download/lindexi_gd/10903908 )
+
+[WPF 高性能笔](https://lindexi.oschina.io/lindexi/post/WPF-%E9%AB%98%E6%80%A7%E8%83%BD%E7%AC%94.html )
 
 
 
