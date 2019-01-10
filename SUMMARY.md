@@ -878,6 +878,8 @@
 
  * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
 
+ * [WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示](WPF-使用-RenderTargetBitmap-快速截图出现-COMException-提示.md)
+
  * [WPF 使用 SharpDX 在 D3DImage 显示](WPF-使用-SharpDX-在-D3DImage-显示.md)
 
  * [WPF 使用 SharpDx 异步渲染](WPF-使用-SharpDx-异步渲染.md)
