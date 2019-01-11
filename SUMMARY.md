@@ -190,6 +190,8 @@
 
  * [dotnet core 添加 SublimeText 编译插件](dotnet-core-添加-SublimeText-编译插件.md)
 
+ * [dotnet core 用值初始化整个数组](dotnet-core-用值初始化整个数组.md)
+
  * [dotnet core 编程规范](dotnet-core-编程规范.md)
 
  * [dotnet core 通过修改文件头的方式隐藏控制台窗口](dotnet-core-通过修改文件头的方式隐藏控制台窗口.md)
@@ -1125,6 +1127,8 @@
  * [安装 aria2](安装-aria2.md)
 
  * [安装 pip](安装-pip.md)
+
+ * [安装 Sureface Hub 系统 Windows 10 team PPIPro 系统](安装-Sureface-Hub-系统-Windows-10-team-PPIPro-系统.md)
 
  * [安装 wordpress 出现 抱歉，我不能写入wp-config.php文件](安装-wordpress-出现-抱歉，我不能写入wp-config.php文件.md)
 
