@@ -878,6 +878,8 @@
 
  * [WPF 使用 Edge 浏览器](WPF-使用-Edge-浏览器.md)
 
+ * [WPF 使用 ItemsPanel 修改方向](WPF-使用-ItemsPanel-修改方向.md)
+
  * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
 
  * [WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示](WPF-使用-RenderTargetBitmap-快速截图出现-COMException-提示.md)
