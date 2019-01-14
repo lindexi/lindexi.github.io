@@ -204,6 +204,8 @@
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
 
+ * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
+
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
 
  * [dotnet 设计规范 · 抽象类](dotnet-设计规范-·-抽象类.md)
