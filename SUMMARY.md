@@ -26,6 +26,8 @@
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
 
+ * [C# json 转 xml 字符串](C-json-转-xml-字符串.md)
+
  * [C# powshell 调用](C-powshell-调用.md)
 
  * [C# Span 入门](C-Span-入门.md)
