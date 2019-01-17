@@ -46,6 +46,40 @@
 当然，开源了 WPF 是很有底气的，既然你看到问题了，不要只是喷，你自己修啊
 
 
+另外，这个坑在 UWP 居然不会让 UWP 炸掉，只是让他的显示有些诡异
+
+步骤：
+
+1. 创建一个 xaml 界面，在里面添加一个 TextBox 元素
+
+1. 在后台代码给这个 TextBox 设置上面的字符串
+
+下面是 xaml 代码
+
+```csharp
+   <Grid>
+        <TextBox x:Name="Txt" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+    </Grid>
+```
+
+下面是后台代码
+
+```csharp
+        public MainPage()
+        {
+            this.InitializeComponent();
+
+            Txt.Text = new string('\u0483', 550);
+        }
+```
+
+现在尝试运行代码，可以看到下面的界面，打开的时候发现 TextBox 填充整个页面，再点击的时候就还原了。
+
+![](http://image.acmx.xyz/lindexi%2F20191179354379)
+
+已经将这个坑放在了 github 上 [UWP TextBox will Fill of the Page if they display text with too many combining marks](https://github.com/Microsoft/microsoft-ui-xaml/issues/194 ) 欢迎小伙伴帮我修语法
+
+
 
 
 
