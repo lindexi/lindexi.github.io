@@ -502,6 +502,8 @@
 
  * [win10 uwp 反射](win10-uwp-反射.md)
 
+ * [win10 uwp 发布的时候 ILC 编译不通过](win10-uwp-发布的时候-ILC-编译不通过.md)
+
  * [win10 UWP 发邮件](win10-UWP-发邮件.md)
 
  * [win10 uwp 右击选择 GridViewItem ](win10-uwp-右击选择-GridViewItem-.md)
