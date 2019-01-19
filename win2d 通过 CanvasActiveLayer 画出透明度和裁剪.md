@@ -5,6 +5,8 @@
 <!--more-->
 <!-- csdn -->
 
+<!-- 标签：uwp,win2d -->
+
 在 win2d 如果需要对某个元素裁剪，可以使用很多方法，本文只是告诉大家使用图层的方法裁剪。如果熟悉 WPF 那么对于这个裁剪将会比较简单，当然没有接触过 WPF 的小伙伴也可以继续看，如果有发现不懂的，欢迎在评论喷
 
 首先创建一个 win2d 的控件，如何安装 win2d 请看 [win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html ) 
@@ -236,6 +238,28 @@
 
 ![](http://image.acmx.xyz/lindexi%2F201911982129485)
 
-[CanvasActiveLayer](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasActiveLayer.htm )
+关于如何做出一个 Geometry 和更多博客请看
+
+[win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
+
+win2d 毛玻璃：[win10 uwp 毛玻璃](https://lindexi.gitee.io/post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83.html )
+
+[win10 uwp 萤火虫效果](https://lindexi.gitee.io/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
+
+[win2d 图片水印](https://lindexi.gitee.io/post/win2d-%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0.html )
+
+[win2d CanvasRenderTarget vs CanvasBitmap](https://lindexi.gitee.io/post/win2d-CanvasRenderTarget-vs-CanvasBitmap.html )
+
+[win10 uwp win2d 使用 Path 绘制界面](https://lindexi.gitee.io/post/win10-uwp-win2d-%E4%BD%BF%E7%94%A8-Path-%E7%BB%98%E5%88%B6%E7%95%8C%E9%9D%A2.html )
+
+[win10 uwp win2d 离屏渲染](https://lindexi.gitee.io/post/win10-uwp-win2d-%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.html )
+
+[win2d 画出好看的图形](https://lindexi.gitee.io/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2.html )
+
+[win10 uwp win2d 特效](https://lindexi.gitee.io/post/win10-uwp-win2d-%E7%89%B9%E6%95%88.html )
+
+[win10 uwp 通过 win2d 画出笔迹](https://lindexi.gitee.io/post/win10-uwp-%E9%80%9A%E8%BF%87-win2d-%E7%94%BB%E5%87%BA%E7%AC%94%E8%BF%B9.html )
+
+文档： [CanvasActiveLayer](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasActiveLayer.htm )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
