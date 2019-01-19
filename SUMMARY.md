@@ -822,6 +822,8 @@
 
  * [win2d 画出好看的图形](win2d-画出好看的图形.md)
 
+ * [win2d 通过 CanvasActiveLayer 画出透明度和裁剪](win2d-通过-CanvasActiveLayer-画出透明度和裁剪.md)
+
  * [Windows 10 16251 添加的 api](Windows-10-16251-添加的-api.md)
 
  * [windows 10预览版升级win10 7月29 10240.16384](windows-10预览版升级win10-7月29-10240.16384.md)
