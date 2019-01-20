@@ -380,6 +380,8 @@
 
  * [VisualStudio 合并代码文件](VisualStudio-合并代码文件.md)
 
+ * [VisualStudio 安装 Python 开发](VisualStudio-安装-Python-开发.md)
+
  * [VisualStudio 扩展开发](VisualStudio-扩展开发.md)
 
  * [visualStudio 无法登陆](visualStudio-无法登陆.md)
