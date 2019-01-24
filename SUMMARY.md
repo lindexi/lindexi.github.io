@@ -992,6 +992,8 @@
 
  * [WPF 播放 gif](WPF-播放-gif.md)
 
+ * [WPF 文字描边](WPF-文字描边.md)
+
  * [WPF 最小的代码使用 DynamicRenderer 书写](WPF-最小的代码使用-DynamicRenderer-书写.md)
 
  * [WPF 渲染原理](WPF-渲染原理.md)

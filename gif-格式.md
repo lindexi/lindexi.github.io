@@ -126,6 +126,8 @@ gif 会把相同的图片作为索引，放在lzw，之后相同的数据就使�
 
 [gif的故事：解剖表情动图的构成](http://www.alloyteam.com/2017/09/13121/ )
 
+一个 gif 解析的方法 [https://github.com/vurdalakov/abandoned/tree/master/gifdotnet/src/GifDotNet](https://github.com/vurdalakov/abandoned/tree/master/gifdotnet/src/GifDotNet )
+
 
 
 
