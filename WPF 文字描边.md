@@ -57,6 +57,12 @@
             );
 ```
 
+打开 xaml 添加这个控件运行代码就可以看到上面界面
+
+```csharp
+        <local:CureekaMasar></local:CureekaMasar>
+```
+
 所有代码请看下面
 
 ```csharp
