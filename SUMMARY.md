@@ -588,6 +588,8 @@
 
  * [win10 uwp 禁止编译器优化代码](win10-uwp-禁止编译器优化代码.md)
 
+ * [win10 uwp 禁用 ScrollViewer 交互](win10-uwp-禁用-ScrollViewer-交互.md)
+
  * [win10 UWP 等级控件](win10-UWP-等级控件.md)
 
  * [win10 uwp 线程池](win10-uwp-线程池.md)
