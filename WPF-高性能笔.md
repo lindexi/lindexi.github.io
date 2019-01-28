@@ -111,6 +111,14 @@
 
 [WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
 
+其他自己写的笔迹算法
+
+- [原笔迹手写实现平滑和笔锋效果之:笔迹的平滑(一) - 88911562 - 博客园](http://www.cnblogs.com/zl03jsj/p/8047259.html )
+
+- [原笔迹手写实现平滑和笔锋效果之:笔迹的平滑(二) - 88911562 - 博客园](https://www.cnblogs.com/zl03jsj/p/8048102.html )
+
+- [原笔迹手写实现平滑和笔锋效果之:笔锋效果(三)[完结篇] - 88911562 - 博客园](https://www.cnblogs.com/zl03jsj/p/8051912.html )
+
 
 
 
