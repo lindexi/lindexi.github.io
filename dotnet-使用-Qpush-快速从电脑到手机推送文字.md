@@ -7,8 +7,7 @@
 <!--more-->
 
 
-<!-- csdn -->
-<!-- 标签：csharp,wpf,dotnetcore -->
+<!-- 标签：csharp,wpf,dotnetcore,uwp,源代码 -->
 
 先介绍[QPush 快推](https://qpush.me/zh_cn/ )这个从电脑到手机最方便的文字推送工具，可以在网页进行输入，在手机自动复制到剪贴板，相当于在手机使用电脑的输入法
 
@@ -70,6 +69,14 @@ using lindexi.src;
 ![](http://image.acmx.xyz/lindexi%2F20191149401883)
 
 这个工具做起来难度很低，但是我做出了一个 dll 库，虽然这个库里面就只有一个类
+
+于是根据这个库做出了一个 UWP 的应用，可以在应用商店搜 Qpush 下载，或者[点击](https://www.microsoft.com/store/productId/9MTV8FSB7HX9)下载
+
+<!-- ![](image/dotnet 使用 Qpush 快速从电脑到手机推送文字/dotnet 使用 Qpush 快速从电脑到手机推送文字4.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201912916184731)
+
+如果想要看 UWP 的源代码，请到 [github](https://github.com/lindexi/UWP/tree/fc9a10c6db9ec3f4f9396134ff4e4246c6cccab9/uwp/src/CipuPursur) 如果发现代码有哪里不清真，欢迎联系
 
 如果觉得直接引用这个库会输出一个 dll 希望放在自己的程序里面，不需要手动去复制下面的源代码，只需要修改 Nuget 包为 [lindexi.src.Qpush.Source](https://www.nuget.org/packages/lindexi.src.Qpush.Source ) 就可以。
 

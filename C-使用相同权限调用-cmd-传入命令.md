@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 如果想要用相同的权限运行一个程序，可以使用 ProcessStartInfo 的方法
 

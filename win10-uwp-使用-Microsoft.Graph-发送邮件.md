@@ -7,7 +7,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 在仔细阅读了[Microsoft Graph 桌面应用程序 - 陈希章](https://www.cnblogs.com/chenxizhang/p/7904255.html )的文章之后，按照文章的方法尝试了很久终于成功发送了邮件
 

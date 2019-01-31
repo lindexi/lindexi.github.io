@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 ## YaHei Consolas Hybrid
 
@@ -50,7 +49,7 @@ BTSYNC：B6EZLWWDHSMHDHNF6DLOMGKYBSXT7OI4R
 
 ### 合并多个字体
 
-请使用
+请使用 FontForge 合并字体
 
 点击选择字体，他的字体放在  `C:\Program Files (x86)\FontForge\`
 
