@@ -5,7 +5,6 @@
 本文告诉大家 Task.Run 和 Task.Factory.StartNew 区别
 
 <!--more-->
-<!-- csdn -->
 
 有很多博客说到了 Task.Run 和 Task.Factory.StartNew 区别，所以我也就不需要展开告诉大家。
 

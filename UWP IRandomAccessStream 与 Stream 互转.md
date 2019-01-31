@@ -6,8 +6,6 @@
 
 <div id="toc"></div>
 
-<!-- csdn -->
-
 如果在使用网络传输文件的时候，在 UWP 经常使用将 IRandomAccessStream 和 Stream 互转。
 
 因为在 UWP 使用打开文件作为流的最简单代码如下

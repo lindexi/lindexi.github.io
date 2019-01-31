@@ -121,6 +121,25 @@ using System.Security.Principal;
 
 输出 `crentUserAd` 可以看到 `设备\\用户` 的格式
 
+## 判断 WPF 程序使用管理员权限运行
+
+引用命名空间，复制下面代码，然后调用 IsAdministrator 方法，如果返回 true 就是使用管理员权限运行
+
+```csharp
+using System.Security.Principal;
+
+        public static bool IsAdministrator()
+        {
+            WindowsIdentity current = WindowsIdentity.GetCurrent();
+            WindowsPrincipal windowsPrincipal = new WindowsPrincipal(current);
+            //WindowsBuiltInRole可以枚举出很多权限，例如系统用户、User、Guest等等
+            return windowsPrincipal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+```
+
+[C# 判断软件是否是管理员权限运行 - 除却猩猩不是猿 - CSDN博客](https://blog.csdn.net/zuoyefeng1990/article/details/62224387 )
+
 ## 注册全局事件
 
 如果需要注册一个类型的全局事件，如拿到 TextBox 的全局输入，那么可以使用下面代码
