@@ -190,6 +190,8 @@
 
  * [dotnet core 使用 sqlite 部署到 Centos 服务器](dotnet-core-使用-sqlite-部署到-Centos-服务器.md)
 
+ * [dotnet core 发布只有一个 exe 的方法](dotnet-core-发布只有一个-exe-的方法.md)
+
  * [dotnet core 添加 SublimeText 编译插件](dotnet-core-添加-SublimeText-编译插件.md)
 
  * [dotnet core 用值初始化整个数组](dotnet-core-用值初始化整个数组.md)
