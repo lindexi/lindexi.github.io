@@ -188,7 +188,11 @@
 
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
 
+ * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
+
  * [dotnet core 使用 sqlite 部署到 Centos 服务器](dotnet-core-使用-sqlite-部署到-Centos-服务器.md)
+
+ * [dotnet core 发布只带必要的依赖文件](dotnet-core-发布只带必要的依赖文件.md)
 
  * [dotnet core 发布只有一个 exe 的方法](dotnet-core-发布只有一个-exe-的方法.md)
 
