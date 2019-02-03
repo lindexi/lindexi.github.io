@@ -392,6 +392,8 @@
 
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)
 
+ * [VisualStudio 扩展开发 获得输出窗口内容](VisualStudio-扩展开发-获得输出窗口内容.md)
+
  * [VisualStudio 扩展开发](VisualStudio-扩展开发.md)
 
  * [visualStudio 无法登陆](visualStudio-无法登陆.md)
