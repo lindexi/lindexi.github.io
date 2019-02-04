@@ -4,6 +4,7 @@
 
 <!--more-->
 <!-- csdn -->
+<!-- 标签： VisualStudio -->
 
 在[添加菜单](https://lindexi.oschina.io/lindexi/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E6%B7%BB%E5%8A%A0%E8%8F%9C%E5%8D%95.html ) 告诉大家如何简单在 VisualStudio 的工具添加一个按钮，通过用户点击按钮才能使用插件
 
