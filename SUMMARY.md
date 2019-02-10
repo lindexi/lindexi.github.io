@@ -392,6 +392,8 @@
 
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)
 
+ * [VisualStudio 扩展开发 添加输出窗口](VisualStudio-扩展开发-添加输出窗口.md)
+
  * [VisualStudio 扩展开发 获得输出窗口内容](VisualStudio-扩展开发-获得输出窗口内容.md)
 
  * [VisualStudio 扩展开发](VisualStudio-扩展开发.md)
@@ -517,6 +519,8 @@
  * [win10 uwp 参考](win10-uwp-参考.md)
 
  * [win10 uwp 反射](win10-uwp-反射.md)
+
+ * [win10 uwp 发布旁加载自动更新](win10-uwp-发布旁加载自动更新.md)
 
  * [win10 uwp 发布的时候 ILC 编译不通过](win10-uwp-发布的时候-ILC-编译不通过.md)
 
