@@ -237,6 +237,12 @@
 
 但是现在还是无法安装的，因为安装程序是 UWP 程序，发布的 asp dotnet core 是本地网络，但是 UWP 程序无法直接访问本地网络，所以要么修改让 UWP 可以访问本地网络，要么拿小伙伴的设备访问，刚好我就拿了小伙伴的设备
 
+如果想要让安装程序访问本地网络，请在命令行输入下面代码
+
+```csharp
+CheckNetIsolation.exe LoopbackExempt -a -n="microsoft.desktopappinstaller_8wekyb3d8bbwe"
+```
+
 要让小伙伴的设备可以访问你的 asp dotnet core 程序，就需要在 asp dotnet core 设置使用的 URL 和端口
 
 使用下面的代码可以修改 asp dotnet core 监听端口
