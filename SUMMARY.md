@@ -206,6 +206,8 @@
 
  * [dotnet core 通过修改文件头的方式隐藏控制台窗口](dotnet-core-通过修改文件头的方式隐藏控制台窗口.md)
 
+ * [dotnet core 隐藏控制台](dotnet-core-隐藏控制台.md)
+
  * [dotnet core 黑科技·String.IndexOf 性能](dotnet-core-黑科技·String.IndexOf-性能.md)
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
