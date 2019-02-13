@@ -74,7 +74,21 @@
 
 ### 安装 basic-miktex
 
-双击 basic-miktex-2.9.6069-x64 打开
+双击 basic-miktex-2.9.6069-x64 打开，请注意在这一步的时候需要保证你的系统是 x64 的系统，如何判断当前的系统是 x86 的还是 x64 的系统，请看下面方法
+
+如果是 windows 10 系统，通过右击 此电脑 属性，可以看到系统类型是 x86 还是 x64 的
+
+<!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文40.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201921310313513)
+
+如果是 windows 7 系统，通过右击 计算机 属性，可以看到是什么系统
+
+<!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文41.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2019213103126688)
+
+如果看到你的设备显示的是 32 位的系统，请下载 [basic-miktex-2.9.6942.exe](https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x86/basic-miktex-2.9.6942.exe ) 版本，安装方法和 x64 相同请看下面
 
 1. 同意协议点击下一步
 
