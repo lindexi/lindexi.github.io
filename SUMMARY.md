@@ -410,6 +410,8 @@
 
  * [VisualStudio 通过 EditorBrowsable 隐藏不开放的属性或方法](VisualStudio-通过-EditorBrowsable-隐藏不开放的属性或方法.md)
 
+ * [VisualStudio 通过外部调试方法快速调试库代码](VisualStudio-通过外部调试方法快速调试库代码.md)
+
  * [win 消息](win-消息.md)
 
  * [win10 17025 触摸bug](win10-17025-触摸bug.md)
@@ -641,6 +643,8 @@
  * [win10 uwp 萤火虫效果](win10-uwp-萤火虫效果.md)
 
  * [win10 uwp 装机必备应用 含源代码](win10-uwp-装机必备应用-含源代码.md)
+
+ * [win10 uwp 解决 SerialDevice.FromIdAsync 返回空](win10-uwp-解决-SerialDevice.FromIdAsync-返回空.md)
 
  * [win10 uwp 让焦点在点击在页面空白处时回到textbox中](win10-uwp-让焦点在点击在页面空白处时回到textbox中.md)
 
