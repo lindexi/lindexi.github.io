@@ -206,6 +206,8 @@
 
  * [dotnet core 编程规范](dotnet-core-编程规范.md)
 
+ * [dotnet core 获取 MacAddress 地址方法](dotnet-core-获取-MacAddress-地址方法.md)
+
  * [dotnet core 通过 frp 发布自己的网站](dotnet-core-通过-frp-发布自己的网站.md)
 
  * [dotnet core 通过修改文件头的方式隐藏控制台窗口](dotnet-core-通过修改文件头的方式隐藏控制台窗口.md)
