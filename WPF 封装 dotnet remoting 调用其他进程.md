@@ -162,7 +162,10 @@
             {
                 throw new RemoteProcessStartException("启动时出现返回值为空")
                 {
-                    Data = {{"ProcessStartInfo", st}}
+                    Data = 
+                    {
+                        {"ProcessStartInfo", st}
+                    }
                 };
             }
 
