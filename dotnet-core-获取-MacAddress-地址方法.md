@@ -109,7 +109,9 @@
 
 简单输出网卡使用 adapter.GetPhysicalAddress().ToString() 输出，如果需要输出带连接的请使用 GetAddressBytes 然后自己输出
 
-下面的代码是我抽出来的，可以直接使用
+我将代码作为 SourceYard 的包发布到 Nuget 通过在 Nuget 搜 [lindexi.src.MacAddress.Source](https://www.nuget.org/packages/lindexi.src.MacAddress.Source/ ) 就可以下载，因为这是一个源代码包，不会多引用一个程序集，也就是这个库会编译到相同的一个 dll 或 exe 这样可以提高运行性能。
+
+下面的代码是我抽出来的，可以直接使用，建议使用 Nuget 包，而不是复制代码，因为我可能发现下面的代码需要修改，但是如果小伙伴复制了我的代码，我不知道有哪些小伙伴复制了，修改了也无法告诉他
 
 ```csharp
         public static void GetActiveMacAddress(string separator = "-")
