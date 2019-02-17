@@ -1178,6 +1178,8 @@
 
  * [如何在 UWP 使用 wpf 的 Trigger ](如何在-UWP-使用-wpf-的-Trigger-.md)
 
+ * [如何在 Windows 10 中移除 Internet Explorer 浏览器](如何在-Windows-10-中移除-Internet-Explorer-浏览器.md)
+
  * [如何安装 btsync](如何安装-btsync.md)
 
  * [如何移动 nuget 缓存文件夹](如何移动-nuget-缓存文件夹.md)
