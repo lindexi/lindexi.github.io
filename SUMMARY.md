@@ -12,6 +12,8 @@
 
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
+ * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
+
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
 
  * [C# 7.0 使用下划线忽略使用的变量](C-7.0-使用下划线忽略使用的变量.md)
