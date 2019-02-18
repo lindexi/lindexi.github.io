@@ -72,6 +72,8 @@
 
  * [C# 序列类为 xml 可以使用的特性大全](C-序列类为-xml-可以使用的特性大全.md)
 
+ * [C# 命令行如何静默调用 del 删除文件](C-命令行如何静默调用-del-删除文件.md)
+
  * [C# 在 8.0 对比 string 和 string? 的类型](C-在-8.0-对比-string-和-string-的类型.md)
 
  * [C# 在 构造函数添加 CallerMemberName 会怎样](C-在-构造函数添加-CallerMemberName-会怎样.md)
