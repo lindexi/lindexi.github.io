@@ -586,6 +586,8 @@
 
  * [win10 uwp 安装文件 appinstaller 格式](win10-uwp-安装文件-appinstaller-格式.md)
 
+ * [win10 uwp 客户端如何发送类到 asp dotnet core 作为参数](win10-uwp-客户端如何发送类到-asp-dotnet-core-作为参数.md)
+
  * [win10 UWP 序列化](win10-UWP-序列化.md)
 
  * [win10 UWP 应用设置](win10-UWP-应用设置.md)
