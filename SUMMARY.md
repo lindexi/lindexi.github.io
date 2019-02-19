@@ -416,6 +416,8 @@
 
  * [visualStudio 无法登陆](visualStudio-无法登陆.md)
 
+ * [VisualStudio 给项目添加特殊的 Nuget 的链接](VisualStudio-给项目添加特殊的-Nuget-的链接.md)
+
  * [VisualStudio 自定义外部命令](VisualStudio-自定义外部命令.md)
 
  * [VisualStudio 通过 EditorBrowsable 隐藏不开放的属性或方法](VisualStudio-通过-EditorBrowsable-隐藏不开放的属性或方法.md)
