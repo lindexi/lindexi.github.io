@@ -214,6 +214,8 @@
 
  * [dotnet core 获取 MacAddress 地址方法](dotnet-core-获取-MacAddress-地址方法.md)
 
+ * [dotnet core 输出调试信息到 DebugView 软件](dotnet-core-输出调试信息到-DebugView-软件.md)
+
  * [dotnet core 通过 frp 发布自己的网站](dotnet-core-通过-frp-发布自己的网站.md)
 
  * [dotnet core 通过修改文件头的方式隐藏控制台窗口](dotnet-core-通过修改文件头的方式隐藏控制台窗口.md)
