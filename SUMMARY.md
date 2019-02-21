@@ -240,6 +240,8 @@
 
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)
 
+ * [dotnet 通过 WMI 拿到显卡信息](dotnet-通过-WMI-拿到显卡信息.md)
+
  * [gif 格式](gif-格式.md)
 
  * [git cannot lock ref](git-cannot-lock-ref.md)
