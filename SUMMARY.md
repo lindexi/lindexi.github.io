@@ -242,6 +242,18 @@
 
  * [dotnet 通过 WMI 拿到显卡信息](dotnet-通过-WMI-拿到显卡信息.md)
 
+ * [dotnet 通过 WMI 获取系统信息](dotnet-通过-WMI-获取系统信息.md)
+
+ * [dotnet 通过 WMI 获取系统启动的服务](dotnet-通过-WMI-获取系统启动的服务.md)
+
+ * [dotnet 通过 WMI 获取系统安装的驱动](dotnet-通过-WMI-获取系统安装的驱动.md)
+
+ * [dotnet 通过 WMI 获取系统安装软件](dotnet-通过-WMI-获取系统安装软件.md)
+
+ * [dotnet 通过 WMI 获取系统补丁](dotnet-通过-WMI-获取系统补丁.md)
+
+ * [dotnet 通过 WMI 获取设备厂商](dotnet-通过-WMI-获取设备厂商.md)
+
  * [gif 格式](gif-格式.md)
 
  * [git cannot lock ref](git-cannot-lock-ref.md)
@@ -303,6 +315,20 @@
  * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
 
  * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
+
+ * [PowerShell 拿到显卡信息](PowerShell-拿到显卡信息.md)
+
+ * [PowerShell 通过 WMI 获取系统信息](PowerShell-通过-WMI-获取系统信息.md)
+
+ * [PowerShell 通过 WMI 获取系统安装的驱动](PowerShell-通过-WMI-获取系统安装的驱动.md)
+
+ * [PowerShell 通过 WMI 获取系统安装软件](PowerShell-通过-WMI-获取系统安装软件.md)
+
+ * [PowerShell 通过 WMI 获取系统服务](PowerShell-通过-WMI-获取系统服务.md)
+
+ * [PowerShell 通过 WMI 获取补丁](PowerShell-通过-WMI-获取补丁.md)
+
+ * [PowerShell 通过 WMI 获取设备厂商](PowerShell-通过-WMI-获取设备厂商.md)
 
  * [PTA 6-2 多项式求值](PTA-6-2-多项式求值.md)
 
