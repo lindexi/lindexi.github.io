@@ -4,6 +4,8 @@
 
 <!--more-->
 <!-- csdn -->
+<!-- 标签：dotnet,C#,WMI -->
+
 
 如果使用的是 dotnet core 请先引用 Microsoft.Windows.Compatibility 才可以使用 WMI 代码
 
