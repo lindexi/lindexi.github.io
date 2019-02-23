@@ -232,6 +232,8 @@
 
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
 
+ * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
+
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
 
  * [dotnet 设计规范 · 抽象类](dotnet-设计规范-·-抽象类.md)
@@ -241,6 +243,8 @@
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)
 
  * [dotnet 通过 WMI 拿到显卡信息](dotnet-通过-WMI-拿到显卡信息.md)
+
+ * [dotnet 通过 WMI 获取指定进程的输入命令行](dotnet-通过-WMI-获取指定进程的输入命令行.md)
 
  * [dotnet 通过 WMI 获取系统信息](dotnet-通过-WMI-获取系统信息.md)
 
@@ -315,6 +319,8 @@
  * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
 
  * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
+
+ * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)
 
  * [PowerShell 拿到显卡信息](PowerShell-拿到显卡信息.md)
 
