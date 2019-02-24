@@ -456,6 +456,8 @@
 
  * [VisualStudio 自定义外部命令](VisualStudio-自定义外部命令.md)
 
+ * [VisualStudio 过滤输出窗口文本](VisualStudio-过滤输出窗口文本.md)
+
  * [VisualStudio 通过 EditorBrowsable 隐藏不开放的属性或方法](VisualStudio-通过-EditorBrowsable-隐藏不开放的属性或方法.md)
 
  * [VisualStudio 通过外部调试方法快速调试库代码](VisualStudio-通过外部调试方法快速调试库代码.md)
