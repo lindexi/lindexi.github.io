@@ -21,7 +21,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2019224153226228)
 
-首先需要还原所有安装的 Nuget 包，此时建议将 Nuget 这个程序加入到环境变量，可以从 [官网](https://www.nuget.org/downloads ) 下载最新版本的 Nuget 程序，如我下载了 5.0 的版本，我将下载的 Nuget 程序放在了 `D:\lindexi\` 文件夹，将 Nuget 下载的程序修改文件名是 Nuget.exe 然后将 `D:\lindexi\nuget.exe` 加入到环境变量
+对于一个新的仓库，首先需要还原所有安装的 Nuget 包，此时建议将 Nuget 这个程序加入到环境变量，可以从 [官网](https://www.nuget.org/downloads ) 下载最新版本的 Nuget 程序，如我下载了 5.0 的版本，我将下载的 Nuget 程序放在了 `D:\lindexi\` 文件夹，将 Nuget 下载的程序修改文件名是 Nuget.exe 然后将 `D:\lindexi\nuget.exe` 加入到环境变量
 
 在 Windows 将某个文件夹加入到环境变量的方法是右击此电脑属性（如果现在还有开发者使用的是 Windows7 那么请自己百度如何将某个文件夹添加到环境变量）点击高级系统设置
 
@@ -76,6 +76,38 @@
 ```csharp
 msbuild -p:configuration="release"
 ```
+
+总结一下，对于一个新的项目，需要先还原然后再编译
+
+```csharp
+nuget restore
+msbuild -t:restore
+msbuild
+```
+
+下面是 msbuild 的一些常用的命令
+
+ - 编译为 Release 代码 `-p:configuration="release"`
+ - 清理项目 `-t:clean`
+ - 重新编译 `-t:rebuild`
+ - 编译项目 `-t:build` 默认可以忽略这个参数
+ - 发布 `-t:Publish`
+
+多个参数之间可以放在一起，如还原代码之后重新编译为 release 的代码
+
+```csharp
+msbuild -t:restore -p:configuration="release" -t:rebuild
+```
+
+这里的 `-t` 和 `/t` 是相同的，也就是可以将上面代码替换为
+
+```csharp
+msbuild /t:restore /p:configuration="release" /t:rebuild
+```
+
+这里的 `-t` 就是调用某个 Target 的代码，这里的 `-p` 就是定义一个属性，关于 Target 和属性请看 [理解 C# 项目 csproj 文件格式的本质和编译流程 ](https://walterlv.com/post/understand-the-csproj.html )
+
+更多编译相关请看[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
 
 
 
