@@ -200,6 +200,8 @@
 
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
 
+ * [dotnet core 使用 PowerShell 脚本](dotnet-core-使用-PowerShell-脚本.md)
+
  * [dotnet core 使用 sqlite 部署到 Centos 服务器](dotnet-core-使用-sqlite-部署到-Centos-服务器.md)
 
  * [dotnet core 发布只带必要的依赖文件](dotnet-core-发布只带必要的依赖文件.md)
@@ -1231,6 +1233,8 @@
  * [如何安装 btsync](如何安装-btsync.md)
 
  * [如何移动 nuget 缓存文件夹](如何移动-nuget-缓存文件夹.md)
+
+ * [如何通过命令行 msbuild 编译项目](如何通过命令行-msbuild-编译项目.md)
 
  * [安装 aria2](安装-aria2.md)
 
