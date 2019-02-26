@@ -1294,6 +1294,8 @@
 
  * [自动机](自动机.md)
 
+ * [获取 Nuget 版本号](获取-Nuget-版本号.md)
+
  * [解决 vs 出现Error MC3000 给定编码中的字符无效](解决-vs-出现Error-MC3000-给定编码中的字符无效.md)
 
  * [解决 VS 跳转定义和 Resharper 重复](解决-VS-跳转定义和-Resharper-重复.md)
