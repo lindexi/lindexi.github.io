@@ -79,18 +79,20 @@ Install-Package BenchmarkDotNet
 
 
 
-那么这个输出表格是什么意思，例如测试了 Csdn 方法，这时的输出表格请看下面
+那么这个 benchmark 输出表格是什么意思，例如测试了 Csdn 方法，这时的输出表格请看下面
 
 
 |  Method |     Mean |    Error |   StdDev |
 |-------- |---------:|---------:|---------:|
 | Csdn | 384.6 ns | 7.687 ns | 9.721 ns |
 
-Mean 的意思是 Arithmetic mean of all measurements 所有测量的算术平均值
+在使用 benchmark dotnet 的时候，输出的表格的含义包括了
 
-Error 的意思是 Half of 99.9% confidence interval 99.9% 一半的置信度区间
+ - Mean 的意思是 Arithmetic mean of all measurements 所有测量的算术平均值
 
-StdDev 是所有测量的标准偏差
+ - Error 的意思是 Half of 99.9% confidence interval 99.9% 一半的置信度区间
+
+ - StdDev 是所有测量的标准偏差
 
 在测试过程包括
 
