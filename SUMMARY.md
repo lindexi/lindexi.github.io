@@ -148,6 +148,8 @@
 
  * [cant found Microsoft.VSSDK.BuildTools.15.0.26201](cant-found-Microsoft.VSSDK.BuildTools.15.0.26201.md)
 
+ * [cmd 如何跨驱动器移动文件夹](cmd-如何跨驱动器移动文件夹.md)
+
  * [C＃ 6.0 字符串 String Interpolation](C＃-6.0-字符串-String-Interpolation.md)
 
  * [C＃ await 高级用法](C＃-await-高级用法.md)
@@ -245,6 +247,8 @@
  * [dotnet 设计规范 · 数组定义](dotnet-设计规范-·-数组定义.md)
 
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)
+
+ * [dotnet 通过 HttpClient 下载文件同时报告进度的方法](dotnet-通过-HttpClient-下载文件同时报告进度的方法.md)
 
  * [dotnet 通过 WMI 拿到显卡信息](dotnet-通过-WMI-拿到显卡信息.md)
 
@@ -454,6 +458,8 @@
 
  * [VisualStudio 扩展开发](VisualStudio-扩展开发.md)
 
+ * [VisualStudio 插件 翻译注释](VisualStudio-插件-翻译注释.md)
+
  * [visualStudio 无法登陆](visualStudio-无法登陆.md)
 
  * [VisualStudio 给项目添加特殊的 Nuget 的链接](VisualStudio-给项目添加特殊的-Nuget-的链接.md)
@@ -577,6 +583,8 @@
  * [win10 uwp 动态修改ListView元素布局](win10-uwp-动态修改ListView元素布局.md)
 
  * [win10 UWP 动画](win10-UWP-动画.md)
+
+ * [win10 uwp 去掉 Flyout 边框](win10-uwp-去掉-Flyout-边框.md)
 
  * [win10 uwp 参考](win10-uwp-参考.md)
 
@@ -1234,6 +1242,8 @@
 
  * [如何安装 btsync](如何安装-btsync.md)
 
+ * [如何替换一个 exe 的图标](如何替换一个-exe-的图标.md)
+
  * [如何移动 nuget 缓存文件夹](如何移动-nuget-缓存文件夹.md)
 
  * [如何通过命令行 msbuild 编译项目](如何通过命令行-msbuild-编译项目.md)
@@ -1303,6 +1313,8 @@
  * [解决 VS 跳转定义和 Resharper 重复](解决-VS-跳转定义和-Resharper-重复.md)
 
  * [解决 Win10 UWP 无法使用 ss 连接](解决-Win10-UWP-无法使用-ss-连接.md)
+
+ * [解决从旧格式的 csproj 迁移到新格式的 csproj 格式 AssemblyInfo 文件值重复问题](解决从旧格式的-csproj-迁移到新格式的-csproj-格式-AssemblyInfo-文件值重复问题.md)
 
  * [让 AE 输出 MPEG ](让-AE-输出-MPEG-.md)
 
