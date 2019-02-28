@@ -32,7 +32,7 @@ while (!System.Diagnostics.Debugger.IsAttached)
 
 这时打开VS点击调试附加到进程，直到附加到进程程序才进行。
 
-[https://stackoverflow.com/q/9896857/6116637](https://stackoverflow.com/q/9896857/6116637 )
+https://stackoverflow.com/q/9896857/6116637
 
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017117185341.jpg)
 

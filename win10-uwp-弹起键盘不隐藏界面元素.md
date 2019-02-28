@@ -69,7 +69,7 @@
 
 ![](http://image.acmx.xyz/0a7537fb-9ef0-49f8-b934-6cb779e8754bwp_ss_20161204_00022016124202039.jpg)
 
-[http://www.cnblogs.com/manupstairs/p/5738387.html](http://www.cnblogs.com/manupstairs/p/5738387.html )
+http://www.cnblogs.com/manupstairs/p/5738387.html
 
 
 

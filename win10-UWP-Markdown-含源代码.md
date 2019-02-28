@@ -407,7 +407,7 @@ MainPage.xaml
 
 ## 发布
 
-[https://dev.windows.com/zh-cn](https://dev.windows.com/zh-cn )
+https://dev.windows.com/zh-cn
 
 登录
 

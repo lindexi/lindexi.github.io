@@ -413,7 +413,7 @@ Reflection ，中文翻译为反射。
 如果你需要把ViewModel的命名后缀ViewModel，那么替换`temp.Name.Replace("ViewModel", "")`,如果没有这些，不需修改。这样我们添加新功能修改好少 -->
 
 
-关于反射，戳此链接 [http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/ )
+关于反射，戳此链接 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%8F%8D%E5%B0%84/
 
 
 ## 自己的框架
@@ -451,7 +451,7 @@ Reflection ，中文翻译为反射。
 
 ```
 
-但是大家也看到，这个需要在使用前就实现 ViewModel ，如果我们想要在使用 ViewModel 才实现，那么我们需要`Type _viewModel`，从 type 进行构造可以去看我之前的博客 [http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/ )
+但是大家也看到，这个需要在使用前就实现 ViewModel ，如果我们想要在使用 ViewModel 才实现，那么我们需要`Type _viewModel`，从 type 进行构造可以去看我之前的博客 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/
 
 我们在这个类写方法 Navigate 判断 ViewModel 是否实现，如果没有，那么从 type 进行构造。
 
@@ -513,7 +513,7 @@ public abstract class ViewModelBase
 
 ```
 
-我们基本的 ViewModel 需要在属性更改通知，我之前写了一个类 [https://github.com/lindexi/UWP/blob/master/uwp/src/ViewModel/NotifyProperty.cs](https://github.com/lindexi/UWP/blob/master/uwp/src/ViewModel/NotifyProperty.cs )
+我们基本的 ViewModel 需要在属性更改通知，我之前写了一个类 https://github.com/lindexi/UWP/blob/master/uwp/src/ViewModel/NotifyProperty.cs
 
 我们需要继承这个，除了这个之外，原来跳转页面的参数是写在Page的 OnNavigatedTo ，但我们想让 ViewModel 知道我们跳转，我们的 ViewModel 通信需要INavigable
 		
@@ -632,7 +632,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 ![](http://image.acmx.xyz/6f20fca0-5961-468c-b5b4-682f3ef6f7882016122691528.jpg)
 
-好啦，我把这个做出模板，大家可以去下载 [http://download.csdn.net/detail/lindexi_gd/9716003](http://download.csdn.net/detail/lindexi_gd/9716003 )
+好啦，我把这个做出模板，大家可以去下载 http://download.csdn.net/detail/lindexi_gd/9716003
 
 上面的模板适合于只有一个主界面，然后其他页面都是没有跳转。那么我们可以做一个静态的 ViewModel ，其他页面都直接从 ViewModel 中拿。
 
@@ -683,7 +683,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 但是这个还是没解决在一个 ViewModel 里面，存在多个 ViewModel 之间的通信。
 
 在我的私密密码本 
-[https://www.microsoft.com/store/apps/9nblggh5cc3g](https://www.microsoft.com/store/apps/9nblggh5cc3g )
+https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 我的创建密码页面需要和密码本联系，在创建密码创建一个密码，就把密码放到密码本
 
@@ -697,7 +697,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 ## MasterDetail
 
-我们用我们上面写的来做一个 MasterDetail ，我之前做了一个简单 [http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/ )
+我们用我们上面写的来做一个 MasterDetail ，我之前做了一个简单 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
 
 我们需要做的：如何让两个页面通信
 
@@ -754,7 +754,7 @@ Content 就是 ViewModel 可以跳转页面，我们的 Navigateto 提供 viewmo
 
 到时我们的 MasterModel 就会有一个 ISendMessage 属性，我们会在 DetailMasterModel 中给他，当然我们总是把 DetailMasterModel 作为属性，所以我们可能在使用他的类给 MasterModel 的 ISendMessage 一个值，这个就是 IOC 。
 
-这样做的原因，可以去看：[http://blog.csdn.net/linux7985/article/details/44782623](http://blog.csdn.net/linux7985/article/details/44782623 )
+这样做的原因，可以去看：http://blog.csdn.net/linux7985/article/details/44782623
 
 我们来写这两个，很简单
         
@@ -927,7 +927,7 @@ ContentModel.ReceiveMessage 可以把 key 改为点击列表
 
 ```
 
-我们界面就不说了，直接去 [https://github.com/lindexi/UWP/tree/cd1637bf31eb22a230390c205da93f840070c49d/uwp/src/Framework/Framework](https://github.com/lindexi/UWP/tree/cd1637bf31eb22a230390c205da93f840070c49d/uwp/src/Framework/Framework )
+我们界面就不说了，直接去 https://github.com/lindexi/UWP/tree/cd1637bf31eb22a230390c205da93f840070c49d/uwp/src/Framework/Framework
 
 我要讲下修改，我们发现我们现在写的两个页面通信在 MasterDetail 有用，但是要确定我们的页面，这样不好，在上面我们说可以加功能不需要去修改写好的，我们需要做的是接收信息，不使用上面的。
 
@@ -1326,24 +1326,24 @@ ContentPage 的 dateContent 用来绑定指定的 `ContentModel` ，绑定的方
 
 全部源代码
 
-[https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework](https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework )
+https://github.com/lindexi/UWP/tree/master/uwp/src/Framework/Framework
 
 
 
-不想每次都自己写很多类，可以下载我的模板 [http://download.csdn.net/detail/lindexi_gd/9716003](http://download.csdn.net/detail/lindexi_gd/9716003 )
+不想每次都自己写很多类，可以下载我的模板 http://download.csdn.net/detail/lindexi_gd/9716003
 
-下载后放在 `C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP` 的 文件夹里，参见 [http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/](http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/ )
+下载后放在 `C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\ProjectTemplates\CSharp\Windows Root\Windows UAP` 的 文件夹里，参见 http://lindexi.oschina.io/lindexi/post/Visual-Studio-%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF/
 
 然后执行`devenv /setup`
 
 我们就可以在新建项目使用模板
 
-课件：[https://r302.cc/B96jVQ](https://r302.cc/B96jVQ )
+课件：https://r302.cc/B96jVQ
 
 参考：
-[http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html](http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html )
+http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
 
-关于 MVC 和 MVVM 区别，参见：[http://www.cnblogs.com/indream/p/3602348.html](http://www.cnblogs.com/indream/p/3602348.html )
+关于 MVC 和 MVVM 区别，参见：http://www.cnblogs.com/indream/p/3602348.html
 
 <!-- ([a-z|A-Z]+)([^\x00-\xff]) -->
 

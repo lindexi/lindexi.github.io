@@ -3,7 +3,7 @@
 
 
 
-参见：[http://www.cnblogs.com/wpfworld/p/3181014.html](http://www.cnblogs.com/wpfworld/p/3181014.html )
+参见：http://www.cnblogs.com/wpfworld/p/3181014.html
 
 
 

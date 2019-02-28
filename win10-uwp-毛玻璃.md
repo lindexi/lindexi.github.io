@@ -324,9 +324,9 @@
 
 关于FDS请看[win10 uwp Fluent Design System 实践](https://lindexi.oschina.io/lindexi/post/win10-uwp-Fluent-Design-System-%E5%AE%9E%E8%B7%B5.html )
 
-参见：[https://stackoverflow.com/questions/31987817/how-to-make-frosted-glass-effect-in-windows-10-universal-app](https://stackoverflow.com/questions/31987817/how-to-make-frosted-glass-effect-in-windows-10-universal-app )
+参见：https://stackoverflow.com/questions/31987817/how-to-make-frosted-glass-effect-in-windows-10-universal-app
 
-[http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm )
+http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm
 
 [（UWP）应用窗口实现毛玻璃效果 - 简书](http://www.jianshu.com/p/3b49fd3d7edb)
 

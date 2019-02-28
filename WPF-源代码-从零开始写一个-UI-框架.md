@@ -480,7 +480,7 @@
 
 从 [WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 也可以了解 WPF 是有多厉害，同时一个大的框架也会存在很多坑，现在 WPF 已经开源了，如果遇到问题，可以在 github 上面提 issus 或者直接修改
 
-[https://github.com/dotnet/wpf/issues](https://github.com/dotnet/wpf/issues )
+https://github.com/dotnet/wpf/issues
 
 课程视频
 

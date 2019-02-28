@@ -267,7 +267,7 @@
 通过 URL 的方法 Post 创建的 casnisHoubou 就可以将文件上传到服务器
 
 ```csharp
-            var rejairJate = new [HttpClient();](HttpClient(); )
+            var rejairJate = new HttpClient();
             var sairlallilarRaibedoYertousebow = "http://localhost:62435/api/XaseYinairtraiSeawhallkous/";
 
             var casnisHoubou = new MultipartFormDataContent();
@@ -318,14 +318,14 @@
 先构造 URL 从服务器的代码可以知道，需要调用 DownLoadFile 传入参数，这里的端口请使用自己的项目的端口
 
 ```csharp
-                var sairlallilarRaibedoYertousebow = "[http://localhost:62435/api/XaseYinairtraiSeawhallkous/DownLoadFile?fileName=文件名";](http://localhost:62435/api/XaseYinairtraiSeawhallkous/DownLoadFile?fileName=文件名"; )
+                var sairlallilarRaibedoYertousebow = "http://localhost:62435/api/XaseYinairtraiSeawhallkous/DownLoadFile?fileName=文件名";
 ```
 
 下载的代码很简单
 
 ```csharp
-                var rejairJate = new [HttpClient();](HttpClient(); )
-                var sairlallilarRaibedoYertousebow = "[http://localhost:62435/api/XaseYinairtraiSeawhallkous/DownLoadFile?fileName=文件名";](http://localhost:62435/api/XaseYinairtraiSeawhallkous/DownLoadFile?fileName=文件名"; )
+                var rejairJate = new HttpClient();
+                var sairlallilarRaibedoYertousebow = "http://localhost:62435/api/XaseYinairtraiSeawhallkous/DownLoadFile?fileName=文件名";
                 var qarJorfis = await rejairJate.GetStreamAsync(sairlallilarRaibedoYertousebow);
 ```
 

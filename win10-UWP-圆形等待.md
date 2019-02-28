@@ -457,9 +457,9 @@ MainPage
 
 ```
 
-代码：[https://github.com/lindexi/lindexi_gd/tree/master/roundload](https://github.com/lindexi/lindexi_gd/tree/master/roundload )
+代码：https://github.com/lindexi/lindexi_gd/tree/master/roundload
 
-参考：[http://blog.csdn.net/qqamoon/article/details/7001693](http://blog.csdn.net/qqamoon/article/details/7001693 )
+参考：http://blog.csdn.net/qqamoon/article/details/7001693
 
 
 

@@ -104,7 +104,7 @@ UWP的 Convert 和 WPF 差不多。
 
 需要知道，`x:bind`默认是 OneTime 而 `Binding` 默认是 OneWay 
 
-参见：[http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html](http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html )
+参见：http://www.cnblogs.com/horan/archive/2012/02/27/2368262.html
 
 [[UWP]了解IValueConverter - dino.c - 博客园](http://www.cnblogs.com/dino623/p/IValueConverter.html )
 

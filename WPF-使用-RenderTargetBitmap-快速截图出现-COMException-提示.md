@@ -112,7 +112,7 @@ System.Runtime.InteropServices.COMException (0x88980003): MILERR_WIN32ERROR (Exc
 
 [RenderTargetBitmap throws COM exception when created too fast: MILERR_WIN32ERROR (Exception from HRESULT: 0x88980003)](https://social.msdn.microsoft.com/Forums/vstudio/en-US/5e9fb69b-7547-4f0b-ba06-ad4211be733d/rendertargetbitmap-throws-com-exception-when-created-too-fast-milerrwin32error-exception-from?forum=wpf )
 
-代码请看 [https://github.com/dotnet-campus/wpf-issues/tree/master/RenderTargetBitmapThrowsCOMExceptionWhenCreatedTooFast](https://github.com/dotnet-campus/wpf-issues/tree/master/RenderTargetBitmapThrowsCOMExceptionWhenCreatedTooFast )
+代码请看 https://github.com/dotnet-campus/wpf-issues/tree/master/RenderTargetBitmapThrowsCOMExceptionWhenCreatedTooFast
 
 
 

@@ -67,7 +67,7 @@
             //如果有文字，那么就是把他放在要拖放的TextBlock
             bool hasText = e.DataView.Contains(StandardDataFormats.Text);
             //显示复制还是没有
-            //拖动显示可以去我之前写的 [http://blog.csdn.net/lindexi_gd/article/details/49757187?locationNum=2&fps=1](http://blog.csdn.net/lindexi_gd/article/details/49757187?locationNum=2&fps=1 )
+            //拖动显示可以去我之前写的 http://blog.csdn.net/lindexi_gd/article/details/49757187?locationNum=2&fps=1
             e.AcceptedOperation = hasText ? DataPackageOperation.Copy : DataPackageOperation.None;
             if (hasText)
             {
@@ -95,7 +95,7 @@
 
 问题原文：
 
-[https://stackoverflow.com/questions/41662650/how-to-move-text-from-one-textblock-to-another-textblock-using-drag-and-drop-in](https://stackoverflow.com/questions/41662650/how-to-move-text-from-one-textblock-to-another-textblock-using-drag-and-drop-in )
+https://stackoverflow.com/questions/41662650/how-to-move-text-from-one-textblock-to-another-textblock-using-drag-and-drop-in
 
 
 

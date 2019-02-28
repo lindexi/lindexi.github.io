@@ -79,13 +79,13 @@
 
 我找到一个简单方法，可以从 Json 转换过程，直接把 DateTime 和 unix timestamp  相互转换，方法很简单。
 
-问题在：[https://stackoverflow.com/q/44643498/6116637](https://stackoverflow.com/q/44643498/6116637 )
+问题在：https://stackoverflow.com/q/44643498/6116637
 
 下面来讲下如何解决。下面需要用到了 JsonConverter 的高级用法。首先需要使用 Nuget 下载 json 的库，当然搜 json 下载第一个就好。
 
 然后创建一个类，用于类型转换，类型转换的意思就是从输入一个类型转换为输出的一个类型
 
-关于更多 json 高级使用，参见：[http://www.cnblogs.com/yanweidie/p/4605212.html](http://www.cnblogs.com/yanweidie/p/4605212.html )
+关于更多 json 高级使用，参见：http://www.cnblogs.com/yanweidie/p/4605212.html
 
 ```csharp
 class UnixConvert : JsonConverter
@@ -196,7 +196,7 @@ CanConvert
 
 可以看到从json转换结果和创建的类的属性一样，所以这个方法可以拿来使用。
 
-[https://stackoverflow.com/questions/44643498/convert-unix-timestamp-to-normal-date-uwp/44650513#44650513](https://stackoverflow.com/questions/44643498/convert-unix-timestamp-to-normal-date-uwp/44650513#44650513 )
+https://stackoverflow.com/questions/44643498/convert-unix-timestamp-to-normal-date-uwp/44650513#44650513
 
 
 

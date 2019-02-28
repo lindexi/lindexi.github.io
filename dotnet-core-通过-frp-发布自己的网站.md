@@ -63,7 +63,7 @@ dotnet run
 ```csharp
 Hosting environment: Development
 Content root path: C:\lindexi\dotnet core 通过 frp 发布自己的网站\lindexi
-Now listening on: [http://0.0.0.0:8000](http://0.0.0.0:8000 )
+Now listening on: http://0.0.0.0:8000
 ```
 
 ## 配置域名
@@ -117,7 +117,7 @@ server_addr = 23.105.201.4
 server_port = 7000
 
 [web]
-type = [http](http )
+type = http
 local_port = 8000
 custom_domains = server.lindexi.com
 ```

@@ -39,7 +39,7 @@ git checkout master
 
 [Git subtree 管理子项目包使用小结](https://blog.zthxxx.me/posts/Git-subtree-Manage-Subpackages-Usage-Summary/)
 
-[https://stackoverflow.com/a/18608538/6116637](https://stackoverflow.com/a/18608538/6116637 )
+https://stackoverflow.com/a/18608538/6116637
 
 
 

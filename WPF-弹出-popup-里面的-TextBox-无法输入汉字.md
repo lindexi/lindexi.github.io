@@ -51,7 +51,7 @@ public static void ActivatePopup(Popup popup)
 }
 ```
 
-参见：[https://www.codeproject.com/Questions/184429/Text-box-is-not-working-in-WPF-Popup](https://www.codeproject.com/Questions/184429/Text-box-is-not-working-in-WPF-Popup )
+参见：https://www.codeproject.com/Questions/184429/Text-box-is-not-working-in-WPF-Popup
 
 如果发现使用了我的方法还是无法输入，那么需要看一下 TextBox 是否禁用输入法。
 

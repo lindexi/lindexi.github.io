@@ -331,9 +331,9 @@ static class Foo
 
 虽然说了很多，但很多都是大神讲的，于是
 
-推荐大神讲的反射：[http://www.cnblogs.com/wangshenhe/p/3256657.html](http://www.cnblogs.com/wangshenhe/p/3256657.html )
+推荐大神讲的反射：http://www.cnblogs.com/wangshenhe/p/3256657.html
 
-[https://www.codeproject.com/Articles/55710/Reflection-in-NET](https://www.codeproject.com/Articles/55710/Reflection-in-NET )
+https://www.codeproject.com/Articles/55710/Reflection-in-NET
 
 ### 反射判断类继承接口
 

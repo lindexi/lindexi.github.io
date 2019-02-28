@@ -162,7 +162,7 @@ json转xml
 
 [Converting between JSON and XML](https://www.newtonsoft.com/json/help/html/ConvertingJSONandXML.htm )
 
-代码 [https://gitee.com/lindexi/lindexi_gd/tree/dev/LapouRairpaltearwou](https://gitee.com/lindexi/lindexi_gd/tree/dev/LapouRairpaltearwou )
+代码 https://gitee.com/lindexi/lindexi_gd/tree/dev/LapouRairpaltearwou
 
 
 

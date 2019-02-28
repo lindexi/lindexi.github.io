@@ -54,7 +54,7 @@ dotnet publish -r win-x64 -c release
 
 现在可以发现发布的文件夹里面有 native 文件夹，里面就只包含一个 exe 程序，同时这个文件也非常小
 
-代码请看 [https://github.com/dotnet/corert/tree/master/samples/HelloWorld](https://github.com/dotnet/corert/tree/master/samples/HelloWorld )
+代码请看 https://github.com/dotnet/corert/tree/master/samples/HelloWorld
 
 更详细的博客请看 [使用CoreRT将.NET Core发布为Native应用程序 - KAnts - 博客园](https://www.cnblogs.com/ants/p/8630332.html )
 

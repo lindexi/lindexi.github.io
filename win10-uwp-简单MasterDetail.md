@@ -31,7 +31,7 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160806131357113)
 
-[https://msdn.microsoft.com/windows/uwp/controls-and-patterns/master-details](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/master-details )
+https://msdn.microsoft.com/windows/uwp/controls-and-patterns/master-details
 
 国内晓迪文章很好，但是文章对我渣渣很难知道如何做。
 
@@ -178,7 +178,7 @@ FrameNavigate(typeof(页), 参数);
 
 ```
 
-如果不知道我说的是什么，可以去下我源代码[https://github.com/lindexi/UWP](https://github.com/lindexi/UWP )
+如果不知道我说的是什么，可以去下我源代码https://github.com/lindexi/UWP
 
 然后在按后退按钮，就把我们的hasFrame=false;
 
@@ -247,7 +247,7 @@ Window.Current.Bounds.Width放在函数，就可以得到我们的窗口大小�
 
 我们就在界面变化，和点击后悔，点击列表，使用判断，我们判断写成一个函数，函数判断现在窗口，判断HasFrame，很简单。
 
-如果看不懂我上面说的，可以看我代码[https://github.com/lindexi/UWP/tree/master/uwp/src/DetailMaster](https://github.com/lindexi/UWP/tree/master/uwp/src/DetailMaster )
+如果看不懂我上面说的，可以看我代码https://github.com/lindexi/UWP/tree/master/uwp/src/DetailMaster
 
 我们开始的大屏幕是使用Grid有分开，左边列表，右边Content，其中Content是Frame，用到页面导航。
 
@@ -303,7 +303,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
                   Canvas.ZIndex="{x:Bind View.ZFrame,Mode=OneWay}">
 ```
 
-我们需要做一点修改，在我们的内容没有，我们是不需要返回键的，那么这时的返回键可以作为按两次退出，这个可以看 `[http://blog.csdn.net/xuzhongxuan/article/details/49962705`，实际就是写一个字段存储来判断在一段时间是否点击两次。](http://blog.csdn.net/xuzhongxuan/article/details/49962705`，实际就是写一个字段存储来判断在一段时间是否点击两次。 )
+我们需要做一点修改，在我们的内容没有，我们是不需要返回键的，那么这时的返回键可以作为按两次退出，这个可以看 `http://blog.csdn.net/xuzhongxuan/article/details/49962705`，实际就是写一个字段存储来判断在一段时间是否点击两次。
 
 如果我们按返回，但是我们撸了一半，假如我们是页面跳转，不使用我源码，那么加上 NavigationCacheMode ，保存页面，这样不会让页面现在的选择重新
 
@@ -311,7 +311,7 @@ BackRequested是返回，按返回键，我们现在简单使用界面的，不�
 
 如果需要使用左右两边相互操作，一般建议使用 MVVM 然后绑定 ViewModel ，通过 ViewModel 可以直接操作两边，因为 ViewModel 知道左右的数据。这也是我建议的。
 
-关于 MVVM 可以看这个博客 [http://lindexi.oschina.io/lindexi//post/win10-uwp-MVVM%E5%85%A5%E9%97%A8/](http://lindexi.oschina.io/lindexi//post/win10-uwp-MVVM%E5%85%A5%E9%97%A8/ )
+关于 MVVM 可以看这个博客 http://lindexi.oschina.io/lindexi//post/win10-uwp-MVVM%E5%85%A5%E9%97%A8/
 
 
 下面说下English，其实是Google翻译，因为我这个遇到一个用英文问我的人，不知道是不是，反正就直接翻译

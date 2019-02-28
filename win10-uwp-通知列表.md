@@ -139,7 +139,7 @@
 
 可以看到界面就是进行变换，就这么简单写通知列表。
 
-代码：[http://download.csdn.net/detail/lindexi_gd/9826807](http://download.csdn.net/detail/lindexi_gd/9826807 )
+代码：http://download.csdn.net/detail/lindexi_gd/9826807
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F%25E5%2588%2597%25E8%25A1%25A8.gif)
 

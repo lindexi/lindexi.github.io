@@ -185,7 +185,7 @@ public MainWindow()
 
 ![](http://image.acmx.xyz/lindexi%2F2018101893923600)
 
-代码请看 [https://github.com/lindexi/UWP/tree/master/wpf/CaitrairSodeyatarFowfurur](https://github.com/lindexi/UWP/tree/master/wpf/CaitrairSodeyatarFowfurur )
+代码请看 https://github.com/lindexi/UWP/tree/master/wpf/CaitrairSodeyatarFowfurur
 
 更多博客请看 [WPF 同一窗口内的多线程 UI（VisualTarget） - walterlv](https://walterlv.com/post/multi-thread-ui-using-visualtarget-in-wpf.html )
 

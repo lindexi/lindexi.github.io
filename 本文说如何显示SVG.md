@@ -4,7 +4,7 @@
 【】
 本来在我一个白天晚上按钮，使用图片，图片不清晰
 ![这里写图片描述](http://img.blog.csdn.net/20160729180053912)
-这些图片在[http://www.zcool.com.cn/，不知道是不是不能直接用](http://www.zcool.com.cn/，不知道是不是不能直接用 )
+这些图片在http://www.zcool.com.cn/，不知道是不是不能直接用
 我们需要一个看起来不会模糊，因为矢量图，所以我们就使用svg，其实png也是，但是他播放模糊。
 
 <!--more-->
@@ -39,7 +39,7 @@ lindexi
 
 我们开始使用Image，但是没有显示
 
-于是网上有一个库Mntone.SvgForXaml，[https://github.com/mntone/SvgForXaml，我们用Nuget](https://github.com/mntone/SvgForXaml，我们用Nuget )
+于是网上有一个库Mntone.SvgForXaml，https://github.com/mntone/SvgForXaml，我们用Nuget
 
 ![这里写图片描述](http://img.blog.csdn.net/20160729185702468)
 
@@ -144,9 +144,9 @@ await SvgImageRenderer.RendererImageAsync(file, new SvgImageRendererSettings()
 ![这里写图片描述](http://img.blog.csdn.net/20160731160141698)
 
 
-参见：[http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/](http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/ )
+参见：http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/
 
-代码：[https://github.com/lindexi/UWP/tree/master/uwp/src/ScalableVectorGraphic](https://github.com/lindexi/UWP/tree/master/uwp/src/ScalableVectorGraphic )
+代码：https://github.com/lindexi/UWP/tree/master/uwp/src/ScalableVectorGraphic
 
 因为已经有人写了，和我一样，驸马说他用过Svg to Xaml 做，我求请教了驸马大神，在github找到库，好像简单。
 

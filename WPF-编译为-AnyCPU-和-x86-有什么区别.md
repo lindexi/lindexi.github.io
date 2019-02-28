@@ -83,7 +83,7 @@ PE: PE32+
 csc /platform:anycpu filename.cs  
 ```
 
-参见：[https://stackoverflow.com/a/12066861/6116637](https://stackoverflow.com/a/12066861/6116637 )
+参见：https://stackoverflow.com/a/12066861/6116637
 
 [使 32 位程序使用大于 2GB 的内存 - walterlv](https://walterlv.github.io/windows/2017/09/12/32bit-application-use-large-memory.html )
 

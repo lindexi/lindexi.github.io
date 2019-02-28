@@ -53,26 +53,26 @@
  
  我们开始接收就接收16+16+16+16位，然后使用length接收下面，这样就可以解决
 
-技术很简单，其实我们需要做服务器，和客户端，一般我们可以在UWP做两个，这个参见[http://www.wangchenran.com/uwp-streamsocket-chatroom-1.html](http://www.wangchenran.com/uwp-streamsocket-chatroom-1.html )
+技术很简单，其实我们需要做服务器，和客户端，一般我们可以在UWP做两个，这个参见http://www.wangchenran.com/uwp-streamsocket-chatroom-1.html
  
 我们可以用传输数据，可以传输文本，这个我们需要传什么需要一个协议，这个是应用高层，前面说的是协议传输
 
 ## 带Header的WebRequest
 
 ```csharp
-[HttpRequestMessage](HttpRequestMessage ) [httpRequestMessage](httpRequestMessage ) = new [HttpRequestMessage(](HttpRequestMessage( )
+HttpRequestMessage httpRequestMessage = new HttpRequestMessage(
     HttpMethod.Post, new Uri("http://www.contoso.com"));
 httpRequestMessage.Content = new HttpStringContent("hello, world");
 httpRequestMessage.Headers.Append("X-My-Client","true");
 
-myWebView.NavigateWith[HttpRequestMessage(httpRequestMessage);](HttpRequestMessage(httpRequestMessage); )
+myWebView.NavigateWithHttpRequestMessage(httpRequestMessage);
 ```
 
 ```csharp
             var url = new Uri("http://www.baidu.com", UriKind.Absolute);
-            var [httpClient](httpClient ) = new System.Net.[Http.HttpClient();](Http.HttpClient(); )
+            var httpClient = new System.Net.Http.HttpClient();
             httpClient.DefaultRequestHeaders.Add("apikey", "123456");
-            var reponse = await [httpClient.GetStreamAsync(url);](httpClient.GetStreamAsync(url); )
+            var reponse = await httpClient.GetStreamAsync(url);
             var streamReader = new StreamReader(reponse, Encoding.UTF8);
             var jsonString = streamReader.ReadToEnd();
             var jsonObject = JsonObject.Parse(jsonString);
@@ -81,12 +81,12 @@ myWebView.NavigateWith[HttpRequestMessage(httpRequestMessage);](HttpRequestMessa
 ## 获取Buffer
 
 ```csharp
-                Windows.Web.[Http.HttpClient](Http.HttpClient ) [http](http ) = new Windows.Web.[Http.HttpClient();](Http.HttpClient(); )
-                IBuffer buffer = await [http.GetBufferAsync(uri);](http.GetBufferAsync(uri); )
+                Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
+                IBuffer buffer = await http.GetBufferAsync(uri);
 
 ```
 
-参见：[https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx )
+参见：https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx
 
 
 
@@ -96,11 +96,11 @@ myWebView.NavigateWith[HttpRequestMessage(httpRequestMessage);](HttpRequestMessa
 
 ## HttpClient 使用 Cookie 
 
-参见：[https://stackoverflow.com/questions/41599384/httpclient-cookie-issue](https://stackoverflow.com/questions/41599384/httpclient-cookie-issue )
+参见：https://stackoverflow.com/questions/41599384/httpclient-cookie-issue
 
-如果不想自己写，请看 [https://github.com/chenrensong/WebSocket.UWP](https://github.com/chenrensong/WebSocket.UWP )
+如果不想自己写，请看 https://github.com/chenrensong/WebSocket.UWP
 
-[https://github.com/rdavisau/sockets-for-pcl](https://github.com/rdavisau/sockets-for-pcl )
+https://github.com/rdavisau/sockets-for-pcl
 
 
 
