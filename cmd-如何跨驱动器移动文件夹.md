@@ -30,6 +30,8 @@ rd 原有的文件夹 /s /q
 
 [xcopy-参数详解 - 疯狂的tiger - 博客园](https://www.cnblogs.com/yang-hao/p/6003308.html )
 
+[Windows下使用CMD命令复制多层级目录 - 小灰笔记 - CSDN博客](https://blog.csdn.net/grey_csdn/article/details/77727591 )
+
 我通过这个技术让希沃白板课件缓存文件夹可以放在有空间的盘，请看[希沃白板课件缓存文件夹迁移工具 解决C盘空间不足 - 分享汇 - 希沃论坛](http://bbs.seewoedu.cn/forum.php?mod=viewthread&tid=17342&extra= )
 
 
