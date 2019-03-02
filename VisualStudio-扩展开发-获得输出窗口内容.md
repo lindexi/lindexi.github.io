@@ -6,10 +6,9 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签： VisualStudio -->
 
-在上一篇告诉大家如何开发[添加菜单](https://lindexi.oschina.io/lindexi/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E6%B7%BB%E5%8A%A0%E8%8F%9C%E5%8D%95.html ) 点击的时候可以使用方法，如果需要拿到 VisualStudio 的输出窗口的内容，如想要开发一个插件，通过这个工具可以过滤输出
+在上一篇告诉大家如何开发[添加菜单](https://blog.lindexi.com/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E6%B7%BB%E5%8A%A0%E8%8F%9C%E5%8D%95.html ) 点击的时候可以使用方法，如果需要拿到 VisualStudio 的输出窗口的内容，如想要开发一个插件，通过这个工具可以过滤输出
 
 有很多小伙伴在输出的时候，想要将所有的内容输出，然后我就很难看到自己想要看的内容
 

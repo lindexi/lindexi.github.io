@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 <div id="toc"></div>
 
@@ -266,13 +265,13 @@
 
 在这个过程中几乎所有步骤都可以拿出来说
 
- - [使用事件](https://lindexi.oschina.io/lindexi/post/.net-remoting-%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6.html )
+ - [使用事件](https://blog.lindexi.com/lindexi/post/.net-remoting-%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6.html )
 
  - [抛出异常](https://blog.csdn.net/lindexi_gd/article/details/82114730 )
 
 
 
-如果不想了解太多细节，想快速使用，请看[WPF 封装 dotnet remoting 调用其他进程](https://lindexi.gitee.io/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
+如果不想了解太多细节，想快速使用，请看[WPF 封装 dotnet remoting 调用其他进程](https://blog.lindexi.com/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
 
 参见：
 
@@ -284,7 +283,7 @@
 
  Ingo Rammer，《Advanced .NET Remoting》
 
-[.net remoting 抛出异常](https://lindexi.oschina.io/lindexi/post/.net-remoting-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
+[.net remoting 抛出异常](https://blog.lindexi.com/lindexi/post/.net-remoting-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
 
 《Professional C#》 第3版
 
@@ -292,7 +291,7 @@
 
 [.NET Remoting中的事件处理(.NET Framework 2.0)（一） - 大坏蛋 - 博客园](http://www.cnblogs.com/dahuaidan410/articles/31656.html )
 
-[WPF 使用RPC调用其他进程](./WPF-%E4%BD%BF%E7%94%A8RPC%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
+[WPF 使用RPC调用其他进程](https://blog.csdn.net/lindexi_gd/article/details/80373135 ) 
 
 
 

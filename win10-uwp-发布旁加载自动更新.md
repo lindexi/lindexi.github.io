@@ -7,8 +7,6 @@
 
 
 
-<!-- csdn -->
-
 本文告诉大家如何搭建一个 asp dotnet core 服务器，将一个 UWP 程序使用旁加载发布，同时支持自动更新
 
 
@@ -332,7 +330,7 @@ CheckNetIsolation.exe LoopbackExempt -a -n="microsoft.desktopappinstaller_8wekyb
 
 现在开发 UWP 感觉还是不错的，虽然没有多少用户会使用应用商店，但是通过本文告诉大家的方法是不需要应用商店，只需要一个服务器，但是大家可以看到安装界面不好看，那么就需要小伙伴自己去写安装程序
 
-
+[如何在国内发布 UWP 应用](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%9B%BD%E5%86%85%E5%8F%91%E5%B8%83-UWP-%E5%BA%94%E7%94%A8.html )
 
 
 

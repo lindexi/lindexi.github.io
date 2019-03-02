@@ -234,11 +234,15 @@
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
 
+ * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
+
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
 
  * [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行](dotnet-判断程序当前使用管理员运行降低权使用普通权限运行.md)
+
+ * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
 

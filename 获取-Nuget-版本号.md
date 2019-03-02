@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：nuget -->
 
 在 Nuget 中没有 `-version` 和 `-v` 和 `--version` 等写法，只需要直接输入 nuget 在第一行就会显示版本号
