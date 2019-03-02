@@ -155,4 +155,32 @@
 
 因为返回值是 string 所以又可以继续等待
 
+## 如何不执行 finally 里面的代码
+
+这里有一个代码，需要让 finally 里面的代码不执行，现在你只能写 Foo 方法，同时这个方法不能运行无限长时间
+
+```csharp
+            try
+            {
+                Foo();
+            }
+            finally
+            {
+                Console.WriteLine("不要让这个代码运行");
+            } 
+```
+
+参考答案
+
+因为不能让 Foo 运行无限长，就不能使用无限循环的方法，可以使用的方法有 Environment.FailFast 或 Environment.Exit 退出
+
+```csharp
+private static void Foo()
+{
+    Environment.Exit(0);
+}
+```
+
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

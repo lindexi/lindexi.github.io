@@ -3,7 +3,6 @@
 如果需要使用旋转，那么很容易把图片旋转的布局被裁剪。如果需要旋转的控件还在指定的 Grid 内，就需要使用布局的旋转。本文告诉大家如何使用 LayoutTransformer。需要知道，uwp是没有 LayoutTransformer ，这个类是仿照 wpf 的 LayoutTransformer 写的。
 
 <!--more-->
-<!-- csdn -->
 
 请看下面的图片，如果直接使用 Transformer 旋转，那么在元素布局完成再进行旋转，于是这时元素就的显示在布局之外。如果是 LayoutTransformer ，是先把元素旋转，然后进行布局。
 
