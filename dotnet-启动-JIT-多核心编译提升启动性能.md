@@ -84,6 +84,8 @@ else
 <!-- ![](image/dotnet 启动 JIT 多核心编译提升启动性能/dotnet 启动 JIT 多核心编译提升启动性能0.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F201931163451479)
+
+在 dotnet core 还可以使用[阶梯编译](https://blog.lindexi.com/post/dotnet-core-2.1-%E4%BD%BF%E7%94%A8%E9%98%B6%E6%A2%AF%E7%BC%96%E8%AF%91.html ) 在软件启动的过程使用到的方法都使用快速编译的方法，减少JIT执行的时间
  
 [ProfileOptimization](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.profileoptimization?redirectedfrom=MSDN&view=netframework-4.7.2 )
 
