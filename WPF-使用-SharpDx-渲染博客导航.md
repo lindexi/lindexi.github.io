@@ -34,7 +34,7 @@
 
 以下是我收藏的一些博客
 
-- [【X_Jun的博客】一个游戏/图形爱好者 - CSDN博客](https://blog.csdn.net/X_Jun96?tdsourcetag=s_pctim_aiomsg ) 
+- [DirectX11 With Windows SDK--00 目录 - X_Jun - 博客园](https://www.cnblogs.com/X-Jun/p/9028764.html?tdsourcetag=s_pctim_aiomsg )
 
 有任何建议和吐槽都欢迎通过邮件联系我，或加入[dotnet 职业技术学院](https://t.me/dotnet_campus) 交流
 
