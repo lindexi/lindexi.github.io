@@ -175,6 +175,8 @@ RawColor4 就是 rgba ，颜色是从 0 到 1 ，对应 WPF 的 RGB 从 0 到 25
 
 重新告诉大家如何画出。首先拿到窗口，在 WPF 能创建的 WindowRenderTarget 最简单是拿到窗口。因为通过几个属性设置如何渲染，在哪渲染，所以还需要多使用几个属性才可以创建 D2D.WindowRenderTarget 。因为需要一个时机对 WindowRenderTarget 画出，所以我就使用 CompositionTarget 对他进行画出。
 
+上面很多参数都没有详细说明，具体请看这位大佬的[博客](https://blog.csdn.net/X_Jun96?tdsourcetag=s_pctim_aiomsg )
+
 
 
 
