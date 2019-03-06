@@ -1002,6 +1002,8 @@
 
  * [WPF 使用 SharpDx 异步渲染](WPF-使用-SharpDx-异步渲染.md)
 
+ * [WPF 使用 SharpDx 渲染博客导航](WPF-使用-SharpDx-渲染博客导航.md)
+
  * [WPF 使用 SharpDX](WPF-使用-SharpDX.md)
 
  * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
