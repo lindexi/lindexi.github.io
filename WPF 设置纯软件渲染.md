@@ -20,11 +20,40 @@ hwndTarget.RenderMode = RenderMode.SoftwareOnly;
 
 除了想降低性能，估计没有人会设置这个。
 
-最近在做渲染优化，更多博客请看 [渲染相关](https://lindexi.oschina.io/lindexi/post/%E6%B8%B2%E6%9F%93.html )
+上面的方法是开启窗口级的软渲染，如果想要在进程级设置开启软渲染，请使用这个代码
 
-[WPF 渲染级别](https://lindexi.oschina.io/lindexi/post/WPF-%E6%B8%B2%E6%9F%93%E7%BA%A7%E5%88%AB.html )
+```csharp
+RenderOptions.ProcessRenderMode = RenderMode.SoftwareOnly; 
+```
 
-[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
+如果想要在整个设备运行 WPF 程序都使用软渲染，那么可以通过修改注册表的方法
+
+在 `HKEY_CURRENT_USER\Software\Microsoft\Avalon.Graphics` 里面添加一个项，这个项是 `dword` 命名是 `DisableHWAcceleration` 使用默认值 0 就可以
+
+那么如何判断当前的软件是使用软渲染的？
+
+通过 [WPF Performance Suite](https://docs.microsoft.com/en-us/previous-versions/aa969767(v=vs.110) ) 运行之后附加到打开的进程调试，勾选 Draw software renderingwith purple tint 观察原有进程是否被一个诡异的颜色放在上面，如果是那么就是开启软渲染了
+
+在[Performance Profiling Tools for WPF](https://docs.microsoft.com/en-us/previous-versions/aa969767(v=vs.110) ) 的 Draw software renderingwith purple tint 就是使用高亮的矩形覆盖在使用软渲染的范围，如果整个进程都是使用软渲染，那么整个进程都会被高亮
+
+注意，除了设置使用软渲染之外打开高亮矩形可能会显示在使用 bitmap effects 的元素上或通过RenderTargetBitmap渲染的内容等使用软渲染的元素
+
+<!-- ![](image/WPF 设置纯软件渲染/WPF 设置纯软件渲染0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201937185522636)
+
+现在微软已经不开放[Performance Profiling Tools for WPF](https://docs.microsoft.com/en-us/previous-versions/aa969767(v=vs.110) )下载，请点击这个[链接](https://download.microsoft.com/download/A/6/A/A6AC035D-DA3F-4F0C-ADA4-37C8E5D34E3D/setup/WinSDKPerformanceToolKit_amd64/wpt_x64.msi)下载
+
+最近在做渲染优化，更多博客请看 [渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93.html )
+
+[WPF 渲染级别](https://blog.lindexi.com/post/WPF-%E6%B8%B2%E6%9F%93%E7%BA%A7%E5%88%AB.html )
+
+[WPF 使用 Direct2D1 画图入门](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
+
+
+[Video Rendering Issues for WPF Windows - Rick Strahl's Web Log](https://weblog.west-wind.com/posts/2017/Feb/13/Video-Rendering-Issues-for-WPF-Windows )
+
+[Enable Software Rendering in WPF programmatically](https://codeblitz.wordpress.com/2010/09/15/enable-software-rendering-in-wpf-programmatically/ )
 
 
 
