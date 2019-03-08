@@ -546,6 +546,8 @@
 
  * [win10 uwp x:Bind 无法获得资源](win10-uwp-x-Bind-无法获得资源.md)
 
+ * [win10 uwp 一张图说明水平对齐和垂直对齐](win10-uwp-一张图说明水平对齐和垂直对齐.md)
+
  * [win10 UWP 九幽数据分析](win10-UWP-九幽数据分析.md)
 
  * [win10 UWP 九幽登录](win10-UWP-九幽登录.md)

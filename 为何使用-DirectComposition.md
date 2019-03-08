@@ -46,6 +46,8 @@
 
 参见：[Why use DirectComposition](https://msdn.microsoft.com/en-us/library/windows/desktop/hh449195(v=vs.85).aspx )
 
+注意，在 Windows 8 和以上的系统才能使用 DirectComposition 的 API 包括在 x86 x64 和 ARM 等系统
+
 
 
 

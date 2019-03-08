@@ -38,7 +38,9 @@
 
 那么是不是可以通过Composition显示元素，自己来写 UWP 框架。
 
-在开始告诉大家写 UWP 框架之前，先给大家一个简单的例子，如何应用 DirectComposition 。
+在开始告诉大家写 UWP 框架之前，先给大家一个简单的例子，如何应用 DirectComposition 的 API 写出界面框架。需要知道 DirectComposition 虽然很好用，但是开发的技术要求是 C++ 和 COM 开发难度很高，在 fall creators update 16299 以上的版本，可以使用 Windows.UI.Composition 的方法，可以直接在 xaml 中写出调用 DirectComposition 的方法，同时后台代码可以使用 C# 写
+
+虽然本文想直接告诉小伙伴如何使用 C++ 和 COM 写一个 DirectComposition 的应用，但是因为发现难度太大了，同时微软也建议小伙伴使用 Windows.UI.Composition 而不是使用 DirectComposition 写应用，所以下面将告诉大家如何使用 Windows.UI.Composition 从零开始写一个应用
 
 ## 例子
 
@@ -48,7 +50,7 @@
 
 ## 创建工程
 
-首先创建一个 UWP 项目，注意选择比较高的目标。
+首先创建一个 UWP 项目，注意选择比较高的目标。最低支持要求是 16299 的系统，这里的 16299 指的是系统版本 
 
 ![](http://image.acmx.xyz/lindexi%2F20184221150375871.jpg)
 

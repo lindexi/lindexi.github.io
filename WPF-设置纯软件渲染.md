@@ -53,12 +53,11 @@ RenderOptions.ProcessRenderMode = RenderMode.SoftwareOnly;
 
 [WPF 使用 Direct2D1 画图入门](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
 
-
 [Video Rendering Issues for WPF Windows - Rick Strahl's Web Log](https://weblog.west-wind.com/posts/2017/Feb/13/Video-Rendering-Issues-for-WPF-Windows )
 
 [Enable Software Rendering in WPF programmatically](https://codeblitz.wordpress.com/2010/09/15/enable-software-rendering-in-wpf-programmatically/ )
 
-
+[Software Rendering Usage in WPF – WPF Performance and .NET Framework Client Profile](https://blogs.msdn.microsoft.com/jgoldb/2010/06/22/software-rendering-usage-in-wpf/ )
 
 
 
