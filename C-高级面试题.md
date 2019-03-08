@@ -185,7 +185,53 @@ private static void Foo()
 }
 ```
 
+## 请问下面代码输出多少
 
+请问下面的代码的 n 的值是多少？
+
+```csharp
+        class Foo
+        {
+            public int N { get; } = 1;
+        }
+
+            Foo foo = null;
+            var n = 2 + foo?.N ?? 1;
+
+            Console.WriteLine(n);
+```
+
+参考答案
+
+1
+
+可能有小伙伴认为在 `2 + foo?.N` 这时如果 foo 为空就应该返回 `??` 后面的值，但是这是不对的上面的代码是和下面的代码等同的
+
+```csharp
+            if (foo == null)
+            {
+                n = 1;
+            }
+            else
+            {
+                n = 2 + foo.N;
+            }
+```
+
+而不是和下面的代码等价的
+
+```csharp
+           if (foo == null)
+            {
+                n = 2 + 1;
+            }
+            else
+            {
+                n = 2 + foo.N;
+            }
+```
+
+在表达里面只有 `?` 的值为空，那么就不会执行
 
 
 
