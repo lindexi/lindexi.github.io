@@ -14,6 +14,8 @@
 
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
 
+ * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
+
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
 
  * [C# 7.0 使用下划线忽略使用的变量](C-7.0-使用下划线忽略使用的变量.md)
@@ -1223,6 +1225,8 @@
  * [国内好用的 DNS 列表](国内好用的-DNS-列表.md)
 
  * [图论 Warshall 和Floyd 矩阵传递闭包](图论-Warshall-和Floyd-矩阵传递闭包.md)
+
+ * [图论加法](图论加法.md)
 
  * [在 Windows 下那些好用的调试软件](在-Windows-下那些好用的调试软件.md)
 
