@@ -134,7 +134,7 @@
         {
             var button = (Button) sender;
 
-            var storyboard =(Storyboard) button.Resources["Storyboard"];
+            var storyboard = (Storyboard) button.Resources["Storyboard"];
 
             storyboard.Begin();
         }
