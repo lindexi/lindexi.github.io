@@ -250,6 +250,8 @@
 
  * [dotnet 如何调试某个文件是哪个代码创建](dotnet-如何调试某个文件是哪个代码创建.md)
 
+ * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
+
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
 
  * [dotnet 获取程序所在路径的方法](dotnet-获取程序所在路径的方法.md)
