@@ -88,6 +88,8 @@
 
  * [C# 如何在项目引用x86 x64的非托管代码](C-如何在项目引用x86-x64的非托管代码.md)
 
+ * [C# 如何引用 WshShell 类](C-如何引用-WshShell-类.md)
+
  * [C# 字典 Dictionary 的 TryGetValue 与先判断 ContainsKey 然后 Get 的性能对比](C-字典-Dictionary-的-TryGetValue-与先判断-ContainsKey-然后-Get-的性能对比.md)
 
  * [C# 对 byte 数组进行模式搜索](C-对-byte-数组进行模式搜索.md)
@@ -131,6 +133,8 @@
  * [C# 转换类型和字符串](C-转换类型和字符串.md)
 
  * [C# 通过 probing 指定 dll 寻找文件夹](C-通过-probing-指定-dll-寻找文件夹.md)
+
+ * [C# 通过编程的方法在桌面创建回收站快捷方式](C-通过编程的方法在桌面创建回收站快捷方式.md)
 
  * [C# 遍历枚举](C-遍历枚举.md)
 

@@ -54,6 +54,10 @@
             }
 ```
 
+代码 [https://github.com/lindexi/lindexi_gd/tree/e397171412e1cae803b8590ffd31413027866dc9/SeaherehorjawKitirnaivouwebooca](https://github.com/lindexi/lindexi_gd/tree/e397171412e1cae803b8590ffd31413027866dc9/SeaherehorjawKitirnaivouwebooca)
+
+更多方法请看 [Hangfire.SQLite An easy way to perform fire-and-forget, delayed and recurring tasks inside ASP.NET apps](https://github.com/tidusjar/Hangfire.SQLite )
+
 
 
 
