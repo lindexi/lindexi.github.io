@@ -432,6 +432,8 @@
 
  * [SublimeText 粘贴图片保存到本地](SublimeText-粘贴图片保存到本地.md)
 
+ * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
+
  * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
 
  * [UWP IRandomAccessStream 与 Stream 互转](UWP-IRandomAccessStream-与-Stream-互转.md)
@@ -659,6 +661,8 @@
  * [win10 uwp 如何打包Nuget给其他人](win10-uwp-如何打包Nuget给其他人.md)
 
  * [win10 uwp 如何拖动一个TextBlock的文字到另一个TextBlock ](win10-uwp-如何拖动一个TextBlock的文字到另一个TextBlock-.md)
+
+ * [win10 uwp 如何自定义 RichTextBlock 右键菜单](win10-uwp-如何自定义-RichTextBlock-右键菜单.md)
 
  * [win10 uwp 如何让 Page 继承泛型类](win10-uwp-如何让-Page-继承泛型类.md)
 

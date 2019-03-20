@@ -89,7 +89,7 @@
 
 这时运行代码不会炸掉，因为设置了 `e.ErrorContext.Handled` 是 true 如果想要记录问题同时需要炸掉，那么就不要写这个代码
 
-
+所有代码请看 [github](https://github.com/lindexi/lindexi_gd/tree/7d553d290d68b567f91daed16c814c023e90c1a8/BepirquwiKedoucawji)
 
 [Serialization Error Handling](https://www.newtonsoft.com/json/help/html/SerializationErrorHandling.htm )
 
