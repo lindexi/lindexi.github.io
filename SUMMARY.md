@@ -602,6 +602,8 @@
 
  * [win10 uwp 修改Pivot Header 颜色](win10-uwp-修改Pivot-Header-颜色.md)
 
+ * [win10 uwp 修改图片质量压缩图片](win10-uwp-修改图片质量压缩图片.md)
+
  * [win10 UWP 修改密码框文字水平](win10-UWP-修改密码框文字水平.md)
 
  * [win10 uwp 关联文件](win10-uwp-关联文件.md)
