@@ -254,6 +254,8 @@
 
  * [dotnet 如何调试某个文件是哪个代码创建](dotnet-如何调试某个文件是哪个代码创建.md)
 
+ * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
+
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)
 
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
