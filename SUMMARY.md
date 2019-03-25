@@ -660,6 +660,8 @@
 
  * [win10 uwp 如何在DataTemplate绑定方法](win10-uwp-如何在DataTemplate绑定方法.md)
 
+ * [win10 uwp 如何将像素数组转 png 文件](win10-uwp-如何将像素数组转-png-文件.md)
+
  * [win10 uwp 如何开始写 uwp 程序](win10-uwp-如何开始写-uwp-程序.md)
 
  * [win10 uwp 如何打包Nuget给其他人](win10-uwp-如何打包Nuget给其他人.md)
