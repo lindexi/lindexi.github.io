@@ -620,6 +620,8 @@
 
  * [win10 UWP 动画](win10-UWP-动画.md)
 
+ * [win10 uwp 动画移动滑动条的滑块](win10-uwp-动画移动滑动条的滑块.md)
+
  * [win10 uwp 去掉 Flyout 边框](win10-uwp-去掉-Flyout-边框.md)
 
  * [win10 uwp 参考](win10-uwp-参考.md)
