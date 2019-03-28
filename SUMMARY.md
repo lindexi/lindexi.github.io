@@ -1022,6 +1022,8 @@
 
  * [WPF 从零开始开发 dotnet Remoting 程序](WPF-从零开始开发-dotnet-Remoting-程序.md)
 
+ * [WPF 使用 Composition API 做高性能渲染](WPF-使用-Composition-API-做高性能渲染.md)
+
  * [WPF 使用 Direct2D1 画图 绘制基本图形](WPF-使用-Direct2D1-画图-绘制基本图形.md)
 
  * [WPF 使用 Direct2D1 画图入门](WPF-使用-Direct2D1-画图入门.md)
