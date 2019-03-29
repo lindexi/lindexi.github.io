@@ -28,7 +28,18 @@
 
 点击 Nuget 源设置，在 VisualStudio 的工具->选项->nuget包管理器->nuget包源里面添加 myget 的使用，这个网站是微软的 CI 输出的，里面大量的库都是没有发布的，所以微软也无法保证这些库稳定
 
-添加一个新的源，路径是 https://dotnet.myget.org/F/dotnet-core/api/v3/index.json 
+添加一个新的源，路径是 [https://dotnet.myget.org/F/dotnet-core/api/v3/index.json](https://dotnet.myget.org/F/dotnet-core/api/v3/index.json) 可以通过 `dotnet new nuget` 创建配置文件，在配置文件添加下面代码，这样就可以不在全局添加这个链接
+
+```csharp
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+ <packageSources>
+    <add key="dotnet-core" value="https://dotnet.myget.org/F/dotnet-core/api/v3/index.json" />
+ </packageSources>
+</configuration>
+``` 
+
+这个黑科技请看 [VisualStudio 给项目添加特殊的 Nuget 的链接](https://blog.lindexi.com/post/visualstudio-%E7%BB%99%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E7%89%B9%E6%AE%8A%E7%9A%84-nuget-%E7%9A%84%E9%93%BE%E6%8E%A5 )
 
 通过 VisualStudio 2017 创建一个新的控制台项目，或者通过命令行使用 dotnet 命令行创建一个新的控制台项目
 
@@ -54,7 +65,7 @@ dotnet publish -r win-x64 -c release
 
 现在可以发现发布的文件夹里面有 native 文件夹，里面就只包含一个 exe 程序，同时这个文件也非常小
 
-代码请看 https://github.com/dotnet/corert/tree/master/samples/HelloWorld
+代码请看 <https://github.com/dotnet/corert/tree/master/samples/HelloWorld>
 
 更详细的博客请看 [使用CoreRT将.NET Core发布为Native应用程序 - KAnts - 博客园](https://www.cnblogs.com/ants/p/8630332.html )
 
