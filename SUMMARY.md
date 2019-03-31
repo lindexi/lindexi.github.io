@@ -584,6 +584,8 @@
 
  * [win10 uwp 使用 Azure DevOps 自动构建](win10-uwp-使用-Azure-DevOps-自动构建.md)
 
+ * [win10 uwp 使用 Border 布局](win10-uwp-使用-Border-布局.md)
+
  * [win10 uwp 使用 Geometry resources 在 xaml](win10-uwp-使用-Geometry-resources-在-xaml.md)
 
  * [win10 uwp 使用 LayoutTransformer](win10-uwp-使用-LayoutTransformer.md)
