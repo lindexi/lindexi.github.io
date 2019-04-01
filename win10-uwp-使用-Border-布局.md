@@ -58,7 +58,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F201933116232839)
 
-如果修改宽度为 0 那么就看不到相同，如我就需要在文本下方画一条直线
+如果修改宽度为 0 那么就看不到相同，如我就需要在文本画一条直线
 
 ```csharp
         <Border HorizontalAlignment="Center" VerticalAlignment="Center"
