@@ -15,7 +15,7 @@
 
 很多小伙伴都说 VisualStudio 卡，于是微软就做了项目性能的提升，特别是打开大的项目
 
-在新的 VisualStduio 支持打开项目的时候不加载项目
+在新的 VisualStudio 支持打开项目的时候不加载项目
 
 ![](https://i.loli.net/2019/04/01/5ca1f90b01cb2.jpg)
 
@@ -27,7 +27,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F201941194516172)
 
-在 VisualStudio 经过用户的上报发现用户用的最多的是 Blue 主题，于是微软就对 Blue 主题做了优化，添加了额外对比度，实际上我看不出差别
+在 VisualStudio 经过用户的上报发现用户用的最多的是 Blue 主题，同时也只有对 Blue 主题做优化才有产出比，如果是深色主题，无论怎么优化的对比度都不如优化 Blue 的，于是微软就对 Blue 主题做了优化，添加了额外对比度，实际上我看不出差别
 
 ![](http://image.acmx.xyz/lindexi%2F20194119465644)
 
@@ -110,6 +110,14 @@
 还有很多有趣的功能，就需要小伙伴下载安装
 
 ![](http://image.acmx.xyz/lindexi%2F20194120133155)
+
+特别感谢
+
+- 应颜小伙伴告诉我 VisualStudio 写错了
+
+- walterlv 告诉我为什么优化的是 Blue 主题
+
+- Edi Wang 小伙伴让我撤回容易被小伙伴喷的图
 
 
 
