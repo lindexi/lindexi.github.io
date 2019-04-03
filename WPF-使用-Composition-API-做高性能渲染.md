@@ -115,7 +115,7 @@ dotnet build
 
 也是因为使用了这个技术，所以会存在一些坑，将会在本文下面告诉大家
 
-### 通过 PInvoke 等方法调用额外的系统相关的接口
+### 通过 COM 等方法调用额外的系统相关的接口
 
 如果只是创建一个空白的窗口是没法直接用到 Composition API 需要使用一些黑科技，这些代码都在 `CompositionHost` 因为我也看不懂，所以就跳过
 
@@ -168,6 +168,10 @@ dotnet build
 [我修改的代码](https://github.com/lindexi/lindexi_gd/tree/a8d0df42142b4979807be154ba538b648dd27175/HelloComposition)
 
 [官方代码](https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples)
+
+特别感谢
+
+- [蓝火火](https://www.cnblogs.com/blue-fire) 告诉我通过 COM 方法不是通过 PInvoke 调用系统
 
 
 

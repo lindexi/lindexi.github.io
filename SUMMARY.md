@@ -466,6 +466,8 @@
 
  * [VisualStudio 2017 项目格式 自动生成版本号](VisualStudio-2017-项目格式-自动生成版本号.md)
 
+ * [VisualStudio 2019 如何离线下载](VisualStudio-2019-如何离线下载.md)
+
  * [VisualStudio 2019 尝试使用 C# 8.0 新的方式](VisualStudio-2019-尝试使用-C-8.0-新的方式.md)
 
  * [VisualStudio 2019 新特性](VisualStudio-2019-新特性.md)

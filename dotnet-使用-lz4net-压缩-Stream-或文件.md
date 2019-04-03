@@ -52,6 +52,8 @@ using K4os.Compression.LZ4.Streams;
 
 [K4os.Compression.LZ4](https://github.com/MiloszKrajewski/K4os.Compression.LZ4 )
 
+所有代码都在 [github](https://github.com/lindexi/lindexi_gd/tree/c315a9e325e07abe3782a5966d2b24ebd2e92954/DurbujukerhaHaykairyearnal )
+
 
 
 
