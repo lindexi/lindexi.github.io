@@ -109,7 +109,9 @@
 
 还有很多有趣的功能，就需要小伙伴下载安装
 
-![](http://image.acmx.xyz/lindexi%2F20194120133155)
+<!-- ![](http://image.acmx.xyz/lindexi%2F20194120133155) -->
+
+![](http://image.acmx.xyz/lindexi%2F20194310939421)
 
 特别感谢
 
@@ -118,6 +120,8 @@
 - walterlv 告诉我为什么优化的是 Blue 主题
 
 - Edi Wang 小伙伴让我撤回容易被小伙伴喷的图
+
+如何下载安装离线的 VS 请看 [VisualStudio 2019 如何离线下载](https://blog.lindexi.com/post/visualstudio-2019-%E5%A6%82%E4%BD%95%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD )
 
 
 
