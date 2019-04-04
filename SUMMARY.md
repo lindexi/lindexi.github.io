@@ -484,6 +484,8 @@
 
  * [VisualStudio 合并代码文件](VisualStudio-合并代码文件.md)
 
+ * [VisualStudio 好用插件集合](VisualStudio-好用插件集合.md)
+
  * [VisualStudio 安装 Python 开发](VisualStudio-安装-Python-开发.md)
 
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)

@@ -70,6 +70,12 @@
 --lang zh-CN --addProductLang en-US
 ```
 
+如果同时添加多个语言可以在 `--lang` 后面添加多个
+
+```csharp
+--lang zh-CN en-US
+```
+
 于是一个下载.NET Core 开发、桌面端开发和 ASP.NET Core 开发和 UWP 开发等，下载到 `F:\下载\vs\vslayout` 的命令可以这样写
 
 ```csharp
