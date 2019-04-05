@@ -5,7 +5,13 @@
 <!--more-->
 <!-- csdn -->
 
+## PInvoke.net Visual Studio Extension  辅助编写 Win32 函数签名
 
+快速插入 PInvoke 调用代码
+
+![](https://blog.walterlv.com/static/posts/2018-07-21-22-57-52.png)
+
+详细请看 [PInvoke.net Visual Studio Extension - 辅助编写 Win32 函数签名](https://blog.walterlv.com/post/pinvoke-net-visual-studio-extension.html)
 
 ## 复制函数断点
 
@@ -24,3 +30,53 @@
 ![](http://image.acmx.xyz/lindexi%2F201943185915393)
 
 [Copy Function Breakpoint Name - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=jnm2.CopyFunctionBreakpointName )
+
+## Output enhancer
+
+为 Visual Studio 输出窗口的内容加上颜色标识（更容易找到警告和错误）
+
+
+## Gitsoler 
+
+为 Visual Studio 内嵌一个 git bash 窗口
+
+## BuildVision 
+
+使用可视化的编译输出替代文字输出，提供编译期间一些快捷的干预按钮
+
+## C#/XAML for HTML5
+
+使用 C#/XAML 编写 Web 前端代码
+
+## Avalonia for Visual Studio 
+
+用于开发和调试 Avalonia 跨平台 XAML UI 框架项目
+
+## OzCode 
+
+调试神器
+
+详细请看[OzCode - 调试神器](https://blog.walterlv.com/post/using-ozcode-to-improve-debug.html)
+
+## DLL Reference Path Change Auto
+
+通过替换引用的 NuGet 包为项目，以获得 NuGet 包的调试能力
+
+## Microsoft Child Process Debugging Power Tool 
+
+调试多进程的程序
+
+详细请看 [Microsoft Child Process Debugging Power Tool - 调试多进程的程序](https://blog.walterlv.com/post/debug-multi-process-application-using-visual-studio.html)
+
+## ClaudiaIDE 
+
+为编辑器添加一张背景图
+
+## ReSharper 
+
+嘿嘿嘿
+
+
+如果有发现好玩的插件，欢迎评论
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
