@@ -502,6 +502,8 @@
 
  * [VisualStudio 给项目添加特殊的 Nuget 的链接](VisualStudio-给项目添加特殊的-Nuget-的链接.md)
 
+ * [VisualStudio 编码规范工具 2.6 修改当前文件编码](VisualStudio-编码规范工具-2.6-修改当前文件编码.md)
+
  * [VisualStudio 自定义外部命令](VisualStudio-自定义外部命令.md)
 
  * [VisualStudio 过滤输出窗口文本](VisualStudio-过滤输出窗口文本.md)

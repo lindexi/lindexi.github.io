@@ -123,6 +123,16 @@
 
 如何下载安装离线的 VS 请看 [VisualStudio 2019 如何离线下载](https://blog.lindexi.com/post/visualstudio-2019-%E5%A6%82%E4%BD%95%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD )
 
+附激活码，激活码只用于尝试 VisualStudio 的使用，请不要在商业环境使用
+
+Visual Studio 2019 Enterprise
+
+BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
+
+Visual Studio 2019 Professional
+
+NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
+
 
 
 

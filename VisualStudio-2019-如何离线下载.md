@@ -120,6 +120,16 @@ F:\下载\vs\vslayout\vs_community.exe --add Microsoft.VisualStudio.Workload.Man
 
 [Visual Studio Community workload and component IDs](https://docs.microsoft.com/en-us/visualstudio/install/workload-component-id-vs-community?view=vs-2019#aspnet-and-web-development )
 
+激活码，激活码只用于尝试 VisualStudio 的使用，请不要在商业环境使用
+
+Visual Studio 2019 Enterprise
+
+BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
+
+Visual Studio 2019 Professional
+
+NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
+
 
 
 
