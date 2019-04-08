@@ -113,6 +113,8 @@
 
 ![](http://image.acmx.xyz/lindexi%2F20194310939421)
 
+其实还有很多我没有说到的细节，此时请大家看大佬们的视频 [Visual Studio 2019 新特性大揭秘](https://devopslive.bopoda.cn/live/azuredevops101-20190403?from=groupmessage&isappinstalled=0 )
+
 特别感谢
 
 - 应颜小伙伴告诉我 VisualStudio 写错了
@@ -132,6 +134,10 @@ BF8Y8-GN2QH-T84XB-QVY3B-RC4DF
 Visual Studio 2019 Professional
 
 NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
+
+[Visual Studio 2019 .NET productivity](https://devblogs.microsoft.com/dotnet/visual-studio-2019-net-productivity-2/ )
+
+<!-- 过滤引用 解决方法 值断点 -->
 
 
 
