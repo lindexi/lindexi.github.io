@@ -28,7 +28,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F201812121753079)
 
-当前，在使用之前需要做一些准备，首先是[下载](https://aka.ms/netcore3download) dotnet core 3.0 不然一些功能不能使用
+当前，在使用之前需要做一些准备，首先是[下载](https://aka.ms/netcore3download) dotnet core 3.0 不然一些功能不能使用。如果官网无法下载，可以到
 
 右击项目，编辑一下 csproj 文件
 
@@ -84,6 +84,20 @@
 </Project>
 ```
 
+注意：
+
+在VS2019正式版中，使用
+
+```csharp
+<NullableContextOptions>enable</NullableContextOptions>
+```
+
+而不是使用
+
+```csharp
+<NullableReferenceTypes>true</NullableReferenceTypes>
+```
+
 再次编译一下项目，虽然可以看到项目编译通过，但是可以看到下面的警告
 
 <!-- ![](image/VisualStudio 2019 尝试使用 C# 80 新的方式/VisualStudio 2019 尝试使用 C# 80 新的方式4.png) -->
@@ -120,6 +134,8 @@ warning CS8602: Possible dereference of a null reference.
             var foo = str?[0];
             Console.WriteLine(str);
 ```
+
+[C#8.0可空引用类型的使用注意要点 - 自来喵的野 - 博客园](https://www.cnblogs.com/zlmdy/p/10656793.html )
 
 ## Range
 

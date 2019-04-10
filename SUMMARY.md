@@ -750,6 +750,8 @@
 
  * [win10 uwp 自定义控件初始化](win10-uwp-自定义控件初始化.md)
 
+ * [win10 uwp 自定义标记扩展](win10-uwp-自定义标记扩展.md)
+
  * [win10 uwp 获取指定的文件 AQS](win10-uwp-获取指定的文件-AQS.md)
 
  * [win10 uwp 获取按钮鼠标左键按下](win10-uwp-获取按钮鼠标左键按下.md)
