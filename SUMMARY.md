@@ -294,6 +294,8 @@
 
  * [dotnet 通过 WMI 获取设备厂商](dotnet-通过-WMI-获取设备厂商.md)
 
+ * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
+
  * [gif 格式](gif-格式.md)
 
  * [git cannot lock ref](git-cannot-lock-ref.md)
@@ -1179,6 +1181,8 @@
  * [wpf 绑定 DataGridTextColumn ](wpf-绑定-DataGridTextColumn-.md)
 
  * [wpf 绑定 TextLength ](wpf-绑定-TextLength-.md)
+
+ * [WPF 绑定的默认模式](WPF-绑定的默认模式.md)
 
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
 
