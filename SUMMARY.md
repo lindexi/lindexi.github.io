@@ -488,6 +488,8 @@
 
  * [VisualStudio 好用插件集合](VisualStudio-好用插件集合.md)
 
+ * [VisualStudio 如何在 NuGet 包里面同时包含 DEBUG 和 RELEASE 的库](VisualStudio-如何在-NuGet-包里面同时包含-DEBUG-和-RELEASE-的库.md)
+
  * [VisualStudio 安装 Python 开发](VisualStudio-安装-Python-开发.md)
 
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)

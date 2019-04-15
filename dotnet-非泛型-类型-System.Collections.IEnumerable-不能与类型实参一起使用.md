@@ -20,6 +20,8 @@ using System.Collections.Generic;
 
 除了 IEnumerable 对于 IEnumerator 也一样，如果遇到非泛型 类型“System.Collections.IEnumerator”不能与类型实参一起使用，那么看代码里面是通过 `System.Collections.IEnumerator<Foo>` 还是 `IEnumerator<Foo>` 可以选择添加命名空间还是修改
 
+![](https://i.loli.net/2019/04/14/5cb29f897d199.jpg)
+
 
 
 
