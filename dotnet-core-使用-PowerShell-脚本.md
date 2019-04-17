@@ -60,7 +60,7 @@ System.Management.Automation.ActionPreferenceSystem.Management.Automation.AliasA
 
 [官方例子](https://github.com/PowerShell/PowerShell/tree/2c488fb4e5020de2b0629934c9edbf0fa7858b28/docs/host-powershell )
 
-https://stackoverflow.com/a/47777636/6116637
+[https://stackoverflow.com/a/47777636/6116637](https://stackoverflow.com/a/47777636/6116637 )
 
 
 

@@ -50,7 +50,7 @@ assembly 可以获得所有的类和方法。
 
 上面的 appDomainName 是我自己给他的。
 
-http://stackoverflow.com/questions/2132649/loading-unloading-assembly-in-different-appdomain
+[http://stackoverflow.com/questions/2132649/loading-unloading-assembly-in-different-appdomain](http://stackoverflow.com/questions/2132649/loading-unloading-assembly-in-different-appdomain )
 
 我们可以验证，如果不使用新建一个 AppDomain 加载的 DLL 会在主程序集，如果使用了，就会在我们新建的 AppDomain 。
 

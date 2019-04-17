@@ -206,7 +206,7 @@
 
 如果使用的数据，传入的列是男生的，那么就会使用`MaleData`，于是就可以对不同的数据使用不同的`DataTemplate`。上面的例子只是很简单使用两个不同的数据，如果有很多不同的数据，或者数据里，需要按照数据内容，进行自定义的显示，那么使用选择器也是可以做到。
 
-源代码：https://github.com/lindexi/kechengbiao
+源代码：[https://github.com/lindexi/kechengbiao](https://github.com/lindexi/kechengbiao )
 
 如果需要所有源代码，请[联系](mailto:lindexi_gd@163.com)我因为现在csdn上传需要审查，总是无法上传
 

@@ -9,7 +9,7 @@
 
 <div id="toc"></div>
 
- 进度条可以参见：http://edi.wang/post/2016/2/25/windows-10-uwp-modal-progress-dialog
+ 进度条可以参见：[http://edi.wang/post/2016/2/25/windows-10-uwp-modal-progress-dialog](http://edi.wang/post/2016/2/25/windows-10-uwp-modal-progress-dialog )
  
 
  进度条其实异步就是使用后台变化，然后 value 绑定，异步绑定很简单，参见绑定的文章。
@@ -91,11 +91,11 @@ ViewModel
 
  
 
-参见：http://www.cnblogs.com/ms-uap/p/4641419.html
+参见：[http://www.cnblogs.com/ms-uap/p/4641419.html](http://www.cnblogs.com/ms-uap/p/4641419.html )
 
  
 
-先说怎么用我的，首先去我源代码https://github.com/lindexi/UWP，打开我的进度条文件夹，里面有View文件夹
+先说怎么用我的，首先去我源代码[https://github.com/lindexi/UWP，打开我的进度条文件夹，里面有View文件夹](https://github.com/lindexi/UWP，打开我的进度条文件夹，里面有View文件夹 )
 
  
 
@@ -226,7 +226,7 @@ ViewModel
 
 如果觉得固定不好，可以在我们转换写属性，然后在界面把我们的宽度给属性，然后换为我们的宽度算，这个简单
 
-代码在https://github.com/lindexi/UWP/tree/master/uwp/control/Progress/Progress/View/RountProgress.xaml
+代码在[https://github.com/lindexi/UWP/tree/master/uwp/control/Progress/Progress/View/RountProgress.xaml](https://github.com/lindexi/UWP/tree/master/uwp/control/Progress/Progress/View/RountProgress.xaml )
 
 那么进度条如果不需要进度，那么我有一些好的，例如我之前的博客有说的，还有一个简单，也是上面改，我们一个值是显示一个值是不显示，那么我们可以做
 

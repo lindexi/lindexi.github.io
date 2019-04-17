@@ -38,7 +38,7 @@ using (SerialDevice serialPort = await SerialDevice.FromIdAsync(deviceId))
 }
 ```
 
-https://stackoverflow.com/q/37505107/6116637
+[https://stackoverflow.com/q/37505107/6116637](https://stackoverflow.com/q/37505107/6116637 )
 
 
 

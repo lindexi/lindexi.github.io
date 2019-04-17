@@ -36,7 +36,7 @@
 |60（1分钟）|如果您经常修改IP，修改记录一分钟即可生效。长期使用 60，解析速度会略受影响|
 |3600（1小时）|如果您IP极少变动（一年几次），建议选择 3600，解析速度快。如果要修改IP，提前一天改为 60，即可快速生效|
 
-http://www.figotan.org/2016/03/29/how-to-speed-up-your-blog-using-duplex-git-pages/
+[http://www.figotan.org/2016/03/29/how-to-speed-up-your-blog-using-duplex-git-pages/](http://www.figotan.org/2016/03/29/how-to-speed-up-your-blog-using-duplex-git-pages/ )
 
 
 

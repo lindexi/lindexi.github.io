@@ -43,12 +43,12 @@ await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPrio
 });
 ```
 
-上面两种方法都写在堆栈网 https://stackoverflow.com/a/38175976/6116637
+上面两种方法都写在堆栈网 [https://stackoverflow.com/a/38175976/6116637](https://stackoverflow.com/a/38175976/6116637 )
 
 
-https://stackoverflow.com/questions/7401538/simple-example-of-dispatcherhelper
+[https://stackoverflow.com/questions/7401538/simple-example-of-dispatcherhelper](https://stackoverflow.com/questions/7401538/simple-example-of-dispatcherhelper )
 
-https://stackoverflow.com/questions/38149767/uwp-update-ui-from-task
+[https://stackoverflow.com/questions/38149767/uwp-update-ui-from-task](https://stackoverflow.com/questions/38149767/uwp-update-ui-from-task )
 
 
 

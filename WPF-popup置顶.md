@@ -9,9 +9,9 @@
 
 <div id="toc"></div>
 
-http://www.cnblogs.com/Leaco/p/3164394.html
+[http://www.cnblogs.com/Leaco/p/3164394.html](http://www.cnblogs.com/Leaco/p/3164394.html )
 
-http://blog.csdn.net/baijinwen/article/details/6159043
+[http://blog.csdn.net/baijinwen/article/details/6159043](http://blog.csdn.net/baijinwen/article/details/6159043 )
 
 只需要把下面的类放到自己的软件，然后把使用 popup 替换为 CCPopup 就不会让popup置顶
 

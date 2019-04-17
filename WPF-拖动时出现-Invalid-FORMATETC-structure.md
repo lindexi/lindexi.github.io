@@ -33,7 +33,7 @@ Additional information: Invalid FORMATETC-Structure (Exception HRESULT: 0x800400
 
 只需要忽略就好了
 
-参见 https://stackoverflow.com/a/34092811/6116637
+参见 [https://stackoverflow.com/a/34092811/6116637](https://stackoverflow.com/a/34092811/6116637 )
 
 ![](http://www.chinadaily.com.cn/china/images/attachement/jpg/site1/20090722/0013729e4ad90bd108253f.jpg )
 

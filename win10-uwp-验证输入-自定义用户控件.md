@@ -569,7 +569,7 @@ TemplatePart 是告诉做界面，我的需要名字为 Name，类型为什么�
 
 于是我们使用布局，直接放TextBlock，于是我们的控件做好。
 
-有一些比较难说我没有说，请去看代码 http://git.oschina.net/lindexi/WinUX-UWP-Toolkit
+有一些比较难说我没有说，请去看代码 [http://git.oschina.net/lindexi/WinUX-UWP-Toolkit](http://git.oschina.net/lindexi/WinUX-UWP-Toolkit )
 
 
 

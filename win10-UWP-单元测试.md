@@ -129,7 +129,7 @@ Assert 是返回结果 true 方法是测试通过，如果是其他就不通过�
 
 ## 异步测试
 
-参见：https://msdn.microsoft.com/zh-cn/magazine/dn818493.aspx
+参见：[https://msdn.microsoft.com/zh-cn/magazine/dn818493.aspx](https://msdn.microsoft.com/zh-cn/magazine/dn818493.aspx )
 
 
 

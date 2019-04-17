@@ -34,7 +34,7 @@
             var httpRequestMessage = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.Get, new Uri(Url));
             var userAgent = "Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; WebView/3.0; Microsoft; Virtual) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10240 sample/1.0";
             httpRequestMessage.Headers.Add("User-Agent", userAgent);
-            Webview.NavigateWithHttpRequestMessage(httpRequestMessage);
+            Webview.NavigateWith[HttpRequestMessage(httpRequestMessage);](HttpRequestMessage(httpRequestMessage); )
         }
 ```
 
@@ -136,7 +136,7 @@ namespace WebViewUwp
             var httpRequestMessage = new Windows.Web.Http.HttpRequestMessage(Windows.Web.Http.HttpMethod.Get, new Uri(Url));
             var userAgent = "Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; WebView/3.0; Microsoft; Virtual) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10240 sample/1.0";
             httpRequestMessage.Headers.Add("User-Agent", userAgent);
-            Webview.NavigateWithHttpRequestMessage(httpRequestMessage);
+            Webview.NavigateWith[HttpRequestMessage(httpRequestMessage);](HttpRequestMessage(httpRequestMessage); )
         }
     }
 }

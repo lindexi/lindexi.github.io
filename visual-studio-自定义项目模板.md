@@ -53,10 +53,10 @@
 
 <table Responsive="true"><tr Responsive="true"><th><p>
                 <span id="mt17" class="sentence" data-guid="03144cce1fcdacdbe993e5266c0bf3f3" data-source="Parameter" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">
-  <sentenceText xmlns="http://www.w3.org/1999/xhtml">参数</sentenceText>
+  <sentenceText xmlns="[http://www.w3.org/1999/xhtml">参数</sentenceText>](http://www.w3.org/1999/xhtml">参数</sentenceText> )
 </sentenceText></span>
               </p></th><th><p>
-                <span id="mt18" class="sentence" data-guid="67daf92c833c41c95db874e18fcb2786" data-source="Description" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">描述</sentenceText></span>
+                <span id="mt18" class="sentence" data-guid="67daf92c833c41c95db874e18fcb2786" data-source="Description" xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">描述</sentenceText></span>](http://www.w3.org/1999/xhtml">描述</sentenceText></span> )
               </p></th></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt19" class="sentence" data-guid="c133fa31e454fa144f7d7d90e9ae1693" data-source="clrversion" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">clrversion</sentenceText></span>
@@ -73,19 +73,19 @@
                   <span id="mt24" class="sentence" data-guid="3e3640c36bf50aec770a87493828e76d" data-source="itemname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">itemname</sentenceText></span>
                 </strong>
               </p></td><td data-th="&#xA;                描述&#xA;              "><p>
-                <span id="mt25" class="sentence" data-guid="45f07a95e0e4d41abc8629973ec2626a" data-source="The name provided by the user in the &lt;strong&gt;Add New Item&lt;/strong&gt; dialog box." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">添加新项</strong>对话框中提供的名称。</sentenceText></span>
+                <span id="mt25" class="sentence" data-guid="45f07a95e0e4d41abc8629973ec2626a" data-source="The name provided by the user in the &lt;strong&gt;Add New Item&lt;/strong&gt; dialog box." xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">用户在<strong](http://www.w3.org/1999/xhtml">用户在<strong ) xmlns="[http://www.w3.org/1999/xhtml">添加新项</strong>对话框中提供的名称。</sentenceText></span>](http://www.w3.org/1999/xhtml">添加新项</strong>对话框中提供的名称。</sentenceText></span> )
               </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt26" class="sentence" data-guid="62f2e1d94ea5a730c4dfda5ead0bde29" data-source="machinename" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">machinename</sentenceText></span>
                 </strong>
               </p></td><td data-th="&#xA;                描述&#xA;              "><p>
-                <span id="mt27" class="sentence" data-guid="07677bf070f0091903f60cd3dffbfc75" data-source="The current computer name (for example, Computer01)." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前的计算机名称（例如，Computer01）。</sentenceText></span>
+                <span id="mt27" class="sentence" data-guid="07677bf070f0091903f60cd3dffbfc75" data-source="The current computer name (for example, Computer01)." xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">当前的计算机名称（例如，Computer01）。</sentenceText></span>](http://www.w3.org/1999/xhtml">当前的计算机名称（例如，Computer01）。</sentenceText></span> )
               </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt28" class="sentence" data-guid="0c79925e09c937c71744ced5b822bb9c" data-source="projectname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">projectname</sentenceText></span>
                 </strong>
               </p></td><td data-th="&#xA;                描述&#xA;              "><p>
-                <span id="mt29" class="sentence" data-guid="5dc7586ced55345b6c0596d20776a515" data-source="The name provided by the user in the &lt;strong&gt;New Project&lt;/strong&gt; dialog box." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">新建项目</strong>对话框中提供的名称。</sentenceText></span>
+                <span id="mt29" class="sentence" data-guid="5dc7586ced55345b6c0596d20776a515" data-source="The name provided by the user in the &lt;strong&gt;New Project&lt;/strong&gt; dialog box." xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">用户在<strong](http://www.w3.org/1999/xhtml">用户在<strong ) xmlns="[http://www.w3.org/1999/xhtml">新建项目</strong>对话框中提供的名称。</sentenceText></span>](http://www.w3.org/1999/xhtml">新建项目</strong>对话框中提供的名称。</sentenceText></span> )
               </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt30" class="sentence" data-guid="b8cb8cda7a77173c8cd60820bac24c51" data-source="registeredorganization" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">registeredorganization</sentenceText></span>
@@ -102,13 +102,13 @@
                   <span id="mt35" class="sentence" data-guid="1d776f1950944fd630b39229db934fef" data-source="safeitemname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">safeitemname</sentenceText></span>
                 </strong>
               </p></td><td data-th="&#xA;                描述&#xA;              "><p>
-                <span id="mt36" class="sentence" data-guid="5c6bf9887241db9208137f7209ff1535" data-source="The name provided by the user in the &lt;strong&gt;Add New Item&lt;/strong&gt; dialog box, with all unsafe characters and spaces removed." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">“添加新项”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span>
+                <span id="mt36" class="sentence" data-guid="5c6bf9887241db9208137f7209ff1535" data-source="The name provided by the user in the &lt;strong&gt;Add New Item&lt;/strong&gt; dialog box, with all unsafe characters and spaces removed." xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">用户在<strong](http://www.w3.org/1999/xhtml">用户在<strong ) xmlns="[http://www.w3.org/1999/xhtml">“添加新项”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span>](http://www.w3.org/1999/xhtml">“添加新项”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span> )
               </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt37" class="sentence" data-guid="5eee0cd89154fbf6bd9e081b5a94ced6" data-source="safeprojectname" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">safeprojectname</sentenceText></span>
                 </strong>
               </p></td><td data-th="&#xA;                描述&#xA;              "><p>
-                <span id="mt38" class="sentence" data-guid="944b58f8edf11ae44c537b00d5b613e9" data-source="The name provided by the user in the &lt;strong&gt;New Project&lt;/strong&gt; dialog box, with all unsafe characters and spaces removed." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">用户在<strong xmlns="http://www.w3.org/1999/xhtml">“新建项目”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span>
+                <span id="mt38" class="sentence" data-guid="944b58f8edf11ae44c537b00d5b613e9" data-source="The name provided by the user in the &lt;strong&gt;New Project&lt;/strong&gt; dialog box, with all unsafe characters and spaces removed." xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">用户在<strong](http://www.w3.org/1999/xhtml">用户在<strong ) xmlns="[http://www.w3.org/1999/xhtml">“新建项目”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span>](http://www.w3.org/1999/xhtml">“新建项目”</strong>对话框中提供的名称，名称中移除了所有不安全的字符和空格。</sentenceText></span> )
               </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt39" class="sentence" data-guid="07cc694b9b3fc636710fa08b6922c42b" data-source="time" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">time</sentenceText></span>
@@ -125,13 +125,13 @@
                   <span id="mt45" class="sentence" data-guid="cbbacbb40776f2eda9611f5d6a1aceb7" data-source="userdomain" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">userdomain</sentenceText></span>
                 </strong>
               </p></td><td data-th="&#xA;                描述&#xA;              "><p>
-                <span id="mt46" class="sentence" data-guid="bdd1425d9a1a601a0cef89e8998dc36d" data-source="The current user domain." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前的用户域。</sentenceText></span>
+                <span id="mt46" class="sentence" data-guid="bdd1425d9a1a601a0cef89e8998dc36d" data-source="The current user domain." xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">当前的用户域。</sentenceText></span>](http://www.w3.org/1999/xhtml">当前的用户域。</sentenceText></span> )
               </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt47" class="sentence" data-guid="14c4b06b824ec593239362517f538b29" data-source="username" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">username</sentenceText></span>
                 </strong>
               </p></td><td data-th="&#xA;                描述&#xA;              "><p>
-                <span id="mt48" class="sentence" data-guid="2104843e8c143db53f8ab885786712fd" data-source="The current user name." xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">当前的用户名。</sentenceText></span>
+                <span id="mt48" class="sentence" data-guid="2104843e8c143db53f8ab885786712fd" data-source="The current user name." xml:space="preserve"><sentenceText xmlns="[http://www.w3.org/1999/xhtml">当前的用户名。</sentenceText></span>](http://www.w3.org/1999/xhtml">当前的用户名。</sentenceText></span> )
               </p></td></tr><tr><td data-th="&#xA;                Parameter&#xA;              "><p>
                 <strong>
                   <span id="mt49" class="sentence" data-guid="3e729841ba9695cb7b4b18a70d26d9cd" data-source="webnamespace" xml:space="preserve"><sentenceText xmlns="http://www.w3.org/1999/xhtml">webnamespace</sentenceText></span>

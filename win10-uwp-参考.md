@@ -76,103 +76,103 @@
 
    大量Win2D博客
 
- - http://www.cnblogs.com/gaoshang212
+ - [http://www.cnblogs.com/gaoshang212](http://www.cnblogs.com/gaoshang212 )
 
- - http://www.cnblogs.com/durow/
+ - [http://www.cnblogs.com/durow/](http://www.cnblogs.com/durow/ )
 
- - http://www.cnblogs.com/Enious/
+ - [http://www.cnblogs.com/Enious/](http://www.cnblogs.com/Enious/ )
 
  - nomasp http://blog.csdn.net/nomasp/ 
 
    柯于旺大神，现在小米，没有继续做UWP，但他写了CSDN第一个UWP专栏
 
- - 叔叔的博客 http://www.cnblogs.com/manupstairs/
+ - 叔叔的博客 [http://www.cnblogs.com/manupstairs/](http://www.cnblogs.com/manupstairs/ )
 
- - http://www.cnblogs.com/mushroom/
+ - [http://www.cnblogs.com/mushroom/](http://www.cnblogs.com/mushroom/ )
 
- - http://www.cnblogs.com/OceanEyes
+ - [http://www.cnblogs.com/OceanEyes](http://www.cnblogs.com/OceanEyes )
 
- - http://www.cnblogs.com/FaDeKongJian
+ - [http://www.cnblogs.com/FaDeKongJian](http://www.cnblogs.com/FaDeKongJian )
 
  - http://blog.higan.me/ msp，二次元 
 
    写了很多瀑布流博客 
 
- - http://blog.csdn.net/maple__leaves
+ - [http://blog.csdn.net/maple__leaves](http://blog.csdn.net/maple__leaves )
 
- - http://www.cnblogs.com/qianblue
+ - [http://www.cnblogs.com/qianblue](http://www.cnblogs.com/qianblue )
 
- - http://www.cnblogs.com/youngytj
+ - [http://www.cnblogs.com/youngytj](http://www.cnblogs.com/youngytj )
 
- - msp的昌伟哥哥 http://www.cnblogs.com/mantgh
+ - msp的昌伟哥哥 [http://www.cnblogs.com/mantgh](http://www.cnblogs.com/mantgh )
 
    刚进微软的大神，他有好多HoloLens文章
 
- - https://msdn.microsoft.com/magazine/mt694090
+ - [https://msdn.microsoft.com/magazine/mt694090](https://msdn.microsoft.com/magazine/mt694090 )
 
- - 追梦园 http://www.zmy123.cn
+ - 追梦园 [http://www.zmy123.cn](http://www.zmy123.cn )
 
  - http://www.cnblogs.com/shiyingzheng 
 
- - http://uwpbox.com/
+ - [http://uwpbox.com/](http://uwpbox.com/ )
 
- - http://www.cnblogs.com/cjw1115
+ - [http://www.cnblogs.com/cjw1115](http://www.cnblogs.com/cjw1115 )
 
- - http://www.cnblogs.com/bomo
+ - [http://www.cnblogs.com/bomo](http://www.cnblogs.com/bomo )
 
  - http://www.cnblogs.com/brookshi XPShadow
 
  - http://blog.csdn.net/LH806732 
 
- - http://www.cnblogs.com/wpali
+ - [http://www.cnblogs.com/wpali](http://www.cnblogs.com/wpali )
 
  - https://hjc.im UWP可以使用流氓win32
 
- - http://www.cnblogs.com/KudouShinichi/
+ - [http://www.cnblogs.com/KudouShinichi/](http://www.cnblogs.com/KudouShinichi/ )
 
- - http://blog.mzikmund.com/2016/03/winrt-gotcha-one-shot-timer-backgroundtask-does-not-unregister-after-the-one-shot/
+ - [http://blog.mzikmund.com/2016/03/winrt-gotcha-one-shot-timer-backgroundtask-does-not-unregister-after-the-one-shot/](http://blog.mzikmund.com/2016/03/winrt-gotcha-one-shot-timer-backgroundtask-does-not-unregister-after-the-one-shot/ )
 
- - https://www.mgenware.com/blog
+ - [https://www.mgenware.com/blog](https://www.mgenware.com/blog )
 
- - http://xamlnative.com/
+ - [http://xamlnative.com/](http://xamlnative.com/ )
 
  - jamescroft http://jamescroft.co.uk 我们在做WinUx，他是微软的大神
 
- - http://edi.wang/
+ - [http://edi.wang/](http://edi.wang/ )
 
- - http://www.sambeauvois.be/
+ - [http://www.sambeauvois.be/](http://www.sambeauvois.be/ )
 
- - http://www.dkhalife.com
+ - [http://www.dkhalife.com](http://www.dkhalife.com )
 
- - https://liftcodeplay.com
+ - [https://liftcodeplay.com](https://liftcodeplay.com )
 
  - http://blogs.u2u.be/diederik/ 微软社区工作者
 
- - http://www.franksworld.com/
+ - [http://www.franksworld.com/](http://www.franksworld.com/ )
 
- - http://jameszhan.github.io
+ - [http://jameszhan.github.io](http://jameszhan.github.io )
 
- - http://blog.csdn.net/github_36704374
+ - [http://blog.csdn.net/github_36704374](http://blog.csdn.net/github_36704374 )
 
- - http://blog.csdn.net/u011033906
+ - [http://blog.csdn.net/u011033906](http://blog.csdn.net/u011033906 )
 
- - http://www.romasz.net/
+ - [http://www.romasz.net/](http://www.romasz.net/ )
 
- - http://www.cnblogs.com/RodChong
+ - [http://www.cnblogs.com/RodChong](http://www.cnblogs.com/RodChong )
 
- - https://codeblog.jonskeet.uk/
+ - [https://codeblog.jonskeet.uk/](https://codeblog.jonskeet.uk/ )
 
- - https://ericlippert.com/
+ - [https://ericlippert.com/](https://ericlippert.com/ )
 
- - http://codes-sources.commentcamarche.net/
+ - [http://codes-sources.commentcamarche.net/](http://codes-sources.commentcamarche.net/ )
 
- - https://blog.kulman.sk/
+ - [https://blog.kulman.sk/](https://blog.kulman.sk/ )
 
  - http://www.cnblogs.com/dingdaheng 
 
    看了他的选颜色
 
- - http://juniperphoton.net
+ - [http://juniperphoton.net](http://juniperphoton.net )
 
 如果有发现UWP大神，请告诉他的博客
 

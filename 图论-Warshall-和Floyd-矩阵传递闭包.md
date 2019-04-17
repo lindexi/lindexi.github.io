@@ -10,7 +10,7 @@
 
 我们来说下有向图，一般的有向图也是图，图可以分为稠密图，稀疏图，那么从意思上，稠密图就是点的边比较多，稀疏图就是边比较少的图。为什么稠密图放在矩阵比较省空间，因为邻接表在边之间存储需要多余的指针，而矩阵不需要。
 
-下面这张图：http://blog.csdn.net/tham_/article/details/46048063
+下面这张图：[http://blog.csdn.net/tham_/article/details/46048063](http://blog.csdn.net/tham_/article/details/46048063 )
 
 ![这里写图片描述](http://images.cnitblog.com/i/552798/201404/301440099397248.jpg)
 
@@ -32,7 +32,7 @@
 
 我们来说下有向图，一般的有向图也是图，图可以分为稠密图，稀疏图，那么从意思上，稠密图就是点的边比较多，稀疏图就是边比较少的图。为什么稠密图放在矩阵比较省空间，因为邻接表在边之间存储需要多余的指针，而矩阵不需要。
 
-下面这张图：http://blog.csdn.net/tham_/article/details/46048063
+下面这张图：[http://blog.csdn.net/tham_/article/details/46048063](http://blog.csdn.net/tham_/article/details/46048063 )
 
 ![这里写图片描述](http://images.cnitblog.com/i/552798/201404/301440099397248.jpg)
 

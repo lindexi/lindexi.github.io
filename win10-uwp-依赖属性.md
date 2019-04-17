@@ -200,7 +200,7 @@
 
 不需要担心清除一个不存在的委托，一般在使用 AddValueChanged 之前都使用 RemoveValueChanged 清除
 
-参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
+参见：[https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property](https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property )
 
 
 ### 初始化出现默认值类型与属性类型不同

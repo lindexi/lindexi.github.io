@@ -24,7 +24,7 @@
 
 上面说的都不是来自微软官方。
 
-参见：http://stackoverflow.com/a/40233780/6116637
+参见：[http://stackoverflow.com/a/40233780/6116637](http://stackoverflow.com/a/40233780/6116637 )
 
 [Microsoft releases new Windows 10 SDK ](https://www.onmsft.com/news/microsoft-releases-new-windows-10-sdk-preview-associated-mobile-emulator)
 

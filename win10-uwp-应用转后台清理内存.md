@@ -79,7 +79,7 @@
 `AppMemoryUsageDecreased`我们应用内存等级下降，在我们使用内存从大到小使用，这个在我们清理很多缓存可以让我们知道不用清理，一般用是在`AppMemoryUsageIncreased` 有个任务CleanTask，把我们的缓存清理，然后我们有个bool，一旦`AppMemoryUsageDecreased`我们就设为true，那么我们的CleanTask判断true就停下。
 
 
-源代码：https://github.com/lindexi/NovelRead
+源代码：[https://github.com/lindexi/NovelRead](https://github.com/lindexi/NovelRead )
 
 
 

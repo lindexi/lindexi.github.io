@@ -28,7 +28,7 @@ Application.Current.Resources["Key"]
 
 如果有多个资源使用相同的 Key ，那么哪个资源靠近使用的地方，就是使用哪个资源。可以自己尝试写个呆磨试试，看起来很容易做的样子。如果一个资源写在 App.xaml 那么整个程序都可以用，而且这个资源不会被释放。所以如果想在 App.xaml 使用资源，请小心。如果资源太多，会让软件的启动速度变慢。另外，请不要直接把资源写在 App.xaml ，建议是写在一个资源文件，然后在 App.xaml 使用 Merge 的方式。
 
-参见：http://blog.csdn.net/fwj380891124/article/details/8153229
+参见：[http://blog.csdn.net/fwj380891124/article/details/8153229](http://blog.csdn.net/fwj380891124/article/details/8153229 )
 
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20178885742.jpg)
 

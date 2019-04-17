@@ -18,7 +18,7 @@
 
 > `cd gitea`
 
-下载最新的 gitea ，可以在这个网页找到最新的软件 https://docs.gitea.io/en-us/install-from-binary/
+下载最新的 gitea ，可以在这个网页找到最新的软件 [https://docs.gitea.io/en-us/install-from-binary/](https://docs.gitea.io/en-us/install-from-binary/ )
 
 使用下面的代码将软件下载在文件夹
 
@@ -38,7 +38,7 @@
 
 如果可以运行，就在来浏览器输入服务器的ip和端口3000访问，我的服务器是 http://172.96.218.156 我可以使用下面的链接访问
 
-http://172.96.218.156:3000
+[http://172.96.218.156:3000](http://172.96.218.156:3000 )
 
 这个链接是可以使用的，大家可以使用我的服务器
 

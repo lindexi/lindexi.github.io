@@ -14,7 +14,7 @@
         private async void Button_OnClick(object sender, RoutedEventArgs e)
         {
             var url = "http://image.acmx.xyz/lindexi%2F2018116203842298";
-            var request = WebRequest.CreateHttp(url);
+            var request = WebRequest.Create[Http(url);](Http(url); )
             request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1";
             request.Method = "Get";
             using (var response = await request.GetResponseAsync())
@@ -29,7 +29,7 @@
 
 ```csharp
             var url = "http://image.acmx.xyz/lindexi%2F2018116203842298";
-            var request = WebRequest.CreateHttp(url);
+            var request = WebRequest.Create[Http(url);](Http(url); )
             request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1";
             request.Method = "HEAD";
             using (var response = await request.GetResponseAsync())

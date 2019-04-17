@@ -108,10 +108,10 @@
     /// <summary>
     /// Double 的扩展
     /// </summary>
-    //SOURCE: https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.cs
-    //        https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.Equality.cs
-    //        http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs
-    //        http://stackoverflow.com/questions/2411392/double-epsilon-for-equality-greater-than-less-than-less-than-or-equal-to-gre
+    //SOURCE: [https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.cs](https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.cs )
+    //        [https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.Equality.cs](https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.Equality.cs )
+    //        [http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs](http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs )
+    //        [http://stackoverflow.com/questions/2411392/double-epsilon-for-equality-greater-than-less-than-less-than-or-equal-to-gre](http://stackoverflow.com/questions/2411392/double-epsilon-for-equality-greater-than-less-than-less-than-or-equal-to-gre )
     public static class DoubleExtensions
     {
         /// <summary>
@@ -280,13 +280,13 @@
 
 参见：
 
-https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.cs
+[https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.cs](https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.cs )
 
-https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.Equality.cs
+[https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.Equality.cs](https://github.com/mathnet/mathnet-numerics/blob/master/src/Numerics/Precision.Equality.cs )
 
-http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs
+[http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs](http://referencesource.microsoft.com/#WindowsBase/Shared/MS/Internal/DoubleUtil.cs )
 
-http://stackoverflow.com/questions/2411392/double-epsilon-for-equality-greater-than-less-than-less-than-or-equal-to-gre
+[http://stackoverflow.com/questions/2411392/double-epsilon-for-equality-greater-than-less-than-less-than-or-equal-to-gre](http://stackoverflow.com/questions/2411392/double-epsilon-for-equality-greater-than-less-than-less-than-or-equal-to-gre )
 
 
 

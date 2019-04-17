@@ -22,9 +22,9 @@ visualBrush.Visual = null;
 visualBrush.Visual = visual;
 ```
 
-参见：https://stackoverflow.com/a/3073378/6116637
+参见：[https://stackoverflow.com/a/3073378/6116637](https://stackoverflow.com/a/3073378/6116637 )
 
-https://stackoverflow.com/a/13182210/6116637
+[https://stackoverflow.com/a/13182210/6116637](https://stackoverflow.com/a/13182210/6116637 )
 
 
 

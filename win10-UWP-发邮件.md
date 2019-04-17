@@ -128,9 +128,9 @@ UWP 发送邮件内容如何换行，messageBody 用的是 html ，所以使用 
 ```
 
 
-代码：http://download.csdn.net/detail/lindexi_gd/9757862
+代码：[http://download.csdn.net/detail/lindexi_gd/9757862](http://download.csdn.net/detail/lindexi_gd/9757862 )
 
-参见：https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/sending-email
+参见：[https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/sending-email](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/sending-email )
 
 
 

@@ -281,7 +281,7 @@ UWP的 BitmapImage 不能转换为 byte[] 或 WriteableBitmap 。这句话是错
 获得图片中鼠标点击的颜色。这个方法有时炸了，都是 255 。
 
  -->
-代码：https://github.com/lindexi/UWP/tree/master/uwp/src/ImageMoseClick
+代码：[https://github.com/lindexi/UWP/tree/master/uwp/src/ImageMoseClick](https://github.com/lindexi/UWP/tree/master/uwp/src/ImageMoseClick )
 
 ## 获取Dpi
 
@@ -302,13 +302,13 @@ var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///
 
 如果需要保存网络图片到本地，请到[win10 uwp 存放网络图片到本地](http://lindexi.oschina.io/lindexi/post/win10-uwp-存放网络图片到本地/)
 
-参见：http://www.cnblogs.com/cjw1115/p/5164327.html
+参见：[http://www.cnblogs.com/cjw1115/p/5164327.html](http://www.cnblogs.com/cjw1115/p/5164327.html )
 
-http://www.cnblogs.com/yuanforprogram/p/4819307.html
+[http://www.cnblogs.com/yuanforprogram/p/4819307.html](http://www.cnblogs.com/yuanforprogram/p/4819307.html )
 
-http://stackoverflow.com/questions/41439543/how-can-i-get-the-pixel-color-of-an-image-at-the-current-pointer-position-in-a-u
+[http://stackoverflow.com/questions/41439543/how-can-i-get-the-pixel-color-of-an-image-at-the-current-pointer-position-in-a-u](http://stackoverflow.com/questions/41439543/how-can-i-get-the-pixel-color-of-an-image-at-the-current-pointer-position-in-a-u )
 
-http://www.cnblogs.com/mqxs/p/5707620.html
+[http://www.cnblogs.com/mqxs/p/5707620.html](http://www.cnblogs.com/mqxs/p/5707620.html )
 
 
 

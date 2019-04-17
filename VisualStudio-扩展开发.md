@@ -51,7 +51,7 @@
 
 ![](http://image.acmx.xyz/dac58ce0-c90f-489f-9ac0-83aadcf143db201711292118.jpg)
 
-新建出来可以看到多了好多文件，其中 .vsct 是核心，如果想知道关于他更多，请去中文博客：http://www.cnblogs.com/default/archive/2010/06/28/1766451.html
+新建出来可以看到多了好多文件，其中 .vsct 是核心，如果想知道关于他更多，请去中文博客：[http://www.cnblogs.com/default/archive/2010/06/28/1766451.html](http://www.cnblogs.com/default/archive/2010/06/28/1766451.html )
 
 我先放出做出了的菜单。
 
@@ -179,7 +179,7 @@
 
 ## 增加选项
 
-我们需要保存一些设置，那么如何自定义配置的界面，把配置页面放在工具->选项，可以参见 http://www.cnblogs.com/winkingzhang 提供的方法，我使用了他的方法，很简单。还有垃圾wr的方法 https://github.com/Microsoft/VSSDK-Extensibility-Samples/blob/646de671c1a65ca49e9fce397baefe217e9123e8/Options_Page/Readme.md
+我们需要保存一些设置，那么如何自定义配置的界面，把配置页面放在工具->选项，可以参见 [http://www.cnblogs.com/winkingzhang](http://www.cnblogs.com/winkingzhang ) 提供的方法，我使用了他的方法，很简单。还有垃圾wr的方法 [https://github.com/Microsoft/VSSDK-Extensibility-Samples/blob/646de671c1a65ca49e9fce397baefe217e9123e8/Options_Page/Readme.md](https://github.com/Microsoft/VSSDK-Extensibility-Samples/blob/646de671c1a65ca49e9fce397baefe217e9123e8/Options_Page/Readme.md )
 
 
 首先打开 `*Package.cs` ，不过我们需要新建一个类 DefinitionPage ，不需要在这个类写什么。
@@ -192,7 +192,7 @@
     }
 ```
 
-然后添加 ProvideProfile ，需要写类型、分类名称、页面名称、资源ID。关于 ProvideProfile 可以去：https://msdn.microsoft.com/zh-cn/library/microsoft.visualstudio.shell.provideprofileattribute.aspx
+然后添加 ProvideProfile ，需要写类型、分类名称、页面名称、资源ID。关于 ProvideProfile 可以去：[https://msdn.microsoft.com/zh-cn/library/microsoft.visualstudio.shell.provideprofileattribute.aspx](https://msdn.microsoft.com/zh-cn/library/microsoft.visualstudio.shell.provideprofileattribute.aspx )
 
 
 ```csharp
@@ -316,7 +316,7 @@ DefinitionPage 就是我上面定义的选项
 
 
 
-从零做一个扩展，可以参见：http://www.cnblogs.com/stg609/p/3711443.html
+从零做一个扩展，可以参见：[http://www.cnblogs.com/stg609/p/3711443.html](http://www.cnblogs.com/stg609/p/3711443.html )
 
 ## 传到商店
 
@@ -357,7 +357,7 @@ DefinitionPage 就是我上面定义的选项
 
 我需要获取用户工程的所有项目，我开始使用`dte.Solution.Projects`但是放在文件夹的项目获取不到，所以使用堆栈提供的方法。
 
-这个方法写在[C＃ 解析 sln 文件](http://lindexi.oschina.io/lindexi/post/C-%E8%A7%A3%E6%9E%90-sln-%E6%96%87%E4%BB%B6/) 可是 vs 说找到不 Microsoft.Build.dll 所以这个方法还是不可以的。那么如何从 dte 获取所有项目？我找到一个大神博客：http://www.wwwlicious.com/2011/03/29/envdte-getting-all-projects-html/
+这个方法写在[C＃ 解析 sln 文件](http://lindexi.oschina.io/lindexi/post/C-%E8%A7%A3%E6%9E%90-sln-%E6%96%87%E4%BB%B6/) 可是 vs 说找到不 Microsoft.Build.dll 所以这个方法还是不可以的。那么如何从 dte 获取所有项目？我找到一个大神博客：[http://www.wwwlicious.com/2011/03/29/envdte-getting-all-projects-html/](http://www.wwwlicious.com/2011/03/29/envdte-getting-all-projects-html/ )
 
 开始判断是不是文件夹，如果是的话，递归函数获取文件夹所有项目。
 
@@ -418,15 +418,15 @@ DefinitionPage 就是我上面定义的选项
 
 <script src="https://gist.github.com/lindexi/3105bd0f0c5225bec4aa476f84dd29db.js"></script>
 
-代码：https://gist.github.com/lindexi/3105bd0f0c5225bec4aa476f84dd29db
+代码：[https://gist.github.com/lindexi/3105bd0f0c5225bec4aa476f84dd29db](https://gist.github.com/lindexi/3105bd0f0c5225bec4aa476f84dd29db )
 
 ## 升级 2017
 
-如果有之前扩展需要升级，参见https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017
+如果有之前扩展需要升级，参见[https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017](https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017 )
 
 1. 安装 vs2017 需要添加扩展
 
- 关于vs2017 可以到我网盘下载，参见：http://lindexi.oschina.io/lindexi/post/C-7.0/
+ 关于vs2017 可以到我网盘下载，参见：[http://lindexi.oschina.io/lindexi/post/C-7.0/](http://lindexi.oschina.io/lindexi/post/C-7.0/ )
 
 1. 打开 Nuget 升级，把所有提示升级的都升级。
 
@@ -448,19 +448,19 @@ DefinitionPage 就是我上面定义的选项
 
 1. 启动项目
 
-1. 把插件共享 https://visualstudiogallery.msdn.microsoft.com/site/upload/view
+1. 把插件共享 [https://visualstudiogallery.msdn.microsoft.com/site/upload/view](https://visualstudiogallery.msdn.microsoft.com/site/upload/view )
 
-参见：http://blog.csdn.net/liuruxin/article/details/17955363
+参见：[http://blog.csdn.net/liuruxin/article/details/17955363](http://blog.csdn.net/liuruxin/article/details/17955363 )
 
-https://github.com/Microsoft/VSSDK-Extensibility-Samples
+[https://github.com/Microsoft/VSSDK-Extensibility-Samples](https://github.com/Microsoft/VSSDK-Extensibility-Samples )
 
-https://msdn.microsoft.com/zh-cn/library/cc138589
+[https://msdn.microsoft.com/zh-cn/library/cc138589](https://msdn.microsoft.com/zh-cn/library/cc138589 )
 
-https://msdn.microsoft.com/zh-cn/library/dn705845
+[https://msdn.microsoft.com/zh-cn/library/dn705845](https://msdn.microsoft.com/zh-cn/library/dn705845 )
 
-https://msdn.microsoft.com/zh-cn/library/mt683786
+[https://msdn.microsoft.com/zh-cn/library/mt683786](https://msdn.microsoft.com/zh-cn/library/mt683786 )
 
-代码：https://github.com/lindexi/EncodingNormalior
+代码：[https://github.com/lindexi/EncodingNormalior](https://github.com/lindexi/EncodingNormalior )
 
 如果开发中遇到问题，欢迎联系 [lindexi_gd@163.com](mailto:lindexi_gd@163.com)
 

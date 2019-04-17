@@ -23,7 +23,7 @@ vs点击启动时，出现了一下提示
 
 这样就可以。
 
-参见：http://www.cnblogs.com/know-life-death/archive/2011/07/04/2097841.html
+参见：[http://www.cnblogs.com/know-life-death/archive/2011/07/04/2097841.html](http://www.cnblogs.com/know-life-death/archive/2011/07/04/2097841.html )
 
 
 

@@ -70,7 +70,7 @@
 创建一个 HttpClient 上传 Form 代码
 
 ```csharp
-            var httpClient = new HttpClient();
+            var [httpClient](httpClient ) = new [HttpClient();](HttpClient(); )
             await httpClient.PostAsync(url, multipartFormDataContent);
 ```
 

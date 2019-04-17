@@ -171,7 +171,7 @@ System.Windows.Data Warning: 107 : BindingExpression (hash=294043):   At level 0
 System.Windows.Data Warning: 104 : BindingExpression (hash=294043): Replace item at level 0 with ListViewItem (hash=16130451), using accessor DependencyProperty(AlternationIndex)
 ```
 
-参见：http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html
+参见：[http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html](http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html )
 
 
 

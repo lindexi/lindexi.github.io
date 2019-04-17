@@ -37,7 +37,7 @@
 
 因为这是 WPF 的一个已知的坑，通过 TextBox 显示这个字符串就会 gg 的问题
 
-代码 https://github.com/dotnet-campus/wpf-issues/tree/master/WPFAppsCrashIfDisplayTextWithTooManyCombiningMarks
+代码 [https://github.com/dotnet-campus/wpf-issues/tree/master/WPFAppsCrashIfDisplayTextWithTooManyCombiningMarks](https://github.com/dotnet-campus/wpf-issues/tree/master/WPFAppsCrashIfDisplayTextWithTooManyCombiningMarks )
 
 [WPF apps crash if they display text with too many combining marks](https://github.com/dotnet/wpf/issues/244 )
 
