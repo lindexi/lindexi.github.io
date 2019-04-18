@@ -151,7 +151,7 @@ namespace WaveProgressControlRepo
 
 ```
 
-如果觉得上面的代码还是不懂，那么从 github 下载代码来运行 [https://github.com/JustinXinLiu/WaveProgressControlRepo](https://github.com/JustinXinLiu/WaveProgressControlRepo )
+如果觉得上面的代码还是不懂，那么从 github 下载代码来运行 https://github.com/JustinXinLiu/WaveProgressControlRepo
 
 
 

@@ -143,9 +143,9 @@
 
 这个方法实际上性能不好，如果需要一个可以用的gif解析，请看我的博客[WPF 播放 gif](https://lindexi.github.io/lindexi/post/WPF-%E6%92%AD%E6%94%BE-gif.html )
 
-参见： [http://www.thomaslevesque.com/2011/03/27/wpf-display-an-animated-gif-image/](http://www.thomaslevesque.com/2011/03/27/wpf-display-an-animated-gif-image/ )
+参见： http://www.thomaslevesque.com/2011/03/27/wpf-display-an-animated-gif-image/
 	
-[http://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf](http://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf )
+http://stackoverflow.com/questions/210922/how-do-i-get-an-animated-gif-to-work-in-wpf
 
 
 

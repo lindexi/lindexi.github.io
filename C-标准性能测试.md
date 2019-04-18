@@ -158,10 +158,10 @@ Benchmark was built without optimization enabled (most probably a DEBUG configur
 在控制台输入下面的命令安装 xunit.performance.api 
 
 ```csharp
-Install-Package xunit.performance.api -Version 1.0.0-beta-build0019 -Source [https://dotnet.myget.org/F/dotnet-core/api/v3/index.json](https://dotnet.myget.org/F/dotnet-core/api/v3/index.json )
+Install-Package xunit.performance.api -Version 1.0.0-beta-build0019 -Source https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
 ```
 
-如果找不到nuget控制台，那么设置 Nuget 添加源 [https://dotnet.myget.org/F/dotnet-core/api/v3/index.json](https://dotnet.myget.org/F/dotnet-core/api/v3/index.json )
+如果找不到nuget控制台，那么设置 Nuget 添加源 https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
 
 <!-- ![](image/C# 标准性能测试/C# 标准性能测试2.png) -->
 
@@ -221,7 +221,7 @@ using Xunit;
 
 更多请看[Microsoft/xunit-performance: Provides extensions over xUnit to author performance tests.](https://github.com/Microsoft/xunit-performance )
 
-课件：[https://r302.cc/5W9GVK](https://r302.cc/5W9GVK )
+课件：https://r302.cc/5W9GVK
 
 参见：[.NET Core性能测试组件BenchmarkDotNet 支持.NET Framework Mono - LineZero - 博客园](https://www.cnblogs.com/linezero/p/BenchmarkDotNet.html )
 

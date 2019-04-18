@@ -82,11 +82,11 @@
 
 这里有一个细节是 xmlns 命名空间，这里的命名空间在给不同的系统使用是不相同的
 
-- 给 win10 1809 和以上使用的是 [http://schemas.microsoft.com/appx/appinstaller/2018](http://schemas.microsoft.com/appx/appinstaller/2018 )
+- 给 win10 1809 和以上使用的是 http://schemas.microsoft.com/appx/appinstaller/2018
 
-- 给 win10 1803 和以上使用的是 [http://schemas.microsoft.com/appx/appinstaller/2017/2](http://schemas.microsoft.com/appx/appinstaller/2017/2 )
+- 给 win10 1803 和以上使用的是 http://schemas.microsoft.com/appx/appinstaller/2017/2
 
-- 给 win10 1709 和以上使用的是 [http://schemas.microsoft.com/appx/appinstaller/2017](http://schemas.microsoft.com/appx/appinstaller/2017 )
+- 给 win10 1709 和以上使用的是 http://schemas.microsoft.com/appx/appinstaller/2017
 
 在 UWP 应用有主要包和可选包的区别，主要包就是核心的程序，很多 uwp 程序只有主要包。现在有 appxbundle 和 	msixbundle 两个不同的格式，但是这两个格式相同的写法，通过 MainBundle 如下代码。
 

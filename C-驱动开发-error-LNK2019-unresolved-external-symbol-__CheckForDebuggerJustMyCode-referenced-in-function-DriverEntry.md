@@ -14,7 +14,7 @@
  error LNK2019: unresolved external symbol __CheckForDebuggerJustMyCode referenced in function DriverEntry
 ```
 
-这个问题是已知的 [https://developercommunity.visualstudio.com/content/problem/302014/dirver-build-debugmode-checkfordebuggerjustmycode.html](https://developercommunity.visualstudio.com/content/problem/302014/dirver-build-debugmode-checkfordebuggerjustmycode.html )
+这个问题是已知的 https://developercommunity.visualstudio.com/content/problem/302014/dirver-build-debugmode-checkfordebuggerjustmycode.html
 
 解决方法有两个：
 

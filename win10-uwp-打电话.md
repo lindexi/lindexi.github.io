@@ -61,9 +61,9 @@ UWP判断设备可以使用`AnalyticsInfo.VersionInfo.DeviceFamily`，我们判�
 
 If you have some problems,you can mail to me lindexi_gd@163.com.
 
-参见：[http://stackoverflow.com/questions/34777603/uwp-use-skype-to-call-number](http://stackoverflow.com/questions/34777603/uwp-use-skype-to-call-number )
+参见：http://stackoverflow.com/questions/34777603/uwp-use-skype-to-call-number
 
-[http://stackoverflow.com/questions/39829139/make-telephone-call-from-windows-store-app-c-sharp-winrt](http://stackoverflow.com/questions/39829139/make-telephone-call-from-windows-store-app-c-sharp-winrt )
+http://stackoverflow.com/questions/39829139/make-telephone-call-from-windows-store-app-c-sharp-winrt
 
 
 

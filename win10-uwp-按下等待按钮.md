@@ -289,7 +289,7 @@ namespace lindexi.uwp.control.Button.Control
                                  Click="ButtonBase_OnClick"></control:ProgressButton>
 
 ```
-我上面是测试，点击是进行100秒，过了就完成，代码简单，如果想知道，戳此链接 [https://github.com/lindexi/UWP/tree/master/uwp/control/Button](https://github.com/lindexi/UWP/tree/master/uwp/control/Button )
+我上面是测试，点击是进行100秒，过了就完成，代码简单，如果想知道，戳此链接 https://github.com/lindexi/UWP/tree/master/uwp/control/Button
 
 那么如果我们有好多个页面都用到 ProgressButton ，我们需要在所有页面都写 ResourceDictionary 这样不好，我们有一个简单方法，让页面不用写这个。
 
@@ -312,7 +312,7 @@ namespace lindexi.uwp.control.Button.Control
 
 如果使用遇到问题，欢迎讨论。
 
-参见：[http://www.cnblogs.com/ms-uap/p/5520872.html](http://www.cnblogs.com/ms-uap/p/5520872.html )
+参见：http://www.cnblogs.com/ms-uap/p/5520872.html
 
 
 

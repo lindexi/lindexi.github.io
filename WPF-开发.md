@@ -271,7 +271,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
     </SolidColorBrush>
 ```
 
-[https://stackoverflow.com/a/47952098/6116637](https://stackoverflow.com/a/47952098/6116637 )
+https://stackoverflow.com/a/47952098/6116637
 
 ## WPF 判断文件是否隐藏
 

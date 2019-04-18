@@ -89,7 +89,7 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160918100115278) 
 
-参见：[http://www.cnblogs.com/mycing/p/5658355.html](http://www.cnblogs.com/mycing/p/5658355.html )
+参见：http://www.cnblogs.com/mycing/p/5658355.html
 
 除了上面的方法，因为需要设置路径，比较难用，于是我提供一个方法，让大家可以简单使用字体。这个方法是把字体作为资源，这样比较容易写，请看代码
 
@@ -123,7 +123,7 @@
 
 参见：[UWP开发百科之---内置字体 - 快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/2017/06/25/UWP%E5%BC%80%E5%8F%91%E7%99%BE%E7%A7%91%E4%B9%8B-%E5%86%85%E7%BD%AE%E5%AD%97%E4%BD%93/)
 
-[http://www.c-sharpcorner.com/article/custom-fonts-in-windows-10-uwp-app/](http://www.c-sharpcorner.com/article/custom-fonts-in-windows-10-uwp-app/ )
+http://www.c-sharpcorner.com/article/custom-fonts-in-windows-10-uwp-app/
 
 
 

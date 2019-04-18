@@ -98,7 +98,7 @@ public static unsafe string ToUpperFirst(this string str)
 
 我认为，在字符串大写这个算法，不需要去找性能最好的，需要找的是最容易让别人看懂的才是最好的。
 
-[https://stackoverflow.com/q/4135317/6116637](https://stackoverflow.com/q/4135317/6116637 )
+https://stackoverflow.com/q/4135317/6116637
 
 ## 感谢
 

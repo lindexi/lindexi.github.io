@@ -45,7 +45,7 @@
 </configuration>
 ```
 
-参见：[https://msdn.microsoft.com/en-us/library/mt800336(v=vs.110).aspx](https://msdn.microsoft.com/en-us/library/mt800336(v=vs.110).aspx )
+参见：https://msdn.microsoft.com/en-us/library/mt800336(v=vs.110).aspx
 
 
 

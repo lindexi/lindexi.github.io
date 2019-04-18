@@ -24,7 +24,7 @@ Description       : 坚果云
 IdentifyingNumber : {FEA8B01C-3F43-470A-BB28-679B1AEEC6E8}
 InstallDate       : 20180305
 InstallLocation   : C:\Program Files\Nutstore\
-HelpLink          : [http://help.jianguoyun.com](http://help.jianguoyun.com )
+HelpLink          : http://help.jianguoyun.com
 HelpTelephone     :
 InstallSource     : C:\Users\linde\AppData\Roaming\NutstoreClient\install\AEEC6E8\
 Language          : 2052
@@ -38,7 +38,7 @@ RegOwner          :
 RegCompany        :
 SKUNumber         :
 Transforms        : C:\WINDOWS\Installer\{FEA8B01C-3F43-470A-BB28-679B1AEEC6E8}\Nutstore.mst
-URLInfoAbout      : [https://www.jianguoyun.com/](https://www.jianguoyun.com/ )
+URLInfoAbout      : https://www.jianguoyun.com/
 URLUpdateInfo     :
 Vendor            : 上海亦存网络科技有限公司
 WordCount         : 0
@@ -50,7 +50,7 @@ Description       : Apple 应用程序支持 (32 位)
 IdentifyingNumber : {5A659BE5-849B-484E-A83B-DCB78407F3A4}
 InstallDate       : 20190221
 InstallLocation   : C:\Program Files (x86)\Common Files\Apple\Apple Application Support
-HelpLink          : [http://www.apple.com/cn/support/](http://www.apple.com/cn/support/ )
+HelpLink          : http://www.apple.com/cn/support/
 HelpTelephone     : (86) 800 810 2323
 InstallSource     : C:\Users\linde\AppData\Local\Temp\IXP246.TMP\
 Language          : 2052
@@ -64,8 +64,8 @@ RegOwner          :
 RegCompany        :
 SKUNumber         :
 Transforms        :
-URLInfoAbout      : [http://www.apple.com/cn/](http://www.apple.com/cn/ )
-URLUpdateInfo     : [http://www.apple.com/cn/](http://www.apple.com/cn/ )
+URLInfoAbout      : http://www.apple.com/cn/
+URLUpdateInfo     : http://www.apple.com/cn/
 Vendor            : Apple Inc.
 WordCount         : 0
 Version           : 7.3

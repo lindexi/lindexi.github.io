@@ -22,9 +22,9 @@ Writing objects: 100% (32/32), 2.00 MiB | 0 bytes/s, done.
 Total 32 (delta 19), reused 13 (delta 7)
 remote: hooks/update: line 2: E:/gogs/gogs.exe: No such file or directory
 remote: error: hook declined to update refs/heads/master
-To [http://127.0.0.1:3000/lindexi/gogs.git](http://127.0.0.1:3000/lindexi/gogs.git )
+To http://127.0.0.1:3000/lindexi/gogs.git
  ! [remote rejected] master -> master (hook declined)
-error: failed to push some refs to '[http://127.0.0.1:3000/lindexi/gogs.git'](http://127.0.0.1:3000/lindexi/gogs.git' )
+error: failed to push some refs to 'http://127.0.0.1:3000/lindexi/gogs.git'
 ```
 
 那么如何解决。

@@ -73,7 +73,7 @@
 
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018%25E5%25B9%25B42%25E6%259C%258810%25E6%2597%25A5%2520151339.gif)
 
-参见：[http://hi.baidu.com/mych/blog/item/1eb14f545f12a752564e00be.html](http://hi.baidu.com/mych/blog/item/1eb14f545f12a752564e00be.html )
+参见：http://hi.baidu.com/mych/blog/item/1eb14f545f12a752564e00be.html
 
 [WPF播放GIF控件完整代码 - CSDN博客](http://blog.csdn.net/Libby1984/article/details/52535085 )
 

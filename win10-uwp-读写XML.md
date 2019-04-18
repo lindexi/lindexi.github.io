@@ -236,16 +236,16 @@ XDocument 和 WPF 的CUID都一样，如果需要删除或其他的方法，请�
 
 <!-- 可以看到，我们使用 StreamReader ，于是我们在里面使用  -->
 
-[http://www.cnblogs.com/portalsky/archive/2008/09/11/1289461.html](http://www.cnblogs.com/portalsky/archive/2008/09/11/1289461.html )
+http://www.cnblogs.com/portalsky/archive/2008/09/11/1289461.html
 
-[http://blog.csdn.net/cdjcong/article/details/8473539](http://blog.csdn.net/cdjcong/article/details/8473539 )
+http://blog.csdn.net/cdjcong/article/details/8473539
 
-[http://blog.csdn.net/ht_zhaoliubin/article/details/38900275](http://blog.csdn.net/ht_zhaoliubin/article/details/38900275 )
+http://blog.csdn.net/ht_zhaoliubin/article/details/38900275
 
-[http://www.cnblogs.com/zery/p/3362480.html](http://www.cnblogs.com/zery/p/3362480.html )
+http://www.cnblogs.com/zery/p/3362480.html
 
 
-关于命名空间：[https://msdn.microsoft.com/en-us/library/aa468565.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/en-us/library/aa468565.aspx?f=255&MSPPError=-2147217396 )
+关于命名空间：https://msdn.microsoft.com/en-us/library/aa468565.aspx?f=255&MSPPError=-2147217396
 
 ## WPF 读XML
 

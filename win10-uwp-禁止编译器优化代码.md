@@ -26,9 +26,9 @@ private void MethodWhichShouldNotBeOptimized()
 
 如果使用特性，必须是 .net 3.5 以上，这个特性是在 3.5 加的，之前没有
 
-关于 MethodImplOptions 参见 [https://msdn.microsoft.com/en-us/library/system.runtime.compilerservices.methodimploptions(v=vs.110).aspx](https://msdn.microsoft.com/en-us/library/system.runtime.compilerservices.methodimploptions(v=vs.110).aspx )
+关于 MethodImplOptions 参见 https://msdn.microsoft.com/en-us/library/system.runtime.compilerservices.methodimploptions(v=vs.110).aspx
 
-参见：[https://stackoverflow.com/a/38633044/6116637](https://stackoverflow.com/a/38633044/6116637 )
+参见：https://stackoverflow.com/a/38633044/6116637
 
 最近看到这篇文章讲的很好 [深入了解 WPF Dispatcher 的工作原理（Invoke/InvokeAsync 部分） - walterlv](https://walterlv.github.io/post/dotnet/2017/09/26/dispatcher-invoke-async.html ) 
 

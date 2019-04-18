@@ -97,7 +97,7 @@
 
 ## 控件事件
 
-每个控件都有很多事件，可以使用Xaml，属性创建事件，创建事件的方法是事件处理，参见：[https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview )
+每个控件都有很多事件，可以使用Xaml，属性创建事件，创建事件的方法是事件处理，参见：https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview
 
 创建事件可以在属性
 
@@ -116,7 +116,7 @@
 
 ![](http://i12.tietuku.cn/2cc32155efa5e434.png)
 
-原文：[https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro )
+原文：https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro
 
 
 

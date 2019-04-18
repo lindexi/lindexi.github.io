@@ -41,7 +41,7 @@
 
  如果设置了，可以看到，但是不可以获取，可以对信息安全要求高的程序进行使用，但是设置了性能可能没有之前好。
 
- 关于不可截图，代码：[https://code.msdn.microsoft.com/windowsapps/Disable-screen-capture-00efe630](https://code.msdn.microsoft.com/windowsapps/Disable-screen-capture-00efe630 )
+ 关于不可截图，代码：https://code.msdn.microsoft.com/windowsapps/Disable-screen-capture-00efe630
 
  这个对于应用内截图是不是还可以使用，我还没去试，如果有大神做了，可以的话，请告诉。
 
@@ -84,7 +84,7 @@
 
 
 
-参见：[https://docs.microsoft.com/en-us/uwp/api/windows.ui.viewmanagement.applicationview](https://docs.microsoft.com/en-us/uwp/api/windows.ui.viewmanagement.applicationview )
+参见：https://docs.microsoft.com/en-us/uwp/api/windows.ui.viewmanagement.applicationview
 
 
 
