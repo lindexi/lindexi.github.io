@@ -125,7 +125,7 @@ msbuild clean
 如果需要同时判断多个条件，如在 `Debug` 而且是 `net45` 就运行，可以使用下面代码
 
 ```csharp
-  <Target Name="StanalurJikecair" AfterTargets="CoreCompile" Condition="'$(Configuration)|$(TargetFramework)'=='Release|net45'">
+  <Target Name="StanalurJikecair" AfterTargets="CoreCompile" Condition="'$(Configuration)|$(TargetFramework)'=='DEBUG|net45'">
     <Message Text="123"></Message>
   </Target>
 ```
@@ -291,6 +291,8 @@ StanalurJikecair:
   <Import Condition="Exists('../lindexi.txt')" Project="../lindexi.txt"></Import>
 
 ```
+
+特别感谢 [HaibaraAi](https://github.com/AiHaibara) 大佬的阅读
 
 ![](https://i.loli.net/2018/08/04/5b64febec0b8a.jpg)
 
