@@ -264,6 +264,8 @@
 
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
 
+ * [dotnet 控制台读写 Sqlite 提示 no such table 找不到文件](dotnet-控制台读写-Sqlite-提示-no-such-table-找不到文件.md)
+
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
