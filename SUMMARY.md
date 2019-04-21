@@ -250,6 +250,8 @@
 
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
 
+ * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
+
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
 
  * [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行](dotnet-判断程序当前使用管理员运行降低权使用普通权限运行.md)
@@ -445,6 +447,8 @@
  * [SublimeText 快速打开当前文件的文件夹](SublimeText-快速打开当前文件的文件夹.md)
 
  * [SublimeText 粘贴图片保存到本地](SublimeText-粘贴图片保存到本地.md)
+
+ * [Total Commander 显示文件包含文件名扩展](Total-Commander-显示文件包含文件名扩展.md)
 
  * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
 
