@@ -114,3 +114,41 @@ namespace CeseacooteeGowgu
 
 I remove all your code and replace the code to the content in SomeThing property. And then I add the code that named lindexi.cs to compile.
 
+## Using MSBuild Escape
+
+We can find this way should change the code. We can not copy the code in other to write to file and we should replace all the semicolons to `%3b` that is hard to change all the code.
+
+We can use MSBuild Escape to escape the semicolons and you can see the code.
+
+```xml
+  <Target Name="T1" BeforeTargets="BeforeBuild">
+    <PropertyGroup>
+      <SomeThing>
+        <![CDATA[
+using System%3b
+
+namespace CeseacooteeGowgu
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("I am lindexi");
+        }
+    }
+}
+       ]]>
+      </SomeThing>
+    </PropertyGroup>
+    <WriteLinesToFile File="lindexi.cs" Lines="$([MSBuild]::Escape($(SomeThing)))" Overwrite="true"></WriteLinesToFile>
+    <ItemGroup>
+      <Compile Remove="@(Compile)"></Compile>
+      <Compile Include="lindexi.cs"></Compile>
+    </ItemGroup>
+  </Target>
+```
+
+The `[MSBuild]::Escape` can use [property function](https://docs.microsoft.com/en-us/visualstudio/msbuild/property-functions?wt.mc_id=MVP) to escape strings. 
+
+[How to: Escape Special Characters in MSBuild - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-escape-special-characters-in-msbuild?wt.mc_id=MVP )
+
