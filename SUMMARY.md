@@ -424,6 +424,8 @@
 
  * [Roslyn 获得 sln 文件所在的文件夹](Roslyn-获得-sln-文件所在的文件夹.md)
 
+ * [Roslyn 通过 NuGet 库修改应用程序入口函数](Roslyn-通过-NuGet-库修改应用程序入口函数.md)
+
  * [Roslyn 通过 Nuget 引用源代码 在 VS 智能提示正常但是无法编译](Roslyn-通过-Nuget-引用源代码-在-VS-智能提示正常但是无法编译.md)
 
  * [Roslyn 通过 Nuget 管理公司配置](Roslyn-通过-Nuget-管理公司配置.md)
