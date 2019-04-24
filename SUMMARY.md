@@ -244,6 +244,8 @@
 
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
+ * [dotnet 使用 GC.GetAllocatedBytesForCurrentThread 获取当前线程分配过的内存大小](dotnet-使用-GC.GetAllocatedBytesForCurrentThread-获取当前线程分配过的内存大小.md)
+
  * [dotnet 使用 lz4net 压缩 Stream 或文件](dotnet-使用-lz4net-压缩-Stream-或文件.md)
 
  * [dotnet 使用 MessagePack 序列化对象](dotnet-使用-MessagePack-序列化对象.md)
