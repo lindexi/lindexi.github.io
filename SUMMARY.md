@@ -508,6 +508,8 @@
 
  * [VisualStudio 安装 Python 开发](VisualStudio-安装-Python-开发.md)
 
+ * [VisualStudio 开发文件自定义工具单文件生成工具](VisualStudio-开发文件自定义工具单文件生成工具.md)
+
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)
 
  * [VisualStudio 扩展开发 添加输出窗口](VisualStudio-扩展开发-添加输出窗口.md)
