@@ -368,6 +368,8 @@
 
  * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
 
+ * [NuGet 如何设置图标](NuGet-如何设置图标.md)
+
  * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
 
  * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)
