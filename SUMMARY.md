@@ -1132,6 +1132,8 @@
 
  * [wpf 如何使用 Magick.NET 播放 gif 图片](wpf-如何使用-Magick.NET-播放-gif-图片.md)
 
+ * [WPF 如何判断一个控件在滚动条的里面是用户可见](WPF-如何判断一个控件在滚动条的里面是用户可见.md)
+
  * [WPF 如何在 WriteableBitmap 写文字](WPF-如何在-WriteableBitmap-写文字.md)
 
  * [WPF 如何在应用程序调试启动](WPF-如何在应用程序调试启动.md)
