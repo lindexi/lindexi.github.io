@@ -4,8 +4,7 @@
 
 
 <!--more-->
-
-<!-- csdn -->
+<!-- 标签：dotnet,dotnetcore -->
 
 和之前相同的方式发布一个 dotnet core 程序，记得需要使用 `--self-contained` 发布
 
