@@ -1,14 +1,14 @@
 
 # C# 很少人知道的科技
 
-本文来告诉大家在C#很少有人会发现的科技。即使是工作了好多年的老司机也不一定会知道，如果觉得我在骗你，那么请看看下面。
+本文来告诉大家在C#很少有人会发现的科技。即使是工作了好多年的老司机也不一定会知道，如果觉得我在骗你，那么请看看下面
 
 <!--more-->
 
 
 <div id="toc"></div>
 
-因为C#在微软的帮助，已经从原来很简单的，到现在的很好用。在10多年，很少人知道微软做了哪些，我在网上找了很多大神的博客，然后和很多大神聊天，知道了一些科技，所以就在这里说。如果大家看到这个博客里面没有的科技，请告诉我。
+因为C#在微软的帮助，已经从原来很简单的，到现在的很好用。在10多年，很少人知道微软做了哪些，我在网上找了很多大神的博客，然后和很多大神聊天，知道了一些科技，所以就在这里说。如果大家看到这个博客里面没有的科技，请告诉我
 
 ## 无限级判断空
 
@@ -22,7 +22,15 @@
             var v = v1 ?? v2 ?? v3;
 ```
 
-实际上可以无限的使用`??`
+实际上可以无限的使用`??`判断前面一个函数为空，那么问题来了，下面的代码输出的是多少？
+
+```csharp
+var n = 2 + foo?.N ?? 1;
+```
+
+上面代码的 foo 就是空的，那么 n 是多少？是 1 还是 2 还是 3 还是空？
+
+想要了解这道题的推导过程请看[C# 高级面试题](https://blog.lindexi.com/post/c-%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98 ) 里面写了很多老司机都不一定能解出
 
 ## using 省略长的定义
 
@@ -58,6 +66,12 @@ var foo = new HvcnrclHnlfk();
 ```
 
 看一下就知道这个定义可以做什么
+
+当然使用委托可是会出现这个问题，请问下面的代码实际调用的是哪个委托，下面代码的 a 和 b 和 c 都是 `Action` 委托，同时都不是空的
+
+```csharp
+((a + b + c) - (a + c))();
+```
 
 ## 冲突的类型
 
@@ -334,7 +348,7 @@ F1
 如果使用 Conditional 可以让代码在指定条件不使用，我写了这个代码，在 Release 下就不会使用 F2
 
 ```csharp
-    public sealed class Foo
+    public sealed clas Foo
     {
         public Foo F1()
         {
@@ -457,6 +471,8 @@ await "不告诉你";
 
 这个代码是可以编译通过的，但是只有在我的设备，然后看了这个[博客](https://lindexi.gitee.io/post/C-await-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html )，可能你也可以在你的设备编译
 
+其实 await 是可以写很多次的，如下面代码
+
 ```csharp
 await await await await await await await await await await await await await await await await await await await await await await await "林德熙逗比";
 ```
@@ -571,6 +587,8 @@ fantastic.Foo();
 通过这个方式可以让开发者无法直接创建 Fantastic 类，而且在不知道 FantasticInfo 的情况无法创建 Fantastic 也就是让大家需要了解 FantasticInfo 才可以通过上面的方法创建，具体请看[只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式） - walterlv](https://walterlv.com/post/hide-your-constructor.html )
 
 课件链接： https://r302.cc/J4gxOX
+
+当然还有新的 [C# 7.0](https://blog.lindexi.com/post/c-7.0 ) 和 [C# 8.0](https://blog.lindexi.com/post/visualstudio-2019-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8-c-8.0-%E6%96%B0%E7%9A%84%E6%96%B9%E5%BC%8F ) 的新的语法
 
 欢迎加入 dotnet 职业技术学院 https://t.me/dotnet_campus 使用 Telegram 方法请看 [如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 

@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 ## 快速简单的方法
 
@@ -36,6 +35,8 @@ short converted = BitConverter.ToInt16(numberBytes);
 但是为了这么简单的 short 两个 byte 创建一个数组，感觉不是很好
 
 https://stackoverflow.com/q/1442583/6116637
+
+![](http://image.acmx.xyz/lindexi%2F201942912529158)
 
 
 

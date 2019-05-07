@@ -8,7 +8,7 @@
 
  * [.net remoting 抛出异常](net-remoting-抛出异常.md)
 
- * [.net Standard](net-Standard.md)
+ * [.NET Standard](NET-Standard.md)
 
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
@@ -376,6 +376,8 @@
 
  * [PowerShell 拿到显卡信息](PowerShell-拿到显卡信息.md)
 
+ * [PowerShell 拿到最近的10个系统日志](PowerShell-拿到最近的10个系统日志.md)
+
  * [PowerShell 通过 WMI 获取系统信息](PowerShell-通过-WMI-获取系统信息.md)
 
  * [PowerShell 通过 WMI 获取系统安装的驱动](PowerShell-通过-WMI-获取系统安装的驱动.md)
@@ -699,6 +701,8 @@
  * [win10 uwp 如何创建修改保存位图](win10-uwp-如何创建修改保存位图.md)
 
  * [win10 uwp 如何判断一个对象被移除](win10-uwp-如何判断一个对象被移除.md)
+
+ * [win10 uwp 如何判断一个控件在滚动条的里面是用户可见](win10-uwp-如何判断一个控件在滚动条的里面是用户可见.md)
 
  * [win10 uwp 如何在DataTemplate绑定方法](win10-uwp-如何在DataTemplate绑定方法.md)
 

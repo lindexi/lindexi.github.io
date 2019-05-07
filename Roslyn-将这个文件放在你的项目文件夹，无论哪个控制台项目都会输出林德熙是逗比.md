@@ -163,6 +163,8 @@ namespace CeseacooteeGowgu
 </Project>
 ```
 
+[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
+
 
 
 
