@@ -1210,6 +1210,8 @@
 
  * [wpf 绑定 TextLength ](wpf-绑定-TextLength-.md)
 
+ * [WPF 绑定命令在 MVVM 的 CanExecute 和 Execute 在按钮点击都没触发可能的原因](WPF-绑定命令在-MVVM-的-CanExecute-和-Execute-在按钮点击都没触发可能的原因.md)
+
  * [WPF 绑定的默认模式](WPF-绑定的默认模式.md)
 
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
