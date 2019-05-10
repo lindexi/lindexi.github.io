@@ -12,6 +12,8 @@
 
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
+ * [asp dotnet core 图片在浏览器没访问可能原因](asp-dotnet-core-图片在浏览器没访问可能原因.md)
+
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
