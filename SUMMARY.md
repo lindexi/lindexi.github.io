@@ -12,6 +12,8 @@
 
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
+ * [asp dotnet core 从 Frp 获取用户真实 IP 地址](asp-dotnet-core-从-Frp-获取用户真实-IP-地址.md)
+
  * [asp dotnet core 图片在浏览器没访问可能原因](asp-dotnet-core-图片在浏览器没访问可能原因.md)
 
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
@@ -1191,6 +1193,8 @@
  * [WPF 文字描边](WPF-文字描边.md)
 
  * [WPF 最小的代码使用 DynamicRenderer 书写](WPF-最小的代码使用-DynamicRenderer-书写.md)
+
+ * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
 
  * [WPF 渲染原理](WPF-渲染原理.md)
 
