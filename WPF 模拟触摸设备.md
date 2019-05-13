@@ -76,7 +76,7 @@
         {
             return new TouchPointCollection()
             {
-GetTouchPoint(relativeTo)
+                GetTouchPoint(relativeTo)
             };
         }
     }
@@ -106,6 +106,8 @@ ReportDown();
 
 调用 ReportDown 会先设置本地字段 `_isDown` 为 true 然后调用 UpdateDirectlyOver 方法更新当前按下点到的元素，然后调用 RaiseTouchDown 方法在当前点到的元素触摸触摸按下的路由事件，可以看到此时的路由事件是不需要再获取当前的触摸点，因为只是在点到的元素触摸事件，如果这个元素需要知道当前的触摸点，只需要在方法使用参数的 `e.GetTouchPoint` 方法就可以重新拿到触摸点。因为获取触摸点方法是可以重写的，所以第一次获取的用于命中测试的触摸点可以和元素收到触摸事件获取的触摸点返回不同的点
 
+只需要拿到了对应的元素就可以在元素触发事件，从触摸到事件请看[WPF 触摸到事件](https://blog.lindexi.com/post/wpf-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6 )
+
 调用 ReportMove 移动的方法也是差不多，首先通过 UpdateDirectlyOver 找到命中测试的元素，然后触发路由事件。如果元素不关注触摸点击的点就不需要再次调用获取触摸点方法
 
 那么 UpdateDirectlyOver 是如何进行命中测试的？首先通过获取触摸点方法拿到传入空参数时的触摸点，这时相对的应该是窗口的坐标。通过 TouchDevice.LocalHitTest 方法拿到命中测试的元素，在底层调用的是 MouseDevice.LocalHitTest 方法
@@ -125,5 +127,9 @@ burnerkadelWallnadarli.Move();
 ```
 
 通过这个方法模拟触摸可以走原有的 WPF 触摸命中测试，也能走路由事件
+
+关于 WPF 的触摸到事件请看 [WPF 触摸到事件](https://blog.lindexi.com/post/wpf-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6 )
+
+本文用到的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/f0f872153ed07b2141b47580a74a18a38cc56cfd/DernijacallqaNaycerejerlal)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
