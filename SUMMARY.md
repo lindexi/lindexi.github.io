@@ -1070,6 +1070,8 @@
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
 
+ * [WPF 从触摸消息转触摸事件](WPF-从触摸消息转触摸事件.md)
+
  * [WPF 从零开始开发 dotnet Remoting 程序](WPF-从零开始开发-dotnet-Remoting-程序.md)
 
  * [WPF 使用 Composition API 做高性能渲染](WPF-使用-Composition-API-做高性能渲染.md)
