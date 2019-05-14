@@ -94,6 +94,8 @@
 
  * [C# 如何引用 WshShell 类](C-如何引用-WshShell-类.md)
 
+ * [C# 如何给 ValueTuple 返回值添加注释](C-如何给-ValueTuple-返回值添加注释.md)
+
  * [C# 字典 Dictionary 的 TryGetValue 与先判断 ContainsKey 然后 Get 的性能对比](C-字典-Dictionary-的-TryGetValue-与先判断-ContainsKey-然后-Get-的性能对比.md)
 
  * [C# 对 byte 数组进行模式搜索](C-对-byte-数组进行模式搜索.md)
