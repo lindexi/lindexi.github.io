@@ -242,6 +242,8 @@
 
  * [dotnet core 隐藏控制台](dotnet-core-隐藏控制台.md)
 
+ * [dotnet core 集成到 Mattermost 聊天工具](dotnet-core-集成到-Mattermost-聊天工具.md)
+
  * [dotnet core 黑科技·String.IndexOf 性能](dotnet-core-黑科技·String.IndexOf-性能.md)
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
