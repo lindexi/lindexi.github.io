@@ -86,6 +86,8 @@ System.UnauthorizedAccessException:“对路径“D:\lindexi\无法访问文件�
 
 上面提供的两个方法，第一个方法除了解决光标的问题，还可以解决其他问题。第二个方法可以提升一点性能，同时两个方法可以一起使用
 
+这个问题提交给微软，欢迎小伙伴点击 [Full temporary folder will crash cursor initialization](https://github.com/dotnet/wpf/issues/696 ) 帮我点赞
+
 [通过修改环境变量修改当前进程使用的系统 Temp 文件夹的路径 - walterlv](https://blog.walterlv.com/post/redirect-environment-temp-folder.html )
 
 [GetTempFileNameA function (fileapi.h)](https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-gettempfilenamea?wt.mc_id=MVP )
