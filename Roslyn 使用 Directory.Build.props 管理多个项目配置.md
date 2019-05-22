@@ -3,18 +3,17 @@
 在一些大项目需要很多独立的仓库来做，每个仓库之间都会有很多相同的配置，本文告诉大家如何通过 Directory.Build.props 管理多个项目配置
 
 <!--more-->
-<!-- csdn -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
 在我的 [MVVM 框架](https://www.nuget.org/packages/lindexi.wpf.Framework/ )需要三个不同的库，一个是 Framework 另外两个是 WPF 和 UWP 这三个库有很多重复的配置，如版本号和作者信息。
 
 在之前，我每次发布的时候，我都需要修改三个不同的仓库的版本号，将几个版本号升级到最新，但是这个方法如大家所见，效率是很低的。
 
-在我的另外的博客 [Roslyn 通过 Nuget 管理公司配置](https://lindexi.gitee.io/post/Roslyn-%E9%80%9A%E8%BF%87-Nuget-%E7%AE%A1%E7%90%86%E5%85%AC%E5%8F%B8%E9%85%8D%E7%BD%AE.html ) 和 [Roslyn 通过 nuget 统一管理信息](https://lindexi.gitee.io/post/Roslyn-%E9%80%9A%E8%BF%87-nuget-%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF.html ) 介绍了统一管理配置的优点。
+在我的另外的博客 [Roslyn 通过 Nuget 管理公司配置](https://blog.lindexi.com/post/Roslyn-%E9%80%9A%E8%BF%87-Nuget-%E7%AE%A1%E7%90%86%E5%85%AC%E5%8F%B8%E9%85%8D%E7%BD%AE.html ) 和 [Roslyn 通过 nuget 统一管理信息](https://blog.lindexi.com/post/Roslyn-%E9%80%9A%E8%BF%87-nuget-%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF.html ) 介绍了统一管理配置的优点。
 
 但是很显然，我暂时无法使用 nuget 的方法统一几个仓库的配置，我需要一个新的方式。
 
-在看到我之前的博客 [Roslyn 使用 Directory.Build.props 文件定义编译](https://lindexi.gitee.io/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html ) 可以知道，通过 Directory.Build.props 文件可以修改配置。
+在看到我之前的博客 [Roslyn 使用 Directory.Build.props 文件定义编译](https://blog.lindexi.com/post/roslyn-%E4%BD%BF%E7%94%A8-directory.build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html ) 可以知道，通过 Directory.Build.props 文件可以修改配置。
 
 于是本渣就使用这个方法统一配置，我在项目的最外面添加了 Directory.Build.props 文件
 
@@ -96,7 +95,7 @@ Build\Version.props
 
 上面的代码的 `$(MSBuildThisFileDirectory)` 就是替换文件所在的文件夹路径，更多请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://walterlv.com/post/known-properties-in-csproj.html )
 
-更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
+更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 
 
 参见：[Roslyn 入门 - CSDN博客](https://blog.csdn.net/column/details/23159.html )
 

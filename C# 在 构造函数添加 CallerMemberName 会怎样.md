@@ -3,7 +3,6 @@
 在 C# 中有一个特性 CallerMemberName 可以给方法知道调用这个方法的方法名，在 UWP 中用这个特性很多，特别是在使用 MVVM 绑定
 
 <!--more-->
-<!-- csdn -->
 
 如果在构造函数使用这个特性会发生什么？
 
@@ -132,6 +131,6 @@
 
 可以看到虽然调用的方法看起来是相同的，但是运行的结果是不相同的，因为 CallerMemberName 是在编译时做的
 
-从上面的 IL 也可以看到 CallerMemberName 是在编译的时候传入的值，性能会比反射快，如果需要获得调用这个方法的方法的方法，也就是 A 调 B 然后 B 调 C 需要在 C 里面知道 A 是哪个，就需要使用 [WPF 判断调用方法堆栈](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
+从上面的 IL 也可以看到 CallerMemberName 是在编译的时候传入的值，性能会比反射快，如果需要获得调用这个方法的方法的方法，也就是 A 调 B 然后 B 调 C 需要在 C 里面知道 A 是哪个，就需要使用 [WPF 判断调用方法堆栈](https://blog.lindexi.com/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

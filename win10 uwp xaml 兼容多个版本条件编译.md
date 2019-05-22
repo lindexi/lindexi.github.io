@@ -1,19 +1,28 @@
 # win10 uwp xaml 兼容多个版本条件编译
 
-如果开发的程序需要在多个版本运行，又需要使用最新版本的特性，那么请看本文。
-
-本文告诉大家如何设置 xaml 的条件编译。
+在 UWP 开发有一个坑就是存在很多SDK的版本，同时不同的系统带的SDK是不相同的，还好现在高版本的系统是可以支持低版本的程序的。为了做到尽可能兼容，程序需要用到足够低的 SDK 版本，但是又存在很多新版本特性非常好用，那么如何在用户端判断当前的系统是哪个版本对应可以使用新版本的特性？当然这个代码在后台代码一点都不难，但是界面呢？本文告诉大家如何设置 xaml 的条件编译
 
 <!--more-->
 <!-- csdn -->
 
-如果只需要在 cs 判断版本，那么可以使用星期大神的代码，请看[UWP 判断系统版本](http://www.cnblogs.com/hupo376787/p/7766139.html )
+如果只需要在 cs 代码判断版本，那么可以使用星期大神的代码，请看[UWP 判断系统版本](http://www.cnblogs.com/hupo376787/p/7766139.html )
 
-但是如果是在 xaml ？ 我需要使用 16299 的功能，但是我需要让程序可以在 15063 运行，那么这时就需要 uwp xmal 条件编译。
+```csharp
+public class VersionsHelper
+{
+    public static Boolean Windows10Build10240 => ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 1, 0);
+    public static Boolean Windows10Build10586 => ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 2, 0);
+    public static Boolean Windows10Build14393 => ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 3, 0);
+    public static Boolean Windows10Build15063 => ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 4, 0);
+    public static Boolean Windows10Build16299 => ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5, 0);
+}
+```
+
+但是如果是在 xaml 应该怎么写？ 我需要使用 16299 的功能，但是我需要让程序可以在 15063 运行，那么这时就需要 uwp xmal 条件编译。
 
 使用的方法很简单，不过条件编译不是和 cs 代码使用 `#if` 的方式。
 
-xaml 条件编译（Conditional XAML）就是 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsApiContractPresent_System_String_System_UInt16_ ) 提供的标记。
+这里的 xaml 条件编译（Conditional XAML）就是 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsApiContractPresent_System_String_System_UInt16_ ) 提供的标记。
 
 因为这个标记稍微有些复杂，所以我先写代码给大家看
 
@@ -60,17 +69,17 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 
 如果在运行比数字低的版本，会返回true，例如 在运行 15063 的系统，可以看到下面的代码返回的值
 
- - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 5) = false
+ - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 5) = false // 不属于 16299
 
- - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 4) = true
+ - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 4) = true // 属于 15063
 
- - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 3) = true
+ - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 3) = true // 属于 14393
 
- - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 2) = true
+ - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 2) = true // 属于 10586
 
- - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 1) = true
+ - IsApiContractPresent(Windows.Foundation.UniversalApiContract, 1) = true // 属于 10240
 
-是的，如果运行在 16299 ，那么后面写  12345 都是返回true ，如果返回 true ，那么设置的属性才可以。如果返回false，那么在运行就不会有设置。
+是的，如果运行在 16299 版本的系统上，那么后面写 12345 都是返回true 所以在最高返回 true 的版本就是当前系统可以支持的版本。在调用 IsApiContractPresent 方法，如果返回 true 那么设置的属性才可以。如果返回 false 那么在运行就不会有设置。
 
 但是不能这样写代码
 
@@ -90,7 +99,7 @@ IsApiContractPresent 是在当前系统和低于当前系统返回 true ，IsApi
 
 所以使用`IsApiContractPresent`和`IsApiContractNotPresent`可以设置当前使用的是那个版本
 
-例如使用下面的代码
+例如使用下面的代码，用到了 RevealBorderBrush 这个新功能
 
 ```csharp
     <RevealBorderBrush x:Key="KilqpdiHbmgvaz" TargetTheme="Light" Color="#08000000" FallbackColor="{ThemeResource SystemAccentColor}"/>
