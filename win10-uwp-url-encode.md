@@ -31,14 +31,14 @@ UWP 提供一些方法让我们很容易把 中文转为 URL ，但是转换还�
 `Uri.UnescapeDataString` `WebUtility.UrlDecode` `WebUtility.HtmlDecode`，如果从中文转 URL 就可以用他们弄回来。
 
 先写一个测试使用代码，看看对
-对字符串：“~+ =!@$#^&*http://lindexi.oschina.io”转换的到的是什么
+对字符串：`~+ =!@$#^&*http://lindexi.oschina.io`转换的到的是什么
 
-通过 Uri.EscapeUriString 返回 “~+%20=!@$#%5E&*http://lindexi.oschina.io”
+通过 Uri.EscapeUriString 返回 `~+%20=!@$#%5E&*http://lindexi.oschina.io`
 
   
-WebUtility.UrlEncode 返回  “%7E%2B+%3D!%40%24%23%5E%26*http%3A%2F%2Flindexi.oschina.io”
+WebUtility.UrlEncode 返回  `%7E%2B+%3D!%40%24%23%5E%26*http%3A%2F%2Flindexi.oschina.io`
 
-他们都是标准，关于区别，请看 http://stackoverflow.com/a/11236038/6116637
+他们都是标准，关于区别，请看 [http://stackoverflow.com/a/11236038/6116637](http://stackoverflow.com/a/11236038/6116637)
 
 <!-- 对于中文，使用两个得到是一样 -->
 
@@ -80,8 +80,6 @@ WebUtility.HtmlEncode 可以转 `&#` ，把 `<` 转`&lt;`，`>`转`&gt;` 所以�
 |文 |%E6%96%87|%E6%96%87 |%E6%96%87 |文|
 
 https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/
-
-
 
 
 

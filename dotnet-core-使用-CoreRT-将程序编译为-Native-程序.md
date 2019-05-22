@@ -7,7 +7,7 @@
 <!--more-->
 
 
-<!-- csdn -->
+<!-- 标签：C#,dotnet,dotnetcore -->
 
 使用 CoreRT 发布的优点：
 

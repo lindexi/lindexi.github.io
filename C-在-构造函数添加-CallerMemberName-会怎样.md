@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 如果在构造函数使用这个特性会发生什么？
 
@@ -135,7 +134,7 @@
 
 可以看到虽然调用的方法看起来是相同的，但是运行的结果是不相同的，因为 CallerMemberName 是在编译时做的
 
-从上面的 IL 也可以看到 CallerMemberName 是在编译的时候传入的值，性能会比反射快，如果需要获得调用这个方法的方法的方法，也就是 A 调 B 然后 B 调 C 需要在 C 里面知道 A 是哪个，就需要使用 [WPF 判断调用方法堆栈](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
+从上面的 IL 也可以看到 CallerMemberName 是在编译的时候传入的值，性能会比反射快，如果需要获得调用这个方法的方法的方法，也就是 A 调 B 然后 B 调 C 需要在 C 里面知道 A 是哪个，就需要使用 [WPF 判断调用方法堆栈](https://blog.lindexi.com/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html)
 
 
 

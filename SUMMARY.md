@@ -708,6 +708,8 @@
 
  * [win10 uwp 在 xaml 让 TextBlock 换行](win10-uwp-在-xaml-让-TextBlock-换行.md)
 
+ * [win10 uwp 在笔迹开始书写拿到书写移动事件](win10-uwp-在笔迹开始书写拿到书写移动事件.md)
+
  * [win10 uwp 好看的时间选择控件](win10-uwp-好看的时间选择控件.md)
 
  * [win10 uwp 如何创建修改保存位图](win10-uwp-如何创建修改保存位图.md)
