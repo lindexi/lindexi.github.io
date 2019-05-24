@@ -181,7 +181,7 @@
 
 我使用 win2d 作为原生的绘制方法，除了 win2d 其他的代码都是我自己写的。
 
-第一步就是封装一下 win2d 的代码，这样 win2d 的概念在下面也就不会提及了。即使有提交也只是 win2d 的 [CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html) 刚才封装的画板的渲染方法，需要支持元素在某个坐标绘制写了很多代码，而在 win2d 因为存在了[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)只需要使用很少量的代码就可以做到，因为[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)支持在里面绘制，然后在 Canvas 的任意坐标画出[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html) 这样就可以完成画布的渲染方法。
+第一步就是封装一下 win2d 的代码，这样 win2d 的概念在下面也就不会提及了。即使有提交也只是 win2d 的 [CanvasCommandList](https://blog.lindexi.com/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html) 刚才封装的画板的渲染方法，需要支持元素在某个坐标绘制写了很多代码，而在 win2d 因为存在了[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)只需要使用很少量的代码就可以做到，因为[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html)支持在里面绘制，然后在 Canvas 的任意坐标画出[CanvasCommandList](https://lindexi.gitee.io/post/win2d-CanvasCommandList-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.html) 这样就可以完成画布的渲染方法。
 
 这里的 IPlatformVisual 就是平台的元素渲染接口，本文使用 win2d 需要继承这个接口实现一个类
 
@@ -476,11 +476,11 @@
 
 在 WPF 做出一个漂亮的界面有基础的框架是不够的，还需要有动画、样式和很多基础的方法才可以做出来，做一个框架时间最长的也就是这些细节，而不是框架的核心。
 
-关于 WPF 的渲染 [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
+关于 WPF 的渲染 [WPF 渲染原理](https://blog.lindexi.com/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
 
-从 [WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 也可以了解 WPF 是有多厉害，同时一个大的框架也会存在很多坑，现在 WPF 已经开源了，如果遇到问题，可以在 github 上面提 issus 或者直接修改
+从 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 也可以了解 WPF 是有多厉害，同时一个大的框架也会存在很多坑，现在 WPF 已经开源了，如果遇到问题，可以在 github 上面提 issus 或者直接修改
 
-https://github.com/dotnet/wpf/issues
+[https://github.com/dotnet/wpf/issues](https://github.com/dotnet/wpf/issues)
 
 课程视频
 
