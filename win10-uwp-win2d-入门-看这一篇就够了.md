@@ -52,9 +52,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
  
  - 任意宽度线段
 
-
 - 图形显影效应
-
 
 ## 使用
 
@@ -65,7 +63,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
 
 
-打开 MainPage.xaml ，添加命名`xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"`。在本文后面，我可能会使用`xmlns:xaml="using:Microsoft.Graphics.Canvas.UI.Xaml"` ，两个是相同的，因为本文我写了大概有半年，所以里面的代码有很多是不相同。
+打开 MainPage.xaml ，添加命名`xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"`。在本文后面，我可能会使用另一个命名空间`xmlns:xaml="using:Microsoft.Graphics.Canvas.UI.Xaml"` ，两个是相同的，因为本文我写了大概有半年，所以里面的代码有很多是不相同。
 
 
 ```xml
@@ -80,27 +78,28 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
     mc:Ignorable="d">
 ```
 
-添加命名之后，如果需要显示win2d，那么需要使用控件显示。
-
+添加命名之后，可以在 XAML 添加控件显示界面
 
 ```csharp
-            <canvas:CanvasControl x:Name="canvas" ClearColor="Black"></canvas:CanvasControl>
+            <canvas:CanvasControl x:Name="Canvas" ClearColor="Black"></canvas:CanvasControl>
 
 ```
 
 先运行一下，可以看到如下图的界面。
 
-一般可以按 F5 运行。如果觉得太早了，自己的代码还出现没有写好的，那么请按 ctrl+break 取消生成。
+在 VisualStudio 中一般可以按 F5 运行，但是如果在编译的过程发现还不到可以运行的时候，还需要做一些修改，那么请按 ctrl+break 取消生成。
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262081.jpg)
 
-按下F5这时看起来什么没有，但是有了颜色，如果可以看到这个，那么程序是安装成功，如果错误，那么可能安装的包错误。
+按下F5这时看起来什么没有，其实小伙伴有注意到背景颜色更改了，就是在上面代码 ClearColor 设置的值。如果按下 F5 运行的程序可以运行看到界面颜色修改了，那么就是 Win2d 安装成功了。
 
-如果发现自己的包无法使用，那么请同时升级 Win2d 和 `Microsoft.NETCore.UniversalWindowsPlatform` 最新，升级 UWP 项目使用最新的
+因为win2d的版本和对应的 UWP 的 sdk 版本是有联系的，如果发现无法正常使用，那么请同时升级 Win2d 和 `Microsoft.NETCore.UniversalWindowsPlatform` 最新，升级 UWP 项目使用最新的
+
+在准备好了之后，下面让我告诉大家基础的功能，使用基础的功能不是用来做好看的界面的，只是知道 Win2d 如何使用
 
 ### 添加文字
 
-需要在 canvas 的 Draw 添加函数，可以在这里画出图案，文字，于是使用这句添加在 xaml ` <canvas:CanvasControl x:Name="canvas" ClearColor="Black" Draw="Canvas_OnDraw"></canvas:CanvasControl>` 。在 MainPage.xaml.cs 写函数 `Canvas_OnDraw` 这样就可以在后台代码做出好看界面
+需要在 Canvas 的 Draw 添加函数，可以在这里画出图案，文字，于是使用这句添加在 xaml ` <canvas:CanvasControl x:Name="canvas" ClearColor="Black" Draw="Canvas_OnDraw"></canvas:CanvasControl>` 。在 MainPage.xaml.cs 写函数 `Canvas_OnDraw` 这样就可以在后台代码做出好看界面
 
 实际上上面的代码的核心就是 `Draw="Canvas_OnDraw"` 通过这个代码可以在 MainPage.xaml.cs 函数请看代码
 
@@ -131,6 +130,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
                 FontSize = 100
             });
 ```
+
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017326201856.jpg)
 
 需要告诉大家的是，上面的代码是为了让大家快速跑起来，很多细节都没有告诉大家。如 DrawingSession 的使用需要 using 。在设置字体宽度 `new CanvasTextFormat` 使用之后需要释放。
@@ -266,7 +266,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 
 需要在vs2017 才可以跑，如果希望下载 vs2017 ，可以到我网盘下载
 
-链接：http://pan.baidu.com/s/1skXDc3z 密码：70d6
+链接：[http://pan.baidu.com/s/1skXDc3z](http://pan.baidu.com/s/1skXDc3z) 密码：70d6
 
 如果度盘链接没法使用，请联系我。
 
@@ -299,7 +299,6 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 注意：传入的 `ICanvasResourceCreator` 就是 CanvasControl 也就是一个页面如果存在多个 CanvasControl 在哪个 CanvasControl 使用的图片就需要在哪个创建
 
 下面使用 LoadAsync 传入工程的图片，比较期望的方法是在 `Canvas_OnCreateResources` 事件里面加载图片。但是这里为了演示方便就直接在 `Canvas_OnDrawAsync` 创建图片。
-
 
 ```csharp
             private void Canvas_OnDrawAsync(Microsoft.Graphics.Canvas.UI.Xaml.CanvasControl sender, Microsoft.Graphics.Canvas.UI.Xaml.CanvasDrawEventArgs args)
