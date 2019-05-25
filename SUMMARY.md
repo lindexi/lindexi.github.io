@@ -1362,6 +1362,8 @@
 
  * [如何删除错误提交的 git 大文件](如何删除错误提交的-git-大文件.md)
 
+ * [如何在 CMD 启动的软件传入带空格的路径](如何在-CMD-启动的软件传入带空格的路径.md)
+
  * [如何在 UWP 使用 wpf 的 Trigger ](如何在-UWP-使用-wpf-的-Trigger-.md)
 
  * [如何在 Windows 10 中移除 Internet Explorer 浏览器](如何在-Windows-10-中移除-Internet-Explorer-浏览器.md)
