@@ -18,6 +18,8 @@
 
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
 
+ * [asp dotnet core 通过图片统计 csdn 用户访问](asp-dotnet-core-通过图片统计-csdn-用户访问.md)
+
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
 
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
