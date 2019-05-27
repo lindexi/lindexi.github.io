@@ -710,6 +710,8 @@
 
  * [win10 uwp 在 xaml 让 TextBlock 换行](win10-uwp-在-xaml-让-TextBlock-换行.md)
 
+ * [win10 uwp 在书写过程控制书写行为](win10-uwp-在书写过程控制书写行为.md)
+
  * [win10 uwp 在笔迹开始书写拿到书写移动事件](win10-uwp-在笔迹开始书写拿到书写移动事件.md)
 
  * [win10 uwp 好看的时间选择控件](win10-uwp-好看的时间选择控件.md)
