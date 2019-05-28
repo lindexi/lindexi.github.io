@@ -614,6 +614,8 @@ static void Main(string[] args)
 }
 ```
 
+不过括号还不可以无限使用，因为编译器有一个表达式的长度限制
+
 欢迎加入 dotnet 职业技术学院 https://t.me/dotnet_campus 使用 Telegram 方法请看 [如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
 

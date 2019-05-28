@@ -272,6 +272,8 @@
 
  * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
+ * [dotnet 如何在 Mock 模拟 Func 判断调用次数](dotnet-如何在-Mock-模拟-Func-判断调用次数.md)
+
  * [dotnet 如何调试某个文件是哪个代码创建](dotnet-如何调试某个文件是哪个代码创建.md)
 
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
