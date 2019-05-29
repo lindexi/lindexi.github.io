@@ -466,6 +466,8 @@ https://msdn.microsoft.com/zh-cn/library/mt683786
 
 现在我还有另一个插件：[图片注释](http://download.csdn.net/detail/lindexi_gd/9833388) 这个插件不是我写的，我是修改的，所以没有发布，如果需要就在这里下。
 
+推荐[VS插件开发笔记 - 禾木 - CSDN博客](https://blog.csdn.net/lj22377/article/details/84641077 )
+
 
 
 
