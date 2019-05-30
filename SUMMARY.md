@@ -348,6 +348,8 @@
 
  * [git镜像仓库](git镜像仓库.md)
 
+ * [How to fix nuget Unrecognized license type MIT when pack](How-to-fix-nuget-Unrecognized-license-type-MIT-when-pack.md)
+
  * [How to output the target message in dotnet build command line](How-to-output-the-target-message-in-dotnet-build-command-line.md)
 
  * [How to parse version range](How-to-parse-version-range.md)
@@ -447,6 +449,8 @@
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
  * [Roslyn 获得 sln 文件所在的文件夹](Roslyn-获得-sln-文件所在的文件夹.md)
+
+ * [Roslyn 让 VisualStudio 急速调试底层库方法](Roslyn-让-VisualStudio-急速调试底层库方法.md)
 
  * [Roslyn 通过 NuGet 库修改应用程序入口函数](Roslyn-通过-NuGet-库修改应用程序入口函数.md)
 
