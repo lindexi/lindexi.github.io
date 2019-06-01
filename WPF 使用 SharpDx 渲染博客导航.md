@@ -25,6 +25,10 @@
 - [WPF 使用封装的 SharpDx 控件](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-sharpdx-%E6%8E%A7%E4%BB%B6 )
 - [WPF 使用 SharpDx 异步渲染](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-sharpdx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93 )
 
+一些应用
+
+- [SharpDx 进入全屏模式](https://blog.lindexi.com/post/sharpdx-%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%8F%E6%A8%A1%E5%BC%8F )
+
 更多请看 [SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
 
 如果想了解[渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93 )如 Win2d 和 WPF 渲染原理等请看 [渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93 )
