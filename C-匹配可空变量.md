@@ -107,7 +107,7 @@ var b = null as bool?;
 
 是将 `a is B` 的值作为 bool 转入计算还是将 `a is B b` 这个隐藏的 b 传入计算
 
-请看 [int? 竟然真的可以是 null！.NET/C# 确定可空值类型 Nullable<T> 实例的真实类型 - walterlv](https://blog.walterlv.com/post/how-to-identify-a-nullable-type.html )
+请看 [int? 竟然真的可以是 null](https://blog.walterlv.com/post/how-to-identify-a-nullable-type.html )
 
 
 

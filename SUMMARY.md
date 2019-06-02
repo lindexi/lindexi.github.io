@@ -272,6 +272,8 @@
 
  * [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行](dotnet-判断程序当前使用管理员运行降低权使用普通权限运行.md)
 
+ * [dotnet 动态代理魔法书](dotnet-动态代理魔法书.md)
+
  * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
  * [dotnet 如何在 Mock 模拟 Func 判断调用次数](dotnet-如何在-Mock-模拟-Func-判断调用次数.md)
