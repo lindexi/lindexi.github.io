@@ -104,6 +104,6 @@ var b = null as bool?;
 
 是将 `a is B` 的值作为 bool 转入计算还是将 `a is B b` 这个隐藏的 b 传入计算
 
-请看 [int? 竟然真的可以是 null！.NET/C# 确定可空值类型 Nullable<T> 实例的真实类型 - walterlv](https://blog.walterlv.com/post/how-to-identify-a-nullable-type.html )
+请看 [int? 竟然真的可以是 null](https://blog.walterlv.com/post/how-to-identify-a-nullable-type.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

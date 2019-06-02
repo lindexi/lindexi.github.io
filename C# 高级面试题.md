@@ -231,4 +231,46 @@ private static void Foo()
 
 在表达里面只有 `?` 的值为空，那么就不会执行
 
+## 模式匹配
+
+请问下面代码输出什么？
+
+```csharp
+
+    class B
+    {
+        public static int operator &(B left, B right) => 1;
+        public static int operator >(B left, B right) => 2;
+        public static int operator <(B left, B right) => 3;
+
+        public static int operator &(bool left, B right) => 5;
+        public static int operator >(bool left, B right) => 6;
+        public static int operator <(bool left, B right) => 7;
+    }
+
+        private static B B { get; }
+
+        static void Main(string[] args)
+        {
+            object a = null;
+            B c = null;
+            Console.WriteLine(a is B b & c);
+            Console.WriteLine(a is B b1 > c);
+            Console.WriteLine(a is B b2 < c);
+
+            a = new B();
+
+            Console.WriteLine(a is B b5 & c);
+            Console.WriteLine(a is B b6 > c);
+            Console.WriteLine(a is B b7 < c);
+
+        }
+```
+
+也许这是全部题目里面最简单的一道题
+
+请看 [C# 匹配可空变量](https://blog.lindexi.com/post/c-%E5%8C%B9%E9%85%8D%E5%8F%AF%E7%A9%BA%E5%8F%98%E9%87%8F )
+
+其实这里的 `a is B` 用的 `B` 是 `class` 不是定义的属性，对 `a is B b5` 返回的是 `bool` 所以将会是 `bool` 与 `B` 之间的运算
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
