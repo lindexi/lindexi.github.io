@@ -1,0 +1,170 @@
+# C# 从零开始写 SharpDx 应用 绘制基础图形
+
+本文告诉大家通过 SharpDx 画出简单的 2D 界面
+
+<!--more-->
+<!-- csdn -->
+<!-- 草稿 -->
+
+本文属于 [SharpDx 系列](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html) 博客，建议从头开始读
+
+本文分为两步，第一步是初始化，第二步才是画界面
+
+## 初始化
+
+先创建 RenderForm 用来显示界面，在创建的过程需要指定宽度和高度
+
+```csharp
+            _renderForm = new RenderForm();
+            _renderForm.ClientSize = new Size(Width, Height);
+
+        private const int Width = 1280;
+
+        private const int Height = 720;
+```
+
+上面创建的代码大部分参阅了[C# 从零开始写 SharpDx 应用 初始化dx修改颜色](https://blog.csdn.net/lindexi_gd/article/details/82114907 )的代码
+
+在 InitializeDeviceResources 函数里面更改一些参数，用于创建资源和初始化
+
+```csharp
+            var backBufferDesc =
+                new ModeDescription(Width, Height, new Rational(60, 1), Format.R8G8B8A8_UNorm);
+            var swapChainDesc = new SwapChainDescription
+            {
+                BufferCount = 1,
+                ModeDescription = backBufferDesc,
+                IsWindowed = true,
+                OutputHandle = _renderForm.Handle,
+                SampleDescription = new SampleDescription(1, 0),
+                SwapEffect = SwapEffect.Discard,
+                Usage = Usage.RenderTargetOutput
+            };
+
+            Device.CreateWithSwapChain(DriverType.Hardware, DeviceCreationFlags.BgraSupport, swapChainDesc,
+                out _d3DDevice, out _swapChain);
+
+            _d3DDeviceContext = _d3DDevice.ImmediateContext;
+
+            using (var backBuffer = _swapChain.GetBackBuffer<Texture2D>(0))
+            {
+                _renderTargetView = new RenderTargetView(_d3DDevice, backBuffer);
+
+                _viewport = new Viewport(0, 0, Width, Height);
+                _d3DDeviceContext.Rasterizer.SetViewport(_viewport);
+            }
+
+            CreateD2DRender();
+```
+
+上面参数和[C# 从零开始写 SharpDx 应用 初始化dx修改颜色](https://blog.csdn.net/lindexi_gd/article/details/82114907 )的有一些不相同，在 SwapChainDescription 里面添加了 SwapEffect 参数
+
+在创建交换链的时候，在 Device.CreateWithSwapChain 里面修改了 DeviceCreationFlags 参数
+
+上面内容还是在创建 3D 内容，在 DX 里面是通过一个 3D 的平面画 2D 界面
+
+在 CreateD2DRender 方法里面才是创建 2D 的代码
+
+想要绘制界面需要 `SharpDX.Direct2D1.RenderTarget` 对象，需要先创建工厂然后通过工厂和交换链拿到平面，然后将输出定向到拿到的平面
+
+创建工厂只需要直接创建
+
+```csharp
+            var d2dFactory = new SharpDX.Direct2D1.Factory();
+```
+
+从交换链拿到平面
+
+```csharp
+            Texture2D backBuffer = D3D11.Resource.FromSwapChain<Texture2D>(_swapChain, 0);
+            Surface surface = backBuffer.QueryInterface<Surface>();
+```
+
+创建 RenderTarget 用于绘图
+
+```csharp
+            var d2dRenderTarget = new RenderTarget(d2dFactory, surface,
+                new RenderTargetProperties(new PixelFormat(Format.Unknown, AlphaMode.Premultiplied)));
+```
+
+这里 CreateD2DRender 方法代码请看下面
+
+```csharp
+using DeviceContext = SharpDX.Direct2D1.DeviceContext;
+using Factory = SharpDX.Direct2D1.Factory;
+
+        private void CreateD2DRender()
+        {
+            var d2dFactory = new SharpDX.Direct2D1.Factory();
+            Texture2D backBuffer = D3D11.Resource.FromSwapChain<Texture2D>(_swapChain, 0);
+            Surface surface = backBuffer.QueryInterface<Surface>();
+            var d2dRenderTarget = new RenderTarget(d2dFactory, surface,
+                new RenderTargetProperties(new PixelFormat(Format.Unknown, AlphaMode.Premultiplied)));
+            _d2dFactory = d2dFactory;
+            _d2dRenderTarget = d2dRenderTarget;
+        }
+
+        private Factory _d2dFactory;
+        private RenderTarget _d2dRenderTarget;
+```
+
+现在拿到了 `_d2dRenderTarget` 就可以用来画 2D 的界面了，开启绘制循环之后进行画界面
+
+```csharp
+        public void Run()
+        {
+            RenderLoop.Run(_renderForm, RenderCallback);
+        }
+
+        private void RenderCallback()
+        {
+            Draw();
+        }
+
+        private void Draw()
+        {
+        	// 在这里绘制
+        }
+```
+
+下面将会告诉大家如何在 Draw 方法里面绘制界面
+
+## 画界面
+
+在 Draw 方法里面，使用下面方式画界面
+
+```csharp
+        private void Draw()
+        {
+            _d2dRenderTarget.BeginDraw();
+           
+            // 实际画的代码
+
+            _d2dRenderTarget.EndDraw();
+
+
+            _swapChain.Present(1, PresentFlags.None);
+        }
+```
+
+先调用 BeginDraw 方法开启绘制，在调用 EndDraw 方法将所有绘制指令压缩处理，大部分都是直接传送到显卡渲染
+
+然后调用交换链 `_swapChain` 将后台缓存和前台显示交换，这样就可以做到刷新界面
+
+具体画的内容可以分为基础图形
+
+### 画点
+
+### 画线
+
+### 矩形
+
+### 椭圆
+
+### 文字
+
+更多请看 [SharpDx 系列](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html)
+
+使用 SharpDx 绘制很底层，但是绘制性能超级高
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
