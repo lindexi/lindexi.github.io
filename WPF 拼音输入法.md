@@ -36,7 +36,7 @@
 所以简单的注册一个钩子只需要三行代码
 
 ```csharp
-                var  keyboardHookProcedure = new HookProc(KeyboardHookProc);
+                var keyboardHookProcedure = new HookProc(KeyboardHookProc);
 
                 var hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, keyboardHookProcedure, GetModuleHandle(Process.GetCurrentProcess().MainModule.ModuleName), 0);
 
