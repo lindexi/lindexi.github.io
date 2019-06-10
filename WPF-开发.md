@@ -332,6 +332,16 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 如果 Foo 不需要在主线程，就可以删除 TaskScheduler.FromCurrentSynchronizationContext 代码
 
+## WPF 去掉最大化按钮
+
+通过在窗口添加下面代码
+
+```csharp
+ResizeMode="NoResize"
+```
+
+窗口就剩下一个关闭同时用户也无法拖动修改窗口大小
+
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 
 [wpf动画——缓动动画Animation Easing - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/11/2680579.html)

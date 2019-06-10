@@ -256,6 +256,8 @@
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
 
+ * [dotnet 代码调试方法](dotnet-代码调试方法.md)
+
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
  * [dotnet 使用 GC.GetAllocatedBytesForCurrentThread 获取当前线程分配过的内存大小](dotnet-使用-GC.GetAllocatedBytesForCurrentThread-获取当前线程分配过的内存大小.md)
@@ -539,6 +541,8 @@
  * [VisualStudio 安装 Python 开发](VisualStudio-安装-Python-开发.md)
 
  * [VisualStudio 开发文件自定义工具单文件生成工具](VisualStudio-开发文件自定义工具单文件生成工具.md)
+
+ * [VisualStudio 开启仅我代码调试](VisualStudio-开启仅我代码调试.md)
 
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)
 
@@ -1224,6 +1228,8 @@
 
  * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
 
+ * [WPF 添加窗口消息钩子方法](WPF-添加窗口消息钩子方法.md)
+
  * [WPF 渲染原理](WPF-渲染原理.md)
 
  * [WPF 渲染级别](WPF-渲染级别.md)
@@ -1295,6 +1301,8 @@
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)
 
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
+
+ * [WPF 隐藏系统窗口菜单](WPF-隐藏系统窗口菜单.md)
 
  * [WPF 高性能笔](WPF-高性能笔.md)
 
