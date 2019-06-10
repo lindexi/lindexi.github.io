@@ -348,6 +348,8 @@
 
  * [git 提交添加 emoij 文字](git-提交添加-emoij-文字.md)
 
+ * [git 通过 SublimeMerge 处理冲突](git-通过-SublimeMerge-处理冲突.md)
+
  * [git 需要知道的1000个问题](git-需要知道的1000个问题.md)
 
  * [git无法pull仓库refusing to merge unrelated histories](git无法pull仓库refusing-to-merge-unrelated-histories.md)
