@@ -14,6 +14,8 @@
 
 对于客户端还包括渲染方面调试，我觉得我软件显示比较慢，那么是渲染卡还是主线程卡
 
+欢迎小伙伴告诉我一些你的调试方法
+
 ## 课前测试
 
 带着问题阅读效果将会更好
@@ -197,6 +199,75 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 在项目开发的时候，有时候会遇到一些奇怪的坑，但是项目太大了，不能确定是哪个模块的问题，或者自己对整个逻辑也不熟悉，此时可以尝试使用异常调试的方法
 
+### 调试对象
+
+在 VisualStudio 中提供了给某个对象添加 ID 的功能，在软件运行的过程，整个进程有超级多的对象被创建，而在调试的时候经常发现了修改了某个对象的属性或值但实际上没有应用上。此时可能的原因是找错了对象，通过在局部变量或自动窗口等右击对应的属性可以给这些对象添加一个 id 通过 id 就可以判断当前使用的对象和之前使用的是否相同的对象
+
+这里用一个案例说明
+
+我遇到一个很复杂的代码，这个代码的坑大概是这样的，我已经写了更改了某个对象的 Name 属性，然后在调用 GetName 时就会去取这个属性的值，同时如果这个属性的值为空了，就会出现异常，在调试的时候的代码大概如下图
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法7.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201961014267518)
+
+在 GetName 方法判断传入的属性是否为空，如果为空就异常
+
+```csharp
+        private void GetName()
+        {
+            if (string.IsNullOrEmpty(Foo.F1.Name))
+            {
+                throw new ArgumentException();
+            }
+        }
+```
+
+我通过断点调试发现了我成功设置了 Name 的值
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法8.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201961014283411)
+
+但还是发现了异常，我通过搜代码的 Name 的属性赋值，发现只有上面的代码才会赋值
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法9.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2019610142927709)
+
+此时就可以尝试通过断点调试里面的给对象设置 id 的方法调试，我给了 F1 设置了一个 id 通过局部变量找到这个属性，右击创建分配了 `$1` 给这个属性
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法10.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201961014311346)
+
+然后在 GetName 方法添加断点，此时发现了现在的 F1 对象没有被标记，而存在标记的值和当前的 F1 不是同一个值，也就是说明有一段代码更改了 F1 的值
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法11.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2019610143215420)
+
+而可惜我看到了 F1 代码的定义如下
+
+```csharp
+    public class Foo
+    {
+        public F1 F1 = new F1();
+    }
+```
+
+这样的定义的代码将会出现一个坑在于我无法和属性一样通过在 set 方法上面添加断点知道了在这段代码内有哪个地方更改了 F1 的值，只能通过看代码的形式去寻找。这也就是一个好的例子说明了禁止公开字段的重要性，公开了字段会影响断点调试
+
+如果我将 F1 更改为属性，那么我愉快在 set 方法打上断点，注意不是一开始就打上断点，而是在我设置了 Name 属性之后才添加断点，然后按下 F5 继续运行
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法12.png) -->
+
+![](https://i.loli.net/2019/06/10/5cfdfac1cca2a62584.jpg)
+
+在进入了断点通过调用堆栈可以找到是在 OtherCode 里面有代码更改了这个值
+
+在断点调试里面使用多个技术一起使用，如局部变量和调用堆栈等可以提高调试的速度。当然调用堆栈还有很多用途，在下文的异常调试也会用到调用堆栈也会详细告诉大家如何使用
+
 ## 异常调试
 
 如果遇到程序运行的过程不符合预期，但是自己又不确定是哪个模块，或者代码太多逻辑很复杂，不知道在哪里下断点的效率才会高，此时可以尝试一下异常调试
@@ -233,6 +304,188 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 关于第一次机会异常请看[C#/.NET 如何在第一次机会异常 FirstChanceException 中获取比较完整的异常堆栈 - walterlv](https://walterlv.com/post/how-to-get-the-full-stacktrace-of-an-first-chance-exception.html )
 
+### 读取异常的信息
+
+很多的异常都是带有足够的信息，一般的异常里面都有 Message 告诉小伙伴哪里的使用是不对的，如果信息很多将会在 Data 里面附带其他辅助的信息
+
+在异常的 StackTrace 里面会记录这个异常的调用堆栈，让小伙伴可以知道是在哪个调用顺序里面扔的
+
+在看到一个异常的时候，第一个应该看的就是 Message 大多数的异常通过 Message 都能知道问题，如果发现 Message 里面带的数据不够，可以尝试通过 Data 里面看是否还有附加的信息。在异常的调用堆栈信息里面可以看到方法调用的顺序
+
+#### 好的例子
+
+用一个好的例子说明异常调试
+
+我在尝试小伙伴写的一个库，我写了这样的代码
+
+```csharp
+            var f2 = new F2();
+            f2.ChangeName();
+```
+
+在运行的时候发现在调用 ChangeName 方法给了我一个异常，在异常提示里面写了 `在调用此方法之前，请先调用 Init 初始化方法` 看到这个提示我就知道了在调用之前需要先初始化
+
+#### 不好的例子
+
+一个不好的例子是从微软的 WPF 框架抛的异常在这个信息里面完全没有多少有用的信息
+
+```csharp
+ExceptionType: System.IndexOutOfRangeException
+ ExceptionMessage: 索引超出了数组界限
+
+   在 System.Collections.Generic.Dictionary`2.Insert(TKey key, TValue value, Boolean add)
+   在 System.Windows.Input.StylusWisp.WispLogic.CoalesceAndQueueStylusEvent(RawStylusInputReport inputReport)
+   在 System.Windows.Input.StylusWisp.WispLogic.ProcessInputReport(RawStylusInputReport inputReport)
+   在 System.Windows.Input.PenContext.FirePackets(Int32 stylusPointerId, Int32[] data, Int32 timestamp)
+   在 System.Windows.Input.PenThreadWorker.FlushCache(Boolean goingOutOfRange)
+   在 System.Windows.Input.PenThreadWorker.FireEvent(PenContext penContext, Int32 evt, Int32 stylusPointerId, Int32 cPackets, Int32 cbPacket, IntPtr pPackets)
+   在 System.Windows.Input.PenThreadWorker.ThreadProc()
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+```
+
+在看到这个异常的时候，请问这是在做什么？为什么在这里炸了
+
+#### 写出方便调试的代码
+
+这就是为什么异常不是用来随便扔的，想要在异常调试里面能够快速调试就需要依赖代码对异常的处理
+
+**减少线程委托使用**
+
+先举一个不好的例子，我看到有小伙伴写了这段代码
+
+```csharp
+            new Thread((() =>
+            {
+                throw new Exception("林德熙是逗比");
+            })).Start();
+```
+
+请问上面的代码的坑有哪些？
+
+如果是将上面的代码写在日志或上报等无法附加调试，那么能看到的信息是
+
+```csharp
+ExceptionType： Exception
+ExceptionMessage：林德熙是逗比
+
+   在 lindexi.exe!lindexi.Program.Main.AnonymousMethod__0_0() 
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+```
+
+这样完全不知道这个代码是在哪里运行的，想要添加断点进行调试也不知道是在哪里添加断点
+
+所以推荐的方法是减少在线程里面直接使用辣么大请使用方法，如我写了这样的方法
+
+```csharp
+            new Thread((() =>
+            {
+                Foo();
+            })).Start();	
+
+        static void Foo()
+        {
+            throw new Exception("林德熙是逗比");
+        }
+```	
+
+这样的代码比上面的代码好一点，可以拿到的信息请看下面
+
+```csharp
+ExceptionType： Exception
+ExceptionMessage：林德熙是逗比
+
+   在 lindexi.exe!lindexi.Program.Foo() 
+   在 lindexi.exe!lindexi.Program.Main.AnonymousMethod__0_0() 
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+```
+
+我就可以通过调用堆栈的 Foo 找到了对应的代码，从而进行断点调试
+
+**不要在静态构造函数抛出异常**
+
+填坑
+
+**区分发布代码**
+
+在一些模块，即使出现了异常还是可以正常工作，但是如果没有吃掉这个异常将会让整个软件无法使用。但是有很多逗比的开发者会写出逗比的代码，我期望让他在开发的时候就发现，于是我就通过了判断当前是 DEBUG 版还是发布版执行不同的逻辑
+
+例如在希沃白板软件加载课件的过程，每个课件里面都有不同的页面，如果某个页面加载出现异常，我不期望用户整个课件都打不开，于是就吃掉了页面加载的异常。但是页面是很多小伙伴写的，我期望在开发的时候小伙伴就能发现这里有异常，我通过下面的代码区分了发布版
+
+```csharp
+        static void Foo()
+        {
+#if DEBUG
+            throw new Exception("林德熙是逗比");
+#else
+            Console.WriteLine("林德熙是逗比");
+#endif
+```
+
+建议是在 DEBUG 下只要不符合预期就抛异常，这样可以在开发的时候减少诡异的使用
+
+**保存堆栈**
+
+很多初学 dotnet 的小伙伴喜欢吃掉全局的异常然后重新抛
+
+```csharp
+                try
+                {
+                    Foo();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+```
+
+这个做法是很逗比的，在外层拿到的 e 将会丢失了在 Foo 里面的堆栈信息
+
+**更多方法**
+
+我推荐小伙伴阅读以下博客了解在代码中如何写
+
+- [.NET/C# 建议的异常处理原则 - walterlv](https://walterlv.com/post/suggestions-for-handling-exceptions.html )
+
+- [应该抛出什么异常？不应该抛出什么异常？（.NET/C#） - walterlv](https://walterlv.com/post/throws-which-exception.html )
+
+- [.NET/C# 在正确的条件下抛出最合适的异常](https://blog.walterlv.com/post/when-to-throw-which-exceptions.html)
+
+- [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](https://walterlv.com/post/exceptiondispatchinfo-capture-throw.html )
+
+- [Exception.Data 为异常添加更多调试信息 - walterlv](https://walterlv.com/dotnet/2017/09/12/exception-data.html )
+
+- [NullReferenceException，就不应该存在！ - walterlv](https://walterlv.com/post/wipe-out-null-reference-exception.html )
+
+- [C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常 - walterlv](https://walterlv.com/post/get-the-key-descriptor-of-an-exception.html )
+
+### 开启所有异常
+
+在进入异步等的过程，会发现有一部分的异常提示不在具体的代码，而是在上一层的代码提示，此时可以通过在提示的哪个异常就开启哪个异常的方法，找到对应的代码
+
+但是如果发现提示的异常是合并的异常，或者需要开启的太多了，可以尝试开启所有的异常
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法14.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2019610162630273)
+
+在调试窗口异常设置里面，如果前面的分类是一个方形那么就是开启默认的异常，此时有很多异常都是被忽略的。再点击一次变成勾就可以开启所有的异常
+
+对于很多渣的软件，包括调试 VisualStudio 的过程是不建议开启所有的异常，因为有很多无关的代码特别是异常控制流程会干扰调试
+
+通过开启所有异常的调试大家也知道异常控制流程会影响到调试的方法，在我开启所有异常的时候，如果存在很多异常控制流程的代码，那么将会在调试的时候被这些诡异的代码影响
+
+但是有时候开启了所有的异常还没有让 VisualStudio 停在自己需要关注的代码上面，此时就需要用到调用堆栈
+
 ### 调用堆栈
 
 在找到对应的异常的过程，请通过调用堆栈看到这个方法是如何被调用的，在被调用的函数上面，可以通过双击到达函数，此时在局部窗口等可以看到附近的值，这个方法可以找到代码运行的逻辑，也就是为什么会进入这个分支
@@ -247,6 +500,12 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 通过调用堆栈和异常的方法可以快速定位代码调用是否符合预期，各个函数传入参数是否符合预期，此时的调试不限在 DEBUG 下，同时适合在用户端调试发布的代码
 
+在调用堆栈的使用过程，会自动将没有加载符号的代码作为外部代码隐藏，也就是在开启异常的时候不会将异常代码显示，此时可以通过在调用堆栈右击，选择显示外部代码，此时将会显示所有的调用的外部代码
+
+在外部代码里面的方法都是没有加载符号的，所以无法直接通过双击的方法进入到对应代码，此时可以通过右击加载符号加载对应模块的符号，如果这个模块属于库同时也没有符号，可以通过断点调试的使用 dotPeek 方法创建符号加载
+
+如果在没有符号的时候，只能通过调用的方法名和传入的参数和一下局部变量调试，如果是调试的方法的方法名和所做的内容相同，同时一个方法里面的代码很少，通过看参数和局部变量和调用顺序比较简单找到坑。但是如果在调用堆栈里面无法跳到代码，例如等待 dotPeek 反编译的时间实在太长，同时这个方法的代码特别多，那么将很难进行调试
+
 ### 用户端调试
 
 在用户端调试不是说只有在用户的电脑上进行调试，更多的是在没有使用自己代码进行 DEBUG 编译调试。如果现在遇到的问题是一个不带符号文件的程序出现了坑，如何调试他
@@ -256,6 +515,24 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 也许此时出现异常的是在库里面，或者整个程序在运行的过程是找不到符号文件的，也就是无法定位到具体的代码。但是在调用堆栈依然可以看到用户代码调用顺序，同时在局部窗口也可以发现每次调用的局部变量
 
 此时可以再打开一个 VisualStudio 找到对应的函数的对应代码，按照调用堆栈里面的调用逻辑，是否可以找到解决方法
+
+### 上报异常
+
+不是所有的用户都可以将你拉过去打靶，也不是所有的异常都需要解决
+
+建议在软件运行过程中，所有没有接住的异常还有被接住但是需要解决的都进行上报
+
+此时需要一个后台的服务器用于接受用户运行过程中上报的信息，对于异常的数据建议上报的内容包括以下
+
+ - ExceptionType
+ - ExceptionMessage
+ - stacktrace
+
+如果能将对应的 Data 上报就更好，对于特殊的如 AggregateException 等就需要拆开，除了以上信息还需要上报通用的信息，包括用户的 id 和系统版本安装的 .NET 版本这些
+
+通过上报的数据找到用户报的比较多的异常优先解决，同时在软件上线的过程对于新模块的异常优先解决
+
+因为是在后台看到上报的数据无法进行附加调试，此时上报的异常的信息就更加重要，建议小伙伴在写代码的时候考虑调试
 
 ### 无异常调试
 
@@ -285,6 +562,292 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 在阅读完无异常调试的时候，相信小伙伴都了解到了异常的作用，以及在某些地方如何防逗比了
 
 当然不是所有的时候都适合使用异常也许可以尝试一下日志，另外对于 WPF 和 UWP 的界面相关有另外的调试方法
+
+### 用户端无代码调试
+
+无论是否有异常都可以尝试使用这个方法，通过 dnspy 在用户端调试，可以不需要任何代码，只要在用户端能找到 exe 就可以调试
+
+求填坑 dnspy 使用方法
+
+更多关于 dnspy 请看 [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](https://walterlv.com/post/edit-and-recompile-assembly-using-dnspy.html )
+
+## 多线程调试
+
+现在很少有软件只是有单个线程，一般的软件都是存在多个线程一起使用，而有很多不看书的小伙伴会随意使用多线程，也就会遇到很多多线程的问题，在调试的过程中，调试多线程之前请先了解多线程。不需要了解到内核态什么的，但是需要了解以下的知识点，在不了解之前，很多小伙伴都会说垃圾微软一定是 vs 没编译好
+
+ - 异步和同步
+ - 异步切换上下文
+ - 框架里面提供了哪些多线程方案
+ - 线程安全方法或属性
+ - 多线程读写问题
+ - 框架里面提供哪些锁在什么时候使用
+ - 调度的使用方法
+
+### 当前线程
+
+在开始调试的过程，可以找到当前运行代码的对应的线程，如我在方法添加了断点，我可以看到这个方法在哪个线程运行
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法13.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2019610154727643)
+
+还是刚才的代码，我在两个方法里面修改了 Name 这个属性，然后在第三个方法判断了 Name 的值
+
+```csharp
+        public void ChangeName()
+        {
+            Foo.F1.Name = "lindexi";
+            OtherCode();
+            GetName(); // 抛出 ArgumentException 异常
+        }
+
+        private void OtherCode()
+        {
+            Foo.F1.Name = "逗比";
+        }
+
+        private void GetName()
+        {
+            if (Foo.F1.Name != "逗比")
+            {
+                throw new ArgumentException();
+            }
+        }
+```
+
+理论上代码是先调用 ChangeName 里面的 OtherCode 在这里修改了值，然后才调用 GetName 方法，也就是获取到的值就是最后一次设置的值
+
+但是实际在调试的时候会发现，可能这个 Name 的值是 `lindexi` 此时尝试在 ChangeName 和 GetName 方法上面添加断点在进入断点的时候请看对应的线程是否相同，多次进入断点如果发现方法的线程是不相同的，那么就可以知道这是一个多线程问题。通过单步调试可以发现在线程 1 调用了 ChangeName 到 GetName 方法的过程，在调用 OtherCode 方法完成之后刚好有线程 2 调用了 ChangeName 方法，而在线程2修改了属性之后，在线程1就判断了属性
+
+在调试的过程，可以点击线程，进行切换线程，可以看到在某个线程执行某段代码的时候，另一个线程在做什么，通过这个方式可以调试多线程访问资源
+
+### 并行堆栈
+
+如何看出进入了相互等待的锁的问题
+
+填坑
+
+## 无断点调试
+
+有一些代码是不支持添加断点进行调试的，理论上很少有代码不能添加断点，但是存在很多添加了断点就无法继续的业务。包括了有一些功能是不支持软件暂停的，例如桌面端的调试输入和数据库通信过程。还有一些软件是在不知道是在哪一行代码添加断点，这就需要用到无断点调试
+
+### 不支持暂停的调试
+
+在无断点调试里面做桌面端的小伙伴就知道，如果是在调试用户输入过程，那么此时是不支持暂停的也就无法添加断点调试，如果软件进入了暂停那么等待软件的输入将会被暂停，将无法做出连贯的功能
+
+例如我有一个功能是书写我需要调试，但是如果我添加了断点就会打断书写的输入，在调试的时候就不能使用断点调试也就是上面提供的任何方法都不能在这里使用
+
+### 随机暂停调试
+
+对于另一些无法添加断点调试的可能是不知道在哪里添加断点，例如有小伙伴告诉我软件什么都没做但是占用了很多的 CPU 计算，不知道是哪段代码在计算
+
+
+
+### 通过日志调试
+
+文件
+
+debug view
+
+填坑
+
+
+### 辅助代码调试
+
+填坑
+
+
+
+## 库调试
+
+在进行库调试之前，应该充分相信使用的库的质量，也就是相信库的代码是稳定的
+
+### 桩测试
+
+模拟库里面的公开的代码
+
+填坑
+
+
+### 模块测试
+
+静态状态
+
+填坑
+
+
+### 重定向库输出
+
+如果发现真的是库的问题，那么就需要将库加入到代码进行调试
+
+将 Nuget 替换为 csproj 项目可以使用 [DllReferencePathChanger 这个插件](https://github.com/dotnet-campus/DllReferencePathChanger) 使用这个插件可以将某个 Nuget 替换为项目引用
+
+但是此时需要重新编译整个大项目才能进行调试，这样的调试的效率比较低，可以尝试编译了库的代码，将库的调试作为项目的输出文件，通过这个方法做到每次调试编译库代码就可以，提高效率详细请看下面两篇博客
+
+[Roslyn 让 VisualStudio 急速调试底层库方法](https://blog.lindexi.com/post/roslyn-%E8%AE%A9-visualstudio-%E6%80%A5%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%95%E5%B1%82%E5%BA%93%E6%96%B9%E6%B3%95 )
+
+[VisualStudio 通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/visualstudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81 )
+
+### 案例
+
+我和少珺在一起写一个 c/s 代码，他发现了后台返回的值他拿不到，经过了断点调试发现了后台有返回 json 字符串，但是他解析出来的是一个空的值
+
+此时他很慌的说，我使用的 json 解析库是我自己写的
+
+听到这里我做了一个错误的决策，我认为需要将他写的 json 解析库加入调试
+
+其实最后发现的问题是他的 json 解析库对大小写敏感，需要添加特性修复这个问题。在少珺的 json 解析库里面，对于 json 的属性名是大小写敏感的，因为我返回的属性都是第一个字符小写的，但是他写的代码里面每个属性都符合命名规范都是第一个字符大写的，需要通过特性的方法重新定向到小写的属性名
+
+这个决策让我和少珺多用了很长的时间，其实在使用库代码的时候，应该相信库的实现是稳定的。即使通过模块测试的方法，也只是确定是否正确使用了库提供的功能。在发现调用了某个库的方法不符合预期的时候，请先确定自己是否按照库提供的接口预期使用。
+
+在发现某段代码出现的问题和库相关，第一时间应该是确定是否自己的代码的问题，也就是跳过和库相关的代码，认为库的代码是正确的。如果此时库的接口影响到了自己的模块的功能，可以尝试桩测试，如果在进行桩测试成功之后，那么可以认为是自己没有按照预期的使用库的接口。可以尝试使用模拟测试寻找库的正确打开方式。最后才是尝试认为这是库提供的问题
+
+## 模拟调试
+
+填坑
+
+
+### 网络模拟调试
+
+使用 Fiddler 模拟
+
+填坑
+
+
+### 输入模拟调试
+
+修改代码模拟输入
+
+填坑
+
+
+### 单元测试模拟调试
+
+通过单元测试模拟某个接口
+
+填坑
+
+
+## 文件读写调试
+
+文件占用
+
+找不到库找不到文件
+
+### 加载库调试
+
+判断文件加载的是哪些库
+
+填坑
+
+
+### 读写性能调试
+
+通过 dot trace 找到读写文件
+
+填坑
+
+
+## 界面调试
+
+### 实时可视化树
+
+填坑
+
+### 渲染范围
+
+对于 WPF 和 UWP 使用不同方法
+
+填坑
+
+### 使用 snoop 调试
+
+填坑
+
+## DUMP调试
+
+### 使用 VisualStudio 调试
+
+填坑
+
+### 使用 dotMemory 调试内存
+
+填坑
+
+### 使用 WinDbg 调试
+
+填坑
+
+
+## 性能调试
+
+### 通过 VisualStudio 分析
+
+填坑
+
+
+### CPU 调试
+
+通过 dotTrace 调试
+
+### GPU 调试
+
+通过 VisualStudio 分析，通过 PXI 通过 Vtune 调试
+
+填坑
+
+
+### 内存调试
+
+在 VisualStudio 看内存，分析内存
+
+通过 dotMemory 调试
+
+填坑
+
+
+## 经验
+
+经验里面将会包括很多套路
+
+### 面对不熟悉代码的调试
+
+
+
+填坑
+
+### 通过 git 理解代码
+
+有一些代码明明是可以使用的，但是被添加了某个业务，然后某个业务就不能和之前一样使用。在调试到这个问题的时候不能简单改回去，需要知道为什么那个逗比小伙伴要这样修改
+
+但是这个逗比小伙伴在蹲坑，我不想去找他，我有什么方法可以知道为什么他要这样修改？
+
+或者本金鱼经常不知道自己为什么会这样写代码，我在调试的过程发现有诡异的代码，我如何知道为什么这样做
+
+如果代码里面存在注释，可以通过注释找到这样写的原因。如果是发现上个版本可以使用，但是这个版本被修改了，可以通过 git 的提交信息知道为什么这样修改，在修改的时候可以不掉到上次的坑
+
+有一个笑话是我改了一个 bug 但是测试给我报了 10 个，原因在于我将之前小伙伴解的坑又踩了
+
+填坑
+
+
+### 不必现问题
+
+提高复现，找到最简单步骤
+
+填坑
+
+
+### 二分代码
+
+完全不知道的代码，不熟悉的模块，或不确定是全局的底层库的属性被修改
+
+通过 git 的二分查找
+
+通过二分注释代码
+
+填坑
+
 
 
 
