@@ -219,13 +219,15 @@ using Xunit;
 
 更多请看[Microsoft/xunit-performance: Provides extensions over xUnit to author performance tests.](https://github.com/Microsoft/xunit-performance )
 
-课件：https://r302.cc/5W9GVK
+课件：[https://r302.cc/5W9GVK](https://r302.cc/5W9GVK)
 
 参见：[.NET Core性能测试组件BenchmarkDotNet 支持.NET Framework Mono - LineZero - 博客园](https://www.cnblogs.com/linezero/p/BenchmarkDotNet.html )
 
 [用BenchmarkDotNet给C#程序做性能测试](http://fresky.github.io/2016/03/06/use-benchmarkdotnet-for-csharp-benchmark/ )
 
 [使用 BenchmarkDotnet 测试代码性能 - h82258652 - 博客园](https://www.cnblogs.com/h82258652/p/8748345.html )
+
+[Benchmarking Your .NET Core Code With BenchmarkDotNet - .NET Core Tutorials](https://dotnetcoretutorials.com/2017/12/04/benchmarking-net-core-code-benchmarkdotnet/ )
 
 [C# 标准性能测试高级用法](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html )
 
