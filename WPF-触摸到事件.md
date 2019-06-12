@@ -456,6 +456,8 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 在窗口打开的过程就通过 HwndStylusInputProvider.HwndStylusInputProvider 调用 `penContexts.Enable()` 创建 PenContext 而 PenContext 的创建需要 PenContextInfo 参数，这个参数需要通过 `_penThread.WorkerCreateContext` 创建
 
+在 `PenContexts.Enable` 调用 `WispTabletDeviceCollection.CreateContexts` 创建 `PenContext[]` 在创建数组的过程，也就是在 `WispTabletDeviceCollection.CreateContexts` 方法里面会调用 `WispTabletDevice.CreateContext` 方法创建具体的 `PenContext` 而在  `WispTabletDevice.CreateContext` 方法里面就需要 PenContextInfo 的辅助才能创建
+
 调用 `_penThread.WorkerCreateContext` 不是直接在主线程运行而是在 `PenThreadWorker` 的 Stylus Input 线程运行。
 
 调用 `_penThread.WorkerCreateContext` 时，先在 `_workerOperation` 创建 `WorkerOperationCreateContext` 然后释放 `_pimcResetHandle` 等待 Stylus Input 线程运行。
@@ -536,6 +538,108 @@ internal void FireRawStylusInput(RawStylusInput args)
 			}
 		}
 ```
+
+### 创建触摸线程方法
+
+触摸线程是 PenThreadWorker 里面的创建，创建的线程名是 `Stylus Input` 在一个 UI 显示窗口的线程只有一个 `Stylus Input` 线程
+
+创建的调用堆栈如下
+
+```csharp
+ PresentationCore.dll!System.Windows.Input.PenThreadWorker..ctor()  
+ PresentationCore.dll!System.Windows.Input.PenThread..ctor()  
+ PresentationCore.dll!System.Windows.Input.PenThreadPool.GetPenThreadForPenContextHelper(System.Windows.Input.PenContext penContext)  
+ PresentationCore.dll!System.Windows.Input.PenThreadPool.GetPenThreadForPenContext(System.Windows.Input.PenContext penContext)  
+ PresentationCore.dll!System.Windows.Input.StylusWisp.WispTabletDeviceCollection.UpdateTabletsImpl()  
+ PresentationCore.dll!System.Windows.Input.StylusWisp.WispTabletDeviceCollection.UpdateTablets()  
+ PresentationCore.dll!System.Windows.Input.StylusWisp.WispTabletDeviceCollection..ctor()  
+ PresentationCore.dll!System.Windows.Input.StylusWisp.WispLogic.get_WispTabletDevices()  
+ PresentationCore.dll!System.Windows.Input.StylusWisp.WispLogic.RegisterHwndForInput(System.Windows.Input.InputManager inputManager, System.Windows.PresentationSource inputSource)  
+ PresentationCore.dll!System.Windows.Interop.HwndStylusInputProvider..ctor(System.Windows.Interop.HwndSource source)  
+ PresentationCore.dll!System.Windows.Interop.HwndSource.Initialize(System.Windows.Interop.HwndSourceParameters parameters)  
+ PresentationCore.dll!System.Windows.Interop.HwndSource..ctor(System.Windows.Interop.HwndSourceParameters parameters)  
+ PresentationFramework.dll!System.Windows.Window.CreateSourceWindow(bool duringShow)  
+ PresentationFramework.dll!System.Windows.Window.CreateSourceWindowDuringShow()  
+ PresentationFramework.dll!System.Windows.Window.SafeCreateWindowDuringShow()  
+ PresentationFramework.dll!System.Windows.Window.ShowHelper(object booleanBox)  
+ WindowsBase.dll!System.Windows.Threading.ExceptionWrapper.InternalRealCall(System.Delegate callback, object args, int numArgs)  
+ WindowsBase.dll!System.Windows.Threading.ExceptionWrapper.TryCatchWhen(object source, System.Delegate callback, object args, int numArgs, System.Delegate catchHandler)  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.WrappedInvoke(System.Delegate callback, object args, int numArgs, System.Delegate catchHandler)  
+ WindowsBase.dll!System.Windows.Threading.DispatcherOperation.InvokeImpl()  
+ WindowsBase.dll!System.Windows.Threading.DispatcherOperation.InvokeInSecurityContext(object state)  
+ WindowsBase.dll!MS.Internal.CulturePreservingExecutionContext.CallbackWrapper(object obj)  
+ mscorlib.dll!System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, object state, bool preserveSyncCtx)  
+ mscorlib.dll!System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, object state, bool preserveSyncCtx)  
+ mscorlib.dll!System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, object state)  
+ WindowsBase.dll!MS.Internal.CulturePreservingExecutionContext.Run(MS.Internal.CulturePreservingExecutionContext executionContext, System.Threading.ContextCallback callback, object state)  
+ WindowsBase.dll!System.Windows.Threading.DispatcherOperation.Invoke()  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.ProcessQueue()  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.WndProcHook(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam, ref bool handled)  
+ WindowsBase.dll!MS.Win32.HwndWrapper.WndProc(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam, ref bool handled)  
+ WindowsBase.dll!MS.Win32.HwndSubclass.DispatcherCallbackOperation(object o)  
+ WindowsBase.dll!System.Windows.Threading.ExceptionWrapper.InternalRealCall(System.Delegate callback, object args, int numArgs)  
+ WindowsBase.dll!System.Windows.Threading.ExceptionWrapper.TryCatchWhen(object source, System.Delegate callback, object args, int numArgs, System.Delegate catchHandler)  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.WrappedInvoke(System.Delegate callback, object args, int numArgs, System.Delegate catchHandler)  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.LegacyInvokeImpl(System.Windows.Threading.DispatcherPriority priority, System.TimeSpan timeout, System.Delegate method, object args, int numArgs)  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority priority, System.Delegate method, object arg)  
+ WindowsBase.dll!MS.Win32.HwndSubclass.SubclassWndProc(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam)  
+ [托管到本机的转换]
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.TranslateAndDispatchMessage(ref System.Windows.Interop.MSG msg)  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.PushFrameImpl(System.Windows.Threading.DispatcherFrame frame)  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.PushFrame(System.Windows.Threading.DispatcherFrame frame)  
+ WindowsBase.dll!System.Windows.Threading.Dispatcher.Run()  
+ PresentationFramework.dll!System.Windows.Application.RunDispatcher(object ignore)  
+ PresentationFramework.dll!System.Windows.Application.RunInternal(System.Windows.Window window)  
+ PresentationFramework.dll!System.Windows.Application.Run(System.Windows.Window window)  
+ PresentationFramework.dll!System.Windows.Application.Run()  
+```
+
+从窗口的 VisibilityChanged 开始，在这个方法调用了 `Window.ShowHelper` 方法
+
+```csharp
+ PenThreadWorker..ctor()  
+ PenThread..ctor()  
+ PenThreadPool.GetPenThreadForPenContextHelper(PenContext penContext)  
+ PenThreadPool.GetPenThreadForPenContext(PenContext penContext)  
+ WispTabletDeviceCollection.UpdateTabletsImpl()  
+ WispTabletDeviceCollection.UpdateTablets()  
+ WispTabletDeviceCollection..ctor()  
+ WispLogic.get_WispTabletDevices()  
+ WispLogic.RegisterHwndForInput(InputManager inputManager, PresentationSource inputSource)  
+ HwndStylusInputProvider..ctor(HwndSource source)  
+ HwndSource.Initialize(HwndSourceParameters parameters)  
+ HwndSource..ctor(HwndSourceParameters parameters)  
+
+ PresentationFramework.dll!System.Windows.Window.CreateSourceWindow(bool duringShow)  
+ PresentationFramework.dll!System.Windows.Window.CreateSourceWindowDuringShow()  
+ PresentationFramework.dll!System.Windows.Window.ShowHelper(object booleanBox)  
+```
+
+在 HwndStylusInputProvider 的构造方法会使用下面代码拿到两个单例
+
+```csharp
+			InputManager inputManager = InputManager.Current;
+			_stylusLogic = StylusLogic.GetCurrentStylusLogicAs<WispLogic>();
+```
+
+在 `_stylusLogic` 的 RegisterHwndForInput 方法里面会用到 WispTabletDevices 属性，这个属性在这个单例一开始没有初始化，需要在获取的方法初始化
+
+在WispTabletDevices属性获取的时候，第一次没有创建，需要走初始化的方法
+
+在初始化方法调用 WispTabletDeviceCollection 的构造方法，在 WispTabletDeviceCollection 的 UpdateTablets 方法会尝试从 PenThreadPool 获取触摸线程
+
+在 PenThreadPool 初始化的时候将会创建 PenThread 属性
+
+在 PenThread 的构造函数将会创建 PenThreadWorker 属性
+
+## 如何保证每个界面线程都有触摸线程
+
+在 HwndStylusInputProvider 的构造函数会获取 `StylusLogic.GetCurrentStylusLogicAs<WispLogic>()` 这个方法在没有初始化的时候将会调用初始化，在这里的代码将会创建触摸线程
+
+在 GetCurrentStylusLogicAs 方法会获取 `StylusLogic.CurrentStylusLogic` 属性，这个属性是静态的属性
+
+在 `_currentStylusLogic` 字段标记了 [ThreadStaticAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.threadstaticattribute?view=netframework-4.8 ) 在每个线程都是独立的，所以新的界面线程进来的时候获取到的值是空的，需要初始化同时在初始化之后下一次获取 WispLogic.WispTabletDevices 属性就可以找到值，不需要重新初始化
+
 
 课件
 
