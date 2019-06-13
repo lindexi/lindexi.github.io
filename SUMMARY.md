@@ -292,6 +292,8 @@
 
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
 
+ * [dotnet 线程静态字段](dotnet-线程静态字段.md)
+
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
 
  * [dotnet 获取用户设备安装了哪些 .NET Framework 框架](dotnet-获取用户设备安装了哪些-.NET-Framework-框架.md)
