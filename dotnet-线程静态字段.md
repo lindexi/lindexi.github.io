@@ -86,7 +86,19 @@ thread=9 静态属性=3 线程静态属性=4 次数=8
 
 从上面代码可以知道如果想要多个线程之间的静态字段或属性不相互影响，可以通过 [ThreadStaticAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.threadstaticattribute?wt.mc_id=MVP ) 如输出的最后两行，可以看到普通静态属性是在所有线程使用相同实例，于是输出的静态属性的值相同。但是线程静态属性是每个线程不相同的，在线程 10 的次数是 3 修改的属性值也就是 3 最后输出的就是 3 同时在线程 9 里面的线程静态属性和上次线程修改的相同
 
+本文用到的类放在[github](https://github.com/lindexi/lindexi_gd/tree/4038b7f55a836a491291e0b50abdbc21b10ce093/NiwewheejaiKerebawkaykerego ) 欢迎小伙伴访问
+
 [ThreadStaticAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.threadstaticattribute?wt.mc_id=MVP )
+
+[ThreadStatic静态字段在每个线程里的唯一性 - 王树伦的博客 - CSDN博客](https://blog.csdn.net/wshl1234567/article/details/50820503 )
+
+[C# [ThreadStatic] 标记静态字段对多线程执行的影响 - Ryan_zheng - 博客园](https://www.cnblogs.com/ryanzheng/p/10962513.html )
+
+[ThreadStatic特性标记静态字段对多线程执行的影响 - b0b0 - 博客园](https://www.cnblogs.com/hbb0b0/archive/2011/01/14/1935587.html )
+
+[在多线程中使用静态方法是否有线程安全问题 - 逍遥剑客的专栏 - CSDN博客](https://blog.csdn.net/scucj/article/details/1394523 )
+
+[C#静态变量和静态方法的线程安全问题 - littwo - CSDN博客](https://blog.csdn.net/littwo78168218/article/details/17526471 )
 
 
 

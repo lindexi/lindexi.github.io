@@ -1086,6 +1086,8 @@
 
  * [WPF Process.Start 出现 Win32Exception 异常](WPF-Process.Start-出现-Win32Exception-异常.md)
 
+ * [WPF shows that some windows in multithreading will be locked in the PenThreadWorker constructor when the application starts](WPF-shows-that-some-windows-in-multithreading-will-be-locked-in-the-PenThreadWorker-constructor-when-the-application-starts.md)
+
  * [WPF UncommonField 类型是什么](WPF-UncommonField-类型是什么.md)
 
  * [wpf VisualBrush 已知问题](wpf-VisualBrush-已知问题.md)

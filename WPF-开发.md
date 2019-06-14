@@ -124,6 +124,26 @@ using System.Security.Principal;
 
 输出 `crentUserAd` 可以看到 `设备\\用户` 的格式
 
+## 绑定资源文件里面的资源
+
+在 WPF 的 xaml 可以通过 `x:Static` 绑定资源，但是要求资源文件里面的对应资源设置访问为公开
+
+如果没有设置那么将会在 xaml 运行的时候提示
+
+```csharp
+System.Windows.Markup.XamlParseException 
+
+在 System.Windows.Markup.StaticExtension 上提供值xxx
+```
+
+此时在设计器里面是可以看到绑定成功，只是在运行的时候提示找不到，展开可以看到下面提示
+
+```csharp
+无法将 xx.Properties.Resources.xx  StaticExtension 值解析为枚举、静态字段或静态属性
+```
+
+解决方法是在 Resource.resx 里面的访问权限从 internal 修改为 public 就可以
+
 ## 判断 WPF 程序使用管理员权限运行
 
 引用命名空间，复制下面代码，然后调用 IsAdministrator 方法，如果返回 true 就是使用管理员权限运行
@@ -155,7 +175,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
 
 如果在一个 .net 4.0 的 WPF 程序引用一个 .net 2.0 的库，那么就会让程序无法运行，解决方法添加`useLegacyV2RuntimeActivationPolicy`
 
-打开 app.config 添加`useLegacyV2RuntimeActivationPolicy="true"`
+打开 app.config 添加 `useLegacyV2RuntimeActivationPolicy="true"` 在 startup 元素
 
 下面是 app.config 代码
 
@@ -297,7 +317,9 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 ## TextBlock 换行
 
-使用 `&#10;`
+使用 `&#10;` 就可以换行
+
+[win10 uwp 在 xaml 让 TextBlock 换行](https://blog.lindexi.com/post/win10-uwp-%E5%9C%A8-xaml-%E8%AE%A9-textblock-%E6%8D%A2%E8%A1%8C )
 
 ## 在 xaml 绑定索引空格
 
