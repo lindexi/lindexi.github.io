@@ -1,4 +1,5 @@
 # WPF shows that some windows in multithreading will be locked in the PenThreadWorker constructor when the application starts
+
 **Problem description:**
 
 WPF will initialize pen thread when the window initializing. But I find the window may be locked in PenThreadWorker constructor.
