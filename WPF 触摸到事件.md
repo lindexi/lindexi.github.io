@@ -637,6 +637,9 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 在 `_currentStylusLogic` 字段标记了 [ThreadStaticAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.threadstaticattribute?view=netframework-4.8 ) 在每个线程都是独立的，所以新的界面线程进来的时候获取到的值是空的，需要初始化同时在初始化之后下一次获取 WispLogic.WispTabletDevices 属性就可以找到值，不需要重新初始化
 
+线程静态的字段博客 [dotnet 线程静态字段](https://blog.lindexi.com/post/dotnet-%E7%BA%BF%E7%A8%8B%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5.html )
+
+这样在每个 UI 线程都有自己独立的 StylusLogic 也就有独立的线程
 
 课件
 
