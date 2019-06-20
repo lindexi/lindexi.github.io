@@ -272,6 +272,8 @@
 
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
 
+ * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
+
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
 
  * [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行](dotnet-判断程序当前使用管理员运行降低权使用普通权限运行.md)
