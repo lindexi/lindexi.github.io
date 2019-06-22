@@ -562,6 +562,8 @@
 
  * [VisualStudio 插件 翻译注释](VisualStudio-插件-翻译注释.md)
 
+ * [VisualStudio 断点调试详解](VisualStudio-断点调试详解.md)
+
  * [visualStudio 无法登陆](visualStudio-无法登陆.md)
 
  * [VisualStudio 给项目添加特殊的 Nuget 的链接](VisualStudio-给项目添加特殊的-Nuget-的链接.md)
@@ -1095,6 +1097,8 @@
  * [WPF UncommonField 类型是什么](WPF-UncommonField-类型是什么.md)
 
  * [wpf VisualBrush 已知问题](wpf-VisualBrush-已知问题.md)
+
+ * [WPF will break when an exception be throw in the StylusPlugIn](WPF-will-break-when-an-exception-be-throw-in-the-StylusPlugIn.md)
 
  * [WPF 一个性能比较好的 gif 解析库](WPF-一个性能比较好的-gif-解析库.md)
 
