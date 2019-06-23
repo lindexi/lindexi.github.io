@@ -288,7 +288,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
     </SolidColorBrush>
 ```
 
-https://stackoverflow.com/a/47952098/6116637
+[https://stackoverflow.com/a/47952098/6116637](https://stackoverflow.com/a/47952098/6116637)
 
 ## WPF 判断文件是否隐藏
 
@@ -351,6 +351,18 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 如果 Foo 不需要在主线程，就可以删除 TaskScheduler.FromCurrentSynchronizationContext 代码
 
+## WPF-数据绑定：日期时间格式
+
+```
+{Binding datetime,StringFormat='{}{0:yyyy年MM月dd日 dddd HH:mm:ss}',ConverterCulture=zh-CN}
+```
+
+指定ConverterCulture为zh-CN后星期就显示为中文了。
+
+## WPF 第三方DLL 强签名
+
+参见：http://www.cnblogs.com/xjt927/p/5317678.html
+
 ## WPF 去掉最大化按钮
 
 通过在窗口添加下面代码
@@ -360,6 +372,24 @@ ResizeMode="NoResize"
 ```
 
 窗口就剩下一个关闭同时用户也无法拖动修改窗口大小
+
+## WPF TextBox 全选
+
+在一个按钮点击的时候全选 TextBox 的内容，可以在按钮里面调用 SelectAll 方法
+
+```
+textBox.SelectAll();
+```
+
+上面代码的 textBox 就是界面写的 TextBox 元素
+
+如果发现调用上面的代码 TextBox 没有全选，可能是 TextBox 没有拿到焦点，可以尝试下面代码
+
+```
+textBox.Focus();
+textBox.SelectAll();
+```
+
 
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 
