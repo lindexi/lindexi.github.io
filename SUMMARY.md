@@ -60,6 +60,8 @@
 
  * [C# 从零开始写 SharpDx 应用 画三角](C-从零开始写-SharpDx-应用-画三角.md)
 
+ * [C# 从零开始写 SharpDx 应用 笔刷](C-从零开始写-SharpDx-应用-笔刷.md)
+
  * [C# 从零开始写 SharpDx 应用 绘制基础图形](C-从零开始写-SharpDx-应用-绘制基础图形.md)
 
  * [C# 传入 params object 长度](C-传入-params-object-长度.md)
