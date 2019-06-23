@@ -5,7 +5,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 调用 SerialDevice.FromIdAsync 可能返回空，因为没有设置 package.appmanifest 可以使用端口
 
@@ -38,7 +37,7 @@ using (SerialDevice serialPort = await SerialDevice.FromIdAsync(deviceId))
 }
 ```
 
-https://stackoverflow.com/q/37505107/6116637
+[https://stackoverflow.com/q/37505107/6116637](https://stackoverflow.com/q/37505107/6116637)
 
 
 

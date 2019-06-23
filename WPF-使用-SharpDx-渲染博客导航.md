@@ -16,6 +16,8 @@
 
 - [C# 从零开始写 SharpDx 应用 画三角](https://blog.lindexi.com/post/c-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-sharpdx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92 )
 
+- [C# 从零开始写 SharpDx 应用 绘制基础图形](https://blog.lindexi.com/post/c-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-sharpdx-%E5%BA%94%E7%94%A8-%E7%BB%98%E5%88%B6%E5%9F%BA%E7%A1%80%E5%9B%BE%E5%BD%A2 )
+
 其实 SharpDx 只是一个封装，在没有封装的时候可以直接使用 Direct2D1 在 WPF 画出界面
 
 - [WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
@@ -33,6 +35,8 @@
 - [SharpDx 进入全屏模式](https://blog.lindexi.com/post/sharpdx-%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%8F%E6%A8%A1%E5%BC%8F )
 
 更多请看 [SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
+
+我在 CSDN 创建 [WPF 底层渲染](https://blog.csdn.net/lindexi_gd/column/info/24324 ) 
 
 如果想了解[渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93 )如 Win2d 和 WPF 渲染原理等请看 [渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93 )
 

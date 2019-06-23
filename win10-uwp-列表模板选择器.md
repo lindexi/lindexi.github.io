@@ -204,13 +204,17 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160802195044703)
 
+<!-- ![](image/win10-uwp-列表模板选择器/win10-uwp-列表模板选择器0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201962311358880)
+
 如果使用的数据，传入的列是男生的，那么就会使用`MaleData`，于是就可以对不同的数据使用不同的`DataTemplate`。上面的例子只是很简单使用两个不同的数据，如果有很多不同的数据，或者数据里，需要按照数据内容，进行自定义的显示，那么使用选择器也是可以做到。
 
-源代码：https://github.com/lindexi/kechengbiao
+源代码：[https://github.com/lindexi/kechengbiao](https://github.com/lindexi/kechengbiao)
 
 如果需要所有源代码，请[联系](mailto:lindexi_gd@163.com)我因为现在csdn上传需要审查，总是无法上传
 
-参见：[win10 uwp 如何使用DataTemplate](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8DataTemplate.html )
+参见：[win10 uwp 如何使用DataTemplate](https://blog.lindexi.com/post/win10-uwp-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8DataTemplate.html )
 
 
 

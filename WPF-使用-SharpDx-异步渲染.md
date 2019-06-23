@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->
 
@@ -23,6 +22,8 @@
  - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
 
  - [WPF 使用 SharpDx 异步渲染](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.html )
+
+更多请看 [WPF 使用 SharpDx 渲染博客导航](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-sharpdx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA )
 
 虽然上一篇告诉大家如何使用封装的 SharpDx 控件，但是大家也看到了核心是使用`CompositionTarget`告诉刷新的。
 

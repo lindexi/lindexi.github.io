@@ -22,6 +22,8 @@
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
 
+ * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
+
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
 
  * [C# 7.0 使用下划线忽略使用的变量](C-7.0-使用下划线忽略使用的变量.md)
@@ -214,6 +216,8 @@
 
  * [C＃枚举中使用Flags特性](C＃枚举中使用Flags特性.md)
 
+ * [Developing Universal Windows Apps 开发UWA应用 问答](Developing-Universal-Windows-Apps-开发UWA应用-问答.md)
+
  * [dot net core 使用 IPC 进程通信](dot-net-core-使用-IPC-进程通信.md)
 
  * [dot net core 使用 usb](dot-net-core-使用-usb.md)
@@ -303,6 +307,8 @@
  * [dotnet 获取用户设备安装了哪些 .NET Framework 框架](dotnet-获取用户设备安装了哪些-.NET-Framework-框架.md)
 
  * [dotnet 获取程序所在路径的方法](dotnet-获取程序所在路径的方法.md)
+
+ * [dotnet 获取网页里面 div 的方法](dotnet-获取网页里面-div-的方法.md)
 
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
 
@@ -403,6 +409,8 @@
  * [NuGet 符号服务器](NuGet-符号服务器.md)
 
  * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
+
+ * [ParaView](ParaView.md)
 
  * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)
 
@@ -770,6 +778,8 @@
 
  * [win10 UWP 序列化](win10-UWP-序列化.md)
 
+ * [win10 uwp 应用放到桌面](win10-uwp-应用放到桌面.md)
+
  * [win10 UWP 应用设置](win10-UWP-应用设置.md)
 
  * [win10 uwp 异步转同步](win10-uwp-异步转同步.md)
@@ -789,6 +799,8 @@
  * [win10 uwp 显示SVG](win10-uwp-显示SVG.md)
 
  * [win10 UWP 显示地图](win10-UWP-显示地图.md)
+
+ * [win10 uwp 未给任务 GenerateAppxPackageRecipe 的必需参数 AppxManifestXml 赋值](win10-uwp-未给任务-GenerateAppxPackageRecipe-的必需参数-AppxManifestXml-赋值.md)
 
  * [win10 uwp 模拟网页输入](win10-uwp-模拟网页输入.md)
 
@@ -890,7 +902,7 @@
 
  * [win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](win10-支持默认把触摸提升鼠标事件-打开-Pointer-消息.md)
 
- * [CSDN 阅读 源代码](CSDN-阅读-源代码.md)
+ * [win10 uwp 开发 CSDN 访问量统计 源代码](win10-uwp-开发-CSDN-访问量统计-源代码.md)
 
  * [win10 uwp 读取保存WriteableBitmap 、BitmapImage](win10-uwp-读取保存WriteableBitmap-、BitmapImage.md)
 
@@ -1272,6 +1284,8 @@
 
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
 
+ * [WPF 网络 request 的 read 方法不会返回](WPF-网络-request-的-read-方法不会返回.md)
+
  * [WPF 自定义 TextBoxView 的 Margin 大小](WPF-自定义-TextBoxView-的-Margin-大小.md)
 
  * [WPF 获取下载内容长度](WPF-获取下载内容长度.md)
@@ -1340,6 +1354,8 @@
 
  * [上传代码 CodePlex](上传代码-CodePlex.md)
 
+ * [中国最新手机号段划分情况](中国最新手机号段划分情况.md)
+
  * [为何 987654321/123456789 的值是 8.0000000729](为何-987654321-123456789-的值是-8.0000000729.md)
 
  * [为何使用 DirectComposition](为何使用-DirectComposition.md)
@@ -1364,6 +1380,8 @@
 
  * [使用 RetroShare 分享资源](使用-RetroShare-分享资源.md)
 
+ * [修复 dotnet Core 缺SDK编译失败](修复-dotnet-Core-缺SDK编译失败.md)
+
  * [docfx 做一个和微软一样的文档平台](docfx-做一个和微软一样的文档平台.md)
 
  * [创建不带BOM 的UTF8](创建不带BOM-的UTF8.md)
@@ -1387,6 +1405,8 @@
  * [关于Host(主机)](关于Host(主机).md)
 
  * [大文件的存储和备份](大文件的存储和备份.md)
+
+ * [天河2 程序 version GLIBCXX_3.4.21 not found 解决方法](天河2-程序-version-GLIBCXX_3.4.21-not-found-解决方法.md)
 
  * [如何使用 C# 爬虫获得专栏博客更新排行](如何使用-C-爬虫获得专栏博客更新排行.md)
 
@@ -1467,6 +1487,8 @@
  * [用 sim 卡加密保护资金](用-sim-卡加密保护资金.md)
 
  * [用状态机的思想解析字符串](用状态机的思想解析字符串.md)
+
+ * [破解360doc复制](破解360doc复制.md)
 
  * [硬件分配](硬件分配.md)
 

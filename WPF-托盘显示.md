@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 ## NotifyIcon WPF
 

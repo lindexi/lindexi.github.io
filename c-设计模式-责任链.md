@@ -98,7 +98,7 @@
 
 那么如何添加后退按钮，才可以在需要后退的时候进行后退，可以用到上面说的设计，添加一个链，需要做一个类，如果直接写，看起来比较难。
 
-新建一个类，这个类用做责任，通过这个类，可以做 MVVM ，如果对于这个不熟，请看 [win10 uwp MVVM入门](win10 uwp MVVM入门.md)
+新建一个类，这个类用做责任，通过这个类，可以做 MVVM ，如果对于这个不熟，请看 [win10 uwp MVVM入门](https://blog.lindexi.com/post/win10-uwp-MVVM%E5%85%A5%E9%97%A8.html)
 
 
 本文告诉大家如何做出双击退出应用。
@@ -211,7 +211,7 @@
     }
 ```
 
-在使用的时候，通过调用`FjyhtrOcbhzjwi`就可以获得插入新的处理。接下来就是需要返回的按钮，参见[win10 UWP 标题栏后退](http://lindexi.oschina.io/lindexi//post/win10-UWP-%E6%A0%87%E9%A2%98%E6%A0%8F%E5%90%8E%E9%80%80/ )
+在使用的时候，通过调用`FjyhtrOcbhzjwi`就可以获得插入新的处理。接下来就是需要返回的按钮，参见[win10 UWP 标题栏后退](https://blog.lindexi.com/post/win10-UWP-%E6%A0%87%E9%A2%98%E6%A0%8F%E5%90%8E%E9%80%80.html )
 
 ```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -258,7 +258,7 @@
         }
 ```
 
-但是这样写没有动画，于是添加动画，有关动画，参见：[win10 UWP 动画](http://lindexi.oschina.io/lindexi//post/win10-UWP-%E5%8A%A8%E7%94%BB/ )
+但是这样写没有动画，于是添加动画，有关动画，参见：[win10 UWP 动画](https://blog.lindexi.com/post/win10-UWP-%E5%8A%A8%E7%94%BB.html )
 
 ```csharp
         private void ViewModel_LyfxkdxmSzjd(object sender, string e)
@@ -289,7 +289,7 @@
 
 这里的动画这样写是因为在 ViewModel 有一个事件，这个事件就是通知，于是就需要添加事件，在界面显示。刚好在显示结束的时候关闭双击退出。
 
-在我之前写的游戏[win10 uwp 商业游戏](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F/ )进入游戏时，用户按下返回按钮，需要返回欢迎界面，那么这时候就需要添加后退的处理。
+在我之前写的游戏[win10 uwp 商业游戏](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html )进入游戏时，用户按下返回按钮，需要返回欢迎界面，那么这时候就需要添加后退的处理。
 
 因为我添加的是 MVVM 框架，于是在跳转进游戏的 ViewModel 时添加处理。关于这个框架，请看[win10 uwp MVVM 轻量框架](http://blog.csdn.net/lindexi_gd/article/details/78083924 )这里，但是我不会在本文用了太多这个框架的东西。在没有看这篇文章还是可以继续阅读。
 
