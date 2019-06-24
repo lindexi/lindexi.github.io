@@ -267,6 +267,8 @@ ThreadId = 19768
 
 [Use breakpoints in the debugger](https://docs.microsoft.com/en-us/visualstudio/debugger/using-breakpoints?view=vs-2019 )
 
+更多调试技巧请看 [Visual Studio 调试技巧 - LightSmaile - 博客园](https://www.cnblogs.com/LightSmile/p/11055665.html#!comments )
+
 
 
 
