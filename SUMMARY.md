@@ -1330,6 +1330,8 @@
 
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)
 
+ * [WPF 通过 ReadyToRun 提升性能](WPF-通过-ReadyToRun-提升性能.md)
+
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
 
  * [WPF 隐藏系统窗口菜单](WPF-隐藏系统窗口菜单.md)
