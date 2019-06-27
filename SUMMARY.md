@@ -1214,6 +1214,8 @@
 
  * [WPF 如何画出1像素的线](WPF-如何画出1像素的线.md)
 
+ * [WPF 如何给定两个点画出一条波浪线](WPF-如何给定两个点画出一条波浪线.md)
+
  * [WPF 如何调试 binding](WPF-如何调试-binding.md)
 
  * [WPF 封装 dotnet remoting 调用其他进程](WPF-封装-dotnet-remoting-调用其他进程.md)
