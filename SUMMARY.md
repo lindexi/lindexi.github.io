@@ -474,7 +474,7 @@
 
  * [Roslyn 获得 sln 文件所在的文件夹](Roslyn-获得-sln-文件所在的文件夹.md)
 
- * [Roslyn 让 Message 内容默认输出](Roslyn-让-Message-内容默认输出.md)
+ * [Roslyn 让编译时候 Message 内容默认输出](Roslyn-让编译时候-Message-内容默认输出.md)
 
  * [Roslyn 让 VisualStudio 急速调试底层库方法](Roslyn-让-VisualStudio-急速调试底层库方法.md)
 
