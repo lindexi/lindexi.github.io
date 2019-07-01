@@ -564,6 +564,8 @@
 
  * [VisualStudio 开启仅我代码调试](VisualStudio-开启仅我代码调试.md)
 
+ * [VisualStudio 快速设置启动项目](VisualStudio-快速设置启动项目.md)
+
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)
 
  * [VisualStudio 扩展开发 添加输出窗口](VisualStudio-扩展开发-添加输出窗口.md)
