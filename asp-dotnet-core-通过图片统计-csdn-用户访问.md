@@ -7,7 +7,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 新建一个 asp dotnet core 项目，在自己的 controler 里面添加一个方法，这个方法的访问链接是 `xx.png` 假装这是一张图片，请看代码
 

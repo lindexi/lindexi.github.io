@@ -470,6 +470,8 @@
 
  * [Roslyn 将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比](Roslyn-将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比.md)
 
+ * [Roslyn 开发 NuGet 包的 Task 编译可能遇到的问题](Roslyn-开发-NuGet-包的-Task-编译可能遇到的问题.md)
+
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
  * [Roslyn 获得 sln 文件所在的文件夹](Roslyn-获得-sln-文件所在的文件夹.md)
@@ -1341,6 +1343,8 @@
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
 
  * [WPF 隐藏系统窗口菜单](WPF-隐藏系统窗口菜单.md)
+
+ * [WPF 非客户区的触摸和鼠标点击响应](WPF-非客户区的触摸和鼠标点击响应.md)
 
  * [WPF 高性能笔](WPF-高性能笔.md)
 
