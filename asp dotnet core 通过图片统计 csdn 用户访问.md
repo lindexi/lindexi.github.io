@@ -5,7 +5,6 @@
 通过在 asp dotnet core 创建一个图片链接的方式，将这个链接作为图片放在 csdn 的博客，可以在链接被访问的时候统计用户访问
 
 <!--more-->
-<!-- csdn -->
 
 新建一个 asp dotnet core 项目，在自己的 controler 里面添加一个方法，这个方法的访问链接是 `xx.png` 假装这是一张图片，请看代码
 
