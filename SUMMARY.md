@@ -402,6 +402,8 @@
 
  * [Moq基础 判断方法被执行](Moq基础-判断方法被执行.md)
 
+ * [msbuild 项目文件常用判断条件](msbuild-项目文件常用判断条件.md)
+
  * [nano Framework](nano-Framework.md)
 
  * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
@@ -471,6 +473,8 @@
  * [Roslyn 将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比](Roslyn-将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比.md)
 
  * [Roslyn 开发 NuGet 包的 Task 编译可能遇到的问题](Roslyn-开发-NuGet-包的-Task-编译可能遇到的问题.md)
+
+ * [Roslyn 理解 msbuild 的清理过程](Roslyn-理解-msbuild-的清理过程.md)
 
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
@@ -1161,6 +1165,8 @@
  * [WPF 使用 SharpDX](WPF-使用-SharpDX.md)
 
  * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
+
+ * [WPF 使用 Win2d 渲染](WPF-使用-Win2d-渲染.md)
 
  * [WPF 使用RPC调用其他进程](WPF-使用RPC调用其他进程.md)
 
