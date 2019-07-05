@@ -27,8 +27,10 @@
 请看代码
 
 ```csharp
-Condition="'$(Configuration)'=='DEBUG'"
+Condition="'$(Configuration)'=='Debug'"
 ```
+
+这里 Configuration 的判断是不区分大小写的，默认写的是 `Debug` 而 `DEBUG` 是用在条件编译里面
 
 例如这样写
 
@@ -38,19 +40,23 @@ Condition="'$(Configuration)'=='DEBUG'"
   </PropertyGroup>
 ```
 
-反过来判断不是在调试下编译
-
-```csharp
-Condition="'$(Configuration)'!='DEBUG'"
-```
-
 ## 判断在发布下编译
 
 请看代码
 
 ```csharp
-Condition="'$(Configuration)'=='RELEASE'"
+Condition="'$(Configuration)'!='Debug'"
 ```
+
+也就是上面代码反过来判断不是在调试下编译
+
+另一个判断方法请看代码，这是不推荐的判断方法
+
+```csharp
+Condition="'$(Configuration)'=='Release'"
+```
+
+这个不推荐的写法，一般只有调试下和非调试下，用上面的写法可能有逗比写了 `Release-x` 于是就判断不是发布下，此时就没有做发布的优化
 
 ## 判断平台
 
