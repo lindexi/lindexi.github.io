@@ -143,6 +143,8 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 [Use breakpoints in the debugger - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/using-breakpoints?wt.mc_id=MVP )
 
+详细的断点调试请看[VisualStudio 断点调试详解](https://blog.lindexi.com/post/visualstudio-%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E8%AF%A6%E8%A7%A3 )
+
 ### 变量窗口
 
 在进入断点的时候可以做什么？可以查看当前运行到这一行代码的时候，各个变量的值
@@ -177,7 +179,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 ### 条件断点
 
-填坑
+如果断点每次都进来，那么调试效率将会很低，例如我在调试的函数是在循环之内，我只有在循环到 100 次的时候才需要进行调试，难道之前的循环进来我都需要不断按下继续按钮调过？其实在 VisualStudio 是可以设置条件断点，只有符合设置的条件才进入断点，详细请看[VisualStudio 断点调试详解](https://blog.lindexi.com/post/visualstudio-%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E8%AF%A6%E8%A7%A3 )
 
 ### 更改执行逻辑
 
@@ -285,6 +287,8 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 填坑
 
 ### 调试软件启动
+
+如果有些软件是在发布的时候，刚好在软件启动的过程需要进行调试，此时就需要使用调试软件启动的方法，详细请看
 
 [WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/wpf-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8 )
 
@@ -672,6 +676,28 @@ ExceptionMessage：林德熙是逗比
 在无断点调试里面做桌面端的小伙伴就知道，如果是在调试用户输入过程，那么此时是不支持暂停的也就无法添加断点调试，如果软件进入了暂停那么等待软件的输入将会被暂停，将无法做出连贯的功能
 
 例如我有一个功能是书写我需要调试，但是如果我添加了断点就会打断书写的输入，在调试的时候就不能使用断点调试也就是上面提供的任何方法都不能在这里使用
+
+如果软件是在执行某段业务的过程不支持进行暂停，需要连续执行，那么依然还有很多方法进行调试。但如果是整个软件都不支持进行暂停，除非软件本身带了日志输出内容，否则我也没有好的方法。
+
+也就是说在开发过程，如果发现自己的某个模块需要连续执行，不支持进行暂停。那么请做好调试使用的脚手架，在下文将会讲到如何设置调试日志等
+
+在开始调试不支持暂停的代码的时候，使用最多的是输出窗口，如果此时代码支持更改，请添加描述逻辑的足够的控制台输出
+
+```csharp
+Debug.WriteLine($"进入xx方法，当前值={xx}");
+```
+
+在 VisualStudio 里面输出到输出窗口的内容也有一些套路
+
+- 推荐使用 Debug.WriteLine 而不是使用 Console.WriteLine 输出
+- 推荐加上一些前缀标签，用于过滤输出窗口
+- 推荐带上一些格式，例如 `Debug.WriteLine($"========进入xx方法=======");` 这样进入关键方法时可以快速看到
+
+更多请看 [C# 如何写 DEBUG 输出](https://blog.lindexi.com/post/c-%E5%A6%82%E4%BD%95%E5%86%99-debug-%E8%BE%93%E5%87%BA )
+
+在更改代码进行调试的时候，通过添加更多的描述输出的方法是很难一次性添加对的输出的，需要小伙伴不断尝试和修改
+
+
 
 ### 随机暂停调试
 

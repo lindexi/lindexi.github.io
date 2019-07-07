@@ -114,6 +114,41 @@ using lindexi.linq;
 
 但是这个方法有个缺点，在他的作用只能在一个文件，如果有多个文件都需要写自己的代码，那么还是需要在多个文件上添加这句话，如果在上传代码的时候不记得把所有的文件进行注释，那么还是会被打。
 
+## 使用 Debug.WriteLine 输出
+
+推荐使用 Debug.WriteLine 而不是使用 Console.WriteLine 输出，在发布的版本里面，使用 Console 输出将会作为控制台输出，这是确实的输出，只是你没有看到而已。
+
+而使用 Debug.WriteLine 将会整个代码在发布的版本都不执行，控制台输出也是需要一定的资源占用，使用 Debug 的输出将不会因为调试信息降低在发布版本的性能
+
+在使用 Debug.WriteLine 的时候记得在你的调试下开启 `DEBUG` 宏
+
+<!-- ![](image/C# 如何写 DEBUG 输出/C# 如何写 DEBUG 输出0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201976144722703)
+
+## 过滤输出
+
+在 VisualStudio 里面，我的团队争夺最多的是输出窗口内容，我会发现我的输出窗口不断在输出我不关注的内容，于是我找到了 [VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/visualstudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC ) 这个插件，通过过滤关键字看到我需要关注的内容
+
+我给小伙伴建议在自己的输出里面带上自己的名字
+
+```csharp
+Debug.WriteLine("[lindexi] 我是逗比");
+```
+
+在输出窗口通过过滤输出字符串包含 `[lindexi]` 才输出
+
+现在在团队里面我会创建一些调试使用的静态类
+
+```csharp
+public static class LindexiDebug
+{
+
+}
+```
+
+在我使用上面这个类输出的时候，将会默认带上 `lindexi` 的前缀，可以使用 [VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/visualstudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC ) 的方法过滤输出内容，这样就可以只看到自己需要看到的内容
+
 如果大家有好的方法，请告诉我。
 
 
