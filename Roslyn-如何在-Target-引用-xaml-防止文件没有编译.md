@@ -19,6 +19,10 @@
 
 通过 `BeforeTargets="GenerateBindingRedirects"` 里添加 xaml 文件就可以让 VisualStudio 编译的时候编译添加 xaml 编译。
 
+但一个准确的时机是 `BeforeTargets="MarkupCompilePass1"` 里面添加 xaml 文件，详细请看 [WPF 程序的编译过程](https://blog.walterlv.com/post/how-wpf-assemblies-are-compiled.html)
+
+本文以下的内容只是记录我做过的测试
+
 也就是通过下面代码添加的 MainPage.xaml 可以被编译
 
 ```

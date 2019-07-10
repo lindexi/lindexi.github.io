@@ -474,6 +474,8 @@
 
  * [Roslyn 开发 NuGet 包的 Task 编译可能遇到的问题](Roslyn-开发-NuGet-包的-Task-编译可能遇到的问题.md)
 
+ * [Roslyn 打包自定义的文件到 NuGet 包](Roslyn-打包自定义的文件到-NuGet-包.md)
+
  * [Roslyn 理解 msbuild 的清理过程](Roslyn-理解-msbuild-的清理过程.md)
 
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
