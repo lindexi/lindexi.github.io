@@ -304,6 +304,8 @@
 
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
 
+ * [dotnet 新项目格式与对应框架预定义的宏](dotnet-新项目格式与对应框架预定义的宏.md)
+
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
