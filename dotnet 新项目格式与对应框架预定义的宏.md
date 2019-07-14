@@ -7,6 +7,23 @@
 
 在[让一个 csproj 项目指定多个开发框架 - walterlv](https://blog.walterlv.com/post/configure-projects-to-target-multiple-platforms.html )告诉大家如何在 sdk style 项目格式如何定义多框架开发，在使用多框架开发的时候，有时会使用到特定的平台框架提供的方法，此时就需要使用预定义的宏通过条件判断编译符号的方法，在不同的框架编译不同的代码
 
+例如下面代码根据在不同的平台输出不同的代码
+
+```csharp
+    static void Main()
+    {
+#if NET40
+        Console.WriteLine("Target framework: .NET Framework 4.0");
+#elif NET45  
+        Console.WriteLine("Target framework: .NET Framework 4.5");
+#else
+        Console.WriteLine("Target framework: .NET Standard 2.0");
+#endif
+    }
+```
+
+此时需要知道在 sdk style 的项目文件里面给不同的平台添加了哪些条件编译符可以使用
+
 以下是预定义的宏
 
 ## .NET Framework
