@@ -22,6 +22,8 @@
     }
 ```
 
+以上写法是通过条件编译符，将会在不同条件满足的时候编译出不同的 IL 代码，关于条件编译符请看官方文档[#if 预处理器指令](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/preprocessor-directives/preprocessor-if )
+
 此时需要知道在 sdk style 的项目文件里面给不同的平台添加了哪些条件编译符可以使用
 
 以下是预定义的宏
