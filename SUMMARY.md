@@ -410,6 +410,8 @@
 
  * [Moq基础 判断方法被执行](Moq基础-判断方法被执行.md)
 
+ * [MSBuild 常用参数](MSBuild-常用参数.md)
+
  * [msbuild 项目文件常用判断条件](msbuild-项目文件常用判断条件.md)
 
  * [nano Framework](nano-Framework.md)
