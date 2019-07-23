@@ -1230,6 +1230,8 @@
 
  * [WPF 如何判断一个控件在滚动条的里面是用户可见](WPF-如何判断一个控件在滚动条的里面是用户可见.md)
 
+ * [WPF 如何判断两个 LinearGradientBrush 相等](WPF-如何判断两个-LinearGradientBrush-相等.md)
+
  * [WPF 如何在 WriteableBitmap 写文字](WPF-如何在-WriteableBitmap-写文字.md)
 
  * [WPF 如何在应用程序调试启动](WPF-如何在应用程序调试启动.md)
@@ -1533,6 +1535,8 @@
  * [程序员壁纸](程序员壁纸.md)
 
  * [程序员笑话](程序员笑话.md)
+
+ * [程序猿修养 日志应该如何写](程序猿修养-日志应该如何写.md)
 
  * [简单搭建自己的博客](简单搭建自己的博客.md)
 
