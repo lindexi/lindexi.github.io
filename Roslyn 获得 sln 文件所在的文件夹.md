@@ -2,9 +2,8 @@
 
 我找了很久没有发现 SolutionDir 这个定义，所以只能通过一个不通用的方法找到
 
+<!--more-->
 <!-- csdn -->
-
-<!-- more -->
 
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 

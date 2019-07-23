@@ -390,6 +390,15 @@ textBox.Focus();
 textBox.SelectAll();
 ```
 
+## WPF 获取文本光标宽度
+
+通过 `SystemParameters.CaretWidth` 获取宽度
+
+```csharp
+var caretWidth = SystemParameters.CaretWidth;
+```
+
+详细请看 [SystemParameters.CaretWidth Property](https://docs.microsoft.com/en-us/dotnet/api/system.windows.systemparameters.caretwidth?view=netframework-4.8#System_Windows_SystemParameters_CaretWidth )
 
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 
