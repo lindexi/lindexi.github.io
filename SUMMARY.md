@@ -310,6 +310,8 @@
 
  * [dotnet 新项目格式与对应框架预定义的宏](dotnet-新项目格式与对应框架预定义的宏.md)
 
+ * [dotnet 方法名 To 和 As 有什么不同](dotnet-方法名-To-和-As-有什么不同.md)
+
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
