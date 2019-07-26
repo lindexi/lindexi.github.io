@@ -560,6 +560,8 @@
 
  * [VisualStudio 2019 尝试使用 C# 8.0 新的方式](VisualStudio-2019-尝试使用-C-8.0-新的方式.md)
 
+ * [VisualStudio 2019 新创建项目添加 git 仓库](VisualStudio-2019-新创建项目添加-git-仓库.md)
+
  * [VisualStudio 2019 新特性](VisualStudio-2019-新特性.md)
 
  * [VisualStudio csproj 添加 ItemGroup 的 Service ](VisualStudio-csproj-添加-ItemGroup-的-Service-.md)
