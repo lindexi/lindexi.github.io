@@ -17,7 +17,7 @@
     Error CS0579: “System.Reflection.AssemblyVersionAttribute”特性重复 
 ```
 
-遇到这个问题可以从两个方面解决
+修复编译时候提示项目文件特性重复有两个方法可以修复
 
 ## 删除重复的特性
 
