@@ -13,7 +13,7 @@ uwp的 md5 和 WPF 的使用差不多。
 在 WPF ，我们使用
 
 ```csharp
-        private string get_MD5(string str)
+        private string GetMD5(string str)
         {
             System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
             byte[] temp;

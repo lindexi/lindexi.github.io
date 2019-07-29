@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：Roslyn,MSBuild,编译器,nuget,打包 -->
 
 在项目文件的相同文件夹可以放一个 nuspec 用来告诉 VisualStudio 如何打包
