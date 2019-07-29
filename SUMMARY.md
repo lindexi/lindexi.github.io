@@ -312,6 +312,8 @@
 
  * [dotnet 方法名 To 和 As 有什么不同](dotnet-方法名-To-和-As-有什么不同.md)
 
+ * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
+
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
