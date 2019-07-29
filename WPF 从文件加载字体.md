@@ -9,6 +9,8 @@
 下面的代码就可以使用本地的 free3of9.ttf ，需要注意添加的 FontFamily 是需要知道字体名，和传入 PrivateFontCollection 才可以使用。
 
 ```csharp
+using System.Drawing;
+
 PrivateFontCollection collection = new PrivateFontCollection();
 collection.AddFontFile(@"C:\Projects\MyProj\free3of9.ttf");
 FontFamily fontFamily = new FontFamily("Free 3 of 9", collection);

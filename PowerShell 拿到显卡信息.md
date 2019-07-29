@@ -3,7 +3,6 @@
 本文告诉大家如何在 PowerShell 通过 WMI 拿到显卡信息
 
 <!--more-->
-<!-- csdn -->
 
 在 PowerShell 可以使用下面代码拿到显卡的信息
 
