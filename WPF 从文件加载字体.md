@@ -4,7 +4,7 @@
 
 <!--more-->
 
-假如有字体在 `C:\Projects\MyProj\free3of9.ttf` ，可以使用  PrivateFontCollection 添加字体。
+假如有字体在 `C:\Projects\MyProj\free3of9.ttf` ，可以使用 PrivateFontCollection 添加字体。
 
 下面的代码就可以使用本地的 free3of9.ttf ，需要注意添加的 FontFamily 是需要知道字体名，和传入 PrivateFontCollection 才可以使用。
 
@@ -23,7 +23,18 @@ Font font = new Font(fontFamily, height);
 FontFamily fontFamily = new FontFamily(@"C:\Projects\MyProj\#free3of9");
 ```
 
-https://stackoverflow.com/a/24022783/6116637
+在 WPF 里面 FontFamily 存在与 System.Drawing 和 System.Windows.Media 命名空间下，同时两个命名空间的字体是不能互换的。以上方法使用的是 System.Drawing 命名空间的字体
 
+对 System.Windows.Media 命名空间的 FontFamily 需要使用以下方法拿到本地字体
+
+```csharp
+var file = @"C:\lindexi\xx.ttf";
+var uri = new Uri(file);
+FontFamily fontFamily = new FontFamily(uri, "字体名");
+```
+
+如何查看字体名，可以通过双击字体看到
+
+[https://stackoverflow.com/a/24022783/6116637](https://stackoverflow.com/a/24022783/6116637)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
