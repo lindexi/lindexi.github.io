@@ -7,7 +7,7 @@
 
 
 
-假如有字体在 `C:\Projects\MyProj\free3of9.ttf` ，可以使用  PrivateFontCollection 添加字体。
+假如有字体在 `C:\Projects\MyProj\free3of9.ttf` ，可以使用 PrivateFontCollection 添加字体。
 
 下面的代码就可以使用本地的 free3of9.ttf ，需要注意添加的 FontFamily 是需要知道字体名，和传入 PrivateFontCollection 才可以使用。
 
@@ -26,8 +26,19 @@ Font font = new Font(fontFamily, height);
 FontFamily fontFamily = new FontFamily(@"C:\Projects\MyProj\#free3of9");
 ```
 
-https://stackoverflow.com/a/24022783/6116637
+在 WPF 里面 FontFamily 存在与 System.Drawing 和 System.Windows.Media 命名空间下，同时两个命名空间的字体是不能互换的。以上方法使用的是 System.Drawing 命名空间的字体
 
+对 System.Windows.Media 命名空间的 FontFamily 需要使用以下方法拿到本地字体
+
+```csharp
+var file = @"C:\lindexi\xx.ttf";
+var uri = new Uri(file);
+FontFamily fontFamily = new FontFamily(uri, "字体名");
+```
+
+如何查看字体名，可以通过双击字体看到
+
+[https://stackoverflow.com/a/24022783/6116637](https://stackoverflow.com/a/24022783/6116637)
 
 
 
