@@ -25,7 +25,9 @@ FontFamily fontFamily = new FontFamily(@"C:\Projects\MyProj\#free3of9");
 
 在 WPF 里面 FontFamily 存在与 System.Drawing 和 System.Windows.Media 命名空间下，同时两个命名空间的字体是不能互换的。以上方法使用的是 System.Drawing 命名空间的字体
 
-对 System.Windows.Media 命名空间的 FontFamily 需要使用以下方法拿到本地字体
+对 System.Windows.Media 命名空间的 FontFamily 需要使用以下两个方法之一拿到本地字体
+
+第一个方法是通过 URI 加上字体名
 
 ```csharp
 var file = @"C:\lindexi\xx.ttf";
@@ -33,7 +35,19 @@ var uri = new Uri(file);
 FontFamily fontFamily = new FontFamily(uri, "字体名");
 ```
 
-如何查看字体名，可以通过双击字体看到
+可以通过双击字体看到字体名，或通过下面的第二个方法拿到字体名同时使用本地字体
+
+```csharp
+            var fontFile = @"C:\lindexi\xx.ttf";
+
+            var glyphTypeface = new GlyphTypeface(new Uri(fontFile));
+
+            // 获取字体名
+            var fontName = glyphTypeface.FamilyNames.Values.FirstOrDefault();
+            var directory = Path.GetDirectoryName(fontFile);
+            var fontUri = $"{new Uri(directory).AbsoluteUri}/#{fontName}";
+            var fontFamily = new FontFamily(fontUri);
+```
 
 [https://stackoverflow.com/a/24022783/6116637](https://stackoverflow.com/a/24022783/6116637)
 
