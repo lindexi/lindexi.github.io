@@ -390,6 +390,8 @@
 
  * [How to use code to exit the application in UWP](How-to-use-code-to-exit-the-application-in-UWP.md)
 
+ * [HttpRepl 互操作的 RESTful HTTP 服务调试命令行工具](HttpRepl-互操作的-RESTful-HTTP-服务调试命令行工具.md)
+
  * [jekyll 在博客添加流程图](jekyll-在博客添加流程图.md)
 
  * [jekyll 如何加密博客 防止抓取](jekyll-如何加密博客-防止抓取.md)
@@ -1193,6 +1195,8 @@
  * [WPF 使用不安全代码快速从数组转 WriteableBitmap](WPF-使用不安全代码快速从数组转-WriteableBitmap.md)
 
  * [WPF 使用封装的 SharpDx 控件](WPF-使用封装的-SharpDx-控件.md)
+
+ * [WPF 依赖属性绑定不上调试方法](WPF-依赖属性绑定不上调试方法.md)
 
  * [WPF 修改 ItemContainerStyle 鼠标移动到未选中项效果和选中项背景](WPF-修改-ItemContainerStyle-鼠标移动到未选中项效果和选中项背景.md)
 
