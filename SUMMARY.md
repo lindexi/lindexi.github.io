@@ -22,6 +22,8 @@
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
 
+ * [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](ASP.NET-Core-连接-GitLab-与-MatterMost-打造-devops-工具.md)
+
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
