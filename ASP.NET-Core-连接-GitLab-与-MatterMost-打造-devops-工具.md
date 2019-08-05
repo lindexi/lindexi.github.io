@@ -40,7 +40,7 @@
 
 下面让我告诉大家如何使用我这个工具关联你自己的 GitLab 和 Mattermost 工具
 
-首先在 [github] 将这个仓库的代码通过 git clone 下载，然后使用 VisualStudio 2019 打开哦
+首先在 [github](https://github.com/dotnet-campus/DotNetGitLabWebHook) 将这个仓库的代码通过 git clone 下载，然后使用 VisualStudio 2019 打开哦
 
 ```csharp
 git clone git@github.com:dotnet-campus/DotNetGitLabWebHook.git
