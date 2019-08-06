@@ -1446,6 +1446,8 @@
 
  * [圆和线](圆和线.md)
 
+ * [在 Gitlab 开启 MatterMost 机器人](在-Gitlab-开启-MatterMost-机器人.md)
+
  * [在 Windows Defender 设置文件夹白名单提升 VisualStudio 编译速度](在-Windows-Defender-设置文件夹白名单提升-VisualStudio-编译速度.md)
 
  * [在 Windows 下那些好用的调试软件](在-Windows-下那些好用的调试软件.md)
