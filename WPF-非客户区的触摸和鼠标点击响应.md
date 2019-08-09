@@ -38,6 +38,8 @@
 
 [关于WM_NCHITTEST消息 - Gang.Wang - 博客园](https://www.cnblogs.com/GnagWang/archive/2010/09/12/1824394.html )
 
+[WM_TOUCH message - Windows applications](https://docs.microsoft.com/en-us/windows/win32/wintouch/wm-touchdown )
+
 
 
 
