@@ -626,6 +626,8 @@
 
  * [win10 17025 触摸bug](win10-17025-触摸bug.md)
 
+ * [win10 edge 打开闪退问题](win10-edge-打开闪退问题.md)
+
  * [win10 edge扩展](win10-edge扩展.md)
 
  * [win10 sdk 是否向下兼容](win10-sdk-是否向下兼容.md)
