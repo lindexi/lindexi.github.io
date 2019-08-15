@@ -111,6 +111,17 @@ DISM.exe /Online /Cleanup-image /Restorehealth
 dism /online /Cleanup-Image /RestoreHealth & sfc /SCANNOW?& for %d in (%windir%\system32\*.dll) do %windir%\system32\regsvr32.exe /s %d
 ```
 
+在扫描系统之后，如果依然打不开 edge 那么请尝试结束以下进程
+
+- edge 进程
+
+- ApplicationFrameHost.exe
+- RuntimeBroker.exe
+- browser_broken.exe
+- smartscreen.exe
+
+还有建议将环境上报给微软，如果此时可以打开反馈中心，那么请通过反馈中心反馈给微软
+
 
 
 
