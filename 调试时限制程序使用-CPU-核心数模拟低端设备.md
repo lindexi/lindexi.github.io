@@ -18,6 +18,10 @@
 
 此时可以设置有几个 CPU 可以处理这个进程，这样这个程序就相当于在 CPU 核心数比较少的设备上运行
 
+菜鸟提供了 [SetProcessAffinityMask](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessaffinitymask ) 可以使用程序的方式设置一个进程使用的 CPU 有多少
+
+这个函数请看 [《Windows via C/C++》学习笔记](https://www.cnblogs.com/wz19860913/archive/2008/08/05/1260833.html )
+
 
 
 
