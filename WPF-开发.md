@@ -109,6 +109,20 @@ public class Foo
 <Button ToolTipService.ShowOnDisabled="True">  
 ```
 
+## 获取设备屏幕数量
+
+通过 WinForms 方法获取
+
+```csharp
+System.Windows.Forms.Screen.AllScreens
+```
+
+上面就可以拿到所有的屏幕，通过 Count 方法就可以知道有多少屏幕
+
+```csharp
+var screenCount = Screen.AllScreens.Length;
+```
+
 ## 获取当前域用户
 
 在 WPF 找到当前登陆的用户使用下面代码
