@@ -236,7 +236,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
     private static void Func(){}
     public void C()
     {
-         var temp=new delegate(){Func};
+         var temp = new delegate(){ Func };
          c(temp);
     }
 
@@ -249,7 +249,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
 
 ```csharp
     private static void Func(){}
-    private delegate Temp=new delegate(){Func};
+    private delegate Temp { get; } = new delegate(){Func};
     private void C()
     {
         c(Temp);
