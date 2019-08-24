@@ -942,6 +942,8 @@
 
  * [win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](win10-支持默认把触摸提升鼠标事件-打开-Pointer-消息.md)
 
+ * [win10 本地适配器不支持重要的低能耗控制器状态](win10-本地适配器不支持重要的低能耗控制器状态.md)
+
  * [win10 uwp 开发 CSDN 访问量统计 源代码](win10-uwp-开发-CSDN-访问量统计-源代码.md)
 
  * [win10 uwp 读取保存WriteableBitmap 、BitmapImage](win10-uwp-读取保存WriteableBitmap-、BitmapImage.md)
