@@ -1510,6 +1510,8 @@
 
  * [开源项目使用 appveyor 自动构建](开源项目使用-appveyor-自动构建.md)
 
+ * [当 ASP.NET Core 链接找不到时可能的原因](当-ASP.NET-Core-链接找不到时可能的原因.md)
+
  * [影子系统让 C++ 程序无法运行](影子系统让-C-程序无法运行.md)
 
  * [微软 Tech Summit 技术暨生态大会课程 · 基于 Roslyn 打造高性能预编译框架](微软-Tech-Summit-技术暨生态大会课程-·-基于-Roslyn-打造高性能预编译框架.md)
