@@ -9,6 +9,20 @@
 
 ## 安装
 
+### Visual C++ 2017
+
+x86
+
+```csharp
+vc_redist.x86.exe /install /quiet /log "%temp%\Install_vc_redist_2017_x86.log"
+```
+
+x64
+
+```csharp
+vc_redist.x64.exe /install /quiet /log "%temp%\Install_vc_redist_2017_x64.log"
+```
+
 ### Visual C++ 2015
 
 ```csharp
@@ -48,6 +62,19 @@ Vcredist_x86.exe /q:a /c:"msiexec /i vcredist.msi /qn /l*v %temp%\vcredist_x86.l
 
 ## 卸载
 
+### Visual C++ 2017
+
+```csharp
+vc_redist.x86.exe /uninstall /quiet /log "%temp%\Uninstall_vc_redist_2017_x86.log"
+```
+
+如果找不到 `vc_redist.x86.exe` 可以尝试从缓存文件找到
+
+```csharp
+x86 : "C:\ProgramData\Package Cache\{2019b6a0-8533-4a04-ac0e-b2c10bdb9841}\VC_redist.x86.exe" /uninstall /quiet
+x64 : "C:\ProgramData\Package Cache\{80586c77-db42-44bb-bfc8-7aebbb220c00}\VC_redist.x64.exe" /uninstall /quiet
+```
+
 ### Visual C++ 2010 
 
 ```csharp
@@ -76,17 +103,20 @@ vcredist_x86.exe /q:a /c:"msiexec /i vcredist.msi /qb! /l*v %temp%\vcredist_x86.
 
 ## 下载地址
 
+- [Visual C++ 2017 Redistributable Package (x86)](https://aka.ms/vs/15/release/vc_redist.x86.exe)
+- [Visual C++ 2017 Redistributable Package (x64)](https://aka.ms/vs/15/release/vc_redist.x64.exe)
+
 - [Microsoft Visual C++ 2015 Redistributable (x86)](https://download.microsoft.com/download/9/3/F/93FCF1E7-E6A4-478B-96E7-D4B285925B00/vc_redist.x86.exe)
 - [Download Visual C++ Redistributable Packages for Visual Studio 2013 from Official Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=40784 )
 - [Visual C++ 2010 Redistributable Package (x86)](http://www.microsoft.com/downloads/details.aspx?FamilyID=a7b7a05e-6de6-4d3a-a423-37bf0912db84)
 - [Visual C++ 2010 Redistributable Package (x64)](http://www.microsoft.com/downloads/details.aspx?familyid=BD512D9E-43C8-4655-81BF-9350143D5867)
 - [Visual C++ 2010 Redistributable Package (ia64)](http://www.microsoft.com/downloads/details.aspx?FamilyID=1a2df53a-d8f4-4bfe-be35-152c5d3d0f82)
 
-
 - [VC 8.0 Visual C++ 2005 Redistributable Package (x86)](http://www.microsoft.com/downloads/details.aspx?familyid=32BC1BEE-A3F9-4C13-9C99-220B62A191EE&displaylang=en)
 - [VC 8.0 Visual C++ 2005 Redistributable Package (x64)](http://www.microsoft.com/downloads/details.aspx?familyid=90548130-4468-4bbc-9673-d6acabd5d13b&displaylang=en)
 - [VC 8.0 Visual C++ 2005 Redistributable Package (ia64)](http://www.microsoft.com/downloads/details.aspx?FamilyID=747AAD7C-5D6B-4432-8186-85DF93DD51A9&displaylang=en)
 
+[IT Pro Tips for Microsoft Visual C++ Redistribuable 2017 v14 | ITNinja](https://www.itninja.com/software/microsoft/visual-c-redistribuable-2017/v14-1 )
 
 [Mailbag: How to perform a silent install of the Visual C++ 2010 redistributable packages – Aaron Stebner's WebLog](https://blogs.msdn.microsoft.com/astebner/2010/10/20/mailbag-how-to-perform-a-silent-install-of-the-visual-c-2010-redistributable-packages/ )
 
