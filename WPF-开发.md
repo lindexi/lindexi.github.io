@@ -9,6 +9,41 @@
 
 <div id="toc"></div>
 
+
+## 标记方法被使用
+
+使用 UsedImplicitly 特性可以标记一个没有被引用的方法为反射使用，这时就不会被优化删除。
+
+```csharp
+public class Foo
+{
+    [UsedImplicitly]
+    public Foo()
+    {
+        //反射调用
+    }
+
+    public Foo(string str)
+    {
+        //被引用
+    }
+}
+```
+
+## 拼接 URI 路径
+
+我需要将一个 URI 和另一个 URI 拼接如 `https://blog.lindexi.com/post/123` 和 `/api/12` 拼接，拿到绝对路径 `https://blog.lindexi.com/api/12` 可以使用下面方法
+
+```csharp
+var uri1 = new Uri("https://blog.lindexi.com/post/123");
+var uri2 = "/api/12";
+
+    if (Uri.TryCreate(uri1, uri2, out var absoluteUrl))
+    {
+        // 拼接成功，在这里就可以使用 absoluteUrl 拼接后的绝对路径
+    }
+```
+
 ## 单例应用在多实例用户无法使用
 
 如果使用NamedPipeServerStream、`Mutex`做单实例，需要传入字符串，这时如果传入一个固定的字符串，会在多用户的时候无法使用。
@@ -78,26 +113,6 @@ public partial class App
     }
 
     #endregion
-}
-```
-
-## 标记方法被使用
-
-使用 UsedImplicitly 特性可以标记一个没有被引用的方法为反射使用，这时就不会被优化删除。
-
-```csharp
-public class Foo
-{
-    [UsedImplicitly]
-    public Foo()
-    {
-        //反射调用
-    }
-
-    public Foo(string str)
-    {
-        //被引用
-    }
 }
 ```
 
