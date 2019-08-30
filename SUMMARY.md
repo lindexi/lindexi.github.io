@@ -242,6 +242,8 @@
 
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
 
+ * [dotnet core 使用 GBK 编码](dotnet-core-使用-GBK-编码.md)
+
  * [dotnet core 使用 PowerShell 脚本](dotnet-core-使用-PowerShell-脚本.md)
 
  * [dotnet core 使用 sqlite 部署到 Centos 服务器](dotnet-core-使用-sqlite-部署到-Centos-服务器.md)

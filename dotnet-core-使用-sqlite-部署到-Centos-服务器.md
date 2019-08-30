@@ -106,6 +106,14 @@ dotnet ef migrations add lindexi.github.io
 dotnet ef database update
 ```
 
+如使用 PowerShell 请使用下面代码
+
+```csharp
+Add-Migration InitialCreate
+
+Update-Database
+```
+
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器10.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2018927211716111)
