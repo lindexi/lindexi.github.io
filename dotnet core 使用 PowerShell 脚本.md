@@ -3,7 +3,6 @@
 本文告诉大家如何在 dotnet core 通过 Host PowerShell 的方法使用 PowerShell 脚本
 
 <!--more-->
-<!-- csdn -->
 <!-- 标签：dotnet，dotnetcore,PowerShell -->
 
 本文提供的方法需要在 dotnet core 2.1 和以上的版本，对于 dotnet core 2.1 以下暂时只能通过命令行调用 PowerShell.exe 的方法调用

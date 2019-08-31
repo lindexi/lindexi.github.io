@@ -3,7 +3,6 @@
 本文告诉大家如何通过 WMI 使用 Win32_OperatingSystem 获取设备厂商
 
 <!--more-->
-<!-- csdn -->
 
 <!-- 标签：PowerShell,WMI -->
 

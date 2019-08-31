@@ -3,7 +3,6 @@
 如果想要创建快捷方式等，很多使用都需要引用 WshShell 类，这个类需要通过 COM 的方法引用
 
 <!--more-->
-<!-- csdn -->
 
 引用 WshShell 不是在一个程序集，而是 Windows Script Host Object Model 一个 COM 组件，通过下面步骤可以引用
 

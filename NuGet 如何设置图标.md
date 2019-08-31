@@ -3,7 +3,6 @@
 在找 NuGet 的时候可以看到有趣的库都有有趣的图标，那么如何设置一个 NuGet 的图标？
 
 <!--more-->
-<!-- csdn -->
 
 在开始之前，请在[nuget](https://www.nuget.org/downloads)官方网站下载 NuGet.exe 同时设置环境变量
 

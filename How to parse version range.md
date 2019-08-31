@@ -5,7 +5,6 @@ Now we are making a solution that has to get the package reference. But the vers
 This post will tell you how to parse the version range string to reference version.
 
 <!--more-->
-<!-- csdn -->
 <!-- 标签：C# ，dotnetcore -->
 
 The format for reference version is like this

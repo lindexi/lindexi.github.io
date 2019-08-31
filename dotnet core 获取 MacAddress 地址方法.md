@@ -3,7 +3,6 @@
 本文告诉大家如何在 dotnet core 获取 Mac 地址
 
 <!--more-->
-<!-- csdn -->
 
 因为在 dotnetcore 是没有直接和硬件相关的，所以无法通过 WMI 的方法获取当前设备的 Mac 地址
 

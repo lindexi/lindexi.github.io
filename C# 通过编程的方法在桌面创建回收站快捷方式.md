@@ -3,7 +3,6 @@
 基本所有的桌面都会存在回收站快捷方式，如果想要多创建几个快捷方式，点开就是回收站，请看本文的方法
 
 <!--more-->
-<!-- csdn -->
 
 在引用 Windows Script Host Object Model 这个 COM 方法之后可以使用下面代码在桌面创建 `Recycle Bin.lnk` 快捷方式，这个快捷方式可以打开回收站
 

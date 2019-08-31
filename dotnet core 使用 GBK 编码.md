@@ -3,7 +3,6 @@
 本文告诉大家如何在 .NET Core 中使用 GBK 编码
 
 <!--more-->
-<!-- csdn -->
 
 默认的 .NET Core 框架不包含 GBK 编码，不包含除了代码页为 28591 和 Unicode(utf-8,utf-16) 之外的其他编码，需要安装 System.Text.Encoding.CodePages 才能使用
 

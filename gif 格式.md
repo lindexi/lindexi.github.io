@@ -4,7 +4,6 @@
 
 <!--more-->
 <div id="toc"></div>
-<!-- csdn -->
 
 在开始讲gif之前，先告诉大家 gif 的格式。
 

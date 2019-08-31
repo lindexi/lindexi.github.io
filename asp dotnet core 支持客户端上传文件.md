@@ -3,7 +3,6 @@
 本文告诉大家如何在 asp dotnet core 支持客户端上传文件
 
 <!--more-->
-<!-- csdn -->
 
 新建一个 asp dotnet core 程序，创建一个新的类，用于给客户端上传文件的信息
 

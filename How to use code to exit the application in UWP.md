@@ -3,7 +3,6 @@
 I will tell you how to exit the application in UWP by the code.
 
 <!--more-->
-<!-- csdn -->
 
 We can call some static method to help us to exit the application.
 

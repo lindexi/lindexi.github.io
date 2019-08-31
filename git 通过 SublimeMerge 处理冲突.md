@@ -3,7 +3,6 @@
 在使用 Git 的时候，如果是多个小伙伴开发，那么如果同时修改一个文件将出现冲突。也就是在自动合并的时候不知道使用哪个代码才对，此时就需要合并工具的协助。我找了很久发现 SublimeMerge 是界面最好看的，同时快捷键和 SublimeText 一样多也好用的工具
 
 <!--more-->
-<!-- csdn -->
 
 先通过[官网](https://www.sublimemerge.com/)下载安装 SublimeMerge 记住安装的路径
 

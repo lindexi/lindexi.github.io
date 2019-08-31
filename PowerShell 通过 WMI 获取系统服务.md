@@ -3,7 +3,6 @@
 本文告诉大家如何通过 WMI 获取系统服务
 
 <!--more-->
-<!-- csdn -->
 
 <!-- 标签：PowerShell,WMI -->
 

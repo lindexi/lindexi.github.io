@@ -3,7 +3,6 @@
 本文告诉大家如何在 dotnet core 输出调试信息到 DebugView 软件
 
 <!--more-->
-<!-- csdn -->
 
 在之前告诉小伙伴，如何在 WPF 输出调试信息到 DebugView 软件，请看文章 [WPF 调试 获得追踪输出](https://lindexi.gitee.io/post/WPF-%E8%B0%83%E8%AF%95-%E8%8E%B7%E5%BE%97%E8%BF%BD%E8%B8%AA%E8%BE%93%E5%87%BA.html )
 

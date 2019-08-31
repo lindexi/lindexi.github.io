@@ -5,7 +5,6 @@
 通过 SHFileOperation 可以将文件放在回收站
 
 <!--more-->
-<!-- csdn -->
 
 本文提供的方法暂时只能在 x86 程序使用，此方法暂时不适合 dotnet core 程序
 

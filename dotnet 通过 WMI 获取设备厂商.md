@@ -3,7 +3,6 @@
 本文告诉大家如何通过 WMI 获取设备厂商
 
 <!--more-->
-<!-- csdn -->
 <!-- 标签：dotnet,C#,WMI -->
 
 通过 Win32_ComputerSystem 可以获取电脑系统信息

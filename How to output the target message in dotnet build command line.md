@@ -3,7 +3,6 @@
 How can I output my target message when I using dotnet build in command line.
 
 <!--more-->
-<!-- csdn -->
 
 I use command line to create a web api application.
 

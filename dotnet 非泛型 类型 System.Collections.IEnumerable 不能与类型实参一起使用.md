@@ -3,7 +3,6 @@
 如果在开发的时候遇到非泛型 类型“IEnumerable”不能与类型参数一起使用，那么就是变量的命名空间没弄对
 
 <!--more-->
-<!-- csdn -->
 
 在 dotnet 里面有 `System.Collections.IEnumerable` 和 `System.Collections.Generic.IEnumerable<>` 两个不同的类，带泛型的需要在 `System.Collections.Generic` 命名空间找到
 
