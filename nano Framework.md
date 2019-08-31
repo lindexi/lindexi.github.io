@@ -2,6 +2,7 @@
 
 <!--more-->
 <!-- csdn -->
+<!-- 草稿 -->
 
 [nanoFramework](https://github.com/nanoframework )
 
