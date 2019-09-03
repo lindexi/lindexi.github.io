@@ -35,6 +35,18 @@
 
 设置完成就可以运行一个会炸的程序，看一下是不是在设置的文件里面存在了 DUMP 文件
 
+如果小伙伴不想做复杂的设置，请看这篇博客用脚本自动设置 [UWP应用异常退出Dump - Lulixue的专栏 - CSDN博客](https://blog.csdn.net/Meta_Cpp/article/details/88657660 )
+
+用 PowerShell 设置方法请看下面代码
+
+```PowerShell
+New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting" -Name "LocalDumps"
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps" -Name "DumpFolder" -Value "%LOCALAPPDATA%\CrashDumps" -PropertyType "ExpandString"
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps" -Name "DumpCount" -Value 10 -PropertyType DWord
+```
+
+这里 `"%LOCALAPPDATA%\CrashDumps"` 就是设置 DUMP 输出文件夹，请将这个文件夹修改为你期望的路径
+
 ## 创建一个运行直接退出的程序
 
 打开 VisualStudio 创建一个 UWP 程序，在这个程序里面写简单代码
