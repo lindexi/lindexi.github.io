@@ -1516,6 +1516,8 @@
 
  * [安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources](安装visualStudio-出现-cant-install-Microsoft.TeamFoundation.OfficeIntegration.Resources.md)
 
+ * [完整的 P2P 应用需要包含哪些功能](完整的-P2P-应用需要包含哪些功能.md)
+
  * [开源项目](开源项目.md)
 
  * [开源项目使用 appveyor 自动构建](开源项目使用-appveyor-自动构建.md)
