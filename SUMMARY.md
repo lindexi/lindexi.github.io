@@ -330,6 +330,8 @@
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
 
+ * [dotnet 获取本机 IP 地址方法](dotnet-获取本机-IP-地址方法.md)
+
  * [dotnet 获取用户设备安装了哪些 .NET Framework 框架](dotnet-获取用户设备安装了哪些-.NET-Framework-框架.md)
 
  * [dotnet 获取程序所在路径的方法](dotnet-获取程序所在路径的方法.md)
