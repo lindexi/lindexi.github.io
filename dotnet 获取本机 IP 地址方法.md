@@ -42,6 +42,8 @@
             }
 ```
 
+过滤方法通过 NetworkInterfaceType 判断
+
 [C#获取本机IP地址（ipv4） - LJD泊水 - 博客园](https://www.cnblogs.com/lijianda/p/6604651.html )
 
 
