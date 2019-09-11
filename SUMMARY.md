@@ -1,5 +1,7 @@
 # Summary
 
+ * [.NET Standard](NET-Standard.md)
+
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
  * [asp dotnet core 从 Frp 获取用户真实 IP 地址](asp-dotnet-core-从-Frp-获取用户真实-IP-地址.md)
@@ -1467,6 +1469,8 @@
  * [圆和线](圆和线.md)
 
  * [在 Gitlab 开启 MatterMost 机器人](在-Gitlab-开启-MatterMost-机器人.md)
+
+ * [在 P2P 文件分享应用以文件或文件段为单位的优缺](在-P2P-文件分享应用以文件或文件段为单位的优缺.md)
 
  * [在 Windows Defender 设置文件夹白名单提升 VisualStudio 编译速度](在-Windows-Defender-设置文件夹白名单提升-VisualStudio-编译速度.md)
 
