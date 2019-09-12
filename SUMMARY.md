@@ -624,6 +624,8 @@
 
  * [visualStudio 无法登陆](visualStudio-无法登陆.md)
 
+ * [VisualStudio 给任意字符串给定正则等格式](VisualStudio-给任意字符串给定正则等格式.md)
+
  * [VisualStudio 给项目添加特殊的 Nuget 的链接](VisualStudio-给项目添加特殊的-Nuget-的链接.md)
 
  * [VisualStudio 编码规范工具 2.6 修改当前文件编码](VisualStudio-编码规范工具-2.6-修改当前文件编码.md)
