@@ -170,4 +170,6 @@ System.Windows.Data Warning: 104 : BindingExpression (hash=294043): Replace item
 
 参见 [http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html](http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html)
 
+如果是想要在 VisualStudio 输出所有绑定的详细信息请看 [WPF 笔刷绑定不上可能的原因](https://blog.lindexi.com/post/WPF%20%E7%AC%94%E5%88%B7%E7%BB%91%E5%AE%9A%E4%B8%8D%E4%B8%8A%E5%8F%AF%E8%83%BD%E7%9A%84%E5%8E%9F%E5%9B%A0.html)
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
