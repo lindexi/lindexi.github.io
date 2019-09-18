@@ -1282,6 +1282,8 @@
 
  * [WPF 如何调试 binding](WPF-如何调试-binding.md)
 
+ * [WPF 客户端开发需要知道的触摸失效问题](WPF-客户端开发需要知道的触摸失效问题.md)
+
  * [WPF 封装 dotnet remoting 调用其他进程](WPF-封装-dotnet-remoting-调用其他进程.md)
 
  * [WPF 延迟加载](WPF-延迟加载.md)
@@ -1339,6 +1341,8 @@
  * [WPF 禁用实时触摸](WPF-禁用实时触摸.md)
 
  * [WPF 程序生成类库错误](WPF-程序生成类库错误.md)
+
+ * [WPF 笔刷绑定不上可能的原因](WPF-笔刷绑定不上可能的原因.md)
 
  * [WPF 等距布局](WPF-等距布局.md)
 
