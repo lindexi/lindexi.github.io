@@ -536,6 +536,8 @@
 
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
 
+ * [SharpDx 的代替项目](SharpDx-的代替项目.md)
+
  * [SharpDx 进入全屏模式](SharpDx-进入全屏模式.md)
 
  * [SourceYard 制作源代码包](SourceYard-制作源代码包.md)
