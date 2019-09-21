@@ -4,6 +4,8 @@
 
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
+ * [asp dotnet core 3.0 接口返回 json 使用 PascalCase 格式](asp-dotnet-core-3.0-接口返回-json-使用-PascalCase-格式.md)
+
  * [asp dotnet core 从 Frp 获取用户真实 IP 地址](asp-dotnet-core-从-Frp-获取用户真实-IP-地址.md)
 
  * [asp dotnet core 图片在浏览器没访问可能原因](asp-dotnet-core-图片在浏览器没访问可能原因.md)
