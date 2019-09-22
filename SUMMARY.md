@@ -248,6 +248,8 @@
 
  * [dotnet core 发布只有一个 exe 的方法](dotnet-core-发布只有一个-exe-的方法.md)
 
+ * [dotnet core 导出 COM 组件](dotnet-core-导出-COM-组件.md)
+
  * [dotnet core 添加 SublimeText 编译插件](dotnet-core-添加-SublimeText-编译插件.md)
 
  * [dotnet core 用值初始化整个数组](dotnet-core-用值初始化整个数组.md)
