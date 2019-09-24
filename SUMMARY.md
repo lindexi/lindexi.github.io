@@ -884,6 +884,8 @@
 
  * [win10 UWP 用Path画图](win10-UWP-用Path画图.md)
 
+ * [win10 uwp 睡眠唤醒](win10-uwp-睡眠唤醒.md)
+
  * [win10 uwp 禁止编译器优化代码](win10-uwp-禁止编译器优化代码.md)
 
  * [win10 uwp 禁用 ScrollViewer 交互](win10-uwp-禁用-ScrollViewer-交互.md)
