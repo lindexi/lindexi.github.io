@@ -1,4 +1,4 @@
-# .net remoting 抛出异常
+# dotnet remoting 抛出异常
 
 本文告诉大家如何在使用 .net remoting 的时候，抛出异常。
 
