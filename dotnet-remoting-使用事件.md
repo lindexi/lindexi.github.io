@@ -1,5 +1,5 @@
 
-# .net remoting 使用事件
+# dotnet remoting 使用事件
 
 在RPC如果需要使用事件，相对是比较难的。本文告诉大家如何在 .net remoting 使用事件。
 

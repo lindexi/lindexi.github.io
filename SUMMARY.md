@@ -276,9 +276,9 @@
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
 
- * [.net remoting 使用事件](net-remoting-使用事件.md)
+ * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)
 
- * [.net remoting 抛出异常](net-remoting-抛出异常.md)
+ * [dotnet remoting 抛出异常](dotnet-remoting-抛出异常.md)
 
  * [dotnet remoting 的 Channel 详解](dotnet-remoting-的-Channel-详解.md)
 
@@ -1529,6 +1529,8 @@
  * [如何替换一个 exe 的图标](如何替换一个-exe-的图标.md)
 
  * [如何移动 nuget 缓存文件夹](如何移动-nuget-缓存文件夹.md)
+
+ * [如何让 USB 设备不显示安全删除硬件弹出选项](如何让-USB-设备不显示安全删除硬件弹出选项.md)
 
  * [如何通过命令行 msbuild 编译项目](如何通过命令行-msbuild-编译项目.md)
 
