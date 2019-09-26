@@ -17,17 +17,50 @@
 
 > The USB Removable capability allows the operating system to create a device container for legacy devices.
 
-一个 USB 设备是需要声明自己支持 Removable 的才可以在右下角使用安全删除硬件弹出选项
+从 [Overview of the Removable Device Capability](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/overview-of-the-removable-device-capability )可以知道一个 USB 设备是需要声明自己支持 Removable 的才可以在右下角使用安全删除硬件弹出选项
 
-从 [Container IDs Generated from the Removable Device Capability](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/container-ids-generated-from-the-removable-device-capability ) 可以知道，在插入即播放功能将会使用到这个功能，在设备插入的时候，通过发送 `IRP_MN_QUERY_CAPABILITIES` 获取到设备的返回信息，就可以知道这个设备支不支持移除
+> The removable device capability is a bit (Removable) that bus drivers set in the DEVICE_CAPABILITIES
+
+从 [Container IDs Generated from the Removable Device Capability](https://docs.microsoft.com/en-us/windows-hardware/drivers/install/container-ids-generated-from-the-removable-device-capability ) 可以知道，在即插即用功能将会使用到这个功能，在设备插入的时候，通过发送 `IRP_MN_QUERY_CAPABILITIES` 获取到设备的返回信息，就可以知道这个设备支不支持移除
 
 > The Plug and Play manager uses the removable device capability to generate a container ID for all devnodes enumerated for the physical device. The bus driver reports the removable device capability in response to an IRP_MN_QUERY_CAPABILITIES request.
 
-那么上面说的发送信息是什么，就从[IRP_MN_QUERY_CAPABILITIES](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/irp-mn-query-capabilities ) 可以知道，在硬件设备被枚举时，系统的 PnP 也就是插入即播放功能将会发送 `IRP_MN_QUERY_CAPABILITIES` 信息给到硬件，此时硬件收到时将会回复 `DEVICE_CAPABILITIES` 信息
+那么上面说的发送信息是什么，就从[IRP_MN_QUERY_CAPABILITIES](https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/irp-mn-query-capabilities ) 可以知道，在硬件设备被枚举时，系统的 PnP 也就是即插即用功能将会发送 `IRP_MN_QUERY_CAPABILITIES` 信息给到硬件，此时硬件收到时将会回复 `DEVICE_CAPABILITIES` 信息
 
 > When a device is enumerated, but before the function and filter drivers are loaded for the device, the PnP manager sends an IRP_MN_QUERY_CAPABILITIES request to the parent bus driver for the device. The bus driver must set any relevant values in the DEVICE_CAPABILITIES structure and return it to the PnP manager.
 
 硬件回复的消息请看 [DEVICE_CAPABILITIES (wdm.h)](https://docs.microsoft.com/zh-cn/windows-hardware/drivers/ddi/content/wdm/ns-wdm-_device_capabilities ) 在 PnP 询问USB设备，此时USB设备返回 DEVICE_CAPABILITIES 里面可以设置 Removable 项说明此设备支持移除。也就是想要自己的 USB 设备不能被移除，那么就声明不支持移除
+
+以下是 `DEVICE_CAPABILITIES` 定义
+
+```csharp
+typedef struct _DEVICE_CAPABILITIES {
+  USHORT             Size;
+  USHORT             Version;
+  ULONG              DeviceD1 : 1;
+  ULONG              DeviceD2 : 1;
+  ULONG              LockSupported : 1;
+  ULONG              EjectSupported : 1;
+  ULONG              Removable : 1;
+  // 忽略不相关属性
+} DEVICE_CAPABILITIES, *PDEVICE_CAPABILITIES;
+```
+
+对 Removable 属性的官方注释是如果设置为 True 那么将会显示弹出或移除设备
+
+```csharp
+Removable
+
+Specifies whether the device can be dynamically removed from its immediate parent. If Removable is set to TRUE, the device does not belong to the same physical object as its parent.
+
+For example, if Removable is set to TRUE for a USB composite device inside a multifunction printer, the composite device does not belong to the physical object of its immediate parent, such as a USB hub inside a notebook PC.
+
+In most cases the bus driver, not the function driver, should determine the value of the Removable parameter of the device. For USB devices, the USB hub driver sets the Removable parameter. It should not be modified by the function driver.
+
+If Removable is set to TRUE, the device is displayed in the Unplug or Eject Hardware program, unless SurpriseRemovalOK is also set to TRUE.
+```
+
+[从可移动设备功能生成的容器 Id 重写](https://docs.microsoft.com/zh-cn/windows-hardware/drivers/install/container-ids-generated-from-a-removable-device-capability-override )
 
 
 
