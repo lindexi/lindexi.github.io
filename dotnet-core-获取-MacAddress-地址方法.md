@@ -199,6 +199,8 @@
 
 输出的格式是 5A:15:31:73:B0:9F 同时输出是一个网卡
 
+分开虚拟网卡和物理网卡方法请看 [如何利用c#找到物理网卡的Mac地址 - huangtengxiao](https://huangtengxiao.gitee.io/post/%E4%B8%BA%E4%BB%80%E4%B9%88MessageBox%E4%BC%9A%E8%B7%91%E5%88%B0%E7%AA%97%E5%8F%A3%E4%B8%8B%E9%9D%A2.html )
+
 [NetworkInterface.GetPhysicalAddress Method (System.Net.NetworkInformation)](https://docs.microsoft.com/en-us/dotnet/api/system.net.networkinformation.networkinterface.getphysicaladdress?view=netframework-4.7.2 )
 
 [PhysicalAddress Class (System.Net.NetworkInformation)](https://docs.microsoft.com/en-us/dotnet/api/system.net.networkinformation.physicaladdress?view=netframework-4.7.2 )

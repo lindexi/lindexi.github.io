@@ -53,6 +53,8 @@ We are making a full-screen touch application and the user can only control the 
 
 All the demo code in [github](https://github.com/lindexi/lindexi_gd/tree/4f1cda37f1a6eb4fc88fa404b104cbf9b29b365e/KihemjaibeaNafebahearjece)
 
+[WPF will break when an exception be throw in the StylusPlugIn · Issue #1037 · dotnet/wpf](https://github.com/dotnet/wpf/issues/1037 )
+
 
 
 

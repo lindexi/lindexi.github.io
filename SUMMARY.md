@@ -136,6 +136,8 @@
 
  * [C# 条件编译](C-条件编译.md)
 
+ * [C# 极限压缩 dotnet core 控制台发布文件](C-极限压缩-dotnet-core-控制台发布文件.md)
+
  * [C# 标准性能测试](C-标准性能测试.md)
 
  * [C# 标准性能测试高级用法](C-标准性能测试高级用法.md)
@@ -318,6 +320,8 @@
 
  * [dotnet 如何调试某个文件是哪个代码创建](dotnet-如何调试某个文件是哪个代码创建.md)
 
+ * [dotnet 对 DateTime 排序](dotnet-对-DateTime-排序.md)
+
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)
@@ -333,6 +337,8 @@
  * [dotnet 新项目格式与对应框架预定义的宏](dotnet-新项目格式与对应框架预定义的宏.md)
 
  * [dotnet 方法名 To 和 As 有什么不同](dotnet-方法名-To-和-As-有什么不同.md)
+
+ * [dotnet 枚举当前设备wifi热点](dotnet-枚举当前设备wifi热点.md)
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 
@@ -1294,6 +1300,8 @@
 
  * [WPF 如何调试 binding](WPF-如何调试-binding.md)
 
+ * [WPF 如何跨线程重新抛出异常](WPF-如何跨线程重新抛出异常.md)
+
  * [WPF 客户端开发需要知道的触摸失效问题](WPF-客户端开发需要知道的触摸失效问题.md)
 
  * [WPF 封装 dotnet remoting 调用其他进程](WPF-封装-dotnet-remoting-调用其他进程.md)
@@ -1411,6 +1419,8 @@
  * [WPF 跨线程 UI 的方法](WPF-跨线程-UI-的方法.md)
 
  * [WPF 轻量级 MVVM 框架入门 2.1.2](WPF-轻量级-MVVM-框架入门-2.1.2.md)
+
+ * [WPF 运行时迁移 EF Core 数据库](WPF-运行时迁移-EF-Core-数据库.md)
 
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)
 
