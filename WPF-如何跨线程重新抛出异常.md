@@ -86,6 +86,8 @@
 
 在 WPF 框架我使用这个方法提了建议，在触摸线程的异常抛到主线程，如果您觉得我的方法可以，请在 [这里](https://github.com/dotnet/wpf/pull/945 ) 点赞
 
+详细请看 [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](https://blog.walterlv.com/post/exceptiondispatchinfo-capture-throw.html )
+
 
 
 

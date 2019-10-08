@@ -274,7 +274,7 @@
 
  * [dotnet Framework 源代码 · Ink](dotnet-Framework-源代码-·-Ink.md)
 
- * [.net Framework 源代码 · ScrollViewer](net-Framework-源代码-·-ScrollViewer.md)
+ * [dotnet Framework 源代码 · ScrollViewer](dotnet-Framework-源代码-·-ScrollViewer.md)
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
 
