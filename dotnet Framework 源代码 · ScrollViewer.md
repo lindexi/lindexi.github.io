@@ -1,4 +1,4 @@
-# .net Framework 源代码 · ScrollViewer
+# dotnet Framework 源代码 · ScrollViewer
 
 本文是分析 .net Framework 源代码的系列，主要告诉大家微软做 ScrollViewer 的思路，分析很简单。
 
