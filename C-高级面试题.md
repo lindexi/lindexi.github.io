@@ -55,6 +55,8 @@
         }
 ```
 
+注意，在 dotnet core 不支持 Abort 方法
+
 ## 从空转换
 
 请写出 IFoo 和 Foo 的实现，让下面的代码不会抛出空异常
@@ -183,6 +185,39 @@ private static void Foo()
     Environment.Exit(0);
 }
 ```
+
+或者进行堆栈溢出，如下面代码
+
+```csharp
+        private static void Foo()
+        {
+            Foo();c
+        }
+```
+
+但是申请大内存和退出当前线程方法都会让 finally 执行
+
+```csharp
+        private static void Foo()
+        {
+            var n = new int[int.MaxValue];
+        }
+        // 虽然提示内存不够，但是finally依然可以运行
+```
+
+退出当前线程抛出的是线程中断异常，和其他异常一样都能执行 finally 代码
+
+```csharp
+        private static void Foo()
+        {
+            Thread.CurrentThread.Abort();
+        }
+```
+
+注意，在 dotnet core 不支持 Abort 方法
+
+另外，如果进入 try 是不能使用 goto 跳出但不执行 finally 代码
+
 
 ## 请问下面代码输出多少
 
