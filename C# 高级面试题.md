@@ -189,9 +189,31 @@ private static void Foo()
 ```csharp
         private static void Foo()
         {
-            Foo();c
+            Foo();
         }
 ```
+
+或者 少珺 小伙伴的不安全代码申请
+
+```csharp
+        private static void Foo()
+        {
+            unsafe
+            {
+                var n = stackalloc int[int.MaxValue];
+            }
+        }
+```
+
+或者干掉自己进程
+
+```csharp
+        private static void Foo()
+        {
+           Process.GetCurrentProcess().Kill();
+        }
+```
+
 
 但是申请大内存和退出当前线程方法都会让 finally 执行
 
@@ -215,6 +237,8 @@ private static void Foo()
 注意，在 dotnet core 不支持 Abort 方法
 
 另外，如果进入 try 是不能使用 goto 跳出但不执行 finally 代码
+
+如果是在 VisualStudio 调试，在 Foo 执行完之后，在 VS 里把调试箭头拖到 finally 的后面
 
 
 ## 请问下面代码输出多少
