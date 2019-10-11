@@ -336,6 +336,8 @@
 
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
 
+ * [dotnet 新 sdk style 项目格式的一些命名空间和引用](dotnet-新-sdk-style-项目格式的一些命名空间和引用.md)
+
  * [dotnet 新项目格式与对应框架预定义的宏](dotnet-新项目格式与对应框架预定义的宏.md)
 
  * [dotnet 方法名 To 和 As 有什么不同](dotnet-方法名-To-和-As-有什么不同.md)
@@ -1469,6 +1471,8 @@
  * [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到-VS2017-新项目格式.md)
 
  * [代码段](代码段.md)
+
+ * [优雅调试 REST API 的工具](优雅调试-REST-API-的工具.md)
 
  * [使用 ahk 让普通键盘变为Dvorak键盘](使用-ahk-让普通键盘变为Dvorak键盘.md)
 
