@@ -660,6 +660,8 @@
 
  * [VisualStudio 通过外部调试方法快速调试库代码](VisualStudio-通过外部调试方法快速调试库代码.md)
 
+ * [VisualStudio 配置多进程调试快捷键启动项目](VisualStudio-配置多进程调试快捷键启动项目.md)
+
  * [win 消息](win-消息.md)
 
  * [win10 17025 触摸bug](win10-17025-触摸bug.md)
