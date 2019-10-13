@@ -306,6 +306,8 @@
 
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
 
+ * [dotnet 列表 Linq 的 Task 用法](dotnet-列表-Linq-的-Task-用法.md)
+
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
 
  * [dotnet 判断特定进程存在方法](dotnet-判断特定进程存在方法.md)
@@ -644,8 +646,6 @@
 
  * [visualStudio 无法登陆](visualStudio-无法登陆.md)
 
- * [VisualStudio 给任意字符串给定正则等格式](VisualStudio-给任意字符串给定正则等格式.md)
-
  * [VisualStudio 给项目添加特殊的 Nuget 的链接](VisualStudio-给项目添加特殊的-Nuget-的链接.md)
 
  * [VisualStudio 编码规范工具 2.6 修改当前文件编码](VisualStudio-编码规范工具-2.6-修改当前文件编码.md)
@@ -863,6 +863,8 @@
  * [win10 UWP 应用设置](win10-UWP-应用设置.md)
 
  * [win10 uwp 异步转同步](win10-uwp-异步转同步.md)
+
+ * [win10 uwp 录制任意应用屏幕](win10-uwp-录制任意应用屏幕.md)
 
  * [win10 uwp 手把手教你使用 asp dotnet core 做 cs 程序](win10-uwp-手把手教你使用-asp-dotnet-core-做-cs-程序.md)
 
