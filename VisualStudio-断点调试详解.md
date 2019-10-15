@@ -269,6 +269,12 @@ ThreadId = 19768
 
 更多调试技巧请看 [Visual Studio 调试技巧 - LightSmaile - 博客园](https://www.cnblogs.com/LightSmile/p/11055665.html#!comments )
 
+我录了一个很无聊的课件视频，欢迎小伙伴点击下面课件
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法18.png) -->
+
+[![](http://image.acmx.xyz/lindexi%2F2019107123420756)](https://r302.cc/xy1ar5)
+
 
 
 
