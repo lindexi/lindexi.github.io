@@ -1338,6 +1338,8 @@
 
  * [WPF 拼音输入法](WPF-拼音输入法.md)
 
+ * [WPF 控件 Content 的内容不显示下划线字符串](WPF-控件-Content-的内容不显示下划线字符串.md)
+
  * [WPF 控件继承树](WPF-控件继承树.md)
 
  * [WPF 提高性能](WPF-提高性能.md)
