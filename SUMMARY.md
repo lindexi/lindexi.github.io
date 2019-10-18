@@ -338,6 +338,8 @@
 
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
 
+ * [dotnet 文件读写务必注意事项](dotnet-文件读写务必注意事项.md)
+
  * [dotnet 新 sdk style 项目格式的一些命名空间和引用](dotnet-新-sdk-style-项目格式的一些命名空间和引用.md)
 
  * [dotnet 新项目格式与对应框架预定义的宏](dotnet-新项目格式与对应框架预定义的宏.md)
