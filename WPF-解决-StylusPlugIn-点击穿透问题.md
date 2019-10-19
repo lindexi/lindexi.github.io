@@ -1,7 +1,7 @@
 
 # WPF 解决 StylusPlugIn 点击穿透问题
 
-在使用 StylusPlugIn 的时候会出现这样的坑，只要一个元素附加有 StylusPlugIn 在这个元素上面放另一个没有附加 StylusPlugIn 的元素，点击上面的元素，下面的元素的 StylusPlugIn 还是可以收到触摸的消息
+在使用 StylusPlugIn 的时候会出现这样的坑，只要一个元素附加有 StylusPlugIn 加入到视觉树，在这个元素上面放另一个没有附加 StylusPlugIn 的元素，点击上面的元素，下面的元素的 StylusPlugIn 还是可以收到触摸的消息
 
 <!--more-->
 
@@ -139,6 +139,9 @@
 虽然说德熙是逗比的元素的层级比底层的元素高，但是首先命中的是底层的元素然后才是 `说德熙是逗比` 的元素收到 down 如果此时在底层的元素抬手，那么就会在底层的元素收到 up 而在说德熙是逗比的元素上没有收到消息
 
 通过这个方法可以只要 `说德熙是逗比` 的元素有触摸，就设置底层的元素失去焦点，通过在 底层的元素 添加一个方法，调用这个方法就不处理当前的触摸
+
+在使用 StylusPlugIns 集合，使用框架的方法判断是通过在 `_plugInCollectionList` 字段拿到所有的集合，也就是先添加到视觉树的控件，将会在 `PenContexts.AddStylusPlugInCollection` 加入到字段。所以遍历的顺序和视觉树顺序无关，而是和加入视觉树的顺序有关。详细请看 [
+    WPF 高速书写 StylusPlugIn 原理](https://blog.lindexi.com/post/WPF-%E9%AB%98%E9%80%9F%E4%B9%A6%E5%86%99-StylusPlugIn-%E5%8E%9F%E7%90%86.html)
 
 那么在 WPF 的 DynamicRenderer 是如何处理的？
 

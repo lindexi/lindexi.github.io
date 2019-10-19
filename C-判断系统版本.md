@@ -28,6 +28,10 @@
         }
 ```
 
+上面方法不能判断是win10系统
+
+[关于C#中Environment.OSVersion判断系统及Win10上的问题 - 夏至千秋 - 博客园](https://www.cnblogs.com/chihirosan/p/5139078.html )
+
 
 
 

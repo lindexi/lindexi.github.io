@@ -352,6 +352,8 @@
 
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
 
+ * [dotnet 给MatterMost订阅RSS博客](dotnet-给MatterMost订阅RSS博客.md)
+
  * [dotnet 获取当前进程方法](dotnet-获取当前进程方法.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
@@ -371,6 +373,8 @@
  * [dotnet 设计规范 · 数组定义](dotnet-设计规范-·-数组定义.md)
 
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)
+
+ * [dotnet 进行二进制差分压缩文件](dotnet-进行二进制差分压缩文件.md)
 
  * [dotnet 通过 HttpClient 下载文件同时报告进度的方法](dotnet-通过-HttpClient-下载文件同时报告进度的方法.md)
 
