@@ -150,7 +150,16 @@ Point point = new Point((double)data[data.Length - inputArrayLengthPerPoint], (d
 
 关于 `PenContexts.AddStylusPlugInCollection` 在什么时候被调用，请看下面，这里的调用逻辑还是比较复杂，现在先假设已经添加了 `_plugInCollectionList` 只需要对里面的元素计算
 
-从上面代码可以看到判断是否某个 `StylusPlugInCollection` 可以使用的方式是判断对应的第一个找到命中测试成功的元素。从上面的代码可以知道，一个 UIElement 可以对应一个 StylusPlugInCollection 而在本文下一节将会告诉大家的添加 StylusPlugIn 到输入就会讲到，在添加 StylusPlugInCollection 的时候就会进行一次层级排序，保证最前面的 StylusPlugInCollection 对应的 UIElement 是层级最高的
+从上面代码可以看到判断是否某个 `StylusPlugInCollection` 可以使用的方式是判断对应的第一个找到命中测试成功的元素。从上面的代码可以知道，一个 UIElement 可以对应一个 StylusPlugInCollection 而在本文下一节将会告诉大家的添加 StylusPlugIn 到输入就会讲到，在添加 StylusPlugInCollection 的时候就会进行一次层级排序，保证最前面的 StylusPlugInCollection 对应的 UIElement 是层级最高的，但因为 AddStylusPlugInCollection 的时机和布局时机不相同，所以相对层级最高的也只能做容器的层级。也就是容器里面包含其他元素，那么其他元素的层级就比容器高。而如果在同一容器放多个元素，那么是无法判断哪个元素层级更高，就按照加入的先后顺序
+
+```csharp
+        internal void AddStylusPlugInCollection(StylusPlugInCollection pic)
+        {
+            this._plugInCollectionList.Insert(this.FindZOrderIndex(pic), pic);
+        }
+```
+
+这里的 AddStylusPlugInCollection 函数将会在窗口的 VisibleChanged 事件被调用到。而 FindZOrderIndex 的逻辑其实上对于同一容器的多个元素是依靠加入顺序决定，而不是层级关系
 
 也就是如果存在两个元素，这两个元素都有 StylusPlugInCollection 而且两个元素重叠，那么点击到元素重叠的部分就会返回层级高的元素对应的 StylusPlugInCollection 而不会使用层级低的
 
