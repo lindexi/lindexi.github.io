@@ -422,6 +422,8 @@
 
  * [git 需要知道的1000个问题](git-需要知道的1000个问题.md)
 
+ * [Github 给仓库上传 NuGet 库](Github-给仓库上传-NuGet-库.md)
+
  * [git无法pull仓库refusing to merge unrelated histories](git无法pull仓库refusing-to-merge-unrelated-histories.md)
 
  * [git镜像仓库](git镜像仓库.md)
@@ -1291,6 +1293,8 @@
  * [WPF 在绑定表达式添加计算](WPF-在绑定表达式添加计算.md)
 
  * [WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](WPF-在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待.md)
+
+ * [WPF 多个 StylusPlugIn 的事件触发顺序](WPF-多个-StylusPlugIn-的事件触发顺序.md)
 
  * [WPF 好看的矢量图标](WPF-好看的矢量图标.md)
 
