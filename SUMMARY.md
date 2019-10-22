@@ -1160,6 +1160,8 @@
 
  * [win2d 通过 CanvasActiveLayer 画出透明度和裁剪](win2d-通过-CanvasActiveLayer-画出透明度和裁剪.md)
 
+ * [win7 无法启动 WPF 程序 D3Dcompiler_47.dll 丢失](win7-无法启动-WPF-程序-D3Dcompiler_47.dll-丢失.md)
+
  * [Windows 10 16251 添加的 api](Windows-10-16251-添加的-api.md)
 
  * [windows 10预览版升级win10 7月29 10240.16384](windows-10预览版升级win10-7月29-10240.16384.md)
