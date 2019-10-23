@@ -75,6 +75,18 @@
 
 这样在输出的时候就会自动更改文件名
 
+如果这个库文件只是需要添加资源文件，不需要加上 lib 文件，也就是不添加引用，那么请设置这个项目作为工具库
+
+```
+    <IsTool>true</IsTool>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+```
+
+通过 `IsTool` 将不会在安装的项目引用编译的文件
+
 [Roslyn 使用 Target 替换占位符方式生成 nuget 打包](https://blog.lindexi.com/post/roslyn-%E4%BD%BF%E7%94%A8-target-%E6%9B%BF%E6%8D%A2%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%96%B9%E5%BC%8F%E7%94%9F%E6%88%90-nuget-%E6%89%93%E5%8C%85 )
 
 [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - walterlv](https://blog.walterlv.com/post/write-msbuild-target.html#microsoftnetsdk-%E4%B8%BA%E6%88%91%E4%BB%AC%E6%8F%90%E4%BE%9B%E7%9A%84%E7%8E%B0%E6%88%90%E5%8F%AF%E7%94%A8%E7%9A%84-task )
