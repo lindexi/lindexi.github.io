@@ -936,6 +936,8 @@ Debug.WriteLine($"进入xx方法，当前值={xx}");
 
 对于 WPF 和 UWP 使用不同方法
 
+在 WPF 可以通过 WpfPerf.exe 查看界面刷新，安装 VisualStudio 可以从 "C:\Program Files\Microsoft Windows Performance Toolkit\WPF Performance Suite\WpfPerf.exe" 找到
+
 填坑
 
 ### 使用 snoop 调试

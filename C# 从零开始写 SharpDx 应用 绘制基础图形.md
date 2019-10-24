@@ -365,7 +365,7 @@ var textFormat = new TextFormat(factory, "宋体", 20);
 
 在画文本需要用到很多参数，用于自己定制，请小伙伴自己玩一下
 
-有了基础的画界面就可以做出好看的界面，如何根据这些简单的方法画出好看的界面请看 [WPF 源代码 从零开始写一个 UI 框架](https://blog.lindexi.com/post/wpf-%E6%BA%90%E4%BB%A3%E7%A0%81-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA-ui-%E6%A1%86%E6%9E%B6 )
+有了基础的画界面就可以做出好看的界面，如何根据这些简单的方法画出好看的界面请看 [WPF 源代码 从零开始写一个 UI 框架](https://blog.lindexi.com/post/WPF-%E6%BA%90%E4%BB%A3%E7%A0%81-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99%E4%B8%80%E4%B8%AA-UI-%E6%A1%86%E6%9E%B6.html )
 
 更多请看 [SharpDx 系列](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html)
 
