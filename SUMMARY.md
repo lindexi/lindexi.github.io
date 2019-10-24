@@ -306,7 +306,7 @@
 
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
 
- * [dotnet 列表 Linq 的 Task 用法](dotnet-列表-Linq-的-Task-用法.md)
+ * [dotnet 列表 Linq 的 Take 用法](dotnet-列表-Linq-的-Take-用法.md)
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
 

@@ -23,7 +23,7 @@
 
  - [WPF 使用 SharpDx 异步渲染](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.html )
 
-更多请看 [WPF 使用 SharpDx 渲染博客导航](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-sharpdx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA )
+更多请看 [WPF 使用 SharpDx 渲染博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
 虽然上一篇告诉大家如何使用封装的 SharpDx 控件，但是大家也看到了核心是使用`CompositionTarget`告诉刷新的。
 
@@ -35,7 +35,7 @@
 
 因为使用 SharpDx 在 WPF 除了使用 D3DImage 还可以使用 D3D11Image 但是这个需要分开 x86 和 x64 。现在使用的方法是把 D3DImage 作为图片画出来，如果使用 D3D11Image 也没有什么性能提升。
 
-所以本文就和[WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用的基类不同，原来的基类是 Image 现在的基类是 `FrameworkElement` 。但是如果使用 Image 而且每次刷新的都是比较小的，性能会比使用 FrameworkElement 画出高一些。
+所以本文就和[WPF 使用封装的 SharpDx 控件](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用的基类不同，原来的基类是 Image 现在的基类是 `FrameworkElement` 。但是如果使用 Image 而且每次刷新的都是比较小的，性能会比使用 FrameworkElement 画出高一些。
 
 这里因为封装没有告诉需要刷新的大小，所以只能每次都全部刷新，这样的性能使用 FrameworkElement 不会降低。
 
@@ -55,7 +55,7 @@
 protected abstract void OnRender(SharpDX.Direct2D1.RenderTarget renderTarget);
 ```
 
-其他的代码和[WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用的差不多
+其他的代码和[WPF 使用封装的 SharpDx 控件](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用的差不多
 
 直接通过 OnRender 就可以进行渲染，但是 OnRender 是被触发的，触发的方法是调用基类 `Rendering` 函数，调用了这个函数会进入异步的 SharpDx 渲染，渲染完成再通过 WPF 渲染画出来。
 
@@ -71,7 +71,7 @@ protected abstract void OnRender(SharpDX.Direct2D1.RenderTarget renderTarget);
 
 如果需要使用 SharpDx 需要把 SharpDX.Direct3D11 和 D3DImage 绑定，调用时不能在这个控件的 Load 前，不然无法拿到大小。
 
-下面这个方法和[WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用相同，所以我就直接写代码不解释了。
+下面这个方法和[WPF 使用封装的 SharpDx 控件](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )使用相同，所以我就直接写代码不解释了。
 
 ```csharp
         private void CreateAndBindTargets(int actualWidth, int actualHeight)
@@ -260,7 +260,7 @@ protected abstract void OnRender(SharpDX.Direct2D1.RenderTarget renderTarget);
 
 这个控件可以用在不需要立刻渲染的资源，但是渲染很慢，可以在用户做其他的输入进行渲染。因为默认的渲染都会让用户感觉软件速度有些慢，不过和这个做法相同的是使用 RenderTargetBitmap ，在另一个线程渲染，然后在主线程显示。
 
-和  RenderTargetBitmap 不同的，本文的方法可以在显卡渲染，渲染性能比 RenderTargetBitmap 高。
+和 RenderTargetBitmap 不同的，本文的方法可以在显卡渲染，渲染性能比 RenderTargetBitmap 高。
 
 ## 多线程渲染
 
