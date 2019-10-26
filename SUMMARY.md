@@ -438,6 +438,8 @@
 
  * [HttpRepl 互操作的 RESTful HTTP 服务调试命令行工具](HttpRepl-互操作的-RESTful-HTTP-服务调试命令行工具.md)
 
+ * [Inno Setup 安装包脚本 Run 的 Flags 标记](Inno-Setup-安装包脚本-Run-的-Flags-标记.md)
+
  * [jekyll 在博客添加流程图](jekyll-在博客添加流程图.md)
 
  * [jekyll 如何加密博客 防止抓取](jekyll-如何加密博客-防止抓取.md)

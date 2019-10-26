@@ -12,7 +12,6 @@
 
 ```csharp
 dotnet publish -c Release --self-contained -r win-x86
-
 ```
 
 这时可以在输出的文件夹 bin 的 `Release\netcoreapp2.1\win-x86\publish` 文件夹看到输出的文件，可以看到输出的文件很多，这时通过 Powershell 下载 warp 工具
@@ -47,7 +46,19 @@ dotnet publish -c Release --self-contained -r win-x86
 
 限制：
 
-当前（2019年1月3日）只能发布 x64 的版本的程序，如 windows x64 和 linux x64 程序。
+当前（2019年1月3日）只能发布 x64 的版本的程序，如 windows x64 和 linux x64 程序
+
+## 命令行工具
+
+现在可以通过 dotnet 工具使用 warp 发布，在使用之前先安装工具
+
+```csharp
+dotnet tool install --global dotnet-warp
+```
+
+安装完成可以在输出文件夹里面执行 `dotnet-warp` 就可以打包为单个exe文件
+
+这个项目在[github](https://github.com/dgiagio/warp)欢迎小伙伴访问
 
 ## 使用 dotnet 命令行发布
 
@@ -68,6 +79,8 @@ dotnet publish -r win10-x64 /p:PublishSingleFile=true
 [Single exe self contained console app · Issue #13329 · dotnet/corefx](https://github.com/dotnet/corefx/issues/13329 )
 
 [Announcing .NET Core 3.0 Preview 5](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-5/ )
+
+[dotnet-warp && NSSM 部署 .net core 项目到 windows 服务 - 易墨 - 博客园](https://www.cnblogs.com/morang/p/10792109.html )
 
 
 
