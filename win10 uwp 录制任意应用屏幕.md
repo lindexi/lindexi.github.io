@@ -3,7 +3,6 @@
 在 1803 可以使用 Windows.Graphics.Capture 捕获屏幕，可以用来录制应用的窗口
 
 <!--more-->
-<!-- csdn -->
 
 通过 CompositionAPI 和 win2d 可以作为 D3D 绘制，通过 Direct3D11CaptureFramePool 可以拿到其他应用的界面渲染图，这样就可以完成拿到其他窗口绘制在这个窗口内
 
