@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：resharper -->
 
 ## Resharper 的拼写
@@ -81,7 +80,7 @@
 
 [hunspell/hunspell: The most popular spellchecking library.](https://github.com/hunspell/hunspell )
 
-https://stackoverflow.com/q/52158837/6116637
+[https://stackoverflow.com/q/52158837/6116637](https://stackoverflow.com/q/52158837/6116637)
 
 
 

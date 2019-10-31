@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 这只是一个简单的工具，下面让我告诉大家做出来的效果
 
@@ -143,7 +142,8 @@ http://你的ip:5006/GitLabWebHook/MergeRequest
 
 嗯，代码现在还在进行优化，关键是将这个工具用起来，十分欢迎大家加入开发
 
-[在 Gitlab 开启 MatterMost 机器人](https://blog.lindexi.com/post/%E5%9C%A8-gitlab-%E5%BC%80%E5%90%AF-mattermost-%E6%9C%BA%E5%99%A8%E4%BA%BA )
+[在 Gitlab 开启 MatterMost 机器人](https://blog.lindexi.com/post/%E5%9C%A8-Gitlab-%E5%BC%80%E5%90%AF-MatterMost-%E6%9C%BA%E5%99%A8%E4%BA%BA.html )
+
 
 
 

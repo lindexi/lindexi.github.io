@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 <!-- 标签：VisualStudio -->
 
 在安装完成之后会看到创新的欢迎界面，这个欢迎界面支持输入关键字搜项目，同时支持选择语言平台
@@ -139,7 +138,7 @@ NYWVH-HT4XC-R2WYW-9Y3CM-X4V3Y
 
 <!-- 过滤引用 解决方法 值断点 -->
 
-[VisualStudio 2019 尝试使用 C# 8.0 新的方式](https://blog.lindexi.com/post/visualstudio-2019-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8-c-8.0-%E6%96%B0%E7%9A%84%E6%96%B9%E5%BC%8F )
+[VisualStudio 2019 尝试使用 C# 8.0 新的方式](https://blog.lindexi.com/post/VisualStudio-2019-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8-C-8.0-%E6%96%B0%E7%9A%84%E6%96%B9%E5%BC%8F.html)
 
 
 
