@@ -12,6 +12,8 @@
 
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
 
+ * [asp dotnet core 简单开发P2P中央服务器](asp-dotnet-core-简单开发P2P中央服务器.md)
+
  * [asp dotnet core 通过图片统计 csdn 用户访问](asp-dotnet-core-通过图片统计-csdn-用户访问.md)
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)

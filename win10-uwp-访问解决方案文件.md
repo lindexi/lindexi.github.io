@@ -19,7 +19,7 @@
 ```
 
 ```csharp
-var file = await  StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/1.png")); 
+var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/1.png")); 
 ```
 
 那么我们访问我们解决方案加的 ms-appx 就是解决方案的绝对路径，如果我们相对于我们xaml的路径也是可以
@@ -45,19 +45,22 @@ var file=await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdate://
 
 WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF使用 `pack://application:,,,/` 的方法 参见 https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396
 
-具体请看 [WPF 使用 VisualStudio 2017 项目文件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-VisualStudio-2017-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6.html )
+具体请看 [WPF 使用 VisualStudio 2017 项目文件](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-VisualStudio-2017-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6.html )
 
 ## C# 访问解决方案文件
 
 如果是命令行，那么可以使用 Resource 放文件，然后读取
 
-读取到的文件是 byte[]  ，如果需要转 stream ，请看下面代码，其中资源文件名称为 resource ，资源文件里的文件是 res，资源文件是没有后缀，所以打开不能通过后缀判断
+在项目右击新建资源文件，注意这个文件的后缀是 resw 格式，创建之后，点击添加文件，选取项目里面的现有文件。此时将会自动生成代码，包括添加的文件的二进制数组属性
+
+读取到的文件是 byte[] 数组 ，如果需要转 stream 请看下面代码，其中资源文件名称为 resource ，资源文件里的文件是 Res 属性，资源文件是没有后缀，所以打开不能通过后缀判断
 
 
 ```csharp
-    new MemoryStream(resource.res)
+    new MemoryStream(resource.Res)
 ```
 
+也就是将 byte 数组转换为 MemoryStream 从而转为 Stream 作为参数
 
 
 
