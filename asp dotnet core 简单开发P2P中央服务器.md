@@ -193,4 +193,76 @@
 
 有小伙伴问如果有一个外网地址就访问一次，那是不是数据库的内容就会占用。其实我不关注这个问题，因为我使用内存数据库，我大概几天就关机一次。另外，按照每个客户端报告一个内网 IP 加上端口，也就是大概21个字符，加上外网 IP 和 Id 这些属性，可以看到数据量是非常小。假设每个客户端需要 1kb 的内存，那么 1G 的内存足够 100w 客户端，如果有这么多客户端，我就可以去打广告。然而我只有 10 个客户端
 
+本文的代码可以修改一下在你的项目中使用，非常简单，但是效果不错
+
+客户端需要[获取本机 IP 地址](https://blog.lindexi.com/post/dotnet-%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BA-IP-%E5%9C%B0%E5%9D%80%E6%96%B9%E6%B3%95.html) 加上本机的端口，拼接链接访问
+
+```csharp
+    var localIp = string.Join(';',
+                   GetLocalIpList().Select(temp => $"{temp}:{port}"));
+```
+
+上面代码的 GetLocalIpList 方法请看我博客 [dotnet 获取本机 IP 地址方法](https://blog.lindexi.com/post/dotnet-%E8%8E%B7%E5%8F%96%E6%9C%AC%E6%9C%BA-IP-%E5%9C%B0%E5%9D%80%E6%96%B9%E6%B3%95.html) 
+
+然后拼接链接
+
+```csharp
+        var url = $"http://p2p.api.acmx.xyz/api/peer/{localIp}";
+```
+
+上面的链接就是我部署的链接，如果小伙伴不想自己写服务器，也可以用我的。如果我关机了，这个链接就访问不到
+
+我的服务器虽然很好，但是网很差，所以我设置了超时时间比较长
+
+```csharp
+                    var httpClient = new HttpClient()
+                    {
+                        Timeout = TimeSpan.FromMinutes(10)
+                    };
+
+                    using (httpClient)
+                    {
+                        var remoteIp = await httpClient.GetStringAsync(url);
+                        var ipList = GetIpList(remoteIp).Where(temp =>
+                            !string.IsNullOrEmpty(temp.ip) && !string.IsNullOrEmpty(temp.port)).ToList();
+                    }
+```
+
+这里的 GetIpList 就是解析服务器返回
+
+```csharp
+        private IEnumerable<(string ip, string port)> GetIpList(string remoteIp)
+        {
+            var ipList = remoteIp.Split(';');
+            foreach (var ip in ipList)
+            {
+                yield return IpRegex.Parse(ip);
+            }
+        }
+
+    class IpRegex
+    {
+        public static (string ip, string port) Parse(string str)
+        {
+            var regex = new Regex(@"(\d+\.\d+\.\d+\.\d+):(\d+)");
+
+            var match = regex.Match(str);
+
+            if (match.Success)
+            {
+                var ip = match.Groups[1].Value;
+                var port = match.Groups[2].Value;
+
+                return (ip, port);
+            }
+
+            return default;
+        }
+    }
+```
+
+现在拿到了一些 IP 和端口，尝试访问这些客户端看能不能访问
+
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
