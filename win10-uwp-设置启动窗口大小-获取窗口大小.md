@@ -99,7 +99,7 @@ ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(200, 100));
 
 ```
 
-上面代码是 MasterDetail 使用的，参见 [http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/ )
+上面代码是 MasterDetail 使用的，参见 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
 
 
 

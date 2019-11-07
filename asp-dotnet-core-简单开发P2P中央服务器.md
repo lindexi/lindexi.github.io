@@ -218,14 +218,14 @@
 我的服务器虽然很好，但是网很差，所以我设置了超时时间比较长
 
 ```csharp
-                    var [httpClient](httpClient ) = new [HttpClient()](HttpClient() )
+                    var httpClient = new HttpClient()
                     {
                         Timeout = TimeSpan.FromMinutes(10)
                     };
 
-                    using ([httpClient)](httpClient) )
+                    using (httpClient)
                     {
-                        var remoteIp = await [httpClient.GetStringAsync(url);](httpClient.GetStringAsync(url); )
+                        var remoteIp = await httpClient.GetStringAsync(url);
                         var ipList = GetIpList(remoteIp).Where(temp =>
                             !string.IsNullOrEmpty(temp.ip) && !string.IsNullOrEmpty(temp.port)).ToList();
                     }

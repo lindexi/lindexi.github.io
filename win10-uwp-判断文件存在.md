@@ -1,7 +1,7 @@
 
 # win10 uwp 判断文件存在
 
-本文主要翻译[http://stackoverflow.com/questions/37119464/uwp-check-if-file-exists/37152526#37152526](http://stackoverflow.com/questions/37119464/uwp-check-if-file-exists/37152526#37152526 )
+本文主要翻译http://stackoverflow.com/questions/37119464/uwp-check-if-file-exists/37152526#37152526
 我们有多种方法可以判断文件是否存在，最简单的方法是异常
 
 <!--more-->
@@ -25,7 +25,7 @@
             }
 ```
 
-发现已经有大神写了 [http://www.cnblogs.com/bomo/p/4934447.html](http://www.cnblogs.com/bomo/p/4934447.html )
+发现已经有大神写了 http://www.cnblogs.com/bomo/p/4934447.html
 
 我上面写的异常其实不对，因为exception会获得全部异常，如果文件存在，也是会报异常如果文件被写或者什么原因，看了大神的博客使用`FileNotFoundException`我们可以通过异常知道文件不存在。
 
@@ -79,7 +79,7 @@ public async Task<bool> isFilePresent(string fileName)
 
 <a href="http://www.codeproject.com/script/Articles/BlogFeedList.aspx?amid=12520573" rel="tag">CodeProject</a>
 
-[https://blogs.msdn.microsoft.com/shashankyerramilli/2014/02/17/check-if-a-file-exists-in-windows-phone-8-and-winrt-without-exception/](https://blogs.msdn.microsoft.com/shashankyerramilli/2014/02/17/check-if-a-file-exists-in-windows-phone-8-and-winrt-without-exception/ )
+https://blogs.msdn.microsoft.com/shashankyerramilli/2014/02/17/check-if-a-file-exists-in-windows-phone-8-and-winrt-without-exception/
 
 
 

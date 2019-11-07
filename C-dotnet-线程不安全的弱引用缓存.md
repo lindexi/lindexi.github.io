@@ -121,6 +121,8 @@
     }
 ```
 
+此方法是线程不安全的，请不要在多线程下使用此方法，可以通过 [线程静态字段](https://blog.lindexi.com/post/dotnet-%E7%BA%BF%E7%A8%8B%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5.html ) 让一个线程有一个实例
+
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0f639d7a6334acf3c502065182c441113f24eb05/NaycekihallembeaDiwalkailedecer) 欢迎小伙伴访问
 
 

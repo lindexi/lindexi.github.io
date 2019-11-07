@@ -183,7 +183,7 @@
             str.Append("用户访问 ");
 
             Console.WriteLine(GetUserId());
-            Console.WriteLine("用户id =" + [HttpContextAccessor.HttpContext.Request.HttpContext.Session.Id);](HttpContextAccessor.HttpContext.Request.HttpContext.Session.Id); )
+            Console.WriteLine("用户id =" + HttpContextAccessor.HttpContext.Request.HttpContext.Session.Id);
 
             if (TryGetUserIpFromFrp(HttpContextAccessor.HttpContext.Request, out var ip))
             {

@@ -17,7 +17,7 @@
 
 我们可以在xaml写一个Button，然后就使用左键获取鼠标，这个可以去看 win10 uwp 获取按钮鼠标左键按下
 
-[http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%8E%B7%E5%8F%96%E6%8C%89%E9%92%AE%E9%BC%A0%E6%A0%87%E5%B7%A6%E9%94%AE%E6%8C%89%E4%B8%8B/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%8E%B7%E5%8F%96%E6%8C%89%E9%92%AE%E9%BC%A0%E6%A0%87%E5%B7%A6%E9%94%AE%E6%8C%89%E4%B8%8B/ )
+http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%8E%B7%E5%8F%96%E6%8C%89%E9%92%AE%E9%BC%A0%E6%A0%87%E5%B7%A6%E9%94%AE%E6%8C%89%E4%B8%8B/
 
 于是在Button_OnPointerMoved，我们获取移动的xy
 
@@ -140,7 +140,7 @@ Canvas：我的左边可以长度无限。
 
 好在[OneWindows](https://leoldev.wordpress.com/2016/12/18/uwp-manipulationdelta？蛤？/)的帮助
 
-参见：[http://www.cnblogs.com/cjw1115/p/5323339.html](http://www.cnblogs.com/cjw1115/p/5323339.html )
+参见：http://www.cnblogs.com/cjw1115/p/5323339.html
 
 
 

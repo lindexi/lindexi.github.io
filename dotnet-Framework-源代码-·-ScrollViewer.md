@@ -82,7 +82,7 @@
 
 如果需要在触摸使用滚动，那么需要设置`PanningMode`，可以设置支持垂直拖动。
 
-如果这时设置了`PanningMode`，就会发现拖动时让窗口抖动，这时需要在窗口重写 OnManipulationBoundaryFeedback ，请看下面代码。函数里面什么都不要写，详细请看 [https://stackoverflow.com/a/6918131/6116637](https://stackoverflow.com/a/6918131/6116637 )
+如果这时设置了`PanningMode`，就会发现拖动时让窗口抖动，这时需要在窗口重写 OnManipulationBoundaryFeedback ，请看下面代码。函数里面什么都不要写，详细请看 https://stackoverflow.com/a/6918131/6116637
 
 ```csharp
        protected override void OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs e)

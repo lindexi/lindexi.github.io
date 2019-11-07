@@ -113,9 +113,9 @@ gif 信息包括逻辑屏幕标识符(Logical Screen Descriptor)，全局颜色�
 
 gif 会把相同的图片作为索引，放在lzw，之后相同的数据就使用索引拿到，这样可以减少文件大小。
 
-关于 lzw，请看 [http://blog.csdn.net/abcjennifer/article/details/7995426](http://blog.csdn.net/abcjennifer/article/details/7995426 )
+关于 lzw，请看 http://blog.csdn.net/abcjennifer/article/details/7995426
 
-本文的格式大部分参考 [http://www.cnblogs.com/think/archive/2006/04/12/372942.html](http://www.cnblogs.com/think/archive/2006/04/12/372942.html )
+本文的格式大部分参考 http://www.cnblogs.com/think/archive/2006/04/12/372942.html
 
 关于 gif 解析请看
 
@@ -125,7 +125,7 @@ gif 会把相同的图片作为索引，放在lzw，之后相同的数据就使�
 
 [gif的故事：解剖表情动图的构成](http://www.alloyteam.com/2017/09/13121/ )
 
-一个 gif 解析的方法 [https://github.com/vurdalakov/abandoned/tree/master/gifdotnet/src/GifDotNet](https://github.com/vurdalakov/abandoned/tree/master/gifdotnet/src/GifDotNet )
+一个 gif 解析的方法 https://github.com/vurdalakov/abandoned/tree/master/gifdotnet/src/GifDotNet
 
 
 

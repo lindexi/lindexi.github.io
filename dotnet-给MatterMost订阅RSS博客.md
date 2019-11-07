@@ -21,7 +21,7 @@
 先用 HttpClient 获取 RSS 内容，定义参数 feedUri 表示需要获取的博客链接
 
 ```csharp
-            var xml = await [httpClient.GetStringAsync(feedUri);](httpClient.GetStringAsync(feedUri); )
+            var xml = await httpClient.GetStringAsync(feedUri);
 ```
 
 如我的博客是 [https://blog.lindexi.com/](https://blog.lindexi.com/) 我的订阅地址是 [https://blog.lindexi.com/](https://blog.lindexi.com/) 也就是在 feedUri 里面写的是订阅地址

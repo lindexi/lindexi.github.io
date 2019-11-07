@@ -84,7 +84,7 @@ public sealed class LayoutTransformer : ContentControl
 
 
 
-参见：[http://igrali.com/2012/09/17/layout-transform-in-windows-8-winrt-xaml/](http://igrali.com/2012/09/17/layout-transform-in-windows-8-winrt-xaml/ )
+参见：http://igrali.com/2012/09/17/layout-transform-in-windows-8-winrt-xaml/
 
 LayoutTransformer 代码
 

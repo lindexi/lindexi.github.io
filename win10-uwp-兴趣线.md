@@ -184,7 +184,7 @@ HorizontalAlignment="Center"
 
 做完左边，就去做右边，右边其实就是一个Border里面一个TextBlock，当然里面最好把TextBlock换Grid，注意Margin，这样就好啦。
 
-源代码：[https://github.com/lindexi/csdn-uwp](https://github.com/lindexi/csdn-uwp )
+源代码：https://github.com/lindexi/csdn-uwp
 
 
 

@@ -34,26 +34,26 @@
 
 原因
 
-用了`System.Net.Http.HttpClient`其实HttpStringContent是可以在错误看到，不是System.Net.[Http](Http )
+用了`System.Net.Http.HttpClient`其实HttpStringContent是可以在错误看到，不是System.Net.Http
 
 方法
 
 使用
 
 ```csharp
-           Windows.Web.[Http.HttpClient](Http.HttpClient ) web[HttpClient=](HttpClient= )
-                new Windows.Web.[Http.HttpClient();](Http.HttpClient(); )
+           Windows.Web.Http.HttpClient webHttpClient=
+                new Windows.Web.Http.HttpClient();
 
-           Windows.Web.[Http.HttpStringContent](Http.HttpStringContent ) [httpString=](httpString= )
+           Windows.Web.Http.HttpStringContent httpString=
                 new HttpStringContent("http://blog.csdn.net/lindexi_gd");
-            await web[HttpClient.PostAsync(new](HttpClient.PostAsync(new ) Uri(url), [httpString);](httpString); )
+            await webHttpClient.PostAsync(new Uri(url), httpString);
 ```
 
 
 ## win10 uwp post 上传文件
 
 我们可以使用HttpMultipartFormDataContent上传
-其中我们需要从文件转流，打开StorageFile，把它转换[HttpStreamContent](HttpStreamContent )
+其中我们需要从文件转流，打开StorageFile，把它转换HttpStreamContent
 
             var fileContent = new HttpStreamContent(await File.OpenAsync(FileAccessMode.Read));
 
@@ -77,14 +77,14 @@
 因为需要拿到上传图片
 
 ```csharp
-var str = await web[HttpClient.PostAsync(new](HttpClient.PostAsync(new ) Uri(url), [httpMultipartFormDataContent);](httpMultipartFormDataContent); )
+var str = await webHttpClient.PostAsync(new Uri(url), httpMultipartFormDataContent);
             ResponseString = str.Content.ToString();
             OnUploadedEventHandler?.Invoke(this,ResponseString);
 ```
 
 ## 所有代码
 
-[https://github.com/lindexi/Imageshack/tree/master/smms](https://github.com/lindexi/Imageshack/tree/master/smms )
+https://github.com/lindexi/Imageshack/tree/master/smms
 
 
 

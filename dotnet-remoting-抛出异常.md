@@ -152,7 +152,7 @@
 
 ![](https://i.loli.net/2018/04/08/5ac9ffb44217b.jpg)
 
-我的博客即将搬运同步至腾讯云+社区，邀请大家一同入驻：[https://cloud.tencent.com/developer/support-plan?invite_code=19bm8i8js1ezb](https://cloud.tencent.com/developer/support-plan?invite_code=19bm8i8js1ezb )
+我的博客即将搬运同步至腾讯云+社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=19bm8i8js1ezb
 
 
 

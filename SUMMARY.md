@@ -1198,6 +1198,8 @@
 
  * [wpf GifBitmapDecoder 解析 gif 格式](wpf-GifBitmapDecoder-解析-gif-格式.md)
 
+ * [WPF How to get plain text from RichTextBox](WPF-How-to-get-plain-text-from-RichTextBox.md)
+
  * [WPF ListBox 的选择](WPF-ListBox-的选择.md)
 
  * [win10 uwp listView 绑定前一项](win10-uwp-listView-绑定前一项.md)

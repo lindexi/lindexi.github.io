@@ -12,15 +12,15 @@
 
 于是我找到下面的文章，发现了好多个方法。
 
-[http://stackoverflow.com/questions/567757/how-do-i-distinguish-between-binary-and-text-files](http://stackoverflow.com/questions/567757/how-do-i-distinguish-between-binary-and-text-files )
+http://stackoverflow.com/questions/567757/how-do-i-distinguish-between-binary-and-text-files
 
-[http://magic.codeplex.com/](http://magic.codeplex.com/ )
+http://magic.codeplex.com/
 
-[https://stackoverflow.com/questions/4744890/c-sharp-check-if-file-is-text-based](https://stackoverflow.com/questions/4744890/c-sharp-check-if-file-is-text-based )
+https://stackoverflow.com/questions/4744890/c-sharp-check-if-file-is-text-based
 
-[https://stackoverflow.com/questions/910873/how-can-i-determine-if-a-file-is-binary-or-text-in-c](https://stackoverflow.com/questions/910873/how-can-i-determine-if-a-file-is-binary-or-text-in-c )
+https://stackoverflow.com/questions/910873/how-can-i-determine-if-a-file-is-binary-or-text-in-c
 
-[http://blog.csdn.net/cherylnatsu/article/details/6412898](http://blog.csdn.net/cherylnatsu/article/details/6412898 )
+http://blog.csdn.net/cherylnatsu/article/details/6412898
 
 最后发现Git的方法是判断一个文件中是否存在 '\0' 如果存在，那么判断为二进制，不是文本，当然对于 Utf-16 这个方法容易就炸了，显然没有一个好用的方法。
 

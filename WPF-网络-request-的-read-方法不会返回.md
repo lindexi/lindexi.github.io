@@ -29,7 +29,7 @@ request.ReadWriteTimeout = 20000;
                 //request.Headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
                 request.Method = "GET";
                 request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
-                //request.CachePolicy=new [HttpRequestCachePolicy()](HttpRequestCachePolicy() )
+                //request.CachePolicy=new HttpRequestCachePolicy()
                 //{
 
                 //};
@@ -39,7 +39,7 @@ request.ReadWriteTimeout = 20000;
                     "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
                 request.AllowAutoRedirect = true;
                 HttpWebResponse response = (HttpWebResponse) request.GetResponse();
-                if (response.StatusCode == [HttpStatusCode.OK)](HttpStatusCode.OK) )
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
                     using (StreamReader stream = new StreamReader(response.GetResponseStream()))
                     {

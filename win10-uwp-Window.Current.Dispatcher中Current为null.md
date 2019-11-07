@@ -1,7 +1,7 @@
 
 # win10 uwp Window.Current.Dispatcher中Current为null
 
-本文说的是进行网络中异步界面出现的错误，可能带有一定的主观性和局限性，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，可以在我博客评论 [http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
+本文说的是进行网络中异步界面出现的错误，可能带有一定的主观性和局限性，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，可以在我博客评论 http://blog.csdn.net/lindexi_gd
 
 <!--more-->
 
@@ -27,7 +27,7 @@
     }
  ```
 
-在老周博客：[http://www.cnblogs.com/tcjiaan/p/5511419.html](http://www.cnblogs.com/tcjiaan/p/5511419.html )
+在老周博客：http://www.cnblogs.com/tcjiaan/p/5511419.html
 
 但是我发现在 HttpRequest 中的函数出发了 OnPropertyChanged，这时发现 Current is null
  

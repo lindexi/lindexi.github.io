@@ -39,11 +39,11 @@ var file=await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdate://
 
 参见：[https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/hh965322(v=win.10).aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/hh965322\(v=win.10\).aspx)
 
-关于git [http://blog.csdn.net/marktheone/article/details/52062888](http://blog.csdn.net/marktheone/article/details/52062888 )
+关于git http://blog.csdn.net/marktheone/article/details/52062888
 
 ## WPF 访问解决方案文件
 
-WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF使用 `pack://application:,,,/` 的方法 参见 [https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396 )
+WPF 使用 Application.GetResourceStream 获得，注意 URL 和UWP不同，WPF使用 `pack://application:,,,/` 的方法 参见 https://msdn.microsoft.com/en-us/library/aa970069%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396
 
 具体请看 [WPF 使用 VisualStudio 2017 项目文件](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-VisualStudio-2017-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6.html )
 

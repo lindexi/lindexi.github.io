@@ -69,7 +69,7 @@ csvDoc = csv.SaveToString();
 如果不知道文件读写，请看[win10 uwp 读写文件](http://blog.csdn.net/lindexi_gd/article/details/49007841)
 
 
-[https://www.example-code.com/csharp_winrt/csv_create.asp](https://www.example-code.com/csharp_winrt/csv_create.asp )
+https://www.example-code.com/csharp_winrt/csv_create.asp
 
 
 

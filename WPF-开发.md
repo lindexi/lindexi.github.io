@@ -393,7 +393,7 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 ## WPF 第三方DLL 强签名
 
-参见：[http://www.cnblogs.com/xjt927/p/5317678.html](http://www.cnblogs.com/xjt927/p/5317678.html )
+参见：http://www.cnblogs.com/xjt927/p/5317678.html
 
 ## WPF 去掉最大化按钮
 

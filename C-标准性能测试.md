@@ -158,10 +158,10 @@ Benchmark was built without optimization enabled (most probably a DEBUG configur
 在控制台输入下面的命令安装 xunit.performance.api 
 
 ```csharp
-Install-Package xunit.performance.api -Version 1.0.0-beta-build0019 -Source [https://dotnet.myget.org/F/dotnet-core/api/v3/index.json](https://dotnet.myget.org/F/dotnet-core/api/v3/index.json )
+Install-Package xunit.performance.api -Version 1.0.0-beta-build0019 -Source https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
 ```
 
-如果找不到nuget控制台，那么设置 Nuget 添加源 [https://dotnet.myget.org/F/dotnet-core/api/v3/index.json](https://dotnet.myget.org/F/dotnet-core/api/v3/index.json )
+如果找不到nuget控制台，那么设置 Nuget 添加源 https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
 
 <!-- ![](image/C# 标准性能测试/C# 标准性能测试2.png) -->
 

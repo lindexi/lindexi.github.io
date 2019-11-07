@@ -143,13 +143,13 @@ await SvgImageRenderer.RendererImageAsync(file, new SvgImageRendererSettings()
 
 ![这里写图片描述](http://img.blog.csdn.net/20160731160141698)
 
-在最新版本，ms支持svg，参见：[https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.imaging.svgimagesource](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.imaging.svgimagesource )
+在最新版本，ms支持svg，参见：https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.imaging.svgimagesource
 
 所以在一个 Image控件加入源就好，不需要去做其他的代码。
 
-参见：[http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/](http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/ )
+参见：http://igrali.com/2015/12/24/how-to-render-svg-in-xaml-windows-10-uwp/
 
-代码：[https://github.com/lindexi/UWP/tree/master/uwp/src/ScalableVectorGraphic](https://github.com/lindexi/UWP/tree/master/uwp/src/ScalableVectorGraphic )
+代码：https://github.com/lindexi/UWP/tree/master/uwp/src/ScalableVectorGraphic
 
 ## win2d 使用 svg
 

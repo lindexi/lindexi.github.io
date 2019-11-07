@@ -208,7 +208,7 @@ vi btsync.conf
 
 参见：[BitTorrent Sync Installer 1.4.111](http://getos.org/btsync/14111.html )
 
-[https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html?utm_source=tuicool&utm_medium=referral](https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html?utm_source=tuicool&utm_medium=referral )
+https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html?utm_source=tuicool&utm_medium=referral
 
 ## 搭建预定义主机
 

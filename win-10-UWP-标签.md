@@ -16,7 +16,7 @@
 
 我们使用RichBox，这个可以做我们标签
 
-源代码因为作者写的和UWP不一样，我改UWP，放在[https://github.com/lindexi/TagList](https://github.com/lindexi/TagList )
+源代码因为作者写的和UWP不一样，我改UWP，放在https://github.com/lindexi/TagList
 
 运行效果
 
@@ -133,7 +133,7 @@ foreach (InlineUIContainer container in buttonsToRemove)
 ```
 
 
-源码：[https://github.com/Depechie/TagList](https://github.com/Depechie/TagList )
+源码：https://github.com/Depechie/TagList
 
 
 
