@@ -59,7 +59,7 @@
 
 ![](http://image.acmx.xyz/7fbd5d52-1ce3-4cd7-a438-1795c3f8517e2016123119328.jpg)
 
-我们选英语和中文 ，参见 https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/mt607079.aspx
+我们选英语和中文 ，参见 [https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/mt607079.aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/mt607079.aspx )
 
 然后我们可以看到多了 .xlf 文件
 
@@ -98,11 +98,11 @@
 
 多谢 李继龙 大神
 
-参见：http://www.cnblogs.com/yanxiaodi/p/5091970.html
+参见：[http://www.cnblogs.com/yanxiaodi/p/5091970.html](http://www.cnblogs.com/yanxiaodi/p/5091970.html )
 
-https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPError=-2147217396
+[https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/zh-cn/library/windows/apps/jj569303.aspx?f=255&MSPPError=-2147217396 )
 
-http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps
+[http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps](http://blog.giovannimodica.com/post/how-to-use-multilingual-app-toolkit-in-universal-apps )
 
 但是微软做的多语言太垃圾了，所以我需要使用一个比较好的方法，我现在的项目使用的就是一个很好的方法，尝试把他放在 UWP ，看可不可以。
 

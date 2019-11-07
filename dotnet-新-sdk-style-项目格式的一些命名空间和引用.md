@@ -8,7 +8,7 @@
 
 <!-- cdsn -->
 
-## System.Net.Http
+## System.Net.[Http](Http )
 
 引用方法
 
@@ -22,8 +22,8 @@
 
 包含类有
 
-- System.Net.Http.HttpClient
-- System.Net.Http.HttpMethod
+- System.Net.[Http.HttpClient](Http.HttpClient )
+- System.Net.[Http.HttpMethod](Http.HttpMethod )
 
 ## System.Web
 
@@ -37,7 +37,7 @@
 
 包含以下命名空间
 
-- System.Web.HttpUtility
+- System.Web.[HttpUtility](HttpUtility )
 
 
 

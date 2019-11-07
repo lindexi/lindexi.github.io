@@ -25,7 +25,7 @@ dotnet httprepl 入口URL
 如官方的例子知道了访问 `http://localhost:65369/` 链接
 
 ```csharp
-dotnet httprepl http://localhost:65369/
+dotnet [httprepl](httprepl ) [http://localhost:65369/](http://localhost:65369/ )
 ```
 
 如果在执行以上命令的时候提示没有安装足够的 .NET Core 框架版本，那么请自行从[官方](https://dotnet.microsoft.com/download) 下载最新版本和最新预览版本安装
@@ -40,14 +40,14 @@ The specified framework 'Microsoft.NETCore.App', version '3.0.0-preview6-27804-0
 通过输入 `get` 命令就可以直接拉取，用起来十分简单，详细使用方法请下载安装之后输入以下命令就可以看到
 
 ```csharp
-dotnet httprepl http://blog.lindexi.com
+dotnet [httprepl](httprepl ) [http://blog.lindexi.com](http://blog.lindexi.com )
 help
 ```
 
 看到的控制台输出大概如下
 
 ```csharp
-C:\Users\lindexi>dotnet httprepl http://blog.lindexi.com
+C:\Users\lindexi>dotnet [httprepl](httprepl ) [http://blog.lindexi.com](http://blog.lindexi.com )
 (Disconnected)~ set base "http://blog.lindexi.com"
 
 http://blog.lindexi.com/~ help

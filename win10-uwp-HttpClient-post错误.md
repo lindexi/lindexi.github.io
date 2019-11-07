@@ -13,19 +13,19 @@
 
 原因
 
-用了`System.Net.Http.HttpClient`其实HttpStringContent是可以在错误看到，不是System.Net.Http
+用了`System.Net.Http.HttpClient`其实HttpStringContent是可以在错误看到，不是System.Net.[Http](Http )
 
 方法
 
 使用
 
 ```csharp
-           Windows.Web.Http.HttpClient webHttpClient=
-                new Windows.Web.Http.HttpClient();
+           Windows.Web.[Http.HttpClient](Http.HttpClient ) web[HttpClient=](HttpClient= )
+                new Windows.Web.[Http.HttpClient();](Http.HttpClient(); )
 
-           Windows.Web.Http.HttpStringContent httpString=
+           Windows.Web.[Http.HttpStringContent](Http.HttpStringContent ) [httpString=](httpString= )
                 new HttpStringContent("a");
-            await webHttpClient.PostAsync(new Uri(url), httpString);
+            await web[HttpClient.PostAsync(new](HttpClient.PostAsync(new ) Uri(url), [httpString);](httpString); )
 ```
 
 

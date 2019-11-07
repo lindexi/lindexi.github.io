@@ -128,7 +128,7 @@ We can use MSBuild Escape to escape the semicolons and you can see the code.
     <PropertyGroup>
       <SomeThing>
         <![CDATA[
-using System%3b
+using System;
 
 namespace CeseacooteeGowgu
 {
@@ -155,6 +155,13 @@ The `[MSBuild]::Escape` can use [property function](https://docs.microsoft.com/e
 
 [How to: Escape Special Characters in MSBuild - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/how-to-escape-special-characters-in-msbuild?wt.mc_id=MVP )
 
+
+In the CDATA section that follows, 
+             
+- `%40` = `@`
+- `%25` = `% `
+- `%3B` = `;`
+- `%24` = `$`
 
 
 

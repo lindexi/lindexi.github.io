@@ -21,7 +21,7 @@
 这样就可以把相对路径转绝对。
 
 
-参见：http://stackoverflow.com/questions/4796254/relative-path-to-absolute-path-in-c
+参见：[http://stackoverflow.com/questions/4796254/relative-path-to-absolute-path-in-c](http://stackoverflow.com/questions/4796254/relative-path-to-absolute-path-in-c )
 
 
 

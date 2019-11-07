@@ -163,9 +163,9 @@ internal static readonly UncommonField<EventHandlersStore> EventHandlersStoreFie
 
 从上面的代码可以自己定义一个和他一样的类，用来存放比较少的属性，但是使用不多，因为现在的软件很少需要减少那么少的内存。
 
-参见：https://stackoverflow.com/a/18280136/6116637
+参见：[https://stackoverflow.com/a/18280136/6116637](https://stackoverflow.com/a/18280136/6116637 )
 
-https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/UncommonField.cs
+[https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/UncommonField.cs](https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/UncommonField.cs )
 
 
 

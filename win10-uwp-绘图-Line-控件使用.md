@@ -60,7 +60,7 @@ Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是�
 
 ![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515828.jpg)
 
-接着就是ms-uap 写的 http://www.cnblogs.com/ms-uap/p/4641419.html
+接着就是ms-uap 写的 [http://www.cnblogs.com/ms-uap/p/4641419.html](http://www.cnblogs.com/ms-uap/p/4641419.html )
 
 我们给他一个StrokeDashArray，这个值就是很多数，奇数的数就是显示宽度，偶数的就是不显示的宽度，读到最后的数就循环到最前。我们设置一个0.1一个0.2就会显示0.1的宽度，然后空0.2再显示0.1
 

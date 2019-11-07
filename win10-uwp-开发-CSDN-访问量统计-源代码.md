@@ -182,7 +182,7 @@
         private void ResponseCallBack(IAsyncResult result)
         {
             HttpWebRequest http = (HttpWebRequest) result.AsyncState;
-            WebResponse webResponse = http.EndGetResponse(result);
+            WebResponse webResponse = [http.EndGetResponse(result);](http.EndGetResponse(result); )
             using (Stream stream = webResponse.GetResponseStream())
             {
                 using (StreamReader read = new StreamReader(stream))
@@ -343,9 +343,9 @@
                 _page++;
             }
 
-            HttpGet();
+            [HttpGet();](HttpGet(); )
 
-            //HttpClient client = new HttpClient()
+            //[HttpClient](HttpClient ) client = new [HttpClient()](HttpClient() )
             //{
             //    Timeout = new TimeSpan(1000)
             //};

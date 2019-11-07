@@ -169,9 +169,9 @@ Encoding encodingGbk = Encoding.GetEncoding("GBK");
         }
 ```
 
-参考：http://stackoverflow.com/questions/35296213/read-unicode-string-from-text-file-in-uwp-app/38299563#38299563
+参考：[http://stackoverflow.com/questions/35296213/read-unicode-string-from-text-file-in-uwp-app/38299563#38299563](http://stackoverflow.com/questions/35296213/read-unicode-string-from-text-file-in-uwp-app/38299563#38299563 )
 
-http://www.cnblogs.com/loyieking/p/5617508.html
+[http://www.cnblogs.com/loyieking/p/5617508.html](http://www.cnblogs.com/loyieking/p/5617508.html )
 
 [难道.NET Core到R2连中文编码都不支持吗？ - Artech - 博客园](http://www.cnblogs.com/artech/p/encoding-registeration-4-net-core.html )
 

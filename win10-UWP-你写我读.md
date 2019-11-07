@@ -4,7 +4,7 @@
 想要电脑读出我们写的内容，在win10，很简单
 其实这个技术在windows7就有了，但是现在 win10 写出一个你写我读的软件很简单。
 我们需要一个类 `MediaElement` 来播放，因为 windows10 的M arkdown 软件用的不是很好，所有我自己写一个。
-这个软件我用了你写我读，如果需要代码，请自己去下 https://github.com/lindexi/Markdown
+这个软件我用了你写我读，如果需要代码，请自己去下 [https://github.com/lindexi/Markdown](https://github.com/lindexi/Markdown )
 
 <!--more-->
 
@@ -48,7 +48,7 @@ media_element.Play();
 如果想知道更多
 Volume 声音，请看老周博客
 
-参考：http://www.cnblogs.com/tcjiaan/
+参考：[http://www.cnblogs.com/tcjiaan/](http://www.cnblogs.com/tcjiaan/ )
 
 
 

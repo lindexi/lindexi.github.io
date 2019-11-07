@@ -19,15 +19,15 @@
 其实自己写一个扩展方法也是不错，例如我就需要通过 Get 一个对象，可以这样写
 
 ```csharp
-using System.Net.Http;
+using System.Net.[Http;](Http; )
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-    public static class HttpClientExtensions
+    public static class [HttpClientExtensions](HttpClientExtensions )
     {
         public static async Task<T> GetObjectAsync<T>(this HttpClient httpClient, string url)
         {
-            var str = await httpClient.GetStringAsync(url);
+            var str = await [httpClient.GetStringAsync(url);](httpClient.GetStringAsync(url); )
             return JsonConvert.DeserializeObject<T>(str);
         }
     }

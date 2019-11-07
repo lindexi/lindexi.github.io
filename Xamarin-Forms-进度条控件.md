@@ -2,7 +2,7 @@
 # Xamarin Forms 进度条控件
 
 本文翻译：http://xamlnative.com/2016/04/14/xamarin-forms-a-simple-circular-progress-control/ 里面都是胡说的，如果看不懂可以联系邮箱
-源代码：https://github.com/billreiss/xamlnative/tree/master/XamarinForms/CircularProgress
+源代码：[https://github.com/billreiss/xamlnative/tree/master/XamarinForms/CircularProgress](https://github.com/billreiss/xamlnative/tree/master/XamarinForms/CircularProgress )
 最近作者需要做一个简单的圆形的等待控件在一个Xamarin Forms应用，效果可以看
 ![这里写图片描述](http://img.blog.csdn.net/20160428145540311)
 
@@ -28,7 +28,7 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160428150553877)
 
-图片可以在：https://github.com/billreiss/xamlnative/tree/master/XamarinForms/CircularProgress/CircularProgress/CircularProgress.Droid/Resources/drawable
+图片可以在：[https://github.com/billreiss/xamlnative/tree/master/XamarinForms/CircularProgress/CircularProgress/CircularProgress.Droid/Resources/drawable](https://github.com/billreiss/xamlnative/tree/master/XamarinForms/CircularProgress/CircularProgress/CircularProgress.Droid/Resources/drawable )
 
 两个保存格式Png图片，一个图表示0-50%，我们叫第一图“completed”，第二“pending”，颜色深的是第一，进度我们需要一个completed，两个pending，我们先放completed，然后在它上面放pending，在pending对面放pending，第一个图在代码叫“progress1”，第二“background1”，第二个覆盖第一个，第三个pending旋转180，总的一个蓝色圆，这是0%
 
@@ -177,7 +177,7 @@ namespace CircularProgress
 
 不使用自定义渲染，可以在各个平台没有使用厉害的技术覆盖两个图做出从0-100%，可以使用不同角度表示0.001
 
-本文：http://blog.csdn.net/lindexi_gd
+本文：[http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
 
 
 

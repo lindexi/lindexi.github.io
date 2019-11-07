@@ -117,7 +117,7 @@ git clone git@github.com:dotnet-campus/DotNetGitLabWebHook.git
 在 URL 填写自己的 IP 拼接的链接
 
 ```csharp
-http://你的ip:5006/GitLabWebHook/MergeRequest
+[http://你的ip:5006/GitLabWebHook/MergeRequest](http://你的ip:5006/GitLabWebHook/MergeRequest )
 ```
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具5.png) -->

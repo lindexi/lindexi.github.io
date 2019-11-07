@@ -18,7 +18,7 @@ Type 'NuGet help <command>' for help on a specific command.
 
 Available commands:
 
- add         Adds the given package to a hierarchical source. http sources are not supported. For more info, goto https
+ add         Adds the given package to a hierarchical source. [http](http ) sources are not supported. For more info, goto [https](https )
              ://docs.nuget.org/consume/command-line-reference#add-command.
 
  config      获取或设置 NuGet 配置值。
@@ -28,7 +28,7 @@ Available commands:
  help (?)    显示一般帮助信息，以及有关其他命令的帮助信息。
 
  init        Adds all the packages from the <srcPackageSourcePath> to the hierarchical <destPackageSourcePath>. http fe
-             eds are not supported. For more info, goto https://docs.nuget.org/consume/command-line-reference#init-comm
+             eds are not supported. For more info, goto [https://docs.nuget.org/consume/command-line-reference#init-comm](https://docs.nuget.org/consume/command-line-reference#init-comm )
              and.
 
  install     使用指定的源安装程序包。如果未指定源，则将使用 NuGet 配置文件中定义的所有源。如果配置文件未指定源，则使用默认的 NuGet 源。
@@ -58,7 +58,7 @@ Available commands:
 
  verify      Verifies a signed NuGet package.
 
-有关详细信息，请访问 http://docs.nuget.org/docs/reference/command-line-reference
+有关详细信息，请访问 [http://docs.nuget.org/docs/reference/command-line-reference](http://docs.nuget.org/docs/reference/command-line-reference )
 ```
 
 可以已通过 `nuget update -self` 更新 Nuget 自己的版本

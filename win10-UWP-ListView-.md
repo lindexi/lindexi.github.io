@@ -59,7 +59,7 @@
 
 如果可以写在后台代码多的话，一个简单的方法是在SelectionChanged直接让 AddItems 的显示，其他不显示。
 
-如何想要定义样式，可以参见：https://msdn.microsoft.com/en-us/library/windows/apps/mt299136.aspx
+如何想要定义样式，可以参见：[https://msdn.microsoft.com/en-us/library/windows/apps/mt299136.aspx](https://msdn.microsoft.com/en-us/library/windows/apps/mt299136.aspx )
 
 首先把代码复制下来，然后修改 Selected 的动画，添加自己元素在ControlTemplate，看起来就是
 
@@ -187,7 +187,7 @@
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017%25E5%25B9%25B44%25E6%259C%258818%25E6%2597%25A5%2520090629.gif)
 
-参见：http://stackoverflow.com/questions/43461819/the-listviewitem-style-cant-trigger-unselected
+参见：[http://stackoverflow.com/questions/43461819/the-listviewitem-style-cant-trigger-unselected](http://stackoverflow.com/questions/43461819/the-listviewitem-style-cant-trigger-unselected )
 
 ## ListViewItem 默认
 

@@ -199,7 +199,7 @@ UWP图片水印简单，我们需要一个Image和一个水印，水印在图片
 
 ```
 
-参见：http://www.zmy123.cn/?p=1257
+参见：[http://www.zmy123.cn/?p=1257](http://www.zmy123.cn/?p=1257 )
 
 因为保存的图片比较大，我在找压缩图片的算法，找到了这个博客 [用C#开发一个WinForm版的批量图片压缩工具 - CSDN博客](http://blog.csdn.net/chinacsharper/article/details/9865491 ) 还有 [GDI+ 如何将图片绘制成圆形的图片 - CSDN博客](http://blog.csdn.net/chinacsharper/article/details/50854852 )
 

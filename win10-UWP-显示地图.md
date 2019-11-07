@@ -65,7 +65,7 @@ MainPage.xaml.cs
 点击就把地图中心设置在用户位置
 
 
-参考：http://www.wangchenran.com
+参考：[http://www.wangchenran.com](http://www.wangchenran.com )
 
 
 

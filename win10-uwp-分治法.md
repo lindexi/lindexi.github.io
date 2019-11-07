@@ -24,7 +24,7 @@ $$
  
 而且当点P3 在射线P1P2的左侧的时候，表达式为正，右侧表达式为负，三点同线的话表达式为0；算法中就利用该几何特性判断一个点在一条线的左侧还是右侧。
 
-参见：http://www.cnblogs.com/Booble/archive/2011/03/10/1980089.html
+参见：[http://www.cnblogs.com/Booble/archive/2011/03/10/1980089.html](http://www.cnblogs.com/Booble/archive/2011/03/10/1980089.html )
 
 我们有了一个后台，他可以有很多点，和得到边，我们如何从拿到的`List<Point> point`画出，和拿到的边的点画出
 
@@ -163,7 +163,7 @@ PathFigure第一个点`StartPoint = point[i]`，LineSegment第二个，`path_seg
 
 这样比第一个会多了`path_segment`，这个变量命名不对，但是我现在不想去改
 
-代码：https://github.com/lindexi/Algorithm
+代码：[https://github.com/lindexi/Algorithm](https://github.com/lindexi/Algorithm )
 
 做完我来运行
 

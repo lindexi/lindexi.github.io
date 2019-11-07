@@ -28,7 +28,7 @@ log 就是准备合并的dll
 
 执行代码就可以拿到 2.exe 直接把这个文件给小伙伴，他就不需要使用压缩包，直接打开 2.exe 就不会说找不到库。
 
-参见：http://www.cnblogs.com/blqw/p/LoadResourceDll.html
+参见：[http://www.cnblogs.com/blqw/p/LoadResourceDll.html](http://www.cnblogs.com/blqw/p/LoadResourceDll.html )
 
 [ILMerge将源DLL合并到目标EXE - HackerVirus - 博客园](http://www.cnblogs.com/Leo_wl/p/7792151.html )
 

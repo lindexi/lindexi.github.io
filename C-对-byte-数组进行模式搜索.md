@@ -64,7 +64,7 @@
     }
 ```
 
-这是最简单的方法，参见 https://stackoverflow.com/a/283648/6116637
+这是最简单的方法，参见 [https://stackoverflow.com/a/283648/6116637](https://stackoverflow.com/a/283648/6116637 )
 
 ## linq 
 
@@ -147,7 +147,7 @@
 
 ```
 
-参见：https://stackoverflow.com/q/16252518/6116637
+参见：[https://stackoverflow.com/q/16252518/6116637](https://stackoverflow.com/q/16252518/6116637 )
 
 测试了三个方法的性能，请看下面
 

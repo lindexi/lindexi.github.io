@@ -12,7 +12,7 @@
 
 软件可以直接[下载](http://download.csdn.net/detail/lindexi_gd/9718985)使用
 
-我还推荐一位大神做的神器 http://www.cnblogs.com/bomo/p/4888937.html
+我还推荐一位大神做的神器 [http://www.cnblogs.com/bomo/p/4888937.html](http://www.cnblogs.com/bomo/p/4888937.html )
 
 
 

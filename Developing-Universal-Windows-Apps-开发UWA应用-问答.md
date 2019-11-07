@@ -13,7 +13,7 @@
 - Answer: There is some code on that codeplex site, but more will be added after this course.
 
 - Q：是否已经有代码（xaml解析的代码）？
-- A：现在已有一些代码，不过更多的会在之后发布，http://xaml.codeplex.com
+- A：现在已有一些代码，不过更多的会在之后发布，[http://xaml.codeplex.com](http://xaml.codeplex.com )
 
 - Q:we need no VS?
 - A：Yes, you need VS.
