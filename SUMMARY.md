@@ -244,6 +244,8 @@
 
  * [dot net double 数组转 float 数组](dot-net-double-数组转-float-数组.md)
 
+ * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
+
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
 
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
@@ -1002,7 +1004,7 @@
 
  * [win10 安装Mpi](win10-安装Mpi.md)
 
- * [win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](win10-支持默认把触摸提升鼠标事件-打开-Pointer-消息.md)
+ * [win10 支持默认把触摸提升 Pointer 消息](win10-支持默认把触摸提升-Pointer-消息.md)
 
  * [win10 本地适配器不支持重要的低能耗控制器状态](win10-本地适配器不支持重要的低能耗控制器状态.md)
 

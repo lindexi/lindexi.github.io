@@ -1,5 +1,5 @@
 
-# win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息
+# win10 支持默认把触摸提升 Pointer 消息
 
 在 WPF 经常需要重写一套触摸事件，没有UWP的Pointer那么好用。
 如果一直都觉得 WPF 的触摸做的不好，或想解决 WPF 的触摸问题，但是没有方法，那么请看下面。
@@ -45,7 +45,7 @@
 </configuration>
 ```
 
-参见：https://msdn.microsoft.com/en-us/library/mt800336(v=vs.110).aspx
+参见：[Mitigation: Pointer-based Touch and Stylus Support](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/mitigation-pointer-based-touch-and-stylus-support?redirectedfrom=MSDN )
 
 
 
