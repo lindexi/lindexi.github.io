@@ -14,3 +14,6 @@
 
 本文将快速带大家入门使用 dotnet 进行桌面端开发、移动端开发、服务器后台开发、前端开发还有人工智能开发
 
+
+
+用 UNO 运行提示 `Process is terminating due to StackOverflowException` 是因为现在 UNO 不支持调试，请点击调试菜单，选择运行但不调试
