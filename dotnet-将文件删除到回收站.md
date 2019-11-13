@@ -21,7 +21,7 @@
             {
                 wFunc = FO_DELETE,
                 fFlags = FOF_ALLOWUNDO | FOF_NOCONFIRMATION,
-                // pFrom 需要在字符串后面加两个 \0 才可以 https://docs.microsoft.com/en-us/windows/desktop/api/shellapi/ns-shellapi-_shfileopstructa
+                // pFrom 需要在字符串后面加两个 \0 才可以 [https://docs.microsoft.com/en-us/windows/desktop/api/shellapi/ns-shellapi-_shfileopstructa](https://docs.microsoft.com/en-us/windows/desktop/api/shellapi/ns-shellapi-_shfileopstructa )
                 pFrom = file + "\0"
             };
             SHFileOperation(ref shf);

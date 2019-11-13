@@ -17,7 +17,7 @@
         
 在群里看到有大神问我就写出，虽然少，在没看到他们说之前没想到，九幽开发者：53078485
 
-参见：http://stackoverflow.com/questions/14168439/how-to-get-file-size-in-winrt
+参见：[http://stackoverflow.com/questions/14168439/how-to-get-file-size-in-winrt](http://stackoverflow.com/questions/14168439/how-to-get-file-size-in-winrt )
 
 ## 获取用户最近使用文件
 
@@ -32,7 +32,7 @@
 
 第一个很简单，用户最近使用文件或文件夹，这个只能保存25，我就在这里坑，他会自动删除，找了[https://msdn.microsoft.com/zh-cn/windows/uwp/files/how-to-track-recently-used-files-and-folders](https://msdn.microsoft.com/zh-cn/windows/uwp/files/how-to-track-recently-used-files-and-folders)，其实我们可以使用FutureAccessList ，这个可以使用1k个，但是为什么只有1k，好少，垃圾wr，要就给无限
 
-参见：http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BF%9D%E5%AD%98%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9%E6%96%87%E4%BB%B6%E5%A4%B9/
+参见：[http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BF%9D%E5%AD%98%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9%E6%96%87%E4%BB%B6%E5%A4%B9/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BF%9D%E5%AD%98%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9%E6%96%87%E4%BB%B6%E5%A4%B9/ )
 
 
         

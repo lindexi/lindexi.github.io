@@ -95,7 +95,7 @@ ApplicationViewWindowingMode可以`Auto` ,`PreferredLaunchViewSize`设置窗口�
 
 win10有很简单的API可以应用全屏，在电脑，我们经常用窗口，手机经常使用全屏。
 
-参见：http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/
+参见：[http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/](http://igrali.com/2015/06/21/full-screen-mode-in-windows-10-universal-apps/ )
 
 <!-- 对于窗口大小，参见：win10_uwp_she_zhi_qi_dong_chuang_kou_da_xiao_huo_q.md -->
 
@@ -120,7 +120,7 @@ win10有很简单的API可以应用全屏，在电脑，我们经常用窗口，
 
 <script src="https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082.js"></script>
 
-参见：https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082
+参见：[https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082](https://gist.github.com/gyakoo/cfef3ca0403d26a082afc8c055240082 )
 
 
 

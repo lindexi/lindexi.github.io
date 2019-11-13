@@ -119,7 +119,7 @@ needle：指针，英文我就不翻译
 
 [http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx](http://blogs.u2u.be/diederik/post/2015/12/14/The-Radial-Gauge-goes-UWP.aspx)
 
-使用代码：https://github.com/lindexi/UWP/tree/master/uwp/src/RadialGauge
+使用代码：[https://github.com/lindexi/UWP/tree/master/uwp/src/RadialGauge](https://github.com/lindexi/UWP/tree/master/uwp/src/RadialGauge )
 
 
 

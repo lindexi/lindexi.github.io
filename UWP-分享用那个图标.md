@@ -28,7 +28,7 @@
 
 现在大家可以看到`Segoe font`的分享图标替换为第二个图标。
 
-参见：https://medium.com/microsoft-design/the-iconography-of-sharing-183a1ad9c6f1#.escb5ggr5
+参见：[https://medium.com/microsoft-design/the-iconography-of-sharing-183a1ad9c6f1#.escb5ggr5](https://medium.com/microsoft-design/the-iconography-of-sharing-183a1ad9c6f1#.escb5ggr5 )
 
 
 

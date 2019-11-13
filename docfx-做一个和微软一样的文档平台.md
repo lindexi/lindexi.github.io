@@ -368,7 +368,7 @@ api文档是主要的，生成api文档需要安装vs2015以上。
          type: Namespace
 ```
 
-原文：http://dotnet.github.io/docfx/index.html
+原文：[http://dotnet.github.io/docfx/index.html](http://dotnet.github.io/docfx/index.html )
 
 
 ## 继续在微软上开发

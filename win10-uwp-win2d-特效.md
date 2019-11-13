@@ -246,7 +246,7 @@ Source2Amount = t
 
 <div style="position:relative;height:0;padding-bottom:75.0%"><iframe src="https://www.youtube.com/embed/k8kTRXkaQkY?ecver=2" width="480" height="360" frameborder="0" allow="autoplay; encrypted-media" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div>
 
-视频请看 https://youtu.be/k8kTRXkaQkY
+视频请看 [https://youtu.be/k8kTRXkaQkY](https://youtu.be/k8kTRXkaQkY )
 
 之外，还可以设置图片反色，设置反色的时候只能设置一张图片反色
 

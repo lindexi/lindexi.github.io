@@ -167,7 +167,7 @@ passwordBox.PasswordChanged += PasswordChanged;
 
 我们在PasswordChanged判断输入是不是PasswordBox，把密码传进PasswordProperty。
 
-参见：http://www.wpftutorial.net/PasswordBox.html
+参见：[http://www.wpftutorial.net/PasswordBox.html](http://www.wpftutorial.net/PasswordBox.html )
 
 还有一个简单方法
 

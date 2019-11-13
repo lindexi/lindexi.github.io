@@ -13,13 +13,13 @@
 但是因为是通过本地的 frp 发给用户，也就是本地是 frp 访问，如使用下面代码获取用户的 IP 地址拿到的是本地的地址
 
 ```csharp
-_accessor.HttpContext.Connection.RemoteIpAddress.ToString()
+_accessor.[HttpContext.Connection.RemoteIpAddress.ToString()](HttpContext.Connection.RemoteIpAddress.ToString() )
 ```
 
 上面代码的 `_accessor` 是注入的，需要在 Startup 的 ConfigureServices 添加下面代码
 
 ```csharp
-            services.AddHttpContextAccessor();
+            services.Add[HttpContextAccessor();](HttpContextAccessor(); )
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
 ```
 

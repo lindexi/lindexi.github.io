@@ -342,7 +342,7 @@ l.64 {\Pifont{psy}
 
 开始写的是 `\documentclass[3p,times]{elsarticle}` 
 
-就是引用 elsarticle，`\documentclass[]{elsarticle}` 选项可以使用参见：https://www.elsevier.com/__data/assets/pdf_file/0009/56844/elsdoc2.pdf
+就是引用 elsarticle，`\documentclass[]{elsarticle}` 选项可以使用参见：[https://www.elsevier.com/__data/assets/pdf_file/0009/56844/elsdoc2.pdf](https://www.elsevier.com/__data/assets/pdf_file/0009/56844/elsdoc2.pdf )
 
 <!-- ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=8345e12176ee74d31704d5702819e9ec) -->
 
@@ -806,9 +806,9 @@ Package natbib Error: Bibliography not compatible with author-year citations. (n
 \end{figure}
 ```
 
-参见：http://blog.sciencenet.cn/blog-400681-886697.html
+参见：[http://blog.sciencenet.cn/blog-400681-886697.html](http://blog.sciencenet.cn/blog-400681-886697.html )
 
-http://blog.csdn.net/bingfengxiao/article/details/6650096
+[http://blog.csdn.net/bingfengxiao/article/details/6650096](http://blog.csdn.net/bingfengxiao/article/details/6650096 )
 
 多图并排
 
@@ -859,9 +859,9 @@ http://blog.csdn.net/bingfengxiao/article/details/6650096
 ```
 
 
-http://blog.csdn.net/lsg32/article/details/8121417
+[http://blog.csdn.net/lsg32/article/details/8121417](http://blog.csdn.net/lsg32/article/details/8121417 )
 
-http://www.ctex.org/documents/latex/graphics/node109.html
+[http://www.ctex.org/documents/latex/graphics/node109.html](http://www.ctex.org/documents/latex/graphics/node109.html )
 
 ### 使用eps
 
@@ -889,13 +889,13 @@ epstopdf 图.eps
 
 把生成的pdf也放进去，这样生成就好
 
-重新为图片编号：http://www.52yfjc.com/2014/show.asp?id=887
+重新为图片编号：[http://www.52yfjc.com/2014/show.asp?id=887](http://www.52yfjc.com/2014/show.asp?id=887 )
 
 ### Visio转eps
 
-在线wmf转eps https://cloudconvert.com/wmf-to-eps
+在线wmf转eps [https://cloudconvert.com/wmf-to-eps](https://cloudconvert.com/wmf-to-eps )
 
-svg转eps http://cn.office-converter.com/SVG-to-EPS
+svg转eps [http://cn.office-converter.com/SVG-to-EPS](http://cn.office-converter.com/SVG-to-EPS )
 
 一个简单方法是选择要转换的图，新建一个visio，然后在页面大小，设为适应，然后保存为pdf就好，一般不需要在转
 
@@ -911,11 +911,11 @@ svg转eps http://cn.office-converter.com/SVG-to-EPS
 
 [Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
 
-插入公式：https://www.kancloud.cn/thinkphp/latex/41806
+插入公式：[https://www.kancloud.cn/thinkphp/latex/41806](https://www.kancloud.cn/thinkphp/latex/41806 )
 
-http://mohu.org/info/symbols/symbols.htm
+[http://mohu.org/info/symbols/symbols.htm](http://mohu.org/info/symbols/symbols.htm )
 
-http://blog.csdn.net/garfielder007/article/details/51646604
+[http://blog.csdn.net/garfielder007/article/details/51646604](http://blog.csdn.net/garfielder007/article/details/51646604 )
 
 #### 公式空格
 
@@ -988,7 +988,7 @@ Btsync:B74YC6AIP6J2CNK2CNTCXGG3NVGGMTTXO
 
 Btsync:BBXDB6T3LBPYJ6CVXTV7V6226FGXHXOFP
 
-https://sourceforge.net/projects/texstudio/?source=typ_redirect
+[https://sourceforge.net/projects/texstudio/?source=typ_redirect](https://sourceforge.net/projects/texstudio/?source=typ_redirect )
 
 ### ecrc.sty
 <!-- https://yunpan.cn/OcvKHgsSHJMaFc  访问密码 2cef -->
@@ -1002,7 +1002,7 @@ https://sourceforge.net/projects/texstudio/?source=typ_redirect
 
 ### ecrc-template.tex
 <!-- https://yunpan.cn/OcvKHKAiBNIZDi  访问密码 1100 -->
-http://pan.baidu.com/s/1mi3CzJq
+[http://pan.baidu.com/s/1mi3CzJq](http://pan.baidu.com/s/1mi3CzJq )
 
 Btsync: BQ2XFET5YROHGWVN2NZNQ4X5VTKEKLO4C
 
@@ -1070,9 +1070,9 @@ Font U/psy/m/n/10=psyr at 10.0pt not loadable: Metric (TFM) file not found.
 
 
 
-参见：https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex
+参见：[https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex](https://www.elsevier.com/authors/author-schemas/preparing-crc-journal-articles-with-latex )
 
-http://hubl82.blog.163.com/blog/static/1267694852013459412617/
+[http://hubl82.blog.163.com/blog/static/1267694852013459412617/](http://hubl82.blog.163.com/blog/static/1267694852013459412617/ )
 
 [Latex](https://www.elsevier.com/authors/author-schemas/latex-instructions )
 

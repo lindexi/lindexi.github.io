@@ -8,7 +8,7 @@
 
 
 
-多谢 wtwsgs 提供方法：http://blog.csdn.net/wtwsgs/article/details/51333912
+多谢 wtwsgs 提供方法：[http://blog.csdn.net/wtwsgs/article/details/51333912](http://blog.csdn.net/wtwsgs/article/details/51333912 )
 
 代码很少，可以自己复制放在vs运行
 
@@ -63,11 +63,11 @@
 需要使用管理员打开
 
 参见：
-https://github.com/shadowsocks/shadowsocks-windows/issues/932
+[https://github.com/shadowsocks/shadowsocks-windows/issues/932](https://github.com/shadowsocks/shadowsocks-windows/issues/932 )
 
-http://krblog.krrrrr.xyz/md/post/105
+[http://krblog.krrrrr.xyz/md/post/105](http://krblog.krrrrr.xyz/md/post/105 )
 
-http://www.win10.cm/?p=1226
+[http://www.win10.cm/?p=1226](http://www.win10.cm/?p=1226 )
 
 本文同时放在九幽[解决 Win10 UWP 无法使用 ss 连接 | Win10.CM](http://www.win10.cm/?p=1226)
 

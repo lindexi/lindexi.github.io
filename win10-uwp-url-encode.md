@@ -79,7 +79,7 @@ WebUtility.HtmlEncode 可以转 `&#` ，把 `<` 转`&lt;`，`>`转`&gt;` 所以�
 |中 |%E4%B8%AD|%E4%B8%AD |%E4%B8%AD |中|
 |文 |%E6%96%87|%E6%96%87 |%E6%96%87 |文|
 
-https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/
+[https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/](https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/ )
 
 
 

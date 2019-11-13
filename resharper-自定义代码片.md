@@ -148,7 +148,7 @@ private $string$ _$field$;
 
 选择上下就是输入变量的前后，第一个是第一输入
 
-https://www.jetbrains.com/help/resharper/2016.2/Templates__Creating_and_Editing_Templates.html
+[https://www.jetbrains.com/help/resharper/2016.2/Templates__Creating_and_Editing_Templates.html](https://www.jetbrains.com/help/resharper/2016.2/Templates__Creating_and_Editing_Templates.html )
 
 写好，我们选快捷键
 

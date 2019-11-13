@@ -263,7 +263,7 @@ movie.xaml
 
 代码：<https://gitee.com/lindexi/lindexi_gd/tree/master/classifyapp>
 
-参考：https://msdn.microsoft.com/en-us/library/windows/apps/mt228343.aspx
+参考：[https://msdn.microsoft.com/en-us/library/windows/apps/mt228343.aspx](https://msdn.microsoft.com/en-us/library/windows/apps/mt228343.aspx )
 
 
 

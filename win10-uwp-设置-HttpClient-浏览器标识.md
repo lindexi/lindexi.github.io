@@ -15,7 +15,7 @@
 
 ```csharp
   HttpClient webHttpClient =
-                new HttpClient();
+                new [HttpClient();](HttpClient(); )
            var userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36";
             webHttpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);              
 ```
@@ -27,17 +27,17 @@
 ```csharp
          string url = "https://sm.ms/api/upload";
             HttpClient webHttpClient =
-                new HttpClient();
+                new [HttpClient();](HttpClient(); )
             HttpMultipartFormDataContent httpMultipartFormDataContent =
-                new HttpMultipartFormDataContent();
+                new [HttpMultipartFormDataContent();](HttpMultipartFormDataContent(); )
             var fileContent = new HttpStreamContent(await File.OpenAsync(FileAccessMode.Read));
             fileContent.Headers.Add("Content-Type", "application/octet-stream");
 
             var userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36";
-            webHttpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
+            web[HttpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);](HttpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent); )
 
             httpMultipartFormDataContent.Add(fileContent, "smfile", File.Name);
-            var str = await webHttpClient.PostAsync(new Uri(url), httpMultipartFormDataContent);
+            var str = await web[HttpClient.PostAsync(new](HttpClient.PostAsync(new ) Uri(url), [httpMultipartFormDataContent);](httpMultipartFormDataContent); )
             //这里可以拿到返回的值 str.Content.ToString();
 ```
 

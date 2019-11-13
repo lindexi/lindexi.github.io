@@ -110,11 +110,11 @@ public MainPage()
 我们可以在一个页面不同设备使用不同的xaml
 [WindowsStateTriggers DeviceFamily sample](https://github.com/dotMorten/WindowsStateTriggers/blob/master/src/TestApp/Samples/DeviceFamilySample.xaml)
 
-https://github.com/igrali/UWP-DeviceFamily
+[https://github.com/igrali/UWP-DeviceFamily](https://github.com/igrali/UWP-DeviceFamily )
 
-http://www.cnblogs.com/mushroom/p/5080032.html
+[http://www.cnblogs.com/mushroom/p/5080032.html](http://www.cnblogs.com/mushroom/p/5080032.html )
 
-http://igrali.com/2015/08/02/three-ways-to-set-specific-devicefamily-xaml-views-in-uwp/
+[http://igrali.com/2015/08/02/three-ways-to-set-specific-devicefamily-xaml-views-in-uwp/](http://igrali.com/2015/08/02/three-ways-to-set-specific-devicefamily-xaml-views-in-uwp/ )
 
 
 

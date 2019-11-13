@@ -56,7 +56,7 @@ public global::Windows.UI.Xaml.Data.IValueConverter LookupConverter(string key)
 
 [win10 uwp 后台获取资源](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%90%8E%E5%8F%B0%E8%8E%B7%E5%8F%96%E8%B5%84%E6%BA%90/)
 
-参见：https://stackoverflow.com/a/39735867/6116637
+参见：[https://stackoverflow.com/a/39735867/6116637](https://stackoverflow.com/a/39735867/6116637 )
 
 
 

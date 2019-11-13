@@ -36,9 +36,9 @@ vtkXOpenGLRenderWindow (0x5359980): bad X server connection. DISPLAY=Aborted
 
 pv_web_visualizer.py: error: unrecognized arguments: --use-offscreen-rendering
 ```
-https://www.kitware.com/blog/home/post/999
+[https://www.kitware.com/blog/home/post/999](https://www.kitware.com/blog/home/post/999 )
 
-http://www.paraview.org/Wiki/ParaView/ParaView_And_Mesa_3D
+[http://www.paraview.org/Wiki/ParaView/ParaView_And_Mesa_3D](http://www.paraview.org/Wiki/ParaView/ParaView_And_Mesa_3D )
 
 
 ```

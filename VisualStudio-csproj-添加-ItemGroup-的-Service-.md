@@ -19,7 +19,7 @@
 
 微软：这是故意添加的，为了支持第三方的单元测试框架，如NUnit、XUnit，VisualStudio 2012 会在工程打开的时候加载测试项目，不管这时用户有没有单元测试框架，所以 VisualStudio 2012 的启动速度就会很慢。在VisualStudio 2013，微软改变了加载的算法，只有用户存在最少一个单元测试框架才会加载测试项目。但是这样就很难知道哪个项目就是单元测试项目，于是使用两个方法去定义测试项目，其中一个就是添加`<Service/>`和GUID。另一个方法是使用单元测试项目模板创建使用项目类型的GUID判断是否单元测试。
 
-参见：https://stackoverflow.com/q/18614342/6116637
+参见：[https://stackoverflow.com/q/18614342/6116637](https://stackoverflow.com/q/18614342/6116637 )
 
 [Automatic Project Check Outs After Installing Visual Studio SDK](https://www.richard-banks.org/2007/12/automatic-project-check-outs-after.html )
 

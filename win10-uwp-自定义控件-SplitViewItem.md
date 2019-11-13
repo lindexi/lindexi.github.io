@@ -83,7 +83,7 @@
 
 `    xmlns:view="using:EncryptionSyncFolder.View"`
 
-本来需要很长的代码，现在修改成为一点点，其实就是导入我的自定义控件，首先在上面的代码是把view用作我的控件所在文件夹，反人类的Segoe MDL2 Assets 可以在http://modernicons.io/segoe-mdl2/cheatsheet/，找到你要的图标
+本来需要很长的代码，现在修改成为一点点，其实就是导入我的自定义控件，首先在上面的代码是把view用作我的控件所在文件夹，反人类的Segoe MDL2 Assets 可以在[http://modernicons.io/segoe-mdl2/cheatsheet/，找到你要的图标](http://modernicons.io/segoe-mdl2/cheatsheet/，找到你要的图标 )
 
 ```xml
                         <ListViewItem>

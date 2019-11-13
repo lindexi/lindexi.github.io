@@ -19,11 +19,11 @@
 
 首先下载
 
-nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+nuget.exe [https://dist.nuget.org/win-x86-commandline/latest/nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe )
 
 如果没法下载和我说，我发给你
 
-然后下载一个工具https://docs.nuget.org/Create/using-a-gui-to-build-packages，下载后运行
+然后下载一个工具[https://docs.nuget.org/Create/using-a-gui-to-build-packages，下载后运行](https://docs.nuget.org/Create/using-a-gui-to-build-packages，下载后运行 )
 
 我们把Nuget.exe放在Path，当然不知道Path,就放在我们要打包的工程文件夹
 
@@ -201,11 +201,11 @@ nuget pack smms.csproj
 
 ![这里写图片描述](http://img.blog.csdn.net/20160705155225430)
 
-参见：http://www.cnblogs.com/xiaoyaojian/p/4199735.html
+参见：[http://www.cnblogs.com/xiaoyaojian/p/4199735.html](http://www.cnblogs.com/xiaoyaojian/p/4199735.html )
 
 ## 命令行使用Nuget
 
-参见：https://docs.nuget.org/consume/command-line-reference
+参见：[https://docs.nuget.org/consume/command-line-reference](https://docs.nuget.org/consume/command-line-reference )
 
 [[.Net] 手把手带你将自己打造的类库丢到 NuGet 上 - 反骨仔（二五仔） - 博客园](http://www.cnblogs.com/liqingwen/p/5859236.html)
 

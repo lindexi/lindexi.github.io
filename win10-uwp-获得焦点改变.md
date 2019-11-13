@@ -58,7 +58,7 @@ UWP应用获得焦点可以使用`Window.Current.Activated`，事件参数有几
 
 我们把应用最小化，应用就会不显示。
 
-参见：http://grogansoft.com/blog/?p=1269
+参见：[http://grogansoft.com/blog/?p=1269](http://grogansoft.com/blog/?p=1269 )
 
 ## 如何判断应用是否获得焦点
 

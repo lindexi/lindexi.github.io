@@ -46,7 +46,7 @@ string str = System.IO.File.ReadAllText(path);
 
 如果有找到比我上面代码更少的方法请告诉我，这里不用安装第三方的库，是在快速创建新的项目进行测试
 
-我的博客即将搬运同步至腾讯云+社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=19bm8i8js1ezb
+我的博客即将搬运同步至腾讯云+社区，邀请大家一同入驻：[https://cloud.tencent.com/developer/support-plan?invite_code=19bm8i8js1ezb](https://cloud.tencent.com/developer/support-plan?invite_code=19bm8i8js1ezb )
 
 
 

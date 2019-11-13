@@ -41,7 +41,7 @@ var f = await fp.PickSingleFolderAsync();
 
  修改，把上面代码写在其他函数调用，不在 Load 调用。
 
-参见：http://stackoverflow.com/a/42969965/6116637
+参见：[http://stackoverflow.com/a/42969965/6116637](http://stackoverflow.com/a/42969965/6116637 )
 
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792391647.jpg)
 

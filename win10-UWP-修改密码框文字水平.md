@@ -39,7 +39,7 @@
 
 修改他的 `HorizontalAlignment` 修改为 Center ，密码控件就是上面的图，密码中间。
 
-https://stackoverflow.com/questions/42805582/setting-the-alignment-of-a-passwordbox-in-uwp
+[https://stackoverflow.com/questions/42805582/setting-the-alignment-of-a-passwordbox-in-uwp](https://stackoverflow.com/questions/42805582/setting-the-alignment-of-a-passwordbox-in-uwp )
 
 
 
