@@ -71,9 +71,9 @@ xmlns:view="using:Bproperty.ViewModel"
 
 ```
 
-参见：[http://stackoverflow.com/questions/15854708/how-can-i-bind-a-xaml-property-to-a-static-variable-in-another-class](http://stackoverflow.com/questions/15854708/how-can-i-bind-a-xaml-property-to-a-static-variable-in-another-class )
+参见：http://stackoverflow.com/questions/15854708/how-can-i-bind-a-xaml-property-to-a-static-variable-in-another-class
 
-[http://stackoverflow.com/questions/34701255/how-to-bind-to-attached-property-in-uwp](http://stackoverflow.com/questions/34701255/how-to-bind-to-attached-property-in-uwp )
+http://stackoverflow.com/questions/34701255/how-to-bind-to-attached-property-in-uwp
 
 
 

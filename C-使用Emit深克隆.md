@@ -116,7 +116,7 @@ CloneObjectWithIL(foo1,foo2);
         // ReSharper disable once InconsistentNaming
         public static void CloneObjectWithIL<T>(T source, T los)
         {
-            //参见 [http://lindexi.oschina.io/lindexi/post/C-%E4%BD%BF%E7%94%A8Emit%E6%B7%B1%E5%85%8B%E9%9A%86/](http://lindexi.oschina.io/lindexi/post/C-%E4%BD%BF%E7%94%A8Emit%E6%B7%B1%E5%85%8B%E9%9A%86/ )
+            //参见 http://lindexi.oschina.io/lindexi/post/C-%E4%BD%BF%E7%94%A8Emit%E6%B7%B1%E5%85%8B%E9%9A%86/
             if (CachedIl.ContainsKey(typeof(T)))
             {
                 ((Action<T, T>) CachedIl[typeof(T)])(source, los);
@@ -256,11 +256,11 @@ CloneObjectWithIL(base, derived);
     }
 ```
 
-[http://www.c-sharpcorner.com/uploadfile/puranindia/reflection-and-reflection-emit-in-C-Sharp/](http://www.c-sharpcorner.com/uploadfile/puranindia/reflection-and-reflection-emit-in-C-Sharp/ )
+http://www.c-sharpcorner.com/uploadfile/puranindia/reflection-and-reflection-emit-in-C-Sharp/
 
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20178885325.jpg)
 
-[https://stackoverflow.com/a/46580446/6116637](https://stackoverflow.com/a/46580446/6116637 )
+https://stackoverflow.com/a/46580446/6116637
 
 
 

@@ -80,7 +80,7 @@ Yaml序列化
 
 ![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201742019318.jpg)
 
-这里使用参见 [http://www.cnblogs.com/RicCC/archive/2010/03/01/serialization-data-format.html](http://www.cnblogs.com/RicCC/archive/2010/03/01/serialization-data-format.html )
+这里使用参见 http://www.cnblogs.com/RicCC/archive/2010/03/01/serialization-data-format.html
 
 
 

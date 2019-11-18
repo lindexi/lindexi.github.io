@@ -43,7 +43,7 @@ queryOptions.ApplicationSearchFilter = "System.FileName:latest_*";
     var files = await queryResult.GetFilesAsync(); 
 ```
 
-参见：[http://stackoverflow.com/a/43829407/6116637](http://stackoverflow.com/a/43829407/6116637 )
+参见：http://stackoverflow.com/a/43829407/6116637
 
 ## UWP 获取指定后缀的文件
 
@@ -91,7 +91,7 @@ queryOptions.ApplicationSearchFilter = "System.FileName:latest_*";
 
 参见：[Advanced Query Syntax](https://msdn.microsoft.com/zh-cn/library/windows/apps/aa965711.aspx)
 
-[https://docs.microsoft.com/en-us/uwp/api/windows.storage.search.queryoptions](https://docs.microsoft.com/en-us/uwp/api/windows.storage.search.queryoptions )
+https://docs.microsoft.com/en-us/uwp/api/windows.storage.search.queryoptions
 
 
 

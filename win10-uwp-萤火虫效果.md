@@ -334,7 +334,7 @@
         }
 ```
 
-<script src='[https://gitee.com/lindexi/codes/m90sfzgdwqvk6j81au2y445/widget_preview?title=%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C+Canvas_Draw+2'></script>](https://gitee.com/lindexi/codes/m90sfzgdwqvk6j81au2y445/widget_preview?title=%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C+Canvas_Draw+2'></script> )
+<script src='https://gitee.com/lindexi/codes/m90sfzgdwqvk6j81au2y445/widget_preview?title=%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C+Canvas_Draw+2'></script>
 
 这个效果我放在 [商业游戏](ms-windows-store://pdp/?productid=9pb0286g2ldr) 可以玩一下，代码开源[https://github.com/lindexi/UWP/tree/master/uwp/src/VarietyHiggstGushed](https://github.com/lindexi/UWP/tree/master/uwp/src/VarietyHiggstGushed)
 

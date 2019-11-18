@@ -39,7 +39,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2018101593416619)
 
-具体请看 [https://stackoverflow.com/a/3025944/6116637](https://stackoverflow.com/a/3025944/6116637 )
+具体请看 https://stackoverflow.com/a/3025944/6116637
 
 ## 使用系统的图标
 
@@ -53,7 +53,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2018101584938619)
 
-参见 [https://stackoverflow.com/a/4868459/6116637](https://stackoverflow.com/a/4868459/6116637 )
+参见 https://stackoverflow.com/a/4868459/6116637
 
 ## 禁止用户修改窗口大小
 
@@ -72,7 +72,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2018101585055784)
 
-具体请看 [https://stackoverflow.com/a/5416394/6116637](https://stackoverflow.com/a/5416394/6116637 )
+具体请看 https://stackoverflow.com/a/5416394/6116637
 
 ## 隐藏标题栏的图标
 

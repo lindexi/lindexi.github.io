@@ -25,7 +25,7 @@ Package.appxmanifest
 
 ![这里写图片描述](image/201611817148674.png)
 
-[http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
+http://blog.csdn.net/lindexi_gd
 
 
 

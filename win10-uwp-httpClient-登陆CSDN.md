@@ -17,9 +17,9 @@
 ```csharp
             CookieContainer cookies = new CookieContainer();
 
-            [HttpClientHandler](HttpClientHandler ) handler = new [HttpClientHandler();](HttpClientHandler(); )
+            HttpClientHandler handler = new HttpClientHandler();
             handler.CookieContainer = cookies;
-            [HttpClient](HttpClient ) [http](http ) = new [HttpClient(handler);](HttpClient(handler); )
+            HttpClient http = new HttpClient(handler);
 ```
 
 虽然已经有`Cookie`，但是还缺少一些请求需要带的头，因为浏览器是会告诉网站，需要的`Accept`，为了假装这是一个浏览器，所以就需要添加`Accept` 和`Accept-Encoding` `Accept-Language` `User-Agent`
@@ -131,9 +131,9 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
 
             CookieContainer cookies = new CookieContainer();
 
-            [HttpClientHandler](HttpClientHandler ) handler = new [HttpClientHandler();](HttpClientHandler(); )
+            HttpClientHandler handler = new HttpClientHandler();
             handler.CookieContainer = cookies;
-            [HttpClient](HttpClient ) [http](http ) = new [HttpClient(handler);](HttpClient(handler); )
+            HttpClient http = new HttpClient(handler);
 
 3. 获得登陆需要的流水号
 
@@ -148,7 +148,7 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
             handler.UseCookies = true;
             handler.AllowAutoRedirect = true;
 
-            string str = await [http.GetStringAsync(url);](http.GetStringAsync(url); )
+            string str = await http.GetStringAsync(url);
             Regex regex = new Regex(" type=\"hidden\" name=\"lt\" value=\"([\\w|\\-]+)\"");
             var lt = regex.Match(str).Groups[1].Value;
             regex = new Regex("type=\"hidden\" name=\"execution\" value=\"(\\w+)\"");
@@ -181,7 +181,7 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
 
 
    url = new Uri("http://write.blog.csdn.net/");
-            str = await [http.GetStringAsync(url);](http.GetStringAsync(url); )
+            str = await http.GetStringAsync(url);
 
 
 6. 上传文件
@@ -195,7 +195,7 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
             str = await ((MultipartFormDataContent)content).ReadAsStringAsync();
             url = new Uri("http://write.blog.csdn.net/article/UploadImgMarkdown?parenthost=write.blog.csdn.net");
             var message = await http.PostAsync(url, content);
-            if (message.StatusCode == [HttpStatusCode.OK)](HttpStatusCode.OK) )
+            if (message.StatusCode == HttpStatusCode.OK)
             {
                 ResponseImage(message);
             }

@@ -31,7 +31,7 @@ Encoding encodingGbk = Encoding.GetEncoding("GBK");
 
 [VisualStudio 编码规范工具 2.6 修改当前文件编码](https://blog.lindexi.com/post/visualstudio-%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83%E5%B7%A5%E5%85%B7-2.6-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81 )
 
-[win10 uwp 读取文本GBK错误](https://blog.lindexi.com/post/win10-uwp-%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%ACgbk%E9%94%99%E8%AF%AF )
+[win10 uwp 读取文本GBK错误](https://blog.lindexi.com/post/win10-uwp-%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%ACGBK%E9%94%99%E8%AF%AF.html )
 
 ![](https://i.loli.net/2019/08/29/H7N41mpAM2T6QBg.jpg)
 

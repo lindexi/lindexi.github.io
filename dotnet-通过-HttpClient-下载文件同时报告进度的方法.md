@@ -14,8 +14,8 @@
 ```csharp
        private static async Task DownloadFile(string url, FileInfo file)
         {
-            var [httpClient](httpClient ) = new [HttpClient();](HttpClient(); )
-            var response = await [httpClient.GetAsync(url);](httpClient.GetAsync(url); )
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync(url);
 
             try
             {

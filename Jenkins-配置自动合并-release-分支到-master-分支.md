@@ -41,7 +41,7 @@ t/lindexi/github
 
 为了在用户推送的时候合并，就需要在 Build Triggers 添加 Build when a change is pushed to GitLab. 这样就可以添加 web hook 在打钩之后可以看到下面有一个链接，如下面是我的链接，这个链接会在之后设置到 gitlab 所以暂时需要记下
 
-[https://newci.gz.lindexi.cn/project/lindexi/github_merge_release_to_dev](https://newci.gz.lindexi.cn/project/lindexi/github_merge_release_to_dev )
+https://newci.gz.lindexi.cn/project/lindexi/github_merge_release_to_dev
 
 这里可以通过很多个设置，在 `Push Events` 执行这个仓库或者在 `Accepted Merge Request Events` 执行，可以全部打钩
 

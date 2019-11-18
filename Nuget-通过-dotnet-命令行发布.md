@@ -66,20 +66,20 @@
 这时可以通过下面的命令发布对应的 nuget 到 nuget.org 网站
 
 ```csharp
-dotnet nuget push xx.nupkg -k 刚才复制的key -s [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json )
+dotnet nuget push xx.nupkg -k 刚才复制的key -s https://api.nuget.org/v3/index.json
 ```
 
 如我发布 lindexi.MVVM.Framework.2.2.5.symbols.nupkg 可以使用下面代码
 
 ```csharp
-dotnet nuget push lindexi.MVVM.Framework.2.2.5.symbols.nupkg -k oy2fvszjpukd6lm2vaqav5gcx6xcfuaencyx5x2ppab42e -s [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json )
+dotnet nuget push lindexi.MVVM.Framework.2.2.5.symbols.nupkg -k oy2fvszjpukd6lm2vaqav5gcx6xcfuaencyx5x2ppab42e -s https://api.nuget.org/v3/index.json
 ```
 
 可以看到输出
 
 ```csharp
-info : Pushing lindexi.MVVM.Framework.2.2.5.symbols.nupkg to '[https://www.nuget.org/api/v2/package'...](https://www.nuget.org/api/v2/package'... )
-info :   PUT [https://www.nuget.org/api/v2/package/](https://www.nuget.org/api/v2/package/ )
+info : Pushing lindexi.MVVM.Framework.2.2.5.symbols.nupkg to 'https://www.nuget.org/api/v2/package'...
+info :   PUT https://www.nuget.org/api/v2/package/
 info :   Created https://www.nuget.org/api/v2/package/ 12720ms
 info : Your package was pushed.
 ```
@@ -93,7 +93,7 @@ info : Your package was pushed.
 在相同的文件夹创建一个 nuget.bat 文件，在这个文件输入下面代码
 
 ```csharp
-dotnet nuget push *.nupkg -k 刚才复制的key -s [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json )
+dotnet nuget push *.nupkg -k 刚才复制的key -s https://api.nuget.org/v3/index.json
 ```
 
 这样在编译之后调用这个批处理就可以将文件夹内的 nuget 上传，通过这个方式和 Jenkins 自动打包就可以自动发布 nuget 而且这个方式可以防止用户自己上传过程因为编译了不对的分支让其他用户以为自己写出坑

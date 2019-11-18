@@ -83,7 +83,7 @@
 ```
 
 
-现在算法用在 [https://github.com/tpxxn/JiHuangBaiKeCSharp](https://github.com/tpxxn/JiHuangBaiKeCSharp )
+现在算法用在 https://github.com/tpxxn/JiHuangBaiKeCSharp
 
 
 

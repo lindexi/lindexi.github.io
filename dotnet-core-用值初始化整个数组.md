@@ -62,7 +62,7 @@ public static void Fill<T>(T[] array, T value)
 
 [Cool new way to fill array with a value in .NET Core – Martin Zikmund](https://blog.mzikmund.com/2019/01/cool-new-way-to-fill-array-with-a-value-in-net-core/ )
 
-[https://github.com/dotnet/coreclr](https://github.com/dotnet/coreclr )
+https://github.com/dotnet/coreclr
 
 
 

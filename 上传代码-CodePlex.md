@@ -78,9 +78,9 @@ git push codeplex master
 
  - [url:win10 uwp 水印图床|https://github.com/lindexi/UWP/blob/master/uwp/control/BitStamp]
 
-   参见 ：[url:win10 uwp 水印图床|[https://github.com/lindexi/UWP/blob/master/uwp/control/BitStamp/%E3%80%90%E5%B9%BF%E5%91%8A%E3%80%91win10%20uwp%20%E6%B0%B4%E5%8D%B0%E5%9B%BE%E5%BA%8A%20%E5%90%AB%E4%BB%A3%E7%A0%81.md]](https://github.com/lindexi/UWP/blob/master/uwp/control/BitStamp/%E3%80%90%E5%B9%BF%E5%91%8A%E3%80%91win10%20uwp%20%E6%B0%B4%E5%8D%B0%E5%9B%BE%E5%BA%8A%20%E5%90%AB%E4%BB%A3%E7%A0%81.md] )
+   参见 ：[url:win10 uwp 水印图床|https://github.com/lindexi/UWP/blob/master/uwp/control/BitStamp/%E3%80%90%E5%B9%BF%E5%91%8A%E3%80%91win10%20uwp%20%E6%B0%B4%E5%8D%B0%E5%9B%BE%E5%BA%8A%20%E5%90%AB%E4%BB%A3%E7%A0%81.md]
 
-   [url:安装|ms-windows-store://pdp/?productid=9nblggh562r2][https://www.microsoft.com/store/apps/9nblggh562r2](https://www.microsoft.com/store/apps/9nblggh562r2 )
+   [url:安装|ms-windows-store://pdp/?productid=9nblggh562r2]https://www.microsoft.com/store/apps/9nblggh562r2
 
 !! 代码
 
@@ -91,7 +91,7 @@ git push codeplex master
  - [url:图床|https://github.com/lindexi/UWP/blob/master/uwp/src/Imageshack]
 
    图床是把图片上传到云，然后获取图片链接的开发包，我将繁琐的过程写成一个简单的类。
-   上传的服务器现在有[url:sm.ms|https://sm.ms/]和[url:七牛图床|[http://www.qiniu.com/]。其中[url:七牛sdk](http://www.qiniu.com/]。其中[url:七牛sdk ) UWP|[https://github.com/lindexi/UWP/blob/master/uwp/src/Imageshack/cloundes]，](https://github.com/lindexi/UWP/blob/master/uwp/src/Imageshack/cloundes]， )
+   上传的服务器现在有[url:sm.ms|https://sm.ms/]和[url:七牛图床|http://www.qiniu.com/]。其中[url:七牛sdk UWP|https://github.com/lindexi/UWP/blob/master/uwp/src/Imageshack/cloundes]，
    我只有简单文件上传，好多还没写。代码是从其他大神改出
 
    七牛图床上传到Nuget，搜索`lindexi.uwp.ImageShack.Thirdqiniucs`或
@@ -106,7 +106,7 @@ git push codeplex master
 
  - [url:ViewModel|https://github.com/lindexi/UWP/blob/master/uwp/src/ViewModel]
 
- - [url:隐私策略|[https://github.com/lindexi/UWP/blob/master/uwp/src/%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5]](https://github.com/lindexi/UWP/blob/master/uwp/src/%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5] )
+ - [url:隐私策略|https://github.com/lindexi/UWP/blob/master/uwp/src/%E9%9A%90%E7%A7%81%E7%AD%96%E7%95%A5]
 
  - [url:径向规|https://github.com/lindexi/UWP/blob/master/uwp/src/RadialGauge]
 
@@ -129,7 +129,7 @@ Some controls and common codes
 
 http://www.cnblogs.com/gossip/archive/2012/06/26/2563587.html 
 
-参见 [http://www.cnblogs.com/aspnet_csharp/archive/2012/04/20/2459099.html](http://www.cnblogs.com/aspnet_csharp/archive/2012/04/20/2459099.html )
+参见 http://www.cnblogs.com/aspnet_csharp/archive/2012/04/20/2459099.html
 
 
 

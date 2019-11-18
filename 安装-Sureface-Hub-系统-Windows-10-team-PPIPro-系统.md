@@ -13,11 +13,11 @@
 
 中文版
 
-[https://pan.baidu.com/s/1gAJSSE6KB9JHXo4BT_VfmA](https://pan.baidu.com/s/1gAJSSE6KB9JHXo4BT_VfmA )
+https://pan.baidu.com/s/1gAJSSE6KB9JHXo4BT_VfmA
 
 其他请看
 
-[https://pastebin.com/raw/1ZfXJWgv](https://pastebin.com/raw/1ZfXJWgv )
+https://pastebin.com/raw/1ZfXJWgv
 
 下载地址从网络收集
 

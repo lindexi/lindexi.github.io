@@ -83,7 +83,7 @@
 
 这个已经是包含我可以想到的了，大家可以把它传到github然后给链接，在应用，写一个页面放一个WebView，然后把上面的转html放进去。
 
-源代码：[https://github.com/lindexi/UWP/tree/master/uwp/src/隐私策略](https://github.com/lindexi/UWP/tree/master/uwp/src/隐私策略 )
+源代码：https://github.com/lindexi/UWP/tree/master/uwp/src/隐私策略
 
 
 

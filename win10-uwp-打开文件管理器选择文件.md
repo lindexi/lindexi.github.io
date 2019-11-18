@@ -44,9 +44,9 @@
      await Launcher.LaunchFolderAsync(folder, t);
 ```
 
-参见：[https://codedocu.com/Details?d=1542&a=9&f=181&l=1&v=d&t=UWP:-How-to-Open-the-file-Explorer-from-a-Windows-app](https://codedocu.com/Details?d=1542&a=9&f=181&l=1&v=d&t=UWP:-How-to-Open-the-file-Explorer-from-a-Windows-app )
+参见：https://codedocu.com/Details?d=1542&a=9&f=181&l=1&v=d&t=UWP:-How-to-Open-the-file-Explorer-from-a-Windows-app
 
-[https://docs.microsoft.com/en-us/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchFolderAsync_Windows_Storage_IStorageFolder_Windows_System_FolderLauncherOptions_](https://docs.microsoft.com/en-us/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchFolderAsync_Windows_Storage_IStorageFolder_Windows_System_FolderLauncherOptions_ )
+https://docs.microsoft.com/en-us/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchFolderAsync_Windows_Storage_IStorageFolder_Windows_System_FolderLauncherOptions_
 
 本文同时发在九幽[win10 uwp 打开文件管理器选择文件 | Win10.CM](http://www.win10.cm/?p=1222)
 

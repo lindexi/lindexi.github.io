@@ -19,7 +19,7 @@
 
 ## 扩展标题栏
 
-参见：[http://dailydotnettips.com/2015/10/20/how-to-place-custom-xaml-content-in-the-windows-universal-apps-title-bar/](http://dailydotnettips.com/2015/10/20/how-to-place-custom-xaml-content-in-the-windows-universal-apps-title-bar/ )
+参见：http://dailydotnettips.com/2015/10/20/how-to-place-custom-xaml-content-in-the-windows-universal-apps-title-bar/
 
 ## 修改颜色
 
@@ -82,7 +82,7 @@ statusbar.ProgressIndicator.ShowAsync();
 
 最后一个显示 Text 可以看微信，他是把消息放在标题栏。
 
-参见：[http://uwpbox.com/status-bar-at-the-top-of-the-uwp-statusbar.html](http://uwpbox.com/status-bar-at-the-top-of-the-uwp-statusbar.html )
+参见：http://uwpbox.com/status-bar-at-the-top-of-the-uwp-statusbar.html
 
 参见：[http://www.cnblogs.com/tcjiaan/p/4783049.html](http://www.cnblogs.com/tcjiaan/p/4783049.html)
 

@@ -37,7 +37,7 @@ git branch -m t/lindexiIsDoubi
 
 参见：
 
-[http://zengrong.net/post/1746.htm](http://zengrong.net/post/1746.htm )
+http://zengrong.net/post/1746.htm
 
 
 
