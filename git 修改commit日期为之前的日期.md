@@ -208,4 +208,12 @@ December, Dec.
 
 如果修改过程需要修改上一次提交的日期，可以添加 `--amend` 的参数，如果要修改不是上一次的提交，而是很久的提交，我暂时没找到如何做，如果你知道怎么做，请告诉我
 
+本文用的时间是 RFC 2822 格式，这个格式的时间是 `月 日 时间 年 +0800` 而除了这个格式，还可以使用 ISO 8601 格式，如下面代码
+
+```csharp
+2005-04-07T22:13:13
+```
+
+在 C# 可以使用 `DateTime.UtcNow.ToString("s")` 将时间输出
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

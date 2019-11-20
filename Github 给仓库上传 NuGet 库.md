@@ -100,4 +100,34 @@ RepoAcceptsPackageUploads: Repository "lindexi/HehuhallqaLinearjeebar.Source" do
 
 原因是要求 NuGet 库的 id 必须要在对应的 github 组织找到对应的仓库，如我上面上传 HehuhallqaLinearjeebar.Source.1.0.0.nupkg 文件，但是我没有 HehuhallqaLinearjeebar.Source 仓库，所以提示不能上传
 
+此时可以通过在 `.nuspec` 文件添加 repository 属性，格式如下
+
+```csharp
+<repository type="git" url="https://github.com/lindexi/HehuhallqaLinearjeebar"/>
+```
+
+这样多个库可以使用相同仓库，上面代码需要写到 package 的 metadata 才能使用
+
+```csharp
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+      <id>HehuhallqaLinearjeebar.Source</id>
+      <version>1.0.3</version>
+      <authors>lindexi</authors>
+      <description>Sample exists only to show a sample .nuspec file.</description>
+      <language>en-US</language>
+      <repository type="git" url="https://github.com/lindexi/HehuhallqaLinearjeebar"/>
+    </metadata>
+</package>
+```
+
+如果是在 csporj 可以通过添加下面属性
+
+```xml
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/lindexi/UWP</RepositoryUrl>
+```
+
+注意 RepositoryUrl 的格式是 用户名/仓库 如果自己的上传的文件是在仓库里面的文件夹，请写在 PackageProjectUrl 属性
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
