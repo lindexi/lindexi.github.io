@@ -263,7 +263,7 @@ private static void Foo()
 
 1
 
-可能有小伙伴认为在 `2 + foo?.N` 这时如果 foo 为空就应该返回 `??` 后面的值，但是这是不对的上面的代码是和下面的代码等同的
+可能有小伙伴认为在 `2 + foo?.N` 这时如果 foo 为空就应该返回 `??` 后面的值，但是这是不对的上面的代码是和下面的代码差不多等同的
 
 ```csharp
             if (foo == null)
@@ -290,6 +290,36 @@ private static void Foo()
 ```
 
 在表达里面只有 `?` 的值为空，那么就不会执行
+
+等等，为什么上面的代码说的是差不多等同而不是等价，因为尝试运行下面代码，会看到 Hi 输出，多谢 [九鼎](https://github.com/imba-tjd) 指出
+
+```csharp
+using System;
+class Test
+{
+    class Foo
+    {
+        public int N
+        {
+            get
+            {
+                Console.WriteLine("Hi.");
+                return 1;
+            }
+        }
+    }
+
+    static void Main()
+    {
+        Foo foo = null;
+        Foo foo2 = new Foo();
+        var n = 2 + foo?.N + foo2.N ?? 1;
+        Console.WriteLine(n);
+    }
+}
+```
+
+上面代码中，第一个 `foo?.N` 会进行判断，因为 foo 不存在，所以整个表达式没有执行，但是表达式内的逻辑依然执行
 
 ## 模式匹配
 

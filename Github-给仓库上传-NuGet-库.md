@@ -103,6 +103,36 @@ RepoAcceptsPackageUploads: Repository "lindexi/HehuhallqaLinearjeebar.Source" do
 
 原因是要求 NuGet 库的 id 必须要在对应的 github 组织找到对应的仓库，如我上面上传 HehuhallqaLinearjeebar.Source.1.0.0.nupkg 文件，但是我没有 HehuhallqaLinearjeebar.Source 仓库，所以提示不能上传
 
+此时可以通过在 `.nuspec` 文件添加 repository 属性，格式如下
+
+```csharp
+<repository type="git" url="https://github.com/lindexi/HehuhallqaLinearjeebar"/>
+```
+
+这样多个库可以使用相同仓库，上面代码需要写到 package 的 metadata 才能使用
+
+```csharp
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+      <id>HehuhallqaLinearjeebar.Source</id>
+      <version>1.0.3</version>
+      <authors>lindexi</authors>
+      <description>Sample exists only to show a sample .nuspec file.</description>
+      <language>en-US</language>
+      <repository type="git" url="https://github.com/lindexi/HehuhallqaLinearjeebar"/>
+    </metadata>
+</package>
+```
+
+如果是在 csporj 可以通过添加下面属性
+
+```xml
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/lindexi/UWP</RepositoryUrl>
+```
+
+注意 RepositoryUrl 的格式是 用户名/仓库 如果自己的上传的文件是在仓库里面的文件夹，请写在 PackageProjectUrl 属性
+
 
 
 

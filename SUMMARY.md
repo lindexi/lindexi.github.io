@@ -18,8 +18,6 @@
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
 
- * [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](ASP.NET-Core-连接-GitLab-与-MatterMost-打造-devops-工具.md)
-
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
  * [BAT 脚本判断当前系统是 x86 还是 x64 系统](BAT-脚本判断当前系统是-x86-还是-x64-系统.md)
@@ -1251,6 +1249,8 @@
  * [WPF 使用 Edge 浏览器](WPF-使用-Edge-浏览器.md)
 
  * [WPF 使用 ItemsPanel 修改方向](WPF-使用-ItemsPanel-修改方向.md)
+
+ * [WPF 使用 MyScript 的 IInk 做手写识别](WPF-使用-MyScript-的-IInk-做手写识别.md)
 
  * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
 
