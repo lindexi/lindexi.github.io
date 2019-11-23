@@ -1258,6 +1258,8 @@
 
  * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
 
+ * [WPF 使用 RawInput 接收裸数据](WPF-使用-RawInput-接收裸数据.md)
+
  * [WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示](WPF-使用-RenderTargetBitmap-快速截图出现-COMException-提示.md)
 
  * [WPF 使用 SharpDX 在 D3DImage 显示](WPF-使用-SharpDX-在-D3DImage-显示.md)
@@ -1647,6 +1649,8 @@
  * [浅谈 Windows 桌面端触摸架构演进](浅谈-Windows-桌面端触摸架构演进.md)
 
  * [添加右键使用 SublimeText 打开](添加右键使用-SublimeText-打开.md)
+
+ * [理解项目文件 NuGet 打包时机](理解项目文件-NuGet-打包时机.md)
 
  * [生成密码](生成密码.md)
 
