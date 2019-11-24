@@ -34,7 +34,8 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-@code {
+@code 
+{
 
     int currentCount = 0;
 
@@ -61,7 +62,8 @@
 修改代码让点击按钮触发事件，修改按钮样式
 
 ```csharp
-@code {
+@code 
+{
     
 	string fontSize = "large";
 
