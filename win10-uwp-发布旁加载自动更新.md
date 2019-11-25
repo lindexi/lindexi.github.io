@@ -332,6 +332,8 @@ CheckNetIsolation.exe LoopbackExempt -a -n="microsoft.desktopappinstaller_8wekyb
 
 [如何在国内发布 UWP 应用](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%9B%BD%E5%86%85%E5%8F%91%E5%B8%83-UWP-%E5%BA%94%E7%94%A8.html )
 
+[加强版在国内分发 UWP 应用正确方式 通过win32安装UWP应用](https://blog.lindexi.com/post/%E5%8A%A0%E5%BC%BA%E7%89%88%E5%9C%A8%E5%9B%BD%E5%86%85%E5%88%86%E5%8F%91-UWP-%E5%BA%94%E7%94%A8%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F-%E9%80%9A%E8%BF%87win32%E5%AE%89%E8%A3%85UWP%E5%BA%94%E7%94%A8.html )
+
 
 
 

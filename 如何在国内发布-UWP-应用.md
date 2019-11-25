@@ -51,6 +51,8 @@
 
 最近微软又在准备开发 WinUI 3.0 这个我看起来和玩具一样的不实用的技术
 
+本文的方法只适合预装的方法，如果没有预装可以将 UWP 用 win32 的安装包不通过应用商店给用户，请看[加强版在国内分发 UWP 应用正确方式 通过win32安装UWP应用](https://blog.lindexi.com/post/%E5%8A%A0%E5%BC%BA%E7%89%88%E5%9C%A8%E5%9B%BD%E5%86%85%E5%88%86%E5%8F%91-UWP-%E5%BA%94%E7%94%A8%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F-%E9%80%9A%E8%BF%87win32%E5%AE%89%E8%A3%85UWP%E5%BA%94%E7%94%A8.html )
+
 
 
 

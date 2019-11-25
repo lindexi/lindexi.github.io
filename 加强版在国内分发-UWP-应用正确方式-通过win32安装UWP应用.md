@@ -14,7 +14,7 @@
 
 通过在 VisualStudio 右击项目，选择发布，使用旁加载方式发布，请看 [Packaging UWP apps](https://docs.microsoft.com/en-us/windows/msix/package/packaging-uwp-apps?redirectedfrom=MSDN#sideload-your-app-package) 
 
-此时建议勾选上自动更新的选项，这样才能做到自动更新。如何做自动更新请看 [如何在国内发布 UWP 应用](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%9B%BD%E5%86%85%E5%8F%91%E5%B8%83-UWP-%E5%BA%94%E7%94%A8.html)
+此时建议勾选上自动更新的选项，这样才能做到自动更新。如何做自动更新请看 [如何在国内发布 UWP 应用](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%9B%BD%E5%86%85%E5%8F%91%E5%B8%83-UWP-%E5%BA%94%E7%94%A8.html) 和 [win10 uwp 发布旁加载自动更新](https://blog.lindexi.com/post/win10-uwp-%E5%8F%91%E5%B8%83%E6%97%81%E5%8A%A0%E8%BD%BD%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0.html ) 用这两个方法可以做到旁加载的应用可以自动更新，要求 17134 最低版本
 
 此时可以看到发布的文件夹，这里的 `*.cer` 就是证书文件，而 `*.msixbundle` 就是安装文件，在 UWP 基于不同的版本打出来的安装文件将会不同，本文只是简单告诉大家如何使用命令行安装，所以建议大家使用 18362 的版本，这样文件才会相同
 
@@ -130,15 +130,19 @@ certutil -addstore TrustedPeople C:\lindexi\foo.cer
 
 如果上面两个命令运行了，那么打开开始菜单看是否成功安装了应用，如果没有安装，那么请在命令行自己试试命令，看是不是路径没有写对
 
-这样就完成了使用控制台安装 UWP 程序，但是这个方法存在的问题是如果用户没有开启旁加载，那么将会安装失败
+这样就完成了使用控制台安装 UWP 程序，但是这个方法存在的问题是如果用户没有开启旁加载，那么将会安装失败。如何通过命令开启旁加载请看 [win10 uwp 通过命令行脚本开启旁加载](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%84%9A%E6%9C%AC%E5%BC%80%E5%90%AF%E6%97%81%E5%8A%A0%E8%BD%BD.html )
 
 我就通过这个安装程序，在 NSIS 将 UWP 程序打包，在安装的时候调用安装程序，让安装程序在后台安装 UWP 应用。因为使用安装包安装可以拿到管理员权限，所以上面的安装程序不需要说明需要管理员权限
 
 大概使用这个方法才能让用户在国内用上 UWP 应用，用上了 UWP 应用可以使用现代化的触摸和极高的渲染性能，可以作出现代的应用。但是用 UWP 的不足在于稳定性还是比较差，同时因为 UWP 的底层 API 封装没有 WPF 做的好，所以在出现稳当性问题也比较难在开发的时候找到
 
-如果有小伙伴准备商业化使用本文的方案，欢迎告诉我，这样我好去和小伙伴吹。如果是个人开发者的话，那么自己玩就好了。因为个人开发者不需要整套的 DevOps 以及应用分发的数据传回等
+如果有小伙伴准备商业化使用本文的方案，欢迎告诉我，这样我好去和小伙伴吹。如果是个人开发者的话，那么自己玩就好了。因为个人开发者不需要整套的 DevOps 以及应用分发的数据传回等，如果个人开发者玩了这么多，开发量预计比应用还大
+
+本文的命令行安装程序放在 [github](https://github.com/lindexi/lindexi_gd/tree/52d635598e2342fa74a6aaebb73ff40df0a7ad50/FarwheebanaHeaceababar) 欢迎小伙伴访问
 
 如果不想通过命令行调用的方式安装，可以使用 win32 的方法安装，请看 [aL3891/AppxInstaller: Tools for installing Uwp apps outside the windows store](https://github.com/aL3891/AppxInstaller) 但是这个项目现在gg了，原因是微软改了接口，同时会在一些设备上安装失败
+
+通过旁加载的应用有坑是在系统更新之后可能就无法使用了，如果小伙伴找到解决方案欢迎评论
 
 [Install apps with the WinAppDeployCmd.exe tool - UWP apps](https://docs.microsoft.com/en-us/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool)
 
