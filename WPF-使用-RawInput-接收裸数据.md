@@ -82,7 +82,7 @@
         }
 ```
 
-用 RawInput 就是通过 
+用 RawInput 就是通过 [RegisterRawInputDevices](https://docs.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-registerrawinputdevices?redirectedfrom=MSDN ) 告诉系统当前进程需要支持裸数据，系统将会根据传入的参数将裸数据转发给应用。应用在消息解析数据拿到裸数据，然后按照业务解析裸数据。这个方法可以解决一些特殊设备支持，因为 HID 设备是独占设备，只能让系统独占，如果想要应用也接收硬件发过来的消息，就需要额外通道给应用。另外应用如果需要解决其他应用钩了消息，可以注册裸数据解决其他应用勾了键盘消息
 
 本文的例子代码在 [github](https://github.com/mfakane/rawinput-sharp/pull/5) 欢迎小伙伴访问
 

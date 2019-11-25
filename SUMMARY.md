@@ -994,6 +994,8 @@
 
  * [win10 uwp 通过 win2d 画出笔迹](win10-uwp-通过-win2d-画出笔迹.md)
 
+ * [win10 uwp 通过命令行脚本开启旁加载](win10-uwp-通过命令行脚本开启旁加载.md)
+
  * [win10 uwp 重启软件](win10-uwp-重启软件.md)
 
  * [win10 uwp 非ui线程访问 ui ](win10-uwp-非ui线程访问-ui-.md)
@@ -1537,6 +1539,8 @@
  * [docfx 做一个和微软一样的文档平台](docfx-做一个和微软一样的文档平台.md)
 
  * [创建不带BOM 的UTF8](创建不带BOM-的UTF8.md)
+
+ * [加强版在国内分发 UWP 应用正确方式 通过win32安装UWP应用](加强版在国内分发-UWP-应用正确方式-通过win32安装UWP应用.md)
 
  * [博客](博客.md)
 
