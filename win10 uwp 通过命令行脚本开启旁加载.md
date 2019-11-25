@@ -5,7 +5,7 @@
 <!--more-->
 <!-- csdn -->
 
-在 win10 的旁加载其实就是写入注册表，允许所有应用信任安装
+在 win10 的旁加载其实就是写入注册表，允许所有应用信任安装，所以只需要通过命令行写入注册表就可以
 
 通过调用 reg 写入注册表，可以使用下面命令
 
@@ -40,7 +40,9 @@ $value2 = "0"
 New-ItemProperty -Path $registryPath -Name $name2 -Value $value2 -PropertyType DWORD -Force
 ```
 
-这样就可以通过运行脚本或命令行在用户上用旁加载可以安装
+通过命令行开启旁加载之后就可以安装旁加载应用
+
+开启旁加载可以使用 [通过win32安装UWP应用](https://blog.lindexi.com/post/%E5%8A%A0%E5%BC%BA%E7%89%88%E5%9C%A8%E5%9B%BD%E5%86%85%E5%88%86%E5%8F%91-UWP-%E5%BA%94%E7%94%A8%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F-%E9%80%9A%E8%BF%87win32%E5%AE%89%E8%A3%85UWP%E5%BA%94%E7%94%A8.html ) 博客说的将 UWP 应用通过win32安装包给用户，解决应用商店下载
 
 [Powershell script to Enable Sideloading for Windows 10 v1.0](https://gallery.technet.microsoft.com/scriptcenter/Powershell-script-to-ccb46131)
 
