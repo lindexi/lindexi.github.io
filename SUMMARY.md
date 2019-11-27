@@ -1296,6 +1296,8 @@
 
  * [WPF 光标初始化的时候 temp 文件夹满了无法创建](WPF-光标初始化的时候-temp-文件夹满了无法创建.md)
 
+ * [WPF 全屏透明窗口](WPF-全屏透明窗口.md)
+
  * [WPF 内部的5个窗口之 MediaContextNotificationWindow](WPF-内部的5个窗口之-MediaContextNotificationWindow.md)
 
  * [C＃ 写系统日志](C＃-写系统日志.md)
