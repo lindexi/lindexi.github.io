@@ -900,6 +900,8 @@
 
  * [win10 uwp 按下等待按钮](win10-uwp-按下等待按钮.md)
 
+ * [win10 uwp 提示 Cannot find a Resource with the Name Key 找不到资源](win10-uwp-提示-Cannot-find-a-Resource-with-the-Name-Key-找不到资源.md)
+
  * [win10 uwp 收集 DUMP 文件](win10-uwp-收集-DUMP-文件.md)
 
  * [win10 uwp 改变鼠标](win10-uwp-改变鼠标.md)
