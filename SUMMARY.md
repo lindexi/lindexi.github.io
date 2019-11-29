@@ -18,6 +18,8 @@
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
 
+ * [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](ASP.NET-Core-连接-GitLab-与-MatterMost-打造-devops-工具.md)
+
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
  * [BAT 脚本判断当前系统是 x86 还是 x64 系统](BAT-脚本判断当前系统是-x86-还是-x64-系统.md)
