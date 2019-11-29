@@ -73,7 +73,7 @@ System.Windows.Data Information: 10 : Cannot retrieve value using the binding an
 System.Windows.Data Information: 10 : 无法接受绑定的返回值，同时没有设置绑定失败使用的值；将使用默认值代替。绑定表达式是 Path=Width 数据项是没有，绑定的元素是 Grid 绑定的属性是 Background 这个属性的类型是 Brush 类型
 ```
 
-如果不想每次都设置 VisualStudio 可以使用 [WPF 如何调试 binding](https://blog.lindexi.com/post/wpf-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95-binding )
+如果不想每次都设置 VisualStudio 可以使用 [WPF 如何调试 binding](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95-binding.html )
 
 
 

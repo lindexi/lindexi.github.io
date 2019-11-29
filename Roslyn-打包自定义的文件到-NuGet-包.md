@@ -85,7 +85,7 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
 ```
 
-通过 `IsTool` 将不会在安装的项目引用编译的文件
+通过 `IsTool` 将不会在安装的项目引用编译的文件，也就是这个 NuGet 库只是工具，里面的 dll 不会被引用
 
 [Roslyn 使用 Target 替换占位符方式生成 nuget 打包](https://blog.lindexi.com/post/roslyn-%E4%BD%BF%E7%94%A8-target-%E6%9B%BF%E6%8D%A2%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%96%B9%E5%BC%8F%E7%94%9F%E6%88%90-nuget-%E6%89%93%E5%8C%85 )
 

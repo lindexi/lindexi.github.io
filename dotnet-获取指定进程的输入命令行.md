@@ -206,7 +206,7 @@
         }
 ```
 
-更简单是[通过 WMI 获取指定进程的输入命令行](https://blog.lindexi.com/post/dotnet-%E9%80%9A%E8%BF%87-wmi-%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4%E8%A1%8C )
+更简单是[通过 WMI 获取指定进程的输入命令行](https://blog.lindexi.com/post/dotnet-%E9%80%9A%E8%BF%87-WMI-%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4%E8%A1%8C.html )
 
 
 

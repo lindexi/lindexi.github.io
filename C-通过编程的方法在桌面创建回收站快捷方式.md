@@ -23,7 +23,7 @@
 
 参见 [使用 C# 代码创建快捷方式文件 - walterlv](https://blog.walterlv.com/post/create-shortcut-file-using-csharp.html )
 
-[C# 如何引用 WshShell 类](https://blog.lindexi.com/post/c-%E5%A6%82%E4%BD%95%E5%BC%95%E7%94%A8-wshshell-%E7%B1%BB )
+[C# 如何引用 WshShell 类](https://blog.lindexi.com/post/C-%E5%A6%82%E4%BD%95%E5%BC%95%E7%94%A8-WshShell-%E7%B1%BB.html )
 
 [c# - Programmatically create a shortcut to the recycle bin or other special folders - Stack Overflow](https://stackoverflow.com/a/41825480/6116637 )
 

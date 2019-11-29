@@ -85,13 +85,13 @@
 
 如果一个项目是很多小伙伴开发，里面有一些逗比喜欢在输出窗口输出大量无意义的文本，那么很难通过输出窗口调试 本文告诉大家通过 VisualStudio 插件过滤输出窗口文本，让 VisualStudio 的输出只是自己需要的信息
 
-[VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/visualstudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC )
+[VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/VisualStudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC.html )
 
 ## Comment Translator 
 
 有一些项目的注释是使用日文或英文写的，有一些小伙伴看不懂，在 VisualStudio 可以通过插件帮助翻译注释
 
-[VisualStudio 插件 翻译注释](https://blog.lindexi.com/post/visualstudio-%E6%8F%92%E4%BB%B6-%E7%BF%BB%E8%AF%91%E6%B3%A8%E9%87%8A )
+[VisualStudio 插件 翻译注释](https://blog.lindexi.com/post/VisualStudio-%E6%8F%92%E4%BB%B6-%E7%BF%BB%E8%AF%91%E6%B3%A8%E9%87%8A.html )
 
 ## ReSharper 
 

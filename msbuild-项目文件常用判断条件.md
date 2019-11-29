@@ -91,11 +91,13 @@ Condition=" '$(TargetFramework)'=='net45' or $(Configuration)=='Debug'"
 
 更多判断请看
 
-[Roslyn 在项目文件使用条件判断](https://blog.lindexi.com/post/roslyn-%E5%9C%A8%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD )
+[Roslyn 在项目文件使用条件判断](https://blog.lindexi.com/post/Roslyn-%E5%9C%A8%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD.html )
 
 [MSBuild 如何编写带条件的属性、集合和任务 Condition？ - walterlv](https://blog.walterlv.com/post/how-to-write-msbuild-conditions.html )
 
 [Target frameworks](https://docs.microsoft.com/en-us/dotnet/standard/frameworks?wt.mc_id=MVP )
+
+[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
 
 
 

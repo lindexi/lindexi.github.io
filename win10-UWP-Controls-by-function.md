@@ -299,7 +299,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
     }
 ```
 
-如果绑定的属性列表需要在值发生添加的时候动态修改界面的列表，需要使用 ObservableCollection 获得通过[win10 uwp 通知列表](https://lindexi.gitee.io/post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8.html )的方法
+如果绑定的属性列表需要在值发生添加的时候动态修改界面的列表，需要使用 ObservableCollection 获得通过[win10 uwp 通知列表](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8.html )的方法
 
 ```csharp
         public ObservableCollection<string> lindexi

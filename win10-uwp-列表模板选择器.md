@@ -96,7 +96,7 @@
 
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
 
-如何去背景请看[win10 UWP ListView](https://lindexi.gitee.io/post/win10-UWP-ListView.html )
+如何去背景请看[win10 UWP ListView](https://blog.lindexi.com/post/win10-UWP-ListView.html )
 
 就是把`ListViewItem`复制，然后去掉`ListViewItemBackgroundPointerOver` 和 `SelectedBackground` `SelectedPointerOverBackground` 就好了。实际把很多属性去掉就可以做出比较好的效果，但是选中的修改颜色还需要后台写。这是我修改的 Template 可以直接复制使用。
 

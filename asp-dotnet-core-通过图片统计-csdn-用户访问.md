@@ -126,7 +126,7 @@
 
 这样就可以完成了统计用户的访问了，同时代码也很少。我还需要用户的 IP 和使用什么浏览器，于是需要添加一点代码
 
-我的网站是通过 frp 让用户访问，需要[从 Frp 获取用户真实 IP 地址](https://blog.lindexi.com/post/asp-dotnet-core-%E4%BB%8E-frp-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9E-ip-%E5%9C%B0%E5%9D%80 )用法有点复杂
+我的网站是通过 frp 让用户访问，需要[从 Frp 获取用户真实 IP 地址](https://blog.lindexi.com/post/asp-dotnet-core-%E4%BB%8E-Frp-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9E-IP-%E5%9C%B0%E5%9D%80.html )用法有点复杂
 
 ```csharp
         private static bool TryGetUserIpFromFrp(HttpRequest httpContextRequest, out StringValues ip)
@@ -222,7 +222,7 @@
 
 [dotnet 获取程序所在路径的方法](https://blog.lindexi.com/post/dotnet-%E8%8E%B7%E5%8F%96%E7%A8%8B%E5%BA%8F%E6%89%80%E5%9C%A8%E8%B7%AF%E5%BE%84%E7%9A%84%E6%96%B9%E6%B3%95.html )
 
-[asp dotnet core 从 Frp 获取用户真实 IP 地址](https://blog.lindexi.com/post/asp-dotnet-core-%E4%BB%8E-frp-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9E-ip-%E5%9C%B0%E5%9D%80 )
+[asp dotnet core 从 Frp 获取用户真实 IP 地址](https://blog.lindexi.com/post/asp-dotnet-core-%E4%BB%8E-Frp-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9E-IP-%E5%9C%B0%E5%9D%80.html )
 
 [asp dotnet core 图片在浏览器没访问可能原因](https://blog.lindexi.com/post/asp-dotnet-core-%E5%9B%BE%E7%89%87%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B2%A1%E8%AE%BF%E9%97%AE%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
 

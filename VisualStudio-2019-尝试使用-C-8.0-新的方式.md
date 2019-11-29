@@ -20,7 +20,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F20181212174552691)
 
-虽然界面不错，但是创建项目的速度没有加快，等了很久，终于看到和之前没有多少修改的界面。虽然开始是没有发现添加了什么功能，但是实际作为太阳系最强IDE还是提供了很多好玩的功能，请看[VisualStudio 2019 新特性](https://blog.lindexi.com/post/visualstudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7 )
+虽然界面不错，但是创建项目的速度没有加快，等了很久，终于看到和之前没有多少修改的界面。虽然开始是没有发现添加了什么功能，但是实际作为太阳系最强IDE还是提供了很多好玩的功能，请看[VisualStudio 2019 新特性](https://blog.lindexi.com/post/VisualStudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7.html )
 
 在按下调试的时候，发现有一些按钮的界面修改，如下一步的按钮
 
@@ -480,7 +480,7 @@ warning CS8602: Possible dereference of a null reference.
 
 [[翻译]初试C# 8.0 - WAKU - 博客园](https://www.cnblogs.com/waku/p/10094691.html )
 
-[VisualStudio 2019 新特性](https://blog.lindexi.com/post/visualstudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7 )
+[VisualStudio 2019 新特性](https://blog.lindexi.com/post/VisualStudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7.html )
 
 
 

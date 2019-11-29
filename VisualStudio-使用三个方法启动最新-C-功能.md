@@ -29,7 +29,7 @@
 
 ## 第二个方法
 
-如果升级了自己的 VisualStudio 项目为 VisualStudio 2017 项目格式，那么就很建议使用下面的方法，如何升级请看 [从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
+如果升级了自己的 VisualStudio 项目为 VisualStudio 2017 项目格式，那么就很建议使用下面的方法，如何升级请看 [从以前的项目格式迁移到 VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
 
 打开项目的 csproj 文件，在一个`PropertyGroup`随便一个地方添加下面代码
 

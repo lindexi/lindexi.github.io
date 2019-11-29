@@ -10,7 +10,7 @@
 
 在触摸设备里面，如果用的是微软的 HID 协议，那么需要符合协议才能让 Windows 的软件能使用
 
-关于 HID 协议请看[Windows 的 Pen 协议](https://blog.lindexi.com/post/windows-%E7%9A%84-pen-%E5%8D%8F%E8%AE%AE )
+关于 HID 协议请看[Windows 的 Pen 协议](https://blog.lindexi.com/post/Windows-%E7%9A%84-Pen-%E5%8D%8F%E8%AE%AE.html)
 
 如果发送的消息里面，只有按下没有抬起，或者反过来，那么软件将会出现丢笔，也就是有时的触摸没反应
 
@@ -20,7 +20,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F201971585852994)
 
-其实在 HID 设备里面，对于按下和移动用的都是 0x07 而对抬起用的是 0x04 详细请看[Windows 的 Pen 协议](https://blog.lindexi.com/post/windows-%E7%9A%84-pen-%E5%8D%8F%E8%AE%AE )
+其实在 HID 设备里面，对于按下和移动用的都是 0x07 而对抬起用的是 0x04 详细请看[Windows 的 Pen 协议](https://blog.lindexi.com/post/Windows-%E7%9A%84-Pen-%E5%8D%8F%E8%AE%AE.html)
 
 这个测试工具的源代码请看 [github](https://github.com/lindexi/lindexi_gd/tree/ab74e3f14597e48d71c7cf478e55211991748a0c/WhearernweaemKeefnca )
 

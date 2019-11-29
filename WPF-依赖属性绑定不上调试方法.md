@@ -174,7 +174,7 @@
 
 [为啥在Code Behind进行RelativeSource的binding会丢失](https://huangtengxiao.gitee.io/post/%E4%B8%BA%E5%95%A5%E5%9C%A8Code-Behind%E8%BF%9B%E8%A1%8CRelativeSource%E7%9A%84binding%E4%BC%9A%E4%B8%A2%E5%A4%B1.html )
 
-[WPF 如何调试 binding](https://blog.lindexi.com/post/wpf-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95-binding )
+[WPF 如何调试 binding](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95-binding.html )
 
 
 

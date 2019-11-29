@@ -37,7 +37,7 @@
 
 在 WPF 的 笔迹是没有额外创建一个线程作为另一个 UI 线程，而是直接将触摸收集线程作为另一个 UI 线程。当然这个方法如果没用好可能就会在用户多个手指书写时无法做到足够高的速度。
 
-如果要做高性能的笔必须要了解 WPF 的触摸和渲染原理，具体请看[WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html ) 和 [WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
+如果要做高性能的笔必须要了解 WPF 的触摸和渲染原理，具体请看[WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html ) 和 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
 
 于是下面告诉大家如何做出一个高性能的笔。
 
@@ -109,7 +109,7 @@
 
 [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html ) 
 
-[WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
+[WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
 
 其他自己写的笔迹算法
 

@@ -69,7 +69,7 @@ System.InvalidOperationException:“由于不存在此事件的公共添加方�
 
 更多反射请看
 
-[win10 uwp 反射](https://lindexi.gitee.io/post/win10-uwp-%E5%8F%8D%E5%B0%84.html )
+[win10 uwp 反射](https://blog.lindexi.com/post/win10-uwp-%E5%8F%8D%E5%B0%84.html )
 
 [.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - walterlv](https://walterlv.com/post/create-delegate-to-improve-reflection-performance.html )
 

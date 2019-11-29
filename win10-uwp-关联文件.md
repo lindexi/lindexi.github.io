@@ -52,7 +52,7 @@
 
 如果已经打开了软件，通过 `frame.Navigate` 重新跳转到主页面，页面跳转就是这样，页面传入可以是 StorageFile 但是需要在对应的页面使用对应类型。
 
-现在软件在用户打开对应文件直接显示在 MainPage ，如果需要显示在别的窗口，就可以通过`frame.Navigate`跳转到其他的页面，对于跳转传参数，建议使用本渣的 MVVM 框架，请看[win10 uwp MVVM入门](https://lindexi.gitee.io/post/win10-uwp-MVVM%E5%85%A5%E9%97%A8.html )。
+现在软件在用户打开对应文件直接显示在 MainPage ，如果需要显示在别的窗口，就可以通过`frame.Navigate`跳转到其他的页面，对于跳转传参数，建议使用本渣的 MVVM 框架，请看[win10 uwp MVVM入门](https://blog.lindexi.com/post/win10-uwp-MVVM%E5%85%A5%E9%97%A8.html )。
 
 我没有在博客说如何传参，但是这个对大家也不难。
 

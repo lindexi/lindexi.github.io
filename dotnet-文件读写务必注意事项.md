@@ -25,7 +25,7 @@
 - 注意多进程访问和多线程访问
 - 注意文件编码，注意带BOM和不带的
    
-   请看[C＃ 判断文件编码](https://blog.lindexi.com/post/C-%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81.html)
+   请看[C＃ 判断文件编码](https://blog.lindexi.com/post/C-%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81.html )
  
 
 

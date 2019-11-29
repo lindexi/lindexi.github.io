@@ -83,6 +83,8 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2019131624411)
 
+上面代码使用 Geometry.Combine 合并两个图形
+
 [WPF 通过 DrawingContext DrawImage 绘制图片](https://lindexi.gitee.io/post/WPF-%E9%80%9A%E8%BF%87-DrawingContext-DrawImage-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87.html )
 
 

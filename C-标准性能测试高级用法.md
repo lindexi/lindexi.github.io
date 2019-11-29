@@ -8,7 +8,7 @@
 
 <div id="toc"></div>
 
-在 [C# 标准性能测试](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html ) 已经告诉大家如何使用 BenchmarkDotNet 测试性能，本文会告诉大家高级的用法。
+在 [C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html ) 已经告诉大家如何使用 BenchmarkDotNet 测试性能，本文会告诉大家高级的用法。
 
 建议是创建一个控制台项目用来做性能测试，这个项目要求是 dotnet framework 4.6 以上，建议是 4.7 的版本。使用这个项目引用需要测试的项目，然后在里面写测试的代码。
 

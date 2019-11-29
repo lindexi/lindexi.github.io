@@ -53,7 +53,7 @@
 
 可以看到有输出但是就是不能滚动
 
-在我博客 [WPF 拖动滚动](https://lindexi.gitee.io/post/WPF-%E6%8B%96%E5%8A%A8%E6%BB%9A%E5%8A%A8.html ) 告诉大家通过 PanningMode 的方法可以让滚动条滚动
+在我博客 [WPF 拖动滚动](https://blog.lindexi.com/post/WPF-%E6%8B%96%E5%8A%A8%E6%BB%9A%E5%8A%A8.html ) 告诉大家通过 PanningMode 的方法可以让滚动条滚动
 
 只要在初始的过程设置了 PanningMode 因为在代码里面通过 InvalidateProperty 重新设置 IsManipulationEnabled 的值，所以只需要设置 PanningMode 就可以
 

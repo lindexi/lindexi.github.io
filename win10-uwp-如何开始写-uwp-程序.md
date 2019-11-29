@@ -110,7 +110,7 @@
 
 如果遇到任何的问题，欢迎加入一些 dot net 交流的群交流。
 
-欢迎大家加入我的组织 [telegrma](https://t.me/dotnet_campus) ，如果发现无法加入，请看[如何使用 Telegram](https://lindexi.gitee.io/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
+欢迎大家加入我的组织 [telegrma](https://t.me/dotnet_campus) ，如果发现无法加入，请看[如何使用 Telegram](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
 
 

@@ -74,7 +74,7 @@ Color color = System.Drawing.ColorTranslator.FromHtml(hex);
         }
 ```
 
-大家可以从上面代码发现 ConvertHexToByte 这就是 16 进制转 int 的方法，请看[C# 16 进制字符串转 int](https://lindexi.gitee.io/post/C-16-%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC-int.html )
+大家可以从上面代码发现 ConvertHexToByte 这就是 16 进制转 int 的方法，请看[C# 16 进制字符串转 int](https://blog.lindexi.com/post/C-16-%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC-int.html )
 
 但是存在这样写的颜色 `#FD92` `#DAC` 的颜色，所以还需要继续修改一下算法
 

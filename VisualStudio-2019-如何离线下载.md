@@ -112,7 +112,7 @@ F:\下载\vs\vslayout\vs_community.exe --add Microsoft.VisualStudio.Workload.Man
 
 注意这里添加的 `--add` 需要和上面下载的时候输入的相同
 
-关于 VisualStudio 2019 新功能请看 [VisualStudio 2019 新特性](https://blog.lindexi.com/post/visualstudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7 )
+关于 VisualStudio 2019 新功能请看 [VisualStudio 2019 新特性](https://blog.lindexi.com/post/VisualStudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7.html )
 
 [Visual Studio 2019 发布活动 - Visual Studio](https://visualstudio.microsoft.com/zh-hans/vs2019-launch/?rr=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3D54dGgZyPCZ0eQDyOjhrxFSjIslKmN5iGZ0EHDN672ecSriXESCrcVM9jCtpMBOCk%26wd%3D%26eqid%3D830caa27000393af000000065ca40ad5 )
 

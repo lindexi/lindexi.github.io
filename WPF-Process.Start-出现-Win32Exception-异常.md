@@ -37,7 +37,7 @@
             }
 ```
 
-为什么会出现找不到路径？我使用的是[WPF 封装 dotnet remoting 调用其他进程](https://lindexi.gitee.io/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )里面需要引用一个库用来做远程的软件，因为我使用一个库 A 引用了远程的软件，使用程序B引用了A，因为没有直接引用远程软件，所以就没有在输入路径找到这个文件，所以出现异常。
+为什么会出现找不到路径？我使用的是[WPF 封装 dotnet remoting 调用其他进程](https://blog.lindexi.com/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )里面需要引用一个库用来做远程的软件，因为我使用一个库 A 引用了远程的软件，使用程序B引用了A，因为没有直接引用远程软件，所以就没有在输入路径找到这个文件，所以出现异常。
 
 其他可能出现异常的是：
 
@@ -45,7 +45,7 @@
 
 更多关于 remoting 的博客
 
-[WPF 封装 dotnet remoting 调用其他进程](https://lindexi.gitee.io/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
+[WPF 封装 dotnet remoting 调用其他进程](https://blog.lindexi.com/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
 
 [.net remoting 抛出异常](https://lindexi.gitee.io/post/.net-remoting-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
 

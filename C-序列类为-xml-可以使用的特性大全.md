@@ -8,7 +8,7 @@
 
 <div id="toc"></div>
 
-最近我在把项目文件修改为 VisualStudio 2017 的格式，请看[从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )，这时虽然可以自动打包，但是我还是需要生成 Nuspec 文件，所以本文就是记录我在从 csproj 文件创建 nuspec 文件遇到的转换
+最近我在把项目文件修改为 VisualStudio 2017 的格式，请看[从以前的项目格式迁移到 VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )，这时虽然可以自动打包，但是我还是需要生成 Nuspec 文件，所以本文就是记录我在从 csproj 文件创建 nuspec 文件遇到的转换
 
 实际就是做[将 .NET Core 项目打一个最简单的 NuGet 源码包，安装此包就像直接把源码放进项目一样 - walterlv](https://walterlv.github.io/post/the-simplest-way-to-pack-a-source-code-nuget-package.html )，把项目作为源代码打包
 

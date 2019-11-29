@@ -18,7 +18,7 @@
 
 在 Win7 的触摸是通过硬件设备作为 HID 设备，通过 HAL 层收集到信息，通过系统驱动进行转发消息。此时的硬件将不是直接连接到软件，中间会经过很多层，此时系统将会处理很多触摸的细节，开发的难度降低。但是这也存在一个坑就是系统的稳定性，如果系统没有正确处理触摸消息和触摸消息的转发，那么将会让应用或系统触摸失效
 
-但是微软发现在书写时，如果走 Touch 消息，此时因为需要经过 Windows 消息，速度没有之前从硬件获取的快，于是提出了 Windows Inking Service Platform 请看 [WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
+但是微软发现在书写时，如果走 Touch 消息，此时因为需要经过 Windows 消息，速度没有之前从硬件获取的快，于是提出了 Windows Inking Service Platform 请看 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
 
 在 Win7 的这个触摸架构就是古代的触摸
 

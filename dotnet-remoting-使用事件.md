@@ -10,7 +10,7 @@
 
 <div id="toc"></div>
 
-在我这个博客[WPF 使用RPC调用其他进程](./WPF-%E4%BD%BF%E7%94%A8RPC%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )已经有告诉大家如何简单使用。
+在我这个博客[WPF 使用RPC调用其他进程](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8RPC%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )已经有告诉大家如何简单使用。
 
 但是对于事件的使用还是没有详细告诉大家。
 
@@ -327,7 +327,7 @@ System.Runtime.Remoting.RemotingException:“权限被拒绝: 无法远程调用
     }
 ```
 
-对于刚才的`Remote`特性请看下面，建议使用[WPF 封装 dotnet remoting 调用其他进程](https://lindexi.gitee.io/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
+对于刚才的`Remote`特性请看下面，建议使用[WPF 封装 dotnet remoting 调用其他进程](https://blog.lindexi.com/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
 
 ```csharp
     /// <summary>

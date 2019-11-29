@@ -79,7 +79,7 @@
 
 通过 slnf 文件可以加载只需要的项目，同时解决多个 sln 文件添加项目的同步问题，提升了项目文件打开的性能和编译性能
 
-更多的新功能请看 [VisualStudio 2019 新特性](https://blog.lindexi.com/post/visualstudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7 )
+更多的新功能请看 [VisualStudio 2019 新特性](https://blog.lindexi.com/post/VisualStudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7.html )
 
 [Load a subset of projects - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/filtered-solutions?view=vs-2019 )
 

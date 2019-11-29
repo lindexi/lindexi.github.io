@@ -35,7 +35,7 @@
 
 下面是记录过程，如果只是想要知道结论，那么下面的文章就不需要看了。
 
-首先来创建一个空白的 WPF 程序，使用[从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )的方法修改 WPF 程序为新项目格式，然后开始来修改 xaml 的加入时间。
+首先来创建一个空白的 WPF 程序，使用[从以前的项目格式迁移到 VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )的方法修改 WPF 程序为新项目格式，然后开始来修改 xaml 的加入时间。
 
 一个空白的 WPF 程序会包含这些内容
 

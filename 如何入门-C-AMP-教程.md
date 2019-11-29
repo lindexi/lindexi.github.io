@@ -17,7 +17,7 @@
 
 然后输入下面代码
 
-```csharp
+```c
 #include <iostream> 
 #include <amp.h> 
 using namespace concurrency;
@@ -41,6 +41,8 @@ int main()
 这里的 v 就是 Helloworld 减去 1 得到的，所以进行计算输出
 
 按下运行就可以看到输出
+
+这个例子是多线程同时执行，需要进行多线程的计算不能有依赖，也就是有需要计算的函数 1 和 2 不能让 1 需要等待 2 执行完成才能运行，只有 1 和 2 能同时运行的才能使用这个方法
 
 
 

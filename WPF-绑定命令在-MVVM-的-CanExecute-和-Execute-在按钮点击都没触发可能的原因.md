@@ -55,7 +55,7 @@
         public ViewModel ViewModel { get; } = new ViewModel();
 ```
 
-如何绑定 ViewModel 请看 [win10 uwp DataContext](https://blog.lindexi.com/post/win10-uwp-datacontext )
+如何绑定 ViewModel 请看 [win10 uwp DataContext](https://blog.lindexi.com/post/win10-uwp-DataContext.html )
 
 在界面放一个文本和一个按钮，文本可以在失去焦点的时候重新拿到焦点
 
