@@ -23,7 +23,7 @@
 
 这里的 `WindowChrome.IsHitTestVisibleInChrome` 支持继承，也就是可以在窗口设置，这样所有在窗口里面的按钮都支持在标题栏点击
 
-如何开启 Pointer 消息请看 [win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6-%E6%89%93%E5%BC%80-pointer-%E6%B6%88%E6%81%AF )
+如何开启 Pointer 消息请看 [win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html )
 
 我和 [lsj](https://blog.sdlsj.net/ ) 使用 spy++ 知道在 WPF 的标题栏点击的时候是可以收到 Windows 鼠标消息，也就是这里是 WPF 处理的
 

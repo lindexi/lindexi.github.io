@@ -198,7 +198,7 @@ ThreadId = 19768
 
 在局部变量和自动窗口等都可以右击某个属性设置值更改中断将会在这个值被修改的时候进入断点
 
-详细请看 [VisualStudio 2019 新特性](https://blog.lindexi.com/post/visualstudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7 )
+详细请看 [VisualStudio 2019 新特性](https://blog.lindexi.com/post/VisualStudio-2019-%E6%96%B0%E7%89%B9%E6%80%A7.html )
 
 ## 断点输出
 

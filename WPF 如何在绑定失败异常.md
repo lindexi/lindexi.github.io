@@ -63,7 +63,7 @@ System.Windows.Data Error: 40 : BindingExpression path error: 'JaslorbafelStoj' 
 
 ## 转发绑定
 
-因为绑定失败输出是使用 Trace ，关于 Trace 请看[WPF 调试 获得追踪输出](https://lindexi.gitee.io/post/WPF-%E8%B0%83%E8%AF%95-%E8%8E%B7%E5%BE%97%E8%BF%BD%E8%B8%AA%E8%BE%93%E5%87%BA.html )
+因为绑定失败输出是使用 Trace ，关于 Trace 请看[WPF 调试 获得追踪输出](https://blog.lindexi.com/post/WPF-%E8%B0%83%E8%AF%95-%E8%8E%B7%E5%BE%97%E8%BF%BD%E8%B8%AA%E8%BE%93%E5%87%BA.html )
 
 那么如何拿到 Trace 的输出？
 

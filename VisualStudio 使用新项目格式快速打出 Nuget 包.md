@@ -58,7 +58,7 @@ nuget.exe spec
 
 ![](https://i.loli.net/2018/10/15/5bc407623254b.jpg)
 
-具体打包请看 [win10 uwp 如何打包Nuget给其他人](https://lindexi.gitee.io/post/win10-uwp-%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85Nuget%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA.html )
+具体打包请看 [win10 uwp 如何打包Nuget给其他人](https://blog.lindexi.com/post/win10-uwp-%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85Nuget%E7%BB%99%E5%85%B6%E4%BB%96%E4%BA%BA.html )
 
 而使用 VisualStudio 新项目格式打出 Nuget 包的方法很简单，首先是创建一个 dotnet core 项目，使用这个项目演示
 

@@ -124,7 +124,7 @@ using lindexi.linq;
 
 ## 过滤输出
 
-在 VisualStudio 里面，我的团队争夺最多的是输出窗口内容，我会发现我的输出窗口不断在输出我不关注的内容，于是我找到了 [VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/visualstudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC ) 这个插件，通过过滤关键字看到我需要关注的内容
+在 VisualStudio 里面，我的团队争夺最多的是输出窗口内容，我会发现我的输出窗口不断在输出我不关注的内容，于是我找到了 [VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/VisualStudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC.html ) 这个插件，通过过滤关键字看到我需要关注的内容
 
 我给小伙伴建议在自己的输出里面带上自己的名字
 
@@ -143,7 +143,7 @@ public static class LindexiDebug
 }
 ```
 
-在我使用上面这个类输出的时候，将会默认带上 `lindexi` 的前缀，可以使用 [VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/visualstudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC ) 的方法过滤输出内容，这样就可以只看到自己需要看到的内容
+在我使用上面这个类输出的时候，将会默认带上 `lindexi` 的前缀，可以使用 [VisualStudio 过滤输出窗口文本](https://blog.lindexi.com/post/VisualStudio-%E8%BF%87%E6%BB%A4%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E6%96%87%E6%9C%AC.html) 的方法过滤输出内容，这样就可以只看到自己需要看到的内容
 
 如果大家有好的方法，请告诉我。
 

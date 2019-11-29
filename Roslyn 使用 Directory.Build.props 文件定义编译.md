@@ -6,7 +6,7 @@
 <!-- csdn -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
-在 MSBuild 的 15 之后，也就是安装了 VisualStudio 2017 就可以使用的新功能，支持新的 csproj 格式。如何把以前的格式升级为 VisualStudio 2017 的新格式请看[从以前的项目格式迁移到 VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
+在 MSBuild 的 15 之后，也就是安装了 VisualStudio 2017 就可以使用的新功能，支持新的 csproj 格式。如何把以前的格式升级为 VisualStudio 2017 的新格式请看[从以前的项目格式迁移到 VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
 
 在 MSBuild 15 的一个新的功能就是让开发者可以自己定义项目信息放在一个文件，这个文件会在 `Microsoft.Common.props` 引用，而且会在`csproj`项目文件所在的文件夹开始寻找，只要找到存在`Directory.Build.props`文件就会自动导入里面的内容。
 

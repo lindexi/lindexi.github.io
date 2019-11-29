@@ -139,7 +139,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 [Use breakpoints in the debugger - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/using-breakpoints?wt.mc_id=MVP )
 
-详细的断点调试请看[VisualStudio 断点调试详解](https://blog.lindexi.com/post/visualstudio-%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E8%AF%A6%E8%A7%A3 )
+详细的断点调试请看[VisualStudio 断点调试详解](https://blog.lindexi.com/post/VisualStudio-%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95%E8%AF%A6%E8%A7%A3.html )
 
 ### 变量窗口
 
@@ -300,7 +300,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 如果有些软件是在发布的时候，刚好在软件启动的过程需要进行调试，此时就需要使用调试软件启动的方法，详细请看
 
-[WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/wpf-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8 )
+[WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8.html )
 
 ## 异常调试
 
@@ -735,7 +735,7 @@ Debug.WriteLine($"进入xx方法，当前值={xx}");
 - 推荐加上一些前缀标签，用于过滤输出窗口
 - 推荐带上一些格式，例如 `Debug.WriteLine($"========进入xx方法=======");` 这样进入关键方法时可以快速看到
 
-更多请看 [C# 如何写 DEBUG 输出](https://blog.lindexi.com/post/c-%E5%A6%82%E4%BD%95%E5%86%99-debug-%E8%BE%93%E5%87%BA )
+更多请看 [C# 如何写 DEBUG 输出](https://blog.lindexi.com/post/C-%E5%A6%82%E4%BD%95%E5%86%99-DEBUG-%E8%BE%93%E5%87%BA.html)
 
 在更改代码进行调试的时候，通过添加更多的描述输出的方法是很难一次性添加对的输出的，需要小伙伴不断尝试和修改
 
@@ -770,7 +770,7 @@ Debug.WriteLine($"进入xx方法，当前值={xx}");
 
 但问题来了，请问林德熙逗比开发者如何能知道测试小伙伴说的软件不工作了是怎么回事？为什么软件启动不起来了
 
-在测试的设备上，是安装不了如此重的 VisualStudio 的，于是 [WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/wpf-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8 ) 的方法也用不了。同时因为软件一启动就 gg 了，所以附加调试也用不了。就连 [神器如 dnSpy](https://blog.walterlv.com/post/edit-and-recompile-assembly-using-dnspy.html ) 也被测试小姐姐说不要弄坏她的电脑不能用
+在测试的设备上，是安装不了如此重的 VisualStudio 的，于是 [WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8.html ) 的方法也用不了。同时因为软件一启动就 gg 了，所以附加调试也用不了。就连 [神器如 dnSpy](https://blog.walterlv.com/post/edit-and-recompile-assembly-using-dnspy.html ) 也被测试小姐姐说不要弄坏她的电脑不能用
 
 此时可以怎么知道软件是运行做了什么
 
@@ -894,9 +894,9 @@ Debugger.Break();
 
 但是此时需要重新编译整个大项目才能进行调试，这样的调试的效率比较低，可以尝试编译了库的代码，将库的调试作为项目的输出文件，通过这个方法做到每次调试编译库代码就可以，提高效率详细请看下面两篇博客
 
-[Roslyn 让 VisualStudio 急速调试底层库方法](https://blog.lindexi.com/post/roslyn-%E8%AE%A9-visualstudio-%E6%80%A5%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%95%E5%B1%82%E5%BA%93%E6%96%B9%E6%B3%95 )
+[Roslyn 让 VisualStudio 急速调试底层库方法](https://blog.lindexi.com/post/Roslyn-%E8%AE%A9-VisualStudio-%E6%80%A5%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%95%E5%B1%82%E5%BA%93%E6%96%B9%E6%B3%95.html )
 
-[VisualStudio 通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/visualstudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81 )
+[VisualStudio 通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html)
 
 ### 案例
 

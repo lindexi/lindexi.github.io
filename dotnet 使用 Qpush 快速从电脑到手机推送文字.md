@@ -78,7 +78,7 @@ using lindexi.src;
 
 如果觉得直接引用这个库会输出一个 dll 希望放在自己的程序里面，不需要手动去复制下面的源代码，只需要修改 Nuget 包为 [lindexi.src.Qpush.Source](https://www.nuget.org/packages/lindexi.src.Qpush.Source ) 就可以。
 
-这里的 [lindexi.src.Qpush.Source](https://www.nuget.org/packages/lindexi.src.Qpush.Source ) 是一个源代码包，使用 [SourceYard](https://github.com/dotnet-campus/SourceYard ) 做的源代码，安装这个库和复制下面的源代码到自己的项目里面差不多。但是要安装 lindexi.src.Qpush.Source 需要使用 [VS2017 新项目格式](https://lindexi.gitee.io/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )才可以
+这里的 [lindexi.src.Qpush.Source](https://www.nuget.org/packages/lindexi.src.Qpush.Source ) 是一个源代码包，使用 [SourceYard](https://github.com/dotnet-campus/SourceYard ) 做的源代码，安装这个库和复制下面的源代码到自己的项目里面差不多。但是要安装 lindexi.src.Qpush.Source 需要使用 [VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )才可以
 
 ```csharp
 using System;

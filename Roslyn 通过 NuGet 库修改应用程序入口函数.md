@@ -8,7 +8,7 @@
 
 在程序编译的时候可以通过指定 StartupObject 指定某个命名空间里面的某个类的主函数作为入口
 
-在做 NuGet 包可以通过 Build 文件夹里面添加一些有趣的代码，简单的调试请创建一个简单的 Nuget 包，创建方法请看 [VisualStudio 使用新项目格式快速打出 Nuget 包](https://blog.lindexi.com/post/visualstudio-%E4%BD%BF%E7%94%A8%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E5%BF%AB%E9%80%9F%E6%89%93%E5%87%BA-nuget-%E5%8C%85 )
+在做 NuGet 包可以通过 Build 文件夹里面添加一些有趣的代码，简单的调试请创建一个简单的 Nuget 包，创建方法请看 [VisualStudio 使用新项目格式快速打出 Nuget 包](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E5%BF%AB%E9%80%9F%E6%89%93%E5%87%BA-Nuget-%E5%8C%85.html )
 
 在做一个 Nuget 包的时候可以直接纯手工写一个 nuget 包，或者修改现有的 Nuget 包文件
 

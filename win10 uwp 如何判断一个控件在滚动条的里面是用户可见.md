@@ -7,7 +7,7 @@
 
 昨天[星期八再娶你](https://www.cnblogs.com/hupo376787) 大佬问我如何判断在滚动条内可以看到某个元素，他需要在滚动条里面放一个视频播放器，在用户看不到这个播放器的时候自动停下这个播放器
 
-在 UWP 的判断会比在 WPF 中复杂一些，我写过[WPF 如何判断一个控件在滚动条的里面是用户可见](https://blog.lindexi.com/post/wpf-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%8E%A7%E4%BB%B6%E5%9C%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E7%9A%84%E9%87%8C%E9%9D%A2%E6%98%AF%E7%94%A8%E6%88%B7%E5%8F%AF%E8%A7%81 )但是在 UWP 中的小伙伴，也就是做 UWP 的大佬对 API 的设计会更加诡异
+在 UWP 的判断会比在 WPF 中复杂一些，我写过[WPF 如何判断一个控件在滚动条的里面是用户可见](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%8E%A7%E4%BB%B6%E5%9C%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E7%9A%84%E9%87%8C%E9%9D%A2%E6%98%AF%E7%94%A8%E6%88%B7%E5%8F%AF%E8%A7%81.html )但是在 UWP 中的小伙伴，也就是做 UWP 的大佬对 API 的设计会更加诡异
 
 在 UWP 没有 ScrollChanged 事件只有[ScrollViewer.ViewChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.scrollviewer.viewchanged?wt.mc_id=MVP) 事件，但是这个事件和 WPF 的触发不相同的在于，如果我有外层的控件修改了滚动条的大小，不会触发这个事件。在 [ScrollViewer.ViewChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.scrollviewer.viewchanged?wt.mc_id=MVP) 只有在用户滚动或缩放完成之后才会触发，同时这个事件的参数[ScrollViewerViewChangedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.scrollviewerviewchangedeventargs?wt.mc_id=MVP ) 只有一个表示现在是用户交互的过程还是结束的变量，所以通过这个事件判断控件是否在滚动条可见是不可靠的
 

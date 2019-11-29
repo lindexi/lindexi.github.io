@@ -1,6 +1,6 @@
 # C# 字典 Dictionary 的 TryGetValue 与先判断 ContainsKey 然后 Get 的性能对比
 
-本文使用 [benchmarkdotnet ](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html ) 测试字典的性能，在使用字典获取一个可能存在的值的时候可以使用两个不同的写法，于是本文分析两个写法的性能。
+本文使用 [benchmarkdotnet ](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html ) 测试字典的性能，在使用字典获取一个可能存在的值的时候可以使用两个不同的写法，于是本文分析两个写法的性能。
 
 <!--more-->
 
@@ -23,7 +23,7 @@ if(Dictionary.ContainsKey(xx))
 }
 ```
 
-于是本文就使用[benchmarkdotnet ](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html )测试两个方法的性能
+于是本文就使用[benchmarkdotnet ](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html )测试两个方法的性能
 
 下面是进行测试的数据，测试的代码放在本文的最后。这里的 TryGetExist 方法就是尝试获取一个值，这个值是存在的。而 ContainGetExist 是先判断值是否存在，如果存在就尝试获取这个值。
 

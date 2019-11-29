@@ -49,7 +49,7 @@
 
 准备好了环境和 NuGet 之后就可以开始开发了
 
-和之前博客 [WPF 使用 Composition API 做高性能渲染](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-composition-api-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E6%B8%B2%E6%9F%93 ) 所说方法搭建代码
+和之前博客 [WPF 使用 Composition API 做高性能渲染](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Composition-API-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E6%B8%B2%E6%9F%93.html ) 所说方法搭建代码
 
 搭建出 CompositionHost 和 CompositionHostControl 两个类，然后在 CompositionHostControl 里面添加 Win2d 相关方法
 

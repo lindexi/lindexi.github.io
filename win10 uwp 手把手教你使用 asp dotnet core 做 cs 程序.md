@@ -346,7 +346,7 @@ http://localhost:64043/
 
 ## UWP 连接
 
-打开 UWP 程序，先创建一个 ViewModel 用于数据绑定。本文不会告诉大家很多关于 ViewModel 的方法，如果想了解这个写法，请看[win10 uwp MVVM入门](https://lindexi.gitee.io/post/win10-uwp-MVVM%E5%85%A5%E9%97%A8.html )
+打开 UWP 程序，先创建一个 ViewModel 用于数据绑定。本文不会告诉大家很多关于 ViewModel 的方法，如果想了解这个写法，请看[win10 uwp MVVM入门](https://blog.lindexi.com/post/win10-uwp-MVVM%E5%85%A5%E9%97%A8.html )
 
 ### ViewModel
 

@@ -57,7 +57,7 @@
 
 虽然禁用微软提供的触摸事件，可以修复很多坑，但是禁用了也是有很多新的坑，不过我就不在这里告诉大家。自己尝试运行下面代码，然后试试程序。
 
-为什么这样就可以禁用触摸，请看[WPF 触摸到事件](https://lindexi.gitee.io/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
+为什么这样就可以禁用触摸，请看[WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
 
 [Disable the RealTimeStylus for WPF Applications](https://msdn.microsoft.com/en-us/library/dd901337(v=vs.90).aspx )
 

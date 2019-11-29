@@ -8,7 +8,7 @@
 
 在上一篇 [C# 程序内的类数量对程序启动的影响](https://lindexi.oschina.io/lindexi/post/C-%E7%A8%8B%E5%BA%8F%E5%86%85%E7%9A%84%E7%B1%BB%E6%95%B0%E9%87%8F%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E7%9A%84%E5%BD%B1%E5%93%8D.html ) 的基础上，继续做实验
 
-现在创建 1000 个类和一个测试使用的类，测试方法请看 [C# 标准性能测试](https://lindexi.gitee.io/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html )
+现在创建 1000 个类和一个测试使用的类，测试方法请看 [C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html )
 
 虽然一开始就知道了反射的性能比较差，但是究竟有多差，在创建对象的时候的差异有多少？
 
