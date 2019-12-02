@@ -5,8 +5,6 @@
 <!--more-->
 <!-- csdn -->
 
-<!-- 草稿 -->
-
 ## byte 数组转 IBuffer
 
 使用下面代码可以将 byte 数组转 IBuffer
