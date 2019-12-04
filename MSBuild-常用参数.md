@@ -103,6 +103,12 @@ msbuild -t:clean
 msbuild -t:pack
 ```
 
+## UWP 打包
+
+```csharp
+msbuild /t:restore /t:Publish /p:Configuration=Release /p:AppxPackageDir="D:\lindexi\AppxPackages\\" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload /p:AppxBundlePlatforms="x86|x64|arm"
+```
+
 
 
 
