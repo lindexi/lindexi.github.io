@@ -41,7 +41,7 @@
 
 绑定的端口是用来接收的端口，所以绑定失败不会影响发送
 
-绑定完成需要加入组播网络
+绑定完成需要加入组播网络，发送和接收需要加入相同的组播地址才可以
 
 ```csharp
                 var multicastOption = new MulticastOption(MulticastAddress, IPAddress.Any);
@@ -64,7 +64,7 @@
         public IPAddress MulticastAddress { set; get; }
 ```
 
-需要注意，上面代码的 LocalIpAddress 写的是 Any 也就是只有在默认的网卡是和其他设备网段才能访问
+需要注意，上面代码的 LocalIpAddress 写的是 Any 也就是只有在默认的网卡是和其他设备网段才能访问，也就是如果你的默认网卡是虚拟网卡，那么就不能接收发送
 
 如果发现其他设备不能接收到信息，那么请修改 LocalIpAddress 为你设备的地址
 
@@ -116,7 +116,14 @@
         }
 ```
 
-所有代码
+但是客户端不是所有设备都能使用组播，例如用了虚拟网卡，就不能通过虚拟网卡发送，如注册表策略。如果发现不能使用组播请先尝试禁用虚拟网卡，如果是win7请尝试修改注册表
+
+- [win7 无法组播的问题 - yxljl1219的专栏 - CSDN博客](https://blog.csdn.net/yxljl1314/article/details/11211267 )
+- [网络UDP广播包发不出去或接收不到问题 - lixiang987654321的专栏 - CSDN博客](https://blog.csdn.net/lixiang987654321/article/details/41697533 )
+ 
+在组播发送请不要发送过快，发送过快就是会丢包 
+
+所有代码 
 
 ```csharp
     internal class PeerMulticastFinder : IDisposable
