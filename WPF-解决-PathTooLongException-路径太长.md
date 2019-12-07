@@ -9,8 +9,6 @@
 
 <!-- csdn -->
 
-<!-- 不发布 -->
-
 先创建简单的程序，在界面放一个按钮，在按钮点击的事件尝试写一个文件名很长的文件
 
 ```csharp
@@ -46,7 +44,35 @@ System.IO.PathTooLongException:“指定的路径或文件名太长，或者两�
 
 <!-- ![](image/WPF 解决 PathTooLongException 路径太长/WPF 解决 PathTooLongException 路径太长1.png) -->
 
+如果要在应用程序可以使用长的文件名，当然单个文件名不能超过 265 字符，但是文件所在路径可以超过。需要在 .NET 4.6.2 以上，添加清单
 
+在清单 app.manifest 添加下面代码
+
+```csharp
+  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+      <windowsSettings xmlns:ws2="https://schemas.microsoft.com/SMI/2016/WindowsSettings">
+          <ws2:longPathAware>true</ws2:longPathAware>
+      </windowsSettings>
+  </application>
+```
+
+此时可以尝试写长路径
+
+```csharp
+        static void Main(string[] args)
+        {
+            var folder = Path.GetTempPath();
+
+            for (int i = 0; i < 300; i++)
+            {
+                folder = Path.Combine(folder, i.ToString());
+                Directory.CreateDirectory(folder);
+            }
+
+            var file = new FileInfo(Path.Combine(folder, "1.txt"));
+            var fileStream = file.Create();
+        }
+```
 
 [Naming Files, Paths, and Namespaces - Windows applications](https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file#maxpath )
 
