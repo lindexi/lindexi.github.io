@@ -356,6 +356,8 @@
 
  * [dotnet 文件读写务必注意事项](dotnet-文件读写务必注意事项.md)
 
+ * [dotnet 新 sdk style 项目格式 文件冲突](dotnet-新-sdk-style-项目格式-文件冲突.md)
+
  * [dotnet 新 sdk style 项目格式的一些命名空间和引用](dotnet-新-sdk-style-项目格式的一些命名空间和引用.md)
 
  * [dotnet 新项目格式与对应框架预定义的宏](dotnet-新项目格式与对应框架预定义的宏.md)
@@ -409,6 +411,8 @@
  * [dotnet 通过 WMI 获取系统补丁](dotnet-通过-WMI-获取系统补丁.md)
 
  * [dotnet 通过 WMI 获取设备厂商](dotnet-通过-WMI-获取设备厂商.md)
+
+ * [dotnet 部署 github 的 Action 进行持续集成](dotnet-部署-github-的-Action-进行持续集成.md)
 
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
@@ -649,6 +653,8 @@
  * [VisualStudio 修改配色](VisualStudio-修改配色.md)
 
  * [VisualStudio 合并代码文件](VisualStudio-合并代码文件.md)
+
+ * [VisualStudio 命令行编译 build 通过 rebuild 不通过](VisualStudio-命令行编译-build-通过-rebuild-不通过.md)
 
  * [VisualStudio 好用插件集合](VisualStudio-好用插件集合.md)
 
