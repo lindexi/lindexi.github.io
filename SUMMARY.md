@@ -414,6 +414,8 @@
 
  * [dotnet 部署 github 的 Action 进行持续集成](dotnet-部署-github-的-Action-进行持续集成.md)
 
+ * [dotnet 配置 github 自动打包上传 nuget 文件](dotnet-配置-github-自动打包上传-nuget-文件.md)
+
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
  * [gif 格式](gif-格式.md)
@@ -489,6 +491,8 @@
  * [nano Framework](nano-Framework.md)
 
  * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
+
+ * [NuGet 命令行上传找不到 snupkg 文件](NuGet-命令行上传找不到-snupkg-文件.md)
 
  * [NuGet 如何设置图标](NuGet-如何设置图标.md)
 
