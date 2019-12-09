@@ -1,12 +1,12 @@
 # WPF Process.Start 出现 Win32Exception 异常
 
-我在使用 WPF 其他其他软件的时候，发现出现Win32Exception异常。
+我在使用 WPF 调用其他软件的时候，发现出现Win32Exception异常。
 
 <!--more-->
 <!-- csdn -->
 <div id="toc"></div>
 
-如果使用下面的代码启动另一个软件，那么在启动的软件路径不存在时，就会出现异常`System.ComponentModel.Win32Exception`，没有其他信息
+如果使用下面的代码启动另一个软件，那么在启动的软件路径不存在时，就会出现异常`System.ComponentModel.Win32Exception` 没有其他信息
 
 ```csharp
 	        var st = new ProcessStartInfo(ProcessName,
