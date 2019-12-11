@@ -332,6 +332,8 @@
 
  * [dotnet 动态代理魔法书](dotnet-动态代理魔法书.md)
 
+ * [dotnet 单元测试注入文件读写](dotnet-单元测试注入文件读写.md)
+
  * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
  * [dotnet 命名管道名字长度限制](dotnet-命名管道名字长度限制.md)
