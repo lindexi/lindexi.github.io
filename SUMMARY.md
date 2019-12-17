@@ -326,6 +326,8 @@
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
 
+ * [dotnet 判断其他进程未响应](dotnet-判断其他进程未响应.md)
+
  * [dotnet 判断特定进程存在方法](dotnet-判断特定进程存在方法.md)
 
  * [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行](dotnet-判断程序当前使用管理员运行降低权使用普通权限运行.md)
@@ -1199,6 +1201,8 @@
  * [win2d 画出好看的图形](win2d-画出好看的图形.md)
 
  * [win2d 通过 CanvasActiveLayer 画出透明度和裁剪](win2d-通过-CanvasActiveLayer-画出透明度和裁剪.md)
+
+ * [win7 升级到 win10 补丁](win7-升级到-win10-补丁.md)
 
  * [win7 无法启动 WPF 程序 D3Dcompiler_47.dll 丢失](win7-无法启动-WPF-程序-D3Dcompiler_47.dll-丢失.md)
 
