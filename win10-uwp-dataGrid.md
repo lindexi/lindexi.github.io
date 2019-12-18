@@ -194,15 +194,15 @@ xaml：
 
 这样我们手动写表格，手动写表格宽度不好做，因为我们需要都是固定宽度
 
-参见：http://www.cnblogs.com/FaDeKongJian/p/5860148.html
+参见：[http://www.cnblogs.com/FaDeKongJian/p/5860148.html](http://www.cnblogs.com/FaDeKongJian/p/5860148.html )
 
 看到国内一个大神写的：https://github.com/zmtzawqlp/UWP-master/commits/master 
  
-现在可以使用： https://github.com/MyToolkit/MyToolkit/wiki/DataGrid
+现在可以使用： [https://github.com/MyToolkit/MyToolkit/wiki/DataGrid](https://github.com/MyToolkit/MyToolkit/wiki/DataGrid )
  
-国外 https://liftcodeplay.com/2015/10/24/datagrid-alternatives-in-uwp/
+国外 [https://liftcodeplay.com/2015/10/24/datagrid-alternatives-in-uwp/](https://liftcodeplay.com/2015/10/24/datagrid-alternatives-in-uwp/ )
  
-需要钱的：https://www.syncfusion.com/products/uwp/sfdatagrid
+需要钱的：[https://www.syncfusion.com/products/uwp/sfdatagrid](https://www.syncfusion.com/products/uwp/sfdatagrid )
 
 ![](http://i.wotula.com/wp.png)
  

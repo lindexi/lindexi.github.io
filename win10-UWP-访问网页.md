@@ -18,7 +18,7 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 
             string str = "http://blog.csdn.net/lindexi_gd/article/details/50392343";
 
-            using (Windows.Web.Http.HttpClient client = new Windows.Web.Http.HttpClient())
+            using (Windows.Web.[Http.HttpClient](Http.HttpClient ) client = new Windows.Web.[Http.HttpClient())](Http.HttpClient()) )
 
             {
 
@@ -28,7 +28,7 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 
                     Windows.Web.Http.HttpResponseMessage response = await client.GetAsync(new Uri(str));
 
-                    if (response != null && response.StatusCode == Windows.Web.Http.HttpStatusCode.Ok)
+                    if (response != null && response.StatusCode == Windows.Web.[Http.HttpStatusCode.Ok)](Http.HttpStatusCode.Ok) )
 
                     {
 
@@ -79,7 +79,7 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 
             System.Net.HttpWebRequest request = null;
 
-            request = System.Net.WebRequest.Create(str) as System.Net.HttpWebRequest;
+            request = System.Net.WebRequest.Create(str) as System.Net.[HttpWebRequest;](HttpWebRequest; )
 
             request.Accept = "text/html, application/xhtml+xml, image/jxr, */*";
             //有些网站需要 Accept 如果这个不对，不返回
@@ -94,7 +94,7 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 
                 System.Net.HttpWebResponse response = (System.Net.HttpWebResponse)await request.GetResponseAsync();
 
-                if (response != null && response.StatusCode==System.Net.HttpStatusCode.OK)
+                if (response != null && response.StatusCode==System.Net.[HttpStatusCode.OK)](HttpStatusCode.OK) )
 
                 {
 
@@ -157,11 +157,11 @@ Windows10 UWP 要访问 csdn博客，可以使用`Windows.Web.Http.HttpClient`�
 我在 GetProxy 使用断点，在使用下面代码运行，没有进入刚才写的函数
 
 ```csharp
-            var httpClientHandler = new HttpClientHandler();
+            var [httpClientHandler](httpClientHandler ) = new [HttpClientHandler();](HttpClientHandler(); )
             httpClientHandler.UseProxy = true;
             httpClientHandler.Proxy = new WebProxy();
 
-            var httpClient = new HttpClient(httpClientHandler);
+            var [httpClient](httpClient ) = new [HttpClient(httpClientHandler);](HttpClient(httpClientHandler); )
 
             var str = await httpClient.GetStringAsync(new Uri("https://www.google.com"));
 

@@ -17,7 +17,7 @@
 所以使用下面代码可以获取
 
 ```csharp
-            var httpClient = new HttpClient();
+            var [httpClient](httpClient ) = new [HttpClient();](HttpClient(); )
 
             var str = await httpClient.GetStringAsync("http://pv.sohu.com/cityjson");
 ```
@@ -27,7 +27,7 @@
 ```csharp
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            var httpClient = new HttpClient();
+            var [httpClient](httpClient ) = new [HttpClient();](HttpClient(); )
 
             var str = await httpClient.GetStringAsync("http://pv.sohu.com/cityjson");
 

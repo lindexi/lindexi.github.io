@@ -3,7 +3,7 @@
 
 这篇文章主要译：
 https://msdn.microsoft.com/magazine/mt694090 有很多都是胡说，随便喷，但我不会理。
-https://blogs.msdn.microsoft.com/lucian
+[https://blogs.msdn.microsoft.com/lucian](https://blogs.msdn.microsoft.com/lucian )
 今天的科技行业最常用的短语之一就是“物联网”，物联网可以让每个设备使用云而智能。使用云，设备可以分享数据和控制别的设备。我们可以远程控制相机，远程收集分析数据。
 
 <!--more-->
@@ -33,7 +33,7 @@ Led 电阻 我将会连接led到Raspberry Pi 2 ，电压5V，会让LED坏，所�
 
 以太网电缆,USB鼠标和键盘,HDMI监视器  Raspberry Pi 2有4个USB我们可以连接键盘，以太网，HDMI，我们可以把Raspberry Pi 2当做电脑。
 
-下载windows10 可以在iot跑，可以到https://developer.microsoft.com/zh-CN/windows/iot/Downloads.htm#Win8
+下载windows10 可以在iot跑，可以到[https://developer.microsoft.com/zh-CN/windows/iot/Downloads.htm#Win8](https://developer.microsoft.com/zh-CN/windows/iot/Downloads.htm#Win8 )
 
 开始项目有点难，很多开发者移动代码不一定适合硬件，为了这个例子我做了一个很简单的LED闪动，实时从网上下载数据。需要下面这些硬件：led灯，无焊料的电路试验板，电缆。
  Raspberry Pi 2 Model B 有很多GPIO ，GPIO 是General Purpose Input/Output，如果想知道可以百度，当然我是觉得google才是比较好，具体翻墙我就不说，相信大家github host很快就可以干了百度。有一些接口是保留我们不能编程，那么不能使用的有标出来，可以看上面的图有哪些被引出不能够编程。
@@ -161,20 +161,20 @@ Iot是一个新的挑战，开发需要运行环境，需要电源和网，大�
 
 虽然我们的天气没有使用云，很多iot都是要网络，我们可以做一个简单的可以发送邮件的应用。Iot可以用很多地方，所以有空可以去玩。
 
-代码：https://github.com/ms-iot/samples
+代码：[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples )
 
 中文好的博客：
-http://edi.wang/post/2016/3/26/windows-10-iot-gy-30-light-sensor
+[http://edi.wang/post/2016/3/26/windows-10-iot-gy-30-light-sensor](http://edi.wang/post/2016/3/26/windows-10-iot-gy-30-light-sensor )
 
-http://edi.wang/post/2016/3/28/windows-10-iot-moisture-sensor-raspberry-pi3
+[http://edi.wang/post/2016/3/28/windows-10-iot-moisture-sensor-raspberry-pi3](http://edi.wang/post/2016/3/28/windows-10-iot-moisture-sensor-raspberry-pi3 )
 
-http://edi.wang/post/2016/4/2/windows-10-iot-hc04-ultra-sonic-distance
+[http://edi.wang/post/2016/4/2/windows-10-iot-hc04-ultra-sonic-distance](http://edi.wang/post/2016/4/2/windows-10-iot-hc04-ultra-sonic-distance )
 
-http://edi.wang/post/2016/4/3/windows-10-iot-sound-light
+[http://edi.wang/post/2016/4/3/windows-10-iot-sound-light](http://edi.wang/post/2016/4/3/windows-10-iot-sound-light )
 
-http://edi.wang/post/2016/4/4/windows-10-iot-stepper-motor
+[http://edi.wang/post/2016/4/4/windows-10-iot-stepper-motor](http://edi.wang/post/2016/4/4/windows-10-iot-stepper-motor )
 
-http://edi.wang/post/2016/4/10/windows-10-iot-azure-remote-light
+[http://edi.wang/post/2016/4/10/windows-10-iot-azure-remote-light](http://edi.wang/post/2016/4/10/windows-10-iot-azure-remote-light )
 
 
 

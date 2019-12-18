@@ -90,13 +90,13 @@ private async void SimulateClickAsync(string button)
 如果需要使用 cookie 那么请加上下面的代码
 
 ```csharp
-            Windows.Web.Http.Filters.HttpBaseProtocolFilter filter = new Windows.Web.Http.Filters.HttpBaseProtocolFilter();
+            Windows.Web.[Http.Filters.HttpBaseProtocolFilter](Http.Filters.HttpBaseProtocolFilter ) filter = new Windows.Web.[Http.Filters.HttpBaseProtocolFilter();](Http.Filters.HttpBaseProtocolFilter(); )
 
 ```
 
 只要写上这句话就好了
 
-参见：https://stackoverflow.com/questions/44685469/programatically-press-a-button-in-a-website-from-an-app-in-a-phone/44692971
+参见：[https://stackoverflow.com/questions/44685469/programatically-press-a-button-in-a-website-from-an-app-in-a-phone/44692971](https://stackoverflow.com/questions/44685469/programatically-press-a-button-in-a-website-from-an-app-in-a-phone/44692971 )
 
 
 

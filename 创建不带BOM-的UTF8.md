@@ -45,7 +45,7 @@
         }
 ```
 
-参见：http://stackoverflow.com/questions/2502990/create-text-file-without-bom
+参见：[http://stackoverflow.com/questions/2502990/create-text-file-without-bom](http://stackoverflow.com/questions/2502990/create-text-file-without-bom )
 
 ![](https://i.loli.net/2018/05/19/5affc0092037f.jpg)
 

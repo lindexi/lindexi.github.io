@@ -20,9 +20,9 @@
 今天在win10.me看到一个rss，不知道是什么东西，打开看到
 ![这里写图片描述](http://img.blog.csdn.net/20160222151447588)
 
-于是在网上查了RSS，又在微软官网看到https://msdn.microsoft.com/zh-cn/library/windows/apps/mt429379.aspx
+于是在网上查了RSS，又在微软官网看到[https://msdn.microsoft.com/zh-cn/library/windows/apps/mt429379.aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/mt429379.aspx )
 
-林政的书也有说过，不过他是用HttpWebRequest
+林政的书也有说过，不过他是用[HttpWebRequest](HttpWebRequest )
 
 我的rss是使用SyndicationClient
 先创建SyndicationClient
@@ -180,11 +180,11 @@ rss_page不能滚动TextBlock，可以使用ScrollViewer
 ```
 
 源代码
-https://github.com/lindexi/lindexi_gd/tree/master/rss
+[https://github.com/lindexi/lindexi_gd/tree/master/rss](https://github.com/lindexi/lindexi_gd/tree/master/rss )
 
 链接：http://pan.baidu.com/s/1sk7v6Zr 密码：dzfa
 
-Http://blog.csdn.net/lindexi_gd
+[Http://blog.csdn.net/lindexi_gd](Http://blog.csdn.net/lindexi_gd )
 
 ![这里写图片描述](http://img.blog.csdn.net/20160222155811716)
 

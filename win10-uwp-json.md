@@ -1,7 +1,7 @@
 
 # win10 uwp json
 
-本文讲的是关于在uwp使用json的简单使用，json应用很多，因为我只是写简单使用，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，可以在我博客评论 http://blog.csdn.net/lindexi_gd
+本文讲的是关于在uwp使用json的简单使用，json应用很多，因为我只是写简单使用，说的东西可能不对或者不符合每个人的预期。如果觉得我有讲的不对的，就多多包含，或者直接关掉这篇文章，但是请勿生气或者发怒吐槽，可以在我博客评论 [http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
 
 <!--more-->
 
@@ -312,9 +312,9 @@ for (uint i = 0; i < root.Count; i++)
 
 
 如果需要转换中文 
-参见：http://www.cnblogs.com/DomoYao/p/Json.html
+参见：[http://www.cnblogs.com/DomoYao/p/Json.html](http://www.cnblogs.com/DomoYao/p/Json.html )
 
-参见：http://blog.csdn.net/lovegonghui/article/details/50248455
+参见：[http://blog.csdn.net/lovegonghui/article/details/50248455](http://blog.csdn.net/lovegonghui/article/details/50248455 )
 
 ## 换行输出
 

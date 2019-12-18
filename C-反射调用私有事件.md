@@ -63,7 +63,7 @@ System.InvalidOperationException:“由于不存在此事件的公共添加方�
             }
 ```
 
-参见 https://stackoverflow.com/a/6423886/6116637
+参见 [https://stackoverflow.com/a/6423886/6116637](https://stackoverflow.com/a/6423886/6116637 )
 
 如果可能遇到类型转换的异常`System.ArgumanetException:'Object of type 'System.EventHandler1[System.EventArgs]' cannot be converted to type 'System.EventHandler'. `，请看[.NET/C# 使用反射注册事件 - walterlv](https://walterlv.com/post/add-event-handler-using-reflection.html )
 

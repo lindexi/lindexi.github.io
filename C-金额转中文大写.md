@@ -161,7 +161,7 @@
 
 <script src='https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20/widget_preview?title=Money'></script>
 
-代码请看 https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20
+代码请看 [https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20](https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20 )
 
 参见：[src/Money.php · 趋势软件/capital - 码云 Gitee.com](https://gitee.com/trendsoftorg/capital/blob/master/src/Money.php )
 

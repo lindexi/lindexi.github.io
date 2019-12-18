@@ -419,9 +419,9 @@ win10总有很多看起来有用，但实际没什么卵用的东西，我一点
 
 ![这里写图片描述](http://img.blog.csdn.net/20160426165752073)
 
-http://blog.csdn.net/lindexi_gd
+[http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
 
-https://mobileprogrammerblog.wordpress.com/2015/12/23/live-tiles-and-notifications-in-universal-windows-10-app/
+[https://mobileprogrammerblog.wordpress.com/2015/12/23/live-tiles-and-notifications-in-universal-windows-10-app/](https://mobileprogrammerblog.wordpress.com/2015/12/23/live-tiles-and-notifications-in-universal-windows-10-app/ )
 
 
 
