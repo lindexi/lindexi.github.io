@@ -72,6 +72,30 @@
 
 这样在输出的时候就会自动更改文件名
 
+在 package.targets 文件让对应的放在 NuGet 文件的资源输出，通过 [Copy](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html) 的方式输出
+
+先定义一个 Target 可以在编译完成之后输出
+
+```xml
+<Project>
+    <Target Name="CopyXxxFile" AfterTargets="AfterBuild">
+
+    </Target>
+</Project>
+```
+
+请将 Target 的名修改为实际使用的复制文件
+
+```
+    <Target Name="_CopyXxxFile" AfterTargets="AfterBuild">
+        <Copy SourceFiles="$(MSBuildThisFileDirectory)..\tools\nuget.exe" DestinationFiles="$(OutputPath)\tools\nuget.exe" SkipUnchangedFiles="True"></Copy>
+    </Target>
+```
+
+使用 `$(MSBuildThisFileDirectory)` 拿到当前文件的文件夹，此时通过上一层文件就可以拿到 NuGet 包的文件夹。获取对应的文件进行输出到软件编译输出文件夹
+
+关于文件复制请看 [Roslyn 如何使用 MSBuild Copy 复制文件](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html)
+
 如果这个库文件只是需要添加资源文件，不需要加上 lib 文件，也就是不添加引用，那么请设置这个项目作为工具库
 
 ```
