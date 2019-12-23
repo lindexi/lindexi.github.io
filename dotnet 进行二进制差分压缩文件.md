@@ -10,3 +10,4 @@
 在 Chrome 的软件更新就使用这个技术，通过二进制差分方法下载差分文件，然后用差分文件和当前版本计算出新版本
 
 
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/blob/739bb867bd62d9356dc5a3d189e9e1d63daf4a69/LwufxgbaDljqkx/) 欢迎小伙伴访问

@@ -258,6 +258,8 @@ using Microsoft.Graph;
 
 看到这里就可以知道，现在UWP发送邮件有三个方法，本文是其中一个，其他方法请看[win10 UWP 发邮件](https://lindexi.gitee.io/post/win10-UWP-%E5%8F%91%E9%82%AE%E4%BB%B6.html )
 
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/blob/22a89c4f916dc891e384324b29138dda3dfdb426/BalreMahouVoomawbatu/) 欢迎小伙伴访问
+
 参考
 
 [Microsoft Graph 桌面应用程序 - 陈希章 - 博客园](https://www.cnblogs.com/chenxizhang/p/7904255.html )
