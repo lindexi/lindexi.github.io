@@ -24,7 +24,7 @@ Q# 是微软的量子语言，很厉害，所以本文告诉大家如何入门�
 项目的地址：[Microsoft/Quantum: Microsoft Quantum Developer Kit Samples and Libraries](https://github.com/microsoft/quantum ) ，可以使用下面的代码克隆
 
 ```csharp
-git clone [https://github.com/Microsoft/Quantum.git](https://github.com/Microsoft/Quantum.git )
+git clone https://github.com/Microsoft/Quantum.git
 ```
 
 如果发现自己无法访问，那么可以使用 gitee 进行克隆，新建一个项目选择远程链接，这样就好。

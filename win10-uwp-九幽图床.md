@@ -9,7 +9,7 @@
 
 <div id="toc"></div>
 
-图片加水印，我的方法，简单，一个好的方法是毒逆天大神的图片加水印方法或[http://daily.zhihu.com/story/8812028](http://daily.zhihu.com/story/8812028 )
+图片加水印，我的方法，简单，一个好的方法是毒逆天大神的图片加水印方法或http://daily.zhihu.com/story/8812028
 
 我们现在用我的方法，就是加一个TextBlock，然后获得屏幕，很简单，然后我们把水印图保存。
 

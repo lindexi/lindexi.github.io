@@ -27,9 +27,9 @@
 
 ```csharp
 
-                Windows.Web.[Http.HttpClient](Http.HttpClient ) [http](http ) = new Windows.Web.[Http.HttpClient();](Http.HttpClient(); )
+                Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
 
-                IBuffer buffer = await [http.GetBufferAsync(uri);](http.GetBufferAsync(uri); )
+                IBuffer buffer = await http.GetBufferAsync(uri);
 
                 BitmapImage img = new BitmapImage();
 
@@ -175,7 +175,7 @@ Uwp使用Md5，可以去看我写的文章
 
             return await GetLoacalFolderImage(uri) ??
 
-                   await Get[HttpImage(uri);](HttpImage(uri); )
+                   await GetHttpImage(uri);
 
         }
 
@@ -233,9 +233,9 @@ Uwp使用Md5，可以去看我写的文章
 
             {
 
-                Windows.Web.[Http.HttpClient](Http.HttpClient ) [http](http ) = new Windows.Web.[Http.HttpClient();](Http.HttpClient(); )
+                Windows.Web.Http.HttpClient http = new Windows.Web.Http.HttpClient();
 
-                IBuffer buffer = await [http.GetBufferAsync(uri);](http.GetBufferAsync(uri); )
+                IBuffer buffer = await http.GetBufferAsync(uri);
 
                 BitmapImage img = new BitmapImage();
 

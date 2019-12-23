@@ -42,7 +42,7 @@ public static class InkCanvasBinder
 <InkCanvas local:InkCanvasBinder.InkStrokes="{x:Bind AnInkStrokeContainer}" />
 ```
 
-参见：[https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/InkCanvas-data-binding.md](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/InkCanvas-data-binding.md )
+参见：https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/InkCanvas-data-binding.md
 
 
 

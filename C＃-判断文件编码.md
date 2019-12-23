@@ -25,7 +25,7 @@
 
 于是这时，出现了 unicode ，他是一个国际标准，但是没有人使用它。后来在 网络的发展，人们为可以在世界使用自己的网站，就使用了 unicode ，但是他的传输性能比较差，好在有了 Utf-8 。
 
-关于字符编码的故事，可以去看：[http://www.jianshu.com/p/326795dab773](http://www.jianshu.com/p/326795dab773 )
+关于字符编码的故事，可以去看：http://www.jianshu.com/p/326795dab773
 
 因为文件编码太多，最好是让文件自己说自己是什么编码，于是 WR 就说，在文件开始使用两个字节来说明文件是什么编码。于是这就叫文件带签名，这样可以根据文件自己描述，来读取文件。
 
@@ -41,7 +41,7 @@
 
 那么带签名的意思是什么，这个和历史有关，我们做出了太多编码，有时无法解析文件的编码，如我们在记事本写上联通，再次打开会是乱码的原因一样，为了让文件自己告诉是什么编码，我们就取文件的前四个 byte ，用于让文件说出自己的编码。
 
-对带签名文件，我们可以简单得到他的编码。See：[http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%ACGBK%E9%94%99%E8%AF%AF/](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%ACGBK%E9%94%99%E8%AF%AF/ )
+对带签名文件，我们可以简单得到他的编码。See：http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%AF%BB%E5%8F%96%E6%96%87%E6%9C%ACGBK%E9%94%99%E8%AF%AF/
 
 
 ```csharp
@@ -116,7 +116,7 @@ namespace EncodingNormalior.Model
 
 我们需要知道 GBK 的编码，对于一般的 ASCII 字符，使用一个 byte 和ASCII一样，如果一个文件都是 ASCII 字符，那么GBK 编码和 ASCII 的都一样，我们统计得到属于 GBK的byte个数为0。对于其他的字符，使用两个 byte 表示。
 
-我找到了一个大神写的判断，[https://gist.github.com/neesenk/956765](https://gist.github.com/neesenk/956765 )
+我找到了一个大神写的判断，https://gist.github.com/neesenk/956765
 
 <script src="https://gist.github.com/neesenk/956765.js"></script>
 
@@ -269,27 +269,27 @@ namespace EncodingNormalior.Model
 
 我把项目开源，希望能帮到大家。
 
-[https://github.com/lindexi/EncodingNormalior](https://github.com/lindexi/EncodingNormalior )
+https://github.com/lindexi/EncodingNormalior
 
 听说项目的名字拼错了，大家不要笑。
 
-参见：[http://blog.csdn.net/wwlhsgs/article/details/45641997](http://blog.csdn.net/wwlhsgs/article/details/45641997 )
+参见：http://blog.csdn.net/wwlhsgs/article/details/45641997
 
-[http://blog.csdn.net/wgw335363240/article/details/41700045](http://blog.csdn.net/wgw335363240/article/details/41700045 )
+http://blog.csdn.net/wgw335363240/article/details/41700045
 
-[http://www.ruanyifeng.com/blog/2010/02/url_encoding.html](http://www.ruanyifeng.com/blog/2010/02/url_encoding.html )
+http://www.ruanyifeng.com/blog/2010/02/url_encoding.html
 
-[http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html )
+http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html
 
-[http://blog.codingnow.com/2010/06/detect_utf-8_gbk.html](http://blog.codingnow.com/2010/06/detect_utf-8_gbk.html )
+http://blog.codingnow.com/2010/06/detect_utf-8_gbk.html
 
-[https://msdn.microsoft.com/en-us/library/dd374101(VS.85).aspx](https://msdn.microsoft.com/en-us/library/dd374101(VS.85).aspx )
+https://msdn.microsoft.com/en-us/library/dd374101(VS.85).aspx
 
-[http://www.jianshu.com/p/326795dab773](http://www.jianshu.com/p/326795dab773 )
+http://www.jianshu.com/p/326795dab773
 
-[http://blog.sina.com.cn/s/blog_63426ff90100he20.html](http://blog.sina.com.cn/s/blog_63426ff90100he20.html )
+http://blog.sina.com.cn/s/blog_63426ff90100he20.html
 
-[https://my.oschina.net/1pei/blog/390663](https://my.oschina.net/1pei/blog/390663 )
+https://my.oschina.net/1pei/blog/390663
 
 最近发现我的方法在国内可以使用，如果使用的软件会在很多个国家使用，还需要去想如何识别他们国家的编码，于是我找到一个好的库
 

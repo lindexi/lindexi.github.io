@@ -108,7 +108,7 @@
 
 参见：[水印第三版 ~ 变态水印（这次用Magick.NET来实现，附需求分析和源码） - 毒逆天 - 博客园](http://www.cnblogs.com/dunitian/p/5895133.html#undefined )
 
-[https://github.com/dlemstra/Magick.NET](https://github.com/dlemstra/Magick.NET )
+https://github.com/dlemstra/Magick.NET
 
 其他解析gif 的方法：[【续】WPF支持GIF的各种方法 - CSDN博客](http://blog.csdn.net/gqqnb/article/details/7215408 )
 

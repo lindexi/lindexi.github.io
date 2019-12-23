@@ -92,7 +92,7 @@ web::Control webControl = new web::Control();
 win::Control formControl = new win::Control();
 ```
 
-参见：[https://stackoverflow.com/a/9099/6116637](https://stackoverflow.com/a/9099/6116637 )
+参见：https://stackoverflow.com/a/9099/6116637
 
 ## extern alias 
 
@@ -586,7 +586,7 @@ fantastic.Foo();
 
 通过这个方式可以让开发者无法直接创建 Fantastic 类，而且在不知道 FantasticInfo 的情况无法创建 Fantastic 也就是让大家需要了解 FantasticInfo 才可以通过上面的方法创建，具体请看[只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式） - walterlv](https://walterlv.com/post/hide-your-constructor.html )
 
-课件链接： [https://r302.cc/J4gxOX](https://r302.cc/J4gxOX )
+课件链接： https://r302.cc/J4gxOX
 
 当然还有新的 [C# 7.0](https://blog.lindexi.com/post/C-7.0.html ) 和 [C# 8.0](https://blog.lindexi.com/post/VisualStudio-2019-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8-C-8.0-%E6%96%B0%E7%9A%84%E6%96%B9%E5%BC%8F.html ) 的新的语法
 

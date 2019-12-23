@@ -11,7 +11,7 @@
 
 Freezable 
 
-参见：[https://msdn.microsoft.com/zh-cn/library/ms750509(v=vs.110).aspx](https://msdn.microsoft.com/zh-cn/library/ms750509(v=vs.110).aspx )
+参见：https://msdn.microsoft.com/zh-cn/library/ms750509(v=vs.110).aspx
 
 
 

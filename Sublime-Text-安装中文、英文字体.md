@@ -63,7 +63,7 @@ BTSYNC：B6EZLWWDHSMHDHNF6DLOMGKYBSXT7OI4R
 
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812093945.jpg)
 
-教程：[http://designwithfontforge.com/zh-CN/The_Final_Output_Generating_Font_Files.html](http://designwithfontforge.com/zh-CN/The_Final_Output_Generating_Font_Files.html )
+教程：http://designwithfontforge.com/zh-CN/The_Final_Output_Generating_Font_Files.html
 
 
 

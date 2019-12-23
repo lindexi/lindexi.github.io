@@ -144,6 +144,17 @@ jobs:
 
 使用 PowerShell 脚本下载 nuget 文件，因为 nuget 文件不需要加入环境变量，所以就不需要额外步骤
 
+另外官方提供了安装 NuGet 的脚本，只需要使用下面代码就可以完成安装
+
+```yaml
+- name: Install Nuget
+  uses: nuget/setup-nuget@v1
+  with:
+    nuget-version: '5.x'
+```
+
+多谢 [h神](http://www.cnblogs.com/h82258652) 提供的方法
+
 ## 添加上传信息
 
 可以上传 nuget 到 nuget.org 也可以上传在对应的 github 仓库，上传到 github 仓库请看 [Github 给仓库上传 NuGet 库](https://blog.lindexi.com/post/Github-%E7%BB%99%E4%BB%93%E5%BA%93%E4%B8%8A%E4%BC%A0-NuGet-%E5%BA%93.html )

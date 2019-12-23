@@ -134,7 +134,7 @@ Color color = System.Drawing.ColorTranslator.FromHtml(hex);
         }
 ```
 
-如果想看微软的转换，请看 [https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Media/Parsers.cs](https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Media/Parsers.cs )
+如果想看微软的转换，请看 https://referencesource.microsoft.com/#PresentationCore/Core/CSharp/System/Windows/Media/Parsers.cs
 
 可以复制的源代码：
 

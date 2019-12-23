@@ -38,7 +38,7 @@
 ![](http://image.acmx.xyz/f3c2f4a3-94ae-40b4-b3c3-da73116eb75d2016121716265.jpg)
 
 参见：
-[http://stackoverflow.com/questions/31797875/overriding-pivot-header-foreground-brushes-in-uwp-app-win-10-rtm-sdk](http://stackoverflow.com/questions/31797875/overriding-pivot-header-foreground-brushes-in-uwp-app-win-10-rtm-sdk )
+http://stackoverflow.com/questions/31797875/overriding-pivot-header-foreground-brushes-in-uwp-app-win-10-rtm-sdk
 
 但是如果我们要修改多的Pivot，使用模板其实还不能修改不选中的Pivot Header的颜色
 
@@ -201,7 +201,7 @@ PivotHeaderSelectedPointerOverForegroundBrush 是鼠标移到 被选择的PivotH
 
 如果希望修改其他颜色，请自己去看style可以修改的颜色，如果遇到问题，欢迎讨论。
 
-代码 [https://github.com/lindexi/UWP/tree/master/uwp/src/PivoHeader](https://github.com/lindexi/UWP/tree/master/uwp/src/PivoHeader )
+代码 https://github.com/lindexi/UWP/tree/master/uwp/src/PivoHeader
 
 
 

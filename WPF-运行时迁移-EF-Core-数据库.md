@@ -133,6 +133,8 @@ dotnet ef migrations add 版本名
 
 每次调用 Migrate 都需要一定的时间，建议在另一个线程运行
 
+如果在运行 SaveChanges 提示 `no such table` 那么可能是在调用 `Migrate` 等方法之前没有先调用 `dotnet ef migrations` 创建迁移类
+
 
 
 

@@ -19,7 +19,7 @@
 git clone --mirror Url
 
 我自己的镜像，假如要把我的https://github.com/lindexi/UWP.git 做镜像到本地
-git clone --mirror [https://github.com/lindexi/UWP.git](https://github.com/lindexi/UWP.git )
+git clone --mirror https://github.com/lindexi/UWP.git
 ```
 
 这样就有本地镜像，我们需要更新他的时候用
@@ -55,7 +55,7 @@ gogos.exe web
 
 我最近在用gogs同步我的本地项目，然后用坚果云同步
 
-gogs 可以我传上csdn，下载：[http://download.csdn.net/detail/lindexi_gd/9738926](http://download.csdn.net/detail/lindexi_gd/9738926 )
+gogs 可以我传上csdn，下载：http://download.csdn.net/detail/lindexi_gd/9738926
 
 
 

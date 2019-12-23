@@ -11,7 +11,7 @@
 edge 可以添加扩展，需要先
 
 安装红石预览版
-[https://dev.windows.com/zh-cn/microsoft-edge/extensions/#available-extensions](https://dev.windows.com/zh-cn/microsoft-edge/extensions/#available-extensions )
+https://dev.windows.com/zh-cn/microsoft-edge/extensions/#available-extensions
 
 我推荐一些扩展：
 

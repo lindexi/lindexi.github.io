@@ -34,7 +34,7 @@
 ![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323103719.jpg)
 
 
-这就是可以让 他可以显示。为何这样可以，参见：[http://blog.csdn.net/changtianshuiyue/article/details/26981797](http://blog.csdn.net/changtianshuiyue/article/details/26981797 )
+这就是可以让 他可以显示。为何这样可以，参见：http://blog.csdn.net/changtianshuiyue/article/details/26981797
 
 主要的类StrokeVisual，其实很简单，他可以在上面的类显示文字
 

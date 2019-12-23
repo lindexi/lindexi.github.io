@@ -33,7 +33,7 @@ using System.IO;
 IRandomAccessStream randomAccessStream = stream.AsRandomAccessStream();
 ```
 
-[https://stackoverflow.com/a/33221178/6116637](https://stackoverflow.com/a/33221178/6116637 )
+https://stackoverflow.com/a/33221178/6116637
 
 
 

@@ -32,7 +32,7 @@ After I set the Grid width to 2000000 that work well.
 
 Do not ask why I can find it. I wrote a code `await "lindexi is doubi";` and my friend pressed my head to the Keyboard. My head pressed the `0` key and set the Grid width. I ran the code and I was surprised to see it.
 
-Code [https://github.com/lindexi/lindexi_gd/tree/550373c7ee587980a7ecd56e2c03aa40c6972416/TucasurchasGeldiskaycasoohou](https://github.com/lindexi/lindexi_gd/tree/550373c7ee587980a7ecd56e2c03aa40c6972416/TucasurchasGeldiskaycasoohou )
+Code https://github.com/lindexi/lindexi_gd/tree/550373c7ee587980a7ecd56e2c03aa40c6972416/TucasurchasGeldiskaycasoohou
 
 
 

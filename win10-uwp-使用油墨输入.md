@@ -117,7 +117,7 @@ win10 可以很简单在我们的 app 使用自然输入，这篇文章主要翻
                 }
                 catch (Exception ex)
                 {
-                    //[http://blog.csdn.net/lindexi_gd](http://blog.csdn.net/lindexi_gd )
+                    //http://blog.csdn.net/lindexi_gd
                 }
             }
 ```
@@ -245,7 +245,7 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
 
 来看我们安装了哪些，有安装才能使用
 
-源代码 [https://github.com/lindexi/UWP/tree/master/uwp/src/Ink](https://github.com/lindexi/UWP/tree/master/uwp/src/Ink )
+源代码 https://github.com/lindexi/UWP/tree/master/uwp/src/Ink
 
 ## 语音
 
@@ -281,11 +281,11 @@ VerticalAlignment="Top" HorizontalAlignment="Right" />
             }
 ```
 
-语音：[https://msdn.microsoft.com/zh-cn/library/windows/apps/dn596121.aspx](https://msdn.microsoft.com/zh-cn/library/windows/apps/dn596121.aspx )
+语音：https://msdn.microsoft.com/zh-cn/library/windows/apps/dn596121.aspx
  
-[http://stackoverflow.com/questions/32153880/how-to-render-inkcanvas-to-an-image-in-uwp-windows-10-application/32551620](http://stackoverflow.com/questions/32153880/how-to-render-inkcanvas-to-an-image-in-uwp-windows-10-application/32551620 )
+http://stackoverflow.com/questions/32153880/how-to-render-inkcanvas-to-an-image-in-uwp-windows-10-application/32551620
 
-[https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/](https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/ )
+https://blogs.windows.com/buildingapps/2015/09/08/going-beyond-keyboard-mouse-and-touch-with-natural-input-10-by-10/
 
 
 

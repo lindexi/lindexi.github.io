@@ -213,13 +213,13 @@
 
 <script src="https://gist.github.com/lindexi/b36feb816fe9e586ffbbdf58397b25da.js"></script>
 
-代码：[https://gist.github.com/lindexi/b36feb816fe9e586ffbbdf58397b25da](https://gist.github.com/lindexi/b36feb816fe9e586ffbbdf58397b25da )
+代码：https://gist.github.com/lindexi/b36feb816fe9e586ffbbdf58397b25da
 
-参见：[https://msdn.microsoft.com/en-us/library/microsoft.build.buildengine.project.propertygroups%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/en-us/library/microsoft.build.buildengine.project.propertygroups%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396 )
+参见：https://msdn.microsoft.com/en-us/library/microsoft.build.buildengine.project.propertygroups%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396
 
-[https://msdn.microsoft.com/en-us/library/microsoft.build.buildengine.project%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396](https://msdn.microsoft.com/en-us/library/microsoft.build.buildengine.project%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396 )
+https://msdn.microsoft.com/en-us/library/microsoft.build.buildengine.project%28v=vs.110%29.aspx?f=255&MSPPError=-2147217396
 
-[http://stackoverflow.com/questions/707107/parsing-visual-studio-solution-files](http://stackoverflow.com/questions/707107/parsing-visual-studio-solution-files )
+http://stackoverflow.com/questions/707107/parsing-visual-studio-solution-files
 
 
 
