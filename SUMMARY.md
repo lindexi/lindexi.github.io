@@ -78,8 +78,6 @@
 
  * [C# 使用汇编](C-使用汇编.md)
 
- * [C# 使用相同权限调用 cmd 传入命令](C-使用相同权限调用-cmd-传入命令.md)
-
  * [C# 使用转换语义版本号](C-使用转换语义版本号.md)
 
  * [C# 判断两条直线距离](C-判断两条直线距离.md)
@@ -698,6 +696,8 @@
 
  * [VisualStudio 解决方案筛选器 slnf 文件](VisualStudio-解决方案筛选器-slnf-文件.md)
 
+ * [VisualStudio 调试内存泄漏方法](VisualStudio-调试内存泄漏方法.md)
+
  * [VisualStudio 过滤输出窗口文本](VisualStudio-过滤输出窗口文本.md)
 
  * [VisualStudio 通过 EditorBrowsable 隐藏不开放的属性或方法](VisualStudio-通过-EditorBrowsable-隐藏不开放的属性或方法.md)
@@ -1216,7 +1216,7 @@
 
  * [Windows 的 Pen 协议](Windows-的-Pen-协议.md)
 
- * [windows-10「设置」应用完整ms-settings快捷方式汇总](windows-10「设置」应用完整ms-settings快捷方式汇总.md)
+ * [windows-10「设置」应用完整ms-settings快捷方式汇总.md](windows-10「设置」应用完整ms-settings快捷方式汇总.md.md)
 
  * [Winforms 可能遇到的 1000 个问题](Winforms-可能遇到的-1000-个问题.md)
 
@@ -1517,6 +1517,8 @@
  * [wpf DoEvents ](wpf-DoEvents-.md)
 
  * [WPF 绑定密码](WPF-绑定密码.md)
+
+ * [Xamarin 解决创建空白项目编译提示 linking references 找不到资源](Xamarin-解决创建空白项目编译提示-linking-references-找不到资源.md)
 
  * [Xamarin Forms 进度条控件](Xamarin-Forms-进度条控件.md)
 
