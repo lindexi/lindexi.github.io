@@ -1390,6 +1390,8 @@
 
  * [WPF 开启 ScrollViewer 的触摸滚动](WPF-开启-ScrollViewer-的触摸滚动.md)
 
+ * [WPF 开启Pointer消息存在的坑](WPF-开启Pointer消息存在的坑.md)
+
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
