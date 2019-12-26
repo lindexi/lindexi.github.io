@@ -5,7 +5,7 @@
 <!--more-->
 <!-- 发布 -->
 
-在调试内存泄漏时，在调试内存泄漏时，最简单的方法时通过内存使用率进行调试。核心方法是查看内存中有哪些对象占用了大量内存，其次是查看内存中有哪些不用的对象还在内存
+在调试内存泄漏时，最简单的方法时通过内存使用率进行调试。核心方法是查看内存中有哪些对象占用了大量内存，其次是查看内存中有哪些不用的对象还在内存
 
 第一个方法，查看对象占用的方法我做了一个课件视频，点击下面图片就可以播放
 
@@ -112,5 +112,7 @@
 通过在代码给元素命名，也就是继承基础的数组等，这样可以在调试内存泄漏时，将不同的业务分开。解决在调试内存时看到大量的都是如 `List<int>` 的元素
 
 更多调试方法请看 [dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html)
+
+特别感谢 [Dotnet9](https://dotnet9.com/ ) 小伙伴指出本文错误
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
