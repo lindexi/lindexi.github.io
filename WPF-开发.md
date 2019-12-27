@@ -430,6 +430,22 @@ textBox.SelectAll();
 var caretWidth = SystemParameters.CaretWidth;
 ```
 
+## 获取屏幕可用大小
+
+```csharp
+SystemParameters.WorkArea
+```
+
+## 设置另一个窗口获取焦点
+
+设置窗口获取焦点不能通过 Focus 设置，这个方法设置的是窗口控件拿到窗口内焦点，需要通过 Activate 方法激活窗口
+
+```csharp
+window.Activate();
+```
+
+推荐在子窗口关闭之前激活 Owner 解决[关闭模态窗口后，父窗口居然失去焦点跑到了其他窗口的后面的问题 - walterlv](https://blog.walterlv.com/post/fix-owner-window-dropping-down-when-close-a-modal-child-window.html )
+
 详细请看 [SystemParameters.CaretWidth Property](https://docs.microsoft.com/en-us/dotnet/api/system.windows.systemparameters.caretwidth?view=netframework-4.8#System_Windows_SystemParameters_CaretWidth )
 
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
