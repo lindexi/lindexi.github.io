@@ -8,6 +8,8 @@
 
 本文将会按照从简单到复杂，从常用的到不常用的方式，告诉大家断点调试方法
 
+特别推荐微软学习平台[在 Visual Studio 中进行调试的基础知识](https://docs.microsoft.com/zh-cn/learn/modules/get-started-with-visual-studio-for-windows10-app-dev/2-debugging )
+
 ## 在代码行添加断点
 
 将光标定位到某一行，在此行的左边，也就是下图显示红色断点的地方，进行点击，此时就可以在此行添加断点。或通过在此行按下 F9 键添加断点
