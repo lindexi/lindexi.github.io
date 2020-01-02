@@ -444,6 +444,8 @@
 
  * [git 需要知道的1000个问题](git-需要知道的1000个问题.md)
 
+ * [Github 添加 Action 编译图标](Github-添加-Action-编译图标.md)
+
  * [Github 给仓库上传 NuGet 库](Github-给仓库上传-NuGet-库.md)
 
  * [git无法pull仓库refusing to merge unrelated histories](git无法pull仓库refusing-to-merge-unrelated-histories.md)
