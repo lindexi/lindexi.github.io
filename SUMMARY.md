@@ -612,6 +612,8 @@
 
  * [Total Commander 显示文件包含文件名扩展](Total-Commander-显示文件包含文件名扩展.md)
 
+ * [TotalCommander 设置 VisualStudio 开发者命令行](TotalCommander-设置-VisualStudio-开发者命令行.md)
+
  * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
 
  * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
