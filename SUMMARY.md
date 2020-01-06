@@ -10,6 +10,8 @@
 
  * [asp dotnet core 图片在浏览器没访问可能原因](asp-dotnet-core-图片在浏览器没访问可能原因.md)
 
+ * [asp dotnet core 实现服务器发送事件 Server-Sent Events 简单方式](asp-dotnet-core-实现服务器发送事件-Server-Sent-Events-简单方式.md)
+
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
 
  * [asp dotnet core 简单开发P2P中央服务器](asp-dotnet-core-简单开发P2P中央服务器.md)
