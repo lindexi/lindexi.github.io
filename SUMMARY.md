@@ -1348,6 +1348,8 @@
 
  * [WPF 可获得焦点属性](WPF-可获得焦点属性.md)
 
+ * [WPF 图片移除视觉树内存泄漏](WPF-图片移除视觉树内存泄漏.md)
+
  * [WPF 在 Alt+Tab 隐藏窗口](WPF-在-Alt-Tab-隐藏窗口.md)
 
  * [WPF 在 DrawingContext 的 push 如何使用](WPF-在-DrawingContext-的-push-如何使用.md)
