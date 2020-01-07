@@ -872,6 +872,8 @@
 
  * [win10 uwp 在 ItemsPanelTemplate 里面通过样式绑定 Orientation 显示方向](win10-uwp-在-ItemsPanelTemplate-里面通过样式绑定-Orientation-显示方向.md)
 
+ * [win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店](win10-uwp-在-VisualStudio-打包测试完成自动上传到应用商店.md)
+
  * [win10 uwp 在 VisualStudio 部署失败，找不到 Windows Phone 可能的原因](win10-uwp-在-VisualStudio-部署失败，找不到-Windows-Phone-可能的原因.md)
 
  * [win10 uwp 在 xaml 让 TextBlock 换行](win10-uwp-在-xaml-让-TextBlock-换行.md)
