@@ -348,6 +348,8 @@
 
  * [dotnet 对 DateTime 排序](dotnet-对-DateTime-排序.md)
 
+ * [dotnet 将C#编译为wasm让前端html使用](dotnet-将C-编译为wasm让前端html使用.md)
+
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)

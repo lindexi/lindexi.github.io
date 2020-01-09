@@ -123,7 +123,7 @@ xx\lindexi.txt;xx\lindexi.gitee.io.txt
 
 因为 ItemGroup 可以写多个标签，可以修改下面代码
 
-```csharp
+```xml
   <ItemGroup>
     <Txt Include="lindexi.txt"></Txt>
     <Txt Include="lindexi.gitee.io.txt"></Txt>
