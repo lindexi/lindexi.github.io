@@ -304,6 +304,8 @@
 
  * [.NET Standard](NET-Standard.md)
 
+ * [dotnet 三句命令行创建运行一个 web 服务程序](dotnet-三句命令行创建运行一个-web-服务程序.md)
+
  * [dotnet 不申请额外数组空间合并多个只读数组列表](dotnet-不申请额外数组空间合并多个只读数组列表.md)
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
