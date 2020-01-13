@@ -70,6 +70,11 @@ info: Microsoft.Hosting.Lifetime[0]
 
 接下来可能会问的问题就是，我如何修改浏览器对应的链接，让新的链接可以对应到新的方法？我如何修改默认的端口，我想要开放的是 13802 端口可以怎么做？我想要让小伙伴也能访问我的服务，我可以怎么做？
 
-这些问题都十分简单，微软提供了超级体系的学习平台，此平台是免费的，不仅有文档知识同时提供免费虚拟机可以实践。点击[这个链接访问官方教程](https://docs.microsoft.com/zh-cn/learn/modules/build-web-api-net-core/ ) 我想在在学习平台已经到 6 级了，欢迎小伙伴组队
+这些问题都十分简单，微软提供了超级体系的学习平台，此平台是免费的，不仅有文档知识同时提供免费虚拟机可以实践。点击[这个链接访问官方教程](https://docs.microsoft.com/zh-cn/learn/modules/build-web-api-net-core/ ) 我在学习平台升级 6 级了，欢迎小伙伴组队
+
+更多请看：
+
+- [如何设置 ASP.NET Core 程序监听的 IP 和端口 - walterlv](https://blog.walterlv.com/post/configure-urls-and-port-for-asp-dotnet.html )
+- [为 ASP.NET Core 程序制作 URL 的 301/302 跳转 - walterlv](https://blog.walterlv.com/post/redirect-middleware-for-asp-dotnet.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
