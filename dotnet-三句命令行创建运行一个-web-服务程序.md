@@ -73,7 +73,12 @@ info: Microsoft.Hosting.Lifetime[0]
 
 接下来可能会问的问题就是，我如何修改浏览器对应的链接，让新的链接可以对应到新的方法？我如何修改默认的端口，我想要开放的是 13802 端口可以怎么做？我想要让小伙伴也能访问我的服务，我可以怎么做？
 
-这些问题都十分简单，微软提供了超级体系的学习平台，此平台是免费的，不仅有文档知识同时提供免费虚拟机可以实践。点击[这个链接访问官方教程](https://docs.microsoft.com/zh-cn/learn/modules/build-web-api-net-core/ ) 我想在在学习平台已经到 6 级了，欢迎小伙伴组队
+这些问题都十分简单，微软提供了超级体系的学习平台，此平台是免费的，不仅有文档知识同时提供免费虚拟机可以实践。点击[这个链接访问官方教程](https://docs.microsoft.com/zh-cn/learn/modules/build-web-api-net-core/ ) 我在学习平台升级 6 级了，欢迎小伙伴组队
+
+更多请看：
+
+- [如何设置 ASP.NET Core 程序监听的 IP 和端口 - walterlv](https://blog.walterlv.com/post/configure-urls-and-port-for-asp-dotnet.html )
+- [为 ASP.NET Core 程序制作 URL 的 301/302 跳转 - walterlv](https://blog.walterlv.com/post/redirect-middleware-for-asp-dotnet.html )
 
 
 
