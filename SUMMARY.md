@@ -1216,6 +1216,8 @@
 
  * [win2d 通过 CanvasActiveLayer 画出透明度和裁剪](win2d-通过-CanvasActiveLayer-画出透明度和裁剪.md)
 
+ * [win32 嵌入第三方 UWP 应用做开放平台](win32-嵌入第三方-UWP-应用做开放平台.md)
+
  * [win7 升级到 win10 补丁](win7-升级到-win10-补丁.md)
 
  * [win7 无法启动 WPF 程序 D3Dcompiler_47.dll 丢失](win7-无法启动-WPF-程序-D3Dcompiler_47.dll-丢失.md)
