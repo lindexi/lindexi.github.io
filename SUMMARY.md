@@ -426,6 +426,8 @@
 
  * [dotnet 配置 github 自动打包上传 nuget 文件](dotnet-配置-github-自动打包上传-nuget-文件.md)
 
+ * [dotnet 配置 Gitlab 的 Runner 做 CI 自动构建](dotnet-配置-Gitlab-的-Runner-做-CI-自动构建.md)
+
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
  * [gif 格式](gif-格式.md)
@@ -669,6 +671,8 @@
  * [VisualStudio 使用新项目格式快速打出 Nuget 包](VisualStudio-使用新项目格式快速打出-Nuget-包.md)
 
  * [VisualStudio 修改配色](VisualStudio-修改配色.md)
+
+ * [VisualStudio 各版本 msbuild 路径](VisualStudio-各版本-msbuild-路径.md)
 
  * [VisualStudio 合并代码文件](VisualStudio-合并代码文件.md)
 
