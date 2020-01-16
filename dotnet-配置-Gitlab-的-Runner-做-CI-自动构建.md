@@ -152,6 +152,65 @@ System.Security.Cryptography.CryptographicException: 系统找不到指定的路
 
 现在有新项目接入就快多了，只需要让新项目复制 `.gitlab-ci.yml` 文件就可以了。如果服务器被弄坏了，只需要将备份的虚拟机硬盘拿出来重新在新的服务器使用
 
+如果存在全局的 Runner 设置，请在 job 输出看具体在哪个 runner 运行，如下面有一个全局共享的运行
+
+```csharp
+Running with gitlab-runner 12.4.1 (05161b14)
+  on runner-gitlab-runner-79235b5bd8-vxzt2 neRzXdJb
+```
+
+我的代码需要在 windows 下运行，此时请在项目设置，点击 CI 设置，禁用 Shared Runners 运行
+
+如提示也就是在 linux 环境运行，请看具体在哪个运行
+
+```csharp
+chcp 65001
+/bin/bash: line 85: chcp: command not found
+```
+
+如我的需要在 dotnet campus 的设备运行，通过输出就可以看到在哪个运行
+
+如果此时用到了 msbuild 同时项目使用 SDK 格式，此时的 NuGet 将会放在 `user\.nuget` 文件夹里面，而如果 runner 使用的是服务运行，使用的用户是 System 那么将找不到 user 文件夹，此时的 NuGet 文件就找不到，可以看到下面提示
+
+```
+         C:\Program Files\dotnet\sdk\3.1.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(234,5): error NETSDK1064: 未找到版本为 16.2.0 的包 Microsoft.CodeCoverage。它可能已在 NuGet 还原后删除。否则，NuGet 还原可能只是部分完成，这种情况可能是最大路径长度限制所导致。 [C:\gitlab\builds\SKH4KvNc\0\dotnet-campus\dotnetCampus.Lindexi\Code\dotnetCampus.Lindexi.Tests\dotnetCampus.Lindexi.Tests.csproj]
+```
+
+解决方法是让 Runner 使用某个用户权限运行，其实如果让 Runner 使用某个用户权限运行，此时上面的很多全局配置也就不需要做了。如果有关注我的博客的小伙伴就会发现其实本文是分两次写的，因为开始我使用了 dotnet 没有发现问题，而后续用到了 msbuid 就发现了这个坑
+
+如果已经安装上了 Runner 可以执行下面代码卸载
+
+```powershell
+.\gitlab-runner.exe stop
+.\gitlab-runner.exe uninstall
+```
+
+注意使用管理员权限运行
+
+然后用某个用户权限安装，因为我是在虚拟机运行的，我可以使用登录用户作为运行 Runner 用户
+
+```
+.\gitlab-runner.exe install --user ".\ENTER-YOUR-USERNAME" --password "ENTER-YOUR-PASSWORD"
+```
+
+注意需要在 `--user` 添加的用户名加上 `.\` 如我的用户名是 `lindexi` 密码是  `lindexishidoubi` 那么可以这样安装
+
+```
+.\gitlab-runner.exe install --user ".\lindexi" --password "lindexishidoubi"
+```
+
+然后输入 `.\gitlab-runner.exe start` 启动，如果输出没有权限，那么请继续往下看
+
+```
+FATA[0000] Failed to start GitLab Runner: The service did not start due to a logon failure.
+```
+
+这是因为登录用户没有使用服务权限登录
+
+进入控制面板，进入系统和安全，进入管理工具，在新打开的界面打开本地安全策略工具。点击安全设置下的本地策略，展开本地策略点击用户权限分配，找到右侧作为服务登录 双击添加用户或组将刚才 `--user` 使用的用户添加
+
+这个用户就作为服务登录，因为我是在虚拟机使用，所以我可以将当前用户作为服务登录。不过如果在开发设备上，也可以这样设置，此时可以模拟一些有趣的用户环境，找到一些有趣的坑
+
 
 
 
