@@ -20,6 +20,18 @@ VisualStudio 2019 企业版
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe
 ```
 
+社区版
+
+```
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe
+```
+
+专业版
+
+```
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe
+```
+
 
 
 
