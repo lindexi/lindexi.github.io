@@ -378,6 +378,8 @@
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 
+ * [dotnet 用 gcdump 调试应用程序内存占用](dotnet-用-gcdump-调试应用程序内存占用.md)
+
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
 
  * [dotnet 给MatterMost订阅RSS博客](dotnet-给MatterMost订阅RSS博客.md)
