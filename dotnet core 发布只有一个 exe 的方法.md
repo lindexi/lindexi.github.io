@@ -71,6 +71,10 @@ dotnet publish -r win10-x64 /p:PublishSingleFile=true
 
 第一次运行需要解压文件到临时文件夹的 `.net\程序集名\xx` 文件夹里面，然后再运行
 
+## 隐藏控制台
+
+用 Warp 的方法打包是做套壳，而外层程序是控制台程序，此时双击打开将会看到一个控制台。根据微软的文档，这个可执行的文件是 PE 格式，在 PE 格式的定义上用一个字段表示可执行文件属于控制台还是窗口应用，如果是控制台的就会显示控制台，如果是窗口应用就不会显示控制台。使用这个原理可以通过修改打包后的文件，让这个字段设置为窗口应用具体方法请看 [dotnet core 通过修改文件头的方式隐藏控制台窗口](https://lindexi.gitee.io/post/dotnet-core-%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E5%A4%B4%E7%9A%84%E6%96%B9%E5%BC%8F%E9%9A%90%E8%97%8F%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%AA%97%E5%8F%A3.html )
+
 [dgiagio/warp: Create self-contained single binary applications](https://github.com/dgiagio/warp#windows-1 )
 
 [Single exe self contained console app · Issue #13329 · dotnet/corefx](https://github.com/dotnet/corefx/issues/13329 )
