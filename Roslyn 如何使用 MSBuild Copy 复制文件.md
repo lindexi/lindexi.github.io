@@ -102,7 +102,7 @@ error MSB3030: 无法复制文件“lindexi.txt”，原因是找不到该文件
 
 实际上刚才是写 SourceFiles ，但是实际这样写无法使用通配，也就是`*.txt`的方法，如果需要使用就需要用文件列表
 
-```csharp
+```xml
   <ItemGroup>
     <Txt Include="*.txt"></Txt>
   </ItemGroup>
