@@ -41,6 +41,168 @@
 
 [深入理解 Win32 PE 文件格式 - 国立秀才 - 博客园](https://www.cnblogs.com/guolixiucai/p/4809820.html )
 
+如果我想自己写一个 C# 脚本改变任意的二进制可执行软件从控制台作为窗口程序，也就是隐藏控制台可以如何做？如果抄袭  [NSubsys](https://github.com/jmacato/NSubsys/blob/master/NSubsys.csproj ) 的代码就会非常简单，先复制[PeUtility.cs](https://github.com/jmacato/NSubsys/blob/master/PeUtility.cs )的全部代码放在 PeUtility.cs 文件，使用 `dotnet new console -o Lindexi` 创建一个脚本的项目，此时将会看到 Program 和 csproj 两个文件，只需要修改 Program 文件的代码调用 PeUtility 就可以
+
+```csharp
+using System;
+using System.IO;
+using System.Runtime.InteropServices;
+using static NSubsys.PeUtility;
+
+// 忽略一些代码
+
+        static void Main(string[] args)
+        {
+            ProcessFile(@"c:\lindexi\lindexishidoubi\bin\release\netcoreapp3.1\lindexi.exe");
+        }
+
+        private static bool ProcessFile(string exeFilePath)
+        {
+            using (var peFile = new PeUtility(exeFilePath))
+            {
+                SubSystemType subsysVal;
+                var subsysOffset = peFile.MainHeaderOffset;
+
+                subsysVal = (SubSystemType)peFile.OptionalHeader.Subsystem;
+                subsysOffset += Marshal.OffsetOf<IMAGE_OPTIONAL_HEADER>("Subsystem").ToInt32();
+
+                switch (subsysVal)
+                {
+                    case PeUtility.SubSystemType.IMAGE_SUBSYSTEM_WINDOWS_GUI:
+                        Console.WriteLine("Executable file is already a Win32 App!");
+                        return true;
+                    case PeUtility.SubSystemType.IMAGE_SUBSYSTEM_WINDOWS_CUI:
+                        Console.WriteLine("Console app detected...");
+                        Console.WriteLine("Converting...");
+
+                        var subsysSetting = BitConverter.GetBytes((ushort)SubSystemType.IMAGE_SUBSYSTEM_WINDOWS_GUI);
+
+                        if (!BitConverter.IsLittleEndian)
+                            Array.Reverse(subsysSetting);
+
+                        if (peFile.Stream.CanWrite)
+                        {
+                            peFile.Stream.Seek(subsysOffset, SeekOrigin.Begin);
+                            peFile.Stream.Write(subsysSetting, 0, subsysSetting.Length);
+                            Console.WriteLine("Conversion Complete...");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Can't write changes!");
+                            Console.WriteLine("Conversion Failed...");
+                        }
+
+                        return true;
+                    default:
+                        Console.WriteLine($"Unsupported subsystem : {Enum.GetName(typeof(SubSystemType), subsysVal)}.");
+                        return false;
+                }
+            }
+        }
+```
+
+请替换路径为实际的需要修改的exe的路径或者从命令行拿到文件
+
+这样使用 dotnet run 就可以运行脚本，修改文件
+
+有小伙伴不能访问 github 下面是 PeUtility.cs 代码
+
+```csharp
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+
+namespace NSubsys
+{
+    internal class PeUtility : IDisposable
+    {
+        public enum SubSystemType : UInt16
+        {
+            IMAGE_SUBSYSTEM_WINDOWS_GUI = 2,
+            IMAGE_SUBSYSTEM_WINDOWS_CUI = 3,
+        }
+
+        [StructLayout(LayoutKind.Explicit)]
+        public struct IMAGE_DOS_HEADER
+        {
+            [FieldOffset(60)]
+            public UInt32 e_lfanew;
+        }
+
+        [StructLayout(LayoutKind.Explicit)]
+        public struct IMAGE_OPTIONAL_HEADER
+        {
+            [FieldOffset(68)]
+            public UInt16 Subsystem;
+        }
+
+        private long fileHeaderOffset;
+        private IMAGE_OPTIONAL_HEADER optionalHeader;
+        private FileStream curFileStream;
+
+        public PeUtility(string filePath)
+        {
+            curFileStream = new FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.ReadWrite);
+            var reader = new BinaryReader(curFileStream);
+            var dosHeader = FromBinaryReader<IMAGE_DOS_HEADER>(reader);
+
+            // Seek the new PE Header and skip NtHeadersSignature (4 bytes) & IMAGE_FILE_HEADER struct (20bytes).
+            curFileStream.Seek(dosHeader.e_lfanew + 4 + 20, SeekOrigin.Begin);
+
+            fileHeaderOffset = curFileStream.Position;
+            optionalHeader = FromBinaryReader<IMAGE_OPTIONAL_HEADER>(reader);
+        }
+
+        /// <summary>
+        /// Reads in a block from a file and converts it to the struct
+        /// type specified by the template parameter
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        public static T FromBinaryReader<T>(BinaryReader reader)
+        {
+            // Read in a byte array
+            var bytes = reader.ReadBytes(Marshal.SizeOf<T>());
+
+            // Pin the managed memory while, copy it out the data, then unpin it
+            var handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
+            var theStructure = Marshal.PtrToStructure<T>(handle.AddrOfPinnedObject());
+            handle.Free();
+
+            return theStructure;
+        }
+
+        public void Dispose()
+        {
+            curFileStream?.Dispose();
+        }
+
+        /// <summary>
+        /// Gets the optional header
+        /// </summary>
+        public IMAGE_OPTIONAL_HEADER OptionalHeader
+        {
+            get => optionalHeader;
+        }
+
+        /// <summary>
+        /// Gets the PE file stream for R/W functions.
+        /// </summary> 
+        public FileStream Stream
+        {
+            get => curFileStream;
+        }
+
+        public long MainHeaderOffset
+        {
+            get => fileHeaderOffset;
+        }
+    }
+}
+```
+
 更多阅读
 
 [你应该知道的程序集版本 - WeihanLi - 博客园](https://www.cnblogs.com/weihanli/p/assembly-version.html )
