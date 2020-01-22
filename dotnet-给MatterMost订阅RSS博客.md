@@ -6,7 +6,6 @@
 <!--more-->
 
 
-<!-- csdn -->
 
 这个工具用到 `Microsoft.SyndicationFeed.ReaderWriter` 库，通过这个库可以用来解析RSS内容，所以开发的代码十分少
 
@@ -136,6 +135,12 @@
 我将这个项目代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/dev/NokekebelaidairJelnechallearrur) 欢迎小伙伴下载，如果觉得好像在哪看过这个代码，那么证明你看过[dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html) 我在这个博客将这个代码作为例子演示如何调试
 
 用这个方法做的RSS订阅没有 [RSS Stalker](https://www.microsoft.com/store/productId/9N85PV1RJD6VR) 好用
+
+因为我现在是做一个本机的控制台应用，电脑关了就不订阅，于是修改作为一个服务，我将代码放在 [github](https://github.com/lindexi/UWP/tree/53bda931c118033b75fce97427d901a985984ee0/src/%E5%8D%9A%E5%AE%A2%E8%AE%A2%E9%98%85 ) 欢迎小伙伴访问
+
+可以通过 dotnet run 或者作为 docker 运行两个方法
+
+注意我这里也是用内存数据库，如果 docker 关闭或 dotnet run 关闭也会丢失配置
 
 
 
