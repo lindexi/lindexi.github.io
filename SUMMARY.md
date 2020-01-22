@@ -1460,6 +1460,8 @@
 
  * [WPF 源代码 从零开始写一个 UI 框架](WPF-源代码-从零开始写一个-UI-框架.md)
 
+ * [WPF 用 AvalonEdit 开发简单的代码编辑器 支持高亮自动提示](WPF-用-AvalonEdit-开发简单的代码编辑器-支持高亮自动提示.md)
+
  * [WPF 的 ManipulationCompleted 事件可能什么时候触发](WPF-的-ManipulationCompleted-事件可能什么时候触发.md)
 
  * [WPF 省市县3级联动](WPF-省市县3级联动.md)
