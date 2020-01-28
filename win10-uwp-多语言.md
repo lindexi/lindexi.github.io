@@ -26,7 +26,7 @@
 
 那么我们右击解决方案，新建 Strings 文件夹，在 Strings 新建 zh-CN -> Resources.resw
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/4ee0aeec-688d-462e-9bf6-0c91f74cc0bc20161231185335.jpg)
+![](http://image.acmx.xyz/4ee0aeec-688d-462e-9bf6-0c91f74cc0bc20161231185335.jpg)
 
 然后点击 Resources.resw 打开
 
@@ -54,13 +54,13 @@
 
 写完了我们设置语言，我们右击方案，选择 Multilingual App Toolkit，添加语言
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/7fbd5d52-1ce3-4cd7-a438-1795c3f8517e2016123119328.jpg)
+![](http://image.acmx.xyz/7fbd5d52-1ce3-4cd7-a438-1795c3f8517e2016123119328.jpg)
 
 我们选英语和中文 ，参见 https://msdn.microsoft.com/zh-cn/library/windows/apps/xaml/mt607079.aspx
 
 然后我们可以看到多了 .xlf 文件
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/7fbd5d52-1ce3-4cd7-a438-1795c3f8517e2016123119516.jpg)
+![](http://image.acmx.xyz/7fbd5d52-1ce3-4cd7-a438-1795c3f8517e2016123119516.jpg)
 
 我们打开它，可以看到我们可以去修改
 

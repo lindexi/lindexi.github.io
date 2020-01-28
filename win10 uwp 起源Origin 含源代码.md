@@ -10,9 +10,11 @@
 <div id="toc"></div>
 <!-- csdn -->
 
+<!-- 草稿 -->
+
 我们来说下我们的游戏，游戏每个方格就是一个人，他有8个邻居。方格的人不是存活就是死亡。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/2128cc96-e1ca-4bdd-8812-1c2a302fa87e20161230214413.jpg)
+![](http://image.acmx.xyz/2128cc96-e1ca-4bdd-8812-1c2a302fa87e20161230214413.jpg)
 
 说的方格就是中间的点。
 
@@ -28,21 +30,21 @@
 
 产生的图形有：
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate2.gif)
+![](http://image.acmx.xyz/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate2.gif)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate2.gif)
+![](http://image.acmx.xyz/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate2.gif)
 
 当然我没有把所有的图形画出，这是静态图形，还有动态：
 
 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate1.gif)
+![](http://image.acmx.xyz/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate1.gif)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate2.gif)
+![](http://image.acmx.xyz/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate2.gif)
 
 我们点一下会出现好看的花
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate3.gif)
+![](http://image.acmx.xyz/f3df3fa9-4243-40b9-9862-fc48042b0c5bsimulate3.gif)
 
 这个游戏看起来不是那么好玩
 

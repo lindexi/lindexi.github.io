@@ -6,11 +6,10 @@
 在博客园看到了一位大神使用 Marshal 做出快速申请的大数组，于是我就学他的方法来弄一个。本文告诉大家这个类是如何使用。
 
 <!--more-->
-<!-- csdn -->
 
 在使用的时候，先来看下原来的 C# 的大数组性能。可以看到在不停gc，性能不好
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220112957.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220112957.jpg)
 
 ```csharp
       static void Main(string[] args)
@@ -158,7 +157,7 @@
 
 这时可以看到进入 UnhandledException ，但是无法接住，软件还是会崩溃
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220152536.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220152536.jpg)
 
 ### 释放内存
 
@@ -191,7 +190,7 @@
 
 原来的 byte 数组需要使用 1G 内存，而且速度很慢，而现在使用这个方法只需要 7M 内存，速度很快
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220142918.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220142918.jpg)
 
 所以在需要进行大数组申请的时候，需要不停释放，就可以使用这个方法。
 

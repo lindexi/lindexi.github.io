@@ -51,7 +51,7 @@
 
 所以就可以让浮出窗在需要显示的按钮上显示，下面的图片是我偷一个大神的，他就是使用这个方法做出来。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017627974.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017627974.jpg)
 
 
 参见：http://stackoverflow.com/questions/12387449/how-to-get-the-absolute-position-of-an-element/12388558#12388558

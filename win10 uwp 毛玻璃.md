@@ -7,6 +7,7 @@
 <div id="toc"></div>
 
 <!--more-->
+<!-- 标签：uwp，win2d -->
 
 毛玻璃可以使用 win2D  方法，也可以使用 Compositor 。
 
@@ -50,7 +51,7 @@
 
 这样就可以看到毛玻璃效果
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531204634.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531204634.jpg)
 
 这个代码是从 http://www.jianshu.com/p/3b49fd3d7edb 复制的
 
@@ -84,11 +85,11 @@
 
 使用 win2D 方法，需要使用 Nuget 安装，如果速度太慢，推荐使用博客园的镜像
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201753121840.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201753121840.jpg)
 
 这个方法可以获得控件的毛玻璃，但是不可以获得窗口毛玻璃
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E6%25AF%259B%25E7%258E%25BB%25E7%2592%2583.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E6%25AF%259B%25E7%258E%25BB%25E7%2592%2583.gif)
 
 接下来告诉大家如何做上图的效果。
 
@@ -177,7 +178,7 @@
 ```
 现在看起来就是
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531212439.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017531212439.jpg)
 
 如果需要修改模糊，请把 BlurAmount 修改为你想要的
 
@@ -304,7 +305,7 @@
 
 请看下面的效果，这就是不停修改 BlurAmount 得到。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E7%258E%25BB%25E7%2592%25832017%25E5%25B9%25B46%25E6%259C%25881%25E6%2597%25A5%2520205721.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E7%258E%25BB%25E7%2592%25832017%25E5%25B9%25B46%25E6%259C%25881%25E6%2597%25A5%2520205721.gif)
 
 代码很简单，所以我就不说。
 
@@ -320,10 +321,14 @@
 <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
 ```
 
+关于FDS请看[win10 uwp Fluent Design System 实践](https://lindexi.oschina.io/lindexi/post/win10-uwp-Fluent-Design-System-%E5%AE%9E%E8%B7%B5.html )
+
 参见：https://stackoverflow.com/questions/31987817/how-to-make-frosted-glass-effect-in-windows-10-universal-app
 
 http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm
 
 [（UWP）应用窗口实现毛玻璃效果 - 简书](http://www.jianshu.com/p/3b49fd3d7edb)
+
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

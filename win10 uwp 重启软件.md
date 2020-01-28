@@ -3,7 +3,6 @@
 在16299支持在软件自己重启，不需要让用户点击关闭然后启动，虽然我还不知道这个有什么用。本文告诉大家如何让软件关闭重新打开。
 
 <!--more-->
-<!-- csdn -->
 
 首先需要使用的版本是 16299 ，然后使用 RequestRestartAsync 方法就可以关闭软件重新打开。
 
@@ -22,7 +21,7 @@
         }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171221193314.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171221193314.jpg)
 
 这个方法在 CoreApplication ，使用的时候可以传入参数，在软件打开的时候可以拿到这个参数
 
@@ -49,6 +48,8 @@
 ```
 
 添加了这句代码就可以在软件启动进入调试
+
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018228141535.jpg)
 
 [How to Restart your App Programmatically - Building Apps for WindowsBuilding Apps for Windows](https://blogs.windows.com/buildingapps/2017/07/28/restart-app-programmatically/#WfIzq58ZwbzmwMMd.97 )
 

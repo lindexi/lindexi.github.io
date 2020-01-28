@@ -14,7 +14,7 @@
 
 本文告诉大家如何做出下面的控件，可以看到这使用的是 ListView ，但是第一个元素显示和其他的元素不同，看起来就是面包屑导航
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017930193749.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017930193749.jpg)
 
 需要定义第一个元素和其他元素的代码，于是使用 Path 做出来，因为本文不是说如何使用 Path 所以就不多说，直接写代码。
 
@@ -92,9 +92,9 @@
 
 但是这样看起来还是不是我要的，把鼠标放上去，发现出现背景
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
 
-如何去背景请看[win10 UWP ListView](https://lindexi.gitee.io/post/win10-UWP-ListView.html )
+如何去背景请看[win10 UWP ListView](https://blog.lindexi.com/post/win10-UWP-ListView.html )
 
 就是把`ListViewItem`复制，然后去掉`ListViewItemBackgroundPointerOver` 和 `SelectedBackground` `SelectedPointerOverBackground` 就好了。实际把很多属性去掉就可以做出比较好的效果，但是选中的修改颜色还需要后台写。这是我修改的 Template 可以直接复制使用。
 
@@ -202,13 +202,17 @@
 
 ![这里写图片描述](http://img.blog.csdn.net/20160802195044703)
 
+<!-- ![](image/win10-uwp-列表模板选择器/win10-uwp-列表模板选择器0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F201962311358880)
+
 如果使用的数据，传入的列是男生的，那么就会使用`MaleData`，于是就可以对不同的数据使用不同的`DataTemplate`。上面的例子只是很简单使用两个不同的数据，如果有很多不同的数据，或者数据里，需要按照数据内容，进行自定义的显示，那么使用选择器也是可以做到。
 
-源代码：https://github.com/lindexi/kechengbiao
+源代码：[https://github.com/lindexi/kechengbiao](https://github.com/lindexi/kechengbiao)
 
 如果需要所有源代码，请[联系](mailto:lindexi_gd@163.com)我因为现在csdn上传需要审查，总是无法上传
 
-参见：[win10 uwp 如何使用DataTemplate](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8DataTemplate.html )
+参见：[win10 uwp 如何使用DataTemplate](https://blog.lindexi.com/post/win10-uwp-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8DataTemplate.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 

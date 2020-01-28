@@ -1,3 +1,5 @@
+# windows-10「设置」应用完整ms-settings快捷方式汇总.md
+
 <!--more-->
 
 <div id="toc"></div>

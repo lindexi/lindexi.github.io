@@ -4,6 +4,8 @@
 
 <!--more-->
 
+<!-- 标签：C#,dotnet,Emit -->
+
 关于表达式树复制，参见 [Fast Deep Copy by Expression Trees (C#) - CodeProject](https://www.codeproject.com/Articles/1111658/Fast-Deep-Copy-by-Expression-Trees-C-Sharp)
 
 在开始读本文之前，我推荐两个博客 [读懂IL代码就这么简单 (一) - Zery - 博客园](http://www.cnblogs.com/zery/p/3366175.html) [秒懂C#通过Emit动态生成代码 - 匠心十年 - 博客园](http://www.cnblogs.com/gaochundong/archive/2013/06/01/csharp_emit_generate_assembly.html)
@@ -253,7 +255,7 @@ CloneObjectWithIL(base, derived);
 
 http://www.c-sharpcorner.com/uploadfile/puranindia/reflection-and-reflection-emit-in-C-Sharp/
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20178885325.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20178885325.jpg)
 
 https://stackoverflow.com/a/46580446/6116637
 

@@ -26,7 +26,7 @@
 
 然后在首页添加这个控件
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018114144020.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018114144020.jpg)
 
 ```csharp
         <local:LuenqxuhkRrjbzcf ></local:LuenqxuhkRrjbzcf>
@@ -57,7 +57,7 @@
 
 接下来添加两个按钮在首页，一个是设置用户控件的 DataContext ，一个删除，这时可以看到界面出现变化
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%252011123339.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B411%25E6%259C%258810%25E6%2597%25A5%252011123339.gif)
 
 ```csharp
 <Grid>
@@ -115,7 +115,7 @@
 
 如果只有一个页面，而且使用的地方也是在 页面的内容，那么建议使用这个方法。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201743091652.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201743091652.jpg)
 
 如果需要在 Page 的元素也绑定到 ViewModel ，那么可以参见下面的方法。
 
@@ -132,7 +132,7 @@
 
 这样在程序任何地方都可以使用
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201743091744.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201743091744.jpg)
 
 我的想法，如果是 ViewModel ，那么写在这里，对于 MVVM 的 ViewModel ，MainPage 对应的 ViewModel 建议写在这里。
 

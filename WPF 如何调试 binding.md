@@ -1,29 +1,30 @@
 # WPF 如何调试 binding
 
-如果是写在 xaml 的绑定，很难看到是那里出错
-
-如何做vs 调试 binding？
+如果是写在 xaml 的绑定，很难看到是那里出错。本文告诉大家如何在 vs 调试 binding 是否绑定上？
 
 <!--more-->
 
 <div id="toc"></div>
 <!-- csdn -->
 
-如果界面很简单，当时忽然就和想的不一样，无论如何做都不会反应，但是难以知道是在哪写错，输出也没有显示，那么这时需要如何做？
+<!-- 标签：WPF，WPF调试，调试 -->
 
-可以在 binding 输出很多关于他如何做的 
+在写 Binding 的时候，需要在运行的时候才能知道是否绑定对了，但是可能有时候代码是好的，但是有逗比小伙伴改了一下就不知道是属性名修改了绑定不上，还是转换器没写对
 
-首先引用
+在 WPF 提供了输出绑定的信息，可以在 binding 输出很多关于他如何做的，如何寻找绑定的数据，绑定是如何创建的
+
+本文告诉大家如何使用绑定输出
+
+首先引用命名空间，请在添加 trace 命名空间
 
 ```csharp
           xmlns:trace="clr-namespace:System.Diagnostics;assembly=WindowsBase"
 
 ```
 
-然后在binding里写 trace:PresentationTraceSources.TraceLevel=High
+然后在 binding 里写 `trace:PresentationTraceSources.TraceLevel=High` 设置调试等级
 
-我在一个复杂的界面，很难知道是不是在哪写错，于是代码如下
-
+我在一个复杂的界面，很难知道是不是在哪写错，在绑定里面添加输出的方法如下
 
 ```
     <TextBlock FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -31,9 +32,17 @@
                    
 ```
 
+如果这个 binding 是在后台代码创建，那么请使用下面代码，这里 BakooteZuroolu 是一个 TextBlock 元素，把他的 Text 绑定到 KasxoujarGayher 一个我也不知道什么的属性，可以看到代码很少。
 
+```csharp
+            var binding = new Binding(nameof(ViewModel.KasxoujarGayher));
 
-就可以看到
+            PresentationTraceSources.SetTraceLevel(binding, PresentationTraceLevel.High);
+
+            BindingOperations.SetBinding(BakooteZuroolu, TextBlock.TextProperty, binding);
+```
+
+运行打开就可以看到输出这些代码
 
 
 ```csharp
@@ -159,6 +168,8 @@ System.Windows.Data Warning: 107 : BindingExpression (hash=294043):   At level 0
 System.Windows.Data Warning: 104 : BindingExpression (hash=294043): Replace item at level 0 with ListViewItem (hash=16130451), using accessor DependencyProperty(AlternationIndex)
 ```
 
-参见：http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html
+参见 [http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html](http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html)
+
+如果是想要在 VisualStudio 输出所有绑定的详细信息请看 [WPF 笔刷绑定不上可能的原因](https://blog.lindexi.com/post/WPF%20%E7%AC%94%E5%88%B7%E7%BB%91%E5%AE%9A%E4%B8%8D%E4%B8%8A%E5%8F%AF%E8%83%BD%E7%9A%84%E5%8E%9F%E5%9B%A0.html)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 

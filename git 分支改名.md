@@ -5,7 +5,6 @@
 <!--more-->
 
 <div id="toc"></div>
-<!-- csdn -->
 
 如果对于分支不是当前分支，可以使用下面代码：
 
@@ -13,11 +12,24 @@
     git branch -m 原名 新
 ```
 
-如果是当前，那么可以使用加上新名字
+例如当前的分支是 master 分支，想要修改 t/lindexi 分支为 t/lindexiIsDoubi
 
+可以使用下面的代码
 
 ```csharp
-        git branch -m 原名 
+git branch -m t/lindexi t/lindexiIsDoubi
+```
+
+如果是修改当前的分支，直接修改为新的名字就可以了
+
+```csharp
+        git branch -m 新的分支名 
+```
+
+如当前的分支是 master 分支，想要将他修改 t/lindexiIsDoubi 分支，可以使用下面的代码
+
+```csharp
+git branch -m t/lindexiIsDoubi
 ```
 
 参见：

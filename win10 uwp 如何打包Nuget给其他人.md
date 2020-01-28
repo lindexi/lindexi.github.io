@@ -62,7 +62,7 @@ E:\1>E:\nuget.exe spec
 
 首先是版本，现在的版本和id什么都需要自己写，也就是上面的内容都需要自己全部写。如果需要在 description 使用换行，直接回车就好。如果自己的库需要依赖，那么请修改 dependencies ，依赖的版本参见
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153320.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153320.jpg)
 
 ## 创建简单的库
 
@@ -70,23 +70,23 @@ E:\1>E:\nuget.exe spec
 
 在里面创建一个类
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153624.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153624.jpg)
 
 ## 批量创建不同平台 dll 可以给不同的需要
 
 右击解决方法批处理
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792415375.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792415375.jpg)
 
 可以看到有很多的方法，点全选
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153752.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153752.jpg)
 
 点击重新生成
 
 可以看到生成了很多文件
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153858.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924153858.jpg)
 
 ## 打包
 
@@ -182,7 +182,7 @@ install-package Package -Source E:\1\NrzlmhRzvy
 
 或者点击选项打开 Nuget 管理，输入本地地址
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924204915.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017924204915.jpg)
 
 这样就可以添加打包的库，安装之后需要重新编译才可以使用
 

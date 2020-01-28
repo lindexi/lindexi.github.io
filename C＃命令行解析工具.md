@@ -6,6 +6,8 @@
 
 <div id="toc"></div>
 
+第一个方法是不需要安装任何的库，这个方法是性能很高，但是封装不好。第二个方法是使用 CommandLineParser 库，这个库提高很好的封装但是性能会比较差。
+
 第一个方法：
 
 [林选臣](http://www.cnblogs.com/linxuanchen/p/c-sharp-command-line-argument-parser.html)大神写的，他的方法很简单。
@@ -129,18 +131,22 @@
 
 ```
 
-然后在主函数
+复制完成就可以使用，在主函数可以使用下面代码进行转换，下面代码的 `args` 就是传入的参数字符串数组。
 
 
 ```csharp
     var arguments = CommandLineArgumentParser.Parse(args);
 ```
 
-如果要
+如果需要获得参数的信息，可以使用下面代码，也就是使用 Get 方法传入一个指定的值，通过这个值就可以拿到这个值的参数
 
+```csharp
+var f = arguments.Get("--lindexi").Take();
+```
 
+如命令输入`--lindexi doubi`，上面代码就可以拿到`doubi`，虽然使用这个库的写法的封装不是很好，但是性能很好。下面告诉大家使用另一个方法，十分容易写，但是性能比较差。
 
-第二个方法需要使用 Nuget
+第二个方法需要使用 Nuget 安装 CommandLineParser 库，可以在控制台输入下面代码安装
 
 
 ```csharp
@@ -161,12 +167,14 @@
         [Option("d", "dir", Required = true, HelpText = "PGN Directory to read.")]
         public string PgnDir { get; set; }
 
-        // 第二个参数-s
+        // 新的版本使用的是 char 来作为第一个字符，也就是需要修改 "d" 为 'd' 字符
+        // [Option('d', "dir", Required = true, HelpText = "PGN Directory to read.")]
+        // public string PgnDir { get; set; }
+
+        // 第二个参数-s 也可以使用 --step 
 
         [Option("s", "step", DefaultValue = 30, HelpText = "The maximum steps in PGN game to process.")]
         public int MaxStep { get; set; }
-
-       
 
         [HelpOption]
         public string GetUsage()
@@ -185,10 +193,11 @@
 }
 ```
 
- 主程序Main里使用
+主程序Main里使用可以使用下面代码，这里的 args 数组就是主函数传入函数。下面的代码是老版本的写法
 
 ```csharp
- 
+
+// 老版本的写法
 
 var options = new Options();
 
@@ -213,7 +222,41 @@ else
 }
 ```
 
+上面的代码是老的版本，现在更新 2.2.0 版本是需要修改代码
 
+```csharp
+    class Options
+    {
+        // 注意 'd' 用的是字符
+        // 短参数名称，长参数名称，是否是可选参数，默认值，帮助文本等
+
+        [Option('d', "dir", Required = true, HelpText = "PGN Directory to read.")]
+        public string PgnDir { get; set; }
+
+        // 第二个参数-s
+
+        [Option('s', "step", HelpText = "The maximum steps in PGN game to process.")]
+        public int MaxStep { get; set; }
+    }
+```
+
+原来的 DefaultValue 修改为 Default 可以传入任何类型
+
+在 Main 函数需要修改代码
+
+```csharp
+            CommandLine.Parser.Default.ParseArguments<Options>(args)
+                .WithParsed(options =>
+                {
+                    var step = options.MaxStep;
+                })
+                .WithNotParsed(errorList =>
+                {
+                    
+                });
+```
+
+在 WithParsed 就是解析成功的委托，在 WithNotParsed 就是解析失败的
 
 如何使用参见：http://www.cnblogs.com/speeding/archive/2012/08/07/2626066.html
 

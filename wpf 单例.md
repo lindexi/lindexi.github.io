@@ -8,7 +8,7 @@
 
 首先创建项目，右击 App.xaml.cs 选择编译为 Page ，原来是 ApplicationDefinition
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171019201545.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171019201545.jpg)
 
 打开 App.xaml 删除`StartupUri="MainWindow.xaml"`，不然下面的代码会启动两个窗口
 

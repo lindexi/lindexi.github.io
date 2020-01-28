@@ -20,7 +20,7 @@ wpf: [lindexi.wpf.Framework 1.1.1155](https://www.nuget.org/packages/lindexi.wpf
 
 这里所说的页面包括用户控件，很多情况，可以使用用户控件代替页面。在存在一个页面创建之后，就不需要替换，那么使用用户控件也可以，但是页面的等级是比用户控件更高，所以在比较大的功能，建议使用页面。另一个是存在一个功能，需要替换多个页面，这时使用用户控件就不太好，建议使用页面。接下来，我将会分析两个情况来告诉大家。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017730155441.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017730155441.jpg)
 
 第一个情况如上图的设计，左侧的选项页面就是在程序运行中不会改变的，即使改变，也只是某一些选项，所以这个左侧页面，就可以尝试使用用户控件，或者连用户控件也不要，直接写就可以了。
 
@@ -30,13 +30,13 @@ wpf: [lindexi.wpf.Framework 1.1.1155](https://www.nuget.org/packages/lindexi.wpf
 
 如果说，那就让他跳，反正我不关心，这时需要想一下，左侧页面，是否对当前显示的页面做出不同的颜色，如果功能页面修改了，如何知道？
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201773016113.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201773016113.jpg)
 
 所以多页面通信之间还是有坑的，最好让他们耦合降低，这样就不会出现修改时，准备拿刀砍人。如果耦合很低，点击左侧页面，只是向一个类A发送信息，那么之后这个类A不会改变，那么左侧页面就不会进行修改，如果需要修改功能页面。如果这时有一个按钮可以控制功能页面，那么这个按钮同样对类A发送消息就可以，不需要去关心里面的逻辑，而功能页面通过监听类A的事件，可以绑定当前功能页面的对应列，所以这个设计是比刚才的方法比较好的。
 
 接下来继续将一个多页面通信的问题。假如有一个程序，看起来和下面的图一样，有主页面，主页面有多个页面，那么这时，如何对这些页面进行通信？假如需要点击主页面的一个按钮，控制页面A中的元素，那么如何做？简单的方法是直接主页面知道页面A，直接对他元素修改。但是这个方法很容易看到，耦合很高，如果页面A修改了，那么这时就无法在不修改主页面继续运行。如果更复杂的项目，可能需要修改的地方就会很多，如果有新人不知道，没有修改所有的地方，很容易就出现软件的质量差。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017730161636.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017730161636.jpg)
 
 如果同样可以通过主页面向另一个类B发送信息，页面A监听类B，所以页面A就可以得到主页面需要删除元素的信息，由A页面来删除元素，这样可以做到耦合比较低。那么问题在很多情况都需要创建一个类来接收消息，而需要页面去获得消息，是否可以做出一个框架？我的框架就是这样想到，本来 MVVMLight 也有这样功能，看起来他的功能比较多，所以我就自己写一个，当然看完本文，相信大神们很容易就写出自己的框架。
 
@@ -477,7 +477,7 @@ Install-Package lindexi.uwp.Framework -Version 1.0.15512
 
 那么一个负责跳转的页面，也就是有多个内部页面的窗口的 ViewModel 是建议继承 NavigateViewModel ，这样他就可以对其他 ViewModel 跳转。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017919195927.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017919195927.jpg)
 
 于是主页面的 ViewModel 就可以继承 NavigateViewModel ，可以在调试模式下不传入 Frame 并且在属性生成、条件编译符添加 NOGUI 就可以进行单元测试，各种页面跳转的测试。 ViewModel 可以拿到主要方法是 Navigate ，可以让一个 ViewModel 跳转，请看代码
 
@@ -583,11 +583,11 @@ public class xxMessage:Message
 
 例如有一个左侧列表，用于导航，也就是普通的菜单，那么左边列表的 ViewModel 是 NavigationPanelModel ，请看下面的图
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017730155441.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017730155441.jpg)
 
 最左边的就是 NavigationPanelModel ，那么这时 NavigationPanelModel 需要进行跳转，但是 NavigationPanelModel 不包含其他 ViewModel 包含其他 ViewModel 的是主页面的。所以这时就可以使用发送消息来跳转。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20179219635.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20179219635.jpg)
 
 点击 NavigationPanelModel 的选项时，可以通过发送一个消息到 ViewModel ，让 ViewModel 跳转。
 

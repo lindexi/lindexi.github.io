@@ -42,11 +42,11 @@ gogos.exe web
 
 需要使用gogs镜像，添加外部
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/48607e54-9b56-4d1b-a11f-ff44b53046c4201612693440.jpg)
+![](http://image.acmx.xyz/48607e54-9b56-4d1b-a11f-ff44b53046c4201612693440.jpg)
 
 输入地址
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/48607e54-9b56-4d1b-a11f-ff44b53046c4201612693522.jpg)
+![](http://image.acmx.xyz/48607e54-9b56-4d1b-a11f-ff44b53046c4201612693522.jpg)
 
 然后设置他24小时更新
 

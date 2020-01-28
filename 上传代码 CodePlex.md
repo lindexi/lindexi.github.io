@@ -15,11 +15,11 @@ CodePlex是微软开源项目网站，有很多人都在上面传代码，我们
 
 去https://www.codeplex.com/ 选`Creat Project`
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135425.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135425.jpg)
 
 填写标题、域名、选择git上传
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135510.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135510.jpg)
 
 创建
 
@@ -27,7 +27,7 @@ CodePlex是微软开源项目网站，有很多人都在上面传代码，我们
 
 点击 `Source Code`
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135552.jpg)
+![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135552.jpg)
 
 点击`Clone`
 
@@ -58,7 +58,7 @@ git push codeplex master
 
  - [url:白天黑夜按钮|https://github.com/lindexi/UWP/blob/master/uwp/control/NightDayThemeToggleButton]
 
- [image:http://7xqpl8.com1.z0.glb.clouddn.com/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212105727.jpg]
+ [image:http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212105727.jpg]
 
  - [url:进度条|https://github.com/lindexi/UWP/blob/master/uwp/control/Progress]
 
@@ -66,7 +66,7 @@ git push codeplex master
 
  - [url:变大数字颜色按钮|https://github.com/lindexi/UWP/blob/master/uwp/control/RountGradualFigure]
 
- [image:http://7xqpl8.com1.z0.glb.clouddn.com/RountGradual.gif]
+ [image:http://image.acmx.xyz/RountGradual.gif]
 
 !!! 图
 

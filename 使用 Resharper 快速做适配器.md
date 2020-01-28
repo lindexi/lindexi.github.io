@@ -3,7 +3,6 @@
 如果需要做一个类的重写，需要重新写这个类的所有属性和函数，本文提供一个简单的方法让大家快速重写一个类的所有属性和函数。
 
 <!--more-->
-<!-- csdn -->
 
 <!-- 标签：Resharper -->
 
@@ -50,9 +49,9 @@
 
 使用 ctrl+shift+R 把 Foo 弄出一个接口
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018123183128.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018123183128.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812318323.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812318323.jpg)
 
 可以看到接口
 
@@ -80,9 +79,9 @@
 
 在这个类按 alt+insert 可以看到  Delegating Members ，点击
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812318371.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812318371.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812318383.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812318383.jpg)
 
 这样就可以拿到这个类的所有属性和函数
 

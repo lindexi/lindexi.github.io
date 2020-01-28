@@ -3,10 +3,11 @@
 本文告诉大家一些 ValueTuple 的原理，避免在使用出现和期望不相同的值。ValueTuple 是 C# 7 的语法糖，如果使用的 .net Framework 是 4.7 以前，那么需要使用 Nuget 安装`System.ValueTuple`
 
 <!--more-->
-<!-- csdn -->
 <div id="toc"></div>
 
-虽然 ValueTuple 的很好用，但是需要知道他有两个地方都是在用的时候需要知道他原理。
+<!-- 标签：C#，原理 -->
+
+虽然 ValueTuple 的很好用，但是需要知道他有两个地方都是在用的时候需要知道他原理。如果不知道原理，可能就发现代码和预期不相同
 
 ## json 转换
 
@@ -19,7 +20,7 @@
 
 实际上输出的是 `{"Item1":"lindexi","Item2":"blog.csdn.net/lindexi_gd"}`
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822162054.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822162054.jpg)
 
 那么刚才的命名在哪？
 
@@ -45,7 +46,7 @@
 
 不需要安装反编译软件，可以使用这个[网站](https://sharplab.io/)拿到反编译
 
-可以看到Foo被编译
+可以看到Foo被编译为 TupleElementNames 特性的两个字符串
 
 ```csharp
     [return: TupleElementNames(new string[]
@@ -59,7 +60,7 @@
     }
 ```
 
-所以实际上代码是 `ValueTuple<string, string> ` 不是刚才定义的，只是通过 TupleElementNames 让编译器知道值
+所以实际上代码是 `ValueTuple<string, string> ` 不是刚才定义的代码，只是通过 TupleElementNames 让编译器知道值，所以是语法糖。
 
 IL 代码是 
 
@@ -119,7 +120,7 @@ private hidebysig static valuetype [mscorlib]System.ValueTuple`2<string, string>
 
 运行出现 RuntimeBinderException 异常，因为没有发现 `name` 属性
 
-实际上对比下面
+实际上对比下面匿名类，也就是很差不多写法。
 
 ```csharp
         dynamic foo = new { name = "lindexi", site = "blog.csdn.net/lindexi_gd" };
@@ -127,6 +128,20 @@ private hidebysig static valuetype [mscorlib]System.ValueTuple`2<string, string>
 ```
 
 运行是可以的，所以在使用动态类型，请不要使用 ValueTuple ，如果需要使用，那么请知道有存在找不到变量异常，而且是在运行才出现异常。
+
+## 性能提升
+
+如果使用 ValueTuple 编程会有一些优点，性能是其中之一。而且对于异步编程，使用 ValueTuple 可以继续使用 await 的方法。
+
+假如有一个方法需要返回 5 个参数，那么以前的做法有三个方法，第一个方法是使用 out 的方法，第二个方法是使用 Tuple ，第三个方法是定义一个临时的类。
+
+如果使用了 out 的方法，那么这个方法就不可以继续使用异步 await 的方法，因为 await 需要做出状态机，参见我写的await原理。如果使用 Tuple ，或这定义一个临时的类，就会出现性能的问题。
+
+从上面的原理，已经告诉大家，ValueTuple 是值类型，而 Tuple 或定义的一个类不是值类型。编译器的优化是让 ValueTuple 分配在栈，对于普通的类分配在堆空间。如果一个类分配到堆空间，那么就需要使用垃圾回收才可以清理空间。而分配到栈就不需要使用垃圾回收，使用完成就清空栈，效率比堆空间大。
+
+但是使用栈空间需要注意，栈空间是很小的，如果使用了大量栈空间可能会出现堆栈gg。因为考虑到部分刚入门的小伙伴，所以我就需要多说一些，上面说的 ValueTuple 使用了栈空间需要小心栈空间不足，和你存放的值的关系不大，而是和定义的 ValueTuple 数量有关，这个数量是非常大的。但是在递归方法中，本来是刚好空间足够的，在使用了 ValueTuple 可能就不够了。
+
+使用 ValueTuple 可以继续使用异步，而且不需要垃圾回收，性能比Tuple高，所以建议在多返回参数使用 ValueTuple，而不是定义一个类。
 
 ## 其他需要知道的
 
@@ -140,9 +155,9 @@ private hidebysig static valuetype [mscorlib]System.ValueTuple`2<string, string>
 
 但是这个值，在看的时候，几乎说不出他的属性
 
-第二个需要知道的，ValueTuple 是值类型，所以他的默认值不是 null 而是 `default(xx)`，在C# 7.2 支持使用关键字，所以不需要去写 xx
+第二个需要知道的，ValueTuple 是值类型，所以他的默认值不是 null 而是 `default(xx)`，在C# 7.2 支持使用关键字，所以不需要去写 `defalut(xx,xx)`
 
-关于 ValueTuple 变量名的定义也是很难说的，有的小伙伴觉得需要使用 Axx 的方式命名，但是很多小伙伴觉得使用 aaBa 的命名更好，所以暂时对于他的命名，大家觉得什么方式好请告诉我
+关于 ValueTuple 变量名的定义也是很难说的，有的小伙伴觉得需要使用 Axx 的方式命名，但是很多小伙伴觉得使用 aaBa 的命名更好，所以暂时对于他的命名使用 aaBa 的方法，大家觉得什么方式好请告诉我
 
 参见：[ Exploring Tuples as a Library Author](http://blog.marcgravell.com/2017/04/exploring-tuples-as-library-author.html )
 

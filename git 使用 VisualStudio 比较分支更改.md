@@ -4,9 +4,8 @@
 
 默认的 VisualStudio 比较文件比 github 的用起来好很多，那么如何使用 VisualStudio 作为代码比较？
 
-
+<!-- 标签：git -->
 <!--more-->
-<!-- csdn -->
 
 尝试打开一下 VS ，随意进行对比两个文件。需要找到一个工具，这个工具放在 TeamFoundation 文件夹里，我这里是 VisualStudio 2017 于是我的路径是`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\vsDiffMerge.exe` 可以打开自己的文件夹进行搜索，找到这个软件。
 
@@ -18,9 +17,9 @@ vsDiffMerge.exe 文件1 文件2
 
 就可以看到，软件从 VisualStudio 进行对比
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017118185826.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017118185826.jpg)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711819136.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201711819136.jpg)
 
 
 如果使用的是 Powershell ，那么可以输入 cmd 进入命令行
@@ -65,6 +64,10 @@ git config --global merge.tool visualstudio
 ```
 
 需要修改自己的文件所在，一般可以搜索找到。
+
+如果想使用一个简单的方法，可以打开 VisualStudio 团队设置，然后设置使用 VisualStudio 
+
+![](http://image.acmx.xyz/623b6fff-6d11-0112-9b3c-6b76f86a3bea%2F2017111423046.jpg)
 
 ## 忽略对比的文件夹
 

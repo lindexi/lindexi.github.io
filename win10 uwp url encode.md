@@ -34,14 +34,14 @@ UWP 提供一些方法让我们很容易把 中文转为 URL ，但是转换还�
 `Uri.UnescapeDataString` `WebUtility.UrlDecode` `WebUtility.HtmlDecode`，如果从中文转 URL 就可以用他们弄回来。
 
 先写一个测试使用代码，看看对
-对字符串：“~+ =!@$#^&*http://lindexi.oschina.io”转换的到的是什么
+对字符串：`~+ =!@$#^&*http://lindexi.oschina.io`转换的到的是什么
 
-通过 Uri.EscapeUriString 返回 “~+%20=!@$#%5E&*http://lindexi.oschina.io”
+通过 Uri.EscapeUriString 返回 `~+%20=!@$#%5E&*http://lindexi.oschina.io`
 
   
-WebUtility.UrlEncode 返回  “%7E%2B+%3D!%40%24%23%5E%26*http%3A%2F%2Flindexi.oschina.io”
+WebUtility.UrlEncode 返回  `%7E%2B+%3D!%40%24%23%5E%26*http%3A%2F%2Flindexi.oschina.io`
 
-他们都是标准，关于区别，请看 http://stackoverflow.com/a/11236038/6116637
+他们都是标准，关于区别，请看 [http://stackoverflow.com/a/11236038/6116637](http://stackoverflow.com/a/11236038/6116637)
 
 <!-- 对于中文，使用两个得到是一样 -->
 
@@ -83,7 +83,5 @@ WebUtility.HtmlEncode 可以转 `&#` ，把 `<` 转`&lt;`，`>`转`&gt;` 所以�
 |文 |%E6%96%87|%E6%96%87 |%E6%96%87 |文|
 
 https://blogs.msdn.microsoft.com/yangxind/2006/11/08/dont-use-net-system-uri-unescapedatastring-in-url-decoding/
-
-
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

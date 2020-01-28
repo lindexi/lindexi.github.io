@@ -8,20 +8,28 @@
 
 看名字不知道是什么，我就放一张图
 
-![这里写图片描述](http://img.blog.csdn.net/20160903165703064) 
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160903165703064)  -->
 
-![这里写图片描述](http://img.blog.csdn.net/20160903173217169) 
+![](https://i.loli.net/2018/08/20/5b7ab9db4b4a5.jpg)
 
-使用很简单，在Nuget，Radial Gauge
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160903173217169)  -->
 
-![这里写图片描述](http://img.blog.csdn.net/20160903165948549) 
+![](https://i.loli.net/2018/08/20/5b7aba0ad1c12.gif)
+
+使用很简单，在Nuget 搜索 Radial Gauge 然后下载
+
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160903165948549)  -->
+
+![](https://i.loli.net/2018/08/20/5b7aba24c57d8.gif)
 
 
-要使用大神做的，简单，在使用我们需要在Nuget下载，然后在引用` xmlns:controls="using:WinRTXamlToolkit.Controls"`
+这个库是大神做的，要使用大神做的库是很简单。在安装完成了 nuget 就可以在我们需要的项目引用`xmlns:controls="using:WinRTXamlToolkit.Controls"` 然后使用 `controls:Gauge` 使用这个控件。
 
-我们需要知道每个值是什么
+这个控件需要传入很多值，请看下图
 
-![这里写图片描述](http://img.blog.csdn.net/20160903173511567) 
+![](https://i.loli.net/2018/08/20/5b7aba6f4ec32.gif)
+
+<!-- ![这里写图片描述](http://img.blog.csdn.net/20160903173511567)  -->
 
 tick:最上面表盘，我们可以修改颜色TickBrush，我们颜色可以用SolidColorBrush、ImageBrush、LinearGradientBrush
 
@@ -38,6 +46,8 @@ Minimum：我们可以修改和进度条那最大值，最小值
 Unit：下面写的字，我写了博客
 
 needle：指针，英文我就不翻译
+
+现在大概设置一下，写出下面的代码，注意需要先引用 `xmlns:controls="using:WinRTXamlToolkit.Controls"` 才可以写出下面代码
 
 ```xml
             <controls:Gauge
@@ -66,11 +76,12 @@ needle：指针，英文我就不翻译
             </controls:Gauge>
 ```
 
-如果感兴趣可以去https://github.com/xyzzer/WinRTXamlToolkit
+如果感兴趣可以去 [WinRTXamlToolkit](https://github.com/xyzzer/WinRTXamlToolkit)  看源代码
 
-如果大小觉得不是我们要的，可以用ViewBox，直接设置大小
+如果觉得这个控件的大小不是我们要的，可以在这个控件的外面添加一个 ViewBox 就可以通过设置 ViewBox 的大小的方法设置大小。
 
-说到这我用xaml画Windows10，应该大家看到上面gif，我用了它图片，其实我用path
+
+说到这我用xaml画Windows10图标，应该大家看到上面gif，这里我不是使用图片画出来的，我是用 Path 的方式画出来的，请看代码
 
 ```xml
  <Grid Margin="10,10,10,10">
@@ -99,7 +110,7 @@ needle：指针，英文我就不翻译
 
 ```
 
-如果大小觉得不是你要的，使用ViewBox，然后这个是放大多少都不会模糊。
+如果觉得上面的图不是想要的大小，就可以使用 ViewBox 通过设置 ViewBox 的大小修改大小，这个图无论放大多少都不会模糊
 
 修改Fill修改颜色，修改Stroke修改边框，第一个是田后面就是垃圾wr
 

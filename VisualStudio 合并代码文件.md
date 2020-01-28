@@ -9,7 +9,7 @@
 
 工程文件就是创建一个工程自动生成的，如果创建一个空白的程序，那么就可以从创建的文件夹看到这个文件
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017722155815.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017722155815.jpg)
 
 使用 SublimeText打开，可以看到他里面包含了很多文件
 
@@ -40,7 +40,7 @@
 
 把上面的代码放到两个文件，那么可以看到在解决方案存在两个文件，接下来就要把他们放在一起
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201772216156.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201772216156.jpg)
 
 可以看到在刚才打开的工程文件，有这样的代码
 
@@ -85,6 +85,6 @@
 如果想获得反射的知识，请看
 [win10 uwp 反射](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%8F%8D%E5%B0%84/)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20177221639.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20177221639.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 

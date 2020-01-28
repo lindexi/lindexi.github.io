@@ -24,11 +24,11 @@
 
 于是新建一个  FrameworkElement  需要添加 一些方法，这是默认的，只需要自动创建就好。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323102952.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323102952.jpg)
 
 这个类不是主要的，他是让DrawingVisual显示，在构造函数写下面的代码
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323103719.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323103719.jpg)
 
 
 这就是可以让 他可以显示。为何这样可以，参见：http://blog.csdn.net/changtianshuiyue/article/details/26981797
@@ -42,7 +42,7 @@
 ```
 来看下他的方法 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732310406.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732310406.jpg)
 
 这样就可以画出文字。
 
@@ -55,7 +55,7 @@
 ```
 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732310419.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732310419.jpg)
 
 为什么这样就可以画出？
 
@@ -65,7 +65,7 @@
 
 那么如何做出下图的程序？
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017%25E5%25B9%25B43%25E6%259C%258823%25E6%2597%25A5%2520112045.gif)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017%25E5%25B9%25B43%25E6%259C%258823%25E6%2597%25A5%2520112045.gif)
 
 首先对代码做修改，在 Windows 的MouseMove 调用 StrokeVisual 的 Add 方法和 画出来
 

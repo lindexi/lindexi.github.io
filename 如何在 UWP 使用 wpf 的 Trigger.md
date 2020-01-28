@@ -65,11 +65,11 @@ Install-Package Microsoft.Xaml.Behaviors.Uwp.Managed
 不需要在后台写什么，直接运行可以看到在
 按钮可以使用时的图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017727204046.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017727204046.jpg)
 
 按钮无法使用时的图片
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017727204024.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017727204024.jpg)
 
 
 请使用 DataTriggerBehavior 的Binding 连到需要修改的属性，在 Value 判断他的值。

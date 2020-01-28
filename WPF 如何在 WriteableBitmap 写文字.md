@@ -93,7 +93,7 @@
 
 这样运行就可以看到文字，而且这个方法的性能比较好
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220103729.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201712151723520171220103729.jpg)
 
 因为我没有设置文字大小和显示的大小，所以看起来文字就没有那么清晰
 
@@ -102,5 +102,9 @@
 最近看到一个对 OpenGL 封装的 SharpGL ，感觉还不错，如果需要比较高的速度，那么推荐使用这个库
 
 [SharpGL(Opengl)入门之纹理星球 - BIT祝威 - 博客园](http://www.cnblogs.com/bitzhuwei/archive/2013/05/21/Opengl_Sharpgl_dragtextured_planet_drag_drop.html )
+
+[使用不安全代码将 Bitmap 位图转为 WPF 的 ImageSource 以获得高性能和持续小的内存占用 - walterlv的专栏 - CSDN博客](https://blog.csdn.net/WPwalter/article/details/78619679 )
+
+[基于WriteableBitmap对象类采用擦写内存方式，低开销更新WPF Image UI控件 - Ivan_Whisper的博客 - CSDN博客](https://blog.csdn.net/Ivan_Whisper/article/details/80312586 )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 

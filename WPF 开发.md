@@ -6,6 +6,41 @@
 
 <div id="toc"></div>
 
+
+## 标记方法被使用
+
+使用 UsedImplicitly 特性可以标记一个没有被引用的方法为反射使用，这时就不会被优化删除。
+
+```csharp
+public class Foo
+{
+    [UsedImplicitly]
+    public Foo()
+    {
+        //反射调用
+    }
+
+    public Foo(string str)
+    {
+        //被引用
+    }
+}
+```
+
+## 拼接 URI 路径
+
+我需要将一个 URI 和另一个 URI 拼接如 `https://blog.lindexi.com/post/123` 和 `/api/12` 拼接，拿到绝对路径 `https://blog.lindexi.com/api/12` 可以使用下面方法
+
+```csharp
+var uri1 = new Uri("https://blog.lindexi.com/post/123");
+var uri2 = "/api/12";
+
+    if (Uri.TryCreate(uri1, uri2, out var absoluteUrl))
+    {
+        // 拼接成功，在这里就可以使用 absoluteUrl 拼接后的绝对路径
+    }
+```
+
 ## 单例应用在多实例用户无法使用
 
 如果使用NamedPipeServerStream、`Mutex`做单实例，需要传入字符串，这时如果传入一个固定的字符串，会在多用户的时候无法使用。
@@ -86,6 +121,74 @@ public partial class App
 <Button ToolTipService.ShowOnDisabled="True">  
 ```
 
+## 获取设备屏幕数量
+
+通过 WinForms 方法获取
+
+```csharp
+System.Windows.Forms.Screen.AllScreens
+```
+
+上面就可以拿到所有的屏幕，通过 Count 方法就可以知道有多少屏幕
+
+```csharp
+var screenCount = Screen.AllScreens.Length;
+```
+
+## 获取当前域用户
+
+在 WPF 找到当前登陆的用户使用下面代码
+
+```csharp
+using System.Security.Principal;
+
+// 其他代码
+
+            WindowsIdentity windowsIdentity = WindowsIdentity.GetCurrent();
+            string crentUserAd = windowsIdentity.Name;
+```
+
+输出 `crentUserAd` 可以看到 `设备\\用户` 的格式
+
+## 绑定资源文件里面的资源
+
+在 WPF 的 xaml 可以通过 `x:Static` 绑定资源，但是要求资源文件里面的对应资源设置访问为公开
+
+如果没有设置那么将会在 xaml 运行的时候提示
+
+```csharp
+System.Windows.Markup.XamlParseException 
+
+在 System.Windows.Markup.StaticExtension 上提供值xxx
+```
+
+此时在设计器里面是可以看到绑定成功，只是在运行的时候提示找不到，展开可以看到下面提示
+
+```csharp
+无法将 xx.Properties.Resources.xx  StaticExtension 值解析为枚举、静态字段或静态属性
+```
+
+解决方法是在 Resource.resx 里面的访问权限从 internal 修改为 public 就可以
+
+## 判断 WPF 程序使用管理员权限运行
+
+引用命名空间，复制下面代码，然后调用 IsAdministrator 方法，如果返回 true 就是使用管理员权限运行
+
+```csharp
+using System.Security.Principal;
+
+        public static bool IsAdministrator()
+        {
+            WindowsIdentity current = WindowsIdentity.GetCurrent();
+            WindowsPrincipal windowsPrincipal = new WindowsPrincipal(current);
+            //WindowsBuiltInRole可以枚举出很多权限，例如系统用户、User、Guest等等
+            return windowsPrincipal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+```
+
+[C# 判断软件是否是管理员权限运行 - 除却猩猩不是猿 - CSDN博客](https://blog.csdn.net/zuoyefeng1990/article/details/62224387 )
+
 ## 注册全局事件
 
 如果需要注册一个类型的全局事件，如拿到 TextBox 的全局输入，那么可以使用下面代码
@@ -98,7 +201,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
 
 如果在一个 .net 4.0 的 WPF 程序引用一个 .net 2.0 的库，那么就会让程序无法运行，解决方法添加`useLegacyV2RuntimeActivationPolicy`
 
-打开 app.config 添加`useLegacyV2RuntimeActivationPolicy="true"`
+打开 app.config 添加 `useLegacyV2RuntimeActivationPolicy="true"` 在 startup 元素
 
 下面是 app.config 代码
 
@@ -145,7 +248,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
     private static void Func(){}
     public void C()
     {
-         var temp=new delegate(){Func};
+         var temp = new delegate(){ Func };
          c(temp);
     }
 
@@ -158,7 +261,7 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
 
 ```csharp
     private static void Func(){}
-    private delegate Temp=new delegate(){Func};
+    private delegate Temp { get; } = new delegate(){Func};
     private void C()
     {
         c(Temp);
@@ -202,6 +305,20 @@ EventManager.RegisterClassHandler(typeof(TextBox), TextBox.KeyDownEvent, new Rou
 
 那么在 Release 上为何还可以把程序集放在输出文件夹呢？因为我也不知道原因，如果你知道的话，那么请告诉我一下。
 
+## 使用十进制设置颜色
+
+在 xaml 如果需要使用 十进制设置颜色，请使用下面代码
+
+```csharp
+    <SolidColorBrush x:Key="LikeGreen">
+        <SolidColorBrush.Color>
+            <Color R="100" G="200" B="30" A="100"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+```
+
+[https://stackoverflow.com/a/47952098/6116637](https://stackoverflow.com/a/47952098/6116637)
+
 ## WPF 判断文件是否隐藏
 
 可以设置一些文件是隐藏文件，那么 WPF 如何判断 FileInfo 是隐藏文件？
@@ -226,7 +343,107 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 ## TextBlock 换行
 
-使用 `&#10;`
+使用 `&#10;` 就可以换行
+
+[win10 uwp 在 xaml 让 TextBlock 换行](https://blog.lindexi.com/post/win10-uwp-%E5%9C%A8-xaml-%E8%AE%A9-textblock-%E6%8D%A2%E8%A1%8C )
+
+## 在 xaml 绑定索引空格
+
+如果一个索引需要传入空格，那么在 xaml 使用下面代码是无法绑定
+
+```csharp
+{Binding MyCollection[foo bar]}
+```
+
+需要使用下面代码
+
+```csharp
+{Binding MyCollection[[foo&x20;bar]]}
+```
+
+[Binding to an index with space in XAML – Ivan Krivyakov](https://ikriv.com/blog/?p=1143 )
+
+## 使用 Task ContinueWith 在主线程
+
+在有时候使用 Task 的 Delay 之后想要返回主线程，可以使用 ContinueWith 的方法，请看代码
+
+```csharp
+            Task.Delay(TimeSpan.FromSeconds(5)).ContinueWith
+            (
+                _ => Foo()
+                // 如果 Foo 不需要在主线程，请注释下面一段代码
+                , TaskScheduler.FromCurrentSynchronizationContext()
+            );
+```
+
+核心是 TaskScheduler.FromCurrentSynchronizationContext 方法
+
+如果 Foo 不需要在主线程，就可以删除 TaskScheduler.FromCurrentSynchronizationContext 代码
+
+## WPF-数据绑定：日期时间格式
+
+```
+{Binding datetime,StringFormat='{}{0:yyyy年MM月dd日 dddd HH:mm:ss}',ConverterCulture=zh-CN}
+```
+
+指定ConverterCulture为zh-CN后星期就显示为中文了。
+
+## WPF 第三方DLL 强签名
+
+参见：http://www.cnblogs.com/xjt927/p/5317678.html
+
+## WPF 去掉最大化按钮
+
+通过在窗口添加下面代码
+
+```csharp
+ResizeMode="NoResize"
+```
+
+窗口就剩下一个关闭同时用户也无法拖动修改窗口大小
+
+## WPF TextBox 全选
+
+在一个按钮点击的时候全选 TextBox 的内容，可以在按钮里面调用 SelectAll 方法
+
+```
+textBox.SelectAll();
+```
+
+上面代码的 textBox 就是界面写的 TextBox 元素
+
+如果发现调用上面的代码 TextBox 没有全选，可能是 TextBox 没有拿到焦点，可以尝试下面代码
+
+```
+textBox.Focus();
+textBox.SelectAll();
+```
+
+## WPF 获取文本光标宽度
+
+通过 `SystemParameters.CaretWidth` 获取宽度
+
+```csharp
+var caretWidth = SystemParameters.CaretWidth;
+```
+
+## 获取屏幕可用大小
+
+```csharp
+SystemParameters.WorkArea
+```
+
+## 设置另一个窗口获取焦点
+
+设置窗口获取焦点不能通过 Focus 设置，这个方法设置的是窗口控件拿到窗口内焦点，需要通过 Activate 方法激活窗口
+
+```csharp
+window.Activate();
+```
+
+推荐在子窗口关闭之前激活 Owner 解决[关闭模态窗口后，父窗口居然失去焦点跑到了其他窗口的后面的问题 - walterlv](https://blog.walterlv.com/post/fix-owner-window-dropping-down-when-close-a-modal-child-window.html )
+
+详细请看 [SystemParameters.CaretWidth Property](https://docs.microsoft.com/en-us/dotnet/api/system.windows.systemparameters.caretwidth?view=netframework-4.8#System_Windows_SystemParameters_CaretWidth )
 
 [wpf动画——new PropertyPath属性链 - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/14/2685199.html)
 

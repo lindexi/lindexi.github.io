@@ -4,11 +4,10 @@
 
 <!--more-->
 <div id="toc"></div>
-<!-- csdn -->
 
 在开始讲gif之前，先告诉大家 gif 的格式。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111014494.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111014494.jpg)
 
 请看图片，gif 图分为图片文件头（File Header），gif信息（GIF Data Stream）和文件结尾（Trailer）三个部分，最主要的是 gif 信息。gif信息是由控制块（Control Block）和数据块（Data Sub-blocks）组成的。
 
@@ -22,7 +21,7 @@ gif 信息包括逻辑屏幕标识符(Logical Screen Descriptor)，全局颜色�
 
 逻辑屏幕标识符定义了 gif 图片的逻辑屏幕宽度、逻辑屏幕高度，颜色深度，背景色有无全局颜色列表(Global Color Table)和颜色列表的索引数(Index Count)，请看下表
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111015233.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111015233.jpg)
 
 需要知道，图片的位是反过来写的，也就是从屏幕标识符的第5个byte开始，第0-2位表示的是pixel（ 全局颜色列表大小，pixel+1确定颜色列表的索引数（2的pixel+1次方）），第3位是 s 分类标志(Sort Flag)，如果置位表示全局颜色列表分类排列。然后就是 cr ，颜色深度(Color ResoluTion)，cr+1确定图象的颜色深度。m - 全局颜色列表标志(Global Color Table Flag)，当置位时表示有全局颜色列表，pixel值有意义。
 
@@ -34,7 +33,7 @@ gif 信息包括逻辑屏幕标识符(Logical Screen Descriptor)，全局颜色�
 
 假如一个图片使用了3个颜色 x0、x1、x2 ，如果没有使用全局颜色列表，图片长度1000，宽度1000那么每个点都存放颜色，一个颜色需要 4 byte （rbg和透明），存放的空间就为 `1000*1000*4` ，而有颜色表就直接指定颜色表的位置就可以，可以剩下3倍的空间。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111015158.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111015158.jpg)
 
 
 ### 图片块
@@ -50,7 +49,7 @@ gif 信息包括逻辑屏幕标识符(Logical Screen Descriptor)，全局颜色�
 
 图片的控制块包括图片的图象标识符、图象的性质，一共需要10字节，请看下面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171114103751.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171114103751.jpg)
 
  - m - 局部颜色列表标志(Local Color Table Flag) 置位时标识紧接在图象标识符之后有一个局部颜色列表，供紧跟在它之后的一幅图象使用；值否时使用全局颜色列表，忽略pixel值。	 
  - i - 交织标志(Interlace Flag)，置位时图象数据使用连续方式排列，否则使用顺序排列。	
@@ -121,3 +120,8 @@ gif 会把相同的图片作为索引，放在lzw，之后相同的数据就使�
 
 [wpf GifBitmapDecoder 解析 gif 格式](https://lindexi.github.io/lindexi/post/wpf-GifBitmapDecoder-%E8%A7%A3%E6%9E%90-gif-%E6%A0%BC%E5%BC%8F.html )
 
+[gif的故事：解剖表情动图的构成](http://www.alloyteam.com/2017/09/13121/ )
+
+一个 gif 解析的方法 https://github.com/vurdalakov/abandoned/tree/master/gifdotnet/src/GifDotNet
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

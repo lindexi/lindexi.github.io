@@ -18,7 +18,7 @@
 
 存储从表格读取到的数据，需要看一下表格存在哪些数据。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751785432.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751785432.jpg)
 
 于是我定义一个类
 
@@ -79,7 +79,7 @@
 
 通过查看csdn的代码，可以知道存放博客的是 `detail_list`
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017517907.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017517907.jpg)
 
 如何从 HtmlAgilityPack 获取指定的 class ？
 

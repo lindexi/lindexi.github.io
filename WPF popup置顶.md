@@ -1,3 +1,5 @@
+# WPF popup置顶
+
 在程序写一个popup发现他会在置顶，在网上找了两大神代码，就使用他的代码
 
 <!--more-->
@@ -54,6 +56,10 @@ http://blog.csdn.net/baijinwen/article/details/6159043
     }
     
 ```
+
+代码：<script src="https://gist.github.com/flq/903202.js"></script>
+
+如果看不到上面代码，请点击 <https://gist.github.com/flq/903202>
 
 
 ## 另外的已知问题

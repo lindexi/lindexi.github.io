@@ -7,7 +7,6 @@
 柱状图填充图案
 
 <!--more-->
-<!-- csdn -->
 
 ## 折线图
 
@@ -58,7 +57,7 @@ matlab 柱状图填充图案可以使用 applyhatch 画图，下面将告诉大�
 
 第二步是把文件拷贝到工作台，工作台是什么，就是软件打开的文件夹路径，这个路径如下图
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751094129.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751094129.jpg)
 
 可以自己修改，只要把上面的文件放在这个文件夹就可以了。
 
@@ -123,7 +122,7 @@ applyhatch(gcf,'\.x./');
 set(gcf,'Color','w'); 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751094956.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751094956.jpg)
 
 如果过程遇到问题，可以联系我 lindexi_gd@163.com。
 

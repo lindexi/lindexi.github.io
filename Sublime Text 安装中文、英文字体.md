@@ -3,13 +3,12 @@
 在 Sublimte Text 如何使用默认的字体，英文好看，但是中文不好，所以我就找了一个支持中文英文的字体。
 
 <!--more-->
-<!-- csdn -->
 
 ## YaHei Consolas Hybrid
 
 这个字体看起来效果比较差
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812091421.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812091421.jpg)
 
 下载地址：
 
@@ -19,7 +18,7 @@
 
 这个字体在英文是很好，但是显示中文不好看
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412392.jpg)
+![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412392.jpg)
 
 下载地址：
 
@@ -31,7 +30,7 @@ BTSYNC：B6EZLWWDHSMHDHNF6DLOMGKYBSXT7OI4R
 
 建议使用字号 16 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812095947.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812095947.jpg)
 
 下载地址：
 
@@ -47,19 +46,19 @@ BTSYNC：B6EZLWWDHSMHDHNF6DLOMGKYBSXT7OI4R
 
 ### 合并多个字体
 
-请使用
+请使用 FontForge 合并字体
 
 点击选择字体，他的字体放在  `C:\Program Files (x86)\FontForge\`
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812093732.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812093732.jpg)
 
 点击 FontInfo 修改字体名，注意名称不能添加空格
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812094548.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812094548.jpg)
 
 点击文件保存
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812093945.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812093945.jpg)
 
 教程：http://designwithfontforge.com/zh-CN/The_Final_Output_Generating_Font_Files.html
 

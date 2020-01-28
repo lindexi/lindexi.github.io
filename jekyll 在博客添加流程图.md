@@ -3,13 +3,12 @@
 本文告诉大家如何在博客使用流程图。
 
 <!--more-->
-<!-- csdn -->
 
 如果你使用的是我博客的模板，那么就可以直接使用我说的文件，如果是自己的主题，就需要在自己文件对应的地方加上代码。
 
 在我的博客里，需要添加下面的js到博客，可以打开 js.html 添加下面的代码。如果是自己定义的主题，需要在博客可以访问的地方添加下面的代码
 
-```csharp
+```
 <script src="//cdn.bootcss.com/raphael/2.2.0/raphael-min.js"></script>
 <script src="//cdn.bootcss.com/flowchart/1.6.3/flowchart.js"></script>
 

@@ -27,7 +27,7 @@
 
  - 反射主要应用与类库，这些类库需要知道一个类型的定义，以便提供更多的功能。
 
-在我写的[MVVM](./win10-uwp-MVVM%E5%85%A5%E9%97%A8/)，就使用反射获得ViewModel，这样添加ViewModel 不需要修改写的代码。
+在我写的MVVM，就使用反射获得ViewModel，这样添加ViewModel 不需要修改写的代码。
 
 反射可以添加类型不需要修改代码，这是很好的，但是反射性能比较差，在需要使用的时候才使用反射，不要每次都使用。
 
@@ -35,12 +35,22 @@
 
 反射可以获得安全类型的类，如internal或其他不是public的访问的类或类的字段，都可以获得。
 
-
-
 ## uwp 程序集所有类
 
-我们可以使用下面代码获得程序集所有的类
+在使用反射之前需要打开`Default.rd.xml`添加下面代码，就可以反射这个项目代码
+
+```xml
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Application>
+    <!-- Name="*Application*" 的程序集元素将应用到应用程序包中的所有程序集。星号不是通配符。-->
+    <Assembly Name="*Application*" Dynamic="Required All" />
+  </Application>
+</Directives>
+```
+
+参见：[设置 .NET Native 运行时指令以支持反射（尤其适用于 UWP） - walterlv](https://walterlv.github.io/uwp/2017/09/21/reflection-using-dotnet-native-runtime-directive.html )
 		
+我们可以使用下面代码获得程序集所有的类
 
 ```csharp
 Application.Current.GetType().GetTypeInfo().Assembly
@@ -212,6 +222,16 @@ Application.Current.GetType().GetTypeInfo().Assembly
 
 ```csharp
      object obj = type.Assembly.CreateInstance(type.FullName);
+```
+
+### 反射私有构造方法
+
+上面说的没有告诉大家如何在 C# 反射私有构造方法创建，下面来告诉大家如何写
+
+首先需要获得构造函数，如果构造函数不是 public 那么就需要使用下面代码获得
+
+```csharp
+
 ```
 
 ### 获得方法
@@ -422,7 +442,15 @@ class MasterBedroom : Bedroom
 
 参见： [在C#中判断某个类是否实现了某个接口 ](https://leonax.net/p/3697/determine-if-a-class-implements-a-certain-interface/)
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792392836.jpg)
+## 性能
+
+但是不管怎么说，反射都是伤性能
+
+<!-- ![](image/win10 uwp 反射/win10 uwp 反射0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2018614122491689.jpg)
+
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201792392836.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
 

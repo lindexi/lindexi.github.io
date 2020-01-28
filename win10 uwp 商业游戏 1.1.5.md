@@ -1,13 +1,12 @@
 # win10 uwp 商业游戏 1.1.5
 
-本文是在[win10 uwp 商业游戏 ](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 基础上继续开发，添加一些无聊的游戏。
+本文是在[win10 uwp 商业游戏 ](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 基础上继续开发，添加一些无聊的游戏。
 
 因为在发布几个月，下载量很少，小伙伴说游戏就玩不到几分钟就不想玩，于是我就想加入其他游戏。
 
 下面我来告诉大家如何在游戏中添加多个游戏。包括数据共用，导航。
 
 <!--more-->
-<!-- csdn -->
 <div id="toc"></div>
 
 开始问到小伙伴，他说这个游戏因为玩到后面发现可以买的东西很多，于是就不能继续玩。商店没有限制用户可以买多少的东西，所以就买最贵的，游戏就很简单了，买一下最贵的东西，等到他升价再卖出去。所以看起来很简单，他就不想玩了，于是为了添加游戏的难度，我就先添加商店可以卖出数
@@ -63,7 +62,7 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111205923.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111205923.jpg)
 
 中间的 ListView 就来绑定按钮，绑定的按钮参见：[win10 UWP ListView](https://lindexi.oschina.io/lindexi/post/win10-UWP-ListView.html )
 
@@ -126,7 +125,7 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201811121814.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201811121814.jpg)
 
 但是按钮按下的时候需要告诉上一层的消息，这时可以使用发送消息方法
 
@@ -248,7 +247,7 @@ UgetkmeOulajjz 的数值开始是随机生成，在 10-100 左右。
 
 这样就可以在点击新建游戏的时候看到跳转到市场
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111213321.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018111213321.jpg)
 
 <!-- 草药坊 雕刻 食物 武器 材料 水果 种子-->
 
@@ -663,7 +662,7 @@ LUK幸运
 
 先让大家看一下界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812811243.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812811243.jpg)
 
 界面很简单，我直接写代码。大家也看到这个代码使用的 WPF 写的，因为现在VS无法编译UWP，所以我就先使用 WPF 来做游戏
 
@@ -953,16 +952,14 @@ LUK幸运
 
 大概写好了，直接从代码转换，判断是否可以点击，如何支持点击，就触发点击
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E5%2595%2586%25E4%25B8%259A%25E6%25B8%25B8%25E6%2588%258F%2520%25E5%259B%25BE%25E7%2589%2587%2520DjqwhkKwxfit.gif)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F%25E5%2595%2586%25E4%25B8%259A%25E6%25B8%25B8%25E6%2588%258F%2520%25E5%259B%25BE%25E7%2589%2587%2520DjqwhkKwxfit.gif)
 
 现在的游戏已经可以玩了，于是我就把他放在了 [CSDN](http://download.csdn.net/download/lindexi_gd/10228261 ) 上，大家可以尝试玩一下。
 
-
-
 ## 相关文章
 
- - [win10 uwp 商业游戏 ](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
+ - [win10 uwp 商业游戏 ](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
 
- - [win10 uwp 商业游戏 1.1.5](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html)
+ - [win10 uwp 商业游戏 1.2.1](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.2.1.html)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

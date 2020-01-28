@@ -7,7 +7,7 @@
 本文也记录了我调试 VisualStudio 半个月过程遇到的坑。
 
 <!--more-->
-
+<!-- 标签：VisualStudio -->
 <div id="toc"></div>
 
 我写这博客时候，是我在开发一个插件：[编码规范工具](https://marketplace.visualstudio.com/items?itemName=lindexigd.vs-extension-18109)。记录的是我从不知道到发布插件，如果遇到了开发中的问题，欢迎交流。
@@ -22,11 +22,11 @@
 
 首先是需要安装 SDK ，如果一开始没有安装的话，那么在控制面板，找到 vS 右击，修改 VS ，然后选择工具安装。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291648.jpg)
+![](http://image.acmx.xyz/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291648.jpg)
 
 选择修改，然后选最后一个工具
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291724.jpg)
+![](http://image.acmx.xyz/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291724.jpg)
 
 我的是中文，可能翻译不一样，不过相信这一点压力对大家没有什么。
 
@@ -38,7 +38,7 @@
 
 首先是新建一个插件项目。打开 vs ，新建一个 VSIXProject 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291848.jpg)
+![](http://image.acmx.xyz/dac58ce0-c90f-489f-9ac0-83aadcf143db201711291848.jpg)
 
 新建之后居然发现有一个  index.html 我开始还以为是 写html 来着，还好不是，这个 index.html 只是卖萌的而已。
 
@@ -48,13 +48,13 @@
 
 那么我们直接新建 Command ，注意他的位置是在哪。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711292118.jpg)
+![](http://image.acmx.xyz/dac58ce0-c90f-489f-9ac0-83aadcf143db201711292118.jpg)
 
 新建出来可以看到多了好多文件，其中 .vsct 是核心，如果想知道关于他更多，请去中文博客：http://www.cnblogs.com/default/archive/2010/06/28/1766451.html
 
 我先放出做出了的菜单。
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711292847.jpg)
+![](http://image.acmx.xyz/dac58ce0-c90f-489f-9ac0-83aadcf143db201711292847.jpg)
 
 首先打开 `*.vsct` 在 Symbols 添加 id ，我们添加 EncodingNormalizerMenu ，EncodingNormalizerId2，他们的值随意给。关于这个 GUID 或者其它的，其实我也不懂。
 
@@ -227,7 +227,7 @@ GuidStrings.GuidDefinitionPage) 是我自己定义的GUID放在一起的类，�
         public Encoding CriterionEncoding { set; get; }
 ```
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/dac58ce0-c90f-489f-9ac0-83aadcf143db201711211410.jpg)
+![](http://image.acmx.xyz/dac58ce0-c90f-489f-9ac0-83aadcf143db201711211410.jpg)
 
 如果需要复杂窗体，新建一个 用户控件，注意是 WinForm 控件，然后 override Window。
 
@@ -429,21 +429,21 @@ DefinitionPage 就是我上面定义的选项
 
 1. 打开 Nuget 升级，把所有提示升级的都升级。
 
- ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202746.jpg)
+ ![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202746.jpg)
 
 1. 打开 source.extension.vsixmanifest
 
  选 InstallationTarget 包括各版本
 
- ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202935.jpg)
+ ![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202935.jpg)
 
- ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202922.jpg)
+ ![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323202922.jpg)
 
 1. 打开属性，修改路径
 
  启动外部程序`C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe`
 
- ![](http://7xqpl8.com1.z0.glb.clouddn.com/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323203341.jpg)
+ ![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017323203341.jpg)
 
 1. 启动项目
 
@@ -464,5 +464,7 @@ https://msdn.microsoft.com/zh-cn/library/mt683786
 如果开发中遇到问题，欢迎联系 [lindexi_gd@163.com](mailto:lindexi_gd@163.com)
 
 现在我还有另一个插件：[图片注释](http://download.csdn.net/detail/lindexi_gd/9833388) 这个插件不是我写的，我是修改的，所以没有发布，如果需要就在这里下。
+
+推荐[VS插件开发笔记 - 禾木 - CSDN博客](https://blog.csdn.net/lj22377/article/details/84641077 )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

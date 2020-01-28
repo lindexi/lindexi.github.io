@@ -378,6 +378,30 @@ Nuget搜索`lindexi.uwp.src.ImageStorage`
 Install-Package lindexi.uwp.src.ImageStorage
 ```
 
+## Microsoft.Toolkit.Uwp
+
+当前图片缓存的功能已经合并到 Microsoft.Toolkit.Uwp 工具，不过里面已经看不到我写的代码了，所以变得更加好用
+
+在最低版本为 16299 之后可以通过 nuget 找到 Microsoft.Toolkit.Uwp 安装，然后可以使用下面的代码判断如果图片已经保存在本地，就从本地读取图片。如果图片没有保存到本地，就从网络下载
+
+```csharp
+// 图片可以保存多久的时间
+ImageCache.Instance.CacheDuration = TimeSpan.FromHours(24);
+
+// 最多可以在内存存放多少张图片
+ImageCache.Instance.MaxMemoryCacheCount = 100;
+
+var distantUri = new Uri("http://www.myserver.com/image.jpg");
+
+// 如果图片没有在缓存里，将会下载图片。如果图片在缓存里，直接返回图片
+var bitmapImage = await ImageCache.Instance.GetFromCacheAsync(distantUri);
+
+// 清理缓存
+await ImageCache.Instance.ClearAsync(); 
+```
+
+[ImageCache](https://docs.microsoft.com/en-us/windows/communitytoolkit/helpers/imagecache )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 

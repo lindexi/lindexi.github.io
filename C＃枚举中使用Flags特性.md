@@ -13,7 +13,7 @@
 
 当然，这些太复杂了，我也不会在这里解释。
 
-假如有类型
+假如有类型 Show 的定义如下
 
 
 ```csharp
@@ -37,7 +37,7 @@
   Show show=Show.A | Show.B
 ```
 
-
+枚举通过这个方法可以在一个变量包含多个值
 
 ## 判断是否存在某个值
 
@@ -45,12 +45,15 @@
 
 
 ```csharp
-  Show show=Show.A | Show.B;
+  Show show = Show.A | Show.B;
   show.HasFlag(Show.A);
   //其他
-  bool 包含=(show & Show.A)!=0;
+  bool 包含 = (show & Show.A) !=0 ;
 ```
 
+从性能上看通过 `&` 的性能会比 HasFlag 高，但是从可读性上 HasFlag 更友好，如果你的代码没有性能问题推荐使用 HasFlag 方法
+
+只要一个 enum 使用了 Flags 标记就可以使用 HasFlag 方法
 
 ## 去掉一个值
 
@@ -79,7 +82,7 @@
 
 
 ```csharp
-        [Flags]
+    [Flags]
     public enum Show
     {
         A = 0b00000001,
@@ -89,6 +92,7 @@
     }
 ```
 
+于是这样就可以合并多个值，用一个 byte 表示一个值
 
 参见：http://www.cnblogs.com/jhxk/articles/1738831.html
 

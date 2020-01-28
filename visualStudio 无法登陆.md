@@ -3,13 +3,12 @@
 如果遇到 visualStudio 无法登陆，可以看下我的方法，可能有用。
 
 <!--more-->
-<!-- csdn -->
 
 尝试关闭代理
 
 打开设置、网络、代理，关了它，试试
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162926.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162926.jpg)
 
 
 如果遇到下面的问题：
@@ -19,7 +18,7 @@
 No home tenant info found.
 
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162719.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162719.jpg)
 
 那么可以尝试下面的方法：
 
