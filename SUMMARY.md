@@ -12,6 +12,8 @@
 
  * [asp dotnet core 实现服务器发送事件 Server-Sent Events 简单方式](asp-dotnet-core-实现服务器发送事件-Server-Sent-Events-简单方式.md)
 
+ * [asp dotnet core 提示 Cannot access a disposed object 解决方法](asp-dotnet-core-提示-Cannot-access-a-disposed-object-解决方法.md)
+
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
 
  * [asp dotnet core 简单开发P2P中央服务器](asp-dotnet-core-简单开发P2P中央服务器.md)
@@ -309,6 +311,8 @@
  * [dotnet 不申请额外数组空间合并多个只读数组列表](dotnet-不申请额外数组空间合并多个只读数组列表.md)
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
+
+ * [dotnet 从零开始写一个人工智能](dotnet-从零开始写一个人工智能.md)
 
  * [dotnet 代码调试方法](dotnet-代码调试方法.md)
 
@@ -695,6 +699,8 @@
  * [VisualStudio 开启仅我代码调试](VisualStudio-开启仅我代码调试.md)
 
  * [VisualStudio 快速设置启动项目](VisualStudio-快速设置启动项目.md)
+
+ * [VisualStudio 打断点和不打断点的区别](VisualStudio-打断点和不打断点的区别.md)
 
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)
 
@@ -1623,6 +1629,8 @@
  * [在 Gitlab 开启 MatterMost 机器人](在-Gitlab-开启-MatterMost-机器人.md)
 
  * [在 P2P 文件分享应用以文件或文件段为单位的优缺](在-P2P-文件分享应用以文件或文件段为单位的优缺.md)
+
+ * [在 SublimeText 使用 dotnet 编译 C# 项目](在-SublimeText-使用-dotnet-编译-C-项目.md)
 
  * [在 Windows Defender 设置文件夹白名单提升 VisualStudio 编译速度](在-Windows-Defender-设置文件夹白名单提升-VisualStudio-编译速度.md)
 
