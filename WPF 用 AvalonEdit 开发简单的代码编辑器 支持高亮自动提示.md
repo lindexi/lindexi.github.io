@@ -56,6 +56,18 @@ ShowLineNumbers="True"
             </avalonEdit:TextEditor.Options>
 ```
 
+代码对齐很重要，最简单的代码对齐就是继承上一行的空格数量，通过下面属性让 AvalonEdit 支持设置继承上一行的行首空格
+
+```xml
+            <avalonEdit:TextEditor.Options>
+                <avalonEdit:TextEditorOptions ShowSpaces="True" WordWrapIndentation="4" InheritWordWrapIndentation="true">
+                    <avalonEdit:TextEditorOptions.ColumnRulerPosition>
+                        <system:Int32>10</system:Int32>
+                    </avalonEdit:TextEditorOptions.ColumnRulerPosition>
+                </avalonEdit:TextEditorOptions>
+            </avalonEdit:TextEditor.Options>
+```
+
 作为代码编辑器，如何能不自动提示？自动提示也就是用户输入特殊字符时，如空格和 `.` 提示用户可以输入的内容
 
 在用户输入特殊字符触发特定事件可以通过下面代码
