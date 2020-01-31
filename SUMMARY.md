@@ -634,6 +634,10 @@
 
  * [TotalCommander 设置 VisualStudio 开发者命令行](TotalCommander-设置-VisualStudio-开发者命令行.md)
 
+ * [Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小](Unity3d-修改编辑界面控制图标大小-修改相机图标显示大小.md)
+
+ * [Unity3d 连续按键处理和单次按键处理](Unity3d-连续按键处理和单次按键处理.md)
+
  * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
 
  * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
