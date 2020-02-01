@@ -30,7 +30,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F20198317326951)
 
-核心用的技术就是 Gitlab 的 WebHook 和 [dotnet core 集成到 Mattermost 聊天工具](https://blog.lindexi.com/post/dotnet-core-%E9%9B%86%E6%88%90%E5%88%B0-mattermost-%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7 ) 两个技术
+核心用的技术就是 Gitlab 的 WebHook 和 [dotnet core 集成到 Mattermost 聊天工具](https://blog.lindexi.com/post/dotnet-core-%E9%9B%86%E6%88%90%E5%88%B0-Mattermost-%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7.html ) 两个技术
 
 ## 使用方法
 
@@ -49,7 +49,7 @@ git clone git@github.com:dotnet-campus/DotNetGitLabWebHook.git
 
 打开 `appsettings.json` 文件，此时将可以看到 MatterMostCodeReviewUrl 内容，请将他替换为你自己的 MatterMost 链接，获取链接方式如下
 
-在 [dotnet core 集成到 Mattermost 聊天工具](https://blog.lindexi.com/post/dotnet-core-%E9%9B%86%E6%88%90%E5%88%B0-mattermost-%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7 ) 这篇博客有告诉大家如何拿到链接，本文这里就简单说一下
+在 [dotnet core 集成到 Mattermost 聊天工具](https://blog.lindexi.com/post/dotnet-core-%E9%9B%86%E6%88%90%E5%88%B0-Mattermost-%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7.html ) 这篇博客有告诉大家如何拿到链接，本文这里就简单说一下
 
 点击主菜单，打开集成页面
 

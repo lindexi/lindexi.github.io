@@ -121,7 +121,7 @@
                 }
 ```
 
-现在就拿到了 blogList 可以给 MatterMost 发送信息，发送的方法请看 [dotnet core 集成到 Mattermost 聊天工具](https://blog.lindexi.com/post/dotnet-core-%E9%9B%86%E6%88%90%E5%88%B0-mattermost-%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7 )
+现在就拿到了 blogList 可以给 MatterMost 发送信息，发送的方法请看 [dotnet core 集成到 Mattermost 聊天工具](https://blog.lindexi.com/post/dotnet-core-%E9%9B%86%E6%88%90%E5%88%B0-Mattermost-%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7.html )
 
 做出来的效果是这样
 
