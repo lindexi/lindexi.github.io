@@ -6,6 +6,8 @@
 
  * [asp dotnet core 3.0 接口返回 json 使用 PascalCase 格式](asp-dotnet-core-3.0-接口返回-json-使用-PascalCase-格式.md)
 
+ * [asp dotnet core 不正经的提升效率的单元测试方法](asp-dotnet-core-不正经的提升效率的单元测试方法.md)
+
  * [asp dotnet core 从 Frp 获取用户真实 IP 地址](asp-dotnet-core-从-Frp-获取用户真实-IP-地址.md)
 
  * [asp dotnet core 图片在浏览器没访问可能原因](asp-dotnet-core-图片在浏览器没访问可能原因.md)
@@ -329,6 +331,8 @@
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
 
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
+
+ * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
 
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
 
