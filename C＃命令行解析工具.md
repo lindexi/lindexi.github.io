@@ -52,7 +52,7 @@
 
         public bool Has(string argumentName)
         {
-            return _arguments.Count(p => p == argumentName) > 0;
+            return _arguments.Any(temp => temp == argumentName);
         }
     }
 
