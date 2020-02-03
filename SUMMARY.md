@@ -340,6 +340,8 @@
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
 
+ * [dotnet 删除文件夹方法](dotnet-删除文件夹方法.md)
+
  * [dotnet 判断其他进程未响应](dotnet-判断其他进程未响应.md)
 
  * [dotnet 判断特定进程存在方法](dotnet-判断特定进程存在方法.md)
@@ -1565,6 +1567,8 @@
  * [wpf DoEvents ](wpf-DoEvents-.md)
 
  * [WPF 绑定密码](WPF-绑定密码.md)
+
+ * [Xamarin 和 WPF 的控件和属性的替换](Xamarin-和-WPF-的控件和属性的替换.md)
 
  * [Xamarin 解决创建空白项目编译提示 linking references 找不到资源](Xamarin-解决创建空白项目编译提示-linking-references-找不到资源.md)
 
