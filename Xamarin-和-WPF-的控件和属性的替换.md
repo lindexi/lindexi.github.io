@@ -12,15 +12,28 @@
 
 也就是用 Xamarin.Forms 写的应用能作为 UWP 和 WPF 应用运行，也可以作为 Android 和 IOS 运行，也可以使用 GTK# 在 Linux 下运行。本文只是告诉大家如何从一个已有的 WPF 项目迁移到 Xamarin 上
 
-## StackPanel
+## 控件
 
-在 WPF 的 StackPanel 需要换 StackLayout 布局，以下是属性的更改
+通用控件的属性需要修改
+
+```csharp
+Visibility-IsVisible
+```
+
+## Panel
+
+通用的容器属性需要修改
 
 ```csharp
 HorizontalAlignment-HorizontalOptions
 VerticalAlignment-VerticalOptions
 MinWidth-MinimumWidthRequest
 ```
+
+## StackPanel
+
+在 WPF 的 StackPanel 需要换 StackLayout 布局
+
 
 ## TextBlock
 
@@ -31,6 +44,8 @@ MinWidth-MinimumWidthRequest
 用 Editor 替换
 
 ## Button
+
+如果是文本按钮将 Content 替换为 Text 属性
 
 将 Click 事件替换为 Clicked 事件，后台代码替换
 
