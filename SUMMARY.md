@@ -306,6 +306,8 @@
 
  * [dotnet remoting 的 Channel 详解](dotnet-remoting-的-Channel-详解.md)
 
+ * [dotnet serve 一句话开启文件服务器 通过 HTTP 将文件共享给其他设备](dotnet-serve-一句话开启文件服务器-通过-HTTP-将文件共享给其他设备.md)
+
  * [.NET Standard](NET-Standard.md)
 
  * [dotnet 三句命令行创建运行一个 web 服务程序](dotnet-三句命令行创建运行一个-web-服务程序.md)
