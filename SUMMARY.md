@@ -320,6 +320,8 @@
 
  * [dotnet 代码调试方法](dotnet-代码调试方法.md)
 
+ * [dotnet 使用 ClearScript 执行 VBScript 和 JS 代码 无需浏览器](dotnet-使用-ClearScript-执行-VBScript-和-JS-代码-无需浏览器.md)
+
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
  * [dotnet 使用 GC.GetAllocatedBytesForCurrentThread 获取当前线程分配过的内存大小](dotnet-使用-GC.GetAllocatedBytesForCurrentThread-获取当前线程分配过的内存大小.md)
