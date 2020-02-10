@@ -662,6 +662,8 @@
 
  * [UWP 开发中，需要知道的1000个问题](UWP-开发中，需要知道的1000个问题.md)
 
+ * [UWP 打包 win32 应用 添加防火墙例外](UWP-打包-win32-应用-添加防火墙例外.md)
+
  * [UWP 转换 IBuffer 和其他类型](UWP-转换-IBuffer-和其他类型.md)
 
  * [Visual studio C# 代码使用 NotNull](Visual-studio-C-代码使用-NotNull.md)
