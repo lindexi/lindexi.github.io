@@ -256,6 +256,8 @@
 
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
 
+ * [dotnet C# 如何不联网下快速获取一段url链接里面读取文件名](dotnet-C-如何不联网下快速获取一段url链接里面读取文件名.md)
+
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
@@ -655,6 +657,8 @@
  * [UWP IRandomAccessStream 与 Stream 互转](UWP-IRandomAccessStream-与-Stream-互转.md)
 
  * [uwp ScrollViewer content out of panel when set the long width](uwp-ScrollViewer-content-out-of-panel-when-set-the-long-width.md)
+
+ * [UWP 上架失败因为没有添加隐私策略](UWP-上架失败因为没有添加隐私策略.md)
 
  * [UWP 分享用那个图标](UWP-分享用那个图标.md)
 
