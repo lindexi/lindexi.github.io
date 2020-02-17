@@ -92,6 +92,45 @@ UWP 从文件显示图片很简单，打开放在img就好。
 
 加上图片就是在刚才打开的功能可以看到图标，选择一个好看的图片，在用户将打开这个文件的默认应用设置为自己的应用时，就会使用这个应用设置的图标
 
+添加 Verb 也就是在文件右键菜单里面显示多个其他选项，注意此时的 UWP 应用虽然可以在文件里面显示右键菜单，但是仅限于被关联的文件。如我编辑 Package.appxmanifest 的代码，添加了 `<uap:FileType ContentType="foo/foo">.x</uap:FileType>` 也就是关联了后缀名是 x 的文件，我才可以修改 x 的文件右键菜单显示其他内容
+
+如在 x 文件右键菜单显示`逗比` 和 `林德熙是逗比` 两个选项，需要右击编辑 Package.appxmanifest 的代码
+
+<!-- ![](image/win10 uwp 关联文件/win10 uwp 关联文件1.png) -->
+
+先添加命名空间
+
+```csharp
+  xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+```
+
+然后添加下面代码
+
+```xml
+        <uap3:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="lindexi">
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="foo/foo">.x</uap:FileType>
+            </uap:SupportedFileTypes>
+              <uap2:SupportedVerbs>
+                  <uap3:Verb Id="doubi">逗比</uap3:Verb>
+                  <uap3:Verb Id="Print">林德熙是逗比</uap3:Verb>
+              </uap2:SupportedVerbs>
+            <uap:DisplayName>林德熙逗比</uap:DisplayName>
+            <uap:EditFlags OpenIsSafe="true"/>
+          </uap3:FileTypeAssociation>
+        </uap3:Extension>
+```
+
+现在部署完成了应用，将 x 打开关联到应用，就可以在 x 的文件右击看到了逗比和林德熙是逗比而这两个如何在应用判断用户想要的是什么打开不同页面
+
+在 App.xaml.cs 里面可以重写 OnFileActivated 方法，在这个方法可以用参数 FileActivatedEventArgs 的 Verb 判断
+
+在 FileActivatedEventArgs 的 Verb 会设置为刚才设置的 Id 的值，如 `<uap3:Verb Id="doubi">逗比</uap3:Verb>` 在 Verb 的值就是 doubi 可以通过这个值判断
+
+本文有部分逻辑都推荐小伙伴去看我的代码，本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/84466f2af53538ecdc8d51952f4ac5ceb893771d/NoweenanemkoGefefenaijel)欢迎小伙伴访问
+
 
 
 

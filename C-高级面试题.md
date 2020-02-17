@@ -321,6 +321,33 @@ class Test
 
 上面代码中，第一个 `foo?.N` 会进行判断，因为 foo 不存在，所以整个表达式没有执行，但是表达式内的逻辑依然执行
 
+或者试试下面代码就知道了
+
+```csharp
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Foo foo = null;
+
+            int n = Lindexi() + foo?.N ?? 1;
+
+            Console.WriteLine(n);
+        }
+
+        private static int Lindexi()
+        {
+            Console.WriteLine("林德熙是逗比");
+            return 2;
+        }
+    }
+
+    class Foo
+    {
+        public int N { get; } = 1;
+    }
+```
+
 ## 模式匹配
 
 请问下面代码输出什么？
