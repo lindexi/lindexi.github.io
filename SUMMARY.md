@@ -374,6 +374,8 @@
 
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)
 
+ * [dotnet 手工打一个 dotnet tool 包](dotnet-手工打一个-dotnet-tool-包.md)
+
  * [dotnet 找不到 PostAsJsonAsync 方法](dotnet-找不到-PostAsJsonAsync-方法.md)
 
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
