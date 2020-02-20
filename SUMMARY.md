@@ -480,6 +480,8 @@
 
  * [Github 给仓库上传 NuGet 库](Github-给仓库上传-NuGet-库.md)
 
+ * [github 设置自动删除合并的分支](github-设置自动删除合并的分支.md)
+
  * [git无法pull仓库refusing to merge unrelated histories](git无法pull仓库refusing-to-merge-unrelated-histories.md)
 
  * [git镜像仓库](git镜像仓库.md)
