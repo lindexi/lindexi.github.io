@@ -258,6 +258,8 @@
 
  * [dotnet C# 如何不联网下快速获取一段url链接里面读取文件名](dotnet-C-如何不联网下快速获取一段url链接里面读取文件名.md)
 
+ * [dotnet C# 如何让 Json 序列化数组时序列化继承类的属性](dotnet-C-如何让-Json-序列化数组时序列化继承类的属性.md)
+
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
