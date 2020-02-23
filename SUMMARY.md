@@ -1594,7 +1594,11 @@
 
  * [Xamarin 和 WPF 的控件和属性的替换](Xamarin-和-WPF-的控件和属性的替换.md)
 
+ * [Xamarin 构建提示 error APT2260 resource 找不到资源](Xamarin-构建提示-error-APT2260-resource-找不到资源.md)
+
  * [Xamarin 解决创建空白项目编译提示 linking references 找不到资源](Xamarin-解决创建空白项目编译提示-linking-references-找不到资源.md)
+
+ * [Xamarin.Forms 选取文件 让用户选择本地文件](Xamarin.Forms-选取文件-让用户选择本地文件.md)
 
  * [Xamarin Forms 进度条控件](Xamarin-Forms-进度条控件.md)
 
@@ -1799,6 +1803,10 @@
  * [程序员壁纸](程序员壁纸.md)
 
  * [程序员笑话](程序员笑话.md)
+
+ * [程序猿修养 从安装 dotnet 开始](程序猿修养-从安装-dotnet-开始.md)
+
+ * [程序猿修养 使用 NuGet 发射卫星只需要三步](程序猿修养-使用-NuGet-发射卫星只需要三步.md)
 
  * [程序猿修养 日志应该如何写](程序猿修养-日志应该如何写.md)
 
