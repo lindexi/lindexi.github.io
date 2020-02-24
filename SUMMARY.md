@@ -10,6 +10,8 @@
 
  * [asp dotnet core 从 Frp 获取用户真实 IP 地址](asp-dotnet-core-从-Frp-获取用户真实-IP-地址.md)
 
+ * [asp dotnet core 从零开始创建一个 WebApi 服务](asp-dotnet-core-从零开始创建一个-WebApi-服务.md)
+
  * [asp dotnet core 图片在浏览器没访问可能原因](asp-dotnet-core-图片在浏览器没访问可能原因.md)
 
  * [asp dotnet core 实现服务器发送事件 Server-Sent Events 简单方式](asp-dotnet-core-实现服务器发送事件-Server-Sent-Events-简单方式.md)
@@ -319,6 +321,8 @@
  * [dotnet 不申请额外数组空间合并多个只读数组列表](dotnet-不申请额外数组空间合并多个只读数组列表.md)
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
+
+ * [dotnet 从零开始写一个人工智能 从一个神经元开始](dotnet-从零开始写一个人工智能-从一个神经元开始.md)
 
  * [dotnet 从零开始写一个人工智能](dotnet-从零开始写一个人工智能.md)
 
@@ -1597,6 +1601,8 @@
  * [Xamarin 构建提示 error APT2260 resource 找不到资源](Xamarin-构建提示-error-APT2260-resource-找不到资源.md)
 
  * [Xamarin 解决创建空白项目编译提示 linking references 找不到资源](Xamarin-解决创建空白项目编译提示-linking-references-找不到资源.md)
+
+ * [Xamarin.Forms 按钮样式 圆角按钮](Xamarin.Forms-按钮样式-圆角按钮.md)
 
  * [Xamarin.Forms 选取文件 让用户选择本地文件](Xamarin.Forms-选取文件-让用户选择本地文件.md)
 
