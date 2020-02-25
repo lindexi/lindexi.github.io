@@ -312,4 +312,8 @@ sum = a * x1 + b * x2 + t
 
 因为我用安卓模拟器加上 UWP 应用构建就可以在我设备上支持构建安卓和 Windows 应用了
 
+如果有小伙伴看了本文就觉得自己写一个人工智能很简单，那么我必须道歉。我想要说一个一点都不权威的数据，在现在所有地球人出生之前就有一群智商用一个 int 都放不下的科学家在研究人工智能了，还是研究本文说的人工智能神经网络。而今年所有投入到研究的时间应该比你，哦不，我不是说你，我是说在座的各位的吃饭睡觉加起来的时间都要多
+
+那人工智能有那么难？其实也不是，就像咱玩手机的时候需要了解手机是怎么做的？如果站在别人的键盘上，那么很简单就敲出一个人工智能来了，虽然这个应该说是人工智障才对。最快的应用上的方式是采用 ML.NET 这个完全开源的，跨平台也没问题的人工智能库了，使用方法超级简单，至少入门是超级简单的。如何入门还请看国庆大佬的博客 [ML.NET技术研究系列-1入门篇 - Eric zhou - 博客园](https://www.cnblogs.com/tianqing/p/11071864.html) 和队长的博客 [.NET开发人员如何开始使用ML.NET - 张善友 - 博客园](https://www.cnblogs.com/shanyou/p/10890949.html)
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
