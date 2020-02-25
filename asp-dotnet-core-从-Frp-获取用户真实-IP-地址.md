@@ -63,6 +63,8 @@ private IHttpContextAccessor _accessor;
 
 [dotnet core 通过 frp 发布自己的网站](https://blog.lindexi.com/post/dotnet-core-%E9%80%9A%E8%BF%87-frp-%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99.html)
 
+用 [使用 Frp 为你的 Web 服务添加 https 支持](https://blog.walterlv.com/post/add-https-support-for-web-service-using-frp.html#%E4%B8%8B%E8%BD%BD-frp) 方式是获取不到用户 IP 地址
+
 
 
 

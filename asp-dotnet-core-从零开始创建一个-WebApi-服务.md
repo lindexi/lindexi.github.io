@@ -221,6 +221,8 @@ info: Microsoft.Hosting.Lifetime[0]
 - [asp dotnet core 从 Frp 获取用户真实 IP 地址](https://blog.lindexi.com/post/asp-dotnet-core-%E4%BB%8E-Frp-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9E-IP-%E5%9C%B0%E5%9D%80.html)
 - [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](https://blog.lindexi.com/post/ASP.NET-Core-%E8%BF%9E%E6%8E%A5-GitLab-%E4%B8%8E-MatterMost-%E6%89%93%E9%80%A0-devops-%E5%B7%A5%E5%85%B7.html)
 
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/4e864fd6600e0a26ac61355d4e80a5cad4d10fff/FarbenergarWacerabe) 里面也没有什么内容
+
 
 
 
