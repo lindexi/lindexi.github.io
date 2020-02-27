@@ -114,5 +114,25 @@ RunNgenR2R:
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/af04ec5ddcb5643d4472b87645894ddebd30dc6f/WenabemchicargeQunallburhawwi) 欢迎小伙伴访问
 
 详细请看[官方文档](https://docs.microsoft.com/zh-cn/windows/msix/desktop/desktop-to-uwp-r2r)
+
+## FAQ
+
+Q: 如果这个新构建出来的二进制文件在没有安装 .NET Framework 4.7.2 或以上的设备上运行会如何？
+
+A: 这个优化的二进制文件的优化只有在安装 .NET Framework 4.7.2 或以上的设备才能运行优化版，而对于没有安装 .NET Framework 4.7.2 或以上的设备会执行 MSIL 代码版，也就是此优化只对 4.7.2 或以上的设备有效
+
+Q: 使用中遇到问题或反馈可以在哪里反馈？
+
+A: 可以点击 VisualStudio 的右上角的反馈按钮反馈，详细请看 [如何报告 Visual Studio 的问题](https://docs.microsoft.com/zh-cn/visualstudio/ide/how-to-report-a-problem-with-visual-studio?view=vs-2019 )
+
+Q: 这个优化的本机映像对原有的二进制文件影响是什么？
+
+A: 这个优化的二进制文件将包含托管代码和本机代码，会让最终输出的文件更大
+
+Q: 我是否可以在项目中使用这个技术？
+
+A: 这个版本包含了 Go Live license 也就是咱现在就能用
+
+什么是 Go Live license 请看 [Roslyn ships v1.0-rc2 with "Go-Live" license](https://devblogs.microsoft.com/vbteam/roslyn-ships-v1-0-rc2-with-go-live-license/ )
  
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
