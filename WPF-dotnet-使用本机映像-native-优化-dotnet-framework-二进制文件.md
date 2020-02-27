@@ -12,9 +12,9 @@
 
 微软将这个本机映像编译器作为一个 [NuGet](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler) 库发布，可以从 [https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler) 下载。这个库适用于 .NET Framework 大于等于 4.6.2 的应用。这个包的作用是在构建时添加一个步骤，这个步骤的作用是构建本机映像二进制文件。这个优化将会在应用在安装了 .NET Framework 4.7.2 和以上的设备运行时被使用，而之前的版本的设备将继续使用 MSIL 代码执行，换句话说，想要使用这个特性优化的，只有运行在安装了 .NET Framework 4.7.2 和以上的设备，对之前的设备依然运行优化之前的代码
 
-在 Windows 10 的 Windows 10 April 2018 更新包含了 .NET Framework 4.7.2 的预安装。咱也可以手动在 Windows 7 以上的设备或 Windows Server 2008 R2 以上的设备安装 .NET framework 4.7.2 版本
+在 Windows 10 的 Windows 10 April 2018 （1803 10.0.17134） 更新包含了 .NET Framework 4.7.2 的预安装。咱也可以手动在 Windows 7 以上的设备或 Windows Server 2008 R2 以上的设备安装 .NET framework 4.7.2 版本
 
-如果想要用本机映像优化技术优化打包的项目，将使用 UWP 打包 Win32 应用，请记得选择 UWP 的最低版本是基于 Windows Anniversary Update 版本
+如果想要用本机映像优化技术优化打包的项目，将使用 UWP 打包 Win32 应用，请记得选择 UWP 的最低版本是基于 Windows Anniversary Update （1607 10.0.14393） 版本
 
 ## 如何创建本机映像
 
