@@ -1292,6 +1292,8 @@
 
  * [WPF DelegateCommand 出现Specified cast is not valid](WPF-DelegateCommand-出现Specified-cast-is-not-valid.md)
 
+ * [WPF dotnet 使用本机映像 native 优化 dotnet framework 二进制文件](WPF-dotnet-使用本机映像-native-优化-dotnet-framework-二进制文件.md)
+
  * [WPF Frame 的 DataContext 不能被 Page 继承](WPF-Frame-的-DataContext-不能被-Page-继承.md)
 
  * [wpf GifBitmapDecoder 解析 gif 格式](wpf-GifBitmapDecoder-解析-gif-格式.md)
