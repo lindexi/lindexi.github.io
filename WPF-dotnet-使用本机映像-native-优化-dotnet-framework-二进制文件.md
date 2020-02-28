@@ -137,6 +137,13 @@ Q: 我是否可以在项目中使用这个技术？
 A: 这个版本包含了 Go Live license 也就是咱现在就能用
 
 什么是 Go Live license 请看 [Roslyn ships v1.0-rc2 with "Go-Live" license](https://devblogs.microsoft.com/vbteam/roslyn-ships-v1-0-rc2-with-go-live-license/ )
+
+本文开始说的我问的问题是 [How to compile WPF with .net Native - Stack Overflow](https://stackoverflow.com/questions/46801396/how-to-compile-wpf-with-net-native/60407052#60407052 )
+
+更多请看 
+
+- [各个版本 Windows 10 系统中自带的 .NET Framework 版本 - walterlv](https://blog.walterlv.com/post/embeded-dotnet-version-in-all-windows.html )
+- [dotnet 启动 JIT 多核心编译提升启动性能](https://blog.lindexi.com/post/dotnet-%E5%90%AF%E5%8A%A8-JIT-%E5%A4%9A%E6%A0%B8%E5%BF%83%E7%BC%96%E8%AF%91%E6%8F%90%E5%8D%87%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD.html )
  
 
 
