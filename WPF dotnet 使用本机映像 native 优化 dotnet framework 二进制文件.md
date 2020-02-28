@@ -134,5 +134,12 @@ Q: 我是否可以在项目中使用这个技术？
 A: 这个版本包含了 Go Live license 也就是咱现在就能用
 
 什么是 Go Live license 请看 [Roslyn ships v1.0-rc2 with "Go-Live" license](https://devblogs.microsoft.com/vbteam/roslyn-ships-v1-0-rc2-with-go-live-license/ )
+
+本文开始说的我问的问题是 [How to compile WPF with .net Native - Stack Overflow](https://stackoverflow.com/questions/46801396/how-to-compile-wpf-with-net-native/60407052#60407052 )
+
+更多请看 
+
+- [各个版本 Windows 10 系统中自带的 .NET Framework 版本 - walterlv](https://blog.walterlv.com/post/embeded-dotnet-version-in-all-windows.html )
+- [dotnet 启动 JIT 多核心编译提升启动性能](https://blog.lindexi.com/post/dotnet-%E5%90%AF%E5%8A%A8-JIT-%E5%A4%9A%E6%A0%B8%E5%BF%83%E7%BC%96%E8%AF%91%E6%8F%90%E5%8D%87%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD.html )
  
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
