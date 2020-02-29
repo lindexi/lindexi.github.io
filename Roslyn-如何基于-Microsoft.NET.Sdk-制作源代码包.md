@@ -331,6 +331,8 @@ namespace lindexi
 
 也就是 `$(MSBuildProjectName).csproj.nuget.g.targets)` 是不对的，因为 `$(MSBuildProjectName)` 是延迟计算，在 Import 还没有计算出来值
 
+当然我不会让大家从零开始打包，我开源 [dotnet-campus/SourceYard](https://github.com/dotnet-campus/SourceYard ) 可以将项目的源代码打包为 NuGet 包，使用非常方便，只需要在项目里面安装 SourceYard 库，然后重新打包就可以看到创建了 xx.Source.nupkg 包含源代码的库
+
 [MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://walterlv.com/post/problems-of-msbuild-and-nuget.html )
 
 

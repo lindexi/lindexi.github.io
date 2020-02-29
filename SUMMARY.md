@@ -434,6 +434,8 @@
 
  * [dotnet 进行二进制差分压缩文件](dotnet-进行二进制差分压缩文件.md)
 
+ * [dotnet 通过 dotnetCampus.YamlToCsharp 将 YAML 多语言文件构建为代码](dotnet-通过-dotnetCampus.YamlToCsharp-将-YAML-多语言文件构建为代码.md)
+
  * [dotnet 通过 HttpClient 下载文件同时报告进度的方法](dotnet-通过-HttpClient-下载文件同时报告进度的方法.md)
 
  * [dotnet 通过 WMI 拿到显卡信息](dotnet-通过-WMI-拿到显卡信息.md)
