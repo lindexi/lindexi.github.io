@@ -316,6 +316,8 @@
 
  * [.NET Standard](NET-Standard.md)
 
+ * [dotnet tool 安装失败因为对应的库不仅包含工具](dotnet-tool-安装失败因为对应的库不仅包含工具.md)
+
  * [dotnet 三句命令行创建运行一个 web 服务程序](dotnet-三句命令行创建运行一个-web-服务程序.md)
 
  * [dotnet 不申请额外数组空间合并多个只读数组列表](dotnet-不申请额外数组空间合并多个只读数组列表.md)
@@ -1603,6 +1605,8 @@
  * [WPF 绑定密码](WPF-绑定密码.md)
 
  * [Xamarin 和 WPF 的控件和属性的替换](Xamarin-和-WPF-的控件和属性的替换.md)
+
+ * [Xamarin 构建安卓失败 因为路径太长](Xamarin-构建安卓失败-因为路径太长.md)
 
  * [Xamarin 构建提示 error APT2260 resource 找不到资源](Xamarin-构建提示-error-APT2260-resource-找不到资源.md)
 

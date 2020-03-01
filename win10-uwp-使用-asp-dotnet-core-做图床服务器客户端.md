@@ -372,15 +372,15 @@
 
 这就是一个简单的使用 asp dotnet core 做文件服务器，但是这个服务器离实际可以使用的服务器还很远，本文只是告诉大家一个简单的方法。
 
-代码 [win10 uwp 使用 asp dotnet core 做图床服务器客户端-CSDN下载](https://download.csdn.net/download/lindexi_gd/10730499 )
+代码 [win10 uwp 使用 asp dotnet core 做图床服务器客户端-CSDN下载](https://download.csdn.net/download/lindexi_gd/10730499 ) 如果有分的话，欢迎从 CSDN 下载。没有的话，从 github 下载
+
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/blob/0a099476e01dd10da3b4483bc0cadbfabf38f00f/KehallzorDralna/) 欢迎小伙伴访问
 
 参考 
 
 [.NET Core 文件的上传与下载 - Degalo - 博客园](https://www.cnblogs.com/qmhuang/p/8306627.html )
 
 [Upload/Download Files in ASP.NET Core 2.0 - CodeProject](https://www.codeproject.com/Articles/1203408/Upload-Download-Files-in-ASP-NET-Core )
-
-
 
 
 
