@@ -1604,6 +1604,8 @@
 
  * [WPF 绑定密码](WPF-绑定密码.md)
 
+ * [Xamarin XamlCTask 任务不支持 ValidateOnly 参数](Xamarin-XamlCTask-任务不支持-ValidateOnly-参数.md)
+
  * [Xamarin 和 WPF 的控件和属性的替换](Xamarin-和-WPF-的控件和属性的替换.md)
 
  * [Xamarin 构建安卓失败 因为路径太长](Xamarin-构建安卓失败-因为路径太长.md)
