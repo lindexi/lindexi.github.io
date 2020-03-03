@@ -554,6 +554,8 @@
 
  * [Office Open XML 的测量单位](Office-Open-XML-的测量单位.md)
 
+ * [Office OpenXml SDK 使用 Fallback 图片显示 Ole 元素](Office-OpenXml-SDK-使用-Fallback-图片显示-Ole-元素.md)
+
  * [ParaView](ParaView.md)
 
  * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)
