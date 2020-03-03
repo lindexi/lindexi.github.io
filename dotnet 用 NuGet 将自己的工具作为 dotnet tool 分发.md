@@ -1,6 +1,6 @@
 # dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发
 
-我写了一个有趣的工具，我如何将这个工具给到小伙伴予力众生呢？只需要设定这个工具是 dotnet tool 工具就可以通过 NuGet 分发出去啦。几乎所有的 dotnet 开发者都能用上 NuGet 服务，也就是此工具可以被几乎所有的 dotnet 开发者下载使用
+我写了一个有趣的工具，我如何将这个工具给到小伙伴予力众生呢？只需要设定这个工具是 dotnet tool 工具就可以通过 NuGet 分发出去啦。几乎所有的 dotnet 开发者都能用上 NuGet 服务，也就是此工具可以被几乎所有的 dotnet 开发者下载使用。那么制作难度有多大呢？基本上有一个现成的项目前提下，只需两句代码，一句命令行，就能完成制作
 
 <!--more-->
 <!-- 发布 -->
@@ -19,9 +19,9 @@
 
 知道了这个原理之后咱就知道了，如果是 dotnet core 纯控制台工具，是可以在任何能运行 dotnet 的平台上运行的。而如果是 WPF .NET Core 那么就是能在 win7 sp1 和以上的系统上运行。如果是采用跨平台 UI 技术如 Avalonia 等，那么就能支持在对应平台上运行。这也就是没有限制工具一定只能作为控制台了
 
-将一个现存的工具作为 dotnet tool 发布很简单，只有以下步骤
+将一个现存的 dotnet net core 工具作为 dotnet tool 发布很简单，只有以下步骤
 
-根据 Edi 的博客[教你自制.NET Core Global Tools](https://blog.csdn.net/sD7O95O/article/details/90322977 )可以看到只需要在 VisualStudio 2019 里面双击项目，就可以进入编辑 csproj 文件了，当然右击编辑项目也可以
+根据 Edi 的博客[教你自制.NET Core Global Tools](https://blog.csdn.net/sD7O95O/article/details/90322977 )可以看到只需要在 VisualStudio 2019 里面双击项目，就可以进入编辑 csproj 文件了，当然右击编辑项目也可以。注意要能双击进去编辑 csproj 要求使用 SDK Style 格式的项目文件，本文也只对此格式的项目文件生效
 
 <!-- ![](image/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发0.png) -->
 
