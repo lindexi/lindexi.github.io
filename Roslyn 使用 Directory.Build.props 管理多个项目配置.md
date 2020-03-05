@@ -3,6 +3,8 @@
 在一些大项目需要很多独立的仓库来做，每个仓库之间都会有很多相同的配置，本文告诉大家如何通过 Directory.Build.props 管理多个项目配置
 
 <!--more-->
+<!-- CreateTime:2019/5/21 11:35:52 -->
+
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
 在我的 [MVVM 框架](https://www.nuget.org/packages/lindexi.wpf.Framework/ )需要三个不同的库，一个是 Framework 另外两个是 WPF 和 UWP 这三个库有很多重复的配置，如版本号和作者信息。

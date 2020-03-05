@@ -5,6 +5,8 @@ We can find the default RichTextBlock will show the `copy` and the `select all` 
 If you think the default menu is too boring, try customizing the RichTextBlock right click menu.
 
 <!--more-->
+<!-- CreateTime:2019/3/20 9:54:54 -->
+
 <!-- csdn -->
 
 We can use ContextFlyout to custom RichTextBlock right click menu.

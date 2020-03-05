@@ -3,6 +3,8 @@
 在 dotnet core 3.0 为了支持 IEEE 浮点数计算标准，修改了 Math.Max 的算法，于是在 WPF 的 Track 里面的布局依赖于之前的计算，于是在 dotnet core 3.0 的修改就让布局计算不对了。改动现有 API 的行为会让现有的代码出现不兼容问题，那么要让一个框架能稳定支持升级需要满足什么条件
 
 <!--more-->
+<!-- CreateTime:2019/4/17 10:05:35 -->
+
 <!-- csdn -->
 
 在我准备睡的过程，某 [神樹 桜乃](https://github.com/KodamaSakuno) 告诉我现在的 Math.Max 对于 0 和 NaN 的返回和之前不一样，于是在他的帮助下，我找到了[dotnet core 3.0 的新特性，符合 IEEE 标准的浮点计算的提交](https://github.com/dotnet/coreclr/pull/20912 ) 在这个提交里面，作者说明了这个提交将会是改变 API 行为的

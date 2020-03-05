@@ -5,6 +5,8 @@
 本文告诉大家如何使用 VisualStudio 2017 项目格式自动生成版本号
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:52 -->
+
 <!-- csdn -->
 <!-- 标签：VisualStudio -->
 

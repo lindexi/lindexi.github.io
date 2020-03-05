@@ -4,6 +4,8 @@
 
 <!-- 标签：软件，资源分享，p2p -->
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:51 -->
+
 <div id="toc"></div>
 
 最近因为 csdn 的下载需要积分，所以我在找另一个比较好的分享软件。现在使用了 Btsync 但是好多小伙伴都说无法下载，即使用了[如何安装 btsync](https://lindexi.github.io/lindexi/post/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85-btsync.html )里的在国内使用，下载速度还是很慢。所以在网上我就找到了这个软件，感觉这个软件比较好用。

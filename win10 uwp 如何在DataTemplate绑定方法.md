@@ -3,6 +3,8 @@
 本文告诉大家几个方法在 DataTemplate 绑定。
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:50 -->
+
 <!-- csdn -->
 
 <!-- 标签：win10,uwp -->

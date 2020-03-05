@@ -3,6 +3,8 @@
 在 UWP 开发的时候，我做的文档软件需要在文档还没有保存的时候，用户点击关闭按钮的时候告诉用户需要保存。如何在 UWP 阻止用户点击关闭按钮退出软件，如何知道用户点击了关闭按钮
 
 <!--more-->
+<!-- CreateTime:2019/7/4 9:28:57 -->
+
 <!-- csdn -->
 
 在 UWP 中有限制的功能，需要在 Package.appxmanifest 中开启，关于限制的功能请看[App capability declarations](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities )

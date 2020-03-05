@@ -3,6 +3,8 @@
 在 dotnet core 发布的时候，会使用很多文件，这样发给小伙伴使用的时候不是很清真，本文告诉大家一个非官方的方法通过 warp 将多个文件打包为一个文件
 
 <!--more-->
+<!-- CreateTime:2020/1/21 9:11:22 -->
+
 <!-- 标签：dotnet,dotnetcore -->
 
 使用非常简单，先和之前相同的方式发布一个 dotnet core 程序，记得需要使用 `--self-contained` 发布

@@ -3,6 +3,8 @@
 本文告诉大家如何使用dot net core 和其他进程进行通信。
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:52 -->
+
 <!-- 标签: dnc , 进程通信，IPC，pipe -->
 
 一般都是使用 WCF 或 remoting 做远程通信，但是 dot net core 不支持 WCF 所以暂时我就只能使用 管道通信。

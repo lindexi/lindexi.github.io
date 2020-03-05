@@ -3,6 +3,8 @@
 在大约一周之前，Visual Studio 进行了一项更新，增加了 Ctrl+Click 点击跳转到定义的功能。这项功能与 ReSharper 重复了。
 
 <!--more-->
+<!-- CreateTime:2018/8/14 17:35:06 -->
+
 
 <!-- 标签：Resharper -->
 

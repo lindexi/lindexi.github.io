@@ -3,6 +3,8 @@
 如果在 UWP 有一个控件里面有 ScrollViewer 控件，那么因为默认的 ScrollViewer 会使用触摸的交互，这样在控件就收不到触摸的交互
 
 <!--more-->
+<!-- CreateTime:2019/1/25 21:45:37 -->
+
 <!-- csdn -->
 
 通过 `VerticalScrollMode="Disabled" HorizontalScrollMode="Disabled"` 可以关闭 ScrollViewer 交互

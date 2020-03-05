@@ -5,6 +5,8 @@
 本文告诉大家如何在 UWP 调用 Microsoft.Graph 发送邮件
 
 <!--more-->
+<!-- CreateTime:2019/12/24 9:27:54 -->
+
 
 在仔细阅读了[Microsoft Graph 桌面应用程序 - 陈希章](https://www.cnblogs.com/chenxizhang/p/7904255.html )的文章之后，按照文章的方法尝试了很久终于成功发送了邮件
 

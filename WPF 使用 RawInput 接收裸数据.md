@@ -3,6 +3,8 @@
 在 Windows 提供很底层的方法接收硬件设备的裸数据，通过接收裸数据可以做到性能更高的全局键盘，还能支持多个鼠标。但是用这个方法需要自己解析裸数据，同时会因为接受到很多消息降低性能
 
 <!--more-->
+<!-- CreateTime:2019/11/23 16:41:52 -->
+
 <!-- csdn -->
 
 在微软官方很少有文档说如何使用[Raw Input](https://docs.microsoft.com/en-us/windows/win32/inputdev/about-raw-input )不过我在 github 上找到小伙伴的 [rawinput-sharp: C# wrapper library for Raw Input](https://github.com/mfakane/rawinput-sharp ) 项目，简单通过 NuGet 安装就能使用

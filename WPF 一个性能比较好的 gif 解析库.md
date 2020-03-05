@@ -3,6 +3,8 @@
 本文介绍 Magick.NET ，这是 ImageMagick 的 .Net 封装，他支持 100 多种格式的图片，而 gif 也是他支持的。本文告诉大家如何使用这个库播放 gif 。
 
 <!--more-->
+<!-- CreateTime:2019/8/30 8:59:45 -->
+
 <!-- 标签：WPF，gif -->
 <div id="toc"></div>
 

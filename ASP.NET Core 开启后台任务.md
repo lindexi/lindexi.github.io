@@ -3,6 +3,8 @@
 本文告诉大家如何通过 Microsoft.Extensions.Hosting.BackgroundService  开启后台任务
 
 <!--more-->
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 <!-- 标签：asp,aspdotnetcore,dotnetcore -->
 
 实现 BackManagerService 类继承 BackgroundService 抽象类，请看代码
