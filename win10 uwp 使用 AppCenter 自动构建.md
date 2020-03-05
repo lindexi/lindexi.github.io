@@ -5,6 +5,8 @@
 本文以 UWP 图床为例告诉大家如何在 AppCenter 上部署自动构建。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- 标签：uwp,DevOps,AzureDevOps -->
 
 首先打开 [https://appcenter.ms/](https://appcenter.ms/) 使用微软的账号或 github 账号登陆

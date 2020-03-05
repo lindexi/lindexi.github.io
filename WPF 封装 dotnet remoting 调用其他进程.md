@@ -3,6 +3,8 @@
 本文告诉大家一个封装好的库，使用这个库可以快速搭建多进程相互使用。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：WPF，dotnetremoting，rpc， -->

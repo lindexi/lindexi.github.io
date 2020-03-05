@@ -5,6 +5,8 @@
 需要将 DrawingVisual 转为 RenderTargetBitmap 然后将 RenderTargetBitmap 转为 BitmapImage 才可以
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 先创建一个 DrawingVisual 在里面绘制一些内容

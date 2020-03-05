@@ -3,6 +3,8 @@
 在 Gitlab 上有 MatterMost 插件可以用于订阅 Gitlab 上的事件，本文告诉大家如何使用插件只需要三步就可以关联 Gitlab 和 MatterMost 使用机器人订阅事件
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 首先在 Gitlab 上新建一个测试项目，在这个项目里面点击 

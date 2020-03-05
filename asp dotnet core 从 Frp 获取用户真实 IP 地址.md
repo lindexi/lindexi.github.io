@@ -3,6 +3,8 @@
 我在本地开一个服务，然后通过 Frp 让小伙伴可以在外网访问我的 API 连接，但是直接通过 RemoteIp 拿到的是本地的地址。本文告诉小伙伴如何通过 Frp 可以拿到用户的真实 IP 地址
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 标签：asp,aspdotnetcore,dotnetcore -->
 
 我写过[dotnet core 通过 frp 发布自己的网站](https://blog.lindexi.com/post/dotnet-core-%E9%80%9A%E8%BF%87-frp-%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99.html)可以在本地运行自己的服务，然后在外网访问到

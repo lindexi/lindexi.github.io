@@ -3,6 +3,8 @@
 使用 DelegateCommand 出现 Specified cast is not valid
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 最近写快捷键需要 DelegateCommand ，于是用了 `DelegateCommand<double> ` ，运行时出现 Specified cast is not valid 
 

@@ -3,6 +3,8 @@
 The touch width can help us to make a gorgeous application. This article tells you how to get the touch width from the PointEvent in UWP.
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 <!-- csdn -->
 

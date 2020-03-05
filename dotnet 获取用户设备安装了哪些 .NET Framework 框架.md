@@ -3,6 +3,8 @@
 从注册表可以拿到当前用户安装的 .NET Framework 版本，本文告诉大家如何解析这些信息
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 在注册表的当前设备的 `SOFTWARE\Microsoft\NET Framework Setup\NDP\` 可以拿到在设备安装的 .NET Framework 版本
 

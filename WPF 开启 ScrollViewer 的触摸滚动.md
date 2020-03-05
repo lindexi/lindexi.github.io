@@ -3,6 +3,8 @@
 在 ScrollViewer 如果需要收到触摸消息，通过 Manipulation 触摸滚动，不能只是通过设置 IsManipulationEnabled 方法，还需要设置 PanningMode 才可以
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 那么如何知道滚动条的触摸事件是否触发，可以写一个类继承滚动条

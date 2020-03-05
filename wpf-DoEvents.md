@@ -5,6 +5,8 @@
 首先需要知道，`DoEvents`是在 WinForm 有的，在 WPF 没有这个函数，但是可以自己写出来。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <div id="toc"></div>
 
 <!-- csdn -->

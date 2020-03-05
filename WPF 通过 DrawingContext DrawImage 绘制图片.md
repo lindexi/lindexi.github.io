@@ -3,6 +3,8 @@
 本文告诉大家如何通过 DrawingContext 绘制图片，同时指定绘制图片在画布的某个区域和绘制出来的图片大小，如何裁剪图片
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 在 WPF 中可以使用 DrawingVisual 进行底层的绘制，底层的绘制的效率是比较高的，但是因为 WPF 的界面需要的是 UIElement 如果想要添加 DrawingVisual 还需要写一个帮助类

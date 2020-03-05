@@ -5,6 +5,8 @@
 
 Windows BitLocker驱动器加密通过加密Windows操作系统卷上存储的所有数据可以更好地保护计算机中的数据。BitLocker使用TPM帮助保护Windows操作系统和用户数据，并帮助确保计算机即使在无人参与、丢失或被盗的情况下也不会被篡改。 BitLocker还可以在没有TPM的情况下使用。
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

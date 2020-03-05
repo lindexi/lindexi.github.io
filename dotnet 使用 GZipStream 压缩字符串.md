@@ -3,6 +3,8 @@
 在 dotnet 提供了 GZipStream 进行方便的 Stream 压缩，可以用这个方法压缩字符串
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 
 先拿到字符串，然后使用 Encoding.UTF8 转换为 byte 数组，写入到压缩

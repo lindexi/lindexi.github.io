@@ -3,6 +3,8 @@
 本文告诉大家，visualBrush 已知 bug ，希望大家使用 VisualBrush 时可以知道
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 1. 如果把 VisualBrush 绑定的是在元素加入到视觉树前，那么在元素加入到视觉树之后移除视觉树，VisualBrush 就不会自动刷新

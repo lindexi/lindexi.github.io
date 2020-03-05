@@ -3,6 +3,8 @@
 最近修改了系统，重新安装 SublimeText 但是在安装的时候忘记设置右键使用 SublimeText 打开，所以就需要写注册表。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- 标签：SublimeText -->
 
 可以复制下面的代码到一个记事本，然后保存为 `sublime_addright.reg`，双击打开就可以。

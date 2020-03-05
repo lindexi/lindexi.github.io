@@ -3,6 +3,8 @@
 在开发 dotnet tool 时，我将规范编码的库作为 dotnet tool 发布，但是在发布的时候本地进行安装提示DotnetToolReference 项目类型仅可包含 DotnetTool 类 型的引用
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 
 因为我的库本身也是作为可被引用的项目库发布的，在发布的时候我选择的库是多个平台的。多个平台的框架的写法请看 [让一个 csproj 项目指定多个开发框架 - walterlv](https://blog.walterlv.com/post/configure-projects-to-target-multiple-platforms.html )

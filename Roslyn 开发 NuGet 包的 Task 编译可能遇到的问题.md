@@ -3,6 +3,8 @@
 在写 msbuild 脚本的时候，或修改项目文件的时候，将会使用到很多的微软提供的 Task 命令。在需要复杂的编译的时候，可以通过自己定义一个任务用来定义编译
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 如何入门开发请看 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - walterlv](https://blog.walterlv.com/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html ) 本文只会补充一些开发的过程会遇到的坑

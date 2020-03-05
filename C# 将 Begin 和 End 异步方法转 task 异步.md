@@ -3,6 +3,8 @@
 在 .NET Framework 有两个不同的异步方法，一个是 Asynchronous Programming Model (APM) 另一个是 Task-based asynchronous pattern (TAP) 说 APM 和 TAP 估计大家都不认识。其实 APM 就是有成对的 Begin 和 End 方法的异步，而 TAP 就是使用 async 和 await 的异步
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 从代码上看，使用 async 和 await 的方法比较清真，那么如何从古老的 begin 和 end 异步方法转 task 的异步方法？
 

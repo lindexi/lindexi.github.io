@@ -3,6 +3,8 @@
 本文告诉大家如何在 windows 和 Linux 安装使用 [Btsync](https://www.resilio.com) 而且分享一些小东西给大家
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <div id="toc"></div>
 
 <!-- 标签：btsync -->

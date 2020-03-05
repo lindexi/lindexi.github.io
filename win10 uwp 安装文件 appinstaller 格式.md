@@ -3,6 +3,8 @@
 本文详细告诉大家 appinstaller 的格式，和如何通过 appinstaller 设置自动更新和安装
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 在使用 appinstaller 安装 UWP 应用之前，需要系统的版本是 Windows 10 Fall Creators Update 以上，通过 appinstaller 文件可以用来分发应用给用户，不需要通过微软的商店。

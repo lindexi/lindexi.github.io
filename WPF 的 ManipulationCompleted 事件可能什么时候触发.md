@@ -3,6 +3,8 @@
 本文告诉大家在什么时候可能触发 ManipulationCompleted 事件
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 <!-- 不发布 -->

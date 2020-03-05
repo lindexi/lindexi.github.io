@@ -3,6 +3,8 @@
 本文告诉大家如何在 DataGridTextColumn 使用绑定，因为很容易绑定就找不到数据。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <!-- csdn -->
 

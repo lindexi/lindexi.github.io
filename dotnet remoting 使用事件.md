@@ -3,6 +3,8 @@
 在RPC如果需要使用事件，相对是比较难的。本文告诉大家如何在 .net remoting 使用事件。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 标签：.net remoting,rpc,wpf -->
 
 <div id="toc"></div>

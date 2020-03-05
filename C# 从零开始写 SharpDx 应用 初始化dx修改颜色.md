@@ -3,6 +3,8 @@
 本文来告诉大家如何在上一篇博客创建的窗口里面使用 Sharpdx 初始化，然后设置窗口颜色。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
 <div id="toc"></div>
 

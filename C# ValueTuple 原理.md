@@ -3,6 +3,8 @@
 本文告诉大家一些 ValueTuple 的原理，避免在使用出现和期望不相同的值。ValueTuple 是 C# 7 的语法糖，如果使用的 .net Framework 是 4.7 以前，那么需要使用 Nuget 安装`System.ValueTuple`
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <div id="toc"></div>
 
 <!-- 标签：C#，原理 -->

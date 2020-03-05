@@ -3,6 +3,8 @@
 本文告诉大家如何在 UWP 通过修改图片的质量减少图片大小，这个方法只支持输出 jpg 文件
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 通过创建 BitmapEncoder 的时候指定 BitmapPropertySet 可以设置图片的质量，只有对 JPG 格式才能设置图片质量

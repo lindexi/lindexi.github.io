@@ -3,6 +3,8 @@
 现在 Internet Explorer （IE）已经过时了，可以通过控制面板移除这个古老但是依然是一个伟大的浏览器
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 现在默认在 Windows 10 的浏览器是 Edge 虽然这个浏览器已经修改为 Chromium 内核，但是 Windows 10 依然保留 Internet Explorer 11 为了兼容之前的网站。

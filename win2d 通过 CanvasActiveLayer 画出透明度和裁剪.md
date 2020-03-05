@@ -3,6 +3,8 @@
 本文告诉大家如果在 UWP 的 win2d 通过 CanvasActiveLayer 创建一层，在这里画出的图片有透明度或者裁剪
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <!-- 标签：uwp,win2d -->
 

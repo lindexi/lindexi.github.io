@@ -5,6 +5,8 @@
 本文告诉大家通过一个简单的库可以实现在界面绑定的时候通过表达式不需要转换
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 首先通过 Nuget 安装 CalcBinding 库，注意 Nuget 的地址是 [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json) 如果没有找到这个库就请复制链接点击更新，再输入 `CalcBinding` 寻找 

@@ -3,6 +3,8 @@
 通过 ReadyToRun 可以在程序集同时包含 IL 和本机代码，可以有效提升软件的启动速度
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 在 .NET Core 3.0 Preview 6 发布了 ReadyToRun 的功能，通过这个功能可以提升软件的启动性能，在程序设置在发布的时候使用 ReadyToRun 的特性，将会编译出来 ReadyToRun（R2R）格式的程序集

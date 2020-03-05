@@ -3,6 +3,8 @@
 resharper 可以使用 ctrl+b 跳转到源代码，但是如果使用库的源代码，那么如何跳转，会显示对象管理器，那么如何让resarper 跳转到源代码
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 打开 resharper 选择设置。

@@ -3,6 +3,8 @@
 现在很多小伙伴开始使用了 dotnet core 项目，但是如果是从以前的 dotnet framework 的项目修改为 dotnet core 项目格式，会发现编译的时候出现了 AssemblyInfo 里面的很多值重复
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <!-- 标签：VisualStudio -->
 

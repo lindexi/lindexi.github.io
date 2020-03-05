@@ -5,6 +5,8 @@ UWP 下如何发邮件？可以使用`mailto:xx?subject=*`方式发送？
 本文：如何在 UWP 使用默认邮件发邮件。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

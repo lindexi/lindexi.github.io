@@ -3,6 +3,8 @@
 现在依靠 dotnet 平台，可以方便分发工具，利用 NuGet 服务进行分发和使用工具。打一个 dotnet tool 包，可以将这个包上传到 NuGet 上，小伙伴通过和安装 NuGet 相同方式就可以将工具安装在本机上。本文将告诉大家如何手工打一个 dotnet tool 包，方便小伙伴自己写工具用来创建代码
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 <!-- 标签: NuGet,dotnet,dotnettool -->
 

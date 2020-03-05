@@ -3,6 +3,8 @@
 本文告诉大家如何在 asp dotnet core 支持客户端上传文件
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 新建一个 asp dotnet core 程序，创建一个新的类，用于给客户端上传文件的信息
 

@@ -3,6 +3,8 @@
 本文告诉大家 Directory.Build.props 是什么有什么优点？如何使用 Directory.Build.props 文件定义编译
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 

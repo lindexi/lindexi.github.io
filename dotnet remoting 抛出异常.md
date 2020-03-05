@@ -3,6 +3,8 @@
 本文告诉大家如何在使用 .net remoting 的时候，抛出异常。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 标签：.net remoting,rpc,wpf -->
 
 <div id="toc"></div>

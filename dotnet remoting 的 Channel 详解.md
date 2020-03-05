@@ -3,6 +3,8 @@
 本文详细告诉大家在 dotnet remoting 的各个 Channel 是做什么的。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 <!-- 草稿 -->

@@ -5,6 +5,8 @@
 在运行的时候，出现`System.Runtime.InteropServices.COMException Cannot find a resource with the given key`
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 这个问题就是资源寻找路径问题，因为 Binding 是性能比较差，他的资源是从他的自己，如果找不到，就到他的上一级，直到找到或没有。但是 `x:bind` 的资源寻找和 Bind 不同，他是在元素的最顶级元素和应用资源寻找。假如有一个用户控件 Foo ，那么打开他的代码，可以看到这样的代码

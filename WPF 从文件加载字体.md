@@ -3,6 +3,8 @@
 本文告诉大家从文件加载字体。在wpf 使用 fontfamily 显示指定的 ttf 显示字体。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 假如有字体在 `C:\Projects\MyProj\free3of9.ttf` ，可以使用 PrivateFontCollection 添加字体。
 

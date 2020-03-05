@@ -3,6 +3,8 @@
 本文来告诉大家一个新的技术[DirectComposition](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh437376.aspx )，在 win7 之后（实际上是 vista），微软正在考虑一个新的渲染机制。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <div id="toc"></div>
 
 <!-- 标签：uwp,DirectComposition，win2d,渲染 -->

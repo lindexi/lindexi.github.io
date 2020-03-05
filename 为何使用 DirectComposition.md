@@ -3,6 +3,8 @@
 本文主要翻译[Why use DirectComposition](https://msdn.microsoft.com/en-us/library/windows/desktop/hh449195(v=vs.85).aspx )，介绍 DirectComposition 的功能和优点。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 <div id="toc"></div>

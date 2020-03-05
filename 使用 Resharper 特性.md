@@ -3,6 +3,8 @@
 本文告诉大家如何使用 Resharper 特性，在 VisualStudio 最好的插件就是 Resharper 不过他比较卡。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 <!-- 标签：resharper -->

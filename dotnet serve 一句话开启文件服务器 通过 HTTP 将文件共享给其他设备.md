@@ -3,6 +3,8 @@
 在当前的 IT 领域，我推荐每个开发设备都应该安装 dotnet 这个工具，在 dotnet 这个工具上有大量开发者提供了无数好用的工具。本文要告诉小伙伴的工具是 natemcmaster 大佬提供了 serve 工具，可以用来开启本地文件服务器，使用非常简单。这个方案适合在 Windows 系统和 Linux 系统和 MAC 上使用，发布的 HTTP 服务可以在任何能访问到的设备上使用
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 
 默认小伙伴电脑已经安装了 [dotnet](https://dotnet.microsoft.com/) 工具，如果还没有安装，请到[官网](https://dotnet.microsoft.com/)下载安装

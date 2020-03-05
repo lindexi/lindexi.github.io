@@ -3,6 +3,8 @@
 本文告诉大家如何在 SharpDx 里面使用笔刷，包括纯色笔刷、渐变笔刷和图片笔刷
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 本文属于 [SharpDx 系列](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html) 博客，建议从头开始读
 

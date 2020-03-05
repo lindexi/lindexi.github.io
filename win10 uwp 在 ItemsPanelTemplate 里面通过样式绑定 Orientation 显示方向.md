@@ -3,6 +3,8 @@
 在 UWP 是不支持在 Setter 里面的 Value 进行绑定，如果想要在 ItemsPanelTemplate 里面绑定显示方向，那么需要通过附加属性的方法绑定。如果在后台代码定义了 Orientation 属性想要在 xaml 绑定到 ListView 的样式，可以尝试多创建一个帮助属性，用于在里面绑定
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 <div id="toc"></div>
 

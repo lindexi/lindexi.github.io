@@ -3,6 +3,8 @@
 有小伙伴好奇 HorizontalAlignment 和 VerticalAlignment 是如何使用的，本文使用一张图简单说明了水平对齐和垂直对齐
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 ![](http://image.acmx.xyz/lindexi%2F201938104445786)

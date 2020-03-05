@@ -3,6 +3,8 @@
 在 WPF 没有提供默认的判断 LinearGradientBrush 相等的方法，本文给大家一个可以直接在项目使用的方法
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 可以使用下面代码判断两个 LinearGradientBrush 是否相等

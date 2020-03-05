@@ -5,6 +5,8 @@ win10 下，密码框无法绑定到ViewModel，Password是不可以绑定。
 我们可以自己使用简单方法去绑定。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

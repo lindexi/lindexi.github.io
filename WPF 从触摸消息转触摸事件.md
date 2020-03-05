@@ -3,6 +3,8 @@
 在 WPF 程序可能因为一些坑让程序触摸失效，如果此时还可以收到系统的触摸消息，那么可以通过从触摸消息转触摸事件解决程序触摸失效但不适合所有触摸失效程序
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 在 WPF 的触摸代码写的不是很清真，特别是[触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )可能出现一些坑，如[WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](https://blog.lindexi.com/post/wpf-%E5%9C%A8%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%AD%89%E5%BE%85%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%AA%97%E5%8F%A3%E5%85%B3%E9%97%AD%E4%BC%9A%E8%AE%A9%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%9B%B8%E4%BA%92%E7%AD%89%E5%BE%85 ) 和 [WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/wpf-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88 ) 等，有时候在开机的过程，如果启动快了，触摸设备还没准备好，刚好在 WPF 初始化的过程 USB 触摸设备才准备好，此时 WPF 也会触摸失效

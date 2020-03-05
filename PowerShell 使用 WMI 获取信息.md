@@ -3,6 +3,8 @@
 在 PowerShell 可以很容易使用 WMI 拿到系统的信息，如果有关注我的网站，就会发现我写了很多通过 WMI 拿到系统的显卡，系统安装的软件等方法，本文告诉大家如果通过 PowerShell 拿到 WMI 类里面的属性
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 <!-- 标签：PowerShell,WMI -->
 

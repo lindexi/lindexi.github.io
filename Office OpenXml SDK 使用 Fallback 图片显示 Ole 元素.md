@@ -3,6 +3,8 @@
 我在写一个 WinForms 程序用来读取 Word 里面的图片显示，在解析 Word 等 Office 文档，会看到一些 ole object 元素，而有些 ole object 会有 Fallback 图片，用这些备用的图片可以显示 ole 元素
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 
 其实有很多 Office 插件公司在开发，而特殊的元素如何在其他版本打开？或者我用插件做了一个复杂的元素，在没有插件的设备如何让用户看到？在 Office 的一个做法是通过 Fallback 元素，在里面放一张图片

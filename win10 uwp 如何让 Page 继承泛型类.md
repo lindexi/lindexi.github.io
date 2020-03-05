@@ -7,6 +7,8 @@
 这个 Page 需要指定自己的 ViewModel 但是这个 ViewModel 却是每个 Page 不相同，所以一个好的方法是指定他的泛型类。但是这时如果使用 Page 继承，就会出现编译错误。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <!-- csdn -->
 

@@ -3,6 +3,8 @@
 在 dotnet core 3.0 支持将库导出为COM组件，本文告诉大家如何将代码导出为 COM 组件
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 在导出 COM 组件的库，需要一个 GUID 声明这个 COM 接口

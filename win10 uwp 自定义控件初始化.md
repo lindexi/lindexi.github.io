@@ -5,6 +5,8 @@
 本文告诉大家，从构造函数、loaded、Initialized 的调用过程。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

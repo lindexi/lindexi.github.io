@@ -3,6 +3,8 @@
 
 微软的ContentDialog不是一直有，而是UWP新的，可以使用Content放用户控件，使用很好，但是一点不好的是，默认的一点击下面按钮就会退出。
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

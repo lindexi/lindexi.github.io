@@ -3,6 +3,8 @@
 在 Xamarin 中可以通过 CornerRadius 设置按钮使用圆角
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 
 在 Xamarin 中可以方便进行样式定义或不进行定义样式只修改属性而改变外观，如按钮的圆角可以通过 CornerRadius 属性设置

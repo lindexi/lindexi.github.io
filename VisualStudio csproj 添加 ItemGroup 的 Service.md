@@ -3,6 +3,8 @@
 本文告诉大家，如果发现在自己的工程文件出现了一个新的 ItemGroup 里面是 Service 加 GUID 是在做什么。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 <!-- 标签：VisualStudio -->
 

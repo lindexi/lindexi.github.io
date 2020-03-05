@@ -2,6 +2,8 @@
 
 本文主要说如何绑定InkCanvas，让笔画变化的时候我们可以知道。
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

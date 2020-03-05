@@ -5,6 +5,8 @@
 而且可以在 WPF 和 WinForms 使用微软最新 Edge 浏览器
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 标签：WPF，UWP，dotnet -->
 
 本文翻译[Announcing Windows Community Toolkit v3.0](https://blogs.windows.com/buildingapps/2018/05/30/announcing-windows-community-toolkit-v3-0/#kkTu1mUiPIFADOzj.97 )，因为水平比较渣，请大家不要喷太多。

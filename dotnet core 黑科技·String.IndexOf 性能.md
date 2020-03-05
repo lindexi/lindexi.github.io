@@ -3,6 +3,8 @@
 本文来告诉大家 dotnet core 里面使用的黑科技，如何提高`String.IndexOf(char)`的性能
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 <!-- 标签：dotnet，dotnet-core，黑科技 -->
 

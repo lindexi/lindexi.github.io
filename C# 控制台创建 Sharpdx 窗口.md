@@ -3,6 +3,8 @@
 本文告诉大家如何在控制台使用 SharpDx 创建窗口，这是一个底层的博客，我会用很多博客告诉大家如何从控制台创建一个高性能渲染程序
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <div id="toc"></div>
 <!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D,渲染 -->
 

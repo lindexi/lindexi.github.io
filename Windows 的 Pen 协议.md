@@ -1,6 +1,8 @@
 # Windows 的 Pen 协议
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 [Required HID Descriptors](https://docs.microsoft.com/en-us/windows-hardware/design/component-guidelines/required-hid-descriptors )

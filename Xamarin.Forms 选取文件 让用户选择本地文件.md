@@ -3,6 +3,8 @@
 在 Xamarin 中，使用文件存储或打开某个特定文件都是很常用的做法，而在跨平台中，每个平台都有自己的 IO 的坑。如何在 Xamarin.Froms 里面让用户可以选择打开哪个本文文件，需要照顾多个不同的平台的文件访问方式
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 
 在 Xamarin.Forms 右击管理 NuGet 程序包，搜寻 Xamarin.Plugin.FilePicker 进行安装，或在 csproj 上添加下面代码

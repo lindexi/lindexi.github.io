@@ -5,6 +5,8 @@ We found two way that can make the main thread locked. And we can not write any 
 The easiest way to reproduce this issue is to wait for the window in the main thread to close in the stylus input thread.
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 We have found two ways, the first way always happens, and the second way is probabilistic.

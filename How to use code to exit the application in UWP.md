@@ -3,6 +3,8 @@
 I will tell you how to exit the application in UWP by the code.
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 We can call some static method to help us to exit the application.
 

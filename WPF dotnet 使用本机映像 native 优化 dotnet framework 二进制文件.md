@@ -3,6 +3,8 @@
 在 2017 我在社区问了一个问题，如何让 .NET Framework 的 WPF 等程序使用 .NET Native 构建以提升速度。在 2019.06 的时候，强大的微软提供了一个好用的库，支持将 .NET Framework 的桌面应用构建时添加 native images 本机映像支持
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 发布 -->
 
 咱可以通过预编译咱的二进制文件来提升 .NET Framework 应用的启动时间。推荐使用技术用来在大型的应用的打包和分发上或上架到微软应用商店。微软官方测试表示这个技术大概能提升 20% 的性能。这项技术用到了 ReadyToRun 技术，详细请看 [coreclr/readytorun-overview.md at master · dotnet/coreclr](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md )

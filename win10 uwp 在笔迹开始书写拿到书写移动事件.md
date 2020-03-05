@@ -3,6 +3,8 @@
 在使用 InkCanvas 的过程，无法直接通过 Pointer 消息拿到书写移动，需要使用 StrokeInput 才能获取到
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 在 InkCanvas.InkPresenter.StrokeInput 提供了 [StrokeStarted](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted ) 、[StrokeContinued](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokeinput.strokecontinued) 、[StrokeEnded](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokeinput.strokeended) 这些看名字就知道是干什么用的事件，通过这些事件可以在书写的过程拿到触摸事件或鼠标事件

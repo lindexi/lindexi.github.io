@@ -5,6 +5,8 @@
 所以我就询问了[群里](https://t.me/smms_images)大神，他们告诉我需要设置 UserAgent ，本文就是告诉大家如何设置 HttpClient 的浏览器标识
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 如果使用 HttpClient 上传图片很简单，只需要创建 HttpMultipartFormDataContent ，里面写图片就可以上传。

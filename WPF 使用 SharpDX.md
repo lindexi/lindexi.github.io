@@ -3,6 +3,8 @@
 本文告诉大家如何在 WPF 使用 SharpDX ，只是入门。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->
 

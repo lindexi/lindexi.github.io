@@ -3,6 +3,8 @@
 本文告诉大家使用局部函数可能遇到的坑。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 在以前，如果有一个事件`public event EventHandler Foo`和一个函数`private void Program_Foo(object sender, EventArgs e)`那么使用函数监听事件是很简单的，当然从事件取消函数也是很简单。请看下面代码
 

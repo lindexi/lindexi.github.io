@@ -3,6 +3,8 @@
 在 C++ 需要使用 GetSystemFirmwareTable 的方法来获得 PC 的序列号，需要写的代码很多，但是在 C# 可以使用 WMI 来拿到序列号
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 <!-- 标签：dotnet,C#,WMI -->
 

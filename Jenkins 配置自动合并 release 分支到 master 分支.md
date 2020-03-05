@@ -3,6 +3,8 @@
 本文告诉大家如何在 Jenkins 配置合并到 release 的内容自动合并到 gitlab 的 master 分支
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- 标签：Jenkins -->
 
 首先需要两个仓库，一个是 gitlab 的仓库，另一个是 Jenkins 的仓库

@@ -3,6 +3,8 @@
 我们在UWP，经常使用的图片，数据结构就是 BitmapImage 和 WriteableBitmap。关于 BitmapImage 和 WriteableBitmap 区别，我就不在这里说。主要说的是 BitmapImage 和 WriteableBitmap 、二进制 byte 的互转。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

@@ -11,6 +11,8 @@ UWP 虽然可以直接在xaml.cs 写逻辑但是我们是推荐使用 MVVM 框�
 本文主要：如何在 UWP 使用 MVVM，如何做一个自己的框架。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 
 <div id="toc"></div>
 

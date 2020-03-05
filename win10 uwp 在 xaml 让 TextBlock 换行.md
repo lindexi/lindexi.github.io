@@ -3,6 +3,8 @@
 本文告诉大家几个方法在 xaml 的 TextBlock 的 Text 换行
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 在 xaml 可以使用 `&#x0a;` 表示换行，所以最简单的方法是在 Text 里面输入 `&#x0a;` 换行

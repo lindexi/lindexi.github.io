@@ -2,7 +2,9 @@
 
 本文告诉大家如果遇到 double 数组转 float 数组千万不要使用 Cast ，一般都使用 select 强转。
 
-<!--more--> 
+<!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+ 
 
 <!-- 标签：C#,dotnet -->
 

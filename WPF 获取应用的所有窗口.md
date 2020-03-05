@@ -3,6 +3,8 @@
 本文告诉大家如何获取应用内的所有窗口，无论这些窗口有没显示
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 <!-- csdn -->
 
 在 WPF 可以通过 Application.Current.Windows 列举应用的所有窗口

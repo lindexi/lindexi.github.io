@@ -5,6 +5,8 @@
 本文告诉大家如何使用 benchmarkdotnet 做测试。
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:16 -->
+
 
 现在在 github 提交代码，如果有小伙伴想要知道某个函数的性能，就会用 [BenchmarkDotNet](https://benchmarkdotnet.org/Guides/ChoosingRunStrategy.htm ) 进行测试。
 

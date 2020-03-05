@@ -3,6 +3,8 @@
 本文告诉大家如果在 UWP 发布的时候遇到 ILC 的问题可以如何解决
 
 <!--more-->
+<!-- CreateTime:2020/3/5 9:26:17 -->
+
 <!-- csdn -->
 
 在 UWP 的发布中，需要通过 ILC 将代码编译为 Native 代码，但是在发布的 Microsoft.NETCore.UniversalWindowsPlatform 的 6.2.2 或 6.2.3 版本会让 ILC 无法编译
