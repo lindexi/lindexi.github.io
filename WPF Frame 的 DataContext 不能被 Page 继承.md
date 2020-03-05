@@ -3,6 +3,8 @@
 本文告诉大家在 Frame 的 DataContext 不能被 Page 继承如何解决。
 
 <!--more-->
+<!-- CreateTime:2018/6/11 10:48:24 -->
+
 <!-- csdn -->
 
 如果大家有研究 Frame 会发现一个诡异的现象。

@@ -3,6 +3,8 @@
 本文告诉大家使用 Magick.NET 的方法播放 gif 图片。
 
 <!--more-->
+<!-- CreateTime:2018/2/13 17:23:03 -->
+
 <div id="toc"></div>
 
 <!-- csdn -->

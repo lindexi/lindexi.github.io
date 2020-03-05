@@ -7,6 +7,8 @@
 为了在自己的设备上体验 Resharper 强大的功能，于是我就通过 MVP 的福利注册了 Resharper 的账号，这样就可以免费使用，但是有一个义务就是给 Resharper 多加宣传。
 
 <!--more-->
+<!-- CreateTime:2018/12/21 11:29:00 -->
+
 <!-- csdn -->
 
 打开 Resharper 的这个页面 [https://www.jetbrains.com/shop/eform/devrecognition](https://www.jetbrains.com/shop/eform/devrecognition) 在这里填写个人的信息

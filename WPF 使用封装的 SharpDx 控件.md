@@ -3,6 +3,8 @@
 上一篇告诉大家如何在 WPF 使用 SharpDx ，看起来代码比较复杂，所以本文告诉大家如何使用我封装的控件。
 
 <!--more-->
+<!-- CreateTime:2019/12/26 12:50:41 -->
+
 <!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->

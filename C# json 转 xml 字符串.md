@@ -3,6 +3,8 @@
 本文告诉大家如何将 json 转 xml 或将 xml 转 json 字符串
 
 <!--more-->
+<!-- CreateTime:2019/3/1 9:20:24 -->
+
 
 首先需要安装 Newtonsoft.Json 库，打开 VisualStudio 2019 新建一个 dotnet core 项目，然后右击编译 csproj 输入下面的代码
 

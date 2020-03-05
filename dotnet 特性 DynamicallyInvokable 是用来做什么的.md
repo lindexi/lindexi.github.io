@@ -3,6 +3,8 @@
 我在 Linq 很多函数都看到 `__DynamicallyInvokable` 这个特性，这是一个没有官方文档的特性，也许是用来优化反射
 
 <!--more-->
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 在[堆栈](https://stackoverflow.com/a/12552079/6116637) 网找到了以下描述
 

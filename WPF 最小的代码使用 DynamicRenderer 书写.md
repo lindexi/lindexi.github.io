@@ -3,6 +3,8 @@
 在 WPF 中有 DynamicRenderer 提供高性能的书写，这个类在 WPF 只有 InkCanvas 使用，如果想要在自己的 UIElement 使用，需要写一些代码
 
 <!--more-->
+<!-- CreateTime:2019/1/9 14:07:26 -->
+
 <!-- csdn -->
 <!-- 标签：WPF，笔迹 -->
 

@@ -3,6 +3,8 @@
 本文主要：如何从 Type new一个对象
 
 <!--more-->
+<!-- CreateTime:2018/2/13 17:23:03 -->
+
 
 <div id="toc"></div>
 

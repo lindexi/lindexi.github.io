@@ -3,6 +3,8 @@
 本文告诉大家如何在 UWP 中捕获全局的后台线程异常，在出现后台线程异常时，将会让 UWP 程序闪退，但是在退出之前还是可以执行自己的代码
 
 <!--more-->
+<!-- CreateTime:2019/12/16 8:56:13 -->
+
 <!-- 发布 -->
 
 在 UWP 中，如果需要捕获前台线程，也就是 UI 线程的异常，可以参见 [UWP 中的全局异常处理](https://www.cnblogs.com/zhs852/p/uwp-global-error-handler.html) 的方法

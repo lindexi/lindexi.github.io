@@ -3,6 +3,8 @@
 在 WPF 的 TextBox 里有 TextBoxView 用来渲染 TextBox 内容，但是在 TextBox 里面的 TextBoxView 是不能直接设置而且默认的 Margin 是 2,0,2,0 如何自定义这个值
 
 <!--more-->
+<!-- CreateTime:2018/9/28 17:16:17 -->
+
 <!-- csdn -->
 
 先来写一个简单的程序告诉大家这个问题，创建一个空白 WPF 程序，在里面添加一个 TextBox 设置 TextBox 居中

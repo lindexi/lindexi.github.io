@@ -3,6 +3,8 @@
 本文告诉大家如果在 Nuget 引用源代码的方式引用源代码，在 VisualStudio 的智能提示和 Resharper 的智能提示都能找到对应的类，但是在 VisualStudio 编译或使用命令行 msbuild 编译时提示找不到类
 
 <!--more-->
+<!-- CreateTime:2018/9/29 12:58:16 -->
+
 <!-- csdn -->
 
 <!-- 标签：Roslyn,MSBuild,编译器 -->

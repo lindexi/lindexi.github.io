@@ -3,6 +3,8 @@
 本文告诉大家如何在 dotnet core 的控制台通过 Hangfire 开启后台定时任务
 
 <!--more-->
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 首先需要安装 [HangFire](https://www.nuget.org/packages/Hangfire ) 这个 Nuget 库，通过这个库可以用来做定时任务，虽然很多时候都是在 ASP.NET Core 后台
 

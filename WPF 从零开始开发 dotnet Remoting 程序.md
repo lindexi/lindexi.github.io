@@ -3,6 +3,8 @@
 本文告诉大家如何不使用框架，从零开始开发一个 dotnet remoting 程序
 
 <!--more-->
+<!-- CreateTime:2019/3/1 9:30:45 -->
+
 
 <div id="toc"></div>
 

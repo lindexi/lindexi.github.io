@@ -4,6 +4,8 @@
 
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
 <!-- csdn -->
 
 WPF 的可获得焦点元素是 Focusable，这个属性是所有继承 `IInputElement` 的类都有，也就是所有的 UIElement 都可以设置 Focusable ，如果一个元素设置了 `Focusable = false` 那么这个元素就不能使用 Tab 把焦点放在这个元素。不能获得键盘的输入，但是可以获得鼠标输入。

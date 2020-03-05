@@ -3,6 +3,8 @@
 本文告诉大家如何通过 WMI 使用Win32_ComputerSystem获取设备厂商
 
 <!--more-->
+<!-- CreateTime:2019/2/21 20:02:45 -->
+
 <!-- csdn -->
 
 <!-- 标签：PowerShell,WMI -->

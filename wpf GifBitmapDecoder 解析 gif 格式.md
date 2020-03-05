@@ -4,6 +4,8 @@
 
 本文告诉大家如何使用  GifBitmapDecoder 把gif分开为一张一张，获得他的信息。
 <!--more-->
+<!-- CreateTime:2018/2/13 17:23:03 -->
+
 <!-- csdn -->
 
 <!-- 标签：WPF，gif -->

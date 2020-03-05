@@ -3,6 +3,8 @@
 我在写一个简单的文件服务器，想要用来做客户端下载器的测试服务器，但是返回的方法提示 ObjectDisposedException: Cannot access a disposed object. Object name: 'Cannot access a closed file.' 原因是我的文件被释放
 
 <!--more-->
+<!-- CreateTime:2020/1/30 16:55:33 -->
+
 <!-- 发布 -->
 
 在开发端访问链接可以返回一些提示，如我使用下面代码做一个文件下载服务器

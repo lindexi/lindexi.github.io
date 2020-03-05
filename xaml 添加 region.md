@@ -3,6 +3,8 @@
 本文告诉大家如何在 xaml 添加 region 
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:51 -->
+
 <!-- csdn -->
 <!-- 标签：xaml，VisualStudio -->
 

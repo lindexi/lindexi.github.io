@@ -3,6 +3,8 @@
 在 asp dotnet core 3.0 默认的 webapi 返回接口都是返回 json 格式，同时这个 json 格式使用的是 CamelCase 属性名风格。如果想要兼容之前的格式，让 webapi 返回的 json 的属性名使用 PascalCase 格式，那么请看本文
 
 <!--more-->
+<!-- CreateTime:2019/9/23 18:39:17 -->
+
 <!-- csdn -->
 
 默认的 ASP.NET Core 3.0 的 WebAPI 的 json 返回值的属性使用首字符小写的 CamelCase 属性名风格，可以通过在 ConfigureServices 方法配置让返回值属性使用其他风格

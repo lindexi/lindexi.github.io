@@ -3,6 +3,8 @@
 本文告诉大家如何创建一个 asp dotnet core 程序，这个程序使用 sqlite 保存，部署程序到 Centos 7 服务器
 
 <!--more-->
+<!-- CreateTime:2019/8/29 19:17:48 -->
+
 
 <!-- 标签： dotnetcore,aspdotnetcore,asp,数据库,sqlite -->
 

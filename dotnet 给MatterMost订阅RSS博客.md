@@ -3,6 +3,8 @@
 其实MatterMost是有插件可以用来订阅RSS博客的，但是这个订阅插件需要一个个网址输入，而不是一次性输入很多个，于是我去就自己写了一个控制台程序做订阅
 
 <!--more-->
+<!-- CreateTime:2020/2/1 9:20:01 -->
+
 
 这个工具用到 `Microsoft.SyndicationFeed.ReaderWriter` 库，通过这个库可以用来解析RSS内容，所以开发的代码十分少
 

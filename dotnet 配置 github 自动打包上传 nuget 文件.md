@@ -3,6 +3,8 @@
 在上一篇博客告诉小伙伴如何使用 github 做持续集成，本文告诉大家如何配置 github 让在 master 每次合并都会自动创建一个 nuget 文件，自动上传
 
 <!--more-->
+<!-- CreateTime:2019/12/19 11:08:03 -->
+
 <!-- 发布 -->
 <!-- 标签：Github，GithubAction -->
 

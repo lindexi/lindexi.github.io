@@ -3,6 +3,8 @@
 我说的是不是 .NET Framework 5 也不是 dotnet core 5 而是 dotnet 5 这个当前是预览版的框架
 
 <!--more-->
+<!-- CreateTime:2020/2/4 10:33:48 -->
+
 <!-- 发布 -->
 
 刚才[老司机](https://huchengv5.github.io/ )问我如何在 VisualStudio 打开[aspnetcore](https://github.com/dotnet/aspnetcore )源代码，因为这个项目用到了 dotnet 5 预览版，所以让没有安装 dotnet 5 预览版的小伙伴用不了

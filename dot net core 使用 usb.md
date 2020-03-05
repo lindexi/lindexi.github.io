@@ -3,6 +3,8 @@
 本文告诉大家如何在 dot net core 使用 usb
 
 <!--more-->
+<!-- CreateTime:2018/9/21 19:53:34 -->
+
 <!-- 标签：dotnetcore,usb,dotnet -->
 <div id="toc"></div>
 

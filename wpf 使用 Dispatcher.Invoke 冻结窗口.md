@@ -3,6 +3,8 @@
 如果使用`Dispatcher.Invoke`实际上会有一个坑，在执行`Dispatcher.Invoke`刚好拖动窗口就会出现窗口冻结，这时使用 Alt+Tab 可以解决。
 
 <!--more-->
+<!-- CreateTime:2018/2/13 17:23:03 -->
+
 <div id="toc"></div>
 
 <!-- csdn -->

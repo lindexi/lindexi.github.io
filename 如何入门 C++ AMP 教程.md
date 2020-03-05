@@ -3,6 +3,8 @@
 本文告诉大家如何写一个 Helloworld 程序。
 
 <!--more-->
+<!-- CreateTime:2019/11/29 8:20:37 -->
+
 
 首先打开 VisualStudio ，大概现在也没有人还在用 VisualStudio 2013 了，所以我就不需要告诉大家需要用哪个版本的 VisualStudio ，如果我发现你的 VisualStudio 版本不对让程序运行错误，我就不会去回复。
 
