@@ -3,6 +3,8 @@
 因为 SublimeText 有很多插件都是使用 Py 写的，而我想使用 dotnet core 给 SublimeText 写一个编译插件，也就是在我使用 Markdown 的时候可以点击编译，将 Markdown 转 doc 或者做其他的。
 
 <!--more-->
+<!-- CreateTime:2018/8/29 8:53:47 -->
+
 <!-- 标签：dotnetcore,sublimetext -->
 
 在 SublimeText 有一个功能就是使用 Tools 的 `Build System` 添加新的 `Build` 通过点击`new Build System` 就可以新建一个用 `sublime-build` 结束的文件

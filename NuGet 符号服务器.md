@@ -3,6 +3,8 @@
 在新的 VisualStudio 支持使用 NuGet 符号服务器，可以支持新的 Portable PDB 调试符号的库，本文告诉大家如何打包上传带符号的库和使用符号服务器
 
 <!--more-->
+<!-- CreateTime:2019/5/21 11:34:40 -->
+
 <!-- 标签：nuget -->
 
 在 2018 的 11 月微软支持上传带符号的包到 NuGet.org 符号服务器，在使用 Visual Studio 2017 15.9 和以上版本可以支持打包 .NET Core 的 [Portable PDB](https://www.infoq.cn/article/2017/02/Portable-PDB ) 符号的库，或者使用 [nuget.exe 4.9.0](https://www.nuget.org/downloads) 或 dotnet 命令行打包

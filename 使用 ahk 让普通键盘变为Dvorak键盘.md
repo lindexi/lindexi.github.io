@@ -7,6 +7,8 @@
 ![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017819214.jpg)
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:51 -->
+
 
 首先需要下载 ahk ，可以通过[AutoHotkey](https://autohotkey.com/)下载。
 

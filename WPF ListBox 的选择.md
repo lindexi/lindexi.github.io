@@ -3,6 +3,8 @@
 本文告诉大家在 ListBox 做选择时，多选时 SelectedItem 和 SelectedIndex 的值。
 
 <!--more-->
+<!-- CreateTime:2019/1/25 21:43:17 -->
+
 <!-- csdn -->
 
 首先写一个界面，两个按钮和一个ListBox ，点击第一个按钮选择多个元素，点击第二个按钮就显示当前的  SelectedItem 和 SelectedIndex

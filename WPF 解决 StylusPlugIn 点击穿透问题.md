@@ -3,6 +3,8 @@
 在使用 StylusPlugIn 的时候会出现这样的坑，只要一个元素附加有 StylusPlugIn 加入到视觉树，在这个元素上面放另一个没有附加 StylusPlugIn 的元素，点击上面的元素，下面的元素的 StylusPlugIn 还是可以收到触摸的消息
 
 <!--more-->
+<!-- CreateTime:2019/10/18 20:55:35 -->
+
 <!-- csdn -->
 <!-- 标签：WPF，笔迹 -->
 

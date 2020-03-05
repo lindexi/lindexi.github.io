@@ -3,6 +3,8 @@
 在使用 dotnet core 发布独立项目的时候，会带上大量依赖的库，但是通过微软提供的工具可以去掉一些在代码没有用到的库。
 
 <!--more-->
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 本文介绍的工具是 Microsoft.Packaging.Tools.Trimming 这是一个预览的工具，需要从 myget.org 下载
 

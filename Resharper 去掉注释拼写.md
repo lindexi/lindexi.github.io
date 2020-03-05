@@ -3,6 +3,8 @@
 最近在 Resharper 的 2018.2.1 的版本，提供了单词拼写功能，如果自己写错了单词，可以在 Resharper 提示
 
 <!--more-->
+<!-- CreateTime:2019/11/26 8:42:05 -->
+
 <!-- 标签：resharper -->
 
 ## Resharper 的拼写

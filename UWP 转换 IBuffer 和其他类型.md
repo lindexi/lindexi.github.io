@@ -3,6 +3,8 @@
 本文告诉大家在 UWP 如何转换 IBuffer 为 string 和 stream 类
 
 <!--more-->
+<!-- CreateTime:2019/12/2 8:31:47 -->
+
 <!-- csdn -->
 
 ## byte 数组转 IBuffer

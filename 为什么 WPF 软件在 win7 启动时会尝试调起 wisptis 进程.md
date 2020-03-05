@@ -3,6 +3,8 @@
 我看到一个问题是在 win7 系统上，如果开机启动的软件是 WPF 软件，而这个 WPF 软件在系统的 wisptis 进程启动之前就启动了，那么 WPF 将会调起 wisptis 进程。而在 wisptis 进程已经启动完成，此时启动 WPF 进程不会再打开新的 wisptis 进程。但是被 WPF 启动的 wisptis 进程存在这样的问题，在触摸屏上 win7 的双指打开右键菜单等功能不可用
 
 <!--more-->
+<!-- CreateTime:2020/1/20 16:28:32 -->
+
 <!-- 发布 -->
 
 在 WPF 启动时，将会在 Window 类的 Visibility 修改时调用到 WispLogic.RegisterHwndForInput 方法进行初始化触摸，这部分详细请看 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html) 而在初始化触摸时，需要用到 PenIMC 的逻辑

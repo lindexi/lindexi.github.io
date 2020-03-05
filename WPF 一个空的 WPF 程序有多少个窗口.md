@@ -3,6 +3,8 @@
 好多小伙伴说 WPF 的程序有五个窗口，但是我尝试使用了 EnumThreadWindows 去获取的时候居然拿到了 10 多个窗口
 
 <!--more-->
+<!-- CreateTime:2018/12/18 21:16:40 -->
+
 <!-- csdn -->
 
 在 [WPF 内部的5个窗口之 MediaContextNotificationWindow](https://lindexi.gitee.io/post/WPF-%E5%86%85%E9%83%A8%E7%9A%845%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B9%8B-MediaContextNotificationWindow.html ) 听说有五个窗口

@@ -5,6 +5,8 @@
 本文告诉大家如何在 WriteableBitmap 把文字画上去。
 
 <!--more-->
+<!-- CreateTime:2018/12/25 9:13:57 -->
+
 <!-- csdn -->
 
 ## 截图

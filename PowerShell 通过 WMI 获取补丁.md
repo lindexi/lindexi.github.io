@@ -3,6 +3,8 @@
 本文告诉大家如何通过 WMI 获取补丁
 
 <!--more-->
+<!-- CreateTime:2019/2/21 20:39:51 -->
+
 <!-- csdn -->
 
 <!-- 标签：PowerShell,WMI -->

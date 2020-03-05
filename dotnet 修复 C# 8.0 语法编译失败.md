@@ -3,6 +3,8 @@
 在使用 using 等新语法时，在 VisualStudio 2019 会自动判断框架版本，如在 net 45 就不会自动使用最新版本的语法，需要修改项目文件
 
 <!--more-->
+<!-- CreateTime:2020/2/1 16:59:41 -->
+
 <!-- 发布 -->
 
 在使用 C# 8.0 之前，请在[官网](https://visualstudio.microsoft.com/) 下载最新的 VisualStudio 2019 版本

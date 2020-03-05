@@ -3,6 +3,8 @@
 本文分析在 C# 中使用反射和配置文件和预编译做注入的性能，本文的数据是为[预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html )提供
 
 <!--more-->
+<!-- CreateTime:2019/11/29 10:13:17 -->
+
 <!-- 标签：C#，性能测试 -->
 
 本文通过代码生成工具，使用[C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html )拿到三个不同的方法的性能

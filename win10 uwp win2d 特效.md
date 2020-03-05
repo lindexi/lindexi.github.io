@@ -3,6 +3,8 @@
 本文告诉大家 win2d 里面的特效
 
 <!--more-->
+<!-- CreateTime:2018/10/2 21:20:46 -->
+
 <div id="toc"></div>
 <!-- csdn -->
 <!-- 标签：uwp,win2d -->

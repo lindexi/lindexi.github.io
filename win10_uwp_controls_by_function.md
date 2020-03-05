@@ -7,6 +7,8 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 我们先学微软做一个简单的frame，新建Page，里面放title和跳转页
 
 <!--more-->
+<!-- CreateTime:2019/11/29 10:18:49 -->
+
 
 <div id="toc"></div>
 

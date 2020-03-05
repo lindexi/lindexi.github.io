@@ -3,6 +3,8 @@
 如果使用 StreamWriter 创建的文本，都是默认带 BOM ，如果需要创建一个不带BOM的文件，请看本文。
 
 <!--more-->
+<!-- CreateTime:2018/5/19 14:11:33 -->
+
 
 <div id="toc"></div>
 <!-- csdn -->

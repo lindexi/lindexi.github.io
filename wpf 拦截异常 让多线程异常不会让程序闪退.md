@@ -3,6 +3,8 @@
 本文告诉大家使用`legacyUnhandledExceptionPolicy`让多线程异常不会让程序闪退。
 
 <!--more-->
+<!-- CreateTime:2018/2/13 17:23:03 -->
+
 <div id="toc"></div>
 
 <!-- csdn -->

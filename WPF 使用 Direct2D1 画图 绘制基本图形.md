@@ -3,6 +3,8 @@
 本文来告诉大家如何在 Direct2D1 绘制基本图形，包括线段、矩形、椭圆
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
 <div id="toc"></div>
 <!-- 标签：WPF，D2D,DirectX,渲染 -->
 

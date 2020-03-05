@@ -3,6 +3,8 @@
 在 dotnet 里面可以使用 NamedPipeClientStream 作为命名管道，此时的命名有长度限制，要求在 256 字符之内
 
 <!--more-->
+<!-- CreateTime:2019/9/2 11:54:50 -->
+
 <!-- csdn -->
 
 从官方[文档](https://docs.microsoft.com/en-us/windows/win32/ipc/pipe-names) 可以看到限制 256 字符内

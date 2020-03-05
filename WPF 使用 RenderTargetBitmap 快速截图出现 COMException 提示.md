@@ -3,6 +3,8 @@
 本文告诉大家一个最简单步骤让 RenderTargetBitmap 出现 COMException 提示
 
 <!--more-->
+<!-- CreateTime:2019/1/10 14:58:43 -->
+
 <!-- csdn -->
 
 只需要在界面添加一个 ListView 绑定图片，然后在后台不断刷新列表就可以
