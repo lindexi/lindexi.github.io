@@ -32,8 +32,7 @@ git merge lindexi/master
 git add .
 git commit -m "合并"
 git push lindexi lindexi:master
-git checkout master
-git merge linde我有两个仓库，一个是gitbook在写一本UWP入门，一个是放在github的垃圾，这个是我想要开个人网站，但是做的还是不行https://github.com/lindexi/lindexi.github.io结果发现我需要做html，本来的文件没法直接转过去，但是我又不想使用第三方工具，于是最后我想着自己来写一个，于是就做了winMarkdown，win10软件，不过已经几个月没做
+git 我有两个仓库，一个是gitbook在写一本UWP入门，一个是放在github的垃圾，这个是我想要开个人网站，但是做的还是不行https://github.com/lindexi/lindexi.github.io结果发现我需要做html，本来的文件没法直接转过去，但是我又不想使用第三方工具，于是最后我想着自己来写一个，于是就做了winMarkdown，win10软件，不过已经几个月没做
 
 好了还是回到问题，我想把两个git合并
 
