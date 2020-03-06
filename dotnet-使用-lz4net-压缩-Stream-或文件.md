@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 压缩算法 LZ4 的原代码是使用 C 写的，请看[代码](https://github.com/lz4/lz4) 本文的 [K4os.Compression.LZ4](https://github.com/MiloszKrajewski/K4os.Compression.LZ4 ) 是使用 C# 写的，里面也有版本使用了 C++ 代码
 

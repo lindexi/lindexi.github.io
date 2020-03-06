@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/11/8 20:18:15 -->
+
 <!-- csdn -->
 
 在 WPF 可以通过 System.Net 的类进行下载资源，如下载一张图片 [http://image.acmx.xyz/lindexi%2F2018116203842298](http://image.acmx.xyz/lindexi%2F2018116203842298) 可以使用下面的代码，通过 ContentLength 拿到下载的内容长度

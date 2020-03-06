@@ -10,6 +10,8 @@ zhxilin大神在[文章](http://www.cnblogs.com/zhxilin/p/4819372.html)说到了
 <!--more-->
 
 
+<!-- CreateTime:2018/8/9 9:07:31 -->
+
 
 我设计了 MainPage.xaml 拥有两个 Frame 和单例model
 

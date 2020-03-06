@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/11/26 16:13:14 -->
+
 <!-- csdn -->
 
 在 WPF 中可以使用 DrawingVisual 进行底层的绘制，底层的绘制的效率是比较高的，但是因为 WPF 的界面需要的是 UIElement 如果想要添加 DrawingVisual 还需要写一个帮助类

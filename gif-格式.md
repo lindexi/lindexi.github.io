@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:59 -->
+
 <div id="toc"></div>
 
 在开始讲gif之前，先告诉大家 gif 的格式。

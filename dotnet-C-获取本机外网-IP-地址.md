@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/11/17 16:38:10 -->
+
 <!-- csdn -->
 
 如果有自己的服务器，可以通过自己的服务器使用 [asp dotnet core 服务器获取客户 IP 地址](https://blog.lindexi.com/post/asp-dotnet-core-%E4%BB%8E-Frp-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9E-IP-%E5%9C%B0%E5%9D%80.html ) 方法，将获取的 IP 地址返回给用户

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/7/22 21:26:22 -->
+
 <!-- csdn -->
 
 可以使用下面代码判断两个 LinearGradientBrush 是否相等

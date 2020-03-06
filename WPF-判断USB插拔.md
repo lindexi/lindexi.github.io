@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
 <!-- csdn -->
 
 首先需要在一个窗口重写`OnSourceInitialized`，在这里可以拿到窗口的指针

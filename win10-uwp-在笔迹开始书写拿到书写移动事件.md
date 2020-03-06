@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/7/15 8:58:05 -->
+
 <!-- csdn -->
 
 在 InkCanvas.InkPresenter.StrokeInput 提供了 [StrokeStarted](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted ) 、[StrokeContinued](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokeinput.strokecontinued) 、[StrokeEnded](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokeinput.strokeended) 这些看名字就知道是干什么用的事件，通过这些事件可以在书写的过程拿到触摸事件或鼠标事件

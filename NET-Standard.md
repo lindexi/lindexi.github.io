@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/4/29 12:07:26 -->
+
 
 开始推荐微软的博客，[.NET Standard 中文转载](http://blog.csdn.net/wdeng2011/article/details/77035065 )和[英文原版](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/ )
 

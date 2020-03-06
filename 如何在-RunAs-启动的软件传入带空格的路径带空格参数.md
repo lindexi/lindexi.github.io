@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/2/6 11:52:14 -->
+
 <!-- 发布 -->
 
 用 runas 可以[以指定的权限启动一个进程（非管理员、管理员）](https://blog.walterlv.com/post/start-process-in-a-specific-trust-level.html ) 在传入参数如下

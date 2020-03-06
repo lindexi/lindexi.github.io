@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 在 dotnet 中有 Environment.FailFast 可以用来表示程序无法继续使用需要退出，这个方法和 Exit 不一样的是可以传入字符串
 

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/2/4 10:33:48 -->
+
 <!-- 发布 -->
 
 刚才[老司机](https://huchengv5.github.io/ )问我如何在 VisualStudio 打开[aspnetcore](https://github.com/dotnet/aspnetcore )源代码，因为这个项目用到了 dotnet 5 预览版，所以让没有安装 dotnet 5 预览版的小伙伴用不了
@@ -21,6 +23,10 @@ https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json
 ![](http://image.acmx.xyz/lindexi%2F201958214432905)
 
 如果现有在某个项目使用而不是全部使用请看 [VisualStudio 给项目添加特殊的 Nuget 的链接](https://blog.lindexi.com/post/VisualStudio-%E7%BB%99%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E7%89%B9%E6%AE%8A%E7%9A%84-Nuget-%E7%9A%84%E9%93%BE%E6%8E%A5.html )
+
+如果发现无法访问，可以到[csdn](https://download.csdn.net/download/lindexi_gd/12230985)下载，如果下载不了可以发邮件给我，我给你一个网盘链接。这是 .NET5 的 SDK 将合并.NET Framework和.NET Core为一个版本，这是一个预览版，大概可以用于正式环境了，用这个库可以构建 WPF 项目和 ASP.NET Core 等项目，虽然我不建议将预览版用于正式环境
+
+附此版本的下载链接，链接无效也不用告诉我 [https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.100-alpha1-015515/dotnet-sdk-5.0.100-alpha1-015515-win-x64.exe](https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.100-alpha1-015515/dotnet-sdk-5.0.100-alpha1-015515-win-x64.exe)
 
 
 

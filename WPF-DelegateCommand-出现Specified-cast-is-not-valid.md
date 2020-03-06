@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/2/13 17:23:03 -->
+
 
 最近写快捷键需要 DelegateCommand ，于是用了 `DelegateCommand<double> ` ，运行时出现 Specified cast is not valid 
 

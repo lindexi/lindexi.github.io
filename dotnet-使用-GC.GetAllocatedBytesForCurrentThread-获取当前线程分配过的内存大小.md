@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/5/21 11:33:18 -->
+
 <!-- 标签：C#,dotnet -->
 
 创建一个简单的控制台程序，在调用 GC.GetAllocatedBytesForCurrentThread 方法返回调用方法所在的线程的内存大小，代码请看[GetAllocatedBytesForCurrentThread](https://github.com/lindexi/lindexi_gd/tree/4470807a21a7ae2396d5bf9719ddcecc22f72e99/GetAllocatedBytesForCurrentThread )

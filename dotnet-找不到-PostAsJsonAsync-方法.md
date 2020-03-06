@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/9/19 14:53:58 -->
+
 <!-- csdn -->
 
 在新的版本，可以通过安装 [Microsoft.AspNet.WebApi.Client](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/) 这个库使用，支持 .NETFramework 4.5 和 .NETStandard 2.0 另外不要看这个库的命名空间包含了 AspNet 其实这个库就是一些扩展方法，没有引用任何 AspNet 代码

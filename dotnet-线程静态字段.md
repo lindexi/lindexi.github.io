@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 在 .NET 程序可以使用 ThreadStaticAttribute 特性标记在一个静态字段上，这样这个字段就可以做到在线程里面静态
 

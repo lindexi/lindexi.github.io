@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/7/4 9:28:57 -->
+
 <!-- csdn -->
 
 在 UWP 中有限制的功能，需要在 Package.appxmanifest 中开启，关于限制的功能请看[App capability declarations](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities )

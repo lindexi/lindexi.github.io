@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/2/24 17:17:27 -->
+
 <!-- 标签：asp,aspdotnetcore,dotnetcore -->
 
 我写过[dotnet core 通过 frp 发布自己的网站](https://blog.lindexi.com/post/dotnet-core-%E9%80%9A%E8%BF%87-frp-%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99.html)可以在本地运行自己的服务，然后在外网访问到

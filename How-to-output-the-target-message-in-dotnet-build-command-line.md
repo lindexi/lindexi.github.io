@@ -6,6 +6,8 @@ How can I output my target message when I using dotnet build in command line.
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 I use command line to create a web api application.
 

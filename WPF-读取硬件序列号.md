@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/8/3 11:08:02 -->
+
 <!-- csdn -->
 
 首先是安装 System.Management ，安装了这个库，在 dotnet framework 和 dotnet core 都可以使用本文的方法获取 PC 的序列号

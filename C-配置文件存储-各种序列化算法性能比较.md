@@ -8,6 +8,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/8/10 19:16:52 -->
+
 <div id="toc"></div>
 
 本文将会比较三个世界上最好的序列化算法，一个是 json 、一个是 ProtoBuf 、一个是 wire

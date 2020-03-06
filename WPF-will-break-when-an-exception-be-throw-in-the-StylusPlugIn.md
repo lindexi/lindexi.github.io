@@ -5,6 +5,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/10/7 12:21:19 -->
+
 <!-- csdn -->
 
 We can write a class that inherits the StylusPlugIn. And this class can get the touch event fast in stylus input thread in the overwrite method, such as `OnStylusDown` and the OnStylusUp method. The *Stylus Input* thread is backgroud thread. As we all know, any exception thrown in a background thread will destroy the application. We are hard to catch the background thread and recover this thread. Though we can use `AppDomain.CurrentDomain.UnhandledException` and add `<legacyUnhandledExceptionPolicy enabled="1"/> ` to app.config to catch it. 

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 引用 WshShell 不是在一个程序集，而是 Windows Script Host Object Model 一个 COM 组件，通过下面步骤可以引用
 

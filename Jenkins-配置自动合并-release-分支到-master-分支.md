@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/30 8:54:58 -->
+
 <!-- 标签：Jenkins -->
 
 首先需要两个仓库，一个是 gitlab 的仓库，另一个是 Jenkins 的仓库

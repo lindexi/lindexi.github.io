@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/8/13 15:33:05 -->
+
 
 首先需要通过 VisualStudio 创建 WPF 项目。因为  Microsoft.Toolkit.Win32.UI.Controls 库只支持 4.6.2 以上，所以需要选择框架大于 4.6.2 
 

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/6/24 14:41:29 -->
+
 <!-- 标签：dotnetremoting,rpc,wpf -->
 
 现在不会告诉大家如何使用 WCF ，下面讲的是使用 remoting 这个方法。需要知道 dotnet remoting 是已经过时的技术，建议使用 wcf 但是 wcf 部署难度比较高，对于性能要求比较高或想快速使用，建议使用 remoting 。使用方法很简单

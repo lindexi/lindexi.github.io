@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 在[让一个 csproj 项目指定多个开发框架 - walterlv](https://blog.walterlv.com/post/configure-projects-to-target-multiple-platforms.html )告诉大家如何在 sdk style 项目格式如何定义多框架开发，在使用多框架开发的时候，有时会使用到特定的平台框架提供的方法，此时就需要使用预定义的宏通过条件判断编译符号的方法，在不同的框架编译不同的代码
 

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/11/23 16:41:52 -->
+
 <!-- csdn -->
 
 在微软官方很少有文档说如何使用[Raw Input](https://docs.microsoft.com/en-us/windows/win32/inputdev/about-raw-input )不过我在 github 上找到小伙伴的 [rawinput-sharp: C# wrapper library for Raw Input](https://github.com/mfakane/rawinput-sharp ) 项目，简单通过 NuGet 安装就能使用

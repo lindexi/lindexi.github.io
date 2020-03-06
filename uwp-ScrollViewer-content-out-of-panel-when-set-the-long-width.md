@@ -6,6 +6,8 @@ I find a ununderstandable behavior in UWP. I make a content with a long width in
 <!--more-->
 
 
+<!-- CreateTime:2019/3/15 14:14:24 -->
+
 <!-- csdn -->
 
 I write a xaml with a ScrollViewer and a Grid. And than I set a content to ScrollViewer and the content is a long width Grid.

@@ -9,6 +9,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
 <!-- csdn -->
 
 出现这个错误是因为 app.xaml 的生成是 ApplicationDefinition ，所以可以右击项目的  app.xaml 文件，在属性生成选择 page

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/9/23 18:39:17 -->
+
 <!-- csdn -->
 
 默认的 ASP.NET Core 3.0 的 WebAPI 的 json 返回值的属性使用首字符小写的 CamelCase 属性名风格，可以通过在 ConfigureServices 方法配置让返回值属性使用其他风格

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 <!-- 标签：dotnet，dotnetcore,PowerShell -->
 
 本文提供的方法需要在 dotnet core 2.1 和以上的版本，对于 dotnet core 2.1 以下暂时只能通过命令行调用 PowerShell.exe 的方法调用

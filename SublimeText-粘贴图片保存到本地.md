@@ -7,6 +7,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/5/22 15:15:26 -->
+
 <!-- csdn -->
 
 首先需要下载代码，打开 https://github.com/dotnet-campus/imagepaste 然后下载代码，可以使用 git 的方式下载

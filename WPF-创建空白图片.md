@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/2/14 20:11:55 -->
+
 <!-- csdn -->
 
 可以使用 BitmapSource 的 Create 方法创建空白图片

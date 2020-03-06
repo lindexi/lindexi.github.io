@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/11/29 10:13:16 -->
+
 <div id="toc"></div>
 
 在 [C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html ) 已经告诉大家如何使用 BenchmarkDotNet 测试性能，本文会告诉大家高级的用法。

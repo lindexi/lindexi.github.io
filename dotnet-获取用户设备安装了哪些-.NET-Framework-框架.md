@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 在注册表的当前设备的 `SOFTWARE\Microsoft\NET Framework Setup\NDP\` 可以拿到在设备安装的 .NET Framework 版本
 

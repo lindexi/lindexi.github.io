@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/3/21 15:29:20 -->
+
 <!-- csdn -->
 
 通过创建 BitmapEncoder 的时候指定 BitmapPropertySet 可以设置图片的质量，只有对 JPG 格式才能设置图片质量

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/3/1 10:40:47 -->
+
 <!-- 发布 -->
 
 因为我的库本身也是作为可被引用的项目库发布的，在发布的时候我选择的库是多个平台的。多个平台的框架的写法请看 [让一个 csproj 项目指定多个开发框架 - walterlv](https://blog.walterlv.com/post/configure-projects-to-target-multiple-platforms.html )

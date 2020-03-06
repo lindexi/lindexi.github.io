@@ -7,6 +7,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/12/22 16:12:56 -->
+
 <!-- csdn -->
 
 首先通过 Nuget 安装 CalcBinding 库，注意 Nuget 的地址是 [https://api.nuget.org/v3/index.json](https://api.nuget.org/v3/index.json) 如果没有找到这个库就请复制链接点击更新，再输入 `CalcBinding` 寻找 

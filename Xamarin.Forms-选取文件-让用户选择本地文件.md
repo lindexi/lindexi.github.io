@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/2/23 16:43:08 -->
+
 <!-- 发布 -->
 
 在 Xamarin.Forms 右击管理 NuGet 程序包，搜寻 Xamarin.Plugin.FilePicker 进行安装，或在 csproj 上添加下面代码

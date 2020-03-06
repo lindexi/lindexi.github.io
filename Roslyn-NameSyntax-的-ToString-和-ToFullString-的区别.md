@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/11/19 15:22:23 -->
+
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
 从代码可以看到 NameSyntax 的 ToString 和 ToFullString 方法是调用 Green 的 ToString 和 ToFullString ，所以具体还需要进入 Green 看是如何写

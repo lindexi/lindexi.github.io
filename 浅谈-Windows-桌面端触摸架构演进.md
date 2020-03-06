@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/11/29 10:20:37 -->
+
 <!-- csdn -->
 
 所有触摸架构都建立在系统之上，和系统版本相关。所以可以通过系统划分。虽然说是触摸架构，但是我能知道的也就是应用层面的接口和编程方法，如果是小伙伴被标题吸引过来的，想看触摸架构，那么请左转官方的 [文档](https://docs.microsoft.com/en-us/windows/win32/wintouch/architectural-overview )

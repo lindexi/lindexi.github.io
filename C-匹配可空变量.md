@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 在 [C# 7.0](https://blog.lindexi.com/post/C-7.0.html) 的 is 转换是十分好用的功能，例如我写了一个 Foo 函数，支持将传入的参数转换
 

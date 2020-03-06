@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/11/29 8:47:53 -->
+
 <!-- csdn -->
 
 创建一个类继承 TouchDevice 然后重写 GetTouchPoint 和 GetIntermediateTouchPoints 方法，可以在这个类里面通过调用 ReportDown 等方法模拟触摸的按下和移动

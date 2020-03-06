@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:59 -->
+
 <!-- 标签：dotnet,C#,WMI -->
 
 通过 Win32_ComputerSystem 可以获取电脑系统信息

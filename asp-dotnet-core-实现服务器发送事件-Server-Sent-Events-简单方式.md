@@ -7,6 +7,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/1/6 18:17:58 -->
+
 <!-- csdn -->
 
 其实服务器发送事件 Server-Sent Events 原理就是在请求发送的 stream 设置 `Content-Type` 为 `text/event-stream` 然后不断写入数据就可以了

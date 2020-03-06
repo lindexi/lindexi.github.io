@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/8/10 19:16:50 -->
+
 <div id="toc"></div>
 
 .NET Framework 提供了两个序列化技术：

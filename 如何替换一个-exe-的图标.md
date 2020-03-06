@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/2/27 20:33:16 -->
+
 <!-- csdn -->
 
 通过[Resource Hacker](http://www.angusj.com/resourcehacker/ )可以简单修改一个 C++ 编译的 exe 的图标，如下图的程序

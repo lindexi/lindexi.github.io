@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/1/16 20:37:05 -->
+
 <!-- csdn -->
 
 在 UWP 的发布中，需要通过 ILC 将代码编译为 Native 代码，但是在发布的 Microsoft.NETCore.UniversalWindowsPlatform 的 6.2.2 或 6.2.3 版本会让 ILC 无法编译

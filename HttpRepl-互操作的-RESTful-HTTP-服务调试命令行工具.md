@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 最近 ASP.NET 团队创建了一个叫 [HttpRepl](https://github.com/aspnet/HttpRepl) 的命令行工具，通过这个命令行工具可以像访问文件或文件夹一样访问 HTTP 服务。通过在命令行给一个入口的地址，然后就可以执行 `dir` 和 `cd` 两个命令分别用于枚举和跳转的功能
 

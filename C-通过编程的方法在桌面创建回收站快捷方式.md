@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/11/29 8:30:35 -->
+
 
 在引用 Windows Script Host Object Model 这个 COM 方法之后可以使用下面代码在桌面创建 `Recycle Bin.lnk` 快捷方式，这个快捷方式可以打开回收站
 

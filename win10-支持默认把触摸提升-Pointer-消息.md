@@ -7,6 +7,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/11/9 15:32:31 -->
+
 <!-- 标签：WPF，触摸 -->
 
 只要新建框架为 .net 4.7 以上，运行的系统是`Windows 10 Creators Update` 就可以。

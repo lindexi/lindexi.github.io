@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/2/26 18:45:29 -->
+
 <!-- csdn -->
 
 点击 Preferences 的 Key bindings 打开编辑界面，打开之后可以看到一个 json 文件，这个文件就是所有可以可以使用的快捷键

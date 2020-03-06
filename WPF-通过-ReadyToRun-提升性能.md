@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/7/2 10:29:55 -->
+
 <!-- csdn -->
 
 在 .NET Core 3.0 Preview 6 发布了 ReadyToRun 的功能，通过这个功能可以提升软件的启动性能，在程序设置在发布的时候使用 ReadyToRun 的特性，将会编译出来 ReadyToRun（R2R）格式的程序集

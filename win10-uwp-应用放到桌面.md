@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2019/6/23 11:11:30 -->
+
 
 打开运行`win+R`，输入`shell:AppsFolder`打开应用安装文件夹
 

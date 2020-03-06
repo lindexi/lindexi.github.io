@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/2/13 17:23:03 -->
+
 
 需要知道，两个方法都是 Linq 的方法，使用之前需要引用 Linq 。对于 List 等都是继承可枚举`Enumerable`这时获取第一个元素可以使用`FirstOrDefault`。如果使用`Find`那么需要数组的类型是`IList`。
 

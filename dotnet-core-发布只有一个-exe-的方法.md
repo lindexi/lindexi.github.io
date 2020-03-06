@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/1/21 9:11:22 -->
+
 <!-- 标签：dotnet,dotnetcore -->
 
 使用非常简单，先和之前相同的方式发布一个 dotnet core 程序，记得需要使用 `--self-contained` 发布

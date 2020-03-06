@@ -8,6 +8,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/8/10 19:16:50 -->
+
 <!-- 标签：uwp，win2d -->
 
 毛玻璃可以使用 win2D  方法，也可以使用 Compositor 。

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/1/20 21:12:07 -->
+
 <!-- 标签：Avalonia,Roslyn，dotnetcore -->
 
 最近在使用 Avalonia 开发，这是一个支持 dotnet framework 和 dotnet core 的框架，在开发的过程发现启动的窗口居然会出现控制台窗口。

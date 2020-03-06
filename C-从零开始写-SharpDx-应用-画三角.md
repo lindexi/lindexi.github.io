@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2018/9/30 18:30:14 -->
+
 <!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D,渲染 -->
 <div id="toc"></div>
 
