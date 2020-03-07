@@ -113,7 +113,7 @@ regsvr32 项目名.comhost.dll
 
 创建接口就可以使用方法
 
-[Exposing .NET Core Components to COM | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/native-interop/expose-components-to-com )
+[Exposing .NET Core Components to COM](https://docs.microsoft.com/en-us/dotnet/core/native-interop/expose-components-to-com )
 
 源代码请看 [github](https://github.com/lindexi/lindexi_gd/tree/de3c493051f15be07c4327e797d081c6869c6f93/BearqalkeawaiKaleenemcemfo) 和 [官方源代码](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo) 
 
