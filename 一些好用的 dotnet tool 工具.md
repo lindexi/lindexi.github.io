@@ -4,7 +4,7 @@
 
 <!--more-->
 <!-- CreateTime:2020/3/5 21:24:30 -->
-
+<!-- 不发布 -->
 
 - dotnetCampus.UpdateAllDotNetTools 一句命令更新所有 dotnet tool 到最新版本 
 - dotnet-serve 一句命令开启文件服务器

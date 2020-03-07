@@ -11,6 +11,8 @@
 
 在开始之前，我推荐你先安装好 VisualStudio 工具，在 VisualStudio 2019 的帮助下，能够快速简单进行打包和发布
 
+<div id="toc"></div>
+
 ## 如何打包 dotnet tool 工具
 
 其实 dotnet tool 工具没有任何黑科技，原理就是用 dotnet tool install 命令，这个命令将会通过后续传入的包的 id 从 NuGet 上寻找这个工具，下载到本地。此时要求工具本身不需要做安装包等类似的部署，而是直接复制文件过来就能使用的工具
