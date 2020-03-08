@@ -3,6 +3,8 @@
 本文记录 D3Dcompiler_47 丢失问题，在安装 KB4040973 KB3178034 完成的 win7 系统可能出现 D3Dcompiler_47 丢失，让 WPF 等软件无法启动
 
 <!--more-->
+<!-- CreateTime:2019/11/29 8:22:10 -->
+
 <!-- csdn -->
 <div id="toc"></div>
 

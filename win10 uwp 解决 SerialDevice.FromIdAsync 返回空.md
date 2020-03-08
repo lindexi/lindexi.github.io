@@ -1,6 +1,8 @@
 # win10 uwp 解决 SerialDevice.FromIdAsync 返回空
 
 <!--more-->
+<!-- CreateTime:2019/6/23 11:54:04 -->
+
 
 调用 SerialDevice.FromIdAsync 可能返回空，因为没有设置 package.appmanifest 可以使用端口
 

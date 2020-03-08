@@ -5,6 +5,8 @@
 本文继续使用图床为例告诉大家如何使用 Azure DevOps 自动构建
 
 <!--more-->
+<!-- CreateTime:2018/11/19 15:26:04 -->
+
 
 <!-- 标签：uwp,DevOps,AzureDevOps -->
 

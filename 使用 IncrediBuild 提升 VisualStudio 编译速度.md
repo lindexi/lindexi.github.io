@@ -3,6 +3,8 @@
 我现在有一个 100M 的代码，需要快速去编译他，我寻找了很多方法，本文记录我找到的 IncrediBuild 用于提交编译速度。
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:51 -->
+
 <div id="toc"></div>
 <!-- 标签：VisualStudio，软件 -->
 

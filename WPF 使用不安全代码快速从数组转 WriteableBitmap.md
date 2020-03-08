@@ -3,6 +3,8 @@
 本文告诉大家一个快速的方法，直接把数组转 WriteableBitmap 
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
 <!-- csdn -->
 
 先来说下以前的方法，以前使用的是 BitmapSource ，这个方法是大法官方提供的。

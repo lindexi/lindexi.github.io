@@ -3,6 +3,8 @@
 本文告诉大家，编译为 AnyCpu 和 AnyCPU（Prefer 32-bit）和 x86 有什么区别
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
 <!-- csdn -->
 
 ## x86

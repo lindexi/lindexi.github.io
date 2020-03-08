@@ -3,6 +3,8 @@
 在 dotnet core 3.0 支持将库导出为COM组件，本文告诉大家如何将代码导出为 COM 组件
 
 <!--more-->
+<!-- CreateTime:2019/9/22 20:25:38 -->
+
 <!-- csdn -->
 
 在导出 COM 组件的库，需要一个 GUID 声明这个 COM 接口
@@ -111,7 +113,7 @@ regsvr32 项目名.comhost.dll
 
 创建接口就可以使用方法
 
-[Exposing .NET Core Components to COM | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/native-interop/expose-components-to-com )
+[Exposing .NET Core Components to COM](https://docs.microsoft.com/en-us/dotnet/core/native-interop/expose-components-to-com )
 
 源代码请看 [github](https://github.com/lindexi/lindexi_gd/tree/de3c493051f15be07c4327e797d081c6869c6f93/BearqalkeawaiKaleenemcemfo) 和 [官方源代码](https://github.com/dotnet/samples/tree/master/core/extensions/COMServerDemo) 
 

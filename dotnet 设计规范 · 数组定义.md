@@ -3,6 +3,8 @@
 本文告诉大家数组定义需要知道的规范，本文翻译 [docs  dotnet](https://github.com/dotnet/docs/blob/master/docs/standard/design-guidelines/arrays.md )
 
 <!--more-->
+<!-- CreateTime:2018/7/9 14:26:48 -->
+
 <!-- 标签：设计规范，规范 -->
 
 ✓ 建议在公开的 API 使用集合而不是数组。集合可以提供更多的信息。

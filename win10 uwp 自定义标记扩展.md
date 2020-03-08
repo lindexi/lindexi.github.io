@@ -3,6 +3,8 @@
 在 UWP 使用的 Binding 或 StaticResource 这些都是标记扩展，在 Windows 10 Fall Creators Update 版本号是 10.0.16299.0 和以上支持在 UWP 自定义标记扩展，也就是定义了一个可以在 xaml 使用的标记的方法
 
 <!--more-->
+<!-- CreateTime:2019/4/10 9:46:13 -->
+
 <!-- csdn -->
 
 定义一个标记扩展需要满足下面条件

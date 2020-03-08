@@ -3,6 +3,8 @@
 本文告诉大家如何通过修改 ItemContainerStyle 让 ListView 或 ListBox 的选择效果如鼠标移动到未选中项的效果或选择项的背景
 
 <!--more-->
+<!-- CreateTime:2018/12/1 8:18:33 -->
+
 <!-- csdn -->
 
 先写一些简单的代码用于界面的绑定

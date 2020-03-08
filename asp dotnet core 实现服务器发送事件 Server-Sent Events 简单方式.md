@@ -5,6 +5,8 @@
 这是一个简陋的开发端的工具，开源的好处就是，你觉得不爽，自己改哇。自己改不动就等开发者下班协助啦，本文就使用一个简单的方式在 asp dotnet core 实现服务器发送事件。虽然标题是 asp dotnet core 而实际上我的软件是一个桌面端软件
 
 <!--more-->
+<!-- CreateTime:2020/1/6 18:17:58 -->
+
 <!-- csdn -->
 
 其实服务器发送事件 Server-Sent Events 原理就是在请求发送的 stream 设置 `Content-Type` 为 `text/event-stream` 然后不断写入数据就可以了

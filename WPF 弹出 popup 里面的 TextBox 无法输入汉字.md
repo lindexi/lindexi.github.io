@@ -3,6 +3,8 @@
 这是一个 wpf 的bug，在弹出Popup之后，如果 Popup 里面有 TextBox ，这时无法在里面输入文字。
 
 <!--more-->
+<!-- CreateTime:2018/12/21 18:10:30 -->
+
 <!-- csdn -->
 
 因为 Popup 的句柄具有 WS_EX_NOACTIVATE 的特性，所以 Popup 是无法获得焦点。在微软的系统，所有的窗口、控件都是有句柄，句柄就是一个指针，获得他才知道是哪个控件。

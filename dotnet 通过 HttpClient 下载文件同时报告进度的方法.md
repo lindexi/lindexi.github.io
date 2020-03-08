@@ -3,6 +3,8 @@
 本文告诉大家一个简单的方法通过 HttpClient 下载文件，同时报告下载进度
 
 <!--more-->
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 
 通过 HttpClient 的 ContentLength 很多时候都可以拿到下载的内容的长度，通过 ReadAsync 可以返回当前读到的长度，将读取到的长度加起来就是已经下载的长度
 

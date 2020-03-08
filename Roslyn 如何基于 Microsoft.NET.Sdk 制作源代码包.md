@@ -3,6 +3,8 @@
 本文告诉大家如何做源代码包，源代码包的意思是安装的包不是安装dll的方式，而是使用源代码的方式。也就是最后是编译包的源代码而不是添加dll，这个方式是解决想要把项目分小，功能分细，但是不希望项目有很多的 dll，因为如果项目有很多 dll 会让软件打开的时间比较长
 
 <!--more-->
+<!-- CreateTime:2020/2/29 10:58:20 -->
+
 <!-- csdn -->
 <div id="toc"></div>
 <!-- 标签：Roslyn,MSBuild,编译器 -->
@@ -327,6 +329,8 @@ namespace lindexi
 这里 xxx.csproj.nuget.g.targets 的 xxx 就是项目名，注意此时不能使用 `$(MSBuildProjectName)` 代替项目名，因为在编译过程是 `xxx_一段我看不懂的字符_wpftmp.csproj` 而不是直接的 `xxx` 项目
 
 也就是 `$(MSBuildProjectName).csproj.nuget.g.targets)` 是不对的，因为 `$(MSBuildProjectName)` 是延迟计算，在 Import 还没有计算出来值
+
+当然我不会让大家从零开始打包，我开源 [dotnet-campus/SourceYard](https://github.com/dotnet-campus/SourceYard ) 可以将项目的源代码打包为 NuGet 包，使用非常方便，只需要在项目里面安装 SourceYard 库，然后重新打包就可以看到创建了 xx.Source.nupkg 包含源代码的库
 
 [MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://walterlv.com/post/problems-of-msbuild-and-nuget.html )
 

@@ -3,6 +3,8 @@
 本文：如何自定义控件用 DrawingVisual 画图
 
 <!--more-->
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
 <!-- csdn -->
 
 本文不会讲 DrawingVisual 是什么，只会告诉简单方法画图。

@@ -3,6 +3,8 @@
 本文告诉大家如何写出描边的字体
 
 <!--more-->
+<!-- CreateTime:2019/1/24 19:47:18 -->
+
 <!-- csdn -->
 
 在WPF如果需要写入描边需要使用 FormattedText 将文字转换为 Geometry 然后通过画出 Geometry 的边框和填充画出描边

@@ -5,6 +5,8 @@ Now we are making a solution that has to get the package reference. But the vers
 This post will tell you how to parse the version range string to reference version.
 
 <!--more-->
+<!-- CreateTime:2019/8/31 16:55:58 -->
+
 <!-- 标签：C# ，dotnetcore -->
 
 The format for reference version is like this

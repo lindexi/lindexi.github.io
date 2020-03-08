@@ -3,6 +3,8 @@
 本文告诉大家如何在 PowerShell 通过 WMI 拿到显卡信息
 
 <!--more-->
+<!-- CreateTime:2019/7/29 10:03:35 -->
+
 
 在 PowerShell 可以使用下面代码拿到显卡的信息
 
