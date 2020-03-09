@@ -3,6 +3,8 @@
 其实这两篇博客我都写过，但是放在一起方便我新建项目的时候复制代码。在 GitHub 的首页上，很多开源项目都会写出当前构建是通过还是不通过，如果是提供 NuGet 包的还添加 NuGet 版本图标
 
 <!--more-->
+<!-- CreateTime:2020/3/9 9:48:05 -->
+
 <!-- 发布 -->
 
 我推荐在 Github 上使用 Action 构建，此时可以通过 [Github 添加 Action 编译图标](https://blog.lindexi.com/post/Github-%E6%B7%BB%E5%8A%A0-Action-%E7%BC%96%E8%AF%91%E5%9B%BE%E6%A0%87.html) 这个方法添加构建图标
