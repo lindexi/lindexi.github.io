@@ -1576,6 +1576,8 @@
 
  * [WPF 读取硬件序列号](WPF-读取硬件序列号.md)
 
+ * [WPF 调用 InvalidateVisual 不触发 OnRender 的原因](WPF-调用-InvalidateVisual-不触发-OnRender-的原因.md)
+
  * [WPF 调试 获得追踪输出](WPF-调试-获得追踪输出.md)
 
  * [WPF 资源冻结](WPF-资源冻结.md)
