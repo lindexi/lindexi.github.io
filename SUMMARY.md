@@ -964,6 +964,8 @@
 
  * [win10 uwp 如何拖动一个TextBlock的文字到另一个TextBlock ](win10-uwp-如何拖动一个TextBlock的文字到另一个TextBlock-.md)
 
+ * [win10 uwp 如何给 DropDownButton 一个很小的宽度](win10-uwp-如何给-DropDownButton-一个很小的宽度.md)
+
  * [win10 uwp 如何自定义 RichTextBlock 右键菜单](win10-uwp-如何自定义-RichTextBlock-右键菜单.md)
 
  * [win10 uwp 如何让 Page 继承泛型类](win10-uwp-如何让-Page-继承泛型类.md)
