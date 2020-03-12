@@ -350,6 +350,8 @@
 
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
 
+ * [dotnet 入门到放弃 使用 .NET Core 卸载工具](dotnet-入门到放弃-使用-.NET-Core-卸载工具.md)
+
  * [dotnet 列表 Linq 的 Take 用法](dotnet-列表-Linq-的-Take-用法.md)
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
