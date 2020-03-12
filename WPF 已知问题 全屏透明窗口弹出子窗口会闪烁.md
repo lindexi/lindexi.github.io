@@ -3,6 +3,8 @@
 在 WPF 中通过设置 WindowStyle 为 None 以及 WindowState 为 Maximized 进入全屏，同时设置 AllowsTransparency 支持透明，此时弹出一个设置 WindowStyle 是 None 的子窗口，用 VisualStudio 2019 运行将会看到 子窗口 先显示出来，然后回到主窗口下面，然后再显示到主窗口上面
 
 <!--more-->
+<!-- CreateTime:2020/3/12 8:32:20 -->
+
 <!-- 发布 -->
 
 其实此问题我没有复现
