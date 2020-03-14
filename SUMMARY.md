@@ -48,6 +48,8 @@
 
  * [C# dotnet 使用 OpenXml 解析 PPT 文件](C-dotnet-使用-OpenXml-解析-PPT-文件.md)
 
+ * [C# dotnet 使用 OpenXml 解析 PPT 里面的视频](C-dotnet-使用-OpenXml-解析-PPT-里面的视频.md)
+
  * [C# dotnet 线程不安全的弱引用缓存](C-dotnet-线程不安全的弱引用缓存.md)
 
  * [C# dotnet 获取整个局域网的 ip 地址](C-dotnet-获取整个局域网的-ip-地址.md)
@@ -1483,6 +1485,8 @@
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
+
+ * [WPF 打包为 UWP 应用构建失败 MSB3270 不匹配 AMD64 架构](WPF-打包为-UWP-应用构建失败-MSB3270-不匹配-AMD64-架构.md)
 
  * [WPF 托盘显示](WPF-托盘显示.md)
 
