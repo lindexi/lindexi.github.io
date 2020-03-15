@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/3/13 11:06:33 -->
+
 <!-- 发布 -->
 
 在我使用下面命令打包的时候，如果我将 `Platform` 设置为 x86 那么什么问题都没有，如果我设置为 x64 就会发现构建失败，请看 [https://github.com/dotnet-campus/TranslationTool/runs/504702520?check_suite_focus=true](https://github.com/dotnet-campus/TranslationTool/runs/504702520?check_suite_focus=true)

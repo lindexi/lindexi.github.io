@@ -68,6 +68,10 @@ MinWidth-MinimumWidthRequest
         }
 ```
 
+[UI 控件比较 - Xamarin](https://docs.microsoft.com/zh-cn/xamarin/cross-platform/desktop/controls/ )
+
+[WPF 与 Xamarin：相似性 & 差异 - Xamarin](https://docs.microsoft.com/zh-cn/xamarin/cross-platform/desktop/controls/wpf )
+
 
 
 

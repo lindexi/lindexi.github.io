@@ -50,6 +50,8 @@
 
  * [C# dotnet 使用 OpenXml 解析 PPT 里面的视频](C-dotnet-使用-OpenXml-解析-PPT-里面的视频.md)
 
+ * [C# dotnet 将 Stream 保存到文件的方法](C-dotnet-将-Stream-保存到文件的方法.md)
+
  * [C# dotnet 线程不安全的弱引用缓存](C-dotnet-线程不安全的弱引用缓存.md)
 
  * [C# dotnet 获取整个局域网的 ip 地址](C-dotnet-获取整个局域网的-ip-地址.md)
