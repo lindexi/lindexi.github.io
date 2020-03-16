@@ -274,6 +274,8 @@
 
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
 
+ * [dotnet core 使用 ef 迁移常见问题](dotnet-core-使用-ef-迁移常见问题.md)
+
  * [dotnet core 使用 GBK 编码](dotnet-core-使用-GBK-编码.md)
 
  * [dotnet core 使用 PowerShell 脚本](dotnet-core-使用-PowerShell-脚本.md)
@@ -749,8 +751,6 @@
  * [VisualStudio 开启仅我代码调试](VisualStudio-开启仅我代码调试.md)
 
  * [VisualStudio 快速设置启动项目](VisualStudio-快速设置启动项目.md)
-
- * [VisualStudio 打断点和不打断点的区别](VisualStudio-打断点和不打断点的区别.md)
 
  * [VisualStudio 扩展开发 添加菜单](VisualStudio-扩展开发-添加菜单.md)
 
@@ -1581,6 +1581,8 @@
  * [WPF 解决弹出模态窗口关闭后，主窗口不在最前](WPF-解决弹出模态窗口关闭后，主窗口不在最前.md)
 
  * [WPF 触摸到事件](WPF-触摸到事件.md)
+
+ * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
 
  * [WPF 设置管理员权限启动](WPF-设置管理员权限启动.md)
 

@@ -26,7 +26,9 @@ https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json
 
 如果发现无法访问，可以到[csdn](https://download.csdn.net/download/lindexi_gd/12230985)下载，如果下载不了可以发邮件给我，我给你一个网盘链接。这是 .NET5 的 SDK 将合并.NET Framework和.NET Core为一个版本，这是一个预览版，大概可以用于正式环境了，用这个库可以构建 WPF 项目和 ASP.NET Core 等项目，虽然我不建议将预览版用于正式环境
 
-附此版本的下载链接，链接无效也不用告诉我 [https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.100-alpha1-015515/dotnet-sdk-5.0.100-alpha1-015515-win-x64.exe](https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.100-alpha1-015515/dotnet-sdk-5.0.100-alpha1-015515-win-x64.exe)
+附此版本的下载链接 [https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.100-alpha1-015515/dotnet-sdk-5.0.100-alpha1-015515-win-x64.exe](https://dotnetcli.azureedge.net/dotnet/Sdk/5.0.100-alpha1-015515/dotnet-sdk-5.0.100-alpha1-015515-win-x64.exe)
+
+上面链接如果无法下载，请到 [CSDN](https://download.csdn.net/download/lindexi_gd/12230985 ) 下载
 
 
 
