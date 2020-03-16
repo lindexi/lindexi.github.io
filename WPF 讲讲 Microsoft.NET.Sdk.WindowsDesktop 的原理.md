@@ -3,6 +3,8 @@
 在使用 .NET Core 3.0 和以上版本，可以使用新的 SDK 版本支持的 csproj 项目文件，这个 SDK 格式的项目文件可以支持 .NET Core 以及 .NET Framework 版本的 WPF 核心就是在 csproj 项目的第一句话。本文就来和大家聊这个 Microsoft.NET.Sdk.WindowsDesktop 的原理
 
 <!--more-->
+<!-- CreateTime:2020/3/16 8:31:10 -->
+
 <!-- 发布 -->
 
 现在 WPF 开源了，换句话说，遇到问题自己改代码也是可以的。或者说自己看代码也是很棒的
@@ -118,6 +120,10 @@
 
 移除重复的页面引用，需要移除页面里面引用的 `@(Resource);@(Content)` 的内容，大多数的资源和内容都不是 .xaml 格式的，而有一部分是声明为 Content 的 xaml 这些就是需要移除的。接下来就是移除 ApplicationDefinition 的内容，这个 xaml 是用来应用定义，如果没有移除 PresentationBuildTasks 将会构建这个文件两次，引用这个 xaml 的自动生成代码两次
 
-接下来是一个 Target 用来提示构建项重复，核心是用到 CheckForDuplicateItems 这个 Task 做的逻辑，关于 Task 的使用和定义请看 
+接下来是一个 Target 用来提示构建项重复，核心是用到 CheckForDuplicateItems 这个 Task 做的逻辑，关于 Task 的使用和定义请看 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - walterlv](https://blog.walterlv.com/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html )
+
+最后一部分就是 NetSdkWarning 用来提示版本警告
+
+更多请看 [理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](https://blog.walterlv.com/post/understand-the-csproj.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
