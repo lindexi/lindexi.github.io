@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/3/16 8:31:10 -->
+
 <!-- 发布 -->
 
 现在 WPF 开源了，换句话说，遇到问题自己改代码也是可以的。或者说自己看代码也是很棒的
@@ -121,7 +123,11 @@
 
 移除重复的页面引用，需要移除页面里面引用的 `@(Resource);@(Content)` 的内容，大多数的资源和内容都不是 .xaml 格式的，而有一部分是声明为 Content 的 xaml 这些就是需要移除的。接下来就是移除 ApplicationDefinition 的内容，这个 xaml 是用来应用定义，如果没有移除 PresentationBuildTasks 将会构建这个文件两次，引用这个 xaml 的自动生成代码两次
 
-接下来是一个 Target 用来提示构建项重复，核心是用到 CheckForDuplicateItems 这个 Task 做的逻辑，关于 Task 的使用和定义请看 
+接下来是一个 Target 用来提示构建项重复，核心是用到 CheckForDuplicateItems 这个 Task 做的逻辑，关于 Task 的使用和定义请看 [如何创建一个基于 MSBuild Task 的跨平台的 NuGet 工具包 - walterlv](https://blog.walterlv.com/post/create-a-cross-platform-msbuild-task-based-nuget-tool.html )
+
+最后一部分就是 NetSdkWarning 用来提示版本警告
+
+更多请看 [理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](https://blog.walterlv.com/post/understand-the-csproj.html )
 
 
 
