@@ -3,6 +3,8 @@
 在阅读本文之前，我期望你能了解基础的 PPT 解析内容，或看我的入门级博客。本文将告诉大家如何从 PPT 里面解析出通用元素的 x 和 y 的值，以及元素的宽度和高度的值
 
 <!--more-->
+<!-- CreateTime:2020/3/16 16:35:42 -->
+
 <!-- 发布 -->
 
 在开始之前请看 [C# dotnet 使用 OpenXml 解析 PPT 文件](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E4%BB%B6.html) 在拿到 slidePart.Slide.CommonSlideData.ShapeTree 里面的元素，几乎所有元素都存在坐标和宽度高度，这里的元素我称为通用元素，也就是不是特定的如形状、图片元素
