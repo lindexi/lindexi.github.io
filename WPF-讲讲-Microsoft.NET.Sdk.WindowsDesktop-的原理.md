@@ -127,6 +127,8 @@
 
 最后一部分就是 NetSdkWarning 用来提示版本警告
 
+通过了解 Microsoft.NET.Sdk.WindowsDesktop 的原理可以知道，可以通过自己设置 ApplicationDefinition 和 Page 内容再加上 引用框架 就可以不引用 SDK 使用 Microsoft.NET.Sdk 创建 WPF 项目，详细请看 [从以前的项目格式迁移到 VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
+
 更多请看 [理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](https://blog.walterlv.com/post/understand-the-csproj.html )
 
 
