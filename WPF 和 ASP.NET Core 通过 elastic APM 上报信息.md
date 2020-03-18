@@ -3,6 +3,8 @@
 我的运维小伙伴搭建了 elastic 平台，我有一个 ASP.NET Core 后台和一个 WPF 客户端，我想要让这两个应用的数据都上报，可以使用 Elastic.Apm 库上报
 
 <!--more-->
+<!-- CreateTime:2020/3/17 18:43:42 -->
+
 <!-- 发布 -->
 
 先使用 ASP.NET Core 为例子，本文不包含任何 elastic 服务器搭建
