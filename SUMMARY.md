@@ -106,6 +106,8 @@
 
  * [C# 匹配可空变量](C-匹配可空变量.md)
 
+ * [C# 反射判断属性是抽象继承](C-反射判断属性是抽象继承.md)
+
  * [C# 使用反射获取私有属性的方法](C-使用反射获取私有属性的方法.md)
 
  * [C# 反射调用私有事件](C-反射调用私有事件.md)
@@ -627,6 +629,8 @@
  * [Roslyn 如何在 Target 引用 xaml 防止文件没有编译](Roslyn-如何在-Target-引用-xaml-防止文件没有编译.md)
 
  * [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](Roslyn-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
+
+ * [Roslyn 如何给每个平台设置 PlatformTarget 属性](Roslyn-如何给每个平台设置-PlatformTarget-属性.md)
 
  * [Roslyn 如何获得一个类的引用](Roslyn-如何获得一个类的引用.md)
 
