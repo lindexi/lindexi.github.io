@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/3/17 19:23:02 -->
+
 <!-- 发布 -->
 
 在 C# 中可以方便通过反射拿到一个类里面的所有属性，在阅读本文之前，我期望你先看 [win10 uwp 反射](https://blog.lindexi.com/post/win10-uwp-%E5%8F%8D%E5%B0%84.html)
