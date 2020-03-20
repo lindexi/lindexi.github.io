@@ -99,9 +99,6 @@ If you use csharp language version lower than 7.0, please remove the readonly ke
             Value = value;
         }
 
-        /// <summary>
-        /// 像素点的值
-        /// </summary>
         public double Value { get; }
     }
 ```
@@ -114,6 +111,14 @@ This is the code for converting different units of OpenXML
     public static class UnitConverter
     {
         public const double DefaultDpi = 96;
+
+        #region Pixel
+
+        public static Pixel ToPixel(this Inch inch) => inch.ToEmu().ToPixel();
+
+        public static Inch ToInch(this Pixel pixel) => pixel.ToEmu().ToInch();
+
+        #endregion
 
         #region Dxa
 

@@ -7,6 +7,10 @@
 
 <!-- 发布 -->
 
+最新预览版官方开放下载，请到 [Download .NET Core 官网](https://dotnet.microsoft.com/download/dotnet-core ) 下载
+
+关于 dotnet 5添加了什么功能，请看 [【翻译】.NET 5 Preview 1 发布 - HueiFeng - 博客园](https://www.cnblogs.com/yyfh/p/12508844.html )
+
 刚才[老司机](https://huchengv5.github.io/ )问我如何在 VisualStudio 打开[aspnetcore](https://github.com/dotnet/aspnetcore )源代码，因为这个项目用到了 dotnet 5 预览版，所以让没有安装 dotnet 5 预览版的小伙伴用不了
 
 打开 VisualStudio 的 NuGet 包设置，添加一个源

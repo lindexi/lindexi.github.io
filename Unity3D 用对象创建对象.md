@@ -3,6 +3,8 @@
 在 Unity3d 中会用到从一个游戏对象复制出一个新的游戏物体的方式，如制作射击游戏的子弹等。在 Unity3d 中可以使用 GameObject.Instantiate 的方式从一个 GameObject 里面创建一个和这个 GameObject 一样的对象
 
 <!--more-->
+<!-- CreateTime:2020/3/18 8:19:25 -->
+
 <!-- 发布 -->
 
 一般此时游戏对象都是使用模板对象，在 Unity3d 里面制作一个模板是十分简单的，只需要在 Hierarchy 里面的物体拖动放到 Assets 文件夹里面就可以了
