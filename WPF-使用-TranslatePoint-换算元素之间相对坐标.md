@@ -43,6 +43,8 @@
 
 本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/502e65befeee340520968976b023cf9b8b4b70a9/JeelifuwheChaykicinelniyearje)欢迎小伙伴访问
 
+更多请看 [WPF使用TransformToAncestor获取元素的相对坐标_网络_sinat_31608641的博客-CSDN博客](https://blog.csdn.net/sinat_31608641/article/details/89631824 )
+
 
 
 
