@@ -58,6 +58,8 @@
 
  * [C# dotnet 获取整个局域网的 ip 地址](C-dotnet-获取整个局域网的-ip-地址.md)
 
+ * [C# dotnet 高性能多线程工具 AsyncAutoResetEvent 异步等待使用方法和原理](C-dotnet-高性能多线程工具-AsyncAutoResetEvent-异步等待使用方法和原理.md)
+
  * [C# double 好用的扩展](C-double-好用的扩展.md)
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
