@@ -3,6 +3,8 @@
 在 C# 里面配合 dotnet 的 Task 可以作出 AsyncAutoResetEvent 高性能多线程工具，从命名可以看到 AsyncAutoResetEvent 的意思就是支持异步的自动线程等待事件，用于多线程竞争访问执行权，可以用在消费队列或用在限制有限线程执行的业务上
 
 <!--more-->
+<!-- CreateTime:2020/3/21 14:15:17 -->
+
 <!-- 发布 -->
 
 和框架自带的 [AutoResetEvent 类](https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.autoresetevent?view=netframework-4.8 ) 一样的作用，表示线程同步事件在一个等待线程释放后收到信号时自动重置
@@ -157,6 +159,16 @@ asyncAutoResetEvent.Set();
     }
 ```
 
-源代码请看 https://github.com/dotnet-campus/AsyncWorkerCollection/blob/480ba1159289eebf0e08996f866a4fa832099f4b/AsyncWorkerCollection/AsyncAutoResetEvent.cs#
+源代码请看 [https://github.com/dotnet-campus/AsyncWorkerCollection/blob/480ba1159289eebf0e08996f866a4fa832099f4b/AsyncWorkerCollection/AsyncAutoResetEvent.cs](https://github.com/dotnet-campus/AsyncWorkerCollection/blob/480ba1159289eebf0e08996f866a4fa832099f4b/AsyncWorkerCollection/AsyncAutoResetEvent.cs)
+
+## 测试
+
+此库其实在我的几个项目里面经过了一年的测试，大概在100w台设备上运行过，没有翻车
+
+这样的库实际上单元测试作用不大……
+
+## 感谢
+
+此库 [dotnet-campus/AsyncWorkerCollection: 多线程异步工具](https://github.com/dotnet-campus/AsyncWorkerCollection ) 由多线程砖家[头像](https://xinyuehtx.github.io/ ) 用了一年的时间写的，因为自己业务使用也许没有测试出坑，于是开源出来，请小伙伴协助测试
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
