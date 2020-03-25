@@ -296,6 +296,8 @@
 
  * [dotnet core 导出 COM 组件](dotnet-core-导出-COM-组件.md)
 
+ * [dotnet core 打包构建提示 MSB3024 可能的原因](dotnet-core-打包构建提示-MSB3024-可能的原因.md)
+
  * [dotnet core 添加 SublimeText 编译插件](dotnet-core-添加-SublimeText-编译插件.md)
 
  * [dotnet core 用值初始化整个数组](dotnet-core-用值初始化整个数组.md)
