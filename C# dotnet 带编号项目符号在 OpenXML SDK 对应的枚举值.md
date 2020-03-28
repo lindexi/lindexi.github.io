@@ -3,6 +3,8 @@
 本文告诉大家在 OpenXML SDK 里面文本框的文本带自动编号的项目符号，不同的编号在 OpenXML SDK 上的枚举值
 
 <!--more-->
+<!-- CreateTime:2020/3/26 17:08:16 -->
+
 <!-- 发布 -->
 
 在 OpenXML SDK 使用 [TextAutoNumberSchemeValues](https://docs.microsoft.com/zh-cn/dotnet/api/documentformat.openxml.drawing.textautonumberschemevalues) 枚举表示自动编号的项目符号使用的自动编号是哪个
