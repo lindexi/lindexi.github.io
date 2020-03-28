@@ -146,6 +146,7 @@ Module.mono_bind_static_method("[Example] YadernawcoLofeleabe.Example:Hello");
 			init: function () 
 			{
 				that.execute = Module.mono_bind_static_method("[Example] YadernawcoLofeleabe.Example:Hello");
+                
 				that.output = document.getElementById("output");
 				that.button = document.getElementById("button");
 

@@ -46,6 +46,8 @@
 
  * [C# dotnet core 局域网组播方法](C-dotnet-core-局域网组播方法.md)
 
+ * [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](C-dotnet-WPF-使用-OpenXml-解析-Excel-文件.md)
+
  * [C# dotnet 使用 OpenXml 解析 PPT 元素的坐标和宽度高度](C-dotnet-使用-OpenXml-解析-PPT-元素的坐标和宽度高度.md)
 
  * [C# dotnet 使用 OpenXml 解析 PPT 文件](C-dotnet-使用-OpenXml-解析-PPT-文件.md)
