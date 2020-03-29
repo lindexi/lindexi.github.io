@@ -1,92 +1,163 @@
 
 # win10 uwp smms图床
 
-本文，如何使用smms图床上传图片，用到win10 uwp post文件，因为我是渣渣，如果本文有错的，请和我说，在本文评论，或发给我邮箱，请不要发不良言论
+本文告诉大家如何在 UWP 中使用 sm.ms 图床服务上传图片，获取图片外链
 
 <!--more-->
 
 
 <!-- CreateTime:2018/2/13 17:23:03 -->
 
-
 <div id="toc"></div>
 
-找到一个很好的图床，sm.ms
+和之前不一样的是，现在的 sm.ms 网站是需要注册才能获取对应的 Api Key 进行上传图片
 
-可以简单使用post上传文件，我就做了一个工具，可以把图片上传，使用只需要
+## 注册账号
 
-```csharp
-            //传入文件
-            smms.Model.Imageshack imageshack = new Imageshack()
-            {
-                File=File,
-            };
-            //上传完成事件，其中str为sm.ms返回，一般为json
-            //Reminder是例子，可以根据具体修改，注意要同步CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync
-            imageshack.OnUploadedEventHandler += (sender, str) => Reminder = str.Replace("\\/","/");
-            //上传
-            imageshack.UpLoad();
-```
+打开 [https://sm.ms/](https://sm.ms/) 点击右上角的注册按钮，注册步骤我就省略了
 
-我将会把我做的发现的和大家说
+注册之后有免费的 5G 的空间，理论上用来做私人的图床也是足够的
 
-## 进行HttpClient post参数错误
+打开 [https://sm.ms/home/apitoken](https://sm.ms/home/apitoken) 可以生成对应的 Secret Token 请看下图
 
-从“Windows.Web.Http.HttpStringContent”转换为“System.Net.Http.HttpContent”
+<!-- ![](image/win10_uwp_smmstu_chuang/win10_uwp_smmstu_chuang0.png) -->
 
-原因
+![](http://image.acmx.xyz/lindexi%2F202032914798525.jpg)
 
-用了`System.Net.Http.HttpClient`其实HttpStringContent是可以在错误看到，不是System.Net.Http
+将这串 Api Key 保存到本地记事本上，接下来将会用到
 
-方法
+## 安装库
 
-使用
+虽然 sm.ms 上有文档说如何上传，但是我依然写了一个库，通过这个库可以让大家使用起来更加方便
 
-```csharp
-           Windows.Web.Http.HttpClient webHttpClient=
-                new Windows.Web.Http.HttpClient();
+通过 NuGet 安装 [smms](https://www.nuget.org/packages/smms/) 库
 
-           Windows.Web.Http.HttpStringContent httpString=
-                new HttpStringContent("http://blog.csdn.net/lindexi_gd");
-            await webHttpClient.PostAsync(new Uri(url), httpString);
-```
+这个库的源代码是开源的，全部源代码可以在[github](https://github.com/lindexi/Sm.ms)下载
 
+## 使用库上传图片
 
-## win10 uwp post 上传文件
+因为我不想要在我的库里面引用 json 库，所以我的库的返回值就是字符串，解析方法请小伙伴自行用 json 或正则进行解析
 
-我们可以使用HttpMultipartFormDataContent上传
-其中我们需要从文件转流，打开StorageFile，把它转换HttpStreamContent
-
-            var fileContent = new HttpStreamContent(await File.OpenAsync(FileAccessMode.Read));
-
-然后我们要fileContent.Headers.Add("Content-Type", "application/octet-stream");
-
-我们可以把httpMultipartFormDataContent加上fileContent，看到sm.ms
-
-|参数名称|类型|是否必须|描述|
-|--|--|--|--|
-|smfile|File|是|表单名称。上传图片用到|
-|ssl	|Bool|	否|	是否使用 https 输出，默认关闭|
-|format	|String|	否|	输出的格式。可选值有 json、xml。默认为 json|
-|domain|	Int|	否|	图片域名。可选|
-
-我们就修改`Add(IHttpContent content, System.String name, System.String fileName);` name "smfile"
-
-    httpMultipartFormDataContent.Add(fileContent, "smfile", File.Name);
-
-使用`await webHttpClient.PostAsync(new Uri(url), httpMultipartFormDataContent);`
-
-因为需要拿到上传图片
+这个库的初始化要求传入刚才保存的 Api Key 也就是每个小伙伴注册的都不一样
 
 ```csharp
-var str = await webHttpClient.PostAsync(new Uri(url), httpMultipartFormDataContent);
-            ResponseString = str.Content.ToString();
-            OnUploadedEventHandler?.Invoke(this,ResponseString);
+            var smms = new Smms("Api Key");
 ```
 
-## 所有代码
+调用 UploadImage 传入 stream 就可以完成上传了，但是在 UWP 里面获取文件是用 StorageFile 的方式，需要通过 StorageFile 的扩展方法打开文件
 
-https://github.com/lindexi/Imageshack/tree/master/smms
+```csharp
+var str = await smms.UploadImage(await File.OpenStreamForReadAsync(), File.Name);
+```
+
+上面代码的 File 是一个属性，定义请看代码
+
+```csharp
+private StorageFile File { get; }
+```
+
+而 OpenStreamForReadAsync 是一个扩展方法，复制粘贴上面代码到 VisualStudio 里面就可以自动添加引用
+
+调用 UploadImage 返回值是一个字符串，可以通过 Json 库转换为实际的类
+
+```csharp
+        public class SmmsInfo
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("success")]
+            public bool Success { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("code")]
+            public string Code { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("message")]
+            public string Message { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("data")]
+            public Data Data { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("RequestId")]
+            public string RequestId { get;set; }
+
+        }
+
+        public class Data
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("file_id")]
+            public int FileId { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("width")]
+            public int Width { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("height")]
+            public int Height { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("filename")]
+            public string Filename { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("storename")]
+            public string StoreName { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("size")]
+            public int Size { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("path")]
+            public string Path { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("hash")]
+            public string Hash { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("url")]
+            public string Url { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("delete")]
+            public string Delete { get;set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            [JsonProperty("page")]
+            public string Page { get;set; }
+        }
+```
+
+在安装完成了json解析库可以使用下面方法转换
+
+```csharp
+  var smmsInfo = JsonConvert.DeserializeObject<SmmsInfo>(str);
+```
+
+在使用这个库的时候需要注意处理网络异常等
 
 
 
