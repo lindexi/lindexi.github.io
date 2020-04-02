@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:4/2/2020 8:16:19 AM -->
+
 <!-- 发布 -->
 
 什么是 Abalonia 简单说法就是原 WPF 的开发者没事干写的一套全平台框架，这个框架将 UI 布局和 UI 渲染抽离，通过在不同的平台注入平台原生的渲染框架做到了全平台。理论上无论哪个平台，只要符合渲染原理能够封装注入进去，那么将可以用上 Avalonia 框架
@@ -71,7 +73,9 @@ chmod 777 ./avalonial
 
 接下来可以选择用命令行输入 `./avalonial` 执行，也可以如下图在资源管理器里面双击运行
 
-![](http://image.acmx.xyz/lindexi%2F2020-04-02_08-29-25.jpg)
+<!-- ![](image/dotnet 使用 Avalonia 开发 UOS 原生应用/dotnet 使用 Avalonia 开发 UOS 原生应用0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20204293577880.jpg)
 
 在成功跑起来之后，再请小伙伴修改界面，写出还玩的应用。此时部署炸了就肯定不会说 Avalonia 不兼容 UOS 了
 
