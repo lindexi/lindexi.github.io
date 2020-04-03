@@ -488,6 +488,8 @@
 
  * [dotnet 部署 github 的 Action 进行持续集成](dotnet-部署-github-的-Action-进行持续集成.md)
 
+ * [dotnet 配合 Gitlab 做自动推 Tag 时打包 NuGet 包](dotnet-配合-Gitlab-做自动推-Tag-时打包-NuGet-包.md)
+
  * [dotnet 配置 github 自动打包上传 nuget 文件](dotnet-配置-github-自动打包上传-nuget-文件.md)
 
  * [dotnet 配置 Gitlab 的 Runner 做 CI 自动构建](dotnet-配置-Gitlab-的-Runner-做-CI-自动构建.md)
