@@ -10,7 +10,7 @@
 
 <!-- csdn -->
 
-本文提供的方法和[通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/visualstudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81 ) 说到的方法几乎相同，只是通过上面文章的方法会让输出的时候带了底层库依赖的库文件会影响软件的正常运行
+本文提供的方法和[通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html ) 说到的方法几乎相同，只是通过上面文章的方法会让输出的时候带了底层库依赖的库文件会影响软件的正常运行
 
 假设我有一个大的项目和一个底层库，大的项目是 BemjefearjiLebedayal 底层库是 FibiwhearweJukelerekalu 具体的代码我都放在 [github](https://github.com/lindexi/lindexi_gd/tree/423f7de145212d75ada919bbef7e0ff50fac0777/BemjefearjiLebedayal) 欢迎小伙伴关注
 
@@ -40,11 +40,11 @@
 
 我需要在 GetFoo 函数里面使用断点，我需要修改返回值，小伙伴使用的方法是先修改 GetFoo 方法里面的代码，然后点击启动大项目。这样就需要从底层库编译到主项目，需要等待很长的编译时间。不过小伙伴会在这段时间里面水了很多 QQ 群，所以我才会一天都看到一些小伙伴都在群里说话
 
-从[通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/visualstudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81 ) 可以知道，想要让 VisualStudio 调试库的代码只需要将对应的 dll 文件和符号文件放在了需要调试的大项目的文件夹里面就可以了。
+从[通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html ) 可以知道，想要让 VisualStudio 调试库的代码只需要将对应的 dll 文件和符号文件放在了需要调试的大项目的文件夹里面就可以了。
 
 这个方法通过重定向输出文件夹可以做到，但是我的底层库会依赖很多特殊的库，这些库和主项目使用到的库可能不相同，此时重定向整个输出文件夹会让主项目无法进行调试
 
-解决方法就是在编译完成的时候，通过[MSBuild Copy 复制文件](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-msbuild-copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6 ) 将输出的库文件复制到主项目的文件夹，这样就可以做到每次更改只编译库的代码，提升了调试速度
+解决方法就是在编译完成的时候，通过[MSBuild Copy 复制文件](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html ) 将输出的库文件复制到主项目的文件夹，这样就可以做到每次更改只编译库的代码，提升了调试速度
 
 右击 FibiwhearweJukelerekalu 底层库的csproj编辑文件，在 2019 可以通过双击进入编辑
 
@@ -72,7 +72,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F20195291993337)
 
-此时就可以在底层库里面点击运行进行调试，同时可以做二进制兼容的改动。关于二进制兼容请看[VisualStudio 通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/visualstudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81 )
+此时就可以在底层库里面点击运行进行调试，同时可以做二进制兼容的改动。关于二进制兼容请看[VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html )
 
 写到这里的代码已经放在 [github](https://github.com/lindexi/lindexi_gd/tree/423f7de145212d75ada919bbef7e0ff50fac0777/BemjefearjiLebedayal) 如果小伙伴还不知道上面的步骤，可以下载代码自己运行一下
 
@@ -130,15 +130,15 @@
 
 此调试方式要求对底层库的更改满足二进制兼容
 
-关于二进制兼容请看 [VisualStudio 通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/visualstudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81 )
+关于二进制兼容请看 [VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html )
 
 ## 感谢
 
 感谢 https://github.com/kkwpsv/lsjutil 提供 json 解析
 
-[VisualStudio 通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/visualstudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81 )
+[VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html )
 
-[Roslyn 如何使用 MSBuild Copy 复制文件](https://blog.lindexi.com/post/roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-msbuild-copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6 )
+[Roslyn 如何使用 MSBuild Copy 复制文件](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html )
 
 
 
