@@ -291,7 +291,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 ## 跳过编译直接调试
 
-卧龙岗扯淡的人说大型项目很少Start运行调试的，都是attach进程，不然每次编译十几分钟
+卧龙岗扯淡的人说大型项目很少Start运行调试的，都是attach进程，不然每次编译十几分钟。其实只要存在 DPB 文件和代码文件基本上都可以在附加进程的时候断点进入原有的代码的逻辑。可以在 VisualStudio 里面不进行重新编译直接调试
 
 ### 附加进程调试
 
@@ -302,6 +302,8 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 如果有些软件是在发布的时候，刚好在软件启动的过程需要进行调试，此时就需要使用调试软件启动的方法，详细请看
 
 [WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8.html )
+
+[win10 uwp 调试软件启动](https://blog.lindexi.com/post/win10-uwp-%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8.html )
 
 ## 异常调试
 
@@ -591,7 +593,7 @@ ExceptionMessage：林德熙是逗比
 
  - ExceptionType
  - ExceptionMessage
- - stacktrace
+ - Stacktrace
 
 如果能将对应的 Data 上报就更好，对于特殊的如 AggregateException 等就需要拆开，除了以上信息还需要上报通用的信息，包括用户的 id 和系统版本安装的 .NET 版本这些
 
@@ -705,6 +707,12 @@ ExceptionMessage：林德熙是逗比
 在 dotnet 程序，如果一个线程等待的地方不是某个 IO 返回值，在客户端程序，如果主线程等待的地方不是在 GetMessage 方法，那么大概率是在等待某个锁
 
 在并行堆栈找到多个线程都在等待锁，可以猜测当前是存在相互等待的锁。在没有源代码的情况下，依然可以通过附加调试，看到当前进程的并行堆栈在有加载符号的前提下，可以通过调用堆栈的方法名猜测当前线程是否在等待锁。一个简单的判断线程是否暂停执行的方法是进入该线程的调用堆栈方法，进行单步调试查看是否运行，如果进行单步调试的时候等待一段时间都没有进入 VisualStudio 的暂停，那么此时线程就是进入等待。如果有多个线程需要进行判断，可以不断按下运行和暂停按钮，观察线程是否改变调用堆栈的方法
+
+### 锁和线程的调试
+
+如果程序卡住，但是CPU很低，一般都是锁的问题
+
+线程在等待某个锁，但是这个锁没有被释放，那么拥有这个锁的线程是哪个线程代码运行到哪？ 调试方法请看 [在 Visual Studio 2019 (16.5) 中查看托管线程正在等待的锁被哪个线程占用 - walterlv](https://blog.walterlv.com/post/view-which-managed-thread-is-holding-a-dotnet-object-lock-using-visual-studio.html )
 
 ## 无断点调试
 
@@ -949,7 +957,7 @@ public static int Count { set; get; }
 
 [Roslyn 让 VisualStudio 急速调试底层库方法](https://blog.lindexi.com/post/Roslyn-%E8%AE%A9-VisualStudio-%E6%80%A5%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%95%E5%B1%82%E5%BA%93%E6%96%B9%E6%B3%95.html )
 
-[VisualStudio 通过外部调试方法快速调试库代码](https://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html)
+[VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html.html)
 
 ### 案例
 
@@ -964,6 +972,13 @@ public static int Count { set; get; }
 这个决策让我和少珺多用了很长的时间，其实在使用库代码的时候，应该相信库的实现是稳定的。即使通过模块测试的方法，也只是确定是否正确使用了库提供的功能。在发现调用了某个库的方法不符合预期的时候，请先确定自己是否按照库提供的接口预期使用。
 
 在发现某段代码出现的问题和库相关，第一时间应该是确定是否自己的代码的问题，也就是跳过和库相关的代码，认为库的代码是正确的。如果此时库的接口影响到了自己的模块的功能，可以尝试桩测试，如果在进行桩测试成功之后，那么可以认为是自己没有按照预期的使用库的接口。可以尝试使用模拟测试寻找库的正确打开方式。最后才是尝试认为这是库提供的问题
+
+### 框架调试
+
+有时候可能是框架的问题，如 .NET Framework 或 .NET Core 框架，或 WPF 框架等问题，此时需要调试微软提供的框架。调试方法请看
+
+- [调试 ms 源代码](https://blog.lindexi.com/post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81.html )
+- [断点调试 Windows 源代码](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html )
 
 ## 模拟调试
 
@@ -993,8 +1008,6 @@ public static int Count { set; get; }
 
 ## 文件读写调试
 
-文件占用
-
 找不到库找不到文件
 
 ### 加载库调试
@@ -1003,12 +1016,9 @@ public static int Count { set; get; }
 
 填坑
 
+### 调试某个文件是哪个代码创建
 
-### 读写性能调试
-
-通过 dot trace 找到读写文件
-
-填坑
+在遇到某个特别的文件不知道是那句代码创建的，如我想要调试是哪个模块会在桌面新建一个 1.txt 文件，请看 [dotnet 如何调试某个文件是哪个代码创建](https://blog.lindexi.com/post/dotnet-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%98%AF%E5%93%AA%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%88%9B%E5%BB%BA.html )
 
 
 ## 界面调试
@@ -1025,11 +1035,23 @@ public static int Count { set; get; }
 
 填坑
 
+### WPF 界面调试
+
+调试 binding 方法 [WPF 如何调试 binding](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95-binding.html )
+
 ### 使用 snoop 调试
 
 填坑
 
 ## DUMP调试
+
+收集 DUMP 有多个方法，例如打开任务管理器，右击进程选择创建转储文件。或在应用程序里面调用[MiniDumpWriteDump](https://docs.microsoft.com/zh-cn/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump ) 方法
+
+或在 WinDbg 里面使用 [.dump](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-dump--create-dump-file- ) 创建 dump 文件
+
+或设置注册表收集 DUMP 文件，请看 [win10 uwp 收集 DUMP 文件](https://blog.lindexi.com/post/win10-uwp-%E6%94%B6%E9%9B%86-DUMP-%E6%96%87%E4%BB%B6.html )
+
+收集到了 DUMP 之后可以使用多个不同的工具进行调试
 
 ### 使用 VisualStudio 调试
 
@@ -1087,14 +1109,23 @@ public static int Count { set; get; }
 
 [![](http://image.acmx.xyz/lindexi%2F2019107124436606)](https://r302.cc/B0mV0z)
 
+[VisualStudio 调试内存泄漏方法](https://blog.lindexi.com/post/VisualStudio-%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%96%B9%E6%B3%95.html )
+
 通过 dotMemory 调试
+
+另外，如果是调试 Linux 等服务器上的 dotnet 应用的内存占用，请看 [dotnet 用 gcdump 调试应用程序内存占用](https://blog.lindexi.com/post/dotnet-%E7%94%A8-gcdump-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8.html )
+
+### 读写性能调试
+
+通过 dot trace 找到读写文件
 
 填坑
 
-
 ## 经验
 
-经验里面将会包括很多套路
+经验里面将会包括很多套路，以下是一些案例
+
+- [记一次调试资源管理器未响应经验](https://blog.lindexi.com/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%B0%83%E8%AF%95%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E6%9C%AA%E5%93%8D%E5%BA%94%E7%BB%8F%E9%AA%8C.html )
 
 ### 面对不熟悉代码的调试
 
@@ -1133,5 +1164,13 @@ public static int Count { set; get; }
 通过二分注释代码
 
 填坑
+
+## 工具
+
+高效率的调试离不开工具的辅助，我收藏的一些工具请看 [在 Windows 下那些好用的调试软件](https://blog.lindexi.com/post/%E5%9C%A8-Windows-%E4%B8%8B%E9%82%A3%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6.html )
+
+[Roslyn 让 VisualStudio 急速调试底层库方法](https://blog.lindexi.com/post/Roslyn-%E8%AE%A9-VisualStudio-%E6%80%A5%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%95%E5%B1%82%E5%BA%93%E6%96%B9%E6%B3%95.html )
+
+[VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
