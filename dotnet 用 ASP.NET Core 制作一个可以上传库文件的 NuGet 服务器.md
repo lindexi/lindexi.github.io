@@ -3,6 +3,8 @@
 我在写一个有趣的 WPF 应用，我想要测试这个 WPF 应用的一个功能，这个功能就是一键点击自动推送 NuGet 包到服务器。我想要做一点自动化的测试，我需要有某个假装是 NuGet 的服务器用来接收我这个应用推送的 NuGet 包。用 ASP.NET Core 写一个假装的 NuGet 服务器，支持被 NuGet 推送包是特别简单的，本文就来和大家说说这个后台如何写
 
 <!--more-->
+<!-- CreateTime:4/5/2020 3:39:34 PM -->
+
 <!-- 发布 -->
 
 其实有现成的整个 NuGet 服务器，包含了包的列举和上传等功能，这就是 [BaGet](https://github.com/loic-sharma/BaGet ) 项目，但是这个项目存在的问题是太大了，我想要做到自动测试里面去，又有很多有趣的逻辑需要写
@@ -87,8 +89,10 @@ nuget push -Source http://localhost:49614/api/v2/package AntBlazor.0.0.1.nupkg -
 
 ```csharp
              var key = HttpContext.Request.Headers["X-NuGet-ApiKey"];
-``` 
+```
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/457ebad9ce3895bde7c76ae60bd8c4c4be6f93b4/AluwemjealayCheedeaweabewairhur) 欢迎小伙伴访问
+
+顺便广告一下 [ant-design-blazor](https://github.com/ElderJames/ant-design-blazor ) 这个使用 Blazor 的 ant 界面库，欢迎小伙伴关注
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
