@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:4/5/2020 3:39:34 PM -->
+
 <!-- 发布 -->
 
 其实有现成的整个 NuGet 服务器，包含了包的列举和上传等功能，这就是 [BaGet](https://github.com/loic-sharma/BaGet ) 项目，但是这个项目存在的问题是太大了，我想要做到自动测试里面去，又有很多有趣的逻辑需要写
@@ -90,9 +92,11 @@ nuget push -Source http://localhost:49614/api/v2/package AntBlazor.0.0.1.nupkg -
 
 ```csharp
              var key = HttpContext.Request.Headers["X-NuGet-ApiKey"];
-``` 
+```
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/457ebad9ce3895bde7c76ae60bd8c4c4be6f93b4/AluwemjealayCheedeaweabewairhur) 欢迎小伙伴访问
+
+顺便广告一下 [ant-design-blazor](https://github.com/ElderJames/ant-design-blazor ) 这个使用 Blazor 的 ant 界面库，欢迎小伙伴关注
 
 
 
