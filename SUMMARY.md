@@ -436,6 +436,8 @@
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 
+ * [dotnet 用 ASP.NET Core 制作一个可以上传库文件的 NuGet 服务器](dotnet-用-ASP.NET-Core-制作一个可以上传库文件的-NuGet-服务器.md)
+
  * [dotnet 用 gcdump 调试应用程序内存占用](dotnet-用-gcdump-调试应用程序内存占用.md)
 
  * [dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发](dotnet-用-NuGet-将自己的工具作为-dotnet-tool-分发.md)
