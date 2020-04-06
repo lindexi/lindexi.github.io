@@ -906,6 +906,8 @@
 
  * [win10 uwp 使用 msbuild 命令行编译 UWP 程序](win10-uwp-使用-msbuild-命令行编译-UWP-程序.md)
 
+ * [win10 uwp 使用 OCR 光学字符识别](win10-uwp-使用-OCR-光学字符识别.md)
+
  * [win10 uwp 使用 ScaleTransform 放大某个元素](win10-uwp-使用-ScaleTransform-放大某个元素.md)
 
  * [win10 uwp 使用 WinDbg 调试](win10-uwp-使用-WinDbg-调试.md)
