@@ -3,6 +3,8 @@
 在 OpenXML SDK 里面对于很多值，如字符串等的值，都包含一个 HasValue 属性。刚入门的小伙伴会认为这就是一个和可空类型一样的属性，表示这个属性是不是为空。其实这句话只是对一半，其实这个属性表示的是在重新定义的字符串参数里面的属性是否为空
 
 <!--more-->
+<!-- CreateTime:4/6/2020 3:26:44 PM -->
+
 <!-- 发布 -->
 
 在 OpenXML SDK 里面给很多基础类型都是自己新定义的，如 SingleValue 和 StringValue 等，这些定义都继承 OpenXmlSimpleType 类，而在 OpenXmlSimpleType 类就存在一个让刚入行的小伙伴会错误认为这是一个可空类型的 HasValue 属性
