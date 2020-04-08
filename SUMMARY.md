@@ -86,6 +86,8 @@
 
  * [C# 不能用于文件名的字符](C-不能用于文件名的字符.md)
 
+ * [C# 为什么不建议对任意的 IEnumerable 反转](C-为什么不建议对任意的-IEnumerable-反转.md)
+
  * [C# 从 short 转 byte 方法](C-从-short-转-byte-方法.md)
 
  * [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](C-从零开始写-SharpDx-应用-初始化dx修改颜色.md)
@@ -1697,6 +1699,8 @@
  * [为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](为什么-WPF-软件在-win7-启动时会尝试调起-wisptis-进程.md)
 
  * [为何 987654321/123456789 的值是 8.0000000729](为何-987654321-123456789-的值是-8.0000000729.md)
+
+ * [为何 C# 的指针不是可空类型](为何-C-的指针不是可空类型.md)
 
  * [为何使用 DirectComposition](为何使用-DirectComposition.md)
 

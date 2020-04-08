@@ -21,7 +21,7 @@
 
 ```csharp
 <Project Sdk="MSBuild.Sdk.Extras/1.5.4">
-  <PropertyGroup>
+  <PropertyGroup>#
     <TargetFrameworks>uap10.0.16299;</TargetFrameworks>
   </PropertyGroup>
 
