@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:4/9/2020 7:43:27 PM -->
+
 <!-- 发布 -->
 
 小伙伴都知道 在 WPF 里面使用了 DX 作为底层的渲染，在说到 WPF 卡顿的时候，还请小伙伴不要忘记 dx 部分也是可能存在卡顿的
@@ -30,11 +32,11 @@
 
 而根据垂直刷新，只要错过了这帧，将会在下一次绘制才会输出。也就是延迟 1ms - 8ms 对于延迟来说基本相同，也就是一次性能优化，至少需要优化超过 8ms 否则很少有效果
 
-这里插入一点的是 WIndows 系统不是只有一个应用在绘制，也就是在存在大量 CPU 的时候，将会让 GPU 的工作线程的运行被频繁中断，在一次渲染过程中存在大量线程的变化。换句话说，一个高性能的 UI 框架反而不是线程越多越好。这部分还请看 DirectX 多线程渲染性能相关
+这里插入一点的是 Windows 系统不是只有一个应用在绘制，也就是在存在大量 CPU 的时候，将会让 GPU 的工作线程的运行被频繁中断，在一次渲染过程中存在大量线程的变化。换句话说，一个高性能的 UI 框架反而不是线程越多越好。这部分还请看 DirectX 多线程渲染性能相关
 
 [一篇文章入门DirectX 12 - 知乎](https://zhuanlan.zhihu.com/p/57061190 )
 
-[提交命令缓冲区 - Windows drivers | Microsoft Docs](https://docs.microsoft.com/zh-cn/windows-hardware/drivers/display/submitting-a-command-buffer )
+[提交命令缓冲区 - Windows drivers](https://docs.microsoft.com/zh-cn/windows-hardware/drivers/display/submitting-a-command-buffer )
 
 [GPU Rendering Pipeline——GPU渲染流水线简介 - 知乎](https://zhuanlan.zhihu.com/p/61949898 )
 
