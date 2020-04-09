@@ -3,6 +3,8 @@
 这不是一篇深入底层的博客，很多细节还请看 DX 底层相关
 
 <!--more-->
+<!-- CreateTime:4/9/2020 7:43:27 PM -->
+
 <!-- 发布 -->
 
 小伙伴都知道 在 WPF 里面使用了 DX 作为底层的渲染，在说到 WPF 卡顿的时候，还请小伙伴不要忘记 dx 部分也是可能存在卡顿的
@@ -31,7 +33,7 @@
 
 [一篇文章入门DirectX 12 - 知乎](https://zhuanlan.zhihu.com/p/57061190 )
 
-[提交命令缓冲区 - Windows drivers | Microsoft Docs](https://docs.microsoft.com/zh-cn/windows-hardware/drivers/display/submitting-a-command-buffer )
+[提交命令缓冲区 - Windows drivers](https://docs.microsoft.com/zh-cn/windows-hardware/drivers/display/submitting-a-command-buffer )
 
 [GPU Rendering Pipeline——GPU渲染流水线简介 - 知乎](https://zhuanlan.zhihu.com/p/61949898 )
 
