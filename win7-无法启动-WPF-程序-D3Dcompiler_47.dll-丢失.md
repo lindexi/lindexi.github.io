@@ -84,6 +84,14 @@ step2：安装以下两个更新：KB4040973 KB3178034 （任意安装顺序）�
 
 [WPF程序停止工作-CSDN论坛](https://bbs.csdn.net/topics/392423671 )
 
+## 官方措施
+
+在 .NET Core 版本修复
+
+[Adding d3d_compiler dependency to known issues by rladuca · Pull Request #190 · dotnet/wpf](https://github.com/dotnet/wpf/pull/190 )
+
+[WPF Applications require crash with System.TypeLoadException when VC++ redistributables are not present · Issue #37 · dotnet/wpf](https://github.com/dotnet/wpf/issues/37 )
+
 
 
 

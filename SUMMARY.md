@@ -1458,6 +1458,8 @@
 
  * [WPF 判断调用方法堆栈](WPF-判断调用方法堆栈.md)
 
+ * [WPF 升级 .NET Core 的理由](WPF-升级-.NET-Core-的理由.md)
+
  * [wpf 单例](wpf-单例.md)
 
  * [WPF 只允许打开一个实例](WPF-只允许打开一个实例.md)
