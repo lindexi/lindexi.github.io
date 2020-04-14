@@ -27,6 +27,8 @@
 在后台代码添加按钮点击时让用户选择文件的代码
 
 ```csharp
+using Plugin.FilePicker;
+
         private async void Button_OnClicked(object sender, EventArgs e)
         {
             var pickFile = await CrossFilePicker.Current.PickFile();
