@@ -75,6 +75,12 @@
 
 本文说到的宏是古老的词汇，在官方用语里面叫条件编译符，也叫预处理符号(preprocessor symbols) 在 Roslyn 的语法分析中，就是这样写的
 
+在 csproj 或 Target 中可以采用下面代码判断宏是否包含
+
+```csharp
+Condition="$(DefineConstants.Contains(NET30))"
+```
+
 [.NET/C# 项目如何优雅地设置条件编译符号？ - walterlv](https://blog.walterlv.com/post/how-to-define-preprocessor-symbols.html )
 
 [在 Roslyn 分析语法树时添加条件编译符号的支持 - walterlv](https://blog.walterlv.com/post/roslyn-syntax-tree-supporting-preprocessor-symbols.html )

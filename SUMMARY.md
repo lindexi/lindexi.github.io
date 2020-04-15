@@ -60,6 +60,8 @@
 
  * [C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值](C-dotnet-带编号项目符号在-OpenXML-SDK-对应的枚举值.md)
 
+ * [C# dotnet 的锁 SemaphoreSlim 和队列](C-dotnet-的锁-SemaphoreSlim-和队列.md)
+
  * [C# dotnet 线程不安全的弱引用缓存](C-dotnet-线程不安全的弱引用缓存.md)
 
  * [C# dotnet 获取整个局域网的 ip 地址](C-dotnet-获取整个局域网的-ip-地址.md)
@@ -659,6 +661,8 @@
  * [Roslyn 将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比](Roslyn-将这个文件放在你的项目文件夹，无论哪个控制台项目都会输出林德熙是逗比.md)
 
  * [Roslyn 开发 NuGet 包的 Task 编译可能遇到的问题](Roslyn-开发-NuGet-包的-Task-编译可能遇到的问题.md)
+
+ * [Roslyn 引用某个文件夹所有文件作为链接](Roslyn-引用某个文件夹所有文件作为链接.md)
 
  * [Roslyn 打包自定义的文件到 NuGet 包](Roslyn-打包自定义的文件到-NuGet-包.md)
 
