@@ -1938,6 +1938,8 @@
 
  * [让 AE 输出 MPEG ](让-AE-输出-MPEG-.md)
 
+ * [让 snoop 支持 .NET Core WPF 调试](让-snoop-支持-.NET-Core-WPF-调试.md)
+
  * [记一次调试资源管理器未响应经验](记一次调试资源管理器未响应经验.md)
 
  * [调试 ms 源代码](调试-ms-源代码.md)
