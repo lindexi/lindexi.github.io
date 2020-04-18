@@ -780,6 +780,8 @@
 
  * [VisualStudio 如何在 NuGet 包里面同时包含 DEBUG 和 RELEASE 的库](VisualStudio-如何在-NuGet-包里面同时包含-DEBUG-和-RELEASE-的库.md)
 
+ * [VisualStudio 如何快速添加一个 Git Tag 推送](VisualStudio-如何快速添加一个-Git-Tag-推送.md)
+
  * [VisualStudio 安装 Python 开发](VisualStudio-安装-Python-开发.md)
 
  * [VisualStudio 开发文件自定义工具单文件生成工具](VisualStudio-开发文件自定义工具单文件生成工具.md)
