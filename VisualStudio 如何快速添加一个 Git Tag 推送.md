@@ -63,4 +63,6 @@
 
 这就是为什么选用推送 Tag 打包的原因，允许小伙伴自己选择预览版的版本推送，自动打包，这样就可以在项目中使用此Tag 打出的预览版的代码。此时的 commit 其他小伙伴也能构建，回滚代码的时候也可以在公共服务器找到 NuGet 包或切换到对应版本的源代码
 
+更多请看 [VisualStudio 2019 新创建项目添加 git 仓库](https://blog.lindexi.com/post/VisualStudio-2019-%E6%96%B0%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0-git-%E4%BB%93%E5%BA%93.html)
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

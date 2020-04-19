@@ -3,6 +3,8 @@
 在最新的 snoop 3.0.0-alpha0116 版支持了 .NET Core 的 WPF 的调试，只需要下载安装最新版本就可以
 
 <!--more-->
+<!-- CreateTime:4/18/2020 9:40:19 AM -->
+
 <!-- 发布 -->
 
 可以到 [github](https://github.com/snoopwpf/snoopwpf ) 的 [Releases](https://github.com/snoopwpf/snoopwpf/releases ) 下载最新版本
