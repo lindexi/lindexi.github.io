@@ -1636,6 +1636,8 @@
 
  * [WPF 触摸到事件](WPF-触摸到事件.md)
 
+ * [WPF 触摸底层 PenImc 是如何工作的](WPF-触摸底层-PenImc-是如何工作的.md)
+
  * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
 
  * [WPF 设置管理员权限启动](WPF-设置管理员权限启动.md)
