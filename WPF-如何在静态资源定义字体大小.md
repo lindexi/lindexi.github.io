@@ -102,6 +102,8 @@ public class FontSizeExtension : MarkupExtension
 
 这样就可以在静态资源里面定义字体大小
 
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/46c42c17d0a23370ae0fe3c064c68420efa9c92d/CelakercalbochallhiNerjufeeqalchelfu) 欢迎小伙伴访问
+
 
 
 

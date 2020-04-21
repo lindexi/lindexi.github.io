@@ -1340,9 +1340,13 @@
 
  * [windows 应用程序在关机时的退出代号](windows-应用程序在关机时的退出代号.md)
 
+ * [Windows 核心编程笔记 Direct2D 比 GDI 快的一部分](Windows-核心编程笔记-Direct2D-比-GDI-快的一部分.md)
+
  * [Windows 的 Pen 协议](Windows-的-Pen-协议.md)
 
  * [windows-10「设置」应用完整ms-settings快捷方式汇总.md](windows-10「设置」应用完整ms-settings快捷方式汇总.md.md)
+
+ * [WinForms 下的高性能笔迹方法](WinForms-下的高性能笔迹方法.md)
 
  * [Winforms 可能遇到的 1000 个问题](Winforms-可能遇到的-1000-个问题.md)
 

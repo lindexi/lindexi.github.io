@@ -89,6 +89,8 @@ while (!this.__disposed)
 
 通过这个方法可以知道触摸的设备的 id 和触摸的数据，触摸的事件
 
+这里的 GetPenEvent 和 GetPenEventMultiple 其实就是调用 PenImc 的代码，这部分属于更底层的逻辑。如果有兴趣，请看 [WPF 触摸底层 PenImc 是如何工作的](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%BA%95%E5%B1%82-PenImc-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.html)
+
 在拿到触摸信息之后，会调用 `FireEvent` 转换事件，在拿到的信息包括了表示是什么事件，因为触摸的事件是传入一个数值，需要通过这个数值转换为对应的事件
 
  - 707：PenInRange
