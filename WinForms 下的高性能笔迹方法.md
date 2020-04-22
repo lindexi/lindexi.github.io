@@ -3,6 +3,8 @@
 在 WPF 中可以通过 StylusPlugIn 的方式快速从触摸线程拿到触摸数据，而 WinForms 没有这个机制，但是可以通过 Microsoft.Ink 组件和 WPF 相同在 RealTimeStylus 服务拿到触摸点
 
 <!--more-->
+<!-- CreateTime:4/20/2020 5:00:00 PM -->
+
 <!-- csdn -->
 
 本文的例子放在微软的官方例子里面，请看 [GitHub](https://github.com/microsoft/Windows-classic-samples/tree/8f31b1ff79d669b4ba9609f2640635b3b8a9e0a4/Samples/Win7Samples/Touch/MTScratchpadRTStylus/CS ) 代码
