@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:4/20/2020 5:00:00 PM -->
+
 <!-- csdn -->
 
 本文的例子放在微软的官方例子里面，请看 [GitHub](https://github.com/microsoft/Windows-classic-samples/tree/8f31b1ff79d669b4ba9609f2640635b3b8a9e0a4/Samples/Win7Samples/Touch/MTScratchpadRTStylus/CS ) 代码

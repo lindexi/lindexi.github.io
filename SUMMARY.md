@@ -652,6 +652,8 @@
 
  * [Roslyn 如何使用 MSBuild Copy 复制文件](Roslyn-如何使用-MSBuild-Copy-复制文件.md)
 
+ * [Roslyn 如何使用 MSBuild ZipDirectory 压缩文件夹](Roslyn-如何使用-MSBuild-ZipDirectory-压缩文件夹.md)
+
  * [Roslyn 如何在 Target 引用 xaml 防止文件没有编译](Roslyn-如何在-Target-引用-xaml-防止文件没有编译.md)
 
  * [Roslyn 如何基于 Microsoft.NET.Sdk 制作源代码包](Roslyn-如何基于-Microsoft.NET.Sdk-制作源代码包.md)
@@ -1641,6 +1643,8 @@
  * [WPF 触摸到事件](WPF-触摸到事件.md)
 
  * [WPF 触摸底层 PenImc 是如何工作的](WPF-触摸底层-PenImc-是如何工作的.md)
+
+ * [WPF 让窗口激活作为前台最上层窗口的方法](WPF-让窗口激活作为前台最上层窗口的方法.md)
 
  * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
 
