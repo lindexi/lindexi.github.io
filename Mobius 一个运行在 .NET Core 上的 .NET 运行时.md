@@ -3,6 +3,8 @@
 一个 .NET 应用仅仅只是一块在 .NET 运行时上面运行的二进制代码。而 .NET 运行时只是一个能执行这项任务的程序。当前的 .NET Framework 和 .NET Core 运行时采用 C++ 编写，而 Mobius 是一个使用 C# 重写的 .NET 运行时，重写包括 JIT 编译和 GC 等，这些逻辑都将和 C++ 无关
 
 <!--more-->
+<!-- CreateTime:4/22/2020 8:24:36 PM -->
+
 <!-- 发布 -->
 
 原文：[Mobius – .NET runtime running on .NET Core – TooSlowException](https://tooslowexception.com/mobius-net-runtime-running-on-net-core/ )
@@ -59,9 +61,9 @@
 
 基于这个原因，作者认为 .NET Core 运行时应该只提供很少量的运行时服务给到 Mobius 框架，提供的服务主要只是调用 Jit 编译代码
 
-<!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时3.png) -->
+<!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020422210494182.jpg)
+![](http://image.acmx.xyz/lindexi%2F202042385217211.jpg)
 
 ## 当前状态
 
