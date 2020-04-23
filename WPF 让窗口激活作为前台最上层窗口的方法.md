@@ -3,6 +3,8 @@
 在 WPF 中，如果想要使用代码控制，让某个窗口作为当前用户的输入的逻辑焦点的窗口，也就是在当前用户活动的窗口的最上层窗口，默认使用 Activate 方法，通过这个方法在大部分设备都可以做到激活窗口
 
 <!--more-->
+<!-- CreateTime:4/21/2020 2:15:04 PM -->
+
 <!-- 发布 -->
 
 但是在一些特殊的设备上，使用下面代码调起窗口只是在任务栏闪烁图标，而没有让窗口放在最上层
@@ -39,7 +41,7 @@ window.Activate();
 
 源代码请看 [github](https://github.com/dotnet/wpf/blob/d3b4fa3b42e245701bf215794ebf763281cd81a5/src/Microsoft.DotNet.Wpf/src/PresentationFramework/System/Windows/Window.cs#L501-L516)
 
-也就是调用 SetForegroundWindow 和调用 Activate 方法是差不多的，如果调用 Activate 应该调用 SetForegroundWindow 也差不多
+也就是调用 SetForegroundWindow 和调用 Activate 方法是差不多的，如果调用 Activate 没有用那么应该调用 SetForegroundWindow 也差不多
 
 通过大佬的 [SetForegroundWindow的正确用法 - 子坞 - 博客园](https://www.cnblogs.com/ziwuge/archive/2012/01/06/2315342.html ) 可以了解到，需要按照以下步骤
 
@@ -51,7 +53,7 @@ window.Activate();
 　　　　5.最后SetForegroundWindow 
 ```
 
-在 WPF 中对应的更改窗口的顺序使用的是 Topmost 属性，同时设置顺序需要做一定小的更改
+在 WPF 中对应的更改窗口的顺序使用的是 Topmost 属性，同时设置顺序需要做一点小的更改
 
 在 WPF 中通过 [c# - Bring a window to the front in WPF - Stack Overflow](https://stackoverflow.com/questions/257587/bring-a-window-to-the-front-in-wpf ) 可以了解到如何用 AttachThreadInput 方法
 

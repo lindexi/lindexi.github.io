@@ -3,6 +3,8 @@
 在 csproj 文件或在 NuGet 的 Targets 文件中可以通过 Target 调用 ZipDirectory 任务用来制作压缩包，在构建的时候，可以用这个方法将某个输出文件夹等内容压缩输出
 
 <!--more-->
+<!-- CreateTime:4/21/2020 7:50:26 PM -->
+
 <!-- 发布 -->
 
 使用 ZipDirectory 有两个必要的属性，一个是 DestinationFile 表示输出的 zip 文件的路径，另一个是 SourceDirectory 表示将被压缩的文件夹路径
