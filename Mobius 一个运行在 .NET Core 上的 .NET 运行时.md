@@ -10,10 +10,10 @@
 原文：[Mobius – .NET runtime running on .NET Core – TooSlowException](https://tooslowexception.com/mobius-net-runtime-running-on-net-core/ )
 
 ```csharp
-我看到这个有趣的项目的时候就像试试安利一下大家，这个项目特别适合用来了解 GC （Garbage Collector 垃圾收集）和 JIT （Just-In-Time Compiler 即时编译器）的算法
+我看到这个有趣的项目的时候就想试试安利一下大家，这个项目特别适合用来了解 GC （Garbage Collector 垃圾收集）和 JIT （Just-In-Time Compiler 即时编译器）的算法
 ```
 
-让编写一个 .NET 运行时和编写一个 .NET 应用是否有可能呢？换句话是不要 Native 的本机代码或 C++ 代码，所有的代码都是通过 C# 编写是否有可能？这看起来是一个无穷的递归，用 .NET 写 .NET 的运行时运行在 .NET 的运行时上。这是不是就是将一个 .NET 运行时运行在另一个 .NET 运行时上？
+让 C# 编写一个 .NET 运行时和编写一个 .NET 应用是否有可能呢？换句话是不要 Native 的本机代码或 C++ 代码，所有的代码都是通过 C# 编写是否有可能？这看起来是一个无穷的递归，用 .NET 写 .NET 的运行时运行在 .NET 的运行时上。这是不是就是将一个 .NET 运行时运行在另一个 .NET 运行时上？
 
 <!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时0.png) -->
 
