@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:4/22/2020 8:24:36 PM -->
+
 <!-- 发布 -->
 
 原文：[Mobius – .NET runtime running on .NET Core – TooSlowException](https://tooslowexception.com/mobius-net-runtime-running-on-net-core/ )
@@ -62,9 +64,9 @@
 
 基于这个原因，作者认为 .NET Core 运行时应该只提供很少量的运行时服务给到 Mobius 框架，提供的服务主要只是调用 Jit 编译代码
 
-<!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时3.png) -->
+<!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020422210494182.jpg)
+![](http://image.acmx.xyz/lindexi%2F202042385217211.jpg)
 
 ## 当前状态
 
