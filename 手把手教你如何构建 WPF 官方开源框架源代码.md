@@ -3,6 +3,8 @@
 从去年微软就将 WPF 开源了，差不多现在所有 WPF 的源代码都开源了。在学习框架的时候，我会做一些改动，期望能构建一个自己的版本进行测试。但是作为一个特别大的框架，想要构建跑起来可不是直接在 VisualStudio 里面点击一下运行就完成了，需要做很多的准备才可以。本文将一步步教你如何构建 WPF 框架源代码
 
 <!--more-->
+<!-- CreateTime:4/23/2020 2:24:15 PM -->
+
 <!-- 发布 -->
 
 我不敢说每个版本的 WPF 框架的源代码我都能构建，在[官方仓库 https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 我构建成功的版本是这个 [commit](https://github.com/dotnet/wpf/commit/f226a72ed5302737b14984cffdd6208731244038) 小伙伴可以尝试使用本文的方法，先切的这个 commit 按照我的方法来进行构建，成功了之后再做更新版本的尝试
@@ -19,7 +21,8 @@
 
 - dotnet-sdk-5.0.100-preview.1.20155.7-win-x64.zip 安装
 - dotnet-runtime-5.0.0-preview.4.20220.15-win-x86.zip 安装
-- strawberry-perl-5.28.1.1-1-win64-x64.zip 放到 `.netcoreeng\native\temp` 文件夹 - net-framework-48-ref-assemblies-0.0.0.1-win64-x64.zip 放到 `.netcoreeng\native\temp` 文件夹
+- strawberry-perl-5.28.1.1-1-win64-x64.zip 放到 `.netcoreeng\native\temp` 文件夹 
+- net-framework-48-ref-assemblies-0.0.0.1-win64-x64.zip 放到 `.netcoreeng\native\temp` 文件夹
 - dotnet-api-docs_netcoreapp3.0-0.0.0.2-win64-x64.zip 放到 `.netcoreeng\native\temp` 文件夹
 - msvcurt-c1xx-0.0.1.2-win64-x64.zip 放到 `.netcoreeng\native\temp` 文件夹
 - net-framework-472-iltools-0.0.0.1-win64-x64.zip 放到 `.netcoreeng\native\temp` 文件夹
