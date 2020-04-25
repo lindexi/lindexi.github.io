@@ -1,7 +1,7 @@
 
 # dotnet 部署 github 的 Action 进行持续集成
 
-大概只需要 3 分钟就可以在 github 上通过 Action 部署持续集成，本文以 SourceYard 作为例子告诉大家如何配置
+被微软收购的 GitHub 现在十分土豪，提供了免费的服务器给咱构建。刚好微软对 dotnet 的支持是特别好的，毕竟还算半个自家的东西，大概只需要 3 分钟就可以在 github 上通过 Action 部署持续集成，本文以 SourceYard 作为例子告诉大家如何配置
 
 <!--more-->
 
@@ -53,6 +53,10 @@
 但是我想要在 Windows 下编译怎么办？没问题，下面就是更详细的配置了
 
 详细的配置请看官方文档 [Automating your workflow](https://help.github.com/cn/actions/automating-your-workflow-with-github-actions/getting-started-with-github-actions )
+
+利用 GitHub 的 Action 还能做什么？如自动构建推送 NuGet 包等，请看 [dotnet 配置 github 自动打包上传 nuget 文件](https://blog.lindexi.com/post/dotnet-%E9%85%8D%E7%BD%AE-github-%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E4%B8%8A%E4%BC%A0-nuget-%E6%96%87%E4%BB%B6.html )
+
+另外，构建成功或失败都应该在首页放个图标告诉小伙伴，如何放一个构建图标请看 [Github 添加 Action 编译图标](https://blog.lindexi.com/post/Github-%E6%B7%BB%E5%8A%A0-Action-%E7%BC%96%E8%AF%91%E5%9B%BE%E6%A0%87.html )
 
 
 
