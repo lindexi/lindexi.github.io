@@ -3,6 +3,10 @@
 在分析 DUMP 进行自动化调试的时候，很多时候只能通过 WinDbg 和命令行调用的方式，这样的方式很难做到灵活。同时编写各个命令行的难度也特别高，这在需要对命令行的输出进行不同的分支的判断时候，难度会更大。于是找到了 Microsoft.Diagnostics.Runtime 库，这个库提供了简单的方式，可以在 C# 里面用代码写分析 DUMP 的代码
 
 <!--more-->
+<!-- CreateTime:4/25/2020 9:05:05 AM -->
+<!-- 标签：dotnet,调试,Diagnostics,DUMP,C# -->
+
+
 <!-- 发布 -->
 
 需要先在 NuGet 上添加一个私有的源才能使用这个库，添加私有源的方式请看 [VisualStudio 给项目添加特殊的 Nuget 的链接](https://blog.lindexi.com/post/VisualStudio-%E7%BB%99%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E7%89%B9%E6%AE%8A%E7%9A%84-Nuget-%E7%9A%84%E9%93%BE%E6%8E%A5.html )
