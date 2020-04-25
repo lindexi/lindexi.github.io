@@ -446,6 +446,8 @@
 
  * [dotnet 用 gcdump 调试应用程序内存占用](dotnet-用-gcdump-调试应用程序内存占用.md)
 
+ * [dotnet 用 Microsoft.Diagnostics.Runtime 库写代码解析 DUMP 文件](dotnet-用-Microsoft.Diagnostics.Runtime-库写代码解析-DUMP-文件.md)
+
  * [dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发](dotnet-用-NuGet-将自己的工具作为-dotnet-tool-分发.md)
 
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
