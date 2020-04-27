@@ -602,6 +602,8 @@
 
  * [Office OpenXml SDK 使用 Fallback 图片显示 Ole 元素](Office-OpenXml-SDK-使用-Fallback-图片显示-Ole-元素.md)
 
+ * [Office OpenXml SDK 文本段落允许标点溢出边界属性](Office-OpenXml-SDK-文本段落允许标点溢出边界属性.md)
+
  * [ParaView](ParaView.md)
 
  * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)

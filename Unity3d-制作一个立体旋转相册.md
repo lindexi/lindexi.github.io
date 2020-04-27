@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:4/26/2020 8:29:09 AM -->
+
 <!-- csdn -->
 
 效果请看下图
@@ -14,7 +16,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2020426832161010.jpg)
 
-本来是打算做个 Gif 动态图给大家看效果的，但是图片太大了 25M 我就不敢放出来了
+本来是打算做个 Gif 动态图给大家看效果的，但是图片太大了 25M 我就不敢放出来了，在文章最后放了运行效果的链接
 
 这个效果很简单，做法可以分为三个部分，第一个部分是模型部分，或者说 Scane 里面的内容。第二个部分就是读取本地图片作为贴图部分。第三个部分就是立体旋转部分
 
@@ -183,6 +185,8 @@ Texture2D texture = new Texture2D(1920, 1080);
 将刚才创建的两个脚本拖放到 Cube 上，然后尝试运行就可以
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/2ed787585407f0af2e1ce34efeb1e4bc061e961a/unity/Square) 欢迎小伙伴访问
+
+运行效果请点击此链接 [https://r302.cc/JGLjDZ](https://r302.cc/JGLjDZ?platform=enpc&channel=copylink)
 
 
 
