@@ -530,6 +530,8 @@
 
  * [git 需要知道的1000个问题](git-需要知道的1000个问题.md)
 
+ * [GitHub Action 新上线 WPF .NET Core 自动构建模板](GitHub-Action-新上线-WPF-.NET-Core-自动构建模板.md)
+
  * [GitHub 如何过滤某个作者的 MR 内容](GitHub-如何过滤某个作者的-MR-内容.md)
 
  * [GitHub 开源项目如何参与](GitHub-开源项目如何参与.md)
