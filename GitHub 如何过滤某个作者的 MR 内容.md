@@ -3,6 +3,8 @@
 在 WPF 开源仓库里面有大量的机器人的 MR 但是我想要了解现在 WPF 仓库有多少开发者在贡献代码，此时如何在 GitHub 中过滤某个作者的 MR 内容
 
 <!--more-->
+<!-- CreateTime:4/30/2020 8:50:52 AM -->
+
 <!-- 发布 -->
 
 在 GitHub 的 Filters 可以通过 `-author` 表示去掉某个作者的内容，如下面链接就是去掉机器人的 WPF 仓库的 MR 有哪些 [https://github.com/dotnet/wpf/pulls?q=is%3Apr+-author%3Aapp%2Fdotnet-maestro](https://github.com/dotnet/wpf/pulls?q=is%3Apr+-author%3Aapp%2Fdotnet-maestro)
