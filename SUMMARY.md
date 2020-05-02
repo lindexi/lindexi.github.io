@@ -1352,11 +1352,15 @@
 
  * [Windows Community Toolkit 3.0 新功能](Windows-Community-Toolkit-3.0-新功能.md)
 
+ * [Windows 对全屏应用的优化](Windows-对全屏应用的优化.md)
+
  * [windows 应用程序在关机时的退出代号](windows-应用程序在关机时的退出代号.md)
 
  * [Windows 核心编程笔记 Direct2D 比 GDI 快的一部分](Windows-核心编程笔记-Direct2D-比-GDI-快的一部分.md)
 
  * [Windows 的 Pen 协议](Windows-的-Pen-协议.md)
+
+ * [Windows 窗口样式 什么是 WS_EX_NOREDIRECTIONBITMAP 样式](Windows-窗口样式-什么是-WS_EX_NOREDIRECTIONBITMAP-样式.md)
 
  * [windows-10「设置」应用完整ms-settings快捷方式汇总.md](windows-10「设置」应用完整ms-settings快捷方式汇总.md.md)
 
@@ -1763,6 +1767,8 @@
  * [代码段](代码段.md)
 
  * [优雅调试 REST API 的工具](优雅调试-REST-API-的工具.md)
+
+ * [使用 .NET Core 在 MAC 下提供 Excel 的 Power Query 功能](使用-.NET-Core-在-MAC-下提供-Excel-的-Power-Query-功能.md)
 
  * [使用 ahk 让普通键盘变为Dvorak键盘](使用-ahk-让普通键盘变为Dvorak键盘.md)
 
