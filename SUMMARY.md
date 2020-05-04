@@ -1772,6 +1772,8 @@
 
  * [使用 ahk 让普通键盘变为Dvorak键盘](使用-ahk-让普通键盘变为Dvorak键盘.md)
 
+ * [使用 C# 写脚本的优势和方法](使用-C-写脚本的优势和方法.md)
+
  * [使用 IncrediBuild 提升 VisualStudio 编译速度](使用-IncrediBuild-提升-VisualStudio-编译速度.md)
 
  * [使用 Pandoc 把 Markdown 转 Docx](使用-Pandoc-把-Markdown-转-Docx.md)
