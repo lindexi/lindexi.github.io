@@ -54,6 +54,8 @@
 
  * [C# dotnet 使用 OpenXml 解析 PPT 里面的视频](C-dotnet-使用-OpenXml-解析-PPT-里面的视频.md)
 
+ * [C# dotnet 使用 TaskCompletionSource 实现暂停功能](C-dotnet-使用-TaskCompletionSource-实现暂停功能.md)
+
  * [C# dotnet 分割换行](C-dotnet-分割换行.md)
 
  * [C# dotnet 将 Stream 保存到文件的方法](C-dotnet-将-Stream-保存到文件的方法.md)
