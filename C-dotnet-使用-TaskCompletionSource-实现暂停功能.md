@@ -126,7 +126,7 @@ if (CurrentTask is null)
 
 如果用户设置过暂停但是还没有设置继续，那么 CurrentTask 是存在的，也就是不会重新被创建
 
-在用户重来没有暂停设置继续的时候，因为 CurrentTask 是空，继续执行
+在用户从来没有暂停设置继续的时候，因为 CurrentTask 是空，继续执行
 
 在用户设置过暂停之后设置继续的时候，将调用 TrySetResult 方法让 CurrentTask 完成
 
