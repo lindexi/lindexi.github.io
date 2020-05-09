@@ -3,6 +3,8 @@
 昨天鹏飞哥问了我一个问题，为什么在控制台程序的主线程等待某个线程执行完成之后回来，是在其他线程执行的。而 WPF 在等待某个线程执行完成之后，可以回到主线程执行。其实这是因为在 WPF 和 WinForms 和 ASP.NET 框架里面都自己实现了线程同步上下文，通过线程同步上下文做到调度线程执行。本文就来和小伙伴聊一下如何自己实现一个线程同步上下文
 
 <!--more-->
+<!-- CreateTime:5/9/2020 8:22:22 AM -->
+
 <!-- 发布 -->
 
 我昨天和鹏飞哥说的时候感觉特别绕，但是实际上过来写了一点代码，又发现很好理解。其实线程同步上下文这个概念在于我能否返回到之前的线程，返回到之前的线程需要哪些内容。而 `await` 在出现线程切换的时候，是通过调用之前等待之前的线程的线程同步上下文进行线程调度，大概在进入 await 的做法如下
@@ -122,7 +124,7 @@ class SycnContext : SynchronizationContext
 public static SynchronizationContext? Current => Thread.CurrentThread._synchronizationContext;
 ```
 
-小伙伴都用过 Thread.CurrentThread 这个静态属性，这个属性返回的就是当前线程，也就是不同的线程拿到的对象是不同的
+小伙伴都用过 Thread.CurrentThread 这个静态属性，这个属性返回的就是当前线程，也就是不同的线程拿到的对象是不同的。更多线程静态请看 [dotnet 线程静态字段](https://blog.lindexi.com/post/dotnet-%E7%BA%BF%E7%A8%8B%E9%9D%99%E6%80%81%E5%AD%97%E6%AE%B5.html )
 
 现在添加一个等待后台线程的代码
 
