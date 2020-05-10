@@ -340,6 +340,8 @@
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
 
+ * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
+
  * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)
 
  * [dotnet remoting 抛出异常](dotnet-remoting-抛出异常.md)
@@ -725,6 +727,8 @@
  * [SublimeText 快速打开当前文件的文件夹](SublimeText-快速打开当前文件的文件夹.md)
 
  * [SublimeText 粘贴图片保存到本地](SublimeText-粘贴图片保存到本地.md)
+
+ * [SublimeText 配置跳转回上个光标坐标](SublimeText-配置跳转回上个光标坐标.md)
 
  * [Total Commander 显示文件包含文件名扩展](Total-Commander-显示文件包含文件名扩展.md)
 
