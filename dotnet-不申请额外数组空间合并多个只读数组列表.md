@@ -96,6 +96,23 @@ using System.Linq;
     }
 ```
 
+如果你觉得 GetEnumerator 方法写的不够快，可以试试下面代码
+
+```csharp
+            foreach (var list in Source)
+            {
+                foreach (var temp in list)
+                {
+                    yield return temp;
+                }
+            }
+```
+
+
+
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/2472c94382e5f8aaf5f5c689ac78668f1883e8b6/Fujeencemwebaeahale) 欢迎小伙伴访问
+
+
 
 
 

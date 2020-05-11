@@ -58,6 +58,8 @@
 
  * [C# dotnet 分割换行](C-dotnet-分割换行.md)
 
+ * [C# dotnet 合并只读列表集合](C-dotnet-合并只读列表集合.md)
+
  * [C# dotnet 将 Stream 保存到文件的方法](C-dotnet-将-Stream-保存到文件的方法.md)
 
  * [C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值](C-dotnet-带编号项目符号在-OpenXML-SDK-对应的枚举值.md)
