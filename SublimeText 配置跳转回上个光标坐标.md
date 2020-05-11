@@ -3,6 +3,8 @@
 在 VisualStudio 可以通过 ctrl+- 的功能，跳转到上个光标所在的坐标。如在多个方法之间跳转，可以通过这个快捷键快速实现。在 SublimeText 可以在菜单的 Goto 里面找到 Jump Back 功能，这个功能就是对应 VisualStudio 的跳转回上个光标的功能，也就是向后定位功能
 
 <!--more-->
+<!-- CreateTime:5/9/2020 10:40:11 AM -->
+
 <!-- 发布 -->
 
 对应的 SublimeText 的快捷键是 `alt+-` 和 VS 不相同，可以在 SublimeText 的 Preferences 的 Key Bindings 里面添加下面代码修改快捷键
