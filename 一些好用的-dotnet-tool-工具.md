@@ -7,11 +7,12 @@
 
 
 <!-- CreateTime:2020/3/5 21:24:30 -->
-<!-- 不发布 -->
 
 - dotnetCampus.UpdateAllDotNetTools 一句命令更新所有 dotnet tool 到最新版本 
 - dotnet-serve 一句命令开启文件服务器
 - NuGetMergeFixTool 修复大型项目的 NuGet 合并，也可以用来快速升级 NuGet 库
+
+更多工具可以在 [ToolGet](https://www.toolget.net) 里面进行搜寻
 
 [javadparvaresh/dotnet-exec: Execute shell script as dotnet tasks](https://github.com/javadparvaresh/dotnet-exec )
 
