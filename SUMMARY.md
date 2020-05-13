@@ -30,6 +30,10 @@
 
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
+ * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
+
+ * [Azure 无服务器 Function 函数计算服务 dotnet core 3.1 创建和部署入门](Azure-无服务器-Function-函数计算服务-dotnet-core-3.1-创建和部署入门.md)
+
  * [BAT 脚本判断当前系统是 x86 还是 x64 系统](BAT-脚本判断当前系统是-x86-还是-x64-系统.md)
 
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
