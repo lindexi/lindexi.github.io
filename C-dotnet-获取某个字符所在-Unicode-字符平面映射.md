@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:5/14/2020 3:08:23 PM -->
+
 <!-- 发布 -->
 
 在 System.Text.Encodings.Web 的 UnicodeRanges 其实是根据标准生成的代码，源代码请看 [https://github.com/dotnet/runtime/blob/5372ee9dbe48058ca8d3591763e989d3b2e65581/src/libraries/System.Text.Encodings.Web/src/System/Text/Unicode/UnicodeRanges.generated.cs](https://github.com/dotnet/runtime/blob/5372ee9dbe48058ca8d3591763e989d3b2e65581/src/libraries/System.Text.Encodings.Web/src/System/Text/Unicode/UnicodeRanges.generated.cs)
@@ -296,7 +298,7 @@
         /// <param name="unicodeRange"></param>
         /// <returns></returns>
         public static string GetUnicodeRangeName(UnicodeRange unicodeRange) => UnicodeRangeInfoList
-            .FirstOrDefault(temp => ReferenceEquals(temp, unicodeRange))?.UnicodeRangeName;
+            .FirstOrDefault(temp => ReferenceEquals(temp.UnicodeRange, unicodeRange))?.UnicodeRangeName;
 ```
 
 本文代码放在 [https://gist.github.com/lindexi/8945441c782488613fbc695d81a1bb85](https://gist.github.com/lindexi/8945441c782488613fbc695d81a1bb85) 欢迎小伙伴到 github 复制代码
