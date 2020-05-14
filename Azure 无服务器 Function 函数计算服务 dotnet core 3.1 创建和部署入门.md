@@ -3,6 +3,8 @@
 本文用的是 世纪互联 的 Azure.cn 版本，这个版本因为是在国内，所以网速会快超级超级多。使用 世纪互联 的版本需要一块钱哦，用一块钱就能进入一个月的免费试用。本文主要告诉小伙伴如何使用 Azure 无服务器 Function 函数计算服务
 
 <!--more-->
+<!-- CreateTime:5/13/2020 9:18:11 AM -->
+
 <!-- 发布 -->
 
 本文会偏向于操作，而且仅仅是一条龙下来没有其他分支。如果想要了解边边角角其他的分支功能，请看微软学习平台的 [使用 Visual Studio 开发、测试和部署 Azure Functions - Learn](https://docs.microsoft.com/zh-cn/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/ )

@@ -3,6 +3,8 @@
 在使用 Azure Function 函数服务的时候，将代码推送到函数服务器的时候提示 Your function app is targeting v3, but Azure host has function version 2 此时是因为在 Azure 的主机设置的版本落后函数的代码版本
 
 <!--more-->
+<!-- CreateTime:5/13/2020 8:54:17 AM -->
+
 <!-- 发布 -->
 
 在日志例如可以看到下面代码
