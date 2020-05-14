@@ -3,6 +3,8 @@
 在 dotnet 里面可以通过安装 System.Text.Encodings.Web 库拿到 UnicodeRanges 这个包含了 Unicode 标准的平面映射。但是我还没有找到如何判断一个字符是落在哪个平面的逻辑，本文就告诉大家一个可以使用的方法，这个方法同时稍微兼顾了性能
 
 <!--more-->
+<!-- CreateTime:5/14/2020 3:08:23 PM -->
+
 <!-- 发布 -->
 
 在 System.Text.Encodings.Web 的 UnicodeRanges 其实是根据标准生成的代码，源代码请看 [https://github.com/dotnet/runtime/blob/5372ee9dbe48058ca8d3591763e989d3b2e65581/src/libraries/System.Text.Encodings.Web/src/System/Text/Unicode/UnicodeRanges.generated.cs](https://github.com/dotnet/runtime/blob/5372ee9dbe48058ca8d3591763e989d3b2e65581/src/libraries/System.Text.Encodings.Web/src/System/Text/Unicode/UnicodeRanges.generated.cs)
@@ -293,7 +295,7 @@
         /// <param name="unicodeRange"></param>
         /// <returns></returns>
         public static string GetUnicodeRangeName(UnicodeRange unicodeRange) => UnicodeRangeInfoList
-            .FirstOrDefault(temp => ReferenceEquals(temp, unicodeRange))?.UnicodeRangeName;
+            .FirstOrDefault(temp => ReferenceEquals(temp.UnicodeRange, unicodeRange))?.UnicodeRangeName;
 ```
 
 本文代码放在 [https://gist.github.com/lindexi/8945441c782488613fbc695d81a1bb85](https://gist.github.com/lindexi/8945441c782488613fbc695d81a1bb85) 欢迎小伙伴到 github 复制代码
