@@ -3,6 +3,8 @@
 之前版本是通过安装 Blend SDK 支持 Behaviors 库的，但是这个方法都是通过引用 dll 的方式，不够优雅。在升级到 dotnet core 3.0 的时候就需要使用 WPF 官方团队开源的 Microsoft.Xaml.Behaviors.Wpf 库代替
 
 <!--more-->
+<!-- CreateTime:5/17/2020 2:13:54 PM -->
+
 <!-- 发布 -->
 
 先通过 NuGet 安装 [Microsoft.Xaml.Behaviors.Wpf](https://www.nuget.org/packages/Microsoft.Xaml.Behaviors.Wpf) 库
