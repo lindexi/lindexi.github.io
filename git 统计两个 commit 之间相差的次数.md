@@ -3,6 +3,8 @@
 本文告诉大家在一个连续的 commit 树中统计两个 commit 之间的差异的 commit 数量，也就是存在 A commit 存在而 B commit 不存在的 commit 的数量
 
 <!--more-->
+<!-- CreateTime:5/15/2020 9:00:18 AM -->
+
 <!-- 发布 -->
 
 可以使用下面代码统计两个 commit 或分支之间的差异的次数
