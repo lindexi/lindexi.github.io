@@ -19,73 +19,73 @@
 然后在按钮点击的代码里面添加下面代码解析
 
 ```csharp
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            {
-                using (SpreadsheetDocument doc = SpreadsheetDocument.Open(fs, false))
-                {
+using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+{
+    using (SpreadsheetDocument doc = SpreadsheetDocument.Open(fs, false))
+    {
 
-                }
-            }
+    }
+}
 ```
 
 大概这样就解析完成了，上面代码的 fileName 就是传入的文件，如下面代码
 
 ```csharp
-            string fileName = @"f:\lindexi\FurlalloganarBerkojelfarwiwa.xlsx";
+string fileName = @"f:\lindexi\FurlalloganarBerkojelfarwiwa.xlsx";
 ```
 
 在 Excel 里面有多个标签，下面代码是获取第一个标签
 
 ```csharp
-                    WorkbookPart workbookPart = doc.WorkbookPart;
-                    SharedStringTablePart sstpart = workbookPart.GetPartsOfType<SharedStringTablePart>().First();
-                    SharedStringTable sst = sstpart.SharedStringTable;
+WorkbookPart workbookPart = doc.WorkbookPart;
+SharedStringTablePart sstpart = workbookPart.GetPartsOfType<SharedStringTablePart>().First();
+SharedStringTable sst = sstpart.SharedStringTable;
 
-                    WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
-                    Worksheet sheet = worksheetPart.Worksheet;
+WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
+Worksheet sheet = worksheetPart.Worksheet;
 ```
 
 如果读取格子里面内容，可以使用下面代码
 
 ```csharp
-                    var cells = sheet.Descendants<Cell>();
-                    var rows = sheet.Descendants<Row>();
+var cells = sheet.Descendants<Cell>();
+var rows = sheet.Descendants<Row>();
 
-                    Debug.WriteLine("Row count = {0}", rows.LongCount());
-                    Debug.WriteLine("Cell count = {0}", cells.LongCount());
+Debug.WriteLine("Row count = {0}", rows.LongCount());
+Debug.WriteLine("Cell count = {0}", cells.LongCount());
 
-                    // One way: go through each cell in the sheet
-                    foreach (Cell cell in cells)
-                    {
-                        if ((cell.DataType != null) && (cell.DataType == CellValues.SharedString))
-                        {
-                            int ssid = int.Parse(cell.CellValue.Text);
-                            string str = sst.ChildElements[ssid].InnerText;
-                            Debug.WriteLine("Shared string {0}: {1}", ssid, str);
-                        }
-                        else if (cell.CellValue != null)
-                        {
-                            Debug.WriteLine("Cell contents: {0}", cell.CellValue.Text);
-                        }
-                    }
+// One way: go through each cell in the sheet
+foreach (Cell cell in cells)
+{
+    if ((cell.DataType != null) && (cell.DataType == CellValues.SharedString))
+    {
+        int ssid = int.Parse(cell.CellValue.Text);
+        string str = sst.ChildElements[ssid].InnerText;
+        Debug.WriteLine("Shared string {0}: {1}", ssid, str);
+    }
+    else if (cell.CellValue != null)
+    {
+        Debug.WriteLine("Cell contents: {0}", cell.CellValue.Text);
+    }
+}
 
-                    // Or... via each row
-                    foreach (Row row in rows)
-                    {
-                        foreach (Cell c in row.Elements<Cell>())
-                        {
-                            if ((c.DataType != null) && (c.DataType == CellValues.SharedString))
-                            {
-                                int ssid = int.Parse(c.CellValue.Text);
-                                string str = sst.ChildElements[ssid].InnerText;
-                                Debug.WriteLine("Shared string {0}: {1}", ssid, str);
-                            }
-                            else if (c.CellValue != null)
-                            {
-                                Debug.WriteLine("Cell contents: {0}", c.CellValue.Text);
-                            }
-                        }
-                    }
+// Or... via each row
+foreach (Row row in rows)
+{
+    foreach (Cell c in row.Elements<Cell>())
+    {
+        if ((c.DataType != null) && (c.DataType == CellValues.SharedString))
+        {
+            int ssid = int.Parse(c.CellValue.Text);
+            string str = sst.ChildElements[ssid].InnerText;
+            Debug.WriteLine("Shared string {0}: {1}", ssid, str);
+        }
+        else if (c.CellValue != null)
+        {
+            Debug.WriteLine("Cell contents: {0}", c.CellValue.Text);
+        }
+    }
+}
 ```
 
 如果想要了解解析的每个对象的内容，我推荐在对应的代码添加断点，如想要了解 row 的值等，可以如下图添加一个断点，然后通过局部变量窗口就可以看到每个变量的值
