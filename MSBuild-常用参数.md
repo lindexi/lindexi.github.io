@@ -46,7 +46,7 @@ msbuild /m:6
 通过发布版编译就是设置 configuration 属性为 release 通过下面代码
 
 ```csharp
-msbuild /p:configuration="release"
+msbuild /p:Configuration=Release
 ```
 
 在msbuild通过 `/p` 设置对应的属性的值
