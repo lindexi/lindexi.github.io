@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:5/20/2020 8:38:04 AM -->
+
 <!-- 发布 -->
 
 当咱在考虑如何在 .NET 上构建一个跨平台应用的时候，需要关注的设备和系统包括 Windows 系统和设备和 Android 和 iOS 和 macOS 等。为了满足多平台开发的需求，微软改名部推出了一个新的 UI 框架叫 .NET Multi-platform App UI 简称 .NET MAUI 框架
@@ -116,6 +118,9 @@ Xamarin.Forms将于今年晚些时候发布新的主版本，并继续在2021年
 ## 立即参与
 
 通过全新的开源代码仓库 [https://github.com/dotnet/maui](https://github.com/dotnet/maui)，与全世界的 .NET 开发者一起踏上.NET MAUI的旅程。欢迎小伙伴给这个项目点星星以关注这个项目的更新和通知，也欢迎小伙伴在 [Issus](https://github.com/dotnet/maui/issues) 上讨论。这将是合并 Xamarin 和 Xamarin.Forms 到 .NET 核心中的漫长旅程的开始，微软很高兴与您一起开放的进行开发
+
+官方文章请看 [Introducing .NET Multi-platform App UI](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/ )
+
 
 
 
