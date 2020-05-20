@@ -77,7 +77,7 @@ void ExecuteClickCommand ()
 readonly State<int> _count = 0;
 
 [Body]
-View body() => new StackLayout
+View Body() => new StackLayout
 {
     new Label("Welcome to .NET MAUI!"),
     new Button
