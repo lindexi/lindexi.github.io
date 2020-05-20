@@ -348,6 +348,8 @@
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
 
+ * [dotnet Multi-platform App UI 多平台应用 UI 框架简介](dotnet-Multi-platform-App-UI-多平台应用-UI-框架简介.md)
+
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
 
  * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)

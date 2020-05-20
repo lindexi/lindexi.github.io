@@ -126,6 +126,8 @@
 
 现在很多大厂都是提供了函数计算服务，如 阿里的服务，请看 [dotnet C# 使用阿里函数计算服务](https://blog.lindexi.com/post/dotnet-C-%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E6%9C%8D%E5%8A%A1.html )
 
+那么这个函数技术能做什么？这里有一个实际的开源的例子 URL 缩短器，请看 [https://github.com/FBoucher/AzUrlShortener](https://github.com/FBoucher/AzUrlShortener )
+
 更多博客
 
 [使用 Visual Studio 开发、测试和部署 Azure Functions（一）开发 - Grant_Allen - 博客园](https://www.cnblogs.com/AllenMaster/p/12633088.html )
