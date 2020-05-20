@@ -21,7 +21,7 @@
 
 使用 .NET MAUI 简化了 .NET 开发人员的技术选择，提供了一个技术栈来支持所有现代工作开发如：Android，iOS，macOS和Windows平台的开发。 每个平台和UI控件的本机功能都可以通过一个简单的跨平台API触手可及，您可以在提供不妥协的用户体验的同时共享比以前更多的代码
 
-## 单一技术栈的开发经验
+## 单一项目开发体验
 
 .NET MAUI 的构建考虑了开发人员的生产力，包括开发人员需要的项目系统和跨平台工具。 .NET MAUI 框架将项目结构简化为一个针对多个平台的项目。 这意味着您只需单击一下鼠标，便可以轻松地将其部署到所需的任何目标，包括台式机，仿真器，模拟器或物理设备。 使用内置的跨平台资源，您可以将任何图像，字体或翻译文件添加到单个项目中，并且 .NET MAUI 将自动设置本机挂钩，以便您可以进行编码。 最后，您将始终可以访问本机底层操作系统API，在通过特定于新平台的集成可以让开发比以往更加轻松。在特定平台下，可以添加针对特定平台的代码用来访问平台相关的本地 API 接口。使用 .NET MAUI 可以让所有开发精力保持在一个地方，统一的技术栈的开发经验可以不断深耕提升生产力
 
@@ -115,6 +115,8 @@ Xamarin.Forms将于今年晚些时候发布新的主版本，并继续在2021年
 ## 立即参与
 
 通过全新的开源代码仓库 [https://github.com/dotnet/maui](https://github.com/dotnet/maui)，与全世界的 .NET 开发者一起踏上.NET MAUI的旅程。欢迎小伙伴给这个项目点星星以关注这个项目的更新和通知，也欢迎小伙伴在 [Issus](https://github.com/dotnet/maui/issues) 上讨论。这将是合并 Xamarin 和 Xamarin.Forms 到 .NET 核心中的漫长旅程的开始，微软很高兴与您一起开放的进行开发
+
+大佬的翻译博客：[[翻译] .NET 官宣跨平台 UI 框架 MAUI - hez2010 - 博客园](https://www.cnblogs.com/hez2010/p/12920729.html )
 
 官方文章请看 [Introducing .NET Multi-platform App UI](https://devblogs.microsoft.com/dotnet/introducing-net-multi-platform-app-ui/ )
 
