@@ -406,7 +406,7 @@ draw.DrawLine（x1，y1，x2，y2，颜色）
 win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法设置背景，会在 win2d 忽略
 
 ```csharp
-        <xaml:CanvasControl x:Name="canvas" Background="Brown" Draw="Canvas_OnDraw"></xaml:CanvasControl>
+        <xaml:CanvasControl x:Name="Canvas" Background="Brown" Draw="Canvas_OnDraw"></xaml:CanvasControl>
 
 ```
 
@@ -415,7 +415,7 @@ win2d 会忽略在 xaml 设置的背景，如果使用 Background = xx 的方法
 如果想把 win2d 的背景颜色设置为 白色，那么可以使用下面代码
 
 ```csharp
-        <xaml:CanvasControl x:Name="canvas" ClearColor="White" Draw="Canvas_OnDraw"></xaml:CanvasControl>
+        <xaml:CanvasControl x:Name="Canvas" ClearColor="White" Draw="Canvas_OnDraw"></xaml:CanvasControl>
 
 ```
 
