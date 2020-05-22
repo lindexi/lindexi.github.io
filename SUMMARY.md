@@ -50,6 +50,8 @@
 
  * [C# dotnet core 局域网组播方法](C-dotnet-core-局域网组播方法.md)
 
+ * [C# dotnet TypeForwarding 的用法](C-dotnet-TypeForwarding-的用法.md)
+
  * [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](C-dotnet-WPF-使用-OpenXml-解析-Excel-文件.md)
 
  * [C# dotnet 使用 OpenXml 解析 PPT 元素的坐标和宽度高度](C-dotnet-使用-OpenXml-解析-PPT-元素的坐标和宽度高度.md)
@@ -611,6 +613,8 @@
  * [msbuild 修改 VisualStudio 文件复制到输出目录的路径](msbuild-修改-VisualStudio-文件复制到输出目录的路径.md)
 
  * [MSBuild 常用参数](MSBuild-常用参数.md)
+
+ * [MSBuild 输出日志可视化工具 MSBuild Structured Log Viewer 简介](MSBuild-输出日志可视化工具-MSBuild-Structured-Log-Viewer-简介.md)
 
  * [msbuild 项目文件常用判断条件](msbuild-项目文件常用判断条件.md)
 
