@@ -1724,6 +1724,8 @@
 
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)
 
+ * [WPF 通过 InputManager 模拟调度触摸事件](WPF-通过-InputManager-模拟调度触摸事件.md)
+
  * [WPF 通过 ReadyToRun 提升性能](WPF-通过-ReadyToRun-提升性能.md)
 
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
