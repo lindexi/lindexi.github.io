@@ -3,6 +3,8 @@
 感谢 Vatsan Madhavan 小伙伴推荐的 MSBuild 输出日志可视化工具，这个工具可以使用漂亮的 WPF 界面预览 MSBuild 复杂的输出内容
 
 <!--more-->
+<!-- CreateTime:5/21/2020 4:09:16 PM -->
+
 <!-- 发布 -->
 
 这是一个完全开源的工具，请看 [KirillOsenkov/MSBuildStructuredLog: A logger for MSBuild that records a structured representation of executed targets, tasks, property and item values.](https://github.com/KirillOsenkov/MSBuildStructuredLog )
