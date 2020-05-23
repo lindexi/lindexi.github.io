@@ -166,7 +166,7 @@ jobs:
 ```yaml
     - name: Add private GitHub registry to NuGet
       run: |
-        .\nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${{ secrets.GITHUB_TOKEN }}
+        .\nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${{ secrets.GITHUB_TOKEN } }
 ```
 
 这样就添加对应的仓库，可以用来上传
@@ -215,10 +215,10 @@ jobs:
 
 ![](http://image.acmx.xyz/lindexi%2F201912816938783)
 
-这里的 name 在脚本通过 `${{ secrets.Name }}` 替换，这里的 `secrets.Name` 的 Name 就是输入的 name 如上面输入的是 NugetKey 在使用脚本需要下面代码
+这里的 name 在脚本通过 `${{ secrets.Name } }` 替换，这里的 `secrets.Name` 的 Name 就是输入的 name 如上面输入的是 NugetKey 在使用脚本需要下面代码
 
 ```yaml
-${{ secrets.NugetKey }}
+${{ secrets.NugetKey } }  # 请删除 } 和 } 中间的空格
 ```
 
 完成配置之后就是上传库
@@ -236,7 +236,7 @@ ${{ secrets.NugetKey }}
 而刚才没有配置 nuget.org 的源，需要使用这个代码上传
 
 ```yaml
-.\nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey }} -NoSymbols
+.\nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey } } -NoSymbols
 ```
 
 这里 `-ApiKey` 用到上一步添加的安全信息，细心小伙伴发现添加了 `-NoSymbols` 因为 nuget.org 默认上传 snupkg 文件，如果找不到文件就会提示找不到文件，请看 [NuGet 命令行上传找不到 snupkg 文件](https://blog.lindexi.com/post/NuGet-%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8A%E4%BC%A0%E6%89%BE%E4%B8%8D%E5%88%B0-snupkg-%E6%96%87%E4%BB%B6.html)
@@ -277,11 +277,11 @@ jobs:
       shell: pwsh
     - name: Add private GitHub registry to NuGet
       run: |
-        .\nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${{ secrets.GITHUB_TOKEN }}
+        .\nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${{ secrets.GITHUB_TOKEN } } # 请删除 } 和 } 中间的空格
     - name: Push generated package to GitHub registry
       run: |
         .\nuget push .\bin\release\*.nupkg -Source github -SkipDuplicate
-        .\nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey }} -NoSymbols 
+        .\nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey } } -NoSymbols 
 ```
 
 上面的代码在 [SourceYard](https://github.com/dotnet-campus/SourceYard) 使用，这是我开源的项目，支持制作源代码的 nuget 库文件。也就是通过 nuget 给小伙伴的不是 dll 引用，而是源代码引用，特别适合小的库
