@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:5/23/2020 10:27:24 AM -->
+
 <!-- 发布 -->
 
 本文的内容属于没有任何官方文档的支持的内容，以下是我看 WPF 源代码了解到的用法
@@ -14,7 +16,7 @@
 
 此时就可以回答这个 InputManager.Current 是针对进程还是线程的问题了，请问 CurrentDispatcher 是针对进程还是线程呢
 
-在拿到输入管理，就可以调用 ProcessInput 方法传入一个 InputEventArgs 了，可以传入一个路由事件，此时路由事件将会加入触发队列，在调度方法的核心是通过 `Stack _stagingArea` 字段做到栈的方式的调度
+在拿到输入管理，就可以调用 ProcessInput 方法传入一个 InputEventArgs 了，可以传入一个路由事件，此时路由事件将会加入触发队列，在调度方法的核心是通过  `Stack _stagingArea` 字段做到栈的方式的调度
 
 ```csharp
         /// <summary>
