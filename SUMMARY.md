@@ -304,6 +304,8 @@
 
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
+ * [dotnet CBB 为什么决定推送 Tag 才能打包](dotnet-CBB-为什么决定推送-Tag-才能打包.md)
+
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
 
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
@@ -349,6 +351,8 @@
  * [dotnet Framework 源代码 · ScrollViewer](dotnet-Framework-源代码-·-ScrollViewer.md)
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
+
+ * [dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库](dotnet-Microsoft.Recognizers.Text-超强大的自然语言关键词提取库.md)
 
  * [dotnet Multi-platform App UI 多平台应用 UI 框架简介](dotnet-Multi-platform-App-UI-多平台应用-UI-框架简介.md)
 
@@ -521,6 +525,8 @@
  * [dotnet 通过 WMI 获取设备厂商](dotnet-通过-WMI-获取设备厂商.md)
 
  * [dotnet 部署 github 的 Action 进行持续集成](dotnet-部署-github-的-Action-进行持续集成.md)
+
+ * [dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包](dotnet-配合-GitHub-的-Action-做自动推-Tag-时打包-NuGet-包.md)
 
  * [dotnet 配合 Gitlab 做自动推 Tag 时打包 NuGet 包](dotnet-配合-Gitlab-做自动推-Tag-时打包-NuGet-包.md)
 
@@ -1767,6 +1773,8 @@
  * [一个好的程序员](一个好的程序员.md)
 
  * [一些好用的 dotnet tool 工具](一些好用的-dotnet-tool-工具.md)
+
+ * [一些好用的开发者工具](一些好用的开发者工具.md)
 
  * [一段能让 VisualStudio 炸掉的代码](一段能让-VisualStudio-炸掉的代码.md)
 
