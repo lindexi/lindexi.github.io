@@ -3,11 +3,13 @@
 被微软收购的 GitHub 越来越好用，拥有大量免费的工具资源和构建服务器资源，再加上私有项目的无限制使用，我有大量的项目都在向 GitHub 迁移。通过 GitHub 的 Action 的自动构建，可以用上微软土豪的服务器资源，进行自动化测试和构建。对于 CBB 来说，发布就是打出 NuGet 包然后上传到内部 NuGet 服务器。此时遇到的问题是，如何在 GitHub 上执行打包，打包的时候如何指定 NuGet 包的版本号。因为 CBB 的特殊性，我要求每个 NuGet 正式发布的包都应该有一个对应的 Tag 号，这样将 NuGet 库安装到项目里面，之后发现问题了还能找到对应版本的代码
 
 <!--more-->
+<!-- CreateTime:5/23/2020 2:32:17 PM -->
+
 <!-- 发布 -->
 
 在阅读本文之前，期望小伙伴能了解如何在 dotnet 下使用 GitHub 的 Action 进行自动构建，请看 [dotnet 部署 github 的 Action 进行持续集成](https://blog.lindexi.com/post/dotnet-%E9%83%A8%E7%BD%B2-github-%E7%9A%84-Action-%E8%BF%9B%E8%A1%8C%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90.html ) 而发布 NuGet 包的方法请看 [dotnet 配置 github 自动打包上传 nuget 文件](https://blog.lindexi.com/post/dotnet-%E9%85%8D%E7%BD%AE-github-%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E4%B8%8A%E4%BC%A0-nuget-%E6%96%87%E4%BB%B6.html)
 
-本文将在此基础上实现本地推送一个 Tag 到 GitHub 服务器上，就会触发 GitHub 的 Action 的自动构建，自动构建的 NuGet 包的版本就是 Tag 版本
+本文将在此基础上实现本地推送一个 Tag 到 GitHub 服务器上，就会触发 GitHub 的 Action 的自动构建，自动构建的 NuGet 包的版本就是 Tag 版本。为什么需要在推 Tag 打包，请看 [dotnet CBB 为什么决定推送 Tag 才能打包](https://blog.lindexi.com/post/dotnet-CBB-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%B3%E5%AE%9A%E6%8E%A8%E9%80%81-Tag-%E6%89%8D%E8%83%BD%E6%89%93%E5%8C%85.html )
 
 本文将用到一个 dotnet tool 工具，在 dotnet 里面可以通过 dotnet tool 轻松分发和安装 dotnet tool 工具。更多关于 dotnet tool 请看 [dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发](https://blog.lindexi.com/post/dotnet-%E7%94%A8-NuGet-%E5%B0%86%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%A5%E5%85%B7%E4%BD%9C%E4%B8%BA-dotnet-tool-%E5%88%86%E5%8F%91.html )
 
