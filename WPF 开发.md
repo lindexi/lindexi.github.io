@@ -452,3 +452,16 @@ window.Activate();
 [wpf动画——缓动动画Animation Easing - 影天 - 博客园](http://www.cnblogs.com/xwlyun/archive/2012/09/11/2680579.html)
 
 
+## WPF ListView 使用 WrapPanel 没有自动换行
+
+原因是没有设置禁用 ListView 的水平滚动
+
+```xml
+<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+  <ListView.ItemsPanel>
+    <ItemsPanelTemplate>
+      <WrapPanel Orientation="Horizontal" />
+    </ItemsPanelTemplate>
+  </ListView.ItemsPanel>
+</ListView>
+```
