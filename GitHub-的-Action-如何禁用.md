@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:5/25/2020 9:36:22 AM -->
+
 <!-- 发布 -->
 
 这是我 Fork 的 [ant-design-blazor](https://github.com/lindexi/ant-design-blazor )仓库，每天都告诉我构建失败
@@ -41,6 +43,19 @@ if: github.repository == 'lindexi/doubi'
 ```
 
 上面代码设置了只有在 lindexi 的 doubi 仓库才进行构建
+
+如果不是干掉某个步骤，而是需要让整个 job 都不执行，可以在 job 下面使用 if 判断
+
+```yaml
+jobs:
+  build:
+    runs-on: windows-latest
+    if: github.repository == 'lindexi/doubi'
+```
+
+更多请看 [GitHub 操作的工作流程语法 - GitHub 帮助](https://help.github.com/cn/actions/reference/workflow-syntax-for-github-actions )
+
+[Context and expression syntax for GitHub Actions - GitHub Help](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions )
 
 
 
