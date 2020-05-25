@@ -570,6 +570,8 @@
 
  * [Github 添加 Action 编译图标](Github-添加-Action-编译图标.md)
 
+ * [GitHub 的 Action 如何禁用](GitHub-的-Action-如何禁用.md)
+
  * [Github 给仓库上传 NuGet 库](Github-给仓库上传-NuGet-库.md)
 
  * [github 设置自动删除合并的分支](github-设置自动删除合并的分支.md)
