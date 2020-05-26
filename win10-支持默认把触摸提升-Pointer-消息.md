@@ -11,7 +11,7 @@
 
 <!-- 标签：WPF，触摸 -->
 
-只要新建框架为 .net 4.7 以上，运行的系统是`Windows 10 Creators Update` 就可以。
+只要新建框架为 .net 4.7 以上，运行的系统是 `Windows 10 Creators Update` 1703 10.0.15063 就可以。
 
 打开新建的工程，设置框架。
 

@@ -24,6 +24,8 @@
 
  * [asp dotnet core 通过图片统计 csdn 用户访问](asp-dotnet-core-通过图片统计-csdn-用户访问.md)
 
+ * [ASP.NET Core 将文件夹内容输出为压缩包文件方法](ASP.NET-Core-将文件夹内容输出为压缩包文件方法.md)
+
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
 
  * [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](ASP.NET-Core-连接-GitLab-与-MatterMost-打造-devops-工具.md)
@@ -569,6 +571,8 @@
  * [GitHub 开源项目如何参与](GitHub-开源项目如何参与.md)
 
  * [Github 添加 Action 编译图标](Github-添加-Action-编译图标.md)
+
+ * [GitHub 的 Action 判断仅在主仓库才执行脚本](GitHub-的-Action-判断仅在主仓库才执行脚本.md)
 
  * [GitHub 的 Action 如何禁用](GitHub-的-Action-如何禁用.md)
 

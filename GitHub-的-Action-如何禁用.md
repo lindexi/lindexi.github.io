@@ -53,6 +53,12 @@ jobs:
     if: github.repository == 'lindexi/doubi'
 ```
 
+当然，判断仓库的拥有者也不错，请看代码
+
+```
+    if: github.repository_owner == 'lindexi'
+```
+
 更多请看 [GitHub 操作的工作流程语法 - GitHub 帮助](https://help.github.com/cn/actions/reference/workflow-syntax-for-github-actions )
 
 [Context and expression syntax for GitHub Actions - GitHub Help](https://help.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions )
