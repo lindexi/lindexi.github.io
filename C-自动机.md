@@ -18,7 +18,7 @@
 
 通过 Build 可以随机设置初始
 
-通过 Proc 可以循环运行，但是因为控制台是没有显示，需要使用 HilerehanuwereleQeyifinu 的  Draw 画为图片
+通过 Proc 可以循环运行，但是因为控制台是没有显示，需要使用 HilerehanuwereleQeyifinu 的 Draw 画为图片
 
 
 

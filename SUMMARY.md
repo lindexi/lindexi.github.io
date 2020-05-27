@@ -308,6 +308,8 @@
 
  * [dotnet CBB 为什么决定推送 Tag 才能打包](dotnet-CBB-为什么决定推送-Tag-才能打包.md)
 
+ * [dotnet ConditionalWeakTable 的底层原理](dotnet-ConditionalWeakTable-的底层原理.md)
+
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
 
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
@@ -585,6 +587,8 @@
  * [git镜像仓库](git镜像仓库.md)
 
  * [How to fix nuget Unrecognized license type MIT when pack](How-to-fix-nuget-Unrecognized-license-type-MIT-when-pack.md)
+
+ * [How to generate NuGet package with Git Tag version using GitHub Action](How-to-generate-NuGet-package-with-Git-Tag-version-using-GitHub-Action.md)
 
  * [How to output the target message in dotnet build command line](How-to-output-the-target-message-in-dotnet-build-command-line.md)
 
@@ -1863,6 +1867,8 @@
  * [在 P2P 文件分享应用以文件或文件段为单位的优缺](在-P2P-文件分享应用以文件或文件段为单位的优缺.md)
 
  * [在 SublimeText 使用 dotnet 编译 C# 项目](在-SublimeText-使用-dotnet-编译-C-项目.md)
+
+ * [在 VisualStudio 给文件起一个带分号的文件名会怎样](在-VisualStudio-给文件起一个带分号的文件名会怎样.md)
 
  * [在 Windows Defender 设置文件夹白名单提升 VisualStudio 编译速度](在-Windows-Defender-设置文件夹白名单提升-VisualStudio-编译速度.md)
 
