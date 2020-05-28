@@ -3,6 +3,8 @@
 We can trigger the GitHub Action by Git tag pushed and we can read the Git tag name as the version. And then we can generate the NuGet package with this version.
 
 <!--more-->
+<!-- CreateTime:5/26/2020 2:18:01 PM -->
+
 <!-- 发布 -->
 
 There is a dotnet tool that can read Git tags as a version and write it to the version file.

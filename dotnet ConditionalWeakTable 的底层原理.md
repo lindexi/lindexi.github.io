@@ -3,6 +3,8 @@
 在 dotnet 中有一个特殊的类，这个类能够做到附加属性一样的功能。也就是给某个对象附加一个属性，当这个对象被回收的时候，自然解除附加的属性的对象的引用。本文就来聊聊这个类的底层原理
 
 <!--more-->
+<!-- CreateTime:5/26/2020 10:04:23 AM -->
+
 <!-- 发布 -->
 
 小伙伴都知道弱缓存是什么，弱缓存的核心是弱引用。也就是我虽然拿到一个对象，但是我没有给这个对象添加依赖引用，也就是这个对象不会记录被弱引用的引用。而 ConditionalWeakTable 也是一个弱缓存只是有些特殊的是关联的是其他对象。使用方法请看 [.NET/C# 使用 ConditionalWeakTable 附加字段（CLR 版本的附加属性，也可用用来当作弱引用字典 WeakDictionary） - walterlv](https://blog.walterlv.com/post/conditional-weak-table.html )
