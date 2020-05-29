@@ -59,8 +59,12 @@ Writing the tag as version by dotnet tool.
       run: dotnet tool install -g dotnetCampus.TagToVersion
 
     - name: Set tag to version  
-      run: dotnet TagToVersion -t ${{ github.ref }}
+      run: dotnet TagToVersion -t ${ { github.ref } }
 ```
+
+<!-- ![](image/How to generate NuGet package with Git Tag version using GitHub Action/How to generate NuGet package with Git Tag version using GitHub Action0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20205281056227454.jpg)
 
 Building the package
 
@@ -77,11 +81,11 @@ Building the package
 
     - name: Add private GitHub registry to NuGet
       run: |
-        nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${{ secrets.GITHUB_TOKEN }}
+        nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${ { secrets.GITHUB_TOKEN } }
     - name: Push generated package to GitHub registry
       run: |
         nuget push .\bin\release\*.nupkg -Source github -SkipDuplicate
-        nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey }} -NoSymbols 
+        nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${ { secrets.NugetKey } } -NoSymbols 
 ```
 
 See https://github.com/dotnet-campus/dotnetCampus.TagToVersion
