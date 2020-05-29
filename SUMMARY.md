@@ -486,6 +486,8 @@
 
  * [dotnet 给MatterMost订阅RSS博客](dotnet-给MatterMost订阅RSS博客.md)
 
+ * [dotnet 给任意对象附加任意属性的库](dotnet-给任意对象附加任意属性的库.md)
+
  * [dotnet 获取当前进程方法](dotnet-获取当前进程方法.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
@@ -1983,6 +1985,8 @@
  * [浅谈 Windows 桌面端触摸架构演进](浅谈-Windows-桌面端触摸架构演进.md)
 
  * [添加右键使用 SublimeText 打开](添加右键使用-SublimeText-打开.md)
+
+ * [熟地加洋参解决牙痛](熟地加洋参解决牙痛.md)
 
  * [理解项目文件 NuGet 打包时机](理解项目文件-NuGet-打包时机.md)
 

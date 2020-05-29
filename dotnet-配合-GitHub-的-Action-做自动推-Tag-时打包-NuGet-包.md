@@ -64,12 +64,18 @@ on:
 
     - name: Add private GitHub registry to NuGet
       run: |
-        nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${{ secrets.GITHUB_TOKEN }}
+        nuget sources add -name github -Source https://nuget.pkg.github.com/ORGANIZATION_NAME/index.json -Username ORGANIZATION_NAME -Password ${ { secrets.GITHUB_TOKEN } }
     - name: Push generated package to GitHub registry
       run: |
         nuget push .\bin\release\*.nupkg -Source github -SkipDuplicate
-        nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NugetKey }} -NoSymbols 
+        nuget push .\bin\release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${ { secrets.NugetKey } } -NoSymbols 
 ```
+
+注意上面的代码花括号的中间是不能带空格的，只是因为博客生成平台不支持连续两个花括号
+
+<!-- ![](image/dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包/dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2020528105821550.jpg)
 
 而为了让项目的打包能用到 Build 文件夹的版本号文件还需要修改这个项目
 
