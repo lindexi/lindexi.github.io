@@ -114,7 +114,70 @@ System.Runtime.InteropServices.COMException (0x88980003): MILERR_WIN32ERROR (Exc
 
 [RenderTargetBitmap throws COM exception when created too fast: MILERR_WIN32ERROR (Exception from HRESULT: 0x88980003)](https://social.msdn.microsoft.com/Forums/vstudio/en-US/5e9fb69b-7547-4f0b-ba06-ad4211be733d/rendertargetbitmap-throws-com-exception-when-created-too-fast-milerrwin32error-exception-from?forum=wpf )
 
-代码请看 https://github.com/dotnet-campus/wpf-issues/tree/master/RenderTargetBitmapThrowsCOMExceptionWhenCreatedTooFast
+代码请看 [https://github.com/dotnet-campus/wpf-issues/tree/master/RenderTargetBitmapThrowsCOMExceptionWhenCreatedTooFast](https://github.com/dotnet-campus/wpf-issues/tree/master/RenderTargetBitmapThrowsCOMExceptionWhenCreatedTooFast)
+
+已经报告官方，请看 [Known issus: WPF will throw COM Exception when create RenderTargetBitmap too fast · Issue #3067 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3067 )
+
+在 WPF 里面炸掉的代码如下
+
+```csharp
+        internal override void FinalizeCreation()
+        {
+            try
+            {
+                using (FactoryMaker myFactory = new FactoryMaker())
+                {
+                    SafeMILHandle renderTargetBitmap = null;
+                    HRESULT.Check(UnsafeNativeMethods.MILFactory2.CreateBitmapRenderTarget(
+                        myFactory.FactoryPtr,
+                        (uint)_pixelWidth,
+                        (uint)_pixelHeight,
+                        _format.Format,
+                        (float)_dpiX,
+                        (float)_dpiY,
+                        MILRTInitializationFlags.MIL_RT_INITIALIZE_DEFAULT,
+                        out renderTargetBitmap));
+
+                    Debug.Assert(renderTargetBitmap != null && !renderTargetBitmap.IsInvalid);
+
+                    BitmapSourceSafeMILHandle bitmapSource = null;
+                    HRESULT.Check(MILRenderTargetBitmap.GetBitmap(
+                        renderTargetBitmap,
+                        out bitmapSource));
+                    Debug.Assert(bitmapSource != null && !bitmapSource.IsInvalid);
+
+                    lock (_syncObject)
+                    {
+                        _renderTargetBitmap = renderTargetBitmap;
+                        bitmapSource.CalculateSize();
+                        WicSourceHandle = bitmapSource;
+
+                        // For the purpose of rendering a RenderTargetBitmap, we always treat it as if it's
+                        // not cached.  This is to ensure we never render and write to the same bitmap source
+                        // by the UCE thread and managed thread.
+                        _isSourceCached = false;
+                    }
+                }
+
+                CreationCompleted = true;
+                UpdateCachedSettings();
+            }
+            catch
+            {
+                _bitmapInit.Reset();
+                throw;
+            }
+        }
+```
+
+从上面代码可以看到是调用 COM 炸了，也就是修框架层还是解决不动
+
+有小伙伴 [elyoh](https://github.com/elyoh) 告诉我，也许是 GDI 对象的问题，这个方法每次都需要申请一定量的 GDI 对象，但是这个方法没有立刻释放这些 GDI 资源。通过 [GDI Objects](https://docs.microsoft.com/en-us/windows/win32/sysinfo/gdi-objects ) 文档可以知道，限制每个会话能打开的 GDI 对象是 65535 个，在注册表中设置了每个进程可以注册 10,000 个，一个可以让程序跑得更远的方法是不断调用垃圾回收，尽管这个调用会降低性能
+
+```csharp
+GC.Collect();
+GC.WaitForPendingFinalizers();
+```
 
 
 

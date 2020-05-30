@@ -442,6 +442,8 @@
 
  * [dotnet 如何调试某个文件是哪个代码创建](dotnet-如何调试某个文件是哪个代码创建.md)
 
+ * [dotnet 字典类找不到 TryAdd 方法](dotnet-字典类找不到-TryAdd-方法.md)
+
  * [dotnet 对 DateTime 排序](dotnet-对-DateTime-排序.md)
 
  * [dotnet 将C#编译为wasm让前端html使用](dotnet-将C-编译为wasm让前端html使用.md)
@@ -1713,6 +1715,8 @@
  * [WPF 触摸到事件](WPF-触摸到事件.md)
 
  * [WPF 触摸底层 PenImc 是如何工作的](WPF-触摸底层-PenImc-是如何工作的.md)
+
+ * [WPF 触摸相关](WPF-触摸相关.md)
 
  * [WPF 让窗口激活作为前台最上层窗口的方法](WPF-让窗口激活作为前台最上层窗口的方法.md)
 
