@@ -179,6 +179,12 @@ GC.Collect();
 GC.WaitForPendingFinalizers();
 ```
 
+但实际上小伙伴说的内容不对，原因是这个进程没有使用那么多的 GDI 对象，通过任务管理器可以看到
+
+<!-- ![](image/WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示/WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F202053082836220.jpg)
+
 
 
 
