@@ -48,6 +48,8 @@
 
 [WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](https://blog.lindexi.com/post/WPF-%E5%9C%A8%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%AD%89%E5%BE%85%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%AA%97%E5%8F%A3%E5%85%B3%E9%97%AD%E4%BC%9A%E8%AE%A9%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%9B%B8%E4%BA%92%E7%AD%89%E5%BE%85.html )
 
+![](http://image.acmx.xyz/lindexi%2F72551177_p0.jpg)
+
 
 
 
