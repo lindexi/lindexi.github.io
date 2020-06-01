@@ -1646,6 +1646,8 @@
 
  * [WPF 文字描边](WPF-文字描边.md)
 
+ * [WPF 新建用户控件提示 Error MC3000 首个 xaml 字符不合法](WPF-新建用户控件提示-Error-MC3000-首个-xaml-字符不合法.md)
+
  * [WPF 最小的代码使用 DynamicRenderer 书写](WPF-最小的代码使用-DynamicRenderer-书写.md)
 
  * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
@@ -1697,6 +1699,8 @@
  * [WPF 获取下载内容长度](WPF-获取下载内容长度.md)
 
  * [WPF 获取应用的所有窗口](WPF-获取应用的所有窗口.md)
+
+ * [WPF 获取进程启动到当前现在的时间](WPF-获取进程启动到当前现在的时间.md)
 
  * [WPF 获得当前输入法语言区域](WPF-获得当前输入法语言区域.md)
 
