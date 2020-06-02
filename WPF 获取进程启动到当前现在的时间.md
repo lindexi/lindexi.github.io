@@ -3,6 +3,8 @@
 从应用程序线程创建现在的时间可以通过 Process 类的 StartTime 属性获取，也就是其实这个方法不局限 WPF 可用，任何 dotnet 应用都能此方法
 
 <!--more-->
+<!-- CreateTime:6/1/2020 11:28:32 AM -->
+
 <!-- 发布 -->
 
 通过 `Process.GetCurrentProcess().StartTime` 可以拿到进程启动时间，而通过 DateTime.Now 可以获取当前的时间
