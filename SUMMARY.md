@@ -68,6 +68,8 @@
 
  * [C# dotnet 分割换行](C-dotnet-分割换行.md)
 
+ * [C# dotnet 创建对象附加属性定义 支持附加任意类型](C-dotnet-创建对象附加属性定义-支持附加任意类型.md)
+
  * [C# dotnet 合并只读列表集合](C-dotnet-合并只读列表集合.md)
 
  * [C# dotnet 将 Stream 保存到文件的方法](C-dotnet-将-Stream-保存到文件的方法.md)
