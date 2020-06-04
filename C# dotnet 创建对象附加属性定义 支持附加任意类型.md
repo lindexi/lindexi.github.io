@@ -3,9 +3,11 @@
 在 dotnet 中，通过 dotnetCampus.ClrAttachedProperty 库，可以实现给任意对象附加任意属性。以及实现创建对象的附加属性定义，使用相同的附加属性定义才能访问相同的附加属性值。在使用过 WPF 的小伙伴一定对附加属性不陌生，在 WPF 框架中很强大的一个功能就是附加属性，而针对于 WPF 框架外的 dotnet 其实也能做到相同的设计，支持定义对象附加属性
 
 <!--more-->
+<!-- CreateTime:6/3/2020 3:14:48 PM -->
+
 <!-- 发布 -->
 
-在 [dotnet 给任意对象附加任意属性的库](https://blog.csdn.net/lindexi_gd/article/details/106427397) 和大家介绍了 dotnetCampus.ClrAttachedProperty 库的一般用法，而本文就来告诉大家如何定制和 WPF 一样功能的附加属性
+在 [dotnet 给任意对象附加任意属性的库](https://blog.csdn.net/lindexi_gd/article/details/106427397) 和大家介绍了 [dotnetCampus.ClrAttachedProperty](https://github.com/dotnet-campus/dotnetCampus.ClrAttachedProperty ) 库的一般用法，而本文就来告诉大家如何定制和 WPF 一样功能的附加属性
 
 没有用过 WPF 的小伙伴也没关系，因为用过 WPF 的小伙伴应该是看到 API 就瞬间明白用法和优势，没有用过 WPF 的小伙伴就先来听听我吹一下
 
@@ -87,5 +89,23 @@ Assert.AreEqual(200, bank2.IdProperty.GetValue(person));
 如果我开的是瞬间的银行，我只是定义局部变量，也是可以定义 AttachedProperty 局部变量。此时只有拿到相同的 AttachedProperty 对象才能访问对象的相同的附加属性的值
 
 但是使用这些附加属性时需要小心。垃圾回收的机制，即使是定义局部变量的附加属性，附加到对象的属性的值，最短的存活将会是在附加到的对象被回收之后。换句话说是即使 AttachedProperty 的对象已经被回收了，但是不意味着此时通过 AttachedProperty 附加到对象的属性值也会被回收，而是需要在被附加到的对象被回收之后才会被回收
+
+这个库提供了两个不同版本的 NuGet 库，其中一个包是传统的 Dll 引用包。另一个包是使用 [SourceYard](https://github.com/dotnet-campus/SourceYard) 打出来的源代码包，源代码包安装之后将会引用源代码
+
+安装传统的 Dll 引用包的方式如下
+
+```
+dotnet add package dotnetCampus.ClrAttachedProperty --version 1.0.0
+```
+
+安装源代码包的方式如下
+
+```
+dotnet add package dotnetCampus.ClrAttachedProperty.Source --version 1.0.0
+```
+
+在使用的时候两个包只需要选其中一个就可以
+
+另外这是一个完全开源的项目，放在 [github](https://github.com/dotnet-campus/dotnetCampus.ClrAttachedProperty ) 欢迎小伙伴参与
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
