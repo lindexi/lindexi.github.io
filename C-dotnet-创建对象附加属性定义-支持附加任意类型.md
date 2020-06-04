@@ -6,9 +6,11 @@
 <!--more-->
 
 
+<!-- CreateTime:6/3/2020 3:14:48 PM -->
+
 <!-- 发布 -->
 
-在 [dotnet 给任意对象附加任意属性的库](https://blog.csdn.net/lindexi_gd/article/details/106427397) 和大家介绍了 dotnetCampus.ClrAttachedProperty 库的一般用法，而本文就来告诉大家如何定制和 WPF 一样功能的附加属性
+在 [dotnet 给任意对象附加任意属性的库](https://blog.csdn.net/lindexi_gd/article/details/106427397) 和大家介绍了 [dotnetCampus.ClrAttachedProperty](https://github.com/dotnet-campus/dotnetCampus.ClrAttachedProperty ) 库的一般用法，而本文就来告诉大家如何定制和 WPF 一样功能的附加属性
 
 没有用过 WPF 的小伙伴也没关系，因为用过 WPF 的小伙伴应该是看到 API 就瞬间明白用法和优势，没有用过 WPF 的小伙伴就先来听听我吹一下
 
@@ -90,6 +92,24 @@ Assert.AreEqual(200, bank2.IdProperty.GetValue(person));
 如果我开的是瞬间的银行，我只是定义局部变量，也是可以定义 AttachedProperty 局部变量。此时只有拿到相同的 AttachedProperty 对象才能访问对象的相同的附加属性的值
 
 但是使用这些附加属性时需要小心。垃圾回收的机制，即使是定义局部变量的附加属性，附加到对象的属性的值，最短的存活将会是在附加到的对象被回收之后。换句话说是即使 AttachedProperty 的对象已经被回收了，但是不意味着此时通过 AttachedProperty 附加到对象的属性值也会被回收，而是需要在被附加到的对象被回收之后才会被回收
+
+这个库提供了两个不同版本的 NuGet 库，其中一个包是传统的 Dll 引用包。另一个包是使用 [SourceYard](https://github.com/dotnet-campus/SourceYard) 打出来的源代码包，源代码包安装之后将会引用源代码
+
+安装传统的 Dll 引用包的方式如下
+
+```
+dotnet add package dotnetCampus.ClrAttachedProperty --version 1.0.0
+```
+
+安装源代码包的方式如下
+
+```
+dotnet add package dotnetCampus.ClrAttachedProperty.Source --version 1.0.0
+```
+
+在使用的时候两个包只需要选其中一个就可以
+
+另外这是一个完全开源的项目，放在 [github](https://github.com/dotnet-campus/dotnetCampus.ClrAttachedProperty ) 欢迎小伙伴参与
 
 
 
