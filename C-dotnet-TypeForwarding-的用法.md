@@ -33,6 +33,8 @@
 
 本文代码是小伙伴提供的代码，请看 [ikriv-samples/TypeForwardingTest: CLR has a feature to forward type implementation to another assembly](https://github.com/ikriv-samples/TypeForwardingTest )
 
+[微软官方的 NuGet 包是如何做到同时兼容新旧框架的？例如 System.ValueTuple 是如何做到在新旧版本的框架都能使用的？ - walterlv](https://blog.walterlv.com/post/microsoft-dotnet-packages-use-typeforwarded-to-keep-compatibility.html?tdsourcetag=s_pcqq_aiomsg )
+
 
 
 

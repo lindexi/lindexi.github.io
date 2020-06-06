@@ -121,7 +121,7 @@ vcredist_x86.exe /q:a /c:"msiexec /i vcredist.msi /qb! /l*v %temp%\vcredist_x86.
 - [VC 8.0 Visual C++ 2005 Redistributable Package (x64)](http://www.microsoft.com/downloads/details.aspx?familyid=90548130-4468-4bbc-9673-d6acabd5d13b&displaylang=en)
 - [VC 8.0 Visual C++ 2005 Redistributable Package (ia64)](http://www.microsoft.com/downloads/details.aspx?FamilyID=747AAD7C-5D6B-4432-8186-85DF93DD51A9&displaylang=en)
 
-[IT Pro Tips for Microsoft Visual C++ Redistribuable 2017 v14 | ITNinja](https://www.itninja.com/software/microsoft/visual-c-redistribuable-2017/v14-1 )
+[IT Pro Tips for Microsoft Visual C++ Redistribuable 2017 v14](https://www.itninja.com/software/microsoft/visual-c-redistribuable-2017/v14-1 )
 
 [Mailbag: How to perform a silent install of the Visual C++ 2010 redistributable packages – Aaron Stebner's WebLog](https://blogs.msdn.microsoft.com/astebner/2010/10/20/mailbag-how-to-perform-a-silent-install-of-the-visual-c-2010-redistributable-packages/ )
 
