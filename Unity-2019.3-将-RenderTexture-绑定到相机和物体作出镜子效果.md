@@ -36,6 +36,12 @@
 
 ![](http://image.acmx.xyz/lindexi%2F202065185702346.jpg)
 
+实在不知道怎么做的，不妨看看我的视频 [Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果_一起学精彩视频_虎牙视频](https://v.huya.com/play/347702616.html)
+
+<embed src="https://vhuya-static.huya.com/video/vppp.swf" allowfullscreen="true" quality="high" height="" width="" align="middle" allowscriptaccess="always" flashvars="uu=a04808d307&vu=&channelId=yqx&auto_play=1&sdk=dw&vid=347702616&logo=huya&no_danmu=1&from=vhuyashareweb" type="application/x-shockwave-flash" style="z-index:-1" wmode="transparent" />
+
+收到零哥的邀请，我将视频放到了虎牙，放心，没有任何广告，只是讲得比较渣
+
 更多请看 [RenderTexture](https://docs.unity3d.com/ScriptReference/RenderTexture.html )
 
 [Unity RenderTexture的应用 - 简书](https://www.jianshu.com/p/334770f39127 )
