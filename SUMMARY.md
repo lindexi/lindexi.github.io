@@ -48,6 +48,8 @@
 
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)
 
+ * [C# CLR 聊聊对象的内存布局 一个空对象占用多少内存](C-CLR-聊聊对象的内存布局-一个空对象占用多少内存.md)
+
  * [C# const 和 readonly 有什么区别](C-const-和-readonly-有什么区别.md)
 
  * [C# dontet Office Open XML Unit Converter](C-dontet-Office-Open-XML-Unit-Converter.md)
@@ -1831,6 +1833,8 @@
  * [为何使用 DirectComposition](为何使用-DirectComposition.md)
 
  * [二进制数据差异算法 用于减小OTA内容](二进制数据差异算法-用于减小OTA内容.md)
+
+ * [二阶熵](二阶熵.md)
 
  * [云之幻 UWP 视频教程](云之幻-UWP-视频教程.md)
 
