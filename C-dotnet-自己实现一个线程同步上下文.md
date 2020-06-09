@@ -198,6 +198,7 @@ public static SynchronizationContext? Current => Thread.CurrentThread._synchroni
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ada1cf4b994a20395071af3c806f7a3a7dda41fb/CallnernawbawceKairwemwhejeene) 欢迎小伙伴访问
 
+在 WPF 里面是如何做的？请看 [异步函数async await在wpf都做了什么？ - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/13062963.html )
 
 
 

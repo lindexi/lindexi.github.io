@@ -798,6 +798,8 @@
 
  * [Unity3d 连续按键处理和单次按键处理](Unity3d-连续按键处理和单次按键处理.md)
 
+ * [Unity3d 2019.3 通过 Ctrl 键让移动是固定步距](Unity3d-2019.3-通过-Ctrl-键让移动是固定步距.md)
+
  * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
 
  * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
@@ -1711,6 +1713,8 @@
  * [WPF 获取下载内容长度](WPF-获取下载内容长度.md)
 
  * [WPF 获取应用的所有窗口](WPF-获取应用的所有窗口.md)
+
+ * [WPF 获取本机所有字体拿到每个字符的宽度和高度](WPF-获取本机所有字体拿到每个字符的宽度和高度.md)
 
  * [WPF 获取某个窗口的所有子窗口](WPF-获取某个窗口的所有子窗口.md)
 

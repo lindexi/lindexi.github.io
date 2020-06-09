@@ -119,13 +119,13 @@ nuget pack
 
 ![](http://image.acmx.xyz/lindexi%2F201942885043521)
 
-<!-- ## 通过文件
+## 通过文件
 
 有小伙伴说他在清真的地方，无法下载到好看的图标，同时图标使用的是外面的链接，可能下载到的不是图片，所以微软建议将图标文件放在 NuGet 包里面
 
 编辑 Lindexi.nuspec 文件，将 iconUrl 替换为 icon 同时添加相对路径的图标
 
- -->
+这也是比较推荐的方法，能够解决 NU5048 警告
 
 <!-- [Packaging Icon within the nupkg · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/Packaging-Icon-within-the-nupkg ) -->
 
