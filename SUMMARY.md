@@ -60,6 +60,8 @@
 
  * [C# dotnet WeakLazy 弱引用的延迟初始化实现方法](C-dotnet-WeakLazy-弱引用的延迟初始化实现方法.md)
 
+ * [C# dotnet 一个还看的过去的 B 树实现](C-dotnet-一个还看的过去的-B-树实现.md)
+
  * [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](C-dotnet-WPF-使用-OpenXml-解析-Excel-文件.md)
 
  * [C# dotnet 使用 OpenXml 解析 PPT 元素的坐标和宽度高度](C-dotnet-使用-OpenXml-解析-PPT-元素的坐标和宽度高度.md)
