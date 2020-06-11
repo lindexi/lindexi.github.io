@@ -60,6 +60,8 @@
 
  * [C# dotnet WeakLazy 弱引用的延迟初始化实现方法](C-dotnet-WeakLazy-弱引用的延迟初始化实现方法.md)
 
+ * [C# dotnet 一个看上去还能用的二进制序列化帮助类](C-dotnet-一个看上去还能用的二进制序列化帮助类.md)
+
  * [C# dotnet 一个还看的过去的 B 树实现](C-dotnet-一个还看的过去的-B-树实现.md)
 
  * [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](C-dotnet-WPF-使用-OpenXml-解析-Excel-文件.md)
@@ -1749,6 +1751,8 @@
  * [WPF 让窗口激活作为前台最上层窗口的方法](WPF-让窗口激活作为前台最上层窗口的方法.md)
 
  * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
+
+ * [WPF 设置窗口不跟随触摸惯性拖动抖动](WPF-设置窗口不跟随触摸惯性拖动抖动.md)
 
  * [WPF 设置管理员权限启动](WPF-设置管理员权限启动.md)
 
