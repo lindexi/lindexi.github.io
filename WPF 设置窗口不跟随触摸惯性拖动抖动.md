@@ -3,6 +3,8 @@
 默认在触摸滑动 ListView 等控件的时候，如果滑动到控件底部，会让 WPF 窗口也跟随触摸惯性滑动
 
 <!--more-->
+<!-- CreateTime:6/10/2020 5:05:38 PM -->
+
 <!-- 发布 -->
 
 解决方法是通过在 Window 里面重写 OnManipulationBoundaryFeedback 方法，进行禁用
