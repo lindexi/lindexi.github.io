@@ -80,6 +80,8 @@
 
  * [C# dotnet 合并只读列表集合](C-dotnet-合并只读列表集合.md)
 
+ * [C# dotnet 在内存中的 double 的 NAN 和正负无穷二进制是如何存](C-dotnet-在内存中的-double-的-NAN-和正负无穷二进制是如何存.md)
+
  * [C# dotnet 将 Stream 保存到文件的方法](C-dotnet-将-Stream-保存到文件的方法.md)
 
  * [C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值](C-dotnet-带编号项目符号在-OpenXML-SDK-对应的枚举值.md)
@@ -1853,6 +1855,8 @@
  * [从 dotnet core 3.0 的特性让 WPF 布局失效讨论 API 兼容](从-dotnet-core-3.0-的特性让-WPF-布局失效讨论-API-兼容.md)
 
  * [从 DX 层面讲 WPF 渲染卡顿](从-DX-层面讲-WPF-渲染卡顿.md)
+
+ * [从人工思维加上二阶熵猜测世界存在意志思维](从人工思维加上二阶熵猜测世界存在意志思维.md)
 
  * [从以前的项目格式迁移到 VS2017 新项目格式](从以前的项目格式迁移到-VS2017-新项目格式.md)
 
