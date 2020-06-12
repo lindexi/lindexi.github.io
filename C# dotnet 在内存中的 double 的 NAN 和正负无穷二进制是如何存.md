@@ -3,6 +3,8 @@
 我就好奇无穷大和 NAN 在 C# 的二进制是如何表示的
 
 <!--more-->
+<!-- CreateTime:6/12/2020 8:52:44 AM -->
+
 <!-- 发布 -->
 
 揭开谜底
@@ -12,15 +14,6 @@ NAN: 00,00,00,00,00,00,F8,FF
 正无穷 PositiveInfinity : 00,00,00,00,00,00,F0,7F
 
 负无穷 NegativeInfinity : 00,00,00,00,00,00,F0,FF
-
-
-这是小端的表示方法，实际上的值如下
-
-NAN: 0xFFF8000000000000
-
-正无穷 PositiveInfinity : 0x7FF0000000000000
-
-负无穷 NegativeInfinity : 0xFFF0000000000000
 
 测试方法如下
 
