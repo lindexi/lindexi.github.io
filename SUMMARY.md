@@ -558,6 +558,8 @@
 
  * [dotnet 配置 github 自动打包上传 nuget 文件](dotnet-配置-github-自动打包上传-nuget-文件.md)
 
+ * [dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因](dotnet-配置-Gitlab-的-CI-找不到-Runner-或找错的可能原因.md)
+
  * [dotnet 配置 Gitlab 的 Runner 做 CI 自动构建](dotnet-配置-Gitlab-的-Runner-做-CI-自动构建.md)
 
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
