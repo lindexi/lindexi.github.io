@@ -64,6 +64,8 @@
 
  * [C# dotnet 一个还看的过去的 B 树实现](C-dotnet-一个还看的过去的-B-树实现.md)
 
+ * [C# dotnet 从后向前删除列表元素提升性能的原理](C-dotnet-从后向前删除列表元素提升性能的原理.md)
+
  * [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](C-dotnet-WPF-使用-OpenXml-解析-Excel-文件.md)
 
  * [C# dotnet 使用 OpenXml 解析 PPT 元素的坐标和宽度高度](C-dotnet-使用-OpenXml-解析-PPT-元素的坐标和宽度高度.md)
@@ -1747,6 +1749,8 @@
  * [WPF 解决弹出模态窗口关闭后，主窗口不在最前](WPF-解决弹出模态窗口关闭后，主窗口不在最前.md)
 
  * [WPF 触摸到事件](WPF-触摸到事件.md)
+
+ * [WPF 触摸屏应用需要了解的知识](WPF-触摸屏应用需要了解的知识.md)
 
  * [WPF 触摸底层 PenImc 是如何工作的](WPF-触摸底层-PenImc-是如何工作的.md)
 
