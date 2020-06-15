@@ -11,6 +11,7 @@
 
 <div id="toc"></div>
 <!-- csdn -->
+
 ## Multilingual App Toolkit
 
 首先下载工具 Multilingual App Toolkit 可以到 https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkitv40 下载，如果发现他不能下载，可以去[csdn](http://download.csdn.net/detail/lindexi_gd/9726257)我上传的资源下载。
@@ -44,8 +45,6 @@
  2. 我们需要换行，输入 shift+enter 
 
 写完 Resources 我们返回 xaml ，在 TextBlock 和 TextBox 使用Uid
-
-		
 
 ```xml
                <TextBlock x:Uid="lindexi" Text="lindexi"></TextBlock>

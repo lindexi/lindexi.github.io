@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:6/13/2020 3:05:27 PM -->
+
 <!-- 发布 -->
 
 在 dotnet 中的列表存放的底层是一个连续的数组。而列表在删除元素的时候，会通过移动数组的方式让整个列表的元素在内存中依然是连续的
@@ -64,6 +66,24 @@ list.RemoveAt(lastIndex);
 
 大概的测试效果如下
 
+从 dotnet 的源代码可以看到删除的逻辑大概如下，下面代码有删减
+
+```csharp
+        public void RemoveAt(int index)
+        {
+            _size--;
+            if (index < _size)
+            {
+                Array.Copy(_items, index + 1, _items, index, _size - index);
+            }
+            else
+            {
+                _items[_size] = default!;
+            }
+        }
+```
+
+可以看到如果 index 小于 `_size` 就表示删除的不是最后一项，就需要通过 Array.Copy 方法复制一次，让存放的元素依然连续
 
 这是本文的测试代码
 
