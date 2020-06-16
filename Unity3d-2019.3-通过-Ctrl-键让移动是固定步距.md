@@ -20,6 +20,10 @@
 
 除了移动之外，还可以设置缩放的每次固定大小，和旋转的固定大小
 
+<!-- 不知道怎么做的话，试试看一下 B 站的视频 https://www.bilibili.com/video/BV1xt4y1y7uk/
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1xt4y1y7uk&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe> -->
+
 
 
 

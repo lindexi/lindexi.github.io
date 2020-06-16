@@ -752,6 +752,8 @@
 
  * [Roslyn 理解 msbuild 的清理过程](Roslyn-理解-msbuild-的清理过程.md)
 
+ * [Roslyn 给 SourceYard 添加源代码包引用依赖](Roslyn-给-SourceYard-添加源代码包引用依赖.md)
+
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
  * [Roslyn 获得 sln 文件所在的文件夹](Roslyn-获得-sln-文件所在的文件夹.md)
@@ -797,6 +799,8 @@
  * [TotalCommander 设置 VisualStudio 开发者命令行](TotalCommander-设置-VisualStudio-开发者命令行.md)
 
  * [Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果](Unity-2019.3-将-RenderTexture-绑定到相机和物体作出镜子效果.md)
+
+ * [Unity3D 2019 设置的 Playmode tint 有何作用](Unity3D-2019-设置的-Playmode-tint-有何作用.md)
 
  * [Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小](Unity3d-修改编辑界面控制图标大小-修改相机图标显示大小.md)
 
@@ -1712,6 +1716,8 @@
 
  * [WPF 绑定的默认模式](WPF-绑定的默认模式.md)
 
+ * [WPF 给任意控件通过按下移动抬起封装点击事件](WPF-给任意控件通过按下移动抬起封装点击事件.md)
+
  * [WPF 给应用程序添加水印](WPF-给应用程序添加水印.md)
 
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
@@ -1791,6 +1797,8 @@
  * [WPF 通过 ReadyToRun 提升性能](WPF-通过-ReadyToRun-提升性能.md)
 
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
+
+ * [WPF 通过辅助方法在 csharp 代码写出 XAML 界面效果](WPF-通过辅助方法在-csharp-代码写出-XAML-界面效果.md)
 
  * [WPF 隐藏系统窗口菜单](WPF-隐藏系统窗口菜单.md)
 
