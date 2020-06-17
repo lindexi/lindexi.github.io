@@ -3,6 +3,8 @@
 现象是设置 WPF 开机启动的时候，概率界面不显示，进程已经起来，同时占用内存极小。通过 dump 或附加调试可以看到主进程带等待触摸线程的回应
 
 <!--more-->
+<!-- CreateTime:6/16/2020 11:29:15 AM -->
+
 <!-- 发布 -->
 
 
@@ -52,7 +54,7 @@
 
 更多请看 [.NET 4.7 - WPF - Touch Enabled Devices Crash Applications · Issue #480 · microsoft/dotnet](https://github.com/Microsoft/dotnet/issues/480 )
 
- 
+此问题已报告官方，请看 [The main thread of the WPF application that starts automatically at boot will forever wait for the touch thread to execute · Issue #3147 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3147 ) 求点赞
 
 详细的主线程堆栈
 
