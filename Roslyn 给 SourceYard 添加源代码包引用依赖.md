@@ -3,6 +3,8 @@
 小伙伴告诉我，使用 SourceYard 制作的源代码无法传递源代码包的引用依赖。也就是我如果源代码包 A 引用了源代码包 B 而我使用项目 C 安装了源代码包 A 的时候就不会自动安装源代码包 B 的依赖。本文来告诉大家如何修复这个问题
 
 <!--more-->
+<!-- CreateTime:6/16/2020 8:25:22 AM -->
+
 <!-- 不发布 -->
 
 在 [https://github.com/dotnet-campus/SourceYard/issues/60](https://github.com/dotnet-campus/SourceYard/issues/60) 有小伙伴就报告了这个问题，这个问题不是阻断的问题，只是在使用上有点坑
