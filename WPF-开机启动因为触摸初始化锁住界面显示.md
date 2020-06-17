@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:6/16/2020 11:29:15 AM -->
+
 <!-- 发布 -->
 
 
@@ -55,7 +57,7 @@
 
 更多请看 [.NET 4.7 - WPF - Touch Enabled Devices Crash Applications · Issue #480 · microsoft/dotnet](https://github.com/Microsoft/dotnet/issues/480 )
 
- 
+此问题已报告官方，请看 [The main thread of the WPF application that starts automatically at boot will forever wait for the touch thread to execute · Issue #3147 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3147 ) 求点赞
 
 详细的主线程堆栈
 
