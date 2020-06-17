@@ -65,6 +65,18 @@
 
 [Disable the RealTimeStylus for WPF Applications](https://msdn.microsoft.com/en-us/library/dd901337(v=vs.90).aspx )
 
+如果想要 WPF 一启动就禁用触摸，请使用 App.config 添加如下代码
+
+```xml
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value="Switch.System.Windows.Input.Stylus.DisableStylusAndTouchSupport=true" />
+  </runtime>
+</configuration>
+```
+
+详细请看 [通过 AppSwitch 禁用 WPF 内置的触摸让 WPF 程序可以处理 Windows 触摸消息 - walterlv](https://blog.walterlv.com/post/wpf-disable-stylus-and-touch-support.html )
+
 
 
 

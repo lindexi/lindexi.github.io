@@ -1646,6 +1646,8 @@
 
  * [WPF 开启Pointer消息存在的坑](WPF-开启Pointer消息存在的坑.md)
 
+ * [WPF 开机启动因为触摸初始化锁住界面显示](WPF-开机启动因为触摸初始化锁住界面显示.md)
+
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
@@ -1766,6 +1768,8 @@
 
  * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
 
+ * [WPF 设置 WS_EX_TRANSPARENT 触摸失效](WPF-设置-WS_EX_TRANSPARENT-触摸失效.md)
+
  * [WPF 设置窗口不跟随触摸惯性拖动抖动](WPF-设置窗口不跟随触摸惯性拖动抖动.md)
 
  * [WPF 设置管理员权限启动](WPF-设置管理员权限启动.md)
@@ -1799,6 +1803,8 @@
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
 
  * [WPF 通过辅助方法在 csharp 代码写出 XAML 界面效果](WPF-通过辅助方法在-csharp-代码写出-XAML-界面效果.md)
+
+ * [WPF 附加属性提供某个元素拥有拖拽窗口的功能](WPF-附加属性提供某个元素拥有拖拽窗口的功能.md)
 
  * [WPF 隐藏系统窗口菜单](WPF-隐藏系统窗口菜单.md)
 
