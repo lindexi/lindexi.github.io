@@ -48,6 +48,10 @@
 
 [WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](https://blog.lindexi.com/post/WPF-%E5%9C%A8%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%AD%89%E5%BE%85%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%AA%97%E5%8F%A3%E5%85%B3%E9%97%AD%E4%BC%9A%E8%AE%A9%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%9B%B8%E4%BA%92%E7%AD%89%E5%BE%85.html )
 
+[WPF 开机启动因为触摸初始化锁住界面显示](https://blog.lindexi.com/post/WPF-%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E5%9B%A0%E4%B8%BA%E8%A7%A6%E6%91%B8%E5%88%9D%E5%A7%8B%E5%8C%96%E9%94%81%E4%BD%8F%E7%95%8C%E9%9D%A2%E6%98%BE%E7%A4%BA.html )
+
+[WPF 设置 WS_EX_TRANSPARENT 触摸失效](https://blog.lindexi.com/post/WPF-%E8%AE%BE%E7%BD%AE-WS_EX_TRANSPARENT-%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )
+
 ![](http://image.acmx.xyz/lindexi%2F72551177_p0.jpg)
 
 

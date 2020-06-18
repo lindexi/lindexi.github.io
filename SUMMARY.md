@@ -88,6 +88,8 @@
 
  * [C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值](C-dotnet-带编号项目符号在-OpenXML-SDK-对应的枚举值.md)
 
+ * [C# dotnet 提示找不到 CompositionContainer 类的解决方法](C-dotnet-提示找不到-CompositionContainer-类的解决方法.md)
+
  * [C# dotnet 本地代码构建没问题，但 CI 自动构建失败可能的原因](C-dotnet-本地代码构建没问题，但-CI-自动构建失败可能的原因.md)
 
  * [C# dotnet 的锁 SemaphoreSlim 和队列](C-dotnet-的锁-SemaphoreSlim-和队列.md)
@@ -1491,6 +1493,8 @@
  * [WPF 一个性能比较好的 gif 解析库](WPF-一个性能比较好的-gif-解析库.md)
 
  * [WPF 一个空的 WPF 程序有多少个窗口](WPF-一个空的-WPF-程序有多少个窗口.md)
+
+ * [WPF 两个 Topmost 的窗口如何设置谁在最上方](WPF-两个-Topmost-的窗口如何设置谁在最上方.md)
 
  * [WPF 为何不要重写默认 string 字符串的 DataTemplate 数据模版](WPF-为何不要重写默认-string-字符串的-DataTemplate-数据模版.md)
 
