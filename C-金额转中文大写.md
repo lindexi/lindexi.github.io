@@ -165,6 +165,34 @@
 
 代码请看 https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20
 
+另外有一个更全的库，请看 [zmjack/Chinese: 中文解析通用工具。包括拼音，简繁转换，数字读法，货币读法。](https://github.com/zmjack/Chinese )
+
+
+```csharp
+// "mian3 fei4，kua4 ping2 tai1，kai1 yuan2！"
+Pinyin.GetString("免费，跨平台，开源！", PinyinFormat.Default);
+
+// "mian fei，kua ping tai，kai yuan！"
+Pinyin.GetString("免费，跨平台，开源！", PinyinFormat.WithoutTone);
+
+// "miǎn fèi，kuà píng tāi，kāi yuán！"
+Pinyin.GetString("免费，跨平台，开源！", PinyinFormat.PhoneticSymbol);
+
+var options = new ChineseNumberOptions { Simplified = false, Upper = false };
+ChineseNumber.GetString(10_0001, options);    // "一十万零一"
+ChineseNumber.GetString(10_0101, options);    // "一十万零一百零一"
+ChineseNumber.GetString(10_1001, options);    // "一十万一千零一"
+ChineseNumber.GetString(10_1010, options);    // "一十万一千零一十"
+
+ChineseCurrency.GetString(10_0001, options);       // "一十万零一元整"
+ChineseCurrency.GetString(10_0101, options);       // "一十万零一百零一元整"
+ChineseCurrency.GetString(10_1001, options);       // "一十万一千零一元整"
+ChineseCurrency.GetString(10_1010, options);       // "一十万一千零一十元整"
+ChineseCurrency.GetString(10_0001.2m, options);    // "一十万零一元二角整"
+ChineseCurrency.GetString(10_0001.23m, options);   // "一十万零一元二角三分"
+ChineseCurrency.GetString(10_0001.03m, options);   // "一十万零一元零三分"
+```
+
 参见：[src/Money.php · 趋势软件/capital - 码云 Gitee.com](https://gitee.com/trendsoftorg/capital/blob/master/src/Money.php )
 
 ![](https://i.loli.net/2018/04/08/5ac9ffa67477f.jpg)

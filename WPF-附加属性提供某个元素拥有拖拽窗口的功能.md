@@ -63,26 +63,22 @@
         public static readonly DependencyProperty DragWindowProperty = DependencyProperty.RegisterAttached(
             "DragWindow", typeof(WindowDraggingExtension), typeof(WindowDraggingExtension),
             new PropertyMetadata(default(WindowDraggingExtension),
-                new PropertyChangedCallback(OnDragWindowPropertyChanged)));
+                OnDragWindowPropertyChanged));
 
-        private static void OnDragWindowPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            // 仅有设置，不会存在多次设置，也没有反过来
-            if (e.NewValue is WindowDraggingExtension windowDragging && d is UIElement element)
-            {
-                InputHelper.AttachMouseDownMoveUpToClick(element,
-                    delegate { windowDragging.DraggingElementClicked?.Invoke(null, EventArgs.Empty); }, delegate
-                    {
-                        if (Mouse.LeftButton == MouseButtonState.Pressed)
-                        {
-                            var targetWindow = windowDragging.TargetWindow
-                                               ?? Window.GetWindow(element);
+        /// <summary>
+        /// 附加的拖动的窗口，提供此属性仅仅是为了提升性能，可以不设置。如不设置将使用 Window.GetWindow 方法获取当前元素所在窗口
+        /// </summary>
+        public Window TargetWindow { set; get; }
 
-                            targetWindow?.DragMove();
-                        }
-                    });
-            }
-        }
+        /// <summary>
+        /// 拖动的元素实际是被点击时触发
+        /// </summary>
+        public event EventHandler DraggingElementClicked;
+
+        /// <summary>
+        /// 拖动时触发
+        /// </summary>
+        public event EventHandler Dragging;
 
         /// <summary>
         /// 设置元素作为窗口的拖拽元素
@@ -104,15 +100,36 @@
             return (WindowDraggingExtension) element.GetValue(DragWindowProperty);
         }
 
-        /// <summary>
-        /// 附加的拖动的窗口，提供此属性仅仅是为了提升性能，可以不设置。如不设置将使用 Window.GetWindow 方法获取当前元素所在窗口
-        /// </summary>
-        public Window TargetWindow { set; get; }
+        private static void OnDragWindowPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            // 仅有设置，不会存在多次设置，也没有反过来
+            if (e.NewValue is WindowDraggingExtension windowDragging && d is UIElement element)
+            {
+                InputHelper.AttachMouseDownMoveUpToClick(element,
+                    delegate { windowDragging.OnDraggingElementClicked(); }, delegate
+                    {
+                        windowDragging.OnDragging();
 
-        /// <summary>
-        /// 拖动的元素实际是被点击时触发
-        /// </summary>
-        public event EventHandler DraggingElementClicked;
+                        if (Mouse.LeftButton == MouseButtonState.Pressed)
+                        {
+                            var targetWindow = windowDragging.TargetWindow
+                                               ?? Window.GetWindow(element);
+
+                            targetWindow?.DragMove();
+                        }
+                    });
+            }
+        }
+
+        private void OnDraggingElementClicked()
+        {
+            DraggingElementClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void OnDragging()
+        {
+            Dragging?.Invoke(this, EventArgs.Empty);
+        }
     }
 ```
 

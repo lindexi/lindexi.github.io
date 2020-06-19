@@ -732,6 +732,8 @@
 
  * [Roslyn 在项目文件使用条件判断](Roslyn-在项目文件使用条件判断.md)
 
+ * [Roslyn 如何了解某个项目在 msbuild 中所有用到的属性以及构建过程](Roslyn-如何了解某个项目在-msbuild-中所有用到的属性以及构建过程.md)
+
  * [Roslyn 如何使用 MSBuild Copy 复制文件](Roslyn-如何使用-MSBuild-Copy-复制文件.md)
 
  * [Roslyn 如何使用 MSBuild ZipDirectory 压缩文件夹](Roslyn-如何使用-MSBuild-ZipDirectory-压缩文件夹.md)
@@ -753,6 +755,8 @@
  * [Roslyn 打包自定义的文件到 NuGet 包](Roslyn-打包自定义的文件到-NuGet-包.md)
 
  * [Roslyn 理解 msbuild 的清理过程](Roslyn-理解-msbuild-的清理过程.md)
+
+ * [Roslyn 禁止 sdk style csproj 默认引用 Compile 代码文件](Roslyn-禁止-sdk-style-csproj-默认引用-Compile-代码文件.md)
 
  * [Roslyn 给 SourceYard 添加源代码包引用依赖](Roslyn-给-SourceYard-添加源代码包引用依赖.md)
 
@@ -1529,6 +1533,8 @@
  * [WPF 使用 RawInput 接收裸数据](WPF-使用-RawInput-接收裸数据.md)
 
  * [WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示](WPF-使用-RenderTargetBitmap-快速截图出现-COMException-提示.md)
+
+ * [WPF 使用 Resharper 更改命名空间后生成文件引用找不到的命名空间](WPF-使用-Resharper-更改命名空间后生成文件引用找不到的命名空间.md)
 
  * [WPF 使用 SharpDX 在 D3DImage 显示](WPF-使用-SharpDX-在-D3DImage-显示.md)
 
