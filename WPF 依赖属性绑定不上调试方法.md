@@ -74,6 +74,24 @@
 
 所以在发现没有绑定上的时候需要首先看是否定义没有写对
 
+## 复制粘贴没改全
+
+如果你的属性没有绑定上，而这个属性是从别的类复制过来的，此时你需要小心是不是没改全
+
+表现：修改了值但是没有触发绑定变化，或者没有触发界面变化
+
+调试方法：给属性添加一个 PropertyChangedCallback 添加断点，同时在 SetValue 里面同样添加断点。如下图
+
+<!-- ![](image/WPF 依赖属性绑定不上调试方法/WPF 依赖属性绑定不上调试方法3.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20206181034574822.jpg)
+
+如果能进入 SetValue 断点但是不能进去 PropertyChangedCallback 断点，那么证明定义没有写对。如上图写错的代码是将 `typeof(Foo)` 写成了 `typeof(F2)` 这个类写错了，就不会进入触发
+
+如果不能进入 SetValue 那么证明要么弄错类，要么调错方法了
+
+如果能进入 SetValue 也能进入 PropertyChangedCallback 断点，证明绑定被破坏，也就是绑定表达式被更改，如后台代码更改。或者绑定的对象不是修改的对象
+
 ## 使用 VisualStudio 调试
 
 在 VisualStudio 2019 可以使用实时可视化树查看界面元素和元素的属性，其实这个功能在 VisualStudio 2017 就可以使用
