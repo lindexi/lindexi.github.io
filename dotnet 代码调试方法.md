@@ -1021,6 +1021,9 @@ public static int Count { set; get; }
 在遇到某个特别的文件不知道是那句代码创建的，如我想要调试是哪个模块会在桌面新建一个 1.txt 文件，请看 [dotnet 如何调试某个文件是哪个代码创建](https://blog.lindexi.com/post/dotnet-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E6%98%AF%E5%93%AA%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%88%9B%E5%BB%BA.html )
 
 
+
+
+
 ## 界面调试
 
 ### 实时可视化树
@@ -1037,11 +1040,19 @@ public static int Count { set; get; }
 
 ### WPF 界面调试
 
-调试 binding 方法 [WPF 如何调试 binding](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95-binding.html )
+请看 WPF 专项调试 这一节
 
-### 使用 snoop 调试
+## WPF 专项调试
 
-填坑
+[WPF 调试 获得追踪输出](https://blog.lindexi.com/post/WPF-%E8%B0%83%E8%AF%95-%E8%8E%B7%E5%BE%97%E8%BF%BD%E8%B8%AA%E8%BE%93%E5%87%BA.html )
+
+[让 snoop 支持 .NET Core WPF 调试](https://blog.lindexi.com/post/%E8%AE%A9-snoop-%E6%94%AF%E6%8C%81-.NET-Core-WPF-%E8%B0%83%E8%AF%95.html )
+
+[WPF 如何调试 binding](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E8%B0%83%E8%AF%95-binding.html )
+
+[WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8.html )
+
+[WPF 依赖属性绑定不上调试方法](https://blog.lindexi.com/post/WPF-%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8D%E4%B8%8A%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
 
 ## DUMP调试
 
@@ -1165,6 +1176,10 @@ public static int Count { set; get; }
 
 填坑
 
+### 测试的环境也有影响
+
+某一天，师兄告诉我，只有在晚上12点的时候，才会出现一个坑，其他时间都不会。这会和什么问题相关？究竟是什么的影响？请看 [WPF 触摸屏应用需要了解的知识](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%B1%8F%E5%BA%94%E7%94%A8%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E7%9A%84%E7%9F%A5%E8%AF%86.html ) 虫文这一章
+
 ## 工具
 
 高效率的调试离不开工具的辅助，我收藏的一些工具请看 [在 Windows 下那些好用的调试软件](https://blog.lindexi.com/post/%E5%9C%A8-Windows-%E4%B8%8B%E9%82%A3%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6.html )
@@ -1172,5 +1187,6 @@ public static int Count { set; get; }
 [Roslyn 让 VisualStudio 急速调试底层库方法](https://blog.lindexi.com/post/Roslyn-%E8%AE%A9-VisualStudio-%E6%80%A5%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%95%E5%B1%82%E5%BA%93%E6%96%B9%E6%B3%95.html )
 
 [VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html.html )
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

@@ -3,6 +3,8 @@
 默认在 SDK Style 的 csproj 文件将会引用所有的 .cs 文件到 Compile 项，如果是 WPF 项目还会添加 xaml 的引用。如果想要自己手动设置，让一些项不默认引用，需要添加属性 EnableDefaultCompileItems 告诉 msbuild 不要默认引用
 
 <!--more-->
+<!-- CreateTime:6/18/2020 7:50:18 PM -->
+
 <!-- 发布 -->
 
 <!-- 标签：Roslyn,MSBuild,编译器 -->

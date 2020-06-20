@@ -3,6 +3,8 @@
 在 Resharper 更改全部命名空间之后，在 xx.g.cs 文件里面的 using 用了一个之前的命名空间，但是代码里面没有地方使用，此时构建不通过，原因是 xaml 里面存在引用
 
 <!--more-->
+<!-- CreateTime:6/18/2020 5:52:59 PM -->
+
 <!-- 发布 -->
 
 在安装 Resharper 之后，可以右击某个文件夹或项目，点击 Refactor -> AdjustNamespaces 批量更改命名空间
