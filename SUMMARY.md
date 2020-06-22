@@ -330,6 +330,8 @@
 
  * [dotnet ConditionalWeakTable 的底层原理](dotnet-ConditionalWeakTable-的底层原理.md)
 
+ * [dotnet core 2 使用 DispatchProxy 做动态代理 AOP 入门](dotnet-core-2-使用-DispatchProxy-做动态代理-AOP-入门.md)
+
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
 
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
@@ -431,6 +433,8 @@
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
 
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
+
+ * [dotnet 使用完全对象引用相等判断](dotnet-使用完全对象引用相等判断.md)
 
  * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
 
@@ -1832,6 +1836,8 @@
 
  * [WPF 绑定密码](WPF-绑定密码.md)
 
+ * [Xamarin Forms 4.7 支持更简化的 Grid 行列布局写法](Xamarin-Forms-4.7-支持更简化的-Grid-行列布局写法.md)
+
  * [Xamarin XamlCTask 任务不支持 ValidateOnly 参数](Xamarin-XamlCTask-任务不支持-ValidateOnly-参数.md)
 
  * [Xamarin 使用 GTK 提示找不到 libglib-2.0-0.dll 找不到](Xamarin-使用-GTK-提示找不到-libglib-2.0-0.dll-找不到.md)
@@ -2105,6 +2111,8 @@
  * [给博客添加rss订阅](给博客添加rss订阅.md)
 
  * [编程思想 定义过滤的方式解耦](编程思想-定义过滤的方式解耦.md)
+
+ * [聊聊 2020 的 dotnet 各大开源项目仓库的情况](聊聊-2020-的-dotnet-各大开源项目仓库的情况.md)
 
  * [自动更新所有 Git 仓库](自动更新所有-Git-仓库.md)
 
