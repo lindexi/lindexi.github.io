@@ -465,3 +465,67 @@ window.Activate();
   </ListView.ItemsPanel>
 </ListView>
 ```
+
+## 通用路由事件定义
+
+因为没有模版创建，还是写一下，方便抄代码
+
+```csharp
+        public static readonly RoutedEvent LindexiEvent = EventManager.RegisterRoutedEvent("Lindexi",
+            RoutingStrategy.Bubble, typeof(EventHandler<LindexiRoutedEventArgs>), typeof(Owner));
+
+        public event EventHandler<LindexiRoutedEventArgs> Lindexi
+        {
+            add { AddHandler(LindexiEvent, value); }
+            remove { RemoveHandler(LindexiEvent, value); }
+        }
+```
+
+全部代码
+
+```csharp
+    public class Owner : UIElement
+    {
+        public static readonly RoutedEvent LindexiEvent = EventManager.RegisterRoutedEvent("Lindexi",
+            RoutingStrategy.Bubble, typeof(EventHandler<LindexiRoutedEventArgs>), typeof(Owner));
+
+        public event EventHandler<LindexiRoutedEventArgs> Lindexi
+        {
+            add { AddHandler(LindexiEvent, value); }
+            remove { RemoveHandler(LindexiEvent, value); }
+        }
+
+        public void RaiseLindexiEvent()
+        {
+            RaiseEvent(new LindexiRoutedEventArgs(LindexiEvent, this));
+        }
+    }
+
+    public class LindexiRoutedEventArgs : RoutedEventArgs
+    {
+        /// <inheritdoc />
+        public LindexiRoutedEventArgs()
+        {
+        }
+
+        /// <inheritdoc />
+        public LindexiRoutedEventArgs(RoutedEvent routedEvent) : base(routedEvent)
+        {
+        }
+
+        /// <inheritdoc />
+        public LindexiRoutedEventArgs(RoutedEvent routedEvent, object source) : base(routedEvent, source)
+        {
+        }
+    }
+```
+
+监听
+
+```csharp
+            xx.AddHandler(Owner.LindexiEvent, new EventHandler<LindexiRoutedEventArgs>((o, args) =>
+            {
+
+            }));
+```
+
