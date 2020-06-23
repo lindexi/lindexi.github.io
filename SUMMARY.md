@@ -920,6 +920,8 @@
 
  * [VisualStudio 解决方案筛选器 slnf 文件](VisualStudio-解决方案筛选器-slnf-文件.md)
 
+ * [VisualStudio 解决首次调试 docker 的 vs2017u5 exists, deleting 太慢问题](VisualStudio-解决首次调试-docker-的-vs2017u5-exists,-deleting-太慢问题.md)
+
  * [VisualStudio 调试内存泄漏方法](VisualStudio-调试内存泄漏方法.md)
 
  * [VisualStudio 过滤输出窗口文本](VisualStudio-过滤输出窗口文本.md)
