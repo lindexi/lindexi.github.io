@@ -3,6 +3,8 @@
 本文简单告诉大家如何在 .NET Core 里面使用 AOP 切面编程，使用 DispatchProxy 做任意接口的动态代理实现
 
 <!--more-->
+<!-- CreateTime:6/20/2020 5:49:44 PM -->
+
 <!-- 发布 -->
 
 使用 DispatchProxy 有一些限制，如只能创建接口的实例。使用 DispatchProxy 可以让咱做到从无中创建出某个实例，这个实例继承咱想要的接口
