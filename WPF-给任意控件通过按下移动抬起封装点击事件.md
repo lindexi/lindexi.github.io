@@ -194,6 +194,8 @@
 
 这个封装的方法没有用到什么框架里面的功能，因此换个框架，如 UWP 按照这个思路修改一点代码应该也可以做出来
 
+现在这个逻辑放进了[HandyControl](https://github.com/HandyOrg/HandyControl/pull/414)欢迎小伙伴使用
+
 
 
 
