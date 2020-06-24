@@ -30,6 +30,8 @@
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)
 
+ * [ASP.NET Core 解决控制台输出日志内容前面[40m等乱码字符](ASP.NET-Core-解决控制台输出日志内容前面[40m等乱码字符.md)
+
  * [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](ASP.NET-Core-连接-GitLab-与-MatterMost-打造-devops-工具.md)
 
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
