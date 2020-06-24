@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:6/24/2020 3:19:38 PM -->
+
 <!-- 发布 -->
 
 在看到重定向的输出里面包含以下乱码字符
@@ -36,6 +38,21 @@ public void ConfigureServices(IServiceCollection services)
 注意上面代码使用 ClearProviders 清空了日志输出，上面代码禁用颜色用的是 `options.DisableColors = true;` 禁用
 
 禁用之后输出控制台没有颜色，但重定向的日志里面也没有乱码
+
+另外，在 WPF 之外，在 Kubernetes 上的重定向输出也会是差不多的乱码
+
+```csharp
+�[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
+      Now listening on: http://[::]:12312
+�[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+�[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+�[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /lindexi/doubi
+```
+
+解决方法和上面相同
 
 
 
