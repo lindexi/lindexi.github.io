@@ -3,6 +3,8 @@
 作为新一代的全平台开发框架 UNO 将在 2020 的 8 月 13 日进行线上举行 UnoConf 2020 在线会议，所有小伙伴都可以免费参加
 
 <!--more-->
+<!-- CreateTime:6/23/2020 9:27:56 AM -->
+
 <!-- 发布 -->
 
 参加链接： [https://www.eventbrite.ca/e/unoconf-2020-livestream-tickets-106050903106](https://www.eventbrite.ca/e/unoconf-2020-livestream-tickets-106050903106)

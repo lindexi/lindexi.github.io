@@ -3,6 +3,8 @@
 著名的 HandyControl 已经支持给任意控件通过按下移动抬起事件，封装点击事件
 
 <!--more-->
+<!-- CreateTime:6/23/2020 10:14:02 AM -->
+
 <!-- 发布 -->
 
 在 [HandyControl](https://github.com/HandyOrg/HandyControl/pull/414) 的这个 [PR](https://github.com/HandyOrg/HandyControl/pull/414) 添加了 InputClickHelper 类，这个类提供了使用控件的按下移动抬起事件封装为点击事件
