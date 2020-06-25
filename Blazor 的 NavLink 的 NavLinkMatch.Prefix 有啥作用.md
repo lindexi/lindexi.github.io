@@ -40,6 +40,8 @@
 
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/3cf2cdb488013b9022b23dde409e2cf23e393f20/HobilearnargurcalJudowokear) 欢迎小伙伴访问
 
+官方文档请看 [ASP.NET Core Blazor 路由](https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-3.1)
+
 特别推荐两个很好用的 Blazor 的 UI 库
 
 - [wzxinchen/Blazui: Element的blazor版本，用 .NET 写前端的 UI 框架，无JS，无TS，非 Silverlight，非 WebForm，开箱即用](https://github.com/wzxinchen/Blazui)
