@@ -171,7 +171,7 @@
 
 - [.NET 中使用 TaskCompletionSource 作为线程同步互斥或异步操作的事件_walterlv - 吕毅-CSDN博客_wpf taskcompletionsource](https://blog.csdn.net/WPwalter/article/details/85526459 )
 
-- [# dotnet 使用 TaskCompletionSource 实现暂停功能](blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-TaskCompletionSource-%E5%AE%9E%E7%8E%B0%E6%9A%82%E5%81%9C%E5%8A%9F%E8%83%BD.html)
+- [# dotnet 使用 TaskCompletionSource 实现暂停功能](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-TaskCompletionSource-%E5%AE%9E%E7%8E%B0%E6%9A%82%E5%81%9C%E5%8A%9F%E8%83%BD.html)
 
 
 

@@ -42,6 +42,14 @@
 
  * [BAT 脚本判断当前系统是 x86 还是 x64 系统](BAT-脚本判断当前系统是-x86-还是-x64-系统.md)
 
+ * [Blazor 如何使用代码跳转链接](Blazor-如何使用代码跳转链接.md)
+
+ * [Blazor 的 NavLink 提示 RZ9986 不支持复杂内容](Blazor-的-NavLink-提示-RZ9986-不支持复杂内容.md)
+
+ * [Blazor 的 NavLink 的 NavLinkMatch.Prefix 有啥作用](Blazor-的-NavLink-的-NavLinkMatch.Prefix-有啥作用.md)
+
+ * [Blazor 获取当前的 Url 链接](Blazor-获取当前的-Url-链接.md)
+
  * [C# 16 进制字符串转 int ](C-16-进制字符串转-int-.md)
 
  * [C# 7.0 使用下划线忽略使用的变量](C-7.0-使用下划线忽略使用的变量.md)
@@ -1646,6 +1654,8 @@
 
  * [WPF 如何画出1像素的线](WPF-如何画出1像素的线.md)
 
+ * [WPF 如何给 Grid 的某一行添加背景色](WPF-如何给-Grid-的某一行添加背景色.md)
+
  * [WPF 如何给定两个点画出一条波浪线](WPF-如何给定两个点画出一条波浪线.md)
 
  * [WPF 如何计算矩形内一个坐标相对另一个矩形的坐标](WPF-如何计算矩形内一个坐标相对另一个矩形的坐标.md)
@@ -1903,6 +1913,8 @@
  * [从 dotnet core 3.0 的特性让 WPF 布局失效讨论 API 兼容](从-dotnet-core-3.0-的特性让-WPF-布局失效讨论-API-兼容.md)
 
  * [从 DX 层面讲 WPF 渲染卡顿](从-DX-层面讲-WPF-渲染卡顿.md)
+
+ * [从 gitlab 配置管理聊聊团队项目管理](从-gitlab-配置管理聊聊团队项目管理.md)
 
  * [从人工思维加上二阶熵猜测世界存在意志思维](从人工思维加上二阶熵猜测世界存在意志思维.md)
 
