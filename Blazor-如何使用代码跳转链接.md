@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:6/28/2020 8:40:39 AM -->
+
 <!-- 发布 -->
 
 根据[官方文档](https://docs.microsoft.com/zh-cn/aspnet/core/blazor/fundamentals/routing?view=aspnetcore-3.1) 可以在页面注入 NavigationManager 拿到跳转的功能

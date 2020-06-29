@@ -66,6 +66,8 @@
 
  * [C# dotnet core 局域网组播方法](C-dotnet-core-局域网组播方法.md)
 
+ * [C# dotnet Thread.GetCurrentProcessorId 和 CurrentProcess.Id 的区别](C-dotnet-Thread.GetCurrentProcessorId-和-CurrentProcess.Id-的区别.md)
+
  * [C# dotnet TypeForwarding 的用法](C-dotnet-TypeForwarding-的用法.md)
 
  * [C# dotnet WeakLazy 弱引用的延迟初始化实现方法](C-dotnet-WeakLazy-弱引用的延迟初始化实现方法.md)
@@ -113,6 +115,8 @@
  * [C# dotnet 获取整个局域网的 ip 地址](C-dotnet-获取整个局域网的-ip-地址.md)
 
  * [C# dotnet 获取某个字符所在 Unicode 字符平面映射](C-dotnet-获取某个字符所在-Unicode-字符平面映射.md)
+
+ * [C# dotnet 解决 Path 获取文件名路径在 Windows 构建在 Linux 执行问题](C-dotnet-解决-Path-获取文件名路径在-Windows-构建在-Linux-执行问题.md)
 
  * [C# dotnet 高性能多线程工具 AsyncAutoResetEvent 异步等待使用方法和原理](C-dotnet-高性能多线程工具-AsyncAutoResetEvent-异步等待使用方法和原理.md)
 
@@ -483,6 +487,8 @@
  * [dotnet 如何调试某个文件是哪个代码创建](dotnet-如何调试某个文件是哪个代码创建.md)
 
  * [dotnet 字典类找不到 TryAdd 方法](dotnet-字典类找不到-TryAdd-方法.md)
+
+ * [dotnet 定制 ILogger 实现](dotnet-定制-ILogger-实现.md)
 
  * [dotnet 对 DateTime 排序](dotnet-对-DateTime-排序.md)
 
