@@ -45,6 +45,8 @@ using System.Linq;
 
 源代码请看 [src/System.Linq/src/System/Linq/Take.cs](https://github.com/dotnet/corefx/blob/50fc80c8023060d61a826b01733a93840018fe92/src/System.Linq/src/System/Linq/Take.cs )
 
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/230bef81356c0a666671be533adf2bdd25d96c6f/Gacwhecruinlkreeu) 欢迎小伙伴访问
+
 
 
 
