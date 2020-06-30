@@ -3,6 +3,8 @@
 使用 Thread.GetCurrentProcessorId 可以获取当前线程处理器的 Id 是哪个，而通过 Process.GetCurrentProcess().Id 可以获取当前进程的 Id 号，这两个的差别从上面描述就能看出
 
 <!--more-->
+<!-- CreateTime:6/28/2020 10:25:07 AM -->
+
 <!-- 发布 -->
 
 更进一步的 Thread.GetCurrentProcessorId() 方法将会缓存处理器的 Id 因此前后两次线程如果处理器切换，此时拿到的值是不对的。在官方文档里面说了使用代码不得依赖于其正确性，因此这个值基本上只在 DUMP 使用
