@@ -126,4 +126,10 @@ vcredist_x86.exe /q:a /c:"msiexec /i vcredist.msi /qb! /l*v %temp%\vcredist_x86.
 
 [Update regarding silent install of the VC 8.0 runtime (vcredist) packages – Aaron Stebner's WebLog](https://blogs.msdn.microsoft.com/astebner/2007/02/07/update-regarding-silent-install-of-the-vc-8-0-runtime-vcredist-packages/ )
 
+## 更多博客
+
+在所有面向用户的包里面 C++ 库是最诡异的，对于正常的软件，版本较高的程序可以替代并兼容版本较低的程序。然而C++则是一个特例。由于不同的版本中包含了不同的库文件，因此 C++ 2017 不能替代 C++ 2005 和 C++ 2008 哦，然而，由于C++2017是完全在C++2015的基础上更新而来的，所以C++2017可以替代C++2015库，装了2017就不用装2015了，这个是 C++ 系列里唯一一个特例，详细请看 [破解C++ Redistributable Package版本之谜_VBcom的专栏-CSDN博客](https://blog.csdn.net/VBcom/article/details/6172882 )
+
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。        
