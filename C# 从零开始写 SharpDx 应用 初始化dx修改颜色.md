@@ -280,7 +280,7 @@ public void Dispose()
 }
 ```
 
-现在按一下 F5 就可以运行，看到一个绿色的窗口。本文也就告诉了大家如何初始化窗口，在初始化窗口之后离在窗口画东西还需要一步，那就是创建 ViewPort 视口，详细请点击[C# 从零开始写 SharpDx 应用 画三角](https://lindexi.github.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html ) 
+现在按一下 F5 就可以运行，看到一个绿色的窗口。本文也就告诉了大家如何初始化窗口，在初始化窗口之后离在窗口画东西还需要一步，那就是创建 ViewPort 视口，详细请点击[C# 从零开始写 SharpDx 应用 画三角](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html ) 
 
 所有代码
 
@@ -388,7 +388,7 @@ namespace NawbemcemXadre
 
 [SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
 
-[WPF 底层渲染](https://blog.csdn.net/column/details/24324.html )
+[WPF 底层渲染](https://blog.csdn.net/lindexi_gd/category_9276313.html )
 
 [Directx11入门之D3D程序初始化 - 九野的博客 - CSDN博客](https://blog.csdn.net/acmmmm/article/details/79369294 )
 
@@ -402,6 +402,6 @@ namespace NawbemcemXadre
 
 上一篇 [C# 从零开始写 SharpDx 应用 控制台创建 Sharpdx 窗口](https://lindexi.oschina.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )
 
-下一篇 [C# 从零开始写 SharpDx 应用 画三角](https://lindexi.github.io/lindexi/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html ) 将会告诉大家如何创建 视口 ViewPort，视口定义了我们渲染到屏幕上的面积。
+下一篇 [C# 从零开始写 SharpDx 应用 画三角](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html ) 将会告诉大家如何创建 视口 ViewPort，视口定义了我们渲染到屏幕上的面积。
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

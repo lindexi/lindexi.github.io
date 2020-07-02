@@ -10,7 +10,7 @@
 
 <!-- math -->
 
-本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
+本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
 
 在 [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](https://blog.csdn.net/lindexi_gd/article/details/82114907 ) 创建了资源，在这个博客的代码继续写
 
@@ -353,7 +353,7 @@ private D3D11.InputElement[] _inputElements = new D3D11.InputElement[]
 
 参见：[SharpDX Beginners Tutorial Part 4: Drawing a triangle - Johan Falk](http://www.johanfalk.eu/blog/sharpdx-beginners-tutorial-part-4-drawing-a-triangle )
 
-更多博客请看 [SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
+更多博客请看 [SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
 
 ![](https://i.loli.net/2018/06/24/5b2f3cb357b4a.jpg)
 
