@@ -48,7 +48,7 @@ Process.GetCurrentProcess().MainModule.FileName=D:\lindexi\dotnet 获取程序�
 
 ## Assembly.GetEntryAssembly
 
-获取入口程序集，一般的入口程序集就是包含 Main 函数的程序集，一个程序里面是可以存在多个 Main 函数，具体调用哪个可以在编译的时候指定，详细请看 [.NET/C# 中你可以在代码中写多个 Main 函数，然后按需要随时切换 - walterlv](https://walterlv.com/post/write-multiple-main-and-related-startup-codes.html )
+获取入口程序集，一般的入口程序集就是包含 Main 函数的程序集，一个程序里面是可以存在多个 Main 函数，具体调用哪个可以在编译的时候指定，详细请看 [.NET/C# 中你可以在代码中写多个 Main 函数，然后按需要随时切换 - walterlv](https://blog.walterlv.com/post/write-multiple-main-and-related-startup-codes.html )
 
 通过在任意代码调用 Assembly.GetEntryAssembly 可以拿到当前调用的入口函数所在的程序集
 
@@ -91,7 +91,7 @@ Process.GetCurrentProcess().MainModule.FileName=D:\lindexi\dotnet 获取程序�
 
 关于 AppDomain.CurrentDomain.SetupInformation 和 Process.GetCurrentProcess().MainModule.FileName 的方法请看
 
-[三种方法获取可执行程序的文件路径（.NET Core / .NET Framework） - walterlv](https://walterlv.com/post/get-current-executable-file-path.html#%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%9F%9F%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96 )
+[三种方法获取可执行程序的文件路径（.NET Core / .NET Framework） - walterlv](https://blog.walterlv.com/post/get-current-executable-file-path.html#%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%9F%9F%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96 )
 
 参考文档
 
@@ -101,6 +101,6 @@ Process.GetCurrentProcess().MainModule.FileName=D:\lindexi\dotnet 获取程序�
 
 [Assembly.GetCallingAssembly Method (System.Reflection)](https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assembly.getcallingassembly?view=netframework-4.7.2#System_Reflection_Assembly_GetCallingAssembly )
 
-[三种方法获取可执行程序的文件路径（.NET Core / .NET Framework） - walterlv](https://walterlv.com/post/get-current-executable-file-path.html#%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%9F%9F%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96 )
+[三种方法获取可执行程序的文件路径（.NET Core / .NET Framework） - walterlv](https://blog.walterlv.com/post/get-current-executable-file-path.html#%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%9F%9F%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96 )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

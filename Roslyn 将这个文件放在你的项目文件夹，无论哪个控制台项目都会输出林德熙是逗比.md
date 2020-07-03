@@ -62,7 +62,7 @@ namespace CeseacooteeGowgu
 </Project>
 ```
 
-这里的 SomeThing 就是写入代码的文件，关于 `$(IntermediateOutputPath)` 请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://walterlv.com/post/known-properties-in-csproj.html )
+这里的 SomeThing 就是写入代码的文件，关于 `$(IntermediateOutputPath)` 请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 
 在这个 Target 里面就定义了代码文件的路径，然后通过移除现在所有的文件，添加写入的文件的方法，让编译的时候运行的是输出 林德熙是逗比 这里需要注意的是 `BeforeTargets` 需要写为 编译之前，这样小伙伴看到自己的代码还是原来的代码，但是编译的时候是忽略小伙伴的代码编译刚才写的文件
 

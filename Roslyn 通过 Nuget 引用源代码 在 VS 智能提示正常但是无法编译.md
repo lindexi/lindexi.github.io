@@ -9,7 +9,7 @@
 
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
-这个问题是 msbuild 的一个坑，主要是没有主动引用 `.nuget.g.props` 和 `.nuget.g.targets` 文件，使用 Microsoft.NET.Sdk 作为 Sdk 的项目文件会自动在 obj 文件夹下生成 project.assets.json、$(ProjectName).csproj.nuget.cache、$(ProjectName).csproj.nuget.g.props 和 $(ProjectName).csproj.nuget.g.targets 文件；其中 .nuget.g.props 和 .nuget.g.targets 中生成了 Import 包中编译相关文件的代码。具体请看[MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://walterlv.com/post/problems-of-msbuild-and-nuget.html )
+这个问题是 msbuild 的一个坑，主要是没有主动引用 `.nuget.g.props` 和 `.nuget.g.targets` 文件，使用 Microsoft.NET.Sdk 作为 Sdk 的项目文件会自动在 obj 文件夹下生成 project.assets.json、$(ProjectName).csproj.nuget.cache、$(ProjectName).csproj.nuget.g.props 和 $(ProjectName).csproj.nuget.g.targets 文件；其中 .nuget.g.props 和 .nuget.g.targets 中生成了 Import 包中编译相关文件的代码。具体请看[MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://blog.walterlv.com/post/problems-of-msbuild-and-nuget.html )
 
 但是在使用 Nuget 引用源代码的时候，因为此时源代码还没加入到编译，在编译的时候 msbuild 找不到类，于是就没继续执行，只是就无法编译通过
 
@@ -65,7 +65,7 @@ e\SopisatraJowje\SopisatraJowje_rb00pftp_wpftmp.csproj]
 
 添加了这两个引用就可以解决源代码引用的时候出现了在 VisualStudio 可以跳转找到类，但是在编译的时候找不到类的问题
 
-[MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://walterlv.com/post/problems-of-msbuild-and-nuget.html )
+[MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://blog.walterlv.com/post/problems-of-msbuild-and-nuget.html )
 
 ![](http://image.acmx.xyz/lindexi%2F2018927201059809)
 

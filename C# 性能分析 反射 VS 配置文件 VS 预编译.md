@@ -1,6 +1,6 @@
 # C# 性能分析 反射 VS 配置文件 VS 预编译
 
-本文分析在 C# 中使用反射和配置文件和预编译做注入的性能，本文的数据是为[预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html )提供
+本文分析在 C# 中使用反射和配置文件和预编译做注入的性能，本文的数据是为[预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://blog.walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html )提供
 
 <!--more-->
 <!-- CreateTime:2019/11/29 10:13:17 -->

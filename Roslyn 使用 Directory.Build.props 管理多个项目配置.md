@@ -95,7 +95,7 @@ Build\Version.props
 </Project>
 ```
 
-上面的代码的 `$(MSBuildThisFileDirectory)` 就是替换文件所在的文件夹路径，更多请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://walterlv.com/post/known-properties-in-csproj.html )
+上面的代码的 `$(MSBuildThisFileDirectory)` 就是替换文件所在的文件夹路径，更多请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 
 更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 
 

@@ -24,7 +24,7 @@
 | Activator 创建 |   481.28 us |  9.3487 us |   9.6004 us |   477.99 us |
 | ConstructorInfo 创建 | 2,179.59 us | 84.8502 us | 242.0823 us | 2,084.09 us |
 
-而在调用方法的速度请看图片，详细请看[.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - walterlv](https://walterlv.com/post/create-delegate-to-improve-reflection-performance.html )
+而在调用方法的速度请看图片，详细请看[.NET Core/Framework 创建委托以大幅度提高反射调用的性能 - walterlv](https://blog.walterlv.com/post/create-delegate-to-improve-reflection-performance.html )
 
 <!-- ![](image/C# 直接创建多个类和使用反射创建类的性能/C# 直接创建多个类和使用反射创建类的性能1.png) -->
 

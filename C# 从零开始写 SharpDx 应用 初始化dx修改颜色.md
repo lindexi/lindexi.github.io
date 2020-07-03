@@ -8,7 +8,7 @@
 <!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
 <div id="toc"></div>
 
-本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
+本文是 SharpDX 系列博客，更多博客请点击[SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
 
 在[C# 控制台创建 Sharpdx 窗口](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )已经创建了一个窗口，现在需要在这个窗口初始化。因为是从零开始写，所以需要非常多细节，我觉得一篇文章是很难全部告诉大家，所以分为了系列的文章。从零开始写有利于大家了解一个渲染框架是如何做出来，并且从底层优化渲染，当然这个方法就是学习的时间会比较长。我会在文章去掉很多细节放在后面的博客讲，让大家先知道总体是如何做的。
 
@@ -386,7 +386,7 @@ namespace NawbemcemXadre
 
 参见：[SharpDX Beginners Tutorial Part 3: Initializing DirectX - Johan Falk](http://www.johanfalk.eu/blog/sharpdx-beginners-tutorial-part-3-initializing-directx )
 
-[SharpDX 系列](https://lindexi.github.io/lindexi/post/sharpdx.html )
+[SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
 
 [WPF 底层渲染](https://blog.csdn.net/lindexi_gd/category_9276313.html )
 

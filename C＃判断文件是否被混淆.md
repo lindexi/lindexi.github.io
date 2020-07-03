@@ -31,7 +31,7 @@
 
 简单方法去获得文件是否混淆变量名是反射。
 
-可以通过加载文件，使用[动态加载 DLL](http://lindexi.oschina.io/lindexi/post/C-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E5%8D%B8%E8%BD%BD-DLL/)，然后使用反射判断文件变量名是否存在不可读字符，如果存在，那么文件被混淆。
+可以通过加载文件，使用[动态加载 DLL](https://blog.lindexi.com/post/C-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E5%8D%B8%E8%BD%BD-DLL.html)，然后使用反射判断文件变量名是否存在不可读字符，如果存在，那么文件被混淆。
 
 代码：
 
