@@ -189,7 +189,7 @@
 
 用反射获得解析 sln 的 `s_SolutionParser_parseSolution` 他可以获得所有项目。
 
-但是获得的项目路径是相对的，于是使用[C＃ 相对路径转绝对路径](http://lindexi.oschina.io/lindexi/post/C-%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E8%BD%AC%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/)，可以转换项目路径。
+但是获得的项目路径是相对的，于是使用[C＃ 相对路径转绝对路径](https://blog.lindexi.com/post/C-%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E8%BD%AC%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84.html)，可以转换项目路径。
 
 ## 使用
 

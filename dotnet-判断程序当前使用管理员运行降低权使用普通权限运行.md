@@ -62,7 +62,7 @@
             }
 ```
 
-[在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - walterlv](https://walterlv.com/post/start-process-with-lowered-uac-privileges.html )
+[在 Windows 系统上降低 UAC 权限运行程序（从管理员权限降权到普通用户权限） - walterlv](https://blog.walterlv.com/post/start-process-with-lowered-uac-privileges.html )
 
 
 

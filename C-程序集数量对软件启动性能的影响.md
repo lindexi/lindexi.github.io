@@ -3,7 +3,7 @@
 
 本文通过很多的数据测试分析在一个项目引用很多个外部项目和将外部项目的类合并到一个项目之间的启动性能的不同。
 通过分析知道了如果一个项目引用了很多项目，而且在启动过程会全部调用这些项目，这时的软件性能会比将这些项目的代码合并到一个项目的慢很多
-本文的数据为 [预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html ) 提供
+本文的数据为 [预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://blog.walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html ) 提供
 
 <!--more-->
 
@@ -337,7 +337,7 @@ namespace CouwharjeMerball
 
 [C# 性能分析 反射 VS 配置文件 VS 预编译](https://lindexi.oschina.io/lindexi/post/C-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90-%E5%8F%8D%E5%B0%84-VS-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-VS-%E9%A2%84%E7%BC%96%E8%AF%91.html )
 
-[预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html ) 
+[预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://blog.walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html ) 
 
 [dotnet-campus/SourceYard: Add a NuGet package only for dll reference? By using dotnetCampus.SourceYard, you can pack a NuGet package with source code. By installing the new source code package, all source codes behaviors just like it is in your project.](https://github.com/dotnet-campus/SourceYard )
 

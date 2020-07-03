@@ -586,7 +586,7 @@ fantastic.Foo();
     }
 ```
 
-通过这个方式可以让开发者无法直接创建 Fantastic 类，而且在不知道 FantasticInfo 的情况无法创建 Fantastic 也就是让大家需要了解 FantasticInfo 才可以通过上面的方法创建，具体请看[只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式） - walterlv](https://walterlv.com/post/hide-your-constructor.html )
+通过这个方式可以让开发者无法直接创建 Fantastic 类，而且在不知道 FantasticInfo 的情况无法创建 Fantastic 也就是让大家需要了解 FantasticInfo 才可以通过上面的方法创建，具体请看[只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式） - walterlv](https://blog.walterlv.com/post/hide-your-constructor.html )
 
 课件链接： https://r302.cc/J4gxOX
 

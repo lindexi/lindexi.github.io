@@ -342,7 +342,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 找到了异常的代码，可以在代码的调用上下进行断点调试
 
-关于第一次机会异常请看[C#/.NET 如何在第一次机会异常 FirstChanceException 中获取比较完整的异常堆栈 - walterlv](https://walterlv.com/post/how-to-get-the-full-stacktrace-of-an-first-chance-exception.html )
+关于第一次机会异常请看[C#/.NET 如何在第一次机会异常 FirstChanceException 中获取比较完整的异常堆栈 - walterlv](https://blog.walterlv.com/post/how-to-get-the-full-stacktrace-of-an-first-chance-exception.html )
 
 ### 读取异常的信息
 
@@ -524,19 +524,19 @@ ExceptionMessage：林德熙是逗比
 
 我推荐小伙伴阅读以下博客了解在代码中如何写
 
-- [.NET/C# 建议的异常处理原则 - walterlv](https://walterlv.com/post/suggestions-for-handling-exceptions.html )
+- [.NET/C# 建议的异常处理原则 - walterlv](https://blog.walterlv.com/post/suggestions-for-handling-exceptions.html )
 
-- [应该抛出什么异常？不应该抛出什么异常？（.NET/C#） - walterlv](https://walterlv.com/post/throws-which-exception.html )
+- [应该抛出什么异常？不应该抛出什么异常？（.NET/C#） - walterlv](https://blog.walterlv.com/post/throws-which-exception.html )
 
 - [.NET/C# 在正确的条件下抛出最合适的异常](https://blog.walterlv.com/post/when-to-throw-which-exceptions.html)
 
-- [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](https://walterlv.com/post/exceptiondispatchinfo-capture-throw.html )
+- [使用 ExceptionDispatchInfo 捕捉并重新抛出异常 - walterlv](https://blog.walterlv.com/post/exceptiondispatchinfo-capture-throw.html )
 
-- [Exception.Data 为异常添加更多调试信息 - walterlv](https://walterlv.com/dotnet/2017/09/12/exception-data.html )
+- [Exception.Data 为异常添加更多调试信息 - walterlv](https://blog.walterlv.com/dotnet/2017/09/12/exception-data.html )
 
-- [NullReferenceException，就不应该存在！ - walterlv](https://walterlv.com/post/wipe-out-null-reference-exception.html )
+- [NullReferenceException，就不应该存在！ - walterlv](https://blog.walterlv.com/post/wipe-out-null-reference-exception.html )
 
-- [C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常 - walterlv](https://walterlv.com/post/get-the-key-descriptor-of-an-exception.html )
+- [C#/.NET 如何获取一个异常（Exception）的关键特征，用来判断两个异常是否表示同一个异常 - walterlv](https://blog.walterlv.com/post/get-the-key-descriptor-of-an-exception.html )
 
 ### 开启所有异常
 
@@ -641,7 +641,7 @@ ExceptionMessage：林德熙是逗比
 
 求填坑 dnspy 使用方法
 
-更多关于 dnspy 请看 [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](https://walterlv.com/post/edit-and-recompile-assembly-using-dnspy.html )
+更多关于 dnspy 请看 [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](https://blog.walterlv.com/post/edit-and-recompile-assembly-using-dnspy.html )
 
 ## 多线程调试
 

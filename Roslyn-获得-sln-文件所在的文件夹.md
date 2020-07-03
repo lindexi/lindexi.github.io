@@ -49,7 +49,7 @@
 
 因为 `$(MSBuildThisFileDirectory)` 就是当前的文件的文件夹，这个文件和 sln 文件刚好在相同的文件夹，所以通过这个方法就可以获得 sln 所在的文件夹
 
-[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://walterlv.com/post/known-properties-in-csproj.html )
+[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 
 [MSBuild Well-known Item Metadata](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-well-known-item-metadata?view=vs-2017 )
 

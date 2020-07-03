@@ -502,6 +502,8 @@
 
  * [dotnet 找不到 PostAsJsonAsync 方法](dotnet-找不到-PostAsJsonAsync-方法.md)
 
+ * [dotnet 找到博客中引用已失败的链接地址](dotnet-找到博客中引用已失败的链接地址.md)
+
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
 
  * [dotnet 控制台读写 Sqlite 提示 no such table 找不到文件](dotnet-控制台读写-Sqlite-提示-no-such-table-找不到文件.md)

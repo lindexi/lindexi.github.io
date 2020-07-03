@@ -117,7 +117,7 @@ msbuild -t:restore -p:configuration="release" -t:rebuild
 msbuild /t:restore /p:configuration="release" /t:rebuild
 ```
 
-这里的 `-t` 就是调用某个 Target 的代码，这里的 `-p` 就是定义一个属性，关于 Target 和属性请看 [理解 C# 项目 csproj 文件格式的本质和编译流程 ](https://walterlv.com/post/understand-the-csproj.html )
+这里的 `-t` 就是调用某个 Target 的代码，这里的 `-p` 就是定义一个属性，关于 Target 和属性请看 [理解 C# 项目 csproj 文件格式的本质和编译流程 ](https://blog.walterlv.com/post/understand-the-csproj.html )
 
 更多编译相关请看[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
 

@@ -55,7 +55,7 @@
 ```csharp
 // 先进入 HelloComposition.sln 所在的文件夹
 dotnet restore 
-// 还原可能失败，如果发现还原失败可以使用 [我收集的各种公有 NuGet 源](https://walterlv.com/post/public-nuget-sources.html )
+// 还原可能失败，如果发现还原失败可以使用 [我收集的各种公有 NuGet 源](https://blog.walterlv.com/post/public-nuget-sources.html )
 dotnet build
 ```
 
@@ -164,7 +164,7 @@ dotnet build
 
 [Windows.UI.Composition Namespace](https://docs.microsoft.com/en-us/uwp/api/windows.ui.composition )
 
-[我收集的各种公有 NuGet 源](https://walterlv.com/post/public-nuget-sources.html )
+[我收集的各种公有 NuGet 源](https://blog.walterlv.com/post/public-nuget-sources.html )
 
 [我修改的代码](https://github.com/lindexi/lindexi_gd/tree/a8d0df42142b4979807be154ba538b648dd27175/HelloComposition)
 

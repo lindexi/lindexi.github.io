@@ -56,7 +56,7 @@ https://stackoverflow.com/a/2633674/6116637
 
 更多 WMI 请看 [WMI 博客](https://blog.lindexi.com/categories.html#wmi)
 
-[.NET/C# 获取一个正在运行的进程的命令行参数 - walterlv](https://walterlv.com/post/get-command-line-for-a-running-process.html )
+[.NET/C# 获取一个正在运行的进程的命令行参数 - walterlv](https://blog.walterlv.com/post/get-command-line-for-a-running-process.html )
 
 
 

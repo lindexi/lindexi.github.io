@@ -43,7 +43,7 @@ cmd /k " xx.exe xx参数 "
 cmd /k " "C:\lindexi  是逗比\Foo.exe" "C:\林德熙 是逗比" "
 ```
 
-[cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置） - walterlv](https://walterlv.com/post/cmd-startup-arguments.html )
+[cmd.exe 的命令行启动参数（可用于执行命令、传参或进行环境配置） - walterlv](https://blog.walterlv.com/post/cmd-startup-arguments.html )
 
 
 
