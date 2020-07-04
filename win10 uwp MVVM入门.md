@@ -454,7 +454,7 @@ Reflection ，中文翻译为反射。
 
 ```
 
-但是大家也看到，这个需要在使用前就实现 ViewModel ，如果我们想要在使用 ViewModel 才实现，那么我们需要`Type _viewModel`，从 type 进行构造可以去看我之前的博客 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0/
+但是大家也看到，这个需要在使用前就实现 ViewModel ，如果我们想要在使用 ViewModel 才实现，那么我们需要`Type _viewModel`，从 type 进行构造可以去看我之前的博客 [win10 uwp 从Type使用构造](https://blog.lindexi.com/post/win10-uwp-%E4%BB%8EType%E4%BD%BF%E7%94%A8%E6%9E%84%E9%80%A0.html )
 
 我们在这个类写方法 Navigate 判断 ViewModel 是否实现，如果没有，那么从 type 进行构造。
 
@@ -700,7 +700,7 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 
 ## MasterDetail
 
-我们用我们上面写的来做一个 MasterDetail ，我之前做了一个简单 http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail/
+我们用我们上面写的来做一个 MasterDetail ，我之前做了一个 [win10 uwp 简单MasterDetail](https://blog.lindexi.com/post/win10-uwp-%E7%AE%80%E5%8D%95MasterDetail.html )
 
 我们需要做的：如何让两个页面通信
 
@@ -709,8 +709,6 @@ https://www.microsoft.com/store/apps/9nblggh5cc3g
 我们的 B 页面要和A通信，我们让B发送信息到上一级页面，由上一级页面传给A。
 
 我们需要一个信息，他是有发送者，目标、发送内容，发送了什么
-
-        
 
 ```csharp
     public class Message

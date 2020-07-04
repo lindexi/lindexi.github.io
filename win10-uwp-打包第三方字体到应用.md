@@ -117,7 +117,7 @@
  textBlock.FontFamily = newFontFamily("/Assets/Swiftel.ttf#Swiftel Base DEMO");
 ```
 
-路径和页面的方法一样，注意使用的是相对路径，和代码所在有关。如果已经写在资源，那么请看我的博客[win10 uwp 后台获取资源](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E5%90%8E%E5%8F%B0%E8%8E%B7%E5%8F%96%E8%B5%84%E6%BA%90/)
+路径和页面的方法一样，注意使用的是相对路径，和代码所在有关。如果已经写在资源，那么请看我的博客[win10 uwp 后台获取资源](https://blog.lindexi.com/post/win10-uwp-%E5%90%8E%E5%8F%B0%E8%8E%B7%E5%8F%96%E8%B5%84%E6%BA%90.html)
 
 需要注意，UWP 不支持 OTF 字体。
 

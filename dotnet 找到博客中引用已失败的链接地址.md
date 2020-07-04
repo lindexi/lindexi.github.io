@@ -3,6 +3,8 @@
 在我的博客里面会添加很多引用，但是有一大部分的链接失修，访问的时候访问不到了，或者需要更新。于是我写了一个工具，可以协助找到所有的已失败的链接
 
 <!--more-->
+<!-- CreateTime:7/2/2020 3:36:30 PM -->
+
 <!-- 发布 -->
 
 本文用到工具所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/5e17bc953f9e71de9d980ab844e7eceaa72234c8/ReanuyawnicayhiFawcerecheca) 欢迎小伙伴访问

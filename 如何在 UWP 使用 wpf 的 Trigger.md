@@ -55,7 +55,7 @@ Install-Package Microsoft.Xaml.Behaviors.Uwp.Managed
         </Button>
 ```
 
-这里的代码不能直接复制使用，需要先添加命名空间和寻找一张图片，因为图片使用的是`Assets/动漫.jpg` ，所以需要把他修改为你的图片的所在，如何写参见[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/)
+这里的代码不能直接复制使用，需要先添加命名空间和寻找一张图片，因为图片使用的是`Assets/动漫.jpg` ，所以需要把他修改为你的图片的所在，如何写参见[win10 uwp 访问解决方案文件](https://blog.lindexi.com/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html)
 
 ```csharp
 命名空间

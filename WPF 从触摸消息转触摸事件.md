@@ -7,13 +7,13 @@
 
 <!-- csdn -->
 
-在 WPF 的触摸代码写的不是很清真，特别是[触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )可能出现一些坑，如[WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](https://blog.lindexi.com/post/wpf-%E5%9C%A8%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%AD%89%E5%BE%85%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%AA%97%E5%8F%A3%E5%85%B3%E9%97%AD%E4%BC%9A%E8%AE%A9%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%9B%B8%E4%BA%92%E7%AD%89%E5%BE%85 ) 和 [WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/wpf-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88 ) 等，有时候在开机的过程，如果启动快了，触摸设备还没准备好，刚好在 WPF 初始化的过程 USB 触摸设备才准备好，此时 WPF 也会触摸失效
+在 WPF 的触摸代码写的不是很清真，特别是[触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )可能出现一些坑，如[WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](https://blog.lindexi.com/post/WPF-%E5%9C%A8%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%AD%89%E5%BE%85%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%AA%97%E5%8F%A3%E5%85%B3%E9%97%AD%E4%BC%9A%E8%AE%A9%E4%B8%BB%E7%BA%BF%E7%A8%8B%E5%92%8C%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E7%9B%B8%E4%BA%92%E7%AD%89%E5%BE%85.html ) 和 [WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html ) 等，有时候在开机的过程，如果启动快了，触摸设备还没准备好，刚好在 WPF 初始化的过程 USB 触摸设备才准备好，此时 WPF 也会触摸失效
 
 在希沃的设备通过判断用户的开机启动时间，如果启动时间过短，那么就需要多判断是不是 USB 设备还没准备好，如果 USB 还没准备好，那么通过一些黑科技告诉用户重新启动。因为在希沃的设备上主要是触摸屏幕，用户不会有鼠标，如果出现了初始化的过程刚好就是 USB 准备好，那么这个程序将收不到任何触摸事件
 
 在程序启动的时候，可以通过[获得触摸精度和触摸点](https://blog.lindexi.com/post/WPF-%E8%8E%B7%E5%BE%97%E8%A7%A6%E6%91%B8%E7%B2%BE%E5%BA%A6%E5%92%8C%E8%A7%A6%E6%91%B8%E7%82%B9.html )判断当前是否存在触摸设备，如果不存在触摸设备同时判断是在希沃的设备上运行，那么就是触摸失效了。但是还可以收到系统的触摸消息，可以通过本文的黑科技收到触摸
 
-在 WPF 的框架，触摸是从 PENIMC 里面获取的，如果通过自己创建一个模拟的触摸设备，请看 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html) 也可以做到模拟一个触摸。在默认的 WPF 程序是收不到系统的触摸消息，需要[禁用实时触摸](https://blog.lindexi.com/post/wpf-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8 )才可以收到触摸消息，在 Win7 和之后都可以从系统收到 `WM_TOUCH` 消息，通过这个消息可以解析当前的触摸点和触摸面积，通过这两个值可以用来模拟触摸走原有的 WPF 触摸
+在 WPF 的框架，触摸是从 PENIMC 里面获取的，如果通过自己创建一个模拟的触摸设备，请看 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html) 也可以做到模拟一个触摸。在默认的 WPF 程序是收不到系统的触摸消息，需要[禁用实时触摸](https://blog.lindexi.com/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html )才可以收到触摸消息，在 Win7 和之后都可以从系统收到 `WM_TOUCH` 消息，通过这个消息可以解析当前的触摸点和触摸面积，通过这两个值可以用来模拟触摸走原有的 WPF 触摸
 
 在使用 `WM_TOUCH` 消息需要用到一些本地的方法，先定义一个 NativeMethods 类，用来放本地方法
 
@@ -58,7 +58,7 @@
         }
 ```
 
-在 UseMessageTouch 方法需要先通过[禁用实时触摸](https://blog.lindexi.com/post/wpf-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8 )然后使用钩子拿到消息
+在 UseMessageTouch 方法需要先通过[禁用实时触摸](https://blog.lindexi.com/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html)然后使用钩子拿到消息
 
 ```csharp
        /// <summary>

@@ -111,10 +111,10 @@
 
 更多插件开发请看
 
-- [VisualStudio 插件开发 获得输出窗口内容](https://blog.lindexi.com/post/visualstudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E8%8E%B7%E5%BE%97%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E5%86%85%E5%AE%B9 )
-- [VisualStudio 插件开发 添加输出窗口](https://blog.lindexi.com/post/visualstudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E6%B7%BB%E5%8A%A0%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3 )
-- [VisualStudio 插件开发 添加菜单](https://blog.lindexi.com/post/visualstudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E6%B7%BB%E5%8A%A0%E8%8F%9C%E5%8D%95 )
-- [VisualStudio 插件开发](https://blog.lindexi.com/post/visualstudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91 )
+- [VisualStudio 插件开发 获得输出窗口内容](https://blog.lindexi.com/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E8%8E%B7%E5%BE%97%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3%E5%86%85%E5%AE%B9.html )
+- [VisualStudio 插件开发 添加输出窗口](https://blog.lindexi.com/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E6%B7%BB%E5%8A%A0%E8%BE%93%E5%87%BA%E7%AA%97%E5%8F%A3.html )
+- [VisualStudio 插件开发 添加菜单](https://blog.lindexi.com/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91-%E6%B7%BB%E5%8A%A0%E8%8F%9C%E5%8D%95.html )
+- [VisualStudio 插件开发](https://blog.lindexi.com/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91.html )
 
 [Developing Custom Tool (aka Single File Generators) for Visual Studio 2012](https://mnaoumov.wordpress.com/2012/09/26/developing-custom-tool-aka-single-file-generators-for-visual-studio-2012/ )
 

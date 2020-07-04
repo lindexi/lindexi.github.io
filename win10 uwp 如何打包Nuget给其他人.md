@@ -7,7 +7,7 @@
 
 <div id="toc"></div>
 
-首先需要知道一些 Nuget 打包需要知道的，请看 [win10 uwp 上传Nuget 让别人用我们的库](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E4%B8%8A%E4%BC%A0Nuget-%E8%AE%A9%E5%88%AB%E4%BA%BA%E7%94%A8%E6%88%91%E4%BB%AC%E7%9A%84%E5%BA%93/ )
+首先需要知道一些 Nuget 打包需要知道的，请看 [win10 uwp 上传Nuget 让别人用我们的库](https://blog.lindexi.com/post/win10-uwp-%E4%B8%8A%E4%BC%A0Nuget-%E8%AE%A9%E5%88%AB%E4%BA%BA%E7%94%A8%E6%88%91%E4%BB%AC%E7%9A%84%E5%BA%93.html )
 
 但是 UWP 的包和上面说的有一些不同，需要对打包做一些修改。
 

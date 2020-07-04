@@ -145,7 +145,7 @@ UWP的 Convert 和 WPF 差不多。
 
 第二个，可以使用依赖属性，在获得值判断 e.NewValue 是 INotifyCollectionChanged ，获得 CollectionChanged 的添加新项就可以。
 
-参见：[win10 uwp 通知列表](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8/)
+参见：[win10 uwp 通知列表](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E7%9F%A5%E5%88%97%E8%A1%A8.html)
 
 ## DataTemplate 绑定 ViewModel
 

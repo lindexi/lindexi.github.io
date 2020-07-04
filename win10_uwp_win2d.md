@@ -271,7 +271,7 @@ Win2d 是一个很简单的库，这个库使用的底层图形 Windows Runtime 
 
 btsync：BTZR4YIPCLUUEL2BKDACVGLC3473MEWDN
 
-如果需要使用 Win2d 使用动画，请看 [win10 uwp win2d CanvasVirtualControl](https://lindexi.gitee.io/post/win10-uwp-win2d-CanvasVirtualControl.html )
+如果需要使用 Win2d 使用动画，请看 [win10 uwp win2d CanvasVirtualControl](https://blog.lindexi.com/post/win10-uwp-win2d-CanvasVirtualControl-%E4%B8%8E-CanvasAnimatedControl.html )
 
 ### 如何画线
 

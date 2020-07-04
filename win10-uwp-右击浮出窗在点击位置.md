@@ -12,7 +12,7 @@
 
 我们一般使用的 MenuFlyout 写在前台，写在 Button 里面，但是可能我们的 MenuFlyout 显示的位置和我们想要的不一样。
 
-也可能是为了使用  ToggleButton ，而他里面没有 FLyOut ，需要使用基类来写，所以这时就需要在其他控件写的 Flyout 放在指定控件的显示。如果需要获得控件的坐标，请看 [win10 uwp 获得元素绝对坐标](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%8E%B7%E5%BE%97%E5%85%83%E7%B4%A0%E7%BB%9D%E5%AF%B9%E5%9D%90%E6%A0%87/)。本文使用的方法是在 后台代码使用 MenuFlyout ，然后在后台进行显示，需要知道的是，这个方法不能直接在前台完成。
+也可能是为了使用  ToggleButton ，而他里面没有 FLyOut ，需要使用基类来写，所以这时就需要在其他控件写的 Flyout 放在指定控件的显示。如果需要获得控件的坐标，请看 [win10 uwp 获得元素绝对坐标](https://blog.lindexi.com/post/win10-uwp-%E8%8E%B7%E5%BE%97%E5%85%83%E7%B4%A0%E7%BB%9D%E5%AF%B9%E5%9D%90%E6%A0%87.html)。本文使用的方法是在 后台代码使用 MenuFlyout ，然后在后台进行显示，需要知道的是，这个方法不能直接在前台完成。
 
 通过使用后台写ShowAt的方法，我们可以通过 e.GetPosition 获得鼠标点击位置，需要对函数传入相对的元素，这个元素一般可以用我们点击使用的元素，也可以使用我们的最外层Grid，这样我们就可以获得了鼠标位置，也就可以显示我们的 MenuFlyout 在点击位置。
 

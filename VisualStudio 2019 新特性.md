@@ -17,7 +17,7 @@
 
 ![](https://i.loli.net/2019/04/01/5ca1f90b01cb2.jpg)
 
-打开的时候就发现所有的项目都没有加载，但是这样就需要手动加载一些项目才可以开始。但是下一次打开是不是还需要打开不加载项目，然后手动加载需要的项目？其实有这个功能，支持保存解决方案加载的项目，也就是假如我有10个项目，我需要在启动的过程不加载其中的5个单元测试项目，就可以通过这个方法另存 slnf 文件，下次打开这个文件就会加载需要的项目，详细请看[VisualStudio 解决方案筛选器 slnf 文件](https://blog.lindexi.com/post/visualstudio-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AD%9B%E9%80%89%E5%99%A8-slnf-%E6%96%87%E4%BB%B6 )
+打开的时候就发现所有的项目都没有加载，但是这样就需要手动加载一些项目才可以开始。但是下一次打开是不是还需要打开不加载项目，然后手动加载需要的项目？其实有这个功能，支持保存解决方案加载的项目，也就是假如我有10个项目，我需要在启动的过程不加载其中的5个单元测试项目，就可以通过这个方法另存 slnf 文件，下次打开这个文件就会加载需要的项目，详细请看[VisualStudio 解决方案筛选器 slnf 文件](https://blog.lindexi.com/post/VisualStudio-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AD%9B%E9%80%89%E5%99%A8-slnf-%E6%96%87%E4%BB%B6.html)
 
 ![](http://image.acmx.xyz/lindexi%2F201941194410257)
 
@@ -121,7 +121,7 @@
 
 - Edi Wang 小伙伴让我撤回容易被小伙伴喷的图
 
-如何下载安装离线的 VS 请看 [VisualStudio 2019 如何离线下载](https://blog.lindexi.com/post/visualstudio-2019-%E5%A6%82%E4%BD%95%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD )
+如何下载安装离线的 VS 请看 [VisualStudio 2019 如何离线下载](https://blog.lindexi.com/post/VisualStudio-2019-%E5%A6%82%E4%BD%95%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD.html )
 
 附激活码，激活码只用于尝试 VisualStudio 的使用，请不要在商业环境使用
 

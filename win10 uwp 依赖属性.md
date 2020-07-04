@@ -239,7 +239,7 @@
         }
 ```
 
-通过修改代码片就可以做到，如何修改请看 [resharper 自定义代码片](http://lindexi.oschina.io/lindexi//post/resharper-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87/ )
+通过修改代码片就可以做到，如何修改请看 [resharper 自定义代码片](https://blog.lindexi.com/post/resharper-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87.html )
 
 下面就是修改后的代码
 

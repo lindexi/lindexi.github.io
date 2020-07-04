@@ -17,11 +17,11 @@
 
 点击 MobaXterm 的 Tool 可以打开 ssh 通道，打开可以看到下面的界面
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201821317278.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201821317278.jpg)
 
 点击创建新通道
 
-![](http://7xqpl8.com1.z0.glb.clouddn.com/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018213172725.jpg)
+![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018213172725.jpg)
 
 选择 动态端口，然后写入本地的端口和中间服务器的端口点击保存，然后启动
 

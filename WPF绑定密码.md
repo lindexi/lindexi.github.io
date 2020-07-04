@@ -4,7 +4,7 @@
 
 我们想做 MVVM ，我们需要绑定密码，不能使用前台 xaml.cs 监听 密码改变得到密码的值，传到 ViewModel 。
 
-本文提供一个简单方法来绑定 WPF 的 PasswordBox 的 Password 。这种方法不仅在 WPF 可以使用，在 UWP 也可以使用。关于 UWP 绑定密码，可以在我博客 [win10 uwp 绑定密码](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E7%BB%91%E5%AE%9A%E5%AF%86%E7%A0%81/) 查看。
+本文提供一个简单方法来绑定 WPF 的 PasswordBox 的 Password 。这种方法不仅在 WPF 可以使用，在 UWP 也可以使用。关于 UWP 绑定密码，可以在我博客 [win10 uwp 绑定密码](https://blog.lindexi.com/post/win10-uwp-%E7%BB%91%E5%AE%9A%E5%AF%86%E7%A0%81.html) 查看。
 
 <!--more-->
 <!-- CreateTime:2018/2/13 17:23:03 -->
