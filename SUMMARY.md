@@ -402,6 +402,8 @@
 
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
 
+ * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
+
  * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)
 
  * [dotnet remoting 抛出异常](dotnet-remoting-抛出异常.md)
