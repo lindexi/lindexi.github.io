@@ -82,7 +82,7 @@
 
 本文用到了 `%(Filename)` 以及 `Copy` 和 `Target` 等，这些可以在我博客看到如何使用
 
-[Roslyn 如何使用 MSBuild Copy 复制文件](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html.html )
+[Roslyn 如何使用 MSBuild Copy 复制文件](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html)
 
 [c# - Visual Studio: How to "Copy to Output Directory" without copying the folder structure? - Stack Overflow](https://stackoverflow.com/questions/18743907/visual-studio-how-to-copy-to-output-directory-without-copying-the-folder-stru )
 

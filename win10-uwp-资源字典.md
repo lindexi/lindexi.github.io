@@ -102,7 +102,7 @@
 
 可以看到这个软件运行显示的是 逗比开发者而不是 林德熙，因为相同的 Key 定义在元素，资源先在元素找，找到了就不会去页面找。资源寻找的方向是 TextBlock -> Border -> Page ，因为在 Boarder 就找到资源，所以在页面的资源就不会找了。通过这个方法可以自定义需要的资源，也就是在 App.xaml 定义一般使用的资源，然后在 Page 定义页面的资源，在元素定义特殊资源。
 
-但是需要知道，如果使用的是 x:Bind ，那么只会在页面找，不会在元素找。这是很重要的，具体请看[x:Bind 无法获得资源](https://lindexi.gitee.io/post/win10-uwp-xBind-%E6%97%A0%E6%B3%95%E8%8E%B7%E5%BE%97%E8%B5%84%E6%BA%90.html )
+但是需要知道，如果使用的是 x:Bind ，那么只会在页面找，不会在元素找。这是很重要的，具体请看[x:Bind 无法获得资源](https://blog.lindexi.com/post/win10-uwp-x_Bind-%E6%97%A0%E6%B3%95%E8%8E%B7%E5%BE%97%E8%B5%84%E6%BA%90.html )
 
 ## 合并资源字典
 

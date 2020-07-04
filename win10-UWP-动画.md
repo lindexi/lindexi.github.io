@@ -89,7 +89,7 @@
 
 点击F5就是可以看到界面出现矩形，按下按钮就向右走
 
-[win10 uwp 使用动画修改 Grid column 的宽度](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E4%BD%BF%E7%94%A8%E5%8A%A8%E7%94%BB%E4%BF%AE%E6%94%B9-Grid-column-%E7%9A%84%E5%AE%BD%E5%BA%A6/)
+[win10 uwp 使用动画修改 Grid column 的宽度](https://blog.lindexi.com/post/win10-uwp-%E4%BD%BF%E7%94%A8%E5%8A%A8%E7%94%BB%E4%BF%AE%E6%94%B9-Grid-column-%E7%9A%84%E5%AE%BD%E5%BA%A6.html )
 
 
 http://www.cnblogs.com/KeithWang/archive/2012/03/30/2425588.html

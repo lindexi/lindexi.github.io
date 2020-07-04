@@ -75,7 +75,7 @@ Integrations Settings 如下图
 
 现在尝试对新建的项目新建一个MR就可以看到 Mattermost 的通知
 
-更多灵活的关联 gitlab 和 mattermost 请看 [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](https://blog.lindexi.com/post/asp.net-core-%E8%BF%9E%E6%8E%A5-gitlab-%E4%B8%8E-mattermost-%E6%89%93%E9%80%A0-devops-%E5%B7%A5%E5%85%B7 )
+更多灵活的关联 gitlab 和 mattermost 请看 [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](https://blog.lindexi.com/post/ASP.NET-Core-%E8%BF%9E%E6%8E%A5-GitLab-%E4%B8%8E-MatterMost-%E6%89%93%E9%80%A0-devops-%E5%B7%A5%E5%85%B7.html )
 
 
 

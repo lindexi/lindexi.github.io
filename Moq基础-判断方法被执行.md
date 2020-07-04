@@ -108,7 +108,7 @@
 
 ```
 
-如果觉得上面的代码写的不错，可以清晰看到每个测试方法，而不是去写小伙伴都看不懂的英文，那么请让使用 MSTestEnhancer 这个测试框架的使用方法十分简单，具体请看[MSTestEnhancer 的使用](https://github.com/dotnet-campus/MSTestEnhancer/blob/master/README.zh-chs.md )
+如果觉得上面的代码写的不错，可以清晰看到每个测试方法，而不是去写小伙伴都看不懂的英文，那么请让使用 MSTestEnhancer 这个测试框架的使用方法十分简单，具体请看[MSTestEnhancer 的使用](https://github.com/dotnet-campus/CUnit/blob/master/docs/zh-chs/README.zh-chs.md )
 
 使用了之后就可以在运行单元测试的时候看到有哪些方法可以运行，有哪些不通过
 

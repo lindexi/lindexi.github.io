@@ -267,7 +267,7 @@
 
 在这个过程中几乎所有步骤都可以拿出来说
 
- - [使用事件](https://blog.lindexi.com/lindexi/post/.net-remoting-%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6.html )
+ - [使用事件](https://blog.lindexi.com/post/dotnet-remoting-%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6.html )
 
  - [抛出异常](https://blog.csdn.net/lindexi_gd/article/details/82114730 )
 
@@ -285,7 +285,7 @@
 
  Ingo Rammer，《Advanced .NET Remoting》
 
-[.net remoting 抛出异常](https://blog.lindexi.com/lindexi/post/.net-remoting-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
+[.net remoting 抛出异常](https://blog.lindexi.com/post/dotnet-remoting-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
 
 《Professional C#》 第3版
 

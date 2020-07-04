@@ -22,9 +22,9 @@ resharper 可以使用 ctrl+b 跳转到源代码，但是如果使用库的源�
 
 参见：
 
-[resharper 自定义代码片](http://lindexi.oschina.io/lindexi//post/resharper-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87/)
+[resharper 自定义代码片](https://blog.lindexi.com/post/resharper-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87.html )
 
-[Resharper 如何把类里的类移动到其他文件](http://lindexi.oschina.io/lindexi//post/Resharper-%E5%A6%82%E4%BD%95%E6%8A%8A%E7%B1%BB%E9%87%8C%E7%9A%84%E7%B1%BB%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%85%B6%E4%BB%96%E6%96%87%E4%BB%B6/)
+[Resharper 如何把类里的类移动到其他文件](https://blog.lindexi.com/post/Resharper-%E5%A6%82%E4%BD%95%E6%8A%8A%E7%B1%BB%E9%87%8C%E7%9A%84%E7%B1%BB%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%85%B6%E4%BB%96%E6%96%87%E4%BB%B6.html )
 
 如果需要设置 Resharper 的快捷键，可以到 VisualStudio 的工具 设置，键盘，搜索对应的 Resharper 的快捷键设置。
 

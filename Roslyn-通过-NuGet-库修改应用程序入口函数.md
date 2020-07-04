@@ -51,7 +51,7 @@ c:\Users\lindexi\.nuget\packages\lindexi\1.0.0\
 
 在 targets 文件里面写的内容，只需要下一次在测试项目使用 dotnet run 就会使用
 
-先通过[WriteLinesToFile](https://blog.lindexi.com/post/roslyn-%E4%BD%BF%E7%94%A8-writelinestofile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5 )写一个新的文件，这个文件里面包括主函数
+先通过[WriteLinesToFile](https://blog.lindexi.com/post/Roslyn-how-to-use-WriteLinesToFile-to-write-the-semicolons-to-file.html)写一个新的文件，这个文件里面包括主函数
 
 然后在 `StartupObject` 指定入口函数为刚才创建的文件
 
@@ -97,9 +97,9 @@ c:\Users\lindexi\.nuget\packages\lindexi\1.0.0\
     </PropertyGroup>
 ```
 
-将代码写入到文件可以使用[WriteLinesToFile](https://blog.lindexi.com/post/roslyn-%E4%BD%BF%E7%94%A8-writelinestofile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5 )写入到上面定义的文件
+将代码写入到文件可以使用[WriteLinesToFile](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html)写入到上面定义的文件
 
-注意文件里面有逗号，在[Roslyn how to use WriteLinesToFile to write the semicolons to file](https://blog.lindexi.com/post/roslyn-how-to-use-writelinestofile-to-write-the-semicolons-to-file )告诉大家如何解决逗号的坑
+注意文件里面有逗号，在[Roslyn how to use WriteLinesToFile to write the semicolons to file](https://blog.lindexi.com/post/Roslyn-how-to-use-WriteLinesToFile-to-write-the-semicolons-to-file.html )告诉大家如何解决逗号的坑
 
 ```csharp
     <WriteLinesToFile File="$(_GeneratedEntryPointFile)"

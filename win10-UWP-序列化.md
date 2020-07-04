@@ -88,9 +88,9 @@ Yaml序列化
 
 参见：
 
-[win10 uwp json](http://lindexi.oschina.io/lindexi//post/win10-uwp-json/)
+[win10 uwp json](https://blog.lindexi.com/post/win10-uwp-json.html)
 
-[win10 uwp 读写XML](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AF%BB%E5%86%99XML/)
+[win10 uwp 读写XML](https://blog.lindexi.com/post/win10-uwp-%E8%AF%BB%E5%86%99XML.html)
 
 
 

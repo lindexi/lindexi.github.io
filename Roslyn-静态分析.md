@@ -124,7 +124,7 @@ namespace TrrluujHlcdyqa
 
 [通过Roslyn构建自己的C#脚本（更新版） - 天方 - 博客园](http://www.cnblogs.com/TianFang/p/6939723.html )
 
-[专栏：Roslyn 入门 - CSDN博客](https://blog.csdn.net/column/details/23159.html )
+[专栏：Roslyn 入门 - CSDN博客](https://blog.csdn.net/lindexi_gd/category_7945110.html )
 
 [Getting Started with Roslyn Analyzers ](https://docs.microsoft.com/en-us/visualstudio/extensibility/getting-started-with-roslyn-analyzers )
 

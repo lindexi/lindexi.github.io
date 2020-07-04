@@ -424,11 +424,11 @@ DefinitionPage 就是我上面定义的选项
 
 ## 升级 2017
 
-如果有之前扩展需要升级，参见https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017
+如果有之前扩展需要升级，参见 [https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017](https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017)
 
 1. 安装 vs2017 需要添加扩展
 
- 关于vs2017 可以到我网盘下载，参见：http://lindexi.oschina.io/lindexi/post/C-7.0/
+ 关于vs2017 可以到我网盘下载，参见：[https://blog.lindexi.com/post/C-7.0.html](https://blog.lindexi.com/post/C-7.0.html)
 
 1. 打开 Nuget 升级，把所有提示升级的都升级。
 

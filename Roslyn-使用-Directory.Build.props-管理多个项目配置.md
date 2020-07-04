@@ -18,7 +18,7 @@
 
 但是很显然，我暂时无法使用 nuget 的方法统一几个仓库的配置，我需要一个新的方式。
 
-在看到我之前的博客 [Roslyn 使用 Directory.Build.props 文件定义编译](https://blog.lindexi.com/post/roslyn-%E4%BD%BF%E7%94%A8-directory.build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html ) 可以知道，通过 Directory.Build.props 文件可以修改配置。
+在看到我之前的博客 [Roslyn 使用 Directory.Build.props 文件定义编译](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html ) 可以知道，通过 Directory.Build.props 文件可以修改配置。
 
 于是本渣就使用这个方法统一配置，我在项目的最外面添加了 Directory.Build.props 文件
 
@@ -102,7 +102,7 @@ Build\Version.props
 
 更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 
 
-参见：[Roslyn 入门 - CSDN博客](https://blog.csdn.net/column/details/23159.html )
+参见：[Roslyn 入门 - CSDN博客](https://blog.csdn.net/lindexi_gd/category_7945110.html )
 
 
 

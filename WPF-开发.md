@@ -350,7 +350,7 @@ element.RaiseEvent(new MouseEventArgs(Mouse.PrimaryDevice, 1)
 
 使用 `&#10;` 就可以换行
 
-[win10 uwp 在 xaml 让 TextBlock 换行](https://blog.lindexi.com/post/win10-uwp-%E5%9C%A8-xaml-%E8%AE%A9-textblock-%E6%8D%A2%E8%A1%8C )
+[win10 uwp 在 xaml 让 TextBlock 换行](https://blog.lindexi.com/post/win10-uwp-%E5%9C%A8-xaml-%E8%AE%A9-TextBlock-%E6%8D%A2%E8%A1%8C.html )
 
 ## 在 xaml 绑定索引空格
 

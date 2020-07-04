@@ -402,7 +402,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 然后判断 `StylusLogic.IsPointerStackEnabled` 现在在 dotnet framework 4.7 在 win10 可以使用 Pointer 消息，所以创建的是 `HwndPointerInputProvider` 本文使用的是 `HwndStylusInputProvider` 因为在 Pointer 消息就不用使用本文的逻辑
 
-原来的 WPF 是存在很多的触摸的问题，在 win10 的 UWP 解决了很多的触摸问题的原因是使用了 Pointer 消息。原来的 WPF 是无法收到触摸的消息，需要使用 `penimc2_v0400.dll` 使用一个新的线程去拿到触摸的消息，也就是本文在告诉大家的流程。这个方法存在一些问题，参见[WPF 插拔触摸设备触摸失效](https://lindexi.github.io/lindexi/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )所以建议是使用 Pointer 消息可以解决很多触摸的问题
+原来的 WPF 是存在很多的触摸的问题，在 win10 的 UWP 解决了很多的触摸问题的原因是使用了 Pointer 消息。原来的 WPF 是无法收到触摸的消息，需要使用 `penimc2_v0400.dll` 使用一个新的线程去拿到触摸的消息，也就是本文在告诉大家的流程。这个方法存在一些问题，参见[WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )所以建议是使用 Pointer 消息可以解决很多触摸的问题
 
 
 在 WispLogic.RegisterHwndForInput 就是初始化的函数在开始初始化之前需要 `HwndStylusInputProvider.HwndStylusInputProvider` 初始化 StylusLogic 这个类有一个静态属性
@@ -444,7 +444,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 		}
 ```
 
-本文不告诉大家 PointerLogic 相关的方法，如何开启 Pointer 消息请看[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://lindexi.gitee.io/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6-%E6%89%93%E5%BC%80-Pointer-%E6%B6%88%E6%81%AF.html )，这里假如是创建 `WispLogic` 就会进入构造，这里只是简单的初始化属性
+本文不告诉大家 PointerLogic 相关的方法，如何开启 Pointer 消息请看[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html )，这里假如是创建 `WispLogic` 就会进入构造，这里只是简单的初始化属性
 
 在 HwndStylusInputProvider.HwndStylusInputProvider 除了创建 StylusLogic 还调用 RegisterHwndForInput 这里传入的是 InputManager HwndSource 通过这两个创建 WispTabletDevices 、 PenContexts 并且通过 IPimcManager2 拿到值
 
@@ -658,7 +658,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 [WPF 高速书写 StylusPlugIn 原理](https://lindexi.gitee.io/post/WPF-%E9%AB%98%E9%80%9F%E4%B9%A6%E5%86%99-StylusPlugIn-%E5%8E%9F%E7%90%86.html )
 
-[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://lindexi.gitee.io/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6-%E6%89%93%E5%BC%80-Pointer-%E6%B6%88%E6%81%AF.html )
+[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html )
 
 [WPF 禁用实时触摸](https://lindexi.gitee.io/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html )
 

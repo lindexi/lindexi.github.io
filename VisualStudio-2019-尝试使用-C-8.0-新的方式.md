@@ -267,7 +267,7 @@ warning CS8602: Possible dereference of a null reference.
         };
 ```
 
-通过语法糖可以写出清真的代码，上面代码用到了两个科技，第一个是 C# 7.0 的时候的表达式方法体，也就是方法体不使用 `{}` 里面写代码，而是通过 `=>` 写一个表达式。更多 C# 7.0 请看 [C# 7.0](https://blog.lindexi.com/post/c-7.0 )
+通过语法糖可以写出清真的代码，上面代码用到了两个科技，第一个是 C# 7.0 的时候的表达式方法体，也就是方法体不使用 `{}` 里面写代码，而是通过 `=>` 写一个表达式。更多 C# 7.0 请看 [C# 7.0](https://blog.lindexi.com/post/C-7.0.html )
 
 第二个科技就是简洁的表达式判断
 
@@ -462,7 +462,7 @@ warning CS8602: Possible dereference of a null reference.
     }
 ```
 
-对于引用的结构体，详细请看[C# 7.0](https://blog.lindexi.com/post/c-7.0 ) 可以添加一个 Dispose 方法，不需要继承任何接口。所以现在的面试题或笔试题就需要更改了，如果要使用 using 释放需要继承什么接口，答案是可以不需要继承接口
+对于引用的结构体，详细请看[C# 7.0](https://blog.lindexi.com/post/C-7.0.html ) 可以添加一个 Dispose 方法，不需要继承任何接口。所以现在的面试题或笔试题就需要更改了，如果要使用 using 释放需要继承什么接口，答案是可以不需要继承接口
 
 释放这个 Point 可以通过 using 的方法，这样就和一个类继承了可释放是相同的
 

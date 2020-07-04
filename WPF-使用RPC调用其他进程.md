@@ -84,13 +84,13 @@
 
 更多关于 WPF dotnet remoting RPC 的博客请看
 
-[.net remoting 使用事件](https://lindexi.gitee.io/post/.net-remoting-%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6.html )
+[.net remoting 使用事件](https://blog.lindexi.com/post/dotnet-remoting-%E4%BD%BF%E7%94%A8%E4%BA%8B%E4%BB%B6.html )
 
-[.net remoting 抛出异常](https://lindexi.gitee.io/post/.net-remoting-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
+[.net remoting 抛出异常](https://blog.lindexi.com/post/dotnet-remoting-%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
 
 如果不想知道那么多，想要快速开始，请看
 
-[WPF 封装 dotnet remoting 调用其他进程](https://lindexi.oschina.io/lindexi/post/WPF-%E5%B0%81%E8%A3%85-dotnet-remoting-%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
+[WPF 封装 dotnet remoting 调用其他进程](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8RPC%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E8%BF%9B%E7%A8%8B.html )
 
 ![](https://i.loli.net/2018/04/08/5ac9ffe655114.jpg)
 

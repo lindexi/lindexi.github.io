@@ -175,7 +175,7 @@ System.Windows.Data Warning: 104 : BindingExpression (hash=294043): Replace item
 
 参见 [http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html](http://jimmangaly.blogspot.com/2009/04/debugging-data-binding-in-wpf.html)
 
-如果是想要在 VisualStudio 输出所有绑定的详细信息请看 [WPF 笔刷绑定不上可能的原因](https://blog.lindexi.com/post/WPF%20%E7%AC%94%E5%88%B7%E7%BB%91%E5%AE%9A%E4%B8%8D%E4%B8%8A%E5%8F%AF%E8%83%BD%E7%9A%84%E5%8E%9F%E5%9B%A0.html)
+如果是想要在 VisualStudio 输出所有绑定的详细信息请看 [WPF 笔刷绑定不上可能的原因](https://blog.lindexi.com/post/WPF-%E7%AC%94%E5%88%B7%E7%BB%91%E5%AE%9A%E4%B8%8D%E4%B8%8A%E5%8F%AF%E8%83%BD%E7%9A%84%E5%8E%9F%E5%9B%A0.html)
 
 
 

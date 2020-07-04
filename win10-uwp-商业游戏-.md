@@ -240,7 +240,7 @@
 
 ```
 
-可以看到图片的写法 Source 的值是使用`ms-appx`，这里就是从资源获得，如果希望知道这个代码是如何写，我有博客[win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi//post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/) 里面就告诉大家如何写。
+可以看到图片的写法 Source 的值是使用`ms-appx`，这里就是从资源获得，如果希望知道这个代码是如何写，我有博客[win10 uwp 访问解决方案文件](https://blog.lindexi.com/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html) 里面就告诉大家如何写。
 
 注意需要设置图片的大小，可以运行程序，然后开始设置，这样界面就可以看到修改，但是需要保存才可以看到。
 
