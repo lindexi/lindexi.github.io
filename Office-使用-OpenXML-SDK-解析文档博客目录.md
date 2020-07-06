@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:7/4/2020 10:05:36 AM -->
+
 <!-- 发布 -->
 
 ## 入门
@@ -13,6 +15,13 @@
 [C# dotnet 使用 OpenXml 解析 PPT 文件](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E4%BB%B6.html)
 
 [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](https://blog.lindexi.com/post/C-dotnet-WPF-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-Excel-%E6%96%87%E4%BB%B6.html)
+
+## PPT 解析
+
+[dotnet OpenXML 解析 PPT 页面元素文档格式](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F.html )
+
+[dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%9A%84-Slide-Master-%E5%92%8C-Slide-Layout-%E6%98%AF%E4%BB%80%E4%B9%88.html )
+
 
 ## 元素解析
 
@@ -32,9 +41,16 @@
 
 [Office OpenXml SDK 文本段落允许标点溢出边界属性](https://blog.lindexi.com/post/Office-OpenXml-SDK-%E6%96%87%E6%9C%AC%E6%AE%B5%E8%90%BD%E5%85%81%E8%AE%B8%E6%A0%87%E7%82%B9%E6%BA%A2%E5%87%BA%E8%BE%B9%E7%95%8C%E5%B1%9E%E6%80%A7.html)
 
+[C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值](https://blog.lindexi.com/post/C-dotnet-%E5%B8%A6%E7%BC%96%E5%8F%B7%E9%A1%B9%E7%9B%AE%E7%AC%A6%E5%8F%B7%E5%9C%A8-OpenXML-SDK-%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9E%9A%E4%B8%BE%E5%80%BC.html)
+
+## 通用知识
+
+
+[Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
+
 [dotnet 在 OpenXML SDK 的 HasValue 是什么含义](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-OpenXML-SDK-%E7%9A%84-HasValue-%E6%98%AF%E4%BB%80%E4%B9%88%E5%90%AB%E4%B9%89.html)
 
-[C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值](https://blog.lindexi.com/post/C-dotnet-%E5%B8%A6%E7%BC%96%E5%8F%B7%E9%A1%B9%E7%9B%AE%E7%AC%A6%E5%8F%B7%E5%9C%A8-OpenXML-SDK-%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9E%9A%E4%B8%BE%E5%80%BC.html)
+
 
 
 

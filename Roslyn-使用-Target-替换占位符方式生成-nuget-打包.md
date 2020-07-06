@@ -92,7 +92,7 @@
 
 更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
 
-参见：[专栏：Roslyn 入门 - CSDN博客](https://blog.csdn.net/column/details/23159.html )
+参见：[专栏：Roslyn 入门 - CSDN博客](https://blog.csdn.net/lindexi_gd/category_7945110.html )
 
 [NuGet pack and restore as MSBuild targets](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets )
 
