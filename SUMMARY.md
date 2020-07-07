@@ -586,6 +586,8 @@
 
  * [dotnet 通过 WMI 获取设备厂商](dotnet-通过-WMI-获取设备厂商.md)
 
+ * [dotnet 通过依赖注入的 Scoped 给工作流注入相同的上下文信息](dotnet-通过依赖注入的-Scoped-给工作流注入相同的上下文信息.md)
+
  * [dotnet 部署 github 的 Action 进行持续集成](dotnet-部署-github-的-Action-进行持续集成.md)
 
  * [dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包](dotnet-配合-GitHub-的-Action-做自动推-Tag-时打包-NuGet-包.md)
@@ -713,6 +715,8 @@
  * [Office OpenXml SDK 文本段落允许标点溢出边界属性](Office-OpenXml-SDK-文本段落允许标点溢出边界属性.md)
 
  * [Office 使用 OpenXML SDK 解析文档博客目录](Office-使用-OpenXML-SDK-解析文档博客目录.md)
+
+ * [Office 文档解析 文档格式和协议](Office-文档解析-文档格式和协议.md)
 
  * [ParaView](ParaView.md)
 
@@ -2108,6 +2112,8 @@
 
  * [断点调试 Windows 源代码](断点调试-Windows-源代码.md)
 
+ * [新人导师笔记](新人导师笔记.md)
+
  * [杀程序员祭天](杀程序员祭天.md)
 
  * [正则表达式30分钟入门教程](正则表达式30分钟入门教程.md)
@@ -2195,6 +2201,8 @@
  * [软件设计 白话依赖注入](软件设计-白话依赖注入.md)
 
  * [逗比面试官成长路线 如何让被面试者觉得糟心](逗比面试官成长路线-如何让被面试者觉得糟心.md)
+
+ * [通过 cmd 批处理文件将 16 进制转 10 进制数字](通过-cmd-批处理文件将-16-进制转-10-进制数字.md)
 
  * [通过 cshtml 将 C# xaml 转 HTML5 代码](通过-cshtml-将-C-xaml-转-HTML5-代码.md)
 
