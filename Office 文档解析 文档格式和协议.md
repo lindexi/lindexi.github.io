@@ -3,6 +3,8 @@
 本文讨论的 Office 文档指的是 Office 2007 及以后的 PPTX 和 xlsx 等格式的文件。在 Office 2007 之前使用的不公开标准的二进制格式定义。在 Office 2007 之后的文档格式使用 OOXML 国际标准定义，本文将告诉大家这个标准的协议和格式
 
 <!--more-->
+<!-- CreateTime:7/7/2020 10:56:35 AM -->
+
 <!-- 发布 -->
 
 在 Office 2007 之后的 Office 文档格式采用的是 OOXML 标准格式。那什么是 OOXML 标准？这里的 OOXML 的全称是 Office Open XML File Formats 或被称为 OpenXML 格式，这是一个基于 zip+xml 定义的文档格式。这个标准最初是由 [ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm ) 定义的，后来 [ISO/IEC 29500](https://www.iso.org/standard/71691.html) 也开始掺和 OOXML 格式的定义，不过可以认为从 ECMA-376 的第2版开始，这两个标准是一样的

@@ -53,5 +53,11 @@
 
 更多 dotnet 底层源代码请看 [官方开源代码](https://github.com/dotnet/runtime) 本文用到的代码放在 `\src\libraries\System.Private.CoreLib\src\System\IO\FileStream.cs` 和 `\src\libraries\System.Private.CoreLib\src\System\IO\FileStream.Windows.cs` 文件
 
+那么文件随机读写的应用是什么？
+
+可以用在一些业务上，这些业务不需要按照顺序读写文件。例如文件的配置的读写等
+
+文件随机读写可以用在文件配置读写上面，例如我知道文件的数据结构，我的某个数据放在第100个字节到第200个字节间，此时我需要读取修改这个数据的内容，我不需要完全去读取前100个字节的内容，我可以直接使用随机读写的方法读取第100个字节到第200个字节的内容。而写入也同理，我不需要从第0个字节开始写入，我可以从第100个字节开始写入。这样能提升一些读写性能
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
