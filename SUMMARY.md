@@ -404,7 +404,13 @@
 
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
 
+ * [dotnet OpenXML 为什么资源使用 Relationship 引用](dotnet-OpenXML-为什么资源使用-Relationship-引用.md)
+
+ * [dotnet OpenXML 文本字体的选择规则](dotnet-OpenXML-文本字体的选择规则.md)
+
  * [dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么](dotnet-OpenXML-的-Slide-Master-和-Slide-Layout-是什么.md)
+
+ * [dotnet OpenXML 的 spcPct 和 spcPts 表示距离的不同](dotnet-OpenXML-的-spcPct-和-spcPts-表示距离的不同.md)
 
  * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
 
@@ -2107,6 +2113,8 @@
  * [手机1520 win8.1升级win10](手机1520-win8.1升级win10.md)
 
  * [拼音输入法 快速输入带音调的字符](拼音输入法-快速输入带音调的字符.md)
+
+ * [推荐官方开源 PInvoke 库 包含大量 win32 封装](推荐官方开源-PInvoke-库-包含大量-win32-封装.md)
 
  * [文件传输](文件传输.md)
 
