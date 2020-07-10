@@ -108,9 +108,10 @@ var layout = slidePart.SlideLayoutPart.SlideLayout;
 var master = slidePart.SlideLayoutPart.SlideMasterPart.SlideMaster;
 ```
 
-先从 layout 里面尝试找到有没有对应的占位符元素，如果没有找到再从 master 里面找
+> 下面这句话是错的
+> 先从 layout 里面尝试找到有没有对应的占位符元素，如果没有找到再从 master 里面找
 
-寻找方法是从 CommonSlideData 的 ShapeTree 寻找是否有对应的元素，那么什么是对应的元素，如果页面元素设置了 Type 那么要求 ShapeTree 的元素的占位符属性有完全相同的 Type 属性，如果页面元素设置了 Index 那么要求 ShapeTree 的有相同的 ShapeTree 属性。如果页面元素的 Type 是空，那么就不对 ShapeTree 的属性有要求，如果 Index 是空，那么对 ShapeTree 的属性也没有要求
+无论是 SlideLayout 还是 SlideMaster 都在 CommonSlideData 的 ShapeTree 存放占位符元素。因此寻找占位符方法是从 CommonSlideData 的 ShapeTree 寻找是否有对应的元素，那么什么是对应的元素，如果页面元素设置了 Type 那么要求 ShapeTree 的元素的占位符属性有完全相同的 Type 属性，如果页面元素设置了 Index 那么要求 ShapeTree 的有相同的 ShapeTree 属性。如果页面元素的 Type 是空，那么就不对 ShapeTree 的属性有要求，如果 Index 是空，那么对 ShapeTree 的属性也没有要求
 
 ```csharp
         private static Shape GetPlaceholderShape(PlaceholderShape placeholder, ShapeTree tree)
@@ -161,11 +162,94 @@ var master = slidePart.SlideLayoutPart.SlideMasterPart.SlideMaster;
   masterPlaceholder = GetPlaceholderShape(placeholder, master?.CommonSlideData?.ShapeTree);
 ```
 
-此时的样式获取顺序就是先从元素获取，如果元素获取不到，就从 layoutPlaceholder 获取，如果获取不到从 masterPlaceholder 获取
+> 下面这句话是不对的
+> 此时的样式获取顺序就是先从元素获取，如果元素获取不到，就从 layoutPlaceholder 获取，如果获取不到从 masterPlaceholder 获取
 
 注释里面的 文本占位符没有type和id的值.pptx 我就不放出来了，有需要的小伙伴发邮件给我
 
 更多的 OpenXML 相关博客，还请自行百度 `OpenXML 林德熙` 就能找到我的博客了
+
+更正一下
+
+小伙伴可以看到我标记了文章一些说法是不对的。原因是 ECMA 376 文档里面其实只包含了 Placeholder 的定义，而没有包含他的实现方式。整个 [ECMA](http://www.ecma-international.org/publications/standards/Ecma-376.htm) 关于 Placeholder 仅有 274 个引用。因此我上面这里的说法完全只是因为没有实践而依靠不靠谱的博客找到的方法
+
+以下为我通过 Office 2013 和 Office 2016 和 WPS 11.3.0.8742 版本测试拿到的规则
+
+- 占位符元素需要同时在 SlideLayout 和 SlideMaster 里面查找
+- 占位符元素的属性优先级是 Slide 里元素本身，然后是 SlideLayout 占位符元素最后是 SlideMaster 占位符元素
+  + 假定尝试获取元素的平移属性，此时在元素本身没有找到，就需要从 SlideLayout 占位符元素（如果存在）里尝试获取平移属性
+  + 假定从 SlideLayout 占位符元素获取不到平移属性，那么尝试从 SlideMaster 占位符元素获取平移属性
+- 占位符元素如果设置了 Id 的值，那么标准文档里面这个 Id 在 SlideLayout 和 SlideMaster 仅能找到一个占位符元素，不会存在两个
+  + 对 WPS 非标准文档，可能存在两个相同 Id 元素，此时使用 xml 的第一个元素
+- 占位符元素如果设置了 Id 的值，在 SlideMaster 里面没有找到对应的 Id 的占位符元素，那么尝试通过占位符元素的 Type 找到对应的 SlideMaster 的元素
+- 如果占位符元素没有设置 Type 的值，那么默认值是 Body 的值
+- 如果在 SlideMaster 里面存在多个 Body 元素，那么标准文档里面将会设置每个 Body 元素都有 Id 的值
+ + 对 WPS 非标准文档，如果定义多个 Body 元素，且没有给每个 Body 元素设置 Id 的值，那么使用 xml 的第一个 Body 元素
+ + 对 WPS 非标准文档，如果定义多个 Body 元素，其中有一个 Body 元素没有 Id 的值，且使用 Id 查找不到对应占位符元素，那么使用第一个没有 Id 的 Body 元素
+
+大概逻辑如下，下面代码仅使用 SlideMaster 的占位符元素，原因是 SlideLayout 没有遇到此非标准文档，而我也不想去改文档代码测试
+
+```csharp
+        /// <summary>
+        /// 对 SlideMaster 的获取占位符的规则是假设 PlaceholderShape 存在 Id 的值，那么在 SlideMaster 所有元素尝试找到对应的 Id 的值的元素，如果能找到那么这个元素就是占位符元素。如果不存在 Id 或找不到对应的元素，那么进行 Type 的查找，如果传入的 PlaceholderType 没有设置值，那么将使用默认的 PlaceholderValues.Body 的值
+        /// </summary>
+        /// <returns></returns>
+        private static Shape GetMasterPlaceholderByPlaceHolderType(PlaceholderShape placeholder, SlideMaster master)
+        {
+            EnumValue<PlaceholderValues> placeholderType = placeholder.Type;
+            const PlaceholderValues defaultPlaceholderValue = PlaceholderValues.Body;
+
+            var type = placeholderType?.Value ?? defaultPlaceholderValue;
+            var id = placeholder.Index?.Value;
+
+            var elementList = master?.CommonSlideData?.ShapeTree?.Elements<Shape>();
+            if (elementList == null)
+            {
+                return null;
+            }
+
+            Shape typeMatchShape = null;
+
+            foreach (var shape in elementList)
+            {
+                var placeholderShape = shape?.NonVisualShapeProperties?.ApplicationNonVisualDrawingProperties
+                    ?.PlaceholderShape;
+
+                if (placeholderShape == null)
+                {
+                    continue;
+                }
+
+                if (id != null)
+                {
+                    // 优先找到 id 相同的占位符
+                    // 如果 id 相同的找不到，那么找 Type 相同的
+                    if (placeholderShape?.Index?.Value == id.Value)
+                    {
+                        return shape;
+                    }
+                }
+
+                // 以下逻辑不全对，注意在有两个Body元素，此时 id != null 且这两个 Body 元素
+                // 第一个元素存在 Id 且和 placeholder.Index 不相等
+                // 第二个元素不存在 Id 的值 
+                // 那么此时应该选用第二个元素，不应该选择第一个元素
+                // 但是下面代码选用的是第一个元素
+                if (placeholderShape.Type?.Value == type)
+                {
+                    // 基本只有一个 Type 相等，如果有多个，那么这个课件不是标准的
+                    Debug.Assert(typeMatchShape == null);
+                    typeMatchShape = shape;
+                }
+            }
+
+            return typeMatchShape;
+        }
+```
+
+上面代码的逻辑不全对，我写在注释里面
+
+更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
 
 

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:7/8/2020 4:40:01 PM -->
+
 <!-- 发布 -->
 
 在做 Office 解析的时候，在 OpenXML SDK 里面是没有找到表示字体的属性的，只能找到 LatinFont 和 EastAsianFont 和 ComplexScriptFont 和 SymbolFont 这几个
@@ -75,7 +77,7 @@
 
 因此这和 [C# dotnet 获取某个字符所在 Unicode 字符平面映射](https://blog.lindexi.com/post/C-dotnet-%E8%8E%B7%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%89%80%E5%9C%A8-Unicode-%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84.html) 不相同
 
-
+这是 [ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm ) 规定的
 
 
 
