@@ -3,6 +3,8 @@
 在 OpenXML 里面的文本排版里面使用到 spcPct （Spacing Percent） 和 spcPts（Spacing Points）两个不同的单位用来表示段前空白和段后空白以及行间距
 
 <!--more-->
+<!-- CreateTime:7/8/2020 3:39:37 PM -->
+
 <!-- 发布 -->
 
 在 Office 的文本排版里面，会在 spcAft (Space After) 段后空白空间以及 spcBef (Space Before) 段前空白空间等使用 spcPct （Spacing Percent）百分比空间 和 spcPts（Spacing Points） 固定点数空间表示空白空间

@@ -3,6 +3,8 @@
 在 Office 的文本排版里面，会根据字符选择使用哪个字体插槽。也就是实际上在 Office 里面可以在一个文本段里面指定多个字体，会根据实际的字符使用不同的字体
 
 <!--more-->
+<!-- CreateTime:7/8/2020 4:40:01 PM -->
+
 <!-- 发布 -->
 
 在做 Office 解析的时候，在 OpenXML SDK 里面是没有找到表示字体的属性的，只能找到 LatinFont 和 EastAsianFont 和 ComplexScriptFont 和 SymbolFont 这几个
@@ -72,6 +74,6 @@
 
 因此这和 [C# dotnet 获取某个字符所在 Unicode 字符平面映射](https://blog.lindexi.com/post/C-dotnet-%E8%8E%B7%E5%8F%96%E6%9F%90%E4%B8%AA%E5%AD%97%E7%AC%A6%E6%89%80%E5%9C%A8-Unicode-%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84.html) 不相同
 
-
+这是 [ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm ) 规定的
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
