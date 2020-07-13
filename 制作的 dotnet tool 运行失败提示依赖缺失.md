@@ -3,6 +3,8 @@
 小伙伴做了一个很好用的 dotnet tool 工具，但是这个工具仅在他的设备上能运行，在我的设备上运行就会退出提示 An assembly specified in the application dependencies manifest (LindexiDoubi.deps.json) was not found 找不到依赖
 
 <!--more-->
+<!-- CreateTime:2020/7/10 20:00:43 -->
+
 <!-- 发布 -->
 
 默认选择 dotnet tool 的 NuGet 包是会带上所有依赖的，和其他的 NuGet 库不相同
