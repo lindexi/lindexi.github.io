@@ -1974,7 +1974,7 @@
 
  * [使用 IncrediBuild 提升 VisualStudio 编译速度](使用-IncrediBuild-提升-VisualStudio-编译速度.md)
 
- * [使用 IOC 希沃和 DI 依赖注入的意义](使用-IOC-希沃和-DI-依赖注入的意义.md)
+ * [使用 IOC 控制反转和 DI 依赖注入的意义](使用-IOC-控制反转和-DI-依赖注入的意义.md)
 
  * [使用 Pandoc 把 Markdown 转 Docx](使用-Pandoc-把-Markdown-转-Docx.md)
 
