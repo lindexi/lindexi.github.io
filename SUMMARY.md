@@ -56,6 +56,8 @@
 
  * [C# 7.2 通过 in 和 readonly struct 减少方法值复制提高性能](C-7.2-通过-in-和-readonly-struct-减少方法值复制提高性能.md)
 
+ * [C# 8.0 文件长度 Bytes 字节转 KB 等单位字符串](C-8.0-文件长度-Bytes-字节转-KB-等单位字符串.md)
+
  * [C# AddRange 添加位置](C-AddRange-添加位置.md)
 
  * [C# CLR 聊聊对象的内存布局 一个空对象占用多少内存](C-CLR-聊聊对象的内存布局-一个空对象占用多少内存.md)
@@ -1574,6 +1576,8 @@
 
  * [WPF 使用 Edge 浏览器](WPF-使用-Edge-浏览器.md)
 
+ * [WPF 使用 HandyControl 给 ListView 添加漂亮的表头效果](WPF-使用-HandyControl-给-ListView-添加漂亮的表头效果.md)
+
  * [WPF 使用 ItemsPanel 修改方向](WPF-使用-ItemsPanel-修改方向.md)
 
  * [WPF 使用 MyScript 的 IInk 做手写识别](WPF-使用-MyScript-的-IInk-做手写识别.md)
@@ -1969,6 +1973,8 @@
  * [使用 C# 写脚本的优势和方法](使用-C-写脚本的优势和方法.md)
 
  * [使用 IncrediBuild 提升 VisualStudio 编译速度](使用-IncrediBuild-提升-VisualStudio-编译速度.md)
+
+ * [使用 IOC 希沃和 DI 依赖注入的意义](使用-IOC-希沃和-DI-依赖注入的意义.md)
 
  * [使用 Pandoc 把 Markdown 转 Docx](使用-Pandoc-把-Markdown-转-Docx.md)
 
