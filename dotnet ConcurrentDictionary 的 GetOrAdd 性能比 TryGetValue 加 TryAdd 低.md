@@ -3,6 +3,8 @@
 我在 Office 的 Open-XML-SDK 库里面找到有代码线程不安全，代码里面使用了 TryGetValue 加 TryAdd 的方法添加对象，而线程安全的方法是通过 GetOrAdd 方法。不过在小伙伴的评论我找到了 GetOrAdd 性能其实在有闭包的时候不如使用 TryGetValue 加 TryAdd 调用这两个方法，但是 GetOrAdd 的优势在于能做到只创建一次对象
 
 <!--more-->
+<!-- CreateTime:2020/7/16 11:00:59 -->
+
 <!-- 发布 -->
 
 在 [Avoid multi-thread creates ElementMetadata object by lindexi · Pull Request #758 · OfficeDev/Open-XML-SDK](https://github.com/OfficeDev/Open-XML-SDK/pull/758 ) 我找到了 OpenXML SDK 的代码存在线程不安全，代码如下
