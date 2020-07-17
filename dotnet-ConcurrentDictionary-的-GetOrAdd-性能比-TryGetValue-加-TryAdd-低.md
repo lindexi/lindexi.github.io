@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/7/16 11:00:59 -->
+
 <!-- 发布 -->
 
 在 [Avoid multi-thread creates ElementMetadata object by lindexi · Pull Request #758 · OfficeDev/Open-XML-SDK](https://github.com/OfficeDev/Open-XML-SDK/pull/758 ) 我找到了 OpenXML SDK 的代码存在线程不安全，代码如下
