@@ -1792,6 +1792,8 @@
 
  * [WPF 绑定的默认模式](WPF-绑定的默认模式.md)
 
+ * [WPF 绑定继承的样式提示 只能根据带有基类型 IFrameworkInputElement 的目标类型的 Style 样式](WPF-绑定继承的样式提示-只能根据带有基类型-IFrameworkInputElement-的目标类型的-Style-样式.md)
+
  * [WPF 给任意控件通过按下移动抬起封装点击事件](WPF-给任意控件通过按下移动抬起封装点击事件.md)
 
  * [WPF 给应用程序添加水印](WPF-给应用程序添加水印.md)
