@@ -3,6 +3,8 @@
 在 WPF 中，如果有一个样式是继承另一个样式，而样式没有使用 TargetType 那么在运行的时候会提示 只能根据带有基类型 IFrameworkInputElement 的目标类型的 Style 样式
 
 <!--more-->
+<!-- CreateTime:2020/7/20 17:58:20 -->
+
 <!-- 发布 -->
 
 在界面添加下面代码
