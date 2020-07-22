@@ -410,6 +410,8 @@
 
  * [dotnet OpenXML 为什么资源使用 Relationship 引用](dotnet-OpenXML-为什么资源使用-Relationship-引用.md)
 
+ * [dotnet OpenXML 从文档生成创建文档的代码的库](dotnet-OpenXML-从文档生成创建文档的代码的库.md)
+
  * [dotnet OpenXML 文本字体的选择规则](dotnet-OpenXML-文本字体的选择规则.md)
 
  * [dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么](dotnet-OpenXML-的-Slide-Master-和-Slide-Layout-是什么.md)
