@@ -3,6 +3,8 @@
 本文和大家介绍 Serialize.OpenXml.CodeGen 这个支持从某个文档生成用于创建出这个文档的 C# 或 VB 代码的库。作用就是可以让小伙伴在拿到一份模版文件之后，可以通过 Serialize.OpenXml.CodeGen 生成能创建出这份文档的 C# 或 VB 的代码，用于在这份代码上面更改功能，做到创建定制 Docx 或 PPTX 或 Xlsx 文档的功能
 
 <!--more-->
+<!-- CreateTime:2020/7/22 12:11:30 -->
+
 <!-- 发布  -->
 
 这是一个完全开源的库，代码放在 [https://github.com/rmboggs/Serialize.OpenXml.CodeGen](https://github.com/rmboggs/Serialize.OpenXml.CodeGen) 欢迎小伙伴访问
