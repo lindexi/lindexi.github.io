@@ -6,7 +6,7 @@
 <!--more-->
 
 
-<!-- 草稿 -->
+<!-- CreateTime:2020/7/22 19:26:42 -->
 
 本文的 OpneXMl SDK 的获取代码前提都有以下代码
 
@@ -16,6 +16,8 @@ public void Foo(Paragraph textParagraph)
 	 ParagraphProperties paragraphProperties = textParagraph.ParagraphProperties;
 }
 ```
+
+本文会不断更新，因为属性太多了
 
 ## defTabSz
 
@@ -95,6 +97,10 @@ OpenXML SDK: `var latinLineBreak = paragraphProperties.LatinLineBreak;`
 ![](http://image.acmx.xyz/lindexi%2F2020722201323813.jpg)
 
 将 `latinLnBrk` 设置为 1 的效果如下
+
+```xml
+	<a:pPr fontAlgn="auto" defTabSz="3600000" latinLnBrk="1">
+```
 
 <!-- ![](image/dotnet OpenXML 文本 ParagraphProperties 的属性作用/dotnet OpenXML 文本 ParagraphProperties 的属性作用4.png) -->
 

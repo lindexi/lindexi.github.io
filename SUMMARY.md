@@ -412,6 +412,8 @@
 
  * [dotnet OpenXML 从文档生成创建文档的代码的库](dotnet-OpenXML-从文档生成创建文档的代码的库.md)
 
+ * [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](dotnet-OpenXML-文本-EndParagraphRunProperties-的作用.md)
+
  * [dotnet OpenXML 文本 ParagraphProperties 的属性作用](dotnet-OpenXML-文本-ParagraphProperties-的属性作用.md)
 
  * [dotnet OpenXML 文本 Text Line Break 的作用](dotnet-OpenXML-文本-Text-Line-Break-的作用.md)
@@ -423,6 +425,8 @@
  * [dotnet OpenXML 的 spcPct 和 spcPts 表示距离的不同](dotnet-OpenXML-的-spcPct-和-spcPts-表示距离的不同.md)
 
  * [dotnet OpenXML 简单聊聊 PPT 文本解析](dotnet-OpenXML-简单聊聊-PPT-文本解析.md)
+
+ * [dotnet OpenXML 解压缩文档为文件夹工具](dotnet-OpenXML-解压缩文档为文件夹工具.md)
 
  * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
 
