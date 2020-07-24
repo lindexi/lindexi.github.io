@@ -34,6 +34,8 @@
 
 ## 文本解析
 
+[dotnet OpenXML 简单聊聊 PPT 文本解析](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8A-PPT-%E6%96%87%E6%9C%AC%E8%A7%A3%E6%9E%90.html )
+
 [dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90-Office-%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%AC%A6%E5%8F%B7-buNone-%E5%90%AB%E4%B9%89.html)
 
 [dotnet OpenXML SDK 文本占位符解析](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E6%96%87%E6%9C%AC%E5%8D%A0%E4%BD%8D%E7%AC%A6%E8%A7%A3%E6%9E%90.html)
@@ -43,6 +45,8 @@
 [C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值](https://blog.lindexi.com/post/C-dotnet-%E5%B8%A6%E7%BC%96%E5%8F%B7%E9%A1%B9%E7%9B%AE%E7%AC%A6%E5%8F%B7%E5%9C%A8-OpenXML-SDK-%E5%AF%B9%E5%BA%94%E7%9A%84%E6%9E%9A%E4%B8%BE%E5%80%BC.html)
 
 [Office 文档 文本排版布局 中华人民共和国国家标准 标点符号用法](https://blog.lindexi.com/post/Office-%E6%96%87%E6%A1%A3-%E6%96%87%E6%9C%AC%E6%8E%92%E7%89%88%E5%B8%83%E5%B1%80-%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86-%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95.html )
+
+[dotnet OpenXML 文本 Text Line Break 的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Text-Line-Break-%E7%9A%84%E4%BD%9C%E7%94%A8.html )
 
 ## 通用知识
 
