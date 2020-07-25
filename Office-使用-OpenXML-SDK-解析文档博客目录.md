@@ -49,10 +49,13 @@
 
 [Office 文档 文本排版布局 中华人民共和国国家标准 标点符号用法](https://blog.lindexi.com/post/Office-%E6%96%87%E6%A1%A3-%E6%96%87%E6%9C%AC%E6%8E%92%E7%89%88%E5%B8%83%E5%B1%80-%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86-%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95.html )
 
+[dotnet OpenXML 文本 ParagraphProperties 的属性作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-ParagraphProperties-%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8.html )
+
 [dotnet OpenXML 文本 Text Line Break 的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Text-Line-Break-%E7%9A%84%E4%BD%9C%E7%94%A8.html )
 
-## 通用知识
+[dotnet OpenXML 文本 EndParagraphRunProperties 的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-EndParagraphRunProperties-%E7%9A%84%E4%BD%9C%E7%94%A8.html )
 
+## 通用知识
 
 [Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
 
@@ -62,6 +65,10 @@
 ## 工具
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
+
+不断压缩和解压缩 Office 文档效率不够，试试下面工具
+
+[dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html )
 
 
 

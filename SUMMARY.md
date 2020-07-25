@@ -476,6 +476,8 @@
 
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
 
+ * [dotnet 使用 SemaphoreSlim 可能的内存泄露](dotnet-使用-SemaphoreSlim-可能的内存泄露.md)
+
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
 
  * [dotnet 使用完全对象引用相等判断](dotnet-使用完全对象引用相等判断.md)

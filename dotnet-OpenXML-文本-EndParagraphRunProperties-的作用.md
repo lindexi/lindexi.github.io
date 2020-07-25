@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/7/23 16:14:05 -->
+
 <!-- 发布 -->
 
 按照 [ECMA 376](http://www.ecma-international.org/publications/standards/Ecma-376.htm ) 的说法，此属性的作用是指定用户在此段落后开始输入其他文本时要保留的属性。只有在此段落的样式与段落本身不同时，才应设置此属性
@@ -64,6 +66,8 @@
 在 UWP 使用 XAML 的换行，请看 [win10 uwp 在 xaml 让 TextBlock 换行](https://blog.lindexi.com/post/win10-uwp-%E5%9C%A8-xaml-%E8%AE%A9-TextBlock-%E6%8D%A2%E8%A1%8C.html )
 
 这个属性和 [Text Line Break](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Text-Line-Break-%E7%9A%84%E4%BD%9C%E7%94%A8.html ) 有些不同，原因是默认一段就是包含一个换行符，而 `<a:br/>` 就是让一段内可以包含多个换行
+
+我写了很多 Office 解析相关的博客，请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
 
 
