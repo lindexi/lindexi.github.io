@@ -3,6 +3,8 @@
 在使用 SemaphoreSlim 这个锁，能做到的是指定让任务执行几次，同时提供异步方法，减少线程占用。但异步的方法如果没有用对，会因为异步状态机的引用，而存在内存泄露
 
 <!--more-->
+<!-- CreateTime:2020/7/24 14:16:13 -->
+
 <!-- 发布 -->
 
 在 dotnet 的 SemaphoreSlim 的用法基本上是一个线程调用 WaitAsync 等待其他线程调用 Release 释放，在 Release 方法可以设置释放几次，设置之后就能通过几次的 WaitAsync 方法
