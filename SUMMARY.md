@@ -562,6 +562,8 @@
 
  * [dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发](dotnet-用-NuGet-将自己的工具作为-dotnet-tool-分发.md)
 
+ * [dotnet 的 TaskCompletionSource 的 TrySetResult 是线程安全](dotnet-的-TaskCompletionSource-的-TrySetResult-是线程安全.md)
+
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
 
  * [dotnet 给MatterMost订阅RSS博客](dotnet-给MatterMost订阅RSS博客.md)
@@ -792,6 +794,8 @@
 
  * [Roslyn 在 msbuild 的 target 判断文件存在](Roslyn-在-msbuild-的-target-判断文件存在.md)
 
+ * [Roslyn 在 NuGet 包中放注释 xml 文件的方法](Roslyn-在-NuGet-包中放注释-xml-文件的方法.md)
+
  * [Roslyn 在多开发框架让 msbuild 的 Target 仅运行一次](Roslyn-在多开发框架让-msbuild-的-Target-仅运行一次.md)
 
  * [Roslyn 在项目文件使用条件判断](Roslyn-在项目文件使用条件判断.md)
@@ -815,6 +819,8 @@
  * [Roslyn 开发 NuGet 包的 Task 编译可能遇到的问题](Roslyn-开发-NuGet-包的-Task-编译可能遇到的问题.md)
 
  * [Roslyn 引用某个文件夹所有文件作为链接](Roslyn-引用某个文件夹所有文件作为链接.md)
+
+ * [Roslyn 打包 NuGet 包添加改动日志](Roslyn-打包-NuGet-包添加改动日志.md)
 
  * [Roslyn 打包自定义的文件到 NuGet 包](Roslyn-打包自定义的文件到-NuGet-包.md)
 
