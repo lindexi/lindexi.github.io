@@ -3,6 +3,8 @@
 群里小伙伴问我如何在 ListView 的右击的时候知道右击的是哪一项，他想要获取对应的行信息。他使用的是 GridView 做的，于是我告诉他需要自己写 ItemContainerStyle 在 GridViewRowPresenter 里添加右键的逻辑。但是这样写不清真，我问到了他的本质问题其实只是想要做右键菜单。刚好我在写一个测试应用，用于测试我的文件下载库，此时需要用到在右击某一个下载项的时候，拿到当前下载项的信息，给出右键菜单。我不使用小伙伴的逻辑，就按照我自己会采用的写法，我认为这样写比较符合 WPF 框架的设计，下面让我告诉大家我的用法，十分简单
 
 <!--more-->
+<!-- CreateTime:2020/7/27 8:40:22 -->
+
 <!-- 发布 -->
 
 我开源了一个文件下载库，原因是我的几个项目里面都有自己的文件下载库，我想要统一这些文件下载库。开源出去可以让更多小伙伴帮我踩坑，开源项目是 [https://github.com/dotnet-campus/dotnetCampus.FileDownloader](https://github.com/dotnet-campus/dotnetCampus.FileDownloader) 欢迎小伙伴使用

@@ -52,6 +52,8 @@
 
 [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-EndParagraphRunProperties-%E7%9A%84%E4%BD%9C%E7%94%A8.html )
 
+[dotnet OpenXML 的 spcPct 和 spcPts 表示距离的不同](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%9A%84-spcPct-%E5%92%8C-spcPts-%E8%A1%A8%E7%A4%BA%E8%B7%9D%E7%A6%BB%E7%9A%84%E4%B8%8D%E5%90%8C.html )
+
 ## 通用知识
 
 [Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
