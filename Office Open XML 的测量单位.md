@@ -89,4 +89,47 @@ n/100 * 5000
 
 如用于 `w:drawing` 绘制，表示绘制画布的宽度 `<wp:extent cx="1530350" cy="2142490"/>` 用这么大的数是可以提高精度和性能，不需要通过浮点计算
 
+## 开源库
+
+我开源了 [dotnetCampus.OpenXMLUnitConverter](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper) 包含了本文的转换方法
+
+<!-- ![](image/Office Open XML 的测量单位/Office Open XML 的测量单位0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20207281217352399.jpg)
+
+工具获取方法是通过以下命令安装 dotnet 工具
+
+```
+dotnet tool update -g dotnetCampus.OfficeDocumentZipper
+```
+
+启动工具方法是在命令行输入下面代码
+
+```
+OfficeDocumentZipper
+```
+
+另外，在项目使用，可以通过 NuGet 安装 dotnetCampus.OpenXMLUnitConverter 这个库
+
+```
+dotnet add package dotnetCampus.OpenXMLUnitConverter
+```
+
+这个库同时包含使用 [SourceYard](https://github.com/dotnet-campus/SourceYard) 打包的源代码 NuGet 包，可以使用下面代码安装
+
+```
+dotnet add package dotnetCampus.OpenXMLUnitConverter.Source
+```
+
+也可以在 csproj 添加下面代码
+
+```xml
+<PackageReference Include="dotnetCampus.OpenXMLUnitConverter.Source" Version="1.0.2-alpah01">
+  <PrivateAssets>all</PrivateAssets>
+  <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+</PackageReference>
+```
+
+更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

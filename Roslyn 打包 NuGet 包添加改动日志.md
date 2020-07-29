@@ -3,6 +3,8 @@
 默认的 NuGet 包支持在 releaseNotes 中添加更改日志，用户可以通过更改日志了解各个版本更新的内容。在 SDK Style 格式的 csproj 文件，可以读取本地的文本文件的内容作为 NuGet 包的改动日志
 
 <!--more-->
+<!-- CreateTime:2020/7/27 10:21:16 -->
+
 <!-- 发布 -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 

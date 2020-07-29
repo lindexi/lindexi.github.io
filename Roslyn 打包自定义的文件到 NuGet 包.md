@@ -110,6 +110,21 @@
 
 通过 `IsTool` 将不会在安装的项目引用编译的文件，也就是这个 NuGet 库只是工具，里面的 dll 不会被引用
 
+在 NuGet 包嵌入 符号文件 的方法是添加 AllowedOutputExtensionsInPackageBuildOutputFolder 属性
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+    <!-- Include symbol files (*.pdb) in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+</Project>
+```
+
+默认符号文件是放在 snupkg 文件，而不是放在 nupkg 文件，原因是将符号文件放在 nupkg 文件，会让 nupkg 文件太大。如果将符号文件放在 nupkg 文件，那么不需要开发者另外配置符号服务器，就可以拿到符号文件
+
+官方文档 [NuGet 和 .NET 库](https://docs.microsoft.com/zh-cn/dotnet/standard/library-guidance/nuget ) 里明确告诉小伙伴请考虑将符号作为符号包 (`*.snupkg`) 发布到 NuGet.org 而不是放在 nupkg 文件，符号包 (`*.snupkg`) 为开发人员提供了良好的按需调试体验，而不会使主程序包大小膨胀，也不会影响那些不打算调试 NuGet 包的用户的还原性能
+
 [Roslyn 使用 Target 替换占位符方式生成 nuget 打包](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Target-%E6%9B%BF%E6%8D%A2%E5%8D%A0%E4%BD%8D%E7%AC%A6%E6%96%B9%E5%BC%8F%E7%94%9F%E6%88%90-nuget-%E6%89%93%E5%8C%85.html )
 
 [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - walterlv](https://blog.walterlv.com/post/write-msbuild-target.html#microsoftnetsdk-%E4%B8%BA%E6%88%91%E4%BB%AC%E6%8F%90%E4%BE%9B%E7%9A%84%E7%8E%B0%E6%88%90%E5%8F%AF%E7%94%A8%E7%9A%84-task )

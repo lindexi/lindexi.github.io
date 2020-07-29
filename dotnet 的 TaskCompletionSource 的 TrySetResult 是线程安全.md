@@ -3,6 +3,8 @@
 在创建一个 TaskCompletionSource 期望让等待的逻辑只会被调用一次，而调用的是多线程，可以使用 TrySetResult 方法，这个方法是线程安全，只会让 TaskCompletionSource 被调用一次
 
 <!--more-->
+<!-- CreateTime:2020/7/27 19:52:44 -->
+
 <!-- 发布 -->
 
 在多个线程调用 TaskCompletionSource 的 TrySetResult 方法，只有一个线程能进入设置，其他线程将会拿到返回 false 的值
