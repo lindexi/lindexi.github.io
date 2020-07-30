@@ -3,6 +3,8 @@
 本文收集 a:bodyPr 文本框属性 BodyProperties 的属性的作用
 
 <!--more-->
+<!-- CreateTime:2020/7/28 15:34:21 -->
+
 <!-- 发布 -->
 
 根据 [ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm ) 文档 21.1.2.1.1 bodyPr (Body Properties) 在 Office 的 OpenXML 使用这个属性定义文本框的属性
@@ -94,7 +96,76 @@ TextWrappingValues textWrapping = bodyProperties?.Wrap?.Value;
 
 代码放在[github](https://github.com/lindexi/lindexi_gd/tree/11ee2825f2b1eee1e5a68efe172e7346f866ad41/GakagaycalhechemNerehejejairairway)欢迎小伙伴访问。代码包含了上面图片测试的 PPT 文件
 
+## Rotation
 
+Rotation
+
+OpneXMl SDK: `var rotation = textBodyProperties.Rotation;`
+
+单位： EMU 角度
+
+```xml
+<a:bodyPr wrap="square" rot="200000">
+</a:bodyPr>
+```
+
+<!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用4.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2020729122273011.jpg)
+
+用来表示整个文本框的旋转，可以使用负数。和使用 `a:xfrm` 的旋转不同的是，这里只是旋转文本框而不是旋转形状。旋转点是文本的左上角，注意是文本的左上角，会被 文本边距 影响，如修改文本边距比较大
+
+```xml
+<a:bodyPr wrap="square" lIns="1080000" tIns="180000" rIns="108000" bIns="180000" rot="200000">
+</a:bodyPr>
+```
+
+执行 PPT 的效果如下
+
+<!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用5.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20207291225379437.jpg)
+
+文字的宽度等排版依然按照文本没有旋转排版，在排版之后再对文本进行旋转，因此文本可以超过文本框
+
+## upright
+
+Text Upright
+
+OpneXMl SDK: `var upRight = textBodyProperties.UpRight;`
+
+也许在 OpneXMl SDK 的命名是不对的，因此我给了一个 [Issues](https://github.com/OfficeDev/Open-XML-SDK/issues/784) 也许会更改命名
+
+这个属性的英文描述博大精深，大概的意思其实是这个属性如果设置上去了，那么文本所在的形状的旋转将不会叠加在文本上，也就是无论形状如何旋转，文本的旋转都只受 textBodyProperties.Rotation 的影响
+
+```xml
+<a:bodyPr upright="1" rot="540000">
+</a:bodyPr>
+```
+
+如上面代码，文本旋转了，但是此时的形状没有旋转，如下图
+
+<!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用6.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20207291420455688.jpg)
+
+而如果旋转了形状，可以看到文本的旋转角度没有变化
+
+<!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用7.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20207291421248352.jpg)
+
+这个属性默认值是 false 也就是跟随形状的旋转。这个属性除了影响跟随旋转同时也影响文本的旋转中心
+
+一个有趣的规则是当形状旋转超过 45 度的时候，那么文本的布局的宽度和高度将会受形状的高度和宽度的影响，也就是将宽度和高度倒过来。可以认为是文本是竖着放，也就是这个属性名的含义，此时文本的排版就会按照当前水平方向的形状具体是那一边靠近决定那一边作为宽度，如下图
+
+<!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用8.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2020729142559203.jpg)
+
+此时的形状旋转让原本形状的作为高度的一边更靠近水平，于是就将原本高度的边作为文本宽度
+
+这个属性 Text Upright 的命名太对了，就是让文本竖放，忽略形状的影响。同时排版布局也是相同的逻辑。只是这个文本不是垂直文本，因此可以看到英文的强大
 
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 

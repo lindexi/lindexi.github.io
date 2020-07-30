@@ -277,7 +277,7 @@ Offset = 1
 
 [ArithmeticCompositeEffect Class](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_ArithmeticCompositeEffect.htm )
 
-代码 [win2d ArithmeticCompositeEffect-CSDN下载](https://download.csdn.net/download/lindexi_gd/10698545 )
+代码 [win2d ArithmeticCompositeEffect-CSDN下载](https://download.csdn.net/download/lindexi_gd/10698545 ) 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/bf1d732f629a076a4b44fe36f5df1daa7c31581f/BallciBarabow) 欢迎小伙伴访问
 
 ![](http://image.acmx.xyz/lindexi%2F20186121956329217.jpg)
 
