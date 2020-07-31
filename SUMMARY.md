@@ -480,6 +480,8 @@
 
  * [dotnet 使用 SemaphoreSlim 可能的内存泄露](dotnet-使用-SemaphoreSlim-可能的内存泄露.md)
 
+ * [dotnet 使用 SourceLink 将 NuGet 链接源代码到 GitHub 等仓库](dotnet-使用-SourceLink-将-NuGet-链接源代码到-GitHub-等仓库.md)
+
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
 
  * [dotnet 使用完全对象引用相等判断](dotnet-使用完全对象引用相等判断.md)
@@ -1342,6 +1344,8 @@
 
  * [win10 本地适配器不支持重要的低能耗控制器状态](win10-本地适配器不支持重要的低能耗控制器状态.md)
 
+ * [Win10 的 WPF 程序的 wisptis 服务是附加到进程的窗口](Win10-的-WPF-程序的-wisptis-服务是附加到进程的窗口.md)
+
  * [win10 uwp 开发 CSDN 访问量统计 源代码](win10-uwp-开发-CSDN-访问量统计-源代码.md)
 
  * [win10 uwp 读取保存WriteableBitmap 、BitmapImage](win10-uwp-读取保存WriteableBitmap-、BitmapImage.md)
@@ -1563,6 +1567,8 @@
  * [wpf PreviewTextInput 在鼠标输入获得 \u0003](wpf-PreviewTextInput-在鼠标输入获得-u0003.md)
 
  * [WPF Process.Start 出现 Win32Exception 异常](WPF-Process.Start-出现-Win32Exception-异常.md)
+
+ * [WPF SharpDx 性能优化方法](WPF-SharpDx-性能优化方法.md)
 
  * [WPF shows that some windows in multithreading will be locked in the PenThreadWorker constructor when the application starts](WPF-shows-that-some-windows-in-multithreading-will-be-locked-in-the-PenThreadWorker-constructor-when-the-application-starts.md)
 
@@ -2255,6 +2261,8 @@
  * [通过 cshtml 将 C# xaml 转 HTML5 代码](通过-cshtml-将-C-xaml-转-HTML5-代码.md)
 
  * [通过 frp 开启服务器打开本地的 ZeroNet 服务器外网访问](通过-frp-开启服务器打开本地的-ZeroNet-服务器外网访问.md)
+
+ * [通过公开的自动构建发布开源项目的库的安全意义](通过公开的自动构建发布开源项目的库的安全意义.md)
 
  * [通过命令行使用微信](通过命令行使用微信.md)
 

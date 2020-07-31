@@ -42,6 +42,8 @@
 
 [浅谈 Windows 桌面端触摸架构演进](https://blog.lindexi.com/post/%E6%B5%85%E8%B0%88-Windows-%E6%A1%8C%E9%9D%A2%E7%AB%AF%E8%A7%A6%E6%91%B8%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B.html )
 
+[为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](https://blog.lindexi.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88-WPF-%E8%BD%AF%E4%BB%B6%E5%9C%A8-win7-%E5%90%AF%E5%8A%A8%E6%97%B6%E4%BC%9A%E5%B0%9D%E8%AF%95%E8%B0%83%E8%B5%B7-wisptis-%E8%BF%9B%E7%A8%8B.html)
+
 ## 已知问题
 
 [WPF 客户端开发需要知道的触摸失效问题](https://blog.lindexi.com/post/WPF-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%80%E5%8F%91%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98.html )
