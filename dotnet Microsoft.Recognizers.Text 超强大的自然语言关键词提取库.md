@@ -86,6 +86,16 @@
 var recognizeIpAddress = SequenceRecognizer.RecognizeIpAddress(text, Culture.Chinese);
 ```
 
+## 链接
+
+```csharp
+var recognizeUrl = SequenceRecognizer.RecognizeURL(text, Culture.Chinese);
+```
+
+<!-- ![](image/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20207311417384291.jpg)
+
 ## 电话号
 
 ```csharp
@@ -130,7 +140,7 @@ var recognizeOrdinal = NumberRecognizer.RecognizeOrdinal(text, Culture.Chinese);
 
 这是一个开源的项目，请看 [Recognizers-Text/.NET at master · microsoft/Recognizers-Text](https://github.com/microsoft/Recognizers-Text/tree/master/.NET )
 
-本文的界面使用 WPF 写的，代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/1cf397895a7c16b834846379dbda7947e724f193/DairqeldejuDawyewheawelbehe) 欢迎小伙伴访问
+本文的界面使用 WPF 写的，代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/9ff7e5fd2029099f852972664e32731aea9130cc/DairqeldejuDawyewheawelbehe) 欢迎小伙伴访问
 
 界面如下
 
