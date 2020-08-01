@@ -90,6 +90,8 @@
 
  * [C# dotnet 使用 OpenXml 解析 PPT 里面的视频](C-dotnet-使用-OpenXml-解析-PPT-里面的视频.md)
 
+ * [C# dotnet 使用 startIndex 提升 IndexOf 的性能](C-dotnet-使用-startIndex-提升-IndexOf-的性能.md)
+
  * [C# dotnet 使用 TaskCompletionSource 实现暂停功能](C-dotnet-使用-TaskCompletionSource-实现暂停功能.md)
 
  * [C# dotnet 使用 TaskCompletionSource 让事件转异步方法](C-dotnet-使用-TaskCompletionSource-让事件转异步方法.md)
