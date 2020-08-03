@@ -63,6 +63,7 @@ window.Activate();
         private static void SetWindowToForegroundWithAttachThreadInput(Window window)
         {
             var interopHelper = new WindowInteropHelper(window);
+            // 以下 Win32 方法可以在 https://github.com/kkwpsv/lsjutil/tree/master/Src/Lsj.Util.Win32 找到
             var thisWindowThreadId = Win32.User32.GetWindowThreadProcessId(interopHelper.Handle, IntPtr.Zero);
             var currentForegroundWindow = Win32.User32.GetForegroundWindow();
             var currentForegroundWindowThreadId = Win32.User32.GetWindowThreadProcessId(currentForegroundWindow, IntPtr.Zero);
