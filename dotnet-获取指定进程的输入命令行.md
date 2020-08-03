@@ -11,7 +11,7 @@
 
 很多的程序在启动的时候都需要传入参数，那么如何拿到这些程序传入的参数？
 
-我找到两个方法，一个需要引用 C++ 库支持 x86 和 x64 程序，另一个都是C#代码，但是只支持 x64 程序
+我找到两个方法，一个需要引用 C++ 库支持 x86 和 x64 程序，另一个都是C#代码，但是只支持 x86 程序
 
 本文提供一个由 [StackOverflow](https://stackoverflow.com/q/2633628/6116637) 大神开发的库拿到进程的命令行
 
@@ -53,7 +53,7 @@
             }
 ```
 
-代码请看 https://github.com/lindexi/lindexi_gd/tree/cf4054b0f479986bd295a8e5b69c31ad8fd7fe10/GetProcessCommandLine
+代码请看 [https://github.com/lindexi/lindexi_gd/tree/cf4054b0f479986bd295a8e5b69c31ad8fd7fe10/GetProcessCommandLine](https://github.com/lindexi/lindexi_gd/tree/cf4054b0f479986bd295a8e5b69c31ad8fd7fe10/GetProcessCommandLine)
 
 上面的代码需要引用一个 C++ 的库，看起来不清真，下面通过全部 C# 的代码
 

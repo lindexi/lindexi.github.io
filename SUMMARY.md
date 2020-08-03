@@ -18,6 +18,8 @@
 
  * [asp dotnet core 实现服务器发送事件 Server-Sent Events 简单方式](asp-dotnet-core-实现服务器发送事件-Server-Sent-Events-简单方式.md)
 
+ * [asp dotnet core 提供大文件下载的测试](asp-dotnet-core-提供大文件下载的测试.md)
+
  * [asp dotnet core 提示 Cannot access a disposed object 解决方法](asp-dotnet-core-提示-Cannot-access-a-disposed-object-解决方法.md)
 
  * [asp dotnet core 支持客户端上传文件](asp-dotnet-core-支持客户端上传文件.md)
@@ -95,6 +97,8 @@
  * [C# dotnet 使用 TaskCompletionSource 实现暂停功能](C-dotnet-使用-TaskCompletionSource-实现暂停功能.md)
 
  * [C# dotnet 使用 TaskCompletionSource 让事件转异步方法](C-dotnet-使用-TaskCompletionSource-让事件转异步方法.md)
+
+ * [C# dotnet 使用判断文件夹存在的方法判断一个文件路径会怎样](C-dotnet-使用判断文件夹存在的方法判断一个文件路径会怎样.md)
 
  * [C# dotnet 分割换行](C-dotnet-分割换行.md)
 
@@ -1602,6 +1606,8 @@
 
  * [WPF 使用 Composition API 做高性能渲染](WPF-使用-Composition-API-做高性能渲染.md)
 
+ * [WPF 使用 Direct Manipulation 的方法](WPF-使用-Direct-Manipulation-的方法.md)
+
  * [WPF 使用 Direct2D1 画图 绘制基本图形](WPF-使用-Direct2D1-画图-绘制基本图形.md)
 
  * [WPF 使用 Direct2D1 画图入门](WPF-使用-Direct2D1-画图入门.md)
@@ -1873,6 +1879,8 @@
  * [WPF 触摸底层 PenImc 是如何工作的](WPF-触摸底层-PenImc-是如何工作的.md)
 
  * [WPF 触摸相关](WPF-触摸相关.md)
+
+ * [WPF 让 TextBox 支持水平滚动](WPF-让-TextBox-支持水平滚动.md)
 
  * [WPF 让窗口激活作为前台最上层窗口的方法](WPF-让窗口激活作为前台最上层窗口的方法.md)
 
