@@ -3,6 +3,8 @@
 小伙伴是否了解在 UWP 和 WPF 触摸的滑动的顺滑是不相同的，一个原因是 UWP 使用了 Direct Manipulation 这个科技。这个科技需要采用 Pointer 消息的支持，本文告诉大家如何使用
 
 <!--more-->
+<!-- CreateTime:2020/8/1 8:32:34 -->
+
 <!-- 发布 -->
 
 本文的代码都是从 [Using DirectManipulation with WPF](http://blog.neteril.org/blog/2019/03/30/using-directmanipulation-with-wpf/ ) 这篇博客抄的

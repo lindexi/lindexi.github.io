@@ -3,6 +3,8 @@
 超级简单的方法，只需要设置 HorizontalScrollBarVisibility 可见就可以了
 
 <!--more-->
+<!-- CreateTime:2020/8/1 11:32:15 -->
+
 <!-- 发布 -->
 
 但是为什么我设置了，没有水平滚动条呢？也许是设置了 TextWrapping 属性
