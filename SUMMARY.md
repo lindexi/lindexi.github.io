@@ -592,6 +592,8 @@
 
  * [dotnet 获取网页里面 div 的方法](dotnet-获取网页里面-div-的方法.md)
 
+ * [dotnet 获取进程命令行参数的工具](dotnet-获取进程命令行参数的工具.md)
+
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
 
  * [dotnet 设计规范 · 抽象类](dotnet-设计规范-·-抽象类.md)
@@ -1742,6 +1744,8 @@
 
  * [WPF 封装 dotnet remoting 调用其他进程](WPF-封装-dotnet-remoting-调用其他进程.md)
 
+ * [WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](WPF-将-docx-的-Word-文件转换为-FlowDocument-显示.md)
+
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
  * [WPF 延迟加载](WPF-延迟加载.md)
@@ -2135,6 +2139,8 @@
  * [希沃视频直播的发展](希沃视频直播的发展.md)
 
  * [应用商店的战略地位](应用商店的战略地位.md)
+
+ * [开源公共组件仓库的更新日志应该如何写](开源公共组件仓库的更新日志应该如何写.md)
 
  * [开源项目](开源项目.md)
 
