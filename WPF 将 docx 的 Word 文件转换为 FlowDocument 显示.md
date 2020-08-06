@@ -3,6 +3,8 @@
 本文告诉大家如何将 docx 的 Word 文档在 WPF 中显示内容
 
 <!--more-->
+<!-- CreateTime:2020/8/4 19:30:53 -->
+
 <!-- 发布 -->
 
 本文源代码请看 [ArtMalykhin/wpf-embedded-docx](https://github.com/ArtMalykhin/wpf-embedded-docx )
