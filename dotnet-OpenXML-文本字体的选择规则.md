@@ -79,6 +79,184 @@
 
 这是 [ECMA-376](http://www.ecma-international.org/publications/standards/Ecma-376.htm ) 规定的
 
+小伙伴如果不想自动动手写代码， 可以参考我在 WPF 项目里面使用的代码，理论上你在 dotnet 的项目里面，能使用 C# 7.0 的语法就能使用
+
+这是上层的使用方法，这里的 text 是输入的字符串
+
+```csharp
+for (var i = 0; i < text.Length; i++)
+{
+   var c = text[i];
+
+   TextType currentType = CharUnicodeRangeTextFontType.GetFontLang(c);
+}
+```
+
+先定义一个枚举，表示当前的文本是什么，请看代码
+
+```csharp
+        public enum TextType
+        {
+            /// <summary>
+            /// 默认的文本 中文系 东亚字符
+            /// </summary>
+            EastAsian,
+            /// <summary>
+            /// 拉丁英文系
+            /// </summary>
+            Latin,
+            /// <summary>
+            /// 复杂脚本
+            /// </summary>
+            ComplexScript,
+
+            /// <summary>
+            /// 特殊符号
+            /// </summary>
+            Symbol,
+        }
+```
+
+添加一个辅助类
+
+```csharp
+   /// <summary>
+    /// 文本内容范围判断类
+    /// </summary>
+    public class TextRangePattern
+    {
+        /// <summary>
+        /// 创建文本内容范围判断类
+        /// </summary>
+        /// <param name="minChar"></param>
+        /// <param name="maxChar"></param>
+        public TextRangePattern(int minChar, int maxChar)
+            : this((char)minChar, (char)maxChar)
+        {
+
+        }
+
+        /// <summary>
+        /// 创建文本内容范围判断类
+        /// </summary>
+        /// <param name="minChar"></param>
+        /// <param name="maxChar"></param>
+        public TextRangePattern(char minChar, char maxChar)
+        {
+            MinChar = minChar;
+            MaxChar = maxChar;
+        }
+
+        /// <summary>
+        /// 最小字符
+        /// </summary>
+        public char MinChar { get; }
+
+        /// <summary>
+        /// 最大字符
+        /// </summary>
+        public char MaxChar { get; }
+
+        /// <summary>
+        /// 是否输入的字符在范围内
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public bool IsInRange(char c)
+        {
+            return !(c < MinChar || c > MaxChar);
+        }
+    }
+```
+
+接着就是创建 CharUnicodeRangeTextFontType 辅助类
+
+```csharp
+    static class CharUnicodeRangeTextFontType
+    {
+        // 如果觉得下面的很多单词不知道是什么意思，请看 https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84
+
+        private static TextRangePattern[] LatinFontTextRangePatternList { get; } =
+        {
+            // - U\+([\dA-F]+)–U\+([\dA-F]+).*
+            new TextRangePattern(0x0000, 0x007F), // - U+0000–U+007F latin font 
+            new TextRangePattern(0x0080, 0x00A6), // - U+0080–U+00A6 latin font 
+            new TextRangePattern(0x00A9, 0x00AF), // - U+00A9–U+00AF latin font 
+            new TextRangePattern(0x00B2, 0x00B3), // - U+00B2–U+00B3 latin font 
+            new TextRangePattern(0x00B5, 0x00D6), // - U+00B5–U+00D6 latin font 
+            new TextRangePattern(0x00D8, 0x00F6), // - U+00D8–U+00F6 latin font 
+            new TextRangePattern(0x00F8, 0x058F), // - U+00F8–U+058F latin font 
+            new TextRangePattern(0x10A0, 0x10FF), // - U+10A0–U+10FF latin font 
+            new TextRangePattern(0x1200, 0x137F), // - U+1200–U+137F latin font 
+            new TextRangePattern(0x13A0, 0x177F), // - U+13A0–U+177F latin font 
+            new TextRangePattern(0x1D00, 0x1D7F), // - U+1D00–U+1D7F latin font 
+            new TextRangePattern(0x1E00, 0x1FFF), // - U+1E00–U+1FFF latin font 
+            new TextRangePattern(0x2000, 0x200B), // - U+2000–U+200B latin font 
+            new TextRangePattern(0x2010, 0x2029), // - U+2010–U+2029 latin font
+            new TextRangePattern(0x2030, 0x2046), // - U+2030–U+2046 latin font 
+            new TextRangePattern(0x204A, 0x245F), // - U+204A–U+245F latin font 
+            new TextRangePattern(0x27C0, 0x2BFF), // - U+27C0–U+2BFF latin font 
+            new TextRangePattern(0xFB00, 0xFB17), // - U+FB00–U+FB17 latin font 
+            new TextRangePattern(0xFE50, 0xFE6F), // - U+FE50–U+FE6F latin font
+            new TextRangePattern(0xD835, 0xD835), // - U+D835        latin font
+        };
+
+        private static TextRangePattern[] ComplexScriptFontTextRangePatternList { get; } =
+        {
+            new TextRangePattern(0x0590, 0x074F), // - U+0590–U+074F cs font 
+            new TextRangePattern(0x0780, 0x07BF), // - U+0780–U+07BF cs font 
+            new TextRangePattern(0x0900, 0x109F), // - U+0900–U+109F cs font 
+            new TextRangePattern(0x1780, 0x18AF), // - U+1780–U+18AF cs font 
+            new TextRangePattern(0x200C, 0x200F), // - U+200C–U+200F cs font 
+            new TextRangePattern(0x202A, 0x202F), // - U+202A–U+202F cs font 
+            new TextRangePattern(0x2670, 0x2671), // - U+2670–U+2671 cs font 
+            new TextRangePattern(0xFB1D, 0xFB4F), // - U+FB1D–U+FB4F cs font 
+        };
+
+        private static TextRangePattern[] EastAsianFontTextRangePatternList { get; } =
+        {
+            new TextRangePattern(0x2018, 0x201F), // - U+2018–U+201F ea font
+            new TextRangePattern(0x3099, 0x309A), // - U+3099–U+309A ea font  
+        };
+
+        private static TextRangePattern[] SymbolFontTextRangePatternList { get; } =
+        {
+            new TextRangePattern(0xF000, 0xF0FF), // - U+F000–U+F0FF sym font 
+        };
+
+        private static (TextType textType, TextRangePattern[] fontTextRangePatternList)[] PatternList { get; } =
+        {
+            (TextType.Latin, LatinFontTextRangePatternList),
+            (TextType.ComplexScript, ComplexScriptFontTextRangePatternList),
+            (TextType.EastAsian, EastAsianFontTextRangePatternList),
+            (TextType.Symbol, SymbolFontTextRangePatternList)
+        };
+
+        /// <summary>
+        /// 根据传入的字符判断当前是哪个语言项
+        /// </summary>
+        /// <param name="ch"></param>
+        /// <returns></returns>
+        public static TextType GetFontLang(char ch)
+        {
+            // 按照 [dotnet OpenXML 文本字体的选择规则](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E7%9A%84%E9%80%89%E6%8B%A9%E8%A7%84%E5%88%99.html)
+
+            foreach (var (textType, fontTextRangePatternList) in PatternList)
+            {
+                if (fontTextRangePatternList.Any(temp => temp.IsInRange(ch)))
+                {
+                    return textType;
+                }
+            }
+
+            // - 其他 ea font
+            return TextType.EastAsian;
+        }
+    }
+```
+
+上面代码忽略 utf16 的字符
+  
 
 
 

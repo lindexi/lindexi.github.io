@@ -850,6 +850,8 @@
 
  * [Roslyn 让 VisualStudio 急速调试底层库方法](Roslyn-让-VisualStudio-急速调试底层库方法.md)
 
+ * [Roslyn 读取 PackageReference 的版本号和内容](Roslyn-读取-PackageReference-的版本号和内容.md)
+
  * [Roslyn 通过 NuGet 库修改应用程序入口函数](Roslyn-通过-NuGet-库修改应用程序入口函数.md)
 
  * [Roslyn 通过 Nuget 引用源代码 在 VS 智能提示正常但是无法编译](Roslyn-通过-Nuget-引用源代码-在-VS-智能提示正常但是无法编译.md)
