@@ -504,6 +504,8 @@
 
  * [dotnet 删除文件夹方法](dotnet-删除文件夹方法.md)
 
+ * [dotnet 删除自身程序的方法](dotnet-删除自身程序的方法.md)
+
  * [dotnet 判断其他进程未响应](dotnet-判断其他进程未响应.md)
 
  * [dotnet 判断特定进程存在方法](dotnet-判断特定进程存在方法.md)
