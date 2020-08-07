@@ -3,6 +3,8 @@
 在写 msbuild 的预编译逻辑，如果想要拿到项目安装的 NuGet 库和版本，可以通过获取 PackageReference 的方法获取
 
 <!--more-->
+<!-- CreateTime:2020/8/5 16:12:49 -->
+
 <!-- 发布 -->
 
 获取方法是放在 Target 里面，如下面代码
