@@ -194,6 +194,8 @@
 
 在实际使用上面代码还需要做很多更改，例如支持 Express 里面添加多个实例，也就是给用户一个 Guid 和接口调用的方法，不同的方法实际可以从多个类里面调用
 
+本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/1e65084e8a8f56695ab6580f20dee74e6c10353b/LebaicocaqeregelHojajaycal)欢迎小伙伴访问
+
 
 
 

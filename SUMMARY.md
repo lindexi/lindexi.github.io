@@ -382,6 +382,8 @@
 
  * [dotnet core 添加 SublimeText 编译插件](dotnet-core-添加-SublimeText-编译插件.md)
 
+ * [.NET Core 用 Blazor 做 jmeter 系列视频](NET-Core-用-Blazor-做-jmeter-系列视频.md)
+
  * [dotnet core 用值初始化整个数组](dotnet-core-用值初始化整个数组.md)
 
  * [dotnet core 编程规范](dotnet-core-编程规范.md)

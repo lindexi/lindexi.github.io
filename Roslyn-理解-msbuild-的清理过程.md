@@ -27,11 +27,12 @@
 
 此时有两个方法，第一个方法就是使用 msbuild 清理的方法，在编译的时候添加创建的文件进入可以删除的文件列表
 
-通过 `$(IntermediateOutputPath)$(CleanFile)` 可以拿到对应的清理文件
+通过 `$(IntermediateOutputPath)$(CleanFile)` 可以拿到对应的清理文件，如我的 [UsingMSBuildCopyOutputFileToFastDebug 库](https://github.com/dotnet-campus/UsingMSBuildCopyOutputFileToFastDebug/commit/f7a8e0e09c2b6e7caf0d3fff1bd7374024326421) 使用的方法
 
-于是在这个文件里面写入需要删除的文件列表就可以，注意写入的是绝对路径
+于是在这个文件里面写入需要删除的文件列表就可以，注意写入的是绝对路径，同时写入到 `$(CleanFile)` 的内容只能是 bin 或 obj 文件夹的内容，如果写其他的文件夹是无效的
 
 上面方法的好处是如果在编译的时候会创建一些随机的文件，那么在清理的过程可以找到这些随机创建的文件
+
 
 另一个方法是在执行清理的时候运行自己的代码
 
@@ -50,6 +51,16 @@
     清理的代码
 </Target>
 ```
+
+如果加上了 `CleanDependsOn` 没有生效，可以修改使用 AfterTargets 的方法
+
+```xml
+<Target Name="Lindexi" AfterTargets="Clean">
+    清理的代码
+</Target>
+```
+
+如何了解清理是如何被执行的，可以尝试使用 [Roslyn 如何了解某个项目在 msbuild 中所有用到的属性以及构建过程](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BA%86%E8%A7%A3%E6%9F%90%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%9C%A8-msbuild-%E4%B8%AD%E6%89%80%E6%9C%89%E7%94%A8%E5%88%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BB%A5%E5%8F%8A%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B.html)
 
 [让 MSBuild Target 支持 Clean - walterlv](https://blog.walterlv.com/post/support-clean-for-msbuild-target.html )
 
