@@ -1612,6 +1612,8 @@
 
  * [WPF 从零开始开发 dotnet Remoting 程序](WPF-从零开始开发-dotnet-Remoting-程序.md)
 
+ * [WPF 从零手动创建承载 Xamarin Forms 项目](WPF-从零手动创建承载-Xamarin-Forms-项目.md)
+
  * [WPF 使用 Composition API 做高性能渲染](WPF-使用-Composition-API-做高性能渲染.md)
 
  * [WPF 使用 Direct Manipulation 的方法](WPF-使用-Direct-Manipulation-的方法.md)
@@ -1949,6 +1951,8 @@
  * [WPF 绑定密码](WPF-绑定密码.md)
 
  * [Xamarin Forms 4.7 支持更简化的 Grid 行列布局写法](Xamarin-Forms-4.7-支持更简化的-Grid-行列布局写法.md)
+
+ * [Xamarin Forms WPF 干掉默认的窗口导航条](Xamarin-Forms-WPF-干掉默认的窗口导航条.md)
 
  * [Xamarin XamlCTask 任务不支持 ValidateOnly 参数](Xamarin-XamlCTask-任务不支持-ValidateOnly-参数.md)
 
