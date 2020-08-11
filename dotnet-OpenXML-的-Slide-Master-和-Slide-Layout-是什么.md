@@ -128,7 +128,9 @@
 
 通过 `slideLayoutPart.SlideMasterPart` 可以获取 Slide Master 是哪个，也不需要自己去写判断逻辑
 
-如果依然不懂的话，请下载我放在 [github](https://github.com/lindexi/lindexi_gd/tree/4f01ab6fc4f994a8eb58cf0f4593aaf8bfd6e693/ChihilaygerYadekearhu) 的代码，然后打开 test.pptx 文件，同时运行代码，看看输出的内容和对应的 PPT 界面显示的文本
+如果依然不懂的话，请下载我放在 [github](https://github.com/lindexi/lindexi_gd/tree/4f01ab6fc4f994a8eb58cf0f4593aaf8bfd6e693/ChihilaygerYadekearhu) 的代码，然后打开 test.pptx 文件，同时运行代码，看看输出的内容和对应的 PPT 界面显示的文本。另外推荐 [dotnetCampus.OfficeDocumentZipper](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html ) 工具，这个工具可以更好的协助小伙伴测试文档
+
+
 
 
 

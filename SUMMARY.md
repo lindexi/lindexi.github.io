@@ -438,6 +438,8 @@
 
  * [dotnet OpenXML 解压缩文档为文件夹工具](dotnet-OpenXML-解压缩文档为文件夹工具.md)
 
+ * [dotnet OpenXML 解析 PPT 文本字体获取详解](dotnet-OpenXML-解析-PPT-文本字体获取详解.md)
+
  * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
 
  * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)
