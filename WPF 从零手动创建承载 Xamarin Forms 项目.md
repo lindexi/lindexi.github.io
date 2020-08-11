@@ -3,6 +3,8 @@
 现在完全开源的 Xamarin Forms 是支持使用 WPF 进行承载，也就是使用 Xamarin 开发的控件等是可以在 WPF 项目使用的。本文来告诉大家如何在 WPF 中运行 Xamarin Forms 项目，让 Xamarin Forms 构建为 WPF 应用
 
 <!--more-->
+<!-- CreateTime:2020/8/8 9:14:15 -->
+
 <!-- 发布 -->
 
 默认的 VS 没有加上 WPF 的模版，而官方文档 [WPF Platform Setup - Xamarin](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/other/wpf ) 旧了一点，因为社区的开发比较激进，而文档没有更新
@@ -39,9 +41,9 @@
 </Project>
 ```
 
-十分简单的逻辑代码，需要注意的是 Win7 非 sp1 最高版本 .NET Framework 4.5.2 同时不支持 .NET Core 任何版本， 而 Win7 加上 Sp1 的系统能支持到 .NET Framework 4.8 的版本和 .NET Core 版本
+可以看到上面代码的是十分简单的逻辑代码。但是如上面代码写的，使用的 TargetFramework 版本是 .NET Framework 4.7.2 这就意味着最低支持的系统是 Win7 带 Sp1 的系统。因为 Win7 非 sp1 最高版本 .NET Framework 是 4.5.2 同时不支持 .NET Core 任何版本，而 Win7 加上 Sp1 的系统能支持到 .NET Framework 4.8 的版本和 .NET Core 版本
 
-因为 需要有 [OpenTK](https://github.com/dotnet-campus/opentk) 的支持，而 OpenTK 最低是 .NET Framework 4.6.1 因此暂时无法降级到 .NET Framework 4.5 版本用来支持 Win7 非 sp1 系统
+那为什么需要采用 .NET Framework 4.7.2 的版本？因为 需要有 [OpenTK](https://github.com/dotnet-campus/opentk) 的支持，而 OpenTK 最低是 .NET Framework 4.6.1 因此暂时无法降级到 .NET Framework 4.5 版本用来支持 Win7 非 sp1 系统
 
 好，继续写一个叫 Program.cs 的类，小伙伴可以看到，一个 WPF 程序是只有 csproj 文件和 Program.cs 文件就可以完成对 Xamarin Forms 项目的承载
 
