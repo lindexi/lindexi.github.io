@@ -524,6 +524,8 @@
 
  * [dotnet 命名管道名字长度限制](dotnet-命名管道名字长度限制.md)
 
+ * [dotnet 在 NuGet 上搜寻好用的 dotnet tool 工具](dotnet-在-NuGet-上搜寻好用的-dotnet-tool-工具.md)
+
  * [dotnet 在 OpenXML SDK 的 HasValue 是什么含义](dotnet-在-OpenXML-SDK-的-HasValue-是什么含义.md)
 
  * [dotnet 基于 debian 创建一个 docker 的 sdk 镜像](dotnet-基于-debian-创建一个-docker-的-sdk-镜像.md)
