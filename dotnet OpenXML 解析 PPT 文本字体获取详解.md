@@ -454,7 +454,7 @@ if (ThemeFontTypePattern.IsMatch(typeface))
 
 这里有一个属性 `lang` 是什么作用？其实就是用来决定使用那个 Script 对应的字体的
 
-而 zh-CN 和 Hans 有什么关系，这个是在 [RFC 4646](https://tools.ietf.org/html/rfc4646) 标准定义的，可以根据语言拿到
+而 zh-CN 和 Hans 有什么关系，这个是在 [RFC 4646](https://tools.ietf.org/html/rfc4646) 标准定义的，可以根据语言拿到。关于 zh-CN 这个语言格式的标准，请看 [BCP47](https://tools.ietf.org/html/bcp47) 标准
 
 ```csharp
         private static string GetScript(StringValue language)
@@ -592,6 +592,22 @@ if (ThemeFontTypePattern.IsMatch(typeface))
 
 如果 latin 也没有内容呢？将使用本机的默认语言字体
 
+但小伙伴是否觉得上面还有一个没有用到的属性，没错就是 altLang 这个属性
+
+```xml
+<a:p>
+    <a:r>
+        <a:rPr lang="zh-CN" altLang="en-US" sz="2000" smtClean="0"/>
+        <a:t>一行文本</a:t>
+    </a:r>
+    <a:endParaRPr lang="en-US" dirty="0"/>
+</a:p>
+```
+
+这个属性是做什么用的？这是一个备用的属性，按照 ECMA-376 的 21.1.2.3.2 defRPr (Default Text Run Properties) 这一章的描述，这是一个备用的属性，默认是不写的，不写的时候将会使用 lang 属性。这个属性可以用来显示界面控件时使用的备用语言，也就是在 lang 找不到语言的时候，需要启用 altLang 属性去获取
+
+而实际上本文的规则主要针对 PPT 而不是 OpenXML 的 ECMA-376 的标准，因为实际上 PPT 有些行为和 ECMA-376 不相同，或者说我没有理解对 ECMA-376 的意思。而这部分也是 OpenXML SDK 没有提供接口方法的
+
 以下是 ECMA-376 的原文
 
 17.15.1.88 ThemeFontLang (Theme Font Languages)
@@ -613,11 +629,11 @@ If this element is omitted, then the default fonts for each region as specified 
 
 ```xml
 <a:p>
-	<a:r>
-		<a:rPr lang="ja-JP" altLang="en-US" sz="2000" smtClean="0"/>
-		<a:t>lindexi</a:t>
-	</a:r>
-	<a:endParaRPr lang="en-US" dirty="0"/>
+    <a:r>
+        <a:rPr lang="ja-JP" altLang="en-US" sz="2000" smtClean="0"/>
+        <a:t>lindexi</a:t>
+    </a:r>
+    <a:endParaRPr lang="en-US" dirty="0"/>
 </a:p>
 
 <a:minorFont>
