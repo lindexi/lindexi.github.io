@@ -3,6 +3,8 @@
 在 OpenXML 的 PPT 的文本的字体是一个比较复杂的概念，即使在 OpenXML SDK 的辅助下，也需要自己写很多的逻辑。通过 ECMA 376 文档里面散落在各地的描述，和 dotnetCampus.OfficeDocumentZipper 工具的实验帮助之下，我摸到了本文将要告诉大家的规则，以及逻辑的实现
 
 <!--more-->
+<!-- CreateTime:2020/8/10 10:17:20 -->
+
 <!-- 发布 -->
 
 有大量的 Office 相关软件在解析 PPT 文档使用的文本段的字体都非常简单，当然，这部分处理也就不全面
@@ -653,5 +655,7 @@ If this element is omitted, then the default fonts for each region as specified 
 可以看到英文字符用的是 `a:latin` 的，而不是使用语言的
 
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
+
+[OOXML Hacking: Font Themes Complete - Brandwares](http://www.brandwares.com/bestpractices/2017/02/xml-hacking-font-themes-complete/ )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

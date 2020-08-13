@@ -3,6 +3,8 @@
 使用 dotnet tool 可以方便分发给小伙伴很多有趣的工具，而小伙伴们也可以通过 dotnet tool 一句命令安装上强大的工具。但有一个问题是，我如何知道有这样的工具？ 当前可以在 nuget.org 上搜寻到 dotnet tool 工具
 
 <!--more-->
+<!-- CreateTime:2020/8/11 11:04:18 -->
+
 <!-- 发布 -->
 
 进入 [https://www.nuget.org](https://www.nuget.org) 然后搜寻一个关键词，如我想要找到一个文件下载器
