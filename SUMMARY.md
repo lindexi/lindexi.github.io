@@ -376,6 +376,8 @@
 
  * [dotnet core 发布只有一个 exe 的方法](dotnet-core-发布只有一个-exe-的方法.md)
 
+ * [dotnet core 在 MAC 系统下删除应用程序自己后调 Process Start 方法将会抛出 Win32 异常](dotnet-core-在-MAC-系统下删除应用程序自己后调-Process-Start-方法将会抛出-Win32-异常.md)
+
  * [dotnet core 导出 COM 组件](dotnet-core-导出-COM-组件.md)
 
  * [dotnet core 打包构建提示 MSB3024 可能的原因](dotnet-core-打包构建提示-MSB3024-可能的原因.md)
