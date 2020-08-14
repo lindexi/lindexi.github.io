@@ -304,6 +304,8 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 //   FooPerf.Lindexidb: DefaultJob [Arguments=10, a=100, b=5]
 ```
 
+例子放在 [github](https://github.com/lindexi/lindexi_gd/tree/ae481a39/HearwhejiyehallyiheFubaduwheefu) 欢迎小伙伴访问
+
 除了可以设置方法传入，还可以设置属性
 
 ```csharp
