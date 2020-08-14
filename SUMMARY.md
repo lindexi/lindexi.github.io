@@ -1092,6 +1092,8 @@
 
  * [win10 uwp 一张图说明水平对齐和垂直对齐](win10-uwp-一张图说明水平对齐和垂直对齐.md)
 
+ * [win10 uwp 不显示 SplashScreen 欢迎界面的方法](win10-uwp-不显示-SplashScreen-欢迎界面的方法.md)
+
  * [win10 UWP 九幽数据分析](win10-UWP-九幽数据分析.md)
 
  * [win10 UWP 九幽登录](win10-UWP-九幽登录.md)
@@ -1713,6 +1715,8 @@
  * [WPF 在 Alt+Tab 隐藏窗口](WPF-在-Alt-Tab-隐藏窗口.md)
 
  * [WPF 在 DrawingContext 的 push 如何使用](WPF-在-DrawingContext-的-push-如何使用.md)
+
+ * [WPF 在 XAML 写 C# 代码](WPF-在-XAML-写-C-代码.md)
 
  * [WPF 在image控件用鼠标拖拽出矩形](WPF-在image控件用鼠标拖拽出矩形.md)
 
