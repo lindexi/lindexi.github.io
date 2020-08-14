@@ -3,6 +3,8 @@
 在 MAC 系统下，如果在运行过程中，应用程序的文件被删除了，那么此时如果应用程序执行了 Process.Start 方法时，将会抛出 Win32Exception 异常
 
 <!--more-->
+<!-- CreateTime:2020/8/13 9:38:41 -->
+
 <!-- 发布 -->
 
 我写了一个工具 [dotnetCampus.UpdateAllDotNetTools](https://github.com/dotnet-campus/dotnetCampus.UpdateAllDotNetTools) 用来更新所有的 dotnet tool 工具。因为 [dotnetCampus.UpdateAllDotNetTools](https://github.com/dotnet-campus/dotnetCampus.UpdateAllDotNetTools) 也是一个 dotnet tool 工具，因此也会更新自身
@@ -69,5 +71,7 @@ at System.Diagnostics.Process.Start()
 ```
 
 这就是在 [Unhandled exception on Mac · Issue #4 · dotnet-campus/dotnetCampus.UpdateAllDotNetTools](https://github.com/dotnet-campus/dotnetCampus.UpdateAllDotNetTools/issues/4 ) 的问题
+
+我尝试在 dotnet runtime 修复这个坑 [Ignore the executable file be deleted in Process Start by lindexi · Pull Request #40748 · dotnet/runtime](https://github.com/dotnet/runtime/pull/40748 ) 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
