@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/8/14 17:09:49 -->
+
 <!-- 发布 -->
 
 在 WPF 的 XAMl 有一个小伙伴也许看到但是忽略的特性就是 `x:Code` 特性，这个特性在 UWP 版本被干掉了，因为太好用了
@@ -50,7 +52,6 @@
             Button.Content = "欢迎访问我博客 https://blog.lindexi.com 里面有大量 UWP WPF 博客";
         }
     }
-        </x:Code>
     </Grid>
 ```
 
