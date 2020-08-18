@@ -650,6 +650,8 @@
 
  * [dotnet 配置 Gitlab 的 Runner 做 CI 自动构建](dotnet-配置-Gitlab-的-Runner-做-CI-自动构建.md)
 
+ * [dotnet 里的那些锁 AutoResetEvent 用法](dotnet-里的那些锁-AutoResetEvent-用法.md)
+
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
  * [gif 格式](gif-格式.md)
