@@ -1712,6 +1712,8 @@
 
  * [WPF 可获得焦点属性](WPF-可获得焦点属性.md)
 
+ * [WPF 启动屏幕键盘](WPF-启动屏幕键盘.md)
+
  * [WPF 和 ASP.NET Core 通过 elastic APM 上报信息](WPF-和-ASP.NET-Core-通过-elastic-APM-上报信息.md)
 
  * [WPF 图片移除视觉树内存泄漏](WPF-图片移除视觉树内存泄漏.md)
