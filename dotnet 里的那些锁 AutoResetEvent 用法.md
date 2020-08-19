@@ -3,6 +3,8 @@
 本文告诉大家在 dotnet 里的 AutoResetEvent 锁的用法
 
 <!--more-->
+<!-- CreateTime:2020/8/18 15:04:03 -->
+
 <!-- 发布 -->
 
 ## 用法
