@@ -1818,6 +1818,8 @@
 
  * [WPF 最小的代码使用 DynamicRenderer 书写](WPF-最小的代码使用-DynamicRenderer-书写.md)
 
+ * [WPF 最简逻辑实现多指顺滑的笔迹书写](WPF-最简逻辑实现多指顺滑的笔迹书写.md)
+
  * [WPF 框架全构建环境虚拟机硬盘分享](WPF-框架全构建环境虚拟机硬盘分享.md)
 
  * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
