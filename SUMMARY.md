@@ -566,6 +566,8 @@
 
  * [dotnet 新 sdk style 项目格式 文件冲突](dotnet-新-sdk-style-项目格式-文件冲突.md)
 
+ * [dotnet 新 SDK Style 项目格式如何使用 InternalsVisibleToAttribute 功能](dotnet-新-SDK-Style-项目格式如何使用-InternalsVisibleToAttribute-功能.md)
+
  * [dotnet 新 sdk style 项目格式的一些命名空间和引用](dotnet-新-sdk-style-项目格式的一些命名空间和引用.md)
 
  * [dotnet 新项目格式与对应框架预定义的宏](dotnet-新项目格式与对应框架预定义的宏.md)
@@ -1569,6 +1571,8 @@
  * [WPF checkbox文字下掉](WPF-checkbox文字下掉.md)
 
  * [WPF DelegateCommand 出现Specified cast is not valid](WPF-DelegateCommand-出现Specified-cast-is-not-valid.md)
+
+ * [WPF dotnet core 如何开启 Pointer 消息的支持](WPF-dotnet-core-如何开启-Pointer-消息的支持.md)
 
  * [WPF dotnet core 的 Blend SDK Behaviors 库](WPF-dotnet-core-的-Blend-SDK-Behaviors-库.md)
 
