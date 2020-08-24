@@ -428,6 +428,8 @@
 
  * [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](dotnet-OpenXML-文本-EndParagraphRunProperties-的作用.md)
 
+ * [dotnet OpenXML 文本 Kerning 字间距的作用](dotnet-OpenXML-文本-Kerning-字间距的作用.md)
+
  * [dotnet OpenXML 文本 ParagraphProperties 的属性作用](dotnet-OpenXML-文本-ParagraphProperties-的属性作用.md)
 
  * [dotnet OpenXML 文本 Text Line Break 的作用](dotnet-OpenXML-文本-Text-Line-Break-的作用.md)
@@ -1777,6 +1779,8 @@
  * [WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](WPF-将-docx-的-Word-文件转换为-FlowDocument-显示.md)
 
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
+
+ * [WPF 底层 从手指触摸屏幕到笔迹在屏幕显示中间的步骤](WPF-底层-从手指触摸屏幕到笔迹在屏幕显示中间的步骤.md)
 
  * [WPF 延迟加载](WPF-延迟加载.md)
 

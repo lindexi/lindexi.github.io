@@ -100,6 +100,8 @@ if (oleElement != null)
 }
 ```
 
+这里的 Ole Object 在 ECMA 全称 Global Element for Embedded objects and Controls 元素
+
 然后尝试读取 oleElement 的 Fallback 是否有图片
 
 不是所有的 ole element 都有备用的图，需要看你的文档里面是否有 `mc:fallback` 元素，同时这个元素是 `p:pic` 图片元素
