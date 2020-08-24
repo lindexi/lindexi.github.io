@@ -3,6 +3,8 @@
 在 WPF 下，可以使用和 UWP 一样的 Pointer 触摸架构，只是开启的方式和 .NET Framework 版本有细微的差异
 
 <!--more-->
+<!-- CreateTime:2020/8/21 14:20:47 -->
+
 <!-- 发布 -->
 
 看过 [win10 支持默认把触摸提升 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html) 的小伙伴可以了解到，这个博客的方法是通过配置文件的方式

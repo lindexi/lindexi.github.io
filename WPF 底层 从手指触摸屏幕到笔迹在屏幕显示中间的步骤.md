@@ -11,7 +11,7 @@
 
 规避了硬件设备，此时咱就不需要画精力去了解硬件设备的收集触摸点的机制，以及封装数据和系统的解包是如何做的
 
-在 WPF 的触摸在系统最底层使用的是 RealTime Stylus 机制实现，这个机制能达到比 WM_Touch 触摸消息快非常多倍的接收速度，基本可以认为硬件设备发送到系统瞬间就到应用程序上，中间过程仅有发生几次锁和读取内存数据的时间
+在 WPF 的触摸在系统最底层使用的是 RealTime Stylus 机制实现，这个机制能达到比 WM_Touch 触摸消息快非常多倍的接收速度，基本可以认为硬件设备发送到系统瞬间就到应用程序上，中间过程仅有发生几次锁和读取内存数据的时间。从 RealTime Stylus 到 WPF 框架经过 PenIMC 模块，请看 [WPF 触摸底层 PenImc 是如何工作的](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%BA%95%E5%B1%82-PenImc-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.html)
 
 而 WPF 尽管可以在 Stylus Input 线程使用 PenThreadWorker 通过 RealTime Stylus 机制快速获取触摸点，但是 WPF 为了让业务逻辑更好实现，此时将会在在主线程触发 Touch 或 Stylus 事件。因此如果监听 Touch 等这些事件，那么将需要等待线程切换和等待主线程忙碌。因此高性能的笔迹实现推荐通过 StylusPlugIn 的方法，在触摸线程获取触摸点，详细请看 [WPF 高速书写 StylusPlugIn 原理](https://blog.lindexi.com/post/WPF-%E9%AB%98%E9%80%9F%E4%B9%A6%E5%86%99-StylusPlugIn-%E5%8E%9F%E7%90%86.html)
 

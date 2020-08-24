@@ -3,6 +3,8 @@
 如果一个项目想要让其他某个指定的项目可以使用到 internal 的类或成员，可以通过标记 InternalsVisibleToAttribute 的方式实现
 
 <!--more-->
+<!-- CreateTime:2020/8/21 16:19:07 -->
+
 <!-- 发布 -->
 
 最简单的方法是新建一个 AssemblyInfo.cs 文件，在这个文件里面使用 System.Runtime.CompilerServices.InternalsVisibleToAttribute 指定某个程序集可见
