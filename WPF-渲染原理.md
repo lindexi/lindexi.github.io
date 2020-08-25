@@ -64,19 +64,19 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 - GDI 这是通用图形绘制接口，不依赖显卡，是进行 CPU 渲染的接口，提供了绘制原语和提高一些绘制质量，如一些 WMF 图片格式等的绘制质量
 
-- CLR 因为 WPF 现在还运行在 dotnet framework 或 dotnet core 所以需要使用运行时。在 运行时 里提供了通用的类和方法，用来方便开发者开发，大概有 30 万 API 可以使用。当然，如果使用了 .NET Native 或者
+- CLR 因为 WPF 现在还运行在 dotnet framework 或 dotnet core 所以需要使用运行时。在 运行时 里提供了通用的类和方法，用来方便开发者开发，大概有 30 万 API 可以使用。当然，如果使用了 .NET Native 或者其他 AOT 技术，此时也可以说不需要 CLR 的支持（尽管不够严谨）
 
-- Device Drivers 设备驱动程序是在系统特殊的用来驱动一些硬件
+- Device Drivers 设备驱动程序是在系统特殊的用来驱动一些硬件的驱动
 
-在下面使用到的代码实际都是从最上层拿到的，只有最上层的代码，微软才会开放。而关键的 milCore 代码我还拿不到，只能通过 WinDbg 拿到调用的堆栈。现在还没有完全知道 milCore 的过程，所以也不会在本文告诉大家。
+在下面使用到的代码实际都是从最上层拿到的，只有最上层的代码，微软才会开放。而关键的 milCore 代码 ~~我还拿不到，只能通过 WinDbg 拿到调用的堆栈。现在还没有完全知道 milCore 的过程，所以也不会在本文告诉大家~~ 我大概读了，但是内容太多就不放在本文。现在 WPF 全部代码开源，欢迎小伙伴改代码
 
 本文的顺序是从消息调度到开发者使用 OnRender 方法给绘制原语，再到如何把绘制原语给渲染线程的过程。从渲染线程调用 milCore ，在通过 milCore 调用 DirectX 的过程就先简单说过。从 DirectX 绘制完成到屏幕显示的过程也是简单告诉大家。
 
 ## 消息循环
 
-在 WPF 中也是使用消息循环，因为在之前的很多程序都是需要自己写消息循环才可以收到用户的交互，这里消息循环就是 Windows 会向 WPF 发送一些消息，而且 WPF 也可以给自己发消息，通过消息就可以判断当前软件需要做哪些
+在 WPF 中也是使用消息循环，因为在之前的很多程序都是需要自己写消息循环才可以收到用户的交互，这里消息循环就是 Windows 会向 WPF 发送一些消息，而且 WPF 也可以给自己发消息，通过消息就可以判断当前软件需要做哪些任务
 
-在处理消息的最主要的类是 HwndSubclass ，在创建应用就会执行 Attach 函数，这个函数请看代码
+在处理消息的最主要的类是 HwndSubclass 类，这个类在创建应用就会执行 Attach 函数，这个函数内容请看代码
 
 ```csharp
     internal IntPtr Attach(IntPtr hwnd)
@@ -86,7 +86,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
     }
 ```
 
-从上面代码可以看到主要的是 CriticalAttach 函数，请看代码
+从上面代码可以看到主要的是 CriticalAttach 函数，关于 CriticalAttach 函数请看代码
 
 ```csharp
     internal IntPtr CriticalAttach(IntPtr hwnd)
@@ -99,7 +99,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
     }
 ```
 
-这里 SubclassWndProc 就是主要处理消息，但是在上面代码是 HookWindowProc 注册。在 GetWindowLongPtr 大家也许都很熟悉，拿到这个函数就是拿到窗口，下面来看一下 HookWindowProc 代码
+上面代码的 NativeMethods.WndProc 其实是一个委托，也就是传入的 SubclassWndProc 才是核心的逻辑。这里 SubclassWndProc 就是主要处理消息，但是在上面代码是 HookWindowProc 注册。在大家也许都很熟悉 GetWindowLongPtr 函数里面将会拿到拿到窗口。在拿到 hwnd 句柄以及实际执行核心逻辑 SubclassWndProc 方法和窗口，调用进了 HookWindowProc 函数，也就是说 HookWindowProc 就是入口，下面来看一下 HookWindowProc 代码
 
 ```csharp
       private void HookWindowProc(IntPtr hwnd, NativeMethods.WndProc newWndProc, IntPtr oldWndProc)
@@ -119,7 +119,9 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
         }
 ```
 
-这里 NativeMethods.GWL_WNDPROC 的值就是 -4 在 CriticalSetWindowLong 是这样写
+上面代码有核心的逻辑在注释告诉了大家，就是 UnsafeNativeMethods.CriticalSetWindowLong 这个函数，这个函数将需要传入 NativeMethods.GWL_WNDPROC 常量，这个常量的值是 -4 表示获得窗口过程的地址，或代表窗口过程的地址的句柄。什么是窗口过程，其实就是处理消息的地方
+
+下面是 CriticalSetWindowLong 的代码，可以看到实际是调用 SetWindowLongPtrWndProc 方法
 
 ```csharp
        internal static IntPtr CriticalSetWindowLong(HandleRef hWnd, int nIndex, NativeMethods.WndProc dwNewLong)
@@ -140,7 +142,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 所以核心就是 SetWindowLongPtrWndProc 调用 SetWindowLongWrapper 设置获得消息
 
-那么消息是如何作为事件？
+那么消息是如何作为事件？在收到一个 Windows 消息，如何封装为一个 dotnet 的事件。此时请看传入的 SubclassWndProc 的方法
 
 ```csharp
        internal IntPtr SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
@@ -291,12 +293,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 在 SubclassWndProc 调用的`dispatcher.Invoke( DispatcherPriority.Send,_dispatcherOperationCallback,param)`就是调用`WndProcHook` 函数传入参数 
 
-如果收到了画窗口的消息，就会把这个消息发送给DWM，通过DWM把窗口画的内容画到屏幕。
+如果收到了画窗口的消息，就会把这个消息发送给 DWM 桌面窗口管理器，通过DWM把窗口画的内容画到屏幕。但实际上是不是每次都有画窗口的消息？其实只有窗口创建以及最小化切换等才会收到 WM_Paint 消息，因为 WPF 是基于 DirectX 的，这里有复杂的机制告诉 DWM 绘制
 
+想了解 DirectX 的绘制之前，需要聊聊 WPF 的最底层指导渲染的方法
 
 ## RenderContent
 
-在使用绘制原语之后，最底层的函数是 UIElement.RenderContent ，请看代码
+在使用绘制原语之后，也就是调用 RenderContext 的各个基础函数进行 Visual 的绘制时，最底层的函数是 UIElement.RenderContent 请看代码
 
 ```csharp
   internal override void RenderContent(RenderContext ctx, bool isOnChannel)
@@ -365,9 +368,9 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 那么这个消息是怎么发送，在`UIElement.InvalidateVisual`函数会调用`MediaContext.PostRender`这里就发送自定义消息，于是就可以开始渲染
 
-在消息循环是会不断获取消息，这里说的渲染是包括两个方面，一个是 WPF 把内容画到窗口，也就是上面说的自定义消息，还有另一个就是把窗口内容画在屏幕。这两个都是依靠 Windows 消息，只是第一个消息是 WPF 自己发给自己，也就是自己玩的。从 Dispatcher 拿到自定义的消息，就开始执行视觉树的对象，调用对应的绘制，这里是收集到绘制原语，也就是告诉显卡可以怎么画。在底层是通过 `System.Windows.Media.Composition.DUCE` 的 Channel 把数据发送到渲染线程，渲染线程就是使用 Dx 进行绘制。在 Dx 画是使用 MilCore 从渲染线程连接到 Dx 画出来的
+在消息循环是会不断获取消息，这里说的渲染是包括两个方面，一个是 WPF 把内容画到窗口，也就是上面说的自定义消息，还有另一个就是把窗口内容画在屏幕。这两个都是依靠 Windows 消息，只是第一个消息是 WPF 自己发给自己，也就是自己玩的。从 Dispatcher 拿到自定义的消息，就开始执行视觉树的对象，调用对应的绘制，这里是收集到绘制原语，也就是告诉显卡（或者准确说是 WPF 框架）可以怎么画。在底层是通过 `System.Windows.Media.Composition.DUCE` 的 Channel 把数据发送到渲染线程，渲染线程就是使用 Dx 进行绘制。使用 Dx 画的方法是 MilCore 从渲染线程连接到 Dx 画出来的
 
-在渲染线程收集到的都是绘制原语，绘制原语就是在 Visual 底层调用的DrawingContext 传入的方法
+在渲染线程收集到的都是绘制原语，绘制原语就是在 Visual 底层调用的 DrawingContext 传入的方法
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理10.png) -->
 
@@ -375,13 +378,11 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 这一部分没有完全跟源代码，如果有哪些地方和实际不相同，请告诉我
 
-渲染线程拿到了绘制原语就可以进行绘制，绘制的过程需要进行处理图片和一些基础形状，大概的过程请看下面
+这里收集到的绘制原语有部分和 DirectX 的渲染图元数据相同，但有很大部分都是不相同的，这部分就需要在框架层进行处理。渲染线程拿到了绘制原语就可以进行绘制，绘制的过程需要进行处理图片和一些基础形状，大概的过程请看下面
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理11.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F201882414397412)
-
-这时到了 Dx 才会使用显卡进行渲染，并且绘制的是窗口指针。也就是窗口绘制完成在屏幕还是无法看到的。
 
 在绘制的时候需要使用 MIL 解码一些图片和一些形状才可以用到 dx 进行渲染
 
@@ -389,7 +390,11 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 ![](http://image.acmx.xyz/lindexi%2F20188241440119)
 
-在窗口画完之后，会通过 `WM_PAINT` 告诉 DWM 可以画出窗口。但是现代的应用是不需要在窗口刷新的过程通过 windows 消息发送到 DWM 才进行窗口刷新。只有在窗口存在部分不可见，如窗口有一部分在屏幕之外，从屏幕外移到屏幕内，或者窗口最小化到显示才需要通过 windows 告诉 DWM 刷新。
+基本上的 WPF 对图片的解码都是调用 WIC 机制进行图片解码，这意味着需要用户本机安装有对应的图片解码器。当然手动解码绘制到 WriteableBitmap 也是可以的，这部分都算业务层的逻辑
+
+在 DirectX 术语里面，上面的逻辑就属于应用阶段。而在 WPF 层面，在准备好了数据调用 Draw Call 之后的部分就交给了 DirectX 了，不属于 WPF 框架内容。这时到了 Dx 才会使用显卡进行渲染，并且绘制的是窗口指针。也就是窗口绘制完成在屏幕还是无法看到的
+
+在窗口画完之后，会通过 `WM_PAINT` 告诉 DWM 桌面窗口管理器可以画出窗口。但是现代的应用是不需要在窗口刷新的过程通过 windows 消息发送到 DWM 才进行窗口刷新。只有在窗口存在部分不可见，如窗口有一部分在屏幕之外，从屏幕外移到屏幕内，或者窗口最小化到显示才需要通过 windows 告诉 DWM 刷新。
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理13.png) -->
 
@@ -412,6 +417,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 在 Windows 8 之后就无法手动设置关闭 DWM 的合成，只有在 windows 7 和以前的系统才可以设置关闭合成。通过 DWM 合成技术可以将每个绘制的窗口认为是一个位图，通过对位图处理添加阴影等，做出好看界面。
 
 更多请看 [Desktop Window Manager](https://docs.microsoft.com/en-us/windows/desktop/dwm/dwm-overview ) 
+
+而在 Win10 系统，其实是在 Win8.1 加入了 DirectComposition 技术，允许 DWM 分层可以细化到应用级，这意味着原先每个应用都是一层，而现在可以做到一个应用拥有多层。这样做的优势请看 [为何使用 DirectComposition](https://blog.lindexi.com/post/%E4%B8%BA%E4%BD%95%E4%BD%BF%E7%94%A8-DirectComposition.html) 使用方法请看 [WPF 使用 Composition API 做高性能渲染](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Composition-API-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E6%B8%B2%E6%9F%93.html) 用 DirectX 配合 Composition API 可以作出无敌的渲染性能
 
 ## 从控件画出来到屏幕显示
 
@@ -443,7 +450,9 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 ![](http://image.acmx.xyz/lindexi%2F2018824142840517)
 
-渲染需要经过消息循环和 Dispatcher 循环，也就是渲染的方法不是直接通过控件调用渲染。控件是通过发送消息经过消息循环再调用到控件的 OnRender 方法。再 OnRender 方法里，经过 Drawing 方法输出绘制原语到渲染线程。渲染线程经过 MIL 和 Dx 渲染界面到窗口。屏幕管理更新窗口让用户在屏幕可以看到、
+渲染需要经过消息循环和 Dispatcher 循环，也就是渲染的方法不是直接通过控件调用渲染。控件是通过发送消息经过消息循环再调用到控件的 OnRender 方法。再 OnRender 方法里，经过 Drawing 方法输出绘制原语到渲染线程。渲染线程经过 MIL 和 Dx 渲染界面到窗口。屏幕管理更新窗口让用户在屏幕可以看到
+
+关于后半部分还有 DirectX 的戏份，这部分就先不多聊啦
 
 关于渲染性能请看 [WPF Drawing Performance](http://kynosarges.org/WpfPerformance.html )
 
@@ -484,6 +493,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 [Win32知识之窗口绘制窗口第一讲](https://www.cnblogs.com/iBinary/p/9576439.html )
 
 [win32程序之窗口程序以及消息机制](https://www.cnblogs.com/iBinary/p/9580268.html )
+
+[WPF 使用 Composition API 做高性能渲染](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Composition-API-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E6%B8%B2%E6%9F%93.html) 
 
 
 

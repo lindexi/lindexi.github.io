@@ -59,6 +59,8 @@
 
 [dotnet OpenXML 文本字体的选择规则](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E7%9A%84%E9%80%89%E6%8B%A9%E8%A7%84%E5%88%99.html)
 
+[dotnet OpenXML 文本 Kerning 字间距的作用](https://lindexi.gitee.io/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Kerning-%E5%AD%97%E9%97%B4%E8%B7%9D%E7%9A%84%E4%BD%9C%E7%94%A8.html )
+
 [dotnet OpenXML 解析 PPT 文本字体获取详解](https://lindexi.gitee.io/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E8%8E%B7%E5%8F%96%E8%AF%A6%E8%A7%A3.html )
 
 ## 通用知识

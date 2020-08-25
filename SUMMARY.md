@@ -466,6 +466,8 @@
 
  * [dotnet 不申请额外数组空间合并多个只读数组列表](dotnet-不申请额外数组空间合并多个只读数组列表.md)
 
+ * [dotnet 为什么开源的运行时仓库代码减少使用 Linq 语句](dotnet-为什么开源的运行时仓库代码减少使用-Linq-语句.md)
+
  * [dotnet 为什么每个项目都会输出一个 NuGet 包而不是一个包带所有项目](dotnet-为什么每个项目都会输出一个-NuGet-包而不是一个包带所有项目.md)
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
@@ -1675,6 +1677,8 @@
  * [WPF 使用RPC调用其他进程](WPF-使用RPC调用其他进程.md)
 
  * [WPF 使用不安全代码快速从数组转 WriteableBitmap](WPF-使用不安全代码快速从数组转-WriteableBitmap.md)
+
+ * [WPF 使用基于 Chromium 内核的 Microsoft Edge 封装的 WebView2 控件](WPF-使用基于-Chromium-内核的-Microsoft-Edge-封装的-WebView2-控件.md)
 
  * [WPF 使用封装的 SharpDx 控件](WPF-使用封装的-SharpDx-控件.md)
 
