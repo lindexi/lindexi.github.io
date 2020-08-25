@@ -13,7 +13,7 @@
 
 编辑完成之后，可以通过工具将文件夹压缩为 Office 文档，使用 Office 打开，此时就可以看到属性的效果
 
-工具在 GitHub 上完全开源，请看 [https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper)
+工具在 GitHub 上完全开源，请看 [https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZipper)
 
 使用方法是通过 dotnet 工具安装
 
