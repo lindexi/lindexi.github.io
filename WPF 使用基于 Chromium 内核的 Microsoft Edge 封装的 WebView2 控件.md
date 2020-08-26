@@ -3,6 +3,8 @@
 现在是 2020.08.23 当前这个技术依然是预览版，使用 WebView2 只需要通过 NuGet 安装库，可以支持 Win7 和 Win8 和 Win10 系统，无 IE 依赖。内核使用 Chromium 内核，顶层技术是 Microsoft Edge 封装
 
 <!--more-->
+<!-- CreateTime:2020/8/25 8:54:05 -->
+
 
 <!-- 发布 -->
 

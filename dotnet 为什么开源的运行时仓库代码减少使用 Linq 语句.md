@@ -3,6 +3,8 @@
 在 dotnet 开源的 runtime 运行时仓库里面，有微软的大佬说运行时仓库的代码应该减少使用 Linq 语句，那这又是为什么呢
 
 <!--more-->
+<!-- CreateTime:2020/8/24 14:21:49 -->
+
 <!-- 发布 -->
 
 微软的 [Jan Kotas](https://github.com/jkotas) 大佬说了下面这段话，大概意思就是减少在运行时库里减少对 Linq 的使用
