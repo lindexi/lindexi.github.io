@@ -34,6 +34,8 @@
 
  * [ASP.NET Core 解决控制台输出日志内容前面[40m等乱码字符](ASP.NET-Core-解决控制台输出日志内容前面[40m等乱码字符.md)
 
+ * [ASP.NET Core 警惕可空类型开启之后模型校验失败](ASP.NET-Core-警惕可空类型开启之后模型校验失败.md)
+
  * [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](ASP.NET-Core-连接-GitLab-与-MatterMost-打造-devops-工具.md)
 
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
@@ -1847,6 +1849,8 @@
  * [WPF 渲染级别](WPF-渲染级别.md)
 
  * [WPF 源代码 从零开始写一个 UI 框架](WPF-源代码-从零开始写一个-UI-框架.md)
+
+ * [WPF 点击按钮时更改按钮样式界面效果的 XAML 实现方法](WPF-点击按钮时更改按钮样式界面效果的-XAML-实现方法.md)
 
  * [WPF 用 AvalonEdit 开发简单的代码编辑器 支持高亮自动提示](WPF-用-AvalonEdit-开发简单的代码编辑器-支持高亮自动提示.md)
 
