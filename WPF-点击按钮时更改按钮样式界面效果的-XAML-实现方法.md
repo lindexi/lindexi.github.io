@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/8/26 10:30:27 -->
+
 
 <!-- 发布 -->
 
@@ -181,6 +183,8 @@ TemplatedParent 模板属性
 ```
 
 代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/46dd1572/Babukeelleneeoai) 欢迎小伙伴访问
+
+当然，本文有很多知识点没有聊到，包括 Style 是什么，以及属性的配置应该如何写，还有动画 DoubleAnimation 是什么等等。我特别推荐小伙伴入门的时候看 [微软技术教程 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili](https://space.bilibili.com/32497462 ) 的免费教程视频，包含了这些细节
 
 
 
