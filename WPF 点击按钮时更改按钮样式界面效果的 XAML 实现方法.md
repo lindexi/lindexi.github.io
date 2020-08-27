@@ -3,6 +3,8 @@
 在 WPF 中按钮 Button 将会吃掉路由事件，此时的 EventTrigger 如果通过 RoutedEvent 是 MouseLeftButtonDown 那么将会拿不到路由事件，也就触发不了，因此样式将不会变更。简单的解决方法就是通过 VisualStateManager 配合 VisualState 来实现
 
 <!--more-->
+<!-- CreateTime:2020/8/26 10:30:27 -->
+
 
 <!-- 发布 -->
 
@@ -178,5 +180,7 @@ TemplatedParent 模板属性
 ```
 
 代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/46dd1572/Babukeelleneeoai) 欢迎小伙伴访问
+
+当然，本文有很多知识点没有聊到，包括 Style 是什么，以及属性的配置应该如何写，还有动画 DoubleAnimation 是什么等等。我特别推荐小伙伴入门的时候看 [微软技术教程 - 哔哩哔哩 ( ゜- ゜)つロ 乾杯~ Bilibili](https://space.bilibili.com/32497462 ) 的免费教程视频，包含了这些细节
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
