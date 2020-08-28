@@ -55,4 +55,19 @@ nuget pack MyPackage.nuspec -Symbols -SymbolPackageFormat snupkg
 
 [How to publish NuGet symbol packages using the new symbol package format '.snupkg'](https://docs.microsoft.com/en-us/nuget/create-packages/symbol-packages-snupkg )
 
+在 NuGet 包嵌入 符号文件 的方法是添加 AllowedOutputExtensionsInPackageBuildOutputFolder 属性
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+    <!-- Include symbol files (*.pdb) in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+</Project>
+```
+
+默认符号文件是放在 snupkg 文件，而不是放在 nupkg 文件，原因是将符号文件放在 nupkg 文件，会让 nupkg 文件太大。如果将符号文件放在 nupkg 文件，那么不需要开发者另外配置符号服务器，就可以拿到符号文件
+
+详细请看 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
