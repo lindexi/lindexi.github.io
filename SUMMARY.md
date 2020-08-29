@@ -426,6 +426,8 @@
 
  * [dotnet OpenXML 从文档生成创建文档的代码的库](dotnet-OpenXML-从文档生成创建文档的代码的库.md)
 
+ * [dotnet OpenXML 如何判断是形状还是文本](dotnet-OpenXML-如何判断是形状还是文本.md)
+
  * [dotnet OpenXML 文本 BodyProperties 的属性作用](dotnet-OpenXML-文本-BodyProperties-的属性作用.md)
 
  * [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](dotnet-OpenXML-文本-EndParagraphRunProperties-的作用.md)
@@ -533,6 +535,8 @@
  * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
  * [dotnet 命名管道名字长度限制](dotnet-命名管道名字长度限制.md)
+
+ * [dotnet 在 Linux 下的 GDI 库对 EMF 图片格式的支持](dotnet-在-Linux-下的-GDI-库对-EMF-图片格式的支持.md)
 
  * [dotnet 在 NuGet 上搜寻好用的 dotnet tool 工具](dotnet-在-NuGet-上搜寻好用的-dotnet-tool-工具.md)
 
