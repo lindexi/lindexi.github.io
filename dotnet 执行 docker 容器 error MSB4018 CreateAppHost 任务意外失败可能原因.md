@@ -3,6 +3,8 @@
 在使用 ASP.NET Core 的 docker 调试的时候，在生成的这一步提示 C:\Program Files\dotnet\sdk\3.1.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(424,5): error MSB4018: “CreateAppHost”任务意外失败 可能的原因是 docker 内之前的容器没有关闭
 
 <!--more-->
+<!-- CreateTime:2020/8/28 8:44:52 -->
+
 <!-- 发布 -->
 
 关注输出窗口，如果可以看到如下内容，那么就是 docker 内存在上次运行的容器没有关闭
