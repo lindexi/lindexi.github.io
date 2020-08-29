@@ -139,4 +139,62 @@
 
 但是无论用什么的算法，只要图片和原始尺寸不相同，那么一定会糊。无论是图片进行放大或缩小，都会模糊，这是基础的知识，想了解原理请自行百度
 
+另一个算法是按照填充像素数量计算的，限制填充像素数量限制大小
+
+```csharp
+public static Size GetImageOptimizationSize(Size originSize, int maxPixel, int requestedPixel)
+```
+
+传入图片的大小，以及限制的最大像素和期望的像素大小。如果图片大小大于期望的像素，小于最大的像素大小，那么返回图片原始大小
+
+```csharp
+        public static Size GetImageOptimizationSize(Size originSize, int maxPixel, int requestedPixel)
+        {
+            var imagePixel = originSize.Width * originSize.Height;
+            if (imagePixel <= maxPixel)
+            {
+                // 是不是太小了，需要缩放
+                if (imagePixel < requestedPixel)
+                {
+                    return GetOptimizationSize(originSize, requestedPixel);
+                }
+            }
+            else
+            {
+                return GetOptimizationSize(originSize, maxPixel);
+            }
+
+            return originSize;
+
+            static Size GetOptimizationSize(Size originSize, double requestedPixel)
+            {
+                // 定义 Ow 是 originSize.Width
+                // 定义 Oh 是 originSize.Height
+                // 返回值为 requestedSize 根据 requestedPixel 计算
+                // 定义 Rw 是 requestedSize.Width
+                // 定义 Rh 是 requestedSize.Height
+                // 假定比例不变，于是有
+                // Ow / Oh = Rw / Rh 
+                // 也就是前后的宽度高度比例不变
+                // 上面表达式交换可以等于
+                // Ow * Rh = Rw * Oh
+                // 而 requestedPixel = requestedSize.Width * requestedSize.Height
+                // 定义 P 是 requestedPixel
+                // 于是有 Rw = P / Rh
+                // 因此 Ow * Rh = Rw * Oh = P / Rh * Oh
+                // Ow * Rh = P / Rh * Oh
+                // Rh * Rh = P * Oh / Ow
+                // 因此 Rh = Math.Sqrt(P * Oh / Ow)
+                // 相同方式可以计算 Rw 的值
+
+                var requestedWidth = (int)Math.Sqrt(requestedPixel * originSize.Width / originSize.Height);
+                var requestedHeight = (int)Math.Sqrt(requestedPixel * originSize.Height / originSize.Width);
+
+                return new Size(requestedWidth, requestedHeight);
+            }
+        }
+```
+
+上面的方法更简单，但是我添加了很多注释用来告诉大家这是如何计算的
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
