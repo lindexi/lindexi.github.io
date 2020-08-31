@@ -3,6 +3,8 @@
 本文告诉大家如何在 WPF 中使用 SkiaSharp 调用 Skia 这个全平台底层渲染框架，使用绘制命令在 WriteableBitmap 图片上绘制内容
 
 <!--more-->
+<!-- CreateTime:2020/8/31 12:30:28 -->
+
 <!-- 发布 -->
 
 谷歌提出了 Skia 全平台渲染框架，这是一个很底层的框架，详细请看 [google/skia: Skia is a complete 2D graphic library for drawing Text, Geometries, and Images.](https://github.com/google/skia)
