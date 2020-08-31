@@ -36,6 +36,8 @@
 
 [dotnet OpenXML 简单聊聊 PPT 文本解析](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8A-PPT-%E6%96%87%E6%9C%AC%E8%A7%A3%E6%9E%90.html )
 
+[dotnet OpenXML 如何判断是形状还是文本](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E5%BD%A2%E7%8A%B6%E8%BF%98%E6%98%AF%E6%96%87%E6%9C%AC.html )
+
 [dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90-Office-%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%AC%A6%E5%8F%B7-buNone-%E5%90%AB%E4%B9%89.html)
 
 [dotnet OpenXML SDK 文本占位符解析](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E6%96%87%E6%9C%AC%E5%8D%A0%E4%BD%8D%E7%AC%A6%E8%A7%A3%E6%9E%90.html)

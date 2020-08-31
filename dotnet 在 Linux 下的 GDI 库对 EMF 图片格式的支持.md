@@ -3,6 +3,8 @@
 我想要在 UOS 上支持上古的图片格式，也就是差不多废弃了 20 年的 EMF 和 WMF 增强图形格式，这两个格式十分古老，而在 Windows 下也存在一些不兼容的图片。我在 Windows 下是使用 GDI+ 的方法支持的，可以将 EMF 转 PNG 或 jpg 等格式。而在 UOS 下，因为 GDI+ 是跨平台的，可以使用跨平台的 System.Drawing.Common 库进行转换
 
 <!--more-->
+<!-- CreateTime:2020/8/29 8:37:06 -->
+
 <!-- 发布 -->
 
 在哪里可以找到很多 EMF 或 WMF 格式的图片？去 PPT 里面的剪辑版找，安装 Office 2013 的版本，可以在 `Program Files\Microsoft Office\CLIPART\PUB60COR\` 找到一些图片
