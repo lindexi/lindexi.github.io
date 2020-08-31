@@ -588,6 +588,8 @@
 
  * [dotnet 方法名 To 和 As 有什么不同](dotnet-方法名-To-和-As-有什么不同.md)
 
+ * [dotnet 日志上报的 TracerId 和 SessionId 的意义](dotnet-日志上报的-TracerId-和-SessionId-的意义.md)
+
  * [dotnet 枚举当前设备wifi热点](dotnet-枚举当前设备wifi热点.md)
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
@@ -1678,6 +1680,8 @@
 
  * [WPF 使用 SharpDX](WPF-使用-SharpDX.md)
 
+ * [WPF 使用 Skia 绘制 WriteableBitmap 图片](WPF-使用-Skia-绘制-WriteableBitmap-图片.md)
+
  * [WPF 使用 TranslatePoint 换算元素之间相对坐标](WPF-使用-TranslatePoint-换算元素之间相对坐标.md)
 
  * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
@@ -1919,6 +1923,8 @@
  * [WPF 解决 ListView 的滚动条不显示](WPF-解决-ListView-的滚动条不显示.md)
 
  * [WPF 解决 PathTooLongException 路径太长](WPF-解决-PathTooLongException-路径太长.md)
+
+ * [WPF 解决 Skia 因为找不到字体而绘制不出中文字符](WPF-解决-Skia-因为找不到字体而绘制不出中文字符.md)
 
  * [WPF 解决 StylusPlugIn 点击穿透问题](WPF-解决-StylusPlugIn-点击穿透问题.md)
 
@@ -2341,6 +2347,10 @@
  * [通过命令行使用微信](通过命令行使用微信.md)
 
  * [静默命令行安装 Visual C++ 发行包](静默命令行安装-Visual-C-发行包.md)
+
+ * [非技术 在线教育与电信行业的发展](非技术-在线教育与电信行业的发展.md)
+
+ * [非技术 左旋和右旋](非技术-左旋和右旋.md)
 
  * [高性能笔迹原理](高性能笔迹原理.md)
 
