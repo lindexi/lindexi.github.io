@@ -542,7 +542,13 @@
 
  * [dotnet 在 OpenXML SDK 的 HasValue 是什么含义](dotnet-在-OpenXML-SDK-的-HasValue-是什么含义.md)
 
+ * [dotnet 在 UOS 国产系统上使用 MonoDevelop 创建 GTK 全平台带界面应用](dotnet-在-UOS-国产系统上使用-MonoDevelop-创建-GTK-全平台带界面应用.md)
+
+ * [dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用](dotnet-在-UOS-国产系统上使用-MonoDevelop-进行拖控件开发-GTK-应用.md)
+
  * [dotnet 在 UOS 国产系统上安装 Mono 开发工具的方法](dotnet-在-UOS-国产系统上安装-Mono-开发工具的方法.md)
+
+ * [dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具](dotnet-在-UOS-国产系统上安装-MonoDevelop-开发工具.md)
 
  * [dotnet 基于 debian 创建一个 docker 的 sdk 镜像](dotnet-基于-debian-创建一个-docker-的-sdk-镜像.md)
 
@@ -877,6 +883,8 @@
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
  * [Roslyn 获得 sln 文件所在的文件夹](Roslyn-获得-sln-文件所在的文件夹.md)
+
+ * [Roslyn 解决找不到 SolutionDir 属性](Roslyn-解决找不到-SolutionDir-属性.md)
 
  * [Roslyn 让编译时候 Message 内容默认输出](Roslyn-让编译时候-Message-内容默认输出.md)
 
