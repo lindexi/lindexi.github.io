@@ -3,6 +3,8 @@
 本文告诉大家如何在 UOS 上安装 MonoDevelop 开发工具。本文使用的 UOS 是 UOS 20 x64 版本，这个系统版本是基于 debian 10 的，默认的 MonoDevelop 开发工具是没有提供 UOS 版本，但是有提供 debian 10 版本
 
 <!--more-->
+<!-- CreateTime:2020/8/31 19:50:35 -->
+
 <!-- 发布 -->
 
 手动安装 MonoDevelop 不靠谱，本文推荐大家通过使用 debian 10 版本方法进行安装

@@ -3,6 +3,8 @@
 在旧版本的 csproj 格式也就是 Franken-proj 格式，可以使用 SolutionDir 拿到当前sln文件所在的文件夹，但是在 SDK Style 格式的项目文件，是拿不到这个属性的，本文告诉大家如何做到兼容之前的逻辑
 
 <!--more-->
+<!-- CreateTime:2020/8/31 19:06:05 -->
+
 <!-- 发布 -->
 
 其实不是 SDK Style 拿不到 SolutionDir 属性，而是因为没有使用 sln 加入构建

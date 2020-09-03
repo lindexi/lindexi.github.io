@@ -126,7 +126,7 @@ services.AddControllers(options => options.SuppressImplicitRequiredAttributeForN
 
 因此如果是新项目，我推荐开启可空，而对于现有的项目，我不推荐打开
 
-[MvcOptions.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes Property (Microsoft.AspNetCore.Mvc)](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.suppressimplicitrequiredattributefornonnullablereferencetypes?view=aspnetcore-3.1 )
+[MvcOptions.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes Property (Microsoft.AspNetCore.Mvc)](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.suppressimplicitrequiredattributefornonnullablereferencetypes?view=aspnetcore-3.1&WT.mc_id=DX-MVP-5003606 )
 
 [Nullable=Enabled results in required validation errors for parameters or bound properties with default values · Issue #18403 · dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues/18403 )
 
