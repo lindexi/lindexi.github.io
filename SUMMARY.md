@@ -546,6 +546,8 @@
 
  * [dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用](dotnet-在-UOS-国产系统上使用-MonoDevelop-进行拖控件开发-GTK-应用.md)
 
+ * [dotnet 在 UOS 国产系统上使用 Xamarin Forms 创建 xaml 界面的 GTK 应用](dotnet-在-UOS-国产系统上使用-Xamarin-Forms-创建-xaml-界面的-GTK-应用.md)
+
  * [dotnet 在 UOS 国产系统上安装 Mono 开发工具的方法](dotnet-在-UOS-国产系统上安装-Mono-开发工具的方法.md)
 
  * [dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具](dotnet-在-UOS-国产系统上安装-MonoDevelop-开发工具.md)
