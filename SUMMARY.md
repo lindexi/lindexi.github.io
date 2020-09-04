@@ -548,6 +548,8 @@
 
  * [dotnet 在 UOS 国产系统上使用 Xamarin Forms 创建 xaml 界面的 GTK 应用](dotnet-在-UOS-国产系统上使用-Xamarin-Forms-创建-xaml-界面的-GTK-应用.md)
 
+ * [dotnet 在 UOS 国产系统上安装 dotnet sdk 的方法](dotnet-在-UOS-国产系统上安装-dotnet-sdk-的方法.md)
+
  * [dotnet 在 UOS 国产系统上安装 Mono 开发工具的方法](dotnet-在-UOS-国产系统上安装-Mono-开发工具的方法.md)
 
  * [dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具](dotnet-在-UOS-国产系统上安装-MonoDevelop-开发工具.md)
@@ -885,6 +887,8 @@
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
 
  * [Roslyn 获得 sln 文件所在的文件夹](Roslyn-获得-sln-文件所在的文件夹.md)
+
+ * [Roslyn 解决 dotnet core 应用进程间引用找不到 runtimeconfig 依赖文件](Roslyn-解决-dotnet-core-应用进程间引用找不到-runtimeconfig-依赖文件.md)
 
  * [Roslyn 解决找不到 SolutionDir 属性](Roslyn-解决找不到-SolutionDir-属性.md)
 
