@@ -94,6 +94,8 @@
 
  * [C# dotnet 使用 OpenXml 解析 PPT 里面的视频](C-dotnet-使用-OpenXml-解析-PPT-里面的视频.md)
 
+ * [C# dotnet 使用 OpenXml 解析 Word 文件](C-dotnet-使用-OpenXml-解析-Word-文件.md)
+
  * [C# dotnet 使用 startIndex 提升 IndexOf 的性能](C-dotnet-使用-startIndex-提升-IndexOf-的性能.md)
 
  * [C# dotnet 使用 TaskCompletionSource 实现暂停功能](C-dotnet-使用-TaskCompletionSource-实现暂停功能.md)
@@ -1918,6 +1920,8 @@
 
  * [WPF 自定义 TextBoxView 的 Margin 大小](WPF-自定义-TextBoxView-的-Margin-大小.md)
 
+ * [WPF 自己封装 Skia 差量绘制控件](WPF-自己封装-Skia-差量绘制控件.md)
+
  * [WPF 获取下载内容长度](WPF-获取下载内容长度.md)
 
  * [WPF 获取屏幕某个点的颜色](WPF-获取屏幕某个点的颜色.md)
@@ -2155,6 +2159,8 @@
  * [[小说] 地狱的环境是怎样的]([小说]-地狱的环境是怎样的.md)
 
  * [关于Host(主机)](关于Host(主机).md)
+
+ * [堆栈是啥意思 有几种堆栈 ](堆栈是啥意思-有几种堆栈-.md)
 
  * [大文件的存储和备份](大文件的存储和备份.md)
 

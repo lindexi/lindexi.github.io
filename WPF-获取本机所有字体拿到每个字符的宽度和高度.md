@@ -93,6 +93,15 @@ var wh = size.Width / size.Height;
 
 [GlyphTypeface Class (System.Windows.Media) ](https://docs.microsoft.com/en-us/dotnet/api/system.windows.media.glyphtypeface?view=netcore-3.1 )
 
+如果需要设置 FontWeight 等影响，可以使用先创建 Typeface 的方法，请看下面代码
+
+```csharp
+var typeface = new Typeface(fontFamily, fontStyle, fontWeight, FontStretches.Normal);
+typeface.TryGetGlyphTypeface(out GlyphTypeface glyph);
+// 如果 TryGetGlyphTypeface 创建失败，那么就是缺少字体等，可以尝试使用微软雅黑等默认字体
+```
+
+上面代码获取 glyph 就可以使用和上文相同的方法获取文本字符宽度
 
 
 

@@ -94,6 +94,8 @@ dotnet publish -r win10-x64 /p:PublishSingleFile=true
 
 [dotnet-warp && NSSM 部署 .net core 项目到 windows 服务 - 易墨 - 博客园](https://www.cnblogs.com/morang/p/10792109.html )
 
+[.NET5.0 单文件发布打包操作深度剖析 - Ron.Liang - 博客园](https://www.cnblogs.com/viter/p/13608947.html )
+
 
 
 
