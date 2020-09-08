@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/9/7 8:57:47 -->
+
 <!-- 发布 -->
 
 在上一篇博客里面告诉大家如何在 WPF 中使用 Skia 绘制，请看 [WPF 使用 Skia 绘制 WriteableBitmap 图片](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Skia-%E7%BB%98%E5%88%B6-WriteableBitmap-%E5%9B%BE%E7%89%87.html)

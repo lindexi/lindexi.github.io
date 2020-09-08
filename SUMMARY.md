@@ -430,6 +430,8 @@
 
  * [dotnet OpenXML 如何判断是形状还是文本](dotnet-OpenXML-如何判断是形状还是文本.md)
 
+ * [dotnet OpenXML 如何获取 schemeClr 颜色](dotnet-OpenXML-如何获取-schemeClr-颜色.md)
+
  * [dotnet OpenXML 文本 BodyProperties 的属性作用](dotnet-OpenXML-文本-BodyProperties-的属性作用.md)
 
  * [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](dotnet-OpenXML-文本-EndParagraphRunProperties-的作用.md)
@@ -453,6 +455,8 @@
  * [dotnet OpenXML 解析 PPT 文本字体获取详解](dotnet-OpenXML-解析-PPT-文本字体获取详解.md)
 
  * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
+
+ * [dotnet OpenXML 颜色变换](dotnet-OpenXML-颜色变换.md)
 
  * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)
 
