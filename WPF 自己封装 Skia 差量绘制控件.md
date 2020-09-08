@@ -3,6 +3,8 @@
 使用 Skia 能做到在多个不同的平台使用相同的一套 API 绘制出相同界面效果的图片，可以将图片绘制到应用程序的渲染显示里面。在 WPF 中最稳的方法就是通过 WriteableBitmap 作为承载绘制。本文告诉大家如何封装一个支持差量绘制的控件，默认的绘制方法都是每次都是不保存上次绘制的内容，而且清空画布，重新绘制。这样的绘制方法显然效率不够高
 
 <!--more-->
+<!-- CreateTime:2020/9/7 8:57:47 -->
+
 <!-- 发布 -->
 
 在上一篇博客里面告诉大家如何在 WPF 中使用 Skia 绘制，请看 [WPF 使用 Skia 绘制 WriteableBitmap 图片](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Skia-%E7%BB%98%E5%88%B6-WriteableBitmap-%E5%9B%BE%E7%89%87.html)
