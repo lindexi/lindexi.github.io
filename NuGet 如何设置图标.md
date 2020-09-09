@@ -124,6 +124,21 @@ nuget pack
 
 这也是比较推荐的方法，能够解决 NU5048 警告
 
-<!-- [Packaging Icon within the nupkg · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/Packaging-Icon-within-the-nupkg ) -->
+推荐在 Directory.Build.props 文件里面使用下面添加
+
+```xml
+  <PropertyGroup>
+    <PackageIcon>Icon.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)logo.png" Pack="true" PackagePath="Icon.png"></None>
+  </ItemGroup>
+```
+
+将图标文件 logo.png 放在 Directory.Build.props 文件所在的文件夹，通过 `$(MSBuildThisFileDirectory)` 就可以找到这个文件，然后打包放在 Icon.png 文件
+
+在 PackageIcon 引用这个文件，需要注意的是这里的文件的大小写是需要关注的，需要让大小写相同，才能拿到相同的文件
+
+[Packaging Icon within the nupkg · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/Packaging-Icon-within-the-nupkg )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

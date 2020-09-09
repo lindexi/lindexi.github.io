@@ -26,8 +26,6 @@
 
 ## 元素解析
 
-[dotnet OpenXml SDK 形状填充渐变色的主题色](https://blog.lindexi.com/post/dotnet-OpenXml-SDK-%E5%BD%A2%E7%8A%B6%E5%A1%AB%E5%85%85%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E4%B8%BB%E9%A2%98%E8%89%B2.html)
-
 [C# dotnet 使用 OpenXml 解析 PPT 元素的坐标和宽度高度](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%90%E6%A0%87%E5%92%8C%E5%AE%BD%E5%BA%A6%E9%AB%98%E5%BA%A6.html)
 
 [C# dotnet 使用 OpenXml 解析 PPT 里面的视频](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E9%87%8C%E9%9D%A2%E7%9A%84%E8%A7%86%E9%A2%91.html)
@@ -64,6 +62,13 @@
 
 [dotnet OpenXML 解析 PPT 文本字体获取详解](https://lindexi.gitee.io/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E8%8E%B7%E5%8F%96%E8%AF%A6%E8%A7%A3.html )
 
+## 颜色
+
+[dotnet OpenXml SDK 形状填充渐变色的主题色](https://blog.lindexi.com/post/dotnet-OpenXml-SDK-%E5%BD%A2%E7%8A%B6%E5%A1%AB%E5%85%85%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E4%B8%BB%E9%A2%98%E8%89%B2.html)
+
+[dotnet OpenXML 颜色变换](https://blog.lindexi.com/post/dotnet-OpenXML-%E9%A2%9C%E8%89%B2%E5%8F%98%E6%8D%A2.html )
+
+
 ## 通用知识
 
 [Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
@@ -82,6 +87,8 @@
 ## 例子
 
 [WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](https://lindexi.gitee.io/post/WPF-%E5%B0%86-docx-%E7%9A%84-Word-%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-FlowDocument-%E6%98%BE%E7%A4%BA.html )
+
+[Xamarin.Forms创建与读写Word文件](https://mp.weixin.qq.com/s/S3xK4Vn4cst8J-uMWJ0I7A )
 
 欢迎小伙伴加入 OpenXML Office 群 688921958
 
