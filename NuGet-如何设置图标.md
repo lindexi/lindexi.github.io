@@ -127,7 +127,22 @@ nuget pack
 
 这也是比较推荐的方法，能够解决 NU5048 警告
 
-<!-- [Packaging Icon within the nupkg · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/Packaging-Icon-within-the-nupkg ) -->
+推荐在 Directory.Build.props 文件里面使用下面添加
+
+```xml
+  <PropertyGroup>
+    <PackageIcon>Icon.png</PackageIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)logo.png" Pack="true" PackagePath="Icon.png"></None>
+  </ItemGroup>
+```
+
+将图标文件 logo.png 放在 Directory.Build.props 文件所在的文件夹，通过 `$(MSBuildThisFileDirectory)` 就可以找到这个文件，然后打包放在 Icon.png 文件
+
+在 PackageIcon 引用这个文件，需要注意的是这里的文件的大小写是需要关注的，需要让大小写相同，才能拿到相同的文件
+
+[Packaging Icon within the nupkg · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/Packaging-Icon-within-the-nupkg )
 
 
 
