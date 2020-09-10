@@ -1884,6 +1884,8 @@
 
  * [WPF 源代码 从零开始写一个 UI 框架](WPF-源代码-从零开始写一个-UI-框架.md)
 
+ * [WPF 漂亮的现代化控件 新 ModernWPF 界面库](WPF-漂亮的现代化控件-新-ModernWPF-界面库.md)
+
  * [WPF 点击按钮时更改按钮样式界面效果的 XAML 实现方法](WPF-点击按钮时更改按钮样式界面效果的-XAML-实现方法.md)
 
  * [WPF 用 AvalonEdit 开发简单的代码编辑器 支持高亮自动提示](WPF-用-AvalonEdit-开发简单的代码编辑器-支持高亮自动提示.md)
