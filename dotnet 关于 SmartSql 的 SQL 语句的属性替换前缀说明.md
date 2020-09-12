@@ -3,7 +3,46 @@
 本文将告诉大家在 SmartSql 的 SQL 语句的属性前缀 ParameterPrefix 的默认值和用法以及原理
 
 <!--more-->
+<!-- CreateTime:2020/9/12 11:16:01 -->
+
 <!-- 发布 -->
+
+## 用途
+
+使用 SmartSql 库的属性前缀 ParameterPrefix 能赋予 SQL 语句属性替换参数的功能，可以将 SQL 语句中的属性替换为业务方传入的参数
+
+如以下代码，在运行时将替换 `@Id` 为业务传入参数
+
+```xml
+        <!--获取表映射实体-->
+        <Statement Id="GetEntity">
+            Select * From T_User Where Id=@Id
+        </Statement>
+```
+
+## 用法
+
+在 SmartSql 中将使用两套属性前缀 ParameterPrefix 定义，一套是根据具体的数据库采用不同的默认属性前缀 ParameterPrefix 字符。另一套是开发者自定义的属性前缀，开发者可以在 SmartSqlMapConfig.xml 的 Settings 的 ParameterPrefix 属性进行自定义，如以下示例，将定义默认的属性前缀为 `$` 符号
+
+```xml
+<SmartSqlMapConfig xmlns="http://SmartSql.net/schemas/SmartSqlMapConfig.xsd">
+    <Settings ParameterPrefix="$"/>
+</SmartSqlMapConfig>
+```
+
+## 默认值
+
+默认的各个数据库采用的默认属性前缀 ParameterPrefix 字符如下
+
+- SQL Server: `@`
+- My SQL Server: `@`
+- POSTGRESQL: `@`
+- SQLite: `@`
+- MySQL: `?`
+- MySQL CONNECTOR: `?`
+- ORACLE: `:`
+
+## 原理
 
 在 SmartSql 库的一个重要功能就是支持编写底层的 SQL 语句。在 SQL 语句里面的属性可以通过一定的规则替换为业务层传入的参数。如下面代码
 
