@@ -520,6 +520,8 @@
 
  * [dotnet 入门到放弃 使用 .NET Core 卸载工具](dotnet-入门到放弃-使用-.NET-Core-卸载工具.md)
 
+ * [dotnet 关于 SmartSql 的 SQL 语句的属性替换前缀说明](dotnet-关于-SmartSql-的-SQL-语句的属性替换前缀说明.md)
+
  * [dotnet 列表 Linq 的 Take 用法](dotnet-列表-Linq-的-Take-用法.md)
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
