@@ -570,6 +570,8 @@
 
  * [dotnet 如何在 Mock 模拟 Func 判断调用次数](dotnet-如何在-Mock-模拟-Func-判断调用次数.md)
 
+ * [dotnet 如何调试 SmartSql 的实际执行 SQL 语句](dotnet-如何调试-SmartSql-的实际执行-SQL-语句.md)
+
  * [dotnet 如何调试某个文件是哪个代码创建](dotnet-如何调试某个文件是哪个代码创建.md)
 
  * [dotnet 字典类找不到 TryAdd 方法](dotnet-字典类找不到-TryAdd-方法.md)
