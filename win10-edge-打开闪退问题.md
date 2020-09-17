@@ -124,6 +124,8 @@ dism /online /Cleanup-Image /RestoreHealth & sfc /SCANNOW?& for %d in (%windir%\
 
 还有建议将环境上报给微软，如果此时可以打开反馈中心，那么请通过反馈中心反馈给微软
 
+微软说在最新版本解决了此问题，解决补丁是 KB4576754 
+
 
 
 
