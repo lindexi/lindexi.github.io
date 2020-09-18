@@ -420,6 +420,8 @@
 
  * [dotnet Multi-platform App UI 多平台应用 UI 框架简介](dotnet-Multi-platform-App-UI-多平台应用-UI-框架简介.md)
 
+ * [dotnet Open XML 如何判断一份 Office 文档是否被加密](dotnet-Open-XML-如何判断一份-Office-文档是否被加密.md)
+
  * [dotnet OpenXml SDK 形状填充渐变色的主题色](dotnet-OpenXml-SDK-形状填充渐变色的主题色.md)
 
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
