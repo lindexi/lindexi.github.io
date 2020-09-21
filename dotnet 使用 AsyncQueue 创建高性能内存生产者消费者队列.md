@@ -30,6 +30,8 @@
 
 当然生产者消费者队列可以使用的业务将会很多，其他用途还请小伙伴自己摸索，或者百度一下
 
+大部分的生产者消费者队列库都是设计为分布式的，支持多设备跨进程的，而这些库也就需要使用更多的资源。本文的 AsyncQueue 是在内存中创建，不会涉及到数据库等功能，只能在相同进程内使用。而因为没有跨进程和设备的功能，可以减少很多资源的时候，只需要一个简单的信号量锁就能完成
+
 ## 安装库
 
 在使用之前的第一步就是安装 NuGet 库，本文的 [AsyncWorkerCollection](https://github.com/dotnet-campus/AsyncWorkerCollection/) 库提供两个 NuGet 包，一个是 dll 引用，另一个是源代码引用，分别如下
@@ -192,6 +194,8 @@
 在 DequeueAsync 方法底层调用的等待就是调用 SemaphoreSlim 的等待方法，如果没有信号量可以使用，那么这个等待将会等待到有信号量被设置。而等待是异步方法，也就是不会占用一个线程，此时占用的资源很小。当然用这个方法就需要小心 [dotnet 使用 SemaphoreSlim 可能的内存泄露](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-SemaphoreSlim-%E5%8F%AF%E8%83%BD%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.html) 这也就是在不使用 AsyncQueue 需要调用释放的原因
 
 而 ConcurrentQueue 就是提供本身存放数据的类，这个类的设计就是线程安全的
+
+因此通过 ConcurrentQueue 存放数据，而通过 SemaphoreSlim 通知出队，让 SemaphoreSlim 支持等待数据出队和让入队数量和出队最大数量相等
 
 使用这两个类的配合就可以做到 AsyncQueue 的高性能低资源占用
 

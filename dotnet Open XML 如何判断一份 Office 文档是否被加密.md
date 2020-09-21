@@ -3,6 +3,8 @@
 在拿到一份 PPTX 文档，或一份 Word 的 docx 文档，如何判断这份文档是被加密的
 
 <!--more-->
+<!-- CreateTime:2020/9/17 19:15:50 -->
+
 <!-- 发布 -->
 
 在 Office 里，对 pptx 文档或 docx 或 xlsx 文档的加密是将文档加密为 OLE 格式，也就是和 Office 2003 的 doc 等文档格式相同的 Ole object 格式
