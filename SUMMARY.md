@@ -490,6 +490,8 @@
 
  * [dotnet 代码调试方法](dotnet-代码调试方法.md)
 
+ * [dotnet 使用 AsyncQueue 创建高性能内存生产者消费者队列](dotnet-使用-AsyncQueue-创建高性能内存生产者消费者队列.md)
+
  * [dotnet 使用 Avalonia 开发 UOS 原生应用](dotnet-使用-Avalonia-开发-UOS-原生应用.md)
 
  * [dotnet 使用 ClearScript 执行 VBScript 和 JS 代码 无需浏览器](dotnet-使用-ClearScript-执行-VBScript-和-JS-代码-无需浏览器.md)
