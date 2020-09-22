@@ -26,6 +26,8 @@
 
  * [asp dotnet core 简单开发P2P中央服务器](asp-dotnet-core-简单开发P2P中央服务器.md)
 
+ * [asp dotnet core 记一次应用拒绝响应调试 开启线程等待同步用光线程池](asp-dotnet-core-记一次应用拒绝响应调试-开启线程等待同步用光线程池.md)
+
  * [asp dotnet core 通过图片统计 csdn 用户访问](asp-dotnet-core-通过图片统计-csdn-用户访问.md)
 
  * [ASP.NET Core 将文件夹内容输出为压缩包文件方法](ASP.NET-Core-将文件夹内容输出为压缩包文件方法.md)
