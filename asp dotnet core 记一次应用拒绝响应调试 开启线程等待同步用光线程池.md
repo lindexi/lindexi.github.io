@@ -71,6 +71,8 @@
 
 如果发现这个的 asp dotnet core 应用的性能不足，因为线程开启过多，那么此时可以全局找 Task.Run 的代码，尽可能干掉这部分逻辑
 
+而本文的坑，可以使用将同步修改为异步的方法解决，换句话说，不需要通过线程池开启线程的方法，通过IO自带的异步方法进行异步IO请求。此时在 IO 的异步里面将会自动出让 CPU 执行，这部分是硬件的支持，因此进入异步的 IO 将不会占用线程，线程可以回到线程池给其他业务调用
+
 一个可选的方法是将一些不重要但是需要慢慢执行的任务放在生产者消费者队列里面，如果这部分任务很小，可以尝试使用我的 AsyncQueue 高性能低资源占用的类，详细请看 [dotnet 使用 AsyncQueue 创建高性能内存生产者消费者队列](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-AsyncQueue-%E5%88%9B%E5%BB%BA%E9%AB%98%E6%80%A7%E8%83%BD%E5%86%85%E5%AD%98%E7%94%9F%E4%BA%A7%E8%80%85%E6%B6%88%E8%B4%B9%E8%80%85%E9%98%9F%E5%88%97.html)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
