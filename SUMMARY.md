@@ -86,6 +86,8 @@
 
  * [C# dotnet 从后向前删除列表元素提升性能的原理](C-dotnet-从后向前删除列表元素提升性能的原理.md)
 
+ * [C# dotnet 使用 AsyncEx 库的 AsyncLock 异步锁](C-dotnet-使用-AsyncEx-库的-AsyncLock-异步锁.md)
+
  * [C# dotnet 使用 FileStream 随机文件读写](C-dotnet-使用-FileStream-随机文件读写.md)
 
  * [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](C-dotnet-WPF-使用-OpenXml-解析-Excel-文件.md)

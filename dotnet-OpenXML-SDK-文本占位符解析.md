@@ -49,12 +49,12 @@
 ```xml
 <p:sp>
     <p:nvsppr>
-        <p:cnvpr id="2" name="标题 1">
-        </p:cnvpr>
-        <p:cnvsppr>
+        <p:cNvPr id="2" name="标题 1">
+        </p:cNvPr>
+        <p:cNvSpPr>
             <a:splocks nogrp="1">
             </a:splocks>
-        </p:cnvsppr>
+        </p:cNvSpPr>
         <p:nvpr>
             <p:ph type="ctrTitle">
             </p:ph>
