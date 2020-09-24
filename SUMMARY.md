@@ -428,6 +428,8 @@
 
  * [dotnet OpenXml SDK 形状填充渐变色的主题色](dotnet-OpenXml-SDK-形状填充渐变色的主题色.md)
 
+ * [dotnet OpenXML SDK 形状的翻转与旋转](dotnet-OpenXML-SDK-形状的翻转与旋转.md)
+
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
 
  * [dotnet OpenXML 为什么资源使用 Relationship 引用](dotnet-OpenXML-为什么资源使用-Relationship-引用.md)
