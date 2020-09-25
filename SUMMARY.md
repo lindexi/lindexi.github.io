@@ -404,6 +404,8 @@
 
  * [dotnet core 输出调试信息到 DebugView 软件](dotnet-core-输出调试信息到-DebugView-软件.md)
 
+ * [dotnet core 进行 XML 序列化抛出 XmlSerializers dll 文件找不到](dotnet-core-进行-XML-序列化抛出-XmlSerializers-dll-文件找不到.md)
+
  * [dotnet core 通过 frp 发布自己的网站](dotnet-core-通过-frp-发布自己的网站.md)
 
  * [dotnet core 通过修改文件头的方式隐藏控制台窗口](dotnet-core-通过修改文件头的方式隐藏控制台窗口.md)

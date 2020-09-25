@@ -65,6 +65,10 @@
 
 [dotnet OpenXML 解析 PPT 文本字体获取详解](https://lindexi.gitee.io/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E8%8E%B7%E5%8F%96%E8%AF%A6%E8%A7%A3.html )
 
+## 形状
+
+[dotnet OpenXML SDK 形状的翻转与旋转](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%BF%BB%E8%BD%AC%E4%B8%8E%E6%97%8B%E8%BD%AC.html )
+
 ## 颜色
 
 [dotnet OpenXml SDK 形状填充渐变色的主题色](https://blog.lindexi.com/post/dotnet-OpenXml-SDK-%E5%BD%A2%E7%8A%B6%E5%A1%AB%E5%85%85%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E4%B8%BB%E9%A2%98%E8%89%B2.html)
