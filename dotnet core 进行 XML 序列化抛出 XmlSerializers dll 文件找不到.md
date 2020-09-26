@@ -3,6 +3,8 @@
 在将原本的 dotnet framework 版本的 WPF 项目迁到 dotnet core 版本，在进行单元测试，发现在 XmlSerializer 抛出了 System.Private.CoreLib.XmlSerializers.dll 找不到的异常，其实这个只是在 XmlSerializer 的内部异常，可以忽略
 
 <!--more-->
+<!-- CreateTime:2020/9/24 20:27:49 -->
+
 <!-- 发布 -->
 
 在 dotnet core 下，使用如下代码进行 xml 序列化，其中 Foo 是我定义的类
