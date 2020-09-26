@@ -138,6 +138,8 @@
 
  * [C# dotnet 高性能多线程工具 AsyncAutoResetEvent 异步等待使用方法和原理](C-dotnet-高性能多线程工具-AsyncAutoResetEvent-异步等待使用方法和原理.md)
 
+ * [C# dotnet 高性能多线程工具 ExecuteOnceAwaiter 只执行一次的任务](C-dotnet-高性能多线程工具-ExecuteOnceAwaiter-只执行一次的任务.md)
+
  * [C# double 好用的扩展](C-double-好用的扩展.md)
 
  * [C# GUID ToString ](C-GUID-ToString-.md)
@@ -479,6 +481,8 @@
  * [.NET Standard](NET-Standard.md)
 
  * [dotnet tool 安装失败因为对应的库不仅包含工具](dotnet-tool-安装失败因为对应的库不仅包含工具.md)
+
+ * [dotnet tool 工具安装提示 Could not find a part of the path 安装失败](dotnet-tool-工具安装提示-Could-not-find-a-part-of-the-path-安装失败.md)
 
  * [dotnet 一些代码审查套路](dotnet-一些代码审查套路.md)
 
