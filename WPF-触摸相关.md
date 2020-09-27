@@ -8,8 +8,6 @@
 
 <!-- CreateTime:5/29/2020 4:56:25 PM -->
 
-<!-- 发布 -->
-
 ## 框架和原理
 
 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
