@@ -5,8 +5,6 @@
 <!--more-->
 <!-- CreateTime:2020/7/13 8:59:36 -->
 
-<!-- 发布 -->
-
 大概做出来的效果如下
 
 <!-- ![](image/WPF 使用 HandyControl 给 ListView 添加漂亮的表头效果/WPF 使用 HandyControl 给 ListView 添加漂亮的表头效果0.png) -->

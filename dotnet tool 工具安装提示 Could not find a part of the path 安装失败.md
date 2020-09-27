@@ -3,6 +3,8 @@
 我在安装 dotnet tool 工具时发现所有的工具都安装失败，全部都提示 Could not find a part of the path 安装失败。我重新安装了 dotnet SDK 也没有用，更新到了3.1.402 版本也没有修复
 
 <!--more-->
+<!-- CreateTime:2020/9/25 15:53:30 -->
+
 <!-- 发布 -->
 
 我在 GitHub 开源了 dotnetcampus.DotNETBuildSDK 项目，请看 [https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK](https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK) 

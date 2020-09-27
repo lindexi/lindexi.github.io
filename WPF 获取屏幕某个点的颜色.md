@@ -5,8 +5,6 @@
 <!--more-->
 <!-- CreateTime:6/29/2020 3:02:27 PM -->
 
-<!-- 发布 -->
-
 本文的方法可以在 WinForms 等使用
 
 ```csharp
