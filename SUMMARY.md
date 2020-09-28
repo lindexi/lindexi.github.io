@@ -440,6 +440,10 @@
 
  * [dotnet OpenXML 从文档生成创建文档的代码的库](dotnet-OpenXML-从文档生成创建文档的代码的库.md)
 
+ * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-的属性作用.md)
+
+ * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-重复-id-标识处理.md)
+
  * [dotnet OpenXML 如何判断是形状还是文本](dotnet-OpenXML-如何判断是形状还是文本.md)
 
  * [dotnet OpenXML 如何获取 schemeClr 颜色](dotnet-OpenXML-如何获取-schemeClr-颜色.md)
