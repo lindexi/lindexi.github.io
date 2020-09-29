@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/9/27 19:22:08 -->
+
 <!-- 发布 -->
 
 在 OpenXML 的元素的标识一个好的设计是使用 uint 作为标识符，这样做的兼容能力更强。因为可以做到在存在标识符不存在以及重复的时候，自动处理
@@ -108,6 +110,9 @@
 测试课件请点击 [元素不存在按序号.pptx](https://github.com/lindexi/lindexi_gd/blob/f366cb079ba594a13bec662af39024c1f8a90ca9/%E5%85%83%E7%B4%A0id%E9%87%8D%E5%A4%8D/%E5%85%83%E7%B4%A0%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%8C%89%E5%BA%8F%E5%8F%B7.pptx) 下载
 
 按照这个规则，如果元素的 id 序号列表是 1 3 3 3 5 6 而有两个动画分别应用 `spid="2"` 和 `spid="4"` 的元素，按照上面的规则，将按照序号重新给定重复的标识的元素新的值。将会给第二个使用 3 作为标识的元素的标识修改为 2 作为标识，给第三个使用 3 作为标识的元素的标识修改为 4 作为标识
+
+本文的属性是依靠 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html ) 工具协助测试的，这个工具是开源免费的工具，欢迎小伙伴使用
+
 
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
