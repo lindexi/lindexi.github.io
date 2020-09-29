@@ -3,6 +3,8 @@
 本文收集元素属性 cNvPr Non-Visual Drawing Properties 的属性的作用
 
 <!--more-->
+<!-- CreateTime:2020/9/27 16:29:27 -->
+
 <!-- 发布 -->
 
 本文的 Non-Visual Drawing Properties 也就是在 OpenXML 文档里面的 cNvPr 代码，在 ECMA 376 的 20.2.2.3 文档有详细说明
@@ -19,6 +21,8 @@ public void Foo(NonVisualDrawingProperties nonVisualDrawingProperties)
 ```
 
 ## id
+
+这是一个必须包含的属性
 
 虽然全名是 Unique Identifier 表示层级里面唯一的 id 标识，但是实际可以存在重复。根据 ECMA 376 的说法是在当前文档里面唯一的 id 标识。但实际上范围只是当前层级。例如在 Slide 页面里面的多个元素，可以通过这个 id 作为区分，而在一个组合元素里面，允许组合里面的元素的 id 和 Slide 页面的其他元素 id 是重复的
 
@@ -74,12 +78,12 @@ public void Foo(NonVisualDrawingProperties nonVisualDrawingProperties)
 
 测试课件请点击 [元素id形状.pptx](https://github.com/lindexi/lindexi_gd/blob/b57cf920518bde16b8eab09d38b2d9037305d54b/KedewallawFudeneanairchea/%E5%85%83%E7%B4%A0id%E5%BD%A2%E7%8A%B6.pptx) 下载
 
-
+虽然在标准里面这个标识是不会重复的，但实际的课件会有重复的 id 和不存在的 id 此时就需要使用 [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%85%83%E7%B4%A0-cNvPr-NonVisual-Drawing-Properties-%E9%87%8D%E5%A4%8D-id-%E6%A0%87%E8%AF%86%E5%A4%84%E7%90%86.html ) 的方法
 
 
 ## name
 
-用于表示元素的名字，这个名字使用本地语言，可以用来在应用程序给用户了解当前元素的名字
+用于表示元素的名字，这个名字使用本地语言，可以用来在应用程序给用户了解当前元素的名字。这是一个必须包含的属性
 
 ```xml
         <p:nvSpPr>
@@ -181,6 +185,10 @@ public void Foo(NonVisualDrawingProperties nonVisualDrawingProperties)
 ```
 
 测试课件请点击 [元素不可见.pptx](https://github.com/lindexi/lindexi_gd/blob/b57cf920518bde16b8eab09d38b2d9037305d54b/KedewallawFudeneanairchea/%E5%85%83%E7%B4%A0%E4%B8%8D%E5%8F%AF%E8%A7%81.pptx) 下载
+
+本文的属性是依靠 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html ) 工具协助测试的，这个工具是开源免费的工具，欢迎小伙伴使用
+
+
 
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 

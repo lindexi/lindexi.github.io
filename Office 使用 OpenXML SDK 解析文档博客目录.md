@@ -32,6 +32,10 @@
 
 [Office OpenXml SDK 使用 Fallback 图片显示 Ole 元素](https://blog.lindexi.com/post/Office-OpenXml-SDK-%E4%BD%BF%E7%94%A8-Fallback-%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA-Ole-%E5%85%83%E7%B4%A0.html)
 
+[dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%85%83%E7%B4%A0-cNvPr-NonVisual-Drawing-Properties-%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8.html )
+
+[dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%85%83%E7%B4%A0-cNvPr-NonVisual-Drawing-Properties-%E9%87%8D%E5%A4%8D-id-%E6%A0%87%E8%AF%86%E5%A4%84%E7%90%86.html )
+
 ## 文本解析
 
 [dotnet OpenXML 简单聊聊 PPT 文本解析](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8A-PPT-%E6%96%87%E6%9C%AC%E8%A7%A3%E6%9E%90.html )
