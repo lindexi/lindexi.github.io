@@ -543,6 +543,55 @@ window.Activate();
 
 [WPF ListBox Scroll to end automatically - Stack Overflow](https://stackoverflow.com/questions/2337822/wpf-listbox-scroll-to-end-automatically )
 
+## [WPF 截图功能的实现](https://huchengv5.gitee.io/post/WPF-%E6%88%AA%E5%9B%BE%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0.html )
+
+```csharp
+        public static BitmapSource Snap(this FrameworkElement element, double scale, int desiredHeight, int desiredWidth)
+        {
+            var width = (int)(element.ActualWidth);
+            if (width == 0)
+            {
+                width = desiredWidth;
+            }
+
+            var height = (int)(element.ActualHeight);
+            if (height == 0)
+            {
+                height = desiredHeight;
+            }
+
+            if (!element.IsLoaded)
+            {
+                element.Arrange(new Rect(0, 0, width, height));
+                element.Measure(new Size(width, height));
+            }
+
+            var scaleWidth = (int)(width * scale);
+            var scaleHeight = (int)(height * scale);
+
+            var bitmap = new RenderTargetBitmap(scaleWidth, scaleHeight, 96.0, 96.0, PixelFormats.Pbgra32);
+            var rectangle = new Rectangle
+            {
+                Width = scaleWidth,
+                Height = scaleHeight,
+
+                Fill = new VisualBrush(element)
+                {
+                    Viewbox = new Rect(0, 0, width, height),
+                    ViewboxUnits = BrushMappingMode.Absolute,
+                }
+            };
+
+            rectangle.Measure(new Size(scaleWidth, scaleHeight));
+            rectangle.Arrange(new Rect(new Size(scaleWidth, scaleHeight)));
+
+            bitmap.Render(rectangle);
+            return bitmap;
+        }
+```
+
+详细请看 [WPF 截图功能的实现](https://huchengv5.gitee.io/post/WPF-%E6%88%AA%E5%9B%BE%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0.html )
+
 
 
 

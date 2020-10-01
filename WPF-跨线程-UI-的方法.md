@@ -191,6 +191,8 @@ public MainWindow()
 
 更多博客请看 [WPF 同一窗口内的多线程 UI（VisualTarget） - walterlv](https://blog.walterlv.com/post/multi-thread-ui-using-visualtarget-in-wpf.html )
 
+[WPF 手把手教你写跨线程UI控件](https://huchengv5.gitee.io/post/WPF-%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%86%99%E8%B7%A8%E7%BA%BF%E7%A8%8BUI%E6%8E%A7%E4%BB%B6.html )
+
 
 
 

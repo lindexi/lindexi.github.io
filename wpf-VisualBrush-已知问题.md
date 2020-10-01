@@ -30,6 +30,8 @@ visualBrush.Visual = visual;
 
 [https://stackoverflow.com/a/13182210/6116637](https://stackoverflow.com/a/13182210/6116637)
 
+[WPF 如何处理VisualBrush停止更新问题](https://huchengv5.gitee.io/post/WPF-%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86VisualBrush%E5%81%9C%E6%AD%A2%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98.html )
+
 
 
 
