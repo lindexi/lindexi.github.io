@@ -606,6 +606,8 @@
 
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
+ * [dotnet 开发的单代码仓库和多代码仓库的优劣](dotnet-开发的单代码仓库和多代码仓库的优劣.md)
+
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)
 
  * [dotnet 手工打一个 dotnet tool 包](dotnet-手工打一个-dotnet-tool-包.md)
