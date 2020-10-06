@@ -822,6 +822,8 @@
 
  * [NuGet 如何设置图标](NuGet-如何设置图标.md)
 
+ * [NuGet 更新库新版本的缓存问题](NuGet-更新库新版本的缓存问题.md)
+
  * [NuGet 符号服务器](NuGet-符号服务器.md)
 
  * [Nuget 通过 dotnet 命令行发布](Nuget-通过-dotnet-命令行发布.md)
