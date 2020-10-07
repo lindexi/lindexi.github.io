@@ -3,6 +3,8 @@
 我有一个 NuGet 库有新的版本，但是我的服务器速度不够快，此时我第一次使用 NuGet 还原找不到库。在我服务器索引完成之后，再次使用 NuGet 会依然找不到这个库，而此时服务器准备完成。这是 NuGet 的缓存的坑
 
 <!--more-->
+<!-- CreateTime:2020/10/5 12:38:52 -->
+
 <!-- 发布 -->
 
 我使用了 [BaGet](https://github.com/loic-sharma/BaGet ) 搭建我私有的 NuGet 服务器，他的速度很快，但是索引一个上传的 NuGet 库依然需要一定的时间。如果在 NuGet 服务器还没准备完成之前调用了 NuGet 的 restore 命令，此时预期是找不到 NuGet 的这个新版本的库
