@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/10/5 12:38:52 -->
+
 <!-- 发布 -->
 
 我使用了 [BaGet](https://github.com/loic-sharma/BaGet ) 搭建我私有的 NuGet 服务器，他的速度很快，但是索引一个上传的 NuGet 库依然需要一定的时间。如果在 NuGet 服务器还没准备完成之前调用了 NuGet 的 restore 命令，此时预期是找不到 NuGet 的这个新版本的库
