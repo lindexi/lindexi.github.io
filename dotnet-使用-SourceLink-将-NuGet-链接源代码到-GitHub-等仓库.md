@@ -112,6 +112,8 @@
 </ItemGroup>
 ```
 
+详细请看 [dotnet 构建 SourceRoot items must include at least one top-level item when DeterministicSourcePaths is true 失败](https://blog.lindexi.com/post/dotnet-%E6%9E%84%E5%BB%BA-SourceRoot-items-must-include-at-least-one-top-level-item-when-DeterministicSourcePaths-is-true-%E5%A4%B1%E8%B4%A5.html )
+
 
 
 
