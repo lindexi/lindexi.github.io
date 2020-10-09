@@ -638,6 +638,8 @@
 
  * [dotnet 日志上报的 TracerId 和 SessionId 的意义](dotnet-日志上报的-TracerId-和-SessionId-的意义.md)
 
+ * [dotnet 构建 SourceRoot items must include at least one top-level item when DeterministicSourcePaths is true 失败](dotnet-构建-SourceRoot-items-must-include-at-least-one-top-level-item-when-DeterministicSourcePaths-is-true-失败.md)
+
  * [dotnet 枚举当前设备wifi热点](dotnet-枚举当前设备wifi热点.md)
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)

@@ -104,6 +104,14 @@
 
 使用 NuGet 能提升不少的开发效率，大部分功能的开发只需要三步。第一步安装 NuGet 库，第二步调用方法，第三步完成
 
+如果安装之后构建失败，提示 error : SourceRoot items must include at least one top-level (not nested) item when DeterministicSourcePaths is true 构建失败，请在 Directory.Build.props 文件添加下面代码
+
+```xml
+<ItemGroup>
+  <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
+</ItemGroup>
+```
+
 
 
 
