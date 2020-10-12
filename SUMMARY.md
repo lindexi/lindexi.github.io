@@ -520,6 +520,8 @@
 
  * [dotnet 使用 GZipStream 压缩字符串](dotnet-使用-GZipStream-压缩字符串.md)
 
+ * [dotnet 使用 Interlocked 实现一个无锁的快速无序仅写集合](dotnet-使用-Interlocked-实现一个无锁的快速无序仅写集合.md)
+
  * [dotnet 使用 lz4net 压缩 Stream 或文件](dotnet-使用-lz4net-压缩-Stream-或文件.md)
 
  * [dotnet 使用 MessagePack 序列化对象](dotnet-使用-MessagePack-序列化对象.md)
