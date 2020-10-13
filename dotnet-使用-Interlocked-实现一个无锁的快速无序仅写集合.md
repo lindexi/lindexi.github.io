@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/10/12 14:40:23 -->
+
 <!-- 发布 -->
 
 这是在 [newbe](https://www.newbe.pro/ ) 大佬的代码所看到的用法，这是他的一个实现 [https://github.com/newbe36524/Newbe.Claptrap/blob/a187bac81652f9808a0f6cdc2916bbf6288e8ee3/src/Newbe.Claptrap/Tools/AutoFlushList.cs#](https://github.com/newbe36524/Newbe.Claptrap/blob/a187bac81652f9808a0f6cdc2916bbf6288e8ee3/src/Newbe.Claptrap/Tools/AutoFlushList.cs#) 尽管这个实现里面其实是有很多不安全的
