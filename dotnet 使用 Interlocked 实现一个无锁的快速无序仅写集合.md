@@ -3,6 +3,8 @@
 在 dotnet 里面，可以使用 Interlocked 进行原子命令更改 int 等的值，利用这个特性可以在一个固定足够长长度的数组里面，让多线程无锁等待写入值。因为没有锁的存在，无法保证读取时的安全，因此这样的集合只能被设计为只写的集合，只有在业务上完成了所有的写之后，才能作为可读的集合取出来
 
 <!--more-->
+<!-- CreateTime:2020/10/12 14:40:23 -->
+
 <!-- 发布 -->
 
 这是在 [newbe](https://www.newbe.pro/ ) 大佬的代码所看到的用法，这是他的一个实现 [https://github.com/newbe36524/Newbe.Claptrap/blob/a187bac81652f9808a0f6cdc2916bbf6288e8ee3/src/Newbe.Claptrap/Tools/AutoFlushList.cs#](https://github.com/newbe36524/Newbe.Claptrap/blob/a187bac81652f9808a0f6cdc2916bbf6288e8ee3/src/Newbe.Claptrap/Tools/AutoFlushList.cs#) 尽管这个实现里面其实是有很多不安全的
