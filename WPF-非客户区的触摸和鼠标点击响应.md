@@ -34,6 +34,8 @@
 
 我和 [lsj](https://blog.sdlsj.net/ ) 说也许是之前的 WPF 框架的大佬写的时候还不知道有触摸，于是处理了鼠标事件。之后添加了触摸忘了需要去掉，于是触摸就可以使用。现在 [lsj](https://blog.sdlsj.net/ ) 正在看 WPF 的源代码，想要找到是如何让标题栏支持触摸但是不支持鼠标点击
 
+在 WPF 下，可以在非客户区的触摸拖动的时候，同时触发触摸拖动和窗口拖动。因为窗口拖动了，因此触摸的相对坐标相对没有更改，此时也许会看到触摸依然是一个点
+
 [WindowChrome Class (System.Windows.Shell)](https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.windowchrome?wt.mc_id=MVP )
 
 [WindowChrome.IsHitTestVisibleInChrome Attached Property (Microsoft.Windows.Shell)](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/ff702336(v%3Dvs.100) )
