@@ -3,6 +3,8 @@
 本文来安利大家一个超强的库，这个库可以让你的 C# 代码利用上 GPU 显卡的性能，进行一些并行计算。这个库是基于 DirectX12GameEngine 的 ComputeSharp 库。在这个库里面将会动态生成 HLSL 代码，使用着色器的方式在 GPU 上跑起来
 
 <!--more-->
+<!-- CreateTime:2020/10/12 20:21:56 -->
+
 <!-- 发布 -->
 
 这个 ComputeSharp 库在 GitHub 完全开源，请看 [https://github.com/Sergio0694/ComputeSharp](https://github.com/Sergio0694/ComputeSharp)
