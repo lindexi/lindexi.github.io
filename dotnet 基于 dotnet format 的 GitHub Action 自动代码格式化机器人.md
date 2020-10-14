@@ -3,6 +3,8 @@
 是不是大家也会觉得代码审查里面审查代码格式化问题是无意义的，但是不审查又觉得过不去？是否有个专门的工具人，用来协助修复代码格式化的问题？本文来安利大家一个特别好用的方法，使用 dotnet 完全开源的专业格式化工具 dotnet format 配合 GitHub 的自动构建 Action 做的自动代码格式化机器人，这个机器人可以被指定到特定时机，如每天晚上或者每次代码合并等，进行代码格式化，格式化完成之后，可以选择直接推送或者提代码审查
 
 <!--more-->
+<!-- CreateTime:2020/10/13 19:53:07 -->
+
 <!-- 发布 -->
 
 这个方法将需要用到 dotnet 完全开源的专业格式化工具 dotnet format 工具，请看 [https://github.com/dotnet/format](https://github.com/dotnet/format)
@@ -115,6 +117,26 @@ if: steps.format.outputs.has-changes == 'true'
 
 我比较推荐使用这个方法，尽管 dotnet format 工具是专业的代码格式化工具，不会让格式化前后的代码的 IL 有变更。但是我依然推荐进行一次代码审查
 
+其实不使用 [jfversluis](https://github.com/jfversluis) 大佬的脚本也可以，因为 [Peter Evans](https://github.com/peter-evans) 的创建代码审查的 [create-pull-request](https://github.com/peter-evans/create-pull-request) 脚本会自动判断如果没有 commit 就不创建代码审查，因此只需要跳过 commit 的失败就可以了，如下面代码
+
+```yml
+      - name: Install dotnet-format
+        run: dotnet tool install -g dotnet-format
+
+      - name: Run dotnet format
+        run: dotnet format
+
+      - name: Commit files
+        # 下面将使用机器人的账号，你可以替换为你自己的账号
+        run: |
+          git config --local user.name "github-actions-dotnet-formatter[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -a -m 'Automated dotnet-format update'
+        continue-on-error: true
+```
+
+可以看到代码十分简洁
+
 而另外的方法是在每个开发者开启代码审查的时候，尝试格式化他的代码，这样可以让代码审查者也许会更开森，代码十分简单，请看下面
 
 ```yml
@@ -173,33 +195,28 @@ jobs:
   dotnet-format:
     runs-on: windows-latest
     steps:
-      - name: Install dotnet-format
-        run: dotnet tool install -g dotnet-format
 
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Install dotnet-format
+        run: dotnet tool install -g dotnet-format
+
       - name: Run dotnet format
-        id: format
-        uses: jfversluis/dotnet-format@v1.0.5
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          action: "fix"
-          only-changed-files: true # only works for PRs
-          # workspace: "Xamarin.Forms.sln" 默认根路径只有一个 sln 文件，可以忽略这一行
+        run: dotnet format
 
       - name: Commit files
-        if: steps.format.outputs.has-changes == 'true' # 如果有格式化，才继续
         # 下面将使用机器人的账号，你可以替换为你自己的账号
         run: |
           git config --local user.name "github-actions-dotnet-formatter[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -a -m 'Automated dotnet-format update'
-
+        continue-on-error: true
+        
       - name: Create Pull Request
-        if: steps.format.outputs.has-changes == 'true' # 如果有格式化，才继续
+        # if: steps.format.outputs.has-changes == 'true' # 如果有格式化，才继续
         uses: peter-evans/create-pull-request@v3
         with:
           title: '[Bot] Automated PR to fix formatting errors'
