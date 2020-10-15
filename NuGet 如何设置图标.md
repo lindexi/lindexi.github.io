@@ -5,6 +5,7 @@
 <!--more-->
 <!-- CreateTime:2019/8/31 16:55:58 -->
 
+比较推荐的方法是 通过文件 的方式设置 NuGet 的图标，设置的方法十分简单，请看文章最后
 
 在开始之前，请在[nuget](https://www.nuget.org/downloads)官方网站下载 NuGet.exe 同时设置环境变量
 
@@ -124,7 +125,7 @@ nuget pack
 
 这也是比较推荐的方法，能够解决 NU5048 警告
 
-推荐在 Directory.Build.props 文件里面使用下面添加
+推荐在 [Directory.Build.props](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html) 文件里面使用下面添加
 
 ```xml
   <PropertyGroup>
