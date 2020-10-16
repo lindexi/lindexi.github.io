@@ -11,6 +11,12 @@
 
 我在网上找了很多大神的博客，然后和很多大神聊天，知道了一些科技，于是就在本文和大家分享一下。如果大家有了解本博客里面没有收藏的科技，还请告诉我
 
+现在整个 C# 从编译器到运行时都是开源的，所有权在 dotnet 基金会上，全部开源的项目都基于最友好的 MIT 协议和 Apache 2 开源协议，文档协议遵循CC-BY协议。这将允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。唯一的限制是，软件中必须包含上述版 权和许可提示，后者协议将会除了为用户提供版权许可之外，还有专利许可，并且授权是免费，无排他性的(任何个人和企业都能获得授权)并且永久不可撤销，用户使用.NET 和 C# 完全不用担心收费问题和版权问题，以及后续无法维护问题。而 dotnet 基金会是一个开放的平台，我也是 dotnet 基金会的成员之一。微软在 2020 的时候依然是 dotnet 基金会最大的支持组织
+
+现在最火的 dotnet 仓库是 [dotnet csharplang](https://github.com/dotnet/csharplang ) 仓库，当前的 C# 语言特性由整个社区决定，这是一个官方开放用来讨论 C# 语言未来的仓库，天天都有大佬们在讨论语言的特性，欢迎大家加入
+
+接下来让我告诉大家一些很少有人会发现的科技
+
 ## 无限级判断空
 
 在 C# 6.0 可以使用`??`判断空，那么就可以使用下面代码
@@ -661,5 +667,11 @@ F1
 参见：[WPF 判断调用方法堆栈](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
 
 欢迎加入 dotnet 职业技术学院 [https://t.me/dotnet_campus](https://t.me/dotnet_campus) 使用 Telegram 方法请看 [如何使用 Telegram](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
+
+<!-- ## 特别感谢
+
+特别感谢 [吕毅 - walterlv](https://blog.walterlv.com/ ) 提供的逗比代码
+
+特别感谢队长提供的 [.NET Core也是国产化信息系统开发的重要选项 - 张善友 - 博客园](https://www.cnblogs.com/shanyou/p/13547269.html ) -->
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
