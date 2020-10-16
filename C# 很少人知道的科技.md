@@ -1,13 +1,15 @@
 # C# 很少人知道的科技
 
-本文来告诉大家在C#很少有人会发现的科技。即使是工作了好多年的老司机也不一定会知道，如果觉得我在骗你，那么请看看下面
+本文来告诉大家在C#很少有人会发现的科技。即使是工作了好多年的老司机也不一定会知道这些科技，如果觉得我是在骗你，那么请看看本文的内容
 
 <!--more-->
 <!-- CreateTime:2019/11/29 10:12:43 -->
 
 <div id="toc"></div>
 
-因为C#在微软的帮助，已经从原来很简单的，到现在的很好用。在10多年，很少人知道微软做了哪些，我在网上找了很多大神的博客，然后和很多大神聊天，知道了一些科技，所以就在这里说。如果大家看到这个博客里面没有的科技，请告诉我
+原本最初 C# 的设计是简单和高效开发的，在经过了这么多年众多公司和开发者的努力下，整个 C# 里面包含了大量有趣的功能。其中一部分功能是针对于某些特殊需求设计的，例如高性能或高并发或无内存回收等。在经过了 10 多年的迭代，很少人能完全了解整个 C# 语言和框架级做了哪些有趣的功能
+
+我在网上找了很多大神的博客，然后和很多大神聊天，知道了一些科技，于是就在本文和大家分享一下。如果大家有了解本博客里面没有收藏的科技，还请告诉我
 
 ## 无限级判断空
 
@@ -31,19 +33,24 @@ var n = 2 + foo?.N ?? 1;
 
 想要了解这道题的推导过程请看[C# 高级面试题](https://blog.lindexi.com/post/C-%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98.html ) 里面写了很多老司机都不一定能解出
 
-## using 省略长的定义
+## 使用 using 关键词省略长的定义
 
-例如有这个代码，使用了很多的 List ，里面有很多定义
+例如有下面这个代码，在这个代码里面使用了很多的 List 嵌套，如下面代码所示里面有很多定义的代码
 
 ```csharp
-var foo =
-                new System.Collections.Generic.Dictionary<
+var foo = new System.Collections.Generic.Dictionary<
                     System.Collections.Generic.List<System.Collections.Generic.List<string>>, string>();
 ```
 
-可以看到需要写很多代码，如果这个值作为参数，才是可怕。
+可以看到上面代码中，有大量的代码都是用来作为类型的定义，假设这个值作为某个方法的参数，那才是可怕
 
-一个简单的方法是使用 `using HvcnrclHnlfk= System.Collections.Generic.Dictionary<System.Collections.Generic.List<System.Collections.Generic.List<string>>,string>;` ，这个文件里的所有定义都可以使用 `using` 后面的值可以代替。
+一个简单的方法是使用 using 关键词，如在文件的开头添加如下代码
+
+```csharp
+using HvcnrclHnlfk = System.Collections.Generic.Dictionary<System.Collections.Generic.List<System.Collections.Generic.List<string>>,string>;
+```
+
+在添加了上面代码之后，在这个文件里的所有用到如上面很长的定义的代码都可以使用 `using` 后面的值可以代替，如本文上面使用了 `HvcnrclHnlfk` 这个词，来看看替换之后的代码长度
 
 ```csharp
 var foo = new HvcnrclHnlfk();
@@ -51,10 +58,14 @@ var foo = new HvcnrclHnlfk();
 
 ## 辣么大
 
-实际上我有些不好意思，好像刚刚说的都是大家都知道的，那么我就要开始写大家很少知道
+实际上写到这里我有些不好意思，好像刚刚说的都是大家都知道的，那么我就要开始写大家很少知道的科技
+
+等等，什么是 `辣么大` 大哇？其实这是 lambda 表达式的翻译
+
+请看看下面这段有趣的代码
 
 ```csharp
-          Func<string,string, EventHandler> foo = (x, y) => (s, e) =>
+            Func<string,string, EventHandler> foo = (x, y) => (s, e) =>
             {
                 var button = (Button) s;
                 button.Left = x;
@@ -64,24 +75,26 @@ var foo = new HvcnrclHnlfk();
             Button1.Click += foo(0, -1);
 ```
 
-看一下就知道这个定义可以做什么
+上面的代码通过一个 lambda 表达式返回一个另一个 lambda 表达式，或者说用一个委托返回另一个委托。这是一个特别有趣的写法，通过函数返回函数的思想可以用来写出一些有趣的逻辑，特别是在多层嵌套的时候
 
-当然使用委托可是会出现这个问题，请问下面的代码实际调用的是哪个委托，下面代码的 a 和 b 和 c 都是 `Action` 委托，同时都不是空的
+当然使用委托可是会出现另一个问题的，请问下面的代码实际调用的是哪个委托，下面代码的 a 和 b 和 c 都是 `Action` 委托，同时都不是空的
 
 ```csharp
 ((a + b + c) - (a + c))();
 ```
 
+在数学上，其实函数也可以视为变量，很有科技范的 C# 当然也支持如此的功能，将函数包装为委托的时候，可以让委托本身支持加减法哦，只是这个加减法的规则有些诡异。不信，请猜猜上面代码执行了什么函数
+
 ## 冲突的类型
 
-如果遇到两个命名空间相同的类型，很多时候都是把命名空间全写
+在遇到某些类型，特别是放在 NuGet 上的多个不同的库里面的类型，这些类型有相同的类名，如 Data 或 Control 等很通用的命名的时候，在代码中如果需要同时使用这两个类，就需要补全整个命名空间，如下面代码
 
 ```csharp
 var webControl = new System.Web.UI.WebControls.Control();
 var formControl = new System.Windows.Forms.Control();
 ```
 
-如果经常使用这两个控件，那么就需要写空间，代码很多，但是微软给了一个坑，使用这个可以不用写空间
+如果经常使用这两个控件，那么就需要写很多补全命名空间的代码，代码很多。好在微软的大佬们给出了一个坑方法，使用这个方法可以不写命名空间，或者说只需要在文件开始 using 一次，请看代码
 
 ```csharp
 using web = System.Web.UI.WebControls;
@@ -91,11 +104,13 @@ web::Control webControl = new web::Control();
 win::Control formControl = new win::Control();
 ```
 
-参见：https://stackoverflow.com/a/9099/6116637
+参见：[https://stackoverflow.com/a/9099/6116637](https://stackoverflow.com/a/9099/6116637)
 
 ## extern alias 
 
-如果使用了两个 dll ，都有相同命名空间和类型，那么如何使用指定的库
+如果使用了两个不同的程序集放在两个不同的 dll 文件里面，这两个程序集都有相同命名空间和类型，那么如何使用指定的库
+
+如下面代码所示，在两个 dll 里面都定义了 `F.Foo` 类型
 
 ```csharp
 //a.dll
@@ -120,7 +135,7 @@ namespace F
 
 ```
 
-这时就可以使用 extern alias
+这时就可以使用 extern alias 关键词
 
 参见：[C#用extern alias解决两个assembly中相同的类型全名 - fresky - 博客园](http://www.cnblogs.com/fresky/archive/2012/12/24/2831697.html )
 
@@ -138,6 +153,391 @@ namespace F
 
 此知识点不再适用，因为在 C# 8.0 的时候，可以按照任意的顺序使用 `$` 和 `@` 标记。详细请看 [$ - 字符串内插 - C# 参考](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/interpolated ) 特别感谢 592844340 群内热心人员勘误
 
+
+
+
+## 特殊关键字
+
+实际上有下面几个关键字是没有详细的文档，可能只有微软的编译器才知道
+
+```csharp
+__makeref
+
+__reftype
+
+__refvalue
+
+__arglist
+```
+
+不过在 C# 7.2 可以使用其他的关键字做到一些功能，详细请看我的 C# 7.0 博客
+
+
+
+## 使用 Unions （C++ 一样的）
+
+如果看到 C++ 可以使用内联，不要说 C# 没有这个功能，实际上也可以使用 FieldOffset 特性实现和 C++ 一样的内联的功能 ，请看下面代码
+
+```csharp
+[StructLayout(LayoutKind.Explicit)]
+public class A
+{
+    [FieldOffset(0)]
+    public byte One;
+
+    [FieldOffset(1)]
+    public byte Two;
+
+    [FieldOffset(2)]
+    public byte Three;
+
+    [FieldOffset(3)]
+    public byte Four;
+
+    [FieldOffset(0)]
+    public int Int32;
+}
+```
+
+如下面代码就定义了`int`变量，修改这个变量就是修改其他的三个变量
+
+```csharp
+     static void Main(string[] args)
+    {
+        A a = new A { Int32 = int.MaxValue };
+
+        Console.WriteLine(a.Int32);
+        Console.WriteLine("{0:X} {1:X} {2:X} {3:X}", a.One, a.Two, a.Three, a.Four);
+
+        a.Four = 0;
+        a.Three = 0;
+        Console.WriteLine(a.Int32);
+    }
+``` 
+
+运行代码可以看到输出如下
+
+```csharp
+2147483647
+FF FF FF 7F
+65535
+```
+
+可以看到修改其中某个值都会相互影响，这几个值共用了相同的一个内存空间
+
+## 接口默认方法
+
+实际上可以给接口使用默认方法，使用的方式如下
+
+```csharp
+public static void Foo(this IF1 foo)
+{
+     //实际上大家也看到是如何定义
+}
+```
+
+当然了，在 C# 8.0 还有更直接的方法，详细请看 [在 C# 中使用默认接口方法安全地更新接口](https://docs.microsoft.com/zh-cn/dotnet/csharp/tutorials/default-interface-methods-versions?WT.mc_id=DX-MVP-5003606 )
+
+## stackalloc 
+
+很多人都不知道这个科技，这是不安全代码，从栈申请空间
+
+```csharp
+int* block = stackalloc int[100]; 
+```
+
+使用的时候需要小心你的栈也许会炸掉
+
+参见：[stackalloc](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/stackalloc )
+
+## 指定编译
+
+这个是一个有趣的特性实现的功能，是一个编译器技术，写给编译器看的特性。使用 Conditional 特性可以让代码在指定条件不使用，如下面的代码，规定了只有在 DEBUG 宏定义的时候才让 F2 方法生效。因此在 Release 下就不会使用 F2 方法了
+
+```csharp
+    public sealed clas Foo
+    {
+        public Foo F1()
+        {
+            Console.WriteLine("进入F1");
+            return this;
+        }
+
+        [Conditional("DEBUG")]
+        public void F2()
+        {
+            Console.WriteLine("F2");
+        }
+    }
+```
+
+简单让代码跑一下
+
+```csharp
+        static void Main(string[] args)
+        {
+            var foo = new Foo();
+            foo.F1();
+            foo.F2();
+        }
+```
+
+结果是什么，大家也知道，在 Debug 和 Release 输出是不相同。但是这么简单的怎么会在这里说呢，请大家看看这个代码输出什么
+
+```csharp
+     static void Main(string[] args)
+     {
+         var foo = new Foo();
+         foo.F1().F2();
+     }
+```
+
+实际上在 Release 下什么都不会输出，此时的 F1 不会被执行
+
+## true 判断
+
+下面写个见鬼的代码
+
+```csharp
+            var foo = new Foo(10);
+
+            if (foo)
+            {
+                Console.WriteLine("我的类没有继承 bool ，居然可以这样写");
+            }
+```
+
+没错 Foo 没有继承 bool 居然可以这样写
+
+实际上就是重写 true 方法，请看代码
+
+```csharp
+    public class Foo
+    {
+        public Foo(int value)
+        {
+            _count = value;
+        }
+
+        private readonly int _count;
+
+        public static bool operator true(Foo mt)
+        {
+            return mt._count > 0;
+        }
+
+        public static bool operator false(Foo mt)
+        {
+            return mt._count < 0;
+        }
+    }
+
+```
+
+是不是觉得很多有人这样写，下面让大家看一个很少人会知道的科技，感谢[walterlv](https://walterlv.github.io/ ) 提供
+
+## 重写运算返回
+
+很少人知道实际上重写 `==` 可以返回任意的类型，而不是只有 bool 类型，请看下面代码
+
+![](http://image.acmx.xyz/lindexi%2F2018422105951305.jpg)
+
+是可以编译通过的，因为我重写运算
+
+```csharp
+   class Foo
+    {
+        public int Count { get; set; }
+     
+        public static string operator ==(Foo f1, Foo f2)
+        {
+            if (f1?.Count == f2?.Count)
+            {
+                return "lindexi";
+            }
+
+            return "";
+        }
+
+        public static string operator !=(Foo f1, Foo f2)
+        {
+            return "";
+        }
+    }
+```
+
+可以重写的运算很多，返回值可以自己随意定义
+
+## await 任何类型
+
+等待任意的类型，包括已定义的基础类型，如下面代码
+
+```csharp
+await "林德熙逗比";
+
+await "不告诉你";
+```
+
+这个代码是可以编译通过的，但是只有在我的设备。在看了这个[博客](https://lindexi.gitee.io/post/C-await-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html )之后，可能你也可以在你的设备编译
+
+其实 await 是可以写很多次的，如下面代码
+
+```csharp
+await await await await await await await await await await await await await await await await await await await await await await await "林德熙逗比";
+```
+
+## 变量名使用中文
+
+实际上在C#支持所有 Unicode 字符，这是编译器支持的，所以变量名使用中文也是可以的，而且可以使用特殊的字符
+
+```csharp
+        public string H\u00e5rføner()
+        {
+            return "可以编译";
+        }
+```
+
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102739.jpg)
+
+![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102848.jpg)
+
+## if this == null
+
+一般看到下面的代码都觉得是不可能进入输出的
+
+```csharp
+if (this == null) Console.WriteLine("this is null");
+```
+
+如果在 if 里面都能使用 this == null 成立，那么一定是vs炸了。实际上这个代码还是可以运行的
+
+在一般的函数，如下面的 Foo 函数，在调用就需要使用`f.Foo()`的方法，方法里 this 就是 f 这个对象，如果 `f == null` 那么在调用方法就直接不让运行，如何到方法里的判断
+
+```csharp
+f.Foo(); //如果 f 为空，那么这里就不执行
+
+void Foo()
+{
+   // 如果 this 为空，怎么可以调用这个方法
+   if (this == null) Console.WriteLine("this is null");
+}
+```
+
+实际上是可以做的，请看[（C#）if (this == null)？你在逗我，this 怎么可能为 null！用 IL 编译和反编译看穿一切 - walterlv](https://walterlv.github.io/post/this-could-be-null.html ) 这篇博客
+
+如上面博客，关键在修改 `callvirt` 为 `call` 调用，直接修改 IL 可以做出很多特殊的写法
+
+那么这个可以用在哪里？可以用在防止大神反编译，如需要使用下面逻辑
+
+```csharp
+//执行的代码
+
+//不执行的代码
+```
+
+此时简单的反编译也许会这么写
+
+```csharp
+if(true)
+{
+   //执行的代码
+}
+else
+{
+   //不执行的代码 
+}
+```
+
+但是直接写 true 很容易让反编译看到不使用代码，而且在优化代码会被去掉，所以可以使用下面代码
+
+```csharp
+if(this == null)
+{
+   //执行的代码
+}
+else
+{
+   //不执行的代码 
+}
+```
+    
+实际在微软代码也是这样写，点击[string的实现源代码](https://referencesource.microsoft.com/#mscorlib/system/string.cs,507 )可以看到微软代码
+
+## 重载的运算符
+
+实际上我可以将 null 强转某个类，创建一个新的对象，请看代码
+
+```csharp
+Fantastic fantastic = (FantasticInfo) null;
+fantastic.Foo();
+```
+
+这里的 FantasticInfo 和 Fantastic 没有任何继承关系，而且调用 Foo 不会出现空引用，也就是 fantastic 是从一个空的对象创建出来的
+
+是不是觉得上面的科技很黑，实际原理没有任何黑的科技，请看代码
+
+```csharp
+    public class Fantastic
+    {
+        private Fantastic()
+        {
+        }
+
+        public static implicit operator Fantastic(FantasticInfo value) => new Fantastic();
+
+        public void Foo()
+        {
+        }
+    }
+
+    public class FantasticInfo
+    {
+    }
+```
+
+通过这个方式可以让开发者无法直接创建 Fantastic 类，而且在不知道 FantasticInfo 的情况无法创建 Fantastic 也就是让大家需要了解 FantasticInfo 才可以通过上面的方法创建，具体请看[只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式） - walterlv](https://blog.walterlv.com/post/hide-your-constructor.html )
+
+课件链接： [https://r302.cc/J4gxOX](https://r302.cc/J4gxOX)
+
+当然还有新的 [C# 7.0](https://blog.lindexi.com/post/C-7.0.html ) 和 [C# 8.0](https://blog.lindexi.com/post/VisualStudio-2019-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8-C-8.0-%E6%96%B0%E7%9A%84%E6%96%B9%E5%BC%8F.html ) 的新的语法
+
+例如下面的内部方法返回自身
+
+## 方法返回自身可以接近无限调用
+
+有一天我看到了下面的代码，你猜小伙伴用什么代码定义了 Foo 这个代码？
+
+```csharp
+Foo()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()();
+```
+
+其实只需要定义一个委托，用内部方法实现委托，因为内部方法是可以返回自身，于是就可以使用5行代码写出 Foo 的定义
+
+```csharp
+        delegate Foo Foo(); // 定义委托
+
+static void Main(string[] args)
+{
+    Foo Foo() // 定义内部方法
+    {
+        return Foo;
+    }
+}
+```
+
+不过括号还不可以无限使用，因为编译器有一个表达式的长度限制
+
+## 无限长度的委托调用
+
+试试这个代码，也许你可以无限写下去，只要 Roslyn 不会炸就可以
+
+```csharp
+ delegate Fx Fx(Fx fx);
+ Fx fx = fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx =>
+                fx => fx => fx => fx => fx => fx => fx => fx => fx => fx;
+```
+
+以下部分准确来说是 .NET 提供的功能，请问 C# 和 .NET 是什么关系？其实我也无法用一两句话说清，扔掉了 .NET 依然可以用 C# 写程序，反过来扔掉 C# 也依然能用 .NET 写程序
 
 ## 表达式树获取函数命名
 
@@ -169,22 +569,6 @@ namespace F
 
 这样就可以拿到函数的命名
 
-## 特殊关键字
-
-实际上有下面几个关键字是没有文档，可能只有垃圾微软的编译器才知道
-
-```csharp
-__makeref
-
-__reftype
-
-__refvalue
-
-__arglist
-```
-
-不过在 C# 7.2 都可以使用其他的关键字做到一些，详细请看我的 C# 7.0 博客
-
 ## DebuggerDisplay
 
 如果想要在调试的时候，鼠标移动到变量显示他的信息，可以重写类的 ToString 
@@ -205,7 +589,7 @@ __arglist
 
 但是如果 ToString 被其他地方用了，如何显示？
 
-垃圾微软告诉大家，使用 DebuggerDisplay 特性
+微软告诉大家，使用 DebuggerDisplay 特性
 
 ```csharp
     [DebuggerDisplay("{DebuggerDisplay}")]
@@ -221,66 +605,6 @@ __arglist
 
 参见[Using the DebuggerDisplay Attribute](https://msdn.microsoft.com/en-us/library/x810d419.aspx )
 
-## 使用 Unions （C++ 一样的）
-
-如果看到 C++ 可以使用内联，不要说 C# 没有，实际上也可以使用 FieldOffset ，请看下面
-
-```csharp
-[StructLayout(LayoutKind.Explicit)]
-public class A
-{
-    [FieldOffset(0)]
-    public byte One;
-
-    [FieldOffset(1)]
-    public byte Two;
-
-    [FieldOffset(2)]
-    public byte Three;
-
-    [FieldOffset(3)]
-    public byte Four;
-
-    [FieldOffset(0)]
-    public int Int32;
-}
-```
-
-这时就定义了`int`变量，修改他就是修改其他的三个
-
-```csharp
-     static void Main(string[] args)
-    {
-        A a = new A { Int32 = int.MaxValue };
-
-        Console.WriteLine(a.Int32);
-        Console.WriteLine("{0:X} {1:X} {2:X} {3:X}", a.One, a.Two, a.Three, a.Four);
-
-        a.Four = 0;
-        a.Three = 0;
-        Console.WriteLine(a.Int32);
-    }
-``` 
-
-这时会输出
-
-```csharp
-2147483647
-FF FF FF 7F
-65535
-```
-
-## 接口默认方法
-
-实际上可以给接口使用默认方法，使用的方式
-
-```csharp
-public static void Foo(this IF1 foo)
-{
-     //实际上大家也看到是如何定义
-}
-```
-
 ## 数字格式
 
 ```csharp
@@ -293,15 +617,6 @@ string zer = 0.ToString(format);     // (0)
 
 参见：[自定义数字格式字符串 ](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/custom-numeric-format-strings#SectionSeparator )
 
-## stackalloc 
-
-实际上很多人都不知道这个，这是不安全代码，从栈申请空间
-
-```csharp
-int* block = stackalloc int[100]; 
-```
-
-参见：[stackalloc ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/stackalloc )
 
 ## 调用堆栈
 
@@ -345,289 +660,6 @@ F1
 
 参见：[WPF 判断调用方法堆栈](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
 
-## 指定编译
-
-如果使用 Conditional 可以让代码在指定条件不使用，我写了这个代码，在 Release 下就不会使用 F2
-
-```csharp
-    public sealed clas Foo
-    {
-        public Foo F1()
-        {
-            Console.WriteLine("进入F1");
-            return this;
-        }
-
-        [Conditional("DEBUG")]
-        public void F2()
-        {
-            Console.WriteLine("F2");
-        }
-    }
-```
-
-简单让代码跑一下
-
-```csharp
-        static void Main(string[] args)
-        {
-            var foo = new Foo();
-            foo.F1();
-            foo.F2();
-        }
-```
-
-结果是什么，大家也知道，在 Debug 和 Release 输出是不相同。但是这么简单的怎么会在这里说，请大家看看这个代码输出什么
-
-```csharp
-     static void Main(string[] args)
-        {
-            var foo = new Foo();
-            foo.F1().F2();
-        }
-```
-
-实际上在 Release 下什么都不会输出，F1 不会被执行
-
-## true 判断
-
-下面写个见鬼的代码
-
-```csharp
-            var foo = new Foo(10);
-
-            if (foo)
-            {
-                Console.WriteLine("我的类没有继承 bool ，居然可以这样写");
-            }
-```
-
-没错 Foo 没有继承 bool 居然可以这样写
-
-实际上就是重写 true ，请看代码
-
-```csharp
-    public class Foo
-    {
-        public Foo(int value)
-        {
-            _count = value;
-        }
-
-        private readonly int _count;
-
-        public static bool operator true(Foo mt)
-        {
-            return mt._count > 0;
-        }
-
-        public static bool operator false(Foo mt)
-        {
-            return mt._count < 0;
-        }
-    }
-
-```
-
-是不是觉得很多有人这样写，下面让大家看一个很少人会知道的科技，感谢[walterlv](https://walterlv.github.io/ )
-
-## 重写运算返回
-
-很少人知道实际上重写 `==` 可以返回任意的类型，而不是只有 bool ，请看下面代码
-
-![](http://image.acmx.xyz/lindexi%2F2018422105951305.jpg)
-
-是可以编译通过的，因为我重写运算
-
-```csharp
-   class Foo
-    {
-        public int Count { get; set; }
-     
-        public static string operator ==(Foo f1, Foo f2)
-        {
-            if (f1?.Count == f2?.Count)
-            {
-                return "lindexi";
-            }
-
-            return "";
-        }
-
-        public static string operator !=(Foo f1, Foo f2)
-        {
-            return "";
-        }
-    }
-```
-
-可以重写的运算很多，返回值可以自己随意定义。
-
-## await 任何类型
-
-```csharp
-await "林德熙逗比";
-
-await "不告诉你";
-```
-
-这个代码是可以编译通过的，但是只有在我的设备，然后看了这个[博客](https://lindexi.gitee.io/post/C-await-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html )，可能你也可以在你的设备编译
-
-其实 await 是可以写很多次的，如下面代码
-
-```csharp
-await await await await await await await await await await await await await await await await await await await await await await await "林德熙逗比";
-```
-
-## 变量名使用中文
-
-实际上在C#支持所有 Unicode ，所以变量名使用中文也是可以的，而且可以使用特殊的字符
-
-```csharp
-        public string H\u00e5rføner()
-        {
-            return "可以编译";
-        }
-```
-
-![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102739.jpg)
-
-![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102848.jpg)
-
-## if this == null
-
-一般看到下面的代码都觉得是不可能
-
-```csharp
-if (this == null) Console.WriteLine("this is null");
-```
-
-如果在 if 里面都能使用 this == null 成立，那么一定是vs炸了。实际上这个代码还是可以运行。
-
-在一般的函数，如 Foo ，在调用就需要使用`f.Foo()`的方法，方法里 this 就是 f ，如果 `f == null` 那么在调用方法就直接不让运行，如何到方法里的判断
-
-```csharp
-f.Foo(); //如果 f 为空，那么这里就不执行
-
-void Foo()
-{
-   // 如果 this 为空，怎么可以调用这个方法
-   if (this == null) Console.WriteLine("this is null");
-}
-```
-
-实际上是可以做的，请看[（C#）if (this == null)？你在逗我，this 怎么可能为 null！用 IL 编译和反编译看穿一切 - walterlv](https://walterlv.github.io/post/this-could-be-null.html )
-
-如上面博客，关键在修改`callvirt `为 `call`，直接修改 IL 可以做出很多特殊的写法。
-
-那么这个可以用在哪里？可以用在防止大神反编译，如需要使用下面逻辑
-
-```csharp
-//执行的代码
-
-//不执行的代码
-```
-
-```csharp
-if(true)
-{
-   //执行的代码
-}
-else
-{
-   //不执行的代码 
-}
-```
-
-但是直接写 true 很容易让反编译看到不使用代码，而且在优化代码会被去掉，所以可以使用下面代码
-
-```csharp
-if(this == null)
-{
-   //执行的代码
-}
-else
-{
-   //不执行的代码 
-}
-```
-    
-实际在微软代码也是这样写，点击[string](https://referencesource.microsoft.com/#mscorlib/system/string.cs,507 )可以看到微软代码
-
-## 重载的运算符
-
-实际上我可以将 null 强转某个类，创建一个新的对象，请看代码
-
-```csharp
-Fantastic fantastic = (FantasticInfo) null;
-fantastic.Foo();
-```
-
-这里的 FantasticInfo 和 Fantastic 没有任何继承关系，而且调用 Foo 不会出现空引用，也就是 fantastic 是从一个空的对象创建出来的。
-
-是不是觉得上面的科技很黑，实际原理没有任何黑的科技，请看代码
-
-```csharp
-    public class Fantastic
-    {
-        private Fantastic()
-        {
-        }
-
-        public static implicit operator Fantastic(FantasticInfo value) => new Fantastic();
-
-        public void Foo()
-        {
-        }
-    }
-
-    public class FantasticInfo
-    {
-    }
-```
-
-通过这个方式可以让开发者无法直接创建 Fantastic 类，而且在不知道 FantasticInfo 的情况无法创建 Fantastic 也就是让大家需要了解 FantasticInfo 才可以通过上面的方法创建，具体请看[只有你能 new 出来！.NET 隐藏构造函数的 n 种方法（Builder Pattern / 构造器模式） - walterlv](https://blog.walterlv.com/post/hide-your-constructor.html )
-
-课件链接： https://r302.cc/J4gxOX
-
-当然还有新的 [C# 7.0](https://blog.lindexi.com/post/C-7.0.html ) 和 [C# 8.0](https://blog.lindexi.com/post/VisualStudio-2019-%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8-C-8.0-%E6%96%B0%E7%9A%84%E6%96%B9%E5%BC%8F.html ) 的新的语法
-
-例如下面的内部方法返回自身
-
-## 方法返回自身可以接近无限调用
-
-有一天我看到了下面的代码，你猜小伙伴用个字符的代码定义了Foo这个代码？
-
-```csharp
-Foo()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()();
-```
-
-其实只需要定义一个委托，用内部方法实现委托，因为内部方法是可以返回自身，于是就可以使用5行代码写出 Foo 的定义
-
-```csharp
-        delegate Foo Foo(); // 定义委托
-
-static void Main(string[] args)
-{
-            Foo Foo() // 定义内部方法
-            {
-                return Foo;
-            }
-}
-```
-
-不过括号还不可以无限使用，因为编译器有一个表达式的长度限制
-
-## 无限长度的委托调用
-
-试试这个代码，也许你可以无限写下去，只要 Roslyn 不会炸就可以
-
-```csharp
- delegate Fx Fx(Fx fx);
- Fx fx = fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx => fx =>
-                fx => fx => fx => fx => fx => fx => fx => fx => fx => fx;
-```
-
-欢迎加入 dotnet 职业技术学院 [https://t.me/dotnet_campus] 使用 Telegram 方法请看 [如何使用 Telegram](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
+欢迎加入 dotnet 职业技术学院 [https://t.me/dotnet_campus](https://t.me/dotnet_campus) 使用 Telegram 方法请看 [如何使用 Telegram](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
