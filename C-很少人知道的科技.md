@@ -137,7 +137,10 @@ namespace F
 {str}";
 ```
 
-注意两个的顺序，反过来直接告诉你代码不能这样写
+~~注意两个的顺序，反过来直接告诉你代码不能这样写~~
+
+此知识点不再适用，因为在 C# 8.0 的时候，可以按照任意的顺序使用 `$` 和 `@` 标记。详细请看 [$ - 字符串内插 - C# 参考](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/interpolated ) 特别感谢 592844340 群内热心人员勘误
+
 
 ## 表达式树获取函数命名
 
