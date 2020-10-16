@@ -450,6 +450,8 @@
 
  * [dotnet OpenXML 如何获取 schemeClr 颜色](dotnet-OpenXML-如何获取-schemeClr-颜色.md)
 
+ * [dotnet OpenXML 幻灯片 PPTX 的 Slide Id 和页面序号的关系](dotnet-OpenXML-幻灯片-PPTX-的-Slide-Id-和页面序号的关系.md)
+
  * [dotnet OpenXML 文本 BodyProperties 的属性作用](dotnet-OpenXML-文本-BodyProperties-的属性作用.md)
 
  * [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](dotnet-OpenXML-文本-EndParagraphRunProperties-的作用.md)
