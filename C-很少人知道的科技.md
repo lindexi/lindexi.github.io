@@ -47,8 +47,7 @@ var n = 2 + foo?.N ?? 1;
 例如有下面这个代码，在这个代码里面使用了很多的 List 嵌套，如下面代码所示里面有很多定义的代码
 
 ```csharp
-var foo = new System.Collections.Generic.Dictionary<
-                    System.Collections.Generic.List<System.Collections.Generic.List<string>>, string>();
+var foo = new System.Collections.Generic.Dictionary<System.Collections.Generic.List<System.Collections.Generic.List<string>>, string>();
 ```
 
 可以看到上面代码中，有大量的代码都是用来作为类型的定义，假设这个值作为某个方法的参数，那才是可怕
@@ -162,9 +161,6 @@ namespace F
 
 此知识点不再适用，因为在 C# 8.0 的时候，可以按照任意的顺序使用 `$` 和 `@` 标记。详细请看 [$ - 字符串内插 - C# 参考](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/interpolated ) 特别感谢 592844340 群内热心人员勘误
 
-
-
-
 ## 特殊关键字
 
 实际上有下面几个关键字是没有详细的文档，可能只有微软的编译器才知道
@@ -180,8 +176,6 @@ __arglist
 ```
 
 不过在 C# 7.2 可以使用其他的关键字做到一些功能，详细请看我的 C# 7.0 博客
-
-
 
 ## 使用 Unions （C++ 一样的）
 
