@@ -665,11 +665,11 @@ F1
 
 欢迎加入 dotnet 职业技术学院 [https://t.me/dotnet_campus](https://t.me/dotnet_campus) 使用 Telegram 方法请看 [如何使用 Telegram](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
-<!-- ## 特别感谢
+## 特别感谢
 
 特别感谢 [吕毅 - walterlv](https://blog.walterlv.com/ ) 提供的逗比代码
 
-特别感谢队长提供的 [.NET Core也是国产化信息系统开发的重要选项 - 张善友 - 博客园](https://www.cnblogs.com/shanyou/p/13547269.html ) -->
+特别感谢队长提供的 [.NET Core也是国产化信息系统开发的重要选项 - 张善友 - 博客园](https://www.cnblogs.com/shanyou/p/13547269.html ) 博客。本文开头为了更准确的描述，于是抄了队长的博客内容
 
 
 
