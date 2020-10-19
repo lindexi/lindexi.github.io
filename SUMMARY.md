@@ -492,6 +492,8 @@
 
  * [dotnet tool 工具安装提示 Could not find a part of the path 安装失败](dotnet-tool-工具安装提示-Could-not-find-a-part-of-the-path-安装失败.md)
 
+ * [dotnet tool 文件编码规范命令行工具](dotnet-tool-文件编码规范命令行工具.md)
+
  * [dotnet 一些代码审查套路](dotnet-一些代码审查套路.md)
 
  * [dotnet 三句命令行创建运行一个 web 服务程序](dotnet-三句命令行创建运行一个-web-服务程序.md)
@@ -571,6 +573,8 @@
  * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
  * [dotnet 命名管道名字长度限制](dotnet-命名管道名字长度限制.md)
+
+ * [dotnet 在 GitHub 的 Action 上部署自动代码编码规范机器人](dotnet-在-GitHub-的-Action-上部署自动代码编码规范机器人.md)
 
  * [dotnet 在 Linux 下的 GDI 库对 EMF 图片格式的支持](dotnet-在-Linux-下的-GDI-库对-EMF-图片格式的支持.md)
 
@@ -1885,6 +1889,8 @@
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
+
+ * [WPF 手绘对称图形控件](WPF-手绘对称图形控件.md)
 
  * [WPF 打包为 UWP 应用构建失败 MSB3270 不匹配 AMD64 架构](WPF-打包为-UWP-应用构建失败-MSB3270-不匹配-AMD64-架构.md)
 
