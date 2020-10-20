@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/10/19 8:22:54 -->
+
 <!-- 发布 -->
 
 只想配置机器人，而不想看原理？没关系，给你一个快餐，复制 [dotnet-format.yml](https://github.com/dotnet-campus/AsyncWorkerCollection/blob/37960b9f99811a22130967122f5772866e3e3314/.github/workflows/dotnet-format.yml) 文件到你的 GitHub 仓库的 `.github\workflows` 文件夹里面即可。效果如何，你试试就知道了，或者在等待 GitHub 的 Action 过程中阅读一下本文
