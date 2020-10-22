@@ -541,6 +541,20 @@ window.Activate();
             scrollViewer.ScrollToBottom();
 ```
 
+可以使用下面扩展方法
+
+```csharp
+    public static class ListViewExtensions
+    {
+        public static void ScrollToBottom(this ListView listView)
+        {
+            DependencyObject border = VisualTreeHelper.GetChild(listView, 0);
+            ScrollViewer scrollViewer = (ScrollViewer) VisualTreeHelper.GetChild(border, 0);
+            scrollViewer.ScrollToBottom();
+        }
+    }
+```
+
 [WPF ListBox Scroll to end automatically - Stack Overflow](https://stackoverflow.com/questions/2337822/wpf-listbox-scroll-to-end-automatically )
 
 ## [WPF 截图功能的实现](https://huchengv5.gitee.io/post/WPF-%E6%88%AA%E5%9B%BE%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0.html )
