@@ -3,6 +3,8 @@
 在哪可以找到 dotnet 官方权威的图标？正统的 .NET 图标是哪个？ 本文来回答大家这几个问题
 
 <!--more-->
+<!-- CreateTime:2020/10/21 15:36:20 -->
+
 <!-- 发布 -->
 
 请到 [dotnet/brand](https://github.com/dotnet/brand) 品牌指导仓库里面获取最新的 logo 文件
