@@ -3,6 +3,8 @@
 在 Xamarin Forms 从 4.7 到 4.8.0.1560 版本，在 Xamarin Forms 构建 WPF 版项目也许会提示 XamlC error XFC0000 : Cannot resolve type "Application" 构建失败
 
 <!--more-->
+<!-- CreateTime:2020/10/22 9:10:35 -->
+
 <!-- 发布 -->
 
 提示内容如下
