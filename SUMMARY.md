@@ -1958,6 +1958,8 @@
 
  * [WPF 等距布局](WPF-等距布局.md)
 
+ * [WPF 简易手绘笔迹支持回放的方法](WPF-简易手绘笔迹支持回放的方法.md)
+
  * [WPF 类型的构造函数执行符合指定的绑定约束的调用时引发了异常](WPF-类型的构造函数执行符合指定的绑定约束的调用时引发了异常.md)
 
  * [wpf 绑定 DataGridTextColumn ](wpf-绑定-DataGridTextColumn-.md)
