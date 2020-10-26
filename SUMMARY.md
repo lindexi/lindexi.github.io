@@ -2088,6 +2088,8 @@
 
  * [Xamarin Forms 构建 WPF 版项目失败提示 XamlC error XFC0000 错误](Xamarin-Forms-构建-WPF-版项目失败提示-XamlC-error-XFC0000-错误.md)
 
+ * [Xamarin iOS 部署版本大于手机的系统版本](Xamarin-iOS-部署版本大于手机的系统版本.md)
+
  * [Xamarin XamlCTask 任务不支持 ValidateOnly 参数](Xamarin-XamlCTask-任务不支持-ValidateOnly-参数.md)
 
  * [Xamarin 使用 GTK 提示找不到 libglib-2.0-0.dll 找不到](Xamarin-使用-GTK-提示找不到-libglib-2.0-0.dll-找不到.md)
