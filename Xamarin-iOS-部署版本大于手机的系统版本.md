@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/10/26 10:18:44 -->
+
 <!-- 发布 -->
 
 如我师傅在 [使用 Xamarin 在 iOS 真机上部署应用进行调试](https://blog.walterlv.com/post/deploy-and-debug-ios-app-using-xamarin.html) 博客上讲的，苹果为了提升开发者门槛，限制了 VS 创建应用的权限。苹果：这不是我说的，你不要瞎说

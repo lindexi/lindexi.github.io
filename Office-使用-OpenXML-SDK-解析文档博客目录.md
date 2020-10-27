@@ -105,6 +105,12 @@
 
 欢迎小伙伴加入 OpenXML Office 群 688921958
 
+## 收藏
+
+以下是收藏的博客
+
+- [OpenXML学习笔记（一）从Office 2007 到 Office 2010](https://www.cnblogs.com/brooks-dotnet/archive/2010/02/08/1665600.html)
+
 
 
 
