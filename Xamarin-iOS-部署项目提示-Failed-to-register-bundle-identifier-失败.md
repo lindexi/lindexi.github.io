@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/10/26 10:43:52 -->
+
 <!-- 发布 -->
 
 在 iOS 上有 Bundle Identifier 的概念，细节请看 [苹果官网](https://developer.apple.com/documentation/appstoreconnectapi/bundle_ids) 以及申请方式请看 [iOS项目的Bundle identifier的申请](https://www.jianshu.com/p/979f58f2b9e3) 这部分的知识苹果更新很快，本文写在 2020.10 如果你阅读本文时的时间距离本文写的时间太远了，还请小心，本文有些知识也许被苹果改了
