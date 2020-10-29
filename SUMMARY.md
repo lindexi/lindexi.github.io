@@ -1318,6 +1318,8 @@
 
  * [win10 uwp 如何让一个集合按照需要的顺序进行排序](win10-uwp-如何让一个集合按照需要的顺序进行排序.md)
 
+ * [win10 uwp 字符文本转语音声音文件方法](win10-uwp-字符文本转语音声音文件方法.md)
+
  * [win10 uwp 安装文件 appinstaller 格式](win10-uwp-安装文件-appinstaller-格式.md)
 
  * [win10 uwp 客户端如何发送类到 asp dotnet core 作为参数](win10-uwp-客户端如何发送类到-asp-dotnet-core-作为参数.md)
