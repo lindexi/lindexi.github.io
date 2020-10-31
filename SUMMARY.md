@@ -1714,6 +1714,8 @@
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
 
+ * [WPF 从最底层源代码了解 AllowsTransparency 性能差的原因](WPF-从最底层源代码了解-AllowsTransparency-性能差的原因.md)
+
  * [WPF 从触摸消息转触摸事件](WPF-从触摸消息转触摸事件.md)
 
  * [WPF 从零开始开发 dotnet Remoting 程序](WPF-从零开始开发-dotnet-Remoting-程序.md)
