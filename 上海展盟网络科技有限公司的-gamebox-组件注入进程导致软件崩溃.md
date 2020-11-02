@@ -47,6 +47,39 @@
 
 以上这几个软件也许会让自己的软件在运行过程中没有处理好的情况下崩溃，本质来说和以上这些软件没有很大的关系，是自己的软件没有处理好。但是自己的软件要处理好，还是有一些难度的
 
+## 细节
+
+以下是给开发者看的内容
+
+1. gamebox_shell.dll 是小黑记事本官方组件；
+2. gamebox_shell.dll 不是使用 dll 注入技术完成的注入，而是 Shell 的 Icon Overlay 扩展，任何应用程序试图获取图标/缩略图时会自动将其加载到应用程序进程中；（目前尚不清楚其作为 Icon Overlay 的作用/目的）
+3. gamebox_shell.dll 加载到程序中的崩溃代码不在获取图标/缩略图中，而是在额外执行的后台线程中；（目前尚不清楚其在后台线程执行的操作）
+4. 目前仅在 .NET Framework + WPF 的组合下才会崩溃，其他组合（.NET Core + WPF，.NET Core + 控制台，.NET Framework + 控制台，C++）都不会崩溃
+
+通过 ShellExView 工具可以了解到 gamebox_shell.dll 使用 Shell 的 Icon Overlay 扩展进行注入，如图
+
+<!-- ![](image/上海展盟网络科技有限公司的 gamebox 组件注入进程导致软件崩溃/上海展盟网络科技有限公司的 gamebox 组件注入进程导致软件崩溃1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2020103199181412.jpg)
+
+默认从官网下载的 小黑记事本 软件不会带上 gamebox_shell.dll 组件，只有在触发了 小黑记事本 的自动更新之后，通过它下载的 Heinoteupdate_gw_001.exe 才带上了 gamebox_shell.dll 组件。通过下载的文件的软件签名可以了解到这两个包都是存在官方签名的
+
+在桌面上留至少一个文件夹，然后使用 .NET Framework + WPF 的应用程序，尝试获取桌面图标，此时将会被注入，然后应用程序闪退。最简 demo 放在 [github](https://github.com/walterlv/Walterlv.Issues.ShellCrash) 欢迎小伙伴下载
+
+和展盟网络科技的小伙伴沟通之后，了解到这是旧版本的问题，将会在 3.2.2.1 新版本解决
+
+## 解决方法
+
+以下方法任选一项
+
+- 尝试更新快压到 3.2.2.1 新版本
+
+- 删除和卸载 gamebox_shell.dll 相关软件
+
+- 使用 ShellExView 工具删除 gamebox_shell.dll 组件
+
+- 使用跨进程方式获取桌面图标
+
 
 
 
