@@ -299,9 +299,9 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 在使用绘制原语之后，也就是调用 RenderContext 的各个基础函数进行 Visual 的绘制时，最底层的函数是 UIElement.RenderContent 请看代码
 
 ```csharp
-  internal override void RenderContent(RenderContext ctx, bool isOnChannel)
+    internal override void RenderContent(RenderContext ctx, bool isOnChannel)
     {
-      DUCE.Channel channel = ctx.Channel;
+        DUCE.Channel channel = ctx.Channel;
 
         DUCE.IResource drawingContent = (DUCE.IResource) this._drawingContent;
         drawingContent.AddRefOnChannel(channel);
@@ -334,6 +334,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理9.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2018824143551331)
+
+上面代码的 DUCE 是 `Dynamic Unified Composition Engine` 的意思，翻译过来的含义大概是 动态统一合成引擎
 
 那么这个渲染是如何触发，实际上在`Dispatcher.ProcessQueue`调用，在上面已经有告诉大家 ProcessQueue 是在 WndProcHook 触发的
 
@@ -492,6 +494,8 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 [win32程序之窗口程序以及消息机制](https://www.cnblogs.com/iBinary/p/9580268.html )
 
 [WPF 使用 Composition API 做高性能渲染](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Composition-API-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E6%B8%B2%E6%9F%93.html) 
+
+[Differences between WPF and Silverlight Rendering Stacks](http://jmorrill.hjtcentral.com/Home/tabid/428/EntryId/446/Differences-between-WPF-and-Silverlight-Rendering-Stacks.aspx)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
 
