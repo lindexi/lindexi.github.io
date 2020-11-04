@@ -108,4 +108,15 @@
 
 - [OpenXML学习笔记（一）从Office 2007 到 Office 2010](https://www.cnblogs.com/brooks-dotnet/archive/2010/02/08/1665600.html)
 
+## 第三方工具
+
+### [Add-in Express](https://www.add-in-express.com/)
+
+很贵，很强的工具包
+
+- Office versions: Office 2019, 2016, 2013, 2010, 2007, 2003, XP and 2000
+- Applications: Outlook, Word, Excel, PowerPoint, Access, FrontPage, Publisher, Project, MapPoint, InfoPath, Visio, OneNote
+- IDEs: Visual Studio 2019, 2017, 2015, 2013, 2012 and 2010 (VB.NET, C#, C++)
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
