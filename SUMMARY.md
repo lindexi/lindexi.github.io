@@ -530,6 +530,8 @@
 
  * [dotnet 使用 MessagePack 序列化对象](dotnet-使用-MessagePack-序列化对象.md)
 
+ * [dotnet 使用 Obsolete 特性标记成员过时保持库和框架的兼容性](dotnet-使用-Obsolete-特性标记成员过时保持库和框架的兼容性.md)
+
  * [dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义](dotnet-使用-OpenXML-SDK-解析-Office-的项目符号-buNone-含义.md)
 
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
