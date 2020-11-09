@@ -74,6 +74,10 @@ System.IO.PathTooLongException:“指定的路径或文件名太长，或者两�
         }
 ```
 
+那么在 dotnet core 下呢？其实在 dotnet core 的行为完全不同，通过 [Support long file names on Windows · Issue #14062 · dotnet/runtime](https://github.com/dotnet/runtime/issues/14062 ) 可以了解到，在 dotnet core 古老的版本就更改了行为
+
+在 [dotnet/corefx#3001](https://github.com/dotnet/corefx/pull/3001) 和 [dotnet/corefx#3010](https://github.com/dotnet/corefx/pull/3010) 的更改，可以看到在 dotnet core 内部转换为 UNC 路径，可以自动解决路径问题，但是依然要求是 win10 下
+
 [Naming Files, Paths, and Namespaces - Windows applications](https://docs.microsoft.com/en-us/windows/desktop/FileIO/naming-a-file#maxpath )
 
 [Long Paths in .NET, Part 1 of 3 [Kim Hamilton] – BCL Team Blog](https://blogs.msdn.microsoft.com/bclteam/2007/02/13/long-paths-in-net-part-1-of-3-kim-hamilton/ )
