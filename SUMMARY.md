@@ -1710,6 +1710,8 @@
 
  * [WPF 为何不要重写默认 string 字符串的 DataTemplate 数据模版](WPF-为何不要重写默认-string-字符串的-DataTemplate-数据模版.md)
 
+ * [WPF 从 dotnet core 3 到 dotnet 5 的变更](WPF-从-dotnet-core-3-到-dotnet-5-的变更.md)
+
  * [WPF 从 DrawingVisual 转 BitmapImage 图片](WPF-从-DrawingVisual-转-BitmapImage-图片.md)
 
  * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
