@@ -488,6 +488,8 @@
 
  * [.NET Standard](NET-Standard.md)
 
+ * [dotnet tool 判断博客文档链接是否可用的工具](dotnet-tool-判断博客文档链接是否可用的工具.md)
+
  * [dotnet tool 安装失败因为对应的库不仅包含工具](dotnet-tool-安装失败因为对应的库不仅包含工具.md)
 
  * [dotnet tool 工具安装提示 Could not find a part of the path 安装失败](dotnet-tool-工具安装提示-Could-not-find-a-part-of-the-path-安装失败.md)
@@ -919,6 +921,8 @@
  * [Roslyn 如何了解某个项目在 msbuild 中所有用到的属性以及构建过程](Roslyn-如何了解某个项目在-msbuild-中所有用到的属性以及构建过程.md)
 
  * [Roslyn 如何使用 MSBuild Copy 复制文件](Roslyn-如何使用-MSBuild-Copy-复制文件.md)
+
+ * [Roslyn 如何使用 MSBuild MakeDir 创建文件夹](Roslyn-如何使用-MSBuild-MakeDir-创建文件夹.md)
 
  * [Roslyn 如何使用 MSBuild ZipDirectory 压缩文件夹](Roslyn-如何使用-MSBuild-ZipDirectory-压缩文件夹.md)
 
