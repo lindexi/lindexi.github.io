@@ -148,6 +148,105 @@ Color color = System.Drawing.ColorTranslator.FromHtml(hex);
 
 如何引用 WindowsCommunityToolkit 库？请通过 NuGet 安装 `Microsoft.Toolkit.Uwp` 库
 
+另一个版本是尝试转换，也就是输入的字符串不符合预期的时候不会炸
+
+```csharp
+    static class ColorTextConverter
+    {
+        public static (bool success, Color? color) TryConvertSolidColorBrush(string hexColorText)
+        {
+            if (!hexColorText.StartsWith("#"))
+            {
+                return (false, null);
+            }
+
+            var hex = hexColorText.Replace("#", string.Empty);
+
+            // 可以采用的格式如下
+            // #FFDFD991   8 个字符 存在 Alpha 通道
+            // #DFD991     6 个字符
+            // #FD92       4 个字符 存在 Alpha 通道
+            // #DAC        3 个字符
+
+            bool existAlpha = hex.Length == 8 || hex.Length == 4;
+            bool isDoubleHex = hex.Length == 8 || hex.Length == 6;
+
+            if (!existAlpha && hex.Length != 6 && hex.Length != 3)
+            {
+                return (false, null);
+            }
+
+            int n = 0;
+            byte a;
+            // 表示十六进制的字符数量，使用两个字符还是一个字符表示
+            int hexCount = isDoubleHex ? 2 : 1;
+            if (existAlpha)
+            {
+                n = hexCount;
+                var convertHexToByteResult = ConvertHexToByte(hex, 0, hexCount);
+                if (!convertHexToByteResult.success)
+                {
+                    return (false, null);
+                }
+
+                a = convertHexToByteResult.hexNumber;
+                if (!isDoubleHex)
+                {
+                    a = (byte) (a * 16 + a);
+                }
+            }
+            else
+            {
+                a = 0xFF;
+            }
+
+            var result = ConvertHexToByte(hex, n, hexCount);
+            if (!result.success)
+            {
+                return (false, null);
+            }
+            var r = result.hexNumber;
+
+            result = ConvertHexToByte(hex, n + hexCount, hexCount);
+            if (!result.success)
+            {
+                return (false, null);
+            }
+            var g = result.hexNumber;
+
+            result = ConvertHexToByte(hex, n + 2 * hexCount, hexCount);
+            if (!result.success)
+            {
+                return (false, null);
+            }
+            var b = result.hexNumber;
+
+            if (!isDoubleHex)
+            {
+                //#FD92 = #FFDD9922
+
+                r = (byte) (r * 16 + r);
+                g = (byte) (g * 16 + g);
+                b = (byte) (b * 16 + b);
+            }
+
+            return (true, Color.FromArgb(a, r, g, b));
+        }
+
+        private static (bool success, byte hexNumber) ConvertHexToByte(string hex, int n, int count = 2)
+        {
+            var hexText = hex.Substring(n, count);
+
+            if (byte.TryParse(hexText, NumberStyles.HexNumber, new NumberFormatInfo(), out var hexNumber))
+            {
+                return (true, hexNumber);
+            }
+
+            return (false, byte.MinValue);
+        }
+    }
+```
+
 ## 颜色转字符串
 
 如果需要从颜色转字符串是很简单

@@ -632,6 +632,29 @@ private void Foo(Page p)
 [c# - How are WPF pages held in memory? - Stack Overflow](https://stackoverflow.com/questions/54844836/how-are-wpf-pages-held-in-memory )
 
 
+### WPF 获得依赖属性值更新
+
+如果需要获得 G 的 Padding 的值更改，WPF 获得依赖属性 值更改可以使用下面代码
+
+
+```csharp
+                DependencyPropertyDescriptor.FromProperty(Border.PaddingProperty, typeof(Border)).AddValueChanged(Board,
+                (s, e) =>
+                {
+                    Padding = Board.Padding;
+                    BoardPadding = Board.Padding;
+                });
+```
+
+这个方法就是获得属性的值更改
+
+但是这个方法会出现内存泄露，可以使用 RemoveValueChanged 清除，为了使用清除，需要写一个函数。
+
+不需要担心清除一个不存在的委托，一般在使用 AddValueChanged 之前都使用 RemoveValueChanged 清除
+
+参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
+
+
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
