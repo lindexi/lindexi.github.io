@@ -627,3 +627,26 @@ private void Foo(Page p)
 详细请看 [Page.KeepAlive Property](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.page.keepalive?view=netcore-3.1&WT.mc_id=DX-MVP-5003606 )
 
 [c# - How are WPF pages held in memory? - Stack Overflow](https://stackoverflow.com/questions/54844836/how-are-wpf-pages-held-in-memory )
+
+
+### WPF 获得依赖属性值更新
+
+如果需要获得 G 的 Padding 的值更改，WPF 获得依赖属性 值更改可以使用下面代码
+
+
+```csharp
+                DependencyPropertyDescriptor.FromProperty(Border.PaddingProperty, typeof(Border)).AddValueChanged(Board,
+                (s, e) =>
+                {
+                    Padding = Board.Padding;
+                    BoardPadding = Board.Padding;
+                });
+```
+
+这个方法就是获得属性的值更改
+
+但是这个方法会出现内存泄露，可以使用 RemoveValueChanged 清除，为了使用清除，需要写一个函数。
+
+不需要担心清除一个不存在的委托，一般在使用 AddValueChanged 之前都使用 RemoveValueChanged 清除
+
+参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
