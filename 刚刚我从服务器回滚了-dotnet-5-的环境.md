@@ -50,7 +50,11 @@ msbuild /p:Configuration=Release
 
 ## 彻底的解决方法
 
-彻底的解决方法是： 再等几天
+~~彻底的解决方法是： 再等几天~~
+
+更新到 NuGet 5.8 就能解决
+
+这是全网首个能支持 .NET 5 的 NuGet 版本，在 [https://dist.nuget.org/win-x86-commandline/v5.8.0/nuget.exe](https://dist.nuget.org/win-x86-commandline/v5.8.0/nuget.exe) 可以下载
 
 
 
