@@ -568,6 +568,8 @@
 
  * [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行](dotnet-判断程序当前使用管理员运行降低权使用普通权限运行.md)
 
+ * [dotnet 制作 docker 提示 Insufficient space in download directory 磁盘空间不足](dotnet-制作-docker-提示-Insufficient-space-in-download-directory-磁盘空间不足.md)
+
  * [dotnet 动态代理魔法书](dotnet-动态代理魔法书.md)
 
  * [dotnet 单元测试注入文件读写](dotnet-单元测试注入文件读写.md)
@@ -2293,6 +2295,8 @@
  * [如何替换一个 exe 的图标](如何替换一个-exe-的图标.md)
 
  * [如何移动 nuget 缓存文件夹](如何移动-nuget-缓存文件夹.md)
+
+ * [如何给 CI CD 服务器搭建上 .NET 5 构建和运行环境](如何给-CI-CD-服务器搭建上-.NET-5-构建和运行环境.md)
 
  * [如何让 USB 设备不显示安全删除硬件弹出选项](如何让-USB-设备不显示安全删除硬件弹出选项.md)
 
