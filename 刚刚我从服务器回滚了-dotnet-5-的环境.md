@@ -10,6 +10,8 @@
 
 <!-- 发布 -->
 
+当前已经踩坑完成，请看 [如何给 CI CD 服务器搭建上 .NET 5 构建和运行环境](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E7%BB%99-CI-CD-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%8A-.NET-5-%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83.html )
+
 ## 现象
 
 使用经典的 NuGet 还原加上 msbuild 的构建，如以下代码将会构建失败

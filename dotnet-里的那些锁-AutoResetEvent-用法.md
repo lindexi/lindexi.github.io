@@ -163,6 +163,8 @@ dotnet add package dotnetCampus.AsyncWorkerCollection.Source --version 1.1.6
 
 使用 AsyncAutoResetEvent 可以将 WaitOne 替换为 WaitOneAsync 方法
 
+[2019-12-1-实现一种异步版本的AutoResetEvent - huangtengxiao](https://xinyuehtx.github.io/post/%E5%AE%9E%E7%8E%B0%E4%B8%80%E7%A7%8D%E5%BC%82%E6%AD%A5%E7%89%88%E6%9C%AC%E7%9A%84AutoResetEvent.html )
+
 
 
 

@@ -30,7 +30,15 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2020741040394015.jpg)
 
-此时你就可以看到第一个大页面就是 Slide Master 页面，后续的每个页面就是 Slide Layout 页面
+此时你就可以看到第一个大页面就是 Slide Master 页面，后续的每个页面就是 Slide Layout 页面。在 PPT文件中，可以创建多个母版 Slide Master 页面，每一个母版创建多个布局 Slide Layout 页面
+
+在制作PPT时，依赖于不同的布局进行创建，不但减少了重复的工作量，也大大减少了PPT文件的体积
+
+在渲染时，软件会依次在三个层级渲染母版，布局，页面中的元素。最终呈现的是三个层级叠加的显示
+
+<!-- ![](image/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F202011181425387683.jpg)
 
 这里的 Slide Layout 的顺序和页面顺序对应，也就是一个页面对应一个 Slide Layout 页面，而所有页面都对应相同的一个 Slide Master 页面
 
@@ -132,7 +140,7 @@
 
 如果依然不懂的话，请下载我放在 [github](https://github.com/lindexi/lindexi_gd/tree/4f01ab6fc4f994a8eb58cf0f4593aaf8bfd6e693/ChihilaygerYadekearhu) 的代码，然后打开 test.pptx 文件，同时运行代码，看看输出的内容和对应的 PPT 界面显示的文本。另外推荐 [dotnetCampus.OfficeDocumentZipper](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html ) 工具，这个工具可以更好的协助小伙伴测试文档
 
-
+[2020-3-10-PPT文档解析之母版 - huangtengxiao](https://xinyuehtx.github.io/post/PPT%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E4%B9%8B%E6%A8%A1%E6%9D%BF%E4%BD%8D%E7%BD%AE%E8%8E%B7%E5%8F%96.html )
 
 
 

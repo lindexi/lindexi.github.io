@@ -111,6 +111,8 @@
 
 在使用 SemaphoreSlim 的时候，需要释放，否则会泄露内存，详细请看 [dotnet 使用 SemaphoreSlim 可能的内存泄露](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-SemaphoreSlim-%E5%8F%AF%E8%83%BD%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.html)
 
+[2019-12-1-使用SemaphoreSlim实现异步等待 - huangtengxiao](https://xinyuehtx.github.io/post/%E4%BD%BF%E7%94%A8SemaphoreSlim%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E7%AD%89%E5%BE%85.html )
+
 
 
 

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/11/18 8:36:35 -->
+
 <!-- 发布 -->
 
 在上一篇博客里面，我因为 NuGet 版本的问题，不得在 2020.11.13 回滚了 CI 服务器。但是刚好就在那天，大法更新了 NuGet 到 5.8 的版本。按照我一个小伙伴的说法，全网首个支持 .NET 5 的 NuGet 已正式发布
@@ -222,6 +224,8 @@ USER cloud
 我比官方更多的逻辑是额外安装了 GDI+ 的库
 
 可以看到搭建 docker 的步骤比虚拟机的步骤多太多了，但这是因为我不能拉官方的 docker 来用而已，如果能拉官方的，那就只需要两句话就完成了
+
+我在做 docker 服务器的时候，因为本地磁盘空间不足，翻车了，请看 [dotnet 制作 docker 提示 Insufficient space in download directory 磁盘空间不足](https://blog.lindexi.com/post/dotnet-%E5%88%B6%E4%BD%9C-docker-%E6%8F%90%E7%A4%BA-Insufficient-space-in-download-directory-%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3.html )
 
 
 
