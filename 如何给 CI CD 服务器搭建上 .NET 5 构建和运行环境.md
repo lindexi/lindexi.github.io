@@ -3,6 +3,8 @@
 在 2020.11.10 官方正式发布了 .NET 5 正式版。而我花了一周的时间进行踩坑和预研，本文将告诉大家如何在自动化服务器上搭建 dotnet 5 的构建和运行环境
 
 <!--more-->
+<!-- CreateTime:2020/11/18 8:36:35 -->
+
 <!-- 发布 -->
 
 在上一篇博客里面，我因为 NuGet 版本的问题，不得在 2020.11.13 回滚了 CI 服务器。但是刚好就在那天，大法更新了 NuGet 到 5.8 的版本。按照我一个小伙伴的说法，全网首个支持 .NET 5 的 NuGet 已正式发布
@@ -219,5 +221,7 @@ USER cloud
 我比官方更多的逻辑是额外安装了 GDI+ 的库
 
 可以看到搭建 docker 的步骤比虚拟机的步骤多太多了，但这是因为我不能拉官方的 docker 来用而已，如果能拉官方的，那就只需要两句话就完成了
+
+我在做 docker 服务器的时候，因为本地磁盘空间不足，翻车了，请看 [dotnet 制作 docker 提示 Insufficient space in download directory 磁盘空间不足](https://blog.lindexi.com/post/dotnet-%E5%88%B6%E4%BD%9C-docker-%E6%8F%90%E7%A4%BA-Insufficient-space-in-download-directory-%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
