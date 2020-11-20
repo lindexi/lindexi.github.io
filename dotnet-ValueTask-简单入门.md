@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/11/20 9:25:04 -->
+
 <!-- 发布 -->
 
 为什么使用 ValueTask 可以用来提升软件整体的性能？回答这个文件的博客有很多，请看以下这几篇博客
@@ -37,7 +39,9 @@
     }
 ```
 
-看起来更改十分简单，但是使用的时候依然是有限制的
+这样就完成了，十分简单
+
+但是使用的时候依然是有限制的
 
 只要你确定能遵循以下简单的规则，那使用 ValueTask 替换是安全的，也是可以提升性能的
 
@@ -68,6 +72,8 @@ var foo = await GetDataAsync().GetAwaiter().GetResult(); // 切记不要这样�
 using ValueTask = System.Threading.Tasks.Task;
 #endif
 ```
+
+另外官方有给一个兼容包 [System.Threading.Tasks.Extensions](https://www.nuget.org/packages/System.Threading.Tasks.Extensions ) 可以用来兼容旧版本，如 .NET Framework 4.5 等，让这些能支持 ValueTask 的功能。感谢 Sagilio 的提醒
 
 官方文档请看[Understanding the Whys, Whats, and Whens of ValueTask](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/ )
 
