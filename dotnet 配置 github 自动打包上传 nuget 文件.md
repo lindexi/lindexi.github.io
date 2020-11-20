@@ -168,7 +168,11 @@ jobs:
 
 这样就添加对应的仓库，可以用来上传
 
-当然，上传到 nuget.org 就需要设置 ApiKey 了，打开 nuget.org 用自己的帐号登录，点击 API keys 设置
+而上传到 NuGet.org 上的，就需要进行额外的设置。在 NuGet.org 上，进行上传需要有身份登录，咱可以使用 NuGet.org 提供的 API Key 的方式进行推送 NuGet 包。通过 API Key 的方法对命令行的方式很友好。但是 API Key 本质上相当于自己的密码，因此就不能写到脚本里面，咱将会写入到 GitHub 的凭据管理器里面。因此总体的步骤就是登录 NuGet.org 然后创建 API Key 内容，将 API Key 的值写入到 GitHub 的凭据管理器里面。在构建脚本中从 GitHub 的凭据管理器拿到 API Key 的值，进行命令行上传 NuGet 包
+
+以上步骤的实际做法如下
+
+打开 nuget.org 用自己的帐号登录，点击 API keys 设置
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件1.png) -->
 
@@ -186,7 +190,7 @@ jobs:
 
 ![](http://image.acmx.xyz/lindexi%2F201912816427603)
 
-小伙伴也不想将这个的 API Key 放在脚本里面，如果放在脚本里面，也许有逗比会哪这个 API Key 传一些有趣的库，所以需要在这个 API Key 放在安全的地方
+小伙伴也不想将这个的 API Key 放在脚本里面，如果放在脚本里面，也许有逗比会哪这个 API Key 传一些有趣的库，所以需要在这个 API Key 放在安全的地方。这个安全的地方就是 GitHub 的凭据管理器。设置方法如下
 
 打开对应仓库的设置页面
 
@@ -212,10 +216,12 @@ jobs:
 
 ![](http://image.acmx.xyz/lindexi%2F201912816938783)
 
+这样就将 API Key 存放到 GitHub 安全里面了
+
 这里的 name 在脚本通过 `${ { secrets.Name } }` 替换，这里的 `secrets.Name` 的 Name 就是输入的 name 如上面输入的是 NugetKey 在使用脚本需要下面代码
 
 ```yaml
-${ { secrets.NugetKey } }  # 请删除 } 和 } 中间的空格
+${ { secrets.NugetKey } }  # 请删除 } 和 } 中间的空格以及 { 和 { 中间的空格。因为我的博客转换有锅，不能有连续两个花括号，所以我就打了空格
 ```
 
 完成配置之后就是上传库
