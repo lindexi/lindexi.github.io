@@ -91,6 +91,12 @@ Condition=" '$(TargetFramework)'=='net45' And $(Configuration)=='Debug'"
 Condition=" '$(TargetFramework)'=='net45' or $(Configuration)=='Debug'"
 ```
 
+## 判断宏
+
+```csharp
+Condition="$(DefineConstants.Contains(NET30))"
+```
+
 更多判断请看
 
 [Roslyn 在项目文件使用条件判断](https://blog.lindexi.com/post/Roslyn-%E5%9C%A8%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD.html )

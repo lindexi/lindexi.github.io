@@ -496,6 +496,8 @@
 
  * [dotnet tool 文件编码规范命令行工具](dotnet-tool-文件编码规范命令行工具.md)
 
+ * [dotnet ValueTask 简单入门](dotnet-ValueTask-简单入门.md)
+
  * [dotnet 一些代码审查套路](dotnet-一些代码审查套路.md)
 
  * [dotnet 三句命令行创建运行一个 web 服务程序](dotnet-三句命令行创建运行一个-web-服务程序.md)
