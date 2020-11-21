@@ -65,7 +65,7 @@ var foo = await GetDataAsync().GetAwaiter().GetResult(); // 切记不要这样�
 
 当然了，本文只是简单的入门的博客，很多细节都没有说到。但只要遵循本文告诉大家的规则，此时的使用将会是安全的，而其他的情况，还请小心。另外，在考虑使用 ValueTask 之前，还是需要进行一定的性能分析。在使用之后，依然需要做一些测试
 
-在 .NET Framework 里面暂时还没有加入 ValueTask 的支持，因为 ValueTask 需要最低是 .NET Standard 2.1 才能支持，因此需要加上一点兼容的代码。如下面代码，放在文件的开始，就能支持。本质上就是使用 Task 而已，因此不会带来任何的优化
+在 .NET Framework 里面暂时还没有加入 ValueTask 的支持，因为 ValueTask 需要最低是 .NET Standard 2.1 才能支持，因此需要加上一点兼容的代码。如下面代码，放在文件的开始，就能支持。但下面代码本质上就是使用 Task 而已，因此不会带来任何的优化
 
 ```csharp
 #if !NETCOREAPP
@@ -73,7 +73,7 @@ using ValueTask = System.Threading.Tasks.Task;
 #endif
 ```
 
-另外官方有给一个兼容包 [System.Threading.Tasks.Extensions](https://www.nuget.org/packages/System.Threading.Tasks.Extensions ) 可以用来兼容旧版本，如 .NET Framework 4.5 等，让这些能支持 ValueTask 的功能。感谢 Sagilio 的提醒
+想要在 dotnet framework 里面使用 ValueTask 同时有真的提升，可以使用官方给兼容包 [System.Threading.Tasks.Extensions](https://www.nuget.org/packages/System.Threading.Tasks.Extensions ) 来实现，这个 NuGet 包可以用来兼容旧版本，如 .NET Framework 4.5 等，让这些能支持 ValueTask 的功能。感谢 Sagilio 的提醒
 
 官方文档请看[Understanding the Whys, Whats, and Whens of ValueTask](https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/ )
 

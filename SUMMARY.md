@@ -1842,6 +1842,8 @@
 
  * [WPF 在image控件用鼠标拖拽出矩形](WPF-在image控件用鼠标拖拽出矩形.md)
 
+ * [WPF 在后台代码定义 ResourceDictionary 资源字典](WPF-在后台代码定义-ResourceDictionary-资源字典.md)
+
  * [WPF 在绑定表达式添加计算](WPF-在绑定表达式添加计算.md)
 
  * [WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](WPF-在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待.md)
