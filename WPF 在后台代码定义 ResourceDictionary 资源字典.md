@@ -3,6 +3,8 @@
 在 WPF 中的 ResourceDictionary 资源字典大部分都是在 XAML 里面定义的，但是在 C# 代码定义一个资源字典也是可行的，只是写起来有点诡异
 
 <!--more-->
+<!-- CreateTime:2020/11/20 17:14:59 -->
+
 <!-- 发布 -->
 
 在 CSharp 后台代码里面给 WPF 定义资源字典需要重新创建一个类，让这个类继承 ResourceDictionary 如以下代码
