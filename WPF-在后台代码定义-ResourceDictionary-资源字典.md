@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/11/20 17:14:59 -->
+
 <!-- 发布 -->
 
 在 CSharp 后台代码里面给 WPF 定义资源字典需要重新创建一个类，让这个类继承 ResourceDictionary 如以下代码

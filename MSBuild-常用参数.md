@@ -25,6 +25,26 @@ msbuild xx.sln
 
 此外添加的参数写在 msbuild 后面
 
+## 还原加构建
+
+原先的 msbuild 之前是需要调用 `nuget restore` 但当前可以不加上 nuget 还原，由 msbuild 自己还原
+
+```csharp
+msbuild -restore
+```
+
+以上代码等价于
+
+```csharp
+msbuild -t:restore,build
+```
+
+详细请看 [NuGet pack and restore as MSBuild targets](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command?WT.mc_id=DX-MVP-5003606 )
+
+<!-- ?WT.mc_id=DX-MVP-5003606
+
+&WT.mc_id=DX-MVP-5003606 -->
+
 ## 并行编译
 
 有多个项目一起编译，通过并行编译可以加快速度
