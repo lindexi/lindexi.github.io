@@ -119,6 +119,42 @@
 
 本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/9b4f948b/LojafeajahaykaWiweyarcerhelralya)欢迎小伙伴访问
 
+而在 XAML 定义内容，同时支持对应的后台代码也可以，但是没有什么意义，至少我还不知道这个功能有什么作用
+
+做法就是和上面代码一样，定义一个继承 ResourceDictionary 的类，如下面代码
+
+```csharp
+    public class ResourceJainahijainenelHuceenukur : ResourceDictionary
+    {
+        public ResourceJainahijainenelHuceenukur()
+        {
+            Debugger.Break();
+        }
+
+        protected override void OnGettingValue(object key, ref object value, out bool canCache)
+        {
+            Debugger.Break();
+            base.OnGettingValue(key, ref value, out canCache);
+        }
+    }
+```
+
+接着创建一个资源字典，创建之后修改 ResourceDictionary 为刚才创建的类名
+
+```xml
+ <local:ResourceJainahijainenelHuceenukur xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:local="clr-namespace:KemkicemdurFemceloja">
+    <SolidColorBrush x:Key="Foo" Color="Aquamarine"></SolidColorBrush>
+</local:ResourceJainahijainenelHuceenukur>
+```
+
+此时就完成了，依然使用的时候使用 url 的形式
+
+但是这样做我想不到有多少意义，因为 OnGettingValue 方法尽管重写了，但是实际不会被调用进入
+
+本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/d98030cf4a7c21b945466d993a4bfaf5f7cc477e/KemkicemdurFemceloja)欢迎小伙伴访问
+
 
 
 

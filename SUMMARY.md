@@ -2054,6 +2054,8 @@
 
  * [WPF 设置 WS_EX_TRANSPARENT 触摸失效](WPF-设置-WS_EX_TRANSPARENT-触摸失效.md)
 
+ * [WPF 设置元素为 Collapsed 是否会创建此元素](WPF-设置元素为-Collapsed-是否会创建此元素.md)
+
  * [WPF 设置窗口不跟随触摸惯性拖动抖动](WPF-设置窗口不跟随触摸惯性拖动抖动.md)
 
  * [WPF 设置管理员权限启动](WPF-设置管理员权限启动.md)
