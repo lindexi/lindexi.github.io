@@ -116,4 +116,40 @@
 
 本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/9b4f948b/LojafeajahaykaWiweyarcerhelralya)欢迎小伙伴访问
 
+而在 XAML 定义内容，同时支持对应的后台代码也可以，但是没有什么意义，至少我还不知道这个功能有什么作用
+
+做法就是和上面代码一样，定义一个继承 ResourceDictionary 的类，如下面代码
+
+```csharp
+    public class ResourceJainahijainenelHuceenukur : ResourceDictionary
+    {
+        public ResourceJainahijainenelHuceenukur()
+        {
+            Debugger.Break();
+        }
+
+        protected override void OnGettingValue(object key, ref object value, out bool canCache)
+        {
+            Debugger.Break();
+            base.OnGettingValue(key, ref value, out canCache);
+        }
+    }
+```
+
+接着创建一个资源字典，创建之后修改 ResourceDictionary 为刚才创建的类名
+
+```xml
+ <local:ResourceJainahijainenelHuceenukur xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:local="clr-namespace:KemkicemdurFemceloja">
+    <SolidColorBrush x:Key="Foo" Color="Aquamarine"></SolidColorBrush>
+</local:ResourceJainahijainenelHuceenukur>
+```
+
+此时就完成了，依然使用的时候使用 url 的形式
+
+但是这样做我想不到有多少意义，因为 OnGettingValue 方法尽管重写了，但是实际不会被调用进入
+
+本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/d98030cf4a7c21b945466d993a4bfaf5f7cc477e/KemkicemdurFemceloja)欢迎小伙伴访问
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
