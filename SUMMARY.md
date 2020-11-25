@@ -16,6 +16,8 @@
 
  * [asp dotnet core 图片在浏览器没访问可能原因](asp-dotnet-core-图片在浏览器没访问可能原因.md)
 
+ * [asp dotnet core 基于 TestServer 做集成测试](asp-dotnet-core-基于-TestServer-做集成测试.md)
+
  * [asp dotnet core 实现服务器发送事件 Server-Sent Events 简单方式](asp-dotnet-core-实现服务器发送事件-Server-Sent-Events-简单方式.md)
 
  * [asp dotnet core 提供大文件下载的测试](asp-dotnet-core-提供大文件下载的测试.md)
@@ -2141,6 +2143,8 @@
  * [Xamarin Forms 进度条控件](Xamarin-Forms-进度条控件.md)
 
  * [xaml 添加 region](xaml-添加-region.md)
+
+ * [XP 源代码 如何在清空回收站时修改回收站图标](XP-源代码-如何在清空回收站时修改回收站图标.md)
 
  * [一个好的程序员](一个好的程序员.md)
 
