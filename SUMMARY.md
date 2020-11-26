@@ -1962,6 +1962,8 @@
 
  * [WPF 源代码 从零开始写一个 UI 框架](WPF-源代码-从零开始写一个-UI-框架.md)
 
+ * [WPF 源代码 资源字典 ResourceDictionary 设置 Source 属性的逻辑](WPF-源代码-资源字典-ResourceDictionary-设置-Source-属性的逻辑.md)
+
  * [WPF 漂亮的现代化控件 新 ModernWPF 界面库](WPF-漂亮的现代化控件-新-ModernWPF-界面库.md)
 
  * [WPF 点击按钮时更改按钮样式界面效果的 XAML 实现方法](WPF-点击按钮时更改按钮样式界面效果的-XAML-实现方法.md)
@@ -2063,6 +2065,8 @@
  * [WPF 设置管理员权限启动](WPF-设置管理员权限启动.md)
 
  * [WPF 设置纯软件渲染](WPF-设置纯软件渲染.md)
+
+ * [WPF 设置资源字典多线程安全读写方法](WPF-设置资源字典多线程安全读写方法.md)
 
  * [WPF 设置输入只能英文](WPF-设置输入只能英文.md)
 
