@@ -3,6 +3,8 @@
 在 WPF 中，使用 ResourceDictionary 本身不会受到创建线程同步影响，意味着可以在任意的线程创建 ResourceDictionary 资源字典，然后在任意线程使用。但是此时的读写需要有时间上的差距，否则将会多线程读写不安全。在 ResourceDictionary 有一个 CanBeAccessedAcrossThreads 属性用来决定在进行读写的时候是否加上锁，但这个属性是内部的，需要通过黑科技更改才能用上
 
 <!--more-->
+<!-- CreateTime:2020/11/25 10:44:10 -->
+
 <!-- 发布 -->
 
 依据 WPF 的源代码，可以看到 ResourceDictionary 类继承了 IDictionary 接口，也开放了 Add 和 Clear 和 Contains 等方法，在这些方法的实现里面，都会先判断 CanBeAccessedAcrossThreads 属性的值，然后决定是否加上锁进行安全读写
