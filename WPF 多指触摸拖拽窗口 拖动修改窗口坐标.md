@@ -3,6 +3,8 @@
 在 WPF 中，如果是鼠标点击拖动窗口坐标，可以调用 Window 的 DragMove 方法，但是如果是触摸，就需要自己调用 Win32 的方法实现
 
 <!--more-->
+<!-- CreateTime:2020/11/26 10:07:10 -->
+
 <!-- 发布 -->
 
 在 WPF 中，调用 Window 的 DragMove 方法要求鼠标的左键（主键）按下，否则将会抛出如下代码
@@ -459,13 +461,6 @@ System.InvalidOperationException:"Can only call DragMove when primary mouse butt
                         {
                             return new Rectangle(x, y, (int) (width + x), (int) (height + y));
                         }
-                    }
-
-                    public override string ToString()
-                    {
-                        var culture = CultureInfo.CurrentCulture;
-                        return
-                            $"{{ Left = {Left.ToString(culture)}, Top = {Top.ToString(culture)} , Right = {Right.ToString(culture)}, Bottom = {Bottom.ToString(culture)} }}, {{ Width: {Width.ToString(culture)}, Height: {Height.ToString(culture)} }}";
                     }
 
                     public static Rectangle From(ref Rectangle lvalue, ref Rectangle rvalue,
