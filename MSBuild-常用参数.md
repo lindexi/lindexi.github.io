@@ -73,6 +73,10 @@ msbuild /p:Configuration=Release
 
 在 msbuild 的参数是不区分 `/` 和 `-` 也就是 `/p` 和 `-p` 是相同
 
+```csharp
+msbuild /p:Configuration=Release -restore
+```
+
 ## 重新编译
 
 通过 `-t:rebuild` 重新编译

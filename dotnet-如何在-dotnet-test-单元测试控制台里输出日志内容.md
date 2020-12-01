@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/11/28 9:02:42 -->
+
 <!-- 发布 -->
 
 解决方法很简单，只需要在控制台输出的部分逻辑修改为 `Console.WriteLine` 而不是 `Debug.WriteLine` 方法
@@ -18,6 +20,10 @@ dotnet test --configuration release -l "console;verbosity=detailed"
 ```
 
 这样就能在 GitHub 的 Action 进行单元测试时，输出对应的日志
+
+为什么 `Debug.WriteLine` 方法没有输出？原因是 `--configuration release` 配置了不要让 Debug 下输出
+
+更多请看 [Console.WriteLine calls during dotnet test are not emitted to the console on Windows · Issue #799 · microsoft/vstest](https://github.com/microsoft/vstest/issues/799 )
 
 
 

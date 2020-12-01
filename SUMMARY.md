@@ -688,6 +688,8 @@
 
  * [dotnet 给任意对象附加任意属性的库](dotnet-给任意对象附加任意属性的库.md)
 
+ * [dotnet 编译 Rolsyn 编译器](dotnet-编译-Rolsyn-编译器.md)
+
  * [dotnet 获取当前进程方法](dotnet-获取当前进程方法.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
