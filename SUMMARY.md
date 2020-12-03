@@ -832,6 +832,8 @@
 
  * [Latex 论文elsevier，手把手如何用Latex写论文](Latex-论文elsevier，手把手如何用Latex写论文.md)
 
+ * [Mac 升级到 dotnet 5 构建 Xamarin 应用失败 error MSB4186 静态方法调用语法无效](Mac-升级到-dotnet-5-构建-Xamarin-应用失败-error-MSB4186-静态方法调用语法无效.md)
+
  * [matlab 画图](matlab-画图.md)
 
  * [Microsoft .NET框架程序设计 笔记](Microsoft-.NET框架程序设计-笔记.md)
