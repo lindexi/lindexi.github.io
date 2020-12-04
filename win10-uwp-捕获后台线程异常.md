@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2019/12/16 8:56:13 -->
 
-<!-- 发布 -->
+
 
 在 UWP 中，如果需要捕获前台线程，也就是 UI 线程的异常，可以参见 [UWP 中的全局异常处理](https://www.cnblogs.com/zhs852/p/uwp-global-error-handler.html) 的方法
 

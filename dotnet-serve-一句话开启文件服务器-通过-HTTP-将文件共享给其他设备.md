@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/2/4 17:30:05 -->
 
-<!-- 发布 -->
+
 
 默认小伙伴电脑已经安装了 [dotnet](https://dotnet.microsoft.com/) 工具，如果还没有安装，请到[官网](https://dotnet.microsoft.com/)下载安装
 

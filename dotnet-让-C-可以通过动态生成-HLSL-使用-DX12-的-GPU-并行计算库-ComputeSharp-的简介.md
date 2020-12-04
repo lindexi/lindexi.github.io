@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/10/12 20:21:56 -->
 
-<!-- 发布 -->
+
 
 这个 ComputeSharp 库在 GitHub 完全开源，请看 [https://github.com/Sergio0694/ComputeSharp](https://github.com/Sergio0694/ComputeSharp)
 

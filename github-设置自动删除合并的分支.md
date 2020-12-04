@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/2/20 9:33:58 -->
 
-<!-- 发布 -->
+
 
 让 github 自动删除 MR 合并的分支是通过在对应的仓库，点击 settings 设置，点击 Automatically delete head branches 自动删除
 

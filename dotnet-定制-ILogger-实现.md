@@ -8,7 +8,7 @@
 
 <!-- CreateTime:6/28/2020 7:49:17 PM -->
 
-<!-- 发布 -->
+
 
 当初写一个类继承 ILogger 是做不到定制，需要再写一个类继承 ILoggerProvider 才好做定制
 

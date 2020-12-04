@@ -2132,6 +2132,8 @@
 
  * [Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法](Xamarin-iOS-切换开发者账号之后的签名标识和预配配置文件更新方法.md)
 
+ * [Xamarin iOS 部署应用提示 iOS code signing key 失败](Xamarin-iOS-部署应用提示-iOS-code-signing-key-失败.md)
+
  * [Xamarin iOS 部署版本大于手机的系统版本](Xamarin-iOS-部署版本大于手机的系统版本.md)
 
  * [Xamarin iOS 部署项目提示 Failed to register bundle identifier 失败](Xamarin-iOS-部署项目提示-Failed-to-register-bundle-identifier-失败.md)

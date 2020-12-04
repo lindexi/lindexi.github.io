@@ -7,8 +7,9 @@
 
 
 <!-- CreateTime:6/22/2020 8:26:10 AM -->
+<!-- 标签：Xamarin -->
 
-<!-- 发布 -->
+
 
 我的小伙伴 [Morten Nielsen](https://github.com/dotMorten) 和我吹水说他有一个提议被合并到了 Xamarin 的官方主仓库里面，可以让 Grid 的行列定义更加简单
 

@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/8/21 8:43:29 -->
 
-<!-- 发布 -->
+
 
 在 [win10 支持默认把触摸提升 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html) 告诉大家如何在 Win10 下让 WPF 在 .NET 4.7 和以上框架支持 Pointer 消息
 

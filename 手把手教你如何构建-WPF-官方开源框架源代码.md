@@ -8,7 +8,7 @@
 
 <!-- CreateTime:4/23/2020 2:24:15 PM -->
 
-<!-- 发布 -->
+
 
 我不敢说每个版本的 WPF 框架的源代码我都能构建，在[官方仓库 https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 我构建成功的版本是这个 [commit](https://github.com/dotnet/wpf/commit/f226a72ed5302737b14984cffdd6208731244038) 小伙伴可以尝试使用本文的方法，先切的这个 commit 按照我的方法来进行构建，成功了之后再做更新版本的尝试
 

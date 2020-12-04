@@ -8,7 +8,7 @@
 
 <!-- CreateTime:4/22/2020 8:24:36 PM -->
 
-<!-- 发布 -->
+
 
 原文：[Mobius – .NET runtime running on .NET Core – TooSlowException](https://tooslowexception.com/mobius-net-runtime-running-on-net-core/ )
 

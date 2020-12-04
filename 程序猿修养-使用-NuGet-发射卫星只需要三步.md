@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/2/23 19:18:30 -->
 
-<!-- 发布 -->
+
 
 回到[上篇博客](https://blog.lindexi.com/post/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E4%BF%AE%E5%85%BB-%E4%BB%8E%E5%AE%89%E8%A3%85-dotnet-%E5%BC%80%E5%A7%8B.html)最后的问题，我想要写一个软件，用来发射卫星，请问需要几步？
 

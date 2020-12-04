@@ -6,7 +6,7 @@
 <!--more-->
 
 
-<!-- 发布 -->
+<!-- CreateTime:2020/12/3 9:55:35 -->
 
 在升级到 dotnet 5 之后，在 Mac 设备上使用 Mac 版本的 VisualStudio 构建 Xamarin 项目将提示如下代码
 

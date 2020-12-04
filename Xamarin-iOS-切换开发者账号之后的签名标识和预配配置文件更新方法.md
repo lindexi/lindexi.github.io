@@ -7,9 +7,9 @@
 
 
 <!-- CreateTime:2020/10/26 11:06:08 -->
+<!-- 标签：Xamarin -->
 
 
-<!-- 发布 -->
 
 在 XCode 的选项账户里面的 Download Manual Profiles 按钮里面，下载的证书文件放在 `~/Library/MobileDevice/Provisioning\ Profiles` 文件夹里面，如下图
 

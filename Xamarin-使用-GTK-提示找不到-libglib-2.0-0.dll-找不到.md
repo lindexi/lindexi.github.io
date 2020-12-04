@@ -8,7 +8,8 @@
 
 <!-- CreateTime:3/31/2020 5:26:58 PM -->
 
-<!-- 发布 -->
+<!-- 标签：Xamarin, GTK -->
+
 
 解决方法是先到[官网](https://www.monodevelop.com/download/#fndtn-download-win) 下载 `GTK#` 安装包或 mono x86 的应用
 

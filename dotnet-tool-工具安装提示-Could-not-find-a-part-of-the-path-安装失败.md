@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/9/25 15:53:30 -->
 
-<!-- 发布 -->
+
 
 我在 GitHub 开源了 dotnetcampus.DotNETBuildSDK 项目，请看 [https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK](https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK) 
 

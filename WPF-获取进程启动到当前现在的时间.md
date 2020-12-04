@@ -8,7 +8,7 @@
 
 <!-- CreateTime:6/1/2020 11:28:32 AM -->
 
-<!-- 发布 -->
+
 
 通过 `Process.GetCurrentProcess().StartTime` 可以拿到进程启动时间，而通过 DateTime.Now 可以获取当前的时间
 

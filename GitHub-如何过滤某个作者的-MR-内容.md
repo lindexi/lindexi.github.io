@@ -8,7 +8,7 @@
 
 <!-- CreateTime:4/30/2020 8:50:52 AM -->
 
-<!-- 发布 -->
+
 
 在 GitHub 的 Filters 可以通过 `-author` 表示去掉某个作者的内容，如下面链接就是去掉机器人的 WPF 仓库的 MR 有哪些 [https://github.com/dotnet/wpf/pulls?q=is%3Apr+-author%3Aapp%2Fdotnet-maestro](https://github.com/dotnet/wpf/pulls?q=is%3Apr+-author%3Aapp%2Fdotnet-maestro)
 

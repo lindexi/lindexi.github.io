@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/8/1 8:32:34 -->
 
-<!-- 发布 -->
+
 
 本文的代码都是从 [Using DirectManipulation with WPF](http://blog.neteril.org/blog/2019/03/30/using-directmanipulation-with-wpf/ ) 这篇博客抄的
 

@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/2/4 10:33:48 -->
 
-<!-- 发布 -->
+
 
 最新预览版官方开放下载，请到 [Download .NET Core 官网](https://dotnet.microsoft.com/download/dotnet-core ) 下载
 

@@ -8,7 +8,7 @@
 
 <!-- CreateTime:5/21/2020 4:09:16 PM -->
 
-<!-- 发布 -->
+
 
 这是一个完全开源的工具，请看 [KirillOsenkov/MSBuildStructuredLog: A logger for MSBuild that records a structured representation of executed targets, tasks, property and item values.](https://github.com/KirillOsenkov/MSBuildStructuredLog )
 

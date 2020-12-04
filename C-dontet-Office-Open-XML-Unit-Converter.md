@@ -8,7 +8,7 @@ Here is my code to conver between OpenXML units.
 
 <!-- CreateTime:2020/3/12 18:11:17 -->
 
-<!-- 发布 -->
+
 
 ## Define
 

@@ -8,7 +8,7 @@
 
 <!-- CreateTime:4/18/2020 9:40:19 AM -->
 
-<!-- 发布 -->
+
 
 可以到 [github](https://github.com/snoopwpf/snoopwpf ) 的 [Releases](https://github.com/snoopwpf/snoopwpf/releases ) 下载最新版本
 

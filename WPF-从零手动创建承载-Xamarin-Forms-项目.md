@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/8/8 9:14:15 -->
 
-<!-- 发布 -->
+
 
 默认的 VS 没有加上 WPF 的模版，而官方文档 [WPF Platform Setup - Xamarin](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/other/wpf ) 旧了一点，因为社区的开发比较激进，而文档没有更新
 

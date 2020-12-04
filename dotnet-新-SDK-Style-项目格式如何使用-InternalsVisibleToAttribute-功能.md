@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2020/8/21 16:19:07 -->
 
-<!-- 发布 -->
+
 
 最简单的方法是新建一个 AssemblyInfo.cs 文件，在这个文件里面使用 System.Runtime.CompilerServices.InternalsVisibleToAttribute 指定某个程序集可见
 

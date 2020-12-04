@@ -8,7 +8,7 @@
 
 <!-- CreateTime:6/3/2020 3:14:48 PM -->
 
-<!-- 发布 -->
+
 
 在 [dotnet 给任意对象附加任意属性的库](https://blog.csdn.net/lindexi_gd/article/details/106427397) 和大家介绍了 [dotnetCampus.ClrAttachedProperty](https://github.com/dotnet-campus/dotnetCampus.ClrAttachedProperty ) 库的一般用法，而本文就来告诉大家如何定制和 WPF 一样功能的附加属性
 

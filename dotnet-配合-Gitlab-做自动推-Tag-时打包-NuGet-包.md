@@ -9,7 +9,7 @@
 
 <!-- CreateTime:4/3/2020 8:31:45 AM -->
 
-<!-- 发布 -->
+
 
 在阅读本文之前，期望大家了解什么是 Gitlab 的 Runner 以及如何开启，详细请看 [dotnet 配置 Gitlab 的 Runner 做 CI 自动构建](https://blog.lindexi.com/post/dotnet-%E9%85%8D%E7%BD%AE-Gitlab-%E7%9A%84-Runner-%E5%81%9A-CI-%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA.html )
 

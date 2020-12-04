@@ -8,7 +8,7 @@
 
 <!-- CreateTime:5/23/2020 2:32:17 PM -->
 
-<!-- 发布 -->
+
 
 在阅读本文之前，期望小伙伴能了解如何在 dotnet 下使用 GitHub 的 Action 进行自动构建，请看 [dotnet 部署 github 的 Action 进行持续集成](https://blog.lindexi.com/post/dotnet-%E9%83%A8%E7%BD%B2-github-%E7%9A%84-Action-%E8%BF%9B%E8%A1%8C%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90.html ) 而发布 NuGet 包的方法请看 [dotnet 配置 github 自动打包上传 nuget 文件](https://blog.lindexi.com/post/dotnet-%E9%85%8D%E7%BD%AE-github-%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E4%B8%8A%E4%BC%A0-nuget-%E6%96%87%E4%BB%B6.html)
 
