@@ -7,8 +7,10 @@
 最近作者需要做一个简单的圆形的等待控件在一个Xamarin Forms应用，效果可以看
 
 ![这里写图片描述](http://img.blog.csdn.net/20160428145540311)
+
 <!--more-->
 <!-- CreateTime:2018/2/13 17:23:03 -->
+<!-- 标签：Xamarin -->
 
 
 <div id="toc"></div>

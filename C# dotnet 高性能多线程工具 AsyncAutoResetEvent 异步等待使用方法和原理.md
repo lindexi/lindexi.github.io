@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/3/21 14:15:17 -->
 
-<!-- 发布 -->
+
 
 和框架自带的 [AutoResetEvent 类](https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.autoresetevent?view=netframework-4.8 ) 一样的作用，表示线程同步事件在一个等待线程释放后收到信号时自动重置
 

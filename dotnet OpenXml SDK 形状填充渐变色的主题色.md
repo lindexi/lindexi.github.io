@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:5/20/2020 11:46:32 AM -->
 
-<!-- 发布 -->
+
 
 我拿到一份有趣的课件，从这份课件的表现上，可以找到在一个 Shape 元素里面的 ShapeProperties 定义了 GradientFill 属性
 

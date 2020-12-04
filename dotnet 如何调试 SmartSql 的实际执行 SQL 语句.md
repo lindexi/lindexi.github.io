@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/9/12 12:06:22 -->
 
-<!-- 发布 -->
+
 
 只需要在 appsettings.json 中将 LogLevel 的 Default 设置为 Debug 等级，可以在运行时看到从开发者编写的 SQL 语句加上参数的实际 SQL 语句，大概内容如下
 

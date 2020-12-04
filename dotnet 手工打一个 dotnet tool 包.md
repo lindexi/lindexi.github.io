@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/2/18 17:56:53 -->
 
-<!-- 发布 -->
+
 <!-- 标签: NuGet,dotnet,dotnettool -->
 
 所有可执行项目可以打包为 dotnet tool 包，通过 `dotnet xx` 的命令就可以执行对应的软件。而 dotnet tool 包本身就是 NuGet 包，如果是在 dotnet 生成或 VisualStudio 中，只需要在 csporj 文件添加下面代码

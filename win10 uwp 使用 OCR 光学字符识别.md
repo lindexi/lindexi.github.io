@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:4/6/2020 12:36:21 PM -->
 
-<!-- 发布 -->
+
 
 在老周的 [【Win10 应用开发】OCR识别](https://www.cnblogs.com/tcjiaan/p/4491906.html ) 博客还是 UAP 的代码，此时 UWP 还没发布，不过在 UWP 发布之后也没有改这部分的 API 也就是可以直接复制代码运行
 

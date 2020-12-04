@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/1/22 17:11:30 -->
 
-<!-- 发布 -->
+
 
 第一步通过 NuGet 安装 [AvalonEdit](https://www.nuget.org/packages/AvalonEdit ) 打开 xaml 界面，添加控件，此时可以在界面设置代码高亮方式等
 

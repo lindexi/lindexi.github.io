@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/7/30 17:19:49 -->
 
-<!-- 发布 -->
+
 
 通过 [WindowDebugger](https://github.com/kkwpsv/WindowDebugger ) 调试工具可以了解在 win10 将会给每个 WPF 进程添加 WISPTIS 窗口，窗口的 Class Name 是 TabletPenServiceHelperClass 请看下图
 

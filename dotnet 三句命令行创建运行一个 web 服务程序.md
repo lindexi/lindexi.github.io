@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/1/13 8:45:47 -->
 
-<!-- 发布 -->
+
 
 如果还没有安装 dotnet 那么请到 [https://dotnet.microsoft.com/ 官网](https://dotnet.microsoft.com/ ) 下载安装，基本上看界面就知道如何下载安装
 

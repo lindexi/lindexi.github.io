@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:5/11/2020 3:00:29 PM -->
 
-<!-- 发布 -->
+
 
 在阅读本文之前，我期望小伙伴是了解基础的解析 Office 的方法。在使用 OpenXML SDK 解析的时候，只需要开发 10 分钟就完成了整个 PPT 的解析了，剩下就是如何使用解析完成的数据。入门的文档请看 [C# dotnet 使用 OpenXml 解析 PPT 文件](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E4%BB%B6.html )
 

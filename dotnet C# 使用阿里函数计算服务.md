@@ -5,7 +5,6 @@
 <!--more-->
 <!-- CreateTime:2020/1/4 8:48:02 -->
 
-<!-- 发布 -->
 
 首先是打开阿里云 [https://cn.aliyun.com](https://cn.aliyun.com) 进入[函数计算](https://www.aliyun.com/product/fc)服务
 

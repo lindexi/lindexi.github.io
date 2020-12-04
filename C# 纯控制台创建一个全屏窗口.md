@@ -5,7 +5,6 @@
 <!--more-->
 <!-- CreateTime:2020/8/15 9:28:02 -->
 
-<!-- 发布 -->
 
 使用 user32.dll 的 CreateWindowExW 方法就能创建窗口，代码请看
 

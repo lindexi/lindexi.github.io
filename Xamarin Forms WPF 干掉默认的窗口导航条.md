@@ -4,8 +4,7 @@
 
 <!--more-->
 <!-- CreateTime:2020/8/8 11:16:03 -->
-
-<!-- 发布 -->
+<!-- 标签：Xamarin, WPF -->
 
 下图是一个默认的 Xamarin Forms 应用
 

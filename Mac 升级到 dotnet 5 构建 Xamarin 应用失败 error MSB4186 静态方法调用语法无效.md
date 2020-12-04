@@ -3,7 +3,7 @@
 我昨天将 Mac 构建机器也升级到了 dontet 5 最新版。但是在升级之后，所有的 Xamarin 项目都在 Mac 版本的 VisualStudio 构建不通过，提示  error MSB4186: 静态方法调用语法无效。解决方法就是将 VisualStudio 更新到最新版本
 
 <!--more-->
-<!-- 发布 -->
+<!-- CreateTime:2020/12/3 9:55:35 -->
 
 在升级到 dotnet 5 之后，在 Mac 设备上使用 Mac 版本的 VisualStudio 构建 Xamarin 项目将提示如下代码
 

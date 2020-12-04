@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:7/3/2020 2:39:50 PM -->
 
-<!-- 发布 -->
+
 
 比较推荐使用 Dxva2 的方法修改亮度，但不是所有的屏幕都支持的。假定某个设备有多个屏幕，此时可以使用 User32 的 MonitorFromWindow 方法获取某个窗口所在的屏幕，此时根据这个屏幕的返回的 GetMonitorBrightness 判断是否支持 Dxva2 的方法
 

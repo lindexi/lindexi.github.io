@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:6/18/2020 5:52:59 PM -->
 
-<!-- 发布 -->
+
 
 在安装 Resharper 之后，可以右击某个文件夹或项目，点击 Refactor -> AdjustNamespaces 批量更改命名空间
 

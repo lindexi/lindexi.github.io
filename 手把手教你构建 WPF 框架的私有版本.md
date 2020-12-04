@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:4/25/2020 3:07:57 PM -->
 
-<!-- 发布 -->
+
 
 在上一篇博客 [手把手教你如何构建 WPF 官方开源框架源代码](https://blog.lindexi.com/post/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA-WPF-%E5%AE%98%E6%96%B9%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E6%BA%90%E4%BB%A3%E7%A0%81.html ) 告诉大家为什么我推荐使用 GitHub 的 Action 进行构建，尽管进行本地构建也可以。但是本文则是再次建议使用 GitHub 的 Action 进行打包推送
 

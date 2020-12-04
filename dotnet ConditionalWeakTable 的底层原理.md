@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:5/26/2020 10:04:23 AM -->
 
-<!-- 发布 -->
+
 
 小伙伴都知道弱缓存是什么，弱缓存的核心是弱引用。也就是我虽然拿到一个对象，但是我没有给这个对象添加依赖引用，也就是这个对象不会记录被弱引用的引用。而 ConditionalWeakTable 也是一个弱缓存只是有些特殊的是关联的是其他对象。使用方法请看 [.NET/C# 使用 ConditionalWeakTable 附加字段（CLR 版本的附加属性，也可用用来当作弱引用字典 WeakDictionary） - walterlv](https://blog.walterlv.com/post/conditional-weak-table.html )
 

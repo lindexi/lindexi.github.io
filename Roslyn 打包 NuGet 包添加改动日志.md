@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/7/27 10:21:16 -->
 
-<!-- 发布 -->
+
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
 在我的团队的 CBB 基础库项目的文件规范，要求每个项目都会包含 README.md 和 CHANGELOG.md 文件，其中的 CHANGELOG.md 文件就是记录 API 变更等的改动记录文件

@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/3/13 19:09:15 -->
 
-<!-- 发布 -->
+
 
 我期望看到本文的小伙伴是了解 OpenXML 的，如果想要解析 Office 的文档，我推荐使用使用 OpenXML SDK 这个开源的库，更多入门级博客请看 [C# dotnet 使用 OpenXml 解析 PPT 文件](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E4%BB%B6.html)
 

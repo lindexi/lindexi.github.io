@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/3/8 11:33:47 -->
 
-<!-- 发布 -->
+
 
 这是小伙伴做的一个 jenkins 的镜像 jenkins/slave 我需要在这个镜像基础上安装 dotnet 进行构建
 

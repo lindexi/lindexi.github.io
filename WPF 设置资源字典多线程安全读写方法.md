@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/11/25 10:44:10 -->
 
-<!-- 发布 -->
+
 
 依据 WPF 的源代码，可以看到 ResourceDictionary 类继承了 IDictionary 接口，也开放了 Add 和 Clear 和 Contains 等方法，在这些方法的实现里面，都会先判断 CanBeAccessedAcrossThreads 属性的值，然后决定是否加上锁进行安全读写
 

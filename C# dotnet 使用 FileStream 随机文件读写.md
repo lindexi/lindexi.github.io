@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:7/6/2020 10:38:13 AM -->
 
-<!-- 发布 -->
+
 
 进行文件读写的时候，基本上读是几乎不存在问题的，而写的话就稍微坑了一点，在 dotnet 里面默认没有提供 RandomAccessStream 类，这个 RandomAccessStream 类仅在 UWP 中可以使用
 

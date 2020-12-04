@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/8/13 9:38:41 -->
 
-<!-- 发布 -->
+
 
 我写了一个工具 [dotnetCampus.UpdateAllDotNetTools](https://github.com/dotnet-campus/dotnetCampus.UpdateAllDotNetTools) 用来更新所有的 dotnet tool 工具。因为 [dotnetCampus.UpdateAllDotNetTools](https://github.com/dotnet-campus/dotnetCampus.UpdateAllDotNetTools) 也是一个 dotnet tool 工具，因此也会更新自身
 

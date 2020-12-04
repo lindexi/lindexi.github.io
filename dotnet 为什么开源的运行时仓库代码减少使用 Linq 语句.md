@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2020/8/24 14:21:49 -->
 
-<!-- 发布 -->
+
 
 微软的 [Jan Kotas](https://github.com/jkotas) 大佬说了下面这段话，大概意思就是减少在运行时库里减少对 Linq 的使用
 
