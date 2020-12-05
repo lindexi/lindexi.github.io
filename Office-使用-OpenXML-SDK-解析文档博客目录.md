@@ -122,6 +122,7 @@
 - Applications: Outlook, Word, Excel, PowerPoint, Access, FrontPage, Publisher, Project, MapPoint, InfoPath, Visio, OneNote
 - IDEs: Visual Studio 2019, 2017, 2015, 2013, 2012 and 2010 (VB.NET, C#, C++)
 
+[NetOfficeFw/NetOffice: 🌌 .NET wrapper assemblies for accessing Microsoft Office applications.](https://github.com/NetOfficeFw/NetOffice )
 
 
 

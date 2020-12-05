@@ -398,6 +398,8 @@
 
  * [dotnet core 应用是如何跑起来的 通过AppHost理解运行过程](dotnet-core-应用是如何跑起来的-通过AppHost理解运行过程.md)
 
+ * [dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程](dotnet-core-应用是如何跑起来的-通过自己写一个-dotnet-host-理解运行过程.md)
+
  * [dotnet core 打包构建提示 MSB3024 可能的原因](dotnet-core-打包构建提示-MSB3024-可能的原因.md)
 
  * [dotnet core 添加 SublimeText 编译插件](dotnet-core-添加-SublimeText-编译插件.md)

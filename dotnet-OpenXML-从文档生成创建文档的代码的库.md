@@ -8,8 +8,6 @@
 
 <!-- CreateTime:2020/7/22 12:11:30 -->
 
-<!-- 发布  -->
-
 这是一个完全开源的库，代码放在 [https://github.com/rmboggs/Serialize.OpenXml.CodeGen](https://github.com/rmboggs/Serialize.OpenXml.CodeGen) 欢迎小伙伴访问
 
 这个库的功能就是从 Office 文档里面，如 Excel 文档里面读取文档内容，生成 CodeCompileUnit 对象，通过 CodeCompileUnit 对象可以序列化为 C# 或 VB 代码

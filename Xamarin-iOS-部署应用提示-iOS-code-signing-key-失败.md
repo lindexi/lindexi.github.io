@@ -6,8 +6,9 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/12/3 20:32:47 -->
+
 <!-- 标签：Xamarin -->
-<!-- 发布 -->
 
 原因就是在 csproj 上的 CodesignProvision 属性设置的是别人的签名，可以通过替换为自己的账号解决
 
