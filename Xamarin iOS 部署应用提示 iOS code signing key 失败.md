@@ -3,8 +3,9 @@
 在部署 iOS 应用的时候，如果是拉别人的代码，因为被使用了别人的签名，就会提示 Error: iOS code signing key 'iPhone Developer: lindexi@icloud.com (F56JH45N57)' not found in keychain. 部署失败。解决方法是替换为自己的账号
 
 <!--more-->
+<!-- CreateTime:2020/12/3 20:32:47 -->
+
 <!-- 标签：Xamarin -->
-<!-- 发布 -->
 
 原因就是在 csproj 上的 CodesignProvision 属性设置的是别人的签名，可以通过替换为自己的账号解决
 
