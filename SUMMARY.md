@@ -530,6 +530,8 @@
 
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
+ * [dotnet 使用 FileAccess 与 OpenOrCreate 对文件访问权限的影响](dotnet-使用-FileAccess-与-OpenOrCreate-对文件访问权限的影响.md)
+
  * [dotnet 使用 GC.GetAllocatedBytesForCurrentThread 获取当前线程分配过的内存大小](dotnet-使用-GC.GetAllocatedBytesForCurrentThread-获取当前线程分配过的内存大小.md)
 
  * [dotnet 使用 GZipStream 压缩字符串](dotnet-使用-GZipStream-压缩字符串.md)
