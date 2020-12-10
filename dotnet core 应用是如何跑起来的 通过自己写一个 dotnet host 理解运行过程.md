@@ -3,6 +3,8 @@
 在上一篇博客是使用官方提供的 AppHost 跑起来整个 dotnet 程序。本文告诉大家在 dotnet 程序运行到托管代码之前，所需要的 Native 部分的逻辑。包括如何寻找 dotnet 运行时，如何加载运行时和框架然后跑起来业务端的 dll 文件的逻辑
 
 <!--more-->
+<!-- CreateTime:2020/12/5 12:52:45 -->
+
 <!-- 发布 -->
 
 在上一篇博客告诉大家在 dotnet 的 AppHost 是如何做的，详细请看 [dotnet core 应用是如何跑起来的 通过AppHost理解运行过程](https://blog.lindexi.com/post/dotnet-core-%E5%BA%94%E7%94%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-%E9%80%9A%E8%BF%87AppHost%E7%90%86%E8%A7%A3%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.html )
