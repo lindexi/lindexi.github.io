@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/12/7 8:39:09 -->
+
 <!-- 发布 -->
 
 在 File.Open 方法里面其实就是对 FileStream 创建的封装，在 FileStream 的构造函数有大量的参数，而对文件权限有影响的是 FileMode 和 FileAccess 和 FileShare 三个

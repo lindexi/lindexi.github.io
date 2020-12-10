@@ -124,6 +124,10 @@
 
 [NetOfficeFw/NetOffice: 🌌 .NET wrapper assemblies for accessing Microsoft Office applications.](https://github.com/NetOfficeFw/NetOffice )
 
+## 文档
+
+[服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
+
 
 
 
