@@ -11,7 +11,7 @@
 
 这个行为也能说明为什么引用了 WPF 之后，运行程序之后啥都没发生。因为如果原先是控制台程序，引用了 WPF 之后不显示控制台了，但是项目原先又没有显示如任何的窗口，就好像应用啥都不做一样
 
-如果想要禁用这个默认的行为，只需要在 csproj 上添加 DisableWinExeOutputInference 属性修改为 false 就可以了，代码如下
+如果想要禁用这个默认的行为，只需要在 csproj 上添加 DisableWinExeOutputInference 属性修改为 true 就可以了，代码如下
 
 ```xml
     <PropertyGroup>
