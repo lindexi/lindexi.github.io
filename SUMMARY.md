@@ -356,6 +356,8 @@
 
  * [dot net double 数组转 float 数组](dot-net-double-数组转-float-数组.md)
 
+ * [dotnet 5 破坏性改动 WPF 和 WinForms 的 OutputType 输出类型重定向为 WinExe 类型](dotnet-5-破坏性改动-WPF-和-WinForms-的-OutputType-输出类型重定向为-WinExe-类型.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
@@ -621,6 +623,8 @@
  * [dotnet 如何在 dotnet test 单元测试控制台里输出日志内容](dotnet-如何在-dotnet-test-单元测试控制台里输出日志内容.md)
 
  * [dotnet 如何在 Mock 模拟 Func 判断调用次数](dotnet-如何在-Mock-模拟-Func-判断调用次数.md)
+
+ * [dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值](dotnet-如何更改应用在任务管理器显示的进程名-AssemblyTitle-的值.md)
 
  * [dotnet 如何调试 SmartSql 的实际执行 SQL 语句](dotnet-如何调试-SmartSql-的实际执行-SQL-语句.md)
 
