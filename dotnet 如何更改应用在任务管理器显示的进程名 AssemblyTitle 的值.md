@@ -3,6 +3,8 @@
 我有一个应用，我期望他在任务管理器里面显示为 Doubi 这样大家就知道这是一个逗比进程。但是我更改了程序集名，也就是 exe 文件名都没有什么用，因为在任务管理器里面通过 AssemblyTitle 属性决定显示的进程名。本文来告诉大家如何更改 AssemblyTitle 的值
 
 <!--more-->
+<!-- CreateTime:2020/12/14 8:36:58 -->
+
 <!-- 发布 -->
 
 在旧版本的 Franken-proj 格式的 csproj 格式里面，在项目都有一个 `Properties\AssemblyInfo.cs` 文件，通过修改这个文件的 AssemblyTitle 属性，就可以更改软件在任务管理器上显示的进程名
