@@ -748,6 +748,8 @@
 
  * [dotnet 通过依赖注入的 Scoped 给工作流注入相同的上下文信息](dotnet-通过依赖注入的-Scoped-给工作流注入相同的上下文信息.md)
 
+ * [dotnet 部署 GitHub 的 Action Runner 制作自托管运行器](dotnet-部署-GitHub-的-Action-Runner-制作自托管运行器.md)
+
  * [dotnet 部署 github 的 Action 进行持续集成](dotnet-部署-github-的-Action-进行持续集成.md)
 
  * [dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包](dotnet-配合-GitHub-的-Action-做自动推-Tag-时打包-NuGet-包.md)

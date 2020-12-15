@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/12/14 8:36:58 -->
+
 <!-- 发布 -->
 
 在旧版本的 Franken-proj 格式的 csproj 格式里面，在项目都有一个 `Properties\AssemblyInfo.cs` 文件，通过修改这个文件的 AssemblyTitle 属性，就可以更改软件在任务管理器上显示的进程名
