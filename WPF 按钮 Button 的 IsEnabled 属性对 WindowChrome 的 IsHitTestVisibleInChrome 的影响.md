@@ -3,6 +3,8 @@
 在 WPF 里面，默认标题栏的交互相对复杂，如按钮没有设置 WindowChrome.IsHitTestVisibleInChrome 属性为 True 那按钮是拿不到点击事件的。本文来告诉大家按钮 Button 的 IsEnabled 属性对 WindowChrome 的 IsHitTestVisibleInChrome 的影响
 
 <!--more-->
+<!-- CreateTime:2020/12/17 19:37:53 -->
+
 <!-- 发布 -->
 
 在 WPF 中的默认交互是点击标题栏的时候，如果是双击标题栏，那么将会进入最大化窗口。而如果在标题栏放一个按钮，此时按钮默认是没有收到点击的，详细请看 [WPF 非客户区的触摸和鼠标点击响应](https://blog.lindexi.com/post/WPF-%E9%9D%9E%E5%AE%A2%E6%88%B7%E5%8C%BA%E7%9A%84%E8%A7%A6%E6%91%B8%E5%92%8C%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%93%8D%E5%BA%94.html )
