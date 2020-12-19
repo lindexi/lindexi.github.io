@@ -484,6 +484,8 @@
 
  * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
 
+ * [dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](dotnet-OpenXML-解析-WPS-不规范的-PPT-文件的-cNvPr-重复-id-问题.md)
+
  * [dotnet OpenXML 颜色变换](dotnet-OpenXML-颜色变换.md)
 
  * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)
@@ -643,6 +645,8 @@
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
  * [dotnet 开发的单代码仓库和多代码仓库的优劣](dotnet-开发的单代码仓库和多代码仓库的优劣.md)
+
+ * [dotnet 强签名下使用 InternalsVisibleToAttribute 给程序集加上友元](dotnet-强签名下使用-InternalsVisibleToAttribute-给程序集加上友元.md)
 
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)
 
