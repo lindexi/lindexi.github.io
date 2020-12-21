@@ -3,6 +3,8 @@
 在 dotnet 里面，可以使用 InternalsVisibleToAttribute 特性，给程序集加上友元程序集，这样能让友元程序集访问到 internal 的程序。也就是说如果我有 A 和 B 两个程序集，我设置了 B 作为 A 的友元程序集 那么此时 B 程序集就能访问 A 程序集里面所有的 internal 成员。默认的友元设置只需要通过 InternalsVisibleToAttribute 特性写入友元程序集名就可以，但是如果程序集有强签名，就需要加上公钥
 
 <!--more-->
+<!-- CreateTime:2020/12/18 20:49:41 -->
+
 <!-- 发布 -->
 
 假定我有 A 和 B 两个程序集，我想要让 B 可以访问到 A 程序集里面所有的 internal 成员，那么我可以在 A 程序集里面通过 InternalsVisibleToAttribute 加上友元程序集，如下面代码
