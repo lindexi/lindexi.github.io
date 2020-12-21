@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2020/12/18 20:49:41 -->
+
 <!-- 发布 -->
 
 假定我有 A 和 B 两个程序集，我想要让 B 可以访问到 A 程序集里面所有的 internal 成员，那么我可以在 A 程序集里面通过 InternalsVisibleToAttribute 加上友元程序集，如下面代码

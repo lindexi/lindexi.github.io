@@ -728,6 +728,12 @@
 
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)
 
+ * [dotnet 读 WPF 源代码笔记 WIC 多媒体图片处理通过 WindowsCodecs.dll 实现功能](dotnet-读-WPF-源代码笔记-WIC-多媒体图片处理通过-WindowsCodecs.dll-实现功能.md)
+
+ * [dotnet 读 WPF 源代码笔记 wpfgfx_cor3.dll 是什么文件](dotnet-读-WPF-源代码笔记-wpfgfx_cor3.dll-是什么文件.md)
+
+ * [dotnet 读 WPF 源代码笔记 启动欢迎界面 SplashScreen 的原理](dotnet-读-WPF-源代码笔记-启动欢迎界面-SplashScreen-的原理.md)
+
  * [dotnet 进行二进制差分压缩文件](dotnet-进行二进制差分压缩文件.md)
 
  * [dotnet 通过 dotnetCampus.YamlToCsharp 将 YAML 多语言文件构建为代码](dotnet-通过-dotnetCampus.YamlToCsharp-将-YAML-多语言文件构建为代码.md)
