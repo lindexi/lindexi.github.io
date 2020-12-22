@@ -128,6 +128,10 @@
 
 [服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
 
+## WPS 相关
+
+[dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E8%A7%84%E8%8C%83%E7%9A%84-PPT-%E6%96%87%E4%BB%B6%E7%9A%84-cNvPr-%E9%87%8D%E5%A4%8D-id-%E9%97%AE%E9%A2%98.html )
+
 
 
 
