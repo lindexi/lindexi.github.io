@@ -32,7 +32,7 @@
 
 开启了这个属性就可以使用 Pointer 消息。
 
-因为有小伙伴说使用了我上面代码无法打开 Pointer 消息，我看了他代码，发现他写错了，所以我把全部  App.config 代码写出来。
+因为有小伙伴说使用了我上面代码无法打开 Pointer 消息，我看了他代码，发现他写错了，所以我把全部 App.config 代码写出来。
 
 ```csharp
 <?xml version="1.0" encoding="utf-8"?>
@@ -48,6 +48,8 @@
 ```
 
 参见：[Mitigation: Pointer-based Touch and Stylus Support](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/mitigation-pointer-based-touch-and-stylus-support?redirectedfrom=MSDN )
+
+在 dotnet core 的 WPF 下，请参阅 [WPF dotnet core 如何开启 Pointer 消息的支持](https://blog.lindexi.com/post/WPF-dotnet-core-%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF-Pointer-%E6%B6%88%E6%81%AF%E7%9A%84%E6%94%AF%E6%8C%81.html )
 
 
 

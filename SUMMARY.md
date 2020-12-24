@@ -370,6 +370,8 @@
 
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
+ * [dotnet C# 链表和字典的性能对比](dotnet-C-链表和字典的性能对比.md)
+
  * [dotnet CBB 为什么决定推送 Tag 才能打包](dotnet-CBB-为什么决定推送-Tag-才能打包.md)
 
  * [dotnet ConcurrentDictionary 的 GetOrAdd 性能比 TryGetValue 加 TryAdd 低](dotnet-ConcurrentDictionary-的-GetOrAdd-性能比-TryGetValue-加-TryAdd-低.md)
@@ -1997,6 +1999,8 @@
  * [WPF 源代码 从零开始写一个 UI 框架](WPF-源代码-从零开始写一个-UI-框架.md)
 
  * [WPF 源代码 资源字典 ResourceDictionary 设置 Source 属性的逻辑](WPF-源代码-资源字典-ResourceDictionary-设置-Source-属性的逻辑.md)
+
+ * [WPF 滑动修改音量控件](WPF-滑动修改音量控件.md)
 
  * [WPF 漂亮的现代化控件 新 ModernWPF 界面库](WPF-漂亮的现代化控件-新-ModernWPF-界面库.md)
 
