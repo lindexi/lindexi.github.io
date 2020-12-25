@@ -88,7 +88,7 @@ using System.Reflection;
 
 用这个方法就可以做到写 InternalsVisibleTo 就可以自动创建 AssemblyInfo.cs 文件
 
-
+如果需要在添加强签名的程序集添加 InternalsVisibleTo 请看 [dotnet 强签名下使用 InternalsVisibleToAttribute 给程序集加上友元](https://blog.lindexi.com/post/dotnet-%E5%BC%BA%E7%AD%BE%E5%90%8D%E4%B8%8B%E4%BD%BF%E7%94%A8-InternalsVisibleToAttribute-%E7%BB%99%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%8A%A0%E4%B8%8A%E5%8F%8B%E5%85%83.html )
 
 
 

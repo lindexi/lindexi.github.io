@@ -1982,9 +1982,13 @@
 
  * [WPF 最小的代码使用 DynamicRenderer 书写](WPF-最小的代码使用-DynamicRenderer-书写.md)
 
+ * [WPF 最简方法使用自己定制的 WPF 框架](WPF-最简方法使用自己定制的-WPF-框架.md)
+
  * [WPF 最简逻辑实现多指顺滑的笔迹书写](WPF-最简逻辑实现多指顺滑的笔迹书写.md)
 
  * [WPF 框架全构建环境虚拟机硬盘分享](WPF-框架全构建环境虚拟机硬盘分享.md)
+
+ * [WPF 框架开发 加入 InternalsVisibleToAttribute 特性让其他程序集可以访问 internal 权限成员](WPF-框架开发-加入-InternalsVisibleToAttribute-特性让其他程序集可以访问-internal-权限成员.md)
 
  * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
 
