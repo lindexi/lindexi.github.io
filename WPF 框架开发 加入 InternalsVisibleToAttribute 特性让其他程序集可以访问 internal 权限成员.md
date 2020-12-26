@@ -5,6 +5,8 @@
 本文告诉大家如何给 WPF 框架加入 InternalsVisibleToAttribute 特性让其他程序集可以访问 internal 权限成员
 
 <!--more-->
+<!-- CreateTime:2020/12/24 17:38:25 -->
+
 
 <!-- 发布 -->
 
