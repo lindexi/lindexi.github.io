@@ -732,6 +732,8 @@
 
  * [dotnet 读 WPF 源代码笔记 AppDomainShutdownMonitor 的设计](dotnet-读-WPF-源代码笔记-AppDomainShutdownMonitor-的设计.md)
 
+ * [dotnet 读 WPF 源代码笔记 SafeMILHandleMemoryPressure 的作用](dotnet-读-WPF-源代码笔记-SafeMILHandleMemoryPressure-的作用.md)
+
  * [dotnet 读 WPF 源代码笔记 WIC 多媒体图片处理通过 WindowsCodecs.dll 实现功能](dotnet-读-WPF-源代码笔记-WIC-多媒体图片处理通过-WindowsCodecs.dll-实现功能.md)
 
  * [dotnet 读 WPF 源代码笔记 wpfgfx_cor3.dll 是什么文件](dotnet-读-WPF-源代码笔记-wpfgfx_cor3.dll-是什么文件.md)

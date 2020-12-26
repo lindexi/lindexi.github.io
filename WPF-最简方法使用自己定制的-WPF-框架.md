@@ -67,7 +67,9 @@
 
 使用这个方法也是有缺点的，如需要额外添加整个程序集以及在 dotnetCampus.WPF 程序集里面是不能放 xaml 文件的
 
+我还同步将内容放在 [最简方式定制 WPF 框架_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/BV1hh411f7jH )
 
+具体实现请看 [WPF 框架开发 加入 InternalsVisibleToAttribute 特性让其他程序集可以访问 internal 权限成员](https://blog.lindexi.com/post/WPF-%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91-%E5%8A%A0%E5%85%A5-InternalsVisibleToAttribute-%E7%89%B9%E6%80%A7%E8%AE%A9%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE-internal-%E6%9D%83%E9%99%90%E6%88%90%E5%91%98.html )
 
 
 
