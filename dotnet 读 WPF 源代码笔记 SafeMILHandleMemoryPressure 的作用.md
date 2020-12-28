@@ -3,6 +3,8 @@
 本文来告诉大家在 WPF 里面的 SafeMILHandleMemoryPressure 类的作用。这是一个 internal 不开放的类，是在 WPF 中和 Dx 等模块调用使用的，用途就是辅助 GC 统计当前内存情况，用来在内存不够的时候触发回收
 
 <!--more-->
+<!-- CreateTime:2020/12/25 9:09:44 -->
+
 
 <!-- 发布 -->
 
