@@ -106,7 +106,7 @@
 
 为了能更快的调用 Remove 方法，也就将存放的容器设计为 Dictionary 了，但实际上没有使用链表快，想不开的话，我会去优化一下这个逻辑
 
-然而经过了测试，发现了实际上在 .NET 5 里面的字典在加元素和删除元素还是完虐链表的，我写了简单的性能测试项目，代码放在[github](https://github.com/lindexi/lindexi_gd/tree/0c6d6a66/HurnabahearwhawJehearhefena)欢迎小伙伴访问
+然而经过了测试，发现了实际上在 .NET 5 里面的字典在加元素和删除元素还是完虐链表的，我写了简单的性能测试项目，代码放在[github](https://github.com/lindexi/lindexi_gd/tree/b63ba44c2077bcc4136455f16b309fe74a288dcc/HurnabahearwhawJehearhefena)欢迎小伙伴访问。因为在这个类里面不需要用到字典，只需要 HashSet 就可以，于是我优化了一个版本，放在 [Replace the Dictionary with HashSet in AppDomainShutdownMonitor by lindexi · Pull Request #3932 · dotnet/wpf](https://github.com/dotnet/wpf/pull/3932) 这个更改内容我也放在 [bilibili](https://www.bilibili.com/video/BV1fK4y1L74G/) 上
 
 通过上面的逻辑，相信大家也了解到如何写出在应用退出的时候的逻辑，以及编写的时候可以参阅 WPF 的设计，尽管因为 WPF 写这段逻辑的时候很多好用的特性还没开发出来，但是需要稍微做一点改动，就可以用上新特性加上这个设计方式做到在应用退出的时候执行一些逻辑的清理
 
