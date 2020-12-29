@@ -780,6 +780,8 @@
 
  * [dotnet 里的那些锁 AutoResetEvent 用法](dotnet-里的那些锁-AutoResetEvent-用法.md)
 
+ * [dotnet 集成测试 SmartSql 存在静态量导致多个主机启动提示 Alias 已存在](dotnet-集成测试-SmartSql-存在静态量导致多个主机启动提示-Alias-已存在.md)
+
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
  * [gif 格式](gif-格式.md)
