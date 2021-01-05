@@ -452,6 +452,8 @@
 
  * [dotnet OpenXML 从文档生成创建文档的代码的库](dotnet-OpenXML-从文档生成创建文档的代码的库.md)
 
+ * [dotnet OpenXML 修复 Office 文档里面包含格式不正确的 Uri 而无法解析](dotnet-OpenXML-修复-Office-文档里面包含格式不正确的-Uri-而无法解析.md)
+
  * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-的属性作用.md)
 
  * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-重复-id-标识处理.md)
@@ -951,6 +953,8 @@
  * [Roslyn 使用 Target 替换占位符方式生成 nuget 打包](Roslyn-使用-Target-替换占位符方式生成-nuget-打包.md)
 
  * [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](Roslyn-使用-WriteLinesToFile-解决参数过长无法传入.md)
+
+ * [Roslyn 判断当前使用 dotnet core 编译器进行编译](Roslyn-判断当前使用-dotnet-core-编译器进行编译.md)
 
  * [Roslyn 在 msbuild 的 target 判断文件存在](Roslyn-在-msbuild-的-target-判断文件存在.md)
 
@@ -1857,6 +1861,8 @@
  * [WPF 判断USB插拔](WPF-判断USB插拔.md)
 
  * [WPF 判断调用方法堆栈](WPF-判断调用方法堆栈.md)
+
+ * [WPF 制作支持点击穿透的高性能的透明背景异形窗口](WPF-制作支持点击穿透的高性能的透明背景异形窗口.md)
 
  * [WPF 动画实战 点击时显示圆圈淡出效果](WPF-动画实战-点击时显示圆圈淡出效果.md)
 
