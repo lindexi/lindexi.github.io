@@ -3,6 +3,8 @@
 默认的 WPF 的支持点击穿透的透明背景窗口，是通过 AllowsTransparency 实现的，但是此方法的性能比较低。本文来告诉大家一个高性能的方法，通过此方法制作出来的 WPF 窗口可以获取很高的性能，设置透明和设置窗口不透明之间几乎没有性能差别
 
 <!--more-->
+<!-- CreateTime:2021/1/4 9:09:54 -->
+
 <!-- 发布 -->
 
 本文的方法由 [少珺](https://blog.sdlsj.net/) 小伙伴提供，我只是代为整理博客。本文的方法是基于 [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html ) 但是 walterlv 大大的方法没有提供可穿透的功能，而本文是提供了全穿透的功能

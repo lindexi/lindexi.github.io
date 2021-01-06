@@ -3,6 +3,8 @@
 在写 msbuild 预编译或编译调度逻辑时，如何知道当前执行的编译器使用的是上古版本的 msbuild 还是用了 dotnet core 内核的 Roslyn 编译器？本文解决的问题是我期望在 Windows 系统使用 .NET Framework 版本的工具，而在非 Windows 系统上，使用 dotnet core 版本的工具。原因是 .NET Framework 在开发者设备上都会有，用起来简单。而 dotnet core 提供了跨平台，可以在其他平台上使用
 
 <!--more-->
+<!-- CreateTime:2021/1/4 19:08:32 -->
+
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 <!-- 发布 -->
 
