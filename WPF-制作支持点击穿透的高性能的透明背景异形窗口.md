@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/1/4 9:09:54 -->
+
 <!-- 发布 -->
 
 本文的方法由 [少珺](https://blog.sdlsj.net/) 小伙伴提供，我只是代为整理博客。本文的方法是基于 [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html ) 但是 walterlv 大大的方法没有提供可穿透的功能，而本文是提供了全穿透的功能

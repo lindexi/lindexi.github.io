@@ -90,6 +90,8 @@
 
 [dotnet Open XML 如何判断一份 Office 文档是否被加密](https://blog.lindexi.com/post/dotnet-Open-XML-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%BB%BD-Office-%E6%96%87%E6%A1%A3%E6%98%AF%E5%90%A6%E8%A2%AB%E5%8A%A0%E5%AF%86.html )
 
+[dotnet OpenXML 修复 Office 文档里面包含格式不正确的 Uri 而无法解析](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BF%AE%E5%A4%8D-Office-%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E5%8C%85%E5%90%AB%E6%A0%BC%E5%BC%8F%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84-Uri-%E8%80%8C%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90.html )
+
 ## 工具
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
