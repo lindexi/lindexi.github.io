@@ -740,6 +740,8 @@
 
  * [dotnet 读 WPF 源代码笔记 wpfgfx_cor3.dll 是什么文件](dotnet-读-WPF-源代码笔记-wpfgfx_cor3.dll-是什么文件.md)
 
+ * [dotnet 读 WPF 源代码笔记 使用 Win32 方法修改窗口的坐标和大小对窗口依赖属性的影响](dotnet-读-WPF-源代码笔记-使用-Win32-方法修改窗口的坐标和大小对窗口依赖属性的影响.md)
+
  * [dotnet 读 WPF 源代码笔记 启动欢迎界面 SplashScreen 的原理](dotnet-读-WPF-源代码笔记-启动欢迎界面-SplashScreen-的原理.md)
 
  * [dotnet 进行二进制差分压缩文件](dotnet-进行二进制差分压缩文件.md)
