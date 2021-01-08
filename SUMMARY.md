@@ -488,6 +488,8 @@
 
  * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
 
+ * [dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](dotnet-OpenXML-解析-WPS-不符合压缩文档规范的文档.md)
+
  * [dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](dotnet-OpenXML-解析-WPS-不规范的-PPT-文件的-cNvPr-重复-id-问题.md)
 
  * [dotnet OpenXML 颜色变换](dotnet-OpenXML-颜色变换.md)
