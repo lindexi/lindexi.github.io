@@ -131,4 +131,6 @@
 
 [dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E8%A7%84%E8%8C%83%E7%9A%84-PPT-%E6%96%87%E4%BB%B6%E7%9A%84-cNvPr-%E9%87%8D%E5%A4%8D-id-%E9%97%AE%E9%A2%98.html )
 
+[dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E7%AC%A6%E5%90%88%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E7%9A%84%E6%96%87%E6%A1%A3.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
