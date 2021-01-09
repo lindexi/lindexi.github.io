@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/1/7 15:02:35 -->
+
 <!-- 发布 -->
 
 如果使用了不符合压缩规范的文件，那么在使用 OpenXML SDK 读取的时候，将会在解压缩的时候炸掉，如下
@@ -23,7 +25,7 @@ System.IO.FileFormatException:“File contains corrupted data.”
 或者下面提示
 
 ```
-//如果是 InvalidDataException 才是 WPS 的诡异格式，此时才能使用此方法解决
+//如果是 InvalidDataException 或 FileFormatException 是 WPS 的诡异格式，此时使用此方法解决
 System.IO.InvalidDataException	End of Central Directory record could not be found.	
 
 at System.IO.Compression.ZipArchive.ReadEndOfCentralDirectory()
