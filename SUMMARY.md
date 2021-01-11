@@ -166,13 +166,19 @@
 
  * [C# 从 short 转 byte 方法](C-从-short-转-byte-方法.md)
 
+ * [C# 从零开始写 SharpDx 应用 从 D3DDevice 获取 DXGIDevice 方法](C-从零开始写-SharpDx-应用-从-D3DDevice-获取-DXGIDevice-方法.md)
+
  * [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](C-从零开始写-SharpDx-应用-初始化dx修改颜色.md)
 
  * [C# 从零开始写 SharpDx 应用 画三角](C-从零开始写-SharpDx-应用-画三角.md)
 
+ * [C# 从零开始写 SharpDx 应用 禁止 Alt + Enter 进入全屏](C-从零开始写-SharpDx-应用-禁止-Alt-Enter-进入全屏.md)
+
  * [C# 从零开始写 SharpDx 应用 笔刷](C-从零开始写-SharpDx-应用-笔刷.md)
 
  * [C# 从零开始写 SharpDx 应用 绘制基础图形](C-从零开始写-SharpDx-应用-绘制基础图形.md)
+
+ * [C# 从零开始写 SharpDx 应用 聊聊功能等级](C-从零开始写-SharpDx-应用-聊聊功能等级.md)
 
  * [C# 传入 params object 长度](C-传入-params-object-长度.md)
 
@@ -2005,6 +2011,8 @@
  * [WPF 框架全构建环境虚拟机硬盘分享](WPF-框架全构建环境虚拟机硬盘分享.md)
 
  * [WPF 框架开发 加入 InternalsVisibleToAttribute 特性让其他程序集可以访问 internal 权限成员](WPF-框架开发-加入-InternalsVisibleToAttribute-特性让其他程序集可以访问-internal-权限成员.md)
+
+ * [WPF 框架开发 更改 API 之后让 CI 重新创建 API 兼容检查基准](WPF-框架开发-更改-API-之后让-CI-重新创建-API-兼容检查基准.md)
 
  * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
 
