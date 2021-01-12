@@ -2010,6 +2010,8 @@
 
  * [WPF 框架全构建环境虚拟机硬盘分享](WPF-框架全构建环境虚拟机硬盘分享.md)
 
+ * [WPF 框架开发 WPF 的构建在哪使用到 Perl 工具](WPF-框架开发-WPF-的构建在哪使用到-Perl-工具.md)
+
  * [WPF 框架开发 加入 InternalsVisibleToAttribute 特性让其他程序集可以访问 internal 权限成员](WPF-框架开发-加入-InternalsVisibleToAttribute-特性让其他程序集可以访问-internal-权限成员.md)
 
  * [WPF 框架开发 更改 API 之后让 CI 重新创建 API 兼容检查基准](WPF-框架开发-更改-API-之后让-CI-重新创建-API-兼容检查基准.md)
