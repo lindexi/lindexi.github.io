@@ -3,6 +3,8 @@
 本文将和大家聊聊 DirectX 里面的功能等级在 SharpDx 的使用方法
 
 <!--more-->
+<!-- CreateTime:2021/1/11 8:23:59 -->
+
 
 <!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
 <!-- 发布 -->

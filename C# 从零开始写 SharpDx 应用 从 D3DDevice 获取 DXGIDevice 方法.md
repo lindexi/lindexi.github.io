@@ -3,6 +3,8 @@
 本文将告诉大家在拿到了 D3D11 的 Device 也就是 D3DDevice 之后，如何去获取 DXGI.Device 以及 DXGI.Factory 的方法
 
 <!--more-->
+<!-- CreateTime:2021/1/11 8:23:59 -->
+
 
 <!-- 标签：C#,D2D,DirectX,SharpDX,Direct2D, -->
 <!-- 发布 -->
