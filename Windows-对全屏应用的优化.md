@@ -18,9 +18,9 @@
 - [Windowed, Fullscreen, and Borderless Modes: Which One Is Best?](https://www.makeuseof.com/tag/windowed-fullscreen-borderless-modes/ )
 - [fullscreen mode and windowed mode_网络_安柏霖的专栏-CSDN博客](https://blog.csdn.net/toughbro/article/details/82926100 ) 
 
-在开始聊 Windows 对全屏应用的优化之前，需要先聊聊窗口的显示方式。在 Windows 上运行的应用，如游戏等有三个不同的显示模式（考古发现还有一些特别的显示模式，但是太诡异了我就不敢说了）包括 全拼独占模式（FSE Fullscreen Exclusive）、窗口模式（Windowed）、无边框窗口。全屏独占窗口可以让应用独占显示和拥有更多（不是全部占有，但也差不多）的显卡资源。而在进入窗口模式的应用需要和其他的应用共享显示和计算资源，其他窗口在后台运行的依然需要使用显卡计算资源。此时的窗口模式应用需要依靠桌面管理器（DWM Desktop Window Manager）进行调度，此时的显卡资源也就需要将资源共享给其他所有的应用，而不是和独占全屏一样。而第三个模式无边框模式的窗口，应用依然是窗口运行，但是这个窗口没有边框，这意味着窗口可以调整大小用来做全屏，但此时的其他应用依然在后台运行
+在开始聊 Windows 对全屏应用的优化之前，需要先聊聊窗口的显示方式。在 Windows 上运行的应用，如游戏等有三个不同的显示模式（考古发现还有一些特别的显示模式，但是太诡异了我就不敢说了）包括 全屏独占模式（FSE Fullscreen Exclusive）、窗口模式（Windowed）、无边框窗口。全屏独占窗口可以让应用独占显示和拥有更多（不是全部占有，但也差不多）的显卡资源。而在进入窗口模式的应用需要和其他的应用共享显示和计算资源，其他窗口在后台运行的依然需要使用显卡计算资源。此时的窗口模式应用需要依靠桌面管理器（DWM Desktop Window Manager）进行调度，此时的显卡资源也就需要将资源共享给其他所有的应用，而不是和独占全屏一样。而第三个模式无边框模式的窗口，应用依然是窗口运行，但是这个窗口没有边框，这意味着窗口可以调整大小用来做全屏，但此时的其他应用依然在后台运行
 
-在微软的这篇文档  [Demystifying Fullscreen Optimizations](https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/ ) 说在 win10 发布之后，微软进行了全拼窗口优化。但是考古发现其实在 win7 的 dx9 就有这样的优化，详细请看  [Direct3D 9Ex Improvements - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3darticles/direct3d-9ex-improvements ) 官方文档
+在微软的这篇文档  [Demystifying Fullscreen Optimizations](https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/ ) 说在 win10 发布之后，微软进行了全屏窗口优化。但是考古发现其实在 win7 的 dx9 就有这样的优化，详细请看  [Direct3D 9Ex Improvements - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3darticles/direct3d-9ex-improvements ) 官方文档
 
 在微软官方文档说 win10 的一个优化是对无边框窗口进行全屏显示的应用的优化，对于无边框的窗口可以让用户体验和全屏独占应用一样的方法，但是会比独占全屏模式更加有利。原因在于独占全屏模式会出现切换的等待，虽然在大部分设备上有显卡的优化，这部分的时间非常短，但是如果想要做频繁的切换，效果也不是很好。而微软 win10 的优化另一部分就是对提供了更快的应用命令，如 alt+tab 切换窗口和多个屏幕的显示效果。通过大量的测试微软对全屏的无边框窗口的性能优化基本达到了全屏独占窗口的性能
 
@@ -50,6 +50,9 @@
 
 [Windows桌面实现之七（DirectX HOOK 方式截取特殊的全屏程序之一）](https://blog.csdn.net/fanxiushu/article/details/89363222 )
 
+[C# 纯控制台创建一个全屏窗口](https://blog.lindexi.com/post/C-%E7%BA%AF%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%8F%E7%AA%97%E5%8F%A3.html)
+
+[WPF 全屏透明窗口](https://blog.lindexi.com/post/WPF-%E5%85%A8%E5%B1%8F%E9%80%8F%E6%98%8E%E7%AA%97%E5%8F%A3.html)
 
 
 
