@@ -720,6 +720,8 @@
 
  * [dotnet 编译 Rolsyn 编译器](dotnet-编译-Rolsyn-编译器.md)
 
+ * [dotnet 自动迁移 VS 2017 以前的 csproj 转为 dotnet core 的 SDK Style 风格工具](dotnet-自动迁移-VS-2017-以前的-csproj-转为-dotnet-core-的-SDK-Style-风格工具.md)
+
  * [dotnet 获取当前进程方法](dotnet-获取当前进程方法.md)
 
  * [dotnet 获取指定进程的输入命令行](dotnet-获取指定进程的输入命令行.md)
