@@ -3,6 +3,8 @@
 在 Windows 下，使用 .NET Framework 构建出来的应用，可以只有一个可执行文件，在可执行文件里面包含了 IL 代码。而使用 .NET Core 构建出来的应用，将会包含一个 Exe 可执行文件，和对应的 Dll 文件，而 IL 代码将放在 Dll 文件里面。那么使用 .NET Framework 和使用 .NET Core 所输出的 Exe 可执行文件有什么差别
 
 <!--more-->
+<!-- CreateTime:2021/1/13 8:54:02 -->
+
 <!-- 发布 -->
 
 在 dotnet core 或 dotnet 5 下，默认输出的 Exe 可执行文件是 AppHost 文件，这是一个纯 Win32 可执行文件，里面不包含 IL 代码。在用户双击运行此 Exe 可执行文件的时候，将会运行起来这个 Win32 应用，在这里面将调用起 CLR 引擎，执行放在 Dll 的 IL 代码。此部分逻辑相对复杂，详细请看 [dotnet core 应用是如何跑起来的 通过AppHost理解运行过程](https://blog.lindexi.com/post/dotnet-core-%E5%BA%94%E7%94%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-%E9%80%9A%E8%BF%87AppHost%E7%90%86%E8%A7%A3%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.html )
