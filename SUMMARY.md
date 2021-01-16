@@ -130,6 +130,8 @@
 
  * [C# dotnet 线程不安全的弱引用缓存](C-dotnet-线程不安全的弱引用缓存.md)
 
+ * [C# dotnet 编写 curl 的用户名和密码逻辑](C-dotnet-编写-curl-的用户名和密码逻辑.md)
+
  * [C# dotnet 自己实现一个线程同步上下文](C-dotnet-自己实现一个线程同步上下文.md)
 
  * [C# dotnet 获取整个局域网的 ip 地址](C-dotnet-获取整个局域网的-ip-地址.md)
@@ -927,6 +929,8 @@
  * [ParaView](ParaView.md)
 
  * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)
+
+ * [PowerShell 实现 curl 的用户名和密码逻辑](PowerShell-实现-curl-的用户名和密码逻辑.md)
 
  * [PowerShell 拿到显卡信息](PowerShell-拿到显卡信息.md)
 
