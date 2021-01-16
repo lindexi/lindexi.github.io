@@ -3,6 +3,8 @@
 本文来安利大家一个特别好用的工具，可以自动将 VisualStudio 2017 以前版本创建的 Franken-proj 格式 的 csproj 项目文件转换为 dotnet core 的 SDK Style 风格的csproj 项目文件的工具
 
 <!--more-->
+<!-- CreateTime:2021/1/15 8:39:59 -->
+
 <!-- 发布 -->
 
 这是一个在 GitHub 上完全开源的仓库，请看 [https://github.com/dotnet/try-convert](https://github.com/dotnet/try-convert )
