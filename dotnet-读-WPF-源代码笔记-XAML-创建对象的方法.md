@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/1/18 19:40:02 -->
+
 
 <!-- 标签：WPF，WPF源代码 -->
 <!-- 发布 -->
@@ -176,6 +178,8 @@
 但是如果对象的类不是公开的，那么将需要用到 CreateInstanceWithActivator 使用反射创建对象，此时的性能相对来说比较差
 
 因此在 WPF 的 XAML 创建对象，只有在尝试了判断这是 WPF 已知的对象失败之后，同时对象对应的类不是公开的不能使用反射创建委托的科技，才会使用反射创建对象。大多数的时候，使用 XAML 都不会有很多性能损失
+
+而对于自己定义的非公开的类，我给 WPF 官方提一个建议，就是提供让开发端自己注入创建器的方式，用来提升性能，请看 [API Request: Allow developers to inject a XAML factory for creating objects · Issue #4022 · dotnet/wpf](https://github.com/dotnet/wpf/issues/4022 )
 
 当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
 
