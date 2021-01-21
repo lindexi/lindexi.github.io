@@ -32,6 +32,8 @@
 
  * [asp dotnet core 通过图片统计 csdn 用户访问](asp-dotnet-core-通过图片统计-csdn-用户访问.md)
 
+ * [ASP.NET Core 因为 Nginx 配置 Connection 为 Upgrade 导致 Kestrel 返回 400 错误](ASP.NET-Core-因为-Nginx-配置-Connection-为-Upgrade-导致-Kestrel-返回-400-错误.md)
+
  * [ASP.NET Core 将文件夹内容输出为压缩包文件方法](ASP.NET-Core-将文件夹内容输出为压缩包文件方法.md)
 
  * [ASP.NET Core 开启后台任务](ASP.NET-Core-开启后台任务.md)

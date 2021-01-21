@@ -660,6 +660,10 @@ private void Foo(Page p)
 
 [2020-1-8-如何正确的在tooltip中实现绑定 - huangtengxiao](https://xinyuehtx.github.io/post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%9C%A8tooltip%E4%B8%AD%E5%AE%9E%E7%8E%B0%E7%BB%91%E5%AE%9A.html )
 
+### WPF 拖动元素
+
+代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0e57c425/LayfilejonarchoDawherehebafonur ) 欢迎小伙伴访问
+
 
 
 
