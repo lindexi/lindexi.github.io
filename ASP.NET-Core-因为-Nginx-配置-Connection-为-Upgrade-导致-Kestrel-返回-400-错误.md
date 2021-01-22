@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/1/21 20:05:54 -->
+
 <!-- 发布 -->
 
 在 HTTP 的标准里面，在 HTTP 协议提供了一种特殊的机制，这一机制允许将一个已建立的连接升级成新的、不相容的协议。由客户端发起给服务端询问可以服务器端选择是否要升级到新协议，这个机制可以做到如客户端使用HTTP/1.1去连接服务器端，询问服务器端是否能升级到HTTP2甚至是WebSockets协议。而这个机制的做法如 [mozilla 协议升级机制](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Protocol_upgrade_mechanism) 文档所说，在客户端请求的时候将会添加两个额外的 Header 内容：
@@ -53,11 +55,30 @@ Upgrade: example/1, foo/2
             });
 ```
 
+从输出的日志里面可以看到下面代码
+
+```
+dbug: Microsoft.AspNetCore.Server.Kestrel[39]
+      Connection id "0HM5U310J8F34" accepted.
+dbug: Microsoft.AspNetCore.Server.Kestrel[1]
+      Connection id "0HM5U310J8F34" started.
+dbug: Microsoft.AspNetCore.Server.Kestrel[17]
+      Connection id "0HM5U310J8F34" bad request data: "Requests with 'Connection: Upgrade' cannot have content in the request body."
+Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Requests with 'Connection: Upgrade' cannot have content in the request body.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException.Throw(RequestRejectionReason reason)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1MessageBody.For(HttpVersion httpVersion, HttpRequestHeaders headers, Http1Connection context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.CreateMessageBody()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+```
+
+也就是说开启调试模式的日志，可以了解到输出了 `Requests with 'Connection: Upgrade' cannot have content in the request body.` 的内容。开启日志的方法就是在 appsettings.json 和 appsettings.Development.json 设置日志等级为 Debug 就可以
+
 而这个问题，官方也有收到反馈，请看 ["Connection: upgrade" causes 400 error that never reaches application code. Triggered by common nginx config. · Issue #17081 · dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues/17081 )
 
 虽然这样做是不符合规范的，但是用的人多了，也就约定俗成了。而 Kestrel 比较严格的遵守标准却在此时挖了一个坑。最近有一个 PR 是允许忽略掉加上 upgrade 在 POST 带上 Body 的逻辑合入到 dotnet core 2.1 和 dotnet core 3.1 和 dotnet 5.0 版本，也许在你看到这个博客的时候，咱的应用其实能做到默认支持的
 
-而其实在官方文档里面也给出了推荐的 Nginx 的配置，如下
+而其实在官方文档里面也给出了推荐的 Nginx 的配置，如下，但是如下配置可是会给 websocket 挖坑的哦，详细请看 [nginx 反向代理websocket – A Blog](https://blog.sdlsj.net/archives/nginx/nginx-reverse-proxy-websocket/ )
 
 ```
 server {
@@ -76,7 +97,51 @@ server {
 }
 ```
 
-可以看到在官方的配置里面给 Connection 配置的是 keep-alive 哈
+可以看到在官方的配置里面给 Connection 配置的是 keep-alive 哈，但如果需要支持 websocket 如 signalr 技术，此时的配置如下
+
+```
+http {
+  map $http_connection $connection_upgrade {
+    "~*Upgrade" $http_connection;
+    default keep-alive;
+}
+
+  server {
+    listen 80;
+    server_name example.com *.example.com;
+
+    # Configure the SignalR Endpoint
+    location /hubroute {
+      # App server url
+      proxy_pass http://localhost:5000;
+
+      # Configuration for WebSockets
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection $connection_upgrade;
+      proxy_cache off;
+
+      # Configuration for ServerSentEvents
+      proxy_buffering off;
+
+      # Configuration for LongPolling or if your KeepAliveInterval is longer than 60 seconds
+      proxy_read_timeout 100s;
+
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+    }
+  }
+}
+```
+
+上面核心的配置是通过 `http_connection` 变量来决定 `connection_upgrade` 变量的内容。如果有 Upgrade 的，那么也在 Connection 上加上 Upgrade 的，否则就使用  keep-alive 作为内容
+
+```
+  map $http_connection $connection_upgrade {
+    "~*Upgrade" $http_connection;
+    default keep-alive;
+}
+```
 
 特别感谢 [lsj](https://blog.sdlsj.net) 的协助，以及运维小伟大佬的方法
 
@@ -95,9 +160,9 @@ server {
 
 [nginx 反向代理websocket – A Blog](https://blog.sdlsj.net/archives/nginx/nginx-reverse-proxy-websocket/ )
 
-[Configure ASP.NET Core to work with proxy servers and load balancers](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-5.0 )
+[Configure ASP.NET Core to work with proxy servers and load balancers](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-5.0&WT.mc_id=DX-MVP-5003606 )
 
-[Host ASP.NET Core on Linux with Nginx](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-5.0 )
+[Host ASP.NET Core on Linux with Nginx](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-5.0&WT.mc_id=DX-MVP-5003606 )
 
 [协议升级机制 - HTTP](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Protocol_upgrade_mechanism )
 
