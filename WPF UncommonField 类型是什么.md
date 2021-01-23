@@ -1,13 +1,13 @@
 # WPF UncommonField 类型是什么
 
-本文告诉大家一个黑科技，这个黑科技在.net 框架外无法使用，这就是 UncommonField 。下面将会告诉大家这个类有什么用。
+本文告诉大家一个黑科技，这个黑科技在 .NET 框架外无法使用，这就是 UncommonField 类。下面将会告诉大家这个类有什么用。
 
 <!--more-->
 <!-- CreateTime:2018/3/8 16:25:02 -->
 
 <!-- csdn -->
 
-<!-- 标签：WPF，.net framework,.net源代码,源代码分析 -->
+<!-- 标签：WPF，.net framework,WPF源代码,源代码分析 -->
 
 如果大家有反编译 UIElement 那么就会看到下面的代码
 
@@ -162,8 +162,9 @@ internal static readonly UncommonField<EventHandlersStore> EventHandlersStoreFie
 
 从上面的代码可以自己定义一个和他一样的类，用来存放比较少的属性，但是使用不多，因为现在的软件很少需要减少那么少的内存。
 
-参见：https://stackoverflow.com/a/18280136/6116637
+参见 [https://stackoverflow.com/a/18280136/6116637](https://stackoverflow.com/a/18280136/6116637)
 
-https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/UncommonField.cs
+当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
+
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
