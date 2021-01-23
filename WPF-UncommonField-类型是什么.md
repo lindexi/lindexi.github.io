@@ -1,7 +1,7 @@
 
 # WPF UncommonField 类型是什么
 
-本文告诉大家一个黑科技，这个黑科技在.net 框架外无法使用，这就是 UncommonField 。下面将会告诉大家这个类有什么用。
+本文告诉大家一个黑科技，这个黑科技在 .NET 框架外无法使用，这就是 UncommonField 类。下面将会告诉大家这个类有什么用。
 
 <!--more-->
 
@@ -10,7 +10,7 @@
 
 <!-- csdn -->
 
-<!-- 标签：WPF，.net framework,.net源代码,源代码分析 -->
+<!-- 标签：WPF，.net framework,WPF源代码,源代码分析 -->
 
 如果大家有反编译 UIElement 那么就会看到下面的代码
 
@@ -165,9 +165,10 @@ internal static readonly UncommonField<EventHandlersStore> EventHandlersStoreFie
 
 从上面的代码可以自己定义一个和他一样的类，用来存放比较少的属性，但是使用不多，因为现在的软件很少需要减少那么少的内存。
 
-参见：https://stackoverflow.com/a/18280136/6116637
+参见 [https://stackoverflow.com/a/18280136/6116637](https://stackoverflow.com/a/18280136/6116637)
 
-https://referencesource.microsoft.com/#WindowsBase/Base/System/Windows/UncommonField.cs
+当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
+
 
 
 
