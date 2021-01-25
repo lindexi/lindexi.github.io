@@ -2322,6 +2322,8 @@
 
  * [加强版在国内分发 UWP 应用正确方式 通过win32安装UWP应用](加强版在国内分发-UWP-应用正确方式-通过win32安装UWP应用.md)
 
+ * [升级到 dotnet core 之后 HandleProcessCorruptedStateExceptions 无法接住异常](升级到-dotnet-core-之后-HandleProcessCorruptedStateExceptions-无法接住异常.md)
+
  * [博客](博客.md)
 
  * [命令行参数使用 json 有哪些坑](命令行参数使用-json-有哪些坑.md)
