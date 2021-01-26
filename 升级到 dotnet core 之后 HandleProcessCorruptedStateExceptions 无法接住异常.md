@@ -3,6 +3,8 @@
 这是 dotnet core 的破坏性改动之一，在 dotnet framework 里面，可以使用 HandleProcessCorruptedStateExceptionsAttribute 接住非托管层抛出的异常，如 C++ 异常等。但是这个功能在 dotnet core 下存在行为的变更，从 .NET Core 1.0 开始，损坏进程状态异常无法由托管代码进行处理。 公共语言运行时不会将损坏进程状态异常传递给托管代码
 
 <!--more-->
+<!-- CreateTime:2021/1/25 8:48:37 -->
+
 <!-- 发布 -->
 
 如果逻辑代码完全使用 C# 实现，那么应用程序可以称为是安全的。这里的安全指的是内存安全。这是 dotnet 的一个优势，在于异常处理上，和 C++ 等的异常处理不同的是，很少会有异常能让整个程序闪退。可以很方便在应用程序里面接住软件运行异常，然后通过各个方法让软件继续执行
@@ -47,7 +49,7 @@ extern "C" __declspec(dllexport) int HeederajiYeafalludall()
 }
 ```
 
-在标记了 HandleProcessCorruptedStateExceptionsAttribute 特性之后，将可以看到断点能进入到 catch 代码里，而且程序不会闪烁退
+在标记了 HandleProcessCorruptedStateExceptionsAttribute 特性之后，将可以看到断点能进入到 catch 代码里，而且程序不会闪退
 
 但是这个机制在 dotnet core 就跑不起来了，根据 [从 .NET Framework 到 .NET Core 的中断性变更](https://docs.microsoft.com/zh-cn/dotnet/core/compatibility/fx-core?WT.mc_id=DX-MVP-5003606) 文档，可以看到在 .NET Core 1.0 开始，损坏进程状态异常无法由托管代码进行处理，将上面的 C# 代码切换到 dotnet core 下执行，此时将会发现不会进入到 catch 的代码，应用程序将会退出
 
