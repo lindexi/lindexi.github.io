@@ -368,6 +368,8 @@
 
  * [dotnet 5 破坏性改动 WPF 和 WinForms 的 OutputType 输出类型重定向为 WinExe 类型](dotnet-5-破坏性改动-WPF-和-WinForms-的-OutputType-输出类型重定向为-WinExe-类型.md)
 
+ * [dotnet 5 静态字段和属性的反射获取 没有想象中那么伤性能](dotnet-5-静态字段和属性的反射获取-没有想象中那么伤性能.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
