@@ -380,6 +380,8 @@
 
  * [dotnet C# 如何让 Json 序列化数组时序列化继承类的属性](dotnet-C-如何让-Json-序列化数组时序列化继承类的属性.md)
 
+ * [dotnet C# 将 Byte 二进制数组使用不安全代码快速转换为 int 或结构体数组](dotnet-C-将-Byte-二进制数组使用不安全代码快速转换为-int-或结构体数组.md)
+
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
  * [dotnet C# 链表和字典的性能对比](dotnet-C-链表和字典的性能对比.md)
