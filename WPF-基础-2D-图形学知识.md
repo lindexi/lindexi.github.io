@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/1/27 19:18:15 -->
+
 
 ## 运行代码
 
@@ -90,7 +92,7 @@ Geometry.FillContains(position)
 
 ![](http://image.acmx.xyz/lindexi%2F20211272028498690.jpg)
 
-给定中心点 O1 和宽度高度旋转角度弧度表示可以创建旋转矩形，代码逻辑如下
+给定中心点 O1 和宽度高度，以及使用弧度表示的旋转角度可以创建旋转矩形，代码逻辑如下
 
 ```csharp
     class 旋转矩形
@@ -143,11 +145,11 @@ Geometry.FillContains(position)
         /// 根据未旋转的相对圆角矩形 中心点 的坐标计算旋转后的相对于零点的坐标。
         /// </summary>
         /// <returns>旋转后的相对于零点的坐标</returns>
-        private static Point 已知未旋转的相对矩形中心点的坐标求旋转后的相对于零点的坐标(double x, double y, Point position, double 旋转角度弧度)
+        private static Point 已知未旋转的相对矩形中心点的坐标求旋转后的相对于零点的坐标(double x, double y, Point position, double 旋转弧度)
         {
             var x0 = position.X;
             var y0 = position.Y;
-            var θ = 旋转角度弧度;
+            var θ = 旋转弧度;
             return new Point(x * Math.Cos(θ) - y * Math.Sin(θ) + x0, x * Math.Sin(θ) + y * Math.Cos(θ) + y0);
         }
 
@@ -163,6 +165,8 @@ Geometry.FillContains(position)
 上面代码的 Polygon 仅仅只是用来给界面显示
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
+
+在命名上，使用 Rotation 指的是旋转，包含了角度和旋转中心点。而 Angle 表示的是旋转的角度，默认咱使用的是弧度表示
 
 ## 求旋转矩形命中测试
 
@@ -257,6 +261,14 @@ Geometry.FillContains(position)
 因此旋转之前的水平方向需要满足 `0<AM⋅AB<AB⋅AB` 才可以。而垂直方向也同理，只是将 AB 修改为 AC 两点
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
+
+## 参考
+
+《人教版初中数学》
+
+《程序员的数学 线性代数》
+
+《同济线性代数教材》
 
 
 

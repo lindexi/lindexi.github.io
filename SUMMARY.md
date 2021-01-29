@@ -758,11 +758,15 @@
 
  * [dotnet 读 WPF 源代码笔记 SafeMILHandleMemoryPressure 的作用](dotnet-读-WPF-源代码笔记-SafeMILHandleMemoryPressure-的作用.md)
 
+ * [dotnet 读 WPF 源代码笔记 Stroke 类可能存在的内存泄露](dotnet-读-WPF-源代码笔记-Stroke-类可能存在的内存泄露.md)
+
  * [dotnet 读 WPF 源代码笔记 WIC 多媒体图片处理通过 WindowsCodecs.dll 实现功能](dotnet-读-WPF-源代码笔记-WIC-多媒体图片处理通过-WindowsCodecs.dll-实现功能.md)
 
  * [dotnet 读 WPF 源代码笔记 wpfgfx_cor3.dll 是什么文件](dotnet-读-WPF-源代码笔记-wpfgfx_cor3.dll-是什么文件.md)
 
  * [dotnet 读 WPF 源代码笔记 XAML 创建对象的方法](dotnet-读-WPF-源代码笔记-XAML-创建对象的方法.md)
+
+ * [dotnet 读 WPF 源代码笔记 为什么默认的笔迹触摸点的压感是 0.5 的值](dotnet-读-WPF-源代码笔记-为什么默认的笔迹触摸点的压感是-0.5-的值.md)
 
  * [dotnet 读 WPF 源代码笔记 使用 Win32 方法修改窗口的坐标和大小对窗口依赖属性的影响](dotnet-读-WPF-源代码笔记-使用-Win32-方法修改窗口的坐标和大小对窗口依赖属性的影响.md)
 
