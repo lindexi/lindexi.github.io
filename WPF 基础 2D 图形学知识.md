@@ -3,6 +3,8 @@
 本文收集一些基础的知识，本文的逻辑是在 WPF 框架下实现，有包含了默认的坐标系以及默认类型定义。对于 WPF 系的包括 Xamarin 和 UWP 都适合
 
 <!--more-->
+<!-- CreateTime:2021/1/27 19:18:15 -->
+
 
 ## 运行代码
 
@@ -87,7 +89,7 @@ Geometry.FillContains(position)
 
 ![](http://image.acmx.xyz/lindexi%2F20211272028498690.jpg)
 
-给定中心点 O1 和宽度高度旋转角度弧度表示可以创建旋转矩形，代码逻辑如下
+给定中心点 O1 和宽度高度，以及使用弧度表示的旋转角度可以创建旋转矩形，代码逻辑如下
 
 ```csharp
     class 旋转矩形
@@ -140,11 +142,11 @@ Geometry.FillContains(position)
         /// 根据未旋转的相对圆角矩形 中心点 的坐标计算旋转后的相对于零点的坐标。
         /// </summary>
         /// <returns>旋转后的相对于零点的坐标</returns>
-        private static Point 已知未旋转的相对矩形中心点的坐标求旋转后的相对于零点的坐标(double x, double y, Point position, double 旋转角度弧度)
+        private static Point 已知未旋转的相对矩形中心点的坐标求旋转后的相对于零点的坐标(double x, double y, Point position, double 旋转弧度)
         {
             var x0 = position.X;
             var y0 = position.Y;
-            var θ = 旋转角度弧度;
+            var θ = 旋转弧度;
             return new Point(x * Math.Cos(θ) - y * Math.Sin(θ) + x0, x * Math.Sin(θ) + y * Math.Cos(θ) + y0);
         }
 
@@ -160,6 +162,8 @@ Geometry.FillContains(position)
 上面代码的 Polygon 仅仅只是用来给界面显示
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
+
+在命名上，使用 Rotation 指的是旋转，包含了角度和旋转中心点。而 Angle 表示的是旋转的角度，默认咱使用的是弧度表示
 
 ## 求旋转矩形命中测试
 
@@ -254,5 +258,13 @@ Geometry.FillContains(position)
 因此旋转之前的水平方向需要满足 `0<AM⋅AB<AB⋅AB` 才可以。而垂直方向也同理，只是将 AB 修改为 AC 两点
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
+
+## 参考
+
+《人教版初中数学》
+
+《程序员的数学 线性代数》
+
+《同济线性代数教材》
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
