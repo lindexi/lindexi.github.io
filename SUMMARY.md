@@ -470,6 +470,8 @@
 
  * [dotnet OpenXML 修复 Office 文档里面包含格式不正确的 Uri 而无法解析](dotnet-OpenXML-修复-Office-文档里面包含格式不正确的-Uri-而无法解析.md)
 
+ * [dotnet OpenXML 修复 Office 文档里面的百分比内容包含百分号](dotnet-OpenXML-修复-Office-文档里面的百分比内容包含百分号.md)
+
  * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-的属性作用.md)
 
  * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-重复-id-标识处理.md)

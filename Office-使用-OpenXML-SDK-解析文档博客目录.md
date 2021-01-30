@@ -126,6 +126,10 @@
 
 [NetOfficeFw/NetOffice: 🌌 .NET wrapper assemblies for accessing Microsoft Office applications.](https://github.com/NetOfficeFw/NetOffice )
 
+### PPT 辅助库
+
+[ShapeCrawler/ShapeCrawler: A .NET library for manipulating PowerPoint presentations.](https://github.com/ShapeCrawler/ShapeCrawler )
+
 ## 文档
 
 [服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
