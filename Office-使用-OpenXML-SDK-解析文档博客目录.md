@@ -92,6 +92,8 @@
 
 [dotnet OpenXML 修复 Office 文档里面包含格式不正确的 Uri 而无法解析](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BF%AE%E5%A4%8D-Office-%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E5%8C%85%E5%90%AB%E6%A0%BC%E5%BC%8F%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84-Uri-%E8%80%8C%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90.html )
 
+[dotnet OpenXML 修复 Office 文档里面的百分比内容包含百分号](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BF%AE%E5%A4%8D-Office-%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E7%99%BE%E5%88%86%E5%8F%B7.html )
+
 ## 工具
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
