@@ -126,6 +126,16 @@ var percentage = new Percentage(alphaText);
 </xsd:simpleType>
 ```
 
+这里的要求的数据格式如下
+
+```xml
+<xsd:simpleType name="ST_PositiveFixedPercentage">
+    <xsd:restriction base="ST_Percentage">
+        <xsd:pattern value="((100)|([0-9][0-9]?))(\.[0-9][0-9]?)?%"/>
+    </xsd:restriction>
+</xsd:simpleType>
+```
+
 也就是说其实不算是 Int 数值
 
 本文的属性是依靠 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html ) 工具协助测试的，这个工具是开源免费的工具，欢迎小伙伴使用

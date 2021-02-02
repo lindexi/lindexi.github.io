@@ -649,6 +649,8 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 [![](http://image.acmx.xyz/lindexi%2F20181113105010622)](https://r302.cc/DKzkRX)
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 参见：[WPF应用程序中输入系统介绍 - CSDN博客](https://blog.csdn.net/tanmengwen/article/details/8128992 )
 
 [一站式WPF--Window（一） - 周永恒 - 博客园](https://www.cnblogs.com/Zhouyongh/archive/2009/11/30/1613628.html )

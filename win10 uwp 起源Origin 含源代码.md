@@ -56,3 +56,7 @@
 
 于是上帝做出了上帝吃不下的饭，调用，上帝不存在上帝吃不下的饭。返回上帝做不出上帝吃不下的饭。于是上帝不是万能的。
 
+
+
+
+本文的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/2971742d7fd6a140d5c4423bd4455ca65eb42f0e/DerewewebaGineyinereburha) 欢迎小伙伴访问

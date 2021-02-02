@@ -89,6 +89,8 @@ n/100 * 5000
 
 如用于 `w:drawing` 绘制，表示绘制画布的宽度 `<wp:extent cx="1530350" cy="2142490"/>` 用这么大的数是可以提高精度和性能，不需要通过浮点计算
 
+关于 EMU 的定义，请看 ECMA 376 的 20.1.2.1 内容
+
 ## 开源库
 
 我开源了 [dotnetCampus.OpenXMLUnitConverter](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper) 包含了本文的转换方法
