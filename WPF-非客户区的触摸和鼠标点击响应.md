@@ -44,6 +44,8 @@
 
 [WM_TOUCH message - Windows applications](https://docs.microsoft.com/en-us/windows/win32/wintouch/wm-touchdown )
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 
 
 

@@ -652,6 +652,8 @@ System.InvalidOperationException:"Can only call DragMove when primary mouse butt
 
 关于 Win32 方法的定义，我推荐使用官方的 [dotnet/pinvoke: A library containing all P/Invoke code so you don't have to import it every time. Maintained and updated to support the latest Windows OS.](https://github.com/dotnet/pinvoke ) 库
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 参考
 
 [WPF Touch DragMove() - CodeProject](https://www.codeproject.com/Questions/669512/WPF-Touch-DragMove )

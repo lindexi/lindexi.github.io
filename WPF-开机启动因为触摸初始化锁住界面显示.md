@@ -300,6 +300,7 @@
  	mscorlib.dll!System.Threading.ThreadHelper.ThreadStart() (IL=epilog, Native=0x6EC56014+0x44)
 ```
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
 
 
 

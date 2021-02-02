@@ -164,6 +164,8 @@
 
 更多请看 [白板类应用的模式交互设计方案](https://blog.lindexi.com/post/%E7%99%BD%E6%9D%BF%E7%B1%BB%E5%BA%94%E7%94%A8%E7%9A%84%E6%A8%A1%E5%BC%8F%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88.html )
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 
 
 

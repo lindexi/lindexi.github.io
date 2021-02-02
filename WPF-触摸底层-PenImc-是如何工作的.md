@@ -199,6 +199,8 @@ switch (m_pSharedMemoryHeader->dwEvent)
 
 [IRealTimeStylus::GetPacketDescriptionData (rtscom.h) - Win32 apps](https://docs.microsoft.com/zh-cn/windows/win32/api/rtscom/nf-rtscom-irealtimestylus-getpacketdescriptiondata?redirectedfrom=MSDN )
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 
 
 

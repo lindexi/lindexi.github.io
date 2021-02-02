@@ -26,6 +26,8 @@
 
 这个测试工具的源代码请看 [github](https://github.com/lindexi/lindexi_gd/tree/ab74e3f14597e48d71c7cf478e55211991748a0c/WhearernweaemKeefnca )
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 
 
 

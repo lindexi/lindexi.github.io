@@ -193,6 +193,8 @@ _lastEventArgs.RoutedEvent = PreviewTouchUpEvent;
 
 本文的方法仅是模拟事件的触发，如果想要修改触摸的点的坐标等，需要自己实现 TouchDevice 类，请看 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html )
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 
 
 

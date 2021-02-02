@@ -191,6 +191,8 @@ void ThreadProc()
 
 其他请看 [WPF 界面异常卡死？Dispatcher的死锁](https://huchengv5.gitee.io/post/WPF-%E7%95%8C%E9%9D%A2%E5%BC%82%E5%B8%B8%E5%8D%A1%E6%AD%BB-Dispatcher%E7%9A%84%E6%AD%BB%E9%94%81.html )
 
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
+
 
 
 

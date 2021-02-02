@@ -16,7 +16,7 @@
 
 在程序启动的时候，可以通过[获得触摸精度和触摸点](https://blog.lindexi.com/post/WPF-%E8%8E%B7%E5%BE%97%E8%A7%A6%E6%91%B8%E7%B2%BE%E5%BA%A6%E5%92%8C%E8%A7%A6%E6%91%B8%E7%82%B9.html )判断当前是否存在触摸设备，如果不存在触摸设备同时判断是在希沃的设备上运行，那么就是触摸失效了。但是还可以收到系统的触摸消息，可以通过本文的黑科技收到触摸
 
-在 WPF 的框架，触摸是从 PENIMC 里面获取的，如果通过自己创建一个模拟的触摸设备，请看 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html) 也可以做到模拟一个触摸。在默认的 WPF 程序是收不到系统的触摸消息，需要[禁用实时触摸](https://blog.lindexi.com/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html )才可以收到触摸消息，在 Win7 和之后都可以从系统收到 `WM_TOUCH` 消息，通过这个消息可以解析当前的触摸点和触摸面积，通过这两个值可以用来模拟触摸走原有的 WPF 触摸
+在 WPF 的框架，触摸是从 PENIMC 里面获取的，如果通过自己创建一个模拟的触摸设备，请看 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html) 也可以做到模拟一个触摸。在默认的 WPF 程序是收不到系统的触摸消息，需要[禁用实时触摸](https://blog.lindexi.com/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html )才可以收到触摸消息，在 Win7 和之后都可以从系统收到 `WM_TOUCH` 消息，通过这个消息可以解析当前的触摸点和触摸面积，通过这两个值可以用来模拟触摸走原有的 WPF 触摸。如果不期望禁用实时触摸，也可以使用 WinForms 窗口来接收消息
 
 在使用 `WM_TOUCH` 消息需要用到一些本地的方法，先定义一个 NativeMethods 类，用来放本地方法
 
@@ -229,6 +229,8 @@ if (!device.IsActive && input.DwFlags.HasFlag(NativeMethods.TOUCHEVENTF.TOUCHEVE
 所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/463a4610393090eac60a06788faa3852589a6aa2/DernijacallqaNaycerejerlal/DernijacallqaNaycerejerlal) 欢迎小伙伴帮忙修改
 
 除了通过 Touch 消息之外，在 Win7 以上的系统，如 Window 10 系统支持 Pointer 消息，可以通过 [把触摸提升 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html ) 将触摸消息转 Pointer 消息进行模拟
+
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
 
 
 

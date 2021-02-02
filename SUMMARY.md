@@ -460,6 +460,8 @@
 
  * [dotnet OpenXml SDK 形状填充渐变色的主题色](dotnet-OpenXml-SDK-形状填充渐变色的主题色.md)
 
+ * [dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响](dotnet-OpenXML-SDK-形状的-rect-Shape-Text-Rectangle-属性对文本框的坐标影响.md)
+
  * [dotnet OpenXML SDK 形状的翻转与旋转](dotnet-OpenXML-SDK-形状的翻转与旋转.md)
 
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
@@ -509,6 +511,8 @@
  * [dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](dotnet-OpenXML-解析-WPS-不符合压缩文档规范的文档.md)
 
  * [dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](dotnet-OpenXML-解析-WPS-不规范的-PPT-文件的-cNvPr-重复-id-问题.md)
+
+ * [dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容](dotnet-OpenXML-让-PathLst-自定义形状转-SVG-路径格式的-Geometry-内容.md)
 
  * [dotnet OpenXML 颜色变换](dotnet-OpenXML-颜色变换.md)
 
@@ -1793,6 +1797,8 @@
  * [WPF 一个性能比较好的 gif 解析库](WPF-一个性能比较好的-gif-解析库.md)
 
  * [WPF 一个空的 WPF 程序有多少个窗口](WPF-一个空的-WPF-程序有多少个窗口.md)
+
+ * [WPF 不禁用实时触摸而收到 WM_Touch 触摸消息方法](WPF-不禁用实时触摸而收到-WM_Touch-触摸消息方法.md)
 
  * [WPF 两个 Topmost 的窗口如何设置谁在最上方](WPF-两个-Topmost-的窗口如何设置谁在最上方.md)
 
