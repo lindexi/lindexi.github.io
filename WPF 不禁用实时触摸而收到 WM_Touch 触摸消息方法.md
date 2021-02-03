@@ -3,6 +3,8 @@
 在 WPF 中，触摸默认通过 RealTimeStylus 实时触摸进来，根据官方文档，这个机制将会和 WM_Touch 触摸消息在同一个 HWND 是互斥的。而在 WPF 中按照机制，在没有禁用实时触摸下是不支持在窗口内收到 WM_Touch 触摸消息。因此想要在不禁用 WPF 实时触摸的情况下，获取 WM_Touch 触摸消息的一个方法是通过 WinForms 窗口来获取
 
 <!--more-->
+<!-- CreateTime:2021/2/1 15:56:09 -->
+
 <!-- 发布 -->
 
 在不禁用 WPF 的 RealTimeStylus 实时触摸下，依然可以通过 WinForms 窗口获取触摸 WM_Touch 消息，只需要在 WinForms 窗口调用 RegisterTouchWindow 就可以

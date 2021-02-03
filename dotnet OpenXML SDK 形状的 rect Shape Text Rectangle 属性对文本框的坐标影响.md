@@ -3,6 +3,8 @@
 在 Office 里面，对于形状，可以通过 a:rect 指定文本框的坐标
 
 <!--more-->
+<!-- CreateTime:2021/2/1 17:04:20 -->
+
 
 <!-- 发布 -->
 
@@ -81,6 +83,12 @@
 <!-- ![](image/dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响/dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响1.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2021211727273025.jpg)
+
+在 Office 里面，对文本框的边距设置，作用是 `a:bodyPr` 属性，而不是 `a:rect` 属性
+
+<!-- ![](image/dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响/dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20212284094980.jpg)
 
 本文全部代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c796ed65/RurlejileGearhuheljale) 或 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c796ed65/RurlejileGearhuheljale) 欢迎大家访问
 

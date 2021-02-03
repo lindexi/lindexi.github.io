@@ -3,6 +3,8 @@
 在 Office 文档里面，可以使用自己定制的自绘制形状，自己绘制的内容将会存放为 pathLst 也就是 List of Shape Paths 内容到文档里面。本文将告诉大家如何将 PathLst 自定义形状转换为标准的 SVG 路径，以支持在 WPF 或 UWP 中的 Path 元素作为 Geometry 显示
 
 <!--more-->
+<!-- CreateTime:2021/2/1 14:24:48 -->
+
 
 <!-- 发布 -->
 
