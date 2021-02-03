@@ -74,6 +74,8 @@
 
 [dotnet OpenXML SDK 形状的翻转与旋转](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%BF%BB%E8%BD%AC%E4%B8%8E%E6%97%8B%E8%BD%AC.html )
 
+[dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响](https://lindexi.gitee.io/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84-rect-Shape-Text-Rectangle-%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%96%87%E6%9C%AC%E6%A1%86%E7%9A%84%E5%9D%90%E6%A0%87%E5%BD%B1%E5%93%8D.html )
+
 ## 颜色
 
 [dotnet OpenXml SDK 形状填充渐变色的主题色](https://blog.lindexi.com/post/dotnet-OpenXml-SDK-%E5%BD%A2%E7%8A%B6%E5%A1%AB%E5%85%85%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E4%B8%BB%E9%A2%98%E8%89%B2.html)

@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/2/1 15:56:09 -->
+
 <!-- 发布 -->
 
 在不禁用 WPF 的 RealTimeStylus 实时触摸下，依然可以通过 WinForms 窗口获取触摸 WM_Touch 消息，只需要在 WinForms 窗口调用 RegisterTouchWindow 就可以
