@@ -534,6 +534,8 @@
 
  * [dotnet tool 文件编码规范命令行工具](dotnet-tool-文件编码规范命令行工具.md)
 
+ * [dotnet tool 自动找到项目里面重复的 NuGet 依赖项](dotnet-tool-自动找到项目里面重复的-NuGet-依赖项.md)
+
  * [dotnet ValueTask 简单入门](dotnet-ValueTask-简单入门.md)
 
  * [dotnet 一些代码审查套路](dotnet-一些代码审查套路.md)
