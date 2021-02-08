@@ -529,6 +529,45 @@ window.Activate();
             }));
 ```
 
+## 附加路由事件
+
+路由事件可以定义在任意的类
+
+```csharp
+    public static class LindexiExtensions
+    {
+        public static void AddLindexiHandler(UIElement element,
+            EventHandler<LindexiRoutedEventArgs> handler)
+        {
+            element.AddHandler(LindexiEvent, handler);
+        }
+
+        public static void RemoveLindexiHandler(UIElement element,
+            EventHandler<LindexiRoutedEventArgs> handler)
+        {
+            element.RemoveHandler(LindexiEvent, handler);
+        }
+
+        public static readonly RoutedEvent LindexiEvent =
+            EventManager.RegisterRoutedEvent("Lindexi",
+                RoutingStrategy.Bubble, typeof(EventHandler<LindexiRoutedEventArgs>),
+                typeof(LindexiExtensions));
+
+        public static void RaiseLindexiEvent(UIElement element)
+        {
+            element.RaiseEvent(new LindexiRoutedEventArgs(LindexiEvent, element));
+        }
+    }
+
+    public class LindexiRoutedEventArgs : RoutedEventArgs
+    {
+        public LindexiRoutedEventArgs(RoutedEvent routedEvent, object source) : base(routedEvent, source)
+        {
+        }
+    }
+```
+
+如使用 `element.RaiseEvent(new UIElementDraggedRoutedEventArgs(UIElementDraggedEvent, element2));` 那么事件里面的 Source 是 element 而 OriginSource 是 element2 元素
 
 ## 滚动 ListView 的内容到最底
 
