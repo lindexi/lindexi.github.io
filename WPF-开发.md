@@ -46,7 +46,7 @@ var uri2 = "/api/12";
     }
 ```
 
-## 单例应用在多实例用户无法使用
+<!-- ## 单例应用在多实例用户无法使用
 
 如果使用NamedPipeServerStream、`Mutex`做单实例，需要传入字符串，这时如果传入一个固定的字符串，会在多用户的时候无法使用。
 
@@ -116,7 +116,7 @@ public partial class App
 
     #endregion
 }
-```
+``` -->
 
 ## 当鼠标滑过一个被禁用的元素时，让ToolTip 显示
 
@@ -671,7 +671,7 @@ private void Foo(Page p)
 [c# - How are WPF pages held in memory? - Stack Overflow](https://stackoverflow.com/questions/54844836/how-are-wpf-pages-held-in-memory )
 
 
-### WPF 获得依赖属性值更新
+## WPF 获得依赖属性值更新
 
 如果需要获得 G 的 Padding 的值更改，WPF 获得依赖属性 值更改可以使用下面代码
 
@@ -693,13 +693,13 @@ private void Foo(Page p)
 
 参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
 
-### WPF 如何正确的在tooltip中实现绑定
+## WPF 如何正确的在tooltip中实现绑定
 
 解决 ToolTip 绑定不上的问题
 
 [2020-1-8-如何正确的在tooltip中实现绑定 - huangtengxiao](https://xinyuehtx.github.io/post/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%9C%A8tooltip%E4%B8%AD%E5%AE%9E%E7%8E%B0%E7%BB%91%E5%AE%9A.html )
 
-### WPF 拖动元素
+## WPF 拖动元素
 
 代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0e57c425/LayfilejonarchoDawherehebafonur ) 欢迎小伙伴访问
 
