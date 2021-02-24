@@ -2336,6 +2336,8 @@
 
  * [刚刚我从服务器回滚了 dotnet 5 的环境](刚刚我从服务器回滚了-dotnet-5-的环境.md)
 
+ * [创建CBB心得](创建CBB心得.md)
+
  * [创建不带BOM 的UTF8](创建不带BOM-的UTF8.md)
 
  * [制作的 dotnet tool 运行失败提示依赖缺失](制作的-dotnet-tool-运行失败提示依赖缺失.md)
