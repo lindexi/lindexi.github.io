@@ -262,6 +262,36 @@ Geometry.FillContains(position)
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
 
+## 角度弧度
+
+使用 Math 的三角函数计算返回值使用的是弧度单位，如下面代码
+
+```csharp
+        /// <summary>
+        /// 获取向量的 cos（θ）值
+        /// </summary>
+        /// <param name="vector"></param>
+        /// <returns></returns>
+        public static double GetCos(this Vector vector)
+            => vector.Y / vector.Length;
+```
+
+在 C# 中将弧度转换为角度可以使用如下代码
+
+```csharp
+var 角度 = 弧度 / Math.PI * 180;
+```
+
+## 最简代码绘制 Geometry 几何
+
+使用 Path 元素
+
+```
+      <Path x:Name="DrawElement" Stroke="Red" StrokeThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top"></Path>
+
+      DrawElement.Data = geometry;
+```
+
 ## 参考
 
 《人教版初中数学》

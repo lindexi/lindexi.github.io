@@ -11,6 +11,7 @@
 - dotnetCampus.UpdateAllDotNetTools 一句命令更新所有 dotnet tool 到最新版本 
 - dotnet-serve 一句命令开启文件服务器
 - NuGetMergeFixTool 修复大型项目的 NuGet 合并，也可以用来快速升级 NuGet 库
+- snitch [自动找到项目里面重复的 NuGet 依赖项](https://blog.lindexi.com/post/dotnet-tool-%E8%87%AA%E5%8A%A8%E6%89%BE%E5%88%B0%E9%A1%B9%E7%9B%AE%E9%87%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%9A%84-NuGet-%E4%BE%9D%E8%B5%96%E9%A1%B9.html )
 
 更多工具可以在 [ToolGet](https://www.toolget.net) 里面进行搜寻，详细请看 [dotnet 在 NuGet 上搜寻好用的 dotnet tool 工具](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-NuGet-%E4%B8%8A%E6%90%9C%E5%AF%BB%E5%A5%BD%E7%94%A8%E7%9A%84-dotnet-tool-%E5%B7%A5%E5%85%B7.html )
 
