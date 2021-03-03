@@ -168,6 +168,26 @@ Geometry.FillContains(position)
 
 在命名上，使用 Rotation 指的是旋转，包含了角度和旋转中心点。而 Angle 表示的是旋转的角度，默认咱使用的是弧度表示
 
+## 向量的获取方法
+
+有两个点分别是 A 和 B 两点，求向量 AB 的值
+
+```csharp
+AB = B - A;
+```
+
+向量里面，采用的点的相减可以获取向量。如上面代码表示向量 AB 以 A 为起点，以 B 为终点的向量
+
+<!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识7.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F202133103233804.jpg)
+
+## [求向量旋转角度](https://blog.lindexi.com/post/WPF-%E5%9F%BA%E7%A1%80-2D-%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9F%A5%E8%AF%86-%E6%B1%82%E5%90%91%E9%87%8F%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6.html )
+
+求向量的三角函数 sin 或 cos 的值。或已知两个点，求两点相连线段角度
+
+请看 [WPF 基础 2D 图形学知识 求向量旋转角度](https://blog.lindexi.com/post/WPF-%E5%9F%BA%E7%A1%80-2D-%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9F%A5%E8%AF%86-%E6%B1%82%E5%90%91%E9%87%8F%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6.html )
+
 ## 求旋转矩形命中测试
 
 这是纯数学计算，给定一个旋转矩形，已知这个旋转矩形的各个顶点坐标。以及一个点，求这个点是否在旋转矩形内
@@ -195,18 +215,23 @@ Geometry.FillContains(position)
 判断代码
 
 ```csharp
+        /// <summary>
+        /// 判断点是否在旋转矩形内
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
         public bool Contains(Point point)
         {
             // https://math.stackexchange.com/a/190373/440577
             // (0<AM⋅AB<AB⋅AB)∧(0<AM⋅AC<AC⋅AC)
-            var am = A - point;
-            var ab = A - B;
-            double am_ab = am * ab;
-            double ab_ab = ab * ab;
+            var am = point - A;
+            var ab = B - A;
+            var am_ab = am * ab;
+            var ab_ab = ab * ab;
 
-            var ac = A - C;
-            double am_ac = am * ac;
-            double ac_ac = ac * ac;
+            var ac = C - A;
+            var am_ac = am * ac;
+            var ac_ac = ac * ac;
 
             if (am_ab > 0 && am_ab < ab_ab /*(0<AM⋅AB<AB⋅AB)*/
                           && am_ac > 0 && am_ac < ac_ac)
@@ -291,6 +316,8 @@ var 角度 = 弧度 / Math.PI * 180;
 
       DrawElement.Data = geometry;
 ```
+
+
 
 ## 参考
 
