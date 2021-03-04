@@ -84,6 +84,10 @@ Geometry.FillContains(position)
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/5f804a35/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/5f804a35/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
 
+更多请看 [WPF 基础 2D 图形学知识 判断点是否在任意几何内部方法](https://blog.lindexi.com/post/WPF-%E5%9F%BA%E7%A1%80-2D-%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9F%A5%E8%AF%86-%E5%88%A4%E6%96%AD%E7%82%B9%E6%98%AF%E5%90%A6%E5%9C%A8%E4%BB%BB%E6%84%8F%E5%87%A0%E4%BD%95%E5%86%85%E9%83%A8%E6%96%B9%E6%B3%95.html )
+
+以上文档包含了求旋转矩形命中测试，给定一个旋转矩形，已知这个旋转矩形的各个顶点坐标。以及一个点，求这个点是否在旋转矩形内的算法
+
 ## 给定中心点和宽度高度旋转角度求旋转矩形顶点坐标
 
 如有定义旋转矩形的顶点分别是 A B C D 四个点，在没有进行旋转之前如图
@@ -187,105 +191,6 @@ AB = B - A;
 求向量的三角函数 sin 或 cos 的值。或已知两个点，求两点相连线段角度
 
 请看 [WPF 基础 2D 图形学知识 求向量旋转角度](https://blog.lindexi.com/post/WPF-%E5%9F%BA%E7%A1%80-2D-%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9F%A5%E8%AF%86-%E6%B1%82%E5%90%91%E9%87%8F%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6.html )
-
-## 求旋转矩形命中测试
-
-这是纯数学计算，给定一个旋转矩形，已知这个旋转矩形的各个顶点坐标。以及一个点，求这个点是否在旋转矩形内
-
-定义给定的点是 M 点，而旋转矩形顶点是 A B C D 点。在旋转矩形没有经过旋转的顶点如下
-
-<!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识1.png) -->
-
-![](http://image.acmx.xyz/lindexi%2F20211272028498690.jpg)
-
-其实在不在 WPF 中，影响都不大，如何判断一个点在旋转后的矩形中，只需要根据公式计算就可以
-
-根据公式可以求出点是否在旋转矩形
-
-```
- (0<AM⋅AB<AB⋅AB)∧(0<AM⋅AC<AC⋅AC)
-```
-
-以上逻辑中的 AM 等表示的是向量。在 WPF 中可以使用两个点相减拿到向量。求 AM 的向量就是使用 A 点减去 M 点
-
-```csharp
-   var am = A - m;
-```
-
-判断代码
-
-```csharp
-        /// <summary>
-        /// 判断点是否在旋转矩形内
-        /// </summary>
-        /// <param name="point"></param>
-        /// <returns></returns>
-        public bool Contains(Point point)
-        {
-            // https://math.stackexchange.com/a/190373/440577
-            // (0<AM⋅AB<AB⋅AB)∧(0<AM⋅AC<AC⋅AC)
-            var am = point - A;
-            var ab = B - A;
-            var am_ab = am * ab;
-            var ab_ab = ab * ab;
-
-            var ac = C - A;
-            var am_ac = am * ac;
-            var ac_ac = ac * ac;
-
-            if (am_ab > 0 && am_ab < ab_ab /*(0<AM⋅AB<AB⋅AB)*/
-                          && am_ac > 0 && am_ac < ac_ac)
-            {
-                return true;
-            }
-
-            return false;
-        }
-```
-
-以上数学的证明大概如下，有旋转矩形如下，有点 M 如下
-
-<!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识2.png) -->
-
-![](http://image.acmx.xyz/lindexi%2F2021127204044398.jpg)
-
-定义的向量如下
-
-<!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识3.png) -->
-
-![](http://image.acmx.xyz/lindexi%2F20211272042302440.jpg)
-
-简单来说的向量的点乘的含义就是降向量维度，如上面的二维向量的点乘可以拿到一维的标量的值
-
-```csharp
-            double am_ab = am * ab;
-            double ab_ab = ab * ab;
-
-            double am_ac = am * ac;
-            double ac_ac = ac * ac;
-```
-
-<!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识4.png) -->
-
-![](http://image.acmx.xyz/lindexi%2F2021127204705505.jpg)
-
-从图片可以看到所有的向量都从 A 点出发，此时可以将 A 点设置为原点，如果此时的 M 是在矩形外，如认为是在如下图的左边，那么此时向量相乘的值就会是负数，因为相对于 A 作为原点
-
-<!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识5.png) -->
-
-![](http://image.acmx.xyz/lindexi%2F2021127204956927.jpg)
-
-因此小于零的就不在矩形内，这就是旋转之前水平方向的判断 `0<AM⋅AB` 的依据
-
-而如果 `AB⋅AB` 就表示 AB 的向量长度，也就是说如果 AM 的距离实际上大于 AB 的距离，如点在矩形的右边，那么点也不在矩形内
-
-<!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识6.png) -->
-
-![](http://image.acmx.xyz/lindexi%2F2021127205388240.jpg)
-
-因此旋转之前的水平方向需要满足 `0<AM⋅AB<AB⋅AB` 才可以。而垂直方向也同理，只是将 AB 修改为 AC 两点
-
-以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/12324b85/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
 
 ## 角度弧度
 
