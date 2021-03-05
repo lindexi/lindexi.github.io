@@ -703,6 +703,98 @@ private void Foo(Page p)
 
 代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0e57c425/LayfilejonarchoDawherehebafonur ) 欢迎小伙伴访问
 
+## 依赖属性的 FrameworkPropertyMetadata 配置仅在 FrameworkElement 生效
+
+如果一个自定义的类型只是继承 UIElement 类型，那么在依赖属性定义的 FrameworkPropertyMetadata 里面设置的 FrameworkPropertyMetadataOptions.AffectsRender 等都是无效的，如下面代码
+
+```csharp
+
+public class Doubi : UIElement
+{
+        public static readonly DependencyProperty LindexiProperty = DependencyProperty.Register(
+            "Lindexi", typeof(Lindexi), typeof(Doubi), new FrameworkPropertyMetadata(default(Lindexi), FrameworkPropertyMetadataOptions.AffectsRender));
+
+        public Lindexi Lindexi
+        {
+            get { return (Lindexi) GetValue(LindexiProperty); }
+            set { SetValue(LindexiProperty, value); }
+        }
+}
+```
+
+如果更改 Lindexi 属性的值，是不会重新触发 OnRender 函数的，因为 FrameworkPropertyMetadataOptions.AffectsRender 的设置是在 FrameworkPropertyMetadata 里面，而这个类需要在 FrameworkElement 下生效，只是继承 UIElement 是无效的
+
+## 多个依赖属性共用一个 PropertyMetadata 对象
+
+如果我定义了多个依赖属性，这些属性都有相同的 PropertyMetadata 定义，如下面代码
+
+```csharp
+    class Doubi : UIElement
+    {
+        public static readonly DependencyProperty F1Property = DependencyProperty.Register(
+            "F1", typeof(Lindexi), typeof(Doubi), new PropertyMetadata(default(Lindexi)));
+
+        public Lindexi F1
+        {
+            get { return (Lindexi) GetValue(F1Property); }
+            set { SetValue(F1Property, value); }
+        }
+
+        public static readonly DependencyProperty F2Property = DependencyProperty.Register(
+            "F2", typeof(double), typeof(Doubi), new PropertyMetadata(default(double)));
+
+        public double F2
+        {
+            get { return (double) GetValue(F2Property); }
+            set { SetValue(F2Property, value); }
+        }
+    }
+
+    class Lindexi
+    {
+
+    }
+```
+
+可以看到 F1Property 和 F2Property 的 PropertyMetadata 里面的定义都是相同的，那么我是否可以只定义一个对象，如下面代码
+
+```csharp
+        private static readonly PropertyMetadata DefaultPropertyMetadata = new PropertyMetadata(default(Lindexi));
+
+        public static readonly DependencyProperty F1Property = DependencyProperty.Register(
+            "F1", typeof(Lindexi), typeof(Doubi), DefaultPropertyMetadata);
+
+        public Lindexi F1
+        {
+            get { return (Lindexi) GetValue(F1Property); }
+            set { SetValue(F1Property, value); }
+        }
+
+        public static readonly DependencyProperty F2Property = DependencyProperty.Register(
+            "F2", typeof(double), typeof(Doubi), DefaultPropertyMetadata);
+
+        public double F2
+        {
+            get { return (double) GetValue(F2Property); }
+            set { SetValue(F2Property, value); }
+        }
+```
+
+这是不可以的，此时运行将会提示此元数据已与类型和属性关联。必须新建一个元数据
+
+```
+System.ArgumentException:“此元数据已与类型和属性关联。必须新建一个元数据。”
+```
+
+抛出的堆栈如下
+
+```
+    WindowsBase.dll!System.Windows.DependencyProperty.SetupOverrideMetadata(System.Type, System.Windows.PropertyMetadata typeMetadata, out System.Windows.DependencyObjectType dType, out System.Windows.PropertyMetadata baseMetadata)  未知
+    WindowsBase.dll!System.Windows.DependencyProperty.OverrideMetadata(System.Type, System.Windows.PropertyMetadata typeMetadata = {System.Windows.PropertyMetadata})    未知
+    WindowsBase.dll!System.Windows.DependencyProperty.Register(string name, System.Type propertyType, System.Type ownerType, System.Windows.PropertyMetadata typeMetadata, System.Windows.ValidateValueCallback validateValueCallback)  未知
+    WindowsBase.dll!System.Windows.DependencyProperty.Register(string name, System.Type propertyType, System.Type ownerType, System.Windows.PropertyMetadata typeMetadata)  未知
+```
+
 
 
 
