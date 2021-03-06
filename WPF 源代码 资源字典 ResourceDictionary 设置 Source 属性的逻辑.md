@@ -251,12 +251,12 @@ ResourceDictionary loadedRD = MimeObjectFactory.GetObjectAndCloseStream(s, conte
 
 更多资源字典相关请看
 
-<!-- ?WT.mc_id=DX-MVP-5003606
+<!-- ?WT.mc_id=WD-MVP-5003260
 
-&WT.mc_id=DX-MVP-5003606 -->
+&WT.mc_id=WD-MVP-5003260 -->
 
-- [Define XAML resources - WPF .NET](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/fundamentals/xaml-resources-define?view=netdesktop-5.0&WT.mc_id=DX-MVP-5003606 )
-- [How to: Use an Application-Scope Resource Dictionary - WPF .NET Framework](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/app-development/how-to-use-an-application-scope-resource-dictionary?view=netframeworkdesktop-4.8&WT.mc_id=DX-MVP-5003606 )
+- [Define XAML resources - WPF .NET](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/fundamentals/xaml-resources-define?view=netdesktop-5.0&WT.mc_id=WD-MVP-5003260 )
+- [How to: Use an Application-Scope Resource Dictionary - WPF .NET Framework](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/app-development/how-to-use-an-application-scope-resource-dictionary?view=netframeworkdesktop-4.8&WT.mc_id=WD-MVP-5003260 )
 - [ResourceDictionary.Source 属性_jiangxinyu的专栏-CSDN博客](https://blog.csdn.net/jiangxinyu/article/details/8756985?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1.control )
 - [WPF之ResourceDictionary资源字典_LADT的博客-CSDN博客](https://blog.csdn.net/wlarlen/article/details/79047320 )
 - [WPF 资源字典ResourceDictionary使用_Stay Hungry-CSDN博客](https://blog.csdn.net/wcc27857285/article/details/90943244 )

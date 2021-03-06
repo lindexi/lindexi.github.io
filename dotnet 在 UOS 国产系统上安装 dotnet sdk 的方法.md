@@ -41,7 +41,7 @@ deb https://mirrors.ustc.edu.cn/debian buster main contrib non-free
 
 ![](http://image.acmx.xyz/lindexi%2F2020931729581851.jpg)
 
-按照 [在 Debian 上安装 .NET Core ](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=DX-MVP-5003606 ) 的方法，在命令行输入下面代码，将 Microsoft 包签名密钥添加到受信任密钥列表，并添加包存储库
+按照 [在 Debian 上安装 .NET Core ](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=WD-MVP-5003260 ) 的方法，在命令行输入下面代码，将 Microsoft 包签名密钥添加到受信任密钥列表，并添加包存储库
 
 ```csharp
 wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -59,6 +59,6 @@ sudo apt-get update; \
 
 欢迎小伙伴加入 xamarin 国产 UOS 开发群： 810052083 
 
-如果安装失败了，请看 [官方文档](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=DX-MVP-5003606 ) 
+如果安装失败了，请看 [官方文档](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=WD-MVP-5003260 ) 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

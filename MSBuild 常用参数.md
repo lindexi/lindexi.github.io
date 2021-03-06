@@ -36,11 +36,11 @@ msbuild -restore
 msbuild -t:restore,build
 ```
 
-详细请看 [NuGet pack and restore as MSBuild targets](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command?WT.mc_id=DX-MVP-5003606 )
+详细请看 [NuGet pack and restore as MSBuild targets](https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#restoring-and-building-with-one-msbuild-command?WT.mc_id=WD-MVP-5003260 )
 
-<!-- ?WT.mc_id=DX-MVP-5003606
+<!-- ?WT.mc_id=WD-MVP-5003260
 
-&WT.mc_id=DX-MVP-5003606 -->
+&WT.mc_id=WD-MVP-5003260 -->
 
 ## 并行编译
 

@@ -16,7 +16,7 @@
 
 先从文件的格式开始聊起。在咱写一个默认的 .NET Framework 控制台应用的时候，在 VisualStudio 上进行 Debug 调试构建输出，此时将可以从输出文件路径上看到仅仅只有一个 EXE 可执行文件，而没有 DLL 动态链接库文件。这个输出的 Exe 可执行文件是一个符合标准的 PE 格式的文件。而 PE （Portable Executable）格式文件是微软 Win32 环境可执行文件的标准文件格式。也就是说使用 .NET Framework 输出的可执行文件和其他 Win32 可执行文件的文件格式是相同的。尽管格式上是相同的，微软在 Windows 下依然对 .NET Framework 应用做了特别的处理，因为在 .NET Framework 输出的可执行文件里面，包含了从元数据和 MSIL 代码，换句话说就是真正的逻辑是包含在 MSIL 代码里面，而不是作为本机代码的存在。这就需要 Windows 系统在用户执行 .NET Framework 可执行文件的时候进行一些特殊的处理
 
-那既然 .NET Framework 的可执行文件在执行时需要 Windows 做特殊的处理，那么 Windows 如何了解到这是一个需要处理的 .NET Framework 应用？根据 [Managed Execution Process 官方文档](https://docs.microsoft.com/en-us/dotnet/standard/managed-execution-process?WT.mc_id=DX-MVP-5003606 ) 可以了解到，在 .NET Framework 的输出可执行文件里面，在 PE 文件的 COFF 头内容添加了特殊的内容，用来标识这是一个 .NET Framework 应用
+那既然 .NET Framework 的可执行文件在执行时需要 Windows 做特殊的处理，那么 Windows 如何了解到这是一个需要处理的 .NET Framework 应用？根据 [Managed Execution Process 官方文档](https://docs.microsoft.com/en-us/dotnet/standard/managed-execution-process?WT.mc_id=WD-MVP-5003260 ) 可以了解到，在 .NET Framework 的输出可执行文件里面，在 PE 文件的 COFF 头内容添加了特殊的内容，用来标识这是一个 .NET Framework 应用
 
 在运行 .NET Framework 的可执行文件的时候，首先进入的 operating system loader 将会判断 PE 文件的 COFF 头内容，通过 COFF 头识别这个可执行文件是否 .NET Framework 可执行文件。对于 .NET Framework 可执行文件而言，将会加载 mscoree.dll 进行执行，通过 `_CorValidateImage` 和 `_CorImageUnloading` 分别用来通知 operating system loader 托管模块的映像的加载和卸载。其中在 `_CorValidateImage` 中将执行确保该代码是有效的托管代码以及将映像中的入口点更改为运行时中的入口点。而在 x64 中，还会在 `_CorValidateImage` 中通过在内存中修改映像的 PE32 为 PE32+ 格式。也因为 .NET Framework 应用是依靠系统的特殊处理，因此 .NET Framework 又有一个原因耦合了系统环境，这和 .NET Core 的启动有着本质的差别
 
@@ -164,6 +164,6 @@ int exe_start(const int argc, const pal::char_t* argv[])
 
 [dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程](https://blog.lindexi.com/post/dotnet-core-%E5%BA%94%E7%94%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-%E9%80%9A%E8%BF%87%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA-dotnet-host-%E7%90%86%E8%A7%A3%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.html )
 
-[Managed Execution Process](https://docs.microsoft.com/en-us/dotnet/standard/managed-execution-process?WT.mc_id=DX-MVP-5003606 ) 
+[Managed Execution Process](https://docs.microsoft.com/en-us/dotnet/standard/managed-execution-process?WT.mc_id=WD-MVP-5003260 ) 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

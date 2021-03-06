@@ -15,7 +15,7 @@
 
 可以使用 [openmcdf](https://github.com/ironfede/openmcdf ) 这个开源库读取 OLE 文件，然后判断这个文件是否 Office 加密文件
 
-判断一份文档是否被加密首先需要了解加密的格式，请看 [[MS-OFFCRYPTO]: Office Document Cryptography Structure](https://docs.microsoft.com/en-us/openspecs/office_file_formats/ms-offcrypto/3c34d72a-1a61-4b52-a893-196f9157f083?WT.mc_id=DX-MVP-5003606 )
+判断一份文档是否被加密首先需要了解加密的格式，请看 [[MS-OFFCRYPTO]: Office Document Cryptography Structure](https://docs.microsoft.com/en-us/openspecs/office_file_formats/ms-offcrypto/3c34d72a-1a61-4b52-a893-196f9157f083?WT.mc_id=WD-MVP-5003260 )
 
 先创建一份加密的 pptx 文档，接下来尝试判断这个文件是加密的 Office 文件，我在 [github](https://github.com/lindexi/lindexi_gd/tree/efd1fc6e57388bf9b4ed65346e3230a4163b1d98/KaldaygeduWalaineejaw ) 放一份我创建的文件，小伙伴可以随意使用
 

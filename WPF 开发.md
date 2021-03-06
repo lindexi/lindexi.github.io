@@ -644,7 +644,7 @@ window.Activate();
 
 ## WPF 使用 Frame 导航 缓存之前页面实例
 
-默认 Frame 导航不会保存 Page 对象，想要实现 Cache 页面的功能，导航的时候调用原来的实例不重新创建，需要在页面设置 `KeepAlive=true` 属性。这个设置相当于在 UWP 中的 [Page.NavigationCacheMode Property](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.page.navigationcachemode?view=winrt-19041&WT.mc_id=DX-MVP-5003606 ) 属性
+默认 Frame 导航不会保存 Page 对象，想要实现 Cache 页面的功能，导航的时候调用原来的实例不重新创建，需要在页面设置 `KeepAlive=true` 属性。这个设置相当于在 UWP 中的 [Page.NavigationCacheMode Property](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.page.navigationcachemode?view=winrt-19041&WT.mc_id=WD-MVP-5003260 ) 属性
 
 ```csharp
 private void Foo(Page p)
@@ -663,7 +663,7 @@ private void Foo(Page p)
     KeepAlive="True">
 ```
 
-详细请看 [Page.KeepAlive Property](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.page.keepalive?view=netcore-3.1&WT.mc_id=DX-MVP-5003606 )
+详细请看 [Page.KeepAlive Property](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.page.keepalive?view=netcore-3.1&WT.mc_id=WD-MVP-5003260 )
 
 [c# - How are WPF pages held in memory? - Stack Overflow](https://stackoverflow.com/questions/54844836/how-are-wpf-pages-held-in-memory )
 

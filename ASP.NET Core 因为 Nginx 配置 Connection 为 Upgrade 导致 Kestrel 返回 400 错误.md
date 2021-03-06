@@ -157,9 +157,9 @@ http {
 
 [nginx 反向代理websocket – A Blog](https://blog.sdlsj.net/archives/nginx/nginx-reverse-proxy-websocket/ )
 
-[Configure ASP.NET Core to work with proxy servers and load balancers](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-5.0&WT.mc_id=DX-MVP-5003606 )
+[Configure ASP.NET Core to work with proxy servers and load balancers](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer?view=aspnetcore-5.0&WT.mc_id=WD-MVP-5003260 )
 
-[Host ASP.NET Core on Linux with Nginx](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-5.0&WT.mc_id=DX-MVP-5003606 )
+[Host ASP.NET Core on Linux with Nginx](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-5.0&WT.mc_id=WD-MVP-5003260 )
 
 [协议升级机制 - HTTP](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Protocol_upgrade_mechanism )
 
@@ -169,11 +169,11 @@ http {
 
 [How to log automatic 400 responses on model validation errors · Issue #12157 · dotnet/AspNetCore.Docs](https://github.com/dotnet/AspNetCore.Docs/issues/12157 )
 
-[Configure options for the ASP.NET Core Kestrel web server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel/options?view=aspnetcore-5.0&WT.mc_id=DX-MVP-5003606 )
+[Configure options for the ASP.NET Core Kestrel web server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel/options?view=aspnetcore-5.0&WT.mc_id=WD-MVP-5003260 )
 
-[Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-5.0&WT.mc_id=DX-MVP-5003606 )
+[Handle errors in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling?view=aspnetcore-5.0&WT.mc_id=WD-MVP-5003260 )
 
-[c# - How to auto log every request in .NET Core WebAPI? - Stack Overflow](https://stackoverflow.com/questions/45479094/how-to-auto-log-every-request-in-net-core-webapi?WT.mc_id=DX-MVP-5003606 )
+[c# - How to auto log every request in .NET Core WebAPI? - Stack Overflow](https://stackoverflow.com/questions/45479094/how-to-auto-log-every-request-in-net-core-webapi?WT.mc_id=WD-MVP-5003260 )
 
 
 

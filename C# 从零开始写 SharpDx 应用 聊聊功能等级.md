@@ -72,7 +72,7 @@
 - 功能等级不代表性能，而仅代表功能。性能取决于硬件实现
 
 
-不同的功能等级对应支持的功能列表请看  [Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=DX-MVP-5003606)
+不同的功能等级对应支持的功能列表请看  [Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=WD-MVP-5003260)
 
 ## 判断设备的支持功能等级
 
@@ -123,6 +123,6 @@ var featureLevel = _d3DDevice.FeatureLevel;
 
 [D3D11_CREATE_DEVICE_FLAG enumeration](https://msdn.microsoft.com/en-us/library/windows/desktop/ff476107(v=vs.85).aspx )
 
-[Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=DX-MVP-5003606)
+[Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=WD-MVP-5003260)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

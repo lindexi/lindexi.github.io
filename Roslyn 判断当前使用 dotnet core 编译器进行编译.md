@@ -28,7 +28,7 @@
 
 The type of the runtime that is currently executing. Introduced in MSBuild 15. Value may be undefined (prior to MSBuild 15), Full indicating that MSBuild is running on the desktop .NET Framework, Core indicating that MSBuild is running on .NET Core (for example in dotnet build), or Mono indicating that MSBuild is running on Mono.
 
-更多请看 [MSBuild Reserved and Well-known Properties - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2019&WT.mc_id=DX-MVP-5003606 )
+更多请看 [MSBuild Reserved and Well-known Properties - Visual Studio](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2019&WT.mc_id=WD-MVP-5003260 )
 
 更多编译相关请看[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
 
