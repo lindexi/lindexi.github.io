@@ -78,7 +78,7 @@ Install-Package Lindexi.Control.WPFFlipDrawingCanvas -Version 1.0.0
 
 ![](http://image.acmx.xyz/lindexi%2F20201017161531776.jpg)
 
-详细请看 [How to: Flip a UIElement Horizontally or Vertically - WPF .NET Framework](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/how-to-flip-a-uielement-horizontally-or-vertically?view=netframeworkdesktop-4.8&WT.mc_id=DX-MVP-5003606 )
+详细请看 [How to: Flip a UIElement Horizontally or Vertically - WPF .NET Framework](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/how-to-flip-a-uielement-horizontally-or-vertically?view=netframeworkdesktop-4.8&WT.mc_id=WD-MVP-5003260 )
 
 我这个控件很简单，因此去安装一个 NuGet 有点坑，所以我更推荐你去抄抄我的代码哈
 

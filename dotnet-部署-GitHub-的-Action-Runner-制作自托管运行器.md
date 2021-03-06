@@ -89,7 +89,7 @@ At line:1 char:3
 Error: Process completed with exit code 1.
 ```
 
-但是上面的 PowerShell 是不安全的，在输入之前，还请大家先阅读官方文档 [about_Execution_Policies - PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1&WT.mc_id=DX-MVP-5003606 )
+但是上面的 PowerShell 是不安全的，在输入之前，还请大家先阅读官方文档 [about_Execution_Policies - PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1&WT.mc_id=WD-MVP-5003260 )
 
 ## 运行
 

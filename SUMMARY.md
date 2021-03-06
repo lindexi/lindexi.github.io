@@ -1866,6 +1866,8 @@
 
  * [WPF 使用 Win2d 渲染](WPF-使用-Win2d-渲染.md)
 
+ * [WPF 使用 XmlDataProvider 提供数据](WPF-使用-XmlDataProvider-提供数据.md)
+
  * [WPF 使用RPC调用其他进程](WPF-使用RPC调用其他进程.md)
 
  * [WPF 使用不安全代码快速从数组转 WriteableBitmap](WPF-使用不安全代码快速从数组转-WriteableBitmap.md)

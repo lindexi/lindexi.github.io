@@ -27,7 +27,7 @@
     </PropertyGroup>
 ```
 
-更多细节请看官方文档 [Breaking change: OutputType set to WinExe for WPF and WinForms apps](https://docs.microsoft.com/en-us/dotnet/core/compatibility/windows-forms/5.0/automatically-infer-winexe-output-type?WT.mc_id=DX-MVP-5003606)
+更多细节请看官方文档 [Breaking change: OutputType set to WinExe for WPF and WinForms apps](https://docs.microsoft.com/en-us/dotnet/core/compatibility/windows-forms/5.0/automatically-infer-winexe-output-type?WT.mc_id=WD-MVP-5003260)
 
 
 

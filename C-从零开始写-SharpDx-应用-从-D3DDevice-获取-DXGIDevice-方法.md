@@ -102,7 +102,7 @@ SharpDX.SharpDXException:“HRESULT: [0x80004002], Module: [General], ApiCode: [
 
 [DirectX11 With Windows SDK--01 DirectX11初始化_X_Jun的博客-CSDN博客](https://blog.csdn.net/X_Jun96/article/details/80293708)
 
-[Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=DX-MVP-5003606)
+[Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=WD-MVP-5003260)
 
 
 

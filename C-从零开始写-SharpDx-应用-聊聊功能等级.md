@@ -75,7 +75,7 @@
 - 功能等级不代表性能，而仅代表功能。性能取决于硬件实现
 
 
-不同的功能等级对应支持的功能列表请看  [Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=DX-MVP-5003606)
+不同的功能等级对应支持的功能列表请看  [Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=WD-MVP-5003260)
 
 ## 判断设备的支持功能等级
 
@@ -126,7 +126,7 @@ var featureLevel = _d3DDevice.FeatureLevel;
 
 [D3D11_CREATE_DEVICE_FLAG enumeration](https://msdn.microsoft.com/en-us/library/windows/desktop/ff476107(v=vs.85).aspx )
 
-[Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=DX-MVP-5003606)
+[Direct3D feature levels - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/direct3d11/overviews-direct3d-11-devices-downlevel-intro?WT.mc_id=WD-MVP-5003260)
 
 
 

@@ -48,9 +48,9 @@ services.AddMvc()
               new DefaultContractResolver());
 ```
 
-[Migrate from ASP.NET Core 2.2 to 3.0 Preview](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-2.2&tabs=visual-studio&WT.mc_id=DX-MVP-5003606)
+[Migrate from ASP.NET Core 2.2 to 3.0 Preview](https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-2.2&tabs=visual-studio&WT.mc_id=WD-MVP-5003260)
 
-[Serializing a PascalCase Newtonsoft.Json JObject to camelCase](https://andrewlock.net/serializing-a-pascalcase-newtonsoft-json-jobject-to-camelcase/?WT.mc_id=DX-MVP-5003606 )
+[Serializing a PascalCase Newtonsoft.Json JObject to camelCase](https://andrewlock.net/serializing-a-pascalcase-newtonsoft-json-jobject-to-camelcase/?WT.mc_id=WD-MVP-5003260 )
 
 
 

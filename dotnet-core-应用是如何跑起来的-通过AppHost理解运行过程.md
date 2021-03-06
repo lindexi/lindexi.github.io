@@ -191,7 +191,7 @@ AppHostPatcher.exe Foo.exe .\Application\Foo.dll
 
 此时原本的 Foo.exe 将会寻找相同文件夹下的 Foo.dll 文件作为 dotnet 的入口程序集，而在执行上面代码之后，双击 Foo.exe 将会寻找 `Application\Foo.dll` 作为入口程序集，因此就能将整个文件夹的内容，除了 exe 之外的其他文件放在其他文件夹里面
 
-更多细节请看 [Write a custom .NET Core runtime host](https://docs.microsoft.com/en-us/dotnet/core/tutorials/netcore-hosting?WT.mc_id=DX-MVP-5003606 )
+更多细节请看 [Write a custom .NET Core runtime host](https://docs.microsoft.com/en-us/dotnet/core/tutorials/netcore-hosting?WT.mc_id=WD-MVP-5003260 )
 
 本文以上使用的代码是在 [https://github.com/dotnet/runtime](https://github.com/dotnet/runtime)  的 v5.0.0-rtm.20519.4 版本的代码
 

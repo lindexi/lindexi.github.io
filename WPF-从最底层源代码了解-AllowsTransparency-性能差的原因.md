@@ -18,11 +18,11 @@
 
 本文代码基于 [WPF 官方开源仓库](https://github.com/dotnet/wpf/) 所了解，部分逻辑也许和 .NET Framework 不同版本有出入
 
-在 WPF 的实现窗口透明逻辑中，可以在窗口设置 `AllowsTransparency = true` 让窗口设置透明笔刷的时候，可以看到窗口后面的内容。这个特性由 Windows 的底层 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=DX-MVP-5003606) 提供或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=DX-MVP-5003606) 提供
+在 WPF 的实现窗口透明逻辑中，可以在窗口设置 `AllowsTransparency = true` 让窗口设置透明笔刷的时候，可以看到窗口后面的内容。这个特性由 Windows 的底层 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=WD-MVP-5003260) 提供或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=WD-MVP-5003260) 提供
 
 在 WPF 的窗口渲染底层的 WPF_GFX 库里面的入口是在 d3ddevice.cpp 的 Present 方法，方法签名如下
 
-<!-- &WT.mc_id=DX-MVP-5003606 -->
+<!-- &WT.mc_id=WD-MVP-5003260 -->
 
 ```csharp
 HRESULT
@@ -184,7 +184,7 @@ Cleanup:
 
 好在 WPF 还是加了一点优化的，只是拷贝 rcDirty 范围而已，这个变量的命名意思是 rect (rc) 矩形的 Dirty 需要重绘的范围
 
-回到 `CD3DDeviceLevel1::PresentWithGDI` 方法，在拿到 hdcBackBuffer 之后，此时就可以使用 hdcBackBuffer 进行 GDI 渲染了。调用的核心方法是 UpdateLayeredWindowEx 方法。这里的 UpdateLayeredWindowEx 是放在 oscompat.cpp 文件里，这个代码是为了做系统兼容使用的，本质就是将会通过系统判断，调用 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=DX-MVP-5003606) 或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=DX-MVP-5003606) 方法，如下面代码
+回到 `CD3DDeviceLevel1::PresentWithGDI` 方法，在拿到 hdcBackBuffer 之后，此时就可以使用 hdcBackBuffer 进行 GDI 渲染了。调用的核心方法是 UpdateLayeredWindowEx 方法。这里的 UpdateLayeredWindowEx 是放在 oscompat.cpp 文件里，这个代码是为了做系统兼容使用的，本质就是将会通过系统判断，调用 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=WD-MVP-5003260) 或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=WD-MVP-5003260) 方法，如下面代码
 
 ```csharp
 //+----------------------------------------------------------------------------
@@ -213,13 +213,13 @@ UpdateLayeredWindowEx(
     )
 ```
 
-而在 Windows 提供的 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=DX-MVP-5003606) 或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=DX-MVP-5003606) 方法将会支持传入 GDI 的绘图空间，根据给定的颜色设置透明。详细使用方法请看 [分层窗口UpdateLayeredWindowIndirect局部更新](https://www.cctry.com/thread-283521-1-1.html)
+而在 Windows 提供的 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=WD-MVP-5003260) 或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=WD-MVP-5003260) 方法将会支持传入 GDI 的绘图空间，根据给定的颜色设置透明。详细使用方法请看 [分层窗口UpdateLayeredWindowIndirect局部更新](https://www.cctry.com/thread-283521-1-1.html)
 
 <!-- ![](image/WPF 从最底层源代码了解 AllowsTransparency 性能差的原因/WPF 从最底层源代码了解 AllowsTransparency 性能差的原因0.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F202010301956101811.jpg)
 
-也就是说整个 WPF 的 AllowsTransparency 设置透明的一个最底层核心逻辑就是调用 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=DX-MVP-5003606) 或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=DX-MVP-5003606) 方法实现
+也就是说整个 WPF 的 AllowsTransparency 设置透明的一个最底层核心逻辑就是调用 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=WD-MVP-5003260) 或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=WD-MVP-5003260) 方法实现
 
 在调用过程中需要从 DX 将窗口渲染内容拷贝出来放在内存，然后使用 GDI 进行渲染。在拷贝内存过程中需要重新申请一段内存空间，将会在窗口比较大的时候占用更多的内存，同时拷贝需要使用更多的 CPU 计算。而通过 GDI 的再次渲染将会降低整个应用的渲染性能
 

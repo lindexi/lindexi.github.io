@@ -42,7 +42,7 @@ deb https://mirrors.ustc.edu.cn/debian buster main contrib non-free
 
 ![](http://image.acmx.xyz/lindexi%2F2020931729581851.jpg)
 
-按照 [在 Debian 上安装 .NET Core ](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=DX-MVP-5003606 ) 的方法，在命令行输入下面代码，将 Microsoft 包签名密钥添加到受信任密钥列表，并添加包存储库
+按照 [在 Debian 上安装 .NET Core ](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=WD-MVP-5003260 ) 的方法，在命令行输入下面代码，将 Microsoft 包签名密钥添加到受信任密钥列表，并添加包存储库
 
 ```csharp
 wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -60,7 +60,7 @@ sudo apt-get update; \
 
 欢迎小伙伴加入 xamarin 国产 UOS 开发群： 810052083 
 
-如果安装失败了，请看 [官方文档](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=DX-MVP-5003606 ) 
+如果安装失败了，请看 [官方文档](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=WD-MVP-5003260 ) 
 
 
 

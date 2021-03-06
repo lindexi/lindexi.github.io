@@ -54,7 +54,7 @@ extern "C" __declspec(dllexport) int HeederajiYeafalludall()
 
 在标记了 HandleProcessCorruptedStateExceptionsAttribute 特性之后，将可以看到断点能进入到 catch 代码里，而且程序不会闪退
 
-但是这个机制在 dotnet core 就跑不起来了，根据 [从 .NET Framework 到 .NET Core 的中断性变更](https://docs.microsoft.com/zh-cn/dotnet/core/compatibility/fx-core?WT.mc_id=DX-MVP-5003606) 文档，可以看到在 .NET Core 1.0 开始，损坏进程状态异常无法由托管代码进行处理，将上面的 C# 代码切换到 dotnet core 下执行，此时将会发现不会进入到 catch 的代码，应用程序将会退出
+但是这个机制在 dotnet core 就跑不起来了，根据 [从 .NET Framework 到 .NET Core 的中断性变更](https://docs.microsoft.com/zh-cn/dotnet/core/compatibility/fx-core?WT.mc_id=WD-MVP-5003260) 文档，可以看到在 .NET Core 1.0 开始，损坏进程状态异常无法由托管代码进行处理，将上面的 C# 代码切换到 dotnet core 下执行，此时将会发现不会进入到 catch 的代码，应用程序将会退出
 
 大家可以尝试使用我放在 [github](https://github.com/lindexi/lindexi_gd/tree/9bf58ca4/BeyajaydahifallChecheecaifelwarlerenel ) 的代码进行测试，切换框架为 .NET Framework 和 .NET Core 比较这里的行为
 

@@ -239,7 +239,7 @@ public static void Foo(this IF1 foo)
 }
 ```
 
-当然了，在 C# 8.0 还有更直接的方法，详细请看 [在 C# 中使用默认接口方法安全地更新接口](https://docs.microsoft.com/zh-cn/dotnet/csharp/tutorials/default-interface-methods-versions?WT.mc_id=DX-MVP-5003606 )
+当然了，在 C# 8.0 还有更直接的方法，详细请看 [在 C# 中使用默认接口方法安全地更新接口](https://docs.microsoft.com/zh-cn/dotnet/csharp/tutorials/default-interface-methods-versions?WT.mc_id=WD-MVP-5003260 )
 
 ## stackalloc 
 
