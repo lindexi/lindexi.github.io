@@ -17,6 +17,7 @@
 - [For best performance, use DXGI flip model](https://devblogs.microsoft.com/directx/dxgi-flip-model/ )
 - [Windowed, Fullscreen, and Borderless Modes: Which One Is Best?](https://www.makeuseof.com/tag/windowed-fullscreen-borderless-modes/ )
 - [fullscreen mode and windowed mode_网络_安柏霖的专栏-CSDN博客](https://blog.csdn.net/toughbro/article/details/82926100 ) 
+- [Windowed vs Full-Screen Mode ](https://docs.microsoft.com/en-us/windows/win32/direct3d9/windowed-vs-full-screen-mode?WT.mc_id=WD-MVP-5003260 )
 
 在开始聊 Windows 对全屏应用的优化之前，需要先聊聊窗口的显示方式。在 Windows 上运行的应用，如游戏等有三个不同的显示模式（考古发现还有一些特别的显示模式，但是太诡异了我就不敢说了）包括 全屏独占模式（FSE Fullscreen Exclusive）、窗口模式（Windowed）、无边框窗口。全屏独占窗口可以让应用独占显示和拥有更多（不是全部占有，但也差不多）的显卡资源。而在进入窗口模式的应用需要和其他的应用共享显示和计算资源，其他窗口在后台运行的依然需要使用显卡计算资源。此时的窗口模式应用需要依靠桌面管理器（DWM Desktop Window Manager）进行调度，此时的显卡资源也就需要将资源共享给其他所有的应用，而不是和独占全屏一样。而第三个模式无边框模式的窗口，应用依然是窗口运行，但是这个窗口没有边框，这意味着窗口可以调整大小用来做全屏，但此时的其他应用依然在后台运行
 
@@ -54,6 +55,7 @@
 
 [WPF 全屏透明窗口](https://blog.lindexi.com/post/WPF-%E5%85%A8%E5%B1%8F%E9%80%8F%E6%98%8E%E7%AA%97%E5%8F%A3.html)
 
+[Windowed vs Full-Screen Mode ](https://docs.microsoft.com/en-us/windows/win32/direct3d9/windowed-vs-full-screen-mode?WT.mc_id=WD-MVP-5003260 )
 
 
 
