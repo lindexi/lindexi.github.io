@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/3/6 10:56:50 -->
+
 <!-- 发布 -->
 
 在序列化某个对象的时候，序列化出来的 XML 进行格式化，可以在创建的 XmlWriter 传入 XmlWriterSettings 设置 Indent 属性，如下面代码
