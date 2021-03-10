@@ -366,6 +366,8 @@
 
  * [dot net double 数组转 float 数组](dot-net-double-数组转-float-数组.md)
 
+ * [dotnet 5 从 IL 层面分析协变返回类型新特性](dotnet-5-从-IL-层面分析协变返回类型新特性.md)
+
  * [dotnet 5 破坏性改动 WPF 和 WinForms 的 OutputType 输出类型重定向为 WinExe 类型](dotnet-5-破坏性改动-WPF-和-WinForms-的-OutputType-输出类型重定向为-WinExe-类型.md)
 
  * [dotnet 5 静态字段和属性的反射获取 没有想象中那么伤性能](dotnet-5-静态字段和属性的反射获取-没有想象中那么伤性能.md)
