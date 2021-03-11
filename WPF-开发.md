@@ -795,6 +795,19 @@ System.ArgumentException:“此元数据已与类型和属性关联。必须新�
     WindowsBase.dll!System.Windows.DependencyProperty.Register(string name, System.Type propertyType, System.Type ownerType, System.Windows.PropertyMetadata typeMetadata)  未知
 ```
 
+## 选择 ListView 的某一项同时滚动到某一项
+
+在 WPF 中让 ListView 滚动到选择的一项，可以在知道当前选择的是哪一项之后，通过如下代码设置。下面代码的 InkPointListView 是一个 ListView 元素，而 selectedIndex 表示当前选择的项的序号，可以使用下面代码，设置自动滚动
+
+```csharp
+            InkPointListView.SelectedIndex = selectedIndex;
+
+            if (selectedIndex >= 0 && selectedIndex < InkPointListView.Items.Count)
+            {
+                InkPointListView.ScrollIntoView(InkPointListView.Items[selectedIndex]);
+            }
+```
+
 
 
 
