@@ -222,7 +222,17 @@ var 角度 = 弧度 / Math.PI * 180;
       DrawElement.Data = geometry;
 ```
 
+## WPF 虚线和像素关系
 
+在 WPF 中，如果需要绘制虚线，可以使用 StrokeDashArray 属性，这个属性将可以传入数组，数组下标从0开始算，如果是偶数的就显示内容，奇数的就透明。而长度就是和像素相关，计算方法和 StrokeThickness 大小有关。像素值等于数组上的数值乘以 StrokeThickness 的大小。例如下面代码，虚线的可以显示部分和不可以显示部分的像素值是 5 乘以 StrokeThickness 的大小，也就是 25 像素
+
+```xml
+    <Line X1="10" Y1="100" X2="100" Y2="100" Stroke="BlanchedAlmond" StrokeThickness="5" StrokeDashArray="5 5" />
+```
+
+当然，上面说的像素其实不算对，应该是 WPF 单位
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/9e31bab17e4a0e48fb6d58e298fbb7c281279fcb/ChacalijurLeahulurbufel ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9e31bab17e4a0e48fb6d58e298fbb7c281279fcb/ChacalijurLeahulurbufel ) 欢迎小伙伴访问
 
 ## 参考
 

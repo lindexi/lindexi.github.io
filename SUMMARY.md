@@ -2016,6 +2016,8 @@
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
 
+ * [WPF 形状的 StrokeThickness 属性对边框的影响](WPF-形状的-StrokeThickness-属性对边框的影响.md)
+
  * [WPF 手绘对称图形控件](WPF-手绘对称图形控件.md)
 
  * [WPF 打包为 UWP 应用构建失败 MSB3270 不匹配 AMD64 架构](WPF-打包为-UWP-应用构建失败-MSB3270-不匹配-AMD64-架构.md)
