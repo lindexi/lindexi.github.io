@@ -505,7 +505,12 @@ catch
 在代码审查看到吃掉全部异常的，就需要问问小伙伴是否必要，另外需要问问他是否可以记一下日志
 
 
+
+
+
 ## WPF 相关
+
+以下是 WPF 专门用的代码审查，里面包括了一些性能提升的建议，以及减少踩坑的建议
 
 ### 空白的容器定义
 
@@ -526,6 +531,99 @@ catch
 ### 尽可能使用 TextBlock 代替 Label 控件
 
 在 WPF 中，存在一个框架设计问题是引入了 Label 这个定位不够明确的控件。在所有使用 Label 的地方，都应该尽可能使用 TextBlock 代替，用来提升性能。其实在 WPF 中 Label 也仅仅只是对 TextBlock 的封装，除了性能比 TextBlock 更差之外，几乎没有别的差别
+
+### 颜色的创建
+
+如果发现有笔刷颜色的创建是采用创建 SolidColorBrush 对象传入一个已知颜色，如下面代码
+
+```csharp
+var lindexi = new SolidColorBrush(Colors.Black);
+```
+
+那么应该提出使用 Brushes 静态类代替
+
+```csharp
+var lindexi = Brushes.Black;
+```
+
+如果 Color 颜色属于已知颜色，但是使用 ARGB 的方式创建，如下面代码
+
+```csharp
+Color color = Color.FromRgb(0xFF, 0x00, 0x00);
+```
+
+那么应该建议使用 Colors.Red 代替
+
+如果是创建了笔刷，那么尽量调用 Freeze 方法，调用之后能提升很小的性能而且可以在其他线程使用
+
+### 共用的相同的资源推荐抽出来
+
+推荐在 App.xaml 添加引用统一的颜色管理，按照视觉设计的推荐，一个应用里面不建议有大量的不同的颜色，因此完全可以做到统一的一次管理。不仅可以规范视觉设计，还可以减少画刷的重复创建提升性能
+
+如果发现在 ListView 里面的每个项都使用一个独立的用户控件，同时用户控件里面包含了很多可以共用的资源，那么推荐抽离到 App.xaml 里面，减少资源的重复多次创建
+
+### 空用户控件的 XAML 删除
+
+如果一个用户控件的 XAML 没有代码，而且可以预期后面也不会添加 XAML 代码的，可以删除掉 XAML 文件，此时保存 cs 文件。可以提升一些性能
+
+### 给 XAML 使用的类应该公开
+
+给 XAML 里面创建的类型应该是公开的，这样才能发挥 XAML 的创建对象性能。如果类型是 internal 的，那么 XAML 每次创建都需要反射创建
+
+在 XAML 里面的创建的类型包括了用户自定义控件和转换器等类型，这些类型推荐是作为公开的，除非是确实不能公开的类型
+
+为什么使用公开的类型能发挥 XAML 创建对象的性能？请看 [dotnet 读 WPF 源代码笔记 XAML 创建对象的方法](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-XAML-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95.html)
+
+### 调用 Dispatcher.Invoke 时需要判断是否可以使用 Dispatcher.InvokeAsync 代替
+
+在使用 WPF 的 Dispatcher.Invoke 时，如果遇到异步，是有可能出现锁的相互等待。因此更多推荐使用 Dispatcher.InvokeAsync 代替，如果可以修改为 Dispatcher.InvokeAsync 那么推荐使用 Dispatcher.InvokeAsync 代替。如果需要等待 Invoke 内容执行完成，记得使用 Dispatcher.InvokeAsync 时需要加上 await 等待
+
+关于 Dispatcher.Invoke 锁相互等待问题，请看[wpf 使用 Dispatcher.Invoke 冻结窗口](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-Dispatcher.Invoke-%E5%86%BB%E7%BB%93%E7%AA%97%E5%8F%A3.html) 
+
+### 调用 Dispatcher.Invoke 里面使用 Shutdown 方法可以使用 InvokeShutdown 代替
+
+如下面代码
+
+```csharp
+  Application.Current.Dispatcher.Invoke(() =>
+  {
+      Application.Current.Shutdown(0);
+  });
+```
+
+可以使用 InvokeShutdown 代替
+
+```csharp
+   Application.Current.Dispatcher.InvokeShutdown();
+```
+
+### 获得依赖属性值更新记得释放
+
+在 WPF 中，可以获得任意 WPF 依赖对象的某个依赖属性的变更通知，如下面方式。下面代码中是获取 Border 类型的 Board 对象的 Padding 属性更改通知
+
+```csharp
+                DependencyPropertyDescriptor.FromProperty(Border.PaddingProperty, typeof(Border)).AddValueChanged(Board,
+                (s, e) =>
+                {
+                    Padding = Board.Padding;
+                    BoardPadding = Board.Padding;
+                });
+```
+
+在调用 AddValueChanged 将会添加一个静态的引用，需要在不需要使用时添加 RemoveValueChanged 进行清除。因此在代码审查，发现了使用委托的形式加上了 AddValueChanged 方法就可以证明没有调用 RemoveValueChanged 方法，也就是说将会让传入的各个参数的对象都不会被回收
+
+推荐的方法是添加一个方法代替委托，然后在不使用的时候调用 RemoveValueChanged 方法
+
+```csharp
+     DependencyPropertyDescriptor.FromProperty(Border.PaddingProperty, typeof(Border)).AddValueChanged(Board,                Board_OnPaddingChanged);
+
+     // 在不使用的时候调用 RemoveValueChanged 方法
+     DependencyPropertyDescriptor.FromProperty(Border.PaddingProperty, typeof(Border)).RemoveValueChanged(Board,                Board_OnPaddingChanged);
+```
+
+详细请看 [WPF 开发](https://blog.lindexi.com/post/WPF-%E5%BC%80%E5%8F%91.html)
+
+
 
 
 
