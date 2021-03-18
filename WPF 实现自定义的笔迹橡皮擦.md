@@ -23,7 +23,7 @@
 StrokeCollection strokes = InkCanvas.Strokes;
 ```
 
-这里拿到的 StrokeCollection 是一个集合，这个集合里面包含了多个 Stroke 类，在 WPF 中，一条笔迹就是一个 Stroke 对象。而多个 Stroke 就放在 StrokeCollection 类里面。可以认为是一个笔画就是一个 Stroke 而一个汉子包含了多个笔画，因此一个汉子的笔迹集合就使用 StrokeCollection 表示
+这里拿到的 StrokeCollection 是一个集合，这个集合里面包含了多个 Stroke 类，在 WPF 中，一条笔迹就是一个 Stroke 对象。而多个 Stroke 就放在 StrokeCollection 类里面。可以认为是一个笔画就是一个 Stroke 而一个汉字包含了多个笔画，因此一个汉字的笔迹集合就使用 StrokeCollection 表示
 
 通过上面代码就可以拿到 InkCanvas 里面的所有笔迹，接下来就是自定义橡皮擦部分的逻辑
 

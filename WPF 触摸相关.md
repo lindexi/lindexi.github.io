@@ -53,6 +53,8 @@
 
 [WPF 测试触摸设备发送触摸按下和抬起不成对](https://blog.lindexi.com/post/WPF-%E6%B5%8B%E8%AF%95%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E5%8F%91%E9%80%81%E8%A7%A6%E6%91%B8%E6%8C%89%E4%B8%8B%E5%92%8C%E6%8A%AC%E8%B5%B7%E4%B8%8D%E6%88%90%E5%AF%B9.html )
 
+[WPF 触摸失效 试试重启触摸](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88-%E8%AF%95%E8%AF%95%E9%87%8D%E5%90%AF%E8%A7%A6%E6%91%B8.html )
+
 ## 历史
 
 [为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](https://blog.lindexi.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88-WPF-%E8%BD%AF%E4%BB%B6%E5%9C%A8-win7-%E5%90%AF%E5%8A%A8%E6%97%B6%E4%BC%9A%E5%B0%9D%E8%AF%95%E8%B0%83%E8%B5%B7-wisptis-%E8%BF%9B%E7%A8%8B.html)
