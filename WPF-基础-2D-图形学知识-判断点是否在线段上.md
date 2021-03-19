@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/3/18 21:05:11 -->
+
 <!-- 发布 -->
 
 本文算法属于通用的算法，可以在 WPF 和 UWP 和 Xamarin 等上运行，基本上所有的 .NET 平台都能执行
@@ -142,6 +144,66 @@
 ```
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ed61e82f/WokayficeKegayurbu ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/ed61e82f/WokayficeKegayurbu ) 欢迎小伙伴访问
+
+以上方法的计算有些重复，其实加上了 crossProduct 只是为了水平和垂直的线段，其实可以做特殊处理，如下面代码
+
+```csharp
+    public static class Math2DExtensions
+    {
+        public static bool CheckIsPointOnLineSegment(Point point, Line line, double epsilon = 0.1)
+        {
+            // 以下是另一个方法，以下方法性能比上面一个好
+
+            // 根据点和任意线段端点连接的线段和当前线段斜率相同，同时点在两个端点中间
+            // (x - x1) / (x2 - x1) = (y - y1) / (y2 - y1)
+            // x1 < x < x2, assuming x1 < x2
+            // y1 < y < y2, assuming y1 < y2
+            // 但是需要额外处理 X1 == X2 和 Y1 == Y2 的计算
+
+            var minX = Math.Min(line.APoint.X, line.BPoint.X);
+            var maxX = Math.Max(line.APoint.X, line.BPoint.X);
+
+            var minY = Math.Min(line.APoint.Y, line.BPoint.Y);
+            var maxY = Math.Max(line.APoint.Y, line.BPoint.Y);
+
+            if (!(minX <= point.X) || !(point.X <= maxX) || !(minY <= point.Y) || !(point.Y <= maxY))
+            {
+                return false;
+            }
+
+            // 以下处理水平和垂直线段
+            if (Math.Abs(line.APoint.X - line.BPoint.X) < epsilon)
+            {
+                // 如果 X 坐标是相同，那么只需要判断点的 X 坐标是否相同
+                // 因为在上面代码已经判断了 点的 Y 坐标是在线段两个点之内
+                return Math.Abs(line.APoint.X - point.X) < epsilon || Math.Abs(line.BPoint.X - point.X) < epsilon;
+            }
+
+            if (Math.Abs(line.APoint.Y - line.BPoint.Y) < epsilon)
+            {
+                return Math.Abs(line.APoint.Y - point.Y) < epsilon || Math.Abs(line.BPoint.Y - point.Y) < epsilon;
+            }
+
+            if (Math.Abs((point.X - line.APoint.X) / (line.BPoint.X - line.APoint.X) - (point.Y - line.APoint.Y) / (line.BPoint.Y - line.APoint.Y)) < epsilon)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public record Line
+    {
+        public Point APoint { get; init; }
+
+        public Point BPoint { get; init; }
+    }
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/05d0e495/WokayficeKegayurbu ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/05d0e495/WokayficeKegayurbu ) 欢迎小伙伴访问
 
 
 
