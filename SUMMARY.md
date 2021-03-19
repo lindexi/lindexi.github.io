@@ -1948,6 +1948,8 @@
 
  * [WPF 基础 2D 图形学知识 判断点是否在任意几何内部方法](WPF-基础-2D-图形学知识-判断点是否在任意几何内部方法.md)
 
+ * [WPF 基础 2D 图形学知识 判断点是否在线段上](WPF-基础-2D-图形学知识-判断点是否在线段上.md)
+
  * [WPF 基础 2D 图形学知识 求向量旋转角度](WPF-基础-2D-图形学知识-求向量旋转角度.md)
 
  * [WPF 基础 2D 图形学知识](WPF-基础-2D-图形学知识.md)
@@ -2177,6 +2179,8 @@
  * [WPF 让窗口激活作为前台最上层窗口的方法](WPF-让窗口激活作为前台最上层窗口的方法.md)
 
  * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
+
+ * [WPF 设置 ShowInTaskbar 对窗口最小化的影响](WPF-设置-ShowInTaskbar-对窗口最小化的影响.md)
 
  * [WPF 设置 WS_EX_TRANSPARENT 触摸失效](WPF-设置-WS_EX_TRANSPARENT-触摸失效.md)
 
