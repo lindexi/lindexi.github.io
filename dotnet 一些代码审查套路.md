@@ -643,9 +643,65 @@ Color color = Color.FromRgb(0xFF, 0x00, 0x00);
 
 详细请看 [WPF 开发](https://blog.lindexi.com/post/WPF-%E5%BC%80%E5%8F%91.html)
 
+### 继承路由事件参数记得重写 InvokeEventHandler 方法
 
+如果自己写了某个类型作为路由事件参数，如下面代码
 
+```csharp
+public class LindexiRoutedEventArgs : RoutedEventArgs
+```
 
+那么推荐重写 InvokeEventHandler 方法，重写了这个方法，可以将传入的 Delegate 强转为自己已知的委托类型，然后触发。这样的性能会比较好
+
+以下是一个推荐的路由事件定义的方法
+
+```csharp
+    public class Owner : UIElement
+    {
+        public static readonly RoutedEvent LindexiEvent = EventManager.RegisterRoutedEvent("Lindexi",
+            RoutingStrategy.Bubble, typeof(LindexiRoutedEventEventHandler), typeof(Owner));
+
+        public event LindexiRoutedEventEventHandler Lindexi
+        {
+            add { AddHandler(LindexiEvent, value); }
+            remove { RemoveHandler(LindexiEvent, value); }
+        }
+
+        public void RaiseLindexiEvent()
+        {
+            RaiseEvent(new LindexiRoutedEventArgs(LindexiEvent, this));
+        }
+    }
+
+    public class LindexiRoutedEventArgs : RoutedEventArgs
+    {
+        /// <inheritdoc />
+        public LindexiRoutedEventArgs()
+        {
+        }
+
+        /// <inheritdoc />
+        public LindexiRoutedEventArgs(RoutedEvent routedEvent) : base(routedEvent)
+        {
+        }
+
+        /// <inheritdoc />
+        public LindexiRoutedEventArgs(RoutedEvent routedEvent, object source) : base(routedEvent, source)
+        {
+        }
+
+        protected override void InvokeEventHandler(Delegate genericHandler, object genericTarget)
+        {
+            // 这个方法的重写是可选的，用途是为了提升性能
+            // 如无重写，底层将会调用 Delegate.DynamicInvoke 方法触发事件，这是通过反射的方法调用的
+            var handler = (LindexiRoutedEventEventHandler) genericHandler;
+            handler(genericTarget, this);
+        }
+    }
+
+    public delegate void LindexiRoutedEventEventHandler(object sender,
+        LindexiRoutedEventArgs e);
+```
 
 
 
