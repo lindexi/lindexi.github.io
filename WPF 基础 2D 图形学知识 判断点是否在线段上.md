@@ -50,6 +50,23 @@
         }
 ```
 
+不使用 Vector 类，可以替换为如下计算方法。上面代码的 ap 等变量是使用 WPF 的两个点的相减能拿到 Vectore 类，而在 Vectore 类里面有 Length 属性而优化代码的。其实核心计算和下面代码相同。下面代码是 [Tone Škoda](https://stackoverflow.com/users/3572009/tone-%c5%a0koda) 提供的，详细请看 [https://stackoverflow.com/a/56850069/6116637](https://stackoverflow.com/a/56850069/6116637)
+
+```csharp
+public static double CalcDistanceBetween2Points(double x1, double y1, double x2, double y2)
+{
+    return Math.Sqrt(Math.Pow (x1 - x2, 2) + Math.Pow (y1 - y2, 2));
+}
+
+public static bool PointLinesOnLine (double x, double y, double x1, double y1, double x2, double y2, double allowedDistanceDifference)
+{
+    double dist1 = CalcDistanceBetween2Points(x, y, x1, y1);
+    double dist2 = CalcDistanceBetween2Points(x, y, x2, y2);
+    double dist3 = CalcDistanceBetween2Points(x1, y1, x2, y2);
+    return Math.Abs(dist3 - (dist1 + dist2)) <= allowedDistanceDifference;
+}
+```
+
 以下是另一个方法，以下方法性能比上面一个好
 
 根据点和任意线段端点连接的线段和当前线段斜率相同，同时点在两个端点中间，就可以认为点在线段内
