@@ -1844,6 +1844,8 @@
 
  * [WPF 使用 ItemsPanel 修改方向](WPF-使用-ItemsPanel-修改方向.md)
 
+ * [WPF 使用 ManipulationProcessor2D 纯数学计算方式提供多点漫游元素功能](WPF-使用-ManipulationProcessor2D-纯数学计算方式提供多点漫游元素功能.md)
+
  * [WPF 使用 MyScript 的 IInk 做手写识别](WPF-使用-MyScript-的-IInk-做手写识别.md)
 
  * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
