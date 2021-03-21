@@ -3,6 +3,8 @@
 在 WPF 中，除了使用 Manipulation 系列在进行触摸的多点进行漫游外，还可以使用比较少有人了解的 WPF 提供的 ManipulationProcessor2D 纯数学库来进行多点漫游元素功能。这是放在 System.Windows.Input.Manipulations 空间内，一个单独的 WPF 程序集，使用这个程序集可以使用和 WPF 交互无关的纯数学计算方式提供多点漫游元素功能。只需要给 ManipulationProcessor2D 提供多点的 Id 和时间和坐标信息，就可以用上 Manipulation 数学计算，拿到平移和缩放和旋转等信息，以及累计量和差量和速度，可以使用这些信息做到元素的漫游
 
 <!--more-->
+<!-- CreateTime:2021/3/19 20:42:56 -->
+
 <!-- 发布 -->
 
 对比 WPF 交互中的 Manipulation 系列，使用 System.Windows.Input.Manipulations 的 ManipulationProcessor2D 的优势在于可以传入很多虚拟的点，可以无视具体的交互，实现从传入的多个点拿到平移和缩放和旋转等信息，以及通过多次传入的时间值计算出累计量和差量和速度
@@ -210,7 +212,7 @@
 
 加上了旋转和缩放的中心点，采用缩放因子代替大小变化量。本质上 ScaleX 和 ScaleY 是由 ExpansionX 和 ExpansionY 推出的，但在 WPF 缩放里面，采用的是缩放比
 
-以下是全部的
+以下是全部的代码
 
 ```csharp
     public partial class MainWindow : Window
