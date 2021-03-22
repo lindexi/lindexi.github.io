@@ -1424,6 +1424,8 @@
 
  * [win10 UWP 序列化](win10-UWP-序列化.md)
 
+ * [win10 uwp 应用包上传失败无效的软件包系列名称](win10-uwp-应用包上传失败无效的软件包系列名称.md)
+
  * [win10 uwp 应用放到桌面](win10-uwp-应用放到桌面.md)
 
  * [win10 UWP 应用设置](win10-UWP-应用设置.md)

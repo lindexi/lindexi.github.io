@@ -43,7 +43,27 @@ public class Startup
 }
 ```
 
-[迁移 - EF Core](https://docs.microsoft.com/zh-cn/ef/core/managing-schemas/migrations/index?wt.mc_id=MVP )
+[迁移 - EF Core](https://docs.microsoft.com/zh-cn/ef/core/managing-schemas/migrations/index?wt.mc_id=WD-MVP-5003260 )
+
+
+在 .NET 5.0 的时候，以上 API 有所变更，将 IApplicationEnvironment 替换为 IWebHostEnvironment 接口，将 ApplicationBasePath 属性替换为 ContentRootPath 属性，更改如下
+
+```csharp
+        public Startup(IWebHostEnvironment hostEnvironment)
+        {
+            _hostEnvironment = hostEnvironment;
+        }
+
+        private readonly IWebHostEnvironment _hostEnvironment;
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+         services.AddDbContext<MyContext>(options =>
+                options.UseSqlite($"Data Source={_hostEnvironment.ContentRootPath}/data.db"));
+    }
+```
+
+我推荐在开始使用之前，判断一下数据库是否存在
 
 
 

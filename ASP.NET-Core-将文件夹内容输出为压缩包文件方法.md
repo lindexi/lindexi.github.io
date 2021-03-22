@@ -46,7 +46,7 @@
                 using (var entryStream = zipArchiveEntry.Open())
                 {
                     using var toZipStream = file.OpenRead();
-                    await toZipStream.CopyToAsync(stream);
+                    await toZipStream.CopyToAsync(entryStream);
                 }
 
                 await stream.FlushAsync();
@@ -108,6 +108,24 @@ For ($i=0; $i -le 100000; $i++)
 如果小伙伴有更好的方法欢迎告诉我
 
 本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/32e2de954d92cc9fa359ae6eacd327405e156fe4/LarnaceakemLachonanafemhejal)欢迎小伙伴访问
+
+我将这个逻辑抽作为库，放在 NuGet 上，大家可以安装 `Lindexi.Src.DirectoryToZipStream` 库或 `Lindexi.Src.DirectoryToZipStream.Source` 源代码包安装使用。这个库的代码也在 GitHub 上完全开源，请看 [https://github.com/lindexi/UWP/tree/94450971838749de2ff0f8bea5238379040c1998/package/Library/DirectoryToZipStream](https://github.com/lindexi/UWP/tree/94450971838749de2ff0f8bea5238379040c1998/package/Library/DirectoryToZipStream)
+
+在安装库之后，加上命名空间引用 `using Lindexi.Src.DirectoryToZipStream;` 接着就可以传入空间需要写入的 Stream 对象，如上面代码的 `HttpContext.Response.BodyWriter.AsStream()` 和一个文件夹，如下面代码的 folder 变量
+
+```csharp
+using var stream = HttpContext.Response.BodyWriter.AsStream();
+DirectoryToZipStreamHelper.ReadDirectoryToZipStream(new DirectoryInfo(folder), stream);
+```
+
+当然，也有异步的方法，如下面代码
+
+```csharp
+using var stream = HttpContext.Response.BodyWriter.AsStream();
+await DirectoryToZipStreamHelper.ReadDirectoryToZipStreamAsync(new DirectoryInfo(folder), stream);
+```
+
+在调用完成 ReadDirectoryToZipStream 或 ReadDirectoryToZipStreamAsync 方法，都会自动关闭 stream 对象
 
 
 
