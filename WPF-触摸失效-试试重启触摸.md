@@ -122,6 +122,8 @@ internal class WispLogic : StylusLogic
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/bdf0e7a0/LeekailawnahelNarjailearyaydi ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/bdf0e7a0/LeekailawnahelNarjailearyaydi ) 欢迎小伙伴访问
 
+更新版本的使用 [WPF 最简逻辑实现多指顺滑的笔迹书写](https://blog.lindexi.com/post/WPF-%E6%9C%80%E7%AE%80%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%8C%87%E9%A1%BA%E6%BB%91%E7%9A%84%E7%AC%94%E8%BF%B9%E4%B9%A6%E5%86%99.html) 的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/eb1bcd8a3207d893c2ac799015bab4c70a278a06/LeekailawnahelNarjailearyaydi ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/eb1bcd8a3207d893c2ac799015bab4c70a278a06/LeekailawnahelNarjailearyaydi ) 欢迎小伙伴访问
+
 本文的方法不能解决内部逻辑调用问题的触摸失效问题，也不能解决太过诡异的系统的触摸失效问题。本文的重启触摸的方法的执行速度是很慢的
 
 以上方法也是有缺点的，使用了上面方法之后，就不能使用 [高性能 DynamicRenderer 书写](https://blog.lindexi.com/post/WPF-%E6%9C%80%E5%B0%8F%E7%9A%84%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8-DynamicRenderer-%E4%B9%A6%E5%86%99.html ) 的方式。解决 DynamicRenderer 丢失的方法就是重新注册一次 StylusPlugIn 元素

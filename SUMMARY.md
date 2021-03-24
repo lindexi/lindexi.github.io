@@ -2224,6 +2224,8 @@
 
  * [WPF 通过 ReadyToRun 提升性能](WPF-通过-ReadyToRun-提升性能.md)
 
+ * [WPF 通过 Switch.MS.Internal.EnableWeakEventMemoryImprovements 开关开启弱事件内存优化](WPF-通过-Switch.MS.Internal.EnableWeakEventMemoryImprovements-开关开启弱事件内存优化.md)
+
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
 
  * [WPF 通过辅助方法在 csharp 代码写出 XAML 界面效果](WPF-通过辅助方法在-csharp-代码写出-XAML-界面效果.md)
@@ -2509,6 +2511,8 @@
  * [拼音输入法 快速输入带音调的字符](拼音输入法-快速输入带音调的字符.md)
 
  * [推荐官方开源 PInvoke 库 包含大量 win32 封装](推荐官方开源-PInvoke-库-包含大量-win32-封装.md)
+
+ * [搭建一个自动化分析 DUMP 平台](搭建一个自动化分析-DUMP-平台.md)
 
  * [文件传输](文件传输.md)
 
