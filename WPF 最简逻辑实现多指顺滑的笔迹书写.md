@@ -180,6 +180,143 @@
 
 本文的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/4317c4c015365dc65284124aa38fca52c888b70e/KemjawyecawDurbahelal) 欢迎小伙伴访问
 
+全部代码如下
+
+```csharp
+    public class MultiTouchInkCanvas : Grid
+    {
+        public MultiTouchInkCanvas()
+        {
+            // 只是为了命中测试，设置背景是透明，这样就能收到输入
+            Background = Brushes.Transparent;
+
+            HorizontalAlignment = HorizontalAlignment.Stretch;
+            VerticalAlignment = VerticalAlignment.Stretch;
+
+            // 使用 StylusMove 事件的速度将会比较慢
+            StylusMove += MultiTouchInkCanvas_StylusMove;
+            StylusUp += MultiTouchInkCanvas_StylusUp;
+        }
+
+        private void MultiTouchInkCanvas_StylusUp(object sender, StylusEventArgs e)
+        {
+            StrokeVisualList.Remove(e.StylusDevice.Id);
+        }
+
+        private void MultiTouchInkCanvas_StylusMove(object sender, StylusEventArgs e)
+        {
+            var strokeVisual = GetStrokeVisual(e.StylusDevice.Id);
+            var stylusPointCollection = e.GetStylusPoints(this);
+            foreach (var stylusPoint in stylusPointCollection)
+            {
+                strokeVisual.Add(new StylusPoint(stylusPoint.X, stylusPoint.Y));
+            }
+
+            strokeVisual.Redraw();
+        }
+
+        // 其实不使用 Grid 而使用自己定制的 Panel 的性能能更好，但是这里只是给例子而已
+        public Grid Grid => this;
+
+        // 如果后续性能优化，使用触摸线程拿到输入，那么记得鼠标和触摸是两个不同线程，不能使用字典
+        private Dictionary<int, StrokeVisual> StrokeVisualList { get; } = new Dictionary<int, StrokeVisual>();
+
+        private StrokeVisual GetStrokeVisual(int id)
+        {
+            if (StrokeVisualList.TryGetValue(id, out var visual))
+            {
+                return visual;
+            }
+
+            var strokeVisual = new StrokeVisual();
+            StrokeVisualList[id] = strokeVisual;
+            var visualCanvas = new VisualCanvas(strokeVisual);
+            Grid.Children.Add(visualCanvas);
+
+            return strokeVisual;
+        }
+    }
+
+
+    /// <summary>
+    ///     用于显示笔迹的类
+    /// </summary>
+    public class StrokeVisual : DrawingVisual
+    {
+        /// <summary>
+        ///     创建显示笔迹的类
+        /// </summary>
+        public StrokeVisual() : this(new DrawingAttributes()
+        {
+            Color = Colors.Red,
+            FitToCurve = true,
+            Width = 5
+        })
+        {
+        }
+
+        /// <summary>
+        ///     创建显示笔迹的类
+        /// </summary>
+        /// <param name="drawingAttributes"></param>
+        public StrokeVisual(DrawingAttributes drawingAttributes)
+        {
+            _drawingAttributes = drawingAttributes;
+        }
+
+        private readonly DrawingAttributes _drawingAttributes;
+
+        /// <summary>
+        ///     设置或获取显示的笔迹
+        /// </summary>
+        public Stroke Stroke { set; get; }
+
+        /// <summary>
+        ///     在笔迹中添加点
+        /// </summary>
+        /// <param name="point"></param>
+        public void Add(StylusPoint point)
+        {
+            if (Stroke == null)
+            {
+                var collection = new StylusPointCollection {point};
+                Stroke = new Stroke(collection) {DrawingAttributes = _drawingAttributes};
+            }
+            else
+            {
+                Stroke.StylusPoints.Add(point);
+            }
+        }
+
+        /// <summary>
+        ///     重新画出笔迹
+        /// </summary>
+        public void Redraw()
+        {
+            using var dc = RenderOpen();
+            Stroke.Draw(dc);
+        }
+    }
+
+    public class VisualCanvas : FrameworkElement
+    {
+        protected override Visual GetVisualChild(int index)
+        {
+            return Visual;
+        }
+
+        protected override int VisualChildrenCount => 1;
+
+        public VisualCanvas(DrawingVisual visual)
+        {
+            Visual = visual;
+            AddVisualChild(visual);
+        }
+
+        public DrawingVisual Visual { get; }
+    }
+```
+
 但是无论如何做，都没有 UWP 的快。除非在 WPF 中上 Composition API [使用 Composition API 做高性能渲染](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Composition-API-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E6%B8%B2%E6%9F%93.html ) 再加上 [WPF 使用 Win2d 渲染](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Win2d-%E6%B8%B2%E6%9F%93.html )的方法，使用 [win2d 画出笔迹](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87-win2d-%E7%94%BB%E5%87%BA%E7%AC%94%E8%BF%B9.html ) 和 [win2d CanvasVirtualControl](https://blog.lindexi.com/post/win10-uwp-win2d-CanvasVirtualControl-%E4%B8%8E-CanvasAnimatedControl.html ) 存放绘制的笔迹
 
 更多笔迹相关请看
