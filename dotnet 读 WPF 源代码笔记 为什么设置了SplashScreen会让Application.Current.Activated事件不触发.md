@@ -145,6 +145,12 @@
 
 所以在 App 的构造函数监听 Activated 事件将不会收到触发
 
+如果想要使用欢迎界面，也想收到系统的消息，可以在创建 Application 之后，手动创建 SplashScreen 类，或者可以使用 lsj 提供的 [kkwpsv/SplashImage: Fast splash Image with GDI+ in C#](https://github.com/kkwpsv/SplashImage) 库，当然了，这个库代码量特别少，我推荐大家可以抄抄代码。这个库提供的是高性能的版本，可以在另一个线程中执行，换句话说，就是使用 [kkwpsv/SplashImage](https://github.com/kkwpsv/SplashImage) 作为欢迎界面，是可以做到不占用 WPF 主线程时间的，性能比 WPF 提供的好
+
+更多请看 [dotnet 读 WPF 源代码笔记 启动欢迎界面 SplashScreen 的原理](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%90%AF%E5%8A%A8%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2-SplashScreen-%E7%9A%84%E5%8E%9F%E7%90%86.html )
+
+当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
 <!-- 
