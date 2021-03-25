@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/3/23 18:56:30 -->
+
 <!-- 发布 -->
 
 对于 C++ 等不安全语言编写的逻辑，将会比较多依赖 DUMP 的调试。但对于 dotnet 应用来说，依靠异常就完全足够了，只要遵循规范，那么基本只有内存爆了、无限递归等很有限的几个问题才能玩炸，其他情况都能稳稳接住
@@ -123,7 +125,7 @@ q
 
 和大家推荐 DUMP 调试群 169225649
 
-[$ , $ , $$ , $$ , $$ a (Run Script File) - Windows drivers](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-----------------------a---run-script-file-?WT.mc_id=WD-MVP-5003260 )
+[a (Run Script File) - Windows drivers](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-----------------------a---run-script-file-?WT.mc_id=WD-MVP-5003260 )
 
 [Debugging Tools for Windows (WinDbg, KD, CDB, NTSD) - Windows drivers](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger?WT.mc_id=WD-MVP-5003260 )
 

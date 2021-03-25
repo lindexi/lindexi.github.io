@@ -778,6 +778,8 @@
 
  * [dotnet 读 WPF 源代码笔记 XAML 创建对象的方法](dotnet-读-WPF-源代码笔记-XAML-创建对象的方法.md)
 
+ * [dotnet 读 WPF 源代码笔记 为什么设置了SplanScreen会让Application.Current.Activated事件不触发](dotnet-读-WPF-源代码笔记-为什么设置了SplanScreen会让Application.Current.Activated事件不触发.md)
+
  * [dotnet 读 WPF 源代码笔记 为什么默认的笔迹触摸点的压感是 0.5 的值](dotnet-读-WPF-源代码笔记-为什么默认的笔迹触摸点的压感是-0.5-的值.md)
 
  * [dotnet 读 WPF 源代码笔记 使用 Win32 方法修改窗口的坐标和大小对窗口依赖属性的影响](dotnet-读-WPF-源代码笔记-使用-Win32-方法修改窗口的坐标和大小对窗口依赖属性的影响.md)
