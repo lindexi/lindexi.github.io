@@ -1,18 +1,20 @@
-# dotnet 读 WPF 源代码笔记 为什么设置了SplanScreen会让Application.Current.Activated事件不触发
+# dotnet 读 WPF 源代码笔记 为什么设置了SplashScreen会让Application.Current.Activated事件不触发
 
-在 WPF 应用中，可以非常方便将一张图片设置为 SplanScreen 启动界面欢迎图，但是如果有设置了启动界面欢迎界面，那么 Application.Current.Activated 事件就不会被触发。本文通过 WPF 框架开源的代码告诉大家这个原因
+在 WPF 应用中，可以非常方便将一张图片设置为 SplashScreen 启动界面欢迎图，但是如果有设置了启动界面欢迎界面，那么 Application.Current.Activated 事件就不会被触发。本文通过 WPF 框架开源的代码告诉大家这个原因
 
 <!--more-->
+<!-- CreateTime:2021/3/25 8:55:32 -->
+
 <!-- 发布 -->
 <!-- 标签：WPF，WPF源代码 -->
 
 这是在 GitHub 上，一个小伙伴问的问题，详细请看 [After adding a splashscreen Application.Current.Activated event is no longer fired · Issue #4316 · dotnet/wpf](https://github.com/dotnet/wpf/issues/4316 )
 
-设置某个图片作为 SplanScreen 启动图的方式很简单，只需要右击图片，设置属性，选择 SplanScreen 就可以。也可以在 csproj 中添加如下代码设置
+设置某个图片作为 SplashScreen 启动图的方式很简单，只需要右击图片，设置属性，选择 SplashScreen 就可以。也可以在 csproj 中添加如下代码设置
 
 ```xml
   <ItemGroup>
-    <SplashScreen Include="SplanScreen.png" />
+    <SplashScreen Include="SplashScreen.png" />
   </ItemGroup>
 ```
 
@@ -32,7 +34,7 @@
     }
 ```
 
-原因是在设置 SplanScreen 启动界面，那么在生成的 App.g.cs 文件里面将会包含下面代码
+原因是在设置 SplashScreen 启动界面，那么在生成的 App.g.cs 文件里面将会包含下面代码
 
 ```csharp
         [System.STAThreadAttribute()]
@@ -40,7 +42,7 @@
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.1.0")]
         public static void Main() 
         {
-            SplashScreen splashScreen = new SplashScreen("splanscreen.png");
+            SplashScreen splashScreen = new SplashScreen("SplashScreen.png");
             splashScreen.Show(true);
             App app = new App();
             app.InitializeComponent();
@@ -144,3 +146,101 @@
 所以在 App 的构造函数监听 Activated 事件将不会收到触发
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+<!-- 
+Why the Application.Current.Activated event is no longer fired?
+因为 Activated 是在 Application 类的 WmActivateApp 方法里面触发的
+Because Activated is fired in the WmActivateApp method of the Application class. 
+而 WmActivateApp 方法是依靠 Windows 消息触发的
+The WmActivateApp method is fired by Windows messages. See [WM_ACTIVATEAPP](https://docs.microsoft.com/zh-cn/windows/win32/winmsg/wm-activateapp?WT.mc_id=WD-MVP-5003260 )
+
+```csharp
+        private void EnsureHwndSource()
+        {
+            if (_parkingHwnd == null)
+            {
+                // _appFilterHook needs to be member variable otherwise
+                // it is GC'ed and we don't get messages from HwndWrapper
+                // (HwndWrapper keeps a WeakReference to the hook)
+
+                _appFilterHook = new HwndWrapperHook(AppFilterMessage);
+                HwndWrapperHook[] wrapperHooks = {_appFilterHook};
+
+                _parkingHwnd = new HwndWrapper(
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                "",
+                                IntPtr.Zero,
+                                wrapperHooks);
+            }
+        }
+
+        private IntPtr AppFilterMessage(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            IntPtr retInt = IntPtr.Zero;
+            switch ((WindowMessage)msg)
+            {
+                case WindowMessage.WM_ACTIVATEAPP:
+                    handled = WmActivateApp(NativeMethods.IntPtrToInt32(wParam));
+                    break;
+                case WindowMessage.WM_QUERYENDSESSION :
+                    handled = WmQueryEndSession(lParam, ref retInt);
+                    break;
+                default:
+                    handled = false;
+                    break;
+            }
+            return retInt;
+        }
+
+        private bool WmActivateApp(Int32 wParam)
+        {
+            int temp = wParam;
+            bool isActivated = (temp == 0? false : true);
+
+            // Event handler exception continuality: if exception occurs in Activate/Deactivate event handlers, our state would not
+            // be corrupted because no internal state are affected by Activate/Deactivate. Please check Event handler exception continuality
+            // if a state depending on those events is added.
+            if (isActivated == true)
+            {
+                OnActivated(EventArgs.Empty);
+            }
+            else
+            {
+                OnDeactivated(EventArgs.Empty);
+            }
+            return false;
+        }
+```
+
+但是在设置 SplashScreen 之后，WPF将会在生成的 App.g.cs 文件里面创建代码
+But after setting SplashScreen, WPF will create the code in the generated App.g.cs file.
+
+```csharp
+        [System.STAThreadAttribute()]
+        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "5.0.1.0")]
+        public static void Main() 
+        {
+            SplashScreen splashScreen = new SplashScreen("SplashScreen.png");
+            splashScreen.Show(true);
+            App app = new App();
+            app.InitializeComponent();
+            app.Run();
+        }
+```
+
+就如你所见到一样，在 Main 函数里面将会先调用 SplashScreen 然后再创建 App 对象
+As you can see, in the Main function, SplashScreen will be called first and then the App object will be created.
+但是 SplashScreen 将会创建窗口，而且 SplashScreen 创建的速度非常快。在 SplashScreen 创建窗口完成之后，系统将会发送 WM_ACTIVATEAPP 消息给到应用。但此时的 App 对象还没有创建完成。
+And SplashScreen will create windows very fast. After the SplashScreen creates the window, the system will send the WM_ACTIVATEAPP message to the application. But at this time the App object has not been created yet. 
+因此在 Application 的 EnsureHwndSource 函数被调用之前，系统已经发送过了WM_ACTIVATEAPP消息给到应用
+Therefore, before EnsureHwndSource method in Application is called, the system has already sent the WM_ACTIVATEAPP message to the application.
+所以 Application 的 AppFilterMessage 方法将不会收到 WM_ACTIVATEAPP 消息，并且不会触发 Activated 事件
+So AppFilterMessage method in Application will not receive WM_ACTIVATEAPP message, and will not trigger the Activated event 
+ -->
