@@ -3,6 +3,8 @@
 本文来告诉大家如何一步步搭建一个 DUMP 分析平台，核心是用来分析桌面端的应用软件，如 WPF 软件的 DUMP 文件。在开始之前需要说明的是，如果桌面端软件使用纯 WPF 实现，中途没有调用不安全的 C++ 库，那么 DUMP 平台几乎无用，原因是 WPF 是 .NET 应用，而 .NET 是安全的，除非是系统环境问题，否则依靠捕获异常所拿到的信息就完全超过了 DUMP 能获取的信息。因此本文的核心功能是提供给调用了不安全的 C++ 等语言编写的库的桌面端软件 DUMP 分析平台
 
 <!--more-->
+<!-- CreateTime:2021/3/23 18:56:30 -->
+
 <!-- 发布 -->
 
 对于 C++ 等不安全语言编写的逻辑，将会比较多依赖 DUMP 的调试。但对于 dotnet 应用来说，依靠异常就完全足够了，只要遵循规范，那么基本只有内存爆了、无限递归等很有限的几个问题才能玩炸，其他情况都能稳稳接住
@@ -120,7 +122,7 @@ q
 
 和大家推荐 DUMP 调试群 169225649
 
-[$ , $ , $$ , $$ , $$ a (Run Script File) - Windows drivers](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-----------------------a---run-script-file-?WT.mc_id=WD-MVP-5003260 )
+[a (Run Script File) - Windows drivers](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-----------------------a---run-script-file-?WT.mc_id=WD-MVP-5003260 )
 
 [Debugging Tools for Windows (WinDbg, KD, CDB, NTSD) - Windows drivers](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger?WT.mc_id=WD-MVP-5003260 )
 
