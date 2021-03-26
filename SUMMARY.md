@@ -592,6 +592,8 @@
 
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
 
+ * [dotnet 使用 TypeNameFormatter 库格式化输出反射泛型类型](dotnet-使用-TypeNameFormatter-库格式化输出反射泛型类型.md)
+
  * [dotnet 使用完全对象引用相等判断](dotnet-使用完全对象引用相等判断.md)
 
  * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
