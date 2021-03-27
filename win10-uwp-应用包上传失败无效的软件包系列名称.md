@@ -28,7 +28,7 @@ BitStamp_2.7.3.0_x86_x64_arm_bundle.appxupload36.0 MB
 
 如果依然失败，那么请清理文件夹，如使用 Git 的 `git clean -xdf` 命令清理掉所有没有被 Git 管理的文件。当然，在清理之前，如果你对 Git 不熟悉，我更建议你拷贝代码重新创建项目
 
-
+更多请看 [UWP开发神坑之---不能根据所提供的指纹找到证书 - 快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/2020/06/21/UWP%E5%BC%80%E5%8F%91%E7%A5%9E%E5%9D%91%E4%B9%8B-%E4%B8%8D%E8%83%BD%E6%A0%B9%E6%8D%AE%E6%89%80%E6%8F%90%E4%BE%9B%E7%9A%84%E6%8C%87%E7%BA%B9%E6%89%BE%E5%88%B0%E8%AF%81%E4%B9%A6/ )
 
 
 

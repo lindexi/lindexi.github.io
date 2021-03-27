@@ -652,6 +652,8 @@
 
  * [dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具](dotnet-在-UOS-国产系统上安装-MonoDevelop-开发工具.md)
 
+ * [dotnet 在 Windows 系统上使用 stakx 的 WIC 库](dotnet-在-Windows-系统上使用-stakx-的-WIC-库.md)
+
  * [dotnet 在国产 UOS 系统利用 dotnet tool 工具做文件传输](dotnet-在国产-UOS-系统利用-dotnet-tool-工具做文件传输.md)
 
  * [dotnet 基于 debian 创建一个 docker 的 sdk 镜像](dotnet-基于-debian-创建一个-docker-的-sdk-镜像.md)
