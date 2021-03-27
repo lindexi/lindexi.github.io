@@ -25,6 +25,6 @@ BitStamp_2.7.3.0_x86_x64_arm_bundle.appxupload36.0 MB
 
 如果依然失败，那么请清理文件夹，如使用 Git 的 `git clean -xdf` 命令清理掉所有没有被 Git 管理的文件。当然，在清理之前，如果你对 Git 不熟悉，我更建议你拷贝代码重新创建项目
 
-
+更多请看 [UWP开发神坑之---不能根据所提供的指纹找到证书 - 快乐 就在你的心 的博客](https://kljzndx.github.io/My-Blog/2020/06/21/UWP%E5%BC%80%E5%8F%91%E7%A5%9E%E5%9D%91%E4%B9%8B-%E4%B8%8D%E8%83%BD%E6%A0%B9%E6%8D%AE%E6%89%80%E6%8F%90%E4%BE%9B%E7%9A%84%E6%8C%87%E7%BA%B9%E6%89%BE%E5%88%B0%E8%AF%81%E4%B9%A6/ )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
