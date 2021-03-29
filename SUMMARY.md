@@ -790,6 +790,8 @@
 
  * [dotnet 读 WPF 源代码笔记 启动欢迎界面 SplashScreen 的原理](dotnet-读-WPF-源代码笔记-启动欢迎界面-SplashScreen-的原理.md)
 
+ * [dotnet 读 WPF 源代码笔记 默认的 Main 函数是在哪创建的](dotnet-读-WPF-源代码笔记-默认的-Main-函数是在哪创建的.md)
+
  * [dotnet 进行二进制差分压缩文件](dotnet-进行二进制差分压缩文件.md)
 
  * [dotnet 通过 dotnetCampus.YamlToCsharp 将 YAML 多语言文件构建为代码](dotnet-通过-dotnetCampus.YamlToCsharp-将-YAML-多语言文件构建为代码.md)
@@ -1156,6 +1158,8 @@
 
  * [VisualStudio 2019 新特性](VisualStudio-2019-新特性.md)
 
+ * [VisualStudio 2019 调试项目使用 Portable PDB 提示不支持 PDB 格式](VisualStudio-2019-调试项目使用-Portable-PDB-提示不支持-PDB-格式.md)
+
  * [VisualStudio csproj 添加 ItemGroup 的 Service ](VisualStudio-csproj-添加-ItemGroup-的-Service-.md)
 
  * [VisualStudio 使用三个方法启动最新 C# 功能](VisualStudio-使用三个方法启动最新-C-功能.md)
@@ -1171,6 +1175,8 @@
  * [VisualStudio 合并代码文件](VisualStudio-合并代码文件.md)
 
  * [VisualStudio 命令行编译 build 通过 rebuild 不通过](VisualStudio-命令行编译-build-通过-rebuild-不通过.md)
+
+ * [VisualStudio 外部工具配合 dotnet tool 制作复制文件名工具](VisualStudio-外部工具配合-dotnet-tool-制作复制文件名工具.md)
 
  * [VisualStudio 好用插件集合](VisualStudio-好用插件集合.md)
 
