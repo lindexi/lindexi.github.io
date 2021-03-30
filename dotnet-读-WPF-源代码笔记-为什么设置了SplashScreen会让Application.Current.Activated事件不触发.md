@@ -37,6 +37,8 @@
     }
 ```
 
+在没有设置 SplashScreen 时，你可以发现 `Current_Activated` 函数将会进入，而在设置 SplashScreen 之后，将不会进入此方法
+
 原因是在设置 SplashScreen 启动界面，那么在生成的 App.g.cs 文件里面将会包含下面代码
 
 ```csharp
@@ -149,6 +151,8 @@
 所以在 App 的构造函数监听 Activated 事件将不会收到触发
 
 如果想要使用欢迎界面，也想收到系统的消息，可以在创建 Application 之后，手动创建 SplashScreen 类，或者可以使用 lsj 提供的 [kkwpsv/SplashImage: Fast splash Image with GDI+ in C#](https://github.com/kkwpsv/SplashImage) 库，当然了，这个库代码量特别少，我推荐大家可以抄抄代码。这个库提供的是高性能的版本，可以在另一个线程中执行，换句话说，就是使用 [kkwpsv/SplashImage](https://github.com/kkwpsv/SplashImage) 作为欢迎界面，是可以做到不占用 WPF 主线程时间的，性能比 WPF 提供的好
+
+我尝试修改 WPF 框架代码来支持在设置 SplashScreen 还能在构造函数添加事件，收到触发，请看 [Try to create application before show SplashScreen by lindexi · Pull Request #4340 · dotnet/wpf](https://github.com/dotnet/wpf/pull/4340 )
 
 更多请看 [dotnet 读 WPF 源代码笔记 启动欢迎界面 SplashScreen 的原理](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E5%90%AF%E5%8A%A8%E6%AC%A2%E8%BF%8E%E7%95%8C%E9%9D%A2-SplashScreen-%E7%9A%84%E5%8E%9F%E7%90%86.html )
 

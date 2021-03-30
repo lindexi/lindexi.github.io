@@ -7,8 +7,10 @@
 
 
 
-<!-- 草稿 -->
+<!-- 发布 -->
 <!-- 标签：WPF，WPF源代码 -->
+
+阅读本文你将了解 WPF 框架中，默认在 App.g.cs 生成入口 Main 函数的详细过程。阅读本文之前，你需要了解一些编译过程的知识以及代码生成的知识
 
 默认的 Application 继承类命名是 App.xaml 如果在你的项目中，依然使用默认的命名，那么在 .NET 5 的 SDK 下，将会自动加上以下默认的代码
 
@@ -19,7 +21,7 @@
     </ApplicationDefinition>
 ```
 
-上面代码是将 App.xaml 识别作为 ApplicationDefinition 特殊内容，这个内容将被作为创建入口函数的出发点文件。也就是 App.g.cs 文件里面存放入口函数就由此决定
+上面代码是将 App.xaml 识别作为 ApplicationDefinition 的特殊内容，这个内容将被作为创建入口函数的出发点文件。也就是 App.g.cs 文件里面存放入口函数就由此决定
 
 在 `src\Microsoft.DotNet.Wpf\src\PresentationBuildTasks\MS\Internal\MarkupCompiler\MarkupCompiler.cs` 文件里面的 GenerateAppEntryPoint 函数，如此函数命名所示，这就是创建应用入口点的方法，大概逻辑如下
 
@@ -77,7 +79,46 @@
 
 在 WPF 中不是拼接字符串的方式完成代码生成的，而是需要用上代码生成逻辑进行生成。在上面代码中有各个注释来告诉大家生成代码的作用，阅读方便
 
-使用 `GenerateEntryPointMethod` 函数即可创建 Main 函数本身，里面不包含任何的逻辑
+调用链关系上，通过 [Roslyn 如何了解某个项目在 msbuild 中所有用到的属性以及构建过程](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BA%86%E8%A7%A3%E6%9F%90%E4%B8%AA%E9%A1%B9%E7%9B%AE%E5%9C%A8-msbuild-%E4%B8%AD%E6%89%80%E6%9C%89%E7%94%A8%E5%88%B0%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BB%A5%E5%8F%8A%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B.html ) 的方法，可以看到在构建过程中，将会先使用 UsingTask 加载 MarkupCompilePass2 任务
+
+```xml
+  <UsingTask TaskName="Microsoft.Build.Tasks.Windows.MarkupCompilePass2" AssemblyFile="$(_PresentationBuildTasksAssembly)" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+```
+
+接着有一个专门的 Target 用来执行，如下面代码
+
+```xml
+  <Target Name="MarkupCompilePass2" Condition="Exists('$(IntermediateOutputPath)$(AssemblyName)_MarkupCompile.lref')" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Message Text="(in) References: '@(ReferencePath);@(AssemblyForLocalTypeReference)'" Condition="'$(MSBuildTargetsVerbose)'=='true'" />
+    <MarkupCompilePass2 AssemblyName="$(AssemblyName)" OutputType="$(OutputType)" Language="$(Language)" LocalizationDirectivesToLocFile="$(LocalizationDirectivesToLocFile)" RootNamespace="$(RootNamespace)" References="@(ReferencePath);@(AssemblyForLocalTypeReference)" KnownReferencePaths="$(MSBuildBinPath);$(TargetFrameworkDirectory);@(_TargetFrameworkSDKDirectoryItem);@(KnownReferencePaths)" AssembliesGeneratedDuringBuild="@(AssembliesGeneratedDuringBuild)" AlwaysCompileMarkupFilesInSeparateDomain="$(AlwaysCompileMarkupFilesInSeparateDomain)" XamlDebuggingInformation="$(XamlDebuggingInformation)" GeneratedBaml="" OutputPath="$(IntermediateOutputPath)" ContinueOnError="false">
+      <!--
+               Output Items for MarkupCompilePass2
+
+               If MarkupCompilePass2 is only for SatelliteAssembly, Append all the generated baml files into SatelliteEmbeddedFiles, No FileClassifier is required.
+               If MarupCompilePass2 is for Main Assembly as well, output the Baml files into GeneratedBaml, FileClassifier task will be invoked later.
+          -->
+      <Output ItemName="GeneratedBamlWithLocalType" TaskParameter="GeneratedBaml" Condition="'$(MSBuildTargetsVerbose)'=='true'" />
+      <Output ItemName="GeneratedBaml" TaskParameter="GeneratedBaml" Condition="'$(_RequireMCPass2ForMainAssembly)' == 'true'" />
+      <Output ItemName="SatelliteEmbeddedFiles" TaskParameter="GeneratedBaml" Condition="'$(_RequireMCPass2ForSatelliteAssemblyOnly)' == 'true'" />
+      <!-- Put the generated files in item FileWrites so that they can be cleaned up appropriately in a next Rebuild -->
+      <Output ItemName="FileWrites" TaskParameter="GeneratedBaml" />
+    </MarkupCompilePass2>
+    <Message Text="(out) After MarkupCompilePass2, SatelliteEmbeddedFiles: '@(SatelliteEmbeddedFiles)'" Condition="'$(MSBuildTargetsVerbose)'=='true'" />
+    <Message Text="(out) GeneratedBamlWithLocalType: '@(GeneratedBamlWithLocalType)'" Condition="'$(MSBuildTargetsVerbose)'=='true'" />
+  </Target>
+```
+
+因此 `GenerateAppEntryPoint` 函数的调用是放在 WPF 项目构建过程中执行，细节请看 [WPF 程序的编译过程 - walterlv](https://blog.walterlv.com/post/how-wpf-assemblies-are-compiled.html )
+
+在 MarkupCompilePass2 里面，将会经过层层调用，使用 `GenerateAppEntryPoint` 函数创建出 App.g.cs 的入口函数。在 GenerateAppEntryPoint 函数包含如下步骤
+
+- 使用 GenerateEntryPointMethod 创建空的 Main 函数本身
+- 使用 GenerateSplashScreenInstance 创建 SplashScreen 的调用，如果开发者有设置的话才会调用
+- 通过 GenerateAppInstance 创建 App 对象，在接下来逻辑调用 InitializeComponent 和 Run 方法
+
+下面是详细的步骤
+
+在 `GenerateAppEntryPoint` 函数使用 `GenerateEntryPointMethod` 函数即可创建 Main 函数本身，里面不包含任何的逻辑
 
 ```csharp
         private CodeMemberMethod GenerateEntryPointMethod()
@@ -311,6 +352,8 @@ private const string SPLASHVAR = "splashScreen";
 
 当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
 
+
+更多请看 [WPF 程序的编译过程 - walterlv](https://blog.walterlv.com/post/how-wpf-assemblies-are-compiled.html )
 
 
 
