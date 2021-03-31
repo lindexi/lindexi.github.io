@@ -2462,6 +2462,8 @@
 
  * [如何给 CI CD 服务器搭建上 .NET 5 构建和运行环境](如何给-CI-CD-服务器搭建上-.NET-5-构建和运行环境.md)
 
+ * [如何让 Gitlab 的 Runner 在构建时拉取 Git Submodules 仓库](如何让-Gitlab-的-Runner-在构建时拉取-Git-Submodules-仓库.md)
+
  * [如何让 USB 设备不显示安全删除硬件弹出选项](如何让-USB-设备不显示安全删除硬件弹出选项.md)
 
  * [如何让软件以 System 权限运行](如何让软件以-System-权限运行.md)
