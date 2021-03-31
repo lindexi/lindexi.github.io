@@ -398,6 +398,46 @@ else if (n < 10)
 
 
 
+## 文件路径相关
+
+### 获取文件夹
+
+如果看到获取文件夹的代码是通过自行寻找 `\` 字符判断的，如以下逻辑
+
+```csharp
+var dir = fileName.Substring(0, fileName.LastIndexOf("\\", StringComparison.Ordinal));
+```
+
+可以使用 `Path.GetDirectoryName` 代替，如以下代码
+
+```csharp
+var dir = Path.GetDirectoryName(fileName);
+```
+
+### 判断文件夹不存在，创建文件夹
+
+默认在 Directory.CreateDirectory 方法里面已包含了判断文件夹是否存在，如果存在就不重复判断的逻辑，因此在 `Directory.CreateDirectory` 之前判断文件夹是否存在的代码可以删除，如以下逻辑
+
+```csharp
+ if (!Directory.Exists(dir))
+ {
+     Directory.CreateDirectory(dir);
+ }
+```
+
+可以删除判断文件夹是否存在的逻辑，如以下代码
+
+```csharp
+Directory.CreateDirectory(dir);
+```
+
+### 拼接路径
+
+如果看到有代码自己使用 `/` 或 `\` 拼接路径，可以使用 `Path.Combine` 方法代替
+
+
+
+
 
 
 
