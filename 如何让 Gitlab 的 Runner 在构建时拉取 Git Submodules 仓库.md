@@ -3,6 +3,8 @@
 默认的 GitLab 的 Runner 在构建时不会去拉取 Git Submodules 仓库，将会提示 Skipping Git submodules setup 跳过初始化 Git Submodule 仓库
 
 <!--more-->
+<!-- CreateTime:2021/3/30 16:42:37 -->
+
 <!-- 发布 -->
 
 如[官方文档](https://docs.gitlab.com/ee/ci/git_submodules.html) 的描述，只需要加上以下代码在 `.gitlab-ci.yml` 文件即可
