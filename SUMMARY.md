@@ -588,6 +588,8 @@
 
  * [dotnet 使用 SemaphoreSlim 可能的内存泄露](dotnet-使用-SemaphoreSlim-可能的内存泄露.md)
 
+ * [dotnet 使用 ShowMeTheXAML 显示 WPF 的 XAML 控件内容](dotnet-使用-ShowMeTheXAML-显示-WPF-的-XAML-控件内容.md)
+
  * [dotnet 使用 SourceLink 将 NuGet 链接源代码到 GitHub 等仓库](dotnet-使用-SourceLink-将-NuGet-链接源代码到-GitHub-等仓库.md)
 
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
