@@ -819,6 +819,70 @@ System.ArgumentException:“此元数据已与类型和属性关联。必须新�
             }
 ```
 
+## 绑定无视 CLR 属性的返回值
+
+如下面代码，返回的是字符串常量，但实际的绑定是有效的
+
+```csharp
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+            "Text", typeof(string), typeof(TextControl));
+
+        public string Text
+        {
+            get { return "lindexi is doubi"; }
+            set { SetValue(TextProperty, value); }
+        }
+```
+
+绑定返回值是绑定的值，而不是返回的字符串
+
+```xml
+    <StackPanel>
+      <TextBlock x:Name="TextBlock" Margin="10,10,10,10" Text="123"></TextBlock>
+      <local:TextControl Margin="10,10,10,10" Text="{Binding ElementName=TextBlock,Path=Text}"></local:TextControl>
+    </StackPanel>
+```
+
+## 单元测试没有 GetEntryAssembly 的返回值
+
+在单元测试调用 Assembly.GetEntryAssembly() 拿到的返回值是空
+
+```csharp
+    /// <summary>
+    /// Use as first line in ad hoc tests (needed by XNA specifically)
+    /// </summary>
+    public static void SetEntryAssembly()
+    {
+        SetEntryAssembly(Assembly.GetCallingAssembly());
+    }
+
+    /// <summary>
+    /// Allows setting the Entry Assembly when needed. 
+    /// Use AssemblyUtilities.SetEntryAssembly() as first line in XNA ad hoc tests
+    /// </summary>
+    /// <param name="assembly">Assembly to set as entry assembly</param>
+    public static void SetEntryAssembly(Assembly assembly)
+    {
+        AppDomainManager manager = new AppDomainManager();
+        FieldInfo entryAssemblyField = manager.GetType().GetField("m_entryAssembly", BindingFlags.Instance | BindingFlags.NonPublic);
+        entryAssemblyField.SetValue(manager, assembly);
+
+        AppDomain domain = AppDomain.CurrentDomain;
+        FieldInfo domainManagerField = domain.GetType().GetField("_domainManager", BindingFlags.Instance | BindingFlags.NonPublic);
+        domainManagerField.SetValue(domain, manager);
+    }
+```
+
+## 触发 WPF 按钮点击
+
+```csharp
+ButtonAutomationPeer peer = new ButtonAutomationPeer(someButton);
+IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as IInvokeProvider;
+invokeProv.Invoke();
+```
+
+详细请看 [https://stackoverflow.com/a/728444/6116637](https://stackoverflow.com/a/728444/6116637)
+
 
 
 
