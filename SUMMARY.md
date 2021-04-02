@@ -482,6 +482,10 @@
 
  * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-重复-id-标识处理.md)
 
+ * [dotnet OpenXML 图片特效的 BiLevel 黑白特效修改图片颜色](dotnet-OpenXML-图片特效的-BiLevel-黑白特效修改图片颜色.md)
+
+ * [dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](dotnet-OpenXML-图片特效的-Color-Change-Effect-特效修改图片颜色.md)
+
  * [dotnet OpenXML 如何判断是形状还是文本](dotnet-OpenXML-如何判断是形状还是文本.md)
 
  * [dotnet OpenXML 如何获取 schemeClr 颜色](dotnet-OpenXML-如何获取-schemeClr-颜色.md)
