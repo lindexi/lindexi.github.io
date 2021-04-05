@@ -13,7 +13,7 @@
 
 在 dotnet core 上，咱的 dotnet 程序可以被 Native 的应用跑起来 CLR 引擎，而在没有运行 CLR 引擎之前，这个 Native 程序自身可以独立运行。详细请看 [dotnet core 应用是如何跑起来的 通过AppHost理解运行过程](https://blog.lindexi.com/post/dotnet-core-%E5%BA%94%E7%94%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-%E9%80%9A%E8%BF%87AppHost%E7%90%86%E8%A7%A3%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.html ) 
 
-因为这个 Native 程序可以自主运行，因此这个 Native 程序特别适合用来做应用程序的入口。当然了，默认的 dotnet core 应用也就使用了这个 Native 的程序作为默认的入口，只是这个默认入口硬编码了 App 的路径而已。咱可以自己去实现这个 Native 程序，只需要找到合适的路径，包括咱的应用软件路径以及 CLR 引擎路径，将 CLR 引擎运行，然后加载咱的应用就可以了
+因为这个 Native 程序可以自主运行，因此这个 Native 程序特别适合用来做应用程序的入口。当然了，默认的 dotnet core 应用也就使用了这个 Native 的程序作为默认的入口，只是这个默认入口硬编码了 App 的路径而已。咱可以自己去实现这个 Native 程序，只需要找到合适的路径，包括咱的应用软件路径以及 CLR 引擎路径，将 CLR 引擎运行，然后加载咱的应用就可以了。如何编写一个 dotnet 入口程序，细节请看 [dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程](https://blog.lindexi.com/post/dotnet-core-%E5%BA%94%E7%94%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-%E9%80%9A%E8%BF%87%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA-dotnet-host-%E7%90%86%E8%A7%A3%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.html)
 
 这样做的一个优势是，使用 Native 作为入口程序，不需要开启两个进程。因为 dotnet 应用将会在这个 Native 程序里面跑起来，只是 Native 应用将会根据配置加载不同的版本的 dotnet 应用而已。相对来说这个方式的启动速度会比较快，而且不会破坏用户将应用程序固定到标题栏，也不需要去更新快捷方式和注册表的路径。多次更新时入口程序的路径没有变更，有变更的是 dotnet 应用程序，不同的版本的 dotnet 应用程序放在不同的版本号文件夹里面，同时更改配置文件里面的路径即可
 
