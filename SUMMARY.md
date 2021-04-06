@@ -604,6 +604,8 @@
 
  * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
 
+ * [dotnet 修复 ILLinkTasksAssembly 特性的值的计算结果无效](dotnet-修复-ILLinkTasksAssembly-特性的值的计算结果无效.md)
+
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
 
  * [dotnet 入门到放弃 使用 .NET Core 卸载工具](dotnet-入门到放弃-使用-.NET-Core-卸载工具.md)
@@ -729,6 +731,8 @@
  * [dotnet 构建 SourceRoot items must include at least one top-level item when DeterministicSourcePaths is true 失败](dotnet-构建-SourceRoot-items-must-include-at-least-one-top-level-item-when-DeterministicSourcePaths-is-true-失败.md)
 
  * [dotnet 枚举当前设备wifi热点](dotnet-枚举当前设备wifi热点.md)
+
+ * [dotnet 桌面端基于 AppHost 的配置式自动切换更新后的应用程序路径](dotnet-桌面端基于-AppHost-的配置式自动切换更新后的应用程序路径.md)
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 
