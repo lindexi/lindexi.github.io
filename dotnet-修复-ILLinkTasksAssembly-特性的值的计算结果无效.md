@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/4/6 8:34:27 -->
+
 <!-- 发布 -->
 
 解决方法是先创建一个空白项目，找找自己本地的 ILLinkTasksAssembly 定义是否存在，默认在 SDK 里面是存在 Microsoft.NET.ILLink.Tasks 的。如果发现自己的设备上不存在 Microsoft.NET.ILLink.Tasks 这个文件夹，那么请将 dotnet sdk 卸载重新安装，或者安装更新版本的 sdk 然后查看自己的环境变量，是否有设置特定版本的 dotnet sdk 如果有设置，就删除此项值或者修改为更新版本
