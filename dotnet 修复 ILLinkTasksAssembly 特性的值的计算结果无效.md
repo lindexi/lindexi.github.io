@@ -3,6 +3,8 @@
 在加上 IL Link 的项目里面，在升级到 .NET 6 预览版，有一些项目将会构建不通过，或者有些 C++ CLI 项目加载失败。提示 元素 UsingTask 中“AssemblyFile”特性的值“$(ILLinkTasksAssembly)”的计算结果“”无效。原因就是 .NET 6 预览版里面，或者自己的设备上 ILLinkTasksAssembly 属性定义失效
 
 <!--more-->
+<!-- CreateTime:2021/4/6 8:34:27 -->
+
 <!-- 发布 -->
 
 解决方法是先创建一个空白项目，找找自己本地的 ILLinkTasksAssembly 定义是否存在，默认在 SDK 里面是存在 Microsoft.NET.ILLink.Tasks 的。如果发现自己的设备上不存在 Microsoft.NET.ILLink.Tasks 这个文件夹，那么请将 dotnet sdk 卸载重新安装，或者安装更新版本的 sdk 然后查看自己的环境变量，是否有设置特定版本的 dotnet sdk 如果有设置，就删除此项值或者修改为更新版本
