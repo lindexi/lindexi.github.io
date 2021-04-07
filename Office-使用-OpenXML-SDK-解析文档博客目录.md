@@ -140,6 +140,10 @@
 
 [ShapeCrawler/ShapeCrawler: A .NET library for manipulating PowerPoint presentations.](https://github.com/ShapeCrawler/ShapeCrawler )
 
+### [aspose](https://www.aspose.com/ )
+
+基于他，你几乎能造个 WPS 出来。很贵，很强的工具包，提供了很强的编辑功能。可以将元素或页面输出为图片效果，支持多个不同的语言
+
 ## 文档
 
 [服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
