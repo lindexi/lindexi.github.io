@@ -69,6 +69,8 @@ EastAsianJapaneseDoubleBytePeriod  一. 二.
 
 这就是 PPT 页面上的常用的枚举值
 
+更多细节请看 ECMA-376 的 20.1.10.61 章文档
+
 
 
 
