@@ -1854,6 +1854,8 @@
 
  * [WPF 从零手动创建承载 Xamarin Forms 项目](WPF-从零手动创建承载-Xamarin-Forms-项目.md)
 
+ * [WPF 使用 Behavior 库辅助获取动态资源变更事件](WPF-使用-Behavior-库辅助获取动态资源变更事件.md)
+
  * [WPF 使用 Composition API 做高性能渲染](WPF-使用-Composition-API-做高性能渲染.md)
 
  * [WPF 使用 Direct Manipulation 的方法](WPF-使用-Direct-Manipulation-的方法.md)
