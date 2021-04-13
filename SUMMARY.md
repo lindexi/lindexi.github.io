@@ -2028,6 +2028,8 @@
 
  * [WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](WPF-将-docx-的-Word-文件转换为-FlowDocument-显示.md)
 
+ * [WPF 将 SVG 转 XAML 的工具](WPF-将-SVG-转-XAML-的工具.md)
+
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
  * [WPF 已知问题 窗口在屏幕外创建将不会刷新渲染](WPF-已知问题-窗口在屏幕外创建将不会刷新渲染.md)
