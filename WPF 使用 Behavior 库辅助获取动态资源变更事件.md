@@ -3,6 +3,8 @@
 在 WPF 开发中，可以使用 Behavior 库辅助，监听某个动态资源变更的事件，从而了解到是在哪个模块变更了动态资源，或者根据动态资源的变更而进行界面修改
 
 <!--more-->
+<!-- CreateTime:2021/4/12 19:35:48 -->
+
 <!-- 发布 -->
 
 在 WPF 的动态资源机制里面，如果某个依赖属性给定了动态资源，那么在动态资源变更的时候，将会重新给属性赋值。通过这个机制，就可以在业务逻辑上，通过添加一个依赖属性，绑定到需要监听变更的动态资源上，那么这个依赖属性将会收到变更通知
@@ -113,7 +115,7 @@
         }
 ```
 
-本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/fe0c808b/JeyaijikeneeWhejoniwairbu ) 欢迎下载执行，可以看到在点击按钮的时候进入 OnResourceChanged_VariableFontSize 方法
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/fe0c808b/JeyaijikeneeWhejoniwairbu ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/fe0c808b/JeyaijikeneeWhejoniwairbu) 欢迎下载执行，可以看到在点击按钮的时候进入 OnResourceChanged_VariableFontSize 方法
 
 使用这个方法可以快速调试是在哪个模块变更了动态资源，也可以通过本文的方法在某个动态资源变更的时候执行其他逻辑，如动画
 
