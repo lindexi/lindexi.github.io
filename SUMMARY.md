@@ -798,6 +798,8 @@
 
  * [dotnet 读 WPF 源代码笔记 使用 Win32 方法修改窗口的坐标和大小对窗口依赖属性的影响](dotnet-读-WPF-源代码笔记-使用-Win32-方法修改窗口的坐标和大小对窗口依赖属性的影响.md)
 
+ * [dotnet 读 WPF 源代码笔记 创建 SolidColorBrush 性能没有想象那么差](dotnet-读-WPF-源代码笔记-创建-SolidColorBrush-性能没有想象那么差.md)
+
  * [dotnet 读 WPF 源代码笔记 启动欢迎界面 SplashScreen 的原理](dotnet-读-WPF-源代码笔记-启动欢迎界面-SplashScreen-的原理.md)
 
  * [dotnet 读 WPF 源代码笔记 默认的 Main 函数是在哪创建的](dotnet-读-WPF-源代码笔记-默认的-Main-函数是在哪创建的.md)
@@ -2499,6 +2501,8 @@
  * [安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources](安装visualStudio-出现-cant-install-Microsoft.TeamFoundation.OfficeIntegration.Resources.md)
 
  * [完整的 P2P 应用需要包含哪些功能](完整的-P2P-应用需要包含哪些功能.md)
+
+ * [希沃白板如何在公式里面输入绝对值符号](希沃白板如何在公式里面输入绝对值符号.md)
 
  * [希沃白板如何解决手机端播放课件内视频出现黑屏闪退](希沃白板如何解决手机端播放课件内视频出现黑屏闪退.md)
 
