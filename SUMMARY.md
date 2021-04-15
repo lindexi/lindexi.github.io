@@ -374,6 +374,8 @@
 
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
+ * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
+
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
 
  * [dotnet C# 图片等比限制最大和最小大小缩放算法](dotnet-C-图片等比限制最大和最小大小缩放算法.md)
