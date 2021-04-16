@@ -46,6 +46,23 @@ var uri2 = "/api/12";
     }
 ```
 
+## 拼接 URL 参数
+
+```csharp
+            var uriBuilder = new UriBuilder(new Uri("http://blog.lindexi.com"));
+            NameValueCollection query = HttpUtility.ParseQueryString(uriBuilder.Query);
+            query["Foo"] = "123";
+            query["doubi"] = "doubi";
+            uriBuilder.Query = query.ToString();
+
+            Console.WriteLine(uriBuilder.Uri);
+```
+
+上面代码放在[github](https://github.com/lindexi/lindexi_gd/tree/b401342b/JearhelawruNibilubeher)欢迎小伙伴访问
+
+
+
+
 <!-- ## 单例应用在多实例用户无法使用
 
 如果使用NamedPipeServerStream、`Mutex`做单实例，需要传入字符串，这时如果传入一个固定的字符串，会在多用户的时候无法使用。
