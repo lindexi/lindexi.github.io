@@ -716,6 +716,8 @@
 
  * [dotnet 文件读写务必注意事项](dotnet-文件读写务必注意事项.md)
 
+ * [dotnet 文档应用的撤销重做设计](dotnet-文档应用的撤销重做设计.md)
+
  * [dotnet 新 sdk style 项目格式 文件冲突](dotnet-新-sdk-style-项目格式-文件冲突.md)
 
  * [dotnet 新 SDK Style 项目格式如何使用 InternalsVisibleToAttribute 功能](dotnet-新-SDK-Style-项目格式如何使用-InternalsVisibleToAttribute-功能.md)

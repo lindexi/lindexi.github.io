@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/4/16 16:53:15 -->
+
 <!-- 发布 -->
 
 这是在 WPF 开源仓库上一个小伙伴报的，详细请看 [WriteableBitmap hangs when source bitmap is rendered on other thread · Issue #4396 · dotnet/wpf](https://github.com/dotnet/wpf/issues/4396 )
@@ -224,6 +226,8 @@ The main thread will use the same SyncObject in BitmapSource.UpdateBitmapSourceR
 The main thread will waitting the `_syncObject` which be used in background task in `WriteableBitmap.InitFromBitmapSource` method.
 
 But the background task now waitting the main thread in `MediaSystem.Startup`. So the main thread wait background task to release the `_syncObject` lock and the background task wait main thread. -->
+
+当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
 
 
 
