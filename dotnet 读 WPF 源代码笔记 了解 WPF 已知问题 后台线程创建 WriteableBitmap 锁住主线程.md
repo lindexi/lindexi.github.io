@@ -3,6 +3,8 @@
 在 WPF 中，如果在没有开启 Dispatcher 的后台线程里面创建 WriteableBitmap 对象，在 WriteableBitmap 构造函数传入在主线程创建的 BitmapSource 也许就会锁住主线程。本文将通过 WPF 框架源代码告诉大家为什么会锁住主线程
 
 <!--more-->
+<!-- CreateTime:2021/4/16 16:53:15 -->
+
 <!-- 发布 -->
 
 这是在 WPF 开源仓库上一个小伙伴报的，详细请看 [WriteableBitmap hangs when source bitmap is rendered on other thread · Issue #4396 · dotnet/wpf](https://github.com/dotnet/wpf/issues/4396 )
@@ -221,5 +223,7 @@ The main thread will use the same SyncObject in BitmapSource.UpdateBitmapSourceR
 The main thread will waitting the `_syncObject` which be used in background task in `WriteableBitmap.InitFromBitmapSource` method.
 
 But the background task now waitting the main thread in `MediaSystem.Startup`. So the main thread wait background task to release the `_syncObject` lock and the background task wait main thread. -->
+
+当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、 使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
