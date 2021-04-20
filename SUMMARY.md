@@ -794,6 +794,8 @@
 
  * [dotnet 读 WPF 源代码笔记 wpfgfx_cor3.dll 是什么文件](dotnet-读-WPF-源代码笔记-wpfgfx_cor3.dll-是什么文件.md)
 
+ * [dotnet 读 WPF 源代码笔记 WriteableBitmap 的渲染和更新是如何实现](dotnet-读-WPF-源代码笔记-WriteableBitmap-的渲染和更新是如何实现.md)
+
  * [dotnet 读 WPF 源代码笔记 XAML 创建对象的方法](dotnet-读-WPF-源代码笔记-XAML-创建对象的方法.md)
 
  * [dotnet 读 WPF 源代码笔记 为什么设置了SplashScreen会让Application.Current.Activated事件不触发](dotnet-读-WPF-源代码笔记-为什么设置了SplashScreen会让Application.Current.Activated事件不触发.md)

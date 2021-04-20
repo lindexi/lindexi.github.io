@@ -7,7 +7,7 @@
 
 
 <!-- CreateTime:2021/4/14 8:31:10 -->
-
+<!-- 标签：WPF，WPF源代码 -->
 <!-- 发布 -->
 
 在 WPF 中，画刷 Brush 有很多实现，本文的内容是纯色画刷的实现。在 WPF 的纯色画刷是继承 Brush 的类，这个类自己定义的只有一个字段 `_duceResource` 和 Color 一个属性，而 Color 属性是一个依赖属性。从这里可以看到 SolidColorBrush 类占用的托管内存空间其实很小
