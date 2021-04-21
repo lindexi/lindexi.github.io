@@ -3,6 +3,8 @@
 在 WPF 框架提供方便进行像素读写的 WriteableBitmap 类，本文来告诉大家在咱写下像素到 WriteableBitmap 渲染，底层的逻辑
 
 <!--more-->
+<!-- CreateTime:2021/4/19 8:38:27 -->
+
 <!-- 标签：WPF，WPF源代码 -->
 <!-- 发布 -->
 
