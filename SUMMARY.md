@@ -2168,6 +2168,8 @@
 
  * [WPF 给应用程序添加水印](WPF-给应用程序添加水印.md)
 
+ * [WPF 给类库设置设计时使用的资源字典](WPF-给类库设置设计时使用的资源字典.md)
+
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
 
  * [WPF 网络 request 的 read 方法不会返回](WPF-网络-request-的-read-方法不会返回.md)

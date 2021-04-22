@@ -96,6 +96,8 @@ dotnet tool install -g Lindexi.Tool.CopyToClipboard
 
 这个工具完全开源，放在 [https://github.com/lindexi/UWP/](https://github.com/lindexi/UWP/)
 
+更多关于外部工具请看 [Visual Studio 自定义外部命令 (External Tools) - J.晒太阳的猫 - 博客园](https://www.cnblogs.com/jasongrass/p/14682527.html )
+
 
 
 

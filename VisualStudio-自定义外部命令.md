@@ -66,6 +66,8 @@
 
 感谢 [吕毅 ](https://walterlv.gitee.io/ )
 
+更多自定义外部工具请看 [Visual Studio 自定义外部命令 (External Tools) - J.晒太阳的猫 - 博客园](https://www.cnblogs.com/jasongrass/p/14682527.html )
+
 
 
 
