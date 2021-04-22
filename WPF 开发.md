@@ -189,6 +189,18 @@ System.Windows.Markup.XamlParseException
 
 解决方法是在 Resource.resx 里面的访问权限从 internal 修改为 public 就可以
 
+## 资源字典引用
+
+```xml
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/JeenalerenenearWerjilakaw;component/ColorBrushResourcesDictionary.xaml"></ResourceDictionary>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+```
+
 ## 判断 WPF 程序使用管理员权限运行
 
 引用命名空间，复制下面代码，然后调用 IsAdministrator 方法，如果返回 true 就是使用管理员权限运行

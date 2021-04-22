@@ -32,7 +32,7 @@
         <PackageReference Include="Moq" Version="4.15.1" />
         <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
         <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
-        <PackageReference Include="MSTestEnhancer" Version="2.0.1" />
+        <PackageReference Include="MSTestEnhancer" Version="2.1.0" />
         <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.1.10" />
     </ItemGroup>
