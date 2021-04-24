@@ -115,9 +115,43 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2021422930159898.jpg)
 
-本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/41f631f0/JeenalerenenearWerjilakaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/41f631f0/JeenalerenenearWerjilakaw) 欢迎下载执行
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/41f631f0/HallnebubeaChelnawjecere ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/41f631f0/HallnebubeaChelnawjecere) 欢迎下载执行
 
 [WPF Design Time Support (Part 2) · jbe2277/waf Wiki](https://github.com/jbe2277/waf/wiki/WPF-Design-Time-Support-(Part-2) )
+
+然而在有 Resharper 的 VisualStudio 上，这个配置在 Resharper 2020 的一些版本是不认识的，此时将会让 Resharper 找不到资源引用，而没有自动跳转和补全的功能。好在 Resharper 对于项目格式的支持不够好，咱可以使用黑科技来解决此问题
+
+在 Resharper 中，将会根据 ApplicationDefinition 定义去读取应用资源文件，但是在读取时将会忽略 Condition 内容。于是咱就可以尝试创建一个叫 `App_MakeReshaperHappy.xaml` 的文件，用来让 Resharper 开森。在 csproj 中添加如下代码，用来引用应用资源，但实际上又不会用上此资源
+
+```xml
+    <ApplicationDefinition Include="App_MakeReshaperHappy.xaml" Condition="false">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+```
+
+上面代码中，使用了 Condition 为 false 让构建时实际忽略了此文件，否则将会在构建时报告不能在 WPF 类库中定义 ApplicationDefinition 元素。为什么不能叫 App.xaml 文件？原因是在 SDK 风格的 csproj 中，默认将会加上 EnableDefaultApplicationDefinition 自动加上默认的 ApplicationDefinition 元素。只要有文件叫 App.xaml 的，那么将会自动识别为 ApplicationDefinition 元素，此元素将会让 WPF 构建时报告不能在类库中定义。而如果设置 EnableDefaultApplicationDefinition 为 false 那 Resharper 又会不认此文件，经过了 [lsj](https://blog.sdlsj.net) 工具人的摸索，发现使用上文方法是最稳的
+
+在 `App_MakeReshaperHappy.xaml` 文件里面存放以下代码，用来让 Resharper 智能感知能在设计时找到资源
+
+```xml
+<Application x:Class="App_MakeReshaperHappy" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--这个文件只是为了让Reshaper的智能感知开心-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--以下替换为你自己的路径，我推荐引用的是设计时资源文件-->
+                <ResourceDictionary Source="Properties/DesignTimeResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+```
+
+以上代码必须要自己定义类型，然后继承 Application 同时有 `x:Class` 内容才可以。这个文件的文件名和类名要求一定包含 App 这三个字符，同时文件名和类名需要相同
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b771e3f0/HallnebubeaChelnawjecere ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b771e3f0/HallnebubeaChelnawjecere) 欢迎下载执行
 
 
 

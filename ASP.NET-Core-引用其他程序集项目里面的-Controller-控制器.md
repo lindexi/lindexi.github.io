@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/4/23 8:38:57 -->
+
 <!-- 发布 -->
 
 只需要在 Startup 的 ConfigureServices 方法，调用 AddControllers 添加控制器，再加上额外的程序集即可，如下面代码，下面代码的 WeatherForecastController 是定义在另一个程序集的类
@@ -53,6 +55,31 @@
 ```
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/f0b05e03/NoyijoqaqaiLallgewhurna ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/f0b05e03/NoyijoqaqaiLallgewhurna) 欢迎下载执行
+
+第二个方法就是在具体的有控制器的项目里面，添加一个 CommonStartup 类，在这里面调用 AddControllers 方法，如下面代码
+
+```csharp
+    public class CommonStartup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+        }
+    }
+```
+
+在入口项目里面调用到 CommonStartup 的 ConfigureServices 方法
+
+```csharp
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+            var commonStartup = new CommonStartup();
+            commonStartup.ConfigureServices(services);
+        }
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/06498b5f/NoyijoqaqaiLallgewhurna ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/06498b5f/NoyijoqaqaiLallgewhurna) 欢迎下载执行
 
 
 
