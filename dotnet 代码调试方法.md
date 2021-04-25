@@ -295,7 +295,34 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 ### 附加进程调试
 
-填坑
+在 VisualStudio 中，可以在调试里面找到附加到进程的选项，点击附加到进程的选项将会列举出当前本机里面可以被附加的进程列表
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法21.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F202142492585642.jpg)
+
+附加进程调试也可以用来做远程调试，只需要点击查找，然后输入远程设备的 ip 地址和端口即可。支持调试 Docker 容器的进程
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法22.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2021424931201088.jpg)
+
+更多关于远程调试相关，请看下文章节
+
+附加进程调试可以调试正在运行的进程，适合用来调试在运行过程中进程出现了卡顿或诡异行为。使用附加进程调试的方法，可以做到不需要重新构建代码，执行进程然后附加调试，可以提升一些开发速度。但如果期望调试软件的启动过程，则需要使用下文的调试软件启动方法
+
+在自己的软件中，可以预埋反向附加调试，也就是从自己的软件里面打开调试。这个做法可以在调试时，手动进行断点，细节请看 [.NET/C# 中设置当发生某个特定异常时进入断点（不借助 Visual Studio 的纯代码实现） - walterlv](https://blog.walterlv.com/post/set-a-breakpoint-when-exception-occurred.html )
+
+如在自己软件的某个按钮中，添加如下代码
+
+```csharp
+#if DEBUG
+            Debugger.Launch();
+            Debugger.Break();
+#endif
+```
+
+点击按钮时将会触发附加调试，如果此时已附加调试，也会进入断点
 
 ### 调试软件启动
 
@@ -343,7 +370,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 ### 读取异常的信息
 
-很多的异常都是带有足够的信息，一般的异常里面都有 Message 告诉小伙伴哪里的使用是不对的，如果信息很多将会在 Data 里面附带其他辅助的信息
+很多的异常都是带有足够的信息，一般的异常里面都有 Message 告诉小伙伴哪里的使用是不对的，如果信息很多，将会在 Data 里面附带其他辅助的信息
 
 在异常的 StackTrace 里面会记录这个异常的调用堆栈，让小伙伴可以知道是在哪个调用顺序里面扔的
 
@@ -416,6 +443,25 @@ ExceptionType: System.IndexOutOfRangeException
 
 在看到这个异常的时候，请问这是在做什么？为什么在这里炸了
 
+另一个不好的例子是在异常里面丢失了数据，在抛出异常的时候，没有带上足够的信息，如旧版本的 WPF 框架里面的 SplashScreen 代码如下
+
+```csharp
+if (Marshal.GetLastWin32Error() != 0x582)
+{
+    throw new Win32Exception();
+}
+```
+
+以上代码存在的坑就是没有告诉开发者具体的信息，在抛出的异常丢失了信息。在新版本的 WPF 框架，我修复了此问题，详细请看 [Add clearer win32 exception information in SplashScreen CreateWindow by lindexi · Pull Request #3923 · dotnet/wpf](https://github.com/dotnet/wpf/pull/3923 )
+
+```csharp
+                var lastWin32Error = Marshal.GetLastWin32Error();
+                if (lastWin32Error != 0x582)
+                {
+                    throw new Win32Exception(lastWin32Error);
+                }
+```
+
 #### 写出方便调试的代码
 
 这就是为什么异常不是用来随便扔的，想要在异常调试里面能够快速调试就需要依赖代码对异常的处理
@@ -477,6 +523,8 @@ ExceptionMessage：林德熙是逗比
 ```
 
 我就可以通过调用堆栈的 Foo 找到了对应的代码，从而进行断点调试
+
+另外，上面代码的另一个坑就是抛出的是 `Exception` 而不是具体的异常，这样在调试的时候不方便了解具体的内容，而且也不方便调试
 
 **不要在静态构造函数抛出异常**
 
@@ -980,6 +1028,12 @@ public static int Count { set; get; }
 - [调试 ms 源代码](https://blog.lindexi.com/post/%E8%B0%83%E8%AF%95-ms-%E6%BA%90%E4%BB%A3%E7%A0%81.html )
 - [断点调试 Windows 源代码](https://blog.lindexi.com/post/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95-Windows-%E6%BA%90%E4%BB%A3%E7%A0%81.html )
 
+在调试 .NET Core 或 .NET 5 框架运行时的逻辑，可以通过在 VisualStudio 里面开启源代码链接功能，此时 VisualStudio 2019 可以辅助从 GitHub 开源仓库里面将代码拉下来调试。开启方法如下图
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法23.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2021424952531384.jpg)
+
 ## 模拟调试
 
 如上文所说有些调试是需要在具体的业务
@@ -1171,6 +1225,8 @@ public static int Count { set; get; }
 完全不知道的代码，不熟悉的模块，或不确定是全局的底层库的属性被修改
 
 通过 git 的二分查找，如何使用 git 进行二分，请看我的课件 [二分调试](https://r302.cc/rKe5a5)
+
+我开源了一个工具，用来辅助 git 二分 commit 调试，可以先将自己应用构建出每个版本，详细请看 [用于辅助做二分调试的构建每个 commit 的工具](https://blog.lindexi.com/post/%E7%94%A8%E4%BA%8E%E8%BE%85%E5%8A%A9%E5%81%9A%E4%BA%8C%E5%88%86%E8%B0%83%E8%AF%95%E7%9A%84%E6%9E%84%E5%BB%BA%E6%AF%8F%E4%B8%AA-commit-%E7%9A%84%E5%B7%A5%E5%85%B7.html )
 
 通过二分注释代码
 

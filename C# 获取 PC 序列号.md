@@ -90,4 +90,17 @@ Default string
 
 需要知道，使用这个方法获取 序列号是比较耗性能的，建议放在其他线程获取 
 
+在 C# 中，如果也使用 GetSystemFirmwareTable 可以参阅 [https://github.com/lindexi/lindexi_gd/tree/142c54bc/KerboberlarYearlewerfibai](https://github.com/lindexi/lindexi_gd/tree/142c54bc/KerboberlarYearlewerfibai)
+
+调用 GetSystemFirmwareTable 的性能还是不错的，我使用 Benchmark 测试，调用两次的时间是 30us 左右
+
+如果只是需要读取 BIOS 的 SystemManufacturer 等信息，可以通过注册表的 `HKEY_LOCAL_MACHINE\HARDWARE\DESCRIPTION\System\BIOS` 读取，代码如下
+
+```csharp
+            Console.WriteLine($"SystemManufacturer={Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("SystemManufacturer")}");
+            Console.WriteLine($"SystemProductName={Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("SystemProductName")}");
+```
+
+通过注册表读取无论是性能还是稳定性都更好，注册表大概是 15us 能读取
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
