@@ -53,6 +53,14 @@
 </PropertyGroup>
 ```
 
+禁止 App.xaml 作为 ApplicationDefinition 默认引用
+
+```xml
+<PropertyGroup>
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+</PropertyGroup>
+```
+
 禁止所有默认引用
 
 ```xml
@@ -62,6 +70,8 @@
 ```
 
 [从以前的项目格式迁移到 VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html)
+
+[MSBuild properties for Microsoft.NET.Sdk - .NET](https://docs.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props?WT.mc_id=WD-MVP-5003260 )
 
 
 

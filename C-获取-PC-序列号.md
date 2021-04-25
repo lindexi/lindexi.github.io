@@ -93,6 +93,19 @@ Default string
 
 需要知道，使用这个方法获取 序列号是比较耗性能的，建议放在其他线程获取 
 
+在 C# 中，如果也使用 GetSystemFirmwareTable 可以参阅 [https://github.com/lindexi/lindexi_gd/tree/142c54bc/KerboberlarYearlewerfibai](https://github.com/lindexi/lindexi_gd/tree/142c54bc/KerboberlarYearlewerfibai)
+
+调用 GetSystemFirmwareTable 的性能还是不错的，我使用 Benchmark 测试，调用两次的时间是 30us 左右
+
+如果只是需要读取 BIOS 的 SystemManufacturer 等信息，可以通过注册表的 `HKEY_LOCAL_MACHINE\HARDWARE\DESCRIPTION\System\BIOS` 读取，代码如下
+
+```csharp
+            Console.WriteLine($"SystemManufacturer={Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("SystemManufacturer")}");
+            Console.WriteLine($"SystemProductName={Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS").GetValue("SystemProductName")}");
+```
+
+通过注册表读取无论是性能还是稳定性都更好，注册表大概是 15us 能读取
+
 
 
 

@@ -119,7 +119,7 @@
 
 [WPF Design Time Support (Part 2) · jbe2277/waf Wiki](https://github.com/jbe2277/waf/wiki/WPF-Design-Time-Support-(Part-2) )
 
-然而在有 Resharper 的 VisualStudio 上，这个配置在 Resharper 2020 的一些版本是不认识的，此时将会让 Resharper 找不到资源引用，而没有自动跳转和补全的功能。好在 Resharper 对于项目格式的支持不够好，咱可以使用黑科技来解决此问题
+然而在有 Resharper 的 VisualStudio 上，这个配置在 Resharper 2020 的一些版本是不认识的，此时将会让 Resharper 找不到资源引用，而没有自动跳转和补全的功能。好在 Resharper 对于项目格式的支持不够好，咱可以使用黑科技来解决此问题。在 Resharper 的 2021 版本也修了这个问题，因此在新版本的 Resharper 是不需要加以下代码
 
 在 Resharper 中，将会根据 ApplicationDefinition 定义去读取应用资源文件，但是在读取时将会忽略 Condition 内容。于是咱就可以尝试创建一个叫 `App_MakeReshaperHappy.xaml` 的文件，用来让 Resharper 开森。在 csproj 中添加如下代码，用来引用应用资源，但实际上又不会用上此资源
 
