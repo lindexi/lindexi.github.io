@@ -158,4 +158,6 @@ on:
 
 本文的方法依然适用构建应用，如构建 WPF 应用，或打包为 UWP 应用。关于 WPF 打包为 UWP 的 GitHub 的 Action 方法请看 [GitHub Action 新上线 WPF .NET Core 自动构建模板](https://blog.lindexi.com/post/GitHub-Action-%E6%96%B0%E4%B8%8A%E7%BA%BF-WPF-.NET-Core-%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA%E6%A8%A1%E6%9D%BF.html)
 
+以上推送 NuGet 的方法请看 [dotnet 配置 github 自动打包上传 nuget 文件](https://blog.lindexi.com/post/dotnet-%E9%85%8D%E7%BD%AE-github-%E8%87%AA%E5%8A%A8%E6%89%93%E5%8C%85%E4%B8%8A%E4%BC%A0-nuget-%E6%96%87%E4%BB%B6.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31. png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
