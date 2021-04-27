@@ -2020,6 +2020,8 @@
 
  * [WPF 如何画出1像素的线](WPF-如何画出1像素的线.md)
 
+ * [WPF 如何知道当前有多少个 DispatcherTime 在运行](WPF-如何知道当前有多少个-DispatcherTime-在运行.md)
+
  * [WPF 如何确定应用程序开启了 Pointer 触摸消息的支持](WPF-如何确定应用程序开启了-Pointer-触摸消息的支持.md)
 
  * [WPF 如何给 Grid 的某一行添加背景色](WPF-如何给-Grid-的某一行添加背景色.md)
