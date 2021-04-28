@@ -1,13 +1,13 @@
 # WPF 如何知道当前有多少个 DispatcherTime 在运行
 
-在 WPF 调试中，对于 DispatcherTime 定时器的执行，没有直观的调试方法。本文来告诉大家如何在 WPF 中调试当前主线程有多少个 DispatcherTime 在运行
+在 WPF 调试中，对于 DispatcherTimer 定时器的执行，没有直观的调试方法。本文来告诉大家如何在 WPF 中调试当前主线程有多少个 DispatcherTimer 在运行
 
 <!--more-->
 <!-- CreateTime:2021/4/27 8:48:17 -->
 
 <!-- 发布 -->
 
-在 WPF 中，如果有 DispatcherTime 定时器在执行，将会影响到主线程的执行，将会让主线程诡异忙碌。或者有 DispatcherTime 定时器忘记订阅 Tick 同时也忘记设置时间，将会不断消耗主线程资源。在遇到没有任何的交互时，此时出现的主线程卡的问题，可以优先尝试了解是否 DispatcherTime 定时器的问题
+在 WPF 中，如果有 DispatcherTimer 定时器在执行，将会影响到主线程的执行，将会让主线程诡异忙碌。或者有 DispatcherTimer 定时器忘记订阅 Tick 同时也忘记设置时间，将会不断消耗主线程资源。在遇到没有任何的交互时，此时出现的主线程卡的问题，可以优先尝试了解是否 DispatcherTime 定时器的问题
 
 如以下代码，在界面创建一个按钮，点击按钮时将会创建和运行 DispatcherTime 定时器
 
@@ -17,7 +17,7 @@
   </Grid>
 ```
 
-在 `Button_OnClick` 加上创建和运行 DispatcherTime 定时器的代码
+在 `Button_OnClick` 加上创建和运行 DispatcherTimer 定时器的代码
 
 ```csharp
         private void Button_OnClick(object sender, RoutedEventArgs e)
@@ -30,7 +30,7 @@
         }
 ```
 
-假定需要调试在进入 `Button_OnClick` 方法，当前主线程有多少 DispatcherTime 定时器在运行。可以在此方法上添加断点，如下图
+假定需要调试在进入 `Button_OnClick` 方法，当前主线程有多少 DispatcherTimer 定时器在运行。可以在此方法上添加断点，如下图
 
 <!-- ![](image/WPF 如何知道当前有多少个 DispatcherTime 在运行/WPF 如何知道当前有多少个 DispatcherTime 在运行0.png) -->
 
@@ -42,7 +42,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2021427850496549.jpg)
 
-如进一步了解当前的 DispatcherTime 定时器是由哪个业务模块定义的，可以通过 `Tick` 委托找到对应的业务模块，如下图
+如进一步了解当前的 DispatcherTimer 定时器是由哪个业务模块定义的，可以通过 `Tick` 委托找到对应的业务模块，如下图
 
 <!-- ![](image/WPF 如何知道当前有多少个 DispatcherTime 在运行/WPF 如何知道当前有多少个 DispatcherTime 在运行2.png) -->
 
@@ -50,7 +50,7 @@
 
 通过 `Tick` 委托可以了解到是哪个类的哪个方法，通过静态代码可以找到业务
 
-如果只是期望调试 DispatcherTime 定时器是由哪个业务模块启动创建的，此时可以添加函数断点，添加函数断点步骤相对复杂
+如果只是期望调试 DispatcherTimer 定时器是由哪个业务模块启动创建的，此时可以添加函数断点，添加函数断点步骤相对复杂
 
 在开始之前，需要加载 WindowsBase.dll 的符号，同时我也推荐使用 dotnet core 或 .NET 5 版本的 WPF 框架进行调试，因此此框架可以有源代码支持。加载 WindowsBase.dll 的符号之前，还请到开源的 WPF 项目，将代码拉到本地
 
