@@ -814,6 +814,8 @@
 
  * [dotnet 读 WPF 源代码笔记 默认的 Main 函数是在哪创建的](dotnet-读-WPF-源代码笔记-默认的-Main-函数是在哪创建的.md)
 
+ * [dotnet 运行时获取某类型的对象占用内存大小](dotnet-运行时获取某类型的对象占用内存大小.md)
+
  * [dotnet 进行二进制差分压缩文件](dotnet-进行二进制差分压缩文件.md)
 
  * [dotnet 通过 dotnetCampus.YamlToCsharp 将 YAML 多语言文件构建为代码](dotnet-通过-dotnetCampus.YamlToCsharp-将-YAML-多语言文件构建为代码.md)
