@@ -1114,6 +1114,8 @@ public static int Count { set; get; }
 
 [WPF 依赖属性绑定不上调试方法](https://blog.lindexi.com/post/WPF-%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8D%E4%B8%8A%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
 
+[WPF 如何知道当前有多少个 DispatcherTime 在运行](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E5%BD%93%E5%89%8D%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA-DispatcherTime-%E5%9C%A8%E8%BF%90%E8%A1%8C.html )
+
 ## DUMP调试
 
 收集 DUMP 有多个方法，例如打开任务管理器，右击进程选择创建转储文件。或在应用程序里面调用[MiniDumpWriteDump](https://docs.microsoft.com/zh-cn/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump ) 方法

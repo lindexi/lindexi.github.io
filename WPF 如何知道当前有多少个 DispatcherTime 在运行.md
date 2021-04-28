@@ -3,6 +3,8 @@
 在 WPF 调试中，对于 DispatcherTime 定时器的执行，没有直观的调试方法。本文来告诉大家如何在 WPF 中调试当前主线程有多少个 DispatcherTime 在运行
 
 <!--more-->
+<!-- CreateTime:2021/4/27 8:48:17 -->
+
 <!-- 发布 -->
 
 在 WPF 中，如果有 DispatcherTime 定时器在执行，将会影响到主线程的执行，将会让主线程诡异忙碌。或者有 DispatcherTime 定时器忘记订阅 Tick 同时也忘记设置时间，将会不断消耗主线程资源。在遇到没有任何的交互时，此时出现的主线程卡的问题，可以优先尝试了解是否 DispatcherTime 定时器的问题
