@@ -534,6 +534,8 @@
 
  * [dotnet remoting 的 Channel 详解](dotnet-remoting-的-Channel-详解.md)
 
+ * [dotnet Roslyn 通过读取 suo 文件获取解决方案的启动项目](dotnet-Roslyn-通过读取-suo-文件获取解决方案的启动项目.md)
+
  * [dotnet serve 一句话开启文件服务器 通过 HTTP 将文件共享给其他设备](dotnet-serve-一句话开启文件服务器-通过-HTTP-将文件共享给其他设备.md)
 
  * [.NET Standard](NET-Standard.md)

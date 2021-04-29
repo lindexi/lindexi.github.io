@@ -59,9 +59,6 @@
 获取某类型对象占用空间大小的方法如下
 
 ```csharp
-        /// <summary>
-        /// Gets type size in unmanaged memory (directly in SOH/LOH) by type
-        /// </summary>
         public static unsafe Int32 SizeOf<T>()
         {
             return ((MethodTableInfo*)(typeof(T).TypeHandle.Value.ToPointer()))->Size;
@@ -69,6 +66,8 @@
 ```
 
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b4784765aae3a9ea35547fff620305966c750c05/HaynogelwhaiFaycemferlerluja) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b4784765aae3a9ea35547fff620305966c750c05/HaynogelwhaiFaycemferlerluja) 欢迎小伙伴访问
+
+本文的这个方法获取到的对象内存具体是什么？还请看 伟民哥翻译的 《.NET内存管理宝典 - 提高代码质量、性能和可扩展性》 这本书
 
 
 
