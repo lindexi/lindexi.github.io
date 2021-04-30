@@ -3,6 +3,8 @@
 本文来告诉大家一个黑科技，通过 .suo 文件读取 VisualStudio 的启动项目。在 sln 项目里面，都会生成对应的 suo 文件，这个文件是 OLE 格式的文件，文件的格式没有公开，本文的方法适合用在 VisualStudio 2019 上，对于其他版本的 VisualStudio 也许会不适合
 
 <!--more-->
+<!-- CreateTime:2021/4/28 20:39:45 -->
+
 
 <!-- 发布 -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
