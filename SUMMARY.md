@@ -46,6 +46,8 @@
 
  * [ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具](ASP.NET-Core-连接-GitLab-与-MatterMost-打造-devops-工具.md)
 
+ * [Autofac 通过 PreserveExistingDefaults 解决单元测试 Fake 对象被覆盖](Autofac-通过-PreserveExistingDefaults-解决单元测试-Fake-对象被覆盖.md)
+
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
  * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
