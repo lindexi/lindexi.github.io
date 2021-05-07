@@ -3,6 +3,8 @@
 在使用 Autofac 作为 IoC 容器，因为 Autofac 默认的创建时机是在主机运行时。而在此 Module 被 Load 时注入的对象的注入的时机，将会在单元测试 Fake 注入之后，这就意味着 Load 时注入的对象将会覆盖 Fake 的对象。可以通过调用 Autofac 的 PreserveExistingDefaults 方法解决覆盖的问题
 
 <!--more-->
+<!-- CreateTime:2021/5/6 20:20:20 -->
+
 
 <!-- 发布 -->
 
