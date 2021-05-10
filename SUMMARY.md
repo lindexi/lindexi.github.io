@@ -1360,6 +1360,8 @@
 
  * [win10 uwp 使用 WinDbg 调试](win10-uwp-使用-WinDbg-调试.md)
 
+ * [win10 uwp 使用 XamlTreeDump 获取 XAML 树元素内容](win10-uwp-使用-XamlTreeDump-获取-XAML-树元素内容.md)
+
  * [win10 uwp 使用动画修改 Grid column 的宽度](win10-uwp-使用动画修改-Grid-column-的宽度.md)
 
  * [win10 uwp 使用资源在后台创建控件](win10-uwp-使用资源在后台创建控件.md)
