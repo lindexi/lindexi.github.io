@@ -2680,6 +2680,8 @@
 
  * [通过 cmd 批处理文件将 16 进制转 10 进制数字](通过-cmd-批处理文件将-16-进制转-10-进制数字.md)
 
+ * [通过 COM 读取 Office PPT 文件提示 COMException 错误码 0x80004005 可能原因](通过-COM-读取-Office-PPT-文件提示-COMException-错误码-0x80004005-可能原因.md)
+
  * [通过 cshtml 将 C# xaml 转 HTML5 代码](通过-cshtml-将-C-xaml-转-HTML5-代码.md)
 
  * [通过 frp 开启服务器打开本地的 ZeroNet 服务器外网访问](通过-frp-开启服务器打开本地的-ZeroNet-服务器外网访问.md)
