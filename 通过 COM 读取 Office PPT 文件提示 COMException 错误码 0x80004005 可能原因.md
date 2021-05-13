@@ -4,6 +4,8 @@
 使用 COM 的方式可以调用本机的 Office 组件进行 PPT 以及 Word 和 Excel 等文件的读写，在打开文件的时候，如果提示 System.Runtime.InteropServices.COMException (0x80004005) 就意味着这是一个通用的错误，没有具体的原因
 
 <!--more-->
+<!-- CreateTime:2021/5/10 19:41:43 -->
+
 <!-- 发布 -->
 
 调用 COM 组件，提示 `System.Runtime.InteropServices.COMException (0x80004005): Error HRESULT E_FAIL has been returned from a call to a COM component.` 表示发现通用的错误，或者未知的错误。我记录一些主要注意的事情，方便大家按照顺序去找是否此原因
