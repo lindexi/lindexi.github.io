@@ -2272,6 +2272,8 @@
 
  * [WPF 运行时迁移 EF Core 数据库](WPF-运行时迁移-EF-Core-数据库.md)
 
+ * [WPF 适合入门阅读的开源项目 SeeGit 图形化 Git 历史记录](WPF-适合入门阅读的开源项目-SeeGit-图形化-Git-历史记录.md)
+
  * [WPF 通过 dotnet core 发布单文件时 log4net 无法使用](WPF-通过-dotnet-core-发布单文件时-log4net-无法使用.md)
 
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)

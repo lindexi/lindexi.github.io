@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/5/10 19:41:43 -->
+
 <!-- 发布 -->
 
 调用 COM 组件，提示 `System.Runtime.InteropServices.COMException (0x80004005): Error HRESULT E_FAIL has been returned from a call to a COM component.` 表示发现通用的错误，或者未知的错误。我记录一些主要注意的事情，方便大家按照顺序去找是否此原因
