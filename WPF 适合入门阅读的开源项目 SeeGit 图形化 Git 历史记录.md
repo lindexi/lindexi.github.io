@@ -3,6 +3,8 @@
 本文来安利大家一个不错的开源项目，这个开源项目整体写的不错，也有用到 MVVM 框架，项目组织以及命名等都还行，功能也实现完全，适合入门级阅读
 
 <!--more-->
+<!-- CreateTime:2021/5/13 8:45:14 -->
+
 <!-- 发布 -->
 
 这是一个在 GitHub 上完全开源的项目，请看 [haacked/seegit: SeeGit - The Git Repository Visualizer](https://github.com/haacked/seegit)
