@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/5/16 9:51:51 -->
+
 <!-- 发布 -->
 
 开始之前，请先阅读 [Unity OpenVR 虚拟现实入门一：安装配置 Unity + OpenVR 环境 - walterlv](https://blog.walterlv.com/post/unity-openvr-starting-1.html ) 和 [Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序 - walterlv](https://blog.walterlv.com/post/unity-openvr-starting-2.html ) 配置完成环境
@@ -44,6 +46,23 @@
 ```
 
 额外还有 `SteamVR_Action_Vibration` 动作，这个大多数是用来作为输出的，如输入到手柄作为反馈
+
+在 SteamVR 开发中，不推荐使用绑定具体的按钮或交互硬件设备上，而是通过抽象的输入。具体来说，不推荐将某个动作的输入绑定到具体的交互硬件设备如摇杆上，如获取摇杆的状态等。推荐的开发方式是定义抽象的交互方式，接着通过抽象的交互方式绑定到自身的输入源上面。此做法的优势在于给玩家更好的定制化，以及更好适配更多厂商的硬件，更好适配未来的硬件设备。例如定义一个叫 DirectMovemont 的动作，此动作表示角色摄像机的移动，输入类型是 `SteamVR_Action_Vector2` 类型，而具体交给什么样的硬件设备就没有做强制约束，而是可以给到用户端进行自定义适配。默认的 SteamVR 会有默认的交互，通过 SteamVR Input 窗口的 Open Binding UI 按钮，即可打开对应的按键绑定功能
+
+<!-- ![](image/Unity3D OpenVR SteamVR Input Action 动作/Unity3D OpenVR SteamVR Input Action 动作1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F202151695624691.jpg)
+
+定义具体的交互绑定的定义，如在代码中定义交互的输入，以及绑定到具体的硬件设备上，请参阅 [Unity OpenVR 虚拟现实入门六：通过摇杆控制玩家移动 - walterlv](https://blog.walterlv.com/post/unity-openvr-starting-6.html )
+
+系列博客请看
+
+- [Unity OpenVR 虚拟现实入门一：安装配置 Unity + OpenVR 环境](https://blog.walterlv.com/post/unity-openvr-starting-1.html)
+- [Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序](https://blog.walterlv.com/post/unity-openvr-starting-2.html)
+- [Unity OpenVR 虚拟现实入门三：最简单的五指交互](https://blog.walterlv.com/post/unity-openvr-starting-3.html)
+- [Unity OpenVR 虚拟现实入门四：通过脚本控制手与控制器](https://blog.walterlv.com/post/unity-openvr-starting-4.html)
+- [Unity OpenVR 虚拟现实入门五：通过传送控制玩家移动](https://blog.walterlv.com/post/unity-openvr-starting-5.html)
+- [Unity OpenVR 虚拟现实入门六：通过摇杆控制玩家移动](https://blog.walterlv.com/post/unity-openvr-starting-6.html)
 
 参阅： [SteamVR 2.0 Unity插件使用指南_sovida的博客-CSDN博客](https://blog.csdn.net/sovida/article/details/85085664 )
 
