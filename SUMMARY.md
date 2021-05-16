@@ -1132,6 +1132,8 @@
 
  * [Unity3D 2019 设置的 Playmode tint 有何作用](Unity3D-2019-设置的-Playmode-tint-有何作用.md)
 
+ * [Unity3D OpenVR SteamVR Input Action 动作](Unity3D-OpenVR-SteamVR-Input-Action-动作.md)
+
  * [Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小](Unity3d-修改编辑界面控制图标大小-修改相机图标显示大小.md)
 
  * [Unity3d 入门 控制相机移动](Unity3d-入门-控制相机移动.md)
