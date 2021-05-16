@@ -3,6 +3,8 @@
 这是在 GitHub 上有小伙伴报的问题，在 WPF 中，不支持调用 BitmapDecoder.Create 方法，传入的 FileStream 是配置了 FileOptions.Asynchronous 选项的文件流。本质原因是 WIC 层不支持，和 WPF 没有关系
 
 <!--more-->
+<!-- CreateTime:2021/5/15 8:54:30 -->
+
 <!-- 标签：WPF，WPF源代码 -->
 <!-- 发布 -->
 
