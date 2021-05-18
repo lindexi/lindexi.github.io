@@ -1134,6 +1134,8 @@
 
  * [Unity3D OpenVR SteamVR Input Action 动作](Unity3D-OpenVR-SteamVR-Input-Action-动作.md)
 
+ * [Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法](Unity3D-OpenVR-SteamVR-获取输入动作按键-交互设备数据方法.md)
+
  * [Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发](Unity3D-OpenVR-虚拟现实-保龄球打砖块游戏开发.md)
 
  * [Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小](Unity3d-修改编辑界面控制图标大小-修改相机图标显示大小.md)
