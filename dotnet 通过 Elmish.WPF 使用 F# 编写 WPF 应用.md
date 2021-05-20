@@ -3,6 +3,8 @@
 本文来安利大家一个有趣而且强大的库，通过 F# 和 C# 混合编程编写 WPF 应用，可以在 WPF 中使用到 F# 强大的数据处理能力
 
 <!--more-->
+<!-- CreateTime:2021/5/18 19:59:36 -->
+
 <!-- 发布 -->
 
 在 GitHub 上完全开源 Elmish.WPF 库，请看 [https://github.com/elmish/Elmish.WPF](https://github.com/elmish/Elmish.WPF)
