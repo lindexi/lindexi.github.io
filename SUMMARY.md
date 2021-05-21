@@ -388,6 +388,8 @@
 
  * [dotnet C# 如何让 Json 序列化数组时序列化继承类的属性](dotnet-C-如何让-Json-序列化数组时序列化继承类的属性.md)
 
+ * [dotnet C# 实现 GetHashCode 的方法](dotnet-C-实现-GetHashCode-的方法.md)
+
  * [dotnet C# 将 Byte 二进制数组使用不安全代码快速转换为 int 或结构体数组](dotnet-C-将-Byte-二进制数组使用不安全代码快速转换为-int-或结构体数组.md)
 
  * [dotnet C# 序列化 XML 时进行自动格式化](dotnet-C-序列化-XML-时进行自动格式化.md)
@@ -2655,6 +2657,8 @@
  * [给博客添加rss订阅](给博客添加rss订阅.md)
 
  * [编程思想 定义过滤的方式解耦](编程思想-定义过滤的方式解耦.md)
+
+ * [考古 dotnet 的不同版本](考古-dotnet-的不同版本.md)
 
  * [聊聊 2020 的 dotnet 各大开源项目仓库的情况](聊聊-2020-的-dotnet-各大开源项目仓库的情况.md)
 
