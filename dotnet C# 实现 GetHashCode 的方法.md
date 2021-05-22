@@ -3,6 +3,8 @@
 本文来聊聊在重写某个类的 GetHashCode 方法时，可以如何实现 GetHashCode 的返回值
 
 <!--more-->
+<!-- CreateTime:2021/5/20 19:36:17 -->
+
 <!-- 发布 -->
 
 按照 GetHashCode 方法的原则，要求两个对象如果 Equals 返回 true 那么一定要求 GetHashCode 也返回相同的值。当然，反过来不成立，也就是两个对象返回的 GetHashCode 的值相同，对象可以是不相等的
