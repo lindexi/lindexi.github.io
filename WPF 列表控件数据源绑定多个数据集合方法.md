@@ -3,6 +3,8 @@
 在 WPF 用的多的列表控件如 ListBox 或 ListView 等，本文告诉大家在这些列表控件上进行绑定多个数据集合来源的多个实现方法。如有一个显示动物列表的控件，需要绑定的数据来源是阿猫和阿狗两个 ObservableCollection 列表，不在后台代码编写合并集合的代码情况下，可以通过 XAML 的编写，绑定多个数据集合
 
 <!--more-->
+<!-- CreateTime:2021/5/22 9:27:42 -->
+
 
 <!-- 发布 -->
 
@@ -215,7 +217,7 @@
 
 [c# - CompositeCollection + CollectionContainer: Bind CollectionContainer.Collection to property of ViewModel that is used as DataTemplates DataType - Stack Overflow](https://stackoverflow.com/questions/19243109/compositecollection-collectioncontainer-bind-collectioncontainer-collection-t )
 
-[wpf - How do you bind a CollectionContainer to a collection in a view model? - Stack Overflow](https://stackoverflow.com/questions/6446699/how-do-you-bind-a-collectioncontainer-to-a-collection-in-a-view-model )
+[wpf - How do you bind a CollectionContainer to a collection in a view model? - Stack Overflow](https://stackoverflow.com/q/6446699/6116637 )
 
 [WPF 很少人知道的科技 - walterlv](https://blog.walterlv.com/post/those-people-dont-know-about-wpf.html )
 
