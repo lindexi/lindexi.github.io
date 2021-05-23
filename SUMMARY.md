@@ -2162,6 +2162,8 @@
 
  * [WPF 用 AvalonEdit 开发简单的代码编辑器 支持高亮自动提示](WPF-用-AvalonEdit-开发简单的代码编辑器-支持高亮自动提示.md)
 
+ * [WPF 用到的触摸的 COM 接口](WPF-用到的触摸的-COM-接口.md)
+
  * [WPF 画布工具栏的可扩展设计](WPF-画布工具栏的可扩展设计.md)
 
  * [WPF 的 ManipulationCompleted 事件可能什么时候触发](WPF-的-ManipulationCompleted-事件可能什么时候触发.md)
