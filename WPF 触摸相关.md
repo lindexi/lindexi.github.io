@@ -25,6 +25,10 @@
 
 [WPF 底层 从手指触摸屏幕到笔迹在屏幕显示中间的步骤](https://blog.lindexi.com/post/WPF-%E5%BA%95%E5%B1%82-%E4%BB%8E%E6%89%8B%E6%8C%87%E8%A7%A6%E6%91%B8%E5%B1%8F%E5%B9%95%E5%88%B0%E7%AC%94%E8%BF%B9%E5%9C%A8%E5%B1%8F%E5%B9%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E9%97%B4%E7%9A%84%E6%AD%A5%E9%AA%A4.html )
 
+[WPF 用到的触摸的 COM 接口](https://blog.lindexi.com/post/WPF-%E7%94%A8%E5%88%B0%E7%9A%84%E8%A7%A6%E6%91%B8%E7%9A%84-COM-%E6%8E%A5%E5%8F%A3.html )
+
+[dotnet 读 WPF 源代码笔记 插入触摸设备的初始化获取设备信息](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E6%8F%92%E5%85%A5%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF.html )
+
 ## 功能
 
 [WPF 多指触摸拖拽窗口 拖动修改窗口坐标](https://blog.lindexi.com/post/WPF-%E5%A4%9A%E6%8C%87%E8%A7%A6%E6%91%B8%E6%8B%96%E6%8B%BD%E7%AA%97%E5%8F%A3-%E6%8B%96%E5%8A%A8%E4%BF%AE%E6%94%B9%E7%AA%97%E5%8F%A3%E5%9D%90%E6%A0%87.html )

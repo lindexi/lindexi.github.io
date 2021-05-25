@@ -161,4 +161,8 @@
 
 [dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E7%AC%A6%E5%90%88%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E7%9A%84%E6%96%87%E6%A1%A3.html )
 
+## VSTO COM
+
+[通过 COM 读取 Office PPT 文件提示 COMException 错误码 0x80004005 可能原因](https://blog.lindexi.com/post/%E9%80%9A%E8%BF%87-COM-%E8%AF%BB%E5%8F%96-Office-PPT-%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA-COMException-%E9%94%99%E8%AF%AF%E7%A0%81-0x80004005-%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
