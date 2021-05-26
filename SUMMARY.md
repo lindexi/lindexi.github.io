@@ -530,6 +530,8 @@
 
  * [dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容](dotnet-OpenXML-让-PathLst-自定义形状转-SVG-路径格式的-Geometry-内容.md)
 
+ * [dotnet OpenXML 读取形状轮廓线条样式序号超过主题样式列表数](dotnet-OpenXML-读取形状轮廓线条样式序号超过主题样式列表数.md)
+
  * [dotnet OpenXML 颜色变换](dotnet-OpenXML-颜色变换.md)
 
  * [dotnet remoting 使用事件](dotnet-remoting-使用事件.md)
