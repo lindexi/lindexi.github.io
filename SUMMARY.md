@@ -1790,6 +1790,8 @@
 
  * [win2d 通过 CanvasActiveLayer 画出透明度和裁剪](win2d-通过-CanvasActiveLayer-画出透明度和裁剪.md)
 
+ * [Win32 使用 SetCurrentProcessExplicitAppUserModelID 关联多个进程 在任务栏合并 WPF 多进程窗口](Win32-使用-SetCurrentProcessExplicitAppUserModelID-关联多个进程-在任务栏合并-WPF-多进程窗口.md)
+
  * [win32 嵌入第三方 UWP 应用做开放平台](win32-嵌入第三方-UWP-应用做开放平台.md)
 
  * [win7 升级到 win10 补丁](win7-升级到-win10-补丁.md)
