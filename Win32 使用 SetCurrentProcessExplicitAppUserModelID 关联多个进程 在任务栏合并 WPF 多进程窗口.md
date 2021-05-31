@@ -3,6 +3,8 @@
 我有一个 WPF 应用，这是一个绿色软件，会被用户拷贝这和那的文件夹，我期望在多个文件夹里面打开的进程，在任务栏里面都可以将窗口进行合并。使用 Win32 的 Shell32.dll 提供的 SetCurrentProcessExplicitAppUserModelID 可以显设置应用的 Application User Model ID 从而让在多个不同的路径打开的应用，使用相同的 Id 而在任务栏进行合并窗口
 
 <!--more-->
+<!-- CreateTime:2021/5/29 17:09:57 -->
+
 <!-- 发布 -->
 
 我期望使用 Win32 的 Shell32.dll 提供的 SetCurrentProcessExplicitAppUserModelID 方法，最简单的做法是使用 [lsj](https://blog.sdlsj.net) 的 Lsj.Util.Win32 库，在这个库里面已经做了封装
