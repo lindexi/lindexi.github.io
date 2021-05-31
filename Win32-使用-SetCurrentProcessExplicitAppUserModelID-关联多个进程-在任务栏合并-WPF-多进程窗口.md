@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/5/29 17:09:57 -->
+
 <!-- 发布 -->
 
 我期望使用 Win32 的 Shell32.dll 提供的 SetCurrentProcessExplicitAppUserModelID 方法，最简单的做法是使用 [lsj](https://blog.sdlsj.net) 的 Lsj.Util.Win32 库，在这个库里面已经做了封装
