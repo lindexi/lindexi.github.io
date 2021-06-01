@@ -21,7 +21,7 @@
 使用方法是通过 dotnet 工具安装
 
 ```csharp
-dotnet tool isntall -g dotnetCampus.OfficeDocumentZipper
+dotnet tool install -g dotnetCampus.OfficeDocumentZipper
 ```
 
 安装完成之后，可以使用命令行开启，如下面代码

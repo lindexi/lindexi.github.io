@@ -1146,6 +1146,8 @@
 
  * [Unity3D OpenVR SteamVR Input Action 动作](Unity3D-OpenVR-SteamVR-Input-Action-动作.md)
 
+ * [Unity3D OpenVR SteamVR 在头盔视觉前面常驻文本](Unity3D-OpenVR-SteamVR-在头盔视觉前面常驻文本.md)
+
  * [Unity3D OpenVR SteamVR 点击菜单切换场景](Unity3D-OpenVR-SteamVR-点击菜单切换场景.md)
 
  * [Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法](Unity3D-OpenVR-SteamVR-获取输入动作按键-交互设备数据方法.md)
