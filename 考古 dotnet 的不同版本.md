@@ -36,6 +36,12 @@
 
 在 Blazor 预览版本，也有基于 Mono 实现的 WASM 版本，当前这个版本合入到 .NET 版本
 
+## nanoFramework
+
+用于运行在低配设备（Can run on resource-constrained devices with as low as 256kB of flash and 64kB of RAM）的 .NET 框架，暂时没有准备合入到 .NET 5 里面，当前也被 .NET 基金会维护。在 GitHub 上完全开源，详细请看 [官网](https://docs.nanoframework.net/index.html)
+
+是 .NET Micro Framework 框架的下一代，在 .NET Micro Framework 结束的地方继续开始的框架
+
 ## WinRT
 
 这是在微软通用平台开发概念提出写的框架，本质上说，这不算是一个 .NET 的实现版本，当前这个 WinRT 依然在维护中，可以通过 NuGet 在 .NET Core 和 .NET 5 使用。通过 WinRT 可以访问现代化的 Windows 系统的功能
@@ -72,7 +78,7 @@
 
 ## .NET Micro Framework
 
-这是给 IOT 等设备准备的开源独立版本，这个版本是最特殊的 .NET 实现版本
+这是给 IOT 等设备准备的开源独立版本，这个版本是最特殊的 .NET 实现版本。也是开源的，请参阅 [官网](http://netmf.github.io/)
 
 ## Itanium
 

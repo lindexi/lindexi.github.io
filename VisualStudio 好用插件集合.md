@@ -7,11 +7,26 @@
 
 <!-- csdn -->
 
-## Whack Whack Terminal
+## ReSharper 
 
-在 VisualStudio 开启命令行，支持启用 git 或 Vim 或其他命令行工具
+嘿嘿嘿
 
-[Whack Whack Terminal - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=DanielGriffen.WhackWhackTerminal )
+## OzCode 
+
+调试神器
+
+详细请看[OzCode - 调试神器](https://blog.walterlv.com/post/using-ozcode-to-improve-debug.html)
+
+## DLL Reference Path Change Auto
+
+通过替换引用的 NuGet 包为项目，以获得 NuGet 包的调试能力
+
+## Microsoft Child Process Debugging Power Tool 
+
+调试多进程的程序
+
+详细请看 [Microsoft Child Process Debugging Power Tool - 调试多进程的程序](https://blog.walterlv.com/post/debug-multi-process-application-using-visual-studio.html)
+
 
 ## PInvoke.net Visual Studio Extension  辅助编写 Win32 函数签名
 
@@ -52,33 +67,14 @@
 
 使用可视化的编译输出替代文字输出，提供编译期间一些快捷的干预按钮
 
-## C#/XAML for HTML5
 
-使用 C#/XAML 编写 Web 前端代码
 
 ## Avalonia for Visual Studio 
 
 用于开发和调试 Avalonia 跨平台 XAML UI 框架项目
 
-## OzCode 
 
-调试神器
 
-详细请看[OzCode - 调试神器](https://blog.walterlv.com/post/using-ozcode-to-improve-debug.html)
-
-## DLL Reference Path Change Auto
-
-通过替换引用的 NuGet 包为项目，以获得 NuGet 包的调试能力
-
-## Microsoft Child Process Debugging Power Tool 
-
-调试多进程的程序
-
-详细请看 [Microsoft Child Process Debugging Power Tool - 调试多进程的程序](https://blog.walterlv.com/post/debug-multi-process-application-using-visual-studio.html)
-
-## ClaudiaIDE 
-
-为编辑器添加一张背景图
 
 ## Filter Debug Window
 
@@ -92,10 +88,39 @@
 
 [VisualStudio 插件 翻译注释](https://blog.lindexi.com/post/VisualStudio-%E6%8F%92%E4%BB%B6-%E7%BF%BB%E8%AF%91%E6%B3%A8%E9%87%8A.html )
 
-## ReSharper 
 
-嘿嘿嘿
 
+## 界面优化
+
+### ClaudiaIDE 
+
+为编辑器添加一张背景图
+
+### Night Owl for Visual Studio 2019 (24hr Owl)
+
+下载地址： [24hr Owl - Theme - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=definedrisk.24hr-owl )
+
+<!-- ![](image/VisualStudio 好用插件集合/VisualStudio 好用插件集合0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F202163126515664.jpg)
+
+如上图效果，看起来不错，只是这个插件的配色和 Resharper 有冲突
+
+## 基本可以废弃的插件
+
+本来这些插件功能是不错的，但是随着 VS 的更新，这些功能都放入到 VS 里面
+
+### Whack Whack Terminal
+
+在 VisualStudio 开启命令行，支持启用 git 或 Vim 或其他命令行工具
+
+[Whack Whack Terminal - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=DanielGriffen.WhackWhackTerminal )
+
+### C#/XAML for HTML5
+
+使用 C#/XAML 编写 Web 前端代码
+
+后续转为使用 UNO 了，还是原开发团队，只是更改名字和底层技术
 
 如果有发现好玩的插件，欢迎评论
 

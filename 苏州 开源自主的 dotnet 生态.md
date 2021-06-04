@@ -1,11 +1,9 @@
 # 苏州 开源自主的 dotnet 生态
 
-本文仅仅只是用来在2020苏州开发者大会上的素材
+本文仅仅只是用来在2020苏州开发者大会上的素材，开发者大会成功完成，本文也可以公开
 
 <!--more-->
 <!-- CreateTime:2020/12/10 19:15:52 -->
-
-<!-- 草稿 -->
 
 从编程语言版权，到编译器到运行时的开源，和允许自己分发和构建
 
@@ -70,6 +68,8 @@
 
 咱刚才提到了 dotnet runtime 运行时，这也是在 GitHub 上完全开源的，基于最友好的 MIT 开源协议的大仓库。为什么说是大仓库呢？因为这个 GitHub 仓库里面将原本散落在各地的 dotnet 仓库集成到一起，这也就包括了 Mono 等仓库。在这个仓库里面将包含了 dotnet 程序运行过程中，将会用到的基础模块。如 JIT 将 IL 转换为本机代码，执行 GC 用于内存管理（看看伟民哥来不来个插入广告了，“值得一说的是，在 dotnet 里面，内存管理是一个复杂而有趣的话题，伟民翻译了一本 .NET内存管理宝典 的书，里面有对此详细的介绍”）。除此之外还包含了咱日常使用的大量底层基础库，如 System.Console 等。这些基础模块基本上都是由 C# 编写，因为这样的对某个代码的优化将会全平台受益。有趣的是，咱的 Roslyn 编译器的运行也是需要用到 dotnet runtime 的，也需要用到很多基础库，因此这就有一个有趣的套娃了，咱使用 C# 写的 Roslyn 编译器来编译 C# 代码，用运行在 dotnet runtime 上的 Roslyn 编译器来编译 dotnet runtime 仓库。这就是为什么我一开始推荐大家自己去编译一次 Roslyn 编译器的原因了，这就是一切的开始的入口。那如何才能构建呢【根据表现，用来提升注意力】？其实在 dotnet 开源组织的各大仓库里面，包括 Roslyn 和 dotnet runtime 仓库，开源的不仅是代码本身，还有构建这个仓库整个工具链，因此只需要在网络速度足够好的设备上，双击一下 Build.cmd 即可完成构建。也许网络速度足够好这个词限制了一些朋友，不过没关系，土豪的微软收购了 GitHub 提供了 GitHub Action 免费的构建服务器可以使用，如果发现自己在国内因为工具链需要大量的下载内容而无法构建成功，可以使用 GitHub 的 Action 来进行构建
 
-还有什么比自己实实在在构建一次更能说明说明自主可控的【这句话看起来不好】
+还有什么比自己实实在在构建一次更能说明自主可控的【这句话看起来不好】
 
 咱刚才提到的无论是 Roslyn 编译器还是 dotnet runtime 仓库，都是在 dotnet 基金会旗下的。而 .NET 基金会2014年微软组织成立的一个独立的组织。2014年以来已经有众多知名公司加入.NET基金会, 仅在平台项目中，.NET平台上有大量贡献者其实不在Microsoft工作。而 dotnet 基金会旗下包含了 dotnet 体系下的各个应用层框架，如 WPF WinForms ASP.NET Core Blazor 以及下一代 UI 框架 MAUI 等等，这些仓库都是完全开放的，欢迎大家参与开发
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
