@@ -474,6 +474,8 @@
 
  * [dotnet Open XML 如何判断一份 Office 文档是否被加密](dotnet-Open-XML-如何判断一份-Office-文档是否被加密.md)
 
+ * [dotnet OpenXML SDK 形状几何 Geometry 的计算公式含义](dotnet-OpenXML-SDK-形状几何-Geometry-的计算公式含义.md)
+
  * [dotnet OpenXml SDK 形状填充渐变色的主题色](dotnet-OpenXml-SDK-形状填充渐变色的主题色.md)
 
  * [dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响](dotnet-OpenXML-SDK-形状的-rect-Shape-Text-Rectangle-属性对文本框的坐标影响.md)

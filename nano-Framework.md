@@ -10,6 +10,9 @@
 <!-- csdn -->
 <!-- 草稿 -->
 
+
+Can run on resource-constrained devices with as low as 256kB of flash and 64kB of RAM
+
 [nanoFramework](https://github.com/nanoframework )
 
 [nanoframework/Home: The landing page for nanoFramework repositories.](https://github.com/nanoframework/Home )

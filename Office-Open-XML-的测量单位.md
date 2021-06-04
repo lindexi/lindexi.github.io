@@ -94,6 +94,25 @@ n/100 * 5000
 
 关于 EMU 的定义，请看 ECMA 376 的 20.1.2.1 内容
 
+
+## Degree
+
+表示 OpenXML 里面的角度单位，使用 60000.0 表示 360° 的圆
+
+对应角度如下
+
+```
+180° = 10800000 Degree
+
+90° = 5400000 Degree
+
+45° = 2700000 Degree
+```
+
+## 千倍百分比
+
+在 OpenXML 的百分比有千倍百分比的方式，使用每1000个单位代表百分之一的值，也就是对应比例是 1 比 100000 的值
+
 ## 开源库
 
 我开源了 [dotnetCampus.OpenXMLUnitConverter](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper) 包含了本文的转换方法
