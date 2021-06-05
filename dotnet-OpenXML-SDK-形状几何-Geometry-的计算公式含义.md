@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/6/3 19:41:03 -->
+
 <!-- 发布 -->
 
 这部分内容放在 ECMA-376 的 20.1.10.55 章文档里面，本文只是将文档里面的内容翻译一下
@@ -315,7 +317,7 @@ cos x y = (x * cos( y )) = (x * Math.Cos(y))
 表示三角函数的 `sat2` 公式，计算方法如下
 
 ```
-sat2 x y z = (x*sin(arctan(z / y))) = (x + Math.Sin(Math.Atan2(z, y)))
+sat2 x y z = (x*sin(arctan(z / y))) = (x * Math.Sin(Math.Atan2(z, y)))
 ```
 
 ## Sine Formula
@@ -323,7 +325,7 @@ sat2 x y z = (x*sin(arctan(z / y))) = (x + Math.Sin(Math.Atan2(z, y)))
 表示三角函数的 `sin` 公式，计算方法如下
 
 ```
-sin x y = (x * sin( y )) = (x + Math.Sin(y))
+sin x y = (x * sin( y )) = (x * Math.Sin(y))
 ```
 
 ## Tangent Formula
@@ -331,7 +333,7 @@ sin x y = (x * sin( y )) = (x + Math.Sin(y))
 表示三角函数的 `tan` 公式，计算方法如下
 
 ```
-tan x y = (x * tan( y )) = (x + Math.Tan(y))
+tan x y = (x * tan( y )) = (x * Math.Tan(y))
 ```
 
 ## Maximum Value Formula
