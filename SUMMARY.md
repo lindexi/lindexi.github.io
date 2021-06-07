@@ -802,6 +802,8 @@
 
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)
 
+ * [dotnet 读 WPF 源代码 Popup 的 StaysOpen 为 false 将会吃掉其他窗口的首次激活](dotnet-读-WPF-源代码-Popup-的-StaysOpen-为-false-将会吃掉其他窗口的首次激活.md)
+
  * [dotnet 读 WPF 源代码笔记 AppDomainShutdownMonitor 的设计](dotnet-读-WPF-源代码笔记-AppDomainShutdownMonitor-的设计.md)
 
  * [dotnet 读 WPF 源代码笔记 SafeMILHandleMemoryPressure 的作用](dotnet-读-WPF-源代码笔记-SafeMILHandleMemoryPressure-的作用.md)
@@ -2024,6 +2026,8 @@
 
  * [WPF 在后台代码定义 ResourceDictionary 资源字典](WPF-在后台代码定义-ResourceDictionary-资源字典.md)
 
+ * [WPF 在窗口的 Deactivated 使用 Mouse 的 Capture 将会让进程失去交互](WPF-在窗口的-Deactivated-使用-Mouse-的-Capture-将会让进程失去交互.md)
+
  * [WPF 在绑定表达式添加计算](WPF-在绑定表达式添加计算.md)
 
  * [WPF 在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待](WPF-在触摸线程等待主线程窗口关闭会让主线程和触摸线程相互等待.md)
@@ -2183,6 +2187,8 @@
  * [WPF 用到的触摸的 COM 接口](WPF-用到的触摸的-COM-接口.md)
 
  * [WPF 画布工具栏的可扩展设计](WPF-画布工具栏的可扩展设计.md)
+
+ * [WPF 的 DefaultEventAttribute 有什么作用](WPF-的-DefaultEventAttribute-有什么作用.md)
 
  * [WPF 的 ManipulationCompleted 事件可能什么时候触发](WPF-的-ManipulationCompleted-事件可能什么时候触发.md)
 

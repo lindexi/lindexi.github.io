@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/6/4 10:27:09 -->
+
 <!-- 发布 -->
 
 在 OpenXML SDK 里面，根据传入的 DocumentFormat.OpenXml.Drawing.PresetColorValues 可以获取到 ST_PresetColorVal 预设颜色值，而这些颜色值在 ECMA 376 文档的 20.1.10.47 章，定义的颜色是 RGB 格式的颜色
