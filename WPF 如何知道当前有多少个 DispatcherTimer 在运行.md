@@ -1,4 +1,4 @@
-# WPF 如何知道当前有多少个 DispatcherTime 在运行
+# WPF 如何知道当前有多少个 DispatcherTimer 在运行
 
 在 WPF 调试中，对于 DispatcherTimer 定时器的执行，没有直观的调试方法。本文来告诉大家如何在 WPF 中调试当前主线程有多少个 DispatcherTimer 在运行
 
