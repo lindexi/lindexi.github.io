@@ -716,6 +716,8 @@
 
  * [dotnet 强签名下使用 InternalsVisibleToAttribute 给程序集加上友元](dotnet-强签名下使用-InternalsVisibleToAttribute-给程序集加上友元.md)
 
+ * [dotnet 忽略输出文件夹的正则表达式](dotnet-忽略输出文件夹的正则表达式.md)
+
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)
 
  * [dotnet 手工打一个 dotnet tool 包](dotnet-手工打一个-dotnet-tool-包.md)
@@ -803,6 +805,8 @@
  * [dotnet 设计规范 · 结构体定义](dotnet-设计规范-·-结构体定义.md)
 
  * [dotnet 读 WPF 源代码 Popup 的 StaysOpen 为 false 将会吃掉其他窗口的首次激活](dotnet-读-WPF-源代码-Popup-的-StaysOpen-为-false-将会吃掉其他窗口的首次激活.md)
+
+ * [dotnet 读 WPF 源代码 聊聊 DispatcherTimer 的实现](dotnet-读-WPF-源代码-聊聊-DispatcherTimer-的实现.md)
 
  * [dotnet 读 WPF 源代码笔记 AppDomainShutdownMonitor 的设计](dotnet-读-WPF-源代码笔记-AppDomainShutdownMonitor-的设计.md)
 
@@ -2066,7 +2070,7 @@
 
  * [WPF 如何画出1像素的线](WPF-如何画出1像素的线.md)
 
- * [WPF 如何知道当前有多少个 DispatcherTime 在运行](WPF-如何知道当前有多少个-DispatcherTime-在运行.md)
+ * [WPF 如何知道当前有多少个 DispatcherTimer 在运行](WPF-如何知道当前有多少个-DispatcherTimer-在运行.md)
 
  * [WPF 如何确定应用程序开启了 Pointer 触摸消息的支持](WPF-如何确定应用程序开启了-Pointer-触摸消息的支持.md)
 
@@ -2707,6 +2711,8 @@
  * [解决从旧格式的 csproj 迁移到新格式的 csproj 格式 AssemblyInfo 文件值重复问题](解决从旧格式的-csproj-迁移到新格式的-csproj-格式-AssemblyInfo-文件值重复问题.md)
 
  * [让 AE 输出 MPEG ](让-AE-输出-MPEG-.md)
+
+ * [让 dotnet 命令行输出作为英文的方法](让-dotnet-命令行输出作为英文的方法.md)
 
  * [让 snoop 支持 .NET Core WPF 调试](让-snoop-支持-.NET-Core-WPF-调试.md)
 
