@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/6/7 20:44:13 -->
+
 <!-- 发布 -->
 
 假定咱是 WPF 框架的开发者（虽然我就是，尽管是格式化代码工程师）咱需要实现一个 DispatcherTimer 的功能，请问可以如何写呢
@@ -45,7 +47,6 @@
         }
     }
 ```
-
 
 那在啥时候需要调用 AddTimer 呢？在 DispatcherTimer 对象创建的时候？如果我只是创建一个空的 DispatcherTimer 对象，这个对象啥都不干，好像加入到 Dispatcher 的 `_timers` 也不合适。不如就在 DispatcherTimer 启动的时候添加
 
@@ -96,7 +97,7 @@
         private TimeSpan _interval;
 ```
 
-作为一个追求性能的框架， 自然咱需要在每个地方都追求一下性能，例如获取当前时间，是否有更快的方法？通过 Environment.TickCount 属性可以获取更快的时间，然而这里获取的是毫秒数，表示的是开机到当前的时间，也刚好不会受到用户修改当前系统时间的影响，自然也就更稳定一些啦
+作为一个追求性能的框架，自然咱需要在每个地方都追求一下性能，例如获取当前时间，是否有更快的方法？通过 Environment.TickCount 属性可以获取更快的时间，使用 Environment.TickCount 获取的是毫秒数，表示的是开机到当前的时间，相对来说抽象一点，不过也刚好不会受到用户修改当前系统时间的影响，自然也就更稳定一些啦
 
 既然都使用 Environment.TickCount 了，不如将 判断调用 Start 的时间加上距离下次执行的时间 合在一起计算吧，这样后续每次 `WM_Timer` 消息过来的时候，就不用每次都做一次加法了，直接判断值的大小即可
 
@@ -195,9 +196,9 @@
     }
 ```
 
-以上判断是通过 `_timers[iTimer]._dueTimeInTicks - currentTimeInTicks <= 0` 决定是否当前的 Timer 需要执行。因为 `_timers[iTimer]._dueTimeInTicks - currentTimeInTicks <= 0` 等价于 `_timers[iTimer]._dueTimeInTicks <= currentTimeInTicks` 也就是 DispatcherTimer 下次执行的时间，小于或等于当前的时间，这个 DispatcherTimer 就应该被执行。因为相同的时间需要执行的 DispatcherTimer 也许有多个，因此就做了两重循环。而同时为了解决在 DispatcherTimer 执行过程，也许有其他逻辑再加入新的 DispatcherTimer 因此也就需要判断一下 `_timersVersion` 当前版本适合和进入的版本相同，如果不同，就证明有其他逻辑更改了集合，需要重新开始
+以上判断是通过 `_timers[iTimer]._dueTimeInTicks - currentTimeInTicks <= 0` 决定是否当前的 Timer 需要执行。因为 `_timers[iTimer]._dueTimeInTicks - currentTimeInTicks <= 0` 等价于 `_timers[iTimer]._dueTimeInTicks <= currentTimeInTicks` 也就是在 DispatcherTimer 下次执行的时间，小于或等于当前的时间，这个 DispatcherTimer 就应该被执行。因为相同的时间需要执行的 DispatcherTimer 也许有多个，因此就做了两重循环。而同时为了解决在 DispatcherTimer 执行过程，也许有其他逻辑再加入新的 DispatcherTimer 因此也就需要判断一下 `_timersVersion` 当前版本适合和进入的版本相同，如果不同，就证明有其他逻辑更改了集合，需要重新开始
 
-从上面代码可以看到，咱判断 DispatcherTimer 是否需要被执行，如果需要，调用 DispatcherTimer 的 Promote 方法进行执行，而最简单的方法执行就是通过调用 Tick 事件触发，简单的代码如下
+从上面代码可以看到，咱判断 DispatcherTimer 是否需要被执行，如果需要执行，调用 DispatcherTimer 的 Promote 方法进行执行，最简单的方法执行就是通过调用 Tick 事件触发，简单的代码如下
 
 ```csharp
         private void FireTick()
@@ -287,16 +288,13 @@
     }
 ```
 
-大概这样就算完成了 DispatcherTimer 的核心实现了，不过此时让咱去天台将性能优化组救下。性能优化组说如果有连续的多个 DispatcherTimer 在执行，此时界面上就卡不动了。因为咱上面的代码，多个 DispatcherTimer 执行之间是没有切换调度的，也就是说刚好有多个 DispatcherTimer 都在执行，那么界面方法去处理其他业务逻辑里
+大概这样就算完成了 DispatcherTimer 的核心实现了，不过此时让咱去天台将性能优化组救下。性能优化组说如果有连续的多个 DispatcherTimer 在执行，此时界面上就卡不动了。因为咱上面的代码，多个 DispatcherTimer 执行之间是没有切换调度的，也就是说刚好有多个 DispatcherTimer 都在执行，那么主线程的资源都在去处理其他业务逻辑里，没有资源去处理界面渲染等
 
 产品大佬也加了需求，要求在 DispatcherTimer 可以加入优先级，优先级相等于 Dispatcher 的优先级，于是咱的逻辑代码也需要改改
 
 在 DispatcherTimer 的 Promote 方法里面，看起来不能调用 FireTick 开始执行代码逻辑，而是需要有优先级调度，也需要有切换调度，不能将全部的 DispatcherTimer 一次性执行。最简单的方法自然就是 Dispatcher.InvokeAsync 等方法来实现优先级调度等功能
 
-产品大佬的需求实现了，但性能优化组还在天台上，咱还需要再优化一下。既然都将 DispatcherTimer 加入到 Dispatcher 里面了，那为什么还需要 Dispatcher.InvokeAsync 调度呢？
-
-最简单的方法就是在 DispatcherTimer 启动的时候，将任务加入到 Dispatcher 里面，但是设置优先级为不执行。当 DispatcherTimer 的 Promote 调用时，设置刚才的加入的任务的优先级为 DispatcherTimer 的执行优先级，自然就会被 Dispatcher 进行调度了
-
+产品大佬的需求实现了，但性能优化组还在天台上，咱还需要再优化一下。既然都将 DispatcherTimer 加入到 Dispatcher 里面了，那为什么还需要 Dispatcher.InvokeAsync 调度呢？最简单的方法就是在 DispatcherTimer 启动的时候，将任务加入到 Dispatcher 里面，但是设置优先级为不执行。当 DispatcherTimer 的 Promote 调用时，设置刚才的加入的任务的优先级为 DispatcherTimer 的执行优先级，自然就会被 Dispatcher 进行调度了
 
 ```csharp
     public class DispatcherTimer
@@ -436,7 +434,6 @@
 ```
 
 那 Stop 方法呢？其实就是从 Dispatcher 队列里面干掉 `_operation` 对象
-
 
 ```csharp
     public class DispatcherTimer
