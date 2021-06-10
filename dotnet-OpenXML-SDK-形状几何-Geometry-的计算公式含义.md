@@ -293,7 +293,65 @@ abs x = Math.Abs(x)
 表示三角函数的 `arctan2` 公式，计算方法如下
 
 ```
-at2 x y = arctan(y / x) = Math.Atan2(y, x)
+at2 x y = arctan(y / x) = Atan2(y, x)
+```
+
+而 Atan2 等的定义如下
+
+```csharp
+        /// <summary>
+        /// OpenXml 三角函数的Sin函数：sin x y = (x * sin( y )) = (x * Math.Sin(y))
+        /// </summary>
+        /// <param name="x">ppt的数值</param>
+        /// <param name="y">ppt表示角度的值</param>
+        /// <returns></returns>
+        public static double Sin(double x, int y)
+        {
+            var angle = GetAngle(y);
+            return x * Math.Sin(angle);
+        }
+
+        public static double Atan2(double x, int y)
+        {
+            var angle = GetAngle(y);
+            return x * Math.Atan2(angle);
+        }        
+
+        /// <summary>
+        /// OpenXml 三角函数的Cos函数：cos x y = (x * cos( y )) = (x * Math.Cos(y))
+        /// </summary>
+        /// <param name="x">ppt的数值</param>
+        /// <param name="y">ppt表示角度的值</param>
+        /// <returns></returns>
+        public static double Cos(double x, int y)
+        {
+            var angle = GetAngle(y);
+            return x * Math.Cos(angle);
+        }
+
+        /// <summary>
+        /// OpenXml 三角函数的Tan函数：tan x y = (x * tan( y )) = (x * Math.Tan(y))
+        /// </summary>
+        /// <param name="x">ppt的数值</param>
+        /// <param name="y">ppt表示角度的值</param>
+        /// <returns></returns>
+        public static double Tan(double x, int y)
+        {
+            var angle = GetAngle(y);
+            return x * Math.Tan(angle);
+        }
+
+        /// <summary>
+        /// ppt的值转为角度
+        /// </summary>
+        /// <param name="value">ppt表示角度的值</param>
+        /// <returns></returns>
+        private static double GetAngle(int value)
+        {
+            var degree = value / 60000.0; // [Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
+            var angle = degree * Math.PI / 180;
+            return angle;
+        }
 ```
 
 ## Cosine ArcTan Formula
@@ -301,7 +359,7 @@ at2 x y = arctan(y / x) = Math.Atan2(y, x)
 表示三角函数的两次计算 `cat2` 公式，计算方法如下
 
 ```
-cat2 x y z = (x*(cos(arctan(z / y))) = (x * Math.Cos(Math.Atan2(z, y)))
+cat2 x y z = (x*(cos(arctan(z / y))) = (x * Cos(Math.Atan2(z, y)))
 ```
 
 ## Cosine Formula
@@ -309,7 +367,7 @@ cat2 x y z = (x*(cos(arctan(z / y))) = (x * Math.Cos(Math.Atan2(z, y)))
 表示三角函数的 `cos` 公式，计算方法如下
 
 ```
-cos x y = (x * cos( y )) = (x * Math.Cos(y))
+cos x y = (x * cos( y )) = (x * Cos(y))
 ```
 
 ## Sine ArcTan Formula
@@ -317,7 +375,7 @@ cos x y = (x * cos( y )) = (x * Math.Cos(y))
 表示三角函数的 `sat2` 公式，计算方法如下
 
 ```
-sat2 x y z = (x*sin(arctan(z / y))) = (x * Math.Sin(Math.Atan2(z, y)))
+sat2 x y z = (x*sin(arctan(z / y))) = (x * Sin(Atan2(z, y)))
 ```
 
 ## Sine Formula
@@ -325,7 +383,7 @@ sat2 x y z = (x*sin(arctan(z / y))) = (x * Math.Sin(Math.Atan2(z, y)))
 表示三角函数的 `sin` 公式，计算方法如下
 
 ```
-sin x y = (x * sin( y )) = (x * Math.Sin(y))
+sin x y = (x * sin( y )) = (x * Sin(y))
 ```
 
 ## Tangent Formula
@@ -333,7 +391,7 @@ sin x y = (x * sin( y )) = (x * Math.Sin(y))
 表示三角函数的 `tan` 公式，计算方法如下
 
 ```
-tan x y = (x * tan( y )) = (x * Math.Tan(y))
+tan x y = (x * tan( y )) = (x * Tan(y))
 ```
 
 ## Maximum Value Formula

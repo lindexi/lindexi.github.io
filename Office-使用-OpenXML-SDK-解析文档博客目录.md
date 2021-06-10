@@ -82,6 +82,8 @@
 
 [dotnet OpenXML SDK 形状几何 Geometry 的计算公式含义](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E5%87%A0%E4%BD%95-Geometry-%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F%E5%90%AB%E4%B9%89.html )
 
+[【OpenXml】Pptx的形状转为WPF的Geometry - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/14864302.html )
+
 ## 图片
 
 [dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](https://lindexi.gitee.io/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-Color-Change-Effect-%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )
@@ -99,6 +101,8 @@
 ## 通用知识
 
 [Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
+
+[C# dontet Office Open XML Unit Converter](https://blog.lindexi.com/post/C-dontet-Office-Open-XML-Unit-Converter.html )
 
 [dotnet 在 OpenXML SDK 的 HasValue 是什么含义](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-OpenXML-SDK-%E7%9A%84-HasValue-%E6%98%AF%E4%BB%80%E4%B9%88%E5%90%AB%E4%B9%89.html)
 
