@@ -1,4 +1,4 @@
-# WPF 如何知道当前有多少个 DispatcherTime 在运行
+# WPF 如何知道当前有多少个 DispatcherTimer 在运行
 
 在 WPF 调试中，对于 DispatcherTimer 定时器的执行，没有直观的调试方法。本文来告诉大家如何在 WPF 中调试当前主线程有多少个 DispatcherTimer 在运行
 
@@ -94,6 +94,22 @@
 其实 DispatcherTimer.Start 函数将会在框架内部消息里面不断调用，因此断点不建议落在 Start 函数，按照咱的调试需求，其实更多的是在构造函数，可以在函数断点里面输入 `System.Windows.Threading.DispatcherTimer.DispatcherTimer` 调试是哪个业务创建 DispatcherTimer 对象
 
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ee3e25f3/RemwuyearjearfabayNaycebereje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/ee3e25f3/RemwuyearjearfabayNaycebereje) 欢迎小伙伴访问
+
+可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin ee3e25f3cb1cd6e3b1c90d3efb529dc37dd61172
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
+
+```
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+```
+
+获取代码之后，进入 RemwuyearjearfabayNaycebereje 文件夹
 
 更多代码调试请看 [dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
 
