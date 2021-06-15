@@ -453,6 +453,8 @@ sqrt x = Math.Sqrt(x)
 
 如 `val x` 就是返回 x 的值
 
+如需要转换为 SVG 的字符串，请看 [dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AE%A9-PathLst-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BD%A2%E7%8A%B6%E8%BD%AC-SVG-%E8%B7%AF%E5%BE%84%E6%A0%BC%E5%BC%8F%E7%9A%84-Geometry-%E5%86%85%E5%AE%B9.html )
+
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
 
