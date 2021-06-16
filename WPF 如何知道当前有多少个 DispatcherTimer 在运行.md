@@ -106,6 +106,7 @@ git pull origin ee3e25f3cb1cd6e3b1c90d3efb529dc37dd61172
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
 
 ```
+git remote remove origin
 git remote add origin https://github.com/lindexi/lindexi_gd.git
 ```
 
