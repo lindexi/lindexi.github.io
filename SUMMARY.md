@@ -988,6 +988,8 @@
 
  * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
 
+ * [NewLife 的 RocketMQ 的生产者每次都是新实例将只由一个消费者消费](NewLife-的-RocketMQ-的生产者每次都是新实例将只由一个消费者消费.md)
+
  * [NuGet 命令行上传找不到 snupkg 文件](NuGet-命令行上传找不到-snupkg-文件.md)
 
  * [NuGet 如何设置图标](NuGet-如何设置图标.md)
@@ -1223,6 +1225,8 @@
  * [VisualStudio 2019 新特性](VisualStudio-2019-新特性.md)
 
  * [VisualStudio 2019 调试项目使用 Portable PDB 提示不支持 PDB 格式](VisualStudio-2019-调试项目使用-Portable-PDB-提示不支持-PDB-格式.md)
+
+ * [VisualStudio can not get the correct struct object value in Locals windows](VisualStudio-can-not-get-the-correct-struct-object-value-in-Locals-windows.md)
 
  * [VisualStudio csproj 添加 ItemGroup 的 Service ](VisualStudio-csproj-添加-ItemGroup-的-Service-.md)
 
