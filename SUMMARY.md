@@ -1244,6 +1244,8 @@
 
  * [VisualStudio 命令行编译 build 通过 rebuild 不通过](VisualStudio-命令行编译-build-通过-rebuild-不通过.md)
 
+ * [VisualStudio 在 DebuggerDisplay 的属性更改业务逻辑将会让调试和非调试下逻辑不同](VisualStudio-在-DebuggerDisplay-的属性更改业务逻辑将会让调试和非调试下逻辑不同.md)
+
  * [VisualStudio 外部工具配合 dotnet tool 制作复制文件名工具](VisualStudio-外部工具配合-dotnet-tool-制作复制文件名工具.md)
 
  * [VisualStudio 好用插件集合](VisualStudio-好用插件集合.md)
