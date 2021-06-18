@@ -386,11 +386,19 @@
 
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
 
+ * [dotnet C# 只创建对象不调用构造函数方法](dotnet-C-只创建对象不调用构造函数方法.md)
+
  * [dotnet C# 图片等比限制最大和最小大小缩放算法](dotnet-C-图片等比限制最大和最小大小缩放算法.md)
+
+ * [dotnet C# 在 finally 抛异常会发生什么](dotnet-C-在-finally-抛异常会发生什么.md)
 
  * [dotnet C# 如何不联网下快速获取一段url链接里面读取文件名](dotnet-C-如何不联网下快速获取一段url链接里面读取文件名.md)
 
  * [dotnet C# 如何让 Json 序列化数组时序列化继承类的属性](dotnet-C-如何让-Json-序列化数组时序列化继承类的属性.md)
+
+ * [dotnet C# 如果在构造函数抛出异常 是否可以拿到对象赋值的变量](dotnet-C-如果在构造函数抛出异常-是否可以拿到对象赋值的变量.md)
+
+ * [dotnet C# 如果在构造函数抛出异常 析构函数是否会执行](dotnet-C-如果在构造函数抛出异常-析构函数是否会执行.md)
 
  * [dotnet C# 实现 GetHashCode 的方法](dotnet-C-实现-GetHashCode-的方法.md)
 
@@ -2019,6 +2027,8 @@
  * [WPF 只允许打开一个实例](WPF-只允许打开一个实例.md)
 
  * [WPF 可获得焦点属性](WPF-可获得焦点属性.md)
+
+ * [WPF 后台代码做 TranslateTransform 的动画](WPF-后台代码做-TranslateTransform-的动画.md)
 
  * [WPF 启动屏幕键盘](WPF-启动屏幕键盘.md)
 

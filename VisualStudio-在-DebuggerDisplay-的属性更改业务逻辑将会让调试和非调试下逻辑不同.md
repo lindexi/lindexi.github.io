@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/6/16 20:21:47 -->
+
 <!-- 发布 -->
 
 在 VisualStudio 调试器进入断点，默认开启隐函数求值，将会自动调用对应的类型的 DebuggerDisplay 特性里面说明的输出方法，如果对应的对象没有定义 DebuggerDisplay 特性，默认将会调用 ToString 方法。无论是在 DebuggerDisplay 特性还是在 ToString 方法里面编写变更业务逻辑的代码，都会让在断点调试下和非断点调试下的行为不相同
