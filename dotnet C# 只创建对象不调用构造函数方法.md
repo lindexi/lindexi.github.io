@@ -3,6 +3,8 @@
 有时我期望只是创建出对象，但是不要调用对象的构造方法，可以通过使用 FormatterServices 的 GetUninitializedObject 函数来实现只创建对象不调用构造函数方法
 
 <!--more-->
+<!-- CreateTime:2021/6/17 20:25:45 -->
+
 <!-- 发布 -->
 
 这个 [FormatterServices.GetUninitializedObject](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.formatterservices.getuninitializedobject?WT.mc_id=WD-MVP-5003260) 方法大部分是用在做序列化使用的，然而在很多 IOC 容器，也都使用此方法来创建对象，而通过其他方法拿到构造函数

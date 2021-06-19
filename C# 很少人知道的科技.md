@@ -662,6 +662,99 @@ F1
 
 欢迎加入 dotnet 职业技术学院 [https://t.me/dotnet_campus](https://t.me/dotnet_campus) 使用 Telegram 方法请看 [如何使用 Telegram](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
+
+## 在 try 和 finally 抛异常会发生什么
+
+如下面代码
+
+```csharp
+        private void F1()
+        {
+            try
+            {
+                A();
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
+
+        private void A()
+        {
+            try
+            {
+                throw new ArgumentException("lindexi is doubi");
+            }
+            finally
+            {
+                throw new FileNotFoundException("lsj is doubi");
+            }
+        }
+```
+
+请问在 F1 的 catch 里面收到的 e 是什么类型，会触发几次？
+
+答案请看 [dotnet C# 在 finally 抛异常会发生什么](https://blog.lindexi.com/post/dotnet-C-%E5%9C%A8-finally-%E6%8A%9B%E5%BC%82%E5%B8%B8%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88.html )
+
+## 如果在构造函数抛出异常 析构函数是否会执行
+
+如下面代码
+
+```csharp
+        private void F1()
+        {
+            try
+            {
+                _ = new Foo();
+            }
+            catch
+            {
+               // 忽略
+            }
+        }
+
+    class Foo
+    {
+        public Foo()
+        {
+            throw new Exception("lindexi is doubi");
+        }
+
+        ~Foo()
+        {
+        }
+    }
+```
+
+请问以上代码的 `~Foo` 是否可以在垃圾回收执行，或者说在构造函数里面抛出异常，是否这个对象可以被垃圾回收
+
+答案请看 [dotnet C# 如果在构造函数抛出异常 析构函数是否会执行](https://blog.lindexi.com/post/dotnet-C-%E5%A6%82%E6%9E%9C%E5%9C%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8-%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0%E6%98%AF%E5%90%A6%E4%BC%9A%E6%89%A7%E8%A1%8C.html )
+
+## 只创建对象不调用构造函数方法
+
+通过 [FormatterServices.GetUninitializedObject](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.formatterservices.getuninitializedobject?WT.mc_id=WD-MVP-5003260) 方法可以只创建对象不调用构造函数方法
+
+```csharp
+            Foo foo = null;
+            try
+            {
+                foo = (Foo) FormatterServices.GetUninitializedObject(typeof(Foo));
+                var constructorInfo = typeof(Foo).GetConstructor(new Type[0]);
+                constructorInfo!.Invoke(foo, null);
+            }
+            catch
+            {
+            }
+
+class Foo
+{
+
+}
+```
+
+详细请看 [dotnet C# 只创建对象不调用构造函数方法](https://blog.lindexi.com/post/dotnet-C-%E5%8F%AA%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E4%B8%8D%E8%B0%83%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95.html )
+
 ## 特别感谢
 
 特别感谢 [吕毅 - walterlv](https://blog.walterlv.com/ ) 提供的逗比代码
