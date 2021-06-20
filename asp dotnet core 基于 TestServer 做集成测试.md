@@ -38,6 +38,33 @@
     </ItemGroup>
 ```
 
+如果是 .NET 5 的应用，那么 csproj 文件的代码大概如下
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.4" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.4" />
+    <PackageReference Include="coverlet.collector" Version="3.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="MSTestEnhancer" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="5.0.7" />
+  </ItemGroup>
+
+</Project>
+```
+
 在使用 TestServer 进行集成测试的时候，其实就是将启动主机的逻辑替换掉，如 [ASP.NET Core搭建多层网站架构【12-xUnit单元测试之集成测试】 - kasnti - 博客园](https://www.cnblogs.com/kasnti/p/12246180.html ) 这篇博客所说的方法，咱来新建一个静态类，用来创建主机和运行
 
 ```csharp
