@@ -34,6 +34,8 @@
 
  * [asp dotnet core 通过图片统计 csdn 用户访问](asp-dotnet-core-通过图片统计-csdn-用户访问.md)
 
+ * [asp dotnet core 限制接口只能本机访问的方法](asp-dotnet-core-限制接口只能本机访问的方法.md)
+
  * [ASP.NET Core 因为 Nginx 配置 Connection 为 Upgrade 导致 Kestrel 返回 400 错误](ASP.NET-Core-因为-Nginx-配置-Connection-为-Upgrade-导致-Kestrel-返回-400-错误.md)
 
  * [ASP.NET Core 将文件夹内容输出为压缩包文件方法](ASP.NET-Core-将文件夹内容输出为压缩包文件方法.md)
@@ -405,6 +407,8 @@
  * [dotnet C# 将 Byte 二进制数组使用不安全代码快速转换为 int 或结构体数组](dotnet-C-将-Byte-二进制数组使用不安全代码快速转换为-int-或结构体数组.md)
 
  * [dotnet C# 序列化 XML 时进行自动格式化](dotnet-C-序列化-XML-时进行自动格式化.md)
+
+ * [dotnet C# 获取一个可用的端口的方法](dotnet-C-获取一个可用的端口的方法.md)
 
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
