@@ -16,6 +16,9 @@
 
 这是一个从 SharpDx 拿出来的库，将会支持 Win32 和 UWP 平台，现在只有一个主力开发者
 
+## Silk.NET
+
+[dotnet/Silk.NET: The high-speed OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX bindings library your mother warned you about.](https://github.com/dotnet/Silk.NET )
 
 
 
