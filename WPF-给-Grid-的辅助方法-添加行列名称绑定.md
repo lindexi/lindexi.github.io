@@ -38,9 +38,11 @@
 
 ![](http://image.acmx.xyz/lindexi%2F2021410850544762.jpg)
 
-通过此方法就可以在给 Grid 加行列或删除行列的时候，减少修改一些元素的行列布局。因为元素绑定的是行列的名而不是序号，因此顺序修改的时候不会影响
+通过此方法就可以在给 Grid 加行列或删除行列的时候，减少修改一些元素的行列布局。因为元素绑定的是行列的名而不是序号，因此顺序修改的时候不会影响原有的界面代码
 
-这个附加属性的实现也非常简单，请看下面代码
+当前这个功能已合入到 HC 控件中，请通过 NuGet 安装 [HandyControl](https://www.nuget.org/packages/HandyControl) 库
+
+如不使用库，自己实现也简单，请看下面代码
 
 ```csharp
     public class GridExtensions

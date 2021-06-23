@@ -1906,6 +1906,8 @@
 
  * [WPF 一个空的 WPF 程序有多少个窗口](WPF-一个空的-WPF-程序有多少个窗口.md)
 
+ * [WPF 下拉框选项做鼠标 Hover 预览效果](WPF-下拉框选项做鼠标-Hover-预览效果.md)
+
  * [WPF 不禁用实时触摸而收到 WM_Touch 触摸消息方法](WPF-不禁用实时触摸而收到-WM_Touch-触摸消息方法.md)
 
  * [WPF 两个 Topmost 的窗口如何设置谁在最上方](WPF-两个-Topmost-的窗口如何设置谁在最上方.md)
