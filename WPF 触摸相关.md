@@ -88,6 +88,7 @@
 - [WPF 最简逻辑实现多指顺滑的笔迹书写](https://blog.lindexi.com/post/WPF-%E6%9C%80%E7%AE%80%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%8C%87%E9%A1%BA%E6%BB%91%E7%9A%84%E7%AC%94%E8%BF%B9%E4%B9%A6%E5%86%99.html)
 - [WPF 笔迹触摸点收集工具](https://blog.lindexi.com/post/WPF-%E7%AC%94%E8%BF%B9%E8%A7%A6%E6%91%B8%E7%82%B9%E6%94%B6%E9%9B%86%E5%B7%A5%E5%85%B7.html )
 - [WPF 实现自定义的笔迹橡皮擦](https://blog.lindexi.com/post/WPF-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%AC%94%E8%BF%B9%E6%A9%A1%E7%9A%AE%E6%93%A6.html )
+- [两个方法，让 WPF 绘制的笔迹更加平滑 - walterlv](https://blog.walterlv.com/post/wpf-smooth-ink.html )
 
 ![](http://image.acmx.xyz/lindexi%2F72551177_p0.jpg)
 
