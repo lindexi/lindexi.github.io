@@ -1,42 +1,39 @@
 # WPF 设置输入只能英文
 
-有时输入只能让用户输入英文，那么如何设置输入只能英文？
+有时输入只能让用户输入英文，那么如何设置输入只能英文？ 做法就是禁用 IME 输入法，此时输入就只能是英文或数字
+
 <!--more-->
 <!-- CreateTime:2019/1/29 15:08:04 -->
 
-
 <div id="toc"></div>
 
-首先在xaml 写一个 TextBox ，给他一个名字。
-
+咱开始之前，首先在 xaml 写一个 TextBox 控件，给他一个名字，用于后续在后台 xaml.cs 代码使用
 
 ```xml
-            <TextBox x:Name="txt"></TextBox>
+  <TextBox x:Name="TxtTextBox"></TextBox>
 ```
-然后在构造使用 `System.Windows.Input.InputMethod` 可以设置 IME  和输入是否可以是中文。
 
+然后在 MainWindow 构造使用 `System.Windows.Input.InputMethod` 可以设置 IME 和输入是否可以是中文，如以下代码，传入的是 false 则禁用 IME 输入法，不能输入中文
 
 ```csharp
-                System.Windows.Input.InputMethod.SetIsInputMethodEnabled(txt, false);
+var txt = TxtTextBox;
+System.Windows.Input.InputMethod.SetIsInputMethodEnabled(txt, false);
 ```
 
-设置IME关掉
-
+设置IME关掉，可以如下代码，上面的代码和下面代码效果差不多
 
 ```csharp
-                InputMethod.SetPreferredImeState(txt,InputMethodState.Off);
-
+var txt = TxtTextBox;
+InputMethod.SetPreferredImeState(txt, InputMethodState.Off);
 ```
 
-当然也可以在页面写
+当然也可以在页面写 XAML 附加属性，如下面代码
 
-
-```csharp
-            <TextBox InputMethod.IsInputMethodEnabled="False"></TextBox>
+```xml
+<TextBox InputMethod.IsInputMethodEnabled="False"></TextBox>
 ```
 
-
-注意用户可以粘贴中文，可以检测用户是否输入有中文。
+注意用户可以粘贴中文，可以检测用户是否输入有中文的方式处理用户的粘贴输入
 
 [C# 切换中英文输入法 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/10298697.html )
 
