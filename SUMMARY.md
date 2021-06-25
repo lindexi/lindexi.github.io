@@ -394,6 +394,8 @@
 
  * [dotnet C# 在 finally 抛异常会发生什么](dotnet-C-在-finally-抛异常会发生什么.md)
 
+ * [dotnet C# 多线程集合的 Linq 获取值同时写入集合将会抛出异常](dotnet-C-多线程集合的-Linq-获取值同时写入集合将会抛出异常.md)
+
  * [dotnet C# 如何不联网下快速获取一段url链接里面读取文件名](dotnet-C-如何不联网下快速获取一段url链接里面读取文件名.md)
 
  * [dotnet C# 如何让 Json 序列化数组时序列化继承类的属性](dotnet-C-如何让-Json-序列化数组时序列化继承类的属性.md)
@@ -401,6 +403,8 @@
  * [dotnet C# 如果在构造函数抛出异常 是否可以拿到对象赋值的变量](dotnet-C-如果在构造函数抛出异常-是否可以拿到对象赋值的变量.md)
 
  * [dotnet C# 如果在构造函数抛出异常 析构函数是否会执行](dotnet-C-如果在构造函数抛出异常-析构函数是否会执行.md)
+
+ * [dotnet C# 字典 Dictionary 和 Hashtable 的性能对比](dotnet-C-字典-Dictionary-和-Hashtable-的性能对比.md)
 
  * [dotnet C# 实现 GetHashCode 的方法](dotnet-C-实现-GetHashCode-的方法.md)
 
