@@ -3,6 +3,8 @@
 如果没有特别的需求，请使用 Dictionary 而不是 Hashtable 原因是 Dictionary 的性能更好，本文将告诉大家 Stephen Toub 大佬的评测
 
 <!--more-->
+<!-- CreateTime:2021/6/24 8:42:14 -->
+
 <!-- 发布 -->
 
 从 2021 的 6 月 23 日，在 WPF 仓库里面，开始看到了性能优化狂魔 [Stephen Toub](https://github.com/stephentoub) 大佬给 WPF 做的性能优化
