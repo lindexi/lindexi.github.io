@@ -386,6 +386,10 @@
 
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
 
+ * [dotnet C# 使用 EqualityComparer 提升泛型值类型相等判断性能](dotnet-C-使用-EqualityComparer-提升泛型值类型相等判断性能.md)
+
+ * [dotnet C# 使用无捕获的委托可以获得编译器缓存减少对象创建](dotnet-C-使用无捕获的委托可以获得编译器缓存减少对象创建.md)
+
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
 
  * [dotnet C# 只创建对象不调用构造函数方法](dotnet-C-只创建对象不调用构造函数方法.md)
@@ -2513,6 +2517,8 @@
  * [升级到 dotnet core 之后 HandleProcessCorruptedStateExceptions 无法接住异常](升级到-dotnet-core-之后-HandleProcessCorruptedStateExceptions-无法接住异常.md)
 
  * [博客](博客.md)
+
+ * [听龙华讲公共组件 CBB 建设笔记](听龙华讲公共组件-CBB-建设笔记.md)
 
  * [命令行参数使用 json 有哪些坑](命令行参数使用-json-有哪些坑.md)
 
