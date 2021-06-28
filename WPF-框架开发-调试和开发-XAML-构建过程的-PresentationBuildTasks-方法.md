@@ -33,16 +33,16 @@
 
 而 PresentationBuildTasks 的代码可以从 WPF 开源仓库里面的 `src\Microsoft.DotNet.Wpf\src\PresentationBuildTasks` 文件夹拿到代码，只是这里面的代码构建需要做一些配置
 
-我给大家提供了我的版本，此版本包含了 Walterlv.Demo.XamlProperties 测试项目本身，使用方法是将我的代码拉到你的本地。请在使用时，安装好 .NET 5 或更新版本的 SDK 然后将你的需要测试的 XAML 文件和代码加入到 Walterlv.Demo.XamlProperties 测试项目里面。先打开 PresentationBuildTasks.sln 项目，接着使用命令行 dotnet build 构建 Walterlv.Demo.XamlProperties 测试项目
+我给大家提供了我的版本，此版本包含了 PresentationBuildTasksTest 测试项目本身，使用方法是将我的代码拉到你的本地。请在使用时，安装好 .NET 5 或更新版本的 SDK 然后将你的需要测试的 XAML 文件和代码加入到 PresentationBuildTasksTest 测试项目里面。先打开 PresentationBuildTasksTest.sln项目，然后开始构建即可，如果第一次构建失败，请重新启动 VisualStudio 再次构建，原因是 msbuild 占用 PresentationBuildTasks 而失败
 
-构建时将会弹出 VisualStudio 附加进程调试窗口，选择使用 PresentationBuildTasks.sln 所在的 VisualStudio 进行调试，下一步按下 F10 就可以看到 PresentationBuildTasks 的源代码
+构建时将会弹出 VisualStudio 附加进程调试窗口，选择使用 PresentationBuildTasksTest.sln 所在的 VisualStudio 进行调试，下一步按下 F10 就可以看到 PresentationBuildTasks 的源代码
 
 获取以上调试版本的方法是先创建一个本地源代码文件夹，此文件夹是一个空文件夹，用来从 GitHub 上拉我的代码。先使用命令行进入到此空文件夹，接下来输入以下代码用来拉代码
 
 ```
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
-git pull origin e9982404d4b51f184f483ba8663ee160befdc8e8
+git pull origin 69b555fda20b6accc3eace960b9e9da0037aff5e
 ```
 
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
@@ -51,7 +51,7 @@ git pull origin e9982404d4b51f184f483ba8663ee160befdc8e8
 git remote add origin https://github.com/lindexi/lindexi_gd.git
 ```
 
-以上代码包含了作为测试项目的 Walterlv.Demo.XamlProperties.csproj 文件，以及我从 WPF 项目里面拷贝的 PresentationBuildTasks 代码。对比放在 WPF 项目的 PresentationBuildTasks 的代码，我提供的测试代码是没有 WPF 项目的依赖的，不仅构建方便，同时构建速度也快
+以上代码包含了作为测试项目的 PresentationBuildTasksTest.sln 文件，以及我从 WPF 项目里面拷贝的 PresentationBuildTasks 代码。对比放在 WPF 项目的 PresentationBuildTasks 的代码，我提供的测试代码是没有 WPF 项目的依赖的，不仅构建方便，同时构建速度也快
 
 当然缺点是没有更上 WPF 的源代码版本，需要大家自己手动去拷贝最新的代码
 
