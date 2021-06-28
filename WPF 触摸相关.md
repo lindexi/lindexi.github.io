@@ -49,6 +49,8 @@
 
 [WPF 设置窗口不跟随触摸惯性拖动抖动](https://blog.lindexi.com/post/WPF-%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E4%B8%8D%E8%B7%9F%E9%9A%8F%E8%A7%A6%E6%91%B8%E6%83%AF%E6%80%A7%E6%8B%96%E5%8A%A8%E6%8A%96%E5%8A%A8.html )
 
+[WPF 屏幕点击的设备类型 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/14888287.html )
+
 ## 高级用法
 
 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html )
