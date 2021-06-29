@@ -420,6 +420,8 @@
 
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
+ * [dotnet C# 调用委托的 GetInvocationList 的对象分配](dotnet-C-调用委托的-GetInvocationList-的对象分配.md)
+
  * [dotnet C# 链表和字典的性能对比](dotnet-C-链表和字典的性能对比.md)
 
  * [dotnet CBB 为什么决定推送 Tag 才能打包](dotnet-CBB-为什么决定推送-Tag-才能打包.md)

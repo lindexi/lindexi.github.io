@@ -8,8 +8,6 @@
 
 <!-- CreateTime:2020/7/27 8:40:22 -->
 
-
-
 我开源了一个文件下载库，原因是我的几个项目里面都有自己的文件下载库，我想要统一这些文件下载库。开源出去可以让更多小伙伴帮我踩坑，开源项目是 [https://github.com/dotnet-campus/dotnetCampus.FileDownloader](https://github.com/dotnet-campus/dotnetCampus.FileDownloader) 欢迎小伙伴使用
 
 我需要写一个简单的界面程序用来测试我这个库，我计划替换掉我现在自己使用的FDM工具，这样我如果自己下载炸了，我就会去修我的库
