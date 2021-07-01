@@ -104,6 +104,8 @@
 
  * [C# dotnet 使用 FileStream 随机文件读写](C-dotnet-使用-FileStream-随机文件读写.md)
 
+ * [C# dotnet 使用 OpenXml 关闭时不自动保存文档方法](C-dotnet-使用-OpenXml-关闭时不自动保存文档方法.md)
+
  * [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](C-dotnet-WPF-使用-OpenXml-解析-Excel-文件.md)
 
  * [C# dotnet 使用 OpenXml 解析 PPT 元素的坐标和宽度高度](C-dotnet-使用-OpenXml-解析-PPT-元素的坐标和宽度高度.md)

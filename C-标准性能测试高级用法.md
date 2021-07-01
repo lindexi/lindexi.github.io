@@ -547,6 +547,44 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 
 在运行的时候就可以选运行哪个
 
+## 加上内存分配
+
+如果需要测试内存分配，可以加上 MemoryDiagnoser 特性，如以下代码
+
+```csharp
+    [MemoryDiagnoser] // 加上这个特性
+    [DryJob]
+    [CategoriesColumn]
+    [BenchmarkCategory("分类")]
+    [AnyCategoriesFilter("A", "1")]
+    public class FooPerf
+    {
+        [Benchmark]
+        [BenchmarkCategory("A", "1")]
+        public void A1() => Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory("A", "2")]
+        public void A2() => Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory("B", "1")]
+        public void B1() => Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory("B", "2")]
+        public void B2() => Thread.Sleep(10);
+    }
+```
+
+加上之后将会自动加上 `Allocated` 这一列，如下面代码
+
+| Method |     Mean |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------- |---------:|-------:|------:|------:|----------:|
+|   F1   | 14.17 ns | 0.0153 |     - |     - |      64 B |
+|   F2   | 40.84 ns |      - |     - |     - |         - |
+
+
 
 
 
