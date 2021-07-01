@@ -544,5 +544,43 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 
 在运行的时候就可以选运行哪个
 
+## 加上内存分配
+
+如果需要测试内存分配，可以加上 MemoryDiagnoser 特性，如以下代码
+
+```csharp
+    [MemoryDiagnoser] // 加上这个特性
+    [DryJob]
+    [CategoriesColumn]
+    [BenchmarkCategory("分类")]
+    [AnyCategoriesFilter("A", "1")]
+    public class FooPerf
+    {
+        [Benchmark]
+        [BenchmarkCategory("A", "1")]
+        public void A1() => Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory("A", "2")]
+        public void A2() => Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory("B", "1")]
+        public void B1() => Thread.Sleep(10); // Will be benchmarked
+
+        [Benchmark]
+        [BenchmarkCategory("B", "2")]
+        public void B2() => Thread.Sleep(10);
+    }
+```
+
+加上之后将会自动加上 `Allocated` 这一列，如下面代码
+
+| Method |     Mean |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------- |---------:|-------:|------:|------:|----------:|
+|   F1   | 14.17 ns | 0.0153 |     - |     - |      64 B |
+|   F2   | 40.84 ns |      - |     - |     - |         - |
+
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
