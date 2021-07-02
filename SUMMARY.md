@@ -562,6 +562,10 @@
 
  * [dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容](dotnet-OpenXML-让-PathLst-自定义形状转-SVG-路径格式的-Geometry-内容.md)
 
+ * [dotnet OpenXML 读取 PPT 主序列进入退出强调动画](dotnet-OpenXML-读取-PPT-主序列进入退出强调动画.md)
+
+ * [dotnet OpenXML 读取 PPT 动画进入退出强调动画类型](dotnet-OpenXML-读取-PPT-动画进入退出强调动画类型.md)
+
  * [dotnet OpenXML 读取形状轮廓线条样式序号超过主题样式列表数](dotnet-OpenXML-读取形状轮廓线条样式序号超过主题样式列表数.md)
 
  * [dotnet OpenXML 预设 PresetColorValues 颜色对应的值](dotnet-OpenXML-预设-PresetColorValues-颜色对应的值.md)
