@@ -3,6 +3,8 @@
 默认在使用 OpenXML SDK 读写 Office 文件，如 PPT 或 Word 或 Excel 文件时，在关闭时调用 Dispose 将会自动将更改部分写入到文件。本文告诉大家如何让 OpenXML SDK 不写入只是释放资源
 
 <!--more-->
+<!-- CreateTime:2021/6/30 20:14:17 -->
+
 <!-- 发布 -->
 
 如使用以下代码传入 .docs 文件进行解析

@@ -17,6 +17,8 @@
 
 [Office 文档解析 文档格式和协议](https://blog.lindexi.com/post/Office-%E6%96%87%E6%A1%A3%E8%A7%A3%E6%9E%90-%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F%E5%92%8C%E5%8D%8F%E8%AE%AE.html )
 
+[C# dotnet 使用 OpenXml 关闭时不自动保存文档方法](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E5%85%B3%E9%97%AD%E6%97%B6%E4%B8%8D%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98%E6%96%87%E6%A1%A3%E6%96%B9%E6%B3%95.html )
+
 ## PPT 解析
 
 [dotnet OpenXML 解析 PPT 页面元素文档格式](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F.html )
