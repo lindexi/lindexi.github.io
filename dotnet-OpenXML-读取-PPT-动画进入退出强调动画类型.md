@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/7/1 19:23:12 -->
+
 <!-- 发布 -->
 
 根据 ECMA-376 文档可以了解到，在 PPT 动画中，通过 `cTn` 也就是 OpenXML sdk 定义的 `CommonTimeNode` 类型的 PresetClass 属性，即可用来判断当前的动画类型
