@@ -119,6 +119,8 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 获取代码之后，进入 NearberjalnodarGahayjekuqi 文件夹
 
+更多调试方法请看 [dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html)
+
 
 
 

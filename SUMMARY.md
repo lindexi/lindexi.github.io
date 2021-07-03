@@ -2210,6 +2210,8 @@
 
  * [WPF 框架开发 更改 API 之后让 CI 重新创建 API 兼容检查基准](WPF-框架开发-更改-API-之后让-CI-重新创建-API-兼容检查基准.md)
 
+ * [WPF 框架开发 调试和开发 System.Xaml 的独立项目方法](WPF-框架开发-调试和开发-System.Xaml-的独立项目方法.md)
+
  * [WPF 框架开发 调试和开发 XAML 构建过程的 PresentationBuildTasks 方法](WPF-框架开发-调试和开发-XAML-构建过程的-PresentationBuildTasks-方法.md)
 
  * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
