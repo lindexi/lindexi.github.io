@@ -25,8 +25,6 @@
 
 [dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%9A%84-Slide-Master-%E5%92%8C-Slide-Layout-%E6%98%AF%E4%BB%80%E4%B9%88.html )
 
-
-
 ## 元素解析
 
 [C# dotnet 使用 OpenXml 解析 PPT 元素的坐标和宽度高度](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%90%E6%A0%87%E5%92%8C%E5%AE%BD%E5%BA%A6%E9%AB%98%E5%BA%A6.html)
@@ -112,6 +110,12 @@
 [dotnet OpenXML 修复 Office 文档里面包含格式不正确的 Uri 而无法解析](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BF%AE%E5%A4%8D-Office-%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E5%8C%85%E5%90%AB%E6%A0%BC%E5%BC%8F%E4%B8%8D%E6%AD%A3%E7%A1%AE%E7%9A%84-Uri-%E8%80%8C%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90.html )
 
 [dotnet OpenXML 修复 Office 文档里面的百分比内容包含百分号](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BF%AE%E5%A4%8D-Office-%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E7%99%BE%E5%88%86%E5%8F%B7.html )
+
+## PPT 动画
+
+[dotnet OpenXML 读取 PPT 主序列进入退出强调动画](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96-PPT-%E4%B8%BB%E5%BA%8F%E5%88%97%E8%BF%9B%E5%85%A5%E9%80%80%E5%87%BA%E5%BC%BA%E8%B0%83%E5%8A%A8%E7%94%BB.html )
+
+[dotnet OpenXML 读取 PPT 动画进入退出强调动画类型](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96-PPT-%E5%8A%A8%E7%94%BB%E8%BF%9B%E5%85%A5%E9%80%80%E5%87%BA%E5%BC%BA%E8%B0%83%E5%8A%A8%E7%94%BB%E7%B1%BB%E5%9E%8B.html )
 
 ## 工具
 
