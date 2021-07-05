@@ -137,6 +137,7 @@
 
 以下是收藏的博客
 
+- [Eric White's Blog](https://docs.microsoft.com/en-us/archive/blogs/ericwhite/ )
 - [OpenXML学习笔记（一）从Office 2007 到 Office 2010](https://www.cnblogs.com/brooks-dotnet/archive/2010/02/08/1665600.html)
 
 ## 第三方工具
@@ -189,5 +190,12 @@
 ## VSTO COM
 
 [通过 COM 读取 Office PPT 文件提示 COMException 错误码 0x80004005 可能原因](https://blog.lindexi.com/post/%E9%80%9A%E8%BF%87-COM-%E8%AF%BB%E5%8F%96-Office-PPT-%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA-COMException-%E9%94%99%E8%AF%AF%E7%A0%81-0x80004005-%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
+
+## 资源
+
+我将一些资源放在 CSDN 方便大家下载，如果想要下载而没有积分，可以找我私聊要资源
+
+- [OpenXMLSDK v25.7z CSDN下载](https://download.csdn.net/download/lindexi_gd/19401193 )
+- [ECMA-376 文档 CSDN下载](https://download.csdn.net/download/lindexi_gd/20002151)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
