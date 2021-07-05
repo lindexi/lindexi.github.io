@@ -900,6 +900,8 @@
 
  * [dotnet 通过依赖注入的 Scoped 给工作流注入相同的上下文信息](dotnet-通过依赖注入的-Scoped-给工作流注入相同的上下文信息.md)
 
+ * [dotnet 通过引用 msbuild 程序集实现自己定制编译器](dotnet-通过引用-msbuild-程序集实现自己定制编译器.md)
+
  * [dotnet 部署 GitHub 的 Action Runner 制作自托管运行器](dotnet-部署-GitHub-的-Action-Runner-制作自托管运行器.md)
 
  * [dotnet 部署 github 的 Action 进行持续集成](dotnet-部署-github-的-Action-进行持续集成.md)
@@ -2495,6 +2497,8 @@
  * [使用 ahk 让普通键盘变为Dvorak键盘](使用-ahk-让普通键盘变为Dvorak键盘.md)
 
  * [使用 C# 写脚本的优势和方法](使用-C-写脚本的优势和方法.md)
+
+ * [使用 FastTunnel 做内网穿透远程计算机桌面服务器](使用-FastTunnel-做内网穿透远程计算机桌面服务器.md)
 
  * [使用 IncrediBuild 提升 VisualStudio 编译速度](使用-IncrediBuild-提升-VisualStudio-编译速度.md)
 

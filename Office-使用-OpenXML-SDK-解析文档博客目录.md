@@ -140,6 +140,7 @@
 
 以下是收藏的博客
 
+- [Eric White's Blog](https://docs.microsoft.com/en-us/archive/blogs/ericwhite/ )
 - [OpenXML学习笔记（一）从Office 2007 到 Office 2010](https://www.cnblogs.com/brooks-dotnet/archive/2010/02/08/1665600.html)
 
 ## 第三方工具
@@ -192,6 +193,13 @@
 ## VSTO COM
 
 [通过 COM 读取 Office PPT 文件提示 COMException 错误码 0x80004005 可能原因](https://blog.lindexi.com/post/%E9%80%9A%E8%BF%87-COM-%E8%AF%BB%E5%8F%96-Office-PPT-%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA-COMException-%E9%94%99%E8%AF%AF%E7%A0%81-0x80004005-%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
+
+## 资源
+
+我将一些资源放在 CSDN 方便大家下载，如果想要下载而没有积分，可以找我私聊要资源
+
+- [OpenXMLSDK v25.7z CSDN下载](https://download.csdn.net/download/lindexi_gd/19401193 )
+- [ECMA-376 文档 CSDN下载](https://download.csdn.net/download/lindexi_gd/20002151)
 
 
 
