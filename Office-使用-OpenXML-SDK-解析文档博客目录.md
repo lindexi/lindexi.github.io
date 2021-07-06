@@ -128,6 +128,17 @@
 
 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html )
 
+
+## WPS 相关
+
+[dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E8%A7%84%E8%8C%83%E7%9A%84-PPT-%E6%96%87%E4%BB%B6%E7%9A%84-cNvPr-%E9%87%8D%E5%A4%8D-id-%E9%97%AE%E9%A2%98.html )
+
+[dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E7%AC%A6%E5%90%88%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E7%9A%84%E6%96%87%E6%A1%A3.html )
+
+## VSTO COM
+
+[通过 COM 读取 Office PPT 文件提示 COMException 错误码 0x80004005 可能原因](https://blog.lindexi.com/post/%E9%80%9A%E8%BF%87-COM-%E8%AF%BB%E5%8F%96-Office-PPT-%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA-COMException-%E9%94%99%E8%AF%AF%E7%A0%81-0x80004005-%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
+
 ## 例子
 
 [WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](https://lindexi.gitee.io/post/WPF-%E5%B0%86-docx-%E7%9A%84-Word-%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-FlowDocument-%E6%98%BE%E7%A4%BA.html )
@@ -136,12 +147,20 @@
 
 欢迎小伙伴加入 OpenXML Office 群 688921958
 
+## 资源
+
+我将一些资源放在 CSDN 方便大家下载，如果想要下载而没有积分，可以找我私聊要资源
+
+- [OpenXMLSDK v25.7z CSDN下载](https://download.csdn.net/download/lindexi_gd/19401193 )
+- [ECMA-376 文档 CSDN下载](https://download.csdn.net/download/lindexi_gd/20002151)
+
 ## 收藏
 
 以下是收藏的博客
 
 - [Eric White's Blog](https://docs.microsoft.com/en-us/archive/blogs/ericwhite/ )
 - [OpenXML学习笔记（一）从Office 2007 到 Office 2010](https://www.cnblogs.com/brooks-dotnet/archive/2010/02/08/1665600.html)
+- [服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
 
 ## 第三方工具
 
@@ -169,7 +188,6 @@
 
 貌似要购买的话，找我也许有优惠…… 但一年大概也是 10w 左右
 
-
 ### [grapecity](https://www.grapecity.com)
 
 这是一个控件库，里面也包含了部分工具，请看
@@ -179,27 +197,6 @@
 ### VS 插件
 
 [bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio: This Power Tool is a Visual Studio add-in that provides an easy way to parse and edit Open Packaging Conventions files, including Word, Excel and PowerPoint documents.](https://github.com/bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio )
-
-## 文档
-
-[服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
-
-## WPS 相关
-
-[dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E8%A7%84%E8%8C%83%E7%9A%84-PPT-%E6%96%87%E4%BB%B6%E7%9A%84-cNvPr-%E9%87%8D%E5%A4%8D-id-%E9%97%AE%E9%A2%98.html )
-
-[dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E7%AC%A6%E5%90%88%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E7%9A%84%E6%96%87%E6%A1%A3.html )
-
-## VSTO COM
-
-[通过 COM 读取 Office PPT 文件提示 COMException 错误码 0x80004005 可能原因](https://blog.lindexi.com/post/%E9%80%9A%E8%BF%87-COM-%E8%AF%BB%E5%8F%96-Office-PPT-%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA-COMException-%E9%94%99%E8%AF%AF%E7%A0%81-0x80004005-%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
-
-## 资源
-
-我将一些资源放在 CSDN 方便大家下载，如果想要下载而没有积分，可以找我私聊要资源
-
-- [OpenXMLSDK v25.7z CSDN下载](https://download.csdn.net/download/lindexi_gd/19401193 )
-- [ECMA-376 文档 CSDN下载](https://download.csdn.net/download/lindexi_gd/20002151)
 
 
 

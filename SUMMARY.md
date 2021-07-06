@@ -2112,6 +2112,8 @@
 
  * [WPF 如何建立自己的 3d gis 程序](WPF-如何建立自己的-3d-gis-程序.md)
 
+ * [WPF 如何找到资源文件路径包含 # 号的文件](WPF-如何找到资源文件路径包含-号的文件.md)
+
  * [WPF 如何画出1像素的线](WPF-如何画出1像素的线.md)
 
  * [WPF 如何知道当前有多少个 DispatcherTimer 在运行](WPF-如何知道当前有多少个-DispatcherTimer-在运行.md)
