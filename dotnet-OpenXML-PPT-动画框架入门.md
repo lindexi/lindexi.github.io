@@ -6,8 +6,6 @@
 <!--more-->
 
 
-<!-- CreateTime:2021/7/2 16:03:31 -->
-<!-- 草稿 -->
 
 开始之前，还请掌握一些基础知识，如阅读以下博客
 
@@ -756,6 +754,325 @@ git pull origin 2c06ddf74e45c31ad7842dd06dc09bcc67b6142e
 因此就比每次点击只有一个动画的课件少了一层。通过以上即可了解到，读取时，就应该采用判断组合的方法，将 MainSequence 里面的 childTnLst 的每一个 par 当成独立的动画。只是有一些独立的动画是组合动画，组合动画里面可以再包含多个动画
 
 
+## 动画的触发顺序
+
+回到动画的触发顺序，依然是在主序列上，如果是单次点击同时出现三个动画，也就是说第一个动画是点击触发，另外两个动画是设置 从上一项开始 的动画
+
+<!-- ![](image/dotnet OpenXML PPT 动画框架入门/dotnet OpenXML PPT 动画框架入门2.png) -->
+
+<!-- ![](http://image.acmx.xyz/lindexi%2F20217695613233.jpg) -->
+
+![](https://i.loli.net/2021/07/06/jaVqPSNyTIUfuRn.jpg)
+
+如上图，三个动画分别是向下动画、不饱和动画、旋转动画。为什么这次不使用进入强调退出做例子？原因是同时进行的动画，如果设置了同时进行，不好调试
+
+从文档的代码可以看到，动画如下
+
+```xml
+<p:cTn id="2" dur="indefinite" nodeType="mainSeq">
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <!-- 向下动画 -->
+                <!-- 不饱和动画 -->
+                <!-- 旋转动画 -->
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+```
+
+展开各个动画的内容如下
+
+```xml
+<p:cTn id="2" dur="indefinite" nodeType="mainSeq">
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:stCondLst>
+          <p:cond delay="indefinite" />
+        </p:stCondLst>
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="5" presetID="42" presetClass="path" presetSubtype="0" accel="50000" decel="50000" fill="hold" grpId="0" nodeType="clickEffect">
+                    <!-- 忽略代码 -->
+                  </p:cTn>
+                </p:par>
+                <p:par>
+                  <p:cTn id="7" presetID="25" presetClass="emph" presetSubtype="0" fill="hold" grpId="2" nodeType="withEffect">
+                    <!-- 忽略代码 -->
+                  </p:cTn>
+                </p:par>
+                <p:par>
+                  <p:cTn id="12" presetID="8" presetClass="emph" presetSubtype="0" fill="hold" grpId="1" nodeType="withEffect">
+                    <!-- 忽略代码 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+```
+
+从以上代码可以看到，设置动画在从上一项开始的，和从上一项开始之后的动画的存储框架是不相同的，下面对比一下两个设置方式的代码
+
+```xml
+<!-- 单次点击，连续出现三个动画 -->
+<p:cTn id="2" dur="indefinite" nodeType="mainSeq">
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:childTnLst>
+          <!-- 进入动画-->
+          <!-- 强调动画-->
+          <!-- 退出动画-->
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+
+<!-- 单次点击，同时出现三个动画 -->
+<p:cTn id="2" dur="indefinite" nodeType="mainSeq">
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:childTnLst>
+                <!-- 向下动画 -->
+                <!-- 不饱和动画 -->
+                <!-- 旋转动画 -->
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+```
+
+可以看到，如果设置的动画是同时出现的，将会被放入到 MainSequence 的里面两层，而如果是设置顺序出现的动画，将会被放入 MainSequence 的里面一层
+
+以上测试课件放在 [github](https://github.com/lindexi/lindexi_gd/tree/5e241a0eaf6c560698bcef33e8884d72a4f2d724/PptxDemo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/5e241a0eaf6c560698bcef33e8884d72a4f2d724/PptxDemo) 可以通过以下命令获取
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 5e241a0eaf6c560698bcef33e8884d72a4f2d724
+```
+
+## 主序列动画框架
+
+主序列动画的顺序上，可以分为以下不同的方式
+
+- 动画之间是相互不影响，每个动画通过点击触发的方式，如 三次点击触发三次动画
+
+- 动画之间相互影响，动画连续触发，在一个动画执行完成之后，再继续下一个动画，如 单次点击连续触发三个动画
+
+- 动画之间相互影响，动画同时触发，在点击之后所有动画同时进行，如 单次点击同时触发三个动画
+
+更复杂的部分是以上三个组合的复杂情况，咱先忽略复杂的组合情况，先聊以上的方式
+
+下面是三个方式的框架对比
+
+```xml
+<!-- 三次点击触发三次动画 -->
+<p:cTn id="2" dur="indefinite" nodeType="mainSeq">
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:stCondLst>
+          <p:cond delay="indefinite" />
+        </p:stCondLst>
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="5" presetID="1" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">
+                    <!-- 进入动画 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+    <p:par>
+      <p:cTn id="7" fill="hold">
+        <p:stCondLst>
+          <p:cond delay="indefinite" />
+        </p:stCondLst>
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="8" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="9" presetID="25" presetClass="emph" presetSubtype="0" fill="hold" grpId="2" nodeType="clickEffect">
+                    <!-- 强调动画 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+    <p:par>
+      <p:cTn id="14" fill="hold">
+        <p:stCondLst>
+          <p:cond delay="indefinite" />
+        </p:stCondLst>
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="15" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="16" presetID="10" presetClass="exit" presetSubtype="0" fill="hold" grpId="1" nodeType="clickEffect">
+                    <!-- 退出动画 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+
+<!-- 单次点击连续触发三个动画 -->
+<p:cTn id="2" dur="indefinite" nodeType="mainSeq">
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:stCondLst>
+          <p:cond delay="indefinite" />
+        </p:stCondLst>
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="5" presetID="1" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">
+                    <!-- 进入动画 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+          <p:par>
+            <p:cTn id="7" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="8" presetID="25" presetClass="emph" presetSubtype="0" fill="hold" grpId="2" nodeType="afterEffect">
+                    <!-- 强调动画 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+          <p:par>
+            <p:cTn id="13" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="500" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="14" presetID="10" presetClass="exit" presetSubtype="0" fill="hold" grpId="1" nodeType="afterEffect">
+                    <!-- 退出动画 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+
+<!-- 单次点击同时触发三个动画 -->
+<p:cTn id="2" dur="indefinite" nodeType="mainSeq">
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:stCondLst>
+          <p:cond delay="indefinite" />
+        </p:stCondLst>
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:stCondLst>
+                <p:cond delay="0" />
+              </p:stCondLst>
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="5" presetID="42" presetClass="path" presetSubtype="0" accel="50000" decel="50000" fill="hold" grpId="0" nodeType="clickEffect">
+                    <!-- 向下动画 -->
+                  </p:cTn>
+                </p:par>
+                <p:par>
+                  <p:cTn id="7" presetID="25" presetClass="emph" presetSubtype="0" fill="hold" grpId="2" nodeType="withEffect">
+                    <!-- 不饱和动画 -->
+                  </p:cTn>
+                </p:par>
+                <p:par>
+                  <p:cTn id="12" presetID="8" presetClass="emph" presetSubtype="0" fill="hold" grpId="1" nodeType="withEffect">
+                    <!-- 旋转动画 -->
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+```
+
+可以看到不同的动画触发方式将会影响动画的存储框架
 
 本文的属性是依靠 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html ) 工具协助测试的，这个工具是开源免费的工具，欢迎使用
 
