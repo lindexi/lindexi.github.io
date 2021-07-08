@@ -308,12 +308,20 @@ at2 x y = arctan(y / x) = Atan2(y, x)
             return x * Math.Sin(angle);
         }
 
+        /// <summary>
+        ///  OpenXml ATan2函数：at2 x y = arctan(y / x) 
+        /// </summary>
+        /// <param name="x">笛卡尔平面的x坐标</param>
+        /// <param name="y">笛卡尔平面的y坐标</param>
+        /// <returns>Emu单位的角度值</returns>
+        /// 计算符号定义在 ECMA 376 的 20.1.9.11 章文档
         public static double ATan2(double x, double y)
         {
-            var radians = Math.Atan2(y, x);
-            var angle = GetAngle(radians);
+            var radians = System.Math.Atan2(y, x);
+            var angle = radians * 180 / System.Math.PI;
             return angle * 60000;
-        }   
+        }
+ 
 
         /// <summary>
         /// OpenXml 三角函数的Cos函数：cos x y = (x * cos( y )) = (x * Math.Cos(y))
