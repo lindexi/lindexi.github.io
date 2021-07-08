@@ -1197,6 +1197,10 @@ public static int Count { set; get; }
 
 填坑
 
+## 远程调试
+
+参阅 [使用VS远程调试其他电脑上安装的软件 - 杜文龙 - 博客园](https://www.cnblogs.com/duwenlong/p/14979056.html )
+
 ## 经验
 
 经验里面将会包括很多套路，以下是一些案例

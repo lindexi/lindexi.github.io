@@ -8,8 +8,6 @@
 
 <!-- CreateTime:7/4/2020 10:05:36 AM -->
 
-
-
 ## 入门
 
 [C# dotnet 使用 OpenXml 解析 PPT 文件](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E4%BB%B6.html)
@@ -98,6 +96,8 @@
 
 [dotnet OpenXML 如何获取 schemeClr 颜色](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-schemeClr-%E9%A2%9C%E8%89%B2.html )
 
+[dotnet OpenXML 预设 PresetColorValues 颜色对应的值](https://blog.lindexi.com/post/dotnet-OpenXML-%E9%A2%84%E8%AE%BE-PresetColorValues-%E9%A2%9C%E8%89%B2%E5%AF%B9%E5%BA%94%E7%9A%84%E5%80%BC.html )
+
 ## 通用知识
 
 [Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
@@ -115,6 +115,8 @@
 [dotnet OpenXML 修复 Office 文档里面的百分比内容包含百分号](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BF%AE%E5%A4%8D-Office-%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E7%99%BE%E5%88%86%E5%8F%B7.html )
 
 ## PPT 动画
+
+[dotnet OpenXML PPT 动画框架入门](https://blog.lindexi.com/post/dotnet-OpenXML-PPT-%E5%8A%A8%E7%94%BB%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8.html )
 
 [dotnet OpenXML 读取 PPT 主序列进入退出强调动画](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96-PPT-%E4%B8%BB%E5%BA%8F%E5%88%97%E8%BF%9B%E5%85%A5%E9%80%80%E5%87%BA%E5%BC%BA%E8%B0%83%E5%8A%A8%E7%94%BB.html )
 
