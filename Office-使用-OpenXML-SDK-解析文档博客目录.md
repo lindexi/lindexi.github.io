@@ -82,6 +82,8 @@
 
 [【OpenXml】Pptx的形状转为WPF的Geometry - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/14864302.html )
 
+[Pptx的多路径形状转为WPF的Path - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/14987788.html )
+
 ## 图片
 
 [dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](https://lindexi.gitee.io/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-Color-Change-Effect-%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )

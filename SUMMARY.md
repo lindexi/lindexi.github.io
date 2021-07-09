@@ -1010,6 +1010,8 @@
 
  * [Moq基础 判断方法被执行](Moq基础-判断方法被执行.md)
 
+ * [msbuild 使用 ProduceOnlyReferenceAssembly 创建作为引用的仅公开成员程序集](msbuild-使用-ProduceOnlyReferenceAssembly-创建作为引用的仅公开成员程序集.md)
+
  * [msbuild 修改 VisualStudio 文件复制到输出目录的路径](msbuild-修改-VisualStudio-文件复制到输出目录的路径.md)
 
  * [MSBuild 常用参数](MSBuild-常用参数.md)
