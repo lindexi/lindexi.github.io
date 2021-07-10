@@ -642,6 +642,8 @@
 
  * [dotnet 使用 Qpush 快速从电脑到手机推送文字](dotnet-使用-Qpush-快速从电脑到手机推送文字.md)
 
+ * [dotnet 使用 Refasmer 从现有的 DLL 里面导出公开的成员组装出新的仅作为引用用途的程序集](dotnet-使用-Refasmer-从现有的-DLL-里面导出公开的成员组装出新的仅作为引用用途的程序集.md)
+
  * [dotnet 使用 SemaphoreSlim 可能的内存泄露](dotnet-使用-SemaphoreSlim-可能的内存泄露.md)
 
  * [dotnet 使用 ShowMeTheXAML 显示 WPF 的 XAML 控件内容](dotnet-使用-ShowMeTheXAML-显示-WPF-的-XAML-控件内容.md)
