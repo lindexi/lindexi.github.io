@@ -48,5 +48,6 @@ msbuild /p:ProduceOnlyReferenceAssembly=true
 
 更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
 
+如果不想从源代码生成，期望从 DLL 里面重新导出，请参阅 [dotnet 使用 Refasmer 从现有的 DLL 里面导出公开的成员组装出新的仅作为引用用途的程序集](https://lindexi.gitee.io/post/dotnet-%E4%BD%BF%E7%94%A8-Refasmer-%E4%BB%8E%E7%8E%B0%E6%9C%89%E7%9A%84-DLL-%E9%87%8C%E9%9D%A2%E5%AF%BC%E5%87%BA%E5%85%AC%E5%BC%80%E7%9A%84%E6%88%90%E5%91%98%E7%BB%84%E8%A3%85%E5%87%BA%E6%96%B0%E7%9A%84%E4%BB%85%E4%BD%9C%E4%B8%BA%E5%BC%95%E7%94%A8%E7%94%A8%E9%80%94%E7%9A%84%E7%A8%8B%E5%BA%8F%E9%9B%86.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

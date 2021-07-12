@@ -3,6 +3,8 @@
 本文告诉大家 Resharper 家（JetBrains）开源的 Refasmer 工具，这个工具的功能就是从现有的 DLL 或 EXE 程序集里面，将所有的公开成员导出，重新打出新的 DLL 或 EXE 程序集。此时打出的新的程序集里面的方法都不包含实现，而是只有定义，这样的程序集被成为仅作为引用用途的程序集，也就是 Reference assemblies 的意思，这也就是 Refasmer 命名来源
 
 <!--more-->
+<!-- CreateTime:2021/7/9 8:38:25 -->
+
 <!-- 发布 -->
 
 这个 Refasmer 工具是是一个 dotnet tool 工具，安装非常方便，使用如下代码进行安装
