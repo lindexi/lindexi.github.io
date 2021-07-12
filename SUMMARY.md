@@ -882,6 +882,8 @@
 
  * [dotnet 通过 Elmish.WPF 使用 F# 编写 WPF 应用](dotnet-通过-Elmish.WPF-使用-F-编写-WPF-应用.md)
 
+ * [dotnet 通过 GitHub 的 Action 辅助下载国外资源文件的离线下载方法](dotnet-通过-GitHub-的-Action-辅助下载国外资源文件的离线下载方法.md)
+
  * [dotnet 通过 HttpClient 下载文件同时报告进度的方法](dotnet-通过-HttpClient-下载文件同时报告进度的方法.md)
 
  * [dotnet 通过 WMI 拿到显卡信息](dotnet-通过-WMI-拿到显卡信息.md)
