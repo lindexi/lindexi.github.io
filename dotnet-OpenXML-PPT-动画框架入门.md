@@ -37,7 +37,7 @@
         </p:cTn>
       </p:par>
     </p:tnLst>
-</p:timing>
+  </p:timing>
 ```
 
 动画是存放在 Slide 页面里面的 Timing 属性里面，通过 OpenXML SDK 获取方法如下

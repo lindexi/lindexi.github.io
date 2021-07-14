@@ -139,6 +139,8 @@ FastTunnel是一款高性能跨平台内网穿透工具，使用它可以实现�
 
 除了用来开放远程桌面外，还可以使用 FastTunnel 将内网的服务开放出去
 
+更多请看 [FastTunnel-开源内网穿透框架 - gui.h - 博客园](https://www.cnblogs.com/springhgui/p/15005329.html )
+
 
 
 
