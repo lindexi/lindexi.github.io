@@ -1132,6 +1132,8 @@
 
  * [Roslyn 引用某个文件夹所有文件作为链接](Roslyn-引用某个文件夹所有文件作为链接.md)
 
+ * [Roslyn 打包 NuGet 包 BuildTransitive 文件夹用于穿透依赖传递拷贝文件](Roslyn-打包-NuGet-包-BuildTransitive-文件夹用于穿透依赖传递拷贝文件.md)
+
  * [Roslyn 打包 NuGet 包添加改动日志](Roslyn-打包-NuGet-包添加改动日志.md)
 
  * [Roslyn 打包自定义的文件到 NuGet 包](Roslyn-打包自定义的文件到-NuGet-包.md)
@@ -1155,6 +1157,8 @@
  * [Roslyn 让 VisualStudio 急速调试底层库方法](Roslyn-让-VisualStudio-急速调试底层库方法.md)
 
  * [Roslyn 读取 PackageReference 的版本号和内容](Roslyn-读取-PackageReference-的版本号和内容.md)
+
+ * [Roslyn 通过 EmbedAllSources 将源代码嵌入到 PDB 符号文件中方便开发者调试](Roslyn-通过-EmbedAllSources-将源代码嵌入到-PDB-符号文件中方便开发者调试.md)
 
  * [Roslyn 通过 NuGet 库修改应用程序入口函数](Roslyn-通过-NuGet-库修改应用程序入口函数.md)
 
