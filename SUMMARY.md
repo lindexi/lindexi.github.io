@@ -452,6 +452,8 @@
 
  * [dotnet core 发布只有一个 exe 的方法](dotnet-core-发布只有一个-exe-的方法.md)
 
+ * [dotnet core 和 .NET 5 不支持 Prefer32Bit 首选 32 位的功能](dotnet-core-和-.NET-5-不支持-Prefer32Bit-首选-32-位的功能.md)
+
  * [dotnet core 和 dotnet Framework 启动可执行文件的差别](dotnet-core-和-dotnet-Framework-启动可执行文件的差别.md)
 
  * [dotnet core 在 MAC 系统下删除应用程序自己后调 Process Start 方法将会抛出 Win32 异常](dotnet-core-在-MAC-系统下删除应用程序自己后调-Process-Start-方法将会抛出-Win32-异常.md)
