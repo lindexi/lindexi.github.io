@@ -630,6 +630,8 @@
 
  * [dotnet 使用 FileAccess 与 OpenOrCreate 对文件访问权限的影响](dotnet-使用-FileAccess-与-OpenOrCreate-对文件访问权限的影响.md)
 
+ * [dotnet 使用 FormatterServices 的 GetUninitializedObject 方法在丢失 DLL 情况下能否执行](dotnet-使用-FormatterServices-的-GetUninitializedObject-方法在丢失-DLL-情况下能否执行.md)
+
  * [dotnet 使用 GC.GetAllocatedBytesForCurrentThread 获取当前线程分配过的内存大小](dotnet-使用-GC.GetAllocatedBytesForCurrentThread-获取当前线程分配过的内存大小.md)
 
  * [dotnet 使用 GZipStream 压缩字符串](dotnet-使用-GZipStream-压缩字符串.md)
