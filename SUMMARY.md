@@ -536,6 +536,8 @@
 
  * [dotnet OpenXML 幻灯片 PPTX 的 Slide Id 和页面序号的关系](dotnet-OpenXML-幻灯片-PPTX-的-Slide-Id-和页面序号的关系.md)
 
+ * [dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为](dotnet-OpenXML-形状的-Outline-的-LineWidth-线条轮廓粗细宽度的行为.md)
+
  * [dotnet OpenXML 文本 BodyProperties 的属性作用](dotnet-OpenXML-文本-BodyProperties-的属性作用.md)
 
  * [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](dotnet-OpenXML-文本-EndParagraphRunProperties-的作用.md)
@@ -555,6 +557,8 @@
  * [dotnet OpenXML 的 spcPct 和 spcPts 表示距离的不同](dotnet-OpenXML-的-spcPct-和-spcPts-表示距离的不同.md)
 
  * [dotnet OpenXML 简单聊聊 PPT 文本解析](dotnet-OpenXML-简单聊聊-PPT-文本解析.md)
+
+ * [dotnet OpenXML 继承组合颜色的 GrpFill 属性](dotnet-OpenXML-继承组合颜色的-GrpFill-属性.md)
 
  * [dotnet OpenXML 解压缩文档为文件夹工具](dotnet-OpenXML-解压缩文档为文件夹工具.md)
 
