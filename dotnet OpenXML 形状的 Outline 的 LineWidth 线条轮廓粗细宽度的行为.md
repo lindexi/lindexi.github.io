@@ -3,6 +3,8 @@
 本文来和大家聊聊 OpenXML 里面的给 PPT 用的形状里面的线条宽度的定义，以及在 PowerPoint 上的行为
 
 <!--more-->
+<!-- CreateTime:2021/7/24 14:45:38 -->
+
 <!-- 发布 -->
 
 本文属于 OpenXML 系列博客，前后文请参阅 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )

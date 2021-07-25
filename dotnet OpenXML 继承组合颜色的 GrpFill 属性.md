@@ -3,6 +3,8 @@
 在 OpenXML 的颜色画刷填充，有特殊的填充是 GrpFill 属性，对应 OpenXML SDK 定义的 DocumentFormat.OpenXml.Drawing.GroupFill 类型
 
 <!--more-->
+<!-- CreateTime:2021/7/24 16:43:57 -->
+
 <!-- 发布 -->
 
 本文属于 OpenXML 系列博客，前后文请参阅 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
@@ -195,6 +197,95 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 ```
 git pull origin f15fb418610fc95ac807289a4ea19343489daa2d
+```
+
+那如果元素没有放入到组合呢？也就是某个形状设置填充色采用继承组合的画刷，但是此形状没有在组合内。在 PowerPoint 的行为是此元素将丢失填充色，相当于没有填充
+
+如以下的文档内容，有一个形状使用了 grpFill 但是没有放在组合里面
+
+```xml
+  <p:cSld>
+    <p:spTree>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="Rectangle 1" />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:prstGeom prst="rect"/>
+          <a:grpFill />
+        </p:spPr>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+```
+
+从 PPT 里打开可以看到此形状是不可见的
+
+<!-- ![](image/dotnet OpenXML 继承组合颜色的 GrpFill 属性/dotnet OpenXML 继承组合颜色的 GrpFill 属性2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20217251038379856.jpg)
+
+咱使用代码读取的方法如下
+
+```csharp
+static void ReadFill(Shape shape)
+{
+    // 更多读取画刷颜色请看 [dotnet OpenXML 获取颜色方法](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
+
+    var shapeProperties = shape.ShapeProperties;
+    if (shapeProperties == null)
+    {
+        return;
+    }
+
+    var groupFill = shapeProperties.GetFirstChild<GroupFill>();
+    if (groupFill != null)
+    {
+        // 如果是组合的颜色画刷，那需要去获取组合的
+        var groupShape = shape.Parent as GroupShape;
+        var solidFill = groupShape?.GroupShapeProperties?.GetFirstChild<SolidFill>();
+
+        if (solidFill is null)
+        {
+            // 继续获取组合的组合
+            while (groupShape != null)
+            {
+                groupShape = groupShape.Parent as GroupShape;
+                solidFill = groupShape?.GroupShapeProperties?.GetFirstChild<SolidFill>();
+
+                if (solidFill != null)
+                {
+                    break;
+                }
+            }
+        }
+
+        if (solidFill is null)
+        {
+            Console.WriteLine($"没有颜色");
+        }
+        else
+        {
+            Debug.Assert(solidFill.RgbColorModelHex?.Val != null, "solidFill.RgbColorModelHex.Val != null");
+            Console.WriteLine(solidFill.RgbColorModelHex.Val.Value);
+        }
+    }
+    else
+    {
+        var solidFill = shapeProperties.GetFirstChild<SolidFill>();
+
+        Debug.Assert(solidFill?.RgbColorModelHex?.Val != null, "solidFill.RgbColorModelHex.Val != null");
+        Console.WriteLine(solidFill.RgbColorModelHex.Val.Value);
+    }
+}
+```
+
+以上代码和测试文件放在 [github](https://github.com/lindexi/lindexi_gd/tree/20627e0deed86ea300a1c70a0066e7b15d98a9b9/PptxDemo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/20627e0deed86ea300a1c70a0066e7b15d98a9b9/PptxDemo) 欢迎访问
+
+可以继续在当前代码仓库里面输入以下命令获取
+
+```
+git pull origin 20627e0deed86ea300a1c70a0066e7b15d98a9b9
 ```
 
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
