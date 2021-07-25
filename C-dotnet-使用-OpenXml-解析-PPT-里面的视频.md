@@ -77,7 +77,28 @@
                 File.WriteAllBytes(file, ReadAllBytes(stream));
 ```
 
-代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/8551ad78455f7e56e2f1cafa66d6ae62d7a94995/GairhajelkewaiHeyerjeaginu) 欢迎小伙伴访问
+代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/8551ad78455f7e56e2f1cafa66d6ae62d7a94995/GairhajelkewaiHeyerjeaginu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/8551ad78455f7e56e2f1cafa66d6ae62d7a94995/GairhajelkewaiHeyerjeaginu) 欢迎访问
+
+可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 8551ad78455f7e56e2f1cafa66d6ae62d7a94995
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+```
+
+获取代码之后，进入 GairhajelkewaiHeyerjeaginu 文件夹
+
+参阅 [C# Net 使用 openxml 提取ppt中的音频、视频、图片、文本 - 爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/p/13497923.html )
+
+更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
 
 

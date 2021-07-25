@@ -158,6 +158,42 @@ dotnet add package dotnetCampus.OpenXMLUnitConverter.Source
 </PackageReference>
 ```
 
+### 使用方法
+
+可以将某个类型，在知道对应的单位的时候，创建对应的单位的对象，然后采用 ToXxx 的方式转换单位
+
+例如 [dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%BD%A2%E7%8A%B6%E7%9A%84-Outline-%E7%9A%84-LineWidth-%E7%BA%BF%E6%9D%A1%E8%BD%AE%E5%BB%93%E7%B2%97%E7%BB%86%E5%AE%BD%E5%BA%A6%E7%9A%84%E8%A1%8C%E4%B8%BA.html ) 这一篇用到的转换线条宽度的代码
+
+```csharp
+        private static void ReadShape(Shape shape)
+        {
+            // 读取线条宽度的方法
+            var outline = shape.ShapeProperties?.GetFirstChild<Outline>();
+            if (outline != null)
+            {
+                var lineWidth = outline.Width;
+                var emu = new Emu(lineWidth);
+                var pixel = emu.ToPixel();
+
+                Console.WriteLine($"线条宽度 {pixel.Value}");
+            }
+            else
+            {
+                // 这形状没有定义轮廓
+            }
+        }
+```
+
+获取出来对应的属性，如 Outline 的 Width 属性，通过查阅文档了解到这是 EMU 单位的。期望转换为 Pixel 像素，可以使用如下面的代码转换
+
+```csharp
+   var lineWidth = outline.Width;
+   var emu = new Emu(lineWidth);
+   var pixel = emu.ToPixel();
+```
+
+用此方法的优势在于方便解决代码逻辑中的各个单位换算问题，比采用 double 或 int 等这些不带单位的类型会更好。详细请看 [程序猿修养 给属性一个单位](https://blog.lindexi.com/post/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E4%BF%AE%E5%85%BB-%E7%BB%99%E5%B1%9E%E6%80%A7%E4%B8%80%E4%B8%AA%E5%8D%95%E4%BD%8D.html )
+
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
 

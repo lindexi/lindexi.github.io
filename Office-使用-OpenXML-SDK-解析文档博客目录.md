@@ -84,11 +84,15 @@
 
 [Pptx的多路径形状转为WPF的Path - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/14987788.html )
 
+[dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%BD%A2%E7%8A%B6%E7%9A%84-Outline-%E7%9A%84-LineWidth-%E7%BA%BF%E6%9D%A1%E8%BD%AE%E5%BB%93%E7%B2%97%E7%BB%86%E5%AE%BD%E5%BA%A6%E7%9A%84%E8%A1%8C%E4%B8%BA.html )
+
 ## 图片
 
 [dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](https://lindexi.gitee.io/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-Color-Change-Effect-%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )
 
 [dotnet OpenXML 图片特效的 BiLevel 黑白特效修改图片颜色](https://lindexi.gitee.io/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-BiLevel-%E9%BB%91%E7%99%BD%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )
+
+[C# Net 使用 openxml 提取ppt中的音频、视频、图片、文本 - 爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/p/13497923.html )
 
 ## 颜色
 
@@ -99,6 +103,8 @@
 [dotnet OpenXML 如何获取 schemeClr 颜色](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-schemeClr-%E9%A2%9C%E8%89%B2.html )
 
 [dotnet OpenXML 预设 PresetColorValues 颜色对应的值](https://blog.lindexi.com/post/dotnet-OpenXML-%E9%A2%84%E8%AE%BE-PresetColorValues-%E9%A2%9C%E8%89%B2%E5%AF%B9%E5%BA%94%E7%9A%84%E5%80%BC.html )
+
+[dotnet OpenXML 继承组合颜色的 GrpFill 属性](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%BB%A7%E6%89%BF%E7%BB%84%E5%90%88%E9%A2%9C%E8%89%B2%E7%9A%84-GrpFill-%E5%B1%9E%E6%80%A7.html )
 
 ## 通用知识
 
@@ -151,6 +157,8 @@
 
 欢迎小伙伴加入 OpenXML Office 群 688921958
 
+<!-- var d=["0","1","2","3","4","5","6","7","8","9"]; var qqGroup=d[6]+d[8]+d[8]+d[9]+d[2]+d[1]+d[9]+d[5]+d[8];  -->
+
 ## 资源
 
 我将一些资源放在 CSDN 方便大家下载，如果想要下载而没有积分，可以找我私聊要资源
@@ -165,6 +173,7 @@
 - [Eric White's Blog](https://docs.microsoft.com/en-us/archive/blogs/ericwhite/ )
 - [OpenXML学习笔记（一）从Office 2007 到 Office 2010](https://www.cnblogs.com/brooks-dotnet/archive/2010/02/08/1665600.html)
 - [服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
+- [爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/ )
 
 ## 第三方工具
 
