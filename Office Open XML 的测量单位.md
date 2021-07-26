@@ -1,19 +1,21 @@
 # Office Open XML 的测量单位
 
-本文记录 Office Open XML (OOXML) 的测量单位
+在 OpenXML 中，有着大量的不同的单位，本文记录 Office Open XML (OOXML) 的测量单位，以及提供一个专门用来处理这些单位换算的开源库给大家
 
 <!--more-->
 <!-- CreateTime:2020/2/19 16:19:12 -->
 
+咱先来介绍一下在 OpenXML 中的各个单位，在本文最后提供给大家一个我团队开源的 [dotnetCampus.OpenXMLUnitConverter](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper) 库用来处理单位换算
 
+## DXA
 
-在 Office Open XML 默认单位是 dxa 也就是像素点的 20 倍，如 ISO 216 A4 (210x297mm ~ 8.3×11.7in) 的大小可以使用下面代码表示
-
-在页面大小 Page width Page height 和边距 margin 和缩进 tabs 使用
+在 Office Open XML 默认单位是 dxa 单位，也就是像素点的 20 倍，如 ISO 216 A4 (210x297mm ~ 8.3×11.7in) 的大小可以使用下面代码表示
 
 ```
 <w:pgSz w:w="11906" w:h="16838"/>
 ```
+
+在页面大小 Page width 和 Page height 和边距 margin 和缩进 tabs 使用的单位都是 DXA 单位
 
 单位计算可以使用下面公式
 
@@ -106,6 +108,8 @@ n/100 * 5000
 45° = 2700000 Degree
 ```
 
+更多请看 [dotnet OpenXML 测量单位的角度和弧度值](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D%E7%9A%84%E8%A7%92%E5%BA%A6%E5%92%8C%E5%BC%A7%E5%BA%A6%E5%80%BC.html )
+
 ## 千倍百分比
 
 在 OpenXML 的百分比有千倍百分比的方式，使用每1000个单位代表百分之一的值，也就是对应比例是 1 比 100000 的值
@@ -116,7 +120,7 @@ n/100 * 5000
 
 ## 开源库
 
-我开源了 [dotnetCampus.OpenXMLUnitConverter](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper) 包含了本文的转换方法
+我所在的团队开源了 [dotnetCampus.OpenXMLUnitConverter](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper) 包含了本文的转换方法
 
 <!-- ![](image/Office Open XML 的测量单位/Office Open XML 的测量单位0.png) -->
 
