@@ -218,3 +218,15 @@ git pull origin 173fbaf7c68023cf5064888bceeb197bd463538f
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
+<!-- 
+
+PPT: The Outline default Line Width value is one pixel not the zero
+
+I find the behavior in PowerPoint is different from the ECMA-376 document.
+
+We can find the ECMA-376 document chapter 20.1.2.2.24 say that the Line Width is omitted, then a value of 0 is assumed.
+
+But when we create a document with the Line Width is omitted, and the PowerPoint will show the shape Line Width as one pixel.
+
+ -->
