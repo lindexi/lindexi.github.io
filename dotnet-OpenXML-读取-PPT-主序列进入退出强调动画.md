@@ -210,7 +210,7 @@ cTn (mainSeq) -> childTnLst -> par -> cTn (id="3") -> childTnLst -> par -> cTn (
                                 // 强调动画
                                 break;
                             case TimeNodePresetClassValues.Path:
-                                // 路由动画
+                                // 路径动画
                                 break;
                             case TimeNodePresetClassValues.Verb:
                                 break;

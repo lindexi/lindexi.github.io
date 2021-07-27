@@ -62,7 +62,7 @@
                         // 强调动画
                         break;
                     case TimeNodePresetClassValues.Path:
-                        // 路由动画
+                        // 路径动画
                         break;
                     case TimeNodePresetClassValues.Verb:
                         break;

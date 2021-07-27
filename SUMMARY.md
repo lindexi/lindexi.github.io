@@ -1036,6 +1036,8 @@
 
  * [msbuild 项目文件常用判断条件](msbuild-项目文件常用判断条件.md)
 
+ * [MSIL 静态类在 IL 定义上和非静态类的差别](MSIL-静态类在-IL-定义上和非静态类的差别.md)
+
  * [nano Framework](nano-Framework.md)
 
  * [NetBIOS 计算机名称命名限制](NetBIOS-计算机名称命名限制.md)
@@ -1877,6 +1879,8 @@
  * [win7 升级到 win10 补丁](win7-升级到-win10-补丁.md)
 
  * [win7 无法启动 WPF 程序 D3Dcompiler_47.dll 丢失](win7-无法启动-WPF-程序-D3Dcompiler_47.dll-丢失.md)
+
+ * [WinDbg 加载 dotnet core 的 sos.dll 辅助调试方法](WinDbg-加载-dotnet-core-的-sos.dll-辅助调试方法.md)
 
  * [Windows 10 16251 添加的 api](Windows-10-16251-添加的-api.md)
 
