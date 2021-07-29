@@ -2002,6 +2002,8 @@
 
  * [WPF 使用 ManipulationProcessor2D 纯数学计算方式提供多点漫游元素功能](WPF-使用-ManipulationProcessor2D-纯数学计算方式提供多点漫游元素功能.md)
 
+ * [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 做高性能笔迹应用](WPF-使用-Microsoft.Toolkit.Wpf.UI.Controls-的-InkCanvas-做高性能笔迹应用.md)
+
  * [WPF 使用 MyScript 的 IInk 做手写识别](WPF-使用-MyScript-的-IInk-做手写识别.md)
 
  * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
@@ -2191,6 +2193,8 @@
  * [WPF 开机启动因为触摸初始化锁住界面显示](WPF-开机启动因为触摸初始化锁住界面显示.md)
 
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
+
+ * [WPF 引用 UWP 控件 不打包为 MSIX 分发的方法](WPF-引用-UWP-控件-不打包为-MSIX-分发的方法.md)
 
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
 
