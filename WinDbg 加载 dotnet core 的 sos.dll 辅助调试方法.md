@@ -3,6 +3,8 @@
 本文告诉大家如何加载 .NET Core 或 .NET 5 的 sos.dll 文件到 WinDbg 的方法
 
 <!--more-->
+<!-- CreateTime:2021/7/26 20:59:25 -->
+
 <!-- 发布 -->
 
 和 .NET Framework 或 dotnet core 2.0 不相同的是，当前的 sos.dll 是放在独立的 [https://github.com/dotnet/diagnostics](https://github.com/dotnet/diagnostics) 仓库里面，也需要独立安装。好在 sos 通过 dotnet tool 进行分发，安装方法非常简单
