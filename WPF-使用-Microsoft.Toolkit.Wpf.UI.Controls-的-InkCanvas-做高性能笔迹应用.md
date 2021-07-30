@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/7/28 16:16:03 -->
+
 <!-- 发布 -->
 
 先新建一个 .NET Core 3.1 的 WPF 应用，当前的方法不支持 .NET Framework 版本。但是请安心，因为带 UWP 控件的应用只能在 Win10 下跑，而 Win10 是不存在 .NET Core 的环境问题的，因此采用 .NET Core 框架将会非常稳
