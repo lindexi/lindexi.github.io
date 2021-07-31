@@ -91,6 +91,8 @@
 
 [C# Net 使用 openxml 提取ppt中的音频、视频、图片、文本 - 爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/p/13497923.html )
 
+[【转】[PPTX解析] 图片 重新着色存储详解](https://blog.lindexi.com/post/%E8%BD%AC-PPTX%E8%A7%A3%E6%9E%90-%E5%9B%BE%E7%89%87-%E9%87%8D%E6%96%B0%E7%9D%80%E8%89%B2%E5%AD%98%E5%82%A8%E8%AF%A6%E8%A7%A3.html )
+
 ## 颜色
 
 [dotnet OpenXml SDK 形状填充渐变色的主题色](https://blog.lindexi.com/post/dotnet-OpenXml-SDK-%E5%BD%A2%E7%8A%B6%E5%A1%AB%E5%85%85%E6%B8%90%E5%8F%98%E8%89%B2%E7%9A%84%E4%B8%BB%E9%A2%98%E8%89%B2.html)
