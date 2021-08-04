@@ -165,7 +165,7 @@ var decoder = BitmapDecoder.Create(fs, BitmapCreateOptions.PreservePixelFormat, 
 
 因此在 WPF 中，调用 BitmapDecoder.Create 方法，传入的带 FileOptions.Asynchronous 的 FileStream 抛出错误，不是 WPF 层的锅，而是 WIC 层不支持。在 GitHub 上报告的作者 [Nikita Kazmin](https://github.com/vonzshik ) 给了一个我同意的建议是 WPF 在 BitmapDecoder.Create 方法里面应该判断一下，如果传入的 FileStream 是异步的，那么在 WPF 层抛出错误，这样方便开发者了解不能这样使用
 
-我也有另一个想法，如果是 FileStream 是异步的，不如完全读取到内存里面，这样开发者也就可以不关注这部分的逻辑
+我也有另一个想法，如果是 FileStream 是异步的，不如完全读取到内存里面，这样开发者也就可以不关注这部分的逻辑。我当前将此逻辑放入到 WPF 仓库中，详细请看 [https://github.com/dotnet/wpf/pull/4966](https://github.com/dotnet/wpf/pull/4966)
 
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/78c73fe25229f0b50992102e59c01cd535e60c31/JemlemlacuLemjakarbabo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/78c73fe25229f0b50992102e59c01cd535e60c31/JemlemlacuLemjakarbabo) 欢迎小伙伴访问
 

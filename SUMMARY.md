@@ -2232,6 +2232,8 @@
 
  * [WPF 新建用户控件提示 Error MC3000 首个 xaml 字符不合法](WPF-新建用户控件提示-Error-MC3000-首个-xaml-字符不合法.md)
 
+ * [WPF 更改 DrawingVisual 的 RenderOpen 用到的对象的内容将持续影响渲染效果](WPF-更改-DrawingVisual-的-RenderOpen-用到的对象的内容将持续影响渲染效果.md)
+
  * [WPF 最小的代码使用 DynamicRenderer 书写](WPF-最小的代码使用-DynamicRenderer-书写.md)
 
  * [WPF 最简方法使用自己定制的 WPF 框架](WPF-最简方法使用自己定制的-WPF-框架.md)
