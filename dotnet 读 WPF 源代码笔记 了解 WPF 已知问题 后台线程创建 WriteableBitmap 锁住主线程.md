@@ -150,6 +150,8 @@
 
 代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0a8ac8dd9a61599dfa8624f73dfd22fd4b1bc539/BitmapSourceTest) 欢迎小伙伴访问
 
+此问题已被我修复，请看 [https://github.com/dotnet/wpf/pull/4425](https://github.com/dotnet/wpf/pull/4425)
+
 <!-- 
 6713
 
