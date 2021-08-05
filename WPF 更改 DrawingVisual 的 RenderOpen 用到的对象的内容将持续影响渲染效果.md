@@ -3,6 +3,8 @@
 在 WPF 里面，可以通过 DrawingVisual 来进行使用底层的绘制方法，此方法需要调用  DrawingVisual 的 RenderOpen 拿到 DrawingContext 类型的对象，接着调用此对象的方法来进行界面绘制。在绘制完成之后，如果依然保存绘制过程的对象，例如 Transform 对象，那当界面再次刷新时，如果更改此对象的属性，将会影响渲染
 
 <!--more-->
+<!-- CreateTime:2021/8/4 8:27:55 -->
+
 
 <!-- 发布 -->
 
