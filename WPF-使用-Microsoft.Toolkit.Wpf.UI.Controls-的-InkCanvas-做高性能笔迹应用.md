@@ -120,6 +120,8 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 获取代码之后，进入 LaykearduchuNachairgurharhear 文件夹
 
+如果不想走 UWP 安装包，也可以放在 WPF 应用程序上，请看 [WPF 引用 UWP 控件 不打包为 MSIX 分发的方法](https://blog.lindexi.com/post/WPF-%E5%BC%95%E7%94%A8-UWP-%E6%8E%A7%E4%BB%B6-%E4%B8%8D%E6%89%93%E5%8C%85%E4%B8%BA-MSIX-%E5%88%86%E5%8F%91%E7%9A%84%E6%96%B9%E6%B3%95.html)
+
 更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html ) 更多笔迹相关请看
 
 - [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )

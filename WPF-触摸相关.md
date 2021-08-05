@@ -94,6 +94,7 @@
 - [WPF 笔迹触摸点收集工具](https://blog.lindexi.com/post/WPF-%E7%AC%94%E8%BF%B9%E8%A7%A6%E6%91%B8%E7%82%B9%E6%94%B6%E9%9B%86%E5%B7%A5%E5%85%B7.html )
 - [WPF 实现自定义的笔迹橡皮擦](https://blog.lindexi.com/post/WPF-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%AC%94%E8%BF%B9%E6%A9%A1%E7%9A%AE%E6%93%A6.html )
 - [两个方法，让 WPF 绘制的笔迹更加平滑 - walterlv](https://blog.walterlv.com/post/wpf-smooth-ink.html )
+- [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 做高性能笔迹应用](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Microsoft.Toolkit.Wpf.UI.Controls-%E7%9A%84-InkCanvas-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E7%AC%94%E8%BF%B9%E5%BA%94%E7%94%A8.html)
 
 ![](http://image.acmx.xyz/lindexi%2F72551177_p0.jpg)
 

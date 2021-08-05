@@ -2344,6 +2344,8 @@
 
  * [WPF 获得触笔悬停元素上](WPF-获得触笔悬停元素上.md)
 
+ * [WPF 被输入法带崩进程](WPF-被输入法带崩进程.md)
+
  * [WPF 解决 ListView 的滚动条不显示](WPF-解决-ListView-的滚动条不显示.md)
 
  * [WPF 解决 PathTooLongException 路径太长](WPF-解决-PathTooLongException-路径太长.md)
