@@ -3,6 +3,8 @@
 在 VisualStudio 附加调试和没有用 VisualStudio 附加调试时，对应用程序是有不同的影响，如 VisualStudio 设计器将会在附加调试 WPF 应用的时候，不断刷新 WPF 应用的渲染。也就是说，如果你觉得界面视觉效果不对或者对，也许可以甩锅到 VisualStudio 上
 
 <!--more-->
+<!-- CreateTime:2021/8/5 18:03:06 -->
+
 
 <!-- 发布 -->
 
