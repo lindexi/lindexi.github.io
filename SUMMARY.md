@@ -664,6 +664,8 @@
 
  * [dotnet 使用 TypeNameFormatter 库格式化输出反射泛型类型](dotnet-使用-TypeNameFormatter-库格式化输出反射泛型类型.md)
 
+ * [dotnet 使用 XWT 构建跨平台客户端 入门篇](dotnet-使用-XWT-构建跨平台客户端-入门篇.md)
+
  * [dotnet 使用完全对象引用相等判断](dotnet-使用完全对象引用相等判断.md)
 
  * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
