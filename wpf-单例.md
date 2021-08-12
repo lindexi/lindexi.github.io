@@ -130,10 +130,11 @@ if (_mutex.WaitOne(TimeSpan.Zero, true))
 
 ```csharp
         private static Mutex _mutex = new Mutex(true, "lindexi" + Environment.UserName);
-
 ```
 
 实际文章就想说如何在多用户系统使用单例。
+
+如果想要在此进程激活现有程序的窗口，请看 [Win32 程序在启动时激活前一个启动程序的窗口 - walterlv](https://blog.walterlv.com/post/show-previous-process-instance-window-when-startup.html )
 
 参见：[Writing a custom Main() method for WPF applications — The Stochastic Game](https://ludovic.chabant.com/devblog/2010/04/20/writing-a-custom-main-method-for-wpf-applications/ )
 
