@@ -3,6 +3,8 @@
 本文告诉大家如何入门开始开发一个基于 mono 组织开源的 XWT 跨平台客户端 UI 框架的应用，本文的 xwt 是在 GitHub 上完全开源的，基于 MIT 协议的，底层采用 GTK# 的 UI 框架
 
 <!--more-->
+<!-- CreateTime:2021/8/9 20:58:50 -->
+
 <!-- 发布 -->
 
 此 xwt 在设计上是通过 mono 进行跨平台运行的，而非采用 dotnet core 方式进行跨平台运行的，因此暂时只能使用 dotnet framework 4.7.2 版本，而不支持 dotnet core 版本。至少在 2021.08.09 依然是不支持在 dotnet core 运行
