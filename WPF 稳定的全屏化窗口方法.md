@@ -3,13 +3,15 @@
 本文来告诉大家在 WPF 中，设置窗口全屏化的一个稳定的设置方法。在设置窗口全屏的时候，经常遇到的问题就是应用程序虽然设置最大化加无边框，但是此方式经常会有任务栏冒出来，或者说窗口没有贴屏幕的边。本文的方法是基于 Win32 的，由 lsj 提供的方法，当前已在 500 多万台设备上稳定运行超过半年时间，只有很少的电脑才偶尔出现任务栏不消失的情况
 
 <!--more-->
+<!-- CreateTime:2021/8/11 8:39:39 -->
+
 <!-- 发布 -->
 
 本文的方法核心方式是通过 Hook 的方式获取当前窗口的 Win32 消息，在消息里面获取显示器信息，根据获取显示器信息来设置窗口的尺寸和左上角的值。可以支持在全屏，多屏的设备上稳定设置全屏。支持在全屏之后，窗口可通过 API 方式（也可以用 Win + Shift + Left/Right）移动，调整大小，但会根据目标矩形寻找显示器重新调整到全屏状态
 
 设置全屏在 Windows 的要求就是覆盖屏幕的每个像素，也就是要求窗口盖住整个屏幕、窗口没有WS_THICKFRAME样式、窗口不能有标题栏且最大化
 
-使用本文提供的 FullScreenHelper 类的 StartFullScreen 方法即可进入全屏。进入全屏的窗口如上文，不能有标题栏，因此先设置窗口样式 `WindowStyle="None"` 如下面代码
+使用本文提供的 FullScreenHelper 类的 StartFullScreen 方法即可进入全屏。进入全屏的窗口必须具备的要求如上文所述，不能有标题栏。如以下的演示例子，设置窗口样式 `WindowStyle="None"` 如下面代码
 
 ```xml
 <Window x:Class="KenafearcuweYemjecahee.MainWindow"
@@ -22,9 +24,9 @@
         Title="MainWindow" Height="450" Width="800"/>
 ```
 
-窗口样式不是强行要求，可以根据自己的业务决定
+窗口样式不是强行要求，可以根据自己的业务决定。但如果有窗口样式，那将根据窗口的样式决定全屏的行为。我推荐默认设置为 `WindowStyle="None"` 用于解决默认的窗口没有贴边的问题
 
-为了样式如何调用全屏方法，在窗口添加一个按钮，在点击按钮时，进入或退出全屏
+为了演示如何调用全屏方法，我在窗口添加一个按钮，在点击按钮时，在后台代码进入或退出全屏
 
 ```xml
     <ToggleButton HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_OnClick">全屏</ToggleButton>
@@ -98,20 +100,20 @@
 
 在进入全屏模式时，需要完成的步骤如下
 
-- 需要将窗口恢复到还原模式，在有标题栏的情况下最大化模式下无法全屏。去掉 `WS_MAXIMIZE` 样式，使窗口变成还原状。不能使用 `ShowWindow(hwnd, ShowWindowCommands.SW_RESTORE)` 方法，避免看到窗口变成还原状态这一过程，也避免影响窗口的Visible状态
+- 需要将窗口恢复到还原模式，在有标题栏的情况下最大化模式下无法全屏。去掉 `WS_MAXIMIZE` 样式，使窗口变成还原状。不能使用 `ShowWindow(hwnd, ShowWindowCommands.SW_RESTORE)` 方法，避免看到窗口变成还原状态这一过程，也避免影响窗口的 `Visible` 状态
 
 - 需要去掉 `WS_THICKFRAME` 样式，在有该样式的情况下不能全屏
 
 - 去掉 `WS_MAXIMIZEBOX` 样式，禁用最大化，如果最大化会退出全屏
 
 ```csharp
-                style &= (~(WindowStyles.WS_THICKFRAME | WindowStyles.WS_MAXIMIZEBOX | WindowStyles.WS_MAXIMIZE));
-                Win32.User32.SetWindowLongPtr(hwnd, GetWindowLongFields.GWL_STYLE, (IntPtr) style);
+   style &= (~(WindowStyles.WS_THICKFRAME | WindowStyles.WS_MAXIMIZEBOX | WindowStyles.WS_MAXIMIZE));
+   Win32.User32.SetWindowLongPtr(hwnd, GetWindowLongFields.GWL_STYLE, (IntPtr) style);
 ```
 
+以上写法是 Win32 函数调用的特有方式，习惯就好。在 Win32 的函数设计中，因为当初每个字节都是十分宝贵的，所以恨不得一个字节当成两个来用，这也就是参数为什么通过枚举的二进制方式，看起来很复杂的逻辑设置的原因
 
-
-全屏的过程，如果有 DWM 动画，将会看到窗口闪烁。因此如果设备上有开启 DWM 那么进行关闭动画
+全屏的过程，如果有 DWM 动画，将会看到窗口闪烁。因此如果设备上有开启 DWM 那么进行关闭动画。对应的，需要在退出全屏的时候，重新打开 DWM 过渡动画
 
 ```csharp
                 //禁用 DWM 过渡动画 忽略返回值，若DWM关闭不做处理
@@ -204,7 +206,6 @@ private static IntPtr KeepFullScreenHook(IntPtr hwnd, int msg, IntPtr wParam, In
             }
         }
 ```
-
 
 在 KeepFullScreenHook 方法就是核心的逻辑，通过收到 Win 消息，判断是 `WM_WINDOWPOSCHANGING` 消息，获取当前屏幕范围，设置给窗口
 
@@ -361,7 +362,6 @@ private static IntPtr KeepFullScreenHook(IntPtr hwnd, int msg, IntPtr wParam, In
                     // 所以，直接 return 就好。
                     return;
                 }
-
 
                 var hwndSource = HwndSource.FromHwnd(hwnd);
 
@@ -699,8 +699,6 @@ private static IntPtr KeepFullScreenHook(IntPtr hwnd, int msg, IntPtr wParam, In
         }
     }
 ```
-
-
 
 本文所有代码在 [github](https://github.com/lindexi/lindexi_gd/tree/5b0440c6617b87cdd9953dc68e706b22c5939ccb/KenafearcuweYemjecahee) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/5b0440c6617b87cdd9953dc68e706b22c5939ccb/KenafearcuweYemjecahee) 上完全开源
 
