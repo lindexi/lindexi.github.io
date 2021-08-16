@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/8/13 19:53:01 -->
+
 <!-- 发布 -->
 
 在 《Application Recovery and Restart Reference》 里可以了解到可以通过 Application Recovery and Restart (ARR) 技术，在应用崩溃的时候，有时机可以保存应用的信息。例如做一个类似 Office 的 PPT 的软件，可以在此软件在崩溃的时候，依然有时机可以保存用户的文档信息。从而实现尽可能不会因为软件崩溃而丢失信息

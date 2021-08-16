@@ -17,7 +17,7 @@ PPTX对图片进行**重新着色**和**设置透明颜色**这两个行为，PP
 
 首先，让我们来看一下PPTX提供了哪些**重新着色**的选项：
 
-![file](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627524289095.png)
+![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627524289095.png)
 
 **可以看到，PPT的着色选项大体分为以下几类：**
 
@@ -364,19 +364,19 @@ namespace ImageProcessService
 ```
 
 下面我们使用色相环去检测不同顺序和颜色对最终效果的影响：
-![image](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627557433281-e1627557916995.png)
+![image](https://imxcg.com/wp-content/uploads/2021/07/image-1627557433281-e1627557916995.png)
 
 |序列|颜色A|颜色B|结果|
 |-|-|-|-|
 |1|白|白|全白|
 |2|黑|黑|全黑|
 |3|红|红|全红|
-|4|白|黑|![file](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627559028516.png)|
-|5|黑|白|![file](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627559411853.png)|
-|6|白|红|![file](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627559235165.png)|
-|7|红|白|![file](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627559361841.png)|
-|8|黑|红|![file](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627559503911.png)|
-|9|红|黑|![file](http://imxcg.com:55555/wp-content/uploads/2021/07/image-1627559540591.png)|
+|4|白|黑|![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627559028516.png)|
+|5|黑|白|![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627559411853.png)|
+|6|白|红|![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627559235165.png)|
+|7|红|白|![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627559361841.png)|
+|8|黑|红|![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627559503911.png)|
+|9|红|黑|![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627559540591.png)|
 
 ## 小知识
 
