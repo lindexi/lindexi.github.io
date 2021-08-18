@@ -2010,6 +2010,8 @@
 
  * [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 做高性能笔迹应用](WPF-使用-Microsoft.Toolkit.Wpf.UI.Controls-的-InkCanvas-做高性能笔迹应用.md)
 
+ * [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 时加上背景色和按钮方法](WPF-使用-Microsoft.Toolkit.Wpf.UI.Controls-的-InkCanvas-时加上背景色和按钮方法.md)
+
  * [WPF 使用 MyScript 的 IInk 做手写识别](WPF-使用-MyScript-的-IInk-做手写识别.md)
 
  * [WPF 使用 Pandoc 把 Markdown 转 Docx](WPF-使用-Pandoc-把-Markdown-转-Docx.md)
