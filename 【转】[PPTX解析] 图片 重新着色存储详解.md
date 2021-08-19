@@ -8,7 +8,9 @@ PPTX对图片进行**重新着色**和**设置透明颜色**这两个行为，PP
 
 <!-- 发布 -->
 
-原作者： 晓嗔戈
+原作者： [晓嗔戈](https://github.com/Firito)
+
+原文： [传送门](https://imxcg.com/technology/dot-net/pptx-analysis/pptx-analysis-set-transparent-color/)
 
 ## 存储解析
 

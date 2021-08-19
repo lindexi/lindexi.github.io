@@ -3,6 +3,8 @@
 本文来告诉大家如何在 WPF 应用 HOST 了 UWP 的 InkCanvas 控件时，给 InkCanvas 控件设置背景色，加上按钮等业务功能的实现方法
 
 <!--more-->
+<!-- CreateTime:2021/8/17 21:19:53 -->
+
 
 <!-- 发布 -->
 
