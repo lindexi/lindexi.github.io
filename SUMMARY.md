@@ -548,6 +548,8 @@
 
  * [dotnet OpenXML 文本 Text Line Break 的作用](dotnet-OpenXML-文本-Text-Line-Break-的作用.md)
 
+ * [dotnet OpenXML 文本删除线解析方法](dotnet-OpenXML-文本删除线解析方法.md)
+
  * [dotnet OpenXML 文本字体的选择规则](dotnet-OpenXML-文本字体的选择规则.md)
 
  * [dotnet OpenXML 测量单位的角度和弧度值](dotnet-OpenXML-测量单位的角度和弧度值.md)

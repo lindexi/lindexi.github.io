@@ -7,7 +7,7 @@
 
 
 <!-- CreateTime:2021/7/2 16:03:31 -->
-
+<!-- 发布 -->
 
 开始之前，还请掌握一些基础知识，如阅读以下博客
 
@@ -1075,6 +1075,257 @@ git pull origin 5e241a0eaf6c560698bcef33e8884d72a4f2d724
 ```
 
 可以看到不同的动画触发方式将会影响动画的存储框架
+
+## 触发序列框架
+
+在 PPT 里面，除了主序列动画之后，还有触发序列。触发序列是由点击某个元素进行触发的动画
+
+触发序列和主序列如命名，在 TmingRoot 之下的一层，和主序列相同的一层里面，采用 InteractiveSequence 标识。在 OpenXML 里面的文档内容大概如下
+
+```xml
+        <p:cTn id="1" dur="indefinite" restart="never" nodeType="tmRoot">
+          <p:childTnLst>
+            <p:seq concurrent="1" nextAc="seek">
+              <p:cTn id="2" restart="whenNotActive" fill="hold" evtFilter="cancelBubble" nodeType="interactiveSeq">
+              </p:cTn>
+            </p:seq>
+          </p:childTnLst>
+        </p:cTn>
+```
+
+在 InteractiveSequence 之下的元素存储框架和主序列完全相同，只是在触发序列里面的各个动画会采用 `stCondLst` 里面的 TargetElement 来决定是由哪个元素点击触发的动画
+
+如以下的 OpenXML 内容
+
+```xml
+<p:cTn id="2" restart="whenNotActive" fill="hold" evtFilter="cancelBubble" nodeType="interactiveSeq">
+  <p:stCondLst>
+    <!-- 通过 onClick 表示是点击的时候触发 -->
+    <p:cond evt="onClick" delay="0">
+      <p:tgtEl>
+        <!-- 决定由点击哪个元素来触发动画 -->
+        <p:spTgt spid="3" /> 
+      </p:tgtEl>
+    </p:cond>
+  </p:stCondLst>
+  <p:childTnLst>
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="5" presetID="10" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">
+                    <p:childTnLst>
+                      <p:set>
+                        <p:cBhvr>
+                          <p:cTn id="6" dur="1" fill="hold"></p:cTn>
+                          <p:tgtEl>
+                            <p:spTgt spid="4" />
+                          </p:tgtEl>
+                        </p:set>
+                      </p:childTnLst>
+                    </p:cTn>
+                  </p:par>
+                </p:childTnLst>
+              </p:cTn>
+            </p:par>
+          </p:childTnLst>
+        </p:cTn>
+      </p:par>
+    </p:childTnLst>
+  </p:cTn>
+```
+
+以上的逻辑表示了采用 `p:spTgt spid="3"` 的元素来触发 `p:spTgt spid="4"` 的元素动画
+
+获取触发序列的逻辑如下
+
+```csharp
+using System.Linq;
+using DocumentFormat.OpenXml.Presentation;
+using NonVisualDrawingProperties = DocumentFormat.OpenXml.Presentation.NonVisualDrawingProperties;
+using NonVisualShapeProperties = DocumentFormat.OpenXml.Presentation.NonVisualShapeProperties;
+
+using var presentationDocument =
+    DocumentFormat.OpenXml.Packaging.PresentationDocument.Open("Test.pptx", false);
+var presentationPart = presentationDocument.PresentationPart;
+var slidePart = presentationPart!.SlideParts.First();
+var slide = slidePart.Slide;
+var timing = slide.Timing;
+// 第一级里面默认只有一项
+var commonTimeNode = timing?.TimeNodeList?.ParallelTimeNode?.CommonTimeNode;
+if (commonTimeNode?.NodeType?.Value == TimeNodeValues.TmingRoot)
+{
+    // 这是符合约定
+    // nodeType="tmRoot"
+}
+
+if (commonTimeNode?.ChildTimeNodeList == null) return;
+// 理论上只有一项，而且一定是 SequenceTimeNode 类型
+var sequenceTimeNode = commonTimeNode.ChildTimeNodeList.GetFirstChild<SequenceTimeNode>();
+var interactiveSequenceTimeNode = sequenceTimeNode.CommonTimeNode;
+if (interactiveSequenceTimeNode?.NodeType?.Value == TimeNodeValues.InteractiveSequence)
+{
+
+}
+```
+
+在触发序列里面，获取触发动画元素的方法如下
+
+```csharp
+    // [TimeLine 对象 (PowerPoint) | Microsoft Docs](https://docs.microsoft.com/zh-cn/office/vba/api/PowerPoint.TimeLine )
+    // 触发动画序列
+
+    // 获取触发动画的元素
+    var condition = interactiveSequenceTimeNode.StartConditionList.GetFirstChild<Condition>();
+    if (condition.Event.Value == TriggerEventValues.OnClick)
+    {
+        // 点击触发动画，还有其他的方式
+    }
+
+    var targetElement = condition.TargetElement;
+    var shapeId = targetElement.ShapeTarget.ShapeId.Value;
+    var shape = slide.CommonSlideData.ShapeTree.FirstOrDefault(t =>
+        t.GetFirstChild<NonVisualShapeProperties>()?.GetFirstChild<NonVisualDrawingProperties>()?.Id?.Value.ToString() == shapeId);
+    // 由 shape 点击触发的动画
+```
+
+以上拿到的 shape 就是用来触发动画的元素
+
+接下来获取具体的动画逻辑和主序列相同
+
+```csharp
+    foreach (var openXmlElement in interactiveSequenceTimeNode.ChildTimeNodeList)
+    {
+        // 并行关系的
+        if (openXmlElement is ParallelTimeNode parallelTimeNode)
+        {
+            var timeNode = parallelTimeNode.CommonTimeNode.ChildTimeNodeList
+                .GetFirstChild<ParallelTimeNode>().CommonTimeNode.ChildTimeNodeList
+                .GetFirstChild<ParallelTimeNode>().CommonTimeNode;
+
+            if (timeNode.NodeType.Value == TimeNodeValues.ClickEffect)
+            {
+                // 点击触发
+            }
+
+            // 其他逻辑和主序列相同
+           
+        }
+    }
+```
+
+以上测试课件和代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/e48a633377bb933ad09e3782272b0a01ffd42ab5/PptxDemo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/e48a633377bb933ad09e3782272b0a01ffd42ab5/PptxDemo) 可以通过以下命令获取
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin e48a633377bb933ad09e3782272b0a01ffd42ab5
+```
+
+对于触发序列，如果是通过相同的一个动画触发的多个动画，那么多个动画的存放是放在相同的触发序列之下。和主序列的不同在于，在 PPT 可以有多个触发序列。每个触发序列表示有一个元素触发的动画。每个触发序列里面，触发动画的元素触发的动画允许有多个
+
+如多次点击相同的一个元素来分别触发三个元素的淡入动画的 OpenXML 文档
+
+```xml
+<p:cTn id="2" restart="whenNotActive" fill="hold" evtFilter="cancelBubble" nodeType="interactiveSeq">
+  <p:stCondLst>
+    <p:cond evt="onClick" delay="0">
+      <p:tgtEl>
+        <!-- 由 Id 是 3 的元素触发动画 -->
+        <p:spTgt spid="3" />
+      </p:tgtEl>
+    </p:cond>
+  </p:stCondLst>
+  <p:childTnLst>
+    <!-- 第一个元素的淡出动画 -->
+    <p:par>
+      <p:cTn id="3" fill="hold">
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="4" fill="hold">
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="5" presetID="10" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">
+                    <p:childTnLst>
+                      <p:set>
+                        <p:cBhvr>
+                          <p:tgtEl>
+                            <!-- 第一个动画的 Id 是 4 的元素 -->
+                            <p:spTgt spid="4" />
+                          </p:tgtEl>
+                        </p:cBhvr>
+                      </p:set>
+                    </p:childTnLst>
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+    <!-- 第二个元素的淡出动画 -->
+    <p:par>
+      <p:cTn id="8" fill="hold">
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="9" fill="hold">
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="10" presetID="10" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">
+                    <p:childTnLst>
+                      <p:set>
+                        <p:cBhvr>
+                          <p:tgtEl>
+                            <!-- 第二个动画的 Id 是 5 的元素 -->
+                            <p:spTgt spid="5" />
+                          </p:tgtEl>
+                        </p:cBhvr>
+                      </p:set>
+                    </p:childTnLst>
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+    <!-- 第三个元素的淡出动画 -->
+    <p:par>
+      <p:cTn id="13" fill="hold">
+        <p:childTnLst>
+          <p:par>
+            <p:cTn id="14" fill="hold">
+              <p:childTnLst>
+                <p:par>
+                  <p:cTn id="15" presetID="10" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">
+                    <p:childTnLst>
+                      <p:set>
+                        <p:cBhvr>
+                          <p:tgtEl>
+                            <!-- 第三个动画的 Id 是 6 的元素 -->
+                            <p:spTgt spid="6" />
+                          </p:tgtEl>
+                        </p:cBhvr>
+                      </p:set>
+                    </p:childTnLst>
+                  </p:cTn>
+                </p:par>
+              </p:childTnLst>
+            </p:cTn>
+          </p:par>
+        </p:childTnLst>
+      </p:cTn>
+    </p:par>
+  </p:childTnLst>
+</p:cTn>
+```
+
+以上文档就是点击 Id 是 3 的元素分别触发 Id 是 4 5 6 元素的淡入动画。对元素 Id 是 4 5 6 的元素的 NodeType 是 ClickEffect 因此是多次点击 Id 是 3 的元素进行分别触发
 
 本文的属性是依靠 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html ) 工具协助测试的，这个工具是开源免费的工具，欢迎使用
 
