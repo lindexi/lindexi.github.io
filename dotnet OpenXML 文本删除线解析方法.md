@@ -3,6 +3,8 @@
 本文来告诉大家如何解析读取在 OpenXML 里面存放的文本删除线，本文使用 PowerPoint 作为例子来告诉大家如何读取然后在 WPF 应用里面显示
 
 <!--more-->
+<!-- CreateTime:2021/8/18 20:58:22 -->
+
 <!-- 发布 -->
 
 在开始之前，期望大家已了解如何在 dotnet 应用里面读取 PPT 文件，如果还不了解读取方法，请参阅 [C# dotnet 使用 OpenXml 解析 PPT 文件](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E4%BB%B6.html)
