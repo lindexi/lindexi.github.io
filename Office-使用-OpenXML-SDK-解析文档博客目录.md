@@ -60,6 +60,8 @@
 
 [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-EndParagraphRunProperties-%E7%9A%84%E4%BD%9C%E7%94%A8.html )
 
+[dotnet OpenXML 文本删除线解析方法](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC%E5%88%A0%E9%99%A4%E7%BA%BF%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95.html )
+
 [dotnet OpenXML 的 spcPct 和 spcPts 表示距离的不同](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%9A%84-spcPct-%E5%92%8C-spcPts-%E8%A1%A8%E7%A4%BA%E8%B7%9D%E7%A6%BB%E7%9A%84%E4%B8%8D%E5%90%8C.html )
 
 [dotnet OpenXML 文本字体的选择规则](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E7%9A%84%E9%80%89%E6%8B%A9%E8%A7%84%E5%88%99.html)
