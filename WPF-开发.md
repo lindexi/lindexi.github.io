@@ -912,6 +912,12 @@ invokeProv.Invoke();
 
 详细请看 [https://stackoverflow.com/a/728444/6116637](https://stackoverflow.com/a/728444/6116637)
 
+## EventTrigger
+
+有哪些内置的，有哪些可用的
+
+[EventTrigger原理浅谈 - huangtengxiao](https://huangtengxiao.gitee.io/post/EventTrigger.html)
+
 
 
 

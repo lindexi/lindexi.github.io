@@ -404,6 +404,8 @@
 
  * [dotnet C# 如何不联网下快速获取一段url链接里面读取文件名](dotnet-C-如何不联网下快速获取一段url链接里面读取文件名.md)
 
+ * [dotnet C# 如何正确获取藏文的字数](dotnet-C-如何正确获取藏文的字数.md)
+
  * [dotnet C# 如何让 Json 序列化数组时序列化继承类的属性](dotnet-C-如何让-Json-序列化数组时序列化继承类的属性.md)
 
  * [dotnet C# 如果在构造函数抛出异常 是否可以拿到对象赋值的变量](dotnet-C-如果在构造函数抛出异常-是否可以拿到对象赋值的变量.md)
@@ -781,6 +783,8 @@
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
 
  * [dotnet 控制台读写 Sqlite 提示 no such table 找不到文件](dotnet-控制台读写-Sqlite-提示-no-such-table-找不到文件.md)
+
+ * [dotnet 教你写一个可以搞炸本机所有 WCF 应用的程序方法](dotnet-教你写一个可以搞炸本机所有-WCF-应用的程序方法.md)
 
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
 

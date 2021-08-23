@@ -154,6 +154,8 @@
 
 [dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E7%AC%A6%E5%90%88%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E7%9A%84%E6%96%87%E6%A1%A3.html )
 
+[2019-1-8-看看你的PPT是不是被WPS玩坏了 - huangtengxiao](https://huangtengxiao.gitee.io/post/%E7%9C%8B%E7%9C%8B%E4%BD%A0%E7%9A%84PPT%E6%98%AF%E4%B8%8D%E6%98%AF%E8%A2%ABWPS%E7%8E%A9%E5%9D%8F%E4%BA%86.html)
+
 ## VSTO COM
 
 [通过 COM 读取 Office PPT 文件提示 COMException 错误码 0x80004005 可能原因](https://blog.lindexi.com/post/%E9%80%9A%E8%BF%87-COM-%E8%AF%BB%E5%8F%96-Office-PPT-%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA-COMException-%E9%94%99%E8%AF%AF%E7%A0%81-0x80004005-%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
