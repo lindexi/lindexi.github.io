@@ -3,6 +3,8 @@
 在 dotnet 里面，拿到一个指针，可以有多个不同的方法转换为结构体，本文将来告诉大家这几个方法的性能的差别
 
 <!--more-->
+<!-- CreateTime:2021/8/20 8:54:17 -->
+
 <!-- 发布 -->
 
 特别感谢性能优化狂魔 [Stephen Toub](https://github.com/stephentoub) 大佬的指导
@@ -55,5 +57,27 @@ public struct MyPoint
 ```
 
 在 [Stephen Toub](https://github.com/stephentoub) 大佬的建议是，虽然 Cast 方法，通过不安全代码指针转换的方法的性能足够好，如上面测试 只需 0.0477 纳秒，但是只有在类型是 [blittable](https://docs.microsoft.com/zh-cn/dotnet/framework/interop/blittable-and-non-blittable-types?WT.mc_id=WD-MVP-5003260)（可直接复制到本机结构中的类型）的时候才适合用强转的方式。否则还是需要使用 Marshal 的方法处理封送
+
+一个有趣的事情是 PtrToStructure 的泛型的和非泛型的方法实现基本一致，如下面代码
+
+```csharp
+        public static object? PtrToStructure(IntPtr ptr, Type structureType)
+        {
+            // Ignore some code ...
+            object structure = Activator.CreateInstance(structureType, nonPublic: true)!;
+            PtrToStructureHelper(ptr, structure, allowValueClasses: true);
+            return structure;
+        }
+
+        public static T? PtrToStructure<T>(IntPtr ptr)
+        {
+            // Ignore some code ...
+            object structure = Activator.CreateInstance(structureType, nonPublic: true)!;
+            PtrToStructureHelper(ptr, structure, allowValueClasses: true);
+            return (T)structure;
+        }
+```
+
+可以看到泛型的版本其实就是强转一下返回而已
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
