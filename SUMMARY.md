@@ -732,6 +732,8 @@
 
  * [dotnet 在 Windows 系统上使用 stakx 的 WIC 库](dotnet-在-Windows-系统上使用-stakx-的-WIC-库.md)
 
+ * [dotnet 在 WPF 里显示数学 π 的颜色](dotnet-在-WPF-里显示数学-π-的颜色.md)
+
  * [dotnet 在国产 UOS 系统利用 dotnet tool 工具做文件传输](dotnet-在国产-UOS-系统利用-dotnet-tool-工具做文件传输.md)
 
  * [dotnet 基于 debian 创建一个 docker 的 sdk 镜像](dotnet-基于-debian-创建一个-docker-的-sdk-镜像.md)
@@ -2174,6 +2176,8 @@
 
  * [WPF 如何给定两个点画出一条波浪线](WPF-如何给定两个点画出一条波浪线.md)
 
+ * [WPF 如何获取有哪些 VisualBrush 用了某个控件](WPF-如何获取有哪些-VisualBrush-用了某个控件.md)
+
  * [WPF 如何计算矩形内一个坐标相对另一个矩形的坐标](WPF-如何计算矩形内一个坐标相对另一个矩形的坐标.md)
 
  * [WPF 如何调试 binding](WPF-如何调试-binding.md)
@@ -2317,6 +2321,8 @@
  * [WPF 笔迹触摸点收集工具](WPF-笔迹触摸点收集工具.md)
 
  * [WPF 等距布局](WPF-等距布局.md)
+
+ * [WPF 简单判断主线程界面是否卡顿的方法](WPF-简单判断主线程界面是否卡顿的方法.md)
 
  * [WPF 简易手绘笔迹支持回放的方法](WPF-简易手绘笔迹支持回放的方法.md)
 
