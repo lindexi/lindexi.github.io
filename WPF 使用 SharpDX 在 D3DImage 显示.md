@@ -204,9 +204,9 @@ using D3D9 = SharpDX.Direct3D9;
             }
 ```
 
-这样就设置好了，通过 D3D11.Texture2D 就可以显示出来了。
+这样就设置好了，通过 D3D11.Texture2D 就可以显示出来了。以上逻辑就是通过 D3D9.Texture 进行承载 D3D11.Texture2D 从而让 D3D11.Texture2D 可以在界面中显示出来
 
-但是直接使用 D3D11.Texture2D 是无法画出来的，如果需要 D2D.RenderTarget 还需要通过 D3D11.Texture2D 创建 Surface 为缓冲区。
+但是直接使用 D3D11.Texture2D 是无法画出来的，不能直接对着 D3D11.Texture2D 进行输入绘制的指令。而想要在 D3D11.Texture2D 上面画出东西，绘制界面，就需要采用用到 D2D.RenderTarget 的辅助。如果需要 D2D.RenderTarget 还需要通过 D3D11.Texture2D 创建 Surface 为缓冲区。绕了一圈的逻辑代码却是十分简单的，如下面代码
 
 ```csharp
             var surface = renderTarget.QueryInterface<DXGI.Surface>();
@@ -221,12 +221,14 @@ using D3D9 = SharpDX.Direct3D9;
             device.ImmediateContext.Rasterizer.SetViewport(0, 0,(int)ActualWidth , (int) ActualHeight);
 ```
 
+以上代码即可拿到 `_d2DRenderTarget` 对象，通过此对象即可用来实现绘制界面的逻辑，可以通过 D2D.RenderTarget 画出有趣的界面
+
 ## 画出来
 
-下面就来尝试使用 D2D.RenderTarget 画出一个矩形，代码写在 CompositionTarget.Rendering ，画出来的代码和之前的一样
+下面就来尝试使用 D2D.RenderTarget 画出一个矩形，代码写在 CompositionTarget.Rendering 方法里面，画出来的代码和之前的博客写的方法一样
 
 ```csharp
-     private void CompositionTarget_Rendering(object sender, EventArgs e)
+        private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
             _d2DRenderTarget.BeginDraw();
 
@@ -239,8 +241,6 @@ using D3D9 = SharpDX.Direct3D9;
             _d3D.AddDirtyRect(new Int32Rect(0, 0, _d3D.PixelWidth, _d3D.PixelHeight));
 
             _d3D.Unlock();
-
-    
         }
 
         private void OnRender(D2D.RenderTarget renderTarget)
@@ -270,12 +270,12 @@ using D3D9 = SharpDX.Direct3D9;
         private float _dy = 1;
 ```
 
-主要和原来不同的是需要 AddDirtyRect 告诉重新渲染，不然不会显示
+主要和原来不同的是需要调用 AddDirtyRect 方法告诉 DX 重新渲染，不然不会显示。如果没有经过 `_d3D.AddDirtyRect(new Int32Rect(0, 0, _d3D.PixelWidth, _d3D.PixelHeight));` 这个代码，那么所有的绘制内容都不会生效
 
 
 现在修改一下前台界面，尝试添加一些代码
 
-```csharp
+```xml
         <Grid>
             <Grid Background="Goldenrod">
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="在图片下方"></TextBlock>
