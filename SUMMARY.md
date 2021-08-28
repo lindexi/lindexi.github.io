@@ -394,6 +394,8 @@
 
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
 
+ * [dotnet C# 全局 Windows 鼠标钩子](dotnet-C-全局-Windows-鼠标钩子.md)
+
  * [dotnet C# 只创建对象不调用构造函数方法](dotnet-C-只创建对象不调用构造函数方法.md)
 
  * [dotnet C# 图片等比限制最大和最小大小缩放算法](dotnet-C-图片等比限制最大和最小大小缩放算法.md)
@@ -579,6 +581,8 @@
  * [dotnet OpenXML 读取 PPT 主序列进入退出强调动画](dotnet-OpenXML-读取-PPT-主序列进入退出强调动画.md)
 
  * [dotnet OpenXML 读取 PPT 动画进入退出强调动画类型](dotnet-OpenXML-读取-PPT-动画进入退出强调动画类型.md)
+
+ * [dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷](dotnet-OpenXML-读取-PPT-形状边框定义在-Style-的颜色画刷.md)
 
  * [dotnet OpenXML 读取形状轮廓线条样式序号超过主题样式列表数](dotnet-OpenXML-读取形状轮廓线条样式序号超过主题样式列表数.md)
 

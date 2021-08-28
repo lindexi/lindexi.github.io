@@ -42,8 +42,6 @@
 
 [dotnet OpenXML 简单聊聊 PPT 文本解析](https://blog.lindexi.com/post/dotnet-OpenXML-%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8A-PPT-%E6%96%87%E6%9C%AC%E8%A7%A3%E6%9E%90.html )
 
-[dotnet OpenXML 如何判断是形状还是文本](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E5%BD%A2%E7%8A%B6%E8%BF%98%E6%98%AF%E6%96%87%E6%9C%AC.html )
-
 [dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90-Office-%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%AC%A6%E5%8F%B7-buNone-%E5%90%AB%E4%B9%89.html)
 
 [dotnet OpenXML SDK 文本占位符解析](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E6%96%87%E6%9C%AC%E5%8D%A0%E4%BD%8D%E7%AC%A6%E8%A7%A3%E6%9E%90.html)
@@ -72,19 +70,33 @@
 
 ## 形状
 
+### 形状样式
+
+形状画刷等知识请参阅颜色部分
+
+[dotnet OpenXML 读取形状轮廓线条样式序号超过主题样式列表数](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96%E5%BD%A2%E7%8A%B6%E8%BD%AE%E5%BB%93%E7%BA%BF%E6%9D%A1%E6%A0%B7%E5%BC%8F%E5%BA%8F%E5%8F%B7%E8%B6%85%E8%BF%87%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E5%88%97%E8%A1%A8%E6%95%B0.html )
+
 [dotnet OpenXML SDK 形状的翻转与旋转](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%BF%BB%E8%BD%AC%E4%B8%8E%E6%97%8B%E8%BD%AC.html )
+
+### 形状内文本
+
+所有的文本在 PPT 里面都采用形状表示，通用文本知识请参阅文本部分
+
+[dotnet OpenXML 如何判断是形状还是文本](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E5%BD%A2%E7%8A%B6%E8%BF%98%E6%98%AF%E6%96%87%E6%9C%AC.html )
 
 [dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响](https://lindexi.gitee.io/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84-rect-Shape-Text-Rectangle-%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%96%87%E6%9C%AC%E6%A1%86%E7%9A%84%E5%9D%90%E6%A0%87%E5%BD%B1%E5%93%8D.html )
 
-[dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AE%A9-PathLst-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BD%A2%E7%8A%B6%E8%BD%AC-SVG-%E8%B7%AF%E5%BE%84%E6%A0%BC%E5%BC%8F%E7%9A%84-Geometry-%E5%86%85%E5%AE%B9.html )
+### 形状几何
 
-[dotnet OpenXML 读取形状轮廓线条样式序号超过主题样式列表数](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96%E5%BD%A2%E7%8A%B6%E8%BD%AE%E5%BB%93%E7%BA%BF%E6%9D%A1%E6%A0%B7%E5%BC%8F%E5%BA%8F%E5%8F%B7%E8%B6%85%E8%BF%87%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E5%88%97%E8%A1%A8%E6%95%B0.html )
+[dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AE%A9-PathLst-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BD%A2%E7%8A%B6%E8%BD%AC-SVG-%E8%B7%AF%E5%BE%84%E6%A0%BC%E5%BC%8F%E7%9A%84-Geometry-%E5%86%85%E5%AE%B9.html )
 
 [dotnet OpenXML SDK 形状几何 Geometry 的计算公式含义](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E5%87%A0%E4%BD%95-Geometry-%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F%E5%90%AB%E4%B9%89.html )
 
 [【OpenXml】Pptx的形状转为WPF的Geometry - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/14864302.html )
 
 [Pptx的多路径形状转为WPF的Path - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/14987788.html )
+
+[【Openxml】将Openxml的椭圆弧线arcTo转为Svg的椭圆弧线 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15191386.html)
 
 [dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%BD%A2%E7%8A%B6%E7%9A%84-Outline-%E7%9A%84-LineWidth-%E7%BA%BF%E6%9D%A1%E8%BD%AE%E5%BB%93%E7%B2%97%E7%BB%86%E5%AE%BD%E5%BA%A6%E7%9A%84%E8%A1%8C%E4%B8%BA.html )
 
@@ -143,7 +155,7 @@
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
 
-不断压缩和解压缩 Office 文档效率不够，试试下面工具
+调试的时候，先解压缩 Office 文档，编辑完成之后，再压缩回 Office 文档，用 Office 打开。不断压缩和解压缩 Office 文档效率不够，试试下面工具，自动解压缩和压缩文件夹为 Office 文档
 
 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html )
 
@@ -165,10 +177,6 @@
 [WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](https://lindexi.gitee.io/post/WPF-%E5%B0%86-docx-%E7%9A%84-Word-%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-FlowDocument-%E6%98%BE%E7%A4%BA.html )
 
 [Xamarin.Forms创建与读写Word文件](https://mp.weixin.qq.com/s/S3xK4Vn4cst8J-uMWJ0I7A )
-
-欢迎小伙伴加入 OpenXML Office 群 688921958
-
-<!-- var d=["0","1","2","3","4","5","6","7","8","9"]; var qqGroup=d[6]+d[8]+d[8]+d[9]+d[2]+d[1]+d[9]+d[5]+d[8];  -->
 
 ## 资源
 
@@ -221,6 +229,18 @@
 ### VS 插件
 
 [bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio: This Power Tool is a Visual Studio add-in that provides an easy way to parse and edit Open Packaging Conventions files, including Word, Excel and PowerPoint documents.](https://github.com/bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio )
+
+## 开发群
+
+加群方式：
+
+```csharp
+    var d = new []{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}; 
+    var qqGroup = d[6] + d[8] + d[8] + d[9] + d[2] + d[1] + d[9] + d[5] + d[8];
+    Console.WriteLine($"欢迎加入 OpenXML Office 群：{qqGroup}");
+```
+
+以上的群非新手群
 
 
 

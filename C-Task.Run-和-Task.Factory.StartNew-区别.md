@@ -118,6 +118,10 @@ Task.Factory.StartNew(foo,
 
 实际上 `Task.Run(foo)` 可以认为是对 `Task.Factory.StartNew` 封装，使用简单的默认的参数。如果需要自己定义很多参数，就请使用 `Task.Factory.StartNew` 定义参数。
 
+## 参考
+
+[Task.Factory.StartNew 和 Task.Run - 一只大老鼠 - 博客园](https://www.cnblogs.com/duanbiflying/p/6400605.html )
+
 
 
 
