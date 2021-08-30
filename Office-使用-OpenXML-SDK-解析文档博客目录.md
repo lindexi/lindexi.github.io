@@ -8,6 +8,8 @@
 
 <!-- CreateTime:7/4/2020 10:05:36 AM -->
 
+<div id="toc"></div>
+
 ## 入门
 
 [C# dotnet 使用 OpenXml 解析 PPT 文件](https://blog.lindexi.com/post/C-dotnet-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E4%BB%B6.html)
@@ -78,6 +80,8 @@
 
 [dotnet OpenXML SDK 形状的翻转与旋转](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84%E7%BF%BB%E8%BD%AC%E4%B8%8E%E6%97%8B%E8%BD%AC.html )
 
+[dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96-PPT-%E5%BD%A2%E7%8A%B6%E8%BE%B9%E6%A1%86%E5%AE%9A%E4%B9%89%E5%9C%A8-Style-%E7%9A%84%E9%A2%9C%E8%89%B2%E7%94%BB%E5%88%B7.html )
+
 ### 形状内文本
 
 所有的文本在 PPT 里面都采用形状表示，通用文本知识请参阅文本部分
@@ -113,7 +117,6 @@
 [[PPTX解析] 图片调整：删除背景、矫正、颜色、艺术效果、透明度 - 仙尘阁](https://imxcg.com/technology/dot-net/pptx-analysis/pptx-analysis-picture-effect/ )
 
 [[PPTX解析] 图片效果算法篇：设置透明色 - 仙尘阁](https://imxcg.com/technology/dot-net/pptx-analysis/pptx-analysis-set-transparent-color/ )
-
 
 ## 颜色
 
@@ -159,7 +162,6 @@
 
 [dotnet OpenXML 解压缩文档为文件夹工具](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E4%B8%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%B7%A5%E5%85%B7.html )
 
-
 ## WPS 相关
 
 [dotnet OpenXML 解析 WPS 不规范的 PPT 文件的 cNvPr 重复 id 问题](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E8%A7%84%E8%8C%83%E7%9A%84-PPT-%E6%96%87%E4%BB%B6%E7%9A%84-cNvPr-%E9%87%8D%E5%A4%8D-id-%E9%97%AE%E9%A2%98.html )
@@ -193,6 +195,7 @@
 - [OpenXML学习笔记（一）从Office 2007 到 Office 2010](https://www.cnblogs.com/brooks-dotnet/archive/2010/02/08/1665600.html)
 - [服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
 - [爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/ )
+- [RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15191386.html)
 
 ## 第三方工具
 

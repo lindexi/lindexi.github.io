@@ -384,6 +384,8 @@
 
  * [dotnet 5 静态字段和属性的反射获取 没有想象中那么伤性能](dotnet-5-静态字段和属性的反射获取-没有想象中那么伤性能.md)
 
+ * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
@@ -421,6 +423,8 @@
  * [dotnet C# 将 Byte 二进制数组使用不安全代码快速转换为 int 或结构体数组](dotnet-C-将-Byte-二进制数组使用不安全代码快速转换为-int-或结构体数组.md)
 
  * [dotnet C# 序列化 XML 时进行自动格式化](dotnet-C-序列化-XML-时进行自动格式化.md)
+
+ * [dotnet C# 根据椭圆长度和宽度和旋转角计算出椭圆中心点的方法](dotnet-C-根据椭圆长度和宽度和旋转角计算出椭圆中心点的方法.md)
 
  * [dotnet C# 获取一个可用的端口的方法](dotnet-C-获取一个可用的端口的方法.md)
 
