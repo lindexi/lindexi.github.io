@@ -1710,6 +1710,8 @@
 
  * [win10 uwp 通知列表](win10-uwp-通知列表.md)
 
+ * [win10 uwp 通过 Win2d 完全控制笔迹绘制逻辑](win10-uwp-通过-Win2d-完全控制笔迹绘制逻辑.md)
+
  * [win10 uwp 通过 win2d 画出笔迹](win10-uwp-通过-win2d-画出笔迹.md)
 
  * [win10 uwp 通过命令行脚本开启旁加载](win10-uwp-通过命令行脚本开启旁加载.md)
