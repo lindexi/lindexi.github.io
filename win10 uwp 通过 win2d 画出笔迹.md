@@ -115,7 +115,7 @@ Canvas.Draw += CanvasControl_Draw
 
 ## 无限漫游
 
-如果现有做无限漫游，可以使用 [CanvasVirtualControl](https://lindexi.gitee.io/post/win10-uwp-win2d-CanvasVirtualControl.html ) 做一个超级大的画布，同时只画出可见的范围
+如果现有做无限漫游，可以使用 [CanvasVirtualControl](https://blog.lindexi.com/post/win10-uwp-win2d-CanvasVirtualControl-%E4%B8%8E-CanvasAnimatedControl.html ) 做一个超级大的画布，同时只画出可见的范围
 
 这样可以做到无限漫游添加很多笔迹而软件不会变卡
 
