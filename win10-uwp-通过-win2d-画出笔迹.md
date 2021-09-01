@@ -122,6 +122,10 @@ Canvas.Draw += CanvasControl_Draw
 
 这样可以做到无限漫游添加很多笔迹而软件不会变卡
 
+## 完全自定义
+
+如果需要完全的自定义，例如在笔迹画到一半，切换为其他模式等，请参阅 [win10 uwp 通过 Win2d 完全控制笔迹绘制逻辑](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87-Win2d-%E5%AE%8C%E5%85%A8%E6%8E%A7%E5%88%B6%E7%AC%94%E8%BF%B9%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
+
 
 
 
