@@ -534,6 +534,8 @@
 
  * [dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理](dotnet-OpenXML-元素-cNvPr-NonVisual-Drawing-Properties-重复-id-标识处理.md)
 
+ * [dotnet OpenXML 利用合并表格单元格在 PPT 文档插入不可见的额外版权信息](dotnet-OpenXML-利用合并表格单元格在-PPT-文档插入不可见的额外版权信息.md)
+
  * [dotnet OpenXML 图片特效的 BiLevel 黑白特效修改图片颜色](dotnet-OpenXML-图片特效的-BiLevel-黑白特效修改图片颜色.md)
 
  * [dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](dotnet-OpenXML-图片特效的-Color-Change-Effect-特效修改图片颜色.md)
@@ -583,6 +585,8 @@
  * [dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容](dotnet-OpenXML-让-PathLst-自定义形状转-SVG-路径格式的-Geometry-内容.md)
 
  * [dotnet OpenXML 读取 PPT 主序列进入退出强调动画](dotnet-OpenXML-读取-PPT-主序列进入退出强调动画.md)
+
+ * [dotnet OpenXML 读取 PPT 内嵌 ole 格式 Excel 表格的信息](dotnet-OpenXML-读取-PPT-内嵌-ole-格式-Excel-表格的信息.md)
 
  * [dotnet OpenXML 读取 PPT 动画进入退出强调动画类型](dotnet-OpenXML-读取-PPT-动画进入退出强调动画类型.md)
 

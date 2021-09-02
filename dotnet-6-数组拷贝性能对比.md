@@ -8,7 +8,6 @@
 
 <!-- CreateTime:2021/8/30 8:45:46 -->
 
-<!-- 博客 -->
 <!-- 发布 -->
 
 测试性能必须采用基准（标准）性能测试方法，否则测试结果不可信。在 dotnet 里面，可以采用 [BenchmarkDotNet](https://benchmarkdotnet.org/Guides/ChoosingRunStrategy.htm ) 进行性能测试。详细请看 [C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html )

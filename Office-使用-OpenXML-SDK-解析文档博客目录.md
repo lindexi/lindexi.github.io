@@ -146,6 +146,8 @@
 
 [dotnet OpenXML 修复 Office 文档里面的百分比内容包含百分号](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BF%AE%E5%A4%8D-Office-%E6%96%87%E6%A1%A3%E9%87%8C%E9%9D%A2%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E7%99%BE%E5%88%86%E5%8F%B7.html )
 
+[dotnet OpenXML 为什么资源使用 Relationship 引用](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B5%84%E6%BA%90%E4%BD%BF%E7%94%A8-Relationship-%E5%BC%95%E7%94%A8.html )
+
 ## PPT 动画
 
 [dotnet OpenXML PPT 动画框架入门](https://blog.lindexi.com/post/dotnet-OpenXML-PPT-%E5%8A%A8%E7%94%BB%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8.html )
