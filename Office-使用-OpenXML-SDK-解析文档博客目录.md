@@ -156,6 +156,12 @@
 
 [dotnet OpenXML 读取 PPT 动画进入退出强调动画类型](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96-PPT-%E5%8A%A8%E7%94%BB%E8%BF%9B%E5%85%A5%E9%80%80%E5%87%BA%E5%BC%BA%E8%B0%83%E5%8A%A8%E7%94%BB%E7%B1%BB%E5%9E%8B.html )
 
+## 表格
+
+[dotnet OpenXML 读取 PPT 内嵌 ole 格式 Excel 表格的信息](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96-PPT-%E5%86%85%E5%B5%8C-ole-%E6%A0%BC%E5%BC%8F-Excel-%E8%A1%A8%E6%A0%BC%E7%9A%84%E4%BF%A1%E6%81%AF.html )
+
+[dotnet OpenXML 利用合并表格单元格在 PPT 文档插入不可见的额外版权信息](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%88%A9%E7%94%A8%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC%E5%8D%95%E5%85%83%E6%A0%BC%E5%9C%A8-PPT-%E6%96%87%E6%A1%A3%E6%8F%92%E5%85%A5%E4%B8%8D%E5%8F%AF%E8%A7%81%E7%9A%84%E9%A2%9D%E5%A4%96%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF.html )
+
 ## 工具
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
