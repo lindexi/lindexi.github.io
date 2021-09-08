@@ -65,6 +65,16 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 获取代码之后，进入 KebelrafoRalneanarjeargi 文件夹
 
+通过调试 VisualStudio 和 WPF 的源代码可以了解到为什么在附加调试的时候将会不断刷新
+
+在 WPF 里面，大部分的界面刷新都由 `MediaContext.PostRender` 触发。而 `MediaContext.PostRender` 函数在大部分依赖属性变更的时候都会触发（取决于依赖属性的定义哈，是否要刷新界面或重新布局等）而可以认为大部分界面刷新也由依赖属性变更而触发
+
+在 VisualStudio 2019 时，微软给出了新功能，实时可视化树调试。此工具有一个功能是附加到当前调试的窗口上，在调试的时候，给当前调试的应用添加一个工具栏或者加上调试使用的界面。此时调试的工具是注入到当前正在调试的应用的代码实现的，此工具也是由 WPF 编写的。刚好在 VisualStudio 调试器里面有这样的逻辑，不断更新调试的工具的某些依赖属性。因为 VisualStudio 代码是没有开源的，我也不想去了解细节，因此本文只是告诉大家 VisualStudio 有这个行为
+
+在 VisualStudio 调试工具更新依赖属性的时候，将会触发元素的重新布局，从而触发 `MediaContext.PostRender` 方法，此时界面将会刷新。这就是为什么通过 VisualStudio 附加调试的时候，将会不断刷新 WPF 渲染的原因
+
+此问题在 GitHub 上也有小伙伴问，详细请看 [WriteableBitmap performance increase. · Issue #5246 · dotnet/wpf](https://github.com/dotnet/wpf/issues/5246 )
+
 
 
 

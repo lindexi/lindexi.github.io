@@ -404,6 +404,8 @@
 
  * [dotnet C# 在 finally 抛异常会发生什么](dotnet-C-在-finally-抛异常会发生什么.md)
 
+ * [dotnet C# 多次对一个对象调用构造函数会发生什么](dotnet-C-多次对一个对象调用构造函数会发生什么.md)
+
  * [dotnet C# 多线程集合的 Linq 获取值同时写入集合将会抛出异常](dotnet-C-多线程集合的-Linq-获取值同时写入集合将会抛出异常.md)
 
  * [dotnet C# 如何不联网下快速获取一段url链接里面读取文件名](dotnet-C-如何不联网下快速获取一段url链接里面读取文件名.md)
