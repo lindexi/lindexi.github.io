@@ -202,6 +202,9 @@
 - [爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/ )
 - [RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15191386.html)
 
+- [Tutorial: how to port a project from Interop Word API to Open XML SDK](https://pvs-studio.com/en/blog/posts/csharp/0856/ )
+- [Analyzing the code quality of Microsoft's Open XML SDK](https://pvs-studio.com/en/blog/posts/csharp/0777/ )
+
 ## 第三方工具
 
 ### [Add-in Express](https://www.add-in-express.com/)
