@@ -918,6 +918,140 @@ invokeProv.Invoke();
 
 [EventTrigger原理浅谈 - huangtengxiao](https://huangtengxiao.gitee.io/post/EventTrigger.html)
 
+## 自定义控件的布局时机和尺寸
+
+在 Grid 里面，设置自定义控件如下
+
+```xml
+ <Grid Width="300" Height="250">
+HorizontalAlignment="Left" VerticalAlignment="Top"
+```
+
+进入测量方法时给的是 Grid 的大小
+
+```csharp
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            // availableSize = {300, 250}
+        }
+```
+
+根据返回值的不同，进入 ArrangeOverride 的值也不同。如返回宽度和高度都小于传入的尺寸
+
+```csharp
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            return new Size(10, 10);
+        }
+```
+
+以上代码在进入 ArrangeOverride 时传入的参数就是 MeasureOverride 返回的值
+
+```csharp
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+            // finalSize = {10,10}
+            return base.ArrangeOverride(finalSize);
+        }
+```
+
+返回值如果超过了宽度高度，如下面代码，此时进入 ArrangeOverride 传入的参数也是 MeasureOverride 返回的值
+
+```csharp
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            return new Size(5000, 10);
+        }
+
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+            // finalSize = {5000,10}
+            return base.ArrangeOverride(finalSize);
+        }
+```
+
+如果控件在 Grid 的设置如下
+
+```xml
+      HorizontalAlignment="Left"
+      VerticalAlignment="Stretch"
+```
+
+如果返回的参数是小于 Grid 容器大小的，按照顺序调用进入下面代码和参数分别如下
+
+```csharp
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            // {300,250}
+            return new Size(10, 10);
+        }
+
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+            // {10,250}
+            return base.ArrangeOverride(finalSize);
+        }
+```
+
+
+如果返回的参数是大于 Grid 容器大小的，按照顺序调用进入下面代码和参数分别如下
+
+```csharp
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            // {300,250}
+            return new Size(1000, 2000);
+        }
+
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+            // {1000,2000}
+            return base.ArrangeOverride(finalSize);
+        }
+```
+
+放在 StackPanel 的，如下面容器定义
+
+```csharp
+    <StackPanel Width="300" Height="250">
+    </StackPanel>
+```
+
+给定的参数如下，对于竖排的 StackPanel 取决于 MeasureOverride 返回的垂直的值，而无视宽度的值
+
+```csharp
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            // {300,∞}
+            return new Size(10, 10);
+        }
+
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+            // {300,10}
+            return base.ArrangeOverride(finalSize);
+        }
+```
+
+总体规则是 MeasureOverride 进入时，传入 `StackPanel.Width` 和 ∞ 的高度。进入 ArrangeOverride 时，传入 `Math.Max(StackPanel.Width, MeasureOverride.Size.Width)` 宽度和 `MeasureOverride.Size.Height` 高度
+
+```csharp
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            // {300,∞}
+            return new Size(600, 1000);
+        }
+
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+            // {600,1000}
+            return base.ArrangeOverride(finalSize);
+        }
+```
+
+放在 Canvas 里面，测量传入都是无穷，布局传入的就是测量返回的值
+
+
 
 
 
