@@ -1052,6 +1052,18 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
 放在 Canvas 里面，测量传入都是无穷，布局传入的就是测量返回的值
 
 
+## 自定义控件的 OnRender 没有被触发
+
+如果是继承 UIElement 的自定义控件，此控件重写的 OnRender 方法没有被触发。原因是上层的控件没有调用此控件的 Arrange 布局方法
+
+## 自定义控件的 OnRender 触发但是没有界面可见
+
+如果上层的自定义控件没有重写 VisualCount 和 GetChildVisual 方法，返回里层的控件，那么里层控件在 OnRender 渲染的内容不会显示到界面上
+
+上层元素调用 AddVisualChild 方法是让里层元素建立视觉树关系，建立视觉树关系不意味着可以被渲染，只是提供了让里层元素可以被交互的功能。只有在 GetVisualChild 里面返回了里层控件，才可以让里层控件在界面上渲染出来
+
+因此如果发现自定义控件没有界面渲染出来，请先在 OnRender 打上断点，如果断点没有进入，查看是否上层控件有调用里层控件的 Arrange 布局方法。如果断点进入还没有界面，请找上层控件是否有重写 GetVisualChild 和 VisualChildrenCount 方法，同时上层控件需要在 GetVisualChild 有返回里层控件
+
 
 
 
