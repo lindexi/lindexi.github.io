@@ -604,6 +604,14 @@ window.Activate();
         public LindexiRoutedEventArgs(RoutedEvent routedEvent, object source) : base(routedEvent, source)
         {
         }
+
+        protected override void InvokeEventHandler(Delegate genericHandler, object genericTarget)
+        {
+            // 这个方法的重写是可选的，用途是为了提升性能
+            // 如无重写，底层将会调用 Delegate.DynamicInvoke 方法触发事件，这是通过反射的方法调用的
+            var handler = (EventHandler<LindexiRoutedEventArgs>) genericHandler;
+            handler(genericTarget, this);
+        }
     }
 ```
 
