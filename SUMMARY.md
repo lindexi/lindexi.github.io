@@ -910,6 +910,8 @@
 
  * [dotnet 读 WPF 源代码笔记 启动欢迎界面 SplashScreen 的原理](dotnet-读-WPF-源代码笔记-启动欢迎界面-SplashScreen-的原理.md)
 
+ * [dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标](dotnet-读-WPF-源代码笔记-布局时-Arrange-如何影响元素渲染坐标.md)
+
  * [dotnet 读 WPF 源代码笔记 提升调试效率的 NamedObject 类型](dotnet-读-WPF-源代码笔记-提升调试效率的-NamedObject-类型.md)
 
  * [dotnet 读 WPF 源代码笔记 插入触摸设备的初始化获取设备信息](dotnet-读-WPF-源代码笔记-插入触摸设备的初始化获取设备信息.md)
