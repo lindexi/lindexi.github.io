@@ -404,6 +404,8 @@
 
  * [dotnet C# 在 finally 抛异常会发生什么](dotnet-C-在-finally-抛异常会发生什么.md)
 
+ * [dotnet C# 基础 为什么 GetHashCode 推荐只取只读属性或字段做哈希值](dotnet-C-基础-为什么-GetHashCode-推荐只取只读属性或字段做哈希值.md)
+
  * [dotnet C# 多次对一个对象调用构造函数会发生什么](dotnet-C-多次对一个对象调用构造函数会发生什么.md)
 
  * [dotnet C# 多线程集合的 Linq 获取值同时写入集合将会抛出异常](dotnet-C-多线程集合的-Linq-获取值同时写入集合将会抛出异常.md)
@@ -789,6 +791,8 @@
  * [dotnet 强签名下使用 InternalsVisibleToAttribute 给程序集加上友元](dotnet-强签名下使用-InternalsVisibleToAttribute-给程序集加上友元.md)
 
  * [dotnet 忽略输出文件夹的正则表达式](dotnet-忽略输出文件夹的正则表达式.md)
+
+ * [dotnet 性能优化 利用哈希思想优化大对象集合相等判断性能](dotnet-性能优化-利用哈希思想优化大对象集合相等判断性能.md)
 
  * [dotnet 手动解决 json 解析中不合法字符串](dotnet-手动解决-json-解析中不合法字符串.md)
 
