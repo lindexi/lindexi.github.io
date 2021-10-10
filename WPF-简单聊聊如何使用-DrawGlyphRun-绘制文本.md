@@ -8,7 +8,6 @@
 
 <!-- CreateTime:2021/9/29 19:09:47 -->
 
-<!-- 博客 -->
 <!-- 发布 -->
 
 本文也属于 WPF 渲染系列博客，更多渲染相关博客请看 [渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93 )
@@ -154,6 +153,30 @@ for (var i = 0; i < text.Length; i++)
 
 上面代码只是例子而已，还请替换为你的业务代码的需要绘制的文本坐标
 
+但是需要知道的是在 GlyphRun 里面传入的是 BaseLine 而不是 Location 的值，相互转换的逻辑需要根据 FontFamily 的 Baseline 的值才能计算，代码如下
+
+```csharp
+        /// <summary>
+        /// 获取指定字体的baseline
+        /// </summary>
+        /// <param name="fontFamily"></param>
+        /// <param name="fontRenderingEmSize"></param>
+        /// <returns></returns>
+        public static double GetBaseline(this FontFamily fontFamily, double fontRenderingEmSize)
+        {
+            var baseline = fontFamily.Baseline;
+
+            var renderingEmSize = fontRenderingEmSize;
+
+            var value = baseline * renderingEmSize;
+            return value;
+        }
+
+        location = new Point(location.X, location.Y + fontFamily.GetBaseline(fontSize));
+```
+
+以上代码是将 GetBaseline 的返回值给到 location 的 Y 值，这适合用在水平布局文本上。如果是垂直排版的文本，自然就需要放在水平方向。请根据你的业务代码修改以上逻辑
+
 ## 语言文化
 
 如果需要支持特殊的文本内容，就需要设置特别的语言文化，默认使用 IetfLanguageTag 即可
@@ -172,7 +195,6 @@ for (var i = 0; i < text.Length; i++)
 ```csharp
     var pixelsPerDip = (float) VisualTreeHelper.GetDpi(Application.Current.MainWindow).PixelsPerDip;
 ```
-
 
 ## 绘制文本
 
@@ -247,6 +269,34 @@ var geometry = glyphRun.BuildGeometry();
 ```
 
 文本的渲染尺寸也就是文本的字墨尺寸，此概念是文本排版概念
+
+## 获取文本的文字布局尺寸
+
+可以通过以上代码的 width 获取文本的字面的布局宽度，而布局高度则需要根据 BaseLine 等属性获取，代码如下
+
+```csharp
+        /// <summary>
+        /// 获取<see cref="GlyphRun"/>的Size
+        /// </summary>
+        /// <param name="run"></param>
+        /// <param name="lineSpacing"></param>
+        /// <returns></returns>
+        public static Size GetSize(this GlyphRun run, double lineSpacing)
+        {
+            var renderingEmSize = run.FontRenderingEmSize;
+            var height = lineSpacing * renderingEmSize;
+            double width = 0;
+            foreach (var index in run.GlyphIndices)
+            {
+                width += run.GlyphTypeface.AdvanceWidths[index];
+            }
+
+            width = width * renderingEmSize;
+            return new Size(width, height);
+        }
+```
+
+调用方法是 `var glyphSize = glyphRun.GetSize(fontFamily.LineSpacing);` 即可拿到文字的布局尺寸
 
 ## 字体回滚策略
 
@@ -348,6 +398,8 @@ var geometry = glyphRun.BuildGeometry();
 
 ## 代码
 
+### 例子
+
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/581ea123df0d1067ec1ed3527e8b85edb2fd082e/NiwejabainelFehargaye) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/581ea123df0d1067ec1ed3527e8b85edb2fd082e/NiwejabainelFehargaye) 欢迎访问
 
 可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
@@ -356,6 +408,101 @@ var geometry = glyphRun.BuildGeometry();
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
 git pull origin 581ea123df0d1067ec1ed3527e8b85edb2fd082e
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+```
+
+获取代码之后，进入 NiwejabainelFehargaye 文件夹
+
+### 轻文本
+
+实现一个和 TextBox 差很多的单行轻文本最简代码如下
+
+```csharp
+    class Foo : UIElement
+    {
+        public string Text { set; get; } = string.Empty;
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            var fontFamily = new FontFamily("微软雅黑");
+
+            var fontSize = 15;
+            var y = 0;
+            drawingContext.PushOpacity(0.3);
+            foreach (var typeface in fontFamily.GetTypefaces().Skip(1).Take(1))
+            {
+                double offset = 3;
+
+                var baseLine = fontFamily.GetBaseline(fontSize);
+
+                if (typeface.TryGetGlyphTypeface(out var glyphTypeface))
+                {
+                    foreach (var c in Text)
+                    {
+                        if (glyphTypeface.CharacterToGlyphMap.TryGetValue(c, out var glyphIndex))
+                        {
+                            // 在排版，不适合将每个字符的宽度独立进行计算。有很多字符是需要重叠布局的
+                            var width = glyphTypeface.AdvanceWidths[glyphIndex] * fontSize;
+                            width = GlyphExtension.RefineValue(width);
+
+#pragma warning disable 618 // 忽略调用废弃构造函数
+                            var glyphRun = new GlyphRun(
+#pragma warning restore 618
+                                glyphTypeface,
+                                0,
+                                false,
+                                fontSize,
+                                new[] { glyphIndex },
+                                new Point(offset, baseLine + y),
+                                new[] { width },
+                                DefaultGlyphOffsetArray,
+                                new char[] { c },
+                                null,
+                                null,
+                                null, DefaultXmlLanguage);
+
+                            drawingContext.DrawLine(new Pen(Brushes.Black, 2), new Point(offset, y), new Point(offset + width, y));
+
+                            drawingContext.DrawGlyphRun(Brushes.Coral, glyphRun);
+
+                            var glyphSize = glyphRun.GetSize(fontFamily.LineSpacing);
+
+                            drawingContext.DrawRectangle(null, new Pen(Brushes.Black, 2), new Rect(new Point(offset, y), glyphSize));
+
+                            // 布局的字符宽度
+                            offset += width;
+                        }
+                    }
+                }
+
+                y += fontSize;
+            }
+            drawingContext.Pop();
+        }
+
+        private static readonly Point[] DefaultGlyphOffsetArray = new Point[] { new Point() };
+
+        private static readonly XmlLanguage DefaultXmlLanguage =
+            XmlLanguage.GetLanguage(CultureInfo.CurrentUICulture.IetfLanguageTag);
+    }
+```
+
+以上代码只是单个字符进行绘制，用于了解每个字符对应的布局值，也就是如上的 DrawRectangle 绘制的内容
+
+上面代码的 GetBaseline 等都是辅助方法，可以从本文上面找到代码，也可以通过如下方式获取代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin fe704afdd32edb05005b1f35bcc87dc59c900040
 ```
 
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
