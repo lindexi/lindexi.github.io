@@ -3,6 +3,8 @@
 本文告诉大家如何在应用运行过程判断自己的 WPF 应用被转制为 UWP 应用运行
 
 <!--more-->
+<!-- CreateTime:2021/10/9 19:51:34 -->
+
 
 通过 kernel32 的 GetCurrentPackageFullName 方法即可判断，此方法要求是在 Win10 或以上版本才能使用哦。当然了，如果在 Win10 以下的版本，如 Win7 那默认就跑不了 UWP 应用，也就不需要判断了
 
