@@ -2142,6 +2142,8 @@
 
  * [WPF 图片移除视觉树内存泄漏](WPF-图片移除视觉树内存泄漏.md)
 
+ * [WPF 在 .NET Core 3.1.19 版本没有跟随 DPI 缩放文本过小问题](WPF-在-.NET-Core-3.1.19-版本没有跟随-DPI-缩放文本过小问题.md)
+
  * [WPF 在 Alt+Tab 隐藏窗口](WPF-在-Alt-Tab-隐藏窗口.md)
 
  * [WPF 在 DrawingContext 的 push 如何使用](WPF-在-DrawingContext-的-push-如何使用.md)
