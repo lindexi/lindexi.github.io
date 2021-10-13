@@ -382,6 +382,8 @@
 
  * [dotnet 5 破坏性改动 WPF 和 WinForms 的 OutputType 输出类型重定向为 WinExe 类型](dotnet-5-破坏性改动-WPF-和-WinForms-的-OutputType-输出类型重定向为-WinExe-类型.md)
 
+ * [dotnet 5 让 WPF 调用 WindowsRuntime 方法](dotnet-5-让-WPF-调用-WindowsRuntime-方法.md)
+
  * [dotnet 5 静态字段和属性的反射获取 没有想象中那么伤性能](dotnet-5-静态字段和属性的反射获取-没有想象中那么伤性能.md)
 
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
