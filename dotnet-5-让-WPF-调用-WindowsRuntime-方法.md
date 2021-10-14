@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/10/12 8:47:29 -->
+
 
 <!-- 发布 -->
 
@@ -77,7 +79,7 @@
             Debug.WriteLine(folder.Path);
 ```
 
-使用本文的方法，应用是不需要进行打包为 MSIX 包在用户端进行部署就可以使用，双击 exe 就可以使用，和之前的相同。因为调用 WindowsRuntime 的原理是 COM 调用，不需要进行打包
+使用本文的方法，应用是不需要进行打包为 MSIX 包在用户端进行部署就可以使用，双击 exe 就可以使用，和之前的相同。~~因为调用 WindowsRuntime 的原理是 COM 调用，不需要进行打包~~
 
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/26b7b6eec1f8e734bb9dbd49447f62fe2e116a9c/WelhearyalluneaceKujalwhekiraqi) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/26b7b6eec1f8e734bb9dbd49447f62fe2e116a9c/WelhearyalluneaceKujalwhekiraqi) 欢迎访问
 
@@ -99,6 +101,8 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 ```
 
 获取代码之后，进入 WelhearyalluneaceKujalwhekiraqi 文件夹
+
+大概可以从 [Breaking change: Built-in support for WinRT is removed from .NET](https://docs.microsoft.com/en-us/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed ) 文档了解到为什么在 .NET 5 需要用到 [CsWinRT](https://github.com/microsoft/CsWinRT ) 的原因
 
 
 

@@ -1073,6 +1073,61 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
 因此如果发现自定义控件没有界面渲染出来，请先在 OnRender 打上断点，如果断点没有进入，查看是否上层控件有调用里层控件的 Arrange 布局方法。如果断点进入还没有界面，请找上层控件是否有重写 GetVisualChild 和 VisualChildrenCount 方法，同时上层控件需要在 GetVisualChild 有返回里层控件
 
 
+## 发送键盘消息
+
+发送给当前应用的键盘输入
+
+```csharp
+        /// <summary>
+        ///   Sends the specified key.
+        /// </summary>
+        public static void SendKey(Key key)
+        {
+            SendKeyDown(key);
+            SendKeyUp(key);
+        }
+
+        /// <summary>
+        ///   Sends the specified key.
+        /// </summary>
+        /// Form: https://stackoverflow.com/a/21074234/6116637
+        /// <param name="key">The key.</param>
+        public static void SendKeyDown(Key key)
+        {
+            if (Keyboard.PrimaryDevice != null)
+            {
+                if (Keyboard.PrimaryDevice.ActiveSource != null)
+                {
+                    var e = new KeyEventArgs(Keyboard.PrimaryDevice, Keyboard.PrimaryDevice.ActiveSource, 0, key)
+                    {
+                        RoutedEvent = Keyboard.KeyDownEvent
+                    };
+                    InputManager.Current.ProcessInput(e);
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Sends the specified key.
+        /// </summary>
+        /// Form: https://stackoverflow.com/a/21074234/6116637
+        public static void SendKeyUp(Key key)
+        {
+            if (Keyboard.PrimaryDevice != null)
+            {
+                if (Keyboard.PrimaryDevice.ActiveSource != null)
+                {
+                    var e = new KeyEventArgs(Keyboard.PrimaryDevice, Keyboard.PrimaryDevice.ActiveSource, 0, key)
+                    {
+                        RoutedEvent = Keyboard.KeyUpEvent
+                    };
+                    InputManager.Current.ProcessInput(e);
+                }
+            }
+        }
+```
+
+
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
