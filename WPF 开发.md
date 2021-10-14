@@ -1068,3 +1068,58 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
 上层元素调用 AddVisualChild 方法是让里层元素建立视觉树关系，建立视觉树关系不意味着可以被渲染，只是提供了让里层元素可以被交互的功能。只有在 GetVisualChild 里面返回了里层控件，才可以让里层控件在界面上渲染出来
 
 因此如果发现自定义控件没有界面渲染出来，请先在 OnRender 打上断点，如果断点没有进入，查看是否上层控件有调用里层控件的 Arrange 布局方法。如果断点进入还没有界面，请找上层控件是否有重写 GetVisualChild 和 VisualChildrenCount 方法，同时上层控件需要在 GetVisualChild 有返回里层控件
+
+
+## 发送键盘消息
+
+发送给当前应用的键盘输入
+
+```csharp
+        /// <summary>
+        ///   Sends the specified key.
+        /// </summary>
+        public static void SendKey(Key key)
+        {
+            SendKeyDown(key);
+            SendKeyUp(key);
+        }
+
+        /// <summary>
+        ///   Sends the specified key.
+        /// </summary>
+        /// Form: https://stackoverflow.com/a/21074234/6116637
+        /// <param name="key">The key.</param>
+        public static void SendKeyDown(Key key)
+        {
+            if (Keyboard.PrimaryDevice != null)
+            {
+                if (Keyboard.PrimaryDevice.ActiveSource != null)
+                {
+                    var e = new KeyEventArgs(Keyboard.PrimaryDevice, Keyboard.PrimaryDevice.ActiveSource, 0, key)
+                    {
+                        RoutedEvent = Keyboard.KeyDownEvent
+                    };
+                    InputManager.Current.ProcessInput(e);
+                }
+            }
+        }
+
+        /// <summary>
+        ///   Sends the specified key.
+        /// </summary>
+        /// Form: https://stackoverflow.com/a/21074234/6116637
+        public static void SendKeyUp(Key key)
+        {
+            if (Keyboard.PrimaryDevice != null)
+            {
+                if (Keyboard.PrimaryDevice.ActiveSource != null)
+                {
+                    var e = new KeyEventArgs(Keyboard.PrimaryDevice, Keyboard.PrimaryDevice.ActiveSource, 0, key)
+                    {
+                        RoutedEvent = Keyboard.KeyUpEvent
+                    };
+                    InputManager.Current.ProcessInput(e);
+                }
+            }
+        }
+```

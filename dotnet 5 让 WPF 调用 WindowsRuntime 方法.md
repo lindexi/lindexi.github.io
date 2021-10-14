@@ -3,6 +3,8 @@
 本文告诉大家在 dotnet 5 里，如何使用 WinRT 加上 Microsoft.Windows.SDK 的辅助来调用 WindowsRuntime 方法。当前是 2021.10 此时的 Windows App SDK 还没准备好，也因此构建起来等逻辑都有点锅。本文和大家演示如何在 WPF 应用里面用上 UWP 提供的 FolderPicker 类型
 
 <!--more-->
+<!-- CreateTime:2021/10/12 8:47:29 -->
+
 
 <!-- 发布 -->
 
@@ -74,7 +76,7 @@
             Debug.WriteLine(folder.Path);
 ```
 
-使用本文的方法，应用是不需要进行打包为 MSIX 包在用户端进行部署就可以使用，双击 exe 就可以使用，和之前的相同。因为调用 WindowsRuntime 的原理是 COM 调用，不需要进行打包
+使用本文的方法，应用是不需要进行打包为 MSIX 包在用户端进行部署就可以使用，双击 exe 就可以使用，和之前的相同。~~因为调用 WindowsRuntime 的原理是 COM 调用，不需要进行打包~~
 
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/26b7b6eec1f8e734bb9dbd49447f62fe2e116a9c/WelhearyalluneaceKujalwhekiraqi) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/26b7b6eec1f8e734bb9dbd49447f62fe2e116a9c/WelhearyalluneaceKujalwhekiraqi) 欢迎访问
 
@@ -96,5 +98,7 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 ```
 
 获取代码之后，进入 WelhearyalluneaceKujalwhekiraqi 文件夹
+
+大概可以从 [Breaking change: Built-in support for WinRT is removed from .NET](https://docs.microsoft.com/en-us/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed ) 文档了解到为什么在 .NET 5 需要用到 [CsWinRT](https://github.com/microsoft/CsWinRT ) 的原因
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
