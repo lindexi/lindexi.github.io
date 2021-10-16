@@ -400,6 +400,8 @@
 
  * [dotnet C# 全局 Windows 鼠标钩子](dotnet-C-全局-Windows-鼠标钩子.md)
 
+ * [dotnet C# 反射扫描程序集所有类型会不会触发类型静态构造函数](dotnet-C-反射扫描程序集所有类型会不会触发类型静态构造函数.md)
+
  * [dotnet C# 只创建对象不调用构造函数方法](dotnet-C-只创建对象不调用构造函数方法.md)
 
  * [dotnet C# 图片等比限制最大和最小大小缩放算法](dotnet-C-图片等比限制最大和最小大小缩放算法.md)
