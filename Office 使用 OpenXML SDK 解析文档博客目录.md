@@ -241,6 +241,10 @@
 
 [bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio: This Power Tool is a Visual Studio add-in that provides an easy way to parse and edit Open Packaging Conventions files, including Word, Excel and PowerPoint documents.](https://github.com/bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio )
 
+### 拷贝 Excel 数据到 WPF 控件
+
+[moraleslarios/MoralesLarios.CustomControls: XAML Controls](https://github.com/moraleslarios/MoralesLarios.CustomControls )
+
 ## 开发群
 
 加群方式：

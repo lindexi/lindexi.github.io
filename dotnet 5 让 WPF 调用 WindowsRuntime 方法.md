@@ -5,7 +5,6 @@
 <!--more-->
 <!-- CreateTime:2021/10/12 8:47:29 -->
 
-
 <!-- 发布 -->
 
 需要将原有的基于 .NET 5 的 WPF 应用的 csproj 替换 `net5.0-windows` 为 `net5.0-windows10.0.19041.0` 代码如下
