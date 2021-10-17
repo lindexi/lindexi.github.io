@@ -1123,3 +1123,38 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
             }
         }
 ```
+
+
+## Win32Exception
+
+默认不传入 Win32 异常的错误码，将会自动去获取 GetLastWin32Error 的值
+
+以下是 Win32Exception 的代码
+
+```csharp
+    public Win32Exception()
+      : this(Marshal.GetLastWin32Error())
+    {
+    }
+```
+
+如下面例子
+
+```csharp
+            HandleRef h = new HandleRef(null, new IntPtr(5));
+
+            var dc = IntGetDC(h);
+            if (dc == IntPtr.Zero)
+            {
+                var lastWin32Error = Marshal.GetLastWin32Error();
+
+                var e = new Win32Exception();
+
+                Console.WriteLine(e.NativeErrorCode == lastWin32Error);
+            }
+
+        [DllImport("user32.dll", SetLastError = true, ExactSpelling = true, EntryPoint = "GetDC", CharSet = CharSet.Auto)]
+        private static extern IntPtr IntGetDC(HandleRef hWnd);
+```
+
+例子请看 https://github.com/lindexi/lindexi_gd/tree/9fb7110aeb0d4bda10f43639173c91d97b032272/JijachawaybaneeHemkinairdocawno
