@@ -926,6 +926,8 @@
 
  * [dotnet 读 WPF 源代码笔记 渲染收集是如何触发](dotnet-读-WPF-源代码笔记-渲染收集是如何触发.md)
 
+ * [dotnet 读 WPF 源代码笔记 简单聊聊文本布局换行逻辑](dotnet-读-WPF-源代码笔记-简单聊聊文本布局换行逻辑.md)
+
  * [dotnet 读 WPF 源代码笔记 默认的 Main 函数是在哪创建的](dotnet-读-WPF-源代码笔记-默认的-Main-函数是在哪创建的.md)
 
  * [dotnet 运行时获取某类型的对象占用内存大小](dotnet-运行时获取某类型的对象占用内存大小.md)
@@ -1133,6 +1135,8 @@
  * [PowerShell 通过 WMI 获取设备厂商](PowerShell-通过-WMI-获取设备厂商.md)
 
  * [PTA 6-2 多项式求值](PTA-6-2-多项式求值.md)
+
+ * [PublishFolderCleaner 让你的 dotnet 应用发布文件夹更加整洁](PublishFolderCleaner-让你的-dotnet-应用发布文件夹更加整洁.md)
 
  * [README](README.md)
 
@@ -2893,6 +2897,8 @@
  * [读书笔记 dotnet 什么时候进行垃圾回收](读书笔记-dotnet-什么时候进行垃圾回收.md)
 
  * [读书笔记 dotnet 大对象堆和小对象堆](读书笔记-dotnet-大对象堆和小对象堆.md)
+
+ * [读书笔记 dotnet 的字符串在内存是如何存放](读书笔记-dotnet-的字符串在内存是如何存放.md)
 
  * [调试 ms 源代码](调试-ms-源代码.md)
 
