@@ -113,7 +113,7 @@ while (x == y)
 
 使用 Label 缩进一个小于当前缩进的标签
 
-原文：[coding-style.md](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md )
+原文：[coding-style.md](https://github.com/dotnet/runtime/blob/main/docs/coding-guidelines/coding-style.md )
 
 ![](http://image.acmx.xyz/lindexi%2F2018571237288065.jpg)
 
