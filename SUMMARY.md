@@ -850,6 +850,8 @@
 
  * [dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发](dotnet-用-NuGet-将自己的工具作为-dotnet-tool-分发.md)
 
+ * [dotnet 画布类应用的组合元素设计](dotnet-画布类应用的组合元素设计.md)
+
  * [dotnet 的 TaskCompletionSource 的 TrySetResult 是线程安全](dotnet-的-TaskCompletionSource-的-TrySetResult-是线程安全.md)
 
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
