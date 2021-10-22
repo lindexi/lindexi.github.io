@@ -264,9 +264,13 @@ foo.A();
 
 如果有看到事件的加等，请看一下是否可以放在业务的最开始
 
+## 框架层对外抛出事件捕获异常
 
+在编写框架层或者基础库的逻辑，需要对外抛出事件，那么推荐捕获对外抛出的事件抛出的异常，不要让事件抛出的异常影响到逻辑
 
+因为对外抛出的事件，是给上层业务使用的，如果上层某个业务抛了异常，也许将会影响框架本身。好的设计大部分是捕获此事件抛出的所有异常，然后稳稳执行完成框架的逻辑之后，再次抛出异常或者封装之后抛出
 
+值得考虑的是，重新抛出的异常可以用 [ExceptionDispatchInfo](https://blog.walterlv.com/post/exceptiondispatchinfo-capture-throw.html) 类的辅助。通过 [ExceptionDispatchInfo](https://blog.walterlv.com/post/exceptiondispatchinfo-capture-throw.html) 可以继续原先异常的抛出堆栈，不会丢失信息
 
 
 ## 字典性能相关
