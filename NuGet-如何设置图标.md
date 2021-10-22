@@ -128,7 +128,7 @@ nuget pack
 
 这也是比较推荐的方法，能够解决 NU5048 警告
 
-推荐在 [Directory.Build.props](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html) 文件里面使用下面添加
+推荐在 [Directory.Build.props](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html) 文件里面使用下面添加下面代码
 
 ```xml
   <PropertyGroup>
@@ -142,6 +142,12 @@ nuget pack
 将图标文件 logo.png 放在 Directory.Build.props 文件所在的文件夹，通过 `$(MSBuildThisFileDirectory)` 就可以找到这个文件，然后打包放在 Icon.png 文件
 
 在 PackageIcon 引用这个文件，需要注意的是这里的文件的大小写是需要关注的，需要让大小写相同，才能拿到相同的文件
+
+另外，此 Icon.png 将会在项目中看到，如果期望没有在项目看到，可以加上 `Visible="False"` 设置不可见，代码如下
+
+```xml
+ <None Include="$(MSBuildThisFileDirectory)Logo.png" Pack="true" PackagePath="Icon.png" Visible="False"></None>
+```
 
 [Packaging Icon within the nupkg · NuGet/Home Wiki](https://github.com/NuGet/Home/wiki/Packaging-Icon-within-the-nupkg )
 
