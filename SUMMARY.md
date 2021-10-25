@@ -836,6 +836,8 @@
 
  * [dotnet 构建 SourceRoot items must include at least one top-level item when DeterministicSourcePaths is true 失败](dotnet-构建-SourceRoot-items-must-include-at-least-one-top-level-item-when-DeterministicSourcePaths-is-true-失败.md)
 
+ * [dotnet 构建还原失败 NuGet.targets 错误可能原因](dotnet-构建还原失败-NuGet.targets-错误可能原因.md)
+
  * [dotnet 枚举当前设备wifi热点](dotnet-枚举当前设备wifi热点.md)
 
  * [dotnet 桌面端基于 AppHost 的配置式自动切换更新后的应用程序路径](dotnet-桌面端基于-AppHost-的配置式自动切换更新后的应用程序路径.md)
