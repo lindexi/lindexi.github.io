@@ -48,6 +48,21 @@ Foo(1, 200, 15, 16, 20);
 
 这部分其实用机器人不错，如 GitHub 的代码风格自动审查机器人 [CodeFactor](https://github.com/marketplace/codefactor ) 可以自动审查代码风格
 
+## 在没有带序号重载的 Where 中谨慎使用 i 变量
+
+大部分时候使用 Linq 的 Where 和 Select 等函数，默认是有多个重载的，其中一个重载是带上序号的，如下面代码
+
+```csharp
+var n = new List<int>();
+
+            n.Where((t, i) =>
+            {
+
+            });
+```
+
+以上的 t 表示的是某个元素，而 i 表示的是此元素的序号。因此在没有使用序号的 Where 中，谨慎使用 i 变量。因为 i 变量按照约定是用在带序号的重载作为表示元素的序号
+
 
 ## 该加单位的属性是否明确了单位
 
@@ -628,7 +643,11 @@ Color color = Color.FromRgb(0xFF, 0x00, 0x00);
 
 ### 空用户控件的 XAML 删除
 
-如果一个用户控件的 XAML 没有代码，而且可以预期后面也不会添加 XAML 代码的，可以删除掉 XAML 文件，此时保存 cs 文件。可以提升一些性能
+如果一个用户控件的 XAML 没有代码，而且可以预期后面也不会添加 XAML 代码的，可以删除掉 XAML 文件，仅保存 cs 文件。可以提升一些性能，减少 XAML 反序列化的资源
+
+### 关注 XAML 层级
+
+在 XAML 创建的控件，默认都是按照从远离屏幕到靠近用户的顺序存放，因此新加入的更改，需要关注是否放在正确的层级里面，是否有挡住原有的控件
 
 ### 给 XAML 使用的类应该公开
 
@@ -746,6 +765,21 @@ public class LindexiRoutedEventArgs : RoutedEventArgs
     public delegate void LindexiRoutedEventEventHandler(object sender,
         LindexiRoutedEventArgs e);
 ```
+
+### 不要在 OnRender 里面抛出事件
+
+在 OnRender 方法里面最好只做和渲染相关的逻辑，禁止任何业务逻辑。不要在 OnRender 里面抛出事件，因为不知道此事件将会执行什么，是否会抛出异常
+
+### 不需要命中测试的自定义控件关闭命中测试
+
+如果自定义的控件不需要有命中测试的功能，如只是用来做界面渲染的，没有任何交互，考虑关闭此控件的命中测试，如在静态构造函数加上如下代码
+
+```csharp
+IsHitTestVisibleProperty.OverrideMetadata(typeof(你的自定义控件), new UIPropertyMetadata(false));
+```
+
+但是以上代码也会挖坑，如果后续需要有交互了，说不定找不到这个代码，从而不知道为什么自己写的控件没有交互
+
 
 
 
