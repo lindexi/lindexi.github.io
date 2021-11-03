@@ -608,6 +608,8 @@
 
  * [dotnet OpenXML 读取形状轮廓线条样式序号超过主题样式列表数](dotnet-OpenXML-读取形状轮廓线条样式序号超过主题样式列表数.md)
 
+ * [dotnet OpenXML 转换 PathFillModeValues 为颜色特效](dotnet-OpenXML-转换-PathFillModeValues-为颜色特效.md)
+
  * [dotnet OpenXML 预设 PresetColorValues 颜色对应的值](dotnet-OpenXML-预设-PresetColorValues-颜色对应的值.md)
 
  * [dotnet OpenXML 颜色变换](dotnet-OpenXML-颜色变换.md)
@@ -2155,6 +2157,8 @@
  * [WPF 和 ASP.NET Core 通过 elastic APM 上报信息](WPF-和-ASP.NET-Core-通过-elastic-APM-上报信息.md)
 
  * [WPF 图片移除视觉树内存泄漏](WPF-图片移除视觉树内存泄漏.md)
+
+ * [WPF 在 .NET Core 3.1.19 版本 触摸笔迹偏移问题](WPF-在-.NET-Core-3.1.19-版本-触摸笔迹偏移问题.md)
 
  * [WPF 在 .NET Core 3.1.19 版本没有跟随 DPI 缩放文本过小问题](WPF-在-.NET-Core-3.1.19-版本没有跟随-DPI-缩放文本过小问题.md)
 
