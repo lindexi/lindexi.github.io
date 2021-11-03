@@ -217,12 +217,6 @@
 
 [NetOfficeFw/NetOffice: 🌌 .NET wrapper assemblies for accessing Microsoft Office applications.](https://github.com/NetOfficeFw/NetOffice )
 
-### PPT 辅助库
-
-[ShapeCrawler/ShapeCrawler: A .NET library for manipulating PowerPoint presentations.](https://github.com/ShapeCrawler/ShapeCrawler )
-
-[sergey-tihon/Clippit: New PowerTools for OpenXml](https://github.com/sergey-tihon/Clippit )
-
 ### [aspose](https://www.aspose.com/ )
 
 基于他，你几乎能造个 WPS 出来。很贵，很强的工具包，提供了很强的编辑功能。可以将元素或页面输出为图片效果，支持多个不同的语言
@@ -244,6 +238,20 @@
 ### 拷贝 Excel 数据到 WPF 控件
 
 [moraleslarios/MoralesLarios.CustomControls: XAML Controls](https://github.com/moraleslarios/MoralesLarios.CustomControls )
+
+### PPT 辅助库
+
+[ShapeCrawler/ShapeCrawler: A .NET library for manipulating PowerPoint presentations.](https://github.com/ShapeCrawler/ShapeCrawler )
+
+[sergey-tihon/Clippit: New PowerTools for OpenXml](https://github.com/sergey-tihon/Clippit )
+
+### Excel 辅助库
+
+[nissl-lab/npoi: a .NET library that can read/write Office formats without Microsoft Office installed. No COM+, no interop.](https://github.com/nissl-lab/npoi )
+
+[EPPlusSoftware/EPPlus: EPPlus 5-Excel spreadsheets for .NET](https://github.com/EPPlusSoftware/EPPlus )
+
+[dotnetcore/Magicodes.IE: Import and export general library, support Dto import and export, template export, fancy export and dynamic export, support Excel, Csv, Word, Pdf and Html.](https://github.com/dotnetcore/Magicodes.IE )
 
 ## 开发群
 
