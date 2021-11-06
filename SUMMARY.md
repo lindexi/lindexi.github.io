@@ -386,6 +386,8 @@
 
  * [dotnet 5 静态字段和属性的反射获取 没有想象中那么伤性能](dotnet-5-静态字段和属性的反射获取-没有想象中那么伤性能.md)
 
+ * [dotnet 6 使用 CreateSymbolicLink 创建文件夹符号链接](dotnet-6-使用-CreateSymbolicLink-创建文件夹符号链接.md)
+
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
 
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)

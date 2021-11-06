@@ -80,6 +80,8 @@
 
 [WPF 设置 WS_EX_TRANSPARENT 触摸失效](https://blog.lindexi.com/post/WPF-%E8%AE%BE%E7%BD%AE-WS_EX_TRANSPARENT-%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )
 
+[WPF 在 .NET Core 3.1.19 版本 触摸笔迹偏移问题](https://lindexi.gitee.io/post/WPF-%E5%9C%A8-.NET-Core-3.1.19-%E7%89%88%E6%9C%AC-%E8%A7%A6%E6%91%B8%E7%AC%94%E8%BF%B9%E5%81%8F%E7%A7%BB%E9%97%AE%E9%A2%98.html )
+
 ## 笔迹
 
 - [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
