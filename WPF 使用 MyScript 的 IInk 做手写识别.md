@@ -13,15 +13,17 @@
 
 好了，我知道怎么吹小伙伴都是不信的，让我给出一张图片证明。这是一张比较大的 GIF 图片，所以我放在了 sm.ms 上，如果看不到图片就刷新
 
+<!-- ![](image/WPF 使用 MyScript 的 IInk 做手写识别/WPF 使用 MyScript 的 IInk 做手写识别0.gif) -->
+
 ![](https://i.loli.net/2019/11/18/EH9TIqwUndyBVft.gif)
 
-小伙伴也许会认为我是用了100000挑里面最好的一个放上来，下面就来告诉搭建如何开发
+小伙伴也许会认为我是用了100000次测试，挑里面最好的一个放上来，下面就来告诉大家搭建和如何开发，让大家也试试看
 
 不要问那么多，上车咯
 
-先通过 Github 下载官方的例子 [MyScript/interactive-ink-examples-wpf: MyScript Interactive Ink examples and user interface reference implementation for Windows WPF.](https://github.com/MyScript/interactive-ink-examples-wpf )
+先通过 Github 下载官方的例子：[MyScript/interactive-ink-examples-wpf: MyScript Interactive Ink examples and user interface reference implementation for Windows WPF.](https://github.com/MyScript/interactive-ink-examples-wpf )
 
-下载完成之后，不要急着打开，因为这是一个收费的库，所以需要下载许可证。下载许可证的路线有点长，需要注册帐号写申请，然后这个网站又在国外，所以可能需要小伙伴一点时间。申请帐号地址是 [https://developer.myscript.com/getting-started](https://developer.myscript.com/getting-started) 申请完成会在邮件收到 MyCertificate.cs 文件，将这个文件替换到下载的仓库的 `GetStarted\MyCertificate.cs` 和 `Demo\MyCertificate.cs` 如果小伙伴都不想申请，或者打不开网站，可以发邮件[给我](mailto:lindexi_gd@163.com)使用我的文件
+下载完成之后，不要急着打开，因为这是一个收费的库，所以需要下载许可证。下载许可证的路线有点长，需要注册帐号写申请，然后这个网站又在国外，所以可能需要小伙伴一点时间。申请帐号地址是 [https://developer.myscript.com/getting-started](https://developer.myscript.com/getting-started) 申请完成会在邮件收到 MyCertificate.cs 文件，将这个文件替换到下载的仓库的 `GetStarted\MyCertificate.cs` 和 `Demo\MyCertificate.cs` 文件。如果小伙伴都不想申请，或者打不开网站，可以发邮件[给我](mailto:lindexi_gd@163.com)使用我的文件
 
 免费的 MyCertificate.cs 可以用在100个设备上
 
@@ -42,7 +44,7 @@
 
 修改之后请重启程序，现在就可以试试公式识别，需要手动点击 Convert 按钮才能识别
 
-这个库好不好用，请小伙伴自己测试如果还是无法编译成功，请找我要编译完成文件
+这个库好不好用，请小伙伴自己测试。如果还是无法编译成功，请找我要编译完成文件
 
 再次说明，我没有收 MyScript 的好处
 

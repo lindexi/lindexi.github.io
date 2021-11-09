@@ -3,6 +3,8 @@
 本文告诉大家如何使用 dotnet 6 提供的 Directory.CreateSymbolicLink 和 File.CreateSymbolicLink 方法创建文件夹和文件的符号链接
 
 <!--more-->
+<!-- CreateTime:2021/11/5 20:10:55 -->
+
 
 <!-- 发布 -->
 

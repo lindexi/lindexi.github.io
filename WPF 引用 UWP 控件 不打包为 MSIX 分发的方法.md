@@ -107,4 +107,9 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 获取代码之后，进入 LaykearduchuNachairgurharhear 文件夹
 
+更多 WPF 引用 UWP 做高性能笔迹文档请看：
+
+- [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 做高性能笔迹应用](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Microsoft.Toolkit.Wpf.UI.Controls-%E7%9A%84-InkCanvas-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E7%AC%94%E8%BF%B9%E5%BA%94%E7%94%A8.html )
+- [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 时加上背景色和按钮方法](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Microsoft.Toolkit.Wpf.UI.Controls-%E7%9A%84-InkCanvas-%E6%97%B6%E5%8A%A0%E4%B8%8A%E8%83%8C%E6%99%AF%E8%89%B2%E5%92%8C%E6%8C%89%E9%92%AE%E6%96%B9%E6%B3%95.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
