@@ -604,6 +604,8 @@
 
  * [dotnet OpenXML 读取 PPT 内嵌 ole 格式 Excel 表格的信息](dotnet-OpenXML-读取-PPT-内嵌-ole-格式-Excel-表格的信息.md)
 
+ * [dotnet OpenXML 读取 PPT 内嵌 xlsx 格式 Excel 表格的信息](dotnet-OpenXML-读取-PPT-内嵌-xlsx-格式-Excel-表格的信息.md)
+
  * [dotnet OpenXML 读取 PPT 动画进入退出强调动画类型](dotnet-OpenXML-读取-PPT-动画进入退出强调动画类型.md)
 
  * [dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷](dotnet-OpenXML-读取-PPT-形状边框定义在-Style-的颜色画刷.md)
@@ -711,6 +713,8 @@
  * [dotnet 入门到放弃 使用 .NET Core 卸载工具](dotnet-入门到放弃-使用-.NET-Core-卸载工具.md)
 
  * [dotnet 关于 SmartSql 的 SQL 语句的属性替换前缀说明](dotnet-关于-SmartSql-的-SQL-语句的属性替换前缀说明.md)
+
+ * [dotnet 写一个支持层层继承属性的对象](dotnet-写一个支持层层继承属性的对象.md)
 
  * [dotnet 列表 Linq 的 Take 用法](dotnet-列表-Linq-的-Take-用法.md)
 
@@ -2089,6 +2093,8 @@
  * [WPF 使用 Skia 绘制 WriteableBitmap 图片](WPF-使用-Skia-绘制-WriteableBitmap-图片.md)
 
  * [WPF 使用 TranslatePoint 换算元素之间相对坐标](WPF-使用-TranslatePoint-换算元素之间相对坐标.md)
+
+ * [WPF 使用 VisualBrush 在 4k 加 200 DPI 设备上某些文本不渲染看不见问题](WPF-使用-VisualBrush-在-4k-加-200-DPI-设备上某些文本不渲染看不见问题.md)
 
  * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
 

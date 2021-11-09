@@ -215,6 +215,8 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 - [MS-XLS].pdf
 - [MS-OI 29500].pdf
 
+我嫌弃 [Open MCDF](https://github.com/ironfede/openmcdf) 库占用的内存太大，于是写了一个只读的版本，此版本能够使用尽可能少的内存，代码正在提回官方，请看 [Add the readonly version by lindexi · Pull Request #87 · ironfede/openmcdf](https://github.com/ironfede/openmcdf/pull/87 )
+
 
 
 
