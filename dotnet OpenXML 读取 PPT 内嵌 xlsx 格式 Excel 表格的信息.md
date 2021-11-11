@@ -1,9 +1,11 @@
 # dotnet OpenXML 读取 PPT 内嵌 xlsx 格式 Excel 表格的信息
 
-在 Office 中，可以在 PPT 里面插入表格，插入表格有好多不同的方法，对应 OpenXML 文档存储的更多不同的方式。本文来介绍如何读取 PPT 内嵌 xlsx 格式的 xls+ 表格的方法
+在 Office 中，可以在 PPT 里面插入表格，插入表格有好多不同的方法，对应 OpenXML 文档存储的更多不同的方式。本文来介绍如何读取 PPT 内嵌 xlsx 格式的表格的方法
 
 
 <!--more-->
+<!-- CreateTime:2021/11/8 16:39:59 -->
+
 
 <!-- 发布 -->
 
