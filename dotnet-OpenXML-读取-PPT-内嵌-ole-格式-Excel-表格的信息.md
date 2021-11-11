@@ -217,6 +217,8 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 我嫌弃 [Open MCDF](https://github.com/ironfede/openmcdf) 库占用的内存太大，于是写了一个只读的版本，此版本能够使用尽可能少的内存，代码正在提回官方，请看 [Add the readonly version by lindexi · Pull Request #87 · ironfede/openmcdf](https://github.com/ironfede/openmcdf/pull/87 )
 
+对于嵌入的是 XLSX 文件的，请看 [dotnet OpenXML 读取 PPT 内嵌 xlsx 格式 Excel 表格的信息](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%AF%BB%E5%8F%96-PPT-%E5%86%85%E5%B5%8C-xlsx-%E6%A0%BC%E5%BC%8F-Excel-%E8%A1%A8%E6%A0%BC%E7%9A%84%E4%BF%A1%E6%81%AF.html )
+
 
 
 

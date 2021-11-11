@@ -1972,6 +1972,8 @@
 
  * [WinForms 下的高性能笔迹方法](WinForms-下的高性能笔迹方法.md)
 
+ * [WinForms 使用 Image 的 FromFile 方法加载文件和使用 Bitmap 有什么不同](WinForms-使用-Image-的-FromFile-方法加载文件和使用-Bitmap-有什么不同.md)
+
  * [Winforms 可能遇到的 1000 个问题](Winforms-可能遇到的-1000-个问题.md)
 
  * [win 10 UWP 标签](win-10-UWP-标签.md)
