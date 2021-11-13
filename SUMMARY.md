@@ -588,6 +588,8 @@
 
  * [dotnet OpenXML 继承组合颜色的 GrpFill 属性](dotnet-OpenXML-继承组合颜色的-GrpFill-属性.md)
 
+ * [dotnet OpenXML 获取 Excel 表格当前激活选择的工作表](dotnet-OpenXML-获取-Excel-表格当前激活选择的工作表.md)
+
  * [dotnet OpenXML 解压缩文档为文件夹工具](dotnet-OpenXML-解压缩文档为文件夹工具.md)
 
  * [dotnet OpenXML 解析 PPT 文本字体获取详解](dotnet-OpenXML-解析-PPT-文本字体获取详解.md)
@@ -2146,6 +2148,8 @@
 
  * [WPF 判断调用方法堆栈](WPF-判断调用方法堆栈.md)
 
+ * [WPF 制作一个占用文件的测试工具](WPF-制作一个占用文件的测试工具.md)
+
  * [WPF 制作支持点击穿透的高性能的透明背景异形窗口](WPF-制作支持点击穿透的高性能的透明背景异形窗口.md)
 
  * [WPF 加载诡异的字体无法布局](WPF-加载诡异的字体无法布局.md)
@@ -2661,6 +2665,8 @@
  * [docfx 做一个和微软一样的文档平台](docfx-做一个和微软一样的文档平台.md)
 
  * [关于技术规划的想法](关于技术规划的想法.md)
+
+ * [关闭 SublimeText 3.2.2 Build 3211 的拼写检查](关闭-SublimeText-3.2.2-Build-3211-的拼写检查.md)
 
  * [分形和图论网络](分形和图论网络.md)
 
