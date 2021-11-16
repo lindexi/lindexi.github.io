@@ -164,6 +164,8 @@
 
 [dotnet OpenXML 利用合并表格单元格在 PPT 文档插入不可见的额外版权信息](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%88%A9%E7%94%A8%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC%E5%8D%95%E5%85%83%E6%A0%BC%E5%9C%A8-PPT-%E6%96%87%E6%A1%A3%E6%8F%92%E5%85%A5%E4%B8%8D%E5%8F%AF%E8%A7%81%E7%9A%84%E9%A2%9D%E5%A4%96%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF.html )
 
+[dotnet OpenXML 获取 Excel 表格当前激活选择的工作表](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%8E%B7%E5%8F%96-Excel-%E8%A1%A8%E6%A0%BC%E5%BD%93%E5%89%8D%E6%BF%80%E6%B4%BB%E9%80%89%E6%8B%A9%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%A1%A8.html )
+
 ## 工具
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
