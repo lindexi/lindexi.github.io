@@ -3,6 +3,8 @@
 本文告诉大家如何读取 Excel 里面的信息拿到当前激活选择的工作表
 
 <!--more-->
+<!-- CreateTime:2021/11/12 20:48:18 -->
+
 <!-- 发布 -->
 
 在开始之前，期望大家了解如何使用 OpenXML 读取 Excel 文件，如果对此还不了解，请看 [C# dotnet WPF 使用 OpenXml 解析 Excel 文件](https://blog.lindexi.com/post/C-dotnet-WPF-%E4%BD%BF%E7%94%A8-OpenXml-%E8%A7%A3%E6%9E%90-Excel-%E6%96%87%E4%BB%B6.html)
