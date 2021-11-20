@@ -3,6 +3,8 @@
 我在迁移一个古老的项目为 .NET 6 框架，但是 VS 提示 error NETSDK1136 如果使用 Windows 窗体或 WPF，或者引用使用 Windows 窗体或 WPF 的项目或包，则必须将目标平台设置为 Windows 平台。但是我不想让此项目绑定到 Windows 平台上，不在 TargetFramework 上修改为 net6.0-windows 框架
 
 <!--more-->
+<!-- CreateTime:2021/11/18 20:23:35 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
