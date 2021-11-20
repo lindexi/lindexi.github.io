@@ -100,7 +100,9 @@
 - [win10 uwp 通过 win2d 画出笔迹](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87-win2d-%E7%94%BB%E5%87%BA%E7%AC%94%E8%BF%B9.html )
 - [win10 uwp 通过 Win2d 完全控制笔迹绘制逻辑](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87-Win2d-%E5%AE%8C%E5%85%A8%E6%8E%A7%E5%88%B6%E7%AC%94%E8%BF%B9%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
 
+## 收藏
 
+[WPF and multi-touch - CodeProject](https://www.codeproject.com/Articles/692286/WPF-and-multi-touch )
 
 ![](http://image.acmx.xyz/lindexi%2F72551177_p0.jpg)
 

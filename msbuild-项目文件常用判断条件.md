@@ -97,6 +97,15 @@ Condition=" '$(TargetFramework)'=='net45' or $(Configuration)=='Debug'"
 Condition="$(DefineConstants.Contains(NET30))"
 ```
 
+## 判断文件夹是否以斜杠结尾
+
+如下面代码，判断 BaseIntermediateOutputPath 是否以斜杠结尾，否则就加上斜杠
+
+```xml
+    <BaseIntermediateOutputPath Condition="!HasTrailingSlash('$(BaseIntermediateOutputPath)')">$(BaseIntermediateOutputPath)\</BaseIntermediateOutputPath>
+```
+
+
 更多判断请看
 
 [Roslyn 在项目文件使用条件判断](https://blog.lindexi.com/post/Roslyn-%E5%9C%A8%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD.html )

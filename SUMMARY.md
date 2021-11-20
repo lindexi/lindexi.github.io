@@ -678,11 +678,15 @@
 
  * [dotnet 使用 GZipStream 压缩字符串](dotnet-使用-GZipStream-压缩字符串.md)
 
+ * [dotnet 使用 Infer# 自动分析代码缺陷](dotnet-使用-Infer-自动分析代码缺陷.md)
+
  * [dotnet 使用 Interlocked 实现一个无锁的快速无序仅写集合](dotnet-使用-Interlocked-实现一个无锁的快速无序仅写集合.md)
 
  * [dotnet 使用 lz4net 压缩 Stream 或文件](dotnet-使用-lz4net-压缩-Stream-或文件.md)
 
  * [dotnet 使用 MessagePack 序列化对象](dotnet-使用-MessagePack-序列化对象.md)
+
+ * [dotnet 使用 Newtonsoft.Json 输出枚举首字符小写](dotnet-使用-Newtonsoft.Json-输出枚举首字符小写.md)
 
  * [dotnet 使用 Obsolete 特性标记成员过时保持库和框架的兼容性](dotnet-使用-Obsolete-特性标记成员过时保持库和框架的兼容性.md)
 
@@ -1087,6 +1091,8 @@
  * [Mobius 一个运行在 .NET Core 上的 .NET 运行时](Mobius-一个运行在-.NET-Core-上的-.NET-运行时.md)
 
  * [Moq基础 判断方法被执行](Moq基础-判断方法被执行.md)
+
+ * [msbuild Roslyn 行为详解](msbuild-Roslyn-行为详解.md)
 
  * [msbuild 使用 ProduceOnlyReferenceAssembly 创建作为引用的仅公开成员程序集](msbuild-使用-ProduceOnlyReferenceAssembly-创建作为引用的仅公开成员程序集.md)
 
