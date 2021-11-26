@@ -20,6 +20,10 @@
 
 [dotnet/Silk.NET: The high-speed OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX bindings library your mother warned you about.](https://github.com/dotnet/Silk.NET )
 
+## DirectN
+
+[smourier/DirectN: Direct interop Code for .NET Framework, .NET Core and .NET 5+ : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.](https://github.com/smourier/DirectN )
+
 
 
 
