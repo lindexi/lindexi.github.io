@@ -6,7 +6,7 @@
 <!-- CreateTime:2020/1/7 11:39:44 -->
 
 
-假如需要把字符串 "red" 转换为 "Red"，把 "red house" 转为 "Red house" 或者单词的第一个大写，下面就是我从网上看到的技术。
+假如需要把字符串 "red" 转换为 "Red"，把 "red house" 转为 "Red house" 或者单词的第一个大写，下面就是我从网上看到的技术
 
 ```csharp
 public static string FirstCharToUpper(string input)

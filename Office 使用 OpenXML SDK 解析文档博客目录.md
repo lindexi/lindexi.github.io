@@ -1,6 +1,6 @@
 # Office 使用 OpenXML SDK 解析文档博客目录
 
-本文收集我写的 Office 解析相关博客
+本文收集 Office 解析相关博客
 
 <!--more-->
 <!-- CreateTime:7/4/2020 10:05:36 AM -->

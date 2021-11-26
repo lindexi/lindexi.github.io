@@ -5,6 +5,8 @@ PPT对图片进行**重新着色**和**设置透明颜色**这两个行为，并
 通过本篇内容，我们将介绍**重新着色**的存储相关，并将说明我们如何实现相同的效果。
 
 <!--more-->
+<!-- CreateTime:2021/11/22 9:11:23 -->
+
 
 原文： [[PPTX解析] 图片效果算法篇：重新着色 - 仙尘阁](https://imxcg.com/technology/dot-net/pptx-analysis/picture-recolor/ )
 

@@ -3,6 +3,8 @@
 在PPT中，我们可以通过图片格式选项中->颜色->设置透明色，将指定颜色设置为透明，以实现去除纯色背景的需求。
 
 <!--more-->
+<!-- CreateTime:2021/11/22 9:11:23 -->
+
 
 ![](http://image.acmx.xyz/lindexi%2Fimage-1628836752925.png)
 <!-- ![file](https://imxcg.com/wp-content/uploads/2021/08/image-1628836752925.png) -->
