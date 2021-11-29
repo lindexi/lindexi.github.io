@@ -114,6 +114,8 @@
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7093026adf0907469f39ea69dc67eea10c3a6d4c/TakeUpFile) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/7093026adf0907469f39ea69dc67eea10c3a6d4c/TakeUpFile) 欢迎访问
 
+应用下载地址： [https://github.com/lindexi/UWP/releases/download/WordPageToImages_1.0.1/WordPageToImages-net5.0-1.0.1.zip](https://github.com/lindexi/UWP/releases/download/WordPageToImages_1.0.1/WordPageToImages-net5.0-1.0.1.zip)
+
 
 
 

@@ -480,6 +480,8 @@
 
  * [dotnet core 在 MAC 系统下删除应用程序自己后调 Process Start 方法将会抛出 Win32 异常](dotnet-core-在-MAC-系统下删除应用程序自己后调-Process-Start-方法将会抛出-Win32-异常.md)
 
+ * [dotnet core 安装在 Redhat6 RHEL 6 或 CentOS 6 的方法](dotnet-core-安装在-Redhat6-RHEL-6-或-CentOS-6-的方法.md)
+
  * [dotnet core 导出 COM 组件](dotnet-core-导出-COM-组件.md)
 
  * [dotnet core 应用是如何跑起来的 通过AppHost理解运行过程](dotnet-core-应用是如何跑起来的-通过AppHost理解运行过程.md)
@@ -632,6 +634,8 @@
 
  * [.NET Standard](NET-Standard.md)
 
+ * [dotnet tool 创建 GitLab 合并请求 Merge Requests 工具](dotnet-tool-创建-GitLab-合并请求-Merge-Requests-工具.md)
+
  * [dotnet tool 判断博客文档链接是否可用的工具](dotnet-tool-判断博客文档链接是否可用的工具.md)
 
  * [dotnet tool 安装失败因为对应的库不仅包含工具](dotnet-tool-安装失败因为对应的库不仅包含工具.md)
@@ -775,6 +779,8 @@
  * [dotnet 在 WPF 里显示数学 π 的颜色](dotnet-在-WPF-里显示数学-π-的颜色.md)
 
  * [dotnet 在国产 UOS 系统利用 dotnet tool 工具做文件传输](dotnet-在国产-UOS-系统利用-dotnet-tool-工具做文件传输.md)
+
+ * [dotnet 在析构函数调用 ThreadLocal 也许会抛出对方已释放](dotnet-在析构函数调用-ThreadLocal-也许会抛出对方已释放.md)
 
  * [dotnet 基于 debian 创建一个 docker 的 sdk 镜像](dotnet-基于-debian-创建一个-docker-的-sdk-镜像.md)
 
