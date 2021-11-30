@@ -592,6 +592,8 @@
 
  * [dotnet OpenXML 继承组合颜色的 GrpFill 属性](dotnet-OpenXML-继承组合颜色的-GrpFill-属性.md)
 
+ * [dotnet OpenXML 聊聊文本段落对齐方式](dotnet-OpenXML-聊聊文本段落对齐方式.md)
+
  * [dotnet OpenXML 获取 Excel 表格当前激活选择的工作表](dotnet-OpenXML-获取-Excel-表格当前激活选择的工作表.md)
 
  * [dotnet OpenXML 解压缩文档为文件夹工具](dotnet-OpenXML-解压缩文档为文件夹工具.md)
