@@ -442,6 +442,8 @@
 
  * [dotnet C# 获取一个可用的端口的方法](dotnet-C-获取一个可用的端口的方法.md)
 
+ * [dotnet C# 获取当前设备可移动磁盘](dotnet-C-获取当前设备可移动磁盘.md)
+
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
  * [dotnet C# 调用委托的 GetInvocationList 的对象分配](dotnet-C-调用委托的-GetInvocationList-的对象分配.md)
