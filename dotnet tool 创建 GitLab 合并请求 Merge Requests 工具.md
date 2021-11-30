@@ -3,6 +3,8 @@
 本文来告诉大家如何使用 dotnetCampus.GitLabMergeRequestCreator 工具，命令行创建 GitLab 合并请求 Merge Requests 的方法
 
 <!--more-->
+<!-- CreateTime:2021/11/29 8:52:59 -->
+
 <!-- 草稿 -->
 
 这是在 GitHub 上完全开源的工具，请看 [https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK](https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK)
