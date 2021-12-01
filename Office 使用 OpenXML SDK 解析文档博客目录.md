@@ -67,6 +67,8 @@
 
 [dotnet OpenXML 解析 PPT 文本字体获取详解](https://lindexi.gitee.io/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E8%8E%B7%E5%8F%96%E8%AF%A6%E8%A7%A3.html )
 
+[dotnet OpenXML 聊聊文本段落对齐方式](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%81%8A%E8%81%8A%E6%96%87%E6%9C%AC%E6%AE%B5%E8%90%BD%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F.html )
+
 ## 形状
 
 ### 形状样式
