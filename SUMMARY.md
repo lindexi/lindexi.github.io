@@ -816,6 +816,8 @@
 
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
+ * [dotnet 将自动代码格式化机器人带入团队 GitLab 平台](dotnet-将自动代码格式化机器人带入团队-GitLab-平台.md)
+
  * [dotnet 开发的单代码仓库和多代码仓库的优劣](dotnet-开发的单代码仓库和多代码仓库的优劣.md)
 
  * [dotnet 强签名下使用 InternalsVisibleToAttribute 给程序集加上友元](dotnet-强签名下使用-InternalsVisibleToAttribute-给程序集加上友元.md)
