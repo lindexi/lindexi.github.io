@@ -7,7 +7,9 @@
 <!--more-->
 
 
-<!-- 草稿 -->
+<!-- CreateTime:2021/11/30 20:36:29 -->
+
+<!-- 发布 -->
 
 本文所使用的工具和代码都是完全开源的，请看 [https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK](https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK)
 
@@ -57,15 +59,9 @@ FormatCode:
 - `-SourceBranch`: 将从 SourceBranch 合并到 TargetBranch 分支。可选，默认将通过环境变量获取 GitLab 的 `$CI_COMMIT_BRANCH` 分支，也就是当前 CI 正在运行分支
 - `-Title`: 提交 MergeRequest 的标题。可选，默认是 "[Bot] Automated PR to fix formatting errors" 字符串
 
-在 GitLab 上，将会在调用命令，传入很多变量，因此大部分可选的命令都是可以不用输入。以上代码关于 Token 的生成等，请参阅 
+在 GitLab 上，将会在调用命令，传入很多变量，因此大部分可选的命令都是可以不用输入。以上代码关于 Token 的生成等，请参阅 [dotnet tool 创建 GitLab 合并请求 Merge Requests 工具](https://blog.lindexi.com/post/dotnet-tool-%E5%88%9B%E5%BB%BA-GitLab-%E5%90%88%E5%B9%B6%E8%AF%B7%E6%B1%82-Merge-Requests-%E5%B7%A5%E5%85%B7.html )
 
-
-
-博客
-
-
-
-以上工具格式化的配置，是依靠仓库的 `.editorconfig` 文件进行配置，更多请参阅 [.NET code style rule options - .NET](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options?WT.mc_id=WD-MVP-5003260 )
+自动格式化工具的格式化的配置，是依靠仓库的 `.editorconfig` 文件进行配置，更多请参阅 [.NET code style rule options - .NET](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options?WT.mc_id=WD-MVP-5003260 )
 
 
 
