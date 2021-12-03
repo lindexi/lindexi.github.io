@@ -592,6 +592,8 @@
 
  * [dotnet OpenXML 继承组合颜色的 GrpFill 属性](dotnet-OpenXML-继承组合颜色的-GrpFill-属性.md)
 
+ * [dotnet OpenXML 聊聊 PPT 文本行距行高计算公式](dotnet-OpenXML-聊聊-PPT-文本行距行高计算公式.md)
+
  * [dotnet OpenXML 聊聊文本段落对齐方式](dotnet-OpenXML-聊聊文本段落对齐方式.md)
 
  * [dotnet OpenXML 获取 Excel 表格当前激活选择的工作表](dotnet-OpenXML-获取-Excel-表格当前激活选择的工作表.md)
