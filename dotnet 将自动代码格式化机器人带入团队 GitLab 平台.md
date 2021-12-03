@@ -21,6 +21,13 @@
 
 为了方便大家使用，我编写了一个工具，此工具合入了代码格式化和推送代码创建合并请求的功能，使用方法特别简单。基于 dotnet tool 发布，大家部署起来也只需要一句话
 
+给团队引入自动代码格式化机器人，只需要两句话，分别是部署和执行
+
+```yml
+    - "dotnet tool update -g dotnetCampus.GitLabCodeFormatBot" # 安装或更新工具
+    - "AutomateFormatCodeAndCreateGitLabMergeRequest -Token $Token" # 格式化代码，推送代码和创建合并请求
+```
+
 如以下代码就是我所在团队里面的 `.gitlab-ci.yml` 配置，只需要如下几句话即可自动在 dev 分支有推送的时候，自动格式化代码，然后创建一个创建合并请求
 
 ```yml
@@ -32,11 +39,11 @@ FormatCode:
   # 格式化规则参阅 .editorconfig 文件
   stage: build
   script:
-    - "chcp 65001"
+    - "chcp 65001" # 解决中文乱码
     - "dotnet tool update -g dotnetCampus.GitLabCodeFormatBot" # 安装或更新工具
-    - "AutomateFormatCodeAndCreateGitLabMergeRequest" # 格式化代码，推送代码和创建合并请求
+    - "AutomateFormatCodeAndCreateGitLabMergeRequest -Token $Token" # 格式化代码，推送代码和创建合并请求
   only:
-    - dev
+    - dev # 只有在 dev 分支有推送时，才进行自动格式化
 ```
 
 运行效果如下
@@ -51,8 +58,8 @@ FormatCode:
 - `-GitLabPushUrl`: 用于上传代码的 GitLab 地址，格式如 `git@gitlab.sdlsj.net:lindexi/foo.git` 地址。可选，默认将通过环境变量拼接 `git@$CI_SERVER_HOST:$CI_PROJECT_PATH.git` 地址
 
 - `-GitLab`: GitLab 地址，如 `https://gitlab.sdlsj.net` 。可选，默认将通过环境变量获取 GitLab 的 `$CI_SERVER_URL` 变量
-- `-Token`: 拥有创建 MergeRequest 的 Token 值，可在 GitLab 上的 `profile/personal_access_tokens` 生成。可选，默认将通过环境变量获取 GitLab 的 `Token` 变量。此变量需要运维手动设置才有
-- `-ProjectId`: 将要创建 MergeRequest 的仓库项目 Id 值。可选，默认将通过环境变量获取 GitLab 的 `$CI_PROJECT_ID` 常量
+- `-Token`: 拥有创建 MergeRequest 的 Token 值，可在 GitLab 上的 `profile/personal_access_tokens` 生成。可选，默认将通过环境变量获取 GitLab 的 `Token` 变量。此变量需要运维手动设置才有值，详细请参阅下文
+- `-ProjectId`: 将要创建 MergeRequest 的仓库项目 Id 值。可选，默认将通过环境变量获取 GitLab 的 `$CI_PROJECT_ID` 常量，也就是当前项目
 - `-TargetBranch`: 将从 SourceBranch 合并到 TargetBranch 分支。可选，默认将通过环境变量获取 GitLab 的 `$CI_DEFAULT_BRANCH` 分支，也就是仓库的默认分支
 - `-SourceBranch`: 将从 SourceBranch 合并到 TargetBranch 分支。可选，默认将通过环境变量获取 GitLab 的 `$CI_COMMIT_BRANCH` 分支，也就是当前 CI 正在运行分支
 - `-Title`: 提交 MergeRequest 的标题。可选，默认是 "[Bot] Automated PR to fix formatting errors" 字符串
