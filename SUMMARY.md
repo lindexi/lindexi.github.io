@@ -870,6 +870,8 @@
 
  * [dotnet 枚举当前设备wifi热点](dotnet-枚举当前设备wifi热点.md)
 
+ * [dotnet 根据基线包版本实现库版本兼容](dotnet-根据基线包版本实现库版本兼容.md)
+
  * [dotnet 桌面端基于 AppHost 的配置式自动切换更新后的应用程序路径](dotnet-桌面端基于-AppHost-的配置式自动切换更新后的应用程序路径.md)
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
@@ -2304,6 +2306,8 @@
 
  * [WPF 引用 UWP 控件 不打包为 MSIX 分发的方法](WPF-引用-UWP-控件-不打包为-MSIX-分发的方法.md)
 
+ * [WPF 引用第三方库的控件在设计器加上设计时数据和属性](WPF-引用第三方库的控件在设计器加上设计时数据和属性.md)
+
  * [WPF 弹出 popup 里面的 TextBox 无法输入汉字](WPF-弹出-popup-里面的-TextBox-无法输入汉字.md)
 
  * [WPF 形状的 StrokeThickness 属性对边框的影响](WPF-形状的-StrokeThickness-属性对边框的影响.md)
@@ -2339,6 +2343,8 @@
  * [WPF 文字描边](WPF-文字描边.md)
 
  * [WPF 新建用户控件提示 Error MC3000 首个 xaml 字符不合法](WPF-新建用户控件提示-Error-MC3000-首个-xaml-字符不合法.md)
+
+ * [WPF 旋转太极](WPF-旋转太极.md)
 
  * [WPF 更改 DrawingVisual 的 RenderOpen 用到的对象的内容将持续影响渲染效果](WPF-更改-DrawingVisual-的-RenderOpen-用到的对象的内容将持续影响渲染效果.md)
 
