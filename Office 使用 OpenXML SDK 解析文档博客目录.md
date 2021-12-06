@@ -69,6 +69,8 @@
 
 [dotnet OpenXML 聊聊文本段落对齐方式](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%81%8A%E8%81%8A%E6%96%87%E6%9C%AC%E6%AE%B5%E8%90%BD%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F.html )
 
+[dotnet OpenXML 聊聊 PPT 文本行距行高计算公式](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%81%8A%E8%81%8A-PPT-%E6%96%87%E6%9C%AC%E8%A1%8C%E8%B7%9D%E8%A1%8C%E9%AB%98%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.html )
+
 ## 形状
 
 ### 形状样式
