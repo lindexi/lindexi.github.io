@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/12/6 8:31:01 -->
+
 <!-- 发布 -->
 
 今天看到了队长推送的 [.NET 6新特性试用 Nuget包验证](https://mp.weixin.qq.com/s/-J2VQEw9pSYy1tFRdTP2ug) 博客，才回忆起此功能。这个功能是给库和框架开发者使用的，用于处理多版本兼容性问题
