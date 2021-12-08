@@ -162,7 +162,7 @@
 
 效果请看 [WPF 旋转太极_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1ah411x7JG/)
 
-本文以上的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/15c60a5534f8c716c056ba181ac42c233c42256e/NallcearreyiHernareferkear) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/15c60a5534f8c716c056ba181ac42c233c42256e/NallcearreyiHernareferkear) 欢迎访问
+本文以上的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/15c60a5534f8c716c056ba181ac42c233c42256e/CowhahiloRallkemnuke) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/15c60a5534f8c716c056ba181ac42c233c42256e/CowhahiloRallkemnuke) 欢迎访问
 
 可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
