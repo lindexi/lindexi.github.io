@@ -972,6 +972,8 @@
 
  * [dotnet 进行二进制差分压缩文件](dotnet-进行二进制差分压缩文件.md)
 
+ * [dotnet 通过 DockerfileContext 解决项目放在里层文件夹导致 VisualStudio 构建失败](dotnet-通过-DockerfileContext-解决项目放在里层文件夹导致-VisualStudio-构建失败.md)
+
  * [dotnet 通过 dotnetCampus.YamlToCsharp 将 YAML 多语言文件构建为代码](dotnet-通过-dotnetCampus.YamlToCsharp-将-YAML-多语言文件构建为代码.md)
 
  * [dotnet 通过 Elmish.WPF 使用 F# 编写 WPF 应用](dotnet-通过-Elmish.WPF-使用-F-编写-WPF-应用.md)
