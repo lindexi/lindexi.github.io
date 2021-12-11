@@ -137,6 +137,8 @@ if (_mutex.WaitOne(TimeSpan.Zero, true))
 
 [C# .NET Single Instance Application - Sanity Free Coding - C#, .NET, PHP](http://sanity-free.org/143/csharp_dotnet_single_instance_application.html )
 
+[c# - What is the correct way to create a single-instance WPF application? - Stack Overflow](https://stackoverflow.com/questions/19147/what-is-the-correct-way-to-create-a-single-instance-wpf-application?rq=1 )
+
 代码：[wpf 单例 PfalmcYmgtx-CSDN下载](http://download.csdn.net/download/lindexi_gd/10030684 )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

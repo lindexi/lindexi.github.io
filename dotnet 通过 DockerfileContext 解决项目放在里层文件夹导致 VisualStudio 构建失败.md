@@ -3,6 +3,8 @@
 本文告诉大家，如何解决 csproj 项目文件放入到里层的文件夹，不放在 sln 所在文件夹的第一层子文件夹，导致 VisualStudio 2022 在构建 docker 映像提示找不到文件的问题
 
 <!--more-->
+<!-- CreateTime:2021/12/9 20:26:04 -->
+
 <!-- 发布 -->
 
 在 VisualStudio 里面，可以右击 docker 文件，进行生成映像。这是默认需要此 csproj 项目文件放入到 sln 所在文件夹的第一层子文件夹里面，而如果有一些定制化的需求，放入到其他的文件夹（依然在 sln 所在的文件夹的子文件夹里面）那就需要设置 DockerfileContext 属性，告诉 Visual Studio 生成时的 Docker 映像时使用的默认上下文
