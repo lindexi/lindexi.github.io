@@ -140,6 +140,8 @@ if (_mutex.WaitOne(TimeSpan.Zero, true))
 
 [C# .NET Single Instance Application - Sanity Free Coding - C#, .NET, PHP](http://sanity-free.org/143/csharp_dotnet_single_instance_application.html )
 
+[c# - What is the correct way to create a single-instance WPF application? - Stack Overflow](https://stackoverflow.com/questions/19147/what-is-the-correct-way-to-create-a-single-instance-wpf-application?rq=1 )
+
 代码：[wpf 单例 PfalmcYmgtx-CSDN下载](http://download.csdn.net/download/lindexi_gd/10030684 )
 
 

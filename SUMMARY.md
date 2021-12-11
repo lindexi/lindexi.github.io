@@ -518,6 +518,8 @@
 
  * [dotnet core 黑科技·String.IndexOf 性能](dotnet-core-黑科技·String.IndexOf-性能.md)
 
+ * [dotnet format 忽略生成代码的格式化](dotnet-format-忽略生成代码的格式化.md)
+
  * [dotnet Framework 源代码 · Ink](dotnet-Framework-源代码-·-Ink.md)
 
  * [dotnet Framework 源代码 · ScrollViewer](dotnet-Framework-源代码-·-ScrollViewer.md)
