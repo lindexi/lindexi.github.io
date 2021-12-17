@@ -546,6 +546,8 @@
 
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
 
+ * [dotnet OpenXML WPF 解析实现 PPT 文本描边效果](dotnet-OpenXML-WPF-解析实现-PPT-文本描边效果.md)
+
  * [dotnet OpenXML 为什么资源使用 Relationship 引用](dotnet-OpenXML-为什么资源使用-Relationship-引用.md)
 
  * [dotnet OpenXML 从文档生成创建文档的代码的库](dotnet-OpenXML-从文档生成创建文档的代码的库.md)
