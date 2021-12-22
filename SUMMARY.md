@@ -1282,6 +1282,8 @@
 
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
 
+ * [SharpDx D3D9 的颜色 Format 和 WPF 的 PixelFormat 转换方法](SharpDx-D3D9-的颜色-Format-和-WPF-的-PixelFormat-转换方法.md)
+
  * [SharpDx 的代替项目](SharpDx-的代替项目.md)
 
  * [SharpDx 进入全屏模式](SharpDx-进入全屏模式.md)
