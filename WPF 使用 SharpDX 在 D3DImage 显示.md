@@ -24,9 +24,9 @@
 
 如果只是使用 SharpDX 使用窗口渲染，就无法使用其它的 WPF 控件，实际使用经常只是使用 SharpDX 加快一些渲染，很多元素都是不需要。
 
-如果拿来 HWND 做渲染，那么 WPF 只是提供一个窗口，这和 WPF 的设计，高效而且灵活不符合，所以本文就来告诉大家如何使用 SharpDx 高性能渲染同时使用 WPF 的元素。
+如果拿来 HWND 做渲染，那么 WPF 只是提供一个窗口，这和 WPF 的设计，高效而且灵活是不符合的，所以本文就来告诉大家如何使用 SharpDx 高性能渲染同时使用 WPF 的元素。
 
-微软为了大家方便使用 Direct2D 就添加了 D3DImage ，虽然这个元素不是很好用。
+微软为了大家方便使用 Direct2D 就添加了 D3DImage 控件，虽然这个元素不是很好用。
 
 ## 介绍
 
@@ -296,7 +296,11 @@ using D3D9 = SharpDX.Direct3D9;
 
 下面就是运行的图片
 
-![](http://img.blog.csdn.net/20180421180424248?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGluZGV4aV9nZA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+<!-- ![](http://img.blog.csdn.net/20180421180424248?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGluZGV4aV9nZA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast) -->
+
+<!-- ![](image/WPF 使用 SharpDX 在 D3DImage 显示/WPF 使用 SharpDX 在 D3DImage 显示0.gif) -->
+
+![](http://image.acmx.xyz/lindexi%2F5a1386e7414d2799ba2116a18fee85c0.gif)
 
 建议复制一下我的代码，在自己的vs粘贴，尝试跑一下，然后继续看博客。
 
@@ -495,7 +499,26 @@ using D3D9 = SharpDX.Direct3D9;
     }
 ```
 
-[WPF 使用 SharpDx 画图 1.1-CSDN下载](https://download.csdn.net/download/lindexi_gd/10365799 )
+源代码可以从 CSDN 下载，请看 [WPF 使用 SharpDx 画图 1.1-CSDN下载](https://download.csdn.net/download/lindexi_gd/10365799 )
+
+本文所有代码也放在[github](https://github.com/lindexi/lindexi_gd/tree/df9de2519f8bc7fa2c621b6a89c9aba983010d0a/HmzicjoDahzyfgn) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/df9de2519f8bc7fa2c621b6a89c9aba983010d0a/HmzicjoDahzyfgn) 欢迎访问，如无 CSDN 积分，推荐使用此方法获取源代码
+
+可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin df9de2519f8bc7fa2c621b6a89c9aba983010d0a
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+```
+
+获取代码之后，进入 HmzicjoDahzyfgn 文件夹
 
 参见：
 
@@ -504,5 +527,7 @@ using D3D9 = SharpDX.Direct3D9;
 [Multithreaded Direct2D Apps (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/jj569217(v=vs.85).aspx )
 
 [Improving the performance of Direct2D apps (Windows)](https://msdn.microsoft.com/en-us/library/windows/desktop/dd372260(v=vs.85).aspx )
+
+更多请看 [WPF 使用 SharpDx 渲染博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
