@@ -380,6 +380,8 @@
 
  * [dotnet 5 从 IL 层面分析协变返回类型新特性](dotnet-5-从-IL-层面分析协变返回类型新特性.md)
 
+ * [dotnet 5 判断当前程序运行在 Windows 系统 Linux 系统的简单方法](dotnet-5-判断当前程序运行在-Windows-系统-Linux-系统的简单方法.md)
+
  * [dotnet 5 破坏性改动 WPF 和 WinForms 的 OutputType 输出类型重定向为 WinExe 类型](dotnet-5-破坏性改动-WPF-和-WinForms-的-OutputType-输出类型重定向为-WinExe-类型.md)
 
  * [dotnet 5 让 WPF 调用 WindowsRuntime 方法](dotnet-5-让-WPF-调用-WindowsRuntime-方法.md)
@@ -2701,6 +2703,8 @@
  * [使用 Resharper 特性](使用-Resharper-特性.md)
 
  * [使用 RetroShare 分享资源](使用-RetroShare-分享资源.md)
+
+ * [使用 Silk.NET 创建 OpenGL 空窗口项目例子](使用-Silk.NET-创建-OpenGL-空窗口项目例子.md)
 
  * [修复 dotnet Core 缺SDK编译失败](修复-dotnet-Core-缺SDK编译失败.md)
 
