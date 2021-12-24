@@ -3,6 +3,9 @@
 本文告诉大家如何使用 Silk.NET 创建 OpenGL 空窗口项目。在 dotnet 基金会下，开源维护 Silk.NET 仓库，此仓库提供了渲染相关的封装逻辑，包括 DX 和 OpenGL 等等的封装，利用此封装可以用来代替原有的 SharpDx 等库。这是一个全新写的项目，使用上了 dotnet 和 C# 很多新的特性，相对来说也很活跃，我准备开始入坑这个项目
 
 <!--more-->
+<!-- CreateTime:2021/12/22 20:57:22 -->
+<!-- 标签：WPF,OpenGL,渲染 -->
+
 <!-- 发布 -->
 
 本文的例子完全是从 [https://github.com/dotnet/Silk.NET](https://github.com/dotnet/Silk.NET) 里面抄的，这是官方的使用 OpenGL 的例子
