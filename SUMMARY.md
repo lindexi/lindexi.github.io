@@ -2128,6 +2128,8 @@
 
  * [WPF 使用 SharpDX](WPF-使用-SharpDX.md)
 
+ * [WPF 使用 Silk.NET 进行 DirectX 渲染入门](WPF-使用-Silk.NET-进行-DirectX-渲染入门.md)
+
  * [WPF 使用 Skia 绘制 WriteableBitmap 图片](WPF-使用-Skia-绘制-WriteableBitmap-图片.md)
 
  * [WPF 使用 TranslatePoint 换算元素之间相对坐标](WPF-使用-TranslatePoint-换算元素之间相对坐标.md)

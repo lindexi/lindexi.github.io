@@ -6,6 +6,9 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/12/22 20:57:22 -->
+<!-- 标签：WPF,OpenGL,渲染 -->
+
 <!-- 发布 -->
 
 本文的例子完全是从 [https://github.com/dotnet/Silk.NET](https://github.com/dotnet/Silk.NET) 里面抄的，这是官方的使用 OpenGL 的例子

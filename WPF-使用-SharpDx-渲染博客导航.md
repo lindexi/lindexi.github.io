@@ -8,7 +8,7 @@
 
 <!-- CreateTime:2019/10/23 21:10:13 -->
 
-因为 SharpDx 涉及很多底层的渲染知识，主要和 DirectX 相关，所以希望开始先看如何在 C# 用一个控制台创建一个 SharpDx 程序
+使用 SharpDx 必然会涉及很多底层的渲染知识，和 DirectX 相关的知识将会有很多，一旦开始入手就是复杂的大项目，将很好被劝退。我希望大家在开始前，先看如何在 C# 用一个控制台创建一个 SharpDx 程序，以下是系列博客
 
 - [C# 从零开始写 SharpDx 应用 控制台创建 Sharpdx 窗口](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3 )
 
@@ -17,6 +17,11 @@
 - [C# 从零开始写 SharpDx 应用 画三角](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%94%BB%E4%B8%89%E8%A7%92.html )
 
 - [C# 从零开始写 SharpDx 应用 绘制基础图形](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%BB%98%E5%88%B6%E5%9F%BA%E7%A1%80%E5%9B%BE%E5%BD%A2.html )
+
+一些 SharpDx 杂项知识如下：
+
+- [C# 从零开始写 SharpDx 应用 聊聊功能等级](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E8%81%8A%E8%81%8A%E5%8A%9F%E8%83%BD%E7%AD%89%E7%BA%A7.html )
+- [C# 从零开始写 SharpDx 应用 从 D3DDevice 获取 DXGIDevice 方法](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E4%BB%8E-D3DDevice-%E8%8E%B7%E5%8F%96-DXGIDevice-%E6%96%B9%E6%B3%95.html )
 
 其实 SharpDx 只是一个封装，在没有封装的时候可以直接使用 Direct2D1 在 WPF 画出界面
 
@@ -29,10 +34,12 @@
 - [WPF 使用 SharpDX 在 D3DImage 显示](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html )
 - [WPF 使用封装的 SharpDx 控件](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
 - [WPF 使用 SharpDx 异步渲染](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.html )
+- [SharpDx D3D9 的颜色 Format 和 WPF 的 PixelFormat 转换方法](https://blog.lindexi.com/post/SharpDx-D3D9-%E7%9A%84%E9%A2%9C%E8%89%B2-Format-%E5%92%8C-WPF-%E7%9A%84-PixelFormat-%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95.html )
 
 一些应用方法如下
 
 - [SharpDx 进入全屏模式](https://blog.lindexi.com/post/SharpDx-%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%8F%E6%A8%A1%E5%BC%8F.html )
+- [C# 从零开始写 SharpDx 应用 禁止 Alt + Enter 进入全屏](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%A6%81%E6%AD%A2-Alt-+-Enter-%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%8F.html )
 
 值得一说的是 SharpDx 当前官方不维护了，可以选择的代替请看 [SharpDx 的代替项目](https://blog.lindexi.com/post/SharpDx-%E7%9A%84%E4%BB%A3%E6%9B%BF%E9%A1%B9%E7%9B%AE.html )
 
@@ -46,7 +53,7 @@
 
 更多请看 [SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
 
-我在 CSDN 创建 [WPF 底层渲染](https://blog.csdn.net/lindexi_gd/column/info/24324 ) 
+我在 CSDN 创建 [WPF 底层渲染](https://blog.csdn.net/lindexi_gd/column/info/24324 ) 系列博客，欢迎大家访问
 
 如果想了解[渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93 )如 Win2d 和 WPF 渲染原理等请看 [渲染相关](https://blog.lindexi.com/post/%E6%B8%B2%E6%9F%93 )
 
