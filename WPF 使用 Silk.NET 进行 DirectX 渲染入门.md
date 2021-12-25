@@ -3,6 +3,8 @@
 本文告诉大家如何使用 dotnet 基金会新开源的 Silk.NET 库调用 DirectX 进行渲染的方法。此库是对 DirectX 的底层基础封装，用上了 dotnet 和 C# 的各个新特性，相对来说基础性能较好，也许后续可以考虑作为 SharpDx 的代替
 
 <!--more-->
+<!-- CreateTime:2021/12/23 20:01:12 -->
+
 <!-- 标签：WPF,DirectX,渲染 -->
 <!-- 发布 -->
 <!-- 博客 -->
@@ -81,7 +83,7 @@
 </Project>
 ```
 
-以上代码关键在于 AllowUnsafeBlocks 需要开启，为了使用 Silk.NET 开启不安全代码。当前 Silk.NET 还没有完成 D2D 封装，本文将使用 SharpDX.Direct2D1 库
+以上代码关键在于 AllowUnsafeBlocks 需要开启，用于开启不安全代码给 Silk.NET 调用代码所使用。当前 Silk.NET 还没有完成 D2D 封装，本文将使用 SharpDX.Direct2D1 库辅助编写 D2D 的代码
 
 在 XAML 界面添加 D3DImage 如下面代码
 
