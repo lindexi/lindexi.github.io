@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2021/12/23 20:01:12 -->
+
 <!-- 标签：WPF,DirectX,渲染 -->
 <!-- 发布 -->
 <!-- 博客 -->
@@ -84,7 +86,7 @@
 </Project>
 ```
 
-以上代码关键在于 AllowUnsafeBlocks 需要开启，为了使用 Silk.NET 开启不安全代码。当前 Silk.NET 还没有完成 D2D 封装，本文将使用 SharpDX.Direct2D1 库
+以上代码关键在于 AllowUnsafeBlocks 需要开启，用于开启不安全代码给 Silk.NET 调用代码所使用。当前 Silk.NET 还没有完成 D2D 封装，本文将使用 SharpDX.Direct2D1 库辅助编写 D2D 的代码
 
 在 XAML 界面添加 D3DImage 如下面代码
 
