@@ -724,6 +724,8 @@
 
  * [dotnet 使用 TypeNameFormatter 库格式化输出反射泛型类型](dotnet-使用-TypeNameFormatter-库格式化输出反射泛型类型.md)
 
+ * [dotnet 使用 WpfAnalyzers 辅助分析 WPF 应用代码缺陷](dotnet-使用-WpfAnalyzers-辅助分析-WPF-应用代码缺陷.md)
+
  * [dotnet 使用 XWT 构建跨平台客户端 入门篇](dotnet-使用-XWT-构建跨平台客户端-入门篇.md)
 
  * [dotnet 使用完全对象引用相等判断](dotnet-使用完全对象引用相等判断.md)
@@ -2875,6 +2877,8 @@
  * [手机1520 win8.1升级win10](手机1520-win8.1升级win10.md)
 
  * [拼音输入法 快速输入带音调的字符](拼音输入法-快速输入带音调的字符.md)
+
+ * [探索 dotnet core 为何在 Windows7 系统需要补丁的原因](探索-dotnet-core-为何在-Windows7-系统需要补丁的原因.md)
 
  * [推荐官方开源 PInvoke 库 包含大量 win32 封装](推荐官方开源-PInvoke-库-包含大量-win32-封装.md)
 
