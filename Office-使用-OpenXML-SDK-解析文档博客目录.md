@@ -54,6 +54,8 @@
 
 [Office 文档 文本排版布局 中华人民共和国国家标准 标点符号用法](https://blog.lindexi.com/post/Office-%E6%96%87%E6%A1%A3-%E6%96%87%E6%9C%AC%E6%8E%92%E7%89%88%E5%B8%83%E5%B1%80-%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86-%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95.html )
 
+[dotnet OpenXML 文本 BodyProperties 的属性作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-BodyProperties-%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8.html )
+
 [dotnet OpenXML 文本 ParagraphProperties 的属性作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-ParagraphProperties-%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8.html )
 
 [dotnet OpenXML 文本 Text Line Break 的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Text-Line-Break-%E7%9A%84%E4%BD%9C%E7%94%A8.html )
@@ -108,7 +110,11 @@
 
 [【Openxml】将Openxml的椭圆弧线arcTo转为Svg的椭圆弧线 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15191386.html)
 
+### 线条
+
 [dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%BD%A2%E7%8A%B6%E7%9A%84-Outline-%E7%9A%84-LineWidth-%E7%BA%BF%E6%9D%A1%E8%BD%AE%E5%BB%93%E7%B2%97%E7%BB%86%E5%AE%BD%E5%BA%A6%E7%9A%84%E8%A1%8C%E4%B8%BA.html )
+
+[【OpenXml】Pptx的边框虚线转为WPF的边框虚线 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15740488.html )
 
 ## 图片
 
@@ -265,6 +271,14 @@
 [EPPlusSoftware/EPPlus: EPPlus 5-Excel spreadsheets for .NET](https://github.com/EPPlusSoftware/EPPlus )
 
 [dotnetcore/Magicodes.IE: Import and export general library, support Dto import and export, template export, fancy export and dynamic export, support Excel, Csv, Word, Pdf and Html.](https://github.com/dotnetcore/Magicodes.IE )
+
+### Word 库
+
+XCeed Software 的 DocX 库：
+
+此库包含免费版本和收费版本
+
+[xceedsoftware/DocX: Fast and easy to use .NET library that creates or modifies Microsoft Word files without installing Word.](https://github.com/xceedsoftware/docx )
 
 ## 开发群
 

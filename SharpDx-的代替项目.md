@@ -24,6 +24,10 @@
 
 [smourier/DirectN: Direct interop Code for .NET Framework, .NET Core and .NET 5+ : DXGI, WIC, DirectX 9 to 12, Direct2D, Direct Write, Direct Composition, Media Foundation, WASAPI, CodecAPI, GDI, Spatial Audio, DVD, Windows Media Player, UWP DXInterop, etc.](https://github.com/smourier/DirectN )
 
+## veldrid
+
+[mellinoe/veldrid: A low-level, portable graphics library for .NET.](https://github.com/mellinoe/veldrid )
+
 
 
 

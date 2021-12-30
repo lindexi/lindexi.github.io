@@ -576,6 +576,8 @@
 
  * [dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为](dotnet-OpenXML-形状的-Outline-的-LineWidth-线条轮廓粗细宽度的行为.md)
 
+ * [dotnet OpenXML 文本 BodyProperties 的 FontScale 与文本字号缩放](dotnet-OpenXML-文本-BodyProperties-的-FontScale-与文本字号缩放.md)
+
  * [dotnet OpenXML 文本 BodyProperties 的属性作用](dotnet-OpenXML-文本-BodyProperties-的属性作用.md)
 
  * [dotnet OpenXML 文本 EndParagraphRunProperties 的作用](dotnet-OpenXML-文本-EndParagraphRunProperties-的作用.md)
@@ -2153,6 +2155,8 @@
  * [WPF 使用封装的 SharpDx 控件](WPF-使用封装的-SharpDx-控件.md)
 
  * [WPF 依赖属性绑定不上调试方法](WPF-依赖属性绑定不上调试方法.md)
+
+ * [WPF 修复 dotnet 6 与源代码包冲突](WPF-修复-dotnet-6-与源代码包冲突.md)
 
  * [WPF 修改 ItemContainerStyle 鼠标移动到未选中项效果和选中项背景](WPF-修改-ItemContainerStyle-鼠标移动到未选中项效果和选中项背景.md)
 
