@@ -228,6 +228,59 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 获取代码之后，进入 Pptx 文件夹
 
+## 规则
+
+以下是一些特殊的规则
+
+### 没有线条宽度
+
+描边的 `a:ln` 没有 LineWidth 也就是没有 `w` 属性，如以下代码，那么依然显示一像素的描边
+
+```xml
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" sz="10000">
+                <a:ln>
+                  <a:solidFill>
+                    <a:srgbClr val="00FF00" />
+                  </a:solidFill>
+                </a:ln>
+              </a:rPr>
+              <a:t>一行文本</a:t>
+            </a:r>
+```
+
+显示效果如下图
+
+<!-- ![](image/dotnet OpenXML WPF 解析实现 PPT 文本描边效果/dotnet OpenXML WPF 解析实现 PPT 文本描边效果1.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F202112281627318204.jpg)
+
+### 没有线条颜色
+
+如果没有线条颜色，那么就没有描边效果，如以下代码
+
+```xml
+            <a:r>
+              <a:rPr lang="zh-CN" altLang="en-US" sz="10000">
+                <a:ln>
+                  <!-- <a:solidFill>
+                    <a:srgbClr val="00FF00" />
+                  </a:solidFill> -->
+                </a:ln>
+                <a:solidFill>
+                   <a:srgbClr val="F0FF00" />
+                </a:solidFill>
+              </a:rPr>
+              <a:t>一行文本</a:t>
+            </a:r>
+```
+
+显示效果如下图
+
+<!-- ![](image/dotnet OpenXML WPF 解析实现 PPT 文本描边效果/dotnet OpenXML WPF 解析实现 PPT 文本描边效果2.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F20211228162949388.jpg)
+
 ## 参考
 
 [WPF 文字描边](https://blog.lindexi.com/post/WPF-%E6%96%87%E5%AD%97%E6%8F%8F%E8%BE%B9.html )
