@@ -56,6 +56,8 @@
 
 [dotnet OpenXML 文本 BodyProperties 的属性作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-BodyProperties-%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8.html )
 
+[dotnet OpenXML 文本 BodyProperties 的 FontScale 与文本字号缩放](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-BodyProperties-%E7%9A%84-FontScale-%E4%B8%8E%E6%96%87%E6%9C%AC%E5%AD%97%E5%8F%B7%E7%BC%A9%E6%94%BE.html )
+
 [dotnet OpenXML 文本 ParagraphProperties 的属性作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-ParagraphProperties-%E7%9A%84%E5%B1%9E%E6%80%A7%E4%BD%9C%E7%94%A8.html )
 
 [dotnet OpenXML 文本 Text Line Break 的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Text-Line-Break-%E7%9A%84%E4%BD%9C%E7%94%A8.html )
