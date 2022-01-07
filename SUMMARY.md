@@ -1032,6 +1032,8 @@
 
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
+ * [dotnetCampus.UITest.WPF 一个支持中文用例的界面单元测试框架](dotnetCampus.UITest.WPF-一个支持中文用例的界面单元测试框架.md)
+
  * [gif 格式](gif-格式.md)
 
  * [git cannot lock ref](git-cannot-lock-ref.md)

@@ -9,7 +9,6 @@
 <!-- CreateTime:2021/12/27 8:27:03 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 这是一个基于 Roslyn 的免费开源的 WPF 代码分析工具，专门给 WPF 应用使用，此工具包含了约 200 条 WPF 应用编写规则，在 GitHub 上使用 MIT 最友好协议开放所有源代码，请看 [https://github.com/DotNetAnalyzers/WpfAnalyzers](https://github.com/DotNetAnalyzers/WpfAnalyzers)
 
