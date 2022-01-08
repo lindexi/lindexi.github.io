@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/1/6 20:12:56 -->
+
 <!-- 博客 -->
 <!-- 发布 -->
 
@@ -42,14 +44,13 @@
 
 ![](http://image.acmx.xyz/lindexi%2F202216201807031.jpg)
 
+本 UI 单元测试框架，仅仅提供的是让你可以使用 CUint(Chinese Unit Test) 风格编写 UI 测试代码，所有的放在 Test 内的代码将会在 UI 线程执行。本 UI 单元测试框架不提供面向测试的辅助类型的方法，例如模拟鼠标点击等功能，如需这些功能，还请使用第三方的库进行辅助
 
 ## 使用方法
 
 此单元测试框架是基于 MIT 最友好开源协议，在 GitHub 上完全开源的，请看 [https://github.com/dotnet-campus/CUnit/](https://github.com/dotnet-campus/CUnit/)
 
-此单元测试框架是 MSTest v2 的一个扩展，在使用时，你需要创建一个 MSTest 的单元测试项目，在此单元测试项目里面额外安装 [dotnetCampus.UITest.WPF](https://www.nuget.org/packages/dotnetCampus.UITest.WPF) 库
-
-在使用新 SDK 风格的 csproj 文件，可以编辑加入如下代码
+此单元测试框架是 MSTest v2 的一个扩展，在使用时，你需要创建一个 MSTest 的单元测试项目，在此单元测试项目里面额外安装 [dotnetCampus.UITest.WPF](https://www.nuget.org/packages/dotnetCampus.UITest.WPF) 库。对于在使用新 SDK 风格的 csproj 文件，可以编辑加入如下代码进行安装库
 
 ```xml
 <PackageReference Include="dotnetCampus.UITest.WPF" Version="2.2.0" />
@@ -69,7 +70,7 @@
   </ItemGroup>
 ```
 
-以上对 App.xaml 的修复非必须，只有你的单元测试项目里面包含了 App.xaml 才有此需求。此问题不是 [dotnetCampus.UITest.WPF](https://www.nuget.org/packages/dotnetCampus.UITest.WPF) 库引入，而是通用的单元测试就存在的问题
+以上对 App.xaml 的修复非必须，只有你的单元测试项目里面包含了 App.xaml 才有此需求。此问题不是 [dotnetCampus.UITest.WPF](https://www.nuget.org/packages/dotnetCampus.UITest.WPF) 库引入，而是通用的单元测试就存在的问题。对于大部分的 UI 单元测试项目来说，都不会也不应该包含 App.xaml 文件，除非这是针对 WPF 的 UI 类库的单元测试。对于应用本身的 UI 单元测试来说，都应该传入的是应用的 App 类
 
 更改完成之后的 csproj 的内容大概如下
 

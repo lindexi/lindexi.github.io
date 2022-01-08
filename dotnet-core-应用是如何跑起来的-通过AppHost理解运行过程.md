@@ -191,9 +191,16 @@ AppHostPatcher.exe Foo.exe .\Application\Foo.dll
 
 此时原本的 Foo.exe 将会寻找相同文件夹下的 Foo.dll 文件作为 dotnet 的入口程序集，而在执行上面代码之后，双击 Foo.exe 将会寻找 `Application\Foo.dll` 作为入口程序集，因此就能将整个文件夹的内容，除了 exe 之外的其他文件放在其他文件夹里面
 
+基于此，我开发了两个应用：
+
+- 我开发了 PublishFolderCleaner 工具，此工具可以让你的输出文件夹更整洁，详细请看 [PublishFolderCleaner 让你的 dotnet 应用发布文件夹更加整洁](https://blog.lindexi.com/post/PublishFolderCleaner-%E8%AE%A9%E4%BD%A0%E7%9A%84-dotnet-%E5%BA%94%E7%94%A8%E5%8F%91%E5%B8%83%E6%96%87%E4%BB%B6%E5%A4%B9%E6%9B%B4%E5%8A%A0%E6%95%B4%E6%B4%81.html )
+- 使用此功能提升软件更新之后的对用户端的变更优化方式，详细请看 [dotnet 桌面端基于 AppHost 的配置式自动切换更新后的应用程序路径](https://blog.lindexi.com/post/dotnet-%E6%A1%8C%E9%9D%A2%E7%AB%AF%E5%9F%BA%E4%BA%8E-AppHost-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%BC%8F%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B7%AF%E5%BE%84.html )
+
 更多细节请看 [Write a custom .NET Core runtime host](https://docs.microsoft.com/en-us/dotnet/core/tutorials/netcore-hosting?WT.mc_id=WD-MVP-5003260 )
 
-本文以上使用的代码是在 [https://github.com/dotnet/runtime](https://github.com/dotnet/runtime)  的 v5.0.0-rtm.20519.4 版本的代码
+本文以上使用的代码是在 [https://github.com/dotnet/runtime](https://github.com/dotnet/runtime) 的 v5.0.0-rtm.20519.4 版本的代码
+
+如果想要完全理解 dotnet 应用的启动过程，请看 [dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程](https://blog.lindexi.com/post/dotnet-core-%E5%BA%94%E7%94%A8%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%91%E8%B5%B7%E6%9D%A5%E7%9A%84-%E9%80%9A%E8%BF%87%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA-dotnet-host-%E7%90%86%E8%A7%A3%E8%BF%90%E8%A1%8C%E8%BF%87%E7%A8%8B.html )
 
 
 
