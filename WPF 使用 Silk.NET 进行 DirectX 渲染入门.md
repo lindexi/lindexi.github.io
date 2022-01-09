@@ -171,6 +171,8 @@ using SharpDXMathematics = SharpDX.Mathematics.Interop;
 
 问题的原因是在 Silk.NET 里面，定义对 DirectX 的调用，使用的是 Cdecl 方式调用，然而在 DirectX 的定义里，需要采用 Stdcall 来调用才是正确的。此行为将在 X86 下导致调用栈的内容不对，本应该清理的内容没有正确清理。这部分细节请参阅 [stdcall Microsoft Docs](https://docs.microsoft.com/en-us/cpp/cpp/stdcall?view=msvc-170&WT.mc_id=WD-MVP-5003260 ) 和 [cdecl Microsoft Docs](https://docs.microsoft.com/en-us/cpp/cpp/cdecl?view=msvc-170&WT.mc_id=WD-MVP-5003260 ) 官方文档
 
+> 官方在 2022.1.7 更新修复了此问题
+
 创建参数里，为了方便在 WPF 里使用，要求最好使用 `FormatB8G8R8A8Unorm` 格式。以上参数差不多是固定写法，各个参数的细节请看 DirectX 官方文档
 
 接下来通过 D3D11 类型的 GetApi 方法获取 D3D11 对象，此对象的获取是 Silk.NET 的封装，不属于 DirectX 的内容
