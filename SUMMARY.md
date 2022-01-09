@@ -2204,6 +2204,8 @@
 
  * [wpf 单例](wpf-单例.md)
 
+ * [WPF 双向绑定到非公开 set 方法属性在 NET 45 和 NET Core 行为的不同](WPF-双向绑定到非公开-set-方法属性在-NET-45-和-NET-Core-行为的不同.md)
+
  * [WPF 只允许打开一个实例](WPF-只允许打开一个实例.md)
 
  * [WPF 可获得焦点属性](WPF-可获得焦点属性.md)
