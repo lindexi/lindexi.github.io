@@ -3,6 +3,8 @@
 本文记录 WPF 在 .NET Framework 4.5 和 .NET Core 3.0 或更高版本对使用 Binding 下的 TwoWay 双向绑定模式绑定到非公开的 set 属性上的行为变更
 
 <!--more-->
+<!-- CreateTime:2022/1/8 17:15:41 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
