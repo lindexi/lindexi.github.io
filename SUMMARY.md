@@ -2722,6 +2722,8 @@
 
  * [修复 dotnet Core 缺SDK编译失败](修复-dotnet-Core-缺SDK编译失败.md)
 
+ * [修复 SmartAssembly 混淆 .NET 6 时提示 Unable to load runtime config file 失败](修复-SmartAssembly-混淆-.NET-6-时提示-Unable-to-load-runtime-config-file-失败.md)
+
  * [docfx 做一个和微软一样的文档平台](docfx-做一个和微软一样的文档平台.md)
 
  * [关于技术规划的想法](关于技术规划的想法.md)
