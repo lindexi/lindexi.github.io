@@ -1,14 +1,13 @@
 # WPF 从文件加载字体
 
-本文告诉大家从文件加载字体。在wpf 使用 fontfamily 显示指定的 ttf 显示字体。
+本文告诉大家从文件加载字体的方法。在 wpf 使用 FontFamily 显示指定的 ttf 文件来显示字体
 
 <!--more-->
 <!-- CreateTime:2019/8/2 17:10:33 -->
 
+假如知道了字体所在的本机的文件路径，那可以使用 PrivateFontCollection 添加字体
 
-假如有字体在 `C:\Projects\MyProj\free3of9.ttf` ，可以使用 PrivateFontCollection 添加字体。
-
-下面的代码就可以使用本地的 free3of9.ttf ，需要注意添加的 FontFamily 是需要知道字体名，和传入 PrivateFontCollection 才可以使用。
+如下面的代码将使用本地的 `C:\Projects\MyProj\free3of9.ttf` 路径的字体，需要注意添加的 FontFamily 是需要知道字体名，和传入 PrivateFontCollection 才可以使用
 
 ```csharp
 using System.Drawing;
@@ -19,15 +18,17 @@ FontFamily fontFamily = new FontFamily("Free 3 of 9", collection);
 Font font = new Font(fontFamily, height);
 ```
 
-另一个方法是去掉字体的后缀名，直接写在 FontFamily ，我比较希望使用下面的方法
+以上方法需要引入 PrivateFontCollection 类，看起来代码比较多，另一个方法是去掉字体的后缀名，直接写在 FontFamily ，我比较希望使用下面的方法
 
 ```csharp
+using System.Drawing;
+
 FontFamily fontFamily = new FontFamily(@"C:\Projects\MyProj\#free3of9");
 ```
 
-在 WPF 里面 FontFamily 存在与 System.Drawing 和 System.Windows.Media 命名空间下，同时两个命名空间的字体是不能互换的。以上方法使用的是 System.Drawing 命名空间的字体
+在 WPF 里面 FontFamily 存在与 System.Drawing 和 System.Windows.Media 命名空间下，同时两个命名空间的字体是不能互换的。以上方法使用的是 System.Drawing 命名空间的字体。这两个命名空间的含义和功能是完全不相同的，在 System.Drawing 命名空间下是 WinForms 的 GDI 系列的功能，在 System.Windows.Media 命名空间下是 WPF 框架内的功能。但无论是哪个，都可以在 WPF 应用下运行，请不要担心在 WPF 下引用任何 WinForms 的功能，因为引入 WinForms 对 WPF 而言是非常友好的，在 WPF 框架内部默认就引用了 WinForms 的功能
 
-对 System.Windows.Media 命名空间的 FontFamily 需要使用以下两个方法之一拿到本地字体
+对 System.Windows.Media 命名空间的 FontFamily 类，需要使用以下两个方法之一拿到本地字体
 
 第一个方法是通过 URI 加上字体名
 

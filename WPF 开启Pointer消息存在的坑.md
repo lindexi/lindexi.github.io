@@ -87,6 +87,16 @@
 
 另一个解决方法是在关闭系统全局触摸反馈点，关闭方法请看 [3 Ways to Enable or Disable Touch Feedback in Windows 10](https://www.top-password.com/blog/enable-or-disable-touch-feedback-in-windows-10/ )
 
+## 不存在互斥触摸交互
+
+其实这个也算是一个特性，但是行为有变更。在 Win10 提出的一个新交互里面，允许未激活的窗口接收到鼠标滚轮消息。这一套是和 Pointer 一起提出的，我问了微软的大佬，收到了 MVP 内部邮件，可惜我没看明白，大概的意思是这个交互是 Win10 提供的，和 Pointer 走的是差不多的逻辑
+
+这也就导致了原本支持互斥独占的触摸交互，在开启 Pointer 的应用下被无效。表现是如当前触摸被某个获取焦点的窗口捕获，此时触摸点到一个后台的窗口，未激活的窗口上，那此窗口依然可以收到触摸消息，无论这个窗口是在哪个进程上，只需要此窗口所在的进程开启 Pointer 消息即可
+
+而原先的交互是如果触摸被某个前台窗口捕获，那么其他窗口将啥都收不到，包括 `WM_Touch` 消息或者实时触摸消息
+
+
+
 更多请看
 
 [WPF can not work well with set IsPressAndHoldEnabled to false when enable pointer message · Issue #3379 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3379 )
