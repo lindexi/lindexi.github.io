@@ -101,6 +101,8 @@
 
 [WPF can not work well with set IsPressAndHoldEnabled to false when enable pointer message · Issue #3379 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3379 )
 
+[Stylus.SetIsPressAndHoldEnabled does not work when Switch.System.Windows.Input.Stylus.EnablePointerSupport is enabled · Issue #5939 · dotnet/wpf](https://github.com/dotnet/wpf/issues/5939 )
+
 [How do I disable the press-and-hold gesture for my window](https://devblogs.microsoft.com/oldnewthing/20170227-00/?p=95585 )
 
 [WM_TABLET_QUERYSYSTEMGESTURESTATUS message (Tpcshrd.h)](https://docs.microsoft.com/en-us/windows/win32/tablet/wm-tablet-querysystemgesturestatus-message )
