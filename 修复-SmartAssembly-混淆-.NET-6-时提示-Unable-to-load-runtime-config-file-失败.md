@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/1/11 21:09:35 -->
+
 <!-- 发布 -->
 
 因为在 SmartAssembly 7.5 发布时，还没有正式发布 .NET 6 版本，好在 IL 是兼容的，因此跑起来也没有什么问题。为了让 SmartAssembly 能跑起来，只需要新建一个 Xxx.runtimeconfig.json 文件，在文件里面放入以下内容
