@@ -12,7 +12,7 @@
 
 例如我想要引用相对于 csproj 的上一层文件夹里面的 doubi 文件夹里面的所有 cs 文件，作为链接引用的方法，可以使用下面代码
 
-```
+```xml
   <ItemGroup>
     <Compile Include="..\doubi\*.cs" Link="lindexi.blog.csdn.net\%(FileName)%(Extension)" />
   </ItemGroup>
@@ -24,7 +24,7 @@
 
 差不多的逻辑也就能写出添加某个项目里面的所有 png 文件
 
-```
+```xml
   <ItemGroup>
     <Content Include="..\Tool.UWP\Assets\*.png" Link="Assets\%(FileName)%(Extension)" />
   </ItemGroup>
@@ -32,7 +32,7 @@
 
 如果想要引用文件夹里面的所有内容，即使这些内容在文件夹的文件夹里面，也就是不在顶层文件夹，可以这样写
 
-```
+```xml
   <ItemGroup>
     <Content Include="..\Tool.UWP\Assets\**\*.png" Link="Assets\%(FileName)%(Extension)" />
   </ItemGroup>
@@ -48,10 +48,16 @@ Exclude="..\Tool.UWP\obj\**\*;"
 
 大概的代码如下
 
-```
+```xml
   <ItemGroup>
     <Content Include="..\Tool.UWP\Assets\**\*.png" Exclude="..\Tool.UWP\obj\**\*;..\Tool.UWP\Foo\**\*" />
   </ItemGroup>
+```
+
+如需保持相对路径关系，可采用 `%(RecursiveDir)` 属性，如以下例子，更多请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
+
+```xml
+<Compile Include="..\..\DocumentFormat.OpenXml.Flatten\src\DocumentFormat.OpenXml.Flatten\**\*.cs" Exclude="**\bin\**\*.cs;**\obj\**\*.cs" Link="DocumentFormat.OpenXml.Flatten\%(RecursiveDir)\%(FileName)%(Extension)" />
 ```
 
 通过这个方法可以将原本一个大的项目，才分为多个小的项目，每个小项目独立，但是最终打包的项目将通过此 方式引用所有的小项目。同时打包的时候不仅主项目会打包，每个小的项目都可以独立打包，这样做的优势是可以提升每个小项目的内聚和降低项目之间的耦合
@@ -69,8 +75,6 @@ Exclude="..\Tool.UWP\obj\**\*;"
 如何使用 SourceYard 做源代码包请看 [SoureYard 官方开源项目](https://github.com/dotnet-campus/SourceYard/)
 
 更多编译相关请看[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
-
-其实刚才上面代码写的没有保存路径的值，如何在路径使用原有项的路径请使用 `%(RecursiveDir)` 属性，更多请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 
 
 

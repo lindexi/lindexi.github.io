@@ -82,6 +82,8 @@
 
 [WPF 在 .NET Core 3.1.19 版本 触摸笔迹偏移问题](https://lindexi.gitee.io/post/WPF-%E5%9C%A8-.NET-Core-3.1.19-%E7%89%88%E6%9C%AC-%E8%A7%A6%E6%91%B8%E7%AC%94%E8%BF%B9%E5%81%8F%E7%A7%BB%E9%97%AE%E9%A2%98.html )
 
+[WPF 开启Pointer消息存在的坑](https://blog.lindexi.com/post/WPF-%E5%BC%80%E5%90%AFPointer%E6%B6%88%E6%81%AF%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9D%91.html )
+
 ## 笔迹
 
 - [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
