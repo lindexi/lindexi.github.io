@@ -2012,6 +2012,8 @@
 
  * [Windows 窗口样式 什么是 WS_EX_NOREDIRECTIONBITMAP 样式](Windows-窗口样式-什么是-WS_EX_NOREDIRECTIONBITMAP-样式.md)
 
+ * [Windows 通过编辑注册表设置左右手使用习惯更改 Popup 弹出位置](Windows-通过编辑注册表设置左右手使用习惯更改-Popup-弹出位置.md)
+
  * [windows-10「设置」应用完整ms-settings快捷方式汇总.md](windows-10「设置」应用完整ms-settings快捷方式汇总.md.md)
 
  * [WinForms 下的高性能笔迹方法](WinForms-下的高性能笔迹方法.md)
