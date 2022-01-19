@@ -3,6 +3,8 @@
 这是一个用于本机多进程进行 IPC 通讯的库，此库的顶层 API 是采用 ASP.NET Core 的 MVC 框架，其底层通讯不是传统的走网络的方式，而是通过 dotnetCampus.Ipc 开源项目提供的 NamedPipeStream 命名管道的方式进行通讯。本库的优势是可以使用设计非常好的 ASP.NET Core 的 MVC 框架作为顶层调用 API 层，底层通讯采用命名管道可提升传输性能，不走网络可以极大减少网络端口占用问题和减少用户端网络环境带来的问题
 
 <!--more-->
+<!-- CreateTime:2022/1/17 8:25:21 -->
+
 <!-- 草稿 -->
 
 <!-- 使用基于 NamedPipeStream 通讯且顶层采用 MVC 框架的 IPC 库 -->
