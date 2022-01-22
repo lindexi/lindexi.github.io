@@ -9,7 +9,6 @@
 <!-- CreateTime:2021/12/29 17:56:48 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 通过 ECMA 376 文档可以了解到 BodyProperties 属性是作用在文本框，放在 BodyProperties 的 NormalAutoFit 的 FontScale 属性，能修改文本框的文本字号缩放
 
