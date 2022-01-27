@@ -479,9 +479,9 @@
 
 在 WPF 做出一个漂亮的界面有基础的框架是不够的，还需要有动画、样式和很多基础的方法才可以做出来，做一个框架时间最长的也就是这些细节，而不是框架的核心。
 
-关于 WPF 的渲染 [WPF 渲染原理](https://blog.lindexi.com/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
+了解更多 WPF 的渲染知识，请参阅 [WPF 渲染原理](https://blog.lindexi.com/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
 
-从 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 也可以了解 WPF 是有多厉害，同时一个大的框架也会存在很多坑，现在 WPF 已经开源了，如果遇到问题，可以在 github 上面提 issus 或者直接修改
+从 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 这篇博客里，除了可以了解渲染之外的触摸交互层的逻辑，也可以了解 WPF 是有多厉害，同时一个大的框架也会存在很多坑，现在 WPF 已经开源了，如果遇到问题，可以在 github 上面提 issus 或者直接修改
 
 [https://github.com/dotnet/wpf/issues](https://github.com/dotnet/wpf/issues)
 

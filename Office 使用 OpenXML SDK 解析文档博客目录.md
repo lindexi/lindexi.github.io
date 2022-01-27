@@ -159,6 +159,12 @@
 
 [dotnet OpenXML 为什么资源使用 Relationship 引用](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%B5%84%E6%BA%90%E4%BD%BF%E7%94%A8-Relationship-%E5%BC%95%E7%94%A8.html )
 
+### 数学计算
+
+[dotnet C# 根据椭圆长度和宽度和旋转角计算出椭圆中心点的方法](https://blog.lindexi.com/post/dotnet-C-%E6%A0%B9%E6%8D%AE%E6%A4%AD%E5%9C%86%E9%95%BF%E5%BA%A6%E5%92%8C%E5%AE%BD%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC%E8%A7%92%E8%AE%A1%E7%AE%97%E5%87%BA%E6%A4%AD%E5%9C%86%E4%B8%AD%E5%BF%83%E7%82%B9%E7%9A%84%E6%96%B9%E6%B3%95.html )
+
+[根据SVG Arc求出其开始角、摆动角和椭圆圆心 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15832672.html )
+
 ## PPT 动画
 
 [dotnet OpenXML PPT 动画框架入门](https://blog.lindexi.com/post/dotnet-OpenXML-PPT-%E5%8A%A8%E7%94%BB%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8.html )

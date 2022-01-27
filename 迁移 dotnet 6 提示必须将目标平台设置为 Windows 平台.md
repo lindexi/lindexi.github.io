@@ -6,7 +6,6 @@
 <!-- CreateTime:2021/11/18 20:23:35 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 此提示是在 .NET 的 SDK 的 Microsoft.NET.Sdk.DefaultItems.targets 文件开启的，代码如下
 

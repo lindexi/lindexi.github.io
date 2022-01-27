@@ -6,7 +6,6 @@
 <!-- CreateTime:2021/11/19 19:39:33 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 这是一个在 GitHub 上完全开源的仓库，请看 [https://github.com/microsoft/infersharp](https://github.com/microsoft/infersharp)
 
