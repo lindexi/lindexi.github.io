@@ -9,7 +9,6 @@
 <!-- CreateTime:2021/8/28 10:22:57 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 方法很简单，请看代码
 
@@ -64,6 +63,8 @@
 我觉得以上是 WPF 框架有带的，但是一时半会没有找到在哪定义的，因此就自己写了一份
 
 以上的 Pixel 和 Degree 的定义代码在 GitHub 上开源，请看 [Office Open XML 的测量单位](https://blog.lindexi.com/post/Office-Open-XML-%E7%9A%84%E6%B5%8B%E9%87%8F%E5%8D%95%E4%BD%8D.html )
+
+其他计算请参阅 [根据SVG Arc求出其开始角、摆动角和椭圆圆心 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15832672.html)
 
 
 

@@ -70,6 +70,10 @@
 
 更多调试方法请看 [dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html)
 
+## 参考
+
+[WPF在远程桌面情况下，窗体显示透明的_十步一杀-CSDN博客](https://blog.csdn.net/config_man/article/details/122701771 )
+
 
 
 

@@ -528,8 +528,6 @@
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
 
- * [dotnet IPC MVC](dotnet-IPC-MVC.md)
-
  * [dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库](dotnet-Microsoft.Recognizers.Text-超强大的自然语言关键词提取库.md)
 
  * [dotnet Multi-platform App UI 多平台应用 UI 框架简介](dotnet-Multi-platform-App-UI-多平台应用-UI-框架简介.md)

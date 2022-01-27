@@ -295,7 +295,7 @@ public class FooContent
     {
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-        	// 序列化请求消息，准备通过 IPC 层发送
+            // 序列化请求消息，准备通过 IPC 层发送
             var message = HttpMessageSerializer.Serialize(request);
 
             // 创建 IPC 消息的 Tag 内容，此 Tag 内容仅用来调试和记录日志
@@ -324,7 +324,7 @@ public class FooContent
     }
 ```
 
-这就是为什么客户端需要通过 IpcPipeMvcClientProvider 的 CreateIpcMvcClientAsync 拿到 HttpClient 的原因。在 CreateIpcMvcClientAsync 方法，不仅需要创建 HttpClient 对象，还需要先尝试连接服务端。尽管从 HttpClient 的设计上，应该是发起请求时才去连接服务端，但因为这是 IPC 通讯，且为了解决 IPC 初始化逻辑的多进程资源竞争，当前版本采用在获取 HttpClient 也就是发起具体请求之间，连接服务端
+这就是为什么客户端需要通过 IpcPipeMvcClientProvider 的 CreateIpcMvcClientAsync 拿到 HttpClient 的原因。在 CreateIpcMvcClientAsync 方法，不仅需要创建 HttpClient 对象，还需要先尝试连接服务端。尽管从 HttpClient 的设计上，应该是发起请求时才去连接服务端，但因为这是 IPC 通讯，且为了解决 IPC 初始化逻辑的多进程资源竞争，当前版本采用在获取 HttpClient 也就是发起具体请求之前连接服务端
 
 ```csharp
     /// <summary>
@@ -540,6 +540,24 @@ public class FooContent
 ## 代码
 
 本文所有代码都放在 [https://github.com/dotnet-campus/dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc) 开源仓库里，欢迎访问
+
+## 参考文档
+
+[HttpRequestMessage C# (CSharp)代码示例 - HotExamples](https://csharp.hotexamples.com/zh/examples/-/HttpRequestMessage/-/php-httprequestmessage-class-examples.html )
+
+[c# - How to send a Post body in the HttpClient request in Windows Phone 8? - Stack Overflow](https://stackoverflow.com/questions/25158452/how-to-send-a-post-body-in-the-httpclient-request-in-windows-phone-8 )
+
+[HttpRequestOptions Class (System.Net.Http)](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httprequestoptions?view=net-5.0 )
+
+[c# - Serialize and deserialize HttpRequestMessage objects - Stack Overflow](https://stackoverflow.com/questions/26611339/serialize-and-deserialize-httprequestmessage-objects )
+
+[Byte Rot: Serialising request and response in ASP.NET Web API](http://byterot.blogspot.com/2012/07/serialising-request-and-response-in.html )
+
+[Efficient post calls with HttpClient and JSON.NET](https://johnthiriet.com/efficient-post-calls/ )
+
+[c# - NamedPipe with ASP.Net - Stack Overflow](https://stackoverflow.com/questions/8376290/namedpipe-with-asp-net?rq=1 )
+
+[wcf - Using "named pipes" in ASP.NET HttpModule - Stack Overflow](https://stackoverflow.com/questions/5806083/using-named-pipes-in-asp-net-httpmodule )
 
 
 
