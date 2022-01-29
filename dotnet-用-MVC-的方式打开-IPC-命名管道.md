@@ -1,7 +1,7 @@
 
 # dotnet 用 MVC 的方式打开 IPC 命名管道
 
-这是一个用于本机多进程进行 IPC 通讯的库，此库的顶层 API 是采用 ASP.NET Core 的 MVC 框架，其底层通讯不是传统的走网络的方式，而是通过 dotnetCampus.Ipc 开源项目提供的 NamedPipeStream 命名管道的方式进行通讯。本库的优势是可以使用设计非常好的 ASP.NET Core 的 MVC 框架作为顶层调用 API 层，底层通讯采用可提升传输性能的命名管道，如此可以做到不走网络通讯从而极大减少网络端口占用问题和减少用户端网络环境带来的问题
+这是一个用于本机多进程进行 IPC 通讯的库，此库的顶层 API 是采用 ASP.NET Core 的 MVC 框架，其底层通讯不是传统的走网络的方式，而是通过 dotnetCampus.Ipc 开源项目提供的 NamedPipeStream 命名管道的方式进行通讯。相当于替换掉 ASP.NET Core 的底层通讯方式，从走网络换成命名管道的方式。本库的优势是可以使用设计非常好的 ASP.NET Core 的 MVC 框架作为顶层调用 API 层，底层通讯采用可提升传输性能的命名管道，如此可以做到不走网络通讯从而极大减少网络端口占用问题和减少用户端网络环境带来的问题
 
 <!--more-->
 
@@ -21,6 +21,10 @@
 <!-- 用命名管道做  dotnet 用 MVC 的方式打开 IPC 命名管道 -->
 
 <!-- NamedPipeStreamMvc -->
+
+<!-- 将 ASP.NET Core 的底层通讯从网络换成命名管道的 IPC 本机多进程通讯库 -->
+<!-- 将 ASP.NET Core 的底层通讯从网络换成命名管道的 IPC 库 -->
+<!-- 替换 ASP.NET Core 的底层通讯为命名管道的 IPC 库 -->
 
 ## 背景
 

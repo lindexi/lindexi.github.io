@@ -2330,6 +2330,8 @@
 
  * [WPF 开机启动因为触摸初始化锁住界面显示](WPF-开机启动因为触摸初始化锁住界面显示.md)
 
+ * [WPF 开源二维绘画小工具 GeometryToolDemo 项目](WPF-开源二维绘画小工具-GeometryToolDemo-项目.md)
+
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
  * [WPF 引用 UWP 控件 不打包为 MSIX 分发的方法](WPF-引用-UWP-控件-不打包为-MSIX-分发的方法.md)
