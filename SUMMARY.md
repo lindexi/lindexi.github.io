@@ -1788,6 +1788,8 @@
 
  * [win10 uwp 退出程序](win10-uwp-退出程序.md)
 
+ * [win10 uwp 选择文本转语音的机器人](win10-uwp-选择文本转语音的机器人.md)
+
  * [win10 uwp 选颜色](win10-uwp-选颜色.md)
 
  * [win10 uwp 通知列表](win10-uwp-通知列表.md)
