@@ -1034,6 +1034,8 @@
 
  * [dotnetCampus.UITest.WPF 一个支持中文用例的界面单元测试框架](dotnetCampus.UITest.WPF-一个支持中文用例的界面单元测试框架.md)
 
+ * [FileStream 的 FlushAsync 方法在 .NET Framework 与 .NET Core 行为的不同](FileStream-的-FlushAsync-方法在-.NET-Framework-与-.NET-Core-行为的不同.md)
+
  * [gif 格式](gif-格式.md)
 
  * [git cannot lock ref](git-cannot-lock-ref.md)
