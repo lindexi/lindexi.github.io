@@ -768,6 +768,8 @@
 
  * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
+ * [dotnet 启动进程传入不存在的文件夹作为工作目录行为变更](dotnet-启动进程传入不存在的文件夹作为工作目录行为变更.md)
+
  * [dotnet 命名管道名字长度限制](dotnet-命名管道名字长度限制.md)
 
  * [dotnet 在 GitHub 的 Action 上部署自动代码编码规范机器人](dotnet-在-GitHub-的-Action-上部署自动代码编码规范机器人.md)
