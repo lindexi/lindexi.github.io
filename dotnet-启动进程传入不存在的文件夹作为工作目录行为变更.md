@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/2/9 19:37:27 -->
+
 <!-- 博客 -->
 <!-- 发布 -->
 
@@ -47,6 +49,19 @@ var process = Process.Start(processStartInfo);
 - 在 .NET Core 下，传入 ProcessStartInfo 的 WorkingDirectory 工作路径是空，且 Environment.CurrentDirectory 的文件夹是一个不存在的文件夹。能启动新进程，且新进程的工作路径和当前进程的 Environment.CurrentDirectory 相同
 - 在 .NET Framework 下，能正常开启进程，且新进程的工作路径是 "C:\Windows" 文件夹
 
+<!-- 
+
+根据 UseShellExecute 参数决定采用哪个方式启动
+
+```csharp
+        private bool StartCore(ProcessStartInfo startInfo)
+        {
+            return startInfo.UseShellExecute
+                ? StartWithShellExecuteEx(startInfo)
+                : StartWithCreateProcess(startInfo);
+        }
+```
+
 在 .NET Core 下，创建进程的代码是通过如下方式
 
 ```csharp
@@ -85,7 +100,7 @@ var process = Process.Start(processStartInfo);
               process = Microsoft.Win32.NativeMethods.CreateProcess((string) null, stringBuilder, (Microsoft.Win32.NativeMethods.SECURITY_ATTRIBUTES) null, (Microsoft.Win32.NativeMethods.SECURITY_ATTRIBUTES) null, true, num1, num2, lpCurrentDirectory, lpStartupInfo, lpProcessInformation);
 ```
 
-可以看到底层创建的方法不相同。不过底层的 ShellExecute 也是会调用到 CreateProcess 方法的
+可以看到底层创建的方法不相同。不过底层的 ShellExecute 也是会调用到 CreateProcess 方法的 -->
 
 更多请看 [c# - Win32Exception: The directory name is invalid - Stack Overflow](https://stackoverflow.com/questions/990562/win32exception-the-directory-name-is-invalid )
 
