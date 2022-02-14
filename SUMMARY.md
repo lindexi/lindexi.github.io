@@ -704,6 +704,8 @@
 
  * [dotnet 使用 MessagePack 序列化对象](dotnet-使用-MessagePack-序列化对象.md)
 
+ * [dotnet 使用 NamedPipeClientStream 连接一个不存在管道服务名将不断空跑 CPU 资源](dotnet-使用-NamedPipeClientStream-连接一个不存在管道服务名将不断空跑-CPU-资源.md)
+
  * [dotnet 使用 Newtonsoft.Json 输出枚举首字符小写](dotnet-使用-Newtonsoft.Json-输出枚举首字符小写.md)
 
  * [dotnet 使用 Obsolete 特性标记成员过时保持库和框架的兼容性](dotnet-使用-Obsolete-特性标记成员过时保持库和框架的兼容性.md)

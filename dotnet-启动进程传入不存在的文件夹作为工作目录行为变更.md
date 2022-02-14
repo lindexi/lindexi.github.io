@@ -39,7 +39,38 @@ var process = Process.Start(processStartInfo);
 
 但如果没有设置 ProcessStartInfo 的 WorkingDirectory 工作路径，那么默认将使用当前进程的 Environment.CurrentDirectory 值作为启动进程的工作路径
 
-这是在 dotnet core 上的行为。 在 .NET Framework 下，以上代码不会抛出任何异常，且新开的进程拿到的工作路径是 "C:\Windows" 文件夹
+在 .NET Core 和 .NET Framework 下，启动时，设置 UseShellExecute 分别为 true 和 false 的值，行为有所不同。在不设置 ProcessStartInfo 的 WorkingDirectory 工作路径，让新的进程默认使用 Environment.CurrentDirectory 工作文件夹。但是此工作路径是一个被插拔的 U 盘的路径，如以下代码
+
+```csharp
+            Environment.CurrentDirectory = @"I:\";
+
+            var exe = Path.Combine(directory, fileName + ".exe"); // 执行到这句代码的时候，拔出 U 盘，让 I:\ 不存在
+            var processStartInfo = new ProcessStartInfo(exe, "fx")
+            {
+                UseShellExecute = true, // 也设置为 false 的值
+            };
+            var process = Process.Start(processStartInfo);
+            process.WaitForExit();
+```
+
+我使用 .NET 6 和 .NET Framework 4.5 进行分别的测试，测试如下：
+
+在 .NET Core 下，设置 UseShellExecute=false 的值，运行结果是：成功，新进程工作路径等于 `I:\` 路径
+
+在 .NET Core 下，设置 UseShellExecute=true 的值，运行结果是：成功，新进程工作路径等于 `C:\Windows` 路径
+
+在 .NET Framework 下，设置 UseShellExecute=false 的值，运行结果是：运行 Process.Start 失败，提示 `System.ComponentModel.Win32Exception: '目录名称无效。'` 错误
+
+在 .NET Framework 下，设置 UseShellExecute=true 的值，运行结果是：成功，新进程工作路径等于 `C:\Windows` 路径
+
+
+
+
+
+
+
+
+<!-- 这是在 dotnet core 上的行为。 在 .NET Framework 下，以上代码不会抛出任何异常，且新开的进程拿到的工作路径是 "C:\Windows" 文件夹
 
 - 在 .NET Core 下，传入 ProcessStartInfo 的 WorkingDirectory 工作路径是不存在的文件夹，将抛出异常
 - 在 .NET Framework 下，传入不存在的文件夹，能正常开启进程，且新进程的工作路径是 "C:\Windows" 文件夹
@@ -47,7 +78,7 @@ var process = Process.Start(processStartInfo);
 另外有一个例外的行为是，如果此时的 Environment.CurrentDirectory 的文件夹是一个不存在的文件夹，例如原本是指向 U 盘，但是在启动进程时，被拔出 U 盘，那么此时没有什么事情发生。但行为依然有以下的不同
 
 - 在 .NET Core 下，传入 ProcessStartInfo 的 WorkingDirectory 工作路径是空，且 Environment.CurrentDirectory 的文件夹是一个不存在的文件夹。能启动新进程，且新进程的工作路径和当前进程的 Environment.CurrentDirectory 相同
-- 在 .NET Framework 下，能正常开启进程，且新进程的工作路径是 "C:\Windows" 文件夹
+- 在 .NET Framework 下，能正常开启进程，且新进程的工作路径是 "C:\Windows" 文件夹 -->
 
 <!-- 
 
