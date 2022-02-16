@@ -3,6 +3,8 @@
 本文记录一个开发和代码审查过程中，需要关注的细节。在 dotnet 里，在 .NET 6 和以下版本，包括 .NET Framework 版本，使用 NamedPipeClientStream 进行连接管道服务，如果此时的管道服务没有存在，或者还没有启动，调用 ConnectAsync 或 Connect 方法，将会进入一个循环，不断进行空跑，等待超时或者是连接上。默认的 ConnectAsync 或 Connect 方法，传入的超时时间都是无穷，也就是将会无限重试，不断消耗 CPU 资源
 
 <!--more-->
+<!-- CreateTime:2022/2/12 10:41:44 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
