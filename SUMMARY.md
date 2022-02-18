@@ -2490,6 +2490,8 @@
 
  * [WPF 自定义 TextBoxView 的 Margin 大小](WPF-自定义-TextBoxView-的-Margin-大小.md)
 
+ * [WPF 自定义文本框输入法 IME 跟随光标](WPF-自定义文本框输入法-IME-跟随光标.md)
+
  * [WPF 自己封装 Skia 差量绘制控件](WPF-自己封装-Skia-差量绘制控件.md)
 
  * [WPF 获取 MediaContext 的方法](WPF-获取-MediaContext-的方法.md)
