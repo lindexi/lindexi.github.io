@@ -2314,6 +2314,8 @@
 
  * [WPF 将 SVG 转 XAML 的工具](WPF-将-SVG-转-XAML-的工具.md)
 
+ * [WPF 将控件放入到 UserControl 里获取 HwndSource 为空的情况](WPF-将控件放入到-UserControl-里获取-HwndSource-为空的情况.md)
+
  * [WPF 已知问题 BitmapDecoder.Create 不支持传入 Asynchronous 的文件流](WPF-已知问题-BitmapDecoder.Create-不支持传入-Asynchronous-的文件流.md)
 
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
