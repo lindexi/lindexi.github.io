@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/2/22 8:50:54 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -104,6 +106,51 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 [Any way to get an HWND of a UserControl? - Visual Studio 2008 - Windows Tech](http://www.windows-tech.info/11/19abe20f2274251c.php )
 
 [Any way to get an HWND of a UserControl?](https://social.msdn.microsoft.com/Forums/vstudio/en-US/cc6297db-6ed9-4d68-abe2-47769e06d93a/any-way-to-get-an-hwnd-of-a-usercontrol?forum=wpf )
+
+----------
+
+更新： 
+
+不是只有 UserControl 有此问题，而是所有需要 Template 的控件，都存在此问题。例如 Button 按钮也一样，如以下代码，将 TextBox2 放入到 Button 里面，其行为和放入到 UserControl 是相同的
+
+```xml
+        <Button x:Name="Button" Visibility="Collapsed">
+            <TextBox x:Name="TextBox2"></TextBox>
+        </Button>
+```
+
+更改 MainWindow_Loaded 函数为以下代码
+
+```csharp
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var hwndSource1 = (HwndSource) PresentationSource.FromVisual(TextBox1); // not null
+            var hwndSource2 = (HwndSource) PresentationSource.FromVisual(TextBox2); // null
+            var logicalParent = LogicalTreeHelper.GetParent(TextBox2); // Button
+            var visualParent = VisualTreeHelper.GetParent(TextBox2); // null
+        }
+```
+
+可以看到从 TextBox2 只能存在逻辑树上，没有建立过视觉树关系。原因是 Button 或 UserControl 控件，不会立即调用 ApplyTemplate 应用资源创建里层控件，只有在必要的时候才进行初始化。因此没有被初始化的 TextBox2 自然就找不到任何可用的 HwndSource 内容
+
+更新的代码也放在[github](https://github.com/lindexi/lindexi_gd/tree/b2dafcd7f3b86efd6283dd8bf6a37cfb85765aa9/FurwihobawNawkanenea) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b2dafcd7f3b86efd6283dd8bf6a37cfb85765aa9/FurwihobawNawkanenea) 欢迎访问
+
+可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin b2dafcd7f3b86efd6283dd8bf6a37cfb85765aa9
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+```
+
+获取代码之后，进入 FurwihobawNawkanenea 文件夹
 
 
 
