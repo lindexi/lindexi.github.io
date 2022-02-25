@@ -2150,6 +2150,8 @@
 
  * [WPF 使用 TranslatePoint 换算元素之间相对坐标](WPF-使用-TranslatePoint-换算元素之间相对坐标.md)
 
+ * [WPF 使用 VideoDrawing 播放视频](WPF-使用-VideoDrawing-播放视频.md)
+
  * [WPF 使用 VisualBrush 在 4k 加 200 DPI 设备上某些文本不渲染看不见问题](WPF-使用-VisualBrush-在-4k-加-200-DPI-设备上某些文本不渲染看不见问题.md)
 
  * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
