@@ -2032,6 +2032,8 @@
 
  * [WPF DrawingVisual](WPF-DrawingVisual.md)
 
+ * [WPF Application Compatibility switches list](WPF-Application-Compatibility-switches-list.md)
+
  * [WPF checkbox文字下掉](WPF-checkbox文字下掉.md)
 
  * [WPF DelegateCommand 出现Specified cast is not valid](WPF-DelegateCommand-出现Specified-cast-is-not-valid.md)
