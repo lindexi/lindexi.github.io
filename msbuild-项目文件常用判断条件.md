@@ -97,6 +97,20 @@ Condition=" '$(TargetFramework)'=='net45' or $(Configuration)=='Debug'"
 Condition="$(DefineConstants.Contains(NET30))"
 ```
 
+## 判断框架版本大于或等于
+
+使用 VersionGreaterThanOrEquals 的方式，传入 TargetFrameworkVersion 进行判断。如以下代码，判断 TargetFramework 是否大于或等于 3.0 的版本
+
+```
+$([MSBuild]::VersionGreaterThanOrEquals('$(TargetFrameworkVersion)', '3.0')
+```
+
+以上的 `TargetFrameworkVersion` 是在 SDK 获取的，代码如下
+
+```
+<TargetFrameworkVersion>v$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 2))</TargetFrameworkVersion>
+```
+
 ## 判断文件夹是否以斜杠结尾
 
 如下面代码，判断 BaseIntermediateOutputPath 是否以斜杠结尾，否则就加上斜杠

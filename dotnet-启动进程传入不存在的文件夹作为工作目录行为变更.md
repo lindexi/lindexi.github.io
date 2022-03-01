@@ -8,7 +8,6 @@
 
 <!-- CreateTime:2022/2/9 19:37:27 -->
 
-<!-- 博客 -->
 <!-- 发布 -->
 
 在 dotnet 6 下，可以使用 ProcessStartInfo 辅助创建 Process 进程，如以下代码进行测试，传入不存在的 `Z:\Windows` 文件夹
