@@ -3,6 +3,8 @@
 This is a list of all System.AppContext base application compatibility switches present in WPF today, along with their defaults and related documentation. 
 
 <!--more-->
+<!-- CreateTime:2022/2/25 19:50:37 -->
+
 <!-- 发布 -->
 
 From: [https://github.com/vatsan-madhavan/WpfAppCompatQuirks](https://github.com/vatsan-madhavan/WpfAppCompatQuirks)
