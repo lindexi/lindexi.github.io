@@ -1124,6 +1124,15 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
         }
 ```
 
+## 发送鼠标滚轮消息
+
+```csharp
+            var mouseWheelEventArgs =
+                new MouseWheelEventArgs(InputManager.Current.PrimaryMouseDevice, Environment.TickCount, -120);
+            mouseWheelEventArgs.RoutedEvent = UIElement.MouseWheelEvent;
+            board.RaiseEvent(mouseWheelEventArgs);
+```
+
 
 ## Win32Exception
 
@@ -1158,3 +1167,11 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
 ```
 
 例子请看 https://github.com/lindexi/lindexi_gd/tree/9fb7110aeb0d4bda10f43639173c91d97b032272/JijachawaybaneeHemkinairdocawno
+
+## MediaPlayer 不支持使用 pack 的链接
+
+在 MediaPlayer 的 Open 传入的  Uri 是程序集资源，如 `new Uri("pack://application:,,,/KufayunurharnaLuragaruker;component/Video.mp4")` 的链接，在播放 Open 之后的下一次 Dispatcher 将会触发 MediaFailed 事件，提示失败
+
+代码放在[github](https://github.com/lindexi/lindexi_gd/tree/af15cde4b0628c2744a8b8eac14a791e2d4f7b54/KufayunurharnaLuragaruker) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/af15cde4b0628c2744a8b8eac14a791e2d4f7b54/KufayunurharnaLuragaruker) 欢迎访问
+
+也就是说不会在调用 Open 方法之后，立刻触发 MediaFailed 事件。而是等待当前的 Dispatcher Frame 执行完成之后，下一个 Dispatcher 主线程触发事件
