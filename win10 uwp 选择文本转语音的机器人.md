@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/2/7 8:37:25 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 刚好从卢老师那里接了一个任务，录制 dotnet 的 20 周年的祝贺视频。然而过年生活太好的我嗓子沙哑了，于是本来普通话就说得不标准的我开始寻求起代码之神的帮助，好在翻到了自己的博客，找到了 [win10 uwp 字符文本转语音声音文件方法](https://blog.lindexi.com/post/win10-uwp-%E5%AD%97%E7%AC%A6%E6%96%87%E6%9C%AC%E8%BD%AC%E8%AF%AD%E9%9F%B3%E5%A3%B0%E9%9F%B3%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95.html) 这篇博客，开始按照此方式录制，却发现了默认语音不是 Kangkang 机器人的。在 UWP 里的 SpeechSynthesizer 的 Voice 属性可以让咱设置所采用的机器人，但是此 VoiceInformation 对象却不能创建，不得不赞叹一下 API 设计者的强大
 
