@@ -1179,6 +1179,50 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
 
 也就是说不会在调用 Open 方法之后，立刻触发 MediaFailed 事件。而是等待当前的 Dispatcher Frame 执行完成之后，下一个 Dispatcher 主线程触发事件
 
+## 鼠标横向滚轮 水平滚轮 触控板横向移动
+
+```csharp
+        /// <summary>
+        /// 监听窗口消息以处理横向滚轮/触控板横向移动的消息。
+        /// </summary>
+        private IntPtr Hook(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            const int WM_MOUSEHWHEEL = 0x020E;
+            switch (msg)
+            {
+                case WM_MOUSEHWHEEL:
+                    int tilt = (short)HIWORD(wParam);
+                    OnMouseTilt(tilt);
+                    return (IntPtr)1;
+            }
+
+            return IntPtr.Zero;
+        }
+
+        /// <summary>
+        /// 取指针所在高位数值。
+        /// </summary>
+        private static int HIWORD(IntPtr ptr)
+        {
+            var val32 = ptr.ToInt32();
+            return ((val32 >> 16) & 0xFFFF);
+        }
+
+        /// <summary>
+        /// 鼠标横向滚轮触发时，横向滚动。
+        /// </summary>
+        /// <param name="tilt">横向滚动量，类似于竖向滚动里的 delta。</param>
+        private void OnMouseTilt(int tilt)
+        {
+        }
+```
+
+https://github.com/dotnet/wpf/issues/5937#issuecomment-1010510114
+
+## 监听触摸频率
+
+可采用 Touch.FrameReported 事件获取
+
 
 
 
