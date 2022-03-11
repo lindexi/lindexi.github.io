@@ -2186,6 +2186,8 @@
 
  * [WPF 光标初始化的时候 temp 文件夹满了无法创建](WPF-光标初始化的时候-temp-文件夹满了无法创建.md)
 
+ * [WPF 全屏窗口将让 Chrome 97 视频停止播放](WPF-全屏窗口将让-Chrome-97-视频停止播放.md)
+
  * [WPF 全屏透明窗口](WPF-全屏透明窗口.md)
 
  * [WPF 内部的5个窗口之 MediaContextNotificationWindow](WPF-内部的5个窗口之-MediaContextNotificationWindow.md)
@@ -2321,6 +2323,10 @@
  * [WPF 将控件放入到 UserControl 里获取 HwndSource 为空的情况](WPF-将控件放入到-UserControl-里获取-HwndSource-为空的情况.md)
 
  * [WPF 已知问题 BitmapDecoder.Create 不支持传入 Asynchronous 的文件流](WPF-已知问题-BitmapDecoder.Create-不支持传入-Asynchronous-的文件流.md)
+
+ * [WPF 已知问题 Popup 吃掉 PreviewMouseDown 事件](WPF-已知问题-Popup-吃掉-PreviewMouseDown-事件.md)
+
+ * [WPF 已知问题 Popup 失焦后导致 ListBox 无法用 MouseWheel 滚动问题和解决方法](WPF-已知问题-Popup-失焦后导致-ListBox-无法用-MouseWheel-滚动问题和解决方法.md)
 
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
