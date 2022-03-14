@@ -2190,6 +2190,8 @@
 
  * [WPF 全屏透明窗口](WPF-全屏透明窗口.md)
 
+ * [WPF 关于将 ManipulationDeltaEventArgs 的 Manipulators 属性返回值修改为 ReadOnlyCollection 类型的提议](WPF-关于将-ManipulationDeltaEventArgs-的-Manipulators-属性返回值修改为-ReadOnlyCollection-类型的提议.md)
+
  * [WPF 内部的5个窗口之 MediaContextNotificationWindow](WPF-内部的5个窗口之-MediaContextNotificationWindow.md)
 
  * [C＃ 写系统日志](C＃-写系统日志.md)

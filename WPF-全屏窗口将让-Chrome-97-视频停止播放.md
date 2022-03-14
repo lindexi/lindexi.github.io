@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/3/10 11:44:40 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -24,6 +26,8 @@
 详细解决方法请参阅 [How to force rendering of video tag content while chrome/electron window is not active for screen sharing? - Stack Overflow](https://stackoverflow.com/a/68685080/6116637)
 
 关于 WPF 高性能全屏透明窗口请看 [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html ) 和 [WPF 制作支持点击穿透的高性能的透明背景异形窗口](https://blog.lindexi.com/post/WPF-%E5%88%B6%E4%BD%9C%E6%94%AF%E6%8C%81%E7%82%B9%E5%87%BB%E7%A9%BF%E9%80%8F%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF%E5%BC%82%E5%BD%A2%E7%AA%97%E5%8F%A3.html )
+
+此问题由 [lsj](https://blog.sdlsj.net) 找到，我只是写博客的工具
 
 
 
