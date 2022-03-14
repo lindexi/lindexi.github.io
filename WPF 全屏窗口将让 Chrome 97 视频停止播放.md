@@ -3,6 +3,8 @@
 无论是使用 WPF 全屏窗口，还是高性能全屏透明窗口，都会在 Chrome 97 以及使用 chromium 对应版本内核的应用的视频停止播放。这是 chromium 的一个优化，因为 chromium 认为，如果有全屏窗口盖在上面，自然此时停止播放视频可以节省资源。然而 chromium 却没有考虑到，有很多会议的应用，虽然是全屏的，但也是透明的，于是此时停止播放视频将是非预期的
 
 <!--more-->
+<!-- CreateTime:2022/3/10 11:44:40 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -21,5 +23,7 @@
 详细解决方法请参阅 [How to force rendering of video tag content while chrome/electron window is not active for screen sharing? - Stack Overflow](https://stackoverflow.com/a/68685080/6116637)
 
 关于 WPF 高性能全屏透明窗口请看 [WPF 制作高性能的透明背景异形窗口（使用 WindowChrome 而不要使用 AllowsTransparency=True） - walterlv](https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html ) 和 [WPF 制作支持点击穿透的高性能的透明背景异形窗口](https://blog.lindexi.com/post/WPF-%E5%88%B6%E4%BD%9C%E6%94%AF%E6%8C%81%E7%82%B9%E5%87%BB%E7%A9%BF%E9%80%8F%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF%E5%BC%82%E5%BD%A2%E7%AA%97%E5%8F%A3.html )
+
+此问题由 [lsj](https://blog.sdlsj.net) 找到，我只是写博客的工具
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 
