@@ -956,6 +956,8 @@
 
  * [dotnet 读 WPF 源代码笔记 XAML 创建对象的方法](dotnet-读-WPF-源代码笔记-XAML-创建对象的方法.md)
 
+ * [dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类](dotnet-读-WPF-源代码笔记-为什么加上-BooleanBoxes-类.md)
+
  * [dotnet 读 WPF 源代码笔记 为什么设置了SplashScreen会让Application.Current.Activated事件不触发](dotnet-读-WPF-源代码笔记-为什么设置了SplashScreen会让Application.Current.Activated事件不触发.md)
 
  * [dotnet 读 WPF 源代码笔记 为什么默认的笔迹触摸点的压感是 0.5 的值](dotnet-读-WPF-源代码笔记-为什么默认的笔迹触摸点的压感是-0.5-的值.md)
@@ -3019,6 +3021,8 @@
  * [记因为 NVIDIA 显驱错误而让 WPF 应用启动闪退问题](记因为-NVIDIA-显驱错误而让-WPF-应用启动闪退问题.md)
 
  * [讲师培训 多米诺原则](讲师培训-多米诺原则.md)
+
+ * [读 WPF 源代码的疑惑记录](读-WPF-源代码的疑惑记录.md)
 
  * [读书笔记 dotnet 什么时候进行垃圾回收](读书笔记-dotnet-什么时候进行垃圾回收.md)
 
