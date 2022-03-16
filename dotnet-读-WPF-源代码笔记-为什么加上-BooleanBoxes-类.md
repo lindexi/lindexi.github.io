@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/3/14 19:41:51 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -13,7 +15,7 @@
 
 创建大量的对象将会让界面逻辑需要不断进行内存回收，自然性能就降低了
 
-那为什么不设计一个泛形呢？因为代码将不好写，同时由于泛形类型的静态属性将不相同，从而再次让逻辑更加复杂。而且对于大多数逻辑来说，确实传输的只是结构体。在 WPF 框架，为了解决此问题，于是就创建了 KnownBoxes 系列类型。包括 NullableBooleanBoxes 和 BooleanBoxes 类型。这两个类型将预先将布尔装箱，当成 object 对象。接下来，所有需要对布尔装箱的逻辑，都将使用 BooleanBoxes 的对象代替
+那为什么不设计一个泛形呢？因为代码将不好写，同时由于泛形类型的静态属性将不相同，从而再次让逻辑更加复杂。而且对于大多数逻辑来说，确实传输的只是引用对象，传输结构体还是一个比较少的业务。在 WPF 框架，为了解决此问题，于是就创建了 KnownBoxes 系列类型。包括 NullableBooleanBoxes 和 BooleanBoxes 类型。这两个类型将预先将布尔装箱，当成 object 对象。接下来，所有需要对布尔装箱的逻辑，都将使用 BooleanBoxes 的对象代替
 
 以下代码是 BooleanBoxes 的逻辑
 
@@ -41,14 +43,18 @@
 
 使用 BooleanBoxes 的性能如何？请看 [https://github.com/dotnet/runtime/issues/7079#issuecomment-264500921](https://github.com/dotnet/runtime/issues/7079#issuecomment-264500921)
 
+<!-- ![](image/dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类/dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2022315856539039.jpg)
+
 |                  Method |      Mean |    StdDev |    Median | Scaled |
 |------------------------ |---------- |---------- |---------- |------- |
-|      BoolUncachedBoxing | 7.3923 ns | 0.0391 ns | 7.3866 ns |   1.00 |
-|        BoolCachedBoxing | 4.5859 ns | 0.0310 ns | 4.5954 ns |   0.62 |
+|      BoolUncachedBoxing |     7.3923 ns |      0.0391 ns |      7.3866 ns |   1.00 |
+|        BoolCachedBoxing |     4.5859 ns |      0.0310 ns |      4.5954 ns |   0.62 |
 
 那为什么在 dotnet 里面，不默认加上此优化呢？原因是如文档，每次在 dotnet 的装箱，都是生成新的对象。没错，新的对象。因此如果做此优化，将修改行为
 
-那这和 D3DImage 的 Callback 方法里面，有什么关系呢？其实在此方法里面，调用到 SetIsFrontBufferAvailable 方法，先来看看此方法做了什么
+那这和 D3DImage 的 Callback 方法里面，有什么关系呢？其实在此方法里面，调用到 SetIsFrontBufferAvailable 方法，在此方法里面进行了一次强转，于是我开始阅读代码，认为强转会炸，先来看看此方法做了什么
 
 ```csharp
         private object SetIsFrontBufferAvailable(object isAvailableVersionPair)
@@ -80,7 +86,7 @@
         }
 ```
 
-可以看到在传入的参数，拿到的 Pair 的第一个参数，是用 BooleanBoxes 创建的
+可以看到在传入的参数，拿到的 Pair 的第一个参数，是用 BooleanBoxes 创建的。然而在 SetIsFrontBufferAvailable 方法里面，将此参数进行了强转。相当于 `(bool) BooleanBoxes.Box(isFrontBufferAvailable)` 的代码。我开始看到 BooleanBoxes 的 Box 返回的是一个 object 对象，以为对 object 对象进行强转肯定会炸。实际上这是不会炸的，转换是符合预期的
 
 那为什么一个 object 对象，在 SetIsFrontBufferAvailable 能被转换为布尔呢？这就是 BooleanBoxes 的属性都是由布尔装箱创建的原因。因为本来是通过布尔装箱创建的，也因此能被转换为布尔值
 
