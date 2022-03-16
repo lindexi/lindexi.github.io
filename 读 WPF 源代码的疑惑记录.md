@@ -3,9 +3,11 @@
 本文记录读 WPF 源代码的疑惑
 
 <!--more-->
+<!-- CreateTime:2022/3/14 17:24:00 -->
+
 <!-- 不发布 -->
 
-## D3DImage
+## D3DImage 的 SetIsFrontBufferAvailable 为什么能对一个 object 强转为布尔
 
 为什么在 D3DImage 的 Callback 方法里面，如下面代码，传入的第一个参数是 BooleanBoxes 
 
@@ -40,6 +42,8 @@
 ```
 
 此时的转换，理论上应该出类型不相同
+
+回答： [dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8A%A0%E4%B8%8A-BooleanBoxes-%E7%B1%BB.html)
 
 ## 拷贝 D3DImage 的性能
 
