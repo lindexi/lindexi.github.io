@@ -390,6 +390,8 @@
 
  * [dotnet 6 使用 CreateSymbolicLink 创建文件夹符号链接](dotnet-6-使用-CreateSymbolicLink-创建文件夹符号链接.md)
 
+ * [dotnet 6 使用 string.Create 提升字符串创建和拼接性能](dotnet-6-使用-string.Create-提升字符串创建和拼接性能.md)
+
  * [dotnet 6 引用 NAudio 的旧版本构建不通过](dotnet-6-引用-NAudio-的旧版本构建不通过.md)
 
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
@@ -2667,6 +2669,8 @@
  * [Xamarin Forms 进度条控件](Xamarin-Forms-进度条控件.md)
 
  * [xaml 添加 region](xaml-添加-region.md)
+
+ * [XAML 给资源起个好名字 用 StaticResource 起一个别名](XAML-给资源起个好名字-用-StaticResource-起一个别名.md)
 
  * [XP 源代码 如何在清空回收站时修改回收站图标](XP-源代码-如何在清空回收站时修改回收站图标.md)
 
