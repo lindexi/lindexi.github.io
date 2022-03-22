@@ -2604,6 +2604,8 @@
 
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)
 
+ * [WPF 通过 GifBitmapDecoder 调用 WIC 解析 Gif 和进行动画播放的简单方法](WPF-通过-GifBitmapDecoder-调用-WIC-解析-Gif-和进行动画播放的简单方法.md)
+
  * [WPF 通过 InputManager 模拟调度触摸事件](WPF-通过-InputManager-模拟调度触摸事件.md)
 
  * [WPF 通过 ReadyToRun 提升性能](WPF-通过-ReadyToRun-提升性能.md)
