@@ -3,6 +3,7 @@
 本文来和大家聊一下关于 XAML 资源的定义的事情，和开发技术关系不大，更多的是开发的思路
 
 <!--more-->
+<!-- CreateTime:2022/3/21 8:29:08 -->
 
 <!-- 标签：wpf,xaml -->
 <!-- 发布 -->
@@ -68,6 +69,6 @@
 
 如果后续准备改主页面的画刷，而其他的页面保持不动。那么可以明确了解到，只需要改 MainPageBackgroundBrush 的资源值即可，影响不到其他的页面。而如果期望是全部页面的背景色都换成某个其他的颜色，只需要改 DefaultPageBackgroundBrush 即可。如果是设计师想要改整个应用的红色主题色，那就改 `Brush.SolidColorBrush.RedThemeBrush` 的颜色
 
-如此的设计可以比较方便解决比较大的项目的资源引用问题。核心的思想就是依靠引用的方式，将资源的定义分层，按照抽象的不同，分为不同层的定义。定义资源的命名方式最好都是一组一组的，一个抽象层里面有很多组，每一组之间的命名都是非常相似的。如此就很方便资源的管理
+如此的设计可以比较方便解决比较大的项目的资源引用问题。核心的思想就是依靠引用的方式，将资源的定义分层，按照抽象的不同，分为不同层的定义。定义资源的命名方式最好都是一组一组的，一个抽象层里面有很多组，每一组之间的命名都是非常相似的。如此就很方便资源的管理。这只是一个思想，不使用 StaticResource 也可以，如换成绑定的方式也可以
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、 使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
