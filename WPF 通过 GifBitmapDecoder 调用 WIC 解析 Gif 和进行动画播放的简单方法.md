@@ -3,6 +3,8 @@
 本文告诉大家如何在 WPF 里，通过 GifBitmapDecoder 调用 WIC 层来解析 GIF 图片，然后采用动画的方式进行播放
 
 <!--more-->
+<!-- CreateTime:2022/3/21 16:29:06 -->
+
 
 <!-- 标签：WPF，gif -->
 <!-- 博客 -->

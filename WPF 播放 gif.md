@@ -19,6 +19,12 @@
 
 参见：[WPF使用MediaElement显示gif图片 - CSDN博客](http://blog.csdn.net/SANYUNI/article/details/73608771 )
 
+## GifBitmapDecoder 方法
+
+使用 GifBitmapDecoder 能用上 WIC 层系统解码，能支持很多奇怪的格式，以下是我实现的版本，我实现的版本只能播放简单的全画的 GIF 图片
+
+[WPF 通过 GifBitmapDecoder 调用 WIC 解析 Gif 和进行动画播放的简单方法](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-GifBitmapDecoder-%E8%B0%83%E7%94%A8-WIC-%E8%A7%A3%E6%9E%90-Gif-%E5%92%8C%E8%BF%9B%E8%A1%8C%E5%8A%A8%E7%94%BB%E6%92%AD%E6%94%BE%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95.html )
+
 ## Magick 方法
 
 这个方法请参见博客 [WPF 一个性能比较好的 gif 解析库 ](https://lindexi.gitee.io/post/WPF-%E4%B8%80%E4%B8%AA%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83%E5%A5%BD%E7%9A%84-gif-%E8%A7%A3%E6%9E%90%E5%BA%93.html )
