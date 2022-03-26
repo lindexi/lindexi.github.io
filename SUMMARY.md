@@ -382,6 +382,8 @@
 
  * [dotnet 5 判断当前程序运行在 Windows 系统 Linux 系统的简单方法](dotnet-5-判断当前程序运行在-Windows-系统-Linux-系统的简单方法.md)
 
+ * [dotnet 5 的 bin 文件夹下的 ref 文件夹是做什么用的](dotnet-5-的-bin-文件夹下的-ref-文件夹是做什么用的.md)
+
  * [dotnet 5 破坏性改动 WPF 和 WinForms 的 OutputType 输出类型重定向为 WinExe 类型](dotnet-5-破坏性改动-WPF-和-WinForms-的-OutputType-输出类型重定向为-WinExe-类型.md)
 
  * [dotnet 5 让 WPF 调用 WindowsRuntime 方法](dotnet-5-让-WPF-调用-WindowsRuntime-方法.md)

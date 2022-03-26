@@ -11,7 +11,6 @@
 
 <!-- 标签：dotnet，性能优化 -->
 <!-- 发布 -->
-<!-- 博客 -->
 
 本文也是跟着 [Stephen Toub](https://github.com/stephentoub) 大佬学性能优化系列博客之一。这是 [Stephen Toub](https://github.com/stephentoub) 大佬在给 WPF 做的性能优化里面其中的一个小点。只是刚好这个优化点，是 [Stephen Toub](https://github.com/stephentoub) 大佬参与设计（预计是主导）和进行开发的。此优化点需要修改 Roslyn 内核，编写分析器，以及在 dotnet runtime 层进行支持才可以做到的优化。在过去完成了从 Roslyn 到分析器到 runtime 的支持之后，就到了应用框架层的支持了，这就是 [Stephen Toub](https://github.com/stephentoub) 大佬会在 WPF 仓库活跃的其中一个原因了
 
@@ -144,14 +143,14 @@ public static string FormatVersion(int major, int minor, int build, int revision
 
 例如使用的内插字符串的拼接需要 5000 的 char 数组空间大小作为缓存空间，然而传入的 `stackalloc` 申请的空间是 `stackalloc char[64]` 那显然不够用。这是没有问题的，在底层将重新和数组池借足够的空间。不会强行在你的栈上分配空间越界的
 
-对于字符串来说，还有一个很重要的就是语言文化。例如对于日期来说，美国和中国的文化的日期的字符串表示是不相同的。自然在格式化输出字符串时，最好是带上日期。咱上面的例子只是为了简单，将 IFormatProvider 传入空值而已。实际上可以传入符合你预期的格式化方法，例如无视语言文化的格式化
+对于字符串来说，还有一个很重要的就是语言文化。例如对于日期来说，美国和中国的文化的日期的字符串表示是不相同的。自然在格式化输出字符串时，最好是带上日期的语言文化。咱上面的例子只是为了简单，将 IFormatProvider 传入空值而已。实际上可以传入符合你预期的格式化方法，例如无视语言文化的格式化
 
 ```csharp
 public static string FormatVersion(int major, int minor, int build, int revision) =>
     string.Create(CultureInfo.InvariantCulture, stackalloc char[64], $"{major}.{minor}.{build}.{revision}");
 ```
 
-以上的 `CultureInfo.InvariantCulture` 将对后续的内插字符串进行对应的格式化，如此可以解决很多语言文化的坑
+以上的 `CultureInfo.InvariantCulture` 将对后续的内插字符串进行对应的格式化。通过在 Create 方法上，传入语言文化相关的格式化可以解决很多语言文化的坑
 
 对于咱的应用代码，如果需要给用户展示的，最好是根据当地的语言文化进行展示。而对于咱应用里层的计算逻辑，最好是做语言文化无关的。如此才能保持逻辑的符合预期，毕竟诡异的语言格式化还是很多的，采用语言文化无关，可以保持咱应用内计算逻辑符合预期
 

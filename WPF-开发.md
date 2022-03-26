@@ -135,6 +135,39 @@ public partial class App
 }
 ``` -->
 
+## 判断字符是数字或英文字符
+
+判断字符是 0-9 的数字或 A-Z 或 a-z 英文字符方法
+
+```csharp
+static bool IsAsciiLetterOrDigit(char character) =>
+    ((((uint) (character - 'A')) & ~0x20) < 26) ||
+    (((uint) (character - '0')) < 10);
+```
+
+以上代码的 `((uint) (character - '0'))` 的意思是在一个字符比 '0' 小的时候，自然减去的值是负数，而使用 uint 强行转换，可以转出一个非常大的数字，自然就大于 10 的值。如果一个字符大于 '9' 那么自然减去 '0' 也大于 10 的值
+
+而 `((uint) (character - 'A'))` 的原理也和上面的数字相同。只是加上 `& ~0x20` 进行忽略大小写差别而已，为什么加上这个能忽略大小写差别？原因是 Ascii 设计的时候如此，在 Ascii 编码里，大写字符在前（数值较小）而小写在后，对应的大小写字符，相差在于 `1 << 5` 的位值上，例如 'A' 和 'a' 的值分别如下
+
+- 'A' 65 0B1000001
+- 'a' 97 0B1100001
+
+也就是大写和小写的字符是从右往左数第6位（从1开始）相差一个位，刚好 `0B100000` 也就是取只有第6位（从1开始）就是十进制的 32 或十六进制的 0x20 的值。于是取 `~0x20` 表示一个数值上，只有第6位（从1开始）是 0 的值，其他都是 1 的数值。对此取与，即可实现忽略当前数值的第6位（从1开始）的值
+
+相当于想要让某个字符，此字符已知落在 A-Z 或 a-z 范围内，强行变为小写，可以使用 `|0x20` 的方式，强行将第6位（从1开始）的值改为1的值，如 `(char)('A'|0x20)` 将输出 'a' 字符。反过来，将小写转换为大写，可以使用 `&~0x20` 的方式，强行将第6位（从1开始）的值改为0的值，如 `(char)('a'&~0x20)` 将输出 'A' 字符
+
+于是根据此编码方式，即可通过 `((((uint) (character - 'A')) & ~0x20) < 26)` 判断出字符是否在 A-Z 或 a-z 范围
+
+以上代码放在 [github](https://github.com/dotnet/wpf/pull/6268/files#diff-1d02f80080e968e5fec25cef51809b5d0a9d18fce33cd7bd8fb2f9c75f14409aR641) 欢迎访问
+
+## 将 int 输出为二进制字符串
+
+使用 `System.Convert` 进行转换
+
+```csharp
+Convert.ToString(value, 2)
+```
+
 ## 当鼠标滑过一个被禁用的元素时，让ToolTip 显示
 
 设置`ToolTipService.ShowOnDisabled`为 true
@@ -203,6 +236,8 @@ System.Windows.Markup.XamlParseException
     </ResourceDictionary>
   </Application.Resources>
 ```
+
+设计器会给你挖的一个坑是 component 如果写两次，如 `;component;component` 那么设计器依然能帮你找到资源，但是运行就炸了
 
 ## 判断 WPF 程序使用管理员权限运行
 
