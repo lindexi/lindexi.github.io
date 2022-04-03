@@ -1104,6 +1104,60 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
 
 因此如果发现自定义控件没有界面渲染出来，请先在 OnRender 打上断点，如果断点没有进入，查看是否上层控件有调用里层控件的 Arrange 布局方法。如果断点进入还没有界面，请找上层控件是否有重写 GetVisualChild 和 VisualChildrenCount 方法，同时上层控件需要在 GetVisualChild 有返回里层控件
 
+## 定制 TextBox 的光标
+
+实现方法就是使用 Transparent 设置原本的 WPF 的光标，让原本 WPF 的 TextBox 的光标不可见。然后再新建一个 Border 元素，使用 Border 元素作为元素的显示光标。在每次 TextBox 的光标更新坐标的时候，修改 Border 所在容器的坐标，例子如下
+
+界面如下
+
+```xml
+        <Grid>
+            <TextBox x:Name="TextBox" CaretBrush="Transparent" />
+            <Canvas>
+                <Border x:Name="CaretBorder" Visibility="Collapsed" Canvas.Left="0" Canvas.Top="0" Width="2" Height="15">
+                    <Border.Background>
+                        <LinearGradientBrush MappingMode="RelativeToBoundingBox"
+                                             StartPoint="0,0"
+                                             EndPoint="0,1">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Color="Blue"    Offset="0" />
+                                <GradientStop Color="Magenta" Offset="0.5" />
+                                <GradientStop Color="Green"   Offset="1" />
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+            </Canvas>
+        </Grid>
+```
+
+后台代码如下
+
+```csharp
+    private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        TextBox.SelectionChanged += (sender, e) => MoveCustomCaret((TextBox)sender);
+        TextBox.LostFocus += (sender, e) => CaretBorder.Visibility = Visibility.Collapsed;
+        TextBox.GotFocus += (sender, e) => CaretBorder.Visibility = Visibility.Visible;
+    }
+
+    private void MoveCustomCaret(TextBox textBox)
+    {
+        var caretLocation = textBox.GetRectFromCharacterIndex(textBox.CaretIndex).Location;
+
+        if (!double.IsInfinity(caretLocation.X))
+        {
+            Canvas.SetLeft(CaretBorder, caretLocation.X);
+        }
+
+        if (!double.IsInfinity(caretLocation.Y))
+        {
+            Canvas.SetTop(CaretBorder, caretLocation.Y);
+        }
+    }
+```
+
+使用以上方法可以定制 WPF 的 TextBox 的光标的宽度高度，任意修改光标画刷，或者让元素跟随 TextBox 的光标坐标
 
 ## 发送键盘消息
 
