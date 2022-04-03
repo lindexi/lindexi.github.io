@@ -392,6 +392,8 @@
 
  * [dotnet 6 使用 CreateSymbolicLink 创建文件夹符号链接](dotnet-6-使用-CreateSymbolicLink-创建文件夹符号链接.md)
 
+ * [dotnet 6 使用 Obfuscar 进行代码混淆](dotnet-6-使用-Obfuscar-进行代码混淆.md)
+
  * [dotnet 6 使用 string.Create 提升字符串创建和拼接性能](dotnet-6-使用-string.Create-提升字符串创建和拼接性能.md)
 
  * [dotnet 6 引用 NAudio 的旧版本构建不通过](dotnet-6-引用-NAudio-的旧版本构建不通过.md)
