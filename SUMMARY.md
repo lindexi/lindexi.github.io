@@ -678,7 +678,7 @@
 
  * [dotnet 为什么每个项目都会输出一个 NuGet 包而不是一个包带所有项目](dotnet-为什么每个项目都会输出一个-NuGet-包而不是一个包带所有项目.md)
 
- * [dotnet 为大型应用而创建的 ApplicationStartupManager 启动流程框架](dotnet-为大型应用而创建的-ApplicationStartupManager-启动流程框架.md)
+ * [dotnet 为大型应用接入 ApplicationStartupManager 启动流程框架](dotnet-为大型应用接入-ApplicationStartupManager-启动流程框架.md)
 
  * [dotnet 从入门到放弃的 500 篇文章合集](dotnet-从入门到放弃的-500-篇文章合集.md)
 
