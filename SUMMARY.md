@@ -2284,6 +2284,8 @@
 
  * [WPF 多指触摸拖拽窗口 拖动修改窗口坐标](WPF-多指触摸拖拽窗口-拖动修改窗口坐标.md)
 
+ * [WPF 多线程下跨线程处理 ObservableCollection 数据](WPF-多线程下跨线程处理-ObservableCollection-数据.md)
+
  * [WPF 好看的矢量图标](WPF-好看的矢量图标.md)
 
  * [wpf 如何使用 Magick.NET 播放 gif 图片](wpf-如何使用-Magick.NET-播放-gif-图片.md)
