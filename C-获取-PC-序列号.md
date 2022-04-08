@@ -106,6 +106,8 @@ Default string
 
 通过注册表读取无论是性能还是稳定性都更好，注册表大概是 15us 能读取
 
+还有一个方式是通过 UUID 的方式读取，试试输入命令行 `wmic csproduct get UUID` 获取 SMBIOS 的 System Information 的 UUID 值
+
 
 
 
