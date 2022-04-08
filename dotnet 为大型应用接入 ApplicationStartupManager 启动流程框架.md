@@ -380,9 +380,11 @@
 
 以上代码即可实现在 Main 函数启动之后，跑起来启动框架。不过上面代码编译还不能通过，因为还没有完成 AssemblyMetadataExporter 的逻辑，这个预编译模块相关逻辑
 
-接下来就是预编译模块的接入逻辑
+这不等价于这套启动框架强依赖于预编译模块，而是说可选接入预编译模块。只需要有任何的逻辑，能对接 AddStartupTaskMetadataCollector 方法，在此方法里面能传入获取应用所需的启动任务项即可。无论使用任何的方式，包括反射等都是可以的。接入预编译模块只是为了优化性能，减少收集启动任务项的耗时
 
-和 .NET 的其他库一样，为了接入预编译模块，就需要先安装 NuGet 库。通过 NuGet 安装 [dotnetCampus.Telescope](https://github.com/dotnet-campus/SourceFusion)库，如果是新 SDK 风格的项目文件，可以编辑 csproj 项目文件，添加如下代码安装
+接下来就是预编译模块的接入逻辑，本文不涉及 Telescope 预编译模块的原理部分，只包含如何接入的方法
+
+和 .NET 的其他库一样，为了接入预编译模块，就需要先安装 NuGet 库。通过 NuGet 安装 [dotnetCampus.Telescope](https://github.com/dotnet-campus/SourceFusion) 库，如果是新 SDK 风格的项目文件，可以编辑 csproj 项目文件，添加如下代码安装
 
 ```xml
   <ItemGroup>
@@ -511,7 +513,6 @@ namespace WPFDemo.Api.StartupTaskFramework
 
 回到 Program.cs 里面，新建一个 BuildStartupAssemblies 方法，此方法里面，写明需要收集启动任务项的程序集列表，交给 AssemblyMetadataExporter 去获取
 
-
 ```csharp
     class Program
     {
@@ -524,7 +525,6 @@ namespace WPFDemo.Api.StartupTaskFramework
                 // 忽略其他逻辑
             });
         }
-
 
         private static Assembly[] BuildStartupAssemblies()
         {
@@ -665,8 +665,5 @@ namespace WPFDemo.App.Startup
 ```
 
 以上就是应用接入 [ApplicationStartupManager](https://github.com/dotnet-campus/dotnetCampus.ApplicationStartupManager) 启动流程框架的方法，以及业务方编写启动任务项的例子。以上的代码放在 [https://github.com/dotnet-campus/dotnetCampus.ApplicationStartupManager](https://github.com/dotnet-campus/dotnetCampus.ApplicationStartupManager) 的例子项目
-
-
-
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

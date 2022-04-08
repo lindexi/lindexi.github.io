@@ -14,7 +14,7 @@
 这是比较不推荐的方法，但是使用简单
 
 ```csharp
-<MediaElement x:Name="gifMedia"  Source="x.gif" UnloadedBehavior="Manual"  LoadedBehavior="Play" />
+<MediaElement x:Name="GifMedia"  Source="x.gif" UnloadedBehavior="Manual"  LoadedBehavior="Play" />
 ```
 
 参见：[WPF使用MediaElement显示gif图片 - CSDN博客](http://blog.csdn.net/SANYUNI/article/details/73608771 )
