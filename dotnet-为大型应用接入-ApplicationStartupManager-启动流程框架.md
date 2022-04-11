@@ -407,7 +407,7 @@
 
 以上就是对接预编译框架的代码，十分简单。通过给程序集加上 `dotnetCampus.Telescope.MarkExportAttribute` 可以标记程序集的导出预编译的类型，传入的两个参数分别是导出的类型的基类型以及所继承的特性
 
-以上代码表示导出所有继承 `WPFDemo.Api.StartupTaskFramework.StartupTask` 类型，且标记了 `otnetCampus.ApplicationStartupManager.StartupTaskAttribute` 特性的类型
+以上代码表示导出所有继承 `WPFDemo.Api.StartupTaskFramework.StartupTask` 类型，且标记了 `dotnetCampus.ApplicationStartupManager.StartupTaskAttribute` 特性的类型
 
 标记之后，重新构建代码，将会在 obj 文件夹找到 AttributedTypesExport.g.cs 生成文件，如在本文的例子项目里面，生成文件的路径如下
 
