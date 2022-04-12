@@ -390,7 +390,7 @@ class Test
 
 也许这是全部题目里面最简单的一道题
 
-请看 [C# 匹配可空变量](https://blog.lindexi.com/post/c-%E5%8C%B9%E9%85%8D%E5%8F%AF%E7%A9%BA%E5%8F%98%E9%87%8F )
+请看 [C# 匹配可空变量](https://blog.lindexi.com/post/C-%E5%8C%B9%E9%85%8D%E5%8F%AF%E7%A9%BA%E5%8F%98%E9%87%8F.html )
 
 其实这里的 `a is B` 用的 `B` 是 `class` 不是定义的属性，对 `a is B b5` 返回的是 `bool` 所以将会是 `bool` 与 `B` 之间的运算
 
