@@ -672,6 +672,8 @@ Color color = Color.FromRgb(0xFF, 0x00, 0x00);
 
 如果发现在 ListView 里面的每个项都使用一个独立的用户控件，同时用户控件里面包含了很多可以共用的资源，那么推荐抽离到 App.xaml 里面，减少资源的重复多次创建
 
+另外，可以考虑使用 StaticResource 的方式给资源添加别名，详细请看 [XAML 给资源起个好名字 用 StaticResource 起一个别名](https://blog.lindexi.com/post/XAML-%E7%BB%99%E8%B5%84%E6%BA%90%E8%B5%B7%E4%B8%AA%E5%A5%BD%E5%90%8D%E5%AD%97-%E7%94%A8-StaticResource-%E8%B5%B7%E4%B8%80%E4%B8%AA%E5%88%AB%E5%90%8D.html)
+
 ### 空用户控件的 XAML 删除
 
 如果一个用户控件的 XAML 没有代码，而且可以预期后面也不会添加 XAML 代码的，可以删除掉 XAML 文件，仅保存 cs 文件。可以提升一些性能，减少 XAML 反序列化的资源
