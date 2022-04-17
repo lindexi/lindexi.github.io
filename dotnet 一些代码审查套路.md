@@ -585,6 +585,37 @@ catch
 
 
 
+## 多框架差异相关
+
+尽管 dotnet 系的 API 兼容性做的非常好，但是这么大的一个框架，每个版本之间，或多或少都有一些变更。而有一些变更是破坏性的行为，这些就需要在代码审查的时候关注。如果审查的代码是一个基础库，基础库包含了对多个框架版本的支持，例如在 TargetFrameworks 里面写的是 net45 和 net6.0 那就需要关注一下，有没有 API 刚好是在 net45 和 net6.0 的行为出现变更的
+
+其实如果是 API 不兼容，那问题不大，构建不通过就可以提醒开发者。但如果是行为变更，也就是 API 是兼容的，但是相同的调用方法，行为却不同，那就也许有坑了。因为开发者本身也没有去测试多个框架版本新的行为
+
+好在软的文档写的好，每个版本更改了哪些破坏改动，都会记录。详细请看 [官方文档](https://docs.microsoft.com/en-us/dotnet/core/compatibility/)
+
+### 启动进程 Process 的行为变更
+
+这个行为变更对 Windows 应用的影响是最大的，其原因在于在 .NET Framework 全系列版本下，都是在 Start 的时候，默认采用 Shell 的方式其他。而在 .NET Core 和 .NET 5 和以上版本，采用的都是默认 `UseShellExecute` 为 false 的方式
+
+这两个的差别在于启动进程的行为不同，例如通过 Shell 启动的方式，可以实现默认打开文件，跳转链接等等行为。细节请参阅 [C#/.NET 中启动进程时所使用的 UseShellExecute 设置为 true 和 false 分别代表什么意思？](https://blog.csdn.net/WPwalter/article/details/90344443)
+
+建议的方法是在启动进程的时候，显式设置 `UseShellExecute` 属性，如此即可解决 .NET Framework 和 .NET Core 默认参数的不同，从而让软件运行不符合预期
+
+```csharp
+            var processStartInfo = new ProcessStartInfo(exe, "参数")
+            {
+                UseShellExecute = true, // 根据需求设置为 false 的值或者 true 的值，但是一定要写
+            };
+            var process = Process.Start(processStartInfo);
+            process.WaitForExit();
+```
+
+如此软件的调用 Process 启动的行为就是可预期的
+
+如果没有设置，也许就会在 .NET Framework 运行好好的，然而在 .NET Core 行为不符合预期，或者反过来。例如 [dotnet 启动进程传入不存在的文件夹作为工作目录行为变更](https://www.cnblogs.com/lindexi/p/15941908.html)
+
+
+
 
 
 ## WPF 相关
@@ -779,6 +810,11 @@ IsHitTestVisibleProperty.OverrideMetadata(typeof(你的自定义控件), new UIP
 ```
 
 但是以上代码也会挖坑，如果后续需要有交互了，说不定找不到这个代码，从而不知道为什么自己写的控件没有交互
+
+
+
+
+
 
 
 
