@@ -297,6 +297,10 @@ StanalurJikecair:
 
 ```
 
+## 常用判断条件
+
+请参阅 [msbuild 项目文件常用判断条件](https://blog.lindexi.com/post/msbuild-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6.html )
+
 特别感谢 [HaibaraAi](https://github.com/AiHaibara) 大佬的阅读
 
 ![](https://i.loli.net/2018/08/04/5b64febec0b8a.jpg)

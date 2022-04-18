@@ -1326,6 +1326,8 @@
 
  * [SublimeText 配置跳转回上个光标坐标](SublimeText-配置跳转回上个光标坐标.md)
 
+ * [Total Commander 使用 mklink 建立文件夹链接 将 C 盘文件迁移到其他盘](Total-Commander-使用-mklink-建立文件夹链接-将-C-盘文件迁移到其他盘.md)
+
  * [Total Commander 显示文件包含文件名扩展](Total-Commander-显示文件包含文件名扩展.md)
 
  * [TotalCommander 设置 VisualStudio 开发者命令行](TotalCommander-设置-VisualStudio-开发者命令行.md)
