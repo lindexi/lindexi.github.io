@@ -400,6 +400,8 @@
 
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
 
+ * [dotnet 6 通过 DOTNET_ROOT 让调起的应用的进程拿到共享的运行时文件夹](dotnet-6-通过-DOTNET_ROOT-让调起的应用的进程拿到共享的运行时文件夹.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
