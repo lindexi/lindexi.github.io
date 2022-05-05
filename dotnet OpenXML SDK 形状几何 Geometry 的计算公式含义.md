@@ -129,6 +129,8 @@ cd8 = 360° / 8 = 45° = 2700000 Degree
 */ h 1.0 2.0
 ```
 
+以上代码的 `*/` 公式内容请参阅下文，而 h 表示的是宽度
+
 以此可以了解如下的几个常量的计算
 
 ```
@@ -148,7 +150,6 @@ hd8 = */ h 1.0 8.0 = height / 8
 ```
 
 以上代码的 `*/` 公式内容请参阅下文，而 h 表示的是宽度
-
 
 ## l
 
@@ -269,11 +270,11 @@ ssd8 = */ ss 1.0 8.0 = Shortest Side / 8
 
 if (x > 0)
 {
-        return y;
+    return y;
 }
 else
 {
-        return z;
+    return z;
 }
 ```
 
@@ -322,7 +323,6 @@ at2 x y = arctan(y / x) = Atan2(y, x)
             return angle * 60000;
         }
  
-
         /// <summary>
         /// OpenXml 三角函数的Cos函数：cos x y = (x * cos( y )) = (x * Math.Cos(y))
         /// </summary>
@@ -433,15 +433,15 @@ pin x y z =
 
 if (y < x)
 {
-        return x;
+    return x;
 }
 else if (y > z)
 {
-        return z;
+    return z;
 }
 else
 {
-        return y;
+    return y;
 }
 ```
 
