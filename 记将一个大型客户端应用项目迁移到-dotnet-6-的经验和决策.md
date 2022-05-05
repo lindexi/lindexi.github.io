@@ -9,7 +9,6 @@
 <!-- CreateTime:2022/4/24 14:25:43 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 ## 前文
 
@@ -528,6 +527,8 @@ Chose FX version [C:\Program Files (x86)\dotnet\shared\Microsoft.WindowsDesktop.
 ```
 
 通过此方式可以了解到自己让应用找到的运行时文件夹符合预期
+
+以上就是迁移此应用所踩到的坑，以及所采用的决策。希望对大家的迁移有所帮助
 
 
 
