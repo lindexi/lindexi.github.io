@@ -396,6 +396,8 @@
 
  * [dotnet 6 使用 string.Create 提升字符串创建和拼接性能](dotnet-6-使用-string.Create-提升字符串创建和拼接性能.md)
 
+ * [dotnet 6 在 Win7 系统证书链错误导致 HttpWebRequest 内存泄露](dotnet-6-在-Win7-系统证书链错误导致-HttpWebRequest-内存泄露.md)
+
  * [dotnet 6 引用 NAudio 的旧版本构建不通过](dotnet-6-引用-NAudio-的旧版本构建不通过.md)
 
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
