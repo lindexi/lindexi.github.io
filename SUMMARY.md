@@ -698,6 +698,8 @@
 
  * [dotnet 使用 ClearScript 执行 VBScript 和 JS 代码 无需浏览器](dotnet-使用-ClearScript-执行-VBScript-和-JS-代码-无需浏览器.md)
 
+ * [dotnet 使用 ConfigureAwait.Fody 库设置默认的 await 同步上下文切换配置](dotnet-使用-ConfigureAwait.Fody-库设置默认的-await-同步上下文切换配置.md)
+
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
  * [dotnet 使用 FileAccess 与 OpenOrCreate 对文件访问权限的影响](dotnet-使用-FileAccess-与-OpenOrCreate-对文件访问权限的影响.md)
