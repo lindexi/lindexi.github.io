@@ -2946,6 +2946,8 @@
 
  * [搭建一个自动化分析 DUMP 平台](搭建一个自动化分析-DUMP-平台.md)
 
+ * [支持 dotnet 6 的 dnSpy 神器版本](支持-dotnet-6-的-dnSpy-神器版本.md)
+
  * [文件传输](文件传输.md)
 
  * [断点调试 Windows 源代码](断点调试-Windows-源代码.md)
