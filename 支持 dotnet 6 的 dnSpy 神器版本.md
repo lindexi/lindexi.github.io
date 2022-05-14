@@ -52,5 +52,7 @@
 
 经过以上更改，就可以让 dnSpy 支持 dotnet 6 的调试
 
+嗯，现在我觉得 dnSpy 作者做的还是太对了，我似乎越来越觉得开源也是一个不对的事情，那就是 SB 太多了。本来今天是想着将 dnSpy 在堆栈网上广告一下，造福一下国外的小伙伴。可惜遇到了傻比，最后我将问题和回答都删除了。有人问，原作者关闭了 dnSpy 的瓜是什么？其中一个瓜就是被傻子给气的，开源了不收钱了，反而被当成理所当然还要这要那，不满足了还被骂。具体的瓜还请自己去找了
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
 
