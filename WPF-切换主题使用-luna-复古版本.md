@@ -114,7 +114,7 @@
 
 也就是以上的写法是符合预期的
 
-本文以上的测试文件和代码放在[github](https://github.com/lindexi/lindexi_gd/tree/3a6a955fdd761b3f45d9195abc241c70574413d3/BearweakiqeNurwhallcarnearcowar) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/3a6a955fdd761b3f45d9195abc241c70574413d3/BearweakiqeNurwhallcarnearcowar) 欢迎访问
+本文以上的测试代码放在[github](https://github.com/lindexi/lindexi_gd/tree/3a6a955fdd761b3f45d9195abc241c70574413d3/BearweakiqeNurwhallcarnearcowar) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/3a6a955fdd761b3f45d9195abc241c70574413d3/BearweakiqeNurwhallcarnearcowar) 欢迎访问
 
 可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
