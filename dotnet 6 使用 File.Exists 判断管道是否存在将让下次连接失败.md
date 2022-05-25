@@ -3,6 +3,8 @@
 我尝试在 dotnet 6 使用 File.Exists 判断管道是否存在，如果管道存在再进行连接。然而这个逻辑将会接下来的 NamedPipeClientStream 调用 Connect 连接失败
 
 <!--more-->
+<!-- CreateTime:2022/5/23 20:17:28 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
