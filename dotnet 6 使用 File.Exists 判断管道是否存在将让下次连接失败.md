@@ -71,9 +71,11 @@ void StartClient()
 
                     var file = FindFirstFile(@"\\.\pipe\" + pipeName, (IntPtr)findFileData);
 
-                    if (!file.IsInvalid)
+                    const nint INVALID_HANDLE_VALUE = -1;
+
+                    if (file != INVALID_HANDLE_VALUE)
                     {
-                        file.Dispose();
+                        FindClose(file);
                         return true;
                     }
                 }
@@ -88,6 +90,10 @@ void StartClient()
 
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode, EntryPoint = "FindFirstFileW", ExactSpelling = true)]
         private static extern SafeFileHandle FindFirstFile([In] string lpFileName, [In] IntPtr lpFindFileData);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, EntryPoint = "FindClose", ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool FindClose([In] IntPtr hFindFile);
 ```
 
 如果不想碰不安全代码，也可以采用判断文件夹里面的文件是否存在的方法判断管道是否存在
