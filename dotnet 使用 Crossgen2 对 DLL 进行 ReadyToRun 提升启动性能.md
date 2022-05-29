@@ -82,7 +82,7 @@ C:\lindexi\Code\empty\KokicakawheeyeeWhemhedawfelawnemhel\KokicakawheeyeeWhemhed
 
 使用 Crossgen2 工具对每个 DLL 来一次，包括框架层的 DLL 也来一次。然后逐个 DLL 替换，测量应用启动性能。如果发现某些 DLL 进行了 ReadyToRun 反而降低启动性能，或者某些 DLL 加大的文件体积对比启动性能的优化来说不划算，那就不对这些 DLL 进行优化
 
-以下是我测试的对 dotnet runtime 底层和 WPF 框架的 DLL 进行 ReadyToRun 优化之后，对我的某个应用的启动性能的影响
+以下是测试的对 dotnet runtime 底层和 WPF 框架的 DLL 进行 ReadyToRun 优化之后，对 walterlv 大佬的某个应用的启动性能的影响，值得一提的是对于不同的应用，测试的数据将会存在很大的出入，核心原因在于不同的应用启动过程将访问的模块有所不同
 
 ![](http://image.acmx.xyz/lindexi%2F20225282146453265.jpg)
 
@@ -90,7 +90,7 @@ C:\lindexi\Code\empty\KokicakawheeyeeWhemhedawfelawnemhel\KokicakawheeyeeWhemhed
 
 我所在团队的某个大型应用，在经过了 ReadyToRun 技术的优化，启动性能提升百分之三十
 
-但也必须说明的是，不是所有的应用使用 ReadyToRun 都能有优化启动性能，例如我的一个小应用，只要采用了 ReadyToRun 技术，启动性能基本上都是降低了。这也就是说，采用 ReadyToRun 技术是需要进行性能测量的
+但也必须说明的是，不是所有的应用使用 ReadyToRun 都能有优化启动性能，例如我的一个小应用，只要采用了 ReadyToRun 技术，启动性能基本上都是降低了。总的来说，采用 ReadyToRun 技术是需要进行性能测量的
 
 [Conversation about crossgen2 - .NET Blog](https://devblogs.microsoft.com/dotnet/conversation-about-crossgen2/)
 
