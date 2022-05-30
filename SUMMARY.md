@@ -702,6 +702,8 @@
 
  * [dotnet 使用 ConfigureAwait.Fody 库设置默认的 await 同步上下文切换配置](dotnet-使用-ConfigureAwait.Fody-库设置默认的-await-同步上下文切换配置.md)
 
+ * [dotnet 使用 Crossgen2 对 DLL 进行 ReadyToRun 提升启动性能](dotnet-使用-Crossgen2-对-DLL-进行-ReadyToRun-提升启动性能.md)
+
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
  * [dotnet 使用 FileAccess 与 OpenOrCreate 对文件访问权限的影响](dotnet-使用-FileAccess-与-OpenOrCreate-对文件访问权限的影响.md)
@@ -2359,6 +2361,8 @@
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
  * [WPF 已知问题 窗口在屏幕外创建将不会刷新渲染](WPF-已知问题-窗口在屏幕外创建将不会刷新渲染.md)
+
+ * [WPF 已知问题 资源字典树引用与资源寻找的坑](WPF-已知问题-资源字典树引用与资源寻找的坑.md)
 
  * [WPF 布局 在有限空间内让两个元素尽可能撑开的例子](WPF-布局-在有限空间内让两个元素尽可能撑开的例子.md)
 
