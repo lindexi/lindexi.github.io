@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/5/30 8:42:06 -->
+
 
 <!-- 博客 -->
 <!-- 发布 -->
@@ -94,6 +96,12 @@ C:\lindexi\Code\empty\KokicakawheeyeeWhemhedawfelawnemhel\KokicakawheeyeeWhemhed
 我所在团队的某个大型应用，在经过了 ReadyToRun 技术的优化，启动性能提升百分之三十
 
 但也必须说明的是，不是所有的应用使用 ReadyToRun 都能有优化启动性能，例如我的一个小应用，只要采用了 ReadyToRun 技术，启动性能基本上都是降低了。总的来说，采用 ReadyToRun 技术是需要进行性能测量的
+
+参考文档
+
+[WPF dotnet 使用本机映像 native 优化 dotnet framework 二进制文件](https://blog.lindexi.com/post/WPF-dotnet-%E4%BD%BF%E7%94%A8%E6%9C%AC%E6%9C%BA%E6%98%A0%E5%83%8F-native-%E4%BC%98%E5%8C%96-dotnet-framework-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6.html )
+
+[WPF 通过 ReadyToRun 提升性能](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-ReadyToRun-%E6%8F%90%E5%8D%87%E6%80%A7%E8%83%BD.html )
 
 [Conversation about crossgen2 - .NET Blog](https://devblogs.microsoft.com/dotnet/conversation-about-crossgen2/)
 
