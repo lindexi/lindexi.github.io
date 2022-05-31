@@ -102,6 +102,8 @@ dotnet publish -c release  -r win-x64 --self-contained
 
 关于项目文件的配置请看我的[项目](https://github.com/lindexi/lindexi_gd/tree/36d9e70722f86bc8d03385868a99fc9c7719b504/FuhelerjaihuBuqibeayay) 下载之后可以使用本文方法进行编译
 
+进行更多的优化，请参阅 [dotnet 使用 Crossgen2 对 DLL 进行 ReadyToRun 提升启动性能](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-Crossgen2-%E5%AF%B9-DLL-%E8%BF%9B%E8%A1%8C-ReadyToRun-%E6%8F%90%E5%8D%87%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD.html )
+
 更多请看[官方文档](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md) 
 
 [Announcing .NET Core 3.0 Preview 6 ](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0-preview-6/ )
