@@ -6,10 +6,9 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/6/6 8:28:48 -->
 
 <!-- 标签：MAUI -->
-
-<!-- 博客 -->
 <!-- 发布 -->
 
 在 MAUI 里面，默认将会在 Microsoft.Maui.Dependencies 引用 Microsoft.Maui.Graphics 的负载。在 Microsoft.Maui.Graphics 里，提供了跨平台的独立绘图能力，在 GitHub 上作为独立的开源项目，开源在 [https://github.com/dotnet/Microsoft.Maui.Graphics](https://github.com/dotnet/Microsoft.Maui.Graphics)
@@ -20,7 +19,7 @@
 
 回到主题，本文将告诉大家如何在 MAUI 里面使用 Microsoft.Maui.Graphics 提供的绘图能力进自绘。对于任何的 UI 框架来说，只要能实现好的自绘，就能扩展出超级多炫酷的界面效果，同时也可以方便将旧技术积累迁移到此 UI 框架上。无疑，在MAUI上就实现了这一点
 
-这部分的内容，在当前是 2022.06 还没有多少文档，官方的文档里面都说 MAUI 还是预览版，别停官方说的，在5月就发布了。发布在 [6.0.312](https://github.com/dotnet/maui/releases/tag/6.0.312) 的 dotnet 版本上
+这部分的内容，在当前是 2022.06 还没有多少文档，官方的文档里面都说 MAUI 还是预览版，别听官方说的，在5月就发布了。发布在 [6.0.312](https://github.com/dotnet/maui/releases/tag/6.0.312) 的 dotnet 版本上
 
 在 MAUI 里面接入 Microsoft.Maui.Graphics 从而实现自绘是有框架层的支持的，只是实现的方式稍微有点绕
 
