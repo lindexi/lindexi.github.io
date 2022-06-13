@@ -394,6 +394,8 @@
 
  * [dotnet 6 使用 File.Exists 判断管道是否存在将让下次连接失败](dotnet-6-使用-File.Exists-判断管道是否存在将让下次连接失败.md)
 
+ * [dotnet 6 使用 HttpWebRequest 进行 POST 文件将占用大量内存](dotnet-6-使用-HttpWebRequest-进行-POST-文件将占用大量内存.md)
+
  * [dotnet 6 使用 Obfuscar 进行代码混淆](dotnet-6-使用-Obfuscar-进行代码混淆.md)
 
  * [dotnet 6 使用 string.Create 提升字符串创建和拼接性能](dotnet-6-使用-string.Create-提升字符串创建和拼接性能.md)
@@ -2149,6 +2151,8 @@
  * [WPF 使用 ItemsPanel 修改方向](WPF-使用-ItemsPanel-修改方向.md)
 
  * [WPF 使用 ManipulationProcessor2D 纯数学计算方式提供多点漫游元素功能](WPF-使用-ManipulationProcessor2D-纯数学计算方式提供多点漫游元素功能.md)
+
+ * [WPF 使用 MAUI 的自绘制逻辑](WPF-使用-MAUI-的自绘制逻辑.md)
 
  * [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 做高性能笔迹应用](WPF-使用-Microsoft.Toolkit.Wpf.UI.Controls-的-InkCanvas-做高性能笔迹应用.md)
 
