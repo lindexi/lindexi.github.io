@@ -6,6 +6,7 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/6/13 8:04:47 -->
 
 <!-- 发布 -->
 <!-- 博客 -->
@@ -218,6 +219,10 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 ```
 
 获取代码之后，进入 BujeardalljelKaifeljaynaba 文件夹
+
+那此内存大量占用问题可以如何解决呢？十分简单，换成 HttpClient 即可
+
+原本 HttpWebRequest 底层就是调用 HttpClient 实现发送网络请求，由因为 HttpWebRequest 的 API 限制，导致了只能将文件的数据先全部读取到内存，再进行发送。如果换成 HttpClient 的话，扔一个 StreamContent 进去即可
 
 
 

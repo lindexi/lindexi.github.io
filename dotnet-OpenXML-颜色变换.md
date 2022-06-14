@@ -55,6 +55,8 @@
 
 详细请看 ECMA 376 的 L.4.8.3 文档和 20.1.2.3 Colors 文档
 
+计算方法详细请看 [【Openxml】颜色变化属性计算 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/16370464.html )
+
 上面的所有标记了百分比的值的单位都是千倍百分比，也就是在 OpenXML 文档里写的值如下面代码，这里的 `lumMod` 就是表示百分比
 
 ```csharp

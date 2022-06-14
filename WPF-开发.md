@@ -1312,6 +1312,10 @@ https://github.com/dotnet/wpf/issues/5937#issuecomment-1010510114
 
 可采用 Touch.FrameReported 事件获取
 
+## Helix 3d 加载资源
+
+可以采用对应的 Reader 加载，详细请看 HelixBiyawubiburwhoKaiwunaikarwheqar 项目
+
 
 
 
