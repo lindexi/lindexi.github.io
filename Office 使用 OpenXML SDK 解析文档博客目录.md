@@ -135,6 +135,8 @@
 
 [dotnet OpenXML 颜色变换](https://blog.lindexi.com/post/dotnet-OpenXML-%E9%A2%9C%E8%89%B2%E5%8F%98%E6%8D%A2.html )
 
+[【Openxml】颜色变化属性计算 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/16370464.html )
+
 [dotnet OpenXML 如何获取 schemeClr 颜色](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96-schemeClr-%E9%A2%9C%E8%89%B2.html )
 
 [dotnet OpenXML 预设 PresetColorValues 颜色对应的值](https://blog.lindexi.com/post/dotnet-OpenXML-%E9%A2%84%E8%AE%BE-PresetColorValues-%E9%A2%9C%E8%89%B2%E5%AF%B9%E5%BA%94%E7%9A%84%E5%80%BC.html )
