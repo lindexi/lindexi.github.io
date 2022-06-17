@@ -390,9 +390,13 @@
 
  * [dotnet 5 静态字段和属性的反射获取 没有想象中那么伤性能](dotnet-5-静态字段和属性的反射获取-没有想象中那么伤性能.md)
 
+ * [dotnet 6 HttpClientHandler 和 SocketsHttpHandler 有什么差别](dotnet-6-HttpClientHandler-和-SocketsHttpHandler-有什么差别.md)
+
  * [dotnet 6 使用 CreateSymbolicLink 创建文件夹符号链接](dotnet-6-使用-CreateSymbolicLink-创建文件夹符号链接.md)
 
  * [dotnet 6 使用 File.Exists 判断管道是否存在将让下次连接失败](dotnet-6-使用-File.Exists-判断管道是否存在将让下次连接失败.md)
+
+ * [dotnet 6 使用 HttpClient 的超时机制](dotnet-6-使用-HttpClient-的超时机制.md)
 
  * [dotnet 6 使用 HttpWebRequest 进行 POST 文件将占用大量内存](dotnet-6-使用-HttpWebRequest-进行-POST-文件将占用大量内存.md)
 
