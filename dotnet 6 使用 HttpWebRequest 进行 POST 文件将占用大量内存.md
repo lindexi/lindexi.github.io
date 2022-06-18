@@ -221,4 +221,6 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 原本 HttpWebRequest 底层就是调用 HttpClient 实现发送网络请求，由因为 HttpWebRequest 的 API 限制，导致了只能将文件的数据先全部读取到内存，再进行发送。如果换成 HttpClient 的话，扔一个 StreamContent 进去即可
 
+上传大文件的时候，还有另外一个坑，那就是上传超时的问题。在 dotnet 6 改了行为，原本的 HttpWebRequest 是分为两个阶段，一个是建立连接的超时判断，另一个是获取响应阶段，在建立连接和获取响应中间的上传数据是不会有超时影响的。但是在 dotnet 6 采用了 HttpClient 作为底层，默认的超时时间是包含整个网络请求活动，也就是建立连接到上传数据完成这个时间不能超时。这个坑将会影响到原本在 .NET Framework 能跑的好好的逻辑，升级到 dotnet 6 将会在上传文件时抛出超时异常。解决方法请看 [dotnet 6 使用 HttpClient 的超时机制](https://blog.lindexi.com/post/dotnet-6-%E4%BD%BF%E7%94%A8-HttpClient-%E7%9A%84%E8%B6%85%E6%97%B6%E6%9C%BA%E5%88%B6.html )
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、 使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

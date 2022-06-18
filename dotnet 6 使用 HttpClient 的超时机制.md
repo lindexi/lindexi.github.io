@@ -3,6 +3,8 @@
 在 dotnet 6 里，推荐的网络通讯是使用 HttpClient 类型，在国内诡异的网络环境下，有很多弱网环境需要考虑，其中很重要一点就是网络超时。本文将来告诉大家如何合理使用 HttpClient 的超时机制
 
 <!--more-->
+<!-- CreateTime:2022/6/16 17:16:06 -->
+
 <!-- 发布 -->
 
 在 HttpClient 里面有一个 Timeout 属性，这个属性的含义是整个网络活动过程中的超时时间，这个定义是有一定的坑的。例如我对一个 API 数据接口进行访问，只是 POST 一段很短的数据，此时设置超时时间是 100 秒，默认超时时间是完全合理的。但是如果我是进行一个大文件上传，文件上传的时间很长，那此时采用超时时间是 100 秒显然是不合理的，在 100 秒内如果文件还没上传完成，也就是网络活动还没完成，将会触发超时异常
@@ -24,7 +26,7 @@
     };
 ```
 
-在 HttpClient 里面传入 SocketsHttpHandler 对象，可以在 SocketsHttpHandler 对象进行更底层的控制，从而实现控制连接超时时间。在 dotnet 6 下，默认的 HttpClient 底层就是调用 SocketsHttpHandler 对象，因此以上代码对 HttpClient 底层行为没有任何变更
+在 HttpClient 里面传入 SocketsHttpHandler 对象，可以在 SocketsHttpHandler 对象进行更底层的控制，从而实现控制连接超时时间。在 dotnet 6 下，默认的 HttpClient 底层就是调用 SocketsHttpHandler 对象，因此以上代码对 HttpClient 底层行为没有任何变更。详细请看 [dotnet 6 HttpClientHandler 和 SocketsHttpHandler 有什么差别](https://blog.lindexi.com/post/dotnet-6-HttpClientHandler-%E5%92%8C-SocketsHttpHandler-%E6%9C%89%E4%BB%80%E4%B9%88%E5%B7%AE%E5%88%AB.html )
 
 有些伙伴在遇到此问题的时候，在网上搜到了一些上古的解决方案，那就是采用 HttpWebRequest 的方式。然而坏消息是在 dotnet 6 下，由于 HttpWebRequest 的底层就是采用 HttpClient 实现，因此 HttpWebRequest 是解决不了此问题的。详细请看 [dotnet 6 使用 HttpWebRequest 进行 POST 文件将占用大量内存](https://blog.lindexi.com/post/dotnet-6-%E4%BD%BF%E7%94%A8-HttpWebRequest-%E8%BF%9B%E8%A1%8C-POST-%E6%96%87%E4%BB%B6%E5%B0%86%E5%8D%A0%E7%94%A8%E5%A4%A7%E9%87%8F%E5%86%85%E5%AD%98.html )
 
