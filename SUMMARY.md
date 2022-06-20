@@ -408,6 +408,8 @@
 
  * [dotnet 6 引用 NAudio 的旧版本构建不通过](dotnet-6-引用-NAudio-的旧版本构建不通过.md)
 
+ * [dotnet 6 推荐一个可代替 .NET Remoting 的 IPC 库](dotnet-6-推荐一个可代替-.NET-Remoting-的-IPC-库.md)
+
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
 
  * [dotnet 6 通过 DOTNET_ROOT 让调起的应用的进程拿到共享的运行时文件夹](dotnet-6-通过-DOTNET_ROOT-让调起的应用的进程拿到共享的运行时文件夹.md)
@@ -1007,6 +1009,8 @@
  * [dotnet 读 WPF 源代码笔记 简单聊聊文本布局换行逻辑](dotnet-读-WPF-源代码笔记-简单聊聊文本布局换行逻辑.md)
 
  * [dotnet 读 WPF 源代码笔记 默认的 Main 函数是在哪创建的](dotnet-读-WPF-源代码笔记-默认的-Main-函数是在哪创建的.md)
+
+ * [dotnet 调试应用启动闪退的方法](dotnet-调试应用启动闪退的方法.md)
 
  * [dotnet 谨慎在静态构造函数里使用锁](dotnet-谨慎在静态构造函数里使用锁.md)
 
