@@ -8,15 +8,13 @@
 
 <!-- CreateTime:2022/5/30 8:42:06 -->
 
-
-<!-- 博客 -->
 <!-- 发布 -->
 
 我预计本文是具有时效的，各个概念都在变更，本文是在 2022.05 编写的。如果你阅读本文的时间距离本文编写时间过长，那请小心本文过期的知识误导
 
 开始之前，还请理清一下概念
 
-在 dotnet 里面，这些概念都在变来变去，还没有完全定下来。在 dotnet 里面的 AOT 是必须先来做一个辟谣的。第一个是 AOT 意味着性能更高？ 其实不然，采用 AOT 能减少应用启动过程中，从 IL 转换为本机代码的损耗，但通过分层编译(TieredCompilation)技术，这部分的差异不会特别特别大，再加上 dotnet 6 引入 的 QuickJit 技术，还能进一步缩小差距。但即使这么说，启动性能方面，采用 AOT 还是很有优势的，因为启动过程是性能敏感的，再加上大型项目在启动过程中将需要执行大量的代码逻辑，即使 JIT 再快和加上动态 PGO 的辅助下，依然由于需要工作的量太多而在性能上不如采用 AOT 的方式。由于 AOT 是生产静态逻辑，只取平台最小集，而无法和 JIT 一样，根据所运行设备进行动态优化，这就是为什么运行过程中的性能，在 JIT 进入 Tier 2 优化之后的性能要远远超过 AOT 的方式。换句话说，全程都使用 AOT 而不加入任何 JIT 只是提升启动性能，但是降低了运行过程的性能
+在 dotnet 里面，这些概念都在变来变去，还没有完全定下来。在聊 dotnet 里面的 AOT 之前，是必须先来做一个辟谣的。第一个谣言是 AOT 意味着性能更高？ 其实不然，采用 AOT 能减少应用启动过程中，从 IL 转换为本机代码的损耗，但通过分层编译(TieredCompilation)技术，这部分的差异不会特别特别大，再加上 dotnet 6 引入 的 QuickJit 技术，还能进一步缩小差距。但即使这么说，启动性能方面，采用 AOT 还是很有优势的，因为启动过程是性能敏感的，再加上大型项目在启动过程中将需要执行大量的代码逻辑，即使 JIT 再快和加上动态 PGO 的辅助下，依然由于需要工作的量太多而在性能上不如采用 AOT 的方式。由于 AOT 是生产静态逻辑，只取平台最小集，而无法和 JIT 一样，根据所运行设备进行动态优化，这就是为什么运行过程中的性能，在 JIT 进入 Tier 2 优化之后的性能要远远超过 AOT 的方式。换句话说，全程都使用 AOT 而不加入任何 JIT 只是提升启动性能，但是降低了运行过程的性能
 
 那如果我启动性能也要，运行过程的性能也要呢？这个就是 ReadyToRun 技术的概念了，在 DLL 的进入调用时，先采用 AOT 技术，将部分逻辑预先跑了 JIT 且将跑了之后的二进制逻辑也记录到 DLL 里面。如此可以实现在首次调用方法时，减少 JIT 的戏份，尽可能使用之前 AOT 的内容，从而提升应用启动性能。而在应用跑起来之后，依然跑的是 JIT 的优化，如此即可兼顾启动性能和运行过程的性能
 
@@ -110,8 +108,6 @@ C:\lindexi\Code\empty\KokicakawheeyeeWhemhedawfelawnemhel\KokicakawheeyeeWhemhed
 [runtime/Program.cs at main · dotnet/runtime](https://github.com/dotnet/runtime/blob/main/src/coreclr/tools/aot/crossgen2/Program.cs)
 
 [编译配置设置 - .NET Microsoft Docs](https://docs.microsoft.com/zh-cn/dotnet/core/runtime-config/compilation)
-
-[ReadyToRun deployment overview - .NET Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/deploying/ready-to-run#:~:text=There%20are%20two%20ways%20to%20publish%20your%20app,project.%20Publish%20the%20application%20without%20any%20special%20parameters.)
 
 [ReadyToRun deployment overview - .NET Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/core/deploying/ready-to-run#:~:text=There%20are%20two%20ways%20to%20publish%20your%20app,project.%20Publish%20the%20application%20without%20any%20special%20parameters.)
 

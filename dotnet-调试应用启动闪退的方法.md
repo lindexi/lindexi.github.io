@@ -6,9 +6,9 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/6/20 8:03:37 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 应用启动失败的原因可能有很多，例如系统环境问题，例如写个点逗比代码，例如调用某个带毒的库。如果应用启动失败，可以在开发环境上复现，那无疑是十分好的事情，因为咱可以使用开发环境强大的 VisualStudio 调试工具进行调试
 
@@ -129,6 +129,8 @@ procdump.exe -e -t -w -ma KajijuniLiguqujokemka
 核心是看调用堆栈，和局部变量窗口，找到是哪个模块抛出异常或者退出。如果 VisualStudio 无法帮到你，那就只能换成 WinDbg 啦，不过这又是另外一个故事了
 
 大家可以尝试使用我放在 [github](https://github.com/lindexi/lindexi_gd/tree/56318bf4ca4337539f65987cec2b057c1f9c6f8e/BeyajaydahifallChecheecaifelwarlerenel ) 的代码进行测试
+
+更多请看 [dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
 
 
 
