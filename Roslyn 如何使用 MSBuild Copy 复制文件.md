@@ -133,6 +133,16 @@ xx\lindexi.txt;xx\lindexi.gitee.io.txt
   </Target>
 ```
 
+## 文件列表保留文件夹组织
+
+以上的拷贝方法将会让文件被拍平拷贝文件夹，如果需要保留原本的文件夹组织形式，可采用如下方式
+
+```xml
+  <Target Name="Copy" BeforeTargets="CoreCompile">
+    <Copy SourceFiles="@(Txt)" DestinationFolder="LetirNuhe\%(RecursiveDir)"></Copy>
+  </Target>
+```
+
 ## 较新才复制
 
 如果不想每次编译都复制，可以设置`SkipUnchangedFiles="True"` 只有在发现文件较新才复制。

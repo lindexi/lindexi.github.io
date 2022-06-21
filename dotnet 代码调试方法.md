@@ -334,6 +334,8 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 如果有些软件是在发布的时候，刚好在软件启动的过程需要进行调试，此时就需要使用调试软件启动的方法，详细请看
 
+[dotnet 调试应用启动闪退的方法](https://blog.lindexi.com/post/dotnet-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E7%9A%84%E6%96%B9%E6%B3%95.html )
+
 [WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8.html )
 
 [win10 uwp 调试软件启动](https://blog.lindexi.com/post/win10-uwp-%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8.html )
