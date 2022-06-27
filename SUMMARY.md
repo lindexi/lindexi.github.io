@@ -976,6 +976,8 @@
 
  * [dotnet 读 WPF 源代码笔记 WIC 多媒体图片处理通过 WindowsCodecs.dll 实现功能](dotnet-读-WPF-源代码笔记-WIC-多媒体图片处理通过-WindowsCodecs.dll-实现功能.md)
 
+ * [dotnet 读 WPF 源代码笔记 WPF 是如何做到一套代码兼容多个 .NET Framework 版本](dotnet-读-WPF-源代码笔记-WPF-是如何做到一套代码兼容多个-.NET-Framework-版本.md)
+
  * [dotnet 读 WPF 源代码笔记 wpfgfx_cor3.dll 是什么文件](dotnet-读-WPF-源代码笔记-wpfgfx_cor3.dll-是什么文件.md)
 
  * [dotnet 读 WPF 源代码笔记 WriteableBitmap 的渲染和更新是如何实现](dotnet-读-WPF-源代码笔记-WriteableBitmap-的渲染和更新是如何实现.md)
@@ -983,6 +985,8 @@
  * [dotnet 读 WPF 源代码笔记 XAML 创建对象的方法](dotnet-读-WPF-源代码笔记-XAML-创建对象的方法.md)
 
  * [dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类](dotnet-读-WPF-源代码笔记-为什么加上-BooleanBoxes-类.md)
+
+ * [dotnet 读 WPF 源代码笔记 为什么自定义的 UserControl 用户控件不能跨程序集继承](dotnet-读-WPF-源代码笔记-为什么自定义的-UserControl-用户控件不能跨程序集继承.md)
 
  * [dotnet 读 WPF 源代码笔记 为什么设置了SplashScreen会让Application.Current.Activated事件不触发](dotnet-读-WPF-源代码笔记-为什么设置了SplashScreen会让Application.Current.Activated事件不触发.md)
 
@@ -2773,6 +2777,8 @@
  * [从零开始用 dotnet 做全栈开发](从零开始用-dotnet-做全栈开发.md)
 
  * [代码段](代码段.md)
+
+ * [代码设计能力提升之路](代码设计能力提升之路.md)
 
  * [优雅调试 REST API 的工具](优雅调试-REST-API-的工具.md)
 
