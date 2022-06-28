@@ -394,6 +394,8 @@
 
  * [dotnet 6 使用 CreateSymbolicLink 创建文件夹符号链接](dotnet-6-使用-CreateSymbolicLink-创建文件夹符号链接.md)
 
+ * [dotnet 6 使用 DependentHandle 关联对象生命周期](dotnet-6-使用-DependentHandle-关联对象生命周期.md)
+
  * [dotnet 6 使用 File.Exists 判断管道是否存在将让下次连接失败](dotnet-6-使用-File.Exists-判断管道是否存在将让下次连接失败.md)
 
  * [dotnet 6 使用 HttpClient 的超时机制](dotnet-6-使用-HttpClient-的超时机制.md)
@@ -761,6 +763,8 @@
  * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
 
  * [dotnet 修复 ILLinkTasksAssembly 特性的值的计算结果无效](dotnet-修复-ILLinkTasksAssembly-特性的值的计算结果无效.md)
+
+ * [dotnet 修复在 Linux 上使用 SkiaSharp 提示找不到 liblibSkiaSharp 库](dotnet-修复在-Linux-上使用-SkiaSharp-提示找不到-liblibSkiaSharp-库.md)
 
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
 

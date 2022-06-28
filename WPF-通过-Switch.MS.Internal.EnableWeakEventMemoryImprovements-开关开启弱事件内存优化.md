@@ -56,9 +56,43 @@
 
 这几个类都是用来监听各个事件的，如依赖属性本身的通知和 INotifyPropertyChanged 接口的事件等，详细请看 WPF 框架源代码
 
-我的建议是可以在项目中加上此开关，因为阅读完成了 WPF 框架的源代码，没有发现会影响业务功能的逻辑
+我的建议是可以在项目中加上此开关，因为阅读完成了 WPF 框架的源代码，没有发现会影响业务功能的逻辑，逻辑上都是性能优化。 未来可能这个属性的默认值会改为 true 表示开启，但当前 .NET 6 下还没有此计划，可以通过以下代码进行判断默认值
+
+```csharp
+            // WindowsBase
+            var assembly = typeof(DependencyObject).Assembly;
+
+            // Switch.MS.Internal.EnableWeakEventMemoryImprovements 默认没有开启
+            var baseAppContextSwitchesType = assembly.GetType("MS.Internal.BaseAppContextSwitches");
+
+            var enableWeakEventMemoryImprovementsProperty = baseAppContextSwitchesType.GetProperty("EnableWeakEventMemoryImprovements");
+
+            var value = enableWeakEventMemoryImprovementsProperty.GetMethod.Invoke(null, null);
+```
+
+以上的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/9ed2848163f22415f8aec33b07a8a592f744b729/LeekilerelalljarFayjululeayem) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9ed2848163f22415f8aec33b07a8a592f744b729/LeekilerelalljarFayjululeayem) 欢迎访问
+
+可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 9ed2848163f22415f8aec33b07a8a592f744b729
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 9ed2848163f22415f8aec33b07a8a592f744b729
+```
+
+获取代码之后，进入 LeekilerelalljarFayjululeayem 文件夹
 
 文档请看 [dotnet-framework-early-access/changes.md at master · microsoft/dotnet-framework-early-access](https://github.com/microsoft/dotnet-framework-early-access/blob/master/release-notes/NET48/build-3734/changes.md )
+
+更多开关请看 [WPF Application Compatibility switches list](https://blog.lindexi.com/post/WPF-Application-Compatibility-switches-list.html )
 
 当前的 WPF 在 [https://github.com/dotnet/wpf](https://github.com/dotnet/wpf) 完全开源，使用友好的 MIT 协议，意味着允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。在仓库里面包含了完全的构建逻辑，只需要本地的网络足够好（因为需要下载一堆构建工具），即可进行本地构建
 

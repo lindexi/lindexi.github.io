@@ -48,7 +48,7 @@
 }
 ```
 
-如此就和放入到 App.config 文件的配置实现相同的功能，以上的例子放在放在[github](https://github.com/lindexi/lindexi_gd/tree/b3c6a4299c3d517a357cc05f045dd3a16ec261e2/WhajecichalLaykeljalha) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b3c6a4299c3d517a357cc05f045dd3a16ec261e2/WhajecichalLaykeljalha) 欢迎访问
+如此就和放入到 App.config 文件的配置实现相同的功能，以上的例子代码放在[github](https://github.com/lindexi/lindexi_gd/tree/b3c6a4299c3d517a357cc05f045dd3a16ec261e2/WhajecichalLaykeljalha) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b3c6a4299c3d517a357cc05f045dd3a16ec261e2/WhajecichalLaykeljalha) 欢迎访问
 
 可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
