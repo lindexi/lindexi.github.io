@@ -3,6 +3,8 @@
 本文将告诉大家在 dotnet 6 新加入的 System.Runtime.DependentHandle 的类型的使用方法，通过 DependentHandle 可以实现将某个对象的引用生命周期和另一个对象关联起来
 
 <!--more-->
+<!-- CreateTime:2022/6/28 8:28:35 -->
+
 
 <!-- 博客 -->
 <!-- 发布 -->
