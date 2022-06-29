@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/6/27 15:30:46 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -55,6 +57,8 @@ git pull origin 668b2acf5749a1e190733882ae49ad105877cb55
 ```
 
 获取代码之后，进入 SkiaSharp/KebeninegeeWaljelluhi 文件夹
+
+我建立了一个 SkiaSharp 的群： 788018852 欢迎大家加入讨论
 
 
 

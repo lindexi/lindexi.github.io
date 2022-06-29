@@ -1426,7 +1426,7 @@
 
  * [Visual Studio 自定义项目模板](Visual-Studio-自定义项目模板.md)
 
- * [VisualStduio 打断点调试和不打断点调试有什么区别](VisualStduio-打断点调试和不打断点调试有什么区别.md)
+ * [VisualStudio 打断点调试和不打断点调试有什么区别](VisualStudio-打断点调试和不打断点调试有什么区别.md)
 
  * [VisualStudio 2017 项目格式 自动生成版本号](VisualStudio-2017-项目格式-自动生成版本号.md)
 
@@ -2502,6 +2502,8 @@
 
  * [WPF 用到的触摸的 COM 接口](WPF-用到的触摸的-COM-接口.md)
 
+ * [WPF 由于系统颜色配置 Mscms 组件损坏启动失败](WPF-由于系统颜色配置-Mscms-组件损坏启动失败.md)
+
  * [WPF 画布工具栏的可扩展设计](WPF-画布工具栏的可扩展设计.md)
 
  * [WPF 的 DefaultEventAttribute 有什么作用](WPF-的-DefaultEventAttribute-有什么作用.md)
@@ -2833,6 +2835,8 @@
  * [升级到 dotnet core 之后 HandleProcessCorruptedStateExceptions 无法接住异常](升级到-dotnet-core-之后-HandleProcessCorruptedStateExceptions-无法接住异常.md)
 
  * [博客](博客.md)
+
+ * [博客导航](博客导航.md)
 
  * [听龙华讲公共组件 CBB 建设笔记](听龙华讲公共组件-CBB-建设笔记.md)
 
