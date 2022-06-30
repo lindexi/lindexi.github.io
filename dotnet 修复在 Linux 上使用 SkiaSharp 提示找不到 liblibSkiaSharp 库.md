@@ -56,3 +56,5 @@ git pull origin 668b2acf5749a1e190733882ae49ad105877cb55
 获取代码之后，进入 SkiaSharp/KebeninegeeWaljelluhi 文件夹
 
 我建立了一个 SkiaSharp 的群： 788018852 欢迎大家加入讨论
+
+更多请看 [Docker环境下使用SkiaSharp的2种方式 - 从零开始-DotNET技术 - 博客园](https://www.cnblogs.com/yycelsu/p/14048859.html )
