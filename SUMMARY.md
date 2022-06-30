@@ -884,6 +884,8 @@
 
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
 
+ * [dotnet 控制台 使用 Microsoft.Maui.Graphics 配合 Skia 进行绘图入门](dotnet-控制台-使用-Microsoft.Maui.Graphics-配合-Skia-进行绘图入门.md)
+
  * [dotnet 控制台读写 Sqlite 提示 no such table 找不到文件](dotnet-控制台读写-Sqlite-提示-no-such-table-找不到文件.md)
 
  * [dotnet 教你写一个可以搞炸本机所有 WCF 应用的程序方法](dotnet-教你写一个可以搞炸本机所有-WCF-应用的程序方法.md)
