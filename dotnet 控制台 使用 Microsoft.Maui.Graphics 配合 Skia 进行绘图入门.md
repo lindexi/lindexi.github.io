@@ -3,6 +3,8 @@
 本文将告诉大家如何在 dotnet 的控制台模式下，采用 MAUI 自绘库 Microsoft.Maui.Graphics 进行绘图，设置 Microsoft.Maui.Graphics 底层调用 Microsoft.Maui.Graphics.Skia 库的 Skia 进行具体的绘图实现，此控制台可以跨平台运行，我在本机 Win10 和 WSL 的 Ubuntu 上都运行过，输出的结果图片像素级相似。本文将告诉大家如何采用 Microsoft.Maui.Graphics 进行跨平台的自绘
 
 <!--more-->
+<!-- CreateTime:2022/6/29 15:03:53 -->
+
 
 <!-- 标签：MAUI,MauiGraphics -->
 <!-- 博客 -->
