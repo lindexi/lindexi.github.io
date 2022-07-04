@@ -9,8 +9,7 @@
 <!-- CreateTime:2022/6/29 15:03:53 -->
 
 
-<!-- 标签：MAUI,MauiGraphics -->
-<!-- 博客 -->
+<!-- 标签：MAUI,MauiGraphics,Skia,SkiaSharp,渲染 -->
 <!-- 发布 -->
 
 在开始之前，先理清一下概念。刚正式发布的 MAUI 指的是一个跨平台的 UI 框架，而 dotnet 指的是在 UI 框架下面的运行时，这是早已实现跨平台的了。本文所说的 Microsoft.Maui.Graphics 是属于 MAUI 的一个组件，是 MAUI 的渲染层里面的一个部分。相当于直接使用 Microsoft.Maui.Graphics 就是将 MAUI 的渲染里面的一个模块拆出来独立使用。可以看到 MAUI 的设计上，渲染的一个模块是可以拆处理独立使用的

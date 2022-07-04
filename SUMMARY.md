@@ -1346,6 +1346,8 @@
 
  * [SharpDx 进入全屏模式](SharpDx-进入全屏模式.md)
 
+ * [SkiaSharp 渲染输出 SVG 文件](SkiaSharp-渲染输出-SVG-文件.md)
+
  * [SourceYard 制作源代码包](SourceYard-制作源代码包.md)
 
  * [Sublime Text 好用的插件](Sublime-Text-好用的插件.md)
