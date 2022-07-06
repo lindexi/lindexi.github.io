@@ -2818,6 +2818,8 @@
 
  * [修复 SmartAssembly 混淆 .NET 6 时提示 Unable to load runtime config file 失败](修复-SmartAssembly-混淆-.NET-6-时提示-Unable-to-load-runtime-config-file-失败.md)
 
+ * [修复 VisualStudio 构建时没有将 NuGet 的 PDB 符号文件拷贝到输出文件夹](修复-VisualStudio-构建时没有将-NuGet-的-PDB-符号文件拷贝到输出文件夹.md)
+
  * [docfx 做一个和微软一样的文档平台](docfx-做一个和微软一样的文档平台.md)
 
  * [关于技术规划的想法](关于技术规划的想法.md)
