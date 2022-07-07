@@ -1168,6 +1168,8 @@
 
  * [Microsoft .NET框架程序设计 笔记](Microsoft-.NET框架程序设计-笔记.md)
 
+ * [Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题](Microsoft.Maui.Graphics.Skia-使用-DrawString-绘制文本的坐标问题.md)
+
  * [MobaXterm 使用代理](MobaXterm-使用代理.md)
 
  * [Mobius 一个运行在 .NET Core 上的 .NET 运行时](Mobius-一个运行在-.NET-Core-上的-.NET-运行时.md)
