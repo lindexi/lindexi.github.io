@@ -3,6 +3,8 @@
 本文记录使用 Microsoft.Maui.Graphics.Skia 的 DrawString 进行绘制文本，不同的重载方法绘制的文本的坐标不同的问题
 
 <!--more-->
+<!-- CreateTime:2022/7/6 17:19:27 -->
+
 <!-- 发布 -->
 
 <!-- 标签：MAUI,MauiGraphics,Skia,SkiaSharp,渲染 -->
@@ -31,7 +33,7 @@
 
 <!-- ![](image/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202276172324608.jpg)
+![](http://image.acmx.xyz/lindexi%2F202277851443916.jpg)
 
 可以看到文本是从 100,100 作为左上角的基线 BaseLine 开始绘制的。这里需要科普文本的 基线 BaseLine 是什么。其实大家学英语到知道四线三格吧，如下图，第三条线就是 BaseLine 基线
 
@@ -53,7 +55,8 @@
 
 <!-- ![](image/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022761727257130.jpg)
+![](http://image.acmx.xyz/lindexi%2F20227785225663.jpg)
+
 
 但在采用的是 `void DrawString(string value, float x, float y, float width, float height, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment, TextFlow textFlow = TextFlow.ClipBounds, float lineSpacingAdjustment = 0F)` 方法进行绘制文本，那将会让绘制的文本完全放在 `float x, float y, float width, float height` 这个矩形框里面，如以下代码
 
@@ -69,7 +72,7 @@
 
 <!-- ![](image/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022761730282793.jpg)
+![](http://image.acmx.xyz/lindexi%2F20227785325256.jpg)
 
 可以看到文本在矩形内
 
@@ -85,7 +88,7 @@
 
 <!-- ![](image/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022761731472138.jpg)
+![](http://image.acmx.xyz/lindexi%2F202277853354898.jpg)
 
 - 文本的水平居右
 
@@ -97,7 +100,7 @@
 
 <!-- ![](image/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022761732231450.jpg)
+![](http://image.acmx.xyz/lindexi%2F20227785467789.jpg)
 
 - 文本的垂直居中
 
@@ -109,8 +112,7 @@
 
 <!-- ![](image/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022761734165089.jpg)
-
+![](http://image.acmx.xyz/lindexi%2F202277854361294.jpg)
 
 - 文本的垂直距下
 
@@ -122,7 +124,7 @@
 
 <!-- ![](image/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题/Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202276173541500.jpg)
+![](http://image.acmx.xyz/lindexi%2F2022778554393.jpg)
 
 如果文本的实际渲染大小超过给定的矩形范围，可以通过 TextFlow 参数决定是裁剪还是允许超过范围。横排文本布局的超过范围是在 Y 坐标上超过边界。默认参数是超过给定的范围就裁剪
 
