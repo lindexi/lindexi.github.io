@@ -3,6 +3,8 @@
 本文告诉大家如何修复 VisualStudio 构建时没有将 NuGet 的 PDB 符号文件拷贝到输出文件夹的问题。如果 VisualStudio 构建时没有将 NuGet 的 PDB 符号文件拷贝到输出文件夹，那将会在调试的时候，由于找不到 PDB 符号文件而加载符号失败
 
 <!--more-->
+<!-- CreateTime:2022/7/5 14:17:08 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签： NuGet，VisualStudio，构建 -->
