@@ -51,6 +51,14 @@
 
 [WPF 屏幕点击的设备类型 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/14888287.html )
 
+[WPF 获得触笔悬停元素上](https://blog.lindexi.com/post/WPF-%E8%8E%B7%E5%BE%97%E8%A7%A6%E7%AC%94%E6%82%AC%E5%81%9C%E5%85%83%E7%B4%A0%E4%B8%8A.html )
+
+[WPF 多个 StylusPlugIn 的事件触发顺序](https://blog.lindexi.com/post/WPF-%E5%A4%9A%E4%B8%AA-StylusPlugIn-%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91%E9%A1%BA%E5%BA%8F.html )
+
+[WPF 不禁用实时触摸而收到 WM_Touch 触摸消息方法](https://blog.lindexi.com/post/WPF-%E4%B8%8D%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8%E8%80%8C%E6%94%B6%E5%88%B0-WM_Touch-%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF%E6%96%B9%E6%B3%95.html )
+
+
+
 ## 高级用法
 
 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html )
@@ -81,6 +89,9 @@
 
 [WPF 开启Pointer消息存在的坑](https://blog.lindexi.com/post/WPF-%E5%BC%80%E5%90%AFPointer%E6%B6%88%E6%81%AF%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9D%91.html )
 
+[WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )
+
+
 ## 笔迹
 
 - [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
@@ -98,6 +109,7 @@
 - [WPF 使用 Microsoft.Toolkit.Wpf.UI.Controls 的 InkCanvas 做高性能笔迹应用](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Microsoft.Toolkit.Wpf.UI.Controls-%E7%9A%84-InkCanvas-%E5%81%9A%E9%AB%98%E6%80%A7%E8%83%BD%E7%AC%94%E8%BF%B9%E5%BA%94%E7%94%A8.html)
 - [win10 uwp 通过 win2d 画出笔迹](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87-win2d-%E7%94%BB%E5%87%BA%E7%AC%94%E8%BF%B9.html )
 - [win10 uwp 通过 Win2d 完全控制笔迹绘制逻辑](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87-Win2d-%E5%AE%8C%E5%85%A8%E6%8E%A7%E5%88%B6%E7%AC%94%E8%BF%B9%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
+- [WPF 简易手绘笔迹支持回放的方法](https://blog.lindexi.com/post/WPF-%E7%AE%80%E6%98%93%E6%89%8B%E7%BB%98%E7%AC%94%E8%BF%B9%E6%94%AF%E6%8C%81%E5%9B%9E%E6%94%BE%E7%9A%84%E6%96%B9%E6%B3%95.html )
 
 ## 收藏
 

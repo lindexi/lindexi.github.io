@@ -3,6 +3,8 @@
 准确来说，这个不算是 WPF 的问题，而是系统等的问题。在某些设备上的使用了 WindowChrome 功能的 WPF 应用，将在运行过程，在 WindowChromeWorker 类里面抛出 System.OverflowException 异常。核心原因是这些设备是 x64 设备，运行的 x64 的 WPF 应用程序，在消息循环里面传入的 lParam 是一个 x64 的指针，但在 WPF 里面使用 ToInt32 方法进行转换，刚好此 x64 的指针超过 int 的范围，从而抛出异常
 
 <!--more-->
+<!-- CreateTime:2022/7/15 19:16:49 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
