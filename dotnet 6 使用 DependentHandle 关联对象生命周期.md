@@ -5,8 +5,6 @@
 <!--more-->
 <!-- CreateTime:2022/6/28 8:28:35 -->
 
-
-<!-- 博客 -->
 <!-- 发布 -->
 
 如 DependentHandle 结构体的构造函数，要传入两个对象作为参数，这两个对象参数分别是 target 和 dependent 参数对象，表示的意义是将这两个对象通过 DependentHandle 结构体建立关联。让 target 对象关联上 dependent 对象的生命周期，在 dependent 对象没有被释放之前，不会先释放 target 对象。功能上和 ConditionalWeakTable 差不多，只是 DependentHandle 作为 ConditionalWeakTable 的底层实现支持，直接使用 DependentHandle 可以有更多的控制
