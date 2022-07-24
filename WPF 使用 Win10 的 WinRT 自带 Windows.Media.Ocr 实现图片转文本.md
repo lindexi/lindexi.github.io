@@ -163,5 +163,4 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 获取代码之后，进入 JagerekukibeHelcewhalay 文件夹
 
-<!-- httpclient readwritet -->
 
