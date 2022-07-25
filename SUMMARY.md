@@ -416,6 +416,8 @@
 
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
 
+ * [dotnet 6 精细控制 HttpClient 网络请求超时](dotnet-6-精细控制-HttpClient-网络请求超时.md)
+
  * [dotnet 6 通过 DOTNET_ROOT 让调起的应用的进程拿到共享的运行时文件夹](dotnet-6-通过-DOTNET_ROOT-让调起的应用的进程拿到共享的运行时文件夹.md)
 
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
@@ -1412,6 +1414,8 @@
 
  * [UWP 上架失败因为没有添加隐私策略](UWP-上架失败因为没有添加隐私策略.md)
 
+ * [UWP 从文件 StorageFile 转 SoftwareBitmap 图片方法](UWP-从文件-StorageFile-转-SoftwareBitmap-图片方法.md)
+
  * [UWP 写入图片 Exif 信息](UWP-写入图片-Exif-信息.md)
 
  * [UWP 分享用那个图标](UWP-分享用那个图标.md)
@@ -2090,6 +2094,8 @@
 
  * [WPF DelegateCommand 出现Specified cast is not valid](WPF-DelegateCommand-出现Specified-cast-is-not-valid.md)
 
+ * [WPF dotnet 6 开启 PM v2 的 DPI 感知 导致触摸线程访问 UI 属性抛异常](WPF-dotnet-6-开启-PM-v2-的-DPI-感知-导致触摸线程访问-UI-属性抛异常.md)
+
  * [WPF dotnet core 如何开启 Pointer 消息的支持](WPF-dotnet-core-如何开启-Pointer-消息的支持.md)
 
  * [WPF dotnet core 的 Blend SDK Behaviors 库](WPF-dotnet-core-的-Blend-SDK-Behaviors-库.md)
@@ -2211,6 +2217,8 @@
  * [WPF 使用 VisualBrush 在 4k 加 200 DPI 设备上某些文本不渲染看不见问题](WPF-使用-VisualBrush-在-4k-加-200-DPI-设备上某些文本不渲染看不见问题.md)
 
  * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
+
+ * [WPF 使用 Win10 的 WinRT 自带 Windows.Media.Ocr 实现图片转文本](WPF-使用-Win10-的-WinRT-自带-Windows.Media.Ocr-实现图片转文本.md)
 
  * [WPF 使用 Win2d 渲染](WPF-使用-Win2d-渲染.md)
 
