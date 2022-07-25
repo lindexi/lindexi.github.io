@@ -10,7 +10,9 @@
 
 在 Windows 会将所有的 Hid （输入）设备在插拔的时候通过 Windows 消息进行更新设备信息。在触摸的时候，通过一个线程用来收集触摸信息。
 
-本文下面的代码是通过 [dnSpy](https://walterlv.github.io/post/edit-and-recompile-assembly-using-dnspy.html )反编译调试。
+本文下面的代码是通过 [dnSpy](https://walterlv.github.io/post/edit-and-recompile-assembly-using-dnspy.html )反编译调试
+
+> 本文遇到的问题是采用 .NET Framework 4.5 的运行时。在 dotnet core 3.1 和以上版本已解决此问题
 
 ## 存在的问题
 
@@ -25,6 +27,8 @@
 在重新插拔触摸屏就可以恢复。
 
 通过降低 CPU 频率可以减少触摸失效
+
+> 根本解决方法： 升级运行时为 .NET Framework 4.8 最新版本。或者升级为 .NET Core 3.1 或以上版本
 
 ## 原理
 
@@ -329,7 +333,9 @@ WispLogic.cs
 
 这里为什么在 `_handles.Length` 不是 1 需要使用 `GetPenEventMultiple` 而不是直接返回的原因是觉得创建线程的代价太高，或如果不进入等待的函数就会进入循环，不停进入循环。实际上这里在 `_handles` 没有值就是用户没有触摸屏，用户插入触摸屏的时间是很少的，没有几个用户一天没事都在插入拔出触摸屏，所以在用户插入触摸屏时再创建一个新的线程，在用户拔出触摸屏去掉这个线程是可以的。 通过这样做减少在这个线程等待的时间，防止用户的软件因为在 `GetPenEventMultiple` 没有释放触摸失效。 
 
-但是无论是什么方法都难以解决所有触摸问题，建议开发接口让应用去修改触摸相关的，如重新进行初始化触摸
+但是无论是什么方法都难以解决所有触摸问题，建议开放接口让应用去修改触摸相关的，如重新进行初始化触摸。重启触摸方法请看 [WPF 触摸失效 试试重启触摸](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88-%E8%AF%95%E8%AF%95%E9%87%8D%E5%90%AF%E8%A7%A6%E6%91%B8.html )
+
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
 
 参见：
 
