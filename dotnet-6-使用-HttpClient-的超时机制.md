@@ -316,6 +316,8 @@ async Task Download()
 
 可以看到下载超过了 10 秒还能继续下载，证明了 Timeout 属性对下载是无效的
 
+更精细控制网络超时，请参阅 [dotnet 6 精细控制 HttpClient 网络请求超时](https://blog.lindexi.com/post/dotnet-6-%E7%B2%BE%E7%BB%86%E6%8E%A7%E5%88%B6-HttpClient-%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E8%B6%85%E6%97%B6.html )
+
 
 
 

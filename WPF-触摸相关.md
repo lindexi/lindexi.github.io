@@ -60,7 +60,7 @@
 
 [WPF 不禁用实时触摸而收到 WM_Touch 触摸消息方法](https://blog.lindexi.com/post/WPF-%E4%B8%8D%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8%E8%80%8C%E6%94%B6%E5%88%B0-WM_Touch-%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF%E6%96%B9%E6%B3%95.html )
 
-
+[WPF 使用 Direct Manipulation 的方法](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Direct-Manipulation-%E7%9A%84%E6%96%B9%E6%B3%95.html )
 
 ## 高级用法
 
@@ -94,6 +94,7 @@
 
 [WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )
 
+[WPF dotnet 6 开启 PM v2 的 DPI 感知 导致触摸线程访问 UI 属性抛异常](https://blog.lindexi.com/post/WPF-dotnet-6-%E5%BC%80%E5%90%AF-PM-v2-%E7%9A%84-DPI-%E6%84%9F%E7%9F%A5-%E5%AF%BC%E8%87%B4%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E8%AE%BF%E9%97%AE-UI-%E5%B1%9E%E6%80%A7%E6%8A%9B%E5%BC%82%E5%B8%B8.html )
 
 ## 笔迹
 
