@@ -3,6 +3,8 @@
 本文告诉大家如何在 UWP 从 文件 StorageFile 转 SoftwareBitmap 图片的方法
 
 <!--more-->
+<!-- CreateTime:2022/7/25 8:28:00 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

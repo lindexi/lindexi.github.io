@@ -53,6 +53,35 @@
 
 这就是网络请求不跟随本机网络代理变化的原因
 
+一个解决方法就是拷贝 dotnet runtime 的读取系统的配置方法，再加上监听注册表变更进行刷新配置，从而实现动态跟随系统代理变化而变化。我拷贝了代码，写了一个版本，使用方法是
+
+```csharp
+var dynamicHttpWindowsProxy = new DynamicHttpWindowsProxy();
+
+HttpClient.DefaultProxy = dynamicHttpWindowsProxy; 
+```
+
+代码的实现放在[github](https://github.com/lindexi/lindexi_gd/tree/8c64e9676c4205e55fad227a86d5d8d95a5ebe91/NilerlanaihikaWhurreeberhalur) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/8c64e9676c4205e55fad227a86d5d8d95a5ebe91/NilerlanaihikaWhurreeberhalur) 欢迎访问
+
+可以通过如下方式获取源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 8c64e9676c4205e55fad227a86d5d8d95a5ebe91
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 8c64e9676c4205e55fad227a86d5d8d95a5ebe91
+```
+
+获取代码之后，进入 NilerlanaihikaWhurreeberhalur 文件夹，具体实现放在 `Proxy` 文件里面，在 Program.cs 包含了测试逻辑，可以不断尝试访问百度。可以测试在使用 `HttpClient.DefaultProxy = dynamicHttpWindowsProxy; ` 时，切换 Fiddler 代理配置，和不使用 DynamicHttpWindowsProxy 切换配置的行为
+
+以上代码基本都是从 dotnet runtime 里面抄的，可以放心用在正式的项目。监听注册表变更是从 [https://www.codeproject.com/Articles/4502/RegistryMonitor-a-NET-wrapper-class-for-RegNotifyC](https://www.codeproject.com/Articles/4502/RegistryMonitor-a-NET-wrapper-class-for-RegNotifyC) 抄的，这是一段比较古老稳定的代码，只不过需要多开启一个线程用来监听注册表。这就是为什么在例子代码里面，会延迟去启动监听注册表
 
 参考文档：
 
