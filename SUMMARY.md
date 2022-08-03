@@ -2608,6 +2608,8 @@
 
  * [WPF 解决 ListView 的滚动条不显示](WPF-解决-ListView-的滚动条不显示.md)
 
+ * [WPF 解决 ObservableCollection 提示 Cannot change ObservableCollection during a CollectionChanged event 异常](WPF-解决-ObservableCollection-提示-Cannot-change-ObservableCollection-during-a-CollectionChanged-event-异常.md)
+
  * [WPF 解决 PathTooLongException 路径太长](WPF-解决-PathTooLongException-路径太长.md)
 
  * [WPF 解决 Skia 因为找不到字体而绘制不出中文字符](WPF-解决-Skia-因为找不到字体而绘制不出中文字符.md)
