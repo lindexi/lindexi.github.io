@@ -3,6 +3,8 @@
 本文告诉大家在使用 ObservableCollection 时，抛出 InvalidOperationException 异常，提示 Cannot change ObservableCollection during a CollectionChanged event 内容，的原因和解决方法
 
 <!--more-->
+<!-- CreateTime:2022/8/2 17:40:37 -->
+
 
 <!-- 发布 -->
 <!-- 博客 -->
