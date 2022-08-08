@@ -188,6 +188,10 @@
 
 [dotnet OpenXML 获取 Excel 表格当前激活选择的工作表](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%8E%B7%E5%8F%96-Excel-%E8%A1%A8%E6%A0%BC%E5%BD%93%E5%89%8D%E6%BF%80%E6%B4%BB%E9%80%89%E6%8B%A9%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%A1%A8.html )
 
+## 图表
+
+[dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) [博客园](https://www.cnblogs.com/lindexi/p/16552973.html )
+
 ## 工具
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
@@ -289,6 +293,12 @@ XCeed Software 的 DocX 库：
 此库包含免费版本和收费版本
 
 [xceedsoftware/DocX: Fast and easy to use .NET library that creates or modifies Microsoft Word files without installing Word.](https://github.com/xceedsoftware/docx )
+
+### OpenXML 解析辅助库
+
+[dotnet-campus/DocumentFormat.OpenXml.Extensions: The OpenXML SDK extensions. Including libraries and tools.](https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions )
+
+这是我所在的团队开源的 OpenXml 解析辅助库，支持层层继承的属性拍平和对基础元素的处理
 
 ## 开发群
 
