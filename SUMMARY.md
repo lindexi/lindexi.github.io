@@ -2214,6 +2214,8 @@
 
  * [WPF 使用 Skia 绘制 WriteableBitmap 图片](WPF-使用-Skia-绘制-WriteableBitmap-图片.md)
 
+ * [WPF 使用 Skia 解析绘制 SVG 图片](WPF-使用-Skia-解析绘制-SVG-图片.md)
+
  * [WPF 使用 TranslatePoint 换算元素之间相对坐标](WPF-使用-TranslatePoint-换算元素之间相对坐标.md)
 
  * [WPF 使用 VideoDrawing 播放视频](WPF-使用-VideoDrawing-播放视频.md)
