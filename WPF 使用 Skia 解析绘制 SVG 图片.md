@@ -3,6 +3,8 @@
 本文告诉大家如何在 WPF 里面，使用 Skia 解析绘制 SVG 图片。本文也适合控制台使用 SkiaSharp 解析绘制 SVG 图片，本文的 WPF 部分只是在 Skia 绘制完成之后，将 Skia 的内容绘制到 WPF 的 WriteableBitmap 图片，从而在界面显示
 
 <!--more-->
+<!-- CreateTime:2022/8/8 19:28:27 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
