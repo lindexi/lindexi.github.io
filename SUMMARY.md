@@ -2242,6 +2242,8 @@
 
  * [WPF 依赖属性绑定不上调试方法](WPF-依赖属性绑定不上调试方法.md)
 
+ * [WPF 修复 ContextMenu 在开启 PerMonitorV2 后所用 DPI 错误](WPF-修复-ContextMenu-在开启-PerMonitorV2-后所用-DPI-错误.md)
+
  * [WPF 修复 dotnet 6 与源代码包冲突](WPF-修复-dotnet-6-与源代码包冲突.md)
 
  * [WPF 修改 ItemContainerStyle 鼠标移动到未选中项效果和选中项背景](WPF-修改-ItemContainerStyle-鼠标移动到未选中项效果和选中项背景.md)
