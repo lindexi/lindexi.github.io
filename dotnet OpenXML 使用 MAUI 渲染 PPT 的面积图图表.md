@@ -10,6 +10,7 @@
 图表工具软件的开发架构如下，可以看到只有和具体平台对接的一层不相同
 
 <!-- ![](image/dotnet OpenXML 使用 MAUI 渲染 PPT 的面积图图表/dotnet OpenXML 使用 MAUI 渲染 PPT 的面积图图表3.png) -->
+
 ![](http://image.acmx.xyz/lindexi%2F20228121559227277.jpg)
 
 本文将包含两个部分，一个是解析渲染面积图图表，另一个是使用 MAUI 开发跨平台应用。解析面积图图表是用到 OpenXML 解析 PPT 的知识，本文只包含很少量的 OpenXML 的知识，我将详细的使用 OpenXML 解析 PPT 的面积图的方法放在了 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 博客里。本文的用到的解析 PPT 的代码也是从此博客里面抄的，这部分代码将不会在本文上贴出。 如对 OpenXML 解析 PPT 毫无概念的伙伴，阅读本文也不会存在问题，只需要假定本文的解析 PPT 的代码是通过某个方式获取到了图表的相关信息即可，请将重点放在图表的绘制渲染，以及如何做跨平台对接上
@@ -889,7 +890,7 @@ var skiaCanvas = new SkiaCanvas()
             AreaChartRender areaChartRender = modelReader.BuildAreaChartRender(file);
 ```
 
-再使用上文的对接 Skia 和 MAUI 的逻辑，获取到 `skiaCanvas` 对象，传入到 AreaChartRender 绘制，这就是最关键的代码
+再使用和上文一样的对接 Skia 和 MAUI 的逻辑进行对接。对接方法依然是获取到 `skiaCanvas` 对象，传入到 AreaChartRender 绘制，这就是最关键的代码
 
 ```csharp
 areaChartRender.Render(skiaCanvas);
@@ -897,7 +898,7 @@ areaChartRender.Render(skiaCanvas);
 
 可以看到，关键的代码也只需要一句即可完成
 
-这就是在 GtkSharp 上对接的方法，代码如下
+这就是在 GtkSharp 上对接的方法，核心的代码如下
 
 ```csharp
         private void OnPaintSurface(object sender, SKPaintSurfaceEventArgs e)
@@ -927,6 +928,8 @@ areaChartRender.Render(skiaCanvas);
 ![](http://image.acmx.xyz/lindexi%2Fdotnet%2520OpenXML%2520%25E4%25BD%25BF%25E7%2594%25A8%2520MAUI%2520%25E6%25B8%25B2%25E6%259F%2593%2520PPT%2520%25E7%259A%2584%25E9%259D%25A2%25E7%25A7%25AF%25E5%259B%25BE%25E5%259B%25BE%25E8%25A1%25A81.gif)
 
 这就是使用 MAUI 在 Windows 和 Linux 上解析和绘制 PPT 的图表的例子，本文忽略了很多细节，更多细节请阅读本文使用的代码
+
+整个 MAUI 是一个非常庞大和强大的框架，如此庞大的框架想要完全完成还是需要一些时间的。本文所用到的仅仅只是 MAUI 的渲染层，我将 MAUI 的渲染层拆开，即可放入到现有的应用里面，也可以输出到本地图片文件。既支持 Windows 平台，又支持 Linux 平台。可以使用默认自带的 MAUI 具体平台实现，也可以自己基于接口，自己实现一套渲染进行对接
 
 ## 代码
 
