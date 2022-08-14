@@ -1,20 +1,22 @@
 # dotnet OpenXML 使用 MAUI 渲染 PPT 的面积图图表
 
-我在做一个图表工具软件，这个软件使用 MAUI 开发。我的需求是图表的内容需要和 PPT 的图表对接，也就需要用到 OpenXML 解析 PPT 内容，读取到图表元素，接着使用 MAUI 渲染层进行绘制
+我在做一个图表工具软件，这个软件使用 MAUI 开发。我的需求是图表的内容需要和 PPT 的图表对接，需要用到 OpenXML 解析 PPT 内容，读取到 PPT 图表元素的内容，接着使用 MAUI 渲染层绘制图表元素。图表工具软件需要在 Windows 平台和 Linux 平台上运行。在 Windows 下，我采用 WPF 应用，用来辟谣说 MAUI 不支持 WPF 应用。 在 Linux 选用 Ubuntu 系统，采用 GTKSharp 应用加上 Skia 渲染对接 MAUI 框架
 
 <!--more-->
 
 <!-- 发布 -->
 <!-- 博客 -->
 
-图表工具软件需要在 Windows 平台和 Linux 平台上运行。在 Windows 下，我采用 WPF 应用，用来辟谣说 MAUI 不支持 WPF 应用。 在 Linux 选用 Ubuntu 系统，采用 GTKSharp 应用加上 Skia 渲染对接 MAUI 框架。开发架构如下，可以看到只有和具体平台对接的一层不相同
+图表工具软件的开发架构如下，可以看到只有和具体平台对接的一层不相同
 
 <!-- ![](image/dotnet OpenXML 使用 MAUI 渲染 PPT 的面积图图表/dotnet OpenXML 使用 MAUI 渲染 PPT 的面积图图表3.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20228121559227277.jpg)
 
-本文将包含两个部分，一个是解析渲染面积图图表，另一个是使用 MAUI 开发跨平台应用。解析面积图图表是用到 OpenXML 解析 PPT 的知识，本文只包含很少量的 OpenXML 的知识，我将详细的使用 OpenXML 解析 PPT 的面积图的方法放在了 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 博客里。本文的用到的解析 PPT 的代码也是从此博客里面抄的，这部分代码将不会在本文上贴出。 如对 OpenXML 解析 PPT 毫无概念的伙伴，阅读本文也不会存在问题，只需要假定通过某个方式获取到了图表的相关信息即可，请将重点放在图表的绘制渲染，以及如何做跨平台对接
+本文将包含两个部分，一个是解析渲染面积图图表，另一个是使用 MAUI 开发跨平台应用。解析面积图图表是用到 OpenXML 解析 PPT 的知识，本文只包含很少量的 OpenXML 的知识，我将详细的使用 OpenXML 解析 PPT 的面积图的方法放在了 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 博客里。本文的用到的解析 PPT 的代码也是从此博客里面抄的，这部分代码将不会在本文上贴出。 如对 OpenXML 解析 PPT 毫无概念的伙伴，阅读本文也不会存在问题，只需要假定本文的解析 PPT 的代码是通过某个方式获取到了图表的相关信息即可，请将重点放在图表的绘制渲染，以及如何做跨平台对接上
 
-本文使用的代码只能用来做例子，本文的解析只能支持例子的测试文件，本文的测试文件和代码可以从本文最后获取
+本文使用的代码只能用来做例子，本文的解析 PPT 图表的代码只能支持本文例子里的测试文件，本文的测试文件和代码可以从本文最后获取
+
+在开始之前，先看一下本文实现的效果
 
 ## 效果
 
@@ -73,9 +75,9 @@ public class AreaChartRenderContext
 }
 ```
 
-上面代码的 `ChartSpace` 如 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 可以了解到是图表元素，里面包含图表的信息。上面代码的 `SlideContext` 是我所在的团队开源的 OpenXml 解析辅助库提供的包含元素所在页面的类型，详细请看: [https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions](https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions )
+上面代码的 `ChartSpace` 属性是图表元素，通过 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 博客可以了解到里面包含图表的信息。上面代码的 `SlideContext` 属性是我所在的团队开源的 OpenXml 解析辅助库提供的包含元素所在页面的类型，详细请看: [https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions](https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions )
 
-图表关键的信息包含类别轴上的数据，横坐标轴上的数据，放在 `CategoryAxisValueList` 属性。系列信息集合，放在 `AreaChartSeriesInfoList` 属性。这两个属性是从 `ChartSpace` 读取，读取的方法请看 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 或者阅读本文用到的代码
+图表关键的信息包含类别轴上的数据，也称为横坐标轴上的数据，放在 `CategoryAxisValueList` 属性。系列信息集合，放在 `AreaChartSeriesInfoList` 属性。这两个属性是从 `ChartSpace` 读取，读取的方法请看 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 博客或者阅读本文用到的代码
 
 在获取到了图表的各个信息之后，即可进行绘制图表。开始进行绘制之前，还请先了解图表的各个组成部分
 
@@ -118,7 +120,7 @@ public class AreaChartRenderContext
 
 为了让绘制逻辑更方便阅读，定义 AreaChartRender 类用来绘制图表
 
-图表绘制需要两个参数，一个是 `AreaChartRenderContext` 用来提供信息，一个是 `Microsoft.Maui.Graphics.ICanvas` 用来提供渲染绘制方法。在各个平台上，可以使用不同的实现对接 MAUI 的渲染，也就是 `Microsoft.Maui.Graphics.ICanvas` 接口可以对应不同的实现。在解析渲染模块里不耦合具体的渲染实现，定义的类型如下
+图表绘制 AreaChartRender 需要两个参数，一个是 `AreaChartRenderContext` 用来提供信息，一个是 `Microsoft.Maui.Graphics.ICanvas` 用来提供渲染绘制方法。在各个平台上，可以使用不同的实现对接 MAUI 的渲染，也就是 `Microsoft.Maui.Graphics.ICanvas` 接口可以对应不同的实现。在解析渲染模块里不耦合具体的平台渲染实现，只使用抽象的接口，定义的类型如下
 
 ```csharp
 public class AreaChartRender
@@ -132,10 +134,11 @@ public class AreaChartRender
 
     public void Render(ICanvas canvas)
     {
+        // 忽略代码
     }
 ```
 
-基础的使用是在和 OpenXML 解析 PPT 的图表这一层对接，通过 AreaChartRenderContext 类型拿到图表的内容，创建出 AreaChartRender 对象，传递给具体的渲染层。在渲染层里，将区分平台进行渲染，各个平台定义 `Microsoft.Maui.Graphics.ICanvas` 的实现，传入到 AreaChartRender 的 Render 方法。在 Render 方法将绘制图表内容，即可通过抽象的 `Microsoft.Maui.Graphics.ICanvas` 接口，调用各个平台具体的绘制实现
+图表绘制 AreaChartRender 基础的使用方法是在和 OpenXML 解析 PPT 的图表这一层对接，通过 AreaChartRenderContext 类型拿到图表的内容，创建出 AreaChartRender 对象，传递给具体的渲染层。在渲染层里，将区分平台进行渲染，各个平台定义 `Microsoft.Maui.Graphics.ICanvas` 的实现，传入到 AreaChartRender 的 Render 方法。在 Render 方法将绘制图表内容，即可通过抽象的 `Microsoft.Maui.Graphics.ICanvas` 接口，调用各个平台具体的绘制实现
 
 使用以下代码即可使用 OpenXML 解析 PPT 的图表，获取图表内容，关于以下代码的细节逻辑，请看 [dotnet OpenXML 解析 PPT 图表 面积图入门](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%85%A5%E9%97%A8.html )
 
@@ -153,14 +156,14 @@ public class ModelReader
         var slide = presentationDocument.PresentationPart!.SlideParts.First().Slide;
 
         /*
-     <p:cSld>
-       <p:spTree>
-         <p:graphicFrame>
-           ...
-         </p:graphicFrame>
-       </p:spTree>
-     </p:cSld>
-    */
+          <p:cSld>
+            <p:spTree>
+              <p:graphicFrame>
+                ...
+              </p:graphicFrame>
+            </p:spTree>
+          </p:cSld>
+        */
         // 获取图表元素，在这份课件里，有一个面积图。以下使用 First 忽略细节，获取图表
         var graphicFrame = slide.Descendants<GraphicFrame>().First();
 
@@ -206,9 +209,9 @@ public class ModelReader
 }
 ```
 
-具体的平台实现部分，放在下一章。下面先对接 MAUI 的抽象的 `Microsoft.Maui.Graphics.ICanvas` 接口，进行绘制图表。绘制图表的工作量包括绘制坐标轴信息，计算刻度线，对各个系列的绘制
+具体的平台渲染实现部分，放在下一章。下面先在 Render 方法对接 MAUI 的抽象的 `Microsoft.Maui.Graphics.ICanvas` 接口，进行绘制图表。绘制图表的工作量包括绘制坐标轴信息，计算刻度线，对各个系列的绘制
 
-本文这里基本采用的是绝对布局方式，相对来说用到的知识简单。缺点是很多计算都会放在下面代码，看起来比较复杂，好在计算只是小学数学的加减
+本文这里采用的是绝对布局方式，相对来说用到的知识简单。缺点是很多计算都会放在下面代码，看起来比较复杂，好在计算只是小学数学的加减
 
 下面的绘制代码只能作为本文的例子使用，很多原本需要进行排版计算的值，为了方便理解，我都使用常量，如下面代码，还请忽略这部分的细节
 
@@ -235,7 +238,7 @@ public class ModelReader
         var chartHeight = (float) Context.Height.Value;
 ```
 
-以上的数值定义全部采用 float 类型，其原因是 MAUI 为了更好的适配更多的平台，选用了 float 作为渲染绘制的参数的通用类型。这一点和 WPF 的不相同，在 WPF 或 UWP 或 WinFroms 等，通用的绘制计算都采用 double 类型。对于渲染绘制，大部分情况，使用 float 也是够用的。如果一个 double 值的范围是在 float 内，那进行 double 转 float 也是安全的，性能的损耗，如果不是热点代码，也可以忽略
+以上的数值定义全部采用 float 类型，其原因是 MAUI 为了更好的适配更多的平台，选用了 float 作为渲染绘制的参数的通用类型。这一点和 WPF 的不相同，在 WPF 或 UWP 或 WinFroms 等，通用的绘制计算都采用 double 类型。对于渲染绘制，大部分情况，使用 float 也是够用的。如果一个 double 值的范围是在 float 内，那进行 double 转 float 也是安全的。至于性能的损耗，如果不是热点代码，也可以忽略
 
 通过以上的信息即可计算出图表的绘制范围，包括坐标和尺寸
 
@@ -246,18 +249,18 @@ public class ModelReader
         var plotAreaHeight = chartHeight - chartTitleHeight - chartLegendHeight - xAxisBottomMargin;
 ```
 
-这些信息属于布局信息，本文这里只是使用简单的固定数值计算，而不是跟随具体的图表数据进行计算，以上的代码比较“塑料”还请不要抄到实际项目代码。完成布局计算之后，开始绘制坐标轴信息。坐标轴信息包含了刻度信息，也就是 Y 轴的刻度，每个刻度之间的数值间隔是多少，最大值和最小值是多少。我采用了玄学的计算方法 GetRatio 获取到了刻度的间隔的值，固定了只有 8 条线
+这些信息属于布局信息，本文这里只是使用简单的固定数值计算，而不是跟随具体的图表数据进行计算，以上的代码比较“塑料”还请不要抄到实际项目代码。完成布局计算之后，开始绘制坐标轴信息。坐标轴信息包含了刻度信息，也就是 Y 轴的刻度。刻度信息包括了每个刻度之间的数值间隔是多少，最大值和最小值是多少的信息。我采用了玄学的计算方法 GetRatio 获取到了刻度的间隔的值，以及和这份 PPT 的图表一样固定了只有 8 条线
 
 ```csharp
-        var rowLineCount = 8;
+        var rowLineCount = 8; // 这份 PPT 测试文件里只有 8 条线
         // 获取数据最大值
         var maxData = GetMaxValue();
         // 获取刻度的值
-        var ratio = GetRatio(maxData, rowLineCount);
+        var ratio = GetRatio(maxData, rowLineCount); // 这是一个玄学的方法。才不告诉你方法里面直接返回了一个常量
         var maxValue = ratio * (rowLineCount - 1);
 ```
 
-完成了基础计算，接下来可以开始绘制坐标轴。绘制坐标轴就需要用到 MAUI 的绘制知识，参阅官方文档： [Graphics - .NET MAUI Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/maui/user-interface/graphics/ )
+完成了基础计算，接下来可以开始绘制坐标轴。绘制坐标轴就需要用到 MAUI 的绘制知识，对这些绘制知识感兴趣还请参阅官方文档： [Graphics - .NET MAUI Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/maui/user-interface/graphics/ )
 
 绘制坐标轴，本质上是绘制网格线，步骤是先绘制 Y 轴，再绘制 X 轴。如 PPT 的图表效果，这份文档的 Y 轴只有刻度，也就是需要绘制 Y 轴的刻度和 x 行的线。在 MAUI 里，绘制线条只需要使用 DrawLine 方法，传入两个点即可。控制线条的粗细和颜色等，是通过在 DrawLine 方法之前，先设置好参数属性。如下面代码绘制 X 行的线
 
@@ -278,7 +281,7 @@ public class ModelReader
 
 接下来继续绘制 Y 轴的刻度。绘制刻度需要用到文本绘制的方法，文本绘制中存在一个小问题，那就是中文字体设置的问题，好在此问题被我修复了，详细请看 [Fix set the Font to Microsoft.Maui.Graphics.Skia by lindexi · Pull Request #9124 · dotnet/maui](https://github.com/dotnet/maui/pull/9124 )
 
-以下代码只是绘制数字而已，不需要设置中文字体，也就不会踩到上文说到的坑。绘制文本需要对齐到刻度，需要给定绘制文本的范围，这里稍微有一些知识需要了解，详细请看 [Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题](https://blog.lindexi.com/post/Microsoft.Maui.Graphics.Skia-%E4%BD%BF%E7%94%A8-DrawString-%E7%BB%98%E5%88%B6%E6%96%87%E6%9C%AC%E7%9A%84%E5%9D%90%E6%A0%87%E9%97%AE%E9%A2%98.html )
+以下代码只是绘制数字而已，不需要设置中文字体，也就不会踩到上文说到的坑。为了让绘制文本对齐到刻度，需要给定绘制文本的范围，这里稍微有一些知识需要了解，详细请看 [Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题](https://blog.lindexi.com/post/Microsoft.Maui.Graphics.Skia-%E4%BD%BF%E7%94%A8-DrawString-%E7%BB%98%E5%88%B6%E6%96%87%E6%9C%AC%E7%9A%84%E5%9D%90%E6%A0%87%E9%97%AE%E9%A2%98.html )
 
 ```csharp
             // 获取刻度的值
@@ -289,13 +292,14 @@ public class ModelReader
             var textY = offsetY - fontSize / 2f;
             var textWidth = plotAreaOffsetX - textX - textRightMargin;
             var textHeight = 25;
+            // 获取刻度的文本
             var value = (ratio * i).ToString(CultureInfo.CurrentCulture);
             canvas.DrawString(value, textX, textY, textWidth, textHeight, HorizontalAlignment.Right, VerticalAlignment.Top);
 ```
 
-和绘制线条相同的是，在绘制文本之前，通过参数属性设置文本的属性，例如上面代码设置了文本的字体大小。同样，这里的字体大小也是没有具体单位的，由具体的平台实现决定，大部分可以认为是像素
+和绘制线条相同的是，在绘制文本之前，通过参数属性设置文本的属性，例如上面代码设置了文本的字体大小。同样，这里的字体大小也是没有具体单位的，由具体的平台实现决定，大部分情况可以认为是像素单位
 
-完成了绘制 Y 轴的刻度和 x 行的线，接下来绘制放在 X 轴底部的类别信息，也就是对应本文的图表的日期信息
+完成了绘制 Y 轴的刻度和 x 行的线，继续绘制放在 X 轴底部的类别信息，也就是对应本文的图表的日期信息。好在日期的表示的字符串也没有用到中文，依然不会踩到上文描述的中文字体的坑
 
 ```csharp
         // 绘制 X 轴，绘制类别信息
@@ -315,17 +319,17 @@ public class ModelReader
         }
 ```
 
-绘制类别信息也就是计算出文本的坐标，和使用 GetViewText 获取到文本的字符串，然后调用 DrawString 方法即可
+绘制类别信息的工作量就是计算出文本的坐标，和使用 GetViewText 方法，获取到具体类别里的用户可见的文本的字符串，然后调用 DrawString 方法即可
 
-完成坐标轴的绘制之后，接下来进入关键的 DrawArea 方法，在此方法里面，将会绘制图表的数据信息。将图表的各个系列的数据作为面积图绘制
+完成坐标轴的绘制之后，就进入关键的 DrawArea 方法，在此方法里面，将会绘制图表的数据信息。将图表的各个系列的数据作为面积图绘制
 
-绘制面积图的方法是获取到图表的各个系列的数值信息，根据这些数值创建出一段 Path Geometry 路径几何用于填充面积图。创建路径几何可使用 PathF 类型创建一个基于 float 存储信息的路径几何。这里的 PathF 就是 Path + Float 的意思，如以下代码进行创建
+绘制面积图图表的方法是获取到图表的各个系列的数值信息，根据这些数值创建出一段 Path Geometry 路径几何用于填充面积图。创建路径几何可使用 PathF 类型创建一个基于 float 存储信息的路径几何。这里的 PathF 就是 Path + Float 的意思，如以下代码进行创建
 
 ```csharp
   using var path = new PathF();
 ```
 
-在 MAUI 里，这个 PathF 是推荐做释放的，在各个平台的 PathF 的底层实现有所不同，不代表着一定需要释放。好在多调用释放是安全的，这里就加上 using 用来在方法执行结束释放。按照 Path 的创建惯例，开始点采用 Move 方法设置，如以下代码
+在 MAUI 里，这个 PathF 是推荐做释放的，在各个平台的 PathF 的底层实现有所不同，不代表着一定需要释放。好在多调用释放是安全的，这里就加上 using 用来在方法执行结束释放。开始绘制之前，先准备一点点路径几何创建的知识。按照 Path 的创建惯例，开始点采用 Move 方法设置，如以下代码
 
 ```csharp
   path.Move(startX, startY);
@@ -339,7 +343,7 @@ public class ModelReader
                 .Close();
 ```
 
-以上就是本文用到的核心绘制知识，在了解了基础用法，接下来开始绘制面积图
+如上面代码即可画出一段路径集合出来，本文会用到的也仅仅只是以上几个方法，这也就是本文用到的核心绘制路径的知识。当然，路径几何 PathF 是一个复杂的类型，拥有的方法和功能可远不止本文介绍的这一点，更多绘制知识，还请参阅官方文档。在了解了基础用法，接下来开始绘制面积图
 
 绘制面积图只是一些计算逻辑，通过给定的数据计算出 PathF 的内容，代码如下
 
@@ -378,14 +382,14 @@ public class ModelReader
         }
 ```
 
-创建 path 路径完成，即可绘制到画布。绘制需要先设置填充颜色，再绘制
+创建 path 路径完成，即可绘制到画布。按照惯例，绘制需要先设置填充颜色，再绘制
 
 ```csharp
                 // 在这份课件里，一定是纯色
                 var (success, a, r, g, b) =
                     BrushCreator.ConvertToColor(chartSeriesInfo.FillBrush!.GetFill<SolidFill>()!.RgbColorModelHex!.Val!);
 
-                var color = new Color(r, g, b, a);
+                var color = new Color(r, g, b, a); // 获取到各个系列的填充颜色
                 canvas.FillColor = color;
 
                 canvas.FillPath(path);
@@ -522,19 +526,19 @@ public class ModelReader
 
 ## 开发跨平台应用
 
-完成图表的绘制逻辑，接下来需要各个平台进行对接。基于 MAUI 的对接是十分简单的，按照惯例，是先安装 NuGet 库，然后调用库提供的方法即可完成对接。先对接 Windows 平台的 WPF 应用
+完成图表的绘制逻辑，接下来需要各个平台进行对接。与 MAUI 的对接是十分简单的，按照惯例，是先安装 NuGet 库，然后调用库提供的方法即可完成对接。先对接 Windows 平台的 WPF 应用
 
-在 WPF 应用里，这次采用的是对接图片文件渲染方法。通过 `Microsoft.Maui.Graphics.Skia` 将 Skia 和 MAUI 对接，使用 Skia 作为 MAUI 的画布，在绘制完成之后使用 Skia 保存本地图片文件，再使用 WPF 渲染保存的图片
+在 WPF 应用里，这次采用的是对接图片文件渲染方法。如本文开始的开发架构图所述，在 Windows 上通过 `Microsoft.Maui.Graphics.Skia` 将 Skia 和 MAUI 对接，使用 Skia 作为 MAUI 的画布，在绘制完成之后使用 Skia 保存本地图片文件，再使用 WPF 渲染保存的图片
 
-这不代表着在 WPF 里面，只能通过 Skia 才能和 MAUI 对接，也不代表着 WPF 对接 Skia 只能通过本地图片的显示。关于在 WPF 里面，直接对接 MAUI 请看 [WPF 使用 MAUI 的自绘制逻辑](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-MAUI-%E7%9A%84%E8%87%AA%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
+这不代表着在 WPF 里面，只能通过 Skia 才能和 MAUI 对接，也不代表着 WPF 对接 Skia 只能通过本地图片的显示。关于在 WPF 里面，直接对接 MAUI 的方法请看 [WPF 使用 MAUI 的自绘制逻辑](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-MAUI-%E7%9A%84%E8%87%AA%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
 
-关于在 WPF 里面，使用 WriteableBitmap 控件作为 Skia 的输出的方式，让 WPF 对接 Skia 请看 [WPF 使用 Skia 绘制 WriteableBitmap 图片](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Skia-%E7%BB%98%E5%88%B6-WriteableBitmap-%E5%9B%BE%E7%89%87.html )
+关于在 WPF 里面，使用 WriteableBitmap 控件作为 Skia 的输出的方式，让 WPF 对接 Skia 的方法请看 [WPF 使用 Skia 绘制 WriteableBitmap 图片](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Skia-%E7%BB%98%E5%88%B6-WriteableBitmap-%E5%9B%BE%E7%89%87.html )
 
-回到对接的逻辑，由于本文的 WPF 应用只需要将 Skia 保存的图片进行渲染，也就是说 WPF 层是可以不知道任何 MAUI 和 Skia 的逻辑，只需要知道保存的图片文件在哪即可。既然没有什么 WPF 的逻辑，那就先来关注一下 Skia 的对接逻辑
+回到对接的逻辑，由于本文的 WPF 应用只负责将 Skia 保存的图片进行渲染，也就是说 WPF 层是可以不知道任何 MAUI 和 Skia 的逻辑，只需要知道保存的图片文件在哪即可。既然没有什么 WPF 的逻辑，那就先来关注一下 Skia 的对接逻辑
 
 这里的 Skia 逻辑包括两个部分，一个是 Skia 输出到本地图片文件，另一个是 Skia 对接 MAUI 的逻辑。关于 Skia 对接 MAUI 的逻辑，细节可参阅 [dotnet 控制台 使用 Microsoft.Maui.Graphics 配合 Skia 进行绘图入门](https://blog.lindexi.com/post/dotnet-%E6%8E%A7%E5%88%B6%E5%8F%B0-%E4%BD%BF%E7%94%A8-Microsoft.Maui.Graphics-%E9%85%8D%E5%90%88-Skia-%E8%BF%9B%E8%A1%8C%E7%BB%98%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 文档，本文将不包含细节逻辑
 
-开始之前，先安装 NuGet 库，编辑 csproj 项目文件，加上以下代码用来安装 NuGet 库。安装的 NuGet 库包括用来解析 PPT 的 `dotnetCampus.DocumentFormat.OpenXml.Flatten` 和 `dotnetCampus.OpenXmlUnitConverter` 和 `DocumentFormat.OpenXml` 库，和 MAUI 的 `Microsoft.Maui.Graphics` 和 `Microsoft.Maui.Graphics.Skia` 库
+开始之前，按照惯例先安装 NuGet 库。在 dotnet 6 应用里，通过编辑 csproj 项目文件的方式可以快速安装 NuGet 库，在 csproj 文件上加上以下代码用来安装 NuGet 库。安装的 NuGet 库包括用来解析 PPT 的 `dotnetCampus.DocumentFormat.OpenXml.Flatten` 和 `dotnetCampus.OpenXmlUnitConverter` 和 `DocumentFormat.OpenXml` 库，和 MAUI 的 `Microsoft.Maui.Graphics` 和 `Microsoft.Maui.Graphics.Skia` 库
 
 ```xml
     <ItemGroup>
@@ -563,9 +567,9 @@ public interface IRenderCanvas
 }
 ```
 
-通过调用 Render 方法，传入委托，委托的参数就是 `Microsoft.Maui.Graphics.ICanvas` 接口
+通过调用 Render 方法，传入委托，委托的参数就是 `Microsoft.Maui.Graphics.ICanvas` 接口，在此委托里面完成实际的绘制逻辑
 
-创建 SkiaPngImageRenderCanvas 需要三个参数，分别是画布尺寸，也就是保存的图片的尺寸，和保存的文件。上层业务调用 Render 完成，将输出文件
+创建 SkiaPngImageRenderCanvas 需要三个参数，分别是宽度高度的画布尺寸，也就是保存的图片的尺寸，这里的单位是像素，和保存的文件。上层业务调用 Render 完成，将输出文件
 
 ```csharp
 
@@ -653,7 +657,7 @@ public class SkiaPngImageRenderCanvas : IRenderCanvas
 
 以上就完成了 Skia 的对接，接下来就交给 WPF 层，将 OpenXML 解析和 Skia 和 MAUI 对接一起
 
-先对接 OpenXML 解析，获取测试文件，将测试文件传入 ModelReader 构建出 AreaChartRender 用来绘制
+先对接 OpenXML 解析 PPT 图表的逻辑。获取测试文件，将测试文件传入 ModelReader 构建出 AreaChartRender 用来绘制，如此即可完成 OpenXML 的对接
 
 ```csharp
             var file = new FileInfo("Test.pptx");
@@ -662,7 +666,7 @@ public class SkiaPngImageRenderCanvas : IRenderCanvas
             var areaChartRender = modelReader.BuildAreaChartRender(file);
 ```
 
-接着定义输出的本地图片，创建 SkiaPngImageRenderCanvas 用来做画布
+接着定义输出的本地图片，创建 SkiaPngImageRenderCanvas 用来做画布。这里是随便找一个文件用来输出
 
 ```csharp
             var tempFile = Path.GetTempFileName();
@@ -745,7 +749,7 @@ public class SkiaPngImageRenderCanvas : IRenderCanvas
 
 可以看到在 Windows 下，通过 WPF 对接 MAUI 是十分简单的
 
-下面开始对接 Linux 平台，使用 GtkSharp 做应用，依然使用 Skia 做 MAUI 的渲染层
+下面开始对接 Linux 平台的应用，在 Linux 平台上使用 GtkSharp 框架做应用，依然使用 Skia 做 MAUI 的渲染层
 
 在 Linux 平台上的对接分为多个任务：
 
@@ -759,7 +763,7 @@ public class SkiaPngImageRenderCanvas : IRenderCanvas
 
 本文创建的 GtkSharp 应用，就是使用 [https://github.com/GtkSharp/GtkSharp](https://github.com/GtkSharp/GtkSharp) 提供的支持
 
-手动创建的方法是先创建一个 dotnet 6 的控制台应用，接着编辑 csproj 文件，修改为以下代码，安装 GtkSharp 和 SkiaSharp.Views.Gtk3 库。创建一个 GtkSharp 项目十分简单，只需要安装上支持 .NET Standard 2.0 及以上框架的 GtkSharp 库即可
+手动创建的方法是先创建一个 dotnet 6 的控制台应用，接着编辑 csproj 文件，修改为以下代码，安装 GtkSharp 和 SkiaSharp.Views.Gtk3 库。如以下代码可以了解到创建一个 GtkSharp 项目十分简单，只需要安装上支持 .NET Standard 2.0 及以上框架的 GtkSharp 库即可
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -801,13 +805,13 @@ dotnet new --install GtkSharp.Template.CSharp
 
 安装完成之后，即可使用如下命令创建项目，请将下面命令的 MyApplication 替换为你的项目名
 
-```csharp
+```
 dotnet new gtkapp -o MyApplication
 ```
 
 创建好了 GtkSharp 项目和安装完成了必要的 NuGet 包之后，接下来是让 Skia 和 GtkSharp 进行对接。在开始对接之前，需要说明的是，我推荐是在 Ubuntu 上构建和运行此项目，而不是在 Windows 上运行。尽管 GtkSharp 声称是支持 Windows 平台的，而且 [https://github.com/GtkSharp/GtkSharp](https://github.com/GtkSharp/GtkSharp) 仓库也做了很多辅助构建工作，但是实际在 Windows 平台上的构建体验还是比较闹心的。为什么这么说？构建的第一步是需要将依赖下载了，依赖放在 [https://github.com/GtkSharp/Dependencies](https://github.com/GtkSharp/Dependencies) 仓库里，将依赖下载到 `%LocalAppData%\Gtk\3.24.24\gtk.zip` 文件。然而这是一个 50MB 左右的文件，在国内的垃圾网速下……
 
-如果想要在 Windows 下构建，同时拉 gtk-3.24.24.zip 的速度太慢，可以试试我上传到 CSDN 下载的资源 [https://download.csdn.net/download/lindexi_gd/86362889](https://download.csdn.net/download/lindexi_gd/86362889)
+如果想要在 Windows 下构建，同时嫌弃拉 gtk-3.24.24.zip 的速度太慢，可以试试我上传到 CSDN 下载的资源 [https://download.csdn.net/download/lindexi_gd/86362889](https://download.csdn.net/download/lindexi_gd/86362889)
 
 如果构建成功，但是运行提示 `System.DllNotFoundException: Gtk: libgtk-3-0.dll` 失败，请参阅 [https://github.com/GtkSharp/GtkSharp/issues/337](https://github.com/GtkSharp/GtkSharp/issues/337)
 
@@ -860,9 +864,9 @@ dotnet new gtkapp -o MyApplication
         }
 ```
 
-在 `OnPaintSurface` 方法里面就是 Skia 的渲染回调，在此函数里，通过 `e.Surface.Canvas` 绘制的内容，将会输出到 GtkSharp 的窗口
+在 `OnPaintSurface` 方法里面就是 Skia 的渲染回调，有点和 WPF 的 OnRender 方法类似，在此函数里，通过 `e.Surface.Canvas` 绘制的内容，将会输出到 GtkSharp 的窗口
 
-根据上文的 WPF 对接 Skia 和 MAUI 的逻辑，可以了解到可以通过 Skia 的画布创建 MAUI 的 SkiaCanvas 画布，如以下代码
+根据上文的 WPF 对接 Skia 和 MAUI 的逻辑，可以了解到对接的方式是使用 Skia 的画布创建 MAUI 的 SkiaCanvas 画布，如以下代码
 
 ```csharp
 // the the canvas and properties
