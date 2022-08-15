@@ -578,6 +578,8 @@
 
  * [dotnet OpenXML 从文档生成创建文档的代码的库](dotnet-OpenXML-从文档生成创建文档的代码的库.md)
 
+ * [dotnet OpenXML 使用 MAUI 渲染 PPT 的面积图图表](dotnet-OpenXML-使用-MAUI-渲染-PPT-的面积图图表.md)
+
  * [dotnet OpenXML 修复 Office 文档里面包含格式不正确的 Uri 而无法解析](dotnet-OpenXML-修复-Office-文档里面包含格式不正确的-Uri-而无法解析.md)
 
  * [dotnet OpenXML 修复 Office 文档里面的百分比内容包含百分号](dotnet-OpenXML-修复-Office-文档里面的百分比内容包含百分号.md)
