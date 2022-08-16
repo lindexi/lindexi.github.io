@@ -3,6 +3,8 @@
 我在做一个图表工具软件，这个软件使用 MAUI 开发。我的需求是图表的内容需要和 PPT 的图表对接，需要用到 OpenXML 解析 PPT 内容，读取到 PPT 图表元素的内容，接着使用 MAUI 渲染层绘制图表元素。图表工具软件需要在 Windows 平台和 Linux 平台上运行。在 Windows 下，我采用 WPF 应用，用来辟谣说 MAUI 不支持 WPF 应用。 在 Linux 选用 Ubuntu 系统，采用 GTKSharp 应用加上 Skia 渲染对接 MAUI 框架
 
 <!--more-->
+<!-- CreateTime:2022/8/12 8:45:34 -->
+
 
 <!-- 发布 -->
 <!-- 博客 -->

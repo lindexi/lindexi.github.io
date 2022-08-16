@@ -191,6 +191,9 @@
 
 [dotnet OpenXML 解析 PPT 图表 解析日期时间表示内容](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E5%9B%BE%E8%A1%A8-%E8%A7%A3%E6%9E%90%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E8%A1%A8%E7%A4%BA%E5%86%85%E5%AE%B9.html )
 
+[dotnet OpenXML 使用 MAUI 渲染 PPT 的面积图图表](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BD%BF%E7%94%A8-MAUI-%E6%B8%B2%E6%9F%93-PPT-%E7%9A%84%E9%9D%A2%E7%A7%AF%E5%9B%BE%E5%9B%BE%E8%A1%A8.html )
+
+
 ## 工具
 
 [dotnet OpenXML 从文档生成创建文档的代码的库](https://blog.lindexi.com/post/dotnet-OpenXML-%E4%BB%8E%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E5%BA%93.html )
