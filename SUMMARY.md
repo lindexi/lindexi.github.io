@@ -1382,6 +1382,8 @@
 
  * [TotalCommander 设置 VisualStudio 开发者命令行](TotalCommander-设置-VisualStudio-开发者命令行.md)
 
+ * [Ubuntu 通过本机代理修复 NuGet 还原 error NU1301 失败](Ubuntu-通过本机代理修复-NuGet-还原-error-NU1301-失败.md)
+
  * [Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果](Unity-2019.3-将-RenderTexture-绑定到相机和物体作出镜子效果.md)
 
  * [Unity3D 2019 设置的 Playmode tint 有何作用](Unity3D-2019-设置的-Playmode-tint-有何作用.md)
