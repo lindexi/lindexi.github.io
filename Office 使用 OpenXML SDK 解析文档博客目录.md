@@ -266,6 +266,16 @@
 
 [Importing and Exporting OpenXml Files (WPF) ](https://www.grapecity.com/componentone/docs/wpf/online-excel/importingandexportin.html )
 
+### [GemBox.Document](https://www.gemboxsoftware.com/ )
+
+C# / VB.NET Word component
+
+<!-- ![](image/Office 使用 OpenXML SDK 解析文档博客目录/Office 使用 OpenXML SDK 解析文档博客目录0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2022818101656359.jpg)
+
+[https://www.gemboxsoftware.com](https://www.gemboxsoftware.com)
+
 ### VS 插件
 
 [bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio: This Power Tool is a Visual Studio add-in that provides an easy way to parse and edit Open Packaging Conventions files, including Word, Excel and PowerPoint documents.](https://github.com/bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio )

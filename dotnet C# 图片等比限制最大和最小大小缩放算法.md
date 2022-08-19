@@ -128,9 +128,8 @@
             var minScale = Math.Max(widthScale, heightScale);
             minScale = Math.Max(minScale, 1.0);
             var scale = Math.Min(minScale, maxScale);
-            // 尽可能使用整数
-            scale = Math.Ceiling(scale);
-            return new Size(width * scale, height * scale);
+            // 为了尽量使用整数，这里使用了 Math.Ceiling 计算
+            return new Size(Math.Ceiling(width * scale), Math.Ceiling(height * scale));
         }
 ```
 
