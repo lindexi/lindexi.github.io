@@ -460,28 +460,30 @@ ExceptionType: System.IndexOutOfRangeException
 
 在看到这个异常的时候，请问这是在做什么？为什么在这里炸了
 
-另一个不好的例子是在异常里面丢失了数据，在抛出异常的时候，没有带上足够的信息，如旧版本的 WPF 框架里面的 SplashScreen 代码如下
+另一个不好的例子是在异常里面丢失了数据，在抛出异常的时候，没有带上足够的信息，如某个代码里面判断了某个条件，然后抛出异常：
 
 ```csharp
 if (Marshal.GetLastWin32Error() != 0x582)
 {
-    throw new Win32Exception();
+    throw new FooException();
 }
 ```
 
-以上代码存在的坑就是没有告诉开发者具体的信息，在抛出的异常丢失了信息。在新版本的 WPF 框架，我修复了此问题，详细请看 [Add clearer win32 exception information in SplashScreen CreateWindow by lindexi · Pull Request #3923 · dotnet/wpf](https://github.com/dotnet/wpf/pull/3923 )
+以上代码存在的坑就是没有告诉开发者具体的信息，在抛出的异常丢失了信息。优化后的抛出异常如下：
 
 ```csharp
                 var lastWin32Error = Marshal.GetLastWin32Error();
                 if (lastWin32Error != 0x582)
                 {
-                    throw new Win32Exception(lastWin32Error);
+                    throw new FooException(lastWin32Error);
                 }
 ```
 
+开发者可以更好从 FooException 获取到更多的错误信息，方便了解为什么存在此异常
+
 #### 写出方便调试的代码
 
-这就是为什么异常不是用来随便扔的，想要在异常调试里面能够快速调试就需要依赖代码对异常的处理
+如上文的例子，可以看到，如果异常是随便扔的，那开发者在遇到异常时，也难以快速定位问题。想要在异常调试里面能够快速调试就需要依赖代码对异常的处理，下面将介绍一些常用的套路
 
 **减少线程委托使用**
 
@@ -496,7 +498,7 @@ if (Marshal.GetLastWin32Error() != 0x582)
 
 请问上面的代码的坑有哪些？
 
-如果是将上面的代码写在日志或上报等无法附加调试，那么能看到的信息是
+如果是将上面的代码写在日志或上报等无法附加调试的情况下，只能阅读输出信息，那么能看到的信息是：
 
 ```csharp
 ExceptionType： Exception
@@ -509,9 +511,9 @@ ExceptionMessage：林德熙是逗比
    在 System.Threading.ThreadHelper.ThreadStart()
 ```
 
-这样完全不知道这个代码是在哪里运行的，想要添加断点进行调试也不知道是在哪里添加断点
+这样完全不知道这个代码是在哪里运行的，想要添加断点进行调试也不知道是在哪里添加断点。无疑，这是一个比较差的异常抛出方式
 
-所以推荐的方法是减少在线程里面直接使用辣么大请使用方法，如我写了这样的方法
+所以推荐的方法是减少在线程里面直接使用辣么大请使用方法，推荐的是多包一层函数，如我写了这样的方法
 
 ```csharp
             new Thread((() =>
@@ -543,9 +545,25 @@ ExceptionMessage：林德熙是逗比
 
 另外，上面代码的另一个坑就是抛出的是 `Exception` 而不是具体的异常，这样在调试的时候不方便了解具体的内容，而且也不方便调试
 
+阅读到这里，还请新手伙伴们不要和我杠多调用一层函数的性能问题。必须说明的是，多加一层函数带来的性能损耗是非常小的，除非真的在写性能特别敏感的逻辑。即使是性能特别敏感的逻辑，多加一层函数为了提升调试效率，在大部分情况下，还是很划得来的。因为这里多加一层函数，那其他地方只要稍微少一点点逻辑，自然性能又上来
+
 **不要在静态构造函数抛出异常**
 
-填坑
+尽量不要在静态构造函数里面抛出异常，无论是自己有意抛出还是调用了某些逻辑，无意被抛出异常。因为在静态构造函数存在的一个问题在于，静态构造函数的调用时机是开发者不能完全掌控的，准确来说是难以完全掌控，即使这个版本能让开发者完全掌控，也许下个版本稍微改了逻辑，调用时机也被变更。由于调用时机难以控制，调用时机取决于哪个逻辑代码先碰到对应的类型，首个碰到类型的逻辑代码将会在开始之前，先执行对应的类型的静态构造函数。于是静态构造函数里面，抛出的异常，将存在比较迷的堆栈信息
+
+即使在 VisualStudio 里面调试，如果静态构造函数是放在某个库里面，且没有加载此库的 PDB 符号文件，那么大多数情况下在遇到抛出的异常，是难以快速反应过来是静态构造函数的异常
+
+特别是在静态构造函数里面存在空异常时，此时将会让大量的日志收集或者埋点上报的信息无效化
+
+而如果遇到调用时机存在多线程调用，那即使是有完全的代码，解决问题和调试都是比较玄学的，甚至对于很多新手来说，将直接无法调试。现在对于静态构造函数的调试异常的最重要一点就是： 尽量不要在静态构造函数抛出异常！！！
+
+没错，没有什么好的方法快速调试。只有在写代码的时候，注意尽量不要在静态构造函数抛出异常
+
+这也不代表在静态构造函数里面捕获所有的异常，如果你看到有人在静态构造函数捕获所有的异常（非特定的业务处理异常）那这个代码一定是在挖坑。因为这将会让应用程序出现不受控的情况，不受控的情况也许导致后续的其他模块出现更多非预期的行为，也就是让应用程序可能出现一些诡异的或者复现步骤很神奇的坑
+
+如果真需要在静态构造函数里面执行稍微复杂的逻辑，那推荐将逻辑拆开作为静态函数，然后由某个逻辑明确的进行调用。注意，不是比较复杂的逻辑就需要如此做，是稍微复杂就需要拆开作为静态函数，然后由某个逻辑明确的进行调用。 拆开的静态函数，也一定不能由某个静态构造函数调用，必须是由某个明确的逻辑进行调用。那什么是明确的逻辑呢？明确的逻辑就是开发者可以完全了解在什么情况和什么时机执行的逻辑
+
+通过让开发者能完全控制从静态构造函数拆开的逻辑，从而让应用程序减少不受控的行为，同时可以让拆开的静态函数在出现异常时，可以有更好的处理以及更好的告诉开发者是哪里出错
 
 **区分发布代码**
 
@@ -557,7 +575,7 @@ ExceptionMessage：林德熙是逗比
         static void Foo()
         {
 #if DEBUG
-            throw new Exception("林德熙是逗比");
+            throw new FooException("林德熙是逗比");
 #else
             Console.WriteLine("林德熙是逗比");
 #endif
@@ -565,9 +583,118 @@ ExceptionMessage：林德熙是逗比
 
 建议是在 DEBUG 下只要不符合预期就抛异常，这样可以在开发的时候减少诡异的使用
 
+更细节的做法是：
+
+对于抛出的异常，推荐在异常信息里面告诉开发者，这个异常是仅调试下抛出的，不要慌，不要去吓开发者
+
+```csharp
+        static void Foo()
+        {
+#if DEBUG
+            throw new FooException("Xxx，此异常仅调试下抛出");
+#else
+            Log("Xxx");
+#endif
+```
+
+此外，如果项目开发者比较多，也推荐附加上名字，方便其他开发者遇到异常时，可以找到能协助解决的伙伴
+
+```csharp
+        static void Foo()
+        {
+#if DEBUG
+            throw new FooException("Xxx，此异常仅调试下抛出，请找德熙");
+#else
+            Log("Xxx");
+#endif
+```
+
+以上的抛出调试异常的方法是通过条件编译符控制，对于基础库来说，大部分情况下都是使用发布版本。基础库的抛出调试异常的判断，可以通过在应用程序将状态设置给基础库，从而让基础库了解到当前是否在调试模式，如以下代码是在某个叫 D1.dll 的基础库
+
+```csharp
+// D1.dll
+
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+
+namespace Lindexi.ComponentModel
+{
+    /// <summary>
+    /// 包含在运行时判断编译器编译配置中调试信息相关的属性
+    /// </summary>
+    public static class DebuggingProperties
+    {
+        /// <summary>
+        /// 检查当前正在运行的主程序是否是在 Debug 配置下编译生成的
+        /// </summary>
+        public static bool IsDebug
+        {
+            get
+            {
+                if (_isDebug == null)
+                {
+                    Assembly assembly = Assembly.GetEntryAssembly();
+                    if (assembly == null)
+                    {
+                        assembly = Assembly.GetCallingAssembly();
+                    }
+
+                    // 如果是在测试项目，从 GetEntryAssembly 拿到的因为是使用测试项目 release 版本，而且测试项目使用一些非托管，所以无法拿到值。
+                    // 从 StackTrace 拿到的可能是 false 原因是测试项目用的不是 debug 版本
+                    // 所以从调用堆栈拿并且从 GetCallingAssembly 两个地方都判断，如果有一个地方是 测试运行，那么就是判断当前是在测试运行
+                    _isDebug = GetDebuggableAttribute(assembly) ||
+                               // ReSharper disable once AssignNullToNotNullAttribute
+                               GetDebuggableAttribute(new StackTrace()
+                                   .GetFrames().Last()
+                                   .GetMethod().Module
+                                   .Assembly);
+                }
+
+                return _isDebug.Value;
+
+                bool GetDebuggableAttribute(Assembly assembly)
+                {
+                    DebuggableAttribute debuggableAttribute = assembly.GetCustomAttribute<DebuggableAttribute>();
+                    return
+                        debuggableAttribute.DebuggingFlags
+                            .HasFlag(DebuggableAttribute.DebuggingModes.EnableEditAndContinue);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 设置当前是否在调试下，用于提高首次访问性能
+        /// </summary>
+        /// <param name="isDebug"></param>
+        public static void SetIsDebug(bool isDebug)
+        {
+            _isDebug = isDebug;
+        }
+
+        private static bool? _isDebug;
+    }
+}
+```
+
+在 D1.dll 基础库的其他逻辑，将会判断 IsDebug 决定是否抛出调试异常
+
+```csharp
+if (DebuggingProperties.IsDebug)
+{
+    throw new FooException("Xxx，此异常仅调试下抛出，请找德熙");
+}
+```
+
+通过以上的方法判断是否调试下，会比判断 [Debugger.IsAttached](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debugger.isattached?view=net-6.0) 稍微好几毛钱。通过 [Debugger.IsAttached](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debugger.isattached?view=net-6.0) 判断的是当前是否在被附加调试，判断的性能上，稍稍微会存在一点点问题，而且也会干扰发布版本的调试逻辑，从而对于一些问题难以进行附加调试
+
+如果担心以上代码使用反射会影响性能，那必须说明的一个点在于，以上的代码是静态的，只有首次调用才可能用到反射，即使有性能损耗，也是特别小的。另外，如果真的感觉性能比较差，也可以通过 SetIsDebug 函数，强行赋值，如此即可做到不需要调用任何反射，性能特别好
+
+
+
 **保存堆栈**
 
-很多初学 dotnet 的小伙伴喜欢吃掉全局的异常然后重新抛
+很多初学 dotnet 的小伙伴喜欢吃掉全局的异常然后重新抛，就如下面的逗比代码一样
 
 ```csharp
                 try
@@ -580,11 +707,29 @@ ExceptionMessage：林德熙是逗比
                 }
 ```
 
-这个做法是很逗比的，在外层拿到的 e 将会丢失了在 Foo 里面的堆栈信息
+这个做法是很逗比的，在外层拿到的 e 将会丢失了在 Foo 里面的堆栈信息。上面的代码纯属吃饱了没事干，不会有任何的优化，不仅降低性能，也让调试更加难。可选的做法有两个，要么就是不加上 `catch (Exception e)` 逻辑，执行运行即可
+
+```csharp
+Foo();
+```
+
+要么就使用 `throw;` 直接抛出，不要接住再重新抛出
+
+```csharp
+                try
+                {
+                    Foo();
+                }
+                catch (Exception e)
+                {
+                    // 这里可以执行一些逻辑
+                    throw;
+                }
+```
 
 **更多方法**
 
-我推荐小伙伴阅读以下博客了解在代码中如何写
+我推荐小伙伴阅读以下博客了解在代码中如何写异常逻辑
 
 - [.NET/C# 建议的异常处理原则 - walterlv](https://blog.walterlv.com/post/suggestions-for-handling-exceptions.html )
 
@@ -602,27 +747,27 @@ ExceptionMessage：林德熙是逗比
 
 ### 开启所有异常
 
-在进入异步等的过程，会发现有一部分的异常提示不在具体的代码，而是在上一层的代码提示，此时可以通过在提示的哪个异常就开启哪个异常的方法，找到对应的代码
+在进入异步等待的过程，也许会发现有一部分的异常提示不在具体的代码，而是在上一层的代码提示。这是因为异步的代码和实际代码的代码是存在出入的，异步的代码将会构建异步状态机，和实际编写的代码存在一定的出入。此时可以通过在提示的哪个异常就开启哪个异常的方法，找到对应的抛出异常的代码
 
-但是如果发现提示的异常是合并的异常，或者需要开启的太多了，可以尝试开启所有的异常
+但是如果发现提示的异常是合并的异常，或者需要开启的太多了，或者是每次抛出的异常都不一样，或者是难以确定准确的异常，可以尝试开启所有的异常
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法14.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F2019610162630273)
 
-在调试窗口异常设置里面，如果前面的分类是一个方形那么就是开启默认的异常，此时有很多异常都是被忽略的。再点击一次变成勾就可以开启所有的异常
+开启所有的异常的方法是在调试窗口异常设置里面，如果前面的分类是一个方形那么就是开启默认的异常，此时有很多异常都是被忽略的。再点击一次变成勾就可以开启所有的异常
 
-对于很多渣的软件，包括调试 VisualStudio 的过程是不建议开启所有的异常，因为有很多无关的代码特别是异常控制流程会干扰调试
+对于很多代码写比较渣的应用软件来说，包括调试 Visual Studio 的代码是不建议开启所有的异常，因为比较渣的软件有很多无关的代码特别是异常控制流程会干扰调试
 
-通过开启所有异常的调试大家也知道异常控制流程会影响到调试的方法，在我开启所有异常的时候，如果存在很多异常控制流程的代码，那么将会在调试的时候被这些诡异的代码影响
+通过开启所有异常的调试会存在的问题，大家也知道异常控制流程会影响到调试的方法，在我开启所有异常的时候，如果存在很多异常控制流程的代码，那么将会在调试的时候被这些诡异的代码影响
 
-但是有时候开启了所有的异常还没有让 VisualStudio 停在自己需要关注的代码上面，此时就需要用到调用堆栈
+但是有时候开启了所有的异常还没有让 VisualStudio 停在自己需要关注的代码上面，此时就需要用到调用堆栈来进行调试
 
 ### 调用堆栈
 
-在找到对应的异常的过程，请通过调用堆栈看到这个方法是如何被调用的，在被调用的函数上面，可以通过双击到达函数，此时在局部窗口等可以看到附近的值，这个方法可以找到代码运行的逻辑，也就是为什么会进入这个分支
+在找到对应的异常的过程，请通过调用堆栈看到这个方法是如何被调用的。在被调用的函数上面，可以通过双击到达函数的代码。配合在局部窗口等可以看到附近的值，这个方法可以找到代码运行的逻辑，也就是了解为什么会进入这个代码分支，和了解代码为什么如此执行
 
-如果发现很难通过调用堆栈看出代码运行的逻辑，也可以在调用堆栈上面右击函数添加断点，然后再次运行代码
+如果发现很难通过调用堆栈看出代码运行的逻辑，也可以在调用堆栈上面右击函数添加断点，然后再次运行代码。再次运行代码，在碰到对应的函数时，将可以进入函数断点，多次重新调试，配合单步调试，可以更好的理解代码运行的逻辑
 
 很多时候通过调用堆栈可以看出来调用方法进来的路径是否符合预期，以及在不符合预期的时候各个函数的参数是什么这些参数是否符合预期
 
