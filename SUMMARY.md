@@ -876,6 +876,8 @@
 
  * [dotnet 开发的单代码仓库和多代码仓库的优劣](dotnet-开发的单代码仓库和多代码仓库的优劣.md)
 
+ * [dotnet 开启 Fiddler 抓包将会让请求 HOST 头被更改](dotnet-开启-Fiddler-抓包将会让请求-HOST-头被更改.md)
+
  * [dotnet 强签名下使用 InternalsVisibleToAttribute 给程序集加上友元](dotnet-强签名下使用-InternalsVisibleToAttribute-给程序集加上友元.md)
 
  * [dotnet 忽略输出文件夹的正则表达式](dotnet-忽略输出文件夹的正则表达式.md)
@@ -2971,6 +2973,8 @@
  * [安装visualStudio 出现 cant install Microsoft.TeamFoundation.OfficeIntegration.Resources](安装visualStudio-出现-cant-install-Microsoft.TeamFoundation.OfficeIntegration.Resources.md)
 
  * [完整的 P2P 应用需要包含哪些功能](完整的-P2P-应用需要包含哪些功能.md)
+
+ * [尝试 IIncrementalGenerator 进行增量 Source Generator 生成代码](尝试-IIncrementalGenerator-进行增量-Source-Generator-生成代码.md)
 
  * [希沃白板如何在公式里面输入绝对值符号](希沃白板如何在公式里面输入绝对值符号.md)
 
