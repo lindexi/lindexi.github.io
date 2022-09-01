@@ -239,6 +239,7 @@
 - [服务器端 Office 自动化注意事项](https://support.microsoft.com/zh-cn/help/257757/considerations-for-server-side-automation-of-office )
 - [爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/ )
 - [RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15191386.html)
+- [Polymath Programmer](http://polymathprogrammer.com/ )
 
 - [Tutorial: how to port a project from Interop Word API to Open XML SDK](https://pvs-studio.com/en/blog/posts/csharp/0856/ )
 - [Analyzing the code quality of Microsoft's Open XML SDK](https://pvs-studio.com/en/blog/posts/csharp/0777/ )
