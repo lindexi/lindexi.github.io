@@ -2162,7 +2162,7 @@
 
  * [WPF 从 DrawingVisual 转 BitmapImage 图片](WPF-从-DrawingVisual-转-BitmapImage-图片.md)
 
- * [WPF 从 RGB 字符串转纯色画刷的方法](WPF-从-RGB-字符串转纯色画刷的方法.md)
+ * [WPF 从 RGB 字符串转纯色颜色画刷的方法](WPF-从-RGB-字符串转纯色颜色画刷的方法.md)
 
  * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
 
