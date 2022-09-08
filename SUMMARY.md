@@ -3132,6 +3132,8 @@
 
  * [让 snoop 支持 .NET Core WPF 调试](让-snoop-支持-.NET-Core-WPF-调试.md)
 
+ * [记 Win8.1 某应用渲染抛出 OutOfMemoryException 异常及修复方法](记-Win8.1-某应用渲染抛出-OutOfMemoryException-异常及修复方法.md)
+
  * [记一次调试资源管理器未响应经验](记一次调试资源管理器未响应经验.md)
 
  * [记因为 NVIDIA 显驱错误而让 WPF 应用启动闪退问题](记因为-NVIDIA-显驱错误而让-WPF-应用启动闪退问题.md)
