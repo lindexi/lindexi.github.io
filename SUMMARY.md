@@ -762,6 +762,8 @@
 
  * [dotnet 使用 System.CommandLine 写命令行程序](dotnet-使用-System.CommandLine-写命令行程序.md)
 
+ * [dotnet 使用 TaskTupleAwaiter 同时等待多个任务简化代码写法](dotnet-使用-TaskTupleAwaiter-同时等待多个任务简化代码写法.md)
+
  * [dotnet 使用 TypeNameFormatter 库格式化输出反射泛型类型](dotnet-使用-TypeNameFormatter-库格式化输出反射泛型类型.md)
 
  * [dotnet 使用 WpfAnalyzers 辅助分析 WPF 应用代码缺陷](dotnet-使用-WpfAnalyzers-辅助分析-WPF-应用代码缺陷.md)
@@ -2875,6 +2877,8 @@
  * [创建不带BOM 的UTF8](创建不带BOM-的UTF8.md)
 
  * [制作的 dotnet tool 运行失败提示依赖缺失](制作的-dotnet-tool-运行失败提示依赖缺失.md)
+
+ * [剪贴板被占用导致应用使用剪贴板拷贝内容失败抛出 COMException 0x800401D0 错误](剪贴板被占用导致应用使用剪贴板拷贝内容失败抛出-COMException-0x800401D0-错误.md)
 
  * [加强版在国内分发 UWP 应用正确方式 通过win32安装UWP应用](加强版在国内分发-UWP-应用正确方式-通过win32安装UWP应用.md)
 
