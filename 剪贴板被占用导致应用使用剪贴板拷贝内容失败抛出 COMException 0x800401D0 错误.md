@@ -3,6 +3,8 @@
 本文记录某些软件，例如 向日葵远程控制 软件占用剪贴板，导致 WPF 应用使用剪贴板拷贝内容和设置剪贴板时，抛出 System.Runtime.InteropServices.COMException (0x800401D0): OpenClipboard 失败 (0x800401D0 (CLIPBRD_E_CANT_OPEN)) 异常
 
 <!--more-->
+<!-- CreateTime:2022/9/9 15:39:17 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
