@@ -113,3 +113,22 @@ git pull origin 37c7473807581cde1215374856e5fd8f285c21a9
 ```
 
 获取代码之后，进入 JahawciceyainalljoHeneeqearhi 文件夹
+
+既然实现如此简单，那自然还有其他的库也可以实现相同的功能。例如 UniTask 库，这是一个支持在 Unity 更方便做异步的库，开源地址： [https://github.com/Cysharp/UniTask ](https://github.com/Cysharp/UniTask )
+
+在非 Unity 下也依然可用，使用之后有两个可选写法，一个是 UniTask.WhenAll 等待方法，另一个是更加简洁的和 TupleTaskAwaiter 几乎完全相同的直接等待的方法，如以下的例子
+
+```csharp
+    var task1 = GetTextAsync(UnityWebRequest.Get("http://google.com"));
+    var task2 = GetTextAsync(UnityWebRequest.Get("http://bing.com"));
+    var task3 = GetTextAsync(UnityWebRequest.Get("http://yahoo.com"));
+
+    // 方法一是通过 UniTask.WhenAll 等待
+    // concurrent async-wait and get results easily by tuple syntax
+    var (google, bing, yahoo) = await UniTask.WhenAll(task1, task2, task3);
+
+    // 方法二是直接等待
+    // shorthand of WhenAll, tuple can await directly
+    var (google2, bing2, yahoo2) = await (task1, task2, task3);
+```
+
