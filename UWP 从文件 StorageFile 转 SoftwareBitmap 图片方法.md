@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/7/25 8:28:00 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 使用以下三步即可从文件 StorageFile 转 SoftwareBitmap 图片
 

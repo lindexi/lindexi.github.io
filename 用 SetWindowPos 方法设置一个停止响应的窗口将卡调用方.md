@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/5/16 8:49:51 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 原本我以为调用 User32 里面的函数，大部分都是很十分快速返回的。刚好今天遇到了测试告诉我应用没响应，这是一个多进程模型的应用。刚好 [lsj](https://blog.sdlsj.net) 修好了 [dnSpy](https://blog.lindexi.com/post/%E6%94%AF%E6%8C%81-dotnet-6-%E7%9A%84-dnSpy-%E7%A5%9E%E5%99%A8%E7%89%88%E6%9C%AC.html) 在 dotnet 6 的调试，于是我就在测试小姐姐那里用 dnSpy 挂上调试
 

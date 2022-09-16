@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/3/12 10:08:49 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 讨论的地方是： [How about change the type of ManipulationDeltaEventArgs.Manipulators property to ReadOnlyCollection · Discussion #6249 · dotnet/wpf](https://github.com/dotnet/wpf/discussions/6249 )
 

@@ -8,7 +8,6 @@
 
 <!-- 标签：MAUI,MauiGraphics,Skia,SkiaSharp,渲染 -->
 <!-- 发布 -->
-<!-- 博客 -->
 
 如 [dotnet 控制台 使用 Microsoft.Maui.Graphics 配合 Skia 进行绘图入门](https://blog.lindexi.com/post/dotnet-%E6%8E%A7%E5%88%B6%E5%8F%B0-%E4%BD%BF%E7%94%A8-Microsoft.Maui.Graphics-%E9%85%8D%E5%90%88-Skia-%E8%BF%9B%E8%A1%8C%E7%BB%98%E5%9B%BE%E5%85%A5%E9%97%A8.html ) 提供的方法，先新建项目安装必要的库
 

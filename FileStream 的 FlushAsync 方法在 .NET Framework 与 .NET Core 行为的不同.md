@@ -5,7 +5,6 @@
 <!--more-->
 <!-- CreateTime:2022/2/7 8:56:20 -->
 
-<!-- 博客 -->
 <!-- 发布 -->
 
 在使用 HID 设备进行 IO 通讯时，可以采用 FileStream 包装，从而方便进行异步读写，然而在写入完成时，期望调用 FlushAsync 方法将缓存内容刷入设备。然而调用 FlushAsync 时，在 .NET Framework 下的默认行为是将 flushToDisk 参数设置为 true 的值，这将会导致抛出操作对象不支持异常。在 .NET Core 下，如 [Stephen Toub](https://github.com/stephentoub ) 大佬所说，当前没有一个系统提供了异步的 Flush 的支持，因此在 .NET Core 调用 FlushAsync 时，相当于设置为 flushToDisk 参数设置为 false 的刷入缓存到设备的行为
