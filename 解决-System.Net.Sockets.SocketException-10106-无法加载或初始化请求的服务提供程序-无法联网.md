@@ -10,8 +10,6 @@
 
 <!-- 发布 -->
 
-<!-- 博客 -->
-
 这里的 10106 是 Win32 的 Socket 错误码，可以从 [Windows Sockets Error Codes (Winsock2.h) - Win32 apps Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/winsock/windows-sockets-error-codes-2 ) 文档了解到 10106 对应的是 WSAEPROVIDERFAILEDINIT 错误，描述如下
 
 > Service provider failed to initialize.

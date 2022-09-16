@@ -9,7 +9,6 @@
 <!-- CreateTime:2022/2/12 10:41:44 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 咱可以使用 NamedPipeClientStream 去连接一个管道服务，从而建立多进程之间的通讯。在连接时，最好是先有管道服务启动，然后再启动管道客户端 NamedPipeClientStream 进行连接。因为如果在 NamedPipeClientStream 开始 Connect 时，还不存在管道服务，那将有一段时间进行 CPU 的空跑
 

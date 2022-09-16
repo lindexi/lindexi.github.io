@@ -9,7 +9,6 @@
 <!-- CreateTime:2022/8/8 19:28:27 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 使用 Skia 可以很完美输出 SVG 图片作为绘制的输出。然而从 2011 开始，就有开发者在 Google 的论坛里问大佬们，是否 Skia 可以自己带上 SVG 的解析，支持传入 SVG 作为图片进行绘制。谷歌的回答是很快就会加入 SVG 导入的支持，然而现在是 2022 了，依然还没有此功能。既然 Skia 没有这个功能，那也不能要求对 Skia 的封装 SkiaSharp 有这个功能吧，如 [Matthew Leibowitz](https://github.com/mattleibow) 大佬的回复
 
