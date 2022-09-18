@@ -4,6 +4,7 @@
 
 <!--more-->
 
+<!-- 博客 -->
 <!-- 发布 -->
 
 在 [Performance Improvements in .NET 7 - .NET Blog](https://devblogs.microsoft.com/dotnet/performance_improvements_in_net_7/) 这篇官方开发博客里面提到了 dotnet 7 的各个方面的性能优化，其中就包括了本身的主角，对 bool 与 string 互转的性能优化。此优化的核心实现代码请参阅 [https://github.com/dotnet/runtime/pull/64782](https://github.com/dotnet/runtime/pull/64782)
