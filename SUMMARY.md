@@ -734,6 +734,8 @@
 
  * [dotnet 使用 GZipStream 压缩字符串](dotnet-使用-GZipStream-压缩字符串.md)
 
+ * [dotnet 使用 IndentedTextWriter 辅助生成代码时生成带缩进的内容](dotnet-使用-IndentedTextWriter-辅助生成代码时生成带缩进的内容.md)
+
  * [dotnet 使用 Infer# 自动分析代码缺陷](dotnet-使用-Infer-自动分析代码缺陷.md)
 
  * [dotnet 使用 Interlocked 实现一个无锁的快速无序仅写集合](dotnet-使用-Interlocked-实现一个无锁的快速无序仅写集合.md)
@@ -2854,6 +2856,8 @@
 
  * [使用 Silk.NET 创建 OpenGL 空窗口项目例子](使用-Silk.NET-创建-OpenGL-空窗口项目例子.md)
 
+ * [使用 Uno Islands 在现有 WPF 里面嵌入 Uno 框架](使用-Uno-Islands-在现有-WPF-里面嵌入-Uno-框架.md)
+
  * [修复 dotnet Core 缺SDK编译失败](修复-dotnet-Core-缺SDK编译失败.md)
 
  * [修复 SmartAssembly 混淆 .NET 6 时提示 Unable to load runtime config file 失败](修复-SmartAssembly-混淆-.NET-6-时提示-Unable-to-load-runtime-config-file-失败.md)
@@ -3111,6 +3115,8 @@
  * [考古 dotnet 的不同版本](考古-dotnet-的不同版本.md)
 
  * [聊聊 2020 的 dotnet 各大开源项目仓库的情况](聊聊-2020-的-dotnet-各大开源项目仓库的情况.md)
+
+ * [聊聊 dotnet 7 对 bool 与字符串互转的底层性能优化](聊聊-dotnet-7-对-bool-与字符串互转的底层性能优化.md)
 
  * [自动更新所有 Git 仓库](自动更新所有-Git-仓库.md)
 
