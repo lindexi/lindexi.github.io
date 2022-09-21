@@ -7,9 +7,7 @@
 
 
 <!-- CreateTime:2022/5/23 20:17:28 -->
-
 <!-- 发布 -->
-<!-- 博客 -->
 
 这个问题似乎是 CLR 底层的问题，我将问题报告给官方，请看 [Using File.Exists to check the pipe created will make the NamedPipeClientStream connect fail · Issue #69604 · dotnet/runtime](https://github.com/dotnet/runtime/issues/69604 )
 

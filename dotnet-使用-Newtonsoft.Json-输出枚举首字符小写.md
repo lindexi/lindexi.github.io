@@ -9,7 +9,6 @@
 <!-- CreateTime:2021/11/19 19:05:42 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 实现方法是加上 JsonConverterAttribute 特性，传入 StringEnumConverter 转换器，再加上参数设置首字符小写
 
