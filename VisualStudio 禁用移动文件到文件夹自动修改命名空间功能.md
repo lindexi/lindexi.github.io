@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/8/31 10:35:38 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 关闭此智能(zhang)的功能的方法是：进入 工具->选项 然后进入项目和解决方案选项卡里面的常规选项卡，去掉移动文件时启用命名空间更新选项即可。对应英文版本的是在 `Projects and Solutions`->`General` 的 `Enable namespace update when moving files` 选项
 
@@ -19,6 +18,4 @@
 英文版：
 
 <!-- ![](image/VisualStudio 禁用移动文件到文件夹自动修改命名空间功能/VisualStudio 禁用移动文件到文件夹自动修改命名空间功能0.png) -->
-
 ![](http://image.acmx.xyz/lindexi%2F20228311035501070.jpg)
-
