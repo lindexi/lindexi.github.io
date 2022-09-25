@@ -296,13 +296,17 @@ VIRTUAL_KEY
 
 以上代码就完成了创建 Win32 窗口
 
-## 获取显卡
+## 获取显示适配器接口
 
-这一步是可选的，通过枚举 DX 提供的抽象的显示适配器接口，可以用来后续创建 D3D 设备。本文这里是给大家演示如何获取抽象的显示适配器接口的方法
+这一步是可选的，通过枚举 DX 提供的抽象的显示适配器接口，可以用来后续创建 D3D 设备。本文这里是给大家演示如何获取抽象的显示适配器接口的方法，没有指定显示适配器接口也是可以创建 D3D 设备
 
-这里获取到的抽象的显示适配器接口，在大部分情况下都是和具体的显卡相关的，但是不代表着一定就是真实的显卡
+显示适配器接口 IDXGIAdapter 是对硬件或软件的一个抽象，可以是一个显卡，也可以是一个软件渲染器。这里获取到的抽象的显示适配器接口，在大部分情况下都是和具体的显卡相关的，但是不代表着一定就是真实的显卡
 
-先使用 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 提供的 [EnumAdapterByGpuPreference](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nf-dxgi1_6-idxgifactory6-enumadapterbygpupreference) 方法枚举显卡，这个方法的功能是可以按照给定的参数进行排序，特别方便开发时，获取首个可用显卡
+下图是从官方文档拷贝的，一个电脑加两个显卡的对象关系
+
+![](http://image.acmx.xyz/lindexi%2F2022924218404239.jpg)
+
+先尝试使用 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 提供的 [EnumAdapterByGpuPreference](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nf-dxgi1_6-idxgifactory6-enumadapterbygpupreference) 方法枚举显卡，这个方法的功能是可以按照给定的参数进行排序，特别方便开发时，获取首个可用显卡
 
 想要使用 [EnumAdapterByGpuPreference](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nf-dxgi1_6-idxgifactory6-enumadapterbygpupreference) 方法，需要先获取 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 对象。而 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 对象可以通过工厂创建 [IDXGIFactory2](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_2/nn-dxgi1_2-idxgifactory2) 对象间接获取
 
@@ -323,7 +327,7 @@ VIRTUAL_KEY
 
 先尝试从 [IDXGIFactory2](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_2/nn-dxgi1_2-idxgifactory2) 对象获取 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 对象
 
-在 DX 的设计上，接口都是一个个版本迭代的，为了保持兼容性，只是新加接口，而不是更改原来的接口定义。也就是获取到的对象，也许有在这台设备上的 DX 版本，能支持到 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 版本，因此可以使用 `QueryInterface*` 方法，例如 `QueryInterfaceOrNull` 方法，尝试获取到更新的版本的接口对象。使用封装的 `QueryInterfaceOrNull` 方法，可以在不支持时返回空，通过判断返回值即可了解是否支持
+在 DX 的设计上，接口都是一个个版本迭代的，为了保持兼容性，只是新加接口，而不是更改原来的接口定义。也就是获取到的对象，也许有在这台设备上的 DX 版本，能支持到 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 版本，通用的做法是调用 `QueryInterface*` 方法，例如 `QueryInterfaceOrNull` 方法，尝试获取到更新的版本的接口对象。使用封装的 `QueryInterfaceOrNull` 方法，可以在不支持时返回空，通过判断返回值即可了解是否支持
 
 ```csharp
         DXGI.IDXGIFactory6? factory6 = factory.QueryInterfaceOrNull<DXGI.IDXGIFactory6>();
@@ -355,7 +359,7 @@ VIRTUAL_KEY
             }
 ```
 
-再扔掉使用软渲染的
+再扔掉使用软渲染的，扔掉软渲染的这一步只是为了演示如何判断获取到的显示适配器接口是采用软渲染的
 
 ```csharp
             // 先告诉系统，要高性能的显卡
@@ -515,7 +519,9 @@ Console.WriteLine($"枚举到 {adapter.Description1.Description} 显卡");
 
 以上代码的 CheckError 方法，将会在失败抛出异常
 
-后续期望使用的是 [ID3D11Device1](https://learn.microsoft.com/zh-tw/windows/win32/api/d3d11_1/nn-d3d11_1-id3d11device1) 接口，按照惯例，从 `d3D11Device` 获取
+创建成功，可以获取到 ID3D11Device 和 ID3D11DeviceContext 类型的对象和实际的功能等级。 这里的 ID3D11Device 就是 D3D 设备，提供给交换链绑定的功能，可以绘制到交换链的缓存里，从而被交换链刷新到屏幕上。这里的 ID3D11DeviceContext 是包含了 D3D 设备的环境和配置，可以用来设置渲染状态等
+
+由于后续期望使用的是 [ID3D11Device1](https://learn.microsoft.com/zh-tw/windows/win32/api/d3d11_1/nn-d3d11_1-id3d11device1) 接口，按照惯例，从 `d3D11Device` 获取
 
 ```csharp
         // 大部分情况下，用的是 ID3D11Device1 和 ID3D11DeviceContext1 类型
@@ -540,11 +546,13 @@ Console.WriteLine($"枚举到 {adapter.Description1.Description} 显卡");
 
 创建设备完成之后，接下来就是创建交换链和关联窗口。创建交换链需要很多参数，在 DX 的设计上，将参数放入到 SwapChainDescription 类型里面。和 DX 的接口设计一样，也有多个 SwapChainDescription 版本
 
-创建 SwapChainDescription 参数的代码如下
+创建 SwapChainDescription1 参数的代码如下
 
 ```csharp
+        // 颜色格式，如果后续准备接入 WPF 那推荐使用此格式
         DXGI.Format colorFormat = DXGI.Format.B8G8R8A8_UNorm;
 
+        // 缓存的数量，包括前缓存。大部分应用来说，至少需要两个缓存，这个玩过游戏的伙伴都知道
         const int FrameCount = 2;
 
         DXGI.SwapChainDescription1 swapChainDescription = new()
@@ -606,7 +614,7 @@ Console.WriteLine($"枚举到 {adapter.Description1.Description} 显卡");
         D2D.ID2D1Factory1 d2DFactory = D2D.D2D1.D2D1CreateFactory<D2D.ID2D1Factory1>();
 ```
 
-先从交换链获取到 ID3D11Texture2D 对象
+先从交换链获取到 ID3D11Texture2D 对象，通过 IDXGISwapChain1 的 GetBuffer 获取交换链的一个后台缓存
 
 ```csharp
         D3D11.ID3D11Texture2D backBufferTexture = swapChain.GetBuffer<D3D11.ID3D11Texture2D>(0);
