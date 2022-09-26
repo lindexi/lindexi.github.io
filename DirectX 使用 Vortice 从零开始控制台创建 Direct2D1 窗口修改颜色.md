@@ -697,3 +697,14 @@ git pull origin 162977106065bd3cf7bfbed0a87828c992b8df3d
 ```
 
 获取代码之后，进入 HoyebenawlerWegemnardicheba 文件夹
+
+## 更多博客
+
+渲染部分，关于 SharpDx 使用，包括入门级教程，请参阅：
+
+- [WPF 使用 SharpDx 渲染博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+- [SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
+
+在 WPF 框架的渲染部分，请参阅： [WPF 底层渲染_lindexi_gd的博客-CSDN博客](https://blog.csdn.net/lindexi_gd/category_9276313.html?spm=1001.2014.3001.5482 )
+
+更多关于我博客请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
