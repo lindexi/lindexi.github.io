@@ -372,6 +372,8 @@
 
  * [Developing Universal Windows Apps 开发UWA应用 问答](Developing-Universal-Windows-Apps-开发UWA应用-问答.md)
 
+ * [DirectX 使用 Vortice 从零开始控制台创建 Direct2D1 窗口修改颜色](DirectX-使用-Vortice-从零开始控制台创建-Direct2D1-窗口修改颜色.md)
+
  * [dot net core 使用 IPC 进程通信](dot-net-core-使用-IPC-进程通信.md)
 
  * [dot net core 使用 usb](dot-net-core-使用-usb.md)

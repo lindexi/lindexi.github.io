@@ -1,7 +1,7 @@
 
 # WPF 使用 SharpDX
 
-本文告诉大家如何在 WPF 使用 SharpDX ，只是入门。
+本文告诉大家如何在 WPF 使用 SharpDX 做绘制，本文是入门级博客
 
 <!--more-->
 
