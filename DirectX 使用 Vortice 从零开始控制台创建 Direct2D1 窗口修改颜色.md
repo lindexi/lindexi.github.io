@@ -3,6 +3,8 @@
 本文将告诉大家如何使用 Vortice 底层库从零开始，从一个控制台项目，开始搭建一个最简单的使用 Direct2D1 的 DirectX 应用。本文属于入门级博客，期望本文能让大家了解 Vortice 底层库是可以如何调用 DirectX 的功能，以及了解 DirectX 中，特别是 D2D 部分的初始化逻辑
 
 <!--more-->
+<!-- CreateTime:2022/9/26 8:23:45 -->
+
 
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D, -->
 <!-- 发布 -->
