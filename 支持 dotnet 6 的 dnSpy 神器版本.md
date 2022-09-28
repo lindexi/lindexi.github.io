@@ -7,7 +7,7 @@
 
 <!-- 标签：dnSpy -->
 <!-- 发布 -->
-<!-- 博客 -->
+
 
 什么是 dnSpy 神器？请看 [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](https://blog.walterlv.com/post/edit-and-recompile-assembly-using-dnspy.html )
 
@@ -24,17 +24,17 @@
 如 [[DAC][DBI] ICorDebugModule::GetMetaDataInterface fails in net6.0 for "Anonymously Hosted DynamicMethods Assembly" in unit test project. · Issue #62977 · dotnet/runtime](https://github.com/dotnet/runtime/issues/62977 ) 所说的原因，由于 `"Anonymously Hosted DynamicMethods Assembly"` 没有定义 IMetaDataImport2 接口，因此在 [https://github.com/dnSpy/dnSpy/blob/2b6dcfaf602fb8ca6462b8b6237fdfc0c74ad994/Extensions/dnSpy.Debugger/dnSpy.Debugger.DotNet.CorDebug/Impl/ModuleCreator.cs#L94-L96](https://github.com/dnSpy/dnSpy/blob/2b6dcfaf602fb8ca6462b8b6237fdfc0c74ad994/Extensions/dnSpy.Debugger/dnSpy.Debugger.DotNet.CorDebug/Impl/ModuleCreator.cs#L94-L96) 将拿到空，如以下代码，将抛出 InvalidOperationException 错误
 
 ```csharp
-			var comMetadata = dnModule.CorModule.GetMetaDataInterface<IMetaDataImport2>();
-			if (comMetadata is null)
-				throw new InvalidOperationException();
+            var comMetadata = dnModule.CorModule.GetMetaDataInterface<IMetaDataImport2>();
+            if (comMetadata is null)
+                throw new InvalidOperationException();
 ```
 
 修复的方式就是不抛出异常，而是自己定义一个 继承 DmdLazyMetadataBytes 类型的 DmdLazyMetadataBytesNull 类型，进行返回，如以下代码
 
 ```csharp
-			if (comMetadata is null)
-				// "Anonymously Hosted DynamicMethods Assembly" not implement IMetaDataImport2, we just return DmdLazyMetadataBytesNull
-				return () => new DmdLazyMetadataBytesNull();
+            if (comMetadata is null)
+                // "Anonymously Hosted DynamicMethods Assembly" not implement IMetaDataImport2, we just return DmdLazyMetadataBytesNull
+                return () => new DmdLazyMetadataBytesNull();
 ```
 
 同时在 DmdAppDomainImpl.cs 里面，返回 DmdNullMetadataReader 即可，如此也许会影响读取程序集的信息，但好过无法调试
@@ -42,8 +42,8 @@
 这个 `"Anonymously Hosted DynamicMethods Assembly"` 没有定义 IMetaDataImport2 接口，也影响 [https://github.com/dnSpy/dnSpy/blob/2b6dcfaf602fb8ca6462b8b6237fdfc0c74ad994/Extensions/dnSpy.Debugger/dnSpy.Debugger.DotNet.CorDebug/dndbg/Engine/CorAssembly.cs#L56-L60](https://github.com/dnSpy/dnSpy/blob/2b6dcfaf602fb8ca6462b8b6237fdfc0c74ad994/Extensions/dnSpy.Debugger/dnSpy.Debugger.DotNet.CorDebug/dndbg/Engine/CorAssembly.cs#L56-L60) 的代码，如以下代码，拿到的 ManifestModule 是空值。好在这里只是在 dnSpy 应用的 Debug 模式才会炸掉
 
 ```csharp
-				var module = ManifestModule;
-				Debug2.Assert(module is not null);
+                var module = ManifestModule;
+                Debug2.Assert(module is not null);
 ```
 
 修复的方法只是将 Assert 的代码干掉即可

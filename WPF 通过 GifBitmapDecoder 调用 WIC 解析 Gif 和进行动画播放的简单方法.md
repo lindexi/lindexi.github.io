@@ -7,7 +7,6 @@
 
 
 <!-- 标签：WPF，gif -->
-<!-- 博客 -->
 <!-- 发布 -->
 
 在[上一篇](https://blog.lindexi.com/post/wpf-GifBitmapDecoder-%E8%A7%A3%E6%9E%90-gif-%E6%A0%BC%E5%BC%8F.html)博客告诉大家，可以通过 GifBitmapDecoder 调用 WIC 层解析 GIF 图片

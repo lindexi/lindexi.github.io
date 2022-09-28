@@ -5,8 +5,6 @@
 <!--more-->
 <!-- CreateTime:2022/6/28 15:51:59 -->
 
-
-<!-- 博客 -->
 <!-- 发布 -->
 
 在 WPF 应用加载图片时，将会调用到系统的 Mscms.dll 组件。刚好我遇到一个用户的设备上，他的 Mscms.dll 是损坏的，在 `C:\Windows\SysWOW64\` 文件夹里面的 Mscms.dll 是 x64 的，于是在 WPF 加载将会抛出如下异常
@@ -34,4 +32,4 @@ System.Windows.Markup.XamlParseException: 初始化“System.Windows.Media.Imagi
 
 修复方法是去下载对应系统版本的 Mscms.dll 进行替换。我从 [https://www.dll-files.com/mscms.dll.html](https://www.dll-files.com/mscms.dll.html) 里找到对应的版本，也就是 Win10 对应 Win10 的，而 Win7 对应 Win7 的，对 32 位的对应 32 位，对 64 位的对应 64 位，下载解压缩，放在对应的文件夹里面。如 32 位的放在 `C:\Windows\SysWOW64\` 文件夹，如 64 位的放在 `C:\Windows\System32\` 文件夹里面，替换原有文件即可
 
-另外的可能由于 Mscms.dll 颜色配置导致起不来的，是在系统的颜色配置里面设置很诡异，解决方法是还原到默认。设置的入口还请自行搜 `配置显示器颜色配置文件` 的方法
+另外的可能由于 Mscms.dll 颜色配置导致起不来的，是在系统的颜色配置里面设置很诡异，解决方法是还原到默认。设置的入口还请自行搜 `配置显示器颜色配置文件` 的方法，此方式也可以修复 [WPF 界面打不开提示 System.ArithmeticException Overflow or underflow in the arithmetic operation 异常](https://blog.lindexi.com/post/WPF-%E7%95%8C%E9%9D%A2%E6%89%93%E4%B8%8D%E5%BC%80%E6%8F%90%E7%A4%BA-System.ArithmeticException-Overflow-or-underflow-in-the-arithmetic-operation-%E5%BC%82%E5%B8%B8.html )

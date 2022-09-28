@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/3/10 12:04:34 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 因为 PreviewMouseDown 是 RoutingStrategy.Direct 路由事件，不能在多个视觉树使用，在设置 Popup 点击界面 StaysOpen="False" 的逻辑就在下面代码
 
