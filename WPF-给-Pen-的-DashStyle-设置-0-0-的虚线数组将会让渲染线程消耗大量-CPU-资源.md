@@ -9,7 +9,6 @@
 <!-- CreateTime:2021/12/24 19:51:54 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 感谢 [Ryzen](https://www.cnblogs.com/ryzen) 大佬找到此问题，我只是帮他报告给 WPF 官方和记录的工具人
 

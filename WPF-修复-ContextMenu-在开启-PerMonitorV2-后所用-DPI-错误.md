@@ -9,7 +9,6 @@
 <!-- CreateTime:2022/8/10 20:06:40 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 关于什么是 PerMonitorV2 请参阅 [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](https://blog.walterlv.com/post/windows-high-dpi-development-for-wpf.html )
 

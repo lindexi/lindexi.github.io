@@ -9,7 +9,6 @@
 <!-- CreateTime:2022/1/29 9:24:05 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 源作者是 [YuWeiCong](https://github.com/YuWeiCong)
 
@@ -17,6 +16,7 @@
 
 软件运行界面效果：
 
+<!-- ![](image/WPF 开源二维绘画小工具 GeometryToolDemo 项目/WPF 开源二维绘画小工具 GeometryToolDemo 项目0.png) -->
 ![](http://image.acmx.xyz/lindexi%2FREADME0.png)
 
 开源地址： [https://github.com/dotnet-campus/GeometryToolDemo](https://github.com/dotnet-campus/GeometryToolDemo )

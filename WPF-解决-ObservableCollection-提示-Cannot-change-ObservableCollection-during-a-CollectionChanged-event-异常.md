@@ -10,7 +10,7 @@
 
 
 <!-- 发布 -->
-<!-- 博客 -->
+
 
 准确来说，这个异常和 WPF 是没有任何关系的。这个异常是 ObservableCollection 类型抛出的，而 ObservableCollection 类型是在 dotnet runtime 定义的，放在 System.ObjectModel 里，而且此异常可以在除 WPF 的其他框架，比如控制台或者 UWP 上复现
 

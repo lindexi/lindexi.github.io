@@ -7,7 +7,6 @@
 
 
 <!-- CreateTime:2021/8/23 16:49:17 -->
-<!-- 博客 -->
 <!-- 发布 -->
 
 这是在 GitHub 上完全免费开源的应用，由 [walterlv](https://github.com/walterlv) 开发的应用，详细请看 [https://github.com/walterlv/ClipboardViewer](https://github.com/walterlv/ClipboardViewer)
