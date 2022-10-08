@@ -980,6 +980,8 @@
 
  * [dotnet 解析 TTF 字体文件格式](dotnet-解析-TTF-字体文件格式.md)
 
+ * [dotnet 警惕判断文件是否存在因为检查网络资源造成超长等待](dotnet-警惕判断文件是否存在因为检查网络资源造成超长等待.md)
+
  * [dotnet 让 C# 可以通过动态生成 HLSL 使用 DX12 的 GPU 并行计算库 ComputeSharp 的简介](dotnet-让-C-可以通过动态生成-HLSL-使用-DX12-的-GPU-并行计算库-ComputeSharp-的简介.md)
 
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
@@ -2660,6 +2662,8 @@
 
  * [WPF 触摸相关](WPF-触摸相关.md)
 
+ * [WPF 警惕使用 Dispatcher.InvokeShutdown 方法退出应用 将不触发 Application.Exit 事件](WPF-警惕使用-Dispatcher.InvokeShutdown-方法退出应用-将不触发-Application.Exit-事件.md)
+
  * [WPF 让 TextBox 支持水平滚动](WPF-让-TextBox-支持水平滚动.md)
 
  * [WPF 让窗口激活作为前台最上层窗口的方法](WPF-让窗口激活作为前台最上层窗口的方法.md)
@@ -2705,6 +2709,8 @@
  * [WPF 通过 dotnet core 发布单文件时 log4net 无法使用](WPF-通过-dotnet-core-发布单文件时-log4net-无法使用.md)
 
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)
+
+ * [WPF 通过 EXIF 设置和读取图片的旋转信息](WPF-通过-EXIF-设置和读取图片的旋转信息.md)
 
  * [WPF 通过 GifBitmapDecoder 调用 WIC 解析 Gif 和进行动画播放的简单方法](WPF-通过-GifBitmapDecoder-调用-WIC-解析-Gif-和进行动画播放的简单方法.md)
 
