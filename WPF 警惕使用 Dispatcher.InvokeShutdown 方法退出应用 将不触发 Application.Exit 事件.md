@@ -3,6 +3,8 @@
 这是一个比较让人困惑的一个点，我一直都以为 Dispatcher.InvokeShutdown 和 Application.Current.Shutdown 是完全等价的。但是后面发现了其实这两者还是有些不同的，感觉上是 Dispatcher.InvokeShutdown 系列方法有点点设计的问题，太过于为了让框架内的代码解耦导致了让上层开发者困惑。 推荐在退出应用时，尽量调用的是 Application.Current.Shutdown 方法，而不是 Dispatcher.InvokeShutdown 系列方法
 
 <!--more-->
+<!-- CreateTime:2022/9/30 15:34:44 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
