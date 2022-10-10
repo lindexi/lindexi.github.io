@@ -12,7 +12,7 @@
 
 ## ReSharper 
 
-嘿嘿嘿
+嘿嘿嘿，超级无敌的神器，只是对开发设备要求有点高，可以免费试用
 
 ## OzCode 
 
@@ -62,9 +62,7 @@
 为 Visual Studio 输出窗口的内容加上颜色标识（更容易找到警告和错误）
 
 
-## Gitsoler 
 
-为 Visual Studio 内嵌一个 git bash 窗口
 
 ## BuildVision 
 
@@ -109,21 +107,51 @@
 
 如上图效果，看起来不错，只是这个插件的配色和 Resharper 有冲突
 
+
+### Rainbow Braces
+
+下载地址： [https://marketplace.visualstudio.com/items?itemName=MadsKristensen.RainbowBraces](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.RainbowBraces)
+
+![](http://image.acmx.xyz/lindexi%2F202210916203054.jpg)
+
+每一级的花括号可以有每一级的颜色，特别方便分开花括号属于哪一级
+
+![](http://image.acmx.xyz/lindexi%2F2022109162389046.jpg)
+
+默认的配色如上图
+
+
+
+
+
 ## 基本可以废弃的插件
 
-本来这些插件功能是不错的，但是随着 VS 的更新，这些功能都放入到 VS 里面
+随着开发的不断迭代，有一些插件现在已经被废弃了
+
+也有插件功能是不错的，随着 VS 的更新，这些功能都放入到 VS 里面
 
 ### Whack Whack Terminal
+
+> 现在 VS 内置了强大的命令行工具
 
 在 VisualStudio 开启命令行，支持启用 git 或 Vim 或其他命令行工具
 
 [Whack Whack Terminal - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=DanielGriffen.WhackWhackTerminal )
 
+## Gitsoler 
+
+> 现在 VS 内置了强大的命令行工具
+
+为 Visual Studio 内嵌一个 git bash 窗口
+
 ### C#/XAML for HTML5
+
+> 后续转为使用 UNO 了，还是原开发团队，只是更改名字和底层技术
 
 使用 C#/XAML 编写 Web 前端代码
 
-后续转为使用 UNO 了，还是原开发团队，只是更改名字和底层技术
+
+## 更多
 
 如果有发现好玩的插件，欢迎评论
 

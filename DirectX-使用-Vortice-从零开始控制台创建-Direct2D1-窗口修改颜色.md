@@ -700,7 +700,7 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 git pull origin 162977106065bd3cf7bfbed0a87828c992b8df3d
 ```
 
-获取代码之后，进入 HoyebenawlerWegemnardicheba 文件夹
+获取代码之后，进入 WakolerwhaKanicabirem 文件夹
 
 ## 更多博客
 
