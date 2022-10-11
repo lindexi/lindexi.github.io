@@ -3138,6 +3138,8 @@
 
  * [获取 Nuget 版本号](获取-Nuget-版本号.md)
 
+ * [解决 System.Net.Sockets.SocketException 10045 参考的对象类型不支持尝试的操作 无法联网](解决-System.Net.Sockets.SocketException-10045-参考的对象类型不支持尝试的操作-无法联网.md)
+
  * [解决 System.Net.Sockets.SocketException 10106 无法加载或初始化请求的服务提供程序 无法联网](解决-System.Net.Sockets.SocketException-10106-无法加载或初始化请求的服务提供程序-无法联网.md)
 
  * [解决 vs 出现Error MC3000 给定编码中的字符无效](解决-vs-出现Error-MC3000-给定编码中的字符无效.md)

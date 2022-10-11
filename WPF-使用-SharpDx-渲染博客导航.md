@@ -43,6 +43,16 @@
 
 值得一说的是 SharpDx 当前官方不维护了，可以选择的代替请看 [SharpDx 的代替项目](https://blog.lindexi.com/post/SharpDx-%E7%9A%84%E4%BB%A3%E6%9B%BF%E9%A1%B9%E7%9B%AE.html )
 
+
+
+其中一个可代替 SharpDx 的是 Vortice 库，以下是使用 Vortice 库的博客
+
+- [DirectX 使用 Vortice 从零开始控制台创建 Direct2D1 窗口修改颜色](https://blog.lindexi.com/post/DirectX-%E4%BD%BF%E7%94%A8-Vortice-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Direct2D1-%E7%AA%97%E5%8F%A3%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2.html )
+
+- [dotnet C# 使用 Vortice 支持 Direct2D1 离屏渲染](https://blog.lindexi.com/post/dotnet-C-%E4%BD%BF%E7%94%A8-Vortice-%E6%94%AF%E6%8C%81-Direct2D1-%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.html )
+
+
+
 在 4k 下的性能测试请看 [WPF 模拟 WPFMediaKit 的 D3D 配置用来测试4k性能](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F-WPFMediaKit-%E7%9A%84-D3D-%E9%85%8D%E7%BD%AE%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%954k%E6%80%A7%E8%83%BD.html )
 
 如果有部分逻辑是通过其实平台渲染的，可以通过 SharedHandle 在不同的 Direct3D 设备之间共享资源，详细请看下面博客
