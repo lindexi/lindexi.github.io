@@ -3,6 +3,8 @@
 本文收集 System.Net.Sockets.SocketException 异常错误码为 10045 导致无法联网的问题
 
 <!--more-->
+<!-- CreateTime:2022/10/11 17:26:36 -->
+
 <!-- 发布 -->
 
 这里的 10045 是 Win32 的 Socket 错误码，可以从 [Windows Sockets Error Codes (Winsock2.h) - Win32 apps Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/winsock/windows-sockets-error-codes-2 ) 文档了解到 10045 对应的是 WSAEOPNOTSUPP 错误，描述如下
