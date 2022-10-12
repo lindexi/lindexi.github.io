@@ -428,6 +428,8 @@
 
  * [dotnet C# 使用 EqualityComparer 提升泛型值类型相等判断性能](dotnet-C-使用-EqualityComparer-提升泛型值类型相等判断性能.md)
 
+ * [dotnet C# 使用 Vortice 创建 Direct2D1 的 ID2D1SolidColorBrush 纯色画刷](dotnet-C-使用-Vortice-创建-Direct2D1-的-ID2D1SolidColorBrush-纯色画刷.md)
+
  * [dotnet C# 使用 Vortice 支持 Direct2D1 离屏渲染](dotnet-C-使用-Vortice-支持-Direct2D1-离屏渲染.md)
 
  * [dotnet C# 使用无捕获的委托可以获得编译器缓存减少对象创建](dotnet-C-使用无捕获的委托可以获得编译器缓存减少对象创建.md)
