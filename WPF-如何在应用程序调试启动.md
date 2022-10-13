@@ -16,7 +16,6 @@
 
 ```csharp
             System.Diagnostics.Debugger.Launch();
-
 ```
 
 在启动时，就会打开调试器，于是就可以调试exe启动。
@@ -26,7 +25,7 @@
 如果添加了上面的代码无法使用，那么可以判断现在是否调试，如果没有，就等待
 
 ```csharp
-while (!System.Diagnostics.Debugger.IsAttached)
+    while (!System.Diagnostics.Debugger.IsAttached)
     {
     	System.Threading.Thread.Sleep(100);
     }
