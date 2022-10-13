@@ -3,6 +3,8 @@
 在进行 D2D 绘制文本或者是形状的时候，期望填充某个颜色，就需要用到 ID2D1SolidColorBrush 纯色画刷，在绘制的时候通过纯色画刷进行填充颜色。本文将告诉大家如何使用 Vortice 库创建 ID2D1SolidColorBrush 纯色画刷
 
 <!--more-->
+<!-- CreateTime:2022/10/11 19:30:56 -->
+
 
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D, -->
 <!-- 发布 -->

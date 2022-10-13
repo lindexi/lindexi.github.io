@@ -90,6 +90,25 @@ Description: The process was terminated due to an internal error in the .NET Run
 
 使用 dnSpy 调试还有一个好处是，可以无须任何符号即可进行调试，十分方便
 
+## 开发辅助调试代码
+
+如果期望能有更加好的调试体验，或者是期望调试的进程是被另一个进程启动的，难以进行单独启动的，可以考虑在开发的时候，埋入调试逻辑用来辅助调试。埋入调试逻辑的一个可选方法是通过命令行参数，判断命令行参数决定是否调用 `System.Diagnostics.Debugger.Launch()` 方法，通过 `Debugger.Launch` 方法主动启动调试器
+
+例如以下代码
+
+```csharp
+if (args[0] == "DebugMode")
+{
+    System.Diagnostics.Debugger.Launch();
+}
+```
+
+然后设置此进程启动时带上 `DebugMode` 命令行参数，即可让此进程触发调试器异常从而方便的让调试器附加调试
+
+详细请看 [WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8.html )
+
+
+
 ## 使用 ProcDump 进行 DUMP 分析
 
 但是如果应用的启动失败不是每次都复现的，是概率复现的，那就不好玩了。以上两个方法都是需要进行调试启动的，而大家都知道，调试模式下和非调试模式下是有差别的，例如多线程执行的差别。如果刚好启动是因为线程安全导致的问题，那么调试下也许是复现不到的。对于不是每次都失败的应用启动，进行调试是非常想砸键盘的，有时候调试的好好的，应用就启动成功了。有时候觉得没问题，按下继续，应用就启动失败了
