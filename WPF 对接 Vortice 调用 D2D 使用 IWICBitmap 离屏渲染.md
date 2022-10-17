@@ -101,12 +101,9 @@
             base(true)
         {            
             _bitmapInit.BeginInit();
-
-            //
             // This constructor is used by BitmapDecoder and BitmapFrameDecode for thumbnails and
             // previews. The bitmapSource parameter comes from BitmapSource.CreateCachedBitmap
             // which already calculated memory pressure, so there's no need to do it here.
-            //
             WicSourceHandle = bitmapSource;
             _bitmapInit.EndInit();
             UpdateCachedSettings();
@@ -150,7 +147,7 @@
     }
 ```
 
-试试跑跑上本文的例子，可以从文本末尾获取到项目的全部代码的可构建运行项目，测试一下对 WPF 的影响。预计此方法对 WPF 的影响是非常小的，损耗约等于渲染一张图，而且还是一张不需要解码的图片的损耗
+试试跑跑上本文的例子，可以从文本末尾获取到项目的全部代码的可构建运行项目，测试一下对 WPF 的影响。预计此方法对 WPF 的影响是非常小的，损耗约等于渲染一张图，而且还是一张不需要解码的图片的损耗。此方法和 D3DImage 对比如何？从代码分析上来说，如果不是静态画面绘制，那是比不过 D3DImage 的。静态画面绘制就是绘制一张静态画面，后续也不需要去更新，去修改画面的内容。在绘制静态画面的时候，性能预计和 D3DImage 持平。只是相对于 D3DImage 这么重的来说，使用 WICBitmap 会更加轻而已，而且由于本身设计上也不是作为动态画面使用，少了很多同步的逻辑
 
 既然这个方式需要这么好用，那再用反射似乎也说不过去，刚好我是 WPF 框架的开发者，我在想着要不要将这个 UnmanagedBitmapWrapper 类型开放好了
 
@@ -173,3 +170,7 @@ git pull origin 1de394636dc15865ab90301230ed7ce37fe01ca0
 ```
 
 获取代码之后，进入 WpfVorticeWicTest 文件夹
+
+更多 DirectX 和 D2D 以及 Vortice 库的博客，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+另外，我创建了专门聊 Vortice 的 QQ 群： 622808968 欢迎加入交流技术
