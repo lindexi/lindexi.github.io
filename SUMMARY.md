@@ -954,6 +954,8 @@
 
  * [dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发](dotnet-用-NuGet-将自己的工具作为-dotnet-tool-分发.md)
 
+ * [dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言](dotnet-用-SourceGenerator-源代码生成技术实现中文编程语言.md)
+
  * [dotnet 画布类应用的组合元素设计](dotnet-画布类应用的组合元素设计.md)
 
  * [dotnet 的 TaskCompletionSource 的 TrySetResult 是线程安全](dotnet-的-TaskCompletionSource-的-TrySetResult-是线程安全.md)
@@ -2413,6 +2415,8 @@
  * [WPF 实现自定义的笔迹橡皮擦](WPF-实现自定义的笔迹橡皮擦.md)
 
  * [WPF 客户端开发需要知道的触摸失效问题](WPF-客户端开发需要知道的触摸失效问题.md)
+
+ * [WPF 对接 Vortice 调用 D2D 使用 IWICBitmap 离屏渲染](WPF-对接-Vortice-调用-D2D-使用-IWICBitmap-离屏渲染.md)
 
  * [WPF 封装 dotnet remoting 调用其他进程](WPF-封装-dotnet-remoting-调用其他进程.md)
 
