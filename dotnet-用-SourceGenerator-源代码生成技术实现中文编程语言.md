@@ -8,13 +8,12 @@
 
 <!-- CreateTime:2022/10/17 8:06:00 -->
 
-
 <!-- 发布 -->
-<!-- 博客 -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
 开始之前，先给大家看看效果
 
+<!-- ![](image/dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言/dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言0.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20221071148534467.jpg)
 
 这是我设计的 csg 格式（Chinese programming language by SourceGenerator）的中文编程语言，设计上完全参考（抄袭）了中文宏的实现方式。原本我是考虑抄袭 易语言 的，但是 易语言 更贴近是 VB 系的方式（？ 似乎也不能这么说）感觉不是我随便就能写出来的。我只是想着学习源代码生成技术，顺带测试一下自己能否很随意的就写出一个新的编程语言。当然，测试结果是我不能很随意就写出一个新的编程语言
