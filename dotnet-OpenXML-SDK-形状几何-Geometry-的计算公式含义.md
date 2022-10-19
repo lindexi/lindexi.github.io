@@ -48,7 +48,30 @@
     </pathLst>
 ```
 
-如果想要绘制形状的 Path 几何图形，就需要了解此形状里面的 Path 的各个值。如上图，可以看到都采用的是公式的方式进行计算，如 gd 的内容如下
+或者是采用预设形状，定义如下
+
+```xml
+<p:sp>
+  <p:nvSpPr>
+    <!-- 忽略代码 -->
+  </p:nvSpPr>
+  <p:spPr>
+    <a:xfrm>
+      <!-- 忽略代码 -->
+    </a:xfrm>
+    <a:prstGeom prst="rect">
+      <a:avLst />
+    </a:prstGeom>
+  </p:spPr>
+  <!-- 忽略代码 -->
+</p:sp>
+```
+
+对于预设形状来说，需要通过预设形状的文档，也就是 ECMA-376 的 `ECMA-376, Third Edition, Part 1 - Fundamentals And Markup Language Reference` 的 `PresetShapeDefinitions.xml` 文档里面，获取到预设形状的定义。展开的结果也和上文相同，预设的定义允许被具体的元素的定义覆盖，规则和 WPF 的资源优先级相同
+
+我将本文的计算规则逻辑放到 [DocumentFormat.OpenXml.Flatten](https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions) 库里面，在 GitHub 上完全开源： [https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions](https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions)
+
+如果想要绘制形状的 Path 几何图形，就需要计算此形状里面的 Path 的各个值。如上面代码，可以看到都采用的是公式的方式进行计算，如 gd 的内容如下
 
 ```xml
       <gd name="adj1" fmla="val 50000" />

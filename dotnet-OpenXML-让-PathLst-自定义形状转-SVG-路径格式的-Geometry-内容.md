@@ -358,6 +358,8 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 如果遇到里面写的是公式，而不是具体的数值，请看 [dotnet OpenXML SDK 形状几何 Geometry 的计算公式含义](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E5%87%A0%E4%BD%95-Geometry-%E7%9A%84%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F%E5%90%AB%E4%B9%89.html )
 
+我将本文的逻辑放到 [DocumentFormat.OpenXml.Flatten](https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions) 库里面，在 GitHub 上完全开源： [https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions](https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions)
+
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
 
 
