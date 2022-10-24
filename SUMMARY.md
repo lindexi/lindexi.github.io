@@ -1482,6 +1482,8 @@
 
  * [VisualStudio csproj 添加 ItemGroup 的 Service ](VisualStudio-csproj-添加-ItemGroup-的-Service-.md)
 
+ * [VisualStudio 使用 FastTunnel 辅助搭建远程调试环境](VisualStudio-使用-FastTunnel-辅助搭建远程调试环境.md)
+
  * [VisualStudio 使用三个方法启动最新 C# 功能](VisualStudio-使用三个方法启动最新-C-功能.md)
 
  * [VisualStudio 使用多个环境进行调试](VisualStudio-使用多个环境进行调试.md)
@@ -2315,6 +2317,8 @@
  * [WPF 加载诡异的字体无法布局](WPF-加载诡异的字体无法布局.md)
 
  * [WPF 动画实战 点击时显示圆圈淡出效果](WPF-动画实战-点击时显示圆圈淡出效果.md)
+
+ * [WPF 动画性能测试应用 一千个半透明矩形做动画](WPF-动画性能测试应用-一千个半透明矩形做动画.md)
 
  * [WPF 升级 .NET Core 的理由](WPF-升级-.NET-Core-的理由.md)
 
