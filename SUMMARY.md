@@ -880,6 +880,8 @@
 
  * [dotnet 将C#编译为wasm让前端html使用](dotnet-将C-编译为wasm让前端html使用.md)
 
+ * [dotnet 将任意时区的 DateTimeOffset 转换为中国时区时间文本](dotnet-将任意时区的-DateTimeOffset-转换为中国时区时间文本.md)
+
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
  * [dotnet 将自动代码格式化机器人带入团队 GitLab 平台](dotnet-将自动代码格式化机器人带入团队-GitLab-平台.md)
