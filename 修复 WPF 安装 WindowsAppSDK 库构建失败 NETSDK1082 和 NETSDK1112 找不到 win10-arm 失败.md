@@ -3,6 +3,8 @@
 通过在 WPF 项目上安装 WindowsAppSDK 库，可以让 WPF 使用上 Win10 及以上版本提供的 Windows Runtime 强大的 API 集和使用上更多的黑科技。本文记录在安装 WindowsAppSDK 库之后，项目生成失败，提示 NETSDK1082 和 NETSDK1112 错误的问题，和修复的方法
 
 <!--more-->
+<!-- CreateTime:2022/10/25 10:23:06 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
