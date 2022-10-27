@@ -70,6 +70,28 @@
 
 需要在绘制之后调用 Dispose 释放字体
 
+---
+
+更新：
+
+在 SkiaSharp 2.88.3 之前，由于没有合入我的修复代码： [https://github.com/mono/SkiaSharp/pull/2146](https://github.com/mono/SkiaSharp/pull/2146)
+
+导致了输入中文的字体名的时候，在 SKTypeface.FromFamilyName 返回找不到
+
+如果是此问题，那只需要更新 SkiaSharp 到 2.88.3 或更高版本
+
+为什么在 2.88.3 之前，传入中文的字体名的时候，将会返回找不到字体？
+
+原因是在 SkiaSharp 里面使用平台调用的时候，传入的中文字体名采用的是 C# 默认的 UTF16 编码。然而在 Skia 里面，期望的字符串编码采用的是 UTF8 编码。这就导致了咱给的中文的字体名，将不会被 Skia 底层识别，从而找不到字体
+
+详细请参阅 [[BUG] sk_fontmgr_match_family_style must input family name argument by utf8 string · Issue #1914 · mono/SkiaSharp](https://github.com/mono/SkiaSharp/issues/1914 )
+
+另外的，如果采用 MAUI 配合 Skia 进行渲染的，也可能出现中文无法渲染的问题，这是 MAUI 层也存在的坑。此问题已经被我修了，请看 [https://github.com/dotnet/maui/pull/9124](https://github.com/dotnet/maui/pull/9124)
+
+详细请看 [Microsoft.Maui.Graphics.Skia do not support Chinese text drawing · Issue #473 · dotnet/Microsoft.Maui.Graphics](https://github.com/dotnet/Microsoft.Maui.Graphics/issues/473 )
+
+也就是说只需要更新到最新版本的 MAUI 自然就修复此问题
+
 
 
 

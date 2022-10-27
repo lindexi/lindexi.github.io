@@ -988,6 +988,8 @@
 
  * [dotnet 解析 TTF 字体文件格式](dotnet-解析-TTF-字体文件格式.md)
 
+ * [dotnet 警惕使用 StackTrace 加获取方法标记 Attribute 特性在 Release 下被内联](dotnet-警惕使用-StackTrace-加获取方法标记-Attribute-特性在-Release-下被内联.md)
+
  * [dotnet 警惕判断文件是否存在因为检查网络资源造成超长等待](dotnet-警惕判断文件是否存在因为检查网络资源造成超长等待.md)
 
  * [dotnet 让 C# 可以通过动态生成 HLSL 使用 DX12 的 GPU 并行计算库 ComputeSharp 的简介](dotnet-让-C-可以通过动态生成-HLSL-使用-DX12-的-GPU-并行计算库-ComputeSharp-的简介.md)
@@ -2887,6 +2889,8 @@
  * [修复 SmartAssembly 混淆 .NET 6 时提示 Unable to load runtime config file 失败](修复-SmartAssembly-混淆-.NET-6-时提示-Unable-to-load-runtime-config-file-失败.md)
 
  * [修复 VisualStudio 构建时没有将 NuGet 的 PDB 符号文件拷贝到输出文件夹](修复-VisualStudio-构建时没有将-NuGet-的-PDB-符号文件拷贝到输出文件夹.md)
+
+ * [修复 WPF 安装 WindowsAppSDK 库构建失败 NETSDK1082 和 NETSDK1112 找不到 win10-arm 失败](修复-WPF-安装-WindowsAppSDK-库构建失败-NETSDK1082-和-NETSDK1112-找不到-win10-arm-失败.md)
 
  * [docfx 做一个和微软一样的文档平台](docfx-做一个和微软一样的文档平台.md)
 
