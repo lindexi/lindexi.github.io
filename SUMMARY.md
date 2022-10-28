@@ -784,6 +784,8 @@
 
  * [dotnet 修复 ILLinkTasksAssembly 特性的值的计算结果无效](dotnet-修复-ILLinkTasksAssembly-特性的值的计算结果无效.md)
 
+ * [dotnet 修复 Uno 中文乱码](dotnet-修复-Uno-中文乱码.md)
+
  * [dotnet 修复在 Linux 上使用 SkiaSharp 提示找不到 libSkiaSharp 库](dotnet-修复在-Linux-上使用-SkiaSharp-提示找不到-libSkiaSharp-库.md)
 
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
