@@ -410,6 +410,10 @@
 
  * [dotnet 6 使用 string.Create 提升字符串创建和拼接性能](dotnet-6-使用-string.Create-提升字符串创建和拼接性能.md)
 
+ * [dotnet 6 修复在 System.Text.Json 使用 source generation 源代码生成提示 SYSLIB1032 错误](dotnet-6-修复在-System.Text.Json-使用-source-generation-源代码生成提示-SYSLIB1032-错误.md)
+
+ * [dotnet 6 在 System.Text.Json 使用 source generation 源代码生成提升 JSON 序列化性能](dotnet-6-在-System.Text.Json-使用-source-generation-源代码生成提升-JSON-序列化性能.md)
+
  * [dotnet 6 在 Win7 系统证书链错误导致 HttpWebRequest 内存泄露](dotnet-6-在-Win7-系统证书链错误导致-HttpWebRequest-内存泄露.md)
 
  * [dotnet 6 引用 NAudio 的旧版本构建不通过](dotnet-6-引用-NAudio-的旧版本构建不通过.md)
@@ -1291,6 +1295,8 @@
  * [不使用数据结构反转栈](不使用数据结构反转栈.md)
 
  * [Roslyn how to use WriteLinesToFile to write the semicolons to file](Roslyn-how-to-use-WriteLinesToFile-to-write-the-semicolons-to-file.md)
+
+ * [Roslyn MSBuild 在构建完成之后 将构建时间写入到输出文件](Roslyn-MSBuild-在构建完成之后-将构建时间写入到输出文件.md)
 
  * [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](Roslyn-NameSyntax-的-ToString-和-ToFullString-的区别.md)
 
