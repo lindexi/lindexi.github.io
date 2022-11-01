@@ -3,6 +3,8 @@
 在 dotnet 6 内置了通过源代码生成的方式进行序列化 JSON 对象，性能非常高。使用的时候需要将 Json 序列化工具类换成 dotnet 运行时自带的 System.Text.Json 进行序列化，再加上一个继承 JsonSerializerContext 的辅助类型，且在此类型标记 JsonSerializableAttribute 特性，将此类型传入序列化和反序列化即可完成对接。然而在使用的过程中，如果发现此辅助类型的实际代码没有生成，且输出提示 SYSLIB1032 警告，那可能就是此辅助类型没有写对导致
 
 <!--more-->
+<!-- CreateTime:2022/10/31 8:09:00 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
