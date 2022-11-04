@@ -952,6 +952,8 @@
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 
+ * [dotnet 理解 IConfigurationProvider 的 GetChildKeys 方法用途](dotnet-理解-IConfigurationProvider-的-GetChildKeys-方法用途.md)
+
  * [dotnet 用 ASP.NET Core 制作一个可以上传库文件的 NuGet 服务器](dotnet-用-ASP.NET-Core-制作一个可以上传库文件的-NuGet-服务器.md)
 
  * [dotnet 用 gcdump 调试应用程序内存占用](dotnet-用-gcdump-调试应用程序内存占用.md)
@@ -2443,6 +2445,8 @@
  * [WPF 将控件放入到 UserControl 里获取 HwndSource 为空的情况](WPF-将控件放入到-UserControl-里获取-HwndSource-为空的情况.md)
 
  * [WPF 已知问题 BitmapDecoder.Create 不支持传入 Asynchronous 的文件流](WPF-已知问题-BitmapDecoder.Create-不支持传入-Asynchronous-的文件流.md)
+
+ * [WPF 已知问题 dotnet 6 设置 InvariantGlobalization 之后将丢失默认绑定转换导致 XAML 抛出异常](WPF-已知问题-dotnet-6-设置-InvariantGlobalization-之后将丢失默认绑定转换导致-XAML-抛出异常.md)
 
  * [WPF 已知问题 Popup 吃掉 PreviewMouseDown 事件](WPF-已知问题-Popup-吃掉-PreviewMouseDown-事件.md)
 
