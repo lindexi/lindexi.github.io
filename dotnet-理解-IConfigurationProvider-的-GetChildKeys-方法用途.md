@@ -1,10 +1,12 @@
 
 # dotnet 理解 IConfigurationProvider 的 GetChildKeys 方法用途
 
-我最近遇到一个有趣的 Bug 让我调试了一会，其现象是我的好多个模块都因为读取不到配置信息而炸掉。核心原因是我对 IConfigurationProvider 的 GetChildKeys 方法的理解不对，实现错了此方法。本文将告诉大家 IConfigurationProvider 的 GetChildKeys 方法用途和如何正确实现他
+我最近遇到了一个有趣的 Bug 让我调试了半天，这个 Bug 的现象是我的好多个模块都因为读取不到配置信息而炸掉，开始我没有定位到具体的问题，以为是我的配置服务器挂掉了。经过了半天的调试，才找到了是我新加入的使用 COIN 配置库的 ReadonlyCoinConfiguration 类型导致的，此 ReadonlyCoinConfiguration 类型继承 IConfigurationProvider 接口，但是我对 IConfigurationProvider 的 GetChildKeys 方法的理解不对，实现错了 GetChildKeys 方法，导致在枚举应用内的所有配置时，配置都会 ReadonlyCoinConfiguration 过滤掉，导致模块读取不到配置。本文将告诉大家 IConfigurationProvider 的 GetChildKeys 方法用途和如何正确实现他
 
 <!--more-->
 
+
+<!-- CreateTime:2022/11/3 19:31:07 -->
 
 <!-- 发布 -->
 <!-- 博客 -->
