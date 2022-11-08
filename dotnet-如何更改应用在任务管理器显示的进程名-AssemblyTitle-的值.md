@@ -20,6 +20,7 @@
 
 更改之后，可以在任务管理器上看到进程名的更改
 
+<!-- ![](image/dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值/dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值0.png) -->
 ![](http://image.acmx.xyz/lindexi%2F202012121758262369.jpg)
 
 在更新到新的 VS 2017 的 SDK Style 的 csproj 格式，默认没有给 `Properties\AssemblyInfo.cs` 文件，如果此时大家自己创建一个 `Properties\AssemblyInfo.cs` 文件，那么在构建的时候将会提示 `Error CS0579 Duplicate 'System.Reflection.AssemblyTitleAttribute' attribute` 原因是当前的 AssemblyInfo.cs 是生成的。如果想要加上 `Properties\AssemblyInfo.cs` 文件，就需要在 csproj 上设置不要自动生成 `AssemblyInfo.cs` 文件
@@ -66,6 +67,8 @@
 那么这个值最终会放入到输出的 PE 格式的 exe 文件的哪里？其实是放在 Win32 的 Resource 里面
 
 通过 FileAlyzer 工具的辅助，可以在 Reousrce 里面找到 FileDescription 属性
+
+<!-- ![](image/dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值/dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值1.png) -->
 
 ![](http://image.acmx.xyz/lindexi%2F20201212209324787.jpg)
 
