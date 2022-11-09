@@ -2454,6 +2454,8 @@
 
  * [WPF 已知问题 Popup 失焦后导致 ListBox 无法用 MouseWheel 滚动问题和解决方法](WPF-已知问题-Popup-失焦后导致-ListBox-无法用-MouseWheel-滚动问题和解决方法.md)
 
+ * [WPF 已知问题 Separator 无法应用 ContextMenu 定义的默认样式](WPF-已知问题-Separator-无法应用-ContextMenu-定义的默认样式.md)
+
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
  * [WPF 已知问题 某些设备上的应用在 WindowChromeWorker 抛出 System.OverflowException 异常](WPF-已知问题-某些设备上的应用在-WindowChromeWorker-抛出-System.OverflowException-异常.md)
