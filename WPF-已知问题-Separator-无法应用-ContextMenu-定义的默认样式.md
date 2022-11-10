@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2022/11/8 20:01:49 -->
+
 
 <!-- 博客 -->
 <!-- 发布 -->
@@ -96,7 +98,7 @@
 
 弹出的菜单的两条分割线的 Margin 是不相同的
 
-根本原因是在 WPF 里面，对于在 Menu 里面的 Separator 采用的是如下逻辑，以下代码可以从 WPF 官方开源仓库 [https://github.com/dotnet/wpf/blob/1aab9e3f42dbf550797bff97a32f2dbfb61a3198/src/Microsoft.DotNet.Wpf/src/PresentationFramework/System/Windows/Controls/MenuItem.cs#L1344-L1353](https://github.com/dotnet/wpf/blob/1aab9e3f42dbf550797bff97a32f2dbfb61a3198/src/Microsoft.DotNet.Wpf/src/PresentationFramework/System/Windows/Controls/MenuItem.cs#L1344-L1353) 找到
+根本原因是在 WPF 里面，对于在 Menu 里面的 Separator 采用的是如下逻辑，以下代码可以从 WPF 官方开源仓库 [https://github.com/dotnet/wpf/blob/1aab9e3f42dbf550797bff97a32f2dbfb61a3198/src/Microsoft.DotNet.Wpf/src/PresentationFramework/System/Windows/Controls/MenuItem.cs#L1344-L1353](https://github.com/dotnet/wpf/blob/1aab9e3f42dbf550797bff97a32f2dbfb61a3198/src/Microsoft.DotNet.Wpf/src/PresentationFramework/System/Windows/Controls/MenuItem.cs#L1344-L1353) 找到。我此问题报告给 WPF 官方，请看 [https://github.com/dotnet/wpf/issues/7268](https://github.com/dotnet/wpf/issues/7268 )
 
 ```csharp
                 Separator separator = item as Separator;
