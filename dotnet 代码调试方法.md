@@ -1298,6 +1298,12 @@ public static int Count { set; get; }
 
 填坑
 
+### 收藏一些大佬的 DUMP 调试博客
+
+使用 DUMP 调试还是比较难的，劝退力比较足。因为除了工具的时候比较难之外，如何进行调试，调试的思路和调试的经验都会成为劝退的原因，我收藏了一些大佬的 DUMP 调试博客，大家可以跟随大佬们的调试思路尝试调试一下
+
+- [一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/)
+
 
 ## 性能调试
 
@@ -1356,7 +1362,10 @@ public static int Count { set; get; }
 
 ## 远程调试
 
-参阅 [使用VS远程调试其他电脑上安装的软件 - 杜文龙 - 博客园](https://www.cnblogs.com/duwenlong/p/14979056.html )
+参阅：
+
+- [使用VS远程调试其他电脑上安装的软件 - 杜文龙 - 博客园](https://www.cnblogs.com/duwenlong/p/14979056.html )
+- [VisualStudio 使用 FastTunnel 辅助搭建远程调试环境](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8-FastTunnel-%E8%BE%85%E5%8A%A9%E6%90%AD%E5%BB%BA%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.html )
 
 ## 经验
 
@@ -1369,6 +1378,24 @@ public static int Count { set; get; }
 - [dotnet 6 在 Win7 系统证书链错误导致 HttpWebRequest 内存泄露](https://blog.lindexi.com/post/dotnet-6-%E5%9C%A8-Win7-%E7%B3%BB%E7%BB%9F%E8%AF%81%E4%B9%A6%E9%93%BE%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4-HttpWebRequest-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.html )
 
 - [dotnet 读 WPF 源代码笔记 为什么自定义的 UserControl 用户控件不能跨程序集继承](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84-UserControl-%E7%94%A8%E6%88%B7%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%83%BD%E8%B7%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%BB%A7%E6%89%BF.html )
+
+### 应用程序闪退调试
+
+应用程序的闪退可以分为两个阶段，第一个就是启动闪退，另一个就是运行过程闪退。对于启动闪退的情况来说，大多数的时候，应用程序内的日志等模块都没有初始化完成，此时将难以准确定位问题，优先推荐采用 [dotnet 调试应用启动闪退的方法](https://blog.lindexi.com/post/dotnet-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E7%9A%84%E6%96%B9%E6%B3%95.html ) 博客提到的方法进行启动调试
+
+如已经启动完成，在运行过程中闪退的，优先定位业务端问题，也就是做了哪些步骤之后，进行闪退。如闪退稳定可以重复演现，那么优先在开发设备上跑代码，定位问题。没有什么能够比自己跑代码定位问题来的更加清晰的
+
+如果闪退是非必现问题，不是一定能够稳定复现的问题，是概率复现的问题的情况下，先翻日志。日志分为两个部分，一个就是应用程序自己记录的日志，在自己记录的日志里面，也许会记录错误原因，或者是前面的步骤，方便后续调查。另一个就是系统事件的日志，大部分的电脑上的系统事件的日志组件都是存活的，在这里面翻翻，也许能够有一些收获。
+
+更多关于日志应该怎么写和应该怎么看，和关于系统事件查看器的系统日志部分，还请参阅上文的 通过日志调试 部分
+
+日志如果没有能很好帮助定位问题的情况下，可以考虑抓一个事后现场的 DUMP 来分析。但是值得一提的是，大多数正常的时候，抓 DUMP 是无奈之举。原因是：这些是事后现场，很多时候最多只能知道应用是怎么崩的，但不知道为什么崩，就如同空异常一样，能够知道某个模块抛出空异常，以及是哪个属性或字段或参数导致的，但是难以知道为什么是空。其次是，如果能够很方便从 DUMP 找到问题，那基本都是代码上的实现缺失，如没有做防逗比措施，自己没有抛出准确的异常，没有好好写日志
+
+抓 DUMP 的方法可以参阅 [dotnet 调试应用启动闪退的方法](https://blog.lindexi.com/post/dotnet-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E7%9A%84%E6%96%B9%E6%B3%95.html ) 提到的 [ProcDump](https://docs.microsoft.com/zh-cn/sysinternals/downloads/procdump?WT.mc_id=WD-MVP-5003260) 的用法来抓 DUMP 文件，然后参阅本文的 DUMP 调试一节进行调试
+
+以及 一线码农 提供的也是通过 [ProcDump](https://docs.microsoft.com/zh-cn/sysinternals/downloads/procdump?WT.mc_id=WD-MVP-5003260) 工具来抓 DUMP 的方法，请看 [如何在 NET 程序万种死法中有效的生成 Dump (上) - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/14661031.html) 和 [.NET程序崩溃了怎么抓 Dump ? 我总结了三种方案 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/14811953.html)
+
+
 
 ### 面对不熟悉代码的调试
 
@@ -1393,7 +1420,11 @@ public static int Count { set; get; }
 
 ### 不必现问题
 
-提高复现，找到最简单步骤
+对于不必现问题来说，最佳做法是提高复现，找到最简单步骤。这一步大概属于有手能行，如果刚好有测试小姐姐或小哥哥的帮助，那就太好了，可以节省一些开发者占用的时间
+
+不必现问题也可以分为两大类，一类就是崩溃问题，另一类是功能性问题。如果是导致应用崩溃的问题，请参阅本文的 应用程序闪退调试 这一章的内容
+
+另外，无论如何，只要复现的概率足够高，且存在某个发布版本没有此问题，那都可以试试下面的二分代码的方式定位问题
 
 填坑
 
@@ -1422,5 +1453,6 @@ public static int Count { set; get; }
 
 [VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html )
 
+[VisualStudio 使用 FastTunnel 辅助搭建远程调试环境](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8-FastTunnel-%E8%BE%85%E5%8A%A9%E6%90%AD%E5%BB%BA%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
