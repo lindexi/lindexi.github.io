@@ -3,6 +3,8 @@
 在 MAUI 里，可以使用 PathFigureCollectionConverter 将 Path 字符串转换为 PathFigureCollection 对象，从而实现从 Path 字符串转换为路径几何。然而这个 PathFigureCollectionConverter 转换器非线程安全，即使创建多个实例对象，依然由于内部的静态字段导致非线程安全，本文将记录此问题的原理
 
 <!--more-->
+<!-- CreateTime:2022/11/14 20:22:49 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
