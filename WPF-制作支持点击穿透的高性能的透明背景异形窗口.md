@@ -155,7 +155,23 @@
 
 如果没有开启 DwmIsCompositionEnabled 那么依然只能使用 AllowsTransparency 的方式设置透明
 
-本文的没有在博客写的代码包括了，如何设置窗口样式以及 win32 方法的定义，这些代码我都放在 [github](https://github.com/lindexi/lindexi_gd/tree/b26274ae/RuhuyagayBemkaijearfear) 欢迎小伙伴访问，这里面包含了所有逻辑，包括博客里面没有放的代码
+本文的没有在博客写的代码包括了，如何设置窗口样式以及 win32 方法的定义，这些代码我都放在 [github](https://github.com/lindexi/lindexi_gd/tree/67f3f2ac002be5ab54f09045ed0999034bf38f78/RuhuyagayBemkaijearfear) 欢迎小伙伴访问，这里面包含了所有逻辑，包括博客里面没有放的代码。可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 67f3f2ac002be5ab54f09045ed0999034bf38f78
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 67f3f2ac002be5ab54f09045ed0999034bf38f78
+```
+
+获取代码之后，进入 RuhuyagayBemkaijearfear 文件夹
 
 尽管上面代码有点 Hack 但我已经在尝试在产品级使用了，暂时还没有发现什么锅
 
