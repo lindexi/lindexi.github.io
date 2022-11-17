@@ -8,7 +8,6 @@
 
 <!-- CreateTime:2022/11/8 20:01:49 -->
 
-
 <!-- 博客 -->
 <!-- 发布 -->
 
@@ -138,6 +137,35 @@ git pull origin b820847a1af20370de28a1e73e32df9561a98ecc
 获取代码之后，进入 HayhachujedaKikunayreefee 文件夹
 
 更多 WPF 已知问题请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+------
+
+大佬 [czdietrich](https://github.com/czdietrich) 告诉我说，这是特意的。原因是 Separator 在很多个地方都会使用，如果在 Menu 里，也采用默认继承的关系，将会让 Separator 的样式打架。毕竟在 Menu 里面的，是期望比较特殊一些的。于是就限制了，如果是放在 Menu 里面，应该采用的是 `MenuItem.SeparatorStyleKey` 样式的才会作为默认的继承样式，如下面代码
+
+```xml
+<Window x:Class="TestContextMenuSeparatorStyle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Window.Resources>
+        <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator">
+            <Setter Property="Background" Value="Tomato" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid Background="White">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Item 1" />
+                <Separator />
+                <MenuItem Header="Item 2" />
+            </ContextMenu>
+        </Grid.ContextMenu>
+    </Grid>
+</Window>
+```
+
+以上的代码也符合 WPF 的逻辑，详细请看 [https://github.com/dotnet/wpf/issues/7268#issuecomment-1315303718](https://github.com/dotnet/wpf/issues/7268#issuecomment-1315303718)
 
 
 
