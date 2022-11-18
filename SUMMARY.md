@@ -426,6 +426,8 @@
 
  * [dotnet 6 通过 DOTNET_ROOT 让调起的应用的进程拿到共享的运行时文件夹](dotnet-6-通过-DOTNET_ROOT-让调起的应用的进程拿到共享的运行时文件夹.md)
 
+ * [dotnet 7 WPF 破坏性改动 按下 F3 让 DataGrid 自动排序](dotnet-7-WPF-破坏性改动-按下-F3-让-DataGrid-自动排序.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
