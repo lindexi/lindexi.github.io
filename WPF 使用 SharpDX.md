@@ -176,4 +176,163 @@ RawColor4 就是 rgba ，颜色是从 0 到 1 ，对应 WPF 的 RGB 从 0 到 25
 
 上面很多参数都没有详细说明，具体请看这位大佬的[博客](https://blog.csdn.net/X_Jun96?tdsourcetag=s_pctim_aiomsg )
 
+简化一下的全部代码如下
+
+```csharp
+using PInvoke;
+
+using SharpDX;
+using SharpDX.Direct2D1;
+
+using System.Windows;
+using System.Windows.Interop;
+using SharpDX.Mathematics.Interop;
+using D2D = SharpDX.Direct2D1;
+using DXGI = SharpDX.DXGI;
+using System.Windows.Media;
+using System.Reflection;
+
+namespace LifafaheqearNearkairliraywal;
+
+public class Program
+{
+    [STAThread]
+    public static void Main(string[] args)
+    {
+        Application application = new Application();
+        application.Startup += (s, e) =>
+        {
+            application.MainWindow.Show();
+        };
+
+        Window window = new Window();
+        D2DRender render = new D2DRender();
+        window.Loaded += (s, e) =>
+        {
+            render.Init(window);
+        };
+        
+        application.MainWindow=window;
+        application.Run();
+    }
+}
+
+class D2DRender
+{
+    public void Init(Window window)
+    {
+        _window = window;
+
+        var factory = new D2D.Factory();
+
+        var pixelFormat = new D2D.PixelFormat(DXGI.Format.B8G8R8A8_UNorm, D2D.AlphaMode.Ignore);
+
+        var renderTargetProperties = new D2D.RenderTargetProperties
+        (
+              // 默认的行为就是尝试使用硬件优先，否则再使用软件
+              D2D.RenderTargetType.Default,
+              // 像素格式，对于当前大多数显卡来说，选择 B8G8R8A8 是完全能支持的
+              // 而且也方便和其他框架，如 WPF 交互
+              pixelFormat,
+              dpiX: 96,
+              dpiY: 96,
+              D2D.RenderTargetUsage.None,
+              D2D.FeatureLevel.Level_DEFAULT
+        );
+        var hwndRenderTargetProperties = new D2D.HwndRenderTargetProperties();
+        hwndRenderTargetProperties.Hwnd = new WindowInteropHelper(window).Handle;
+        ActualWidth = (int)window.ActualWidth;
+        ActualHeight = (int)window.ActualHeight;
+        hwndRenderTargetProperties.PixelSize = new Size2(ActualWidth, ActualHeight);
+
+        var renderTarget = new D2D.WindowRenderTarget(factory, renderTargetProperties, hwndRenderTargetProperties);
+        _renderTarget = renderTarget;
+
+        window.SizeChanged -= Window_SizeChanged;
+        window.SizeChanged += Window_SizeChanged;
+
+        AddRendering();
+    }
+
+    private int ActualWidth { set; get; }
+    private int ActualHeight { set; get; }
+
+    private void AddRendering()
+    {
+        CompositionTarget.Rendering -= CompositionTarget_Rendering;
+        CompositionTarget.Rendering += CompositionTarget_Rendering;
+    }
+
+    public void CompositionTarget_Rendering(object? sender, EventArgs e)
+    {
+        Render();
+    }
+
+    private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+    {
+        ArgumentNullException.ThrowIfNull(_window);
+        ArgumentNullException.ThrowIfNull(_renderTarget);
+
+        var window = _window;
+
+        ActualWidth = (int) window.ActualWidth;
+        ActualHeight = (int) window.ActualHeight;
+
+        _renderTarget.Resize(new Size2(ActualWidth, ActualHeight));
+    }
+
+    public void Render()
+    {
+        var renderTarget = _renderTarget;
+        if (renderTarget == null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        renderTarget.BeginDraw();
+
+        renderTarget.Clear(new RawColor4(0.2f,0.5f,0.5f,1));
+
+        var width = Random.Shared.Next(100, 200);
+        var height = width;
+        var maxWidth = ActualWidth - width;
+        var maxHeight = ActualHeight - height;
+
+        var x = Random.Shared.Next(width, maxWidth);
+        var y = Random.Shared.Next(height, maxHeight);
+
+        var ellipse = new D2D.Ellipse(new RawVector2(x, y), width, height);
+
+        using var brush = new D2D.SolidColorBrush(_renderTarget, new RawColor4(1, 0, 0, 1));
+
+        renderTarget.FillEllipse(ellipse, brush);
+
+        renderTarget.EndDraw();
+    }
+
+    private D2D.WindowRenderTarget? _renderTarget;
+    private Window? _window;
+}
+```
+
+本文的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/a582f328a967af32635cba6d08720341431c9c24/LifafaheqearNearkairliraywal) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/a582f328a967af32635cba6d08720341431c9c24/LifafaheqearNearkairliraywal) 欢迎访问
+
+可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin a582f328a967af32635cba6d08720341431c9c24
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin a582f328a967af32635cba6d08720341431c9c24
+```
+
+获取代码之后，进入 LifafaheqearNearkairliraywal 文件夹
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
