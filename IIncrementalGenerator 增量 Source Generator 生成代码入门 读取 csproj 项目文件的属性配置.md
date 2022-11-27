@@ -95,7 +95,19 @@ namespace LainewihereJerejawwerye
   </ItemGroup>
 ```
 
-加上 CompilerVisibleProperty 之后，分析器才可以通过 GlobalOptions 获取属性。获取时，需要分析器项目使用 TryGetValue 方法，且要求在属性前面加上 `build_property.` 前缀
+加上 CompilerVisibleProperty 之后，分析器才可以通过 GlobalOptions 获取属性。获取时，需要分析器项目使用 TryGetValue 方法，且要求在属性前面加上 `build_property.` 前缀。下文的例子将会告诉大家具体的获取方法
+
+这里还存在一个问题，那就是属性的时机，如果属性的赋值是在分析器执行完成之后再赋值，那自然会让分析器拿不到符合预期的属性内容。而如果属性过早赋值，可能属性本身的逻辑无法实现。因此需要找到一个最迟的时机，这是在分析器可以获取到属性内容的最后时机，如以下代码，可以放在 GenerateMSBuildEditorConfigFileCore 执行之前
+
+```xml
+  <Target Name="Xxxxxxxx" BeforeTargets="GenerateMSBuildEditorConfigFileCore">
+    <PropertyGroup>
+      <MyCustomProperty>xxxxx</MyCustomProperty>
+    </PropertyGroup>
+  </Target>
+```
+
+如果属性能够一开始就赋值，那推荐就是一开始就赋值。如果属性有其他依赖，那推荐使用类似上面代码的写法。如果属性需要在 GenerateMSBuildEditorConfigFileCore 才获取到内容的，那就凉凉了，需要修改实现
 
 完成配置之后，开始编写分析器项目的代码，由于分析器项目采用的是增量源代码构建，逻辑上会比较复杂一些。在增量源代码生成里面，是没有直接提供 GlobalOptions 用来访问的，而是需要按照增量的方法，先过滤出感兴趣的内容。在感兴趣的内容发生变更或初始化时，将会触发实际执行的逻辑，在实际执行的逻辑，通过过滤条件的输出结果，拿到参数，生成代码
 
