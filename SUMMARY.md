@@ -738,6 +738,8 @@
 
  * [dotnet 使用 Crossgen2 对 DLL 进行 ReadyToRun 提升启动性能](dotnet-使用-Crossgen2-对-DLL-进行-ReadyToRun-提升启动性能.md)
 
+ * [dotnet 使用 CsWin32 库简化 Win32 函数调用逻辑](dotnet-使用-CsWin32-库简化-Win32-函数调用逻辑.md)
+
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
  * [dotnet 使用 FileAccess 与 OpenOrCreate 对文件访问权限的影响](dotnet-使用-FileAccess-与-OpenOrCreate-对文件访问权限的影响.md)
@@ -891,6 +893,8 @@
  * [dotnet 将C#编译为wasm让前端html使用](dotnet-将C-编译为wasm让前端html使用.md)
 
  * [dotnet 将任意时区的 DateTimeOffset 转换为中国时区时间文本](dotnet-将任意时区的-DateTimeOffset-转换为中国时区时间文本.md)
+
+ * [dotnet 将控制台 Console.WriteLine 内容输出到文件](dotnet-将控制台-Console.WriteLine-内容输出到文件.md)
 
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
@@ -2753,6 +2757,8 @@
  * [WPF 通过 GifBitmapDecoder 调用 WIC 解析 Gif 和进行动画播放的简单方法](WPF-通过-GifBitmapDecoder-调用-WIC-解析-Gif-和进行动画播放的简单方法.md)
 
  * [WPF 通过 InputManager 模拟调度触摸事件](WPF-通过-InputManager-模拟调度触摸事件.md)
+
+ * [WPF 通过 RawInput 获取触摸消息](WPF-通过-RawInput-获取触摸消息.md)
 
  * [WPF 通过 ReadyToRun 提升性能](WPF-通过-ReadyToRun-提升性能.md)
 
