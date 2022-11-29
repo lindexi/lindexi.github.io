@@ -69,6 +69,9 @@
 
 [WPF 触摸失效 试试重启触摸](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88-%E8%AF%95%E8%AF%95%E9%87%8D%E5%90%AF%E8%A7%A6%E6%91%B8.html )
 
+[WPF 通过 RawInput 获取触摸消息](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-RawInput-%E8%8E%B7%E5%8F%96%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF.html )
+
+
 ## 历史
 
 [为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](https://blog.lindexi.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88-WPF-%E8%BD%AF%E4%BB%B6%E5%9C%A8-win7-%E5%90%AF%E5%8A%A8%E6%97%B6%E4%BC%9A%E5%B0%9D%E8%AF%95%E8%B0%83%E8%B5%B7-wisptis-%E8%BF%9B%E7%A8%8B.html)

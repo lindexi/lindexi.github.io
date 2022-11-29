@@ -3,6 +3,8 @@
 很多开发者，包括开发老司机们，在碰到需要调用 Win32 函数时，都有一个困扰，那就是我应该如何去调用。有两个主要的选项，第一就是自己写 PInvoke 代码，第二就是使用其他大佬给许多 Win32 函数封装好的库。然而这两个方法都有各有各的缺点，第一个方法缺点是可能工作量会很大，需要写方法，写结构体等等。第二个方法缺点是大佬封装的库，虽然全，但可惜里面有很多我用不着的函数，有些浪费。本文将来和大家介绍一个宝藏库，可以很好解决此问题
 
 <!--more-->
+<!-- CreateTime:2022/11/28 8:02:47 -->
+
 
 <!-- 发布 -->
 <!-- 博客 -->
@@ -38,7 +40,7 @@
 
 此 Microsoft.Windows.CsWin32 当前最低支持到 .NET Framework 4.5 的版本。有一些旧的项目，采用的 csproj 项目文件格式还不是 SDK 风格的，推荐先改造此 csproj 文件，修改为 SDK 分割的。修改为 SDK 分割的 csproj 能有更好的可读性，而且可以减少多人协作时，编辑 csproj 带来的冲突。如何从旧的项目格式文件升级到 SDK 风格的，其实只需要两句命令行，请参阅 [从以前的项目格式迁移到 VS2017 新项目格式](https://blog.lindexi.com/post/%E4%BB%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0-VS2017-%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F.html )
 
-这里需要敲一下黑板，此 Microsoft.Windows.CsWin32 库使用到 SourceGenerator 技术，要求采用 VisualStudio 2022 较新版本才能支持。是 VisualStudio 2022 较新版本，不是 VisualStudio 2022 哦。如果你的 VisualStudio 2022 的版本比较落后了，那这个库使用的时候，也许会提示很多诡异的错误，比如找不到方法，或者是构建找到重复的文件
+这里需要敲一下黑板，此 Microsoft.Windows.CsWin32 库使用到 SourceGenerator 技术，要求采用 VisualStudio 2022 较新版本才能支持。是 VisualStudio 2022 较新版本，不仅仅是 VisualStudio 2022 哦。如果你的 VisualStudio 2022 的版本比较落后了，那这个库使用的时候，也许会提示很多诡异的错误，比如找不到方法，或者是构建找到重复的文件
 
 安装完成之后，就可以开始编写代码了。如上文说的，这个 Microsoft.Windows.CsWin32 库是只生成项目所需要的 Win32 函数的 PInvoke 封装，那么咱需要解决一个问题，如何让 Microsoft.Windows.CsWin32 库知道咱项目里需要哪些 Win32 函数
 
