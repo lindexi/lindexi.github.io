@@ -128,7 +128,7 @@ using AlphaMode = Vortice.DXGI.AlphaMode;
 
 为了创建 Win32 窗口以及初始化创建 DX 对象，就需要使用一些 Win32 函数。使用 Win32 函数之前，需要对 Win32 函数进行定义。本文使用 Microsoft.Windows.CsWin32 库来辅助编写 Win32 函数的定义
 
-在安装了 Microsoft.Windows.CsWin32 库，即可新建一个 `NativeMethods.txt` 的文件，在这个文件里面，一行一个函数或 Win32 类型名，即可自动使用源代码生成的方式创建定义
+在安装了 Microsoft.Windows.CsWin32 库，即可新建一个 `NativeMethods.txt` 的文件，在这个文件里面，一行一个函数或 Win32 类型名，即可自动使用源代码生成的方式创建定义。详细请看 [dotnet 使用 CsWin32 库简化 Win32 函数调用逻辑](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-CsWin32-%E5%BA%93%E7%AE%80%E5%8C%96-Win32-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%80%BB%E8%BE%91.html )
 
 新建一个 `NativeMethods.txt` 文件，在这个文件里面写上需要使用的 Win32 函数，内容如下
 
