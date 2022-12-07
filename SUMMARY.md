@@ -504,6 +504,8 @@
 
  * [dotnet core 2.1 使用阶梯编译](dotnet-core-2.1-使用阶梯编译.md)
 
+ * [dotnet core 不自动从 https 到 http 的 302 重定向](dotnet-core-不自动从-https-到-http-的-302-重定向.md)
+
  * [dotnet core 使用 CoreRT 将程序编译为 Native 程序](dotnet-core-使用-CoreRT-将程序编译为-Native-程序.md)
 
  * [dotnet core 使用 ef 迁移常见问题](dotnet-core-使用-ef-迁移常见问题.md)
