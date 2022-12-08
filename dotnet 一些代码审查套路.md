@@ -452,7 +452,7 @@ Directory.CreateDirectory(dir);
 
 ### 拼接路径
 
-如果看到有代码自己使用 `/` 或 `\` 拼接路径，可以使用 `Path.Combine` 方法代替
+如果看到有代码自己使用 `/` 或 `\` 拼接路径，可以使用 `Path.Combine` 或 `Path.Join` 方法代替。对于新代码来说，推荐 `Path.Join` 而不是 `Path.Combine` 方法
 
 
 
@@ -526,7 +526,9 @@ lock ("林德熙是逗比")
 代码审查到锁要求第一个注意的是是否使用了相同的对象，以及使用用的对象是共享的，会被其他业务拿来作为锁的对象
 
 
-## 延迟的目的要说明清楚
+## 时间
+
+### 延迟的目的要说明清楚
 
 如图
 
@@ -536,7 +538,13 @@ lock ("林德熙是逗比")
 
 看到 `await Task.Delay(TimeSpan.FromSeconds(2));` 的代码需要留意一下，也许这是逗比代码
 
+### DateTime 和 DateTimeOffset
 
+对于需要存储下来的时间，或者是需要跨设备通讯的时间对象来说，推荐使用 DateTimeOffset 而不是 DateTime 类型。原因是 DateTimeOffset 类型是带时区的，而 DateTime 是不带时区的
+
+在当前这个世界，如果告诉是早上 9 点，请问对应到北京时间是几点？只使用 DateTime 类型是如果知道的，因为 DateTime 没有存储时区的概念。在使用 DateTimeOffset 时，可以明确告诉是北京时间早上 9 点。于是在进行跨设备通讯时，多个设备的系统使用不同时区，也不会出现问题
+
+只有在本地储存时，或者是瞬时使用的，才可以使用 DateTime 类型，其他情况大部分都属于不安全的。如果啥都不想去思考，那就使用 DateTimeOffset 好了
 
 
 
@@ -696,6 +704,8 @@ Color color = Color.FromRgb(0xFF, 0x00, 0x00);
 
 关于 Dispatcher.Invoke 锁相互等待问题，请看[wpf 使用 Dispatcher.Invoke 冻结窗口](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-Dispatcher.Invoke-%E5%86%BB%E7%BB%93%E7%AA%97%E5%8F%A3.html) 
 
+不想思考的话，默认使用 Dispatcher.InvokeAsync 就好了，除非有特别需求，否则少用 Dispatcher.Invoke 方法
+
 ### 调用 Dispatcher.Invoke 里面使用 Shutdown 方法可以使用 InvokeShutdown 代替
 
 如下面代码
@@ -712,6 +722,12 @@ Color color = Color.FromRgb(0xFF, 0x00, 0x00);
 ```csharp
    Application.Current.Dispatcher.InvokeShutdown();
 ```
+
+### 不要使用 Dispatcher.InvokeShutdown 方法退出应用
+
+应该使用 Application.Current.Dispatcher.InvokeShutdown 或者是 Application.Current.Shutdown 进行退出，不应该使用 Dispatcher.InvokeShutdown 方法退出应用
+
+详细请看 [WPF 警惕使用 Dispatcher.InvokeShutdown 方法退出应用 将不触发 Application.Exit 事件](https://blog.lindexi.com/post/WPF-%E8%AD%A6%E6%83%95%E4%BD%BF%E7%94%A8-Dispatcher.InvokeShutdown-%E6%96%B9%E6%B3%95%E9%80%80%E5%87%BA%E5%BA%94%E7%94%A8-%E5%B0%86%E4%B8%8D%E8%A7%A6%E5%8F%91-Application.Exit-%E4%BA%8B%E4%BB%B6.html )
 
 ### 获得依赖属性值更新记得释放
 
