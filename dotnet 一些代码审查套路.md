@@ -46,14 +46,14 @@ Foo(1, 200, 15, 16, 20);
 
 变量名拼写是否符合语法，符合规范
 
-这部分其实用机器人不错，如 GitHub 的代码风格自动审查机器人 [CodeFactor](https://github.com/marketplace/codefactor ) 可以自动审查代码风格
+这部分其实用机器人来自动审查代码是不错的，如 GitHub 的代码风格自动审查机器人 [CodeFactor](https://github.com/marketplace/codefactor ) 可以自动审查代码风格
 
 ## 在没有带序号重载的 Where 中谨慎使用 i 变量
 
 大部分时候使用 Linq 的 Where 和 Select 等函数，默认是有多个重载的，其中一个重载是带上序号的，如下面代码
 
 ```csharp
-var n = new List<int>();
+            var n = new List<int>();
 
             n.Where((t, i) =>
             {
@@ -62,6 +62,17 @@ var n = new List<int>();
 ```
 
 以上的 t 表示的是某个元素，而 i 表示的是此元素的序号。因此在没有使用序号的 Where 中，谨慎使用 i 变量。因为 i 变量按照约定是用在带序号的重载作为表示元素的序号
+
+如以下代码，刚好 List 的元素类型也是 int 类型，写着也许就忘了下面代码的 i 其实表示的是 List 的元素而不是序号
+
+```csharp
+            var n = new List<int>();
+
+            n.Where(i =>
+            {
+
+            });
+```
 
 
 ## 该加单位的属性是否明确了单位
@@ -82,7 +93,7 @@ public double Foo { get; }
 public void CubeAdsorb(Point start, Point end, Point topLeft, List<Point> points, double theta, Matrix backMatrix, Vector vector, Cube cube)
 ```
 
-太多的参数建议定义一个新的类用来包装
+太多的参数建议定义一个新的类或结构体用来包装
 
 ## 判断逻辑判断方法不要随意倒换
 
@@ -454,25 +465,53 @@ Directory.CreateDirectory(dir);
 
 如果看到有代码自己使用 `/` 或 `\` 拼接路径，可以使用 `Path.Combine` 或 `Path.Join` 方法代替。对于新代码来说，推荐 `Path.Join` 而不是 `Path.Combine` 方法
 
+### 判断文件存在
+
+如果判断的文件是属于可以被用户直接输入的，小心不要在主 UI 线程上判断，因为可能用户输入的格式不对，导致当成网络资源，会让判断文件存在这个同步方法等待超长
+
+详细请看 [dotnet 警惕判断文件是否存在因为检查网络资源造成超长等待](https://blog.lindexi.com/post/dotnet-%E8%AD%A6%E6%83%95%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%E5%9B%A0%E4%B8%BA%E6%A3%80%E6%9F%A5%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E9%80%A0%E6%88%90%E8%B6%85%E9%95%BF%E7%AD%89%E5%BE%85.html )
 
 
 
 
 
 
+## 异步多线程
 
-
-
-
-## Task
+### Task
 
 如果一个 Task 在做耗时任务，需要看这个任务是不是会使用很长的时间，如果会就需要设置为长时间线程
 
-## 设置异步方法返回值为 void 不等待
+### 设置异步方法返回值为 void 不等待
 
 如果设置了异步方法，而且设置了方法的返回值为 void ，那么需要确认是否会出现重入的情况。也就是这个函数可能被多次调用，而且因为没有等待，相同的逻辑被进入多次
 
-## 锁的对象应该是不变的对象
+### 小心 async void 后台线程异常
+
+在 dotnet 的设计里面，如果存在一个后台线程未捕获异常，那整个进程将会挂掉。什么是 后台线程未捕获异常？这里需要区别于 Task 返回值的异常，对于异步来说，使用 `async void` 的方法就是线程的顶端，这个方法里面如果再对外抛出任何的异常，将属于后台线程未捕获异常，将会挂掉整个进程。简单说就是 `async void` 里，存在任何没有接住的异常，都会挂掉进程
+
+而 `async void` 的包含了两个实现，一个就是方法，一个就是 Lambda 表达式
+
+如下面的 Foo 方法，就属于 async void 方法，一旦对外抛出异常，那差不多这个进程就凉凉了。且这可没有统一的救的方法哦
+
+```csharp
+private async void Foo()
+{
+    // 可能抛出异常的代码（无论这个抛出是否是调用的其他的方法等，都算）
+}
+```
+
+如下面的事件加等的 Lambda 表达式，也是一样
+
+```csharp
+F1.FxEvent += async () => { throw xxx; }
+```
+
+代码审查看到所有的 `async void` 和 `+= async` 的代码时，需要看看里面的逻辑是否足够简单，或者是已经捕获了足够的异常，防止进程直接挂掉且没有日志等
+
+
+
+### 锁的对象应该是不变的对象
 
 看到使用 lock 时，请关注 lock 的对象。按照 lock 的工作原理，应该 lock 一个多线程访问的时候为共同的对象。根据这一点可以了解到有以下需要注意的套路
 
@@ -526,6 +565,8 @@ lock ("林德熙是逗比")
 代码审查到锁要求第一个注意的是是否使用了相同的对象，以及使用用的对象是共享的，会被其他业务拿来作为锁的对象
 
 
+
+
 ## 时间
 
 ### 延迟的目的要说明清楚
@@ -546,8 +587,11 @@ lock ("林德熙是逗比")
 
 只有在本地储存时，或者是瞬时使用的，才可以使用 DateTime 类型，其他情况大部分都属于不安全的。如果啥都不想去思考，那就使用 DateTimeOffset 好了
 
+### 判断时间距离
 
+在需要判断距离当前时间是否超过几天或几个小时等，将会使用类似 `DateTime.Now - _lastXxTime > XxTimeSpan` 的代码，着重代码审查在于看是谁减去谁，以及判断的大于小于符号是否写反。可以尝试想一下业务逻辑与时间判断，看看是不是写反了
 
+另外，在有些业务是需要更新最后的时间，需要在代码审查看一下，是否忘记更新最后时间了
 
 
 
@@ -728,6 +772,16 @@ Color color = Color.FromRgb(0xFF, 0x00, 0x00);
 应该使用 Application.Current.Dispatcher.InvokeShutdown 或者是 Application.Current.Shutdown 进行退出，不应该使用 Dispatcher.InvokeShutdown 方法退出应用
 
 详细请看 [WPF 警惕使用 Dispatcher.InvokeShutdown 方法退出应用 将不触发 Application.Exit 事件](https://blog.lindexi.com/post/WPF-%E8%AD%A6%E6%83%95%E4%BD%BF%E7%94%A8-Dispatcher.InvokeShutdown-%E6%96%B9%E6%B3%95%E9%80%80%E5%87%BA%E5%BA%94%E7%94%A8-%E5%B0%86%E4%B8%8D%E8%A7%A6%E5%8F%91-Application.Exit-%E4%BA%8B%E4%BB%B6.html )
+
+### 给 DispatcherTimer 设置 Interval 属性
+
+如果创建一个空的 DispatcherTimer 对象，没有设置 Interval 属性，也没有加上事件，直接开始，那将会空跑 UI 线程，让 UI 线程开始拉满一个 CPU 资源
+
+这是因为 DispatcherTimer 对象在没有设置 Interval 属性时，此属性的值就是 0 时间，也就是不断执行
+
+代码审查的时候，看到 DispatcherTimer 需要看看 Interval 属性是否被设置了，和设置的时间是多少
+
+更多请看 [WPF 如何知道当前有多少个 DispatcherTimer 在运行](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E5%BD%93%E5%89%8D%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA-DispatcherTimer-%E5%9C%A8%E8%BF%90%E8%A1%8C.html )
 
 ### 获得依赖属性值更新记得释放
 
