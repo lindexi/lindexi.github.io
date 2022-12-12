@@ -221,6 +221,8 @@ class 哲学书籍管理 : 书籍管理基类
 
 更多代码编写相关博客，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
+特别感谢 [小方](https://github.com/RafaelLxf) 帮忙改正
+
 
 
 

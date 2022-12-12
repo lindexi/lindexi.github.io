@@ -12,9 +12,9 @@
 
 在 [C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html ) 已经告诉大家如何使用 BenchmarkDotNet 测试性能，本文会告诉大家高级的用法。
 
-建议是创建一个控制台项目用来做性能测试，这个项目要求是 dotnet framework 4.6 以上，建议是 4.7 的版本。使用这个项目引用需要测试的项目，然后在里面写测试的代码。
+建议是创建一个控制台项目用来做性能测试，这个项目要求是 dotnet framework 4.6 以上，建议是 dotnet 7 的版本。使用这个项目引用需要测试的项目，然后在里面写测试的代码。
 
-例如被测试项目有一个类 Foo 里面有一个方法是 lindexidb ，需要测试 林德熙逗比 方法的性能
+例如被测试项目有一个类 Foo 里面有一个叫 Lindexidb 的方法，接下来的任务是需要测试这个 Lindexidb 方法的性能
 
 最简单的测试的代码
 
@@ -22,26 +22,26 @@
 public class FooPerf
 {
 	[Benchmark]
-	public void lindexidb()
+	public void Lindexidb()
 	{
-		new Foo().lindexidb();
+		new Foo().Lindexidb();
 	}
 }
 ```
 
-在 Main 函数使用下面代码
+在 Main 函数使用下面代码，即可执行基准性能测试
 
 ```csharp
   var boKar = BenchmarkRunner.Run<Foo>();
 ```
 
-这样就可以进行测试，如果需要传入一些参数，那么就需要使用本文的方法
+以上代码即可完成最基础的测试，但如上面代码所示，其实不够标准。其原因是咱的需求是测试这个 Lindexidb 方法的性能，但是在测试方法里面，却还需要构造出 Foo 对象，构造出对象的耗时将会影响测量的结果。此时就需要用到标准性能测试的更高级的用法了，如传入参数
 
 ## 传入参数
 
-如果需要测试的方法需要传入不同的参数，而且在使用不同的参数的性能也是不相同，就需要使用传入参数特性。
+如果需要测试的方法需要传入不同的参数，且在使用不同的参数的性能也是不相同，就需要使用传入参数特性的辅助
 
-例如有底层的项目
+例如有底层的项目的代码如下
 
 ```csharp
     public class Foo
@@ -53,9 +53,9 @@ public class FooPerf
     }
 ```
 
-需要创建另一个项目测试这个项目的性能， 需要注意不要在自己的库安装 BenchmarkDotNet ，安装之后会让启动速度慢很多
+推荐是创建另一个项目测试这个项目的性能，需要注意不要在自己的库安装 BenchmarkDotNet ，因为安装之后会让启动速度慢很多。用一个专门的项目用来执行性能测试才是推荐的方法
 
-在测试性能的另一个项目，安装 BenchmarkDotNet 引用库测试，所有的代码
+在测试性能的另一个项目，安装 BenchmarkDotNet 引用库进行测试，所有的用来测试性能的代码如下
 
 ```csharp
    class Program
@@ -78,9 +78,9 @@ public class FooPerf
     }
 ```
 
-需要知道，必须设置 FooPerf 的访问是 public 没有设置会出现异常
+需要知道的是，必须设置 FooPerf 的访问是 public 权限。如没有设置，将会出现异常
 
-现在例如修改了 Lindexidb 需要传入参数
+现在例如修改了 Lindexidb 方法，让这个方法需要传入参数，修改之后的代码如下
 
 ```csharp
     public class Foo
@@ -102,7 +102,7 @@ public class FooPerf
     }
 ```
 
-现在需要修改性能项目
+现在需要修改性能项目用来传入参数，修改的代码如下
 
 ```csharp
     public class FooPerf
@@ -116,7 +116,7 @@ public class FooPerf
     }
 ```
 
-可以看到上面写法很难写出测试很多参数
+可以看到上面写法很难写出测试很多参数，代码里写固定了参数了。一个好的方法是通过 ArgumentsAttribute 特性辅助传入参数，修改后的代码如下
 
 ```csharp
     public class FooPerf
@@ -127,7 +127,7 @@ public class FooPerf
         [Arguments(2, 3)]
         [Arguments(10, 3)]
         [Arguments(21, 3)]
-        public void Lindexidb(int a,int b)
+        public void Lindexidb(int a, int b)
         {
             var foo = new Foo();
             foo.Lindexidb(a, b);
@@ -135,7 +135,7 @@ public class FooPerf
     }
 ```
 
-通过 Arguments 可以传入不同的参数，使用这个方法可以防止初始化参数需要的时间计算为算法的
+通过 Arguments 可以传入不同的参数，使用这个方法可以防止初始化参数需要的时间计算为算法的时间，让测量更加准确
 
 运行程序可以看到下面输出
 
@@ -158,7 +158,7 @@ public class FooPerf
 | **Lindexidb** | **100** | **10** | **2.364 ns** | **0.0809 ns** | **0.2242 ns** |
 
 
-可以传入不同的参数，传入的参数可以自动转换
+可以传入不同的参数，传入的参数可以自动转换为输出结果的描述，如此可以看到在不同的参数下的性能
 
 如果传入的参数不对，就会提示，如下面代码
 
@@ -176,7 +176,7 @@ public class FooPerf
         }
 ```
 
-本来是使用 int 但是参数写 string 所以会出现下面提示
+本来是使用 int 但是参数写 string 类型，用错类型会出现下面提示
 
 ```csharp
 // Build Exception: The build has failed!
@@ -184,7 +184,7 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 CS0029: Cannot implicitly convert type 'string' to 'int'
 ```
 
-如果需要参数是 一个，如代码，传入的参数是两个，那么会出现异常 
+如果需要参数的数量 一个，如代码，但传入的参数是两个，那么会出现异常 
 
 ```csharp
     public class FooPerf
@@ -206,11 +206,11 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
     }
 ```
 
-
+要求特性里传入的参数无论是数量和类型都和方法需要的参数相同才可以
 
 ## 属性
 
-属性和字段都可以修改，但是修改字段需要修改公开字段，不推荐修改字段
+属性和字段都可以修改，但是修改字段需要修改公开字段，不推荐修改字段。修改的方法如下
 
 ```csharp
         [Params(10, 2, 3)]
@@ -259,9 +259,7 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 
 ## 传入多个值
 
-可以看到在特性写参数是比较多的，如果需要很多参数就需要写很多代码
-
-可以使用数组的方式把很多的代码作为数组
+可以看到在特性写参数是比较多的，如果需要很多参数就需要写很多代码。有时候需要做对比测试，例如新旧的代码的性能差异，如果还使用以上的方法传入参数，将会发现存在大量的重复代码。 可以使用数组的方式把很多的代码作为数组，方便多个不同的性能测试方法使用相同的参数
 
 请看代码
 
@@ -306,7 +304,7 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 
 例子放在 [github](https://github.com/lindexi/lindexi_gd/tree/ae481a39/HearwhejiyehallyiheFubaduwheefu) 欢迎小伙伴访问
 
-除了可以设置方法传入，还可以设置属性
+除了可以设置方法传入，还可以设置属性，如以下代码
 
 ```csharp
         [Benchmark]
@@ -535,14 +533,12 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 
 ```csharp
             BenchmarkRunner.Run<FooPerf>();
-
 ```
 
 只能测试一个类，如果有很多类就需要写很多代码，下面告诉大家如何找到所有方法
 
 ```csharp
  BenchmarkSwitcher.FromAssembly(typeof(Program).GetTypeInfo().Assembly).Run(args);
-
 ```
 
 在运行的时候就可以选运行哪个
@@ -584,6 +580,7 @@ CS0029: Cannot implicitly convert type 'string' to 'int'
 |   F1   | 14.17 ns | 0.0153 |     - |     - |      64 B |
 |   F2   | 40.84 ns |      - |     - |     - |         - |
 
+这里的 `Allocated` 指的是内存申请了多少，不等于运行方法结束之后，还占用多少内存哦
 
 
 
