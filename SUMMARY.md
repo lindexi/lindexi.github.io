@@ -1012,6 +1012,8 @@
 
  * [dotnet 让 C# 可以通过动态生成 HLSL 使用 DX12 的 GPU 并行计算库 ComputeSharp 的简介](dotnet-让-C-可以通过动态生成-HLSL-使用-DX12-的-GPU-并行计算库-ComputeSharp-的简介.md)
 
+ * [dotnet 记 TaskCompletionSource 的 SetException 可能将异常记录到 UnobservedTaskException 的问题](dotnet-记-TaskCompletionSource-的-SetException-可能将异常记录到-UnobservedTaskException-的问题.md)
+
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
 
  * [dotnet 设计规范 · 抽象类](dotnet-设计规范-·-抽象类.md)
