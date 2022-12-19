@@ -1130,6 +1130,8 @@
 
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
+ * [dotnet6 C# 一个国内还能用的 NTP 时间校准客户端的实现](dotnet6-C-一个国内还能用的-NTP-时间校准客户端的实现.md)
+
  * [dotnetCampus.UITest.WPF 一个支持中文用例的界面单元测试框架](dotnetCampus.UITest.WPF-一个支持中文用例的界面单元测试框架.md)
 
  * [FileStream 的 FlushAsync 方法在 .NET Framework 与 .NET Core 行为的不同](FileStream-的-FlushAsync-方法在-.NET-Framework-与-.NET-Core-行为的不同.md)
