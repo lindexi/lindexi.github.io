@@ -1006,6 +1006,8 @@
 
  * [dotnet 解析 TTF 字体文件格式](dotnet-解析-TTF-字体文件格式.md)
 
+ * [dotnet 警惕 Task 的 ContinueWith 带上 OnlyOnFaulted 参数抛出取消异常](dotnet-警惕-Task-的-ContinueWith-带上-OnlyOnFaulted-参数抛出取消异常.md)
+
  * [dotnet 警惕使用 StackTrace 加获取方法标记 Attribute 特性在 Release 下被内联](dotnet-警惕使用-StackTrace-加获取方法标记-Attribute-特性在-Release-下被内联.md)
 
  * [dotnet 警惕判断文件是否存在因为检查网络资源造成超长等待](dotnet-警惕判断文件是否存在因为检查网络资源造成超长等待.md)
