@@ -34,7 +34,7 @@ private void ShowPopupButtonClick(object sender, RoutedEventArgs e)
 
 ```
 
-这是一个简单的方法。当然还有另一个方法，使用`SetForegroundWindow`方法。
+这是一个简单的方法。当然还有另一个方法，使用`SetForegroundWindow`方法，将 Popup 设置到前台获取焦点
 
 ```csharp
 [DllImport("USER32.DLL")]
@@ -52,25 +52,45 @@ public static void ActivatePopup(Popup popup)
 
 参见：https://www.codeproject.com/Questions/184429/Text-box-is-not-working-in-WPF-Popup
 
-如果发现使用了我的方法还是无法输入，那么需要看一下 TextBox 是否禁用输入法。
+使用 `SetForegroundWindow` 方法的例子代码放在[github](https://github.com/lindexi/lindexi_gd/tree/1666e742fbd5ebda36e840a8e5f4b866251b3004/GakelfojeNairwogewerwhiheecem) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/1666e742fbd5ebda36e840a8e5f4b866251b3004/GakelfojeNairwogewerwhiheecem) 欢迎访问
+
+可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 1666e742fbd5ebda36e840a8e5f4b866251b3004
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 1666e742fbd5ebda36e840a8e5f4b866251b3004
+```
+
+获取代码之后，进入 GakelfojeNairwogewerwhiheecem 文件夹
+
+如果发现使用了我的方法还是无法输入，那么需要看一下 TextBox 是否禁用输入法，全局搜项目是否调用了如下代码
 
 ```csharp
  InputMethod.SetIsInputMethodSuspended
 ```
 
-和这个类的其他属性都可以设置输入法，请尝试修改他的值。
+如果发现设置了，那就尝试先注释掉代码，试试是否能输入。如果可以输入，再到开发者确认是否可以修改需求
 
-这个问题已经反馈 https://connect.microsoft.com/VisualStudio/feedback/details/389998/wpf-popup-messes-with-ime-switching ，微软已经修复
+这个问题已经反馈给微软，微软已经修复，详细请看: [https://connect.microsoft.com/VisualStudio/feedback/details/389998/wpf-popup-messes-with-ime-switching](https://connect.microsoft.com/VisualStudio/feedback/details/389998/wpf-popup-messes-with-ime-switching)
 
 ## 修复在 Popup 输入法不跟随
 
-在 Popup 里的 TextBox 输入可能出现输入法未跟随编辑框，这时需要调用 Win32 的方法
+在 Popup 里的 TextBox 输入可能出现输入法未跟随编辑框，这时需要调用 Win32 的方法，将 Popup 窗口设置焦点。在 WPF 里面，和其他的正常 Win32 应用一样，采用窗口来承载 Popup 内容。也就是说，创建显示一个 Popup 等于创建显示一个 Win32 窗口。有时候会影响复杂的逻辑导致 Popup 所在窗口没有获取到正确的焦点，从而让输入法没有跟随
 
 ```csharp
 [DllImport("User32.dll")]
 public static extern IntPtr SetFocus(IntPtr hWnd);
 
-IntPtr GetHwnd(Popup popup)
+public IntPtr GetHwnd(Popup popup)
 {
     HwndSource source = (HwndSource)PresentationSource.FromVisual(popup.Child);
     return source.Handle;
@@ -87,8 +107,9 @@ xxPopup.GotFocus += Popup_GotFocus;
             // WPF BUG Fix：TextBox 在 Popup 中，IME 备选框不跟随
             Win32.SetFocus(GetHwnd(RenamePopup.Child));
         }
-
 ```
+
+此问题报告最多的是搜狗的输入法，且不是所有用户都能遇到
 
 ## 在 WinForms 弹出的 WPF 的 TextBox 无法输入问题
 
@@ -105,10 +126,9 @@ xxPopup.GotFocus += Popup_GotFocus;
 解决的方法是调用 EnableModelessKeyboardInterop 传入 WPF 就可以
 
 ```csharp
-Window winWPF = new Window();  //WinWPF为想要显示的WPF窗体。
-System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop(winWPF);     
-winWPF.Show(); 
-
+Window winWPF = new Window();  //WinWPF为想要显示的WPF窗体。
+System.Windows.Forms.Integration.ElementHost.EnableModelessKeyboardInterop(winWPF);
+winWPF.Show(); 
 ```
 
 [WPF 禁用TextBox的触摸后自动弹出虚拟键盘 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/archive/2018/12/21/10154433.html )

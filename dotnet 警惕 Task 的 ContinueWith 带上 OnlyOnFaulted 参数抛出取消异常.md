@@ -3,6 +3,8 @@
 本文记录 dotnet 的一个令人迷惑的设计，在 Task 里，有一个叫 ContinueWith 的方法，此方法可以在 Task 完成时执行传入的委托。在 ContinueWith 方法里面，还有一个可选的 TaskContinuationOptions 参数，在此参数里面传入 OnlyOnFaulted 即可在 Task 出错时才执行传入的委托，然而此行为迷惑的是在 Task 正在执行完成却抛出取消异常
 
 <!--more-->
+<!-- CreateTime:2022/12/21 8:37:37 -->
+
 
 <!-- 发布 -->
 <!-- 博客 -->
@@ -53,7 +55,7 @@ await task;
 
     static void Foo()
     {
-
+    	
     }
 ```
 
@@ -97,7 +99,6 @@ await task;
 ```csharp
         TaskScheduler.UnobservedTaskException += (sender, eventArgs) =>
         {
-
         };
 ```
 
