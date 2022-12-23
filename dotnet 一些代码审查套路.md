@@ -742,46 +742,6 @@ Color color = Color.FromRgb(0xFF, 0x00, 0x00);
 
 为什么使用公开的类型能发挥 XAML 创建对象的性能？请看 [dotnet 读 WPF 源代码笔记 XAML 创建对象的方法](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-XAML-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95.html)
 
-### 调用 Dispatcher.Invoke 时需要判断是否可以使用 Dispatcher.InvokeAsync 代替
-
-在使用 WPF 的 Dispatcher.Invoke 时，如果遇到异步，是有可能出现锁的相互等待。因此更多推荐使用 Dispatcher.InvokeAsync 代替，如果可以修改为 Dispatcher.InvokeAsync 那么推荐使用 Dispatcher.InvokeAsync 代替。如果需要等待 Invoke 内容执行完成，记得使用 Dispatcher.InvokeAsync 时需要加上 await 等待
-
-关于 Dispatcher.Invoke 锁相互等待问题，请看[wpf 使用 Dispatcher.Invoke 冻结窗口](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-Dispatcher.Invoke-%E5%86%BB%E7%BB%93%E7%AA%97%E5%8F%A3.html) 
-
-不想思考的话，默认使用 Dispatcher.InvokeAsync 就好了，除非有特别需求，否则少用 Dispatcher.Invoke 方法
-
-### 调用 Dispatcher.Invoke 里面使用 Shutdown 方法可以使用 InvokeShutdown 代替
-
-如下面代码
-
-```csharp
-  Application.Current.Dispatcher.Invoke(() =>
-  {
-      Application.Current.Shutdown(0);
-  });
-```
-
-可以使用 InvokeShutdown 代替
-
-```csharp
-   Application.Current.Dispatcher.InvokeShutdown();
-```
-
-### 不要使用 Dispatcher.InvokeShutdown 方法退出应用
-
-应该使用 Application.Current.Dispatcher.InvokeShutdown 或者是 Application.Current.Shutdown 进行退出，不应该使用 Dispatcher.InvokeShutdown 方法退出应用
-
-详细请看 [WPF 警惕使用 Dispatcher.InvokeShutdown 方法退出应用 将不触发 Application.Exit 事件](https://blog.lindexi.com/post/WPF-%E8%AD%A6%E6%83%95%E4%BD%BF%E7%94%A8-Dispatcher.InvokeShutdown-%E6%96%B9%E6%B3%95%E9%80%80%E5%87%BA%E5%BA%94%E7%94%A8-%E5%B0%86%E4%B8%8D%E8%A7%A6%E5%8F%91-Application.Exit-%E4%BA%8B%E4%BB%B6.html )
-
-### 给 DispatcherTimer 设置 Interval 属性
-
-如果创建一个空的 DispatcherTimer 对象，没有设置 Interval 属性，也没有加上事件，直接开始，那将会空跑 UI 线程，让 UI 线程开始拉满一个 CPU 资源
-
-这是因为 DispatcherTimer 对象在没有设置 Interval 属性时，此属性的值就是 0 时间，也就是不断执行
-
-代码审查的时候，看到 DispatcherTimer 需要看看 Interval 属性是否被设置了，和设置的时间是多少
-
-更多请看 [WPF 如何知道当前有多少个 DispatcherTimer 在运行](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E5%BD%93%E5%89%8D%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA-DispatcherTimer-%E5%9C%A8%E8%BF%90%E8%A1%8C.html )
 
 ### 获得依赖属性值更新记得释放
 
@@ -884,9 +844,129 @@ IsHitTestVisibleProperty.OverrideMetadata(typeof(你的自定义控件), new UIP
 但是以上代码也会挖坑，如果后续需要有交互了，说不定找不到这个代码，从而不知道为什么自己写的控件没有交互
 
 
+### 窗口相关
+
+#### 调用 Close 关闭模态窗口
+
+在 WPF 里面，可以通过设置 Dialog 或 ShowDialog 的方式给某个现有的窗口设置一个模态子窗口。在调用 Close 关闭模态子窗口时，可能会触发一个 Windows 的（非 WPF 的）一个坑，那就是在关闭模态窗口后，父窗口居然失去焦点跑到了其他窗口的后面的问题
+
+复现步骤是：
+
+1. 弹出一个模态窗口，然后将模态窗口的父窗口设置为自身窗口；
+2. 切换到其他程序窗口中（比如 Windows 资源管理器窗口）；
+3. 切换回此模态窗口，然后关闭这个模态窗口上
+
+现象是模态窗口关闭后，父窗口并没有回到当前的顶层显示中。取而代之的，是其他程序的窗口，比如 Windows 资源管理器窗口
+
+规避方法是重新激活所有者窗口，如以下代码
+
+```csharp
+public ChildModalWindow()
+{
+    Closing += (sender, e) => Owner?.Activate();
+}
+```
+
+在代码审查看到 Close 关闭窗口，需要先看看是否关闭的是一个模态窗口，如果是模态窗口，看一下上面的 Closing 代码是否有编写，如没有编写，需要评估一下 父窗口居然失去焦点跑到了其他窗口的后面的问题 是否在需求上需要考虑。如需要考虑，那就推荐开发者加上以上的补丁代码
+
+此问题详细请看 [解决关闭模态窗口后，父窗口居然失去焦点跑到了其他窗口的后面的问题 - walterlv](https://blog.walterlv.com/post/fix-owner-window-dropping-down-when-close-a-modal-child-window.html )
 
 
 
+### 线程
+
+#### 不要开后台线程只用来调 Dispatcher 回 UI 上
+
+看看下面的逗比代码，大概就是 10 行代码 10 个吐槽点
+
+```csharp
+            ThreadPool.QueueUserWorkItem(o =>
+            {
+                Application.Current.Dispatcher.BeginInvoke(
+                    DispatcherPriority.SystemIdle,
+                    new Action(async () =>
+                    {
+                        Thread.Sleep(100);
+                        UserControl1.Foo();
+                    }));
+            });
+```
+
+**吐槽点**：
+
+- 开一个线程池任务，只是为了回到 UI 调用 UserControl1.Foo 而已。浪费线程池资源，直接调用即可 Dispatcher 调度即可
+
+- 使用 ThreadPool.QueueUserWorkItem 而不是 Task.Run 调度线程池任务。以上的代码如此简单，直接 Task.Run 即可
+
+- 使用 Dispatcher.BeginInvoke 而不是 Dispatcher.InvokeAsync 方法。 不想思考的话，默认使用 Dispatcher.InvokeAsync 就好了，除非有特别需求，否则少用 Dispatcher.Invoke 方法或 Dispatcher.BeginInvoke 方法
+
+- 使用 SystemIdle 优先级可能过低，需要看一下是否真需要如此低优先级。此优先级可能会很长时间都不执行
+
+- 使用 `new Action` 的显式写法，而不是直接委托推导。属于多余的代码，但也可能是受限 Dispatcher.BeginInvoke 方法
+
+- 在 Action 里面使用 async 异步。这就等于是 async void 线程顶层，异步是否完全执行完成，是无法被上层感知到的。再加上 async void 属于 线程顶层，导致一旦存在任何异常，将可能让进程退出
+
+- 写了 async 但是函数体不存在任何 await 代码，白跑了异步
+
+- 调度回 UI 只是为了 Thread.Sleep 去卡 UI 线程，图什么呢。简单优化是 Thread.Sleep 尽可能改 Task.Delay 方法。针对以上代码，更具体的更改是在进入 UI 之前，自己 Task.Delay 一下
+
+以上是比较直接的吐槽点，来试试大家还能不能找出更多的吐槽点
+
+根据以上的吐槽点，改造之后的代码：
+
+```csharp
+// 刚好调用就在 UI 上的，且不明确需要优先级的：
+
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
+            UserControl1.Foo();
+
+// 调用是在后台线程上的，或明确需要优先级的：
+
+            await Task.Delay(TimeSpan.FromMilliseconds(100));
+            _ = Application.Current.Dispatcher.InvokeAsync(() => UserControl1.Foo(), DispatcherPriority.SystemIdle);
+```
+
+
+### 调用 Dispatcher.Invoke 时需要判断是否可以使用 Dispatcher.InvokeAsync 代替
+
+在使用 WPF 的 Dispatcher.Invoke 时，如果遇到异步，是有可能出现锁的相互等待。因此更多推荐使用 Dispatcher.InvokeAsync 代替，如果可以修改为 Dispatcher.InvokeAsync 那么推荐使用 Dispatcher.InvokeAsync 代替。如果需要等待 Invoke 内容执行完成，记得使用 Dispatcher.InvokeAsync 时需要加上 await 等待
+
+关于 Dispatcher.Invoke 锁相互等待问题，请看[wpf 使用 Dispatcher.Invoke 冻结窗口](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-Dispatcher.Invoke-%E5%86%BB%E7%BB%93%E7%AA%97%E5%8F%A3.html) 
+
+不想思考的话，默认使用 Dispatcher.InvokeAsync 就好了，除非有特别需求，否则少用 Dispatcher.Invoke 方法或 Dispatcher.BeginInvoke 方法
+
+### 调用 Dispatcher.Invoke 里面使用 Shutdown 方法可以使用 InvokeShutdown 代替
+
+如下面代码
+
+```csharp
+  Application.Current.Dispatcher.Invoke(() =>
+  {
+      Application.Current.Shutdown(0);
+  });
+```
+
+可以使用 InvokeShutdown 代替
+
+```csharp
+   Application.Current.Dispatcher.InvokeShutdown();
+```
+
+### 不要使用 Dispatcher.InvokeShutdown 方法退出应用
+
+应该使用 Application.Current.Dispatcher.InvokeShutdown 或者是 Application.Current.Shutdown 进行退出，不应该使用 Dispatcher.InvokeShutdown 方法退出应用
+
+详细请看 [WPF 警惕使用 Dispatcher.InvokeShutdown 方法退出应用 将不触发 Application.Exit 事件](https://blog.lindexi.com/post/WPF-%E8%AD%A6%E6%83%95%E4%BD%BF%E7%94%A8-Dispatcher.InvokeShutdown-%E6%96%B9%E6%B3%95%E9%80%80%E5%87%BA%E5%BA%94%E7%94%A8-%E5%B0%86%E4%B8%8D%E8%A7%A6%E5%8F%91-Application.Exit-%E4%BA%8B%E4%BB%B6.html )
+
+### 给 DispatcherTimer 设置 Interval 属性
+
+如果创建一个空的 DispatcherTimer 对象，没有设置 Interval 属性，也没有加上事件，直接开始，那将会空跑 UI 线程，让 UI 线程开始拉满一个 CPU 资源
+
+这是因为 DispatcherTimer 对象在没有设置 Interval 属性时，此属性的值就是 0 时间，也就是不断执行
+
+代码审查的时候，看到 DispatcherTimer 需要看看 Interval 属性是否被设置了，和设置的时间是多少
+
+更多请看 [WPF 如何知道当前有多少个 DispatcherTimer 在运行](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E5%BD%93%E5%89%8D%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA-DispatcherTimer-%E5%9C%A8%E8%BF%90%E8%A1%8C.html )
 
 
 
