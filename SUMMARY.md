@@ -1278,6 +1278,8 @@
 
  * [Office 文档解析 文档格式和协议](Office-文档解析-文档格式和协议.md)
 
+ * [dotnet 世界猜测 随机数的小测试](dotnet-世界猜测-随机数的小测试.md)
+
  * [ParaView](ParaView.md)
 
  * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)
