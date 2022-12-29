@@ -2482,6 +2482,8 @@
 
  * [WPF 已知问题 某些设备上的应用在 WindowChromeWorker 抛出 System.OverflowException 异常](WPF-已知问题-某些设备上的应用在-WindowChromeWorker-抛出-System.OverflowException-异常.md)
 
+ * [WPF 已知问题 清空 CollectionView 的 SortDescriptions 可能抛出空异常](WPF-已知问题-清空-CollectionView-的-SortDescriptions-可能抛出空异常.md)
+
  * [WPF 已知问题 窗口在屏幕外创建将不会刷新渲染](WPF-已知问题-窗口在屏幕外创建将不会刷新渲染.md)
 
  * [WPF 已知问题 资源字典树引用与资源寻找的坑](WPF-已知问题-资源字典树引用与资源寻找的坑.md)
