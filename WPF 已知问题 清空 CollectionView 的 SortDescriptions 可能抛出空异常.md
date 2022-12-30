@@ -3,6 +3,8 @@
 本文记录一个 WPF 的已知问题，在通过 CollectionViewSource 获取到 CollectionView 之后，如果 CollectionViewSource 对象已被 GC 回收，将可能在调用 CollectionView 的 SortDescriptions 属性进行清空或者移除项时，也就是使用 SortDescriptionCollection 类型的清空或者移除项时，在 WPF 框架里面抛出空异常
 
 <!--more-->
+<!-- CreateTime:2022/12/29 8:43:24 -->
+
 
 <!-- 发布 -->
 <!-- 博客 -->
@@ -49,7 +51,7 @@
     }
 ```
 
-以上的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/c7556d7b92605000011425f82793f9e4063e5a00/LechelaneHenayfucee) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c7556d7b92605000011425f82793f9e4063e5a00/LechelaneHenayfucee) 欢迎访问
+以上的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c7556d7b92605000011425f82793f9e4063e5a00/LechelaneHenayfucee) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c7556d7b92605000011425f82793f9e4063e5a00/LechelaneHenayfucee) 欢迎访问
 
 可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
