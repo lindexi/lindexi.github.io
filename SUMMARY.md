@@ -2536,6 +2536,8 @@
 
  * [WPF 按钮 Button 的 IsEnabled 属性对 WindowChrome 的 IsHitTestVisibleInChrome 的影响](WPF-按钮-Button-的-IsEnabled-属性对-WindowChrome-的-IsHitTestVisibleInChrome-的影响.md)
 
+ * [WPF 探索任务管理器的进程分组逻辑](WPF-探索任务管理器的进程分组逻辑.md)
+
  * [WPF 控件 Content 的内容不显示下划线字符串](WPF-控件-Content-的内容不显示下划线字符串.md)
 
  * [WPF 控件继承树](WPF-控件继承树.md)
