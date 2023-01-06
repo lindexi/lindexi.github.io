@@ -454,6 +454,8 @@
 
  * [dotnet C# 在 finally 抛异常会发生什么](dotnet-C-在-finally-抛异常会发生什么.md)
 
+ * [dotnet C# 基于 INotifyPropertyChanged 实现一个 CLR 属性绑定辅助类](dotnet-C-基于-INotifyPropertyChanged-实现一个-CLR-属性绑定辅助类.md)
+
  * [dotnet C# 基础 为什么 GetHashCode 推荐只取只读属性或字段做哈希值](dotnet-C-基础-为什么-GetHashCode-推荐只取只读属性或字段做哈希值.md)
 
  * [dotnet C# 多次对一个对象调用构造函数会发生什么](dotnet-C-多次对一个对象调用构造函数会发生什么.md)
