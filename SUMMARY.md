@@ -2312,6 +2312,8 @@
 
  * [WPF 修复 dotnet 6 与源代码包冲突](WPF-修复-dotnet-6-与源代码包冲突.md)
 
+ * [WPF 修复引用库报错 所使用的 PresentationFramework 6.0.2 高于所引用的标识为 6.0.0 程序集](WPF-修复引用库报错-所使用的-PresentationFramework-6.0.2-高于所引用的标识为-6.0.0-程序集.md)
+
  * [WPF 修改 ItemContainerStyle 鼠标移动到未选中项效果和选中项背景](WPF-修改-ItemContainerStyle-鼠标移动到未选中项效果和选中项背景.md)
 
  * [WPF 修改图片颜色](WPF-修改图片颜色.md)
@@ -2349,6 +2351,8 @@
  * [WPF 判断当前应用被打包为 UWP 而运行](WPF-判断当前应用被打包为-UWP-而运行.md)
 
  * [WPF 判断调用方法堆栈](WPF-判断调用方法堆栈.md)
+
+ * [WPF 制作一个加密文件夹应用](WPF-制作一个加密文件夹应用.md)
 
  * [WPF 制作一个占用文件的测试工具](WPF-制作一个占用文件的测试工具.md)
 
