@@ -3,6 +3,8 @@
 习惯了 WPF 或 UWP 等的依赖属性的绑定机制之后，我在写 CLR 属性时，有时也期望将两个 CLR 属性给绑定到一起。在 dotnet 里，提供了 System.ComponentModel.INotifyPropertyChanged 接口，用于让某个类型约定了属性变更通知机制。于是有了这个基础，即可实现 CLR 属性的单向和双向绑定，核心原理就是在收到 INotifyPropertyChanged 的属性变更事件之后，更改绑定方的属性
 
 <!--more-->
+<!-- CreateTime:2023/1/6 8:19:55 -->
+
 
 <!-- 发布 -->
 <!-- 博客 -->
