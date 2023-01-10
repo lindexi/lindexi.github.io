@@ -9,7 +9,6 @@
 <!-- CreateTime:2022/11/14 20:22:49 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 当前，此 PathFigureCollectionConverter 非线程安全问题，没有规避方法
 

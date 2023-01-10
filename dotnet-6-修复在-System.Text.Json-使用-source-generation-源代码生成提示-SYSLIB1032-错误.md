@@ -9,7 +9,6 @@
 <!-- CreateTime:2022/10/31 8:09:00 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 如官方文档的对 [SYSLIB1032](https://learn.microsoft.com/en-us/dotnet/fundamentals/syslib-diagnostics/syslib1032) 的描述，这是由于标记了 JsonSerializableAttribute 的类型没有写上 partial 关键词，导致了源代码生成无法通过分部类生成代码，从而失败
 
