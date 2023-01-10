@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/10/27 8:09:26 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 在上一篇博客 [使用 Uno Islands 在现有 WPF 里面嵌入 Uno 框架](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-Uno-Islands-%E5%9C%A8%E7%8E%B0%E6%9C%89-WPF-%E9%87%8C%E9%9D%A2%E5%B5%8C%E5%85%A5-Uno-%E6%A1%86%E6%9E%B6.html ) 我在 WPF 里面嵌入了 Uno 应用，但是我发现 TextBlock 无法正常输入中文，如果输入了中文，那将会显示乱码，如下图
 

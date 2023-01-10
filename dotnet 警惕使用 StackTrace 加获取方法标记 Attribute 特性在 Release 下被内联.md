@@ -6,7 +6,6 @@
 <!-- CreateTime:2022/10/26 17:12:31 -->
 
 <!-- 发布 -->
-<!-- 博客 -->
 
 这一个坑是来源于我所在团队开源的 CUnit (中文单元测试框架) 仓库的一次单元测试过程，我发现了在 Debug 下能通过测试，但是在 Release 下失败。详细请看： https://github.com/dotnet-campus/CUnit/actions/runs/3327386251/jobs/5502313113
 
