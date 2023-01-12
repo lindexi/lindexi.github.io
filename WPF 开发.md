@@ -1312,3 +1312,30 @@ https://github.com/dotnet/wpf/issues/5937#issuecomment-1010510114
 ## Helix 3d 加载资源
 
 可以采用对应的 Reader 加载，详细请看 HelixBiyawubiburwhoKaiwunaikarwheqar 项目
+
+
+
+
+
+
+
+
+## WPF 行为
+
+### 设置 DrawingGroup 进行 Freeze 之后设置 Transform 属性
+
+设置 DrawingGroup 进行 Freeze 之后设置 Transform 属性将会抛出异常
+
+```csharp
+System.InvalidOperationException:“无法在对象“System.Windows.Media.DrawingGroup”上设置属性，因为它处于只读状态。”
+```
+
+代码如下
+
+```csharp
+DrawingGroup drawingGroup = Draw();
+drawingGroup.Freeze();
+drawingGroup.Transform = translateTransform;
+```
+
+解决方法是替换漫游的方式，替换的方式是通过 DrawingContext 的 PushTransform 方法修改
