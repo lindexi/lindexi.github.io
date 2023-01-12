@@ -1036,6 +1036,8 @@
 
  * [dotnet 读 WPF 源代码笔记 AppDomainShutdownMonitor 的设计](dotnet-读-WPF-源代码笔记-AppDomainShutdownMonitor-的设计.md)
 
+ * [dotnet 读 WPF 源代码笔记 GlyphRun 的 DeviceFontName 的功能是什么](dotnet-读-WPF-源代码笔记-GlyphRun-的-DeviceFontName-的功能是什么.md)
+
  * [dotnet 读 WPF 源代码笔记 SafeMILHandleMemoryPressure 的作用](dotnet-读-WPF-源代码笔记-SafeMILHandleMemoryPressure-的作用.md)
 
  * [dotnet 读 WPF 源代码笔记 Stroke 类可能存在的内存泄露](dotnet-读-WPF-源代码笔记-Stroke-类可能存在的内存泄露.md)
