@@ -221,6 +221,8 @@ for (var i = 0; i < text.Length; i++)
 
 请将 Brushes.White 替换为字体前景色的画刷
 
+以上的 `deviceFontName` 参数留空即可，这是一个没有什么作用的参数，详细请看 [dotnet 读 WPF 源代码笔记 GlyphRun 的 DeviceFontName 的功能是什么](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-GlyphRun-%E7%9A%84-DeviceFontName-%E7%9A%84%E5%8A%9F%E8%83%BD%E6%98%AF%E4%BB%80%E4%B9%88.html )
+
 以上即可完成文本的绘制，这是一个底层的方式，看起来也很简单
 
 ## 创建成本

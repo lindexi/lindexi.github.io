@@ -3,6 +3,8 @@
 从业务代码构建出来 GlyphRun 对象，在 WPF 的渲染层里，如何利用 GlyphRun 提供的数据将字符在界面呈现出来。本文将和大家聊聊从 WPF 的渲染层获取到 GlyphRun 数据，到调用 DirectX 的各个渲染相关方法的过程，也就是 WPF 绘制字符的原理或者说实现方法
 
 <!--more-->
+<!-- CreateTime:2023/1/12 16:19:33 -->
+
 <!-- 草稿 -->
 <!-- 博客 -->
 
@@ -33,6 +35,10 @@
 另一条渲染方式，是通过 Geometry 几何的方式渲染，这个逻辑就简单很多。通过调用 [IDWriteFontFace::GetGlyphRunOutline](https://learn.microsoft.com/en-us/windows/win32/api/dwrite/nf-dwrite-idwritefontface-getglyphrunoutline ) 方法即可从 GlyphRun 对象生成字形的 Geometry 对象，接着走 Geometry 渲染逻辑即可。本文不讨论 Geometry 渲染逻辑，继续回到 GlyphRun 渲染的细节逻辑
 
 接下来就是代码逻辑的细节部分逻辑了，开始之前期望大家对于 WPF 框架有一定的了解。更多的 WPF 源代码博客请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+由于 WPF 具备软硬渲染的能力，对于软渲染来说走的是另一个分支逻辑，有一些细节上的差异。本文将着重放在硬渲染上，关于软渲染部分只会提到部分
+
+忽略 WPF 的渲染线程的创建和初始化。在 WPF 开始渲染的时候，可以认为的一个核心入口是 CMilSlaveRenderData 的 Draw 方法，这个方法就是在开始渲染时被调用
 
 在 CMilSlaveRenderData 类型的 Draw 方法里面，将会接收到 UI 线程发生给渲染线程的绘制任务，如以下代码
 
@@ -105,7 +111,7 @@ Cleanup:
 }
 ```
 
-这样的写法是因为这是远古时代的逻辑，那时候要啥现代的机制都没有
+这样的写法是因为这是远古时代的逻辑，那时候要啥现代的机制都没有。而且 goto 也只是用来清理而已，看起来还行
 
 以上代码的 MILCMD_DRAW_GLYPH_RUN 类型就是渲染任务项的信息，类型定义如下。大概就是一个 GlyphRun 和 ForegroundBrush 两个有用的属性
 
@@ -212,7 +218,7 @@ Cleanup:
    wpfgfx_cor3.dll!CPartitionThread::ThreadMain(void * pv) 行 51   C++
 ```
 
-以上代码的 `m_pIRenderTarget->DrawGlyphs(pars)` 就是本文的重点，调用 `m_pIRenderTarget` 的 DrawGlyphs 方法绘制 Glyph 内容。在 WPF 的 gfx 层的规范是采用 `m_` 开头的就是表示类型的字段。这里的 `m_pIRenderTarget` 当前的运行实际类型是 CDesktopHWNDRenderTarget 类型，代码定义的是 IRenderTargetInternal 接口
+以上代码的 `m_pIRenderTarget->DrawGlyphs(pars)` 就是本文的重点，调用 `m_pIRenderTarget` 的 DrawGlyphs 方法绘制 Glyph 内容。在 WPF 的 gfx 层的规范是采用 `m_` 开头的就是表示类型的字段。这里的 `m_pIRenderTarget` 当前的运行实际类型是 CDesktopHWNDRenderTarget 类型，代码定义的是 IRenderTargetInternal 接口。如果开启了软渲染，那么这里的 `m_pIRenderTarget` 将是 CSwRenderTargetGetBounds 类型。有关于软渲染的逻辑，将会在下文再聊，这里先集中火力到常用的硬渲染的逻辑
 
 这里的 CDesktopHWNDRenderTarget 表示的是对桌面窗口的 RenderTarget 封装，没有多少实际的代码，继承关系大概如下
 
@@ -263,7 +269,7 @@ Cleanup:
 }
 ```
 
-以上代码的 `pRTInternalNoAddRef` 当前的实际运行类型是 CHwHWNDRenderTarget 类型，这里的中转是为了兼容软渲染和硬渲染逻辑。这里的 CHwHWNDRenderTarget 的 Hw 的意思就是 Hardware 硬件的意思，继承关系如下
+以上代码的 `pRTInternalNoAddRef` 当前的实际运行类型是 CHwHWNDRenderTarget 类型，这里的中转是为了兼容软渲染和硬渲染逻辑。对应在进行软渲染时，将会是 CSwRenderTargetHWND 类型。这里的 CHwHWNDRenderTarget 的 Hw 的意思就是 Hardware 硬件的意思，继承关系如下
 
 ```c++
 class CHwHWNDRenderTarget : 
@@ -446,6 +452,9 @@ public:
 
 
 
+
+开启软渲染
+
 RenderOptions.ProcessRenderMode = RenderMode.SoftwareOnly;
 
 +       pRTInternalNoAddRef 0x000002d9a322ea50 {m_hwnd=0x0000000004422b20 {unused=??? } m_pPresenter=0x000002d9a14a2540 {m_pIdealDisplay=...} ...}  IRenderTargetInternal * {CSwRenderTargetHWND}
@@ -516,3 +525,21 @@ Cleanup:
 
 >   wpfgfx_cor3.dll!CSoftwareRasterizer::DrawGlyphRun(CSpanSink * pSpanSink, CSpanClipper * pSpanClipper, DrawGlyphsParameters & pars, CMILBrush * pBrush, float flEffectAlpha, CGlyphPainterMemory * pGlyphPainterMemory, bool fTargetSupportsClearType, bool * pfClearTypeUsedToRender) 行 424 C++
 
+
+
+
+
+
+[IDWriteFontFace::GetGlyphRunOutline (dwrite.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/dwrite/nf-dwrite-idwritefontface-getglyphrunoutline )
+
+[IDirect3DDevice9：：SetTexture (d3d9.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/win32/api/d3d9/nf-d3d9-idirect3ddevice9-settexture?f1url=%3FappId%3DDev16IDEF1%26l%3DZH-CN%26k%3Dk(D3D9%252FIDirect3DDevice9%253A%253ASetTexture)%3Bk(IDirect3DDevice9%253A%253ASetTexture)%3Bk(SetTexture)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(DevLang-C%252B%252B)%3Bk(TargetOS-Windows)%26rd%3Dtrue )
+
+[DWRITE_TEXTURE_TYPE (dwrite.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/win32/api/dwrite/ne-dwrite-dwrite_texture_type?redirectedfrom=MSDN&f1url=%3FappId%3DDev16IDEF1%26l%3DZH-CN%26k%3Dk(DWRITE%252FDWRITE_TEXTURE_CLEARTYPE_3x1)%3Bk(DWRITE_TEXTURE_CLEARTYPE_3x1)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(DevLang-C%252B%252B)%3Bk(TargetOS-Windows)%26rd%3Dtrue )
+
+[IDWriteGlyphRunAnalysis：：CreateAlphaTexture (dwrite.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/win32/api/dwrite/nf-dwrite-idwriteglyphrunanalysis-createalphatexture?f1url=%3FappId%3DDev16IDEF1%26l%3DZH-CN%26k%3Dk(DWRITE%252FIDWriteGlyphRunAnalysis%253A%253ACreateAlphaTexture)%3Bk(IDWriteGlyphRunAnalysis%253A%253ACreateAlphaTexture)%3Bk(CreateAlphaTexture)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(SolutionItemsProject)%3Bk(DevLang-C%252B%252B)%3Bk(TargetOS-Windows)%26rd%3Dtrue )
+
+[使用自定义文本呈现器进行呈现 - Win32 apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/win32/directwrite/how-to-implement-a-custom-text-renderer )
+
+[ID2D1RenderTarget::DrawGlyphRun (d2d1.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/api/d2d1/nf-d2d1-id2d1rendertarget-drawglyphrun )
+
+[IDWriteGlyphRunAnalysis：：CreateAlphaTexture (dwrite.h) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/win32/api/dwrite/nf-dwrite-idwriteglyphrunanalysis-createalphatexture )
