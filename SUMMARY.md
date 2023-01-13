@@ -1076,6 +1076,8 @@
 
  * [dotnet 读 WPF 源代码笔记 插入触摸设备的初始化获取设备信息](dotnet-读-WPF-源代码笔记-插入触摸设备的初始化获取设备信息.md)
 
+ * [dotnet 读 WPF 源代码笔记 渲染层是如何将字符 GlyphRun 画出来的](dotnet-读-WPF-源代码笔记-渲染层是如何将字符-GlyphRun-画出来的.md)
+
  * [dotnet 读 WPF 源代码笔记 渲染收集是如何触发](dotnet-读-WPF-源代码笔记-渲染收集是如何触发.md)
 
  * [dotnet 读 WPF 源代码笔记 简单聊聊文本布局换行逻辑](dotnet-读-WPF-源代码笔记-简单聊聊文本布局换行逻辑.md)
