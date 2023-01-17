@@ -231,6 +231,8 @@
 
 在 WPF 框架，一开始设计是不存在 DriectWrite 的，是在 .NET Framework 3.5 之后才加入的，在 .NET Framework 4.0 发布，这里是一个[官方的引用](https://github.com/dotnet/wpf/issues/5509#issuecomment-946861616) 也在 WPF 编程宝典有讲到
 
+在 WPF 完成文本的排版布局之后，将决定了每个 glyph 的坐标，至于如何将字符渲染出来，请参阅 [dotnet 读 WPF 源代码笔记 渲染层是如何将字符 GlyphRun 画出来的](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E6%B8%B2%E6%9F%93%E5%B1%82%E6%98%AF%E5%A6%82%E4%BD%95%E5%B0%86%E5%AD%97%E7%AC%A6-GlyphRun-%E7%94%BB%E5%87%BA%E6%9D%A5%E7%9A%84.html )
+
 
 
 
