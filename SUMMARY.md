@@ -6,6 +6,8 @@
 
  * [2021 专家围炉](2021-专家围炉.md)
 
+ * [2022 德熙 腾讯云 年度优秀作者](2022-德熙-腾讯云-年度优秀作者.md)
+
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
  * [asp dotnet core 3.0 接口返回 json 使用 PascalCase 格式](asp-dotnet-core-3.0-接口返回-json-使用-PascalCase-格式.md)
