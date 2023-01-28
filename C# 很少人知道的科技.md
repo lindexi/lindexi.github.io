@@ -401,6 +401,19 @@ await await await await await await await await await await await await await aw
 
 ![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102848.jpg)
 
+甚至以下的奇侠代码后续也许还能编过，当然现在还是不行的哦
+
+```csharp
+public class 😮 : Exception { }
+public static bool 🤔(this string value) => string.IsNullOrWhitespace(value);
+
+string s = null;
+if (s.🤔()) 
+     throw new 😮();
+```
+
+
+
 ## if this == null
 
 一般看到下面的代码都觉得是不可能进入输出的
@@ -659,6 +672,8 @@ F1
 ```
 
 参见：[WPF 判断调用方法堆栈](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
+
+调用堆栈判断是存在一个小坑的，请看 [dotnet 警惕使用 StackTrace 加获取方法标记 Attribute 特性在 Release 下被内联](https://blog.lindexi.com/post/dotnet-%E8%AD%A6%E6%83%95%E4%BD%BF%E7%94%A8-StackTrace-%E5%8A%A0%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%A0%87%E8%AE%B0-Attribute-%E7%89%B9%E6%80%A7%E5%9C%A8-Release-%E4%B8%8B%E8%A2%AB%E5%86%85%E8%81%94.html )
 
 欢迎加入 dotnet 职业技术学院 [https://t.me/dotnet_campus](https://t.me/dotnet_campus) 使用 Telegram 方法请看 [如何使用 Telegram](https://blog.lindexi.com/post/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Telegram.html )
 
