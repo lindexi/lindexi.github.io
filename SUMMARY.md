@@ -926,6 +926,8 @@
 
  * [dotnet 手工打一个 dotnet tool 包](dotnet-手工打一个-dotnet-tool-包.md)
 
+ * [dotnet 打包 NuGet 的配置属性大全整理](dotnet-打包-NuGet-的配置属性大全整理.md)
+
  * [dotnet 执行 docker 容器 error MSB4018 CreateAppHost 任务意外失败可能原因](dotnet-执行-docker-容器-error-MSB4018-CreateAppHost-任务意外失败可能原因.md)
 
  * [dotnet 找不到 PostAsJsonAsync 方法](dotnet-找不到-PostAsJsonAsync-方法.md)

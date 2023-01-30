@@ -60,6 +60,20 @@ Exclude="..\Tool.UWP\obj\**\*;"
 <Compile Include="..\..\DocumentFormat.OpenXml.Flatten\src\DocumentFormat.OpenXml.Flatten\**\*.cs" Exclude="**\bin\**\*.cs;**\obj\**\*.cs" Link="DocumentFormat.OpenXml.Flatten\%(RecursiveDir)\%(FileName)%(Extension)" />
 ```
 
+如果只是为了放入到某个文件夹里面，可以使用 LinkBase 特性辅助，例如全部放入到 `Shared` 文件夹，例子如下
+
+```xml
+<ItemGroup>
+  <Content Include="..\Extras\**\*.cs" LinkBase="Shared"/>
+</ItemGroup>
+```
+
+使用之后的例子效果如下
+
+<!-- ![](image/Roslyn 引用某个文件夹所有文件作为链接/Roslyn 引用某个文件夹所有文件作为链接0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2023129161598688.jpg)
+
 通过这个方法可以将原本一个大的项目，才分为多个小的项目，每个小项目独立，但是最终打包的项目将通过此 方式引用所有的小项目。同时打包的时候不仅主项目会打包，每个小的项目都可以独立打包，这样做的优势是可以提升每个小项目的内聚和降低项目之间的耦合
 
 我现在将很多基础的工具库都用此方式管理，我将一个工具库拆分为很多个小的工具库，每个工具库只包含很小的功能，但是同时我也创建一个主项目，这个主项目里面只放很少的代码，主要代码都是通过本文的方式引用所有小工具库的代码，这样打包出来的主项目是包含全部功能的。但是这个主项目的大小居然有3M这么大了，里面全部都是代码，很多项目里面根本不需要用到这么大的工具项目，于是这些项目就可以使用小的工具库
