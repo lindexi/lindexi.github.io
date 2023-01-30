@@ -15,7 +15,6 @@
 ```
 <Company>dotnet-campus</Company>
 <Copyright>Copyright (c) 2018 dotnet-campus</Copyright>
-
 ```
 
 在第二年的时候，我需要修改很多库的版权，修改为 2019 ，而从 VisualStudio 打开是很慢的，修改一个项目文件需要很长的时间
@@ -41,7 +40,7 @@
   <PropertyGroup>
     <Company>dotnet-campus</Company>
     <Owners>$(Company)</Owners>
-    <Copyright>Copyright (c) 2018 dotnet-campus</Copyright>
+    <Copyright>Copyright (c) 2023 dotnet-campus</Copyright>
   </PropertyGroup>
 </Project>
 ```
@@ -50,7 +49,7 @@
 
 但是现在还不能做出一个 nuget 包，还需要在项目文件添加一些内容，右击工程点击编辑项目文件，在项目文件添加一些代码，请看下面代码
 
-```
+```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -64,7 +63,6 @@
   </ItemGroup>
 
 </Project>
-
 ```
 
 在上面的代码就是添加了 Assets 文件夹，请看下面代码

@@ -11,7 +11,7 @@
 
 传统的 dotnet 系的 IPC 手段有很多个，提供给开发使用的顶层框架也有很多，如 .NET Remoting 和 WCF 等。但是在迁移到 dotnet core 时，由于底层运行时机制的变更，如透明代理不再支持类对象只能支持接口的行为变更，就让 .NET Remoting 从机制性不受支持。为了方便将应用迁移到 dotnet core 框架上，可采用 dotnet campus 组织基于最友好的 MIT 协议开源的 [dotnetCampus.Ipc 开源库](https://github.com/dotnet-campus/dotnetCampus.Ipc)进行本机内多进程通讯
 
-此 [dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc) 开源库底层可基于命名管道进行通讯，经过了约千万万台设备近一年的测试，发现通过此方式的通讯稳定性极高。开源仓库地址：[https://github.com/dotnet-campus/dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc)
+此 [dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc) 开源库底层可基于命名管道进行通讯，经过了约千万台设备近一年的测试，发现通过此方式的通讯稳定性极高。开源仓库地址：[https://github.com/dotnet-campus/dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc)
 
 本文将告诉大家如何使用 [dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc) 库实现类似 .NET Remoting 的 IPC 通讯效果。无缝替换 .NET Remoting 是做不到的，需要做一定的迁移，还请先看一下本 IPC 是如何使用的
 
@@ -30,7 +30,7 @@ interface IFoo
 }
 ```
 
-本 IPC 库在当前 2020.06 只支持属性和方法的远程过程调用方式，不支持事件和委托。好在事件和委托可以采用反向方法调用间接时间，也就是原本是需要做事件的逻辑，换成调用对方的一个方法的方式。也好在原本在 .NET Remoting 上，委托和事件是比较难使用的，导致了更换起来还是比较清真的
+本 IPC 库在当前 2020.06 只支持属性和方法的远程过程调用方式，不支持事件和委托。好在事件和委托可以采用反向方法调用间接实现，也就是原本是需要做事件的逻辑，换成调用对方的一个方法的方式。也好在原本在 .NET Remoting 上，委托和事件是比较难使用的，导致了更换起来还是比较清真的
 
 为了和 IPC 库对接，给这个接口标记 IpcPublicAttribute 特性，在特性上面可选带上参数，如下面代码带上了 IgnoresIpcException 表示忽略 IPC 连接和 IPC 通讯本身的异常，但不忽略业务端抛出的异常，再添加 Timeout 表示方法或属性调用的超时时间
 
@@ -91,7 +91,7 @@ Console.Read();
 
 接下来就是客户端的代码了
 
-需要在客户端定义一个一摸一样的接口，当然，更好的方法就是在 VisualStudio 里面添加现有项，将在服务端定义的接口文件作为链接引用进来。在本 IPC 的接口要求是要求接口和命名空间都是一摸一样的
+需要在客户端定义一个一模一样的接口，当然，更好的方法就是在 VisualStudio 里面添加现有项，将在服务端定义的接口文件作为链接引用进来。在本 IPC 的接口要求是要求接口和命名空间都是一模一样的
 
 定义完成接口之后，就可以开始编写客户端的 IPC 连接逻辑，代码如下。通过以下代码即可建立和服务端的连接
 
