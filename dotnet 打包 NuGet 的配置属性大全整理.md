@@ -3,7 +3,9 @@
 本文整理 dotnet 打包 CBB 组件为 NuGet 包时可以使用的配置的各个属性
 
 <!--more-->
-<!-- 草稿 -->
+<!-- CreateTime:2023/1/29 11:43:55 -->
+
+<!-- 发布 -->
 
 本文将会持续更新，可以通过搜 《dotnet 打包 NuGet 的配置属性大全整理 林德熙》 找到我主站的博客，避免各个备份地址陈旧的内容误导
 
@@ -67,9 +69,17 @@
 
 由于存在语言文化相关问题，如果是公开发布的包且期望国际上的朋友使用，则不建议写入中文。此标题限制为 256 个字符长度
 
-### Version
+### PackageVersion
 
 包版本号，默认不写为 1.0.0 版本号。可使用语义版本号，详细请参阅 [语义版本号（Semantic Versioning） - walterlv](https://blog.walterlv.com/post/semantic-version.html )
+
+```xml
+  <PropertyGroup>
+    <PackageVersion>1.0.0</PackageVersion>
+  </PropertyGroup>
+```
+
+与此相关的还有 Version 属性，大部分情况下都采用 Version 属性。此 Version 属性将会被 PackageVersion 所使用。如果没有明确设置 PackageVersion 属性，将会使用已设置的 Version 属性
 
 ```xml
   <PropertyGroup>
@@ -85,10 +95,51 @@
 
 ### Owners
 
+此包的拥有者，可以不同于作者。大部分作用是在开源组织上，由开源组织拥有此包，然后由具体开发者作为作者。这里的拥有者是可以有多个，推荐多个之间使用分号分割。大部分情况下 Owners 拥有者将和 Company 公司相同
+
+```xml
+<Project>
+  <PropertyGroup>
+    <Company>dotnet-campus</Company>
+    <Owners>$(Company)</Owners>
+  </PropertyGroup>
+</Project>
+```
+
+### Company
+
+公司，也可以当成是组织。一般写全商标注册的公司信息。对外可以使用 Owners 写简称
+
+### Authors
+
+作者，表示这个包由谁谁制作。作者不一定拥有此包的所有权，和 Owners 不相同。例如公司雇用你打工，你帮助公司发布的包，自然此包的 所有权 就在公司上，而你自己就是此包的作者
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>ClassLibDotNetStandard</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>your_name</Authors>
+    <Company>your_company</Company>
+  </PropertyGroup>
+</Project>
+```
+
+### Copyright
+
+版权信息，官方推荐的格式是 `"Copyright (c) <name/company> <year>` 的格式。正经的包一般都会如此遵守。年份上是可以写范围或固定某个年
+
+```xml
+<Project>
+  <PropertyGroup>
+    <Copyright>Copyright (c) dotnet-campus 2020-2023</Copyright>
+  </PropertyGroup>
+</Project>
+```
+
+详细请参阅 [Package authoring best practices Microsoft Learn](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices )
 
 <!-- 
-
-authors
 
 licenseUrl
 
@@ -101,26 +152,9 @@ IsPackable 是否可打包
 
  -->
 
-```xml
-<Project>
-  <PropertyGroup>
-    <Company>dotnet-campus</Company>
-    <Owners>$(Company)</Owners>
-    <Copyright>Copyright (c) 2023 dotnet-campus</Copyright>
-  </PropertyGroup>
-</Project>
-```
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <PackageId>ClassLibDotNetStandard</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>your_name</Authors>
-    <Company>your_company</Company>
-  </PropertyGroup>
-</Project>
-```
+
+
 
 [Package authoring best practices Microsoft Learn](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices )
 
