@@ -9,7 +9,7 @@
 
 本文将会持续更新，可以通过搜 《dotnet 打包 NuGet 的配置属性大全整理 林德熙》 找到我主站的博客，避免各个备份地址陈旧的内容误导
 
-本文更新于：2023.01.29
+本文更新于：2023.01.31
 
 如更新时间距离当前阅读时间过远，则表示可能你阅读的是转发的或转载的文章，推荐去到我主站的博客，了解更新的知识
 
@@ -143,7 +143,6 @@
 
 licenseUrl
 
-
 projectUrl
 
 Description 描述信息
@@ -152,11 +151,15 @@ IsPackable 是否可打包
 
  -->
 
+### PackageIcon
+
+包的图标，详细请看 [NuGet 如何设置图标](https://blog.lindexi.com/post/NuGet-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%9B%BE%E6%A0%87.html )
+
+现在推荐将图标作为文件放入到包里面，而不是使用外链图片下载地址，解决一些奇怪的地方无法拉到包或泄露隐私
 
 
 
 
-[Package authoring best practices Microsoft Learn](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices )
 
 ### EmbedAllSources
 
@@ -187,6 +190,10 @@ IsPackable 是否可打包
 ```
 
 此属性只能决定哪些后缀名的文件会打包到 NuGet 包里面，不合适用来决定某些文件需要打包。如果需要特殊指定某些文件，请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
+
+虽然将 PDB 打包到 NuGet 包里面，有些版本的 VisualStudio 不会自动拷贝 PDB 文件，解决方法请看 [修复 VisualStudio 构建时没有将 NuGet 的 PDB 符号文件拷贝到输出文件夹](https://blog.lindexi.com/post/%E4%BF%AE%E5%A4%8D-VisualStudio-%E6%9E%84%E5%BB%BA%E6%97%B6%E6%B2%A1%E6%9C%89%E5%B0%86-NuGet-%E7%9A%84-PDB-%E7%AC%A6%E5%8F%B7%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D%E5%88%B0%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E5%A4%B9.html )
+
+
 
 ### ContinuousIntegrationBuild
 
