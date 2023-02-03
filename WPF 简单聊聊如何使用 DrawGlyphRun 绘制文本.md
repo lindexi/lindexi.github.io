@@ -299,7 +299,7 @@ var geometry = glyphRun.BuildGeometry();
 
 调用方法是 `var glyphSize = glyphRun.GetSize(fontFamily.LineSpacing);` 即可拿到文字的布局尺寸
 
-以上 `var height = lineSpacing * renderingEmSize` 行高计算方法被我称为 EN 行高计算方法
+以上 `var height = lineSpacing * renderingEmSize` 行高计算方法被我称为 WPF 行高计算方法，使用此方法即可计算出 TextBlock 的行高
 
 对应的，还有 PPT 行高计算方法，此计算方法是被用在 PPT 的文本布局里面，计算公式如下
 
