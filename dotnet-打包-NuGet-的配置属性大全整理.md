@@ -200,7 +200,35 @@ IsPackable 是否可打包
 
 ### ContinuousIntegrationBuild
 
-用于 CI 的确定性构建，默认不开
+这个属性是比较复杂的，用于 CI 的确定性构建，默认不开。和 [Roslyn 的确定性构建](https://blog.walterlv.com/post/deterministic-builds-in-roslyn.html ) 使用的 Deterministic 属性是不相同的两个概念。此 ContinuousIntegrationBuild 是为了 [SourceLink](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-SourceLink-%E5%B0%86-NuGet-%E9%93%BE%E6%8E%A5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%B0-GitHub-%E7%AD%89%E4%BB%93%E5%BA%93.html ) 的功能而引入的。此 [SourceLink](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-SourceLink-%E5%B0%86-NuGet-%E9%93%BE%E6%8E%A5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%B0-GitHub-%E7%AD%89%E4%BB%93%E5%BA%93.html ) 功能是在 PDB 符号文件里面，嵌入源代码的下载地址，方便调试的时候获取到源代码，详细请看 [dotnet 使用 SourceLink 将 NuGet 链接源代码到 GitHub 等仓库](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-SourceLink-%E5%B0%86-NuGet-%E9%93%BE%E6%8E%A5%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%B0-GitHub-%E7%AD%89%E4%BB%93%E5%BA%93.html )
+
+大家都知道，在 PDB 符号文件里面包含的是源代码的绝对路径，在 CI CD 打包服务器上的绝对路径是大部分开发者所不期望的，于是才有了 ContinuousIntegrationBuild 确定性构建的存在。用来实现无论在哪台打包服务器上以及在任何时候打包都会输出相同
+
+这个 ContinuousIntegrationBuild 属性在本机构建调试时，都不应该设置为 true 的值。否则将会丢失本地构建的绝对路径，从而难以自动跳转源代码。只有在 CI 服务器上构建才需要设置
+
+大部分时候设置时，都需要配合设置 SourceRoot 属性
+
+```xml
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)"/>
+  </ItemGroup>
+```
+
+以上代码是推荐放在 `Directory.Build.props` 文件里面，详细关于 Directory.Build.props 请参阅 [Roslyn 使用 Directory.Build.props 文件定义编译](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html ) 和 [Roslyn 使用 Directory.Build.props 管理多个项目配置](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE.html ) 博客
+
+例如在 GitHub 的 CI 构建时，自动设置此属性
+
+```xml
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)"/>
+  </ItemGroup>
+```
+
+详细请参阅
 
 [Producing Packages with Source Link - .NET Blog](https://devblogs.microsoft.com/dotnet/producing-packages-with-source-link/ )
 
@@ -210,13 +238,7 @@ IsPackable 是否可打包
 
 [dotnet/reproducible-builds: Contains the DotNet.ReproducibleBuilds package](https://github.com/dotnet/reproducible-builds )
 
-需要设置 SourceRoot 属性
 
-```xml
-  <ItemGroup>
-    <SourceRoot Include="$(MSBuildThisFileDirectory)"/>
-  </ItemGroup>
-```
 
 
 ## 相关文档

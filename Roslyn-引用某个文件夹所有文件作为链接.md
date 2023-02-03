@@ -54,6 +54,24 @@ Exclude="..\Tool.UWP\obj\**\*;"
   </ItemGroup>
 ```
 
+如果只是期望引用某个文件夹里面的某几个文件，可以参阅 [如何在 MSBuild 中正确使用 % 来引用每一个项（Item）中的元数据 - walterlv](https://blog.walterlv.com/post/how-to-reference-msbuild-item-metadata.html ) 的写法。先写一个自定义项用来接收需要特殊指定的文件，接着再写一个中转使用的自定义项来拼接，最后加入到引用即可。如以下代码
+
+```xml
+  <ItemGroup>
+    <FooAddFileName Include="1.png"/>
+    <FooAddFileName Include="2.png"/>
+    <FooAddFileName Include="3.png"/>
+
+    <__FooAddFileName Include="@(FooAddFileName)">
+      <ReferenceFilePath>..\Tool.UWP\Assets\%(Identity)</ReferenceFilePath>
+    </__FooAddFileName>
+
+    <Content Include="@(__FooAddFileName->'%(ReferenceFilePath)')" Link="Assets\%(FileName)%(Extension)" />
+  </ItemGroup>
+```
+
+以上代码自定义了为 `FooAddFileName` 的自定义项用来接收需要特殊指定的文件。如以上代码指定了 `1.png` 等特殊几个文件。接着定义了名为 `__FooAddFileName` 的自定义项用来中转，凭借上文件夹路径。最后再加入引用
+
 如需保持相对路径关系，可采用 `%(RecursiveDir)` 属性，如以下例子，更多请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 
 ```xml

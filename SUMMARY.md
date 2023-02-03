@@ -418,6 +418,8 @@
 
  * [dotnet 6 创建进程 Process.Start 时设置 UseShellExecute 在 Windows 下对性能的影响](dotnet-6-创建进程-Process.Start-时设置-UseShellExecute-在-Windows-下对性能的影响.md)
 
+ * [dotnet 6 命令行 cmd 设置输出英文解决中文乱码](dotnet-6-命令行-cmd-设置输出英文解决中文乱码.md)
+
  * [dotnet 6 在 System.Text.Json 使用 source generation 源代码生成提升 JSON 序列化性能](dotnet-6-在-System.Text.Json-使用-source-generation-源代码生成提升-JSON-序列化性能.md)
 
  * [dotnet 6 在 Win7 系统证书链错误导致 HttpWebRequest 内存泄露](dotnet-6-在-Win7-系统证书链错误导致-HttpWebRequest-内存泄露.md)
