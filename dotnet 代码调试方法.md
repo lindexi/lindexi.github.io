@@ -1276,6 +1276,10 @@ public static int Count { set; get; }
 
 ## DUMP调试
 
+在开始 DUMP 调试之前，需要先有收集到 dump 文件
+
+### 收集 DUMP 文件
+
 收集 DUMP 有多个方法，例如打开任务管理器，右击进程选择创建转储文件。或在应用程序里面调用[MiniDumpWriteDump](https://docs.microsoft.com/zh-cn/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump ) 方法
 
 或在 WinDbg 里面使用 [.dump](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-dump--create-dump-file- ) 创建 dump 文件
@@ -1283,6 +1287,10 @@ public static int Count { set; get; }
 或设置注册表收集 DUMP 文件，请看 [win10 uwp 收集 DUMP 文件](https://blog.lindexi.com/post/win10-uwp-%E6%94%B6%E9%9B%86-DUMP-%E6%96%87%E4%BB%B6.html )
 
 或如 [dotnet 调试应用启动闪退的方法](https://blog.lindexi.com/post/dotnet-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E7%9A%84%E6%96%B9%E6%B3%95.html ) 提到的 [ProcDump](https://docs.microsoft.com/zh-cn/sysinternals/downloads/procdump?WT.mc_id=WD-MVP-5003260) 工具进行收集
+
+### 非托管相关
+
+被非托管玩坏了内存，可以通过 MDA 助手，在完成 PInvoke 之后立刻调用 GC 回收，从而可以方便知道是在哪个 PInvoke 里破坏了托管堆。详细请看 [C# 托管堆 遭破坏 问题溯源分析 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/archive/2023/01/29/17072024.html )
 
 收集到了 DUMP 之后可以使用多个不同的工具进行调试
 
@@ -1318,7 +1326,7 @@ public static int Count { set; get; }
 
 这里说的主线程指的是响应用户行为的线程，不一定是桌面端的主线程
 
-程序卡住有两个原因
+程序卡住优先看以下两个原因
 
 - 在主线程执行大任务
 - 主线程等待锁
@@ -1329,11 +1337,11 @@ public static int Count { set; get; }
 
 [![](http://image.acmx.xyz/lindexi%2F2019107125425297)](https://r302.cc/g5bR9W)
 
-如果只是程序运行比较卡，那么可以通过 dotTrace 调试
+如果只是程序运行比较卡，而不是卡住，可以通过 dotTrace 调试，分析是哪些模块执行比较卡
 
 ### GPU 调试
 
-通过 VisualStudio 分析，通过 PXI 通过 Vtune 调试
+通过 VisualStudio 分析，通过 PIX 通过 Vtune 调试
 
 填坑
 
