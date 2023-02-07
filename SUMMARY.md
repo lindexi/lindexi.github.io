@@ -2500,6 +2500,8 @@
 
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
+ * [WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误](WPF-已知问题-在-ObservableCollection-的-CollectionChanged-修改集合内容将让-UI-显示错误.md)
+
  * [WPF 已知问题 某些设备上的应用在 WindowChromeWorker 抛出 System.OverflowException 异常](WPF-已知问题-某些设备上的应用在-WindowChromeWorker-抛出-System.OverflowException-异常.md)
 
  * [WPF 已知问题 清空 CollectionView 的 SortDescriptions 可能抛出空异常](WPF-已知问题-清空-CollectionView-的-SortDescriptions-可能抛出空异常.md)
