@@ -3,6 +3,8 @@
 本文记录一个 WPF 已知问题，在 ObservableCollection 的 CollectionChanged 事件里面，绕过 ObservableCollection 的异常判断逻辑，强行修改集合内容，修改之后的 UI 层将不能符合预期。本文将告诉大家此问题的复现方法和修复方法
 
 <!--more-->
+<!-- CreateTime:2023/2/6 17:44:31 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
