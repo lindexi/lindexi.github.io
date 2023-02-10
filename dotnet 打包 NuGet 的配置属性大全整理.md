@@ -159,6 +159,39 @@ IsPackable 是否可打包
 
 
 
+### GeneratePackageOnBuild
+
+生成的时候，构建出 NuGet 包。没有开启此属性时，是需要有额外的打包过程，例如 `dotnet pack` 或者在 VisuslStudio 里右击打包。开启此属性之后，每次构建都会输出 NuGet 包。实际测试是开启此属性对生成的性能影响很小
+
+```xml
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+```
+
+### IsPackable
+
+用于设置项目是否可以被打包，默认是 true 表示项目可以打包，如果设置为 false 禁用则不打包 NuGet 包。可以用在如单元测试等项目，设置这些项目不要输出 NuGet 包
+
+```xml
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+```
+
+注：对于 ASP.NET Core 应用项目，在 SDK 里面默认设置了 IsPackable 为 false 的值
+
+### GenerateDocumentationFile
+
+设置是否在生成的时候，同时生成注释 XML 文件。此属性设置之后，将会自动将注释 XML 文件输出到 NuGet 里
+
+```xml
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+```
+
+在 dotnet 里面，代码上的公开成员，如公开的方法公开的属性等，的注释是存放在一个和程序集同名后缀为 XML 的文件里面。开启 GenerateDocumentationFile 属性，即可在生成过程，生成注释 XML 文件。在拥有此 XML 文件，即可让 VisualStudio 等 IDE 可以自动提示引用库的代码注释，方便让开发者了解调用库的各个成员的含义。进行 NuGet 发布的时候，将注释的 XML 文件带到 NuGet 包里面，可以方便让引用此 NuGet 包的项目获取到库的代码注释
 
 
 ### EmbedAllSources
@@ -193,7 +226,42 @@ IsPackable 是否可打包
 
 虽然将 PDB 打包到 NuGet 包里面，有些版本的 VisualStudio 不会自动拷贝 PDB 文件，解决方法请看 [修复 VisualStudio 构建时没有将 NuGet 的 PDB 符号文件拷贝到输出文件夹](https://blog.lindexi.com/post/%E4%BF%AE%E5%A4%8D-VisualStudio-%E6%9E%84%E5%BB%BA%E6%97%B6%E6%B2%A1%E6%9C%89%E5%B0%86-NuGet-%E7%9A%84-PDB-%E7%AC%A6%E5%8F%B7%E6%96%87%E4%BB%B6%E6%8B%B7%E8%B4%9D%E5%88%B0%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6%E5%A4%B9.html )
 
+### IncludeSymbols
 
+设置是否输出符号文件，用于制作符号包，通常和 SymbolPackageFormat 配合使用
+
+```xml
+  <PropertyGroup>
+    <!-- 输出符号文件 -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+```
+
+### SymbolPackageFormat
+
+输出的符号文件的格式，符号文件有两个输出格式，文件名规范不相同
+
+- `.symbols.nupkg` ： 默认的文件后缀。兼容性好，但是存在冲突。比如真有一个叫 `Xx.Symbols` 项目就凉凉。此格式已被淘汰
+- `.snupkg` ： 专门定义的符号包格式，可以只包含符号 PDB 文件
+
+```xml
+  <PropertyGroup>
+    <!-- 输出符号文件 -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+```
+
+官方文档： [How to publish NuGet symbol packages using the new symbol package format '.snupkg' Microsoft Learn](https://learn.microsoft.com/en-us/nuget/create-packages/symbol-packages-snupkg )
+
+使用 `.snupkg` 格式对应在 `.nuspec` 的配置是
+
+```xml
+<packageTypes>
+   <packageType name="SymbolsPackage"/>
+</packageTypes>
+```
 
 ### ContinuousIntegrationBuild
 
