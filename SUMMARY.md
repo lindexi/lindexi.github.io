@@ -2474,6 +2474,8 @@
 
  * [WPF 如何跨线程重新抛出异常](WPF-如何跨线程重新抛出异常.md)
 
+ * [WPF 字体 FontStyle 的 Italic 和 Oblique 的区别](WPF-字体-FontStyle-的-Italic-和-Oblique-的区别.md)
+
  * [WPF 实现自定义的笔迹橡皮擦](WPF-实现自定义的笔迹橡皮擦.md)
 
  * [WPF 客户端开发需要知道的触摸失效问题](WPF-客户端开发需要知道的触摸失效问题.md)
