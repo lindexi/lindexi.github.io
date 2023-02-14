@@ -770,11 +770,25 @@ private void Foo(Page p)
 
 这个方法就是获得属性的值更改
 
-但是这个方法会出现内存泄露，可以使用 RemoveValueChanged 清除，为了使用清除，需要写一个函数。
-
-不需要担心清除一个不存在的委托，一般在使用 AddValueChanged 之前都使用 RemoveValueChanged 清除
+但是这个方法会出现内存泄露，可以使用 RemoveValueChanged 清除，为了使用清除，需要写一个函数。不需要担心清除一个不存在的委托函数，一般在使用 AddValueChanged 之前都使用 RemoveValueChanged 清除，如此即可减少重复调用 AddValueChanged 导致多次监听以及内存泄露问题
 
 参见：https://stackoverflow.com/questions/4764916/listen-to-changes-of-dependency-property
+
+这个方法是针对于对象之外的，监听某个对象的依赖属性变更。如果是在一个自己可以更改代码的类型里面的对象，可以通过重写 OnPropertyChanged 获取到依赖属性变更，如以下代码
+
+```csharp
+public partial class Foo : FrameworkElement
+{
+    protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+    {
+        if (e.Property == FrameworkElement.WidthProperty)
+        {
+        }
+    }
+}
+```
+
+依赖属性变更时，将会进入到 OnPropertyChanged 方法
 
 ## WPF 如何正确的在tooltip中实现绑定
 

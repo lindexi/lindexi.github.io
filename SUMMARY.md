@@ -2138,6 +2138,8 @@
 
  * [WinDbg 加载 dotnet core 的 sos.dll 辅助调试方法](WinDbg-加载-dotnet-core-的-sos.dll-辅助调试方法.md)
 
+ * [WinDbg 设置在加载到某个 DLL 进入断点](WinDbg-设置在加载到某个-DLL-进入断点.md)
+
  * [Windows 10 16251 添加的 api](Windows-10-16251-添加的-api.md)
 
  * [windows 10预览版升级win10 7月29 10240.16384](windows-10预览版升级win10-7月29-10240.16384.md)
