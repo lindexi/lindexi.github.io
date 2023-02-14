@@ -34,6 +34,7 @@
 
 如果是不进入断点，可能是对象被换掉，试试在对应的属性上的 set 方法加上断点，或者在局部变量里面添加 Id 值，调试此变量的属性在哪被变更
 
+此代码不合适放在项目里面，只适合用来作为调试代码。如果期望在项目代码里面使用，需要记得在 AddValueChanged 之后，找到合适的时机，调用 RemoveValueChanged 清除。否则将会出现内存泄露。因为 AddValueChanged 是加等到一个静态的对象里面，从而导致加等的委托不会被释放，除非调用了 RemoveValueChanged 清除才能释放
 
 一个用来调试的版本的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/e284ff96734a84e9d4f49d76d5de06aa21e3423b/LalyiheahoLujarwallu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/e284ff96734a84e9d4f49d76d5de06aa21e3423b/LalyiheahoLujarwallu) 欢迎访问
 
@@ -54,3 +55,19 @@ git pull origin e284ff96734a84e9d4f49d76d5de06aa21e3423b
 ```
 
 获取代码之后，进入 LalyiheahoLujarwallu 文件夹
+
+另外一点，如果是可以更改此 `要监听的对象` 的类型的代码，可以尝试重写 OnPropertyChanged 方法。在此 OnPropertyChanged 方法里面可以方便的获取到当前类型的依赖属性变更，而且是能获取到所有的依赖属性变更，代码如下
+
+```csharp
+public partial class Foo : FrameworkElement
+{
+    protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+    {
+        if (e.Property == FrameworkElement.WidthProperty)
+        {
+        }
+    }
+}
+```
+
+依赖属性变更时，将会进入到 OnPropertyChanged 方法
