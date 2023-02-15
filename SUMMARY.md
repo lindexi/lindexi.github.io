@@ -916,6 +916,8 @@
 
  * [dotnet 将自动代码格式化机器人带入团队 GitLab 平台](dotnet-将自动代码格式化机器人带入团队-GitLab-平台.md)
 
+ * [dotnet 已知问题 使用 Directory.EnumerateXXX 方法枚举 C 盘根路径可能错误的问题](dotnet-已知问题-使用-Directory.EnumerateXXX-方法枚举-C-盘根路径可能错误的问题.md)
+
  * [dotnet 开发的单代码仓库和多代码仓库的优劣](dotnet-开发的单代码仓库和多代码仓库的优劣.md)
 
  * [dotnet 开启 Fiddler 抓包将会让请求 HOST 头被更改](dotnet-开启-Fiddler-抓包将会让请求-HOST-头被更改.md)
