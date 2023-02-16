@@ -60,8 +60,73 @@ var uri2 = "/api/12";
 
 上面代码放在[github](https://github.com/lindexi/lindexi_gd/tree/b401342b/JearhelawruNibilubeher)欢迎小伙伴访问
 
+## C#代码如何获取 Pack URI 资源
+
+在 WPF 里面，可以使用 Pack URI 格式的资源路径，格式如下
+
+```
+pack://application:,,,/ResourceFile.xaml
+
+pack://application:,,,/Subfolder/ResourceFile.xaml
+
+pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml
+
+pack://application:,,,/ReferencedAssembly;v1.0.0.1;component/ResourceFile.xaml
+```
+
+对于 XAML 代码来说，可以支持相对路径，也就是如 `../ResourceFile.xaml` 的路径。但是 C# 代码使用需要绝对路径，或者是从根路径开始的相对路径
+
+获取资源时，需要区分是 Resources 资源还是 Content 资源
+
+<!-- ![](image/WPF 开发/WPF 开发0.png) -->
+![](http://image.acmx.xyz/lindexi%2FWPF%2520%25E5%25BC%2580%25E5%258F%25910.png)
+
+一个资源属于 Resources 资源还是 Content 资源取决于资源的生成方式。可以在项目里面，右击某个资源文件，点击属性，看他的生成操作是什么。如果生成操作是资源就是资源，生成操作是内容就是内容
+
+或者是在 csproj 里面，看这一项是资源还是内容，如以下代码，这就是内容。其中内容需要设置 PreserveNewest 如果较新则复制内容，否则运行将会找不到内容文件
+
+```xml
+  <ItemGroup>
+    <Content Include="Content.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+```
+
+如以下代码就是资源
+
+```xml
+  <ItemGroup>
+    <Resource Include="Resources.jpg" />
+  </ItemGroup>
+```
+
+相同的一个文件，可以同时是资源也是内容，只需要在 csproj 将 Content 和 Resource 都写一次，使用相同的文件即可
+
+获取资源时，需要使用 `Application.GetResourceStream` 方法获取，传入的就是 Uri 内容，代码大概如下
+
+```csharp
+var streamResourceInfo = Application.GetResourceStream(new Uri("pack://application:,,,/ResourceFile.xaml"))
+```
+
+这里获取到的 StreamResourceInfo 里面的 Stream 是不需要手动调用 Dispose 释放的，这是由 WPF 框架管理的
+
+获取内容时，需要使用 `Application.GetContentStream` 方法获取，代码和上面差不多
+
+```csharp
+var streamResourceInfo = Application.GetContentStream(new Uri("pack://application:,,,/ResourceFile.xaml"))
+```
+
+但很多时候，在 C# 代码里面，直接获取本地的文件即可，不需要使用 GetContentStream 方法
 
 
+参考文档：
+
+[Pack URIs - WPF .NET Framework Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/pack-uris-in-wpf?view=netframeworkdesktop-4.8 )
+
+[Application Resource, Content, and Data Files - WPF .NET Framework Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/desktop/wpf/app-development/wpf-application-resource-content-and-data-files?view=netframeworkdesktop-4.8 )
+
+[Application.GetResourceStream(Uri) Method (System.Windows) Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/api/system.windows.application.getresourcestream?view=windowsdesktop-7.0 )
 
 <!-- ## 单例应用在多实例用户无法使用
 
