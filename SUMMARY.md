@@ -2130,6 +2130,8 @@
 
  * [win2d 通过 CanvasActiveLayer 画出透明度和裁剪](win2d-通过-CanvasActiveLayer-画出透明度和裁剪.md)
 
+ * [Win32 使用 CreateProcess 方法让任务管理器里的命令行不显示应用文件路径](Win32-使用-CreateProcess-方法让任务管理器里的命令行不显示应用文件路径.md)
+
  * [Win32 使用 SetCurrentProcessExplicitAppUserModelID 关联多个进程 在任务栏合并 WPF 多进程窗口](Win32-使用-SetCurrentProcessExplicitAppUserModelID-关联多个进程-在任务栏合并-WPF-多进程窗口.md)
 
  * [win32 嵌入第三方 UWP 应用做开放平台](win32-嵌入第三方-UWP-应用做开放平台.md)
@@ -3255,6 +3257,8 @@
  * [记因为 NVIDIA 显驱错误而让 WPF 应用启动闪退问题](记因为-NVIDIA-显驱错误而让-WPF-应用启动闪退问题.md)
 
  * [记将一个大型客户端应用项目迁移到 dotnet 6 的经验和决策](记将一个大型客户端应用项目迁移到-dotnet-6-的经验和决策.md)
+
+ * [记联软 UniAccess 导致 NSIS 安装包启动进程失效](记联软-UniAccess-导致-NSIS-安装包启动进程失效.md)
 
  * [讲师培训 多米诺原则](讲师培训-多米诺原则.md)
 

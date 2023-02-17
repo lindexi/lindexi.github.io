@@ -150,7 +150,11 @@ projectUrl
 
 Description 描述信息
 
-IsPackable 是否可打包
+<RepositoryUrl>https://github.com/dotnet/wpf</RepositoryUrl>
+
+<RepositoryType>git</RepositoryType>
+
+<PackageProjectUrl>https://github.com/dotnet/wpf</PackageProjectUrl>
 
  -->
 

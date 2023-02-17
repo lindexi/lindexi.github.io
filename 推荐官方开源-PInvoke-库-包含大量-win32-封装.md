@@ -8,7 +8,7 @@
 
 <!-- CreateTime:7/8/2020 9:23:18 AM -->
 
-
+**更新：** 现在推荐 [使用 CsWin32 库简化 Win32 函数调用逻辑](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-CsWin32-%E5%BA%93%E7%AE%80%E5%8C%96-Win32-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%80%BB%E8%BE%91.html )
 
 使用官方的库的优势是什么呢？第一个就是减少从网上复制粘贴有趣的 PInvoke 调用实现，其次是质量上能保底。虽然官方的实现也不够完美，例如 User32 的 GetWindowLong 方法依然有坑。但是因为此项目是在 [github 开源](https://github.com/dotnet/pinvoke) 因此也会有大量的小伙伴入坑不断的修复，相对来说应该会比自己实现的好一些
 
