@@ -3148,6 +3148,8 @@
 
  * [支持 dotnet 6 的 dnSpy 神器版本](支持-dotnet-6-的-dnSpy-神器版本.md)
 
+ * [收集的 C 盘 Windows System32 文件夹里的文件](收集的-C-盘-Windows-System32-文件夹里的文件.md)
+
  * [文件传输](文件传输.md)
 
  * [文本库 聊聊行首光标的行为](文本库-聊聊行首光标的行为.md)
