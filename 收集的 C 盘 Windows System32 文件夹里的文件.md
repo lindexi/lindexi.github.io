@@ -3,6 +3,8 @@
 这是我收藏的 C:\Windows\System32 文件夹里面的各个文件的作用或描述。有一些是我猜测的，有一些是我从网上找的描述，只有很少一些是我了解的。如果有写错的写漏的，欢迎评论告诉我或发邮件告诉我。本文非权威文档，请不要拿着本文的内容作为任何辩论的参考
 
 <!--more-->
+<!-- CreateTime:2023/2/17 8:50:19 -->
+
 <!-- 草稿 -->
 
 aadauthhelper.dll : Microsoft AAD（Azure Active Directory） Auth Helper 据说是 Microsoft Office Access 2010 的依赖文件，也属于 Office 系列依赖文件
