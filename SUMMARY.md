@@ -668,6 +668,8 @@
 
  * [dotnet OpenXML 解析 PPT 文本字体获取详解](dotnet-OpenXML-解析-PPT-文本字体获取详解.md)
 
+ * [dotnet OpenXML 解析 PPT 里表格的样式](dotnet-OpenXML-解析-PPT-里表格的样式.md)
+
  * [dotnet OpenXML 解析 PPT 页面元素文档格式](dotnet-OpenXML-解析-PPT-页面元素文档格式.md)
 
  * [dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](dotnet-OpenXML-解析-WPS-不符合压缩文档规范的文档.md)
