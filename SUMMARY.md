@@ -1096,6 +1096,8 @@
 
  * [dotnet 读 WPF 源代码笔记 简单聊聊文本布局换行逻辑](dotnet-读-WPF-源代码笔记-简单聊聊文本布局换行逻辑.md)
 
+ * [dotnet 读 WPF 源代码笔记 聊聊 HwndWrapper.GetGCMemMessage 调试消息](dotnet-读-WPF-源代码笔记-聊聊-HwndWrapper.GetGCMemMessage-调试消息.md)
+
  * [dotnet 读 WPF 源代码笔记 默认的 Main 函数是在哪创建的](dotnet-读-WPF-源代码笔记-默认的-Main-函数是在哪创建的.md)
 
  * [dotnet 调试应用启动闪退的方法](dotnet-调试应用启动闪退的方法.md)
@@ -2691,6 +2693,8 @@
  * [WPF 给应用程序添加水印](WPF-给应用程序添加水印.md)
 
  * [WPF 给类库设置设计时使用的资源字典](WPF-给类库设置设计时使用的资源字典.md)
+
+ * [WPF 编写一个测试 WM_TOUCH 触摸消息延迟的应用](WPF-编写一个测试-WM_TOUCH-触摸消息延迟的应用.md)
 
  * [WPF 编译为 AnyCPU 和 x86 有什么区别](WPF-编译为-AnyCPU-和-x86-有什么区别.md)
 
