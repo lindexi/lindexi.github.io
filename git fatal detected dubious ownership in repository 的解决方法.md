@@ -3,6 +3,8 @@
 我换了一台电脑，将旧电脑的硬盘换到新电脑上；我装了双系统，切换到另一个系统时；我发现了 git 代码仓库无法执行 git 命令，不断报错 fatal: detected dubious ownership in repository at 'C:\lindexi\Code\Foo' is owned by: 'S-1-5-21-469934170-xxx-xxx-1001' but the current user is: 'S-1-5-21-469994170-aaa-bbb-1001' 失败。本文记录此问题的解决方法
 
 <!--more-->
+<!-- CreateTime:2023/2/28 10:06:02 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
