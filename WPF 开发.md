@@ -1393,7 +1393,14 @@ https://github.com/dotnet/wpf/issues/5937#issuecomment-1010510114
 可以采用对应的 Reader 加载，详细请看 HelixBiyawubiburwhoKaiwunaikarwheqar 项目
 
 
+## 绑定 CommandBindings 的命令没有触发
 
+由于 CommandBindings 需要和 InputBindings 成对使用。先看元素的 KeyDown 能否触发，能触发的前提下，看是否忘记加了 InputBindings 绑定
+
+```csharp
+ _textArea.CommandBindings.Add(new CommandBinding(EditingCommands.Backspace, OnBackspace));
+ _textArea.InputBindings.Add(new KeyBinding(EditingCommands.Backspace, Key.Back, ModifierKeys.None));
+```
 
 
 
