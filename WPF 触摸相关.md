@@ -31,6 +31,7 @@
 
 [WPF 编写一个测试 WM_TOUCH 触摸消息延迟的应用](https://blog.lindexi.com/post/WPF-%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95-WM_TOUCH-%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF%E5%BB%B6%E8%BF%9F%E7%9A%84%E5%BA%94%E7%94%A8.html )
 
+[WPF 从零自己实现从 RealTimeStylus 获取触摸信息](https://blog.lindexi.com/post/WPF-%E4%BB%8E%E9%9B%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E4%BB%8E-RealTimeStylus-%E8%8E%B7%E5%8F%96%E8%A7%A6%E6%91%B8%E4%BF%A1%E6%81%AF.html )
 
 ## 功能
 
