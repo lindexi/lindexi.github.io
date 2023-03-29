@@ -3,8 +3,9 @@
 本文将告诉大家什么是 RealTimeStylus 以及如何从零开始不使用 WPF 框架提供的功能从 RealTimeStylus 获取到触摸信息
 
 <!--more-->
+<!-- CreateTime:2023/3/27 8:39:35 -->
 
-<!-- 草稿 -->
+<!-- 发布 -->
 <!-- 博客 -->
 
 开始之前先复习一下 Windows 的触摸演进。在上古 xp 时代，那会还没有约定好 `WM_Touch` 消息，但是那时就有了白板类应用笔迹书写的需求了。和鼠标的相对移动不相同的是，人类在触摸屏上进行书写的时候，如果书写的存在一点点延迟，大概是 50 毫秒以上，那么人类将可以明显感知到延迟。如果让每个软件开发厂商都和具体的硬件触摸厂商约定触摸需要传输的协议，自然是不靠谱的。而且也不见得每个软件厂商都能实现出比较高性能的触摸
@@ -15,15 +16,19 @@
 
 在 Win7 下，实时触摸是从一个名为 wisptis 的特殊进程，即 Windows Ink Services Platform Tablet Input Subsystem 进程进行分发的。通过微软的 Surface 触摸架构文档可以看到，这个 wisptis 特殊进程跑了一半是在内核态里面，一半在用户态里面。由于我在写这篇博客的时候，没有找出我之前看过的微软的 Surface 触摸架构文档，我怕误导大家，这里就还先跳过细节。只需要知道实时触摸是从 wisptis 的特殊进程过来的即可。这也就回答了 [为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](https://blog.lindexi.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88-WPF-%E8%BD%AF%E4%BB%B6%E5%9C%A8-win7-%E5%90%AF%E5%8A%A8%E6%97%B6%E4%BC%9A%E5%B0%9D%E8%AF%95%E8%B0%83%E8%B5%B7-wisptis-%E8%BF%9B%E7%A8%8B.html) 这个问题
 
+只不过 Win7 那会的触摸统一性也比较弱，在 Surface 触摸平板出来时，大家就遭遇了触摸问题。软软就推出了 Surface SDK 来拯救大家，更多请看 [Surface SDK 2.0 Targets Windows Touch Devices](https://www.infoq.com/news/2011/07/Surface-2/ )
+
 在 Win10 下，这时整个触摸行业才算是完全统一了，大家都遵循标准触摸协议。软软也根据之前踩过的坑，重新设计了整个系统的触摸架构。同时野心很大的软软为了能够支持 VR 头盔等的视线输入等，将所有输入统一，引入了 `WM_Pointer` 概念。也就是无论是鼠标还是触摸，还是视线输入，都是 Pointer 消息
 
 只不过 Pointer 消息也是一个 Windows 消息，依然也受到 Windows 消息的限制。这里需要特别说的是，快和慢是相对的，不能说 Windows 消息是高延迟的，也不能说 Windows 消息是慢的。仅仅只是在高性能笔迹书写的情况下，在妖魔的用户环境下，以及业务的成堆的诡异代码下，才会认为走 Windows 消息是不能做到低延迟的
 
 这里也需要额外说一个题外话，那就是触摸的延迟不仅仅只是系统层也应用层说了算了，而是一个整体的问题，从硬件本身的设计开始到应用层每个模块都能影响。说到这里就需要提一下上古的，但是现在电竞依然还在采用的 PS/2 接口。对比采用轮询设备式运行的 USB 设备，采用系统中断的 PS/2 从原理层面来说能够实现更低的延迟，实际使用的反应更快。尽管 PS/2 接口的数据传输速度不能和 USB 打，但是从低时延方面上还是能够压过 USB 设备的。现在的大尺寸触摸屏幕行业上的触摸基本都是走 USB/HID 方式，也就是从此原理上来说延迟性就存在部分了。那是不是有人就要问了，让大尺寸触摸屏幕的触摸走 PS/2 是否可以？也许可以，但是你要做好了一条龙都需要自己实现的准备。但是在小尺寸的触摸屏上，早已有一些厂商采用 PS/2 接口方式。值得一提的是 PS/2 接口应该是不能传输触摸消息的，也就是这些触摸屏只能发鼠标消息
 
+假设当前遇到的问题是一个大屏白板类软件的触摸延迟问题，然后再看到整体的硬件架构是触摸框将数据发送到安卓板卡，再由安卓转发到 PC 这边，而 PC 不是直接输出到屏幕，而是输出到安卓的一个应用，由安卓电视机方式输出到屏幕。而此过程里面，如果安卓处理触摸的延迟就是 50 毫秒。再加上屏幕输出要求是 4k 分辨率，给的 PC 的配置是 i3 5 代加 4 G 内存无独立显卡的。这时无论软件层使用哪个方式获取触摸消息都对大局没有影响，因为获取触摸消息的延迟在整体上的占比可以忽略。想要优化触摸的延迟到极致，仅软件来做是不够的，这是需要软件加硬件一起来的
+
 在 Win10 改了触摸架构，但是我没有找到官方文档，同时也了解到 Win10 的 wisptis 是附加到进程的窗口，详细请看 [Win10 的 WPF 程序的 wisptis 服务是附加到进程的窗口](https://blog.lindexi.com/post/Win10-%E7%9A%84-WPF-%E7%A8%8B%E5%BA%8F%E7%9A%84-wisptis-%E6%9C%8D%E5%8A%A1%E6%98%AF%E9%99%84%E5%8A%A0%E5%88%B0%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%AA%97%E5%8F%A3.html)
 
-经过实际的测试发现在 Win10 依然还是可以通过 RealTimeStylus 获取低延迟的实时触摸。我拿到了大尺寸屏幕平蛙厂商的高精度触摸框进行实际测试发现走 RealTimeStylus 方式比 `WM_Touch` 和 `WM_Pointer` 的延迟更低，而 `WM_Touch` 和 `WM_Pointer` 的延迟几乎相等，这个测试符合理论，我猜是对的。推荐大家自行进行测试，测试 `WM_Touch` 的 Demo 可以参阅 [WPF 编写一个测试 WM_TOUCH 触摸消息延迟的应用](https://blog.lindexi.com/post/WPF-%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95-WM_TOUCH-%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF%E5%BB%B6%E8%BF%9F%E7%9A%84%E5%BA%94%E7%94%A8.html ) 博客，测试 RealTimeStylus 的 Demo 可以参阅本文
+经过实际的测试发现在 Win10 依然还是可以通过 RealTimeStylus 获取低延迟的实时触摸。我拿到了大尺寸屏幕平蛙厂商的高精度触摸框进行实际测试发现走 RealTimeStylus 方式比 `WM_Touch` 和 `WM_Pointer` 的延迟更低，而 `WM_Touch` 比 `WM_Pointer` 的延迟稍微高一点，这个测试符合理论，我猜是对的。推荐大家自行进行测试，测试 `WM_Touch` 的 Demo 可以参阅 [WPF 编写一个测试 WM_TOUCH 触摸消息延迟的应用](https://blog.lindexi.com/post/WPF-%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95-WM_TOUCH-%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF%E5%BB%B6%E8%BF%9F%E7%9A%84%E5%BA%94%E7%94%A8.html ) 博客，测试 RealTimeStylus 的 Demo 可以参阅本文末尾给出的代码
 
 在 WPF 框架里面，默认的触摸就是通过 WPF 的 PenImc 模块，从 RealTimeStylus 实时触摸里获取。在 WPF 里面选用 RealTimeStylus 实时触摸有两个原因，一个原因是为了更好的支持 XP 系统下的触摸，第二个是 WPF 内置了 InkCanvas 功能，默认就需要支持高性能笔迹书写。详细请看 [WPF 触摸底层 PenImc 是如何工作的](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%BA%95%E5%B1%82-PenImc-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.html)
 
@@ -31,6 +36,8 @@
 
 <!-- ![](image/WPF 从零自己实现从 RealTimeStylus 获取触摸信息/WPF 从零自己实现从 RealTimeStylus 获取触摸信息0.png) -->
 ![](http://image.acmx.xyz/lindexi%2F2023327841403244.jpg)
+
+而 `WM_Touch` 和 `WM_Pointer` 走的是 Win32 消息机制，会受到许多第三方的干扰，再加上应用的主线程不一定能够及时处理消息。叠加上来的结果就是比 RealTimeStylus 实时触摸稍微慢一些。具体测试数据我放在本文末尾。但更推荐大家自行测试，预计不同的硬件设备和不同的系统下，会有一些差异
 
 理论部分咱就先聊这里，接下来是开始从零写代码使用 RealTimeStylus 机制获取到触摸信息。通过此 Demo 不仅可以让大家了解这一套获取触摸的玩法，制作出来的 Demo 还可以让大家用来测试 RealTimeStylus 获取触摸时的延迟以及用来测试触摸失效的设备
 
@@ -417,6 +424,10 @@ git pull origin f9b86511284baf14b5579146736c121b6b571200
 
 开启 RealTimeStylus 之后，将不能从窗口消息里面收到 `WM_Pointer` 或 `WM_Touch` 消息
 
+开启 `SetAllTabletsMode` 设置 `useMouseForInput` 参数为 true 即可接收鼠标消息。但是鼠标和触摸同时接收到的时候，只会收到触摸消息，将不会收到鼠标消息。这一点行为和 WM_Pointer 不相同
+
+多个 RealTimeStylus 之间的 Enable 是互斥的，也就是自己代码开启之后，将会干扰 WPF 底层的，或者反过来被 WPF 的干扰。具体行为大概就是窗口失焦之后回来，会丢失触摸。或者是开启之后 WPF 接收不到 Touch 事件
+
 在 WPF 里面，在不开启 Pointer 消息的前提下，将需要使用 Wisp.dll 组件作为触摸获取的底层，不需要用到 InkObj.dll 组件。但是本文的 Demo 是通过 InkObj.dll 组件作为触摸获取的底层。稍微有一些不相同
 
 在 WPF 里面，接收触摸消息的底层调度是通过消息，但是此消息不等于消息队列的消息，而是从更底层过来的。如此可以减少走消息队列的损耗，且不在主线程调度
@@ -427,7 +438,6 @@ git pull origin f9b86511284baf14b5579146736c121b6b571200
 ![](http://image.acmx.xyz/lindexi%2F20233271731347622.jpg)
 
 以上的 581 和 582 等就是对应的 `WM_Pointer` 消息号。只不过再底层是从哪里调过来的，就不知道了
-
 
 根据上文内容，我编写了通过 `WM_Touch` 和 `WM_Pointer` 和 RealTimeStylus 获取触摸消息的延迟测试 Demo 代码
 

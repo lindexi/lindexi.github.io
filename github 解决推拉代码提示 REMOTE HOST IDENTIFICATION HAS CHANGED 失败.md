@@ -3,6 +3,8 @@
 本文记录最近 github 推送或拉取代码时提示 WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 而失败的解决方法
 
 <!--more-->
+<!-- CreateTime:2023/3/27 8:39:35 -->
+
 
 <!-- 发布 -->
 <!-- 博客 -->
@@ -49,3 +51,5 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 以上步骤就是在将 github 添加到 `known_hosts` 文件里
 
 也就是下一次推拉代码就不需要再次执行以上步骤
+
+为什么有这样的事情呢？这是因为在 2023.03.24 更换了 GitHub 的 RSA 的 Key 值。因为 GitHub 团队发现自己的 Key 泄露了。详细请看 [We updated our RSA SSH host key The GitHub Blog](https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/ )
