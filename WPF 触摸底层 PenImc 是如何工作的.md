@@ -13,7 +13,7 @@
 
 那么在 PenImc 里面做了什么？
 
-在 PenImc 原理里面，其实就是通过共享内存和 COM 的方式通过 RealTimeStylus 的方式快速获取触摸消息
+在 PenImc 原理里面，其实就是通过共享内存和 COM 的方式通过 RealTimeStylus 的方式快速获取触摸消息。更多关于 RealTimeStylus 的使用，请参阅 [WPF 从零自己实现从 RealTimeStylus 获取触摸信息](https://blog.lindexi.com/post/WPF-%E4%BB%8E%E9%9B%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E4%BB%8E-RealTimeStylus-%E8%8E%B7%E5%8F%96%E8%A7%A6%E6%91%B8%E4%BF%A1%E6%81%AF.html )
 
 先通过 WISPTIS_SM_SECTION_NAME 和 WISPTIS_SM_MUTEX_NAME 分别拿到共享内存和进程锁这样可以通过锁通知共享内存收到消息，然后通过读取内存的信息返回到上层
 
@@ -190,7 +190,7 @@ switch (m_pSharedMemoryHeader->dwEvent)
  const int PenEventSystem        = 714;
 ```
 
-也就是上面的代码就是整个触摸的核心代码。对应在 Win32 层的文档请参阅 [COM API Used by Windows Presentation Foundation - Win32 apps Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/tablet/com-apis-used-by-windows-presentation-foundation )
+也就是上面的代码就是整个触摸的核心代码。对应在 Win32 层的文档请参阅 [COM API Used by Windows Presentation Foundation - Win32 apps Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/tablet/com-apis-used-by-windows-presentation-foundation ) 文档，更多请看 [WPF 用到的触摸的 COM 接口](https://blog.lindexi.com/post/WPF-%E7%94%A8%E5%88%B0%E7%9A%84%E8%A7%A6%E6%91%B8%E7%9A%84-COM-%E6%8E%A5%E5%8F%A3.html )
 
 更多代码请看 [https://github.com/dotnet/wpf/](https://github.com/dotnet/wpf/) 
 
