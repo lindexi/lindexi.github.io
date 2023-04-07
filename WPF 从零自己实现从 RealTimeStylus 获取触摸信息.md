@@ -14,7 +14,7 @@
 
 在 win7 时代，引入了 `WM_Touch` 的概念，作为一个 Windows 消息，很难顶住 240Hz 以上的高刷触摸框，而且 Windows 消息本身会受到许多其他第三方应用的干扰以及业务本身的影响，导致了想要通过 `WM_Touch` 获取高性能的触摸数据，进而实现高性能书写是一个从原理上来说比较困难的事情。于是软的大佬们，又想起了 RealTimeStylus 实时触摸技术，继续完善 RealTimeStylus 机制。大概也就是从 Win7 开始，才是真正 RealTimeStylus 实时触摸强大起来的时候。因为在 XP 那会，还是有许许多多的应用都是靠私有 USB 或 HID 协议获取触摸点的，完全无法和 RealTimeStylus 对接，更不要说和 `WM_Touch` 对接
 
-在 Win7 下，实时触摸是从一个名为 wisptis 的特殊进程，即 Windows Ink Services Platform Tablet Input Subsystem 进程进行分发的。通过微软的 Surface 触摸架构文档可以看到，这个 wisptis 特殊进程跑了一半是在内核态里面，一半在用户态里面。由于我在写这篇博客的时候，没有找出我之前看过的微软的 Surface 触摸架构文档，我怕误导大家，这里就还先跳过细节。只需要知道实时触摸是从 wisptis 的特殊进程过来的即可。这也就回答了 [为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](https://blog.lindexi.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88-WPF-%E8%BD%AF%E4%BB%B6%E5%9C%A8-win7-%E5%90%AF%E5%8A%A8%E6%97%B6%E4%BC%9A%E5%B0%9D%E8%AF%95%E8%B0%83%E8%B5%B7-wisptis-%E8%BF%9B%E7%A8%8B.html) 这个问题
+在 Win7 下，实时触摸是从一个名为 wisptis 的特殊进程，即 Windows Ink Services Platform Tablet Input Subsystem 进程进行分发的。通过微软的 Surface 触摸架构文档可以看到，这个 wisptis 特殊进程跑了一半是在内核态里面，一半在用户态里面。由于我在写这篇博客的时候，没有找出我之前看过的微软的 Surface 触摸架构文档，我怕误导大家，这里就先跳过细节。只需要知道实时触摸是从 wisptis 的特殊进程过来的即可。这也就回答了 [为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](https://blog.lindexi.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88-WPF-%E8%BD%AF%E4%BB%B6%E5%9C%A8-win7-%E5%90%AF%E5%8A%A8%E6%97%B6%E4%BC%9A%E5%B0%9D%E8%AF%95%E8%B0%83%E8%B5%B7-wisptis-%E8%BF%9B%E7%A8%8B.html) 这个问题
 
 只不过 Win7 那会的触摸统一性也比较弱，在 Surface 触摸平板出来时，大家就遭遇了触摸问题。软软就推出了 Surface SDK 来拯救大家，更多请看 [Surface SDK 2.0 Targets Windows Touch Devices](https://www.infoq.com/news/2011/07/Surface-2/ )
 
@@ -91,7 +91,7 @@ internal interface IRealTimeStylus
 
 走同步的 IStylusPlugin 接口获取触摸消息的思路是创建出 IStylusPlugin 然后调用 AddStylusSyncPlugin 方法插入到 IRealTimeStylus 插槽里面，如此在 RealTimeStylus 层收到触摸消息后，将会如[官方文档](https://learn.microsoft.com/en-us/windows/win32/tablet/working-with-the-realtimestylus-class)给出的上图描述，将触摸数据给到 IStylusPlugin 里
 
-根据以上思路，第一步就是需要将 IRealTimeStylus 给获取或创建出来。本文这是是将其创建出来，创建出来时需要由于这个 COM 接口是需要传入 License 的，需要用到另一个 [IClassFactory2](https://learn.microsoft.com/en-us/windows/win32/api/ocidl/nn-ocidl-iclassfactory2) 接口用来辅助创建
+根据以上思路，第一步就是需要将 IRealTimeStylus 给获取或创建出来。本文这里是将其创建出来，创建出来时由于这个 COM 接口是需要传入 License 的，需要用到另一个 [IClassFactory2](https://learn.microsoft.com/en-us/windows/win32/api/ocidl/nn-ocidl-iclassfactory2) 接口用来辅助创建
 
 先定义和创建 [IClassFactory2](https://learn.microsoft.com/en-us/windows/win32/api/ocidl/nn-ocidl-iclassfactory2) 接口
 

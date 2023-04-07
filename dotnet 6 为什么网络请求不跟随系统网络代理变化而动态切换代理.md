@@ -93,3 +93,30 @@ git pull origin 8c64e9676c4205e55fad227a86d5d8d95a5ebe91
 - [how to set default proxy with .NET core 3.1 for HTTP client for any request? - Stack Overflow](https://stackoverflow.com/questions/64931470/how-to-set-default-proxy-with-net-core-3-1-for-http-client-for-any-request )
 - [How to change Global Windows Proxy using C# .NET with `Immediate Effect` - Stack Overflow](https://stackoverflow.com/questions/2020363/how-to-change-global-windows-proxy-using-c-sharp-net-with-immediate-effect )
 - [How to auto reset Fiddler when 'system proxy was changed' in Fiddler | Telerik Forums](https://www.telerik.com/forums/how-to-auto-reset-fiddler-when-%27system-proxy-was-changed%27 )
+
+更新：
+
+有些用户环境的代理是带毒的，而且在 .NET 里面的默认代理的逻辑是走同步的，如果刚好在主线程发起，可能出现被代理卡的情况。设置代理超时是一个很有用的用来解决卡代理的方式
+
+默认情况下可以设置一些代码让获取网络代理超时的时候，还能让代码不走代理执行。而且在获取代理超时次数达到一定次数时，认为当前用户环境的代理有毒，自动禁止走代理
+
+更新的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/1cedefac050e18f6eb1e953e57f737a8e41d0521/NilerlanaihikaWhurreeberhalur) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/1cedefac050e18f6eb1e953e57f737a8e41d0521/NilerlanaihikaWhurreeberhalur) 欢迎访问
+
+可以通过如下方式获取源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 1cedefac050e18f6eb1e953e57f737a8e41d0521
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 1cedefac050e18f6eb1e953e57f737a8e41d0521
+```
+
+获取代码之后，进入 NilerlanaihikaWhurreeberhalur 文件夹
+
