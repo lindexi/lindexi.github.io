@@ -3,11 +3,13 @@
 本文属于 OpenTK 入门博客，这是一项使用 C# 做底层调用 OpenGL 和 OpenAL 和 OpenCL 的技术。但值得一提的是，如果是想做渲染相关的话，当前是不建议使用 OpenGL 的，无论是从性能上还是其他方面，都不具备优势
 
 <!--more-->
+<!-- CreateTime:2023/4/7 8:33:59 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签： 渲染 -->
 
-本文将从控制台开始，初始化创建窗口，在窗口里面承载 OpenGL 的内容
+本文将从控制台开始，初始化创建窗口，在窗口里面承载 OpenGL 的内容。创建 OpenGL 空窗口的方式有很多，与之相关的是采用 Silk.NET 库创建 OpenGL 窗口，详细请看 [使用 Silk.NET 创建 OpenGL 空窗口项目例子](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-Silk.NET-%E5%88%9B%E5%BB%BA-OpenGL-%E7%A9%BA%E7%AA%97%E5%8F%A3%E9%A1%B9%E7%9B%AE%E4%BE%8B%E5%AD%90.html )
 
 先新建一个 .NET 7 的控制台应用，接着按照 dotnet 的惯例，安装上 OpenTK 的 NuGet 库。对于 .NET 7 项目，项目文件使用 SDK 风格的 csproj 格式，可以在 VisualStudio 里双击项目进入编辑 csproj 文件，在 csproj 文件里加上以下代码用来安装库
 
@@ -128,3 +130,7 @@ git pull origin 6b04d4bc03c379f776ac4d372833ca1118cb9343
 ```
 
 获取代码之后，进入 NaeawurcaDowhemcenunalfe 文件夹
+
+我创建了一个 OpenTK 技术讨论群： 789025426 欢迎加入
+
+更多渲染相关，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
