@@ -3,6 +3,8 @@
 在上一篇博客的基础上，使用 dotnet 基金会新开源的 Silk.NET 库，让 Silk.NET 创建的 DX 设备和 WPF 对接渲染。接下来本文将告诉大家如何使用 Silk.NET 提供的 Direct2D 底层封装，在 WPF 上绘制出界面
 
 <!--more-->
+<!-- CreateTime:2023/4/10 8:38:39 -->
+
 
 <!-- 标签：WPF,DirectX,渲染 -->
 <!-- 博客 -->
