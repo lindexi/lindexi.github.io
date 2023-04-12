@@ -1,44 +1,41 @@
 # UWP 和 WPF 对比
 
-本文告诉大家 UWP 和 WPF 的不同。
-
-如果在遇到技术选择或者想和小伙伴吹的时候可以让他以为自己很厉害，那么请继续看。
+本文告诉大家 UWP 和 WPF 的一些不同之处
 
 <!--more-->
 <!-- CreateTime:2018/5/5 17:23:33 -->
 
-<!-- csdn -->
+<!-- 草稿 -->
 
 <!-- 标签：wpf,uwp,dotnetcore -->
 
-如果在看这文章还不知道什么是 UWP 和 WPF 那么也没关系，下面会告诉大家。
+从技术上讲 Universal Windows Platform (UWP) 和 Windows Presentation Foundation (WPF) 是不相同的，虽然都可以做界面和桌面开发，但 WPF 是 Win32 系的，而 UWP 作为一个新的 UI 框架，属于 WinRT 系的。在微软的野心驱动下 UWP 是支持很多平台，虽然这些平台除了 Windows 外，几乎没一个能打的，但从数量上就是比 WPF 多
 
-实际上 Universal Windows Platform (UWP) 和 Windows Presentation Foundation (WPF) 是不相同的，虽然都可以做界面和桌面开发，但是 UWP 是一个新的 UI 框架，而且 UWP 是支持很多平台，至少比 WPF 多。
+那么 UWP 可以使用什么语言写？
 
+- xaml 做的 UI 和 C#、VB 写的后台逻辑代码
 
-那么 UWP 可以使用什么写？
+- xaml 的 UI 和 C++ Native 写的后台逻辑代码
 
-- xaml 做的 UI 和 C#、VB 写的后台
+- DirectX 的 UI 和 C++ Native 写的后台逻辑代码
 
-- xaml 的 UI 和 C++ Native 写的后台
+- JavaScript 和 HTML 的组合，只不过这个和废物一样
 
-- DirectX 的 UI 和 C++ Native 写的后台
+而 WPF 呢？他可以使用 xaml 做的 UI 界面，使用 C#、VB、F#、C++写的后台逻辑代码
 
-- JavaScript 和 HTML
-
-WPF 呢？他可以使用 xaml 做的前台，C#、VB、F#、C++写的后台。
-
-不过需要知道，WPF 的C++ 后台使用的是托管的C++。
+不过需要知道的是，以上说的 WPF 的 C++ 后台逻辑代码，使用的是托管的 C++ 方式，而不是传统的 C++ 方式
 
 那么网上怎么好多小伙伴说 UWP 的性能比 WPF 好？
 
+性能好不好有多个方面，从一些
+
 因为 UWP 的渲染使用的是 [DirectComposition](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh437376.aspx ) 而 WPF 使用的 [Desktop Window Manager](https://msdn.microsoft.com/en-us/library/windows/desktop/aa969540(v=vs.85).aspx )，请不要在这里和我说 WPF 使用的 DX9 。
 
-虽然 WPF 渲染是通过 Dx9 但是最后显示出来是需要 DWM ，所以上面这样说。
+<!-- 虽然 WPF 渲染是通过 Dx9 但是最后显示出来是需要 DWM ，所以上面这样说。
 
 之外，UWP 使用 dot net core 编译出来的是 Native 本地代码，WPF 使用 dot net Framework 编译出来是 IL 代码，需要知道 编译出来 Native 代码的性能是 80% C++非托管。所以代码运行会快很多。
 
-这时不要说 IL 可以针对每个 CPU 做优化，因为 dot net core 编译的代码就是对不同的 CPU 做优化。如果还需要对特殊CPU做优化，我还没找到。
+这时不要说 IL 可以针对每个 CPU 做优化，因为 dot net core 编译的代码就是对不同的 CPU 做优化。如果还需要对特殊CPU做优化，我还没找到。 -->
 
 ## 发布时间
 
