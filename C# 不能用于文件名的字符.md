@@ -1,6 +1,6 @@
 # C# 不能用于文件名的字符
 
-在 Windows 有一些字符是不能作为文件名，尝试重命名一个文件，输入`/` 就可以看到windows 提示的不能作为文件名的字符
+在 Windows 有一些字符是不能作为文件名，尝试重命名一个文件，输入`/` 就可以看到 windows 提示的不能作为文件名的字符
 
 <!--more-->
 <!-- CreateTime:2018/8/10 19:16:52 -->
@@ -31,7 +31,7 @@
 
 而且在 windows 的要求，文件是需要有文件名的，虽然你也可以创建`.file`这样的文件，但是用户是难以自己输入这样的文件名。
 
-之外还有一些文件名是保留，不能创建这样的文件名
+之外还有一些文件名是保留的，不能创建下列的文件名
 
 ```csharp
 CON, PRN, AUX, CLOCK$, NUL
@@ -39,7 +39,7 @@ COM0, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9
 LPT0, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, and LPT9.
 ```
 
-尝试新建一个文本，然后把他文件名命名为上面的任意一个，基本windows会说不能把文件命名
+尝试新建一个文本，然后把他文件名命名为上面列表里的任意一个，基本上你都会看到系统给你报错
 
 那么是不是把这些字符串拿出来判断？实际上微软已经做了这个了，因为在不同的系统，可能之后会添加新的字符串，所以最好不要自己写。
 
@@ -48,7 +48,7 @@ LPT0, LPT1, LPT2, LPT3, LPT4, LPT5, LPT6, LPT7, LPT8, and LPT9.
 ```csharp
         public static string MakeValidFileName(string text, string replacement = "_")
         {
-            StringBuilder str=new StringBuilder();
+            var str = new StringBuilder();
             var invalidFileNameChars = System.IO.Path.GetInvalidFileNameChars();
             foreach (var c in text)
             {
@@ -132,7 +132,7 @@ public static string GetSafeFilename(string arbitraryString)
 }
 ```
 
-上面的代码是[jnm2](https://stackoverflow.com/a/30126118/6116637) 大神写的
+上面的代码是 [jnm2](https://stackoverflow.com/a/30126118/6116637) 大神写的
 
 参见：[Information about the characters that you cannot use in site names, folder names, and file names in SharePoint](https://support.microsoft.com/en-us/help/905231/information-about-the-characters-that-you-cannot-use-in-site-names-fol )
 
