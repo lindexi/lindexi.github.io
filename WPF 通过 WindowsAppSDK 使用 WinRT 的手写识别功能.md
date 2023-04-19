@@ -3,6 +3,8 @@
 本文告诉大家如何在基于 .NET 6 的 WPF 使用 WinRT 的手写识别功能
 
 <!--more-->
+<!-- CreateTime:2023/4/18 8:47:21 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -62,7 +64,6 @@ using Point = Windows.Foundation.Point;
             var value = inkAnalysisInkDrawing?.DrawingKind;
             if (value == InkAnalysisDrawingKind.Triangle)
             {
-
             }
         }
     }
