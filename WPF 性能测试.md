@@ -36,6 +36,66 @@ git pull origin 1d3883ac7feba5dd7752e1edccd33f943c02f7f9
 
 获取代码之后，进入 JojeryiheenelNearfinelwhea 文件夹
 
+## 大量资源图片对启动的影响
+
+我创建了 100 张图片，将这些图片作为资源的存在，接着写一个 资源字典 引用这 100 张图片。这 100 张图片都属于不同的图片，最后构建出来的 DLL 文件大概有 300 MB 这么大
+
+![](http://image.acmx.xyz/lindexi%2F20234221458573021.jpg)
+
+将资源字典同样在 App.xaml 里引用加入，测量 App 的 InitializeComponent 时间发现近乎没有受到图片数量的影响。在我的设置上 Debug 模式下仅不到百毫秒即可完成，即使我是放在机械硬盘上运行的
+
+我编写的测试代码放在[github](https://github.com/lindexi/lindexi_gd/tree/9c660568dfadef19c3393a42ca0925b9e72cd749/WhirawahereRallcobaiwe) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9c660568dfadef19c3393a42ca0925b9e72cd749/WhirawahereRallcobaiwe) 欢迎访问
+
+可以通过如下方式获取本文的源代码，先创建一个名为 WhirawahereRallcobaiwe 的空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 9c660568dfadef19c3393a42ca0925b9e72cd749
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 9c660568dfadef19c3393a42ca0925b9e72cd749
+```
+
+获取代码之后，进入 WhirawahereRallcobaiwe 文件夹。里面包含一个生成测试图片和测试代码的项目和一个用来测试启动性能的 WPF 项目
+
+以下是生成测试图片的代码
+
+```csharp
+                    WriteableBitmap writeableBitmap = new WriteableBitmap(1024, 1024, 96, 96, PixelFormats.Pbgra32, null);
+
+                    writeableBitmap.Lock();
+                    unsafe
+                    {
+                        var length = writeableBitmap.PixelWidth * writeableBitmap.PixelHeight *
+                           writeableBitmap.Format.BitsPerPixel / 8;
+                        var backBuffer = (byte*) writeableBitmap.BackBuffer;
+                        for (int i = 0; i + 4 < length; i = i + 4)
+                        {
+                            Span<byte> span = new Span<byte>(backBuffer, length);
+                            span = span.Slice(i, 4);
+                            Random.Shared.NextBytes(span);
+                        }
+                    }
+
+                    writeableBitmap.Unlock();
+
+                    PngBitmapEncoder encoder = new PngBitmapEncoder();
+                    encoder.Frames.Add(BitmapFrame.Create(writeableBitmap));
+
+                    var file = $"{fileName}.png";
+
+                    using var fileStream = File.OpenWrite(file);
+                    encoder.Save(fileStream);
+```
+
+可以看到是采用随机的像素的方式生成的图片，如此即可让每个图片保证是不同的。从以上测试项目可以了解到，假定在启动过程中 WPF 框架是做了图片加载和解析的工作的，那 WPF 的启动时间绝对不可能有这么快，我猜测在许多年内都无法在机械盘上不到百毫秒内完成 100 张 1024x1024 的不同图片的解码。换句话说就是 WPF 的资源字典里面定义的引用确实是延迟加载的，在使用到的时候才真正创建对象，这符合我阅读 WPF 源代码所了解的
+
 
 ## 一千个半透明矩形做动画
 
