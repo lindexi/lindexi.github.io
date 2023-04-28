@@ -4,7 +4,6 @@
 
 <!--more-->
 <!-- CreateTime:2023/4/18 8:47:21 -->
-
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -30,9 +29,11 @@
 </Project>
 ```
 
-如果以上代码构建不通过，请参阅 [修复 WPF 安装 WindowsAppSDK 库构建失败 NETSDK1082 和 NETSDK1112 找不到 win10-arm 失败](https://blog.lindexi.com/post/%E4%BF%AE%E5%A4%8D-WPF-%E5%AE%89%E8%A3%85-WindowsAppSDK-%E5%BA%93%E6%9E%84%E5%BB%BA%E5%A4%B1%E8%B4%A5-NETSDK1082-%E5%92%8C-NETSDK1112-%E6%89%BE%E4%B8%8D%E5%88%B0-win10-arm-%E5%A4%B1%E8%B4%A5.html )
+如果以上代码构建不通过，请参阅 [修复 WPF 安装 WindowsAppSDK 库构建失败 NETSDK1082 和 NETSDK1112 找不到 win10-arm 失败](https://blog.lindexi.com/post/%E4%BF%AE%E5%A4%8D-WPF-%E5%AE%89%E8%A3%85-WindowsAppSDK-%E5%BA%93%E6%9E%84%E5%BB%BA%E5%A4%B1%E8%B4%A5-NETSDK1082-%E5%92%8C-NETSDK1112-%E6%89%BE%E4%B8%8D%E5%88%B0-win10-arm-%E5%A4%B1%E8%B4%A5.html ) 博客
 
 另外，还需要你的 VisualStudio 2022 安装对应的负载，如 10.0.19041 负载等，基本上 Visual Studio 告诉你缺哪个就安装哪个
+
+如果不想自己的项目只能跑在 Win10 及以上的系统，期望支持 Win7 等系统等，可以考虑采用 [WPF 不安装 WindowsAppSDK 使用 WinRT 功能的方法](https://blog.lindexi.com/post/WPF-%E4%B8%8D%E5%AE%89%E8%A3%85-WindowsAppSDK-%E4%BD%BF%E7%94%A8-WinRT-%E5%8A%9F%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%95.html ) 博客提供的方法
 
 先在 MainWindow.xaml 放入一个 InkCanvas 元素，用来绘制笔迹和创建笔迹对象，代码如下
 
