@@ -510,6 +510,30 @@ F1.FxEvent += async () => { throw xxx; }
 代码审查看到所有的 `async void` 和 `+= async` 的代码时，需要看看里面的逻辑是否足够简单，或者是已经捕获了足够的异常，防止进程直接挂掉且没有日志等
 
 
+#### 异步 async void 无效等待
+
+如看到以下代码格式，在一个 async void 方法里面执行 await 等待一个 Task 逻辑。其实这里等待和不等待都是相同的业务逻辑。在使用 ConfigureAwait 为 false 时，就一定不会切换到 WPF 等的主线程上，丢失统一收集
+
+```csharp
+        async void Foo()
+        {
+            await FooAsync().ConfigureAwait(false);
+        }
+```
+
+上面代码里面如果 FooAsync 炸掉，那将会进入 AppDomain.CurrentDomain.UnhandledException 里面，且 IsTerminating 是 true 的值，表示将炸掉应用
+
+改进的方式是不做等待，如以下代码
+
+```csharp
+        void Foo()
+        {
+            _ = FooAsync();
+        }
+```
+
+在似乎所有情况下，两个代码的在业务上是等价的，可以放心更改。如此抛出异常只会进入 TaskScheduler.UnobservedTaskException 里面，这里的异常在从 .NET Framework 4.5 开始，这里异常不会导致进程意外终止
+
 
 ### 锁的对象应该是不变的对象
 
