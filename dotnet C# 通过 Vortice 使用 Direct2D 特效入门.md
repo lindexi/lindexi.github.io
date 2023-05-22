@@ -13,17 +13,164 @@
 
 在上一篇博客里面，咱创建了一个 Win32 空窗口，接着给他挂上了 DirectX 交换链。使用以下代码从交换链里面拿到了 DXGI 平面，拿到的的 DXGI 平面即可被绘制 2D 内容在上面，从而将内容绘制输出到窗口上
 
+```csharp
+        DXGI.IDXGISwapChain1 swapChain = ... // 忽略交换链之前的代码
 
+        D3D11.ID3D11Texture2D backBufferTexture = swapChain.GetBuffer<D3D11.ID3D11Texture2D>(0);
 
-<!-- 特效： 
+        // 获取到 dxgi 的平面，这个屏幕就约等于窗口渲染内容
+        DXGI.IDXGISurface dxgiSurface = backBufferTexture.QueryInterface<DXGI.IDXGISurface>();
+```
 
+接下来咱将创建 D2D 设备，再通过 D2D 设备，从而拿到 ID2D1DeviceContext 对象，设置 DXGI 平面作为 ID2D1DeviceContext 输出，如此即可使用继承自 ID2D1RenderTarget 的 ID2D1DeviceContext 进行绘制界面
 
- -->
+```csharp
+        DXGI.IDXGIDevice dxgiDevice = d3D11Device.QueryInterface<DXGI.IDXGIDevice>();
+        ID2D1Device d2dDevice = d2DFactory.CreateDevice(dxgiDevice);
+        ID2D1DeviceContext d2dDeviceContext = d2dDevice.CreateDeviceContext();
 
+        // 设置 DXGI 平面作为 ID2D1DeviceContext 输出
+        ID2D1Bitmap1 d2dBitmap = d2dDeviceContext.CreateBitmapFromDxgiSurface(dxgiSurface);
+        d2dDeviceContext.Target = d2dBitmap;
+```
 
-本文以上代码放在[github](https://github.com/lindexi/lindexi_gd/tree/615c235ce34b8c38abe1e99e65a5e34ddc9addb0/VorticeD2DEffect1) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/615c235ce34b8c38abe1e99e65a5e34ddc9addb0/VorticeD2DEffect1) 欢迎访问
+使用 Direct2D 特效之前，需要先了解一些概念。在 Direct2D 里面，可使用 ID2D1Effect 特效，特效的常用方法就是先使用 SetInput 方法将某个 ID2D1Bitmap 设置为输入源，再通过 SetValue 设置一些参数。最后将特效放入到 ID2D1DeviceContext 的 DrawImage 方法绘制出来
 
-可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+在 Direct2D 里面有许多内建特效，作为入门的博客，咱随便选一个简单的 GaussianBlur 特效作为例子。先通过 ID2D1DeviceContext 创建出特效，代码如下
+
+```csharp
+                var gaussianBlurEffect = d2dDeviceContext.CreateEffect(EffectGuids.GaussianBlur);
+                using ID2D1Effect d2dEffect = new ID2D1Effect(gaussianBlurEffect);
+```
+
+创建出来的特效现在是缺少输入源的，接下来咱随便写一点代码创建一个 ID2D1Bitmap 作为输入源。为了方便编写例子，我这里采用的是创建放在内存里的 IWICBitmap 作为画布，通过自己绘制的内容作为 ID2D1Bitmap 输出，方法如下
+
+```csharp
+        ID2D1Bitmap CreateBitmap()
+        {
+            using var wicImagingFactory = new IWICImagingFactory();
+            using IWICBitmap wicBitmap =
+                wicImagingFactory.CreateBitmap(1000, 1000, Win32.Graphics.Imaging.Apis.GUID_WICPixelFormat32bppPBGRA);
+            var renderTargetProperties = new D2D.RenderTargetProperties(Vortice.DCommon.PixelFormat.Premultiplied);
+            using D2D.ID2D1RenderTarget wicBitmapRenderTarget =
+                d2DFactory.CreateWicBitmapRenderTarget(wicBitmap, renderTargetProperties);
+            wicBitmapRenderTarget.BeginDraw();
+            using var brush = wicBitmapRenderTarget.CreateSolidColorBrush(color);
+            wicBitmapRenderTarget.FillEllipse(new Ellipse(new System.Numerics.Vector2(200, 200), 100, 100), brush);
+            wicBitmapRenderTarget.EndDraw();
+
+            ID2D1Bitmap1 intputBitmap = renderTarget.CreateBitmapFromWicBitmap(wicBitmap);
+            return intputBitmap;
+        }
+```
+
+以上代码不是本文的重点，大家也可以采用加载本地图片等方式获取到 ID2D1Bitmap 对象。如何加载本机图片，请参阅 [WPF 对接 Vortice 在 Direct2D 绘制从 WIC 加载的图片](https://blog.lindexi.com/post/WPF-%E5%AF%B9%E6%8E%A5-Vortice-%E5%9C%A8-Direct2D-%E7%BB%98%E5%88%B6%E4%BB%8E-WIC-%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%9B%BE%E7%89%87.html )
+
+获取到 ID2D1Bitmap 对象，即可调用 SetInput 方法设置输入源，代码如下
+
+```csharp
+                using ID2D1Bitmap intputBitmap = CreateBitmap();
+
+                d2dEffect.SetInput(0, intputBitmap, new RawBool(true));
+```
+
+接着使用 SetValue 方法设置特效的一些参数，特效的参数都是灵活的。此 SetValue 方法的第一个参数表示的是将要设置特效的哪个参数，第二个参数才是特效参数的值，例如以下代码，设置模糊度
+
+```csharp
+                const int D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION = 0;
+                d2dEffect.SetValue(D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION, 2.5f);
+```
+
+完成特效的设置之后，即可调用 DrawImage 方法将特效结果绘制出来，代码如下
+
+```csharp
+                renderTarget.DrawImage(d2dEffect);
+```
+
+以上就是特效的入门玩法，可以通过高性能的 Direct2D 特效，绘制出绚丽的界面
+
+下面是特效使用部分的代码
+
+```csharp
+        // 创建 D2D 设备，通过设置 ID2D1DeviceContext 的 Target 输出为 dxgiSurface 从而让 ID2D1DeviceContext 渲染内容渲染到窗口上
+        // 如 https://learn.microsoft.com/en-us/windows/win32/direct2d/images/devicecontextdiagram.png 图
+        // 获取 DXGI 设备，用来创建 D2D 设备
+        DXGI.IDXGIDevice dxgiDevice = d3D11Device.QueryInterface<DXGI.IDXGIDevice>();
+        ID2D1Device d2dDevice = d2DFactory.CreateDevice(dxgiDevice);
+        ID2D1DeviceContext d2dDeviceContext = d2dDevice.CreateDeviceContext();
+
+        ID2D1Bitmap1 d2dBitmap = d2dDeviceContext.CreateBitmapFromDxgiSurface(dxgiSurface);
+        d2dDeviceContext.Target = d2dBitmap;
+
+        var renderTarget = d2dDeviceContext;
+
+        var stopwatch = Stopwatch.StartNew();
+        var count = 0;
+
+        // 随意创建颜色
+        var color = new Color4((byte) Random.Shared.Next(255), (byte) Random.Shared.Next(255),
+            (byte) Random.Shared.Next(255));
+
+        Task.Factory.StartNew(() =>
+        {
+            while (true)
+            {
+                // 开始绘制逻辑
+                renderTarget.BeginDraw();
+
+                // 清空画布
+                renderTarget.Clear(new Color4(0xFF,0xFF,0xFF));
+
+                // 随便创建一张图片
+                using var intputBitmap = CreateBitmap();
+
+                var gaussianBlurEffect = d2dDeviceContext.CreateEffect(EffectGuids.GaussianBlur);
+                using ID2D1Effect d2dEffect = new ID2D1Effect(gaussianBlurEffect);
+
+                d2dEffect.SetInput(0, intputBitmap,new RawBool(true));
+                const int D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION = 0;
+                d2dEffect.SetValue(D2D1_GAUSSIANBLUR_PROP_STANDARD_DEVIATION, count / 60f * 3f);
+
+                renderTarget.DrawImage(d2dEffect);
+
+                renderTarget.EndDraw();
+
+                swapChain.Present(1, DXGI.PresentFlags.None);
+                // 等待刷新
+                d3D11DeviceContext.Flush();
+
+                // 统计刷新率
+                count++;
+                if (stopwatch.Elapsed >= TimeSpan.FromSeconds(1))
+                {
+                    Console.WriteLine($"FPS: {count / stopwatch.Elapsed.TotalSeconds}");
+                    stopwatch.Restart();
+                    count = 0;
+                }
+            }
+        }, TaskCreationOptions.LongRunning);
+
+        ID2D1Bitmap CreateBitmap()
+        {
+            using var wicImagingFactory = new IWICImagingFactory();
+            using IWICBitmap wicBitmap =
+                wicImagingFactory.CreateBitmap(1000, 1000, Win32.Graphics.Imaging.Apis.GUID_WICPixelFormat32bppPBGRA);
+            var renderTargetProperties = new D2D.RenderTargetProperties(Vortice.DCommon.PixelFormat.Premultiplied);
+            using D2D.ID2D1RenderTarget wicBitmapRenderTarget =
+                d2DFactory.CreateWicBitmapRenderTarget(wicBitmap, renderTargetProperties);
+            wicBitmapRenderTarget.BeginDraw();
+            using var brush = wicBitmapRenderTarget.CreateSolidColorBrush(color);
+            wicBitmapRenderTarget.FillEllipse(new Ellipse(new System.Numerics.Vector2(200, 200), 100, 100), brush);
+            wicBitmapRenderTarget.EndDraw();
+
+            ID2D1Bitmap1 intputBitmap = renderTarget.CreateBitmapFromWicBitmap(wicBitmap);
+            return intputBitmap;
+        }
+```
+
+以上代码将可以动态绘制一个模糊度不断变化的圆，代码省略和没有写的部分，我放在了 [github](https://github.com/lindexi/lindexi_gd/tree/615c235ce34b8c38abe1e99e65a5e34ddc9addb0/VorticeD2DEffect1) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/615c235ce34b8c38abe1e99e65a5e34ddc9addb0/VorticeD2DEffect1) 上，可以通过以下方式获取整个项目的代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
 ```
 git init
