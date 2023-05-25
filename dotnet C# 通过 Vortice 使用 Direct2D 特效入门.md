@@ -3,6 +3,8 @@
 本文将告诉大家如何通过 Vortice 使用 D2D 的特效
 
 <!--more-->
+<!-- CreateTime:2023/5/22 8:51:31 -->
+
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D, -->
 <!-- 博客 -->
 <!-- 发布 -->
