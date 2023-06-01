@@ -3,6 +3,8 @@
 本文将告诉大家如何通过 Vortice 使用 D2D 的 CommandList 功能
 
 <!--more-->
+<!-- CreateTime:2023/5/30 19:29:44 -->
+
 
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D, -->
 <!-- 博客 -->
