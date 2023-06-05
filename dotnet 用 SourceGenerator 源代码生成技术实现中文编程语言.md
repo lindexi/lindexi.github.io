@@ -6,7 +6,7 @@
 <!-- CreateTime:2022/10/17 8:06:00 -->
 
 <!-- 发布 -->
-<!-- 标签：Roslyn,MSBuild,编译器 -->
+<!-- 标签：Roslyn,MSBuild,编译器,SourceGenerator,生成代码 -->
 
 开始之前，先给大家看看效果
 
