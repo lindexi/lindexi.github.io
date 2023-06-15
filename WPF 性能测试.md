@@ -36,7 +36,7 @@ git pull origin 1d3883ac7feba5dd7752e1edccd33f943c02f7f9
 
 获取代码之后，进入 JojeryiheenelNearfinelwhea 文件夹
 
-## 大量资源图片对启动的影响
+### 大量资源图片对启动的影响
 
 我创建了 100 张图片，将这些图片作为资源的存在，接着写一个 资源字典 引用这 100 张图片。这 100 张图片都属于不同的图片，最后构建出来的 DLL 文件大概有 300 MB 这么大
 
@@ -123,3 +123,5 @@ git pull origin 4983492acb47c040ecb80b7417f7cf364d1e3e19
 ```
 
 获取代码之后，进入 NarlearcefearNuyikallair 文件夹
+
+带刷新率的绘制一万矩形版本的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 欢迎访问

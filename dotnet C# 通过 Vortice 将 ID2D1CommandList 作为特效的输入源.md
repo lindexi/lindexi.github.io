@@ -21,7 +21,7 @@
 2. 创建特效
 3. 将 ID2D1CommandList 作为特效的输入源
 
-先来开始第一步，创建 ID2D1CommandList 对象，在 ID2D1CommandList 进行界面的绘制
+先来开始第一步，创建 ID2D1CommandList 对象，在 ID2D1CommandList 进行界面的绘制。详细关于如何在 Vortice 使用 ID2D1CommandList 请参阅 [dotnet C# 通过 Vortice 使用 Direct2D 的 ID2D1CommandList 入门](https://blog.lindexi.com/post/dotnet-C-%E9%80%9A%E8%BF%87-Vortice-%E4%BD%BF%E7%94%A8-Direct2D-%E7%9A%84-ID2D1CommandList-%E5%85%A5%E9%97%A8.html )
 
 ```csharp
     private static ID2D1CommandList CreateCommandList(ID2D1DeviceContext renderTarget)
