@@ -242,9 +242,7 @@
         }
 ```
 
-在 XAML 里面使用 StaticResourceExtension 也就是 `{StaticResource xx}` 的方法获取的时候，将会调用到 Contains 方法。但是在使用的时候还请放心，因为理论上对字典以及 WPF 的 Hashtable 进行一个线程写一个线程读是不会有异常的。本文提供的方法只是为了
-
-通过多线程创建资源字典的方法可以用来提升启动性能
+在 XAML 里面使用 StaticResourceExtension 也就是 `{StaticResource xx}` 的方法获取的时候，将会调用到 Contains 方法。但是在使用的时候还请放心，因为理论上对字典以及 WPF 的 Hashtable 进行一个线程写一个线程读是不会有异常的。本文提供的方法只是为了通过多线程创建资源字典的方法可以用来提升启动性能
 
 当前整个 WPF 源代码都是开源的，请看 [https://github.com/dotnet/wpf/](https://github.com/dotnet/wpf/)
 

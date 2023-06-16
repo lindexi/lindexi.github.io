@@ -125,3 +125,7 @@ git pull origin 4983492acb47c040ecb80b7417f7cf364d1e3e19
 获取代码之后，进入 NarlearcefearNuyikallair 文件夹
 
 带刷新率的绘制一万矩形版本的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 欢迎访问
+
+## 视频播放性能
+
+[WPF 模拟 WPFMediaKit 的 D3D 配置用来测试4k性能](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F-WPFMediaKit-%E7%9A%84-D3D-%E9%85%8D%E7%BD%AE%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%954k%E6%80%A7%E8%83%BD.html )

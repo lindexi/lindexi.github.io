@@ -46,11 +46,23 @@
 
 - [DirectX 使用 Vortice 从零开始控制台创建 Direct2D1 窗口修改颜色](https://blog.lindexi.com/post/DirectX-%E4%BD%BF%E7%94%A8-Vortice-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Direct2D1-%E7%AA%97%E5%8F%A3%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2.html )
 
+- [dotnet DirectX 通过 Vortice 控制台使用 ID2D1DeviceContext 绘制画面](https://blog.lindexi.com/post/dotnet-DirectX-%E9%80%9A%E8%BF%87-Vortice-%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8-ID2D1DeviceContext-%E7%BB%98%E5%88%B6%E7%94%BB%E9%9D%A2.html )
+
 - [dotnet C# 使用 Vortice 支持 Direct2D1 离屏渲染](https://blog.lindexi.com/post/dotnet-C-%E4%BD%BF%E7%94%A8-Vortice-%E6%94%AF%E6%8C%81-Direct2D1-%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.html )
 
 - [dotnet C# 使用 Vortice 创建 Direct2D1 的 ID2D1SolidColorBrush 纯色画刷](https://blog.lindexi.com/post/dotnet-C-%E4%BD%BF%E7%94%A8-Vortice-%E5%88%9B%E5%BB%BA-Direct2D1-%E7%9A%84-ID2D1SolidColorBrush-%E7%BA%AF%E8%89%B2%E7%94%BB%E5%88%B7.html )
 
-- [WPF 对接 Vortice 调用 D2D 使用 IWICBitmap 离屏渲染](https://blog.lindexi.com/post/WPF-%E5%AF%B9%E6%8E%A5-Vortice-%E8%B0%83%E7%94%A8-D2D-%E4%BD%BF%E7%94%A8-IWICBitmap-%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.html )
+- [WPF 对接 Vortice 调用 D2D 使用 IWICBitmap 离屏渲染](https://blog.lindexi.com/post/WPF-%E5%AF%B9%E6%8E%A5-Vortice-%E8%B0%83%E7%94%A8-D2D-%E4%BD%BF%E7%94%A8-IWICBitmap-%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.html ) [博客园](https://www.cnblogs.com/lindexi/p/16774416.html )
+
+- [WPF 对接 Vortice 调用 WIC 加载图片](https://blog.lindexi.com/post/WPF-%E5%AF%B9%E6%8E%A5-Vortice-%E8%B0%83%E7%94%A8-WIC-%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87.html )
+
+- [WPF 对接 Vortice 在 Direct2D 绘制从 WIC 加载的图片](https://blog.lindexi.com/post/WPF-%E5%AF%B9%E6%8E%A5-Vortice-%E5%9C%A8-Direct2D-%E7%BB%98%E5%88%B6%E4%BB%8E-WIC-%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%9B%BE%E7%89%87.html )
+
+- [dotnet C# 通过 Vortice 使用 Direct2D 特效入门](https://blog.lindexi.com/post/dotnet-C-%E9%80%9A%E8%BF%87-Vortice-%E4%BD%BF%E7%94%A8-Direct2D-%E7%89%B9%E6%95%88%E5%85%A5%E9%97%A8.html )
+
+- [dotnet C# 通过 Vortice 使用 Direct2D 的 ID2D1CommandList 入门](https://blog.lindexi.com/post/dotnet-C-%E9%80%9A%E8%BF%87-Vortice-%E4%BD%BF%E7%94%A8-Direct2D-%E7%9A%84-ID2D1CommandList-%E5%85%A5%E9%97%A8.html )
+
+- [dotnet C# 通过 Vortice 将 ID2D1CommandList 作为特效的输入源](https://blog.lindexi.com/post/dotnet-C-%E9%80%9A%E8%BF%87-Vortice-%E5%B0%86-ID2D1CommandList-%E4%BD%9C%E4%B8%BA%E7%89%B9%E6%95%88%E7%9A%84%E8%BE%93%E5%85%A5%E6%BA%90.html )
 
 
 
