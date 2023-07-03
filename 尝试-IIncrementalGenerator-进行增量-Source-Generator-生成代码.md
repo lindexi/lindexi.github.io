@@ -10,7 +10,7 @@
 
 <!-- 发布 -->
 
-<!-- 标签：Roslyn,MSBuild,编译器 -->
+<!-- 标签：Roslyn,MSBuild,编译器,SourceGenerator,生成代码 -->
 
 开始阅读之前必须要明确的是，几乎所有的设计为高性能使用的 API 都代表着 API 本身不够好用。本身使用 Source Generator 就有一定的门槛了，现在使用 Incremental Generators 机制只会更加复杂。在开始阅读本文之前，我期望你已熟悉源代码生成机制以及 dotnet 的构建过程。本文非新手友好
 

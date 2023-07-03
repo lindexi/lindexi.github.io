@@ -77,6 +77,30 @@
 
 这样在输出的时候就会自动更改文件名
 
+如果某些依赖文件是另外的其他项目构建生成的，则可以将引用放入到 Target 里面，设置在 `_GetPackageFiles` 之前执行。比如说常用的依赖分析器项目，将分析器打入 NuGet 包里，大概的代码如下
+
+```xml
+  <ItemGroup>
+    <!-- 引用分析器项目，设置 ReferenceOutputAssembly 表示不引用程序集，只是用来设置构建顺序 -->
+    <ProjectReference Include="..\FooAnalyzer\FooAnalyzer.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <!-- 添加分析器 -->
+  <Target Name="_IncludeAllDependencies" BeforeTargets="_GetPackageFiles">
+    <ItemGroup>
+      <None Include="..\FooAnalyzer\bin\$(Configuration)\netstandard2.0\**" Pack="True" PackagePath="analyzers\dotnet\cs" />
+    </ItemGroup>
+  </Target>
+```
+
+以上代码通过 ProjectReference 设置项目的构建顺序，通过设置 ReferenceOutputAssembly 表示不引用程序集，详细请参阅 [三种方法设置 .NET/C# 项目的编译顺序，而不影响项目之间的引用 - walterlv](https://blog.walterlv.com/post/affects-project-building-order.html )
+
+设置 `BeforeTargets="_GetPackageFiles"` 即可在 NuGet 打包收集文件之前，且在引用项目构建完成之后进行执行，从而可以添加引用。这里不能通过 `GenerateNuspecDependsOn` 的方式加上 Target 决定顺序，在 `C:\Program Files\dotnet\sdk\x.x.x\Sdks\NuGet.Build.Tasks.Pack\buildCrossTargeting\NuGet.Build.Tasks.Pack.targets` 里面配置了 `GenerateNuspecDependsOn` 将在 `_GetPackageFiles` 之后执行，如此将让 Target 里面的内容没有被引用
+
+更多关于分析器请参阅 [使用 Source Generator 在编译你的 .NET 项目时自动生成代码 - walterlv](https://blog.walterlv.com/post/generate-csharp-source-using-roslyn-source-generator )
+
+以上就是在 NuGet 包里打入自定义文件的方法，如果想要将 NuGet 包里的文件拷贝输出，则可以采用如下方法
+
 在 package.targets 文件让对应的放在 NuGet 文件的资源输出，通过 [Copy](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-MSBuild-Copy-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6.html) 的方式输出
 
 先定义一个 Target 可以在编译完成之后输出

@@ -36,14 +36,14 @@ Point2F 也是一个结构体，所以和 Point 类型差不多
 ```csharp
     public void DrawLine(Point2F firstPoint 起始点 , Point2F secondPoint 终点, Brush brush 笔刷, float strokeWidth 线段宽度)
 
- public unsafe void DrawLine(Point2F firstPoint, Point2F secondPoint, Brush brush, float strokeWidth, StrokeStyle strokeStyle 线段样式)
+    public unsafe void DrawLine(Point2F firstPoint, Point2F secondPoint, Brush brush, float strokeWidth, StrokeStyle strokeStyle 线段样式)
 ```
  
 所以使用下面的方法就可以在 (10,10) (100,10) 画出一条宽度为 2 的红线
 
 ```csharp
             _renderTarget.DrawLine(new D2D.Point2F(10, 10), new D2D.Point2F(100, 10),
-                _renderTarget.CreateSolidColorBrush(new D2D.ColorF(1, 0, 0, 1)), 2);
+            _renderTarget.CreateSolidColorBrush(new D2D.ColorF(1, 0, 0, 1)), 2);
 ```
 
 ![](http://image.acmx.xyz/lindexi%2F20184191049105692.jpg)
@@ -86,7 +86,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 所以需要修改[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )文章的代码，把 D2DFactory 写为字段
 
 ```csharp
-   public MainWindow()
+        public MainWindow()
         {
             InitializeComponent();
 
@@ -156,7 +156,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 圆的
 
 ```csharp
-       float h = 10;
+            float h = 10;
 
             strokeStyleProperties.StartCap = D2D.CapStyle.Round;
             strokeStyleProperties.EndCap = D2D.CapStyle.Round;
@@ -178,7 +178,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 方形
 
 ```csharp
-  strokeStyleProperties.StartCap = D2D.CapStyle.Square;
+            strokeStyleProperties.StartCap = D2D.CapStyle.Square;
             strokeStyleProperties.EndCap = D2D.CapStyle.Square;
             strokeStyle = _d2DFactory.CreateStrokeStyle(strokeStyleProperties);
 
@@ -198,7 +198,6 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 三角形
 
 ```csharp
-
             strokeStyleProperties.StartCap = D2D.CapStyle.Triangle;
             strokeStyleProperties.EndCap = D2D.CapStyle.Triangle;
             strokeStyle = _d2DFactory.CreateStrokeStyle(strokeStyleProperties);
@@ -248,7 +247,6 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 
 ```csharp
             _renderTarget.DrawRectangle(new D2D.RectF(10, 10, 100, 100), brush, 10);
-
 ```
 
 矩形有两个重载
@@ -272,7 +270,6 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 
 ```csharp
     public void DrawEllipse(Ellipse ellipse, Brush brush, float strokeWidth)
-
 ```
 
 ```csharp
@@ -285,7 +282,6 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 
 ```csharp
             var ellipse = new D2D.Ellipse(new D2D.Point2F(100, 100), 50, 50);
-
 ```
 
 ![](http://image.acmx.xyz/lindexi%2F2018419145042837.jpg)
@@ -306,7 +302,6 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 
 ```csharp
             var dWriteFactory = DWriteFactory.CreateFactory();
-
 ```
 
 创建文字有多个方法
@@ -321,9 +316,9 @@ public void DrawText(string text, TextFormat textFormat, RectF layoutRect, Brush
 public unsafe void DrawText(string text, TextFormat textFormat, RectF layoutRect, Brush defaultForegroundBrush, DrawTextOptions options, MeasuringMode measuringMode)
 
 
- public unsafe void DrawTextLayout(Point2F origin, TextLayout textLayout, Brush defaultForegroundBrush)
+public unsafe void DrawTextLayout(Point2F origin, TextLayout textLayout, Brush defaultForegroundBrush)
 
- public unsafe void DrawTextLayout(Point2F origin, TextLayout textLayout, Brush defaultForegroundBrush, DrawTextOptions options)
+public unsafe void DrawTextLayout(Point2F origin, TextLayout textLayout, Brush defaultForegroundBrush, DrawTextOptions options)
 ```
 
 因为有很多个参数，需要大家自己去试试
@@ -336,7 +331,6 @@ public unsafe void DrawText(string text, TextFormat textFormat, RectF layoutRect
 
 ```csharp
             var textFormat = dWriteFactory.CreateTextFormat("宋体", 20);
-
 ```
 
 下面就是画出文字，文字换行可以使用`\n`，复杂的换行请使用文字重载方法，这里我就不说了
