@@ -2570,6 +2570,8 @@
 
  * [WPF 已知问题 dotnet 6 设置 InvariantGlobalization 之后将丢失默认绑定转换导致 XAML 抛出异常](WPF-已知问题-dotnet-6-设置-InvariantGlobalization-之后将丢失默认绑定转换导致-XAML-抛出异常.md)
 
+ * [WPF 已知问题 InputEventArgs 的 Timestamp 属性是静态的导致事件之间相互影响](WPF-已知问题-InputEventArgs-的-Timestamp-属性是静态的导致事件之间相互影响.md)
+
  * [WPF 已知问题 Popup 吃掉 PreviewMouseDown 事件](WPF-已知问题-Popup-吃掉-PreviewMouseDown-事件.md)
 
  * [WPF 已知问题 Popup 失焦后导致 ListBox 无法用 MouseWheel 滚动问题和解决方法](WPF-已知问题-Popup-失焦后导致-ListBox-无法用-MouseWheel-滚动问题和解决方法.md)
