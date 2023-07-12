@@ -293,6 +293,65 @@ foo.A();
 
 如果有看到事件的加等，请看一下是否可以放在业务的最开始
 
+## 避免在静态构造函数中初始化静态字段
+
+先看一个差的例子，以下代码的 Bar 类型在静态构造函数里面里面初始化静态字段。这将会导致无论碰到 Bar 的哪个成员，都会执行静态构造函数初始化静态字段
+
+```csharp
+static class Program
+{
+    public class Bar
+    {
+        private readonly static int _value;
+        public static int Value => _value;
+        static Bar() => _value = Initialize();
+        public static void Invoke() { }
+    }
+
+    private static bool _initialized;
+    static void Main()
+    {
+        Bar.Invoke();
+        Debug.Assert(_initialized == true);
+    }
+    private static int Initialize()
+    {
+        _initialized = true;
+        return 123;
+    }
+}
+```
+
+再看一个好的例子，不写静态构造函数，如以下代码。以下代码在调用 Foo 的 Invoke 静态方法，由于 Inovke 静态方法用不着任何静态字段，此时的 `_value` 字段的赋值是没有被调用的，通过 Program 的 `_initialized` 字段即可了解到
+
+```csharp
+static class Program
+{
+    public class Foo
+    {
+        private readonly static int _value = Initialize();
+        public static int Value => _value;
+        public static void Invoke() { }
+    }
+
+    private static bool _initialized;
+    static void Main()
+    {
+        Foo.Invoke();
+        Debug.Assert(_initialized == false);
+    }
+    private static int Initialize()
+    {
+        _initialized = true;
+        return 123;
+    }
+}
+```
+
+不在静态类型里面为了给静态字段赋值而编写静态构造函数，可以提升一点点初始化性能。以上这两个写法是在 IL 层面有微小的差别的，代码审查看到伙伴编写的代码里面如果他的静态构造函数只是为了给静态字段赋值，则可以考虑干掉静态构造函数
+
+详细请参阅 [为什么应该尽可能避免在静态构造函数中初始化静态字段？ - Artech - 博客园](https://www.cnblogs.com/artech/p/17535283.html )
+
 ## 框架层对外抛出事件捕获异常
 
 在编写框架层或者基础库的逻辑，需要对外抛出事件，那么推荐捕获对外抛出的事件抛出的异常，不要让事件抛出的异常影响到逻辑
@@ -511,6 +570,8 @@ F1.FxEvent += async () => { throw xxx; }
 ```
 
 代码审查看到所有的 `async void` 和 `+= async` 的代码时，需要看看里面的逻辑是否足够简单，或者是已经捕获了足够的异常，防止进程直接挂掉且没有日志等
+
+详细请看 [dotnet 警惕 async void 线程顶层异常](https://blog.lindexi.com/post/dotnet-%E8%AD%A6%E6%83%95-async-void-%E7%BA%BF%E7%A8%8B%E9%A1%B6%E5%B1%82%E5%BC%82%E5%B8%B8.html )
 
 
 #### 异步 async void 无效等待
