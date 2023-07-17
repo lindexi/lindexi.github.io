@@ -15,6 +15,21 @@
 
 [msbuild 项目文件常用判断条件](https://blog.lindexi.com/post/msbuild-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6.html )
 
+## 行为属性
+
+### CopyLocalLockFileAssemblies
+
+拷贝引用项到输出。默认行为下，对于 DLL 项目来说不拷贝引用项到输出，对于 Exe 或 WinExe 项目来说默认是会拷贝引用项到输出
+
+如果想要让 DLL 项目也将引用项拷贝到输出，则可以配置 CopyLocalLockFileAssemblies 为 true 的值，如以下代码
+
+```xml
+  <PropertyGroup>
+    <!-- 拷贝输出项，用于给 MauiWpfAdapt 项目引用 -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+```
+
 ## 多框架相关
 
 ### 调用次数
@@ -50,6 +65,28 @@
 
 ## NuGet 相关
 
+### 配置属性大全
+
+[dotnet 打包 NuGet 的配置属性大全整理](https://blog.lindexi.com/post/dotnet-%E6%89%93%E5%8C%85-NuGet-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8%E6%95%B4%E7%90%86.html )
+
+### 动态加入打包到 NuGet 包的文件时机
+
+可在 `_GetPackageFiles` 这个 Target 前执行，在此执行加入 Nuget 打包文件才是有效，在这个时机之后将会无效，如以下代码
+
+```xml
+  <ItemGroup>
+    <None Include="build\package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+  </ItemGroup>
+
+  <Target Name="FooIncludeAllDependencies" BeforeTargets="_GetPackageFiles">
+    <ItemGroup>
+      <None Include="..\Foo\Foo.dll" Pack="True" PackagePath="analyzers\dotnet\cs" />
+    </ItemGroup>
+  </Target>
+```
+
+以上代码的两个加入打包的文件都会成功都被加入打包。更多请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
+
 ### 多框架的 BuildMultiTargeting 和 Build 文件夹下的 Target 调用次数
 
 在 Build 文件夹下的 Target 将会在各个框架分别执行。放在 BuildMultiTargeting 的 Target 将只会执行一次，详细请看 [Roslyn 在多开发框架让 msbuild 的 Target 仅运行一次](https://blog.lindexi.com/post/Roslyn-%E5%9C%A8%E5%A4%9A%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6%E8%AE%A9-msbuild-%E7%9A%84-Target-%E4%BB%85%E8%BF%90%E8%A1%8C%E4%B8%80%E6%AC%A1.html )
@@ -80,4 +117,3 @@
 
 因此不能在 BuildMultiTargeting 上使用到各个 Build 文件夹下的 Target 收集的属性内容
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
