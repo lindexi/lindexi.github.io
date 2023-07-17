@@ -8,8 +8,6 @@
 
 <!-- CreateTime:4/15/2020 8:23:09 AM -->
 
-
-
 例如我想要引用相对于 csproj 的上一层文件夹里面的 doubi 文件夹里面的所有 cs 文件，作为链接引用的方法，可以使用下面代码
 
 ```xml
@@ -72,6 +70,14 @@ Exclude="..\Tool.UWP\obj\**\*;"
 
 以上代码自定义了为 `FooAddFileName` 的自定义项用来接收需要特殊指定的文件。如以上代码指定了 `1.png` 等特殊几个文件。接着定义了名为 `__FooAddFileName` 的自定义项用来中转，凭借上文件夹路径。最后再加入引用
 
+如果不想让加入的项目在 VisualStudio 里可见，可加上 `Visible="False"` 属性，如以下代码
+
+```xml
+  <ItemGroup>
+    <None Include="..\MauiApp\bin\Debug\net6.0\**\*" CopyToOutputDirectory="PreserveNewest" Visible="False"></None>
+  </ItemGroup>
+```
+
 如需保持相对路径关系，可采用 `%(RecursiveDir)` 属性，如以下例子，更多请看 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 
 ```xml
@@ -107,7 +113,6 @@ Exclude="..\Tool.UWP\obj\**\*;"
 如何使用 SourceYard 做源代码包请看 [SoureYard 官方开源项目](https://github.com/dotnet-campus/SourceYard/)
 
 更多编译相关请看[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
-
 
 
 

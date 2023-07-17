@@ -1290,6 +1290,8 @@
 
  * [MAUI 已知问题 PathFigureCollectionConverter 非线程安全](MAUI-已知问题-PathFigureCollectionConverter-非线程安全.md)
 
+ * [MAUI 框架开发 将 MAUI 嵌入到 WPF 控件里](MAUI-框架开发-将-MAUI-嵌入到-WPF-控件里.md)
+
  * [MAUI 自定义绘图入门](MAUI-自定义绘图入门.md)
 
  * [Microsoft .NET框架程序设计 笔记](Microsoft-.NET框架程序设计-笔记.md)
@@ -3185,6 +3187,8 @@
  * [希沃白板断网环境免登陆编辑课件](希沃白板断网环境免登陆编辑课件.md)
 
  * [希沃视频直播的发展](希沃视频直播的发展.md)
+
+ * [庆贺博客五百万访问量](庆贺博客五百万访问量.md)
 
  * [应用商店的战略地位](应用商店的战略地位.md)
 

@@ -18,6 +18,21 @@
 
 [msbuild 项目文件常用判断条件](https://blog.lindexi.com/post/msbuild-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6.html )
 
+## 行为属性
+
+### CopyLocalLockFileAssemblies
+
+拷贝引用项到输出。默认行为下，对于 DLL 项目来说不拷贝引用项到输出，对于 Exe 或 WinExe 项目来说默认是会拷贝引用项到输出
+
+如果想要让 DLL 项目也将引用项拷贝到输出，则可以配置 CopyLocalLockFileAssemblies 为 true 的值，如以下代码
+
+```xml
+  <PropertyGroup>
+    <!-- 拷贝输出项，用于给 MauiWpfAdapt 项目引用 -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+```
+
 ## 多框架相关
 
 ### 调用次数
@@ -52,6 +67,28 @@
 
 
 ## NuGet 相关
+
+### 配置属性大全
+
+[dotnet 打包 NuGet 的配置属性大全整理](https://blog.lindexi.com/post/dotnet-%E6%89%93%E5%8C%85-NuGet-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8%E6%95%B4%E7%90%86.html )
+
+### 动态加入打包到 NuGet 包的文件时机
+
+可在 `_GetPackageFiles` 这个 Target 前执行，在此执行加入 Nuget 打包文件才是有效，在这个时机之后将会无效，如以下代码
+
+```xml
+  <ItemGroup>
+    <None Include="build\package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+  </ItemGroup>
+
+  <Target Name="FooIncludeAllDependencies" BeforeTargets="_GetPackageFiles">
+    <ItemGroup>
+      <None Include="..\Foo\Foo.dll" Pack="True" PackagePath="analyzers\dotnet\cs" />
+    </ItemGroup>
+  </Target>
+```
+
+以上代码的两个加入打包的文件都会成功都被加入打包。更多请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
 
 ### 多框架的 BuildMultiTargeting 和 Build 文件夹下的 Target 调用次数
 
