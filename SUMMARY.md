@@ -2908,6 +2908,8 @@
 
  * [WPF 非客户区的触摸和鼠标点击响应](WPF-非客户区的触摸和鼠标点击响应.md)
 
+ * [WPF 项目文件不加 -windows 的引用 WPF 框架方式](WPF-项目文件不加-windows-的引用-WPF-框架方式.md)
+
  * [WPF 高性能笔](WPF-高性能笔.md)
 
  * [WPF 高速书写 StylusPlugIn 原理](WPF-高速书写-StylusPlugIn-原理.md)
