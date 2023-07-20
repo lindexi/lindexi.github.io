@@ -990,6 +990,8 @@
 
  * [dotnet 日志上报的 TracerId 和 SessionId 的意义](dotnet-日志上报的-TracerId-和-SessionId-的意义.md)
 
+ * [dotnet 是否应该对 HttpResponseMessage 调用 Dispose 进行释放](dotnet-是否应该对-HttpResponseMessage-调用-Dispose-进行释放.md)
+
  * [dotnet 更新本地所有 Git 仓库的工具](dotnet-更新本地所有-Git-仓库的工具.md)
 
  * [dotnet 构建 SourceRoot items must include at least one top-level item when DeterministicSourcePaths is true 失败](dotnet-构建-SourceRoot-items-must-include-at-least-one-top-level-item-when-DeterministicSourcePaths-is-true-失败.md)
