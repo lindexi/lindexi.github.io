@@ -188,6 +188,8 @@
 
  * [C# 从 short 转 byte 方法](C-从-short-转-byte-方法.md)
 
+ * [C# 从控制台创建 WinUI 3 应用](C-从控制台创建-WinUI-3-应用.md)
+
  * [C# 从零开始写 SharpDx 应用 从 D3DDevice 获取 DXGIDevice 方法](C-从零开始写-SharpDx-应用-从-D3DDevice-获取-DXGIDevice-方法.md)
 
  * [C# 从零开始写 SharpDx 应用 初始化dx修改颜色](C-从零开始写-SharpDx-应用-初始化dx修改颜色.md)
