@@ -309,6 +309,18 @@ Description 描述信息
 
 
 
+### IncludeBuildOutput
+
+默认是 true 的值，如果指定为 false 那么项目编译输出的 dll 文件将不会被打包到 NuGet 包中。可以用来配置将项目构建输出的 DLL 不要自动打入到 nupkg 的 lib 文件夹下
+
+这个属性一般会用在分析器项目或者是工具 NuGet 包里
+
+### DevelopmentDependency
+
+这是一个仅开发阶段使用的 NuGet 包，默认是 false 的值。如果设置为 true 即可在安装此 NuGet 包后自动配置为不传递依赖。可用在工具类型的 NuGet 包上，让工具包只对当前安装的项目生效，不会传递给所引用的项目
+
+详细请参阅 [帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - walterlv](https://blog.walterlv.com/post/prevent-nuget-package-been-depended )
+
 
 ## 相关文档
 
