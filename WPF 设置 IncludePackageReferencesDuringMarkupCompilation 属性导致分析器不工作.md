@@ -3,6 +3,8 @@
 本文记录在 WPF 项目里面设置 IncludePackageReferencesDuringMarkupCompilation 属性为 False 导致了项目所安装的分析器不能符合预期工作
 
 <!--more-->
+<!-- CreateTime:2023/8/2 19:37:40 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
