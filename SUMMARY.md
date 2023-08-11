@@ -824,6 +824,8 @@
 
  * [dotnet 使用 TaskTupleAwaiter 同时等待多个任务简化代码写法](dotnet-使用-TaskTupleAwaiter-同时等待多个任务简化代码写法.md)
 
+ * [dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢](dotnet-使用-ToUpperInvariant-替换-ToUpper-以避免初始化-icu-过慢.md)
+
  * [dotnet 使用 TypeNameFormatter 库格式化输出反射泛型类型](dotnet-使用-TypeNameFormatter-库格式化输出反射泛型类型.md)
 
  * [dotnet 使用 WpfAnalyzers 辅助分析 WPF 应用代码缺陷](dotnet-使用-WpfAnalyzers-辅助分析-WPF-应用代码缺陷.md)
@@ -2211,6 +2213,8 @@
  * [Windows Community Toolkit 3.0 新功能](Windows-Community-Toolkit-3.0-新功能.md)
 
  * [Windows 下的 WPF 开发 调试应用程序在什么时机加载了 Dll 模块](Windows-下的-WPF-开发-调试应用程序在什么时机加载了-Dll-模块.md)
+
+ * [Windows 官方提供的触屏硬件延迟测量方法](Windows-官方提供的触屏硬件延迟测量方法.md)
 
  * [Windows 客户端软件自动更新服务的开发有哪些需求](Windows-客户端软件自动更新服务的开发有哪些需求.md)
 
