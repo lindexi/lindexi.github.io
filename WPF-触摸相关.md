@@ -134,6 +134,8 @@
 
 [Device Bus Connectivity (Windows touchscreen) Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/design/component-guidelines/touchscreen-device-bus-connectivity )
 
+[Windows 官方提供的触屏硬件延迟测量方法](https://blog.lindexi.com/post/Windows-%E5%AE%98%E6%96%B9%E6%8F%90%E4%BE%9B%E7%9A%84%E8%A7%A6%E5%B1%8F%E7%A1%AC%E4%BB%B6%E5%BB%B6%E8%BF%9F%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95.html )
+
 ## 收藏
 
 [WPF and multi-touch - CodeProject](https://www.codeproject.com/Articles/692286/WPF-and-multi-touch )
