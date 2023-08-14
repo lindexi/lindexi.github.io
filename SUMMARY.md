@@ -1196,6 +1196,8 @@
 
  * [dotnetCampus.UITest.WPF 一个支持中文用例的界面单元测试框架](dotnetCampus.UITest.WPF-一个支持中文用例的界面单元测试框架.md)
 
+ * [Fiddler 插件开发 将插件放在独立子文件夹防止 DLL 冲突](Fiddler-插件开发-将插件放在独立子文件夹防止-DLL-冲突.md)
+
  * [FileStream 的 FlushAsync 方法在 .NET Framework 与 .NET Core 行为的不同](FileStream-的-FlushAsync-方法在-.NET-Framework-与-.NET-Core-行为的不同.md)
 
  * [Fixing "Missing Windows App Runtime Environment" Prompt for Unpackaged WinUI 3 Applications](Fixing-Missing-Windows-App-Runtime-Environment-Prompt-for-Unpackaged-WinUI-3-Applications.md)
