@@ -595,6 +595,46 @@ window.Activate();
 </ListView>
 ```
 
+## WPF ListView 或 ListBox 压缩内容
+
+让 ListView 或 ListBox 的 Item 项撑开宽度可以通过设置 ItemContainerStyle 配置，设置里层内容的 HorizontalAlignment 为 Stretch 即可。如以下代码
+
+```xml
+        <ListBox>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <Border x:Name="Border" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1" Height="200" CornerRadius="20">
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+```
+
+## 禁用 ListView 或 ListBox 的 Tab 焦点虚框
+
+默认在按下 Tab 时，将会给 ListView 或 ListBox 的 Item 添加上 FocusVisualStyle 对应的虚线矩形框
+
+如果不想要看到这个虚线矩形框，可以通过设置 ItemContainerStyle 配置，设置 FocusVisualStyle 样式，如以下代码
+
+```xml
+        <ListBox>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+                    ... 忽略其他代码
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+```
+
+详细请看 [为控件中的焦点设置样式以及 FocusVisualStyle - WPF .NET Framework](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle?view=netframeworkdesktop-4.8 )
+
 ## 通用路由事件定义
 
 因为没有模版创建，还是写一下，方便抄代码
