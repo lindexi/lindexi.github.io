@@ -476,6 +476,8 @@
 
  * [dotnet C# 基础 为什么 GetHashCode 推荐只取只读属性或字段做哈希值](dotnet-C-基础-为什么-GetHashCode-推荐只取只读属性或字段做哈希值.md)
 
+ * [dotnet C# 基础二进制处理 二进制数组与结构体的互转](dotnet-C-基础二进制处理-二进制数组与结构体的互转.md)
+
  * [dotnet C# 多次对一个对象调用构造函数会发生什么](dotnet-C-多次对一个对象调用构造函数会发生什么.md)
 
  * [dotnet C# 多线程集合的 Linq 获取值同时写入集合将会抛出异常](dotnet-C-多线程集合的-Linq-获取值同时写入集合将会抛出异常.md)
@@ -2474,6 +2476,8 @@
 
  * [WPF 启动屏幕键盘](WPF-启动屏幕键盘.md)
 
+ * [WPF 启动性能优化 在 EnsureHandle 之前设置 WindowStyle 提升性能](WPF-启动性能优化-在-EnsureHandle-之前设置-WindowStyle-提升性能.md)
+
  * [WPF 和 ASP.NET Core 通过 elastic APM 上报信息](WPF-和-ASP.NET-Core-通过-elastic-APM-上报信息.md)
 
  * [WPF 图片移除视觉树内存泄漏](WPF-图片移除视觉树内存泄漏.md)
@@ -3413,6 +3417,8 @@
  * [非技术 在线教育与电信行业的发展](非技术-在线教育与电信行业的发展.md)
 
  * [非技术 基于 VR 虚拟世界开展虚拟资产的玩法](非技术-基于-VR-虚拟世界开展虚拟资产的玩法.md)
+
+ * [非技术 对以后各大应用功能与 AI 助手的思考](非技术-对以后各大应用功能与-AI-助手的思考.md)
 
  * [非技术 左旋和右旋](非技术-左旋和右旋.md)
 
