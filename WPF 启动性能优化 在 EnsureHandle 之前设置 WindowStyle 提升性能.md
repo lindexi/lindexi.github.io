@@ -3,6 +3,8 @@
 本文将记录一个在 WPF 应用程序启动过程中的性能优化点。如果一个窗口需要设置 WindowStyle 属性，那么在窗口 EnsureHandle 之前，设置 WindowStyle 属性将会比在 EnsureHandle 之后设置快不少
 
 <!--more-->
+<!-- CreateTime:2023/8/19 16:13:03 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
