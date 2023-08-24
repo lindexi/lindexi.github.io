@@ -1272,6 +1272,8 @@
 
  * [IIncrementalGenerator 增量 Source Generator 生成代码入门 判断程序集之间的 InternalsVisibleTo 关系](IIncrementalGenerator-增量-Source-Generator-生成代码入门-判断程序集之间的-InternalsVisibleTo-关系.md)
 
+ * [IIncrementalGenerator 增量 Source Generator 生成代码入门 判断程序集的引用关系](IIncrementalGenerator-增量-Source-Generator-生成代码入门-判断程序集的引用关系.md)
+
  * [IIncrementalGenerator 增量 Source Generator 生成代码入门 获取引用程序集的所有类型](IIncrementalGenerator-增量-Source-Generator-生成代码入门-获取引用程序集的所有类型.md)
 
  * [IIncrementalGenerator 增量 Source Generator 生成代码入门 获取项目默认命名空间](IIncrementalGenerator-增量-Source-Generator-生成代码入门-获取项目默认命名空间.md)
