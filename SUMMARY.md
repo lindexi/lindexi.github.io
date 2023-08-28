@@ -730,6 +730,16 @@
 
  * [dotnet Roslyn 通过读取 suo 文件获取解决方案的启动项目](dotnet-Roslyn-通过读取-suo-文件获取解决方案的启动项目.md)
 
+ * [dotnet SemanticKernel 入门 将技能导入框架](dotnet-SemanticKernel-入门-将技能导入框架.md)
+
+ * [dotnet SemanticKernel 入门 开篇](dotnet-SemanticKernel-入门-开篇.md)
+
+ * [dotnet SemanticKernel 入门 注入日志](dotnet-SemanticKernel-入门-注入日志.md)
+
+ * [dotnet SemanticKernel 入门 自定义变量和技能](dotnet-SemanticKernel-入门-自定义变量和技能.md)
+
+ * [dotnet SemanticKernel 入门 调用原生本机技能](dotnet-SemanticKernel-入门-调用原生本机技能.md)
+
  * [dotnet serve 一句话开启文件服务器 通过 HTTP 将文件共享给其他设备](dotnet-serve-一句话开启文件服务器-通过-HTTP-将文件共享给其他设备.md)
 
  * [.NET Standard](NET-Standard.md)
