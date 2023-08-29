@@ -3,6 +3,8 @@
 在上一篇博客中和大家简单介绍了 SemanticKernel 里的技能概念，接下来咱准备将 技能 导入到 SemanticKernel 框架里面，进行一个管道式调用
 
 <!--more-->
+<!-- CreateTime:2023/8/28 8:37:23 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -10,7 +12,7 @@
 
 别着急，本篇博客还不涉及到任何的 GPT 相关的魔法，仅仅只是在 C# 层面上的框架使用而已
 
-按照上一篇博客中的创建项目的例子，也就是安装 Microsoft.SemanticKernel 库之后，就可以开始本篇的代码
+按照[上一篇博客](https://blog.lindexi.com/post/dotnet-SemanticKernel-%E5%85%A5%E9%97%A8-%E8%B0%83%E7%94%A8%E5%8E%9F%E7%94%9F%E6%9C%AC%E6%9C%BA%E6%8A%80%E8%83%BD.html )中的创建项目的例子，也就是安装 Microsoft.SemanticKernel 库之后，就可以开始本篇的代码
 
 使用 SemanticKernel 框架的第一步就是通过 KernelBuilder 创建器创建出 IKernel 对象。可以在 KernelBuilder 创建器配置各项内容，比如日志或者是配置和 AzureAI 或 OpenAI 进行对接的逻辑，甚至配置与第三方大语言模型进行对接
 
@@ -46,7 +48,7 @@ I N F I N I T E     S P A C E
 
 也就是以上代码是按照 `text["TrimStart"]` `text["TrimEnd"]` `text["Uppercase"]` 顺序，分别调用 TextSkill 类型的 TrimStart 和 TrimEnd 和 Uppercase 方法，而且还是将上一个方法的返回值当成下一个方法的输入值
 
-通过 SemanticKernel 框架的这个能力，可以非常方便的提供多个技能进行排列组合，从而完成更加复杂的任务
+通过 SemanticKernel 框架的这个能力，可以非常方便的提供多个技能进行排列组合，从而完成更加复杂的任务。在[下一篇](https://blog.lindexi.com/post/dotnet-SemanticKernel-%E5%85%A5%E9%97%A8-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F%E5%92%8C%E6%8A%80%E8%83%BD.html )将告诉大家如何自定义技能
 
 本文的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/eca54565cd10135ae5acbf6242113ba4e25c2c7c/SemanticKernelSamples/Example02_Pipeline) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/eca54565cd10135ae5acbf6242113ba4e25c2c7c/SemanticKernelSamples/Example02_Pipeline) 欢迎访问
 
