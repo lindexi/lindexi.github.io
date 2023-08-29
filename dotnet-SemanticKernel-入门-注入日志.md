@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2023/8/28 8:37:23 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -50,7 +52,7 @@ var logger = loggerFactory.CreateLogger("SemanticKernel");
 IKernel kernel = new KernelBuilder().WithLogger(logger).Build();
 ```
 
-通过以上代码即可完成将日志模块注入到 SemanticKernel 里
+通过以上代码即可完成将日志模块注入到 SemanticKernel 里，更多日志配置，请参阅 [官方文档](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-7.0)
 
 本文的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/84c1e073be77bee177607596b5e03cabb0c0a719/SemanticKernelSamples/Example03_Variables) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/84c1e073be77bee177607596b5e03cabb0c0a719/SemanticKernelSamples/Example03_Variables) 欢迎访问
 
