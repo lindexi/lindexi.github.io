@@ -3,8 +3,6 @@
 When I packaging license within the nupkg, I will using License to replace licentUrl.
 
 <!--more-->
-<!-- CreateTime:2019/8/31 16:55:58 -->
-
 
 I using this code to set the license as MIT but it can not pack.
 

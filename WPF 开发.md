@@ -3,8 +3,6 @@
 本文：我遇到的WPF的坑
 
 <!--more-->
-<!-- CreateTime:2019/12/27 8:31:20 -->
-
 
 <div id="toc"></div>
 

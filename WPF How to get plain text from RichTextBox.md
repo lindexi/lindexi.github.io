@@ -3,8 +3,6 @@
 We can not find any function to get plain text from RichTextBox. But we can use TextRange to get plain text.
 
 <!--more-->
-<!-- CreateTime:2019/11/7 10:26:17 -->
-
 <!-- csdn -->
 
 We create a RichTextBox in UI

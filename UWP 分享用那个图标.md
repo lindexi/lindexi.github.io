@@ -5,8 +5,6 @@
 ![](http://image.acmx.xyz/1-TqFrTQhRzRVtGy2JGS29YA.png)
 
 <!--more-->
-<!-- CreateTime:2018/8/10 19:16:52 -->
-
 
 <!-- 翻译 -->
 

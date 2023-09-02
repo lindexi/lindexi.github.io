@@ -3,8 +3,6 @@
 win 消息和代码
 
 <!--more-->
-<!-- CreateTime:2018/8/9 15:35:04 -->
-
 <!-- csdn -->
 
     WM_NULL = 0,

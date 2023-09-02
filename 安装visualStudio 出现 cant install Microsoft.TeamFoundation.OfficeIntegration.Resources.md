@@ -3,8 +3,6 @@
 本文告诉大家在安装 VisualStudio 时出现`cant install Microsoft.TeamFoundation.OfficeIntegration.Resources`如何安装
 
 <!--more-->
-<!-- CreateTime:2018/2/13 17:23:03 -->
-
 
 <div id="toc"></div>
 

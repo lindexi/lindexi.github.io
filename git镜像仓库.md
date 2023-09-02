@@ -7,8 +7,6 @@
 普通的git clone不能下载所有分支，想要简单的git clone所有分支，可以用镜像方法
 
 <!--more-->
-<!-- CreateTime:2019/9/2 12:57:37 -->
-
 
 <div id="toc"></div>
 
