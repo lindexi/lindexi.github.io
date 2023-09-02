@@ -17,3 +17,7 @@
 我的博客里面将尽量采用微软官方提供例子，以及配上可执行的代码，方便大家阅读
 
 我创建了 SemanticKernel 群: 623349574 欢迎大家加入交流
+
+## 应用例子
+
+- [使用Skonsole自动生成Git提交信息 - 宵伯特 - 博客园](https://www.cnblogs.com/xbotter/p/skonsole_intro.html)
