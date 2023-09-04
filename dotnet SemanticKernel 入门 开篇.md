@@ -22,6 +22,8 @@
 
 - [使用Skonsole自动生成Git提交信息 - 宵伯特 - 博客园](https://www.cnblogs.com/xbotter/p/skonsole_intro.html)
 
+- [SemanticKernel 将 LLM 自然语言函数和传统编程融合到一起](https://blog.lindexi.com/post/SemanticKernel-%E5%B0%86-LLM-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E5%92%8C%E4%BC%A0%E7%BB%9F%E7%BC%96%E7%A8%8B%E8%9E%8D%E5%90%88%E5%88%B0%E4%B8%80%E8%B5%B7.html )
+
 ## 收藏的博客
 
 以下是我收藏的网上大佬们写的博客：
