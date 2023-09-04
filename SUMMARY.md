@@ -730,6 +730,8 @@
 
  * [dotnet Roslyn 通过读取 suo 文件获取解决方案的启动项目](dotnet-Roslyn-通过读取-suo-文件获取解决方案的启动项目.md)
 
+ * [dotnet SemanticKernel 入门 SemanticFunction 自然语言函数](dotnet-SemanticKernel-入门-SemanticFunction-自然语言函数.md)
+
  * [dotnet SemanticKernel 入门 将技能导入框架](dotnet-SemanticKernel-入门-将技能导入框架.md)
 
  * [dotnet SemanticKernel 入门 开篇](dotnet-SemanticKernel-入门-开篇.md)
@@ -1505,6 +1507,8 @@
  * [Roslyn 静态分析](Roslyn-静态分析.md)
 
  * [三种方式设置特定设备UWP XAML view](三种方式设置特定设备UWP-XAML-view.md)
+
+ * [SemanticKernel 将 LLM 自然语言函数和传统编程融合到一起](SemanticKernel-将-LLM-自然语言函数和传统编程融合到一起.md)
 
  * [SharpDx D3D9 的颜色 Format 和 WPF 的 PixelFormat 转换方法](SharpDx-D3D9-的颜色-Format-和-WPF-的-PixelFormat-转换方法.md)
 

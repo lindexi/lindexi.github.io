@@ -59,7 +59,23 @@ extern "C" __declspec(dllexport) int HeederajiYeafalludall()
 大家可以尝试使用我放在 [github](https://github.com/lindexi/lindexi_gd/tree/9bf58ca4/BeyajaydahifallChecheecaifelwarlerenel ) 的代码进行测试，切换框架为 .NET Framework 和 .NET Core 比较这里的行为
 
 
+那现在有什么办法在 .NET Core 里，包括 .NET 6 或 .NET 7 等处理这些不安全代码的错误？现在官方给出的唯一方法只有是通过 `COMPlus_legacyCorruptedStateExceptionsPolicy` 环境变量配置，做法就是在启动咱的 .NET 进程之前，先设置环境变量
 
+```
+set COMPlus_legacyCorruptedStateExceptionsPolicy=1
+AccessViolationExceptionTest.exe // 咱的应用
+```
+
+或者是启动之后，设置环境变量再重启
+
+```csharp
+Environment.SetEnvironmentVariable("COMPlus_legacyCorruptedStateExceptionsPolicy", "1");
+Process.Start("AccessViolationExceptionTest.exe"); // 咱的应用
+```
+
+或者是干脆设置到用户的全局环境变量里面，再或者是自己修改 AppHost 代码使其在运行 .NET Host 之前设置环境变量
+
+如果在自己的应用代码跑起来之后设置，如在 C# 的 Main 函数设置，这是无效的。因为读取配置的是在 .NET CLR 层，只读取一次，因此在 C# 的 Main 函数设置将会在 CLR 读取配置之后，从而无效
 
 
 

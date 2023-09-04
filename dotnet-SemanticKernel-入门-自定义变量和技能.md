@@ -7,11 +7,9 @@
 
 
 <!-- CreateTime:2023/8/28 8:37:23 -->
-
 <!-- 发布 -->
-<!-- 博客 -->
 
-本文属于 SemanticKernel 入门系列博客，更多博客内容请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+本文属于 SemanticKernel 入门系列博客，更多博客内容请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html ) 或 [博客园的合集](https://www.cnblogs.com/lindexi/collections/6439)
 
 自定义变量是一个非常有用的技能，自定义变量可以让炼丹师和程序员进行并行工作。由炼丹师对 AI 模型进行训练，从而找到对某项问题比较好的解决方案，炼丹师此时不需要关注具体所解决的问题，可以大量使用占位符代替用户的实际输入。而程序员则可以用到炼丹师的成果进而替换占位符为具体的用户输入，从而实现功能。下面举一个具体的例子
 

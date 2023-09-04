@@ -6,12 +6,10 @@
 <!--more-->
 
 
-<!-- CreateTime:2023/8/28 8:37:23 -->
-
+<!-- CreateTime:2023/8/29 9:37:23 -->
 <!-- 发布 -->
-<!-- 博客 -->
 
-本文属于 SemanticKernel 入门系列博客，更多博客内容请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+本文属于 SemanticKernel 入门系列博客，更多博客内容请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html ) 或 [博客园的合集](https://www.cnblogs.com/lindexi/collections/6439)
 
 在 KernelBuilder 创建器里面可以通过 WithLogger 注入 ILogger 类型的日志对象。咱既可以自己定义一个类型继承 ILogger 类型，也可以使用官方的日志库
 
@@ -73,6 +71,13 @@ git pull origin 84c1e073be77bee177607596b5e03cabb0c0a719
 ```
 
 获取代码之后，进入 SemanticKernelSamples\Example03_Variables 文件夹
+
+更新版本的 SemanticKernel 可以直接使用 ILoggerFactory 而不需要自己手动创建 ILogger 对象。直接使用 ILoggerFactory 对象的方法是调用 WithLoggerFactory 如以下代码
+
+```csharp
+IKernel kernel = new KernelBuilder()
+    .WithLoggerFactory(loggerFactory);
+```
 
 
 
