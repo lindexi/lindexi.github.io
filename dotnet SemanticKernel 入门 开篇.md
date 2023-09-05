@@ -28,6 +28,8 @@
 
 以下是我收藏的网上大佬们写的博客：
 
-- [Semantic Kernel 入门系列 ❤️‍🔥 - 宵伯特 - 博客园](https://www.cnblogs.com/xbotter/p/semantic_kernel_introduction.html )
+- [Semantic Kernel 入门系列 - 宵伯特 - 博客园](https://www.cnblogs.com/xbotter/p/semantic_kernel_introduction.html )
 
 - [Semantic Kernel 知多少 开启面向AI编程新篇章 - 哔哩哔哩](https://www.bilibili.com/read/cv22899046/ )
+
+- [ChatGPT 学习导航 - Learning Prompt](https://learningprompt.wiki/zh-Hans/docs/chatgpt-learning-path )
