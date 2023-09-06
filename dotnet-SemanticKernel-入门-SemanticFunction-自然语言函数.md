@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2023/9/4 8:45:17 -->
+<!-- 标题： SemanticFunction 自然语言函数 -->
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -81,6 +83,8 @@ const string FunctionDefinition = @"
 以上的函数就是先给 GPT 两个例子，然后第三个就是让 GPT 进行自由发挥
 
 完成了自然语言函数编写之后，接下来就可以和 SemanticKernel 框架进行对接了
+
+更多关于 Prompt 提示词相关，请参阅 [简介 - Learning Prompt](https://learningprompt.wiki/zh-Hans/docs/chatGPT/tutorial-basics/brief-introduction )
 
 ## 对接框架
 
