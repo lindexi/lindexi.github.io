@@ -916,6 +916,8 @@
 
  * [dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具](dotnet-在-UOS-国产系统上安装-MonoDevelop-开发工具.md)
 
+ * [dotnet 在 UOS 统信系统上运行 UNO 程序输入时闪烁黑屏问题](dotnet-在-UOS-统信系统上运行-UNO-程序输入时闪烁黑屏问题.md)
+
  * [dotnet 在 Windows 系统上使用 stakx 的 WIC 库](dotnet-在-Windows-系统上使用-stakx-的-WIC-库.md)
 
  * [dotnet 在 WPF 里显示数学 π 的颜色](dotnet-在-WPF-里显示数学-π-的颜色.md)
@@ -1051,6 +1053,8 @@
  * [dotnet 给MatterMost订阅RSS博客](dotnet-给MatterMost订阅RSS博客.md)
 
  * [dotnet 给任意对象附加任意属性的库](dotnet-给任意对象附加任意属性的库.md)
+
+ * [dotnet 统信 UOS 运行 UNO FrameBuffer 应用错误 Failed to open FrameBuffer device](dotnet-统信-UOS-运行-UNO-FrameBuffer-应用错误-Failed-to-open-FrameBuffer-device.md)
 
  * [dotnet 编译 Rolsyn 编译器](dotnet-编译-Rolsyn-编译器.md)
 
@@ -3145,6 +3149,8 @@
  * [在 P2P 文件分享应用以文件或文件段为单位的优缺](在-P2P-文件分享应用以文件或文件段为单位的优缺.md)
 
  * [在 SublimeText 使用 dotnet 编译 C# 项目](在-SublimeText-使用-dotnet-编译-C-项目.md)
+
+ * [在 UOS 统信运行 dotnet 程序提示没有通过系统安全验证无法运行](在-UOS-统信运行-dotnet-程序提示没有通过系统安全验证无法运行.md)
 
  * [在 VisualStudio 给文件起一个带分号的文件名会怎样](在-VisualStudio-给文件起一个带分号的文件名会怎样.md)
 
