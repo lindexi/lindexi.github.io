@@ -78,6 +78,8 @@ internal partial class Program
 }
 ```
 
+可以看到用法非常简单，只需要一个分部方法，在方法上标记了 TelescopeExportAttribute 特性即可，没有其他多余的侵入代码
+
 可以看到这里的导出代码是通过 `partial` 的方式实现源代码生成对接的，只需要编写一个 partial 类型，在这个 partial 类型里面包含一个 partial 的方法，要求这个方法有满足条件的导出返回值，再给方法标记特性，即可自动生成导出类型的代码
 
 如以上的代码即可在 Main 里面的遍历找到了 F1 和 F2 两个类型
