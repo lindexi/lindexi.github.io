@@ -848,6 +848,8 @@
 
  * [dotnet 使用 XWT 构建跨平台客户端 入门篇](dotnet-使用-XWT-构建跨平台客户端-入门篇.md)
 
+ * [dotnet 使用增量源代码生成技术的 Telescope 库导出程序集类型](dotnet-使用增量源代码生成技术的-Telescope-库导出程序集类型.md)
+
  * [dotnet 使用完全对象引用相等判断](dotnet-使用完全对象引用相等判断.md)
 
  * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
@@ -2619,6 +2621,8 @@
  * [WPF 已知问题 Popup 失焦后导致 ListBox 无法用 MouseWheel 滚动问题和解决方法](WPF-已知问题-Popup-失焦后导致-ListBox-无法用-MouseWheel-滚动问题和解决方法.md)
 
  * [WPF 已知问题 Separator 无法应用 ContextMenu 定义的默认样式](WPF-已知问题-Separator-无法应用-ContextMenu-定义的默认样式.md)
+
+ * [WPF 已知问题 传入错误数据给到 WriteableBitmap 可能导致渲染线程锁住](WPF-已知问题-传入错误数据给到-WriteableBitmap-可能导致渲染线程锁住.md)
 
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
