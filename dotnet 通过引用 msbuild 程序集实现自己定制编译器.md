@@ -88,16 +88,16 @@ using Microsoft.Build.Locator;
             MSBuildLocator.RegisterInstance(instances.First());
 ```
 
-注册完成之后，将可以使用 msbuild 提供的各个类来实现构建，请新建一个方法用来编写调用 msbuild 各个类的构建代码。如以下代码
+注册完成之后，将可以使用 msbuild 提供的各个类来实现构建，请新建一个方法用来编写调用 msbuild 各个类的构建代码。如以下代码，构建了一个名为 JahalgalerKeacacucurce 的项目
 
 ```csharp
         private static void Build()
         {
-            var projectFile = new FileInfo(@"..\..\..\RalboleaballNeeqaqiku.csproj");
+            var projectFile = new FileInfo(@"..\..\..\..\JahalgalerKeacacucurce\JahalgalerKeacacucurce.csproj");
 
             var projectRootElement = ProjectRootElement.Open(projectFile.FullName);
             var project = new Project(projectRootElement);
-            project.Build(new Logger());
+            project.Build(new[] { "Restore", "Build" }, new[] { new Logger() });
         }
 ```
 
@@ -166,11 +166,11 @@ namespace RalboleaballNeeqaqiku
 
         private static void Build()
         {
-            var projectFile = new FileInfo(@"..\..\..\RalboleaballNeeqaqiku.csproj");
+            var projectFile = new FileInfo(@"..\..\..\..\JahalgalerKeacacucurce\JahalgalerKeacacucurce.csproj");
 
             var projectRootElement = ProjectRootElement.Open(projectFile.FullName);
             var project = new Project(projectRootElement);
-            project.Build(new Logger());
+            project.Build(new[] { "Restore", "Build" }, new[] { new Logger() });
         }
 
         private class Logger : ILogger
@@ -191,14 +191,14 @@ namespace RalboleaballNeeqaqiku
 }
 ```
 
-本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b6171297d4200586d135a8c5c0d7376df7ee7c6a/RalboleaballNeeqaqiku) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b6171297d4200586d135a8c5c0d7376df7ee7c6a/RalboleaballNeeqaqiku) 欢迎访问
+本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/3b339a4b28b88312f3d34e856c75f330554678f3/RalboleaballNeeqaqiku) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/3b339a4b28b88312f3d34e856c75f330554678f3/RalboleaballNeeqaqiku) 欢迎访问
 
 可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
 ```
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
-git pull origin b6171297d4200586d135a8c5c0d7376df7ee7c6a
+git pull origin 3b339a4b28b88312f3d34e856c75f330554678f3
 ```
 
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源
