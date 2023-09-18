@@ -10,9 +10,11 @@
 
 <!-- 标签: dnc , 进程通信，IPC，pipe -->
 
-一般都是使用 WCF 或 remoting 做远程通信，但是 dot net core 不支持 WCF 所以暂时我就只能使用 管道通信 的方法
+一般都是使用 WCF 或 remoting 做远程通信，~~但是 dot net core 不支持 WCF 所以暂时我就只能使用 管道通信 的方法~~ 
 
-我开源了支持 dotnet core 的 IPC 库：[https://github.com/dotnet-campus/dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc) 欢迎使用
+无论是 .NET Core 还是 .NET Framework 都可以使用 WCF 进行多进程通讯
+
+我开源了支持 dotnet core 的 IPC 库：[https://github.com/dotnet-campus/dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc) 欢迎使用，详细请看 [dotnet 6 推荐一个可代替 .NET Remoting 的 IPC 库](https://blog.lindexi.com/post/dotnet-6-%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A3%E6%9B%BF-.NET-Remoting-%E7%9A%84-IPC-%E5%BA%93.html )
 
 ## 原理
 

@@ -994,6 +994,8 @@
 
  * [dotnet 控制台读写 Sqlite 提示 no such table 找不到文件](dotnet-控制台读写-Sqlite-提示-no-such-table-找不到文件.md)
 
+ * [dotnet 推荐一个使用 Json 直接路由通讯的 IPC 库](dotnet-推荐一个使用-Json-直接路由通讯的-IPC-库.md)
+
  * [dotnet 教你写一个可以搞炸本机所有 WCF 应用的程序方法](dotnet-教你写一个可以搞炸本机所有-WCF-应用的程序方法.md)
 
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
