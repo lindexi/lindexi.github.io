@@ -3286,6 +3286,8 @@
 
  * [探索 dotnet core 为何在 Windows7 系统需要补丁的原因](探索-dotnet-core-为何在-Windows7-系统需要补丁的原因.md)
 
+ * [探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现](探索-WPF-的-ITabletManager.GetTabletCount-在-Win11-系统的底层实现.md)
+
  * [推荐官方开源 PInvoke 库 包含大量 win32 封装](推荐官方开源-PInvoke-库-包含大量-win32-封装.md)
 
  * [搭建一个自动化分析 DUMP 平台](搭建一个自动化分析-DUMP-平台.md)
