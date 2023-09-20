@@ -89,7 +89,7 @@
 
 ## 触摸线程
 
-在 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 博客里面告诉大家，在 WPF 框架，为了让触摸的性能足够强，将触摸的获取放在独立的进程里面
+在 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 博客里面告诉大家，在 WPF 框架，为了让触摸的性能足够强，将触摸的获取放在独立的线程里面
 
 在获取触摸信息时，也需要调度到触摸线程执行。在 WPF 中，通过 PenThread 类的相关方法可以调度到触摸线程
 
