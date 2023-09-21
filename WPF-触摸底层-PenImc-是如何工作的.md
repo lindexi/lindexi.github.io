@@ -195,6 +195,8 @@ switch (m_pSharedMemoryHeader->dwEvent)
 
 也就是上面的代码就是整个触摸的核心代码。对应在 Win32 层的文档请参阅 [COM API Used by Windows Presentation Foundation - Win32 apps Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/tablet/com-apis-used-by-windows-presentation-foundation ) 文档，更多请看 [WPF 用到的触摸的 COM 接口](https://blog.lindexi.com/post/WPF-%E7%94%A8%E5%88%B0%E7%9A%84%E8%A7%A6%E6%91%B8%E7%9A%84-COM-%E6%8E%A5%E5%8F%A3.html )
 
+更底层的系统实现请看 [探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现](https://blog.lindexi.com/post/%E6%8E%A2%E7%B4%A2-WPF-%E7%9A%84-ITabletManager.GetTabletCount-%E5%9C%A8-Win11-%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0.html )
+
 更多代码请看 [https://github.com/dotnet/wpf/](https://github.com/dotnet/wpf/) 
 
 [IRealTimeStylus::GetPacketDescriptionData (rtscom.h) - Win32 apps](https://docs.microsoft.com/zh-cn/windows/win32/api/rtscom/nf-rtscom-irealtimestylus-getpacketdescriptiondata?redirectedfrom=MSDN )

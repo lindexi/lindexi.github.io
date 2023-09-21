@@ -1578,6 +1578,8 @@
 
  * [UNO UnoConf 2020 在线会议 了解全平台新开发框架 零距离接触官方开发者](UNO-UnoConf-2020-在线会议-了解全平台新开发框架-零距离接触官方开发者.md)
 
+ * [UNO 的 SamplesApp.Skia.Gtk 丢失字体文件抛出空异常](UNO-的-SamplesApp.Skia.Gtk-丢失字体文件抛出空异常.md)
+
  * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
 
  * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
@@ -1973,6 +1975,8 @@
  * [win10 uwp 笔迹书写预测 墨迹书写加速](win10-uwp-笔迹书写预测-墨迹书写加速.md)
 
  * [win10 UWP 等级控件](win10-UWP-等级控件.md)
+
+ * [win10 uwp 简单制作一个 Path 路径绘制的图标按钮](win10-uwp-简单制作一个-Path-路径绘制的图标按钮.md)
 
  * [win10 uwp 线程池](win10-uwp-线程池.md)
 
@@ -3055,6 +3059,8 @@
  * [从 DX 层面讲 WPF 渲染卡顿](从-DX-层面讲-WPF-渲染卡顿.md)
 
  * [从 gitlab 配置管理聊聊团队项目管理](从-gitlab-配置管理聊聊团队项目管理.md)
+
+ * [从 WPF 搬迁到 UOS 下的 UNO 的笔记](从-WPF-搬迁到-UOS-下的-UNO-的笔记.md)
 
  * [从人工思维加上二阶熵猜测世界存在意志思维](从人工思维加上二阶熵猜测世界存在意志思维.md)
 
