@@ -3,12 +3,18 @@
 本文将和大家介绍专为 WPF 触摸模块提供的 ITabletManager 的 GetTabletCount 方法在 Windows 11 系统的底层实现
 
 <!--more-->
+<!-- CreateTime:2023/9/19 20:06:32 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
 本文属于 WPF 触摸相关系列博客，偏系统底层介绍，更多触摸博客请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
 
 大家都知道在 Windows 7 系统，有专门的笔和触摸服务提供触摸消息的支持。而 WPF 是从 Vista 年代就开始的框架，自然需要支持到 XP 系统。在 XP 系统里面，还没有完善的 WM_Touch 消息，同时又需要兼顾性能，最好走的是 RealTimeStylus 这一套。在 Windows 下有一套专门给 WPF 触摸模块使用 COM 接口，这一套接口提供了和 RealTimeStylus 几乎一样的实现功能，详细请看 [https://learn.microsoft.com/en-us/windows/win32/tablet/com-apis-used-by-windows-presentation-foundation](https://learn.microsoft.com/en-us/windows/win32/tablet/com-apis-used-by-windows-presentation-foundation)
+
+更多关于这一个 COM 触摸层的介绍，请看 [WPF 用到的触摸的 COM 接口](https://blog.lindexi.com/post/WPF-%E7%94%A8%E5%88%B0%E7%9A%84%E8%A7%A6%E6%91%B8%E7%9A%84-COM-%E6%8E%A5%E5%8F%A3.html )
+
+如果对这一个 COM 触摸层在 WPF 里的对接感兴趣，请参阅 [WPF 触摸底层 PenImc 是如何工作的](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%BA%95%E5%B1%82-PenImc-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.html )
 
 但是从 Win10 开始，系统里面就没有了专门的笔和触摸服务，而是将触摸消息集成到系统里面
 

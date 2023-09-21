@@ -23,6 +23,8 @@
 
 [WPF 触摸底层 PenImc 是如何工作的](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%BA%95%E5%B1%82-PenImc-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84.html )
 
+[探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现](https://blog.lindexi.com/post/%E6%8E%A2%E7%B4%A2-WPF-%E7%9A%84-ITabletManager.GetTabletCount-%E5%9C%A8-Win11-%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0.html ) [博客园](https://www.cnblogs.com/lindexi/p/17716408.html )
+
 [WPF 底层 从手指触摸屏幕到笔迹在屏幕显示中间的步骤](https://blog.lindexi.com/post/WPF-%E5%BA%95%E5%B1%82-%E4%BB%8E%E6%89%8B%E6%8C%87%E8%A7%A6%E6%91%B8%E5%B1%8F%E5%B9%95%E5%88%B0%E7%AC%94%E8%BF%B9%E5%9C%A8%E5%B1%8F%E5%B9%95%E6%98%BE%E7%A4%BA%E4%B8%AD%E9%97%B4%E7%9A%84%E6%AD%A5%E9%AA%A4.html )
 
 [WPF 用到的触摸的 COM 接口](https://blog.lindexi.com/post/WPF-%E7%94%A8%E5%88%B0%E7%9A%84%E8%A7%A6%E6%91%B8%E7%9A%84-COM-%E6%8E%A5%E5%8F%A3.html )

@@ -192,10 +192,11 @@ switch (m_pSharedMemoryHeader->dwEvent)
 
 也就是上面的代码就是整个触摸的核心代码。对应在 Win32 层的文档请参阅 [COM API Used by Windows Presentation Foundation - Win32 apps Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/tablet/com-apis-used-by-windows-presentation-foundation ) 文档，更多请看 [WPF 用到的触摸的 COM 接口](https://blog.lindexi.com/post/WPF-%E7%94%A8%E5%88%B0%E7%9A%84%E8%A7%A6%E6%91%B8%E7%9A%84-COM-%E6%8E%A5%E5%8F%A3.html )
 
+更底层的系统实现请看 [探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现](https://blog.lindexi.com/post/%E6%8E%A2%E7%B4%A2-WPF-%E7%9A%84-ITabletManager.GetTabletCount-%E5%9C%A8-Win11-%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0.html )
+
 更多代码请看 [https://github.com/dotnet/wpf/](https://github.com/dotnet/wpf/) 
 
 [IRealTimeStylus::GetPacketDescriptionData (rtscom.h) - Win32 apps](https://docs.microsoft.com/zh-cn/windows/win32/api/rtscom/nf-rtscom-irealtimestylus-getpacketdescriptiondata?redirectedfrom=MSDN )
 
 更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
