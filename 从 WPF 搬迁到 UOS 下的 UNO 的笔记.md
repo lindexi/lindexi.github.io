@@ -3,6 +3,8 @@
 本文记录我将一个小 WPF 应用搬迁到 UNO 框架，用于支持统信 UOS 系统时开发经验
 
 <!--more-->
+<!-- CreateTime:2023/9/20 15:42:36 -->
+
 <!-- 草稿 -->
 
 开始之前先说一下我的需求，我现在有一个小的 WPF 应用。现在我需要在统信 UOS 系统和 Windows 系统上都能够运行这个 WPF 应用
@@ -23,6 +25,17 @@
 
 [dotnet 在 UOS 统信系统上运行 UNO 程序输入时闪烁黑屏问题](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-UOS-%E7%BB%9F%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%BF%90%E8%A1%8C-UNO-%E7%A8%8B%E5%BA%8F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%AA%E7%83%81%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.html )
 
+## 中文文本乱码
+
+中文文本乱码是因为中文字体没有正确加载，在 UOS 默认有思源黑体字体，在 GTK 会自动做字体回滚，只需要应用设置为微软雅黑即可。设置为微软雅黑可以让应用在 Windows 系统和 UOS 系统上都能显示正常的黑体字体
+
+设置方法如下
+
+```xml
+<TextBlock Text="解决 UOS 中文乱码" FontFamily="Microsoft YaHei UI"/>
+```
+
+微软雅黑在界面上记得使用 `Microsoft YaHei UI` 字体，带 `UI` 的字体。否则你将会看到一些字体布局有些奇怪
 
 ## 几何图形 StreamGeometry 资源
 
@@ -156,6 +169,54 @@
 ```
 
 更多请参阅官方文档 [Assets and image display](https://platform.uno/docs/articles/features/working-with-assets.html )
+
+## csproj 的变更
+
+由于现在 UNO 和 VisualStduio 存在一些冲突，导致了新建文件可能让 UNO 的 csproj 添加了不需要的代码。需要在开发的过程中，在进行 git 上传之前，看一下 csproj 的变更是否必要，如果是不必要的改动，请直接撤销。一般需要在新建文件，比如新建类型或新建用户控件这些动作之后，撤销 csproj 的更改
+
+## 缺乏的机制
+
+### Visibility.Hidden
+
+没有隐藏的选项，换成设置透明度为 0 代替。设置 `Opacity="0"` 效果和 WPF 的 `Visibility.Hidden` 相似
+
+### MultiBinding
+
+多绑定不受支持，只能绕路，让界面编写只有单绑定
+
+### ControlTemplate.Triggers
+
+不支持，需要绕路
+
+### 在 Resources 的资源使用了 x:Name 特性
+
+在资源里面带了 x:Name 是不受支持的，由于 x:Name 在生成的时候必须分配给他属性或字段，但是资源可以被多次创建，导致了生成的代码无法处理这个情况。之前 Avalonia 的 XAML 创建器就提了这个问题，现在 WinUI 3 和 UNO 和 MAUI 都有这个问题
+
+最简复现代码如下
+
+```xml
+    <Page.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Name="MyBrush" Color="Blue"/>
+        </ResourceDictionary>
+    </Page.Resources>
+```
+
+此时应该是使用 `x:Key` 代替 `x:Name` 才符合预期
+
+另外的是为了资源内的绑定逻辑，如以下代码，这样的代码只能绕路
+
+```xml
+    <Page.Resources>
+        <ControlTemplate x:Key="Template.Loading" TargetType="ContentControl">
+            <Grid x:Name="RootGrid" />
+        </ControlTemplate>
+    </Page.Resources>
+```
+
+以上代码错误提示是 `error CS0103: 当前上下文中不存在名称“_RootGrid”` 信息
+
+更多请看 [Adding Name to a Resource fails on build · Issue #1427 · unoplatform/uno](https://github.com/unoplatform/uno/issues/1427 )
 
 ## 参考文档
 
