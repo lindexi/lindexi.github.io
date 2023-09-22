@@ -348,6 +348,10 @@ WispLogic.cs
 
 [WPF 程序无法触摸操作？我们一起来找原因和解决方法](https://blog.csdn.net/WPwalter/article/details/77986954 )
 
+[“阻断疗法” - 拯救 WPF 启动过程中发生设备热插拔导致触摸失效问题 - gandalfliang的个人博客](https://gandalfliang.github.io/2017/12/02/WPFLostTouchCapability/ )
+
+[通过解读 WPF 触摸源码，分析 WPF 插拔设备触摸失效的问题（问题篇） - walterlv](https://blog.walterlv.com/post/wpf-touch-fails-when-tablet-device-changed.html )
+
 
 
 
