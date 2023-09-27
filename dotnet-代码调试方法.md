@@ -849,7 +849,7 @@ Foo();
 
 在开始之前先安利一下 dnspy 这个工具，在我的调试工具里面用的最多的除了 VisualStudio 和 SublimeText 之外就是这个工具了。这个工具可以在用户端不需要任何代码，通过反编译的方式，支持在任何库里面添加断点进行单步调试，在调试的时候和 VisualStudio 一样提供了局部变量和即使窗口等功能，我调试 WPF 触摸的时候就通过这个工具调试 WPF 框架里面的触摸代码，通过调用堆栈和局部变量知道了 WPF 框架是如何做的
 
-求填坑 dnspy 使用方法
+如何使用 dnSpy 调试代码，请看 [如何在没有第三方.NET库源码的情况下调试第三库代码？ - Dotnet9](https://dotnet9.com/2023/09/How-to-be-without-a-third-party-dotNET-library-source-code-debugging-the-third-library-code )
 
 更多关于 dnspy 请看 [神器如 dnSpy，无需源码也能修改 .NET 程序 - walterlv](https://blog.walterlv.com/post/edit-and-recompile-assembly-using-dnspy.html )
 
@@ -1389,6 +1389,8 @@ public static int Count { set; get; }
 - [dotnet 6 在 Win7 系统证书链错误导致 HttpWebRequest 内存泄露](https://blog.lindexi.com/post/dotnet-6-%E5%9C%A8-Win7-%E7%B3%BB%E7%BB%9F%E8%AF%81%E4%B9%A6%E9%93%BE%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4-HttpWebRequest-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.html )
 
 - [dotnet 读 WPF 源代码笔记 为什么自定义的 UserControl 用户控件不能跨程序集继承](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84-UserControl-%E7%94%A8%E6%88%B7%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%83%BD%E8%B7%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%BB%A7%E6%89%BF.html )
+
+- [【细致完整】终章：模拟.NET应用场景，综合应用反编译、第三方库调试、拦截、一库多版本兼容方案 - Dotnet9](https://dotnet9.com/m5 )
 
 ### 应用程序闪退调试
 
