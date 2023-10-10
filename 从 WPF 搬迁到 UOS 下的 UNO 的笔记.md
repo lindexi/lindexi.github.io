@@ -106,6 +106,10 @@
 <Button Style="{StaticResource Style.TitlebarButton}" Content="{StaticResource Geometry.Close}"/>
 ```
 
+## PathGeometry
+
+有部分不受支持，请进行多平台测试，需要绕路
+
 ## x:Static
 
 静态绑定不受支持，只能绕路，比如使用再定义一个实例属性，让这个实例属性引用静态量，再绑定到实例属性
