@@ -450,6 +450,8 @@
 
  * [dotnet 7 已知问题 WPF 的 TreeView 开启虚拟化之后只显示首项](dotnet-7-已知问题-WPF-的-TreeView-开启虚拟化之后只显示首项.md)
 
+ * [dotnet 8 WPF 支持在 RDP 远程桌面状态下启用渲染硬件加速](dotnet-8-WPF-支持在-RDP-远程桌面状态下启用渲染硬件加速.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
@@ -1279,6 +1281,8 @@
  * [git无法pull仓库refusing to merge unrelated histories](git无法pull仓库refusing-to-merge-unrelated-histories.md)
 
  * [git镜像仓库](git镜像仓库.md)
+
+ * [GPT 炼丹记录](GPT-炼丹记录.md)
 
  * [How to fix nuget Unrecognized license type MIT when pack](How-to-fix-nuget-Unrecognized-license-type-MIT-when-pack.md)
 
