@@ -1084,6 +1084,8 @@
 
  * [dotnet 解析 TTF 字体文件格式](dotnet-解析-TTF-字体文件格式.md)
 
+ * [dotnet 警惕 Assembly.Location 返回空](dotnet-警惕-Assembly.Location-返回空.md)
+
  * [dotnet 警惕 async void 线程顶层异常](dotnet-警惕-async-void-线程顶层异常.md)
 
  * [dotnet 警惕 ConcurrentDictionary 使用 FirstOrDefault 获取到非预期的首项](dotnet-警惕-ConcurrentDictionary-使用-FirstOrDefault-获取到非预期的首项.md)
