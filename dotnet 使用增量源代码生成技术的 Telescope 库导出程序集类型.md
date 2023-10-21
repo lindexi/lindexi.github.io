@@ -98,6 +98,60 @@ internal partial class Program
 
 通过以上的方式即可在增量源代码生成里面生成出自动收集类型的代码，可以规避使用反射带来的性能损耗，同时也能更好的支持 AOT 打包
 
+所生成的代码大概如下
+
+```csharp
+// 这是开发者写的代码
+internal partial class Program
+{
+    static void Main(string[] args)
+    {
+        foreach (var (type, attribute, creator) in ExportFooEnumerable())
+        {
+        }
+    }
+
+    [dotnetCampus.Telescope.TelescopeExportAttribute()]
+    private static partial IEnumerable<(Type type, FooAttribute attribute, Func<Base> creator)> ExportFooEnumerable();
+}
+
+// 这是生成的代码
+    internal partial class Program
+    {
+        private static partial global::System.Collections.Generic.IEnumerable<(global::System.Type type, global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.FooAttribute attribute, global::System.Func<global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.Base> creator)> ExportFooEnumerable()
+        {
+            yield return (typeof(global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.F1), new global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.FooAttribute()
+            {
+                       
+            }, () => new global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.F1());
+            yield return (typeof(global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.F2), new global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.FooAttribute()
+            {
+                       
+            }, () => new global::dotnetCampus.Telescope.SourceGeneratorAnalyzers.Demo.F2());
+        }
+    }
+```
+
+以上代码看起来很复杂，其实只是写全命名空间而已。为了让大家看的更方便，我将其命名空间简写，优化之后的代码如下
+
+```csharp
+internal partial class Program
+{
+    private static partial IEnumerable<(Type type, FooAttribute attribute, Func<Base> creator)> ExportFooEnumerable()
+    {
+        yield return (typeof(F1), new FooAttribute()
+        {
+
+        }, () => new F1());
+        yield return (typeof(F2),
+            new FooAttribute()
+        {
+
+        }, () => new F2());
+    }
+}
+```
+
 除此之外还有许多高级的功能，比如说收集的类型不限于当前项目程序集，也能收集到当前项目的所有依赖项。如果想要收集到依赖程序集里面的类型，可以在 TelescopeExportAttribute 里面加上对 IncludeReferences 属性的设置即可，如以下代码
 
 ```csharp
@@ -108,6 +162,15 @@ internal partial class Program
 }
 ```
 
-加上了 IncludeReferences 将会自动收集到满足要求的所有类型，包括当前项目引用的程序集。但必须说明的是加上了 IncludeReferences 属性设置为 true 将会在 Telescope 里收集引用的程序集类型，可能导致开发过程中的卡顿，但也只会影响开发，不会影响到程序运行
+加上了 IncludeReferences 将会自动收集到满足要求的所有类型，包括当前项目引用的程序集。但必须说明的是加上了 IncludeReferences 属性设置为 true 将会在 Telescope 里收集引用的程序集类型，可能导致开发过程中的卡顿，但也只会影响开发人员的构建速度，不会影响到程序在用户设备上的运行速度
+
+导出的方式除了以上介绍的 IEnumerable 配合带三个参数的 ValueTuple 之外，还可以使用以下的导出方法
+
+如导出时去掉标记的特性，如此即是表示只要满足继承基类就会被导出，不需要在类型上存在特殊标记。代码例子如下，以下代码将导出当前程序集项目里面所有继承 Base 类型的非抽象类型
+
+```csharp
+    [dotnetCampus.Telescope.TelescopeExportAttribute()]
+    private static partial IEnumerable<(Type type, Func<Base> creator)> ExportFooEnumerable();
+```
 
 更多关于我博客请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )

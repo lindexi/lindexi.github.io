@@ -139,6 +139,83 @@
 
 详细请参阅 [Package authoring best practices Microsoft Learn](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices )
 
+### PackageLicenseExpression
+
+许可证信息，可以在 Copyright 不存在时勉强当成版权信息。可以打入的是当前的包使用的是什么协议进行许可，比如当前是给一个 MIT 协议开源的仓库进行打包的，可以使用如下设置当前的 NuGet 包使用最友好的 MIT 协议
+
+```xml
+<PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+</PropertyGroup>
+```
+
+如果这个包是一个混合包，包含多个协议，比如 MIT 和 Apache-2.0 协议，可以这样写
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+</Project>
+```
+
+### PackageLicenseFile
+
+以上的 PackageLicenseExpression 是一个简单的写法，适合用在一些明确当前使用类型的许可证。但如果自己的许可证有些特殊，比如是公司的法务写的许可证，需要特殊的许可证文件，那可以使用 PackageLicenseFile 属性。通过 PackageLicenseFile 属性设置采用打入到 NuGet 包的哪个文件作为许可证文件
+
+```xml
+<PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+</PropertyGroup>
+
+<ItemGroup>
+    <None Include="..\LICENSE.txt" Pack="true" PackagePath=""/>
+</ItemGroup>
+```
+
+这里需要明确的是 PackageLicenseExpression 和 PackageLicenseFile 以及不被推荐使用的 PackageLicenseUrl 三个只能同时存在其中一个
+
+额外说明的是，对于许多仓库的 LICENSE 许可证文件来说，都是没有带后缀名的。由于历史原因，在 NuGet 里面对于没有后缀名的都是会被当成是文件夹。为了能够正确的进行打包，就必须带上 PackagePath 属性，如下面代码例子
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
+  
+</Project>
+```
+
+以上的代码里面核心的逻辑在于 `PackagePath=""` 设置了无后缀名的 LICENSE 不是文件
+
+上面代码是从 https://github.com/NuGet/Samples/blob/ec30a2b7c54c2d09e5a476444a2c7a8f2f289d49/PackageLicenseFileExtensionlessExample/PackageLicenseFileExtensionlessExample.csproj#L1 拷贝的
+
+### PackageReadmeFile
+
+打包到 NuGet 包里面的自述文件，一般可以将仓库里面的 README.md 文件打进来，如以下例子
+
+```xml
+<PropertyGroup>
+    ...
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="..\..\README.md" Link="README.md" Pack="True" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
+
+这里包括两个方面的内容，第一个是在 PropertyGroup 里面使用 PackageReadmeFile 属性标明 README.md 文件，然后在 ItemGroup 里面设置打包到 NuGet 包里面的是哪个文件当成 README.md 文件
+
 <!-- 
 
 licenseUrl
@@ -161,7 +238,21 @@ Description 描述信息
 
 现在推荐将图标作为文件放入到包里面，而不是使用外链图片下载地址，解决一些奇怪的地方无法拉到包或泄露隐私
 
+大概的例子如下
 
+```xml
+<PropertyGroup>
+    ...
+    <PackageIcon>Icon.png</PackageIcon>
+    ...
+</PropertyGroup>
+
+<ItemGroup>
+    ...
+    <None Include="..\Images\Icon.png" Pack="true" PackagePath="\"/>
+    ...
+</ItemGroup>
+```
 
 ### GeneratePackageOnBuild
 
