@@ -1276,17 +1276,28 @@ public static int Count { set; get; }
 
 ## DUMP调试
 
-在开始 DUMP 调试之前，需要先有收集到 dump 文件
+在开始 DUMP 调试之前，需要先有收集到 dump 文件，其次再对此 DUMP 文件进行调试
 
 ### 收集 DUMP 文件
 
-收集 DUMP 有多个方法，例如打开任务管理器，右击进程选择创建转储文件。或在应用程序里面调用[MiniDumpWriteDump](https://docs.microsoft.com/zh-cn/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump ) 方法
+收集 DUMP 有多个方法，例如打开任务管理器，右击进程选择创建转储文件。使用任务管理器时，需要小心 x86 和 x64 的区别。对于 x86 的应用进程，推荐使用 32 位的任务管理器进行收集，在 x64 的电脑上的 32 位的任务管理器默认放在 `C:\windows\SysWOW64\Taskmgr.exe` 路径里
 
-或在 WinDbg 里面使用 [.dump](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-dump--create-dump-file- ) 创建 dump 文件
+或使用 [ProcessExplorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) 工具收集 DUMP 文件
+
+或在 WinDbg 里面使用 [.dump](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-dump--create-dump-file- ) 创建 dump 文件。这里需要小心一点的是，如果被 WinDbg 工具暂停了进程，那此时抓到的 DUMP 文件，可能存在了一个调试异常，如果看到调试器异常还请不用慌，这是 WinDbg 暂停给出的异常，异常错误码是 0x80000003 STATUS_BREAKPOINT 表示进入断点，常见的堆栈如下
+
+```
+ntdll.dll!_DbgBreakPoint
+ntdll.dll!_DbgUiRemoteBreakin
+```
 
 或设置注册表收集 DUMP 文件，请看 [win10 uwp 收集 DUMP 文件](https://blog.lindexi.com/post/win10-uwp-%E6%94%B6%E9%9B%86-DUMP-%E6%96%87%E4%BB%B6.html )
 
 或如 [dotnet 调试应用启动闪退的方法](https://blog.lindexi.com/post/dotnet-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E7%9A%84%E6%96%B9%E6%B3%95.html ) 提到的 [ProcDump](https://docs.microsoft.com/zh-cn/sysinternals/downloads/procdump?WT.mc_id=WD-MVP-5003260) 工具进行收集
+
+或在应用程序里面写代码调用 [MiniDumpWriteDump](https://docs.microsoft.com/zh-cn/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump ) 方法进行自动收集
+
+一般收集 DUMP 都是在非开发的机器上进行收集，毕竟开发机器上直接调试不是更香。于是许多时候都需要将 DUMP 文件进行传输，一个小技巧是在传输之前先使用 7z 等工具将 dump 文件压缩一下，压缩一下一般能省非常多的空间。这是因为大部分的 dump 的进程空间都存在大片的纯零数据，这部分数据压缩工具最能压缩空间
 
 ### 非托管相关
 
@@ -1296,6 +1307,10 @@ public static int Count { set; get; }
 
 ### 使用 VisualStudio 调试
 
+优先推荐使用 VisualStudio 进行调试，如果想要调试的仅只是 .NET 层的问题，那可以直接点击托管调试进行快速的调试。这时候的调试和日常的调试进程没有多少差别，只不过 DUMP 调试时不能点继续运行而已
+
+如果想要调试的地方是可能存在的闪退等问题，可能是非托管代码导致的问题，可以使用混合调试模式。混合调试时，将同时使用 Native 调试器和 .NET 调试器，此时可以调试到更多信息。为什么开始只推荐使用托管调试？这是因为开启混合调试时，信息太多，可能干扰调试思路
+
 填坑
 
 ### 使用 dotMemory 调试内存
@@ -1304,7 +1319,14 @@ public static int Count { set; get; }
 
 ### 使用 WinDbg 调试
 
+使用 WinDbg 调试 .NET Core 系列的应用，包括 dotnet 5 和 dotnet 6 等，需要先加载 sos 才可以进行调试。方法请参阅 [WinDbg 加载 dotnet core 的 sos.dll 辅助调试方法](https://blog.lindexi.com/post/WinDbg-%E5%8A%A0%E8%BD%BD-dotnet-core-%E7%9A%84-sos.dll-%E8%BE%85%E5%8A%A9%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
+
 填坑
+
+以下是一些使用 WinDbg 配合调试 DUMP 的例子
+
+- [dotnet 6 在 Win7 系统证书链错误导致 HttpWebRequest 内存泄露](https://blog.lindexi.com/post/dotnet-6-%E5%9C%A8-Win7-%E7%B3%BB%E7%BB%9F%E8%AF%81%E4%B9%A6%E9%93%BE%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4-HttpWebRequest-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.html )
+- [win10 uwp 使用 WinDbg 调试](https://blog.lindexi.com/post/win10-uwp-%E4%BD%BF%E7%94%A8-WinDbg-%E8%B0%83%E8%AF%95.html )
 
 ### 收藏一些大佬的 DUMP 调试博客
 

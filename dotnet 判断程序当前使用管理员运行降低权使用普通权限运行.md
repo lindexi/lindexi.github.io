@@ -36,7 +36,7 @@
 // 方法1
 
                 var file = new FileInfo(Assembly.GetExecutingAssembly().Location);
-                var exe = Path.Combine(file.DirectoryName, file.Name.Replace(file.Extension, "")+".exe");
+                var exe = Path.Combine(file.DirectoryName, file.Name.Replace(file.Extension, "") + ".exe");
 
 // 方法2
                 var exe = Process.GetCurrentProcess().MainModule.FileName;
