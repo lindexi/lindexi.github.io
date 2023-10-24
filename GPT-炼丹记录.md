@@ -26,6 +26,18 @@
 我统计了我的应用，根据我从 3016336 位用户过去 7 天的数据里面，可以看到平均的启动耗时是 2.7 秒。这里需要进一步说明的是我的应用是一个复杂的应用，启动过程是相当复杂的
 ```
 
+```
+我正在 github 上报告一个问题，请根据以下内容帮我拟定一个英文标题，要求标题简略：
+
+[Content Start]
+
+一个嵌入了 UWP 控件的 WPF 应用程序可能会在 AutomationInteropProvider.HostProviderFromHandle 里卡住
+
+[Content End]
+
+英文标题：
+```
+
 ## 写通知
 
 ```csharp
