@@ -137,6 +137,28 @@ chars[0] = char.ToUpperInvariant(chars[0]);
 
 值得一提的是本文所讲的性能差异仅仅只是在应用启动过程中有效，如果不是应用启动过程，基本上 ICU 也初始化过了，不会存在耗时问题，而且非性能敏感的逻辑也不会有如此严格的耗时要求
 
+相同的启动问题性能优化，也在 MAUI 仓库里面执行，在 MAUI 里面引入了 [CA1311: Specify a culture or use an invariant version](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1311 ) 警告提示，意思就是如果发现代码里面写了不带语言文化的 `String.ToUpper()` 或 `String.ToLower()` 方法，将会提示换成 `ToUpper(CultureInfo)` 或 `ToUpperInvariant()` 或 `ToLower(CultureInfo)` 或 `ToLowerInvariant()` 方式减少语言文化加载性能
+
+<!-- ![](image/dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢/dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢1.png) -->
+![](http://image.acmx.xyz/lindexi%2F20231122014408429.jpg)
+
+如在 [.NET 8 Performance Improvements in .NET MAUI - .NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-8-performance-improvements-in-dotnet-maui/ ) 博客里面提到的
+
+> Address CA1307 and CA1309 for performance
+
+> Profiling a .NET MAUI sample application from a customer, we noticed time spent during “culture-aware” string operations:
+
+> 77.22ms microsoft.maui!Microsoft.Maui.Graphics.MauiDrawable.SetDefaultBackgroundColor()  
+> 42.55ms System.Private.CoreLib!System.String.ToLower()
+
+> This case, we can improve by simply calling ToLowerInvariant() instead. In some cases you might even consider using string.Equals() with StringComparer.Ordinal.
+
+更改的代码如下
+
+[https://github.com/dotnet/maui/pull/14627](https://github.com/dotnet/maui/pull/14627)
+
+通过 ToLowerInvariant 和 ToUpperInvariant 转换大小写等方法代替引入语言文化相关的判断，在逻辑等价变更的情况下，可以减少启动耗时
+
 
 
 
