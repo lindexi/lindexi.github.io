@@ -992,6 +992,8 @@
 
  * [dotnet 找到博客中引用已失败的链接地址](dotnet-找到博客中引用已失败的链接地址.md)
 
+ * [dotnet 探究 SemanticKernel 的 planner 的原理](dotnet-探究-SemanticKernel-的-planner-的原理.md)
+
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
 
  * [dotnet 控制台 使用 Microsoft.Maui.Graphics 配合 Skia 进行绘图入门](dotnet-控制台-使用-Microsoft.Maui.Graphics-配合-Skia-进行绘图入门.md)
