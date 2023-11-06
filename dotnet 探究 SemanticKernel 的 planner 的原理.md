@@ -3,6 +3,7 @@
 在使用 SemanticKernel 时，我着迷于 SemanticKernel 强大的 plan 能力，通过 plan 功能可以让 AI 自动调度拼装多个模块实现复杂的功能。我特别好奇 SemanticKernel 里的 planner 的原理，好奇底层具体是如何实现的。好在 SemanticKernel 是完全开源的，通过阅读源代码，我理解了 SemanticKernel 的工作机制，接下来我将和大家分享我所了解到的原理
 
 <!--more-->
+<!-- CreateTime:2023/11/5 15:16:14 -->
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -15,6 +16,12 @@
 以上这个需求在有 SemanticKernel 的辅助下，将会非常简单实现
 
 接下来咱来尝试在不使用 SemanticKernel 提供的 Plan 工具的前提下，完成类似的功能。通过自己编写代码的方式代替 SemanticKernel 提供的 Plan 的功能，从而了解 SemanticKernel 的实现细节
+
+大概的原理实现步骤如下图
+
+<!-- ![](image/dotnet 探究 SemanticKernel 的 planner 的原理/dotnet 探究 SemanticKernel 的 planner 的原理0.png) -->
+
+![](http://image.acmx.xyz/lindexi%2F2023115172604099.jpg)
 
 先按照 [dotnet SemanticKernel 入门 将技能导入框架](https://blog.lindexi.com/post/dotnet-SemanticKernel-%E5%85%A5%E9%97%A8-%E5%B0%86%E6%8A%80%E8%83%BD%E5%AF%BC%E5%85%A5%E6%A1%86%E6%9E%B6.html ) 博客提供的方法，向 SemanticKernel 框架里面导入两个 SemanticFunction 函数，分别是作诗和翻译
 
