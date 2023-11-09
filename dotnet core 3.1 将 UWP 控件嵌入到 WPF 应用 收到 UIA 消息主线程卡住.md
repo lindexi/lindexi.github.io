@@ -20,7 +20,6 @@
 - 随意嵌入 UWP 控件
 - 在一个有 UIA 存在的环境下运行项目
 
-
 有 UIA 存在的环境指的是有使用 UIA 模块的进程存在的系统环境，比如运行了 PAD 或 AxeWindows 程序。但我不知道这个问题的具体复现步骤，只是这么做的话，可能就可以让主线程卡顿。不过我自己重复了许多次都没有复现
 
 主线程卡顿的堆栈如下
@@ -165,13 +164,11 @@ WARNING: Frame IP not in any known module. Following frames may be wrong.
 
 主线程的堆栈上方是进入 PostMessageW 方法，这个方法不是同步发送消息，换句话说不是因为发送消息而卡住。卡住的地方是在 CCliModalLoop::MyDispatchMessage 之类的方法没有返回
 
-
 这个问题也有可能是客户的机器存在一个奇怪的 UIA 进程，发送了错误的 UIA 消息，或者是执行 UIA 处理时不符合规范
 
 规避方法是：
 
 吃掉 `WM_GETOBJECT` 消息
-
 
 实现方法是通过消息钩子吃掉自己的 `WM_GETOBJECT` 消息，代码如下
 
@@ -250,3 +247,13 @@ git pull origin 5c735d85bc02507f27f2270029050e402b580810
 ```
 
 获取代码之后，进入 CucherelahiBewilargalkalbea 文件夹
+
+---
+
+更新：
+
+此问题预计和 WPF 没有几分钱关系（几分钱都没有，那就是没一毛钱关系）了，因为相同的问题也在 MFC 框架下配合 WebView2 控件复现，请看 [App using WebView2 becomes unresponsive due to infinite 0x403 message posting. · Issue #3141 · MicrosoftEdge/WebView2Feedback](https://github.com/MicrosoftEdge/WebView2Feedback/issues/3141 )
+
+刚好通过上文的堆栈可以看到，在 `CCliModalLoop::MyDispatchMessage` 不断进入的 `02 0285bc20 761be28a combase!CComApartment::ClassicSTAPostMessage(unsigned int msg = 0x403, class IMessageParam * pParam = 0x0e5add18)+0x32` 方法的参数里可以看到，也是在不断发送 0x403 消息
+
+不过 0x403 消息我没有找到这个消息的含义，也就没有继续了解更多信息。既然 MFC 框架的应用也有这个问题，那此问题就和 WPF 没几分钱关系。同时我的 WPF 程序里面只是随便嵌入一个 UWP 控件，也不是 WebView2 控件，因此此问题也和 WebView2 控件没几分钱关系
