@@ -1316,6 +1316,8 @@
 
  * [IIncrementalGenerator 增量 Source Generator 生成代码入门 读取解析 ValueTuple 的定义](IIncrementalGenerator-增量-Source-Generator-生成代码入门-读取解析-ValueTuple-的定义.md)
 
+ * [IIncrementalGenerator 增量 Source Generator 生成代码应用 将构建时间写入源代码](IIncrementalGenerator-增量-Source-Generator-生成代码应用-将构建时间写入源代码.md)
+
  * [Inno Setup 安装包脚本 Run 的 Flags 标记](Inno-Setup-安装包脚本-Run-的-Flags-标记.md)
 
  * [jekyll 在博客添加流程图](jekyll-在博客添加流程图.md)
