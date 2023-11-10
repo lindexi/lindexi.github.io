@@ -2892,6 +2892,8 @@
 
  * [WPF 解决弹出模态窗口关闭后，主窗口不在最前](WPF-解决弹出模态窗口关闭后，主窗口不在最前.md)
 
+ * [WPF 触摸下如何给 StylusPointCollection 添加点](WPF-触摸下如何给-StylusPointCollection-添加点.md)
+
  * [WPF 触摸到事件](WPF-触摸到事件.md)
 
  * [WPF 触摸失效 试试重启触摸](WPF-触摸失效-试试重启触摸.md)
