@@ -47,6 +47,24 @@
 英文内容：
 ```
 
+```
+我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题：
+
+[Content Start]
+我使用 Span 来让 `StylusPoint.CopyAdditionalData` 里的数组拷贝性能更高
+[Content End]
+
+英文标题：
+```
+
+```
+请帮我将以下内容转述为更加地道的英文：
+
+Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
+
+转述之后的英文：Utilizing the Span to expedite the array cloning process in `StylusPoint.CopyAdditionalData`.
+```
+
 ## 写通知
 
 ```csharp
@@ -154,4 +172,120 @@
 [输入结束]
 
 拆分的名单：
+```
+
+## 排版界面
+
+```csharp
+如果你想让GPT理解“对称原理、轴心式布局、左右分布布局、上下分布布局”等布局原理，可以使用以下提示词：
+
+- 角色：设计师
+- 上下文：你正在为一个PPT设计布局
+- 指令：请根据以下布局原理设计PPT页面：对称原理、轴心式布局、左右分布布局、上下分布布局
+- 风格：简洁明了
+- 输出格式：PPT页面
+
+
+源: 与必应的对话， 2023/11/9
+(1) 爆肝一星期，整理了这份简单易用的gpt提示词指南 - 知乎. https://zhuanlan.zhihu.com/p/640598049.
+(2) 爆火ChatGPT代码解释器食用指南，来了 - 知乎 - 知乎专栏. https://zhuanlan.zhihu.com/p/642420229.
+(3) 提问的艺术：如何通过提示词让 ChatGPT 更准确地理解你的问题？-腾讯云开发者社区-腾讯云. https://cloud.tencent.com/developer/article/2277818.
+(4) 用魔法打败魔法！教你让gpt自己产生提示词 - 掘金. https://juejin.cn/post/7287494827702337536.
+(5) undefined. https://www.learnprompt.org/.
+```
+
+当你为PPT设计布局时，作为设计师，你可以根据以下布局原理设计PPT页面：对称原理、轴心式布局、左右分布布局、上下分布布局。请以简洁明了的风格输出PPT页面。希望这些提示词能够帮助你！
+
+```
+当你为PPT设计布局时，作为设计师，你可以根据以下布局原理设计PPT页面：对称原理、轴心式布局、左右分布布局、上下分布布局。请以简洁明了的风格输出PPT页面。
+
+以下是原始的未排版之前的 PPT 文档内容
+
+#####
+
+{
+  "SlideIndex": 1,
+  "SlideId": "b1caa0d40c8a459dbd2fd7596f83f6d5",
+  "SlideWidth": 1280.0,
+  "SlideHeight": 720.0,
+  "Elements": [{
+    "ElementId": "1999daba5ec64e02b877a80cce4060fc",
+    "ElementType": "Picture",
+    "SlideX": 148.153,
+    "SlideY": 59.419,
+    "Width": 372.12199999999996,
+    "Height": 512.0
+  }, {
+    "ElementId": "3cf72c5fe2854a63baa0b2bcb5331c59",
+    "ElementType": "Picture",
+    "SlideX": 669.313,
+    "SlideY": 59.39,
+    "Width": 409.27200000000005,
+    "Height": 512.012
+  }, {
+    "ElementId": "7a43186986114dd0bb441741a059a1e9",
+    "ElementType": "Text",
+    "SlideX": 985.8995,
+    "SlideY": 33.70633333333333,
+    "Width": 80.0,
+    "Height": 52.79333333333334,
+    "ElementContent": "古诗",
+    "RichTextInfo": {
+      "ParagraphInfoList": [{
+        "RunPropertyInfoList": [{
+          "FontName": "微软雅黑",
+          "FontSizePixel": 39.99999999,
+          "StartOffset": 0,
+          "EndOffset": 1,
+          "Length": 2,
+          "Text": "古诗"
+        }]
+      }]
+    }
+  }, {
+    "ElementId": "08cc99014c2140d7abc3420e041db1ed",
+    "ElementType": "Text",
+    "SlideX": 473.171,
+    "SlideY": 36.14383333333333,
+    "Width": 160.00000000000006,
+    "Height": 52.79333333333334,
+    "ElementContent": "理想信念",
+    "RichTextInfo": {
+      "ParagraphInfoList": [{
+        "RunPropertyInfoList": [{
+          "FontName": "微软雅黑",
+          "FontSizePixel": 39.99999999,
+          "StartOffset": 0,
+          "EndOffset": 3,
+          "Length": 4,
+          "Text": "理想信念"
+        }]
+      }]
+    }
+  }, {
+    "ElementId": "f15c8060-939f-4b84-af7c-0e20d85215c2",
+    "ElementType": "Text",
+    "SlideX": 965.9295,
+    "SlideY": 271.65133333333335,
+    "Width": 120.0,
+    "Height": 52.79333333333335,
+    "ElementContent": "回忆录",
+    "RichTextInfo": {
+      "ParagraphInfoList": [{
+        "RunPropertyInfoList": [{
+          "FontName": "微软雅黑",
+          "FontSizePixel": 39.99999999,
+          "StartOffset": 0,
+          "EndOffset": 2,
+          "Length": 3,
+          "Text": "回忆录"
+        }]
+      }]
+    }
+  }]
+}
+
+#####
+
+请在内容不变的前提下，对以上的 PPT 文档内容进行排版，请输出排版之后的结果
 ```
