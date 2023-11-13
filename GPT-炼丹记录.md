@@ -42,9 +42,8 @@
 我正在 github 上回复一个问题，请根据以下内容帮我编写符合程序员风格的英文内容：
 
 [Content Start]
-我探索到的临时解决方法是通过 Hook 掉 WM_GETOBJECT 消息，如我的 Demo 代码所示：https://github.com/lindexi/lindexi_gd/tree/5c735d85bc02507f27f2270029050e402b580810/CucherelahiBewilargalkalbea
+我挑拣了我的 https://github.com/dotnet/wpf/pull/6428 和 https://github.com/dotnet/wpf/issues/6829 这两个 PR 构建了我的私有的 WPF 版本。我的应用使用我这个 WPF 私有版本已经运行了快两年了，我的应用在几百万台触摸设备上运行且工作得很好。这个足以证明我的 PR 是可靠的
 
-但是我的临时解决方法存在的缺点是将会让 UIA 工具无法正常工作
 [Content End]
 
 英文内容：
@@ -93,7 +92,7 @@ Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
 ```
 
 ```csharp
-我正在编写一个功能，这个功能是一个带特效的笔迹效果。我正在编写的是 C# 代码，我需要创建一个带特效的笔迹元素，请为这个带特效的笔迹元素类型起一个类型名，请给出多个候选命名给我选择
+我正在编写一个功能，这个功能是一个表示调试下复现问题用的Json文件路径的属性。我正在编写的是 C# 代码，属性起一个符合 C# 命名规范的属性名，请给出多个候选命名给我选择
 ```
 
 ```csharp
@@ -291,6 +290,15 @@ Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
 #####
 
 请在内容不变的前提下，对以上的 PPT 文档内容进行排版，请输出排版之后的结果
+```
+
+
+```
+我给你一个点集，请根据点集猜出这些点集构建成的文字
+
+#####
+
+#####
 ```
 
 
