@@ -3,6 +3,8 @@
 本文告诉大家如何在触摸下给 WPF 的 StylusPointCollection 添加新的点
 
 <!--more-->
+<!-- CreateTime:2023/11/9 19:46:55 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

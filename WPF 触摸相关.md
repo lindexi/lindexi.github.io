@@ -124,6 +124,7 @@
 - [win10 uwp 通过 Win2d 完全控制笔迹绘制逻辑](https://blog.lindexi.com/post/win10-uwp-%E9%80%9A%E8%BF%87-Win2d-%E5%AE%8C%E5%85%A8%E6%8E%A7%E5%88%B6%E7%AC%94%E8%BF%B9%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
 - [win10 uwp 笔迹书写预测 墨迹书写加速](https://blog.lindexi.com/post/win10-uwp-%E7%AC%94%E8%BF%B9%E4%B9%A6%E5%86%99%E9%A2%84%E6%B5%8B-%E5%A2%A8%E8%BF%B9%E4%B9%A6%E5%86%99%E5%8A%A0%E9%80%9F.html )
 - [WPF 简易手绘笔迹支持回放的方法](https://blog.lindexi.com/post/WPF-%E7%AE%80%E6%98%93%E6%89%8B%E7%BB%98%E7%AC%94%E8%BF%B9%E6%94%AF%E6%8C%81%E5%9B%9E%E6%94%BE%E7%9A%84%E6%96%B9%E6%B3%95.html )
+- [WPF 笔迹算法 从点集转笔迹轮廓](https://blog.lindexi.com/post/WPF-%E7%AC%94%E8%BF%B9%E7%AE%97%E6%B3%95-%E4%BB%8E%E7%82%B9%E9%9B%86%E8%BD%AC%E7%AC%94%E8%BF%B9%E8%BD%AE%E5%BB%93.html ) [博客园](https://www.cnblogs.com/lindexi/p/17758666.html)
 
 ## 官方文档
 
