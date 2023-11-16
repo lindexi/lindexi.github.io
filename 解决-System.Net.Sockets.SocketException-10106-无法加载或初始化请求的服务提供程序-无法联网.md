@@ -15,7 +15,7 @@
 > Service provider failed to initialize.
 >   The requested service provider could not be loaded or initialized. This error is returned if either a service provider's DLL could not be loaded (LoadLibrary failed) or the provider's WSPStartup or NSPStartup function failed.
 
-这一层出现问题，和 .NET 的关系不大，其他技术也可能会遇到相同的问题
+这一层出现问题，和 .NET 的关系不大，其他技术也可能会遇到相同的问题。用户端遇到此问题，基本都是用户的电脑环境的网络配置不正确。修复方法基本是重置网络，如以下方法
 
 解决方法：
 

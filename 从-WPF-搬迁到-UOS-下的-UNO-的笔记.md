@@ -8,8 +8,6 @@
 
 <!-- CreateTime:2023/9/20 15:42:36 -->
 
-<!-- 草稿 -->
-
 开始之前先说一下我的需求，我现在有一个小的 WPF 应用。现在我需要在统信 UOS 系统和 Windows 系统上都能够运行这个 WPF 应用
 
 现在 dotnet 系可选的多平台开发框架有很多，这一次我准备尝试使用 UNO/MAUI 的方式进行开发，大的技术架构如下图
@@ -22,13 +20,19 @@
 
 然后总的渲染层使用 SKIA 来保证多个平台的渲染效果一致
 
-## 在 UOS 闪烁黑屏问题
+## 日常开发
+
+新建项目的时候记得勾选 Windows 项目，如此将可以生成 WinUI3 项目。通过编写代码的时候选用 WinUI 3 项目，即可获取 XAML 代码智能提示。调试的时候优先选用 WinUI 3 项目调试界面布局，可以直接使用 Visual Studio 对 WinUI 3 的热重载支持，效果更好
+
+## 文本
+
+### 在 UOS 闪烁黑屏问题
 
 这是 OpenGL 的问题，修复方法请看
 
 [dotnet 在 UOS 统信系统上运行 UNO 程序输入时闪烁黑屏问题](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-UOS-%E7%BB%9F%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%BF%90%E8%A1%8C-UNO-%E7%A8%8B%E5%BA%8F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%AA%E7%83%81%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.html )
 
-## 中文文本乱码
+### 中文文本乱码
 
 中文文本乱码是因为中文字体没有正确加载，在 UOS 默认有思源黑体字体，在 GTK 会自动做字体回滚，只需要应用设置为微软雅黑即可。设置为微软雅黑可以让应用在 Windows 系统和 UOS 系统上都能显示正常的黑体字体
 
@@ -39,6 +43,28 @@
 ```
 
 微软雅黑在界面上记得使用 `Microsoft YaHei UI` 字体，带 `UI` 的字体。否则你将会看到一些字体布局有些奇怪
+
+### TextBox 撑开空间
+
+如果有内容是依赖 TextBox 的输入过程时的测量撑开的空间的，那撑开的空间将可能不对，比如以下代码
+
+```xml
+      <TextBox HorizontalAlignment="Center" FontSize="50"></TextBox>
+```
+
+如此的逻辑将会在输入的过程看到文本内容被裁剪，基本在 Skia.WPF 和 Skia.GTK 项目下可以看到文本内容被裁剪
+
+<!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记1.png) -->
+![](http://image.acmx.xyz/lindexi%2F202311161640203139.jpg)
+
+<!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记2.png) -->
+![](http://image.acmx.xyz/lindexi%2F202311161640505448.jpg)
+
+暂时只能绕路，现在是 UNO 5.0 版本，依然难以修复此问题
+
+### TextBox 的最小高度
+
+最小高度依然会比预期的更高一些，只能修改界面设计，绕路
 
 ## 几何图形 StreamGeometry 资源
 
@@ -181,6 +207,36 @@
 
 由于现在 UNO 和 VisualStduio 存在一些冲突，导致了新建文件可能让 UNO 的 csproj 添加了不需要的代码。需要在开发的过程中，在进行 git 上传之前，看一下 csproj 的变更是否必要，如果是不必要的改动，请直接撤销。一般需要在新建文件，比如新建类型或新建用户控件这些动作之后，撤销 csproj 的更改
 
+## Dispatcher
+
+调度上 UNO 的 Dispatcher 要比 WPF 的弱，但可以进行一些平替。从原本的界面元素上获取 Dispatcher 的逻辑，依然不变
+
+从静态获取的逻辑，如以下的 WPF 代码，则需要进行替换
+
+```csharp
+System.Windows.Application.Current.Dispatcher.InvokeAsync
+```
+
+从 UNO 获取静态的主线程调度器和 UWP 或 WinUI 3 的获取方法是相同的，代码如下
+
+```csharp
+                    await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                    {
+                        // 在这里编写调度实现代码
+                    });
+```
+
+和 WPF 的 Dispatcher 调度等级不相同的是 UNO 的可调度等级非常少，只有如下的可调度等级
+
+```csharp
+High    1   高优先级。 将立即为所有同步请求调用委托。 异步请求将在任何其他请求类型之前排队和处理。
+Idle    -2  最低优先级。 将此优先级用于后台任务。 当窗口的main线程空闲且队列中没有挂起的输入时，将处理委托。
+Low     -1  低优先级。 如果队列中没有更高的优先级事件挂起，则处理委托。
+Normal  0   正常优先级。 委托按计划的顺序进行处理。
+```
+
+大部分情况下使用的都是 Normal 优先级
+
 ## 缺乏的机制
 
 ### Visibility.Hidden
@@ -224,6 +280,12 @@
 以上代码错误提示是 `error CS0103: 当前上下文中不存在名称“_RootGrid”` 信息
 
 更多请看 [Adding Name to a Resource fails on build · Issue #1427 · unoplatform/uno](https://github.com/unoplatform/uno/issues/1427 )
+
+## IPC
+
+已知问题： 
+
+[Linux 下的 Console.Read 将导致管道无法读取到消息 · Issue #139 · dotnet-campus/dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc/issues/139 )
 
 ## 参考文档
 
