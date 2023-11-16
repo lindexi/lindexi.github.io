@@ -12,7 +12,7 @@
 > Operation not supported.
 >   The attempted operation is not supported for the type of object referenced. Usually this occurs when a socket descriptor to a socket that cannot support this operation is trying to accept a connection on a datagram socket.
 
-这一层出现问题，和 .NET 的关系不大，其他技术也可能会遇到相同的问题
+这一层出现问题，和 .NET 的关系不大，其他技术也可能会遇到相同的问题。网上可能可以找到一些修改源代码解决问题的方法，但更多的可能是用户的电脑的网络问题，修复 10045 WSAEOPNOTSUPP 错误的方法如下
 
 先去注册表的 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9` 路径里面，在各个子路径，找找有没有奇怪的 DLL 将其删除，然后再尝试重置网络重启电脑。如果只是想查看而已，也可以通过命令行输入 `netsh winsock show catalog` 显示所有的文件
 
