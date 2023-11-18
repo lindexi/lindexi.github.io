@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2023/9/20 15:42:36 -->
 
-开始之前先说一下我的需求，我现在有一个小的 WPF 应用。现在我需要在统信 UOS 系统和 Windows 系统上都能够运行这个 WPF 应用
+开始之前先说一下我的需求，我现在有一个[小的 WPF 应用](https://github.com/dotnet-campus/dotnetCampus.Ipc/blob/100ac217ef8e570c0fc263db251bf9fc35bcf8cb/demo/dotnetCampus.Ipc.WpfDemo/)。现在我需要在统信 UOS 系统和 Windows 系统上都能够运行这个 WPF 应用
 
 现在 dotnet 系可选的多平台开发框架有很多，这一次我准备尝试使用 UNO/MAUI 的方式进行开发，大的技术架构如下图
 
