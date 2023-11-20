@@ -67,6 +67,16 @@ Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
 转述之后的英文：Utilizing the Span to expedite the array cloning process in `StylusPoint.CopyAdditionalData`.
 ```
 
+```
+我想要在 github 上报告一个问题，请你帮我拟一个报告问题的英文标题和一个报告问题的英文内容
+
+以下是我想要报告的问题：
+
+当自己不小心在方法上不正确标记了 MethodImplAttribute 特性时，错误选择了 MethodImplOptions.InternalCall 参数，那将会在运行的过程在，在此类型被访问之前就抛出了 System.TypeLoadException 异常，错误信息是 Internal call method with non_NULL RVA 内容。然而 System.TypeLoadException 异常会在类型访问之前就抛出，且只包含 TypeName 属性说明是哪个类型出错，没有更进一步告诉开发者是具体哪个方法标记错误了特性
+
+我的提议是期望能够在此情况下抛出的异常里面添加更多的信息，比如是具体哪个方法定义错误了，方便提升开发效率。假设我的类型里面包含了上百个方法，其中有一些方法的特性表示是正确的，有一些是错误的，如果这个异常没有包含具体的出错的方法，那将会让我需要花费比较长的时间才能调查到具体的问题
+```
+
 ## 写通知
 
 ```csharp
