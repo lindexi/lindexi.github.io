@@ -48,10 +48,9 @@ foreach (TabletDevice device in Tablet.TabletDevices)
                 }
 ```
 
-如果发现设备触摸失效，可以使用这个项目
+如果发现设备触摸失效，可以使用这个项目进行辅助调试
 
-[ManipulationDemo](https://github.com/walterlv/ManipulationDemo )
-
+[https://github.com/dotnet-campus/ManipulationDemo](https://github.com/dotnet-campus/ManipulationDemo )
 
 
 
