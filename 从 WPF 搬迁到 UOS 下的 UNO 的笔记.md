@@ -200,6 +200,19 @@
 
 更多请参阅官方文档 [Assets and image display](https://platform.uno/docs/articles/features/working-with-assets.html )
 
+## ContentControl
+
+功能上和 WPF 对齐，只是样式默认行为不相同。默认的 HorizontalContentAlignment 和 VerticalContentAlignment 是左上角，需要设置为 Stretch 才和 WPF 相同
+
+```xml
+<ContentControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"></ContentControl>
+```
+
+## 控件默认属性
+
+大部分的控件的默认属性都和 WPF 相同，但也有少部分布局属性和 WPF 不相同，比如大量控件的 HorizontalAlignment 和 VerticalAlignment 都是左上角，需要设置为 Stretch 才和 WPF 相同
+
 ## csproj 的变更
 
 由于现在 UNO 和 VisualStduio 存在一些冲突，导致了新建文件可能让 UNO 的 csproj 添加了不需要的代码。需要在开发的过程中，在进行 git 上传之前，看一下 csproj 的变更是否必要，如果是不必要的改动，请直接撤销。一般需要在新建文件，比如新建类型或新建用户控件这些动作之后，撤销 csproj 的更改
@@ -233,6 +246,30 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 ```
 
 大部分情况下使用的都是 Normal 优先级
+
+但是在 WinUI 3 运行的时候，可能 `CoreApplication.MainView.CoreWindow` 属性的获取会抛出不能重复创建的异常。而如果尝试通过 `CoreApplication.GetCurrentView()` 获取 CoreApplicationView 类型的对象从而间接拿到 Dispatcher 则依然可能失败，因为此方法将会抛出 System.Runtime.InteropServices.COMException:“Element not found” 异常
+
+比较稳妥的方式就是自己在 App 里面将 Microsoft.UI.Dispatching.DispatcherQueue 存起来，如此获取到相同的从主 UI 线程获取的 DispatcherQueue 对象即可同时在 WinUI 3 以及 WPF 和 GTK 项目上使用。在 WinUI 3 项目里 MainWindow.Dispatcher 属性当前依然是 null 值，这就是为什么拿的是 DispatcherQueue 的原因
+
+```csharp
+    public class App : EmbeddingApplication
+    {
+        protected async override void OnLaunched(LaunchActivatedEventArgs args)
+        {
+            // 忽略其他代码
+            MainWindow = builder.Window;
+
+#if DEBUG
+            MainWindow.EnableHotReload();
+#endif
+            
+            Dispatcher = MainWindow.DispatcherQueue;
+            Host = await builder.NavigateAsync<Shell>();
+        }
+
+        public Microsoft.UI.Dispatching.DispatcherQueue Dispatcher { private set; get; } = null!;
+    }
+```
 
 ## 缺乏的机制
 

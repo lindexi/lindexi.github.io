@@ -3,6 +3,8 @@
 本文将记录一个 dotnet 的已知问题。当自己不小心在方法上不正确标记了 MethodImplAttribute 特性时，错误选择了 MethodImplOptions.InternalCall 参数，那将会在运行的过程在，在此类型被访问之前就抛出了 System.TypeLoadException 异常，错误信息是 Internal call method with non_NULL RVA 内容
 
 <!--more-->
+<!-- CreateTime:2023/11/19 11:21:05 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
