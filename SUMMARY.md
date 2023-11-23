@@ -2400,6 +2400,8 @@
 
  * [WPF 使用 ItemsPanel 修改方向](WPF-使用-ItemsPanel-修改方向.md)
 
+ * [WPF 使用 ManipulationDemo 工具辅助调试设备触摸失效问题](WPF-使用-ManipulationDemo-工具辅助调试设备触摸失效问题.md)
+
  * [WPF 使用 ManipulationProcessor2D 纯数学计算方式提供多点漫游元素功能](WPF-使用-ManipulationProcessor2D-纯数学计算方式提供多点漫游元素功能.md)
 
  * [WPF 使用 MAUI 的自绘制逻辑](WPF-使用-MAUI-的自绘制逻辑.md)
@@ -2959,6 +2961,8 @@
  * [WPF 通过 DrawingContext DrawImage 绘制图片](WPF-通过-DrawingContext-DrawImage-绘制图片.md)
 
  * [WPF 通过 EXIF 设置和读取图片的旋转信息](WPF-通过-EXIF-设置和读取图片的旋转信息.md)
+
+ * [WPF 通过 GetMessageExtraInfo 方法获取当前收到的鼠标消息是否由触摸转换过来](WPF-通过-GetMessageExtraInfo-方法获取当前收到的鼠标消息是否由触摸转换过来.md)
 
  * [WPF 通过 GifBitmapDecoder 调用 WIC 解析 Gif 和进行动画播放的简单方法](WPF-通过-GifBitmapDecoder-调用-WIC-解析-Gif-和进行动画播放的简单方法.md)
 
