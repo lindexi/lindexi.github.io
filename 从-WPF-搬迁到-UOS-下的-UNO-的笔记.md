@@ -66,6 +66,55 @@
 
 最小高度依然会比预期的更高一些，只能修改界面设计，绕路
 
+### TextBox 的滚动条
+
+比如滚动最底，可以使用如下代码
+
+```csharp
+        private void ScrollToBottom(TextBox textBox)
+        {
+            //textBox.Spy();
+            if(textBox.VisualDescendant<ScrollViewer>() is { } scrollViewer)
+            {
+                scrollViewer.ChangeView(0.0f, scrollViewer.ExtentHeight, 1.0f, true);
+            }
+        }
+```
+
+这个 VisualDescendant 方法是辅助方法，代码如下
+
+```csharp
+    static class TreeExtensions
+    {
+        public static T? VisualDescendant<T>(this UIElement element) where T : DependencyObject
+            => VisualDescendant<T>((DependencyObject) element);
+
+        public static T? VisualDescendant<T>(DependencyObject element) where T : DependencyObject
+        {
+            if (element is T)
+            {
+                return (T) element;
+            }
+
+            T? foundElement = default;
+            for (var i = 0; i < VisualTreeHelper.GetChildrenCount(element); i++)
+            {
+                var child = VisualTreeHelper.GetChild(element, i);
+                foundElement = VisualDescendant<T>(child);
+                if (foundElement != null)
+                {
+                    break;
+                }
+            }
+
+            return foundElement;
+        }
+    }
+```
+
+此方法对于 ListView 等也一样有用
+
+
 ## 几何图形 StreamGeometry 资源
 
 在 WPF 里面，经常有图标使用的是 Path 几何路径，作为矢量图标，放入到 StreamGeometry 资源里面。由单个 Path 制作的 StreamGeometry 资源可以通过 `x:String` 的方式在 UNO 里替换，如下面代码是一个原先放在 WPF 资源里的图标
@@ -339,6 +388,8 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 [dotnet 在 UOS 统信系统上运行 UNO 程序输入时闪烁黑屏问题](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-UOS-%E7%BB%9F%E4%BF%A1%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%BF%90%E8%A1%8C-UNO-%E7%A8%8B%E5%BA%8F%E8%BE%93%E5%85%A5%E6%97%B6%E9%97%AA%E7%83%81%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98.html )
 
 [dotnet 统信 UOS 运行 UNO FrameBuffer 应用错误 Failed to open FrameBuffer device](https://blog.lindexi.com/post/dotnet-%E7%BB%9F%E4%BF%A1-UOS-%E8%BF%90%E8%A1%8C-UNO-FrameBuffer-%E5%BA%94%E7%94%A8%E9%94%99%E8%AF%AF-Failed-to-open-FrameBuffer-device.html )
+
+[中文视频教程 I share a video of an app which created with uno · unoplatform/uno · Discussion #4962](https://github.com/unoplatform/uno/discussions/4962 )
 
 
 
