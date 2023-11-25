@@ -3,6 +3,8 @@
 我在一个 WPF 项目里面，在界面显示应用的版本号，更新到 dotnet 8 的 SDK 之后，发现我的界面布局损坏了。本质上这个破坏性改动和 WPF 没有什么关系，是 dotnet 的 SDK 或编译器的破坏性变更，在 AssemblyInformationalVersionAttribute 的 InformationalVersion 属性里面写入了当前的 git 的 commit 提交号
 
 <!--more-->
+<!-- CreateTime:2023/11/23 20:20:46 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
