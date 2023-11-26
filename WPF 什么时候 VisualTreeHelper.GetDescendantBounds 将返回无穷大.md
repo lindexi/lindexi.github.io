@@ -3,6 +3,8 @@
 本文将和大家介绍在什么情况下 WPF 将会在调用 VisualTreeHelper.GetDescendantBounds 方法时，返回一个无穷大的范围尺寸
 
 <!--more-->
+<!-- CreateTime:2023/11/24 9:52:19 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
