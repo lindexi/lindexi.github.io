@@ -764,6 +764,8 @@
 
  * [dotnet tool 自动找到项目里面重复的 NuGet 依赖项](dotnet-tool-自动找到项目里面重复的-NuGet-依赖项.md)
 
+ * [dotnet UNO 如何在调试下输出界面层级结构](dotnet-UNO-如何在调试下输出界面层级结构.md)
+
  * [dotnet ValueTask 简单入门](dotnet-ValueTask-简单入门.md)
 
  * [dotnet win32 使用 WIC 获取系统编解码器](dotnet-win32-使用-WIC-获取系统编解码器.md)
@@ -1061,6 +1063,8 @@
  * [dotnet 画布类应用的组合元素设计](dotnet-画布类应用的组合元素设计.md)
 
  * [dotnet 的 TaskCompletionSource 的 TrySetResult 是线程安全](dotnet-的-TaskCompletionSource-的-TrySetResult-是线程安全.md)
+
+ * [dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架](dotnet-简单方法在一个进程内同时跑起-WPF-和-ASP.NET-Core-框架.md)
 
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
 

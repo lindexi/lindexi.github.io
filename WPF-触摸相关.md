@@ -80,6 +80,9 @@
 
 [WPF 通过 RawInput 获取触摸消息](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-RawInput-%E8%8E%B7%E5%8F%96%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF.html )
 
+## 调试工具
+
+[WPF 使用 ManipulationDemo 工具辅助调试设备触摸失效问题](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-ManipulationDemo-%E5%B7%A5%E5%85%B7%E8%BE%85%E5%8A%A9%E8%B0%83%E8%AF%95%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98.html )
 
 ## 历史
 

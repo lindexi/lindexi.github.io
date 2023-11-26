@@ -391,6 +391,8 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 
 [中文视频教程 I share a video of an app which created with uno · unoplatform/uno · Discussion #4962](https://github.com/unoplatform/uno/discussions/4962 )
 
+[A Journey of Migrating a WPF Project to UNO Framework: Triumphs and Challenges · unoplatform/uno · Discussion #14548](https://github.com/unoplatform/uno/discussions/14548 )
+
 
 
 
