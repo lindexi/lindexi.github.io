@@ -1386,6 +1386,8 @@
 
  * [NewLife 的 RocketMQ 的生产者每次都是新实例将只由一个消费者消费](NewLife-的-RocketMQ-的生产者每次都是新实例将只由一个消费者消费.md)
 
+ * [Notes on Migrating from WPF to UNO under UOS](Notes-on-Migrating-from-WPF-to-UNO-under-UOS.md)
+
  * [NuGet 命令行上传找不到 snupkg 文件](NuGet-命令行上传找不到-snupkg-文件.md)
 
  * [NuGet 如何设置图标](NuGet-如何设置图标.md)

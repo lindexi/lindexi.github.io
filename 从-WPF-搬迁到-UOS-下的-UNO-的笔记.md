@@ -10,7 +10,7 @@
 
 开始之前先说一下我的需求，我现在有一个[小的 WPF 应用](https://github.com/dotnet-campus/dotnetCampus.Ipc/blob/100ac217ef8e570c0fc263db251bf9fc35bcf8cb/demo/dotnetCampus.Ipc.WpfDemo/)。现在我需要在统信 UOS 系统和 Windows 系统上都能够运行这个 WPF 应用
 
-现在 dotnet 系可选的多平台开发框架有很多，这一次我准备尝试使用 UNO/MAUI 的方式进行开发，大的技术架构如下图
+众所周知当前的 dotnet 系可选的多平台开发框架有很多，这一次我准备尝试使用 UNO/MAUI 的方式进行开发，大的技术架构如下图
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记0.png) -->
 
@@ -23,6 +23,8 @@
 ## 日常开发
 
 新建项目的时候记得勾选 Windows 项目，如此将可以生成 WinUI3 项目。通过编写代码的时候选用 WinUI 3 项目，即可获取 XAML 代码智能提示。调试的时候优先选用 WinUI 3 项目调试界面布局，可以直接使用 Visual Studio 对 WinUI 3 的热重载支持，效果更好
+
+推荐同步也加上 Skia.WPF 和 Skia.GTK 项目，其中 GTK 可以同时在 Windows 和 Linux 系统上跑，但 GTK 在 Windows 上可能有一些奇奇怪怪的问题，此时换成 Skia.WPF 好了，毕竟真的发布在 Windows 平台的也不会那么想不开用 GTK 做底层
 
 ## 文本
 
@@ -112,7 +114,7 @@
     }
 ```
 
-此方法对于 ListView 等也一样有用
+此方法对于 ListView 等也一样有用。核心就是通过爬视觉树找到 ScrollViewer 对象，通过 ScrollViewer 控制滚动
 
 
 ## 几何图形 StreamGeometry 资源
