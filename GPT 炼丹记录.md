@@ -39,7 +39,7 @@
 我正在 github 上回复一个问题，请根据以下内容帮我编写符合程序员风格的英文内容：
 
 [Content Start]
-我挑拣了我的 https://github.com/dotnet/wpf/pull/6428 和 https://github.com/dotnet/wpf/issues/6829 这两个 PR 构建了我的私有的 WPF 版本。我的应用使用我这个 WPF 私有版本已经运行了快两年了，我的应用在几百万台触摸设备上运行且工作得很好。这个足以证明我的 PR 是可靠的
+这里的 ScanCode 在 UNO 框架上是否一个必须且重要的属性？如果是的话，我很乐意在 WPF 仓库提交一个 API 变更请求
 
 [Content End]
 
@@ -50,7 +50,7 @@
 我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题：
 
 [Content Start]
-我使用 Span 来让 `StylusPoint.CopyAdditionalData` 里的数组拷贝性能更高
+我将 `FullValueSource` 里面的 `IsCoercedWithCurrentValue` 的初始化使用4位数字表示，我没有更改任何的代码行为，只是为了我的代码洁癖。因为在 `FullValueSource` 里面的其他成员定义都是使用4位数字，只有 `IsCoercedWithCurrentValue` 使用三位，我想将其统一一下，让所有的成员都使用4位数字
 [Content End]
 
 英文标题：
@@ -62,6 +62,12 @@
 Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
 
 转述之后的英文：Utilizing the Span to expedite the array cloning process in `StylusPoint.CopyAdditionalData`.
+```
+
+```
+请帮我将以下内容转述为更加地道的英文：
+
+在 `FullValueSource` 里面的其他成员定义都是使用4位数字，只有 `IsCoercedWithCurrentValue` 使用三位，我想将其统一一下，让所有的成员都使用4位数字
 ```
 
 ```

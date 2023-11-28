@@ -242,6 +242,9 @@
 
 - [Tutorial: how to port a project from Interop Word API to Open XML SDK](https://pvs-studio.com/en/blog/posts/csharp/0856/ )
 - [Analyzing the code quality of Microsoft's Open XML SDK](https://pvs-studio.com/en/blog/posts/csharp/0777/ )
+- [Microsoft Office 2013 官方文档](https://learn.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/cc303401(v=office.15) )
+- [Microsoft Office 2010 官方文档](https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2010/cc313152(v=office.12) )
+- [Microsoft Office 2007 官方文档](https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2007/bb726436(v=office.12) )
 
 ## 第三方工具
 
