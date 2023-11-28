@@ -6,6 +6,8 @@ This article documents my experience in migrating a small WPF application to the
 <!--more-->
 
 
+<!-- CreateTime:2023/11/26 11:17:24 -->
+
 <!-- 发布 -->
 
 Before I begin, let me explain my requirements. I currently have [a small WPF application](https://github.com/dotnet-campus/dotnetCampus.Ipc/blob/100ac217ef8e570c0fc263db251bf9fc35bcf8cb/demo/dotnetCampus.Ipc.WpfDemo/) that I need to run on both the UnionTech OS and Windows.

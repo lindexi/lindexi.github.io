@@ -116,6 +116,7 @@
 
 此方法对于 ListView 等也一样有用。核心就是通过爬视觉树找到 ScrollViewer 对象，通过 ScrollViewer 控制滚动
 
+以上代码注释掉的 `textBox.Spy();` 是我在调试下输出界面，方便调试是否获取正确滚动条，详细请看 [dotnet UNO 如何在调试下输出界面层级结构](https://blog.lindexi.com/post/dotnet-UNO-%E5%A6%82%E4%BD%95%E5%9C%A8%E8%B0%83%E8%AF%95%E4%B8%8B%E8%BE%93%E5%87%BA%E7%95%8C%E9%9D%A2%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.html )
 
 ## 几何图形 StreamGeometry 资源
 
@@ -368,6 +369,12 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 以上代码错误提示是 `error CS0103: 当前上下文中不存在名称“_RootGrid”` 信息
 
 更多请看 [Adding Name to a Resource fails on build · Issue #1427 · unoplatform/uno](https://github.com/unoplatform/uno/issues/1427 )
+
+## 文件系统
+
+所有路径都是采用 `/` 作为分割而不是采用 `\` 作为分割，必须小心各种拼接路径的写法。最好是使用 `Path.Combine` 或 `Path.Join` 方法辅助拼接路径，尽量不要自己使用分隔符拼接字符串
+
+在 Linux 系统上，没有盘符的概念，请不要认为 `C:` 是根路径
 
 ## IPC
 
