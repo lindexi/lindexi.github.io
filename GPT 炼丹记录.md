@@ -65,12 +65,6 @@ Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
 ```
 
 ```
-请帮我将以下内容转述为更加地道的英文：
-
-在 `FullValueSource` 里面的其他成员定义都是使用4位数字，只有 `IsCoercedWithCurrentValue` 使用三位，我想将其统一一下，让所有的成员都使用4位数字
-```
-
-```
 我想要在 github 上报告一个问题，请你帮我拟一个报告问题的英文标题和一个报告问题的英文内容
 
 以下是我想要报告的问题：
@@ -105,7 +99,7 @@ Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
 ```
 
 ```csharp
-我正在编写一个功能，这个功能是一个表示调试下复现问题用的Json文件路径的属性。我正在编写的是 C# 代码，属性起一个符合 C# 命名规范的属性名，请给出多个候选命名给我选择
+我正在编写一个功能，这个功能是一个表示“点和线的关系”属性。我正在编写的是 C# 代码，属性起一个符合 C# 命名规范的属性名，请给出多个候选命名给我选择
 ```
 
 ```csharp

@@ -11,6 +11,8 @@
 
 启用了Pointer之后，调用Textbox.Focus()，起不来屏幕键盘，必须点在它之上才行，触摸在它之上才行
 
+后续的 Win10 版本似乎修复了这个问题，暂时还没了解到具体是从哪个版本开始修复
+
 ## 使用屏幕绝对坐标而不是窗口坐标
 
 默认 Pointer 消息是使用屏幕绝对坐标而不是窗口坐标
@@ -84,6 +86,8 @@
 但如果开启了 Pointer 消息，那么这个机制将会无效，即使依然是手动监听消息，如 [https://github.com/lindexi/lindexi_gd/tree/81b2a63a/KemjawyecawDurbahelal](https://github.com/lindexi/lindexi_gd/tree/81b2a63a/KemjawyecawDurbahelal) 的代码，也是无效的
 
 问题报告给了 WPF 官方，请看 [WPF can not work well with set IsPressAndHoldEnabled to false when enable pointer message · Issue #3379 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3379 ) 但预计不会在 WPF 中修复，原因是这是 Windows 的 WM_Pointer 机制的坑，和 WPF 其实没有关系
+
+现在 WM_Pointer 开启之后，可以通过 DwnShowContact 达成类似的功能，或者是通过 SetWindowFeedbackSetting 禁用整个窗口的触摸反馈效果
 
 另一个解决方法是在关闭系统全局触摸反馈点，关闭方法请看 [3 Ways to Enable or Disable Touch Feedback in Windows 10](https://www.top-password.com/blog/enable-or-disable-touch-feedback-in-windows-10/ )
 
