@@ -70,7 +70,7 @@ public static bool PointLinesOnLine (double x, double y, double x1, double y1, d
 }
 ```
 
-以下是另一个方法，以下方法性能比上面一个好
+以下是另一个方法，以下方法性能比上面一个好，上面的方法需要用到平方再开方，计算复杂度会高一些
 
 根据点和任意线段端点连接的线段和当前线段斜率相同，同时点在两个端点中间，就可以认为点在线段内
 
@@ -78,16 +78,16 @@ public static bool PointLinesOnLine (double x, double y, double x1, double y1, d
 (x - x1) / (x2 - x1) = (y - y1) / (y2 - y1)
 ```
 
-因为乘法性能更高，因此计算方法可以如下
+因为乘法性能更高，因此计算方法可以根据如下公式进行改进
 
 ```csharp
  (x - x1) * (y2 - y1) = (y - y1) * (x2 - x1)
  (x - x1) * (y2 - y1) - (y - y1) * (x2 - x1) = 0
 ```
 
-但是乘法的误差很大，因此还是继续使用除法
+<!-- 但是乘法的误差很大，因此还是继续使用除法 -->
 
-另外，需要判断点在两个端点中间
+在完成斜率判断之后，还需要判断点在两个端点中间，判断点是否在两个端点中间可以通过 x 和 y 两个分量都在两个端点中间作为判断条件，如下面公式
 
 ```csharp
              x1 < x < x2, assuming x1 < x2
@@ -102,9 +102,11 @@ public static bool PointLinesOnLine (double x, double y, double x1, double y1, d
                 return true;
             }
 
-            // 乘法性能更高，误差大。请试试在返回 true 的时候，看看 crossProduct 的值，可以发现这个值依然很大
+            // 乘法性能更高，但在一些要求精度的情况下可能 double 误差大。请试试在返回 true 的时候，看看 CrossProduct 的值，可以发现误差依然很大
             var crossProduct = (point.X - line.APoint.X) * (line.BPoint.Y - line.APoint.Y) -
                                (point.Y - line.APoint.Y) * (line.BPoint.X - line.APoint.X);
+
+            // 将 crossProduct 和 0 比较，从而判断是否平行。可以看到在一些满足点在线上的情况下，如果和 0 进行完全相等比较时，可能因为精度误差问题，判断失败
 
             if (Math.Abs((point.X - line.APoint.X) / (line.BPoint.X - line.APoint.X) - (point.Y - line.APoint.Y) / (line.BPoint.Y - line.APoint.Y)) < epsilon)
             {
@@ -129,9 +131,9 @@ public static bool PointLinesOnLine (double x, double y, double x1, double y1, d
             }
 ```
 
-上面代码的 crossProduct 是不用使用的，只是为了告诉大家，尽管乘法性能比较好，但是误差比较大
+上面代码的 CrossProduct 是不用使用的，只是为了告诉大家，尽管乘法性能比较好，但是误差比较大
 
-当然以上算法有漏洞，在于如果 A 和 B 两个点的 Y 坐标相同或 X 坐标相同的时候，那么以上算法不适合。可以先判断 crossProduct 的值，如果是等于零，那么证明有 A 和 B 两个点的 Y 坐标相同或 X 坐标相同
+当然以上算法有漏洞，在于如果 A 和 B 两个点的 Y 坐标相同或 X 坐标相同的时候，那么以上算法不适合。可以先判断 CrossProduct 的值，如果是等于零，那么证明有 A 和 B 两个点的 Y 坐标相同或 X 坐标相同
 
 ```csharp
             var crossProduct = (point.X - line.APoint.X) * (line.BPoint.Y - line.APoint.Y) -
@@ -162,7 +164,7 @@ public static bool PointLinesOnLine (double x, double y, double x1, double y1, d
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ed61e82f/WokayficeKegayurbu ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/ed61e82f/WokayficeKegayurbu ) 欢迎小伙伴访问
 
-以上方法的计算有些重复，其实加上了 crossProduct 只是为了水平和垂直的线段，其实可以做特殊处理，如下面代码
+以上方法的计算有些重复，其实加上了 CrossProduct 只是为了水平和垂直的线段，其实可以做特殊处理优化水平和垂直的线段的计算，如下面代码
 
 ```csharp
     public static class Math2DExtensions
