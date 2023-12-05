@@ -39,7 +39,9 @@
 我正在 github 上回复一个问题，请根据以下内容帮我编写符合程序员风格的英文内容：
 
 [Content Start]
-这里的 ScanCode 在 UNO 框架上是否一个必须且重要的属性？如果是的话，我很乐意在 WPF 仓库提交一个 API 变更请求
+我在这个帖子记录了我合并到 dotnetCampus.CustomWpf 仓库里面的代码，以及对应的发布 NuGet 包的版本。
+
+请注意：所有的修复和新特性都应该合并到 dotnet/wpf 官方代码仓库里面，本仓库仅仅只是为了方便咱测试问题以及快速体验，请不要将你的代码推送到本仓库里面，你应该始终都提交合并请求到 dotnet/wpf 官方代码仓库里面
 
 [Content End]
 
@@ -57,11 +59,9 @@
 ```
 
 ```
-请帮我将以下内容转述为更加地道的英文：
+请帮我将以下内容转述为地道的英文：
 
-Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
-
-转述之后的英文：Utilizing the Span to expedite the array cloning process in `StylusPoint.CopyAdditionalData`.
+我很难评价你的测量方法，但我认为如果你对 WPF 框架有更充分的认知是有帮助的
 ```
 
 ```
@@ -69,9 +69,11 @@ Using the Span to clone faster the array in `StylusPoint.CopyAdditionalData`
 
 以下是我想要报告的问题：
 
-当自己不小心在方法上不正确标记了 MethodImplAttribute 特性时，错误选择了 MethodImplOptions.InternalCall 参数，那将会在运行的过程在，在此类型被访问之前就抛出了 System.TypeLoadException 异常，错误信息是 Internal call method with non_NULL RVA 内容。然而 System.TypeLoadException 异常会在类型访问之前就抛出，且只包含 TypeName 属性说明是哪个类型出错，没有更进一步告诉开发者是具体哪个方法标记错误了特性
+当在一些版本的 Windows 10 系统上，运行一些特殊的图片时，如以下的图片文件。将会导致在 WindowsCodecs.dll 发生 Read 0xFFFFFFFF ACCESS_VIOLATION 的未处理异常。这个异常会导致进程崩溃。
 
-我的提议是期望能够在此情况下抛出的异常里面添加更多的信息，比如是具体哪个方法定义错误了，方便提升开发效率。假设我的类型里面包含了上百个方法，其中有一些方法的特性表示是正确的，有一些是错误的，如果这个异常没有包含具体的出错的方法，那将会让我需要花费比较长的时间才能调查到具体的问题
+通过下文的调用堆栈，我看到了在 System.Windows.Media.Imaging.BitmapSource.DUCECompatiblePtr 的 Get 方法里面将会调用 WIC 的 _IWICImagingFactory_CreateBitmapFromSource_Proxy 方法，然而在此方法的底层将会在 `WindowsCodecs.dll!CScalerFant::ScaleXByteOneChannelLargeDownsample_SSE2(void *,unsigned int)` 抛出 ACCESS_VIOLATION 异常
+
+我想询问在 WPF 框架上是否有方法可以规避这类问题
 ```
 
 ## 写通知
