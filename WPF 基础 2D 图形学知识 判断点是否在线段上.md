@@ -128,7 +128,7 @@ public static bool PointLinesOnLine (double x, double y, double x1, double y1, d
             }
 ```
 
-上面代码的 CrossProduct 是不用使用的，只是为了告诉大家，尽管乘法性能比较好，但是误差比较大
+上面代码的 CrossProduct 是不用使用的，只是为了告诉大家，尽管乘法性能比较好，但是误差比较大。以上的 CrossProduct 使用了叉乘的方法，在本文末尾也会重新再讲一次
 
 当然以上算法有漏洞，在于如果 A 和 B 两个点的 Y 坐标相同或 X 坐标相同的时候，那么以上算法不适合。可以先判断 CrossProduct 的值，如果是等于零，那么证明有 A 和 B 两个点的 Y 坐标相同或 X 坐标相同
 
@@ -221,8 +221,88 @@ public static bool PointLinesOnLine (double x, double y, double x1, double y1, d
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/05d0e495/WokayficeKegayurbu ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/05d0e495/WokayficeKegayurbu ) 欢迎小伙伴访问
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+除了以上方法之外，还可以通过叉积法求点是否在直线上，再通过判断与端点两点的差值从而判断点是否在线段上
 
+叉积法又称向量法。计算方法就是将原本线段构成向量，再与所求点与线段任意端点构成的向量，两个向量之间的叉乘计算，求向量的叉乘结果与 0 判断，从而判断点是否在线段所在直线上。在 2D 几何的向量叉乘计算上，更准确来说是使用向量叉乘在二维空间中的推广
+
+```csharp
+    /// <summary>
+    /// 求线点关系
+    /// 使用叉积方法求点在线的左侧还是右侧
+    /// 使用向量法求点到线的距离
+    /// 详细请看 “叉积法”或“向量法”
+    /// </summary>
+    /// <param name="line"></param>
+    /// <param name="point"></param>
+    /// <returns></returns>
+    public static PointWithLineRelation CalculatePointWithLineRelation(this Segment2D line, Point2D point)
+    {
+        Vector2D v1 = line.Vector;
+        Vector2D v2 = (point - line.PointA);
+        var crossProductValue = v1.Det(v2);
+        var distance = Math.Abs(crossProductValue) / line.Length;
+        return new PointWithLineRelation(crossProductValue, distance);
+    }
+
+/// <summary>
+/// 点与线的关系
+/// </summary>
+/// <param name="CrossProductValue"></param>
+/// <param name="Distance"></param>
+public readonly record struct PointWithLineRelation(double CrossProductValue, double Distance)
+{
+    public PointInLineCrossProductResult CrossProductResult
+    {
+        get
+        {
+            if (CrossProductValue > 0)
+            {
+                return PointInLineCrossProductResult.PointInLineLeft;
+            }
+            else if (CrossProductValue < 0)
+            {
+                return PointInLineCrossProductResult.PointInLineRight;
+            }
+            else
+            {
+                return PointInLineCrossProductResult.PointInLine;
+            }
+        }
+    }
+};
+
+public enum PointInLineCrossProductResult
+{
+    PointInLineLeft,
+    PointInLine,
+    PointInLineRight,
+}
+```
+
+以上的 Vector2D 的 Det 的定义如下
+
+```csharp
+[DebuggerDisplay("X = {X}, Y = {Y}")]
+public readonly record struct Vector2D(double X, double Y)
+{
+    /// <summary>
+    /// 向量行列式，即向量叉乘在二维空间中的推广。
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    public double Det(Vector2D other)
+    {
+        return (X * other.Y) - (Y * other.X);
+    }
+
+    [Obsolete("和 Det 完全相同，请使用 Det 代替", true)]
+    public double CrossProduct(Vector2D other) => Det(other);
+}
+```
+
+可以看到这里介绍的叉乘方法本质上和上文所述的数学计算过程是相同的，只是所使用的概念不同
+
+以上更多的数学定义代码我放在 [github](https://github.com/lindexi/lindexi_gd/tree/03b4e63958e63a57509682caafc452a8bd97649a/CheabeloleYiharjelke/dotnetCampus.Mathematics.SpatialGeometry ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/03b4e63958e63a57509682caafc452a8bd97649a/CheabeloleYiharjelke/dotnetCampus.Mathematics.SpatialGeometry ) 欢迎访问
 
 
 <!-- 

@@ -69,11 +69,7 @@
 
 以下是我想要报告的问题：
 
-当在一些版本的 Windows 10 系统上，运行一些特殊的图片时，如以下的图片文件。将会导致在 WindowsCodecs.dll 发生 Read 0xFFFFFFFF ACCESS_VIOLATION 的未处理异常。这个异常会导致进程崩溃。
-
-通过下文的调用堆栈，我看到了在 System.Windows.Media.Imaging.BitmapSource.DUCECompatiblePtr 的 Get 方法里面将会调用 WIC 的 _IWICImagingFactory_CreateBitmapFromSource_Proxy 方法，然而在此方法的底层将会在 `WindowsCodecs.dll!CScalerFant::ScaleXByteOneChannelLargeDownsample_SSE2(void *,unsigned int)` 抛出 ACCESS_VIOLATION 异常
-
-我想询问在 WPF 框架上是否有方法可以规避这类问题
+我拉取了 release/6.0 分支，也就是 6.0.26 版本进行构建私有的版本用于我的测试工作，我发现了应用运行将会 System.Environment.FailFast 失败，我将失败代码的堆栈贴在下面。我暂时不知道是什么问题，可能在实际正式发布时不会有此问题
 ```
 
 ## 写通知
