@@ -3338,6 +3338,8 @@
 
  * [探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现](探索-WPF-的-ITabletManager.GetTabletCount-在-Win11-系统的底层实现.md)
 
+ * [推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具](推荐一个使用-HardLink-硬链接减少重复文件占用磁盘空间的工具.md)
+
  * [推荐官方开源 PInvoke 库 包含大量 win32 封装](推荐官方开源-PInvoke-库-包含大量-win32-封装.md)
 
  * [搭建一个自动化分析 DUMP 平台](搭建一个自动化分析-DUMP-平台.md)

@@ -104,6 +104,8 @@
 
 [WPF 开启Pointer消息存在的坑](https://blog.lindexi.com/post/WPF-%E5%BC%80%E5%90%AFPointer%E6%B6%88%E6%81%AF%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9D%91.html )
 
+[WPF 已知问题 开启 WM_Pointer 消息之后 获取副屏触摸数据坐标偏移](https://blog.lindexi.com/post/WPF-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%BC%80%E5%90%AF-WM_Pointer-%E6%B6%88%E6%81%AF%E4%B9%8B%E5%90%8E-%E8%8E%B7%E5%8F%96%E5%89%AF%E5%B1%8F%E8%A7%A6%E6%91%B8%E6%95%B0%E6%8D%AE%E5%9D%90%E6%A0%87%E5%81%8F%E7%A7%BB.html )
+
 [WPF 插拔触摸设备触摸失效](https://blog.lindexi.com/post/WPF-%E6%8F%92%E6%8B%94%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )
 
 [“阻断疗法” - 拯救 WPF 启动过程中发生设备热插拔导致触摸失效问题 - gandalfliang的个人博客](https://gandalfliang.github.io/2017/12/02/WPFLostTouchCapability/ )

@@ -110,11 +110,13 @@
 
 此问题已修复，参阅 [Port touch activation fix from 4.8 by SamBent · Pull Request #5836 · dotnet/wpf](https://github.com/dotnet/wpf/pull/5836 )
 
-对应在 2022 的一月系统质量更新补丁，如 50088XX 系列补丁，参阅 [https://support.microsoft.com/kb/5008890](https://support.microsoft.com/kb/5008890)
+以上是在 .NET Core 版本的修复，对应的 .NET Framework 在 2022 的一月系统质量更新补丁，如 50088XX 系列补丁，参阅 [https://support.microsoft.com/kb/5008890](https://support.microsoft.com/kb/5008890)
 
 [.NET Framework January 2022 Security and Quality Rollup Updates - .NET Blog](https://devblogs.microsoft.com/dotnet/net-framework-january-2022-security-and-quality-rollup-updates/ )
 
+## 触摸偏移
 
+[WPF 已知问题 开启 WM_Pointer 消息之后 获取副屏触摸数据坐标偏移](https://blog.lindexi.com/post/WPF-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%BC%80%E5%90%AF-WM_Pointer-%E6%B6%88%E6%81%AF%E4%B9%8B%E5%90%8E-%E8%8E%B7%E5%8F%96%E5%89%AF%E5%B1%8F%E8%A7%A6%E6%91%B8%E6%95%B0%E6%8D%AE%E5%9D%90%E6%A0%87%E5%81%8F%E7%A7%BB.html )
 
 
 
