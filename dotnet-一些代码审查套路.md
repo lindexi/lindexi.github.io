@@ -327,6 +327,38 @@ foo.A();
 
 如果有看到事件的加等，请看一下是否可以放在业务的最开始
 
+
+
+## 警惕 using 释放时机
+
+在 C# 的 using 释放资源语法里面，可以直接写 using 不带范围，如下面代码
+
+```csharp
+    using var fileStream = File.OpenRead(file);
+```
+
+以上代码的 using 释放将会在当前作用域结束时执行释放，如果直接放在方法内的最外层花括号内，可以认为是在方法结束前才释放。于是此时可能导致一些非预期的释放时机问题，比如没有及时释放
+
+```csharp
+    using var fileStream = File.OpenRead(file);
+
+    // 对 file 文件进行一些处理，可能会因为 FileStream 依然占用 file 文件而失败
+```
+
+对于一些明确时机的逻辑，修改为明确范围会更好
+
+```csharp
+            using (var fileStream = File.OpenRead(file))
+            {
+            }
+
+            File.Delete(file);
+```
+
+如果方法属于一个简单逻辑，那维持代码简单也不错。这一个代码审查点属于需要警惕的内容，而不是一定说哪个写法更好
+
+
+
 ## 静态构造函数
 
 ### 避免在静态构造函数中初始化静态字段
@@ -623,7 +655,7 @@ private async void Foo()
 F1.FxEvent += async () => { throw xxx; }
 ```
 
-代码审查看到所有的 `async void` 和 `+= async` 的代码时，需要看看里面的逻辑是否足够简单，或者是已经捕获了足够的异常，防止进程直接挂掉且没有日志等
+代码审查看到所有的 `async void` 和 `+= async` 的代码时，需要看看里面的逻辑是否足够简单，或者是已经捕获了足够的异常，防止进程直接挂掉且没有日志等。当然，例外项是在执行线程是存在线程同步上下文情况时，可以忽略此问题。比如在 WPF 的 UI 线程里面，那此时 async void 则是安全的，因为所有抛出的异常还可以进入到 Dispatcher 的 UnhandledException 里，可以执行更多的处理
 
 详细请看 [dotnet 警惕 async void 线程顶层异常](https://blog.lindexi.com/post/dotnet-%E8%AD%A6%E6%83%95-async-void-%E7%BA%BF%E7%A8%8B%E9%A1%B6%E5%B1%82%E5%BC%82%E5%B8%B8.html )
 
@@ -1075,7 +1107,7 @@ public ChildModalWindow()
 
 关于 Dispatcher.Invoke 锁相互等待问题，请看[wpf 使用 Dispatcher.Invoke 冻结窗口](https://blog.lindexi.com/post/wpf-%E4%BD%BF%E7%94%A8-Dispatcher.Invoke-%E5%86%BB%E7%BB%93%E7%AA%97%E5%8F%A3.html) 
 
-不想思考的话，默认使用 Dispatcher.InvokeAsync 就好了，除非有特别需求，否则少用 Dispatcher.Invoke 方法或 Dispatcher.BeginInvoke 方法
+不想思考的话，默认使用 Dispatcher.InvokeAsync 就好了，除非有特别需求，否则少用 Dispatcher.Invoke 方法或 Dispatcher.BeginInvoke 方法。详细请看 [WPF 使用 Dispatcher 的 InvokeAsync 和 BeginInvoke 的异常处理差别](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Dispatcher-%E7%9A%84-InvokeAsync-%E5%92%8C-BeginInvoke-%E7%9A%84%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%B7%AE%E5%88%AB.html )
 
 ### 调用 Dispatcher.Invoke 里面使用 Shutdown 方法可以使用 InvokeShutdown 代替
 
@@ -1093,6 +1125,8 @@ public ChildModalWindow()
 ```csharp
    Application.Current.Dispatcher.InvokeShutdown();
 ```
+
+但无论如何这都是不推荐的，正确的方法应该是使用 Application.Current.Dispatcher.InvokeShutdown 或者是 Application.Current.Shutdown 进行退出，详细请看下文
 
 ### 不要使用 Dispatcher.InvokeShutdown 方法退出应用
 

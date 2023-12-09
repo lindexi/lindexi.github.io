@@ -72,7 +72,27 @@
 
 以下是我想要报告的问题：
 
-我拉取了 release/6.0 分支，也就是 6.0.26 版本进行构建私有的版本用于我的测试工作，我发现了应用运行将会 System.Environment.FailFast 失败，我将失败代码的堆栈贴在下面。我暂时不知道是什么问题，可能在实际正式发布时不会有此问题
+开启 WM_Pointer 后，将应用程序运行在多个屏幕的设备上。将应用程序移动到非主屏幕的屏幕上时，在应用程序内调用 GetTouchPoint 或 GetStylusPoint 方法获取触摸点时，所拿到的触摸点的坐标是错误的
+
+这个问题一开始是我的朋友 @kkwpsv 发现的，随后我借来了一台带触摸的显示器屏幕，我将这个带触摸的显示器屏幕设置为副屏，接着我监听 StylusMove 事件，我在 StylusMove 事件触发后使用 GetStylusPoint 方法获取触摸点。我观察到我所获取的触摸点的坐标都是不正确的
+
+我担心是我实现的问题，我换成了使用默认的 InkCanvas 控件，我看到了 InkCanvas 控件画出来的笔迹的坐标也是偏移的。我录制了屏幕，如下图。我有两个屏幕，左边的屏幕是主屏幕，右边的屏幕是副屏幕，副屏幕是带触摸的触摸屏。我将包含 InkCanvas 控件的最简 Demo 应用程序的窗口进行缩放，让 Demo 的窗口跨了两个屏幕，接下来我在副屏幕通过触摸画线，可以看到 InkCanvas 控件在作出的坐标里画出了笔迹
+
+[Image]
+
+复现步骤：
+
+1. 开启 Pointer 消息
+2. 在 MainWindow 里添加 InkCanvas 控件
+3. 在一台有两个屏幕的设备上运行，左边的屏幕设置为主屏幕，右边的屏幕是触摸屏
+
+请在右边的屏幕上进行触摸，你可以看到 InkCanvas 控件画出的笔迹的坐标是不正确的。更进一步，你可以通过自己监听 StylusMove 等事件，使用 GetStylusPoint 等方法获取触摸点，你会看到获取的触摸点坐标是错误的
+
+经过 @kkwpsv 的调查，这是因为 HwndPointerInputProvider.cs 的 GetOriginOffsetsLogical 方法实现错误导致的问题。在 GetOriginOffsetsLogical 方法里面，直接使用 PointToScreen 方法计算原点坐标的相对坐标。这个计算方法仅仅在只有单个屏幕的时候是正确的，在多个屏幕时，需要额外减去所在屏幕的 DisplayRect 的左上角才是符合预期的原点的值，此时才能将窗口坐标转换为相对于虚拟屏幕的坐标
+
+感谢 @kkwpsv 的修复逻辑，他修复了代码，放在 https://github.com/dotnet-campus/wpf/pull/9 这里面，我合并了他的代码用于测试。我测试通过了 @kkwpsv 的修复逻辑，经过 @kkwpsv 的修复，开启 WM_Pointer 后的 WPF 能够很好的让 GetTouchPoint 或 GetStylusPoint 方法获取正确的触摸点坐标
+
+你可以下载 https://www.nuget.org/packages/dotnetCampus.WPF.Resource/6.0.4-alpha07-test06 这个版本体验修复之后的内容
 ```
 
 ## 写通知
