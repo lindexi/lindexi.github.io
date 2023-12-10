@@ -2648,6 +2648,8 @@
 
  * [WPF 将控件放入到 UserControl 里获取 HwndSource 为空的情况](WPF-将控件放入到-UserControl-里获取-HwndSource-为空的情况.md)
 
+ * [WPF 尝试使用 WinML 做一个简单的手写数字识别应用](WPF-尝试使用-WinML-做一个简单的手写数字识别应用.md)
+
  * [WPF 已知问题 BitmapDecoder.Create 不支持传入 Asynchronous 的文件流](WPF-已知问题-BitmapDecoder.Create-不支持传入-Asynchronous-的文件流.md)
 
  * [WPF 已知问题 dotnet 6 设置 InvariantGlobalization 之后将丢失默认绑定转换导致 XAML 抛出异常](WPF-已知问题-dotnet-6-设置-InvariantGlobalization-之后将丢失默认绑定转换导致-XAML-抛出异常.md)
