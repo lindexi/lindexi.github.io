@@ -3,6 +3,7 @@
 最近我看了微软的 AI 训练营之后，似乎有点了解 Windows Machine Learning 和 DirectML 的概念，于是我尝试实践一下，用 WPF 写一个简单的触摸手写输入的画板，再使用大佬训练好的 mnist.onnx 模型，对接 WinML 实现一个简单的手写数字识别应用
 
 <!--more-->
+<!-- CreateTime:2023/12/9 17:27:59 -->
 <!-- 发布 -->
 <!-- 博客 -->
 
