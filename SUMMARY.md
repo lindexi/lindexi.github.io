@@ -2668,6 +2668,8 @@
 
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
+ * [WPF 已知问题 包含 NaN 的 Geometry 几何可能导致渲染层抛出 UCEERR_RENDERTHREADFAILURE 异常](WPF-已知问题-包含-NaN-的-Geometry-几何可能导致渲染层抛出-UCEERR_RENDERTHREADFAILURE-异常.md)
+
  * [WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误](WPF-已知问题-在-ObservableCollection-的-CollectionChanged-修改集合内容将让-UI-显示错误.md)
 
  * [WPF 已知问题 在 WIC 层处理异常图片时 可能由于出现未处理异常导致进程退出](WPF-已知问题-在-WIC-层处理异常图片时-可能由于出现未处理异常导致进程退出.md)
