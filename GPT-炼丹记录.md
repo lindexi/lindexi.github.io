@@ -52,10 +52,10 @@
 ```
 
 ```
-我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题：
+我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题和内容，要求标题简略：
 
 [Content Start]
-我将 `FullValueSource` 里面的 `IsCoercedWithCurrentValue` 的初始化使用4位数字表示，我没有更改任何的代码行为，只是为了我的代码洁癖。因为在 `FullValueSource` 里面的其他成员定义都是使用4位数字，只有 `IsCoercedWithCurrentValue` 使用三位，我想将其统一一下，让所有的成员都使用4位数字
+减少获取 `AppDomain.CurrentDomain.FriendlyName` 属性的次数，因为 FriendlyName 这个属性的获取不便宜，将会有一些额外的性能损耗。我通过先赋值到局部变量，减少多次获取属性，从而提升一点点性能，且不更改原有的逻辑
 [Content End]
 
 英文标题：
