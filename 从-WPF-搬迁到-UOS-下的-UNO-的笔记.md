@@ -191,7 +191,9 @@
 
 有部分不受支持，请进行多平台测试，需要绕路
 
-## x:Static
+## XAML 系列
+
+### x:Static
 
 静态绑定不受支持，只能绕路，比如使用再定义一个实例属性，让这个实例属性引用静态量，再绑定到实例属性
 
@@ -221,6 +223,39 @@
 
     <Border Visibility="{Binding Foo, Converter={StaticResource CollapsedWhenTrue}}">
 ```
+
+### design 设计时
+
+设计时可正常使用，推荐给 Page 等 XAML 的 UI 界面搭配上 `d:DataContext` 使用，此时切换到 WinUI 3 框架时，可以让 ReSharper 和 VisualStudio 开森，可以在绑定时提供智能提示
+
+但如果写了 `d:DataContext` 时提示 WMC0011 错误，错误信息如下时，则可能忘记将 `d:` 命名空间加入忽略
+
+XamlCompiler error WMC0011: Unknown member 'DataContext' on element 'Page'
+
+以上错误的原因是没有将 `d:` 命名空间加入到 `mc:Ignorable` 列表里面，导致存在不认识的命名空间而失败。修复方法是将 `d:` 加入忽略列表，如以下代码
+
+```xml
+mc:Ignorable="d"
+```
+
+以上代码要求在 xaml 里面已经添加 mc 命名空间，如以下代码
+
+```xml
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+```
+
+加上之后的代码如下
+
+```xml
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      d:DataContext="{d:DesignInstance local:BindableMainModel}"
+```
+
+以上这部分代码和 WPF 相同，直接抄即可
 
 ## 图片资源
 
@@ -325,6 +360,86 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
         public Microsoft.UI.Dispatching.DispatcherQueue Dispatcher { private set; get; } = null!;
     }
 ```
+
+或者是执行依赖注入方式，如下面代码定义
+
+```csharp
+    public record DispatcherQueueProvider(DispatcherQueue Dispatcher) : IDispatcherQueueProvider
+    {
+    }
+
+    public interface IDispatcherQueueProvider
+    {
+        Microsoft.UI.Dispatching.DispatcherQueue Dispatcher { get; }
+    }
+```
+
+在 ConfigureServices 里面进行注入，注入时写的就是 MainWindow.DispatcherQueue 属性，如下面代码
+
+```csharp
+                    .ConfigureServices((context, services) =>
+                    {
+                        // TODO: Register your services
+                        //services.AddSingleton<IMyService, MyService>();
+                        services.AddSingleton<IDispatcherQueueProvider>(c =>
+                        {
+                            return new DispatcherQueueProvider(MainWindow!.DispatcherQueue);
+                        });
+                    })
+```
+
+以上的 ConfigureServices 是写在默认项目的 App.cs 代码里面，如此即可让 ViewModel 层使用 IDispatcherQueueProvider 进行 UI 调度
+
+
+## 多语言
+
+在 Resources.resw 里面不能使用 `/` 标识，否则将会遇到如下错误
+
+```
+ PRI175: 0x80070057 - Processing Resources failed with error: 参数错误。  FooProject FooProject\GENERATEPROJECTPRIFILE 1 
+```
+
+也就是如以下代码是不能作为多语言的标识的
+
+```xml
+      <Button x:Name="CloseButton"
+        x:Uid="/AboutPage/CloseButton"
+        Grid.Column="2"
+        HorizontalAlignment="Stretch"
+        Command="{Binding CloseAbout}"
+        Content="[Close]" />
+```
+
+可选修复方法是将 `/` 替换成 `_` 或 `.` 字符，如下面代码
+
+```xml
+      <Button x:Name="CloseButton"
+        x:Uid="AboutPage.CloseButton"
+        Grid.Column="2"
+        HorizontalAlignment="Stretch"
+        FontFamily="Microsoft YaHei UI"
+        Command="{Binding CloseAbout}"
+        Content="[Close]" />
+
+      <TextBlock
+        x:Uid="AboutPage_GridTitleTextBlock"
+        Margin="0,0,0,12"
+        FontSize="24"
+        FontWeight="SemiBold"
+        FontFamily="Microsoft YaHei UI"
+        Text="[About NanaGet]" />
+```
+
+然后在 Resources.resw 里面使用如下记录
+
+<!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记3.png) -->
+![](http://image.acmx.xyz/lindexi%2F2023121915268390.jpg)
+
+但推荐尽量使用 `_` 下划线，下划线的兼容性更好一些。防止中间下划线被有时识别为属性名，导致找不到多语言，如以下官方文档
+
+> The x:Uid is used for localization. To localize a property, you need to add a string resource in each resource file using its x:Uid followed by a dot (.) and then the property name. eg: `MainPage_IntroText.Text` More on this in the resource steps that follow.
+
+在 UNO 里面，将会构建 resw 为 upri 中间文件
 
 ## 缺乏的机制
 
