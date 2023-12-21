@@ -46,6 +46,21 @@
 
 微软雅黑在界面上记得使用 `Microsoft YaHei UI` 字体，带 `UI` 的字体。否则你将会看到一些字体布局有些奇怪
 
+或者是设置全局的文本控件样式，大概的定义如下，以下是使用 Material 样式时才如此定义。可以看到核心就只是添加了 FontFamily 属性的值
+
+```xml
+  <Style x:Key="PrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource FilledButtonStyle}">
+    <Setter Property="FontFamily" Value="Microsoft YaHei UI"></Setter>
+  </Style>
+  <Style TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}"/>
+
+  <Style x:Key="PrimaryTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BodyMedium}">
+    <Setter Property="FontFamily" Value="Microsoft YaHei UI"></Setter>
+  </Style>
+
+  <Style TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlockStyle}"/>
+```
+
 ### TextBox 撑开空间
 
 如果有内容是依赖 TextBox 的输入过程时的测量撑开的空间的，那撑开的空间将可能不对，比如以下代码
@@ -388,7 +403,7 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
                     })
 ```
 
-以上的 ConfigureServices 是写在默认项目的 App.cs 代码里面，如此即可让 ViewModel 层使用 IDispatcherQueueProvider 进行 UI 调度
+以上的 ConfigureServices 是写在默认项目的 App.cs 代码里面，如此即可让 ViewModel 层使用 IDispatcherQueueProvider 进行 UI 调度。详细更改请参阅 https://github.com/dotnet-campus/dotnetCampus.FileDownloader/commit/2fc43a8050741564cdb4810266bc912149ca318f
 
 
 ## 多语言
