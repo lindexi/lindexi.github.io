@@ -52,7 +52,25 @@
 我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题和内容，要求标题简略：
 
 [Content Start]
-减少获取 `AppDomain.CurrentDomain.FriendlyName` 属性的次数，因为 FriendlyName 这个属性的获取不便宜，将会有一些额外的性能损耗。我通过先赋值到局部变量，减少多次获取属性，从而提升一点点性能，且不更改原有的逻辑
+在 UNO 的 MVU 的生成的绑定代码里面，即在 BindableXxx.cs 里面所生成的代码里面，将会为 XxxModel 层生成对应的 ICommand 命令绑定属性，比如在 XxxModel 的以下方法
+
+    public void Foo(out int n)
+    {
+        n = 10;
+    }
+
+将会在 BindableXxx.cs 里面生成对应的 `public global::Uno.Extensions.Reactive.IAsyncCommand Foo { get; private set; }` 属性
+
+然而在生成 ICommand 命令绑定时，没有为 `out` 参数添加 out 关键字，如上述代码，当前代码生成内容如下
+
+              var n = reactive_arguments;
+
+              model.Foo(n);
+
+以上生成代码将不符合 C# 语法，将导致构建不通过，错误代号是 CS1620
+
+最简的复现 demo 放在： https://github.com/lindexi/lindexi_gd/tree/eeeb023df2f7ab638bafc29d56e1e62a3445cd29/UnoKearqeljikay
+
 [Content End]
 
 英文标题：
@@ -61,35 +79,33 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-如果你有任何问题，欢迎通过我的邮箱：xxx@xx.com 联系我
+我担心大量的 DynamicResource 在这个样式里面将会拖慢性能，请问这里能否设计为使用 StaticResource 代替
 ```
 
 ```
-我想要在 github 上报告一个问题，请你帮我拟一个报告问题的英文标题和一个报告问题的英文内容
+我想要写信报告一个问题，请你帮我拟一个报告问题的英文标题和一个报告问题的英文内容，要求标题简略，你可以重新组织内容以让内容更加通顺。
 
 以下是我想要报告的问题：
 
-开启 WM_Pointer 后，将应用程序运行在多个屏幕的设备上。将应用程序移动到非主屏幕的屏幕上时，在应用程序内调用 GetTouchPoint 或 GetStylusPoint 方法获取触摸点时，所拿到的触摸点的坐标是错误的
+我在 github 的 WPF 代码仓库上发现了一个问题，在 Surface Pro 9 和 Surface 5 设备上，将会发现 HID 描述符的校验不通过。原因是最大值没有大于最小值。以下是 nkolarevic 在 Surface 5 设备上 DUMP 下来的 HID 描述符的部分信息
 
-这个问题一开始是我的朋友 @kkwpsv 发现的，随后我借来了一台带触摸的显示器屏幕，我将这个带触摸的显示器屏幕设置为副屏，接着我监听 StylusMove 事件，我在 StylusMove 事件触发后使用 GetStylusPoint 方法获取触摸点。我观察到我所获取的触摸点的坐标都是不正确的
+    0x06, 0x0B, 0xFF, // Usage Page (Vendor Defined 0xFF0B)
+    0x09, 0x0B, // Usage (0x0B)
+    0xA1, 0x01, // Collection (Application)
+    0x85, 0x2E, // Report ID (46)
+    0x09, 0x2E, // Usage (0x2E)
+    0x15, 0x00, // Logical Minimum (0)
+    0x25, 0xFF, // Logical Maximum (-1)
+    0x35, 0x00, // Physical Minimum (0)
+    0x45, 0x00, // Physical Maximum (0)
 
-我担心是我实现的问题，我换成了使用默认的 InkCanvas 控件，我看到了 InkCanvas 控件画出来的笔迹的坐标也是偏移的。我录制了屏幕，如下图。我有两个屏幕，左边的屏幕是主屏幕，右边的屏幕是副屏幕，副屏幕是带触摸的触摸屏。我将包含 InkCanvas 控件的最简 Demo 应用程序的窗口进行缩放，让 Demo 的窗口跨了两个屏幕，接下来我在副屏幕通过触摸画线，可以看到 InkCanvas 控件在作出的坐标里画出了笔迹
+我不确定 Vendor Defined 部分的描述符信息里面是否允许 `Logical Maximum` 没有大于 `Logical Minimum` 的情况。完整的 HID 描述符信息请看 https://github.com/dotnet/wpf/issues/8435#issuecomment-1866385943
 
-[Image]
+详细的问题链接：https://github.com/dotnet/wpf/issues/8435
 
-复现步骤：
+我写这封信的原因是我不确定这样的 HID 描述符信息是否是 Surface Pro 9 里面犯错了，还是 WPF 框架的代码定义过于严格
 
-1. 开启 Pointer 消息
-2. 在 MainWindow 里添加 InkCanvas 控件
-3. 在一台有两个屏幕的设备上运行，左边的屏幕设置为主屏幕，右边的屏幕是触摸屏
-
-请在右边的屏幕上进行触摸，你可以看到 InkCanvas 控件画出的笔迹的坐标是不正确的。更进一步，你可以通过自己监听 StylusMove 等事件，使用 GetStylusPoint 等方法获取触摸点，你会看到获取的触摸点坐标是错误的
-
-经过 @kkwpsv 的调查，这是因为 HwndPointerInputProvider.cs 的 GetOriginOffsetsLogical 方法实现错误导致的问题。在 GetOriginOffsetsLogical 方法里面，直接使用 PointToScreen 方法计算原点坐标的相对坐标。这个计算方法仅仅在只有单个屏幕的时候是正确的，在多个屏幕时，需要额外减去所在屏幕的 DisplayRect 的左上角才是符合预期的原点的值，此时才能将窗口坐标转换为相对于虚拟屏幕的坐标
-
-感谢 @kkwpsv 的修复逻辑，他修复了代码，放在 https://github.com/dotnet-campus/wpf/pull/9 这里面，我合并了他的代码用于测试。我测试通过了 @kkwpsv 的修复逻辑，经过 @kkwpsv 的修复，开启 WM_Pointer 后的 WPF 能够很好的让 GetTouchPoint 或 GetStylusPoint 方法获取正确的触摸点坐标
-
-你可以下载 https://www.nuget.org/packages/dotnetCampus.WPF.Resource/6.0.4-alpha07-test06 这个版本体验修复之后的内容
+如果你可以帮忙确定在 HID 描述符信息里面的 Vendor Defined 部分，是允许 `Logical Maximum` 没有大于 `Logical Minimum` 的情况，那我很乐意去更新 WPF 仓库的定义逻辑。我猜测 WPF 仓库里面的定义代码里面使用的是旧的标准，太过于严格，不适合现在的情况。有关 WPF 仓库的代码，请参阅 https://github.com/dotnet/wpf/blob/c8a6d45e15701297c5c4bb5714d6c76350c6e956/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/Input/Stylus/Common/StylusPointPropertyInfo.cs#L64-L67
 ```
 
 ## 写通知
