@@ -26,6 +26,44 @@
 
 推荐同步也加上 Skia.WPF 和 Skia.GTK 项目，其中 GTK 可以同时在 Windows 和 Linux 系统上跑，但 GTK 在 Windows 上可能有一些奇奇怪怪的问题，此时换成 Skia.WPF 好了，毕竟真的发布在 Windows 平台的也不会那么想不开用 GTK 做底层
 
+### 构建输出同步
+
+我是在 Windows 设备上进行开发的，在虚拟机里面运行 UOS 系统的。我需要在 Windows 上进行构建，将构建输出的内容在 UOS 系统上运行
+
+我使用的是我所在的团队在 https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK 上开源的 SyncTool 工具进行同步
+
+方法是先在 Windows 设备上进行项目的发布，即使用如下命令行进行发布，其中 `--self-contained true` 是可选的，因为参与开发的 UOS 本身就是安装了全开发包的系统
+
+```
+dotnet publish -c debug -r linux-x64 --self-contained true
+```
+
+接着在 Windows 和 UOS 上使用如下命令安装好 SyncTool 工具
+
+```
+dotnet tool install -g dotnetCampus.SyncTool
+```
+
+定位到 Windows 设备上的发布输出文件夹，使用如下命令行开启文件同步服务，用于将发布输出文件夹提供同步服务，让其他端，即 UOS 系统上可以将发布的文件拉下来
+
+```
+SyncTool serve
+```
+
+查看以上命令所监听的端口，以及当前 Windows 系统所采用的本地 IP 地址，如有弹出防火墙限制请放行
+
+在 UOS 系统上，进入到一个空闲的文件夹，执行以下命令设置同步
+
+```
+SyncTool sync -a http://123.123.123.123:555
+```
+
+以上命令的 `http://123.123.123.123:555` 请替换为你在 Windows 系统上运行 `SyncTool serve` 所监听的端口以及 Windows 系统上所采用的 IP 地址
+
+如此即可完成同步的初始化设置，完成初始化之后，以后的每次发布都会自动同步文件
+
+换句话说，配置完成同步之后，即可在 Windows 端进行发布，然后切换到 UOS 上即可运行发布后的新版本应用。全过程都是自动化的，用起来感觉不错。且在 SyncTool 里面处理了文件占用重试逻辑，整体感觉会更好
+
 ## 文本
 
 ### 在 UOS 闪烁黑屏问题
@@ -314,6 +352,22 @@ mc:Ignorable="d"
                 HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"></ContentControl>
 ```
 
+## 窗口
+
+不同于 WPF 的窗口化，为了更好的跨平台，推荐只做单个窗口然后在窗口里面进行页面切换逻辑。推荐修改 UI 交互方式
+
+### 窗口标题
+
+和 WPF 相同，只需设置 Title 属性即可
+
+```csharp
+            var localizer = Host.Services.GetRequiredService<IStringLocalizer>();
+            string title = localizer["ApplicationName"];
+            MainWindow.Title = title;
+```
+
+以上的 IStringLocalizer 仅仅只是为了做多语言而言，可以执行更改多语言策略
+
 ## 控件默认属性
 
 大部分的控件的默认属性都和 WPF 相同，但也有少部分布局属性和 WPF 不相同，比如大量控件的 HorizontalAlignment 和 VerticalAlignment 都是左上角，需要设置为 Stretch 才和 WPF 相同
@@ -456,6 +510,8 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 
 在 UNO 里面，将会构建 resw 为 upri 中间文件
 
+暂时在 WinUI3 项目上的多语言切换可能一直都会使用英文，无法正确识别到中文，但是 GTK 和 WPF 项目都没有此问题
+
 ## 缺乏的机制
 
 ### Visibility.Hidden
@@ -499,6 +555,48 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 以上代码错误提示是 `error CS0103: 当前上下文中不存在名称“_RootGrid”` 信息
 
 更多请看 [Adding Name to a Resource fails on build · Issue #1427 · unoplatform/uno](https://github.com/unoplatform/uno/issues/1427 )
+
+### 设计时资源引用
+
+似乎玩不出来让 VisualStudio 和 ReSharper 开森的方式
+
+### IsEnable 为 false 下的界面闪烁现象
+
+新建一个文本，应用 Material 样式，如下面代码设置 IsEnable 为 false 值，切换到 Skia.WPF 平台运行
+
+```xml
+      <Button
+        x:Uid="MainPage_StartAllButton"
+        Grid.Column="2"
+        Style="{StaticResource TitleBarButtonStyle}"
+        AutomationProperties.Name="[Start All Button]"
+        IsEnabled="False"
+        ToolTipService.ToolTip="[Start All]">
+        <Button.Content>
+          <SymbolIcon Symbol="Play" />
+        </Button.Content>
+      </Button>
+```
+
+或者是将 Button 放入到 ListView 的 ItemTemplate 里面，如此运行项目也许可以看到界面正在闪烁
+
+### 在 MVU 下带 out 方法将导致构建不通过
+
+如以下代码将导致构建不通过
+
+```csharp
+public partial record MainModel
+{
+    public void Foo(out int n)
+    {
+        n = 10;
+    }
+}
+```
+
+原因是源代码生成没有处理方法带 out 的
+
+[Fix missing 'out' keyword in ICommand binding generation in UNO's MVU · Issue #14900 · unoplatform/uno](https://github.com/unoplatform/uno/issues/14900 )
 
 ## 文件系统
 
