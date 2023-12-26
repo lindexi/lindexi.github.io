@@ -39,9 +39,9 @@
 我正在 github 上回复一个问题，请根据以下内容帮我编写符合程序员风格的英文内容：
 
 [Content Start]
-我担心在 #7417 的修复没有彻底修复此问题，原因是我发现我 Cherry-Pick #7417 的更改到我的代码分支时，没有任何的改变，请参阅 https://github.com/dotnet-campus/dotnetCampus.CustomWpf/pull/27 这就意味着我的代码已经合入了修复代码了。然而我还是收到此异常信息
+我可能无法在这个问题上帮助你。因为我尝试请了我的伙伴帮我下载 64k.mp3 文件，随后我使用 dotnet serve 工具开启本地 http 服务，接着我修改了 MediaElement 的 Source 为我的本地 http://127.0.0.1:5123/64k.mp3 源。结果我发现 PART_Media1 可以正常打开，进入 OnMediaOpened 方法
 
-通过阅读代码，我发现 PopupControlService.CloseToolTip 方法的 ToolTip 参数是一个 `_currentToolTip` 字段过来的，这就意味着确实可能在 MouseDevice.Capture 过程中，获取到的 Owner 是空值
+由于在我当地的网络不允许我访问 http://lhttp.qingting.fm/live/20083/64k.mp3 地址，因此我无法直接使用你给的代码进行复现问题
 
 [Content End]
 
