@@ -12,7 +12,7 @@
 <!-- 发布 -->
 <!-- 博客 -->
 
-基于 dotnet 系的自发布自包含的能力，可以通过 dotnet 系的应用进行发布为独立应用，如此即可执行 deb 包的二进制打包过程，从而对接应用上 UOS 统信系统软件安装包的要求
+基于 dotnet 系的自发布自包含的能力，可以将 dotnet 系的应用进行发布为独立应用，无需框架依赖，如此即可执行 deb 包的二进制打包过程，从而很方便对接上 UOS 统信系统软件安装包的要求
 
 整体步骤可以分为三个大步骤：
 
@@ -26,7 +26,7 @@
 
 ## 步骤一 发布应用
 
-无论是 CPF 应用还是 UNO 应用或者 Avalonia 应用，在进行构建符合要求的 UOS 软件安装包的第一步都是对应用项目进行发布，且发布为独立应用。这些应用的大概的发布命令行如下，请根据你的实际需求进行更改
+无论是 CPF 应用还是 UNO 应用或者 Avalonia 应用，在进行构建符合要求的 UOS 软件安装包的第一步都是对应用项目进行发布，且为了后续打包和分发的方便，十分推荐发布为独立应用。这些应用的大概的发布命令行如下，请根据你的实际需求进行更改
 
 ```
 dotnet publish -c release -r linux-x64 --self-contained true
@@ -34,7 +34,7 @@ dotnet publish -c release -r linux-x64 --self-contained true
 
 完成发布之后，咱即可拿发布出来的文件夹进行制作符合要求的 UOS 软件安装包。为了减少大家的学习成本，本文将一步步进行，本文在编写过程中，将会先略去在本文所没有用到的知识点。但请大家放心的是，按照本文的方法是可以构建出一个符合要求的 UOS 软件安装包，只有一些扩展可选部分的功能被本文略过
 
-在进入步骤二之前，我推荐将发布的文件夹拷贝到 UOS 系统上测试一下，确保本身能够正常运行
+在进入步骤二之前，我推荐将发布的文件夹拷贝到 UOS 系统上测试一下，确保应用本身发布出来是能够正常运行
 
 ## 步骤二 组织文件结构
 
@@ -45,7 +45,7 @@ dotnet publish -c release -r linux-x64 --self-contained true
 在开始之前，需要先准备好打包环境
 
 - 文本编辑器
-  - 这里的文本编辑器可不能选用 Windows 自带的记事本哦。因为 Windows 自带的记事本绝大部分情况下的默认行为都会写入文件的 BOM 头，导致脆弱的 Linux 不认识而挂掉
+  - 这里的文本编辑器可不推荐选用 Windows 自带的记事本哦。因为 Windows 自带的记事本绝大部分情况下的默认行为都会写入文件的 BOM 头，导致脆弱的 Linux 不认识而挂掉。如果一定要用 Windows 自带的记事本工具，记得保存选项里面选用的是 UTF-8 版本，不能选用 UTF-8 with BOM 等编码
   - 推荐使用 SublimeText 或 Vim 工具都可以
 - Debian 的 WSL 工具
   - 下载地址： [https://www.microsoft.com/store/productId/9MSVKQC78PK6?ocid=pdpshare](https://www.microsoft.com/store/productId/9MSVKQC78PK6?ocid=pdpshare)
@@ -57,7 +57,7 @@ dotnet publish -c release -r linux-x64 --self-contained true
 
 ### 2.2 准备文件结构
 
-开始之前的准备工作完成之后，接下来就可以开始正式的打包大业了。先来明确一下咱的目标：现在咱手头上有一个 Debian 的 WSL 工具，也有 UI 框架独立发布之后的文件夹，意味着其二进制文件可以直接在 UOS 上双击运行。咱需要做的就是将独立发布之后的文件夹打进安装包里面，再搭配上 UOS 规范要求的图标、应用信息等即可
+开始之前的准备工作完成之后，接下来就可以开始正式的打包大业了。先来明确一下咱的目标：现在咱手头上有一个 Debian 的 WSL 工具，也有使用 UI 框架的应用进行独立发布之后的文件夹，意味着其二进制文件可以直接在 UOS 上双击运行。咱需要做的就是将独立发布之后的文件夹打进安装包里面，再搭配上 UOS 规范要求的图标、应用信息等即可
 
 根据 [应用打包规范 文档中心-统信UOS生态社区](https://doc.chinauos.com/content/M7kCi3QB_uwzIp6HyF5J ) 文档，咱可以了解到符合 UOS 规范要求的安装包其实也是一个 deb 包。与之不同的只有文件结构组织形式，以及部分配置内容不相同而已
 
@@ -93,6 +93,7 @@ dotnet publish -c release -r linux-x64 --self-contained true
                     │  ExampleApplication.uprimarker
                     │  WindowsBase.dll
                     │  Microsoft.CSharp.dll
+                    │  ...
 ```
 
 再次感谢 [VVavE 潮汐](https://www.vvave.net/) 的[博客](https://www.vvave.net/archives/how-to-build-a-debian-series-distros-installation-package.html) 本文接下来将有大量知识内容来源于此
@@ -105,7 +106,7 @@ dotnet publish -c release -r linux-x64 --self-contained true
 
 为了方便大家理解，本文将对 [UnoFileDownloader 下载器](https://github.com/dotnet-campus/dotnetCampus.FileDownloader/tree/229cf21b32da437706fb6def67a672fdbfa269ec/src/UnoFileDownloader) 进行打包作为例子，方便大家了解手动打包的细节
 
-在开始制作安装包的时候，咱还需要给应用进行命名，即对 AppID 应用的唯一标识进行命名。在 UOS 里采用和 Android 系统类似的规范，应用商店只接受使用域名倒置规则命名的应用。请务必使用厂商的倒置域名+产品名作为应用包名，如 `com.example.demo` ，前半部分为厂商域名倒置，后半部分为产品名，如果使用非拥有者的域名作为前缀，可能会引起该域名拥有者进行申诉，导致软件被申诉下架或者删除
+在开始制作安装包的时候，咱还需要给应用进行命名，即对 AppID 应用的唯一标识进行命名。在 UOS 里采用和 Android 系统类似的规范，应用商店只接受使用域名倒置规则命名的应用。请务必使用厂商的倒置域名+产品名作为应用包名，如 `com.example.demo` 格式，前半部分为厂商域名倒置，后半部分为产品名，如果使用非拥有者的域名作为前缀，可能会引起该域名拥有者进行申诉，导致软件被申诉下架或者删除
 
 这里必须特别强调，只允许小写字母。且在本文下方出现的任何 `AppID` 或 `appid` 或 `${appid}` 等占位符里，都需要采用此应用的唯一标识字符串，请务必确保手工打包时，各处命名都是使用相同的字符串
 
@@ -143,7 +144,7 @@ Description: 下载器.
 - `Architecture` : 目标系统的 CPU 架构，一般来说是 amd64，具体情况以后会有所讨论。有时候，它们可以是 any 或者 all
 - `Maintainer` : deb 包的维护者，及其邮件地址
 - `Description` : 软件包的描述信息。多行也可以，前面缩进至少一个空格
-- 最后一个空行 : 其实是 EOF 的意思，否则打包提示 `missing final newline` 错误
+- 最后一个空行 : 不能省略，否则打包提示 `missing final newline` 错误
 
 在 `DEBIAN/` 文件夹里面还可以包含其他的很多文件，只是本例子这里没有需求用到，就此略过。如感兴趣，请参阅 [Debian 新维护者手册](https://www.debian.org/doc/manuals/maint-guide/)
 
@@ -410,7 +411,7 @@ mountFsTab = false
 
 ### 签名
 
-拿到的 deb 包是还没带签名的，想要进行签名，请参阅 [开发者调试签名 文档中心-统信UOS生态社区](https://doc.chinauos.com/content/LrnDinQB_uwzIp6HxF7k )
+通过以上步骤构建所拿到的 deb 包是还没带签名的，想要进行签名，请参阅 [开发者调试签名 文档中心-统信UOS生态社区](https://doc.chinauos.com/content/LrnDinQB_uwzIp6HxF7k )
 
 签名步骤需要进入到 UOS 系统上进行，对于开发环境来说，即使没有签名的 deb 包也是可以安装的。也就是签名这一步是可选的
 
@@ -426,7 +427,7 @@ mountFsTab = false
 cert-tool -username=lindexi -password=123123123
 ```
 
-完成初始化之后接下来即可对未签名的deb包进行签名，命令行格式如下
+完成初始化之后接下来即可对未签名的 deb 包进行签名，命令行格式如下
 
 ```
 deepin-elf-sign-deb [deb-file]
