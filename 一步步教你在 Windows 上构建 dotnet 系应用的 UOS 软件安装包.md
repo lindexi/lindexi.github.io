@@ -3,6 +3,9 @@
 本文将详细指导大家如何逐步为 dotnet 系列应用创建满足 UOS 统信系统软件安装包的要求。在这里，我们所说的 dotnet 系列应用是指那些能够在 Linux 平台上构建 UI 框架的应用，包括但不限于 CPF 应用、UNO 应用、Avalonia 应用等
 
 <!--more-->
+<!-- CreateTime:2023/12/24 15:35:04 -->
+
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -14,7 +17,7 @@
 - 步骤二：组织文件结构
 - 步骤三：打包 deb 文件
 
-本文接下来将按照步骤顺序一步步告诉大家如何在 Windows 上为 dotnet 系的应用创建符合要求的 UOS 统信系统软件安装包
+本文接下来将按照步骤顺序一步步告诉大家如何在 Windows 上为 dotnet 系的应用创建符合要求的 UOS 统信系统软件安装包。本文写于 2023.12.25 如果你阅读本文的时间距离编写时间过远，可能本文有些知识不正确
 
 <div id="toc"></div>
 
@@ -216,7 +219,7 @@ MimeType=audio/aac;application/aac;
 - `StartupNotify`: 	必填 	程序是否支持发送启动通知事件。为“true”时，允许桌面环境跟踪应用程序的启动，提供用户反馈和其他功能。例如鼠标的等待动画等。为保障应用使用体验，该项建议填写“true”。
 - `MimeType` :	选填 	程序支持的关联文件类型，根据实际需求来填写。如果没有需要支持关联文件，则可以整行不写
 
-Categories 应用类型可参考以下填写值来设置:
+Categories 应用类型可参考以下填写值来设置
 
 - Network： 网络应用
 - Chat： 社交沟通
@@ -250,7 +253,7 @@ entries/icons/hicolor/16x16/apps/${appid}.png
 
 ##### 2.2.2.3 info 文件
 
-完成应用根目录下面包含的 `entries` 和 `files` 两个目录之后，接下来开始编写 `info` 文件。此文件是应用的描述文件，使用 JSON 格式，内容一般如下：
+完成应用根目录下面包含的 `entries` 和 `files` 两个目录之后，接下来开始编写 `info` 文件。此文件是应用的描述文件，用于dde桌面环境安装软件包时自动配置程序的安装文件，使用 JSON 格式，内容一般如下
 
 ```json
 {
@@ -288,6 +291,11 @@ entries/icons/hicolor/16x16/apps/${appid}.png
 - `camera` : 是否允许使用视频设备
 - `audio_record` : 是否允许进行录音
 - `installed_apps` : 是否允许读取安装软件列表
+
+这里需要额外提醒大家，在 UOS 的官方文档提供的 info 文件例子里面，其文件内容的 json 格式是错误的，在 `permissions` 属性和下一个属性之间少了一个逗号，如果想要拷贝官方的例子，还请自行确保 json 格式正确
+
+<!-- ![](image/一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包/一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包0.png) -->
+![](http://image.acmx.xyz/lindexi%2F20231225124323520.jpg)
 
 写到这里，文件结构就完成了，本例子完成之后的文件结构如下
 
@@ -461,6 +469,14 @@ deepin-deb-verify UnoFileDownloader.deb
 
 原因是 `/DEBIAN/control` 文件里面最后一行少了空行
 
+### dpkg 提示 missing 'Package' field 错误
+
+可能是编辑 `/DEBIAN/control` 文件时，编辑器写入 BOM 头
+
+可以使用二进制查看器，看一下 `/DEBIAN/control` 文件开头两个字节是否 BOM 头，如 `EF BB BF` 开头就是 UTF-8 BOM 头。详细关于 BOM 头，请看 [BOM（字节顺序标记(ByteOrderMark)）_百度百科](https://baike.baidu.com/item/BOM/2790364 )
+
+解决方法是换个文本编辑器或手动干掉 BOM 信息
+
 ### dpkg 提示 No such file or directory 错误
 
 详细错误信息是
@@ -469,7 +485,7 @@ deepin-deb-verify UnoFileDownloader.deb
 dpkg-deb: error: failed to open package info file '/DEBIAN/control' for reading: No such file or directory
 ```
 
-请确保进入了正确的文件夹，工作路径错误
+请确保进入了正确的文件夹，工作路径正确
 
 ### 开始菜单图标空白或是默认应用图标
 
@@ -487,11 +503,11 @@ dpkg-deb: error: failed to open package info file '/DEBIAN/control' for reading:
 
 打包之前，推荐先将发布的输出文件夹拷贝到 UOS 上测试运行情况，先确保发布二进制文件本身可以正常运行
 
+如二进制本身可以运行但开始菜单点击无法启动或无法找到安装的应用，请检查 info 文件格式、字段以及字段值的内容是否符合要求，以及 desktop 文件是否正确
+
 ### 打开控制台调试
 
-如果期望在打包之后运行安装的应用程序进行调试，要看到输出控制台，可以在打包过程中编辑 `.desktop` 文本文件，设置 Terminal 为 true 的值
-
-
+如果期望在打包之后运行安装的应用程序进行调试，要看到输出控制台，可以在打包过程中编辑 `.desktop` 文本文件，设置 Terminal 为 true 的值。如此将会在启动程序时显示控制台
 
 
 如果有其他不明白的，还请加入 810052083 群进行交流
