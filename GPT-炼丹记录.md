@@ -42,9 +42,9 @@
 我正在 github 上回复一个问题，请根据以下内容帮我编写符合程序员风格的英文内容：
 
 [Content Start]
-我在这个帖子记录了我合并到 dotnetCampus.CustomWpf 仓库里面的代码，以及对应的发布 NuGet 包的版本。
+我担心在 #7417 的修复没有彻底修复此问题，原因是我发现我 Cherry-Pick #7417 的更改到我的代码分支时，没有任何的改变，请参阅 https://github.com/dotnet-campus/dotnetCampus.CustomWpf/pull/27 这就意味着我的代码已经合入了修复代码了。然而我还是收到此异常信息
 
-请注意：所有的修复和新特性都应该合并到 dotnet/wpf 官方代码仓库里面，本仓库仅仅只是为了方便咱测试问题以及快速体验，请不要将你的代码推送到本仓库里面，你应该始终都提交合并请求到 dotnet/wpf 官方代码仓库里面
+通过阅读代码，我发现 PopupControlService.CloseToolTip 方法的 ToolTip 参数是一个 `_currentToolTip` 字段过来的，这就意味着确实可能在 MouseDevice.Capture 过程中，获取到的 Owner 是空值
 
 [Content End]
 
@@ -90,25 +90,7 @@
 
 以下是我想要报告的问题：
 
-我在 github 的 WPF 代码仓库上发现了一个问题，在 Surface Pro 9 和 Surface 5 设备上，将会发现 HID 描述符的校验不通过。原因是最大值没有大于最小值。以下是 nkolarevic 在 Surface 5 设备上 DUMP 下来的 HID 描述符的部分信息
-
-    0x06, 0x0B, 0xFF, // Usage Page (Vendor Defined 0xFF0B)
-    0x09, 0x0B, // Usage (0x0B)
-    0xA1, 0x01, // Collection (Application)
-    0x85, 0x2E, // Report ID (46)
-    0x09, 0x2E, // Usage (0x2E)
-    0x15, 0x00, // Logical Minimum (0)
-    0x25, 0xFF, // Logical Maximum (-1)
-    0x35, 0x00, // Physical Minimum (0)
-    0x45, 0x00, // Physical Maximum (0)
-
-我不确定 Vendor Defined 部分的描述符信息里面是否允许 `Logical Maximum` 没有大于 `Logical Minimum` 的情况。完整的 HID 描述符信息请看 https://github.com/dotnet/wpf/issues/8435#issuecomment-1866385943
-
-详细的问题链接：https://github.com/dotnet/wpf/issues/8435
-
-我写这封信的原因是我不确定这样的 HID 描述符信息是否是 Surface Pro 9 里面犯错了，还是 WPF 框架的代码定义过于严格
-
-如果你可以帮忙确定在 HID 描述符信息里面的 Vendor Defined 部分，是允许 `Logical Maximum` 没有大于 `Logical Minimum` 的情况，那我很乐意去更新 WPF 仓库的定义逻辑。我猜测 WPF 仓库里面的定义代码里面使用的是旧的标准，太过于严格，不适合现在的情况。有关 WPF 仓库的代码，请参阅 https://github.com/dotnet/wpf/blob/c8a6d45e15701297c5c4bb5714d6c76350c6e956/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/Input/Stylus/Common/StylusPointPropertyInfo.cs#L64-L67
+我观察到最近的 WPF 仓库的关于 Win11 Theming 的更改，在这些更改里面，咱大量使用了 DynamicResource 。咱使用 DynamicResource 的目的如 [Harshit](https://github.com/harshit7962) 在 Xx8579 里面所述，是为了在主题变更的时候，跟随变更界面内容。然而咱都知道，使用 DynamicResource 有着巨大的性能代价，特别是在整个主题样式充满 DynamicResource 的时候，那将会让整个应用的性能都被拖慢。更何况，大量情况下，用户也不会频繁修改系统主题样式，这就意味着通过 DynamicResource 将会拖慢大量用户的性能且不会带来收益。另外，我观察到 [Pankaj Chaurasia](https://github.com/pchaurasia14) 在 Xx8575 里面引入了 ApplicationThemeManager 机制。我认为，当前的 WPF 缺乏了明确的跟随主题变更的机制，换句话说我认为依靠 DynamicResource 来实现跟随主题变更是一个较差的实现方式。我建议在 WPF 仓库里面同步引入一套新的机制，可以用来代替现有的 DynamicResource 代码，用来正确且高效的实现让样式跟随主题的变更
 ```
 
 ## 写通知
