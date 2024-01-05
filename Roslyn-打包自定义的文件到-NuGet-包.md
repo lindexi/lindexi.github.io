@@ -60,6 +60,17 @@
 
 如果我是需要在运行过程引用的一些 C++ 运行库，那么同样可以上面方法
 
+如果想要让打包到 NuGet 的文件，会输出到安装了此 NuGet 包的项目里面的输出路径下，可以添加 PackageCopyToOutput 属性，添加了此属性之后，将会输出到 content;contentFiles 文件夹里面，示例代码如下，更多请看 [Nuget 输出资源文件 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/17943302 )
+
+```xml
+    <ItemGroup>
+        <Content Include="vcomp140d.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackageCopyToOutput>true</PackageCopyToOutput>
+        </Content>
+    </ItemGroup>
+```
+
 另外在输出的时候也支持改名，例如在写 NuGet 的时候，在修改编译过程的 targets 和 props 文件是需要跟随包的名才能被执行。例如在 [Roslyn 通过 Target 修改编译的文件](https://blog.lindexi.com/post/Roslyn-%E9%80%9A%E8%BF%87-Target-%E4%BF%AE%E6%94%B9%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6.html ) 写到的替换编译文件，此时要求对应的文件有规定的命名
 
 在 NuGet 里面，要求执行的 targets 文件必须满足命名要求，需要命名为 `NuGet包id.targets` 才会被执行，对应的 props 文件也相同

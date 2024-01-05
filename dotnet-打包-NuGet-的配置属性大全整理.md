@@ -12,7 +12,7 @@
 
 本文将会持续更新，可以通过搜 《dotnet 打包 NuGet 的配置属性大全整理 林德熙》 找到我主站的博客，避免各个备份地址陈旧的内容误导
 
-本文更新于：2023.01.31
+本文更新于：2023.12.27
 
 如更新时间距离当前阅读时间过远，则表示可能你阅读的是转发的或转载的文章，推荐去到我主站的博客，了解更新的知识
 
@@ -277,7 +277,7 @@ Description 描述信息
   </PropertyGroup>
 ```
 
-注：对于 ASP.NET Core 应用项目，在 SDK 里面默认设置了 IsPackable 为 false 的值
+注：对于 ASP.NET Core 应用项目，在 SDK 里面默认设置了 IsPackable 为 false 的值。也就是说在 ASP.NET Core 应用项目上默认 IsPackable 就是 false 的值
 
 ### GenerateDocumentationFile
 
@@ -409,6 +409,8 @@ Description 描述信息
 
 这个属性一般会用在分析器项目或者是工具 NuGet 包里
 
+一般和 `<IsTool>true</IsTool>` 进行二选一使用。使用 `<IncludeBuildOutput>false</IncludeBuildOutput>` 能够实现更高的定制化，与 IsTool 不同之处在于 IsTool 属性设置为 true 的值将会让输出 NuGet 包的 `tools` 文件夹里面
+
 ### DevelopmentDependency
 
 这是一个仅开发阶段使用的 NuGet 包，默认是 false 的值。如果设置为 true 即可在安装此 NuGet 包后自动配置为不传递依赖。可用在工具类型的 NuGet 包上，让工具包只对当前安装的项目生效，不会传递给所引用的项目
@@ -416,9 +418,82 @@ Description 描述信息
 详细请参阅 [帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - walterlv](https://blog.walterlv.com/post/prevent-nuget-package-been-depended )
 
 
+## 已知属性
+
+以下内容是对 [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html ) 的更多补充
+
+### NuGetPackageRoot
+
+表示的是当前的 NuGet 的 Package 文件夹路径，可以用来拼接获取到对应的 NuGet 包文件路径。一般路径是 `C:\Users\【用户名】\.nuget\packages` 文件夹
+
+拼接 NuGet 包路径的例子如下
+
+```xml
+    <None Include="$(NuGetPackageRoot)\sharpziplib\1.2.0\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll" Link="ICSharpCode.SharpZipLib.dll">
+      <Pack>true</Pack>
+      <PackagePath>tools\netstandard2.0\</PackagePath>
+    </None>
+```
+
+## 常写的代码片
+
+### 输出和包含 targets 文件
+
+```xml
+<None Include="Build\package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+<None Include="Build\package.props" Pack="True" PackagePath="\build\$(PackageId).props" />
+```
+
+详细请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
+
+### 判断框架和平台
+
+```xml
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.5|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+```
+
+## Target 时机
+
+### 动态加入打包到 NuGet 包的文件时机
+
+可在 `_GetPackageFiles` 这个 Target 前执行，在此执行加入 Nuget 打包文件才是有效，在这个时机之后将会无效，如以下代码
+
+```xml
+  <ItemGroup>
+    <None Include="build\package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+  </ItemGroup>
+
+  <Target Name="FooIncludeAllDependencies" BeforeTargets="_GetPackageFiles">
+    <ItemGroup>
+      <None Include="..\Foo\Foo.dll" Pack="True" PackagePath="analyzers\dotnet\cs" />
+    </ItemGroup>
+  </Target>
+```
+
+以上代码的两个加入打包的文件都会成功都被加入打包。更多请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
+
+更多请看 [msbuild Roslyn 行为详解](https://blog.lindexi.com/post/msbuild-Roslyn-%E8%A1%8C%E4%B8%BA%E8%AF%A6%E8%A7%A3.html )
+
+### 进行 Publish 发布之后的时机
+
+```xml
+<Project>
+  <Target Name="Fxxxxx" AfterTargets="Publish">
+    <Warning Text="PublishFolder=$([MSBuild]::NormalizePath($(MSBuildProjectDirectory), $(PublishDir)))"/>
+  </Target>
+</Project>
+```
+
+以上的 `[MSBuild]::NormalizePath` 作用和 Path.Combine 或 Path.Join 相同
+
+实测需要使用 `AfterTargets="Publish"` 而不能使用 DependsOnTargets 方式
+
+
+
+
 ## 相关文档
-
-
 
 [msbuild Roslyn 行为详解](https://blog.lindexi.com/post/msbuild-Roslyn-%E8%A1%8C%E4%B8%BA%E8%AF%A6%E8%A7%A3.html )
 
