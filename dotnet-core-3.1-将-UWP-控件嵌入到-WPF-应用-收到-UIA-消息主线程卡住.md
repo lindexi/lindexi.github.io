@@ -163,7 +163,7 @@ WARNING: Frame IP not in any known module. Following frames may be wrong.
 
 但是看 UWP 的主线程却没有卡住，只是在等渲染线程返回
 
-调试 UWP 的渲染线程过于复杂，我就没有继续调试，暂不知道根本原因
+调试 UWP 的渲染线程过于复杂，我就没有继续调试，暂不知道根本原因。根据后文的更新部分内容，可以看到这个问题预计和 UWP 的渲染没有多少关系，只是 COM 调用卡住了而已，而具体是调用 COM 的哪个方法导致卡住的，这里就没有进一步调查到原因
 
 主线程的堆栈上方是进入 PostMessageW 方法，这个方法不是同步发送消息，换句话说不是因为发送消息而卡住。卡住的地方是在 CCliModalLoop::MyDispatchMessage 之类的方法没有返回
 
@@ -260,6 +260,146 @@ git pull origin 5c735d85bc02507f27f2270029050e402b580810
 刚好通过上文的堆栈可以看到，在 `CCliModalLoop::MyDispatchMessage` 不断进入的 `02 0285bc20 761be28a combase!CComApartment::ClassicSTAPostMessage(unsigned int msg = 0x403, class IMessageParam * pParam = 0x0e5add18)+0x32` 方法的参数里可以看到，也是在不断发送 0x403 消息
 
 不过 0x403 消息我没有找到这个消息的含义，也就没有继续了解更多信息。既然 MFC 框架的应用也有这个问题，那此问题就和 WPF 没几分钱关系。同时我的 WPF 程序里面只是随便嵌入一个 UWP 控件，也不是 WebView2 控件，因此此问题也和 WebView2 控件没几分钱关系
+
+
+---
+
+更新：
+
+在 2024年1月9日 通过[少珺](https://blog.sdlsj.net/)小伙伴阅读 NT5 代码，了解到这个 0x403 消息是在 ole2int.h 里面有定义的，代码如下
+
+```
+const DWORD WMSG_MAGIC_VALUE      = 0x0000babe;
+
+const UINT WM_OLE_ORPC_POST      = (WM_USER + 0);
+const UINT WM_OLE_ORPC_SEND      = (WM_USER + 1);
+const UINT WM_OLE_ORPC_DONE      = (WM_USER + 2);
+const UINT WM_OLE_ORPC_RELRIFREF = (WM_USER + 3);
+const UINT WM_OLE_ORPC_NOTIFY    = (WM_USER + 4);
+const UINT WM_OLE_GETCLASS       = (WM_USER + 5);
+const UINT WM_OLE_GIP_REVOKE     = (WM_USER + 6);
+const UINT WM_OLE_SIGNAL         = (WM_USER + 7);
+```
+
+由 WM_USER=0x400 以及上面的代码，可以知道 Win32 的 0x403 消息就是 WM_OLE_ORPC_RELRIFREF 消息。通过对应的 `WMSG_MAGIC_VALUE` 也能确定是这部分的逻辑，如我下面贴上的详细堆栈信息的部分
+
+```
+combase.dll!ThreadWndProc(HWND__ * window=0x000e1874, unsigned int message=1027, unsigned int wparam=47806, long params=628624048) line 697	C++
+```
+
+以上的 `wparam=47806` 的 47806 的 16 进制就是 0x0000babe 的值，以上的 `message=1027` 的 1027 就是 0x403 的值
+
+详细的堆栈信息如下
+
+```
+>	win32u.dll!_NtUserPostMessage@16�()
+ 	user32.dll!_PostMessageW@16�()
+ 	combase.dll!CComApartment::ClassicSTAPostMessage(unsigned int msg=1027, IMessageParam * pParam=0x25780d20) line 153	C++
+ 	combase.dll!CComApartment::STAPostReleaseRifRef(IMessageParam * pParam=0x25780d20) line 1452	C++
+ 	combase.dll!PostReleaseRifRef(IRemUnknown * pRemUnk=0x14c2d594, int fReleaseRemUnkProxy=0, OXIDEntry * pOXIDEntry=0x25809dc0, unsigned short cRifRef=1, tagREMINTERFACEREF * pRifRef=0x25780ad4, IUnknown * pAsyncRelease=0x00000000) line 8874	C++
+ 	combase.dll!RemoteReleaseRifRefHelper(IRemUnknown * pRemUnk=0x055c025c, int fReleaseRemUnkProxy=348312980, int fProcessingPostedMessage=1, OXIDEntry * pOXIDEntry=0x25809dc0, unsigned short cRifRef=1, tagREMINTERFACEREF * pRifRef=0x25780ad4, IUnknown * pAsyncRelease=0x00000000) line 8748	C++
+ 	combase.dll!HandlePostReleaseRifRef(IMessageParam * pMessageParam=0x00000000) line 8946	C++
+ 	combase.dll!ThreadWndProc(HWND__ * window=0x000e1874, unsigned int message=1027, unsigned int wparam=47806, long params=628624048) line 697	C++
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!_DispatchMessageWorker@8�()
+ 	user32.dll!_DispatchMessageW@4�()
+ 	[Inline] combase.dll!CCliModalLoop::MyDispatchMessage(tagMSG *) line 2959	C++
+ 	combase.dll!CCliModalLoop::PeekRPCAndDDEMessage() line 2568	C++
+ 	combase.dll!CCliModalLoop::BlockFn(void * * ahEvent=0x4a7cba34, unsigned long cEvents=1, unsigned long * lpdwSignaled=0x0537be30) line 2055	C++
+ 	combase.dll!ClassicSTAThreadWaitForHandles(unsigned long dwFlags=2, unsigned long dwTimeout=1, unsigned long cHandles=1, void * * pHandles=0x4a7cba34, unsigned long * pdwIndex=0x0537be30) line 54	C++
+ 	combase.dll!CoWaitForMultipleHandles(unsigned long dwFlags=2, unsigned long dwTimeout=1, unsigned long cHandles=1, void * * pHandles=0x4a7cba34, unsigned long * lpdwindex=0x0537be30) line 126	C++
+ 	[Manager to Native]	
+ 	System.Private.CoreLib.dll!System.Threading.SynchronizationContext.WaitHelper(System.IntPtr[] waitHandles, bool waitAll, int millisecondsTimeout)
+ 	WindowsBase.dll!System.Windows.Threading.DispatcherSynchronizationContext.Wait(System.IntPtr[] waitHandles, bool waitAll, int millisecondsTimeout)
+ 	System.Private.CoreLib.dll!System.Threading.SynchronizationContext.InvokeWaitMethodHelper(System.Threading.SynchronizationContext syncContext, System.IntPtr[] waitHandles, bool waitAll, int millisecondsTimeout)
+ 	[Native to Manager]	
+ 	[Manager to Native]	
+ 	UIAutomationProvider.dll!System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle(System.IntPtr hwnd)
+ 	PresentationCore.dll!MS.Internal.Automation.ElementProxy.HostRawElementProvider.get()
+ 	[Native to Manager]	
+ 	UIAutomationCore.dll!UiaUtils::EntryPointFromImmediateProvider(struct IRawElementProviderSimple *,class ProviderEntryPoint * *,struct IRawElementProviderSimple * *)
+ 	UIAutomationCore.dll!UiaUtils::GetFragmentRootWithHostProviderEntryPoint(struct IRawElementProviderFragment *,bool,struct IRawElementProviderFragmentRoot * *,class ProviderEntryPoint * *)
+ 	UIAutomationCore.dll!GetProviderEventInfo()
+ 	UIAutomationCore.dll!_UiaRaiseAutomationEvent@8�()
+ 	[Manager to Native]	
+ 	UIAutomationProvider.dll!MS.Internal.Automation.UiaCoreProviderApi.UiaRaiseAutomationEvent(System.Windows.Automation.Provider.IRawElementProviderSimple provider = {MS.Internal.Automation.ElementProxy}, int eventId = 20005)
+ 	UIAutomationProvider.dll!System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationEvent(System.Windows.Automation.AutomationEvent eventId = {System.Windows.Automation.AutomationEvent}, System.Windows.Automation.Provider.IRawElementProviderSimple provider = {MS.Internal.Automation.ElementProxy}, System.Windows.Automation.AutomationEventArgs e = {System.Windows.Automation.AutomationEventArgs})
+ 	PresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.RaiseAutomationEvent(System.Windows.Automation.Peers.AutomationEvents eventId = AutomationFocusChanged)
+ 	PresentationCore.dll!System.Windows.Automation.Peers.AutomationPeer.RaiseFocusChangedEventHelper(System.Windows.IInputElement newFocus = {Lindex.Demo.UI.InTabEditingWindow})
+ 	PresentationCore.dll!System.Windows.Input.KeyboardDevice.ChangeFocus(System.Windows.DependencyObject focus = {Lindex.Demo.UI.InTabEditingWindow}, int timestamp = 390239156)
+ 	PresentationCore.dll!System.Windows.Input.KeyboardDevice.TryChangeFocus(System.Windows.DependencyObject newFocus = {Lindex.Demo.UI.InTabEditingWindow}, System.Windows.Input.IKeyboardInputProvider keyboardInputProvider = {System.Windows.Interop.HwndKeyboardInputProvider}, bool askOld = true, bool askNew = true, bool forceToNullIfFailed = true)
+ 	PresentationCore.dll!System.Windows.Input.KeyboardDevice.Focus(System.Windows.DependencyObject focus = {Lindex.Demo.UI.InTabEditingWindow}, bool askOld = true, bool askNew = true, bool forceToNullIfFailed = true)
+ 	PresentationCore.dll!System.Windows.Input.KeyboardDevice.Focus(System.Windows.IInputElement element = null)
+ 	PresentationCore.dll!System.Windows.Input.Keyboard.Focus(System.Windows.IInputElement element = null)
+ 	PresentationCore.dll!System.Windows.Interop.HwndKeyboardInputProvider.OnSetFocus(System.IntPtr hwnd = 0x00120968)
+ 	PresentationCore.dll!System.Windows.Interop.HwndKeyboardInputProvider.FilterMessage(System.IntPtr hwnd = 0x00120968, MS.Internal.Interop.WindowMessage message = WM_SETFOCUS, System.IntPtr wParam = 0x000c0b36, System.IntPtr lParam = 0x00000000, ref bool handled = false)
+ 	PresentationCore.dll!System.Windows.Interop.HwndSource.InputFilterMessage(System.IntPtr hwnd = 0x00120968, int msg, System.IntPtr wParam = 0x000c0b36, System.IntPtr lParam = 0x00000000, ref bool handled = false)
+ 	WindowsBase.dll!MS.Win32.HwndWrapper.WndProc(System.IntPtr hwnd = 0x00120968, int msg, System.IntPtr wParam = 0x000c0b36, System.IntPtr lParam = 0x00000000, ref bool handled = false)
+ 	WindowsBase.dll!MS.Win32.HwndSubclass.DispatcherCallbackOperation(object o)
+ 	WindowsBase.dll!System.Windows.Threading.ExceptionWrapper.InternalRealCall(System.Delegate callback, object args, int numArgs)
+ 	WindowsBase.dll!System.Windows.Threading.ExceptionWrapper.TryCatchWhen(object source = {System.Windows.Threading.Dispatcher}, System.Delegate callback, object args, int numArgs, System.Delegate catchHandler = null)
+ 	WindowsBase.dll!System.Windows.Threading.Dispatcher.LegacyInvokeImpl(System.Windows.Threading.DispatcherPriority priority, System.TimeSpan timeout, System.Delegate method, object args, int numArgs)
+ 	WindowsBase.dll!MS.Win32.HwndSubclass.SubclassWndProc(System.IntPtr hwnd = 0x00120968, int msg, System.IntPtr wParam = 0x000c0b36, System.IntPtr lParam = 0x00000000)
+ 	[Native to Manager]	
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!DispatchClientMessage()
+ 	user32.dll!___fnDWORD@4�()
+ 	ntdll.dll!_KiUserCallbackDispatcher@12�()
+ 	user32.dll!RealDefWindowProcW(struct HWND__ *,unsigned int,unsigned int,long)
+ 	user32.dll!_DefWindowProcW@16�()
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!CallWindowProcW()
+ 	[Manager to Native]	
+ 	WindowsBase.dll!MS.Win32.HwndSubclass.DefWndProcWrapper(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam)
+ 	[Native to Manager]	
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!CallWindowProcW()
+ 	[Manager to Native]	
+ 	WindowsBase.dll!MS.Win32.HwndSubclass.SubclassWndProc(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam)
+ 	[Native to Manager]	
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!DispatchClientMessage()
+ 	user32.dll!___fnDWORD@4�()
+ 	ntdll.dll!_KiUserCallbackDispatcher@12�()
+ 	user32.dll!RealDefWindowProcW(struct HWND__ *,unsigned int,unsigned int,long)
+ 	user32.dll!_DefWindowProcW@16�()
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!CallWindowProcW()
+ 	[Manager to Native]	
+ 	WindowsBase.dll!MS.Win32.HwndSubclass.DefWndProcWrapper(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam)
+ 	[Native to Manager]	
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!CallWindowProcW()
+ 	[Manager to Native]	
+ 	WindowsBase.dll!MS.Win32.HwndSubclass.SubclassWndProc(System.IntPtr hwnd, int msg, System.IntPtr wParam, System.IntPtr lParam)
+ 	[Native to Manager]	
+ 	user32.dll!__InternalCallWinProc@20�()
+ 	user32.dll!UserCallWinProcCheckWow(struct _ACTIVATION_CONTEXT *,void *,struct HWND__ *,enum _WM_VALUE,unsigned int,long,void *,int)
+ 	user32.dll!DispatchClientMessage()
+ 	user32.dll!___fnDWORD@4�()
+ 	ntdll.dll!_KiUserCallbackDispatcher@12�()
+ 	[Manager to Native]	
+ 	PresentationFramework.dll!System.Windows.Window.Activate()
+```
+
+再根据 NT5 的如下代码可以确定 `WMSG_MAGIC_VALUE` 就是作为 wparam 使用
+
+```csharp
+PostMessage(pLocalOXIDEntry->GetServerHwnd(),
+                             WM_OLE_ORPC_RELRIFREF,
+                             WMSG_MAGIC_VALUE,
+                             (LPARAM)pRelRifRef)
+```
+
+
+通过如上代码可以证明的是，遇到这个堆栈是符合 [Single-Threaded Apartments - Win32 apps Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/com/single-threaded-apartments ) 文档所述，在单线程模型里面，是开启一个窗口不断收消息用来实现同步。换句话说就是以上的堆栈实际是没有什么用的，只要有 COM 调用卡住了，就是如此的效果。但是具体是哪个卡住了，本文这里就没有继续调查到原因
 
 
 
