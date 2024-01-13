@@ -2816,6 +2816,8 @@
 
  * [WPF 的 ManipulationCompleted 事件可能什么时候触发](WPF-的-ManipulationCompleted-事件可能什么时候触发.md)
 
+ * [WPF 的 WriteableBitmap 在 Intel 11 代 Iris Xe Graphics 核显设备上停止渲染](WPF-的-WriteableBitmap-在-Intel-11-代-Iris-Xe-Graphics-核显设备上停止渲染.md)
+
  * [WPF 省市县3级联动](WPF-省市县3级联动.md)
 
  * [WPF 禁用实时触摸](WPF-禁用实时触摸.md)
