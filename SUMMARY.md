@@ -2816,6 +2816,8 @@
 
  * [WPF 的 ManipulationCompleted 事件可能什么时候触发](WPF-的-ManipulationCompleted-事件可能什么时候触发.md)
 
+ * [WPF 的 Viewport3D 等 3D 模块在带 Intel UHD 770 设备上抛出渲染异常](WPF-的-Viewport3D-等-3D-模块在带-Intel-UHD-770-设备上抛出渲染异常.md)
+
  * [WPF 的 WriteableBitmap 在 Intel 11 代 Iris Xe Graphics 核显设备上停止渲染](WPF-的-WriteableBitmap-在-Intel-11-代-Iris-Xe-Graphics-核显设备上停止渲染.md)
 
  * [WPF 省市县3级联动](WPF-省市县3级联动.md)
