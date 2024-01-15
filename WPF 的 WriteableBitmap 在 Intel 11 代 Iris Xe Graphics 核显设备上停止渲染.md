@@ -3,6 +3,8 @@
 在 Intel 11 代锐炬 Intel® Iris® Xe Graphics 核显设备上，如果此设备使用旧版本驱动，则可能导致 WPF 的 WriteableBitmap 停止渲染。此问题和 WPF 无关，此问题是 Intel 的 bug 且最新驱动版本已修复
 
 <!--more-->
+<!-- CreateTime:2024/1/13 9:36:19 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
