@@ -3,6 +3,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/1/13 10:10:14 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -29,11 +31,8 @@ System.Runtime.InteropServices.COMException (0x88980406): UCEERR_RENDERTHREADFAI
 复现设备：
 
 * CPU 12900K
-
 * Intel UHD 770 (Driver: 30.0.101.1404 - latest at time of writing)
-
 * NVIDIA RTX 3090
-
 * OS: Windows 11
 
 最简复现代码
@@ -73,3 +72,5 @@ System.Runtime.InteropServices.COMException (0x88980406): UCEERR_RENDERTHREADFAI
 解决方法：只需更新 Intel 驱动即可
 
 此问题已经在 2022 的 5 月结束战斗
+
+关联问题：[WPF 的 WriteableBitmap 在 Intel 11 代 Iris Xe Graphics 核显设备上停止渲染](https://blog.lindexi.com/post/WPF-%E7%9A%84-WriteableBitmap-%E5%9C%A8-Intel-11-%E4%BB%A3-Iris-Xe-Graphics-%E6%A0%B8%E6%98%BE%E8%AE%BE%E5%A4%87%E4%B8%8A%E5%81%9C%E6%AD%A2%E6%B8%B2%E6%9F%93.html )
