@@ -862,6 +862,8 @@
 
  * [dotnet 修复 C# 8.0 语法编译失败](dotnet-修复-C-8.0-语法编译失败.md)
 
+ * [dotnet 修复 GitHub Action 构建过程提示 NETSDK1127 错误](dotnet-修复-GitHub-Action-构建过程提示-NETSDK1127-错误.md)
+
  * [dotnet 修复 ILLinkTasksAssembly 特性的值的计算结果无效](dotnet-修复-ILLinkTasksAssembly-特性的值的计算结果无效.md)
 
  * [dotnet 修复 Uno 中文乱码](dotnet-修复-Uno-中文乱码.md)
@@ -1043,6 +1045,8 @@
  * [dotnet 根据基线包版本实现库版本兼容](dotnet-根据基线包版本实现库版本兼容.md)
 
  * [dotnet 桌面端基于 AppHost 的配置式自动切换更新后的应用程序路径](dotnet-桌面端基于-AppHost-的配置式自动切换更新后的应用程序路径.md)
+
+ * [dotnet 测试在 Linux 系统上的 Environment.GetFolderPath 行为](dotnet-测试在-Linux-系统上的-Environment.GetFolderPath-行为.md)
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 
@@ -1604,7 +1608,11 @@
 
  * [UNO UnoConf 2020 在线会议 了解全平台新开发框架 零距离接触官方开发者](UNO-UnoConf-2020-在线会议-了解全平台新开发框架-零距离接触官方开发者.md)
 
+ * [UNO 新建基础库项目构建提示 UNOB0002 错误](UNO-新建基础库项目构建提示-UNOB0002-错误.md)
+
  * [UNO 的 SamplesApp.Skia.Gtk 丢失字体文件抛出空异常](UNO-的-SamplesApp.Skia.Gtk-丢失字体文件抛出空异常.md)
+
+ * [UNO.Skia.Gtk 设置窗口尺寸变化方法](UNO.Skia.Gtk-设置窗口尺寸变化方法.md)
 
  * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
 
@@ -3115,6 +3123,8 @@
  * [从 DX 层面讲 WPF 渲染卡顿](从-DX-层面讲-WPF-渲染卡顿.md)
 
  * [从 gitlab 配置管理聊聊团队项目管理](从-gitlab-配置管理聊聊团队项目管理.md)
+
+ * [从 Uno Platform 4 更新 Uno Platform 5 的迁移方法](从-Uno-Platform-4-更新-Uno-Platform-5-的迁移方法.md)
 
  * [从 WPF 搬迁到 UOS 下的 UNO 的笔记](从-WPF-搬迁到-UOS-下的-UNO-的笔记.md)
 

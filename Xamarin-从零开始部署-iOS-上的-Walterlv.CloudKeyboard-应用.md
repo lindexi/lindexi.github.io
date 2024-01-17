@@ -129,7 +129,7 @@
 
 ![](http://image.acmx.xyz/lindexi%2F20201132032199006.jpg)
 
-在 XCode 上提示 Could not launch "foo" Security 的原因就是发者没有被信任
+在 XCode 上提示 Could not launch "foo" Security 的原因就是开发者没有被信任
 
 回到手机上，可以看到 XCode 安装的应用
 
