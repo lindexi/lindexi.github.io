@@ -3,6 +3,8 @@
 由于 Environment.GetFolderPath 可以传入的参数里面，有许多都是 Windows 系统特有的，在 Linux 上不存在的，也没有映射对应的文件夹。本文将在 WSL Debian 和 UOS 系统上测试 Environment.GetFolderPath 行为
 
 <!--more-->
+<!-- CreateTime:2024/1/17 16:37:20 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

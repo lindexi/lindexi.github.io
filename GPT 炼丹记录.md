@@ -96,23 +96,25 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-我发现了一些可优化点
+我的本质问题是我准备编写一个在触摸屏设备上使用的带书写功能的应用，然而我发现 InkCanvas 是缺失的。恰好我有非常丰富的触摸屏以及笔迹书写算法的开发经验，我想要在 UNO 上添加一个充满自定义逻辑的 InkCanvas 控件。然而我发现在 UNO 里面缺乏一个基础的机制，这个基础的机制功能是对界面进行任意的绘图，也就是类似于 Microsoft.Maui.Graphics 提供的能力，或者是 WPF 的 DrawingContext 的能力。当前我只能通过 Microsoft.UI.Xaml.Shapes 来间接的实现此功能，但此方式的可控性以及性能上的表现都能糟糕，我为此编写过一个简单的 UnoInk 测试应用，经过了三个月的开发，我发现很难在没有类似于 Microsoft.Maui.Graphics 或 WPF 的 DrawingContext 等功能的帮助下实现一个能在产品化使用的功能
 
-由于 DPI 的影响，这里的 element.RenderSize 是 WPF 坐标系下的尺寸。在转换过程中没有经过 DPI 的处理，这将会导致获取的 bounds 尺寸不符合预期
+事实上，我认为如果能够实现与 Microsoft.Maui.Graphics 的对接，甚至只是将 Skia 的绘图能力对 UIElement 等进行开放，我都有实现一个比较好的界面的能力。由于我接触 UNO 的时间还比较短，如果现在 UNO 已经有实现类似的功能，还请让我知道
 
-这个属性只会影响到 `navigation buttons` ？
+期待您的帮助和回复
 
-我认为这个异常信息具有误导性，也许会让开发者以为是 name 这个
+[Implement InkCanvas · Issue #1821 · unoplatform/uno]()
 
-我认为将 MinimizeWindow 设置为 `protected virtual` 会比调用 `MinimizeActionOverride` 更优
+https://github.com/unoplatform/uno/issues/1821 
 
-我不认为让基类可以重写 OnLoaded 方法时，基类可以正确实现功能。原因有两个，其中就是 `HwndSourceHook` 方法是不公开的，其次是 OnLoaded 方法将会在 OnUnloaded 方法里面被 `-=` 
+https://github.com/lindexi/lindexi_gd/tree/8d59a96e0d4e390ae78946ff556a759901961856/HallgaiwhiyiwaLejucona/UnoInk
 ```
 
-```csharp
+```
 请帮我将以下内容转述为地道的英文：
 
-WPF 这里的判断逻辑可能是适用于古老的触摸标准格式，不一定适用于现代的设备。如果现代的设备认为这个格式是合理的，那 WPF 跟随着格式的更新也是合理的
+我现在遇到的最大的问题是我不知道如何将 SkiaSharp 与 UNO 的 FrameworkElement 关联起来。比如说我想要让这个 FrameworkElement 呈现我通过 SkiaSharp 绘制的内容。似乎除了走 WriteableBitmap 的方法之外，我还没找到其他的可实施方法
+
+假设现在我有一个 FrameworkElement 元素，我想要让这个元素在通过 Pointer 系列事件接收到触摸信息之后，根据触摸信息绘制出来我的自定义笔迹内容。那么我可以如何开始呢？
 ```
 
 ```

@@ -62,3 +62,70 @@ TextBox(Microsoft.UI.Xaml.Controls.TextBox)
               ButtonLayoutGrid(Microsoft.UI.Xaml.Controls.Grid)
                   GlyphElement(Microsoft.UI.Xaml.Shapes.Path)
 ```
+
+在 UNO 里面也有自带的方法，通过 TreeGraph 打印出来，代码如下
+
+```csharp
+using Uno.UI.Extensions;
+
+        var treeGraph = this.TreeGraph();
+```
+
+以上的 `treeGraph` 在我的简单的应用的输出逻辑大概如下
+
+```
+ConnectionUserControl // Actual=624x379, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+    Grid // Actual=624x379, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+        Grid // Actual=624x48, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+            Image // Actual=24x24, HV=Left/Stretch, Margin=[18,0,0,0], Opacity=1, Visibility=Visible
+            TextBlock // Actual=146x20.3203125, HV=Stretch/Center, Margin=[50,0,0,0], Padding=0, Opacity=1, Visibility=Visible
+            Button#AboutButton // Actual=24x24, HV=Right/Center, CornerRadius=0, Margin=[0,0,149,0], Padding=[8,4], Opacity=1, Visibility=Visible
+                Grid // Actual=24x24, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                    Path // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=1, Visibility=Visible
+            Button // Actual=24x24, HV=Right/Center, CornerRadius=0, Margin=[0,0,109,0], Padding=[8,4], Opacity=1, Visibility=Visible
+                Grid // Actual=24x24, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                    Path // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=1, Visibility=Visible
+            Border // Actual=1x14, HV=Right/Stretch, CornerRadius=0, Margin=[0,0,93,0], Padding=0, Opacity=1, Visibility=Visible
+            Button // Actual=24x24, HV=Right/Center, CornerRadius=0, Margin=[0,0,58,0], Padding=[8,4], Opacity=1, Visibility=Visible
+                Grid // Actual=24x24, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                    Path // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=1, Visibility=Visible
+            Button // Actual=24x24, HV=Right/Center, CornerRadius=0, Margin=[0,-2,18,0], Padding=[8,4], Opacity=1, Visibility=Visible
+                Grid // Actual=24x24, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                    Path // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=1, Visibility=Visible
+        Grid#ContentGrid // Actual=640x371, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+            Border // Actual=360x292, HV=Stretch/Top, CornerRadius=[4,4,0,0], Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                Grid // Actual=360x292, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                    TextBlock // Actual=193.546875x54.48046875, HV=Center/Stretch, Margin=[0,24,0,0], Padding=0, Opacity=1, Visibility=Visible
+                    Grid // Actual=160x160, HV=Stretch/Top, CornerRadius=0, Margin=[0,68,0,0], Padding=0, Opacity=1, Visibility=Visible
+                        Image // Actual=0x0, HV=Stretch/Stretch, Margin=4, Opacity=1, Visibility=Collapsed
+                        Grid // Actual=0x0, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Collapsed
+                            Path#ErrorPath // Actual=0x0, HV=Center/Center, Margin=0, Opacity=1, Visibility=Collapsed
+                        CircleLoading#CircleLoading // Actual=32x32, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                            Viewbox // Actual=32x32, HV=Center/Center, Margin=0, Opacity=1, Visibility=Visible
+                                Border // Actual=24x24, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                                    Grid#RootGrid // Actual=24x24, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible
+                                        Path#Part1 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=0.16, Visibility=Visible
+                                        Path#Part2 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=0.28, Visibility=Visible
+                                        Path#Part3 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=0.4, Visibility=Visible
+                                        Path#Part4 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=0.52, Visibility=Visible
+                                        Path#Part5 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=0.64, Visibility=Visible
+                                        Path#Part6 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=0.76, Visibility=Visible
+                                        Path#Part7 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=0.88, Visibility=Visible
+                                        Path#Part8 // Actual=24x24, HV=Stretch/Stretch, Margin=0, Opacity=1, Visibility=Visible
+                        Image#QrCodeImage // Actual=160x160, HV=Stretch/Stretch, Margin=0, Opacity=1, Visibility=Visible
+```
+
+官方的 TreeGraph 方法和前文的使用 VisualTreeHelper 获取到的元素对象都是相同的，原因是 TreeGraph 方法底层实现如下
+
+```csharp
+using _View = Windows.UI.Xaml.DependencyObject;
+
+  internal static IEnumerable<_View> EnumerateChildren(this _View? reference)
+  {
+    return Enumerable
+      .Range(0, VisualTreeHelper.GetChildrenCount(reference))
+      .Select(x => VisualTreeHelper.GetChild(reference, x));
+  }
+```
+
+更多请看 [Inspecting the runtime visual tree of an Uno app](https://platform.uno/docs/articles/uno-development/debugging-inspect-visual-tree.html )
