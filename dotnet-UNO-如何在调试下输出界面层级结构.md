@@ -74,7 +74,7 @@ using Uno.UI.Extensions;
         var treeGraph = this.TreeGraph();
 ```
 
-以上的 `treeGraph` 在我的简单的应用的输出逻辑大概如下
+以上的 `treeGraph` 在我的简单的应用的输出内容大概如下
 
 ```
 ConnectionUserControl // Actual=624x379, HV=Stretch/Stretch, CornerRadius=0, Margin=0, Padding=0, Opacity=1, Visibility=Visible

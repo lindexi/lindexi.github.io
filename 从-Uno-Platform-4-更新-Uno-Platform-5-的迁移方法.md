@@ -7,7 +7,6 @@
 
 
 <!-- CreateTime:2024/1/17 14:39:36 -->
-
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -51,6 +50,8 @@ public App()
     host.Run();
 }
 ```
+
+如果没有更改，将会在运行看到 `If you are seeing this, make sure to follow the "Migrating WpfHost" section of Migrating from previous releases article in the Uno Platform documentation at https://aka.platform.uno/uno5-wpfhost-migration. WpfHost is used at the application level instead of window level starting Uno Platform 5.0.` 提示
 
 ## Skia.Framebuffer
 

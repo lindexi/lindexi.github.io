@@ -1664,6 +1664,8 @@
 
  * [VisualStudio 2019 调试项目使用 Portable PDB 提示不支持 PDB 格式](VisualStudio-2019-调试项目使用-Portable-PDB-提示不支持-PDB-格式.md)
 
+ * [VisualStudio 2022 如何显示 dotnet 6 及以上版本的框架的代码注释为中文](VisualStudio-2022-如何显示-dotnet-6-及以上版本的框架的代码注释为中文.md)
+
  * [VisualStudio 2022 找不到内存 反汇编 寄存器调试工具](VisualStudio-2022-找不到内存-反汇编-寄存器调试工具.md)
 
  * [VisualStudio can not get the correct struct object value in Locals windows](VisualStudio-can-not-get-the-correct-struct-object-value-in-Locals-windows.md)
