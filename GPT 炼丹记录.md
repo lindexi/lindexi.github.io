@@ -118,6 +118,18 @@ https://github.com/lindexi/lindexi_gd/tree/8d59a96e0d4e390ae78946ff556a759901961
 ```
 
 ```
+请帮我将以下内容转述为地道的英文：
+
+我编写了一个 Hack 的 Demo 代码，用于在 Uno.Skia 应用里面，使用 Visual 的 `Draw` 方法进行绘制界面。我的实现方法就是创建一个名为 `SamplesApp` 的项目，因为在 UNO 里面对此 AssemblyName 写了 InternalsVisibleToAttribute 特性，在此项目里面可以访问 internal 的成员，方便我编写 Hack 的代码
+
+我写了一个继承 Visual 的名为 GraphicsCanvasVisual 的类型，让这个类型重写 Draw 方法。于是我在 GraphicsCanvasVisual 就可以使用参与到界面树 VisualTree 的绘制。然后我又编写了一个继承 FrameworkElement 的名为 GraphicsCanvasElement 的类型，我在这个类型的构造函数里面，将 GraphicsCanvasVisual 加入到 GraphicsCanvasElement 的 `Visual.Children` 里
+
+只需要将 GraphicsCanvasElement 加入到 XAML 里，即可在界面绘制出我在 GraphicsCanvasVisual 的绘制内容。我感觉我可以在这个基础上封装出对 Microsoft.Maui.Graphics 的支持
+
+5db72c3d67f121becefb5c4e8a0eacd5099c4198
+```
+
+```
 我想要写信报告一个问题，请你帮我拟一个报告问题的英文标题和一个报告问题的英文内容，要求标题简略，你可以重新组织内容以让内容更加通顺。
 
 以下是我想要报告的问题：
