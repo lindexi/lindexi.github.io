@@ -137,7 +137,17 @@ https://github.com/lindexi/lindexi_gd/tree/8d59a96e0d4e390ae78946ff556a759901961
 
 以下是我想要报告的问题：
 
-我观察到最近的 WPF 仓库的关于 Win11 Theming 的更改，在这些更改里面，咱大量使用了 DynamicResource 。咱使用 DynamicResource 的目的如 [Harshit](https://github.com/harshit7962) 在 Xx8579 里面所述，是为了在主题变更的时候，跟随变更界面内容。然而咱都知道，使用 DynamicResource 有着巨大的性能代价，特别是在整个主题样式充满 DynamicResource 的时候，那将会让整个应用的性能都被拖慢。更何况，大量情况下，用户也不会频繁修改系统主题样式，这就意味着通过 DynamicResource 将会拖慢大量用户的性能且不会带来收益。另外，我观察到 [Pankaj Chaurasia](https://github.com/pchaurasia14) 在 Xx8575 里面引入了 ApplicationThemeManager 机制。我认为，当前的 WPF 缺乏了明确的跟随主题变更的机制，换句话说我认为依靠 DynamicResource 来实现跟随主题变更是一个较差的实现方式。我建议在 WPF 仓库里面同步引入一套新的机制，可以用来代替现有的 DynamicResource 代码，用来正确且高效的实现让样式跟随主题的变更
+当前行为： 当我使用 SKXamlCanvas 时，如果我在 PaintSurface 事件里面抛出任何异常，且当前的 PaintSurface 事件是由后台线程触发的，那将导致我的进程崩溃
+
+预期行为：即使在 PaintSurface 事件里面抛出任何异常，应用程序也可以正常工作且收集到异常，比如通过 TaskScheduler.UnobservedTaskException 事件收集到异常
+
+复现步骤：
+
+1. 添加 SKXamlCanvas 到 xaml 里
+2. 订阅 SKXamlCanvas 的 PaintSurface 事件，且在事件实现方法抛出异常
+3. 在后台线程调用 SKXamlCanvas 的 Invalidate 方法
+
+https://github.com/lindexi/lindexi_gd/tree/dde76effc23ebb9ee974b6ec276b242c39a50bdf/JagobawearjiNeewhiqakerki
 ```
 
 ## 写通知
