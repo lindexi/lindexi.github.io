@@ -3,6 +3,8 @@
 本文记录一个 UNO 已知问题，在 UNO 里面可以利用 SKXamlCanvas 对接 Skia 绘制到应用里面。如果此时在后台线程里面调用 SKXamlCanvas 的 Invalidate 触发界面的重新刷新，但在具体的执行绘制 PaintSurface 事件里面对外抛出异常，将会导致应用炸掉
 
 <!--more-->
+<!-- CreateTime:2024/1/19 15:20:33 -->
+
 <!-- 博客 -->
 <!-- 发布 -->
 
