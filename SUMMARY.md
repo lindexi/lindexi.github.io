@@ -630,6 +630,8 @@
 
  * [dotnet OpenXML SDK 文本占位符解析](dotnet-OpenXML-SDK-文本占位符解析.md)
 
+ * [dotnet OpenXML SDK 添加 CoreFilePropertiesPart 的方法](dotnet-OpenXML-SDK-添加-CoreFilePropertiesPart-的方法.md)
+
  * [dotnet OpenXML WPF 解析实现 PPT 文本描边效果](dotnet-OpenXML-WPF-解析实现-PPT-文本描边效果.md)
 
  * [dotnet OpenXML 为什么资源使用 Relationship 引用](dotnet-OpenXML-为什么资源使用-Relationship-引用.md)
@@ -1047,6 +1049,8 @@
  * [dotnet 桌面端基于 AppHost 的配置式自动切换更新后的应用程序路径](dotnet-桌面端基于-AppHost-的配置式自动切换更新后的应用程序路径.md)
 
  * [dotnet 测试在 Linux 系统上的 Environment.GetFolderPath 行为](dotnet-测试在-Linux-系统上的-Environment.GetFolderPath-行为.md)
+
+ * [dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为](dotnet-测试在-UOS-Linux-上使用-Process-Start-打开文件的行为.md)
 
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 

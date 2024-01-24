@@ -610,6 +610,13 @@ public partial record MainModel
 
 [Linux 下的 Console.Read 将导致管道无法读取到消息 · Issue #139 · dotnet-campus/dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc/issues/139 )
 
+## Environment.GetFolderPath 行为
+
+
+原本写的 ApplicationData 的逻辑或使用 LocalApplicationData 都需要做一定的变更。继续将应用数据放在 LocalApplicationData 依然是正确的。这部分在我的应用里面不用做什么变更
+
+参阅 [dotnet 测试在 Linux 系统上的 Environment.GetFolderPath 行为](https://blog.lindexi.com/post/dotnet-%E6%B5%8B%E8%AF%95%E5%9C%A8-Linux-%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84-Environment.GetFolderPath-%E8%A1%8C%E4%B8%BA.html )
+
 ## 参考文档
 
 [WPF 使用 MAUI 的自绘制逻辑](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-MAUI-%E7%9A%84%E8%87%AA%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
