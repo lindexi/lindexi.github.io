@@ -329,6 +329,10 @@ XCeed Software 的 DocX 库：
 
 这是我所在的团队开源的 OpenXml 解析辅助库，支持层层继承的属性拍平和对基础元素的处理
 
+## 生成 PPT 文档
+
+[dotnet OpenXML SDK 添加 CoreFilePropertiesPart 的方法](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E6%B7%BB%E5%8A%A0-CoreFilePropertiesPart-%E7%9A%84%E6%96%B9%E6%B3%95.html )
+
 ## 开发群
 
 加群方式：
