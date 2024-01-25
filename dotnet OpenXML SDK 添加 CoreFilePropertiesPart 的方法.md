@@ -3,6 +3,8 @@
 本文记录在 OpenXML SDK 2.15 版本下，为 PPTX 文件添加 CoreFilePropertiesPart 的方法，通过本文的方法可以正确且简单的添加 core.xml 文件到 PPTX 文件里
 
 <!--more-->
+<!-- CreateTime:2024/1/24 16:37:44 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
