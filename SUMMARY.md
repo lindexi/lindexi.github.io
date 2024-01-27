@@ -828,6 +828,8 @@
 
  * [dotnet 使用 MessagePack 序列化对象](dotnet-使用-MessagePack-序列化对象.md)
 
+ * [dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件](dotnet-使用-MSTestRunner-将单元测试制作为独立可执行文件.md)
+
  * [dotnet 使用 NamedPipeClientStream 连接一个不存在管道服务名将不断空跑 CPU 资源](dotnet-使用-NamedPipeClientStream-连接一个不存在管道服务名将不断空跑-CPU-资源.md)
 
  * [dotnet 使用 Newtonsoft.Json 输出枚举首字符小写](dotnet-使用-Newtonsoft.Json-输出枚举首字符小写.md)
@@ -2365,6 +2367,8 @@
  * [WPF shows that some windows in multithreading will be locked in the PenThreadWorker constructor when the application starts](WPF-shows-that-some-windows-in-multithreading-will-be-locked-in-the-PenThreadWorker-constructor-when-the-application-starts.md)
 
  * [WPF UncommonField 类型是什么](WPF-UncommonField-类型是什么.md)
+
+ * [WPF UNO 测试固定尺寸且水平和垂直对齐设置 Stretch 的元素在容器内的布局行为](WPF-UNO-测试固定尺寸且水平和垂直对齐设置-Stretch-的元素在容器内的布局行为.md)
 
  * [wpf VisualBrush 已知问题](wpf-VisualBrush-已知问题.md)
 
