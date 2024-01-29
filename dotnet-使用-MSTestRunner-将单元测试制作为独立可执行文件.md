@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/1/27 9:59:41 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -107,7 +109,7 @@ dotnet publish -c release -r linux-x64 --self-contained true
 <!-- ![](image/dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件/dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件0.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20241271024387587.jpg)
 
-这时就体现出这个功能的方便性起来了，原本我的 UOS（统信国产 Linux 系统）系统是不带任何的开发环境的，且在上面的开发体验现在还是不如在 Windows 上熟悉和舒服的。通过将单元测试构建为独立可执行文件，我就可以在 UOS 上只做测试的活，不参与具体的开发。将单元测试构建出来的可执行文件归档起来，通过单元测试可以更好的批量的测试其系统版本之间的行为差异
+这时就体现出这个功能的方便性起来了，原本我的 UOS（统信国产 Linux 系统）系统是不带任何的开发环境的，且在上面的开发体验现在还是不如在 Windows 上熟悉和舒服的。通过将单元测试构建为独立可执行文件，我就可以在 UOS 上只做测试的活，不参与具体的开发。将单元测试构建出来的可执行文件归档起来，通过单元测试可以更好的批量的测试其系统版本之间的行为差异。更多关于国产 UOS 的开发，欢迎加入 810052083 群讨论
 
 本文以上代码放在[github](https://github.com/lindexi/lindexi_gd/tree/14c457e0d9933ba10e5eaf3873384bb3b9a0c26d/BearcenikoriDajebeqehe) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/14c457e0d9933ba10e5eaf3873384bb3b9a0c26d/BearcenikoriDajebeqehe) 欢迎访问
 
@@ -128,6 +130,10 @@ git pull origin 14c457e0d9933ba10e5eaf3873384bb3b9a0c26d
 ```
 
 获取代码之后，进入 BearcenikoriDajebeqehe 文件夹
+
+如果一个单元测试项目里面包含了多个单元测试方法，在做独立的可执行文件时，期望运行过程中只运行里面的部分方法，可以和原本的 vstest 或 dotnet test 一样添加过滤条件，也就是在执行时添加 `--filter` 参数和对应的条件内容，用法和 dotnet test 的用法相同，只是将命令行前面的 `dotnet test` 换成最终输出的可执行文件
+
+详细请参阅 [Run selected unit tests - .NET Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/testing/selective-unit-tests?pivots=mstest )
 
 
 
