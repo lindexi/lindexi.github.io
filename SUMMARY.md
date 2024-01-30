@@ -952,6 +952,8 @@
 
  * [dotnet 如何在 Mock 模拟 Func 判断调用次数](dotnet-如何在-Mock-模拟-Func-判断调用次数.md)
 
+ * [dotnet 如何将 Microsoft.Maui.Graphics 对接到 UNO 框架](dotnet-如何将-Microsoft.Maui.Graphics-对接到-UNO-框架.md)
+
  * [dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值](dotnet-如何更改应用在任务管理器显示的进程名-AssemblyTitle-的值.md)
 
  * [dotnet 如何调试 SmartSql 的实际执行 SQL 语句](dotnet-如何调试-SmartSql-的实际执行-SQL-语句.md)
@@ -1314,6 +1316,8 @@
 
  * [How to generate NuGet package with Git Tag version using GitHub Action](How-to-generate-NuGet-package-with-Git-Tag-version-using-GitHub-Action.md)
 
+ * [How to Integrate Microsoft.Maui.Graphics into the UNO Framework in dotnet](How-to-Integrate-Microsoft.Maui.Graphics-into-the-UNO-Framework-in-dotnet.md)
+
  * [How to output the target message in dotnet build command line](How-to-output-the-target-message-in-dotnet-build-command-line.md)
 
  * [How to parse version range](How-to-parse-version-range.md)
@@ -1423,6 +1427,8 @@
  * [OpenTK 入门 Vsync 垂直同步对刷新率的影响](OpenTK-入门-Vsync-垂直同步对刷新率的影响.md)
 
  * [OpenTK 入门 初始化窗口](OpenTK-入门-初始化窗口.md)
+
+ * [Packaging.DebUOS 专门为 dotnet 应用制作 UOS 安装包](Packaging.DebUOS-专门为-dotnet-应用制作-UOS-安装包.md)
 
  * [ParaView](ParaView.md)
 
