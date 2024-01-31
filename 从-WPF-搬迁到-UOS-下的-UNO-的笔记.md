@@ -84,7 +84,7 @@ SyncTool sync -a http://123.123.123.123:555
 
 微软雅黑在界面上记得使用 `Microsoft YaHei UI` 字体，带 `UI` 的字体。否则你将会看到一些字体布局有些奇怪
 
-或者是设置全局的文本控件样式，大概的定义如下，以下是使用 Material 样式时才如此定义。可以看到核心就只是添加了 FontFamily 属性的值
+或者是设置全局的文本控件样式，大概的定义如下，以下代码放在 AppResources.xaml 里面，以下是使用 Material 样式时才如此定义。可以看到核心就只是添加了 FontFamily 属性的值
 
 ```xml
   <Style x:Key="PrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource FilledButtonStyle}">
@@ -97,6 +97,24 @@ SyncTool sync -a http://123.123.123.123:555
   </Style>
 
   <Style TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlockStyle}"/>
+```
+
+以上代码的 `FilledButtonStyle` 是 Material 样式系带进来的，详细请参阅 [Material Controls Styles](https://platform.uno/docs/articles/external/uno.themes/doc/material-controls-styles.html )
+
+如果不带任何样式，可以使用如下代码
+
+```xml
+    <!-- 通用样式，用来定义字体，修复乱码 -->
+    <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI"></Setter>
+    </Style>
+    <Style TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}"/>
+
+    <Style x:Key="PrimaryTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI"></Setter>
+    </Style>
+
+    <Style TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlockStyle}"/>
 ```
 
 ### TextBox 撑开空间
@@ -598,6 +616,10 @@ public partial record MainModel
 
 [Fix missing 'out' keyword in ICommand binding generation in UNO's MVU · Issue #14900 · unoplatform/uno](https://github.com/unoplatform/uno/issues/14900 )
 
+### Geometry.Empty 属性不支持
+
+绕路
+
 ## 文件系统
 
 所有路径都是采用 `/` 作为分割而不是采用 `\` 作为分割，必须小心各种拼接路径的写法。最好是使用 `Path.Combine` 或 `Path.Join` 方法辅助拼接路径，尽量不要自己使用分隔符拼接字符串
@@ -612,10 +634,26 @@ public partial record MainModel
 
 ## Environment.GetFolderPath 行为
 
-
 原本写的 ApplicationData 的逻辑或使用 LocalApplicationData 都需要做一定的变更。继续将应用数据放在 LocalApplicationData 依然是正确的。这部分在我的应用里面不用做什么变更
 
 参阅 [dotnet 测试在 Linux 系统上的 Environment.GetFolderPath 行为](https://blog.lindexi.com/post/dotnet-%E6%B5%8B%E8%AF%95%E5%9C%A8-Linux-%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%9A%84-Environment.GetFolderPath-%E8%A1%8C%E4%B8%BA.html )
+
+## 启动应用或打开文件的替代
+
+在原本 Windows 下的使用 explorer 打开文件或文件夹的大概如下代码，需要进行替换，因为 Linux 上没有 explorer 应用
+
+```csharp
+        Process.Start("explorer.exe", arguments);
+```
+
+可以替换为设置 ProcessStartInfo 的 UseShellExecute 为 true 进行打开文件或文件夹，或采用 xdg-open 代替 explorer 的部分功能。请参阅 [dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为](https://blog.lindexi.com/post/dotnet-%E6%B5%8B%E8%AF%95%E5%9C%A8-UOS-Linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-Process-Start-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%9A%84%E8%A1%8C%E4%B8%BA.html )
+
+## 安装包
+
+请参阅：
+
+- [一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包](https://blog.lindexi.com/post/%E4%B8%80%E6%AD%A5%E6%AD%A5%E6%95%99%E4%BD%A0%E5%9C%A8-Windows-%E4%B8%8A%E6%9E%84%E5%BB%BA-dotnet-%E7%B3%BB%E5%BA%94%E7%94%A8%E7%9A%84-UOS-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85.html )
+- [Packaging.DebUOS 专门为 dotnet 应用制作 UOS 安装包](https://blog.lindexi.com/post/Packaging.DebUOS-%E4%B8%93%E9%97%A8%E4%B8%BA-dotnet-%E5%BA%94%E7%94%A8%E5%88%B6%E4%BD%9C-UOS-%E5%AE%89%E8%A3%85%E5%8C%85.html )
 
 ## 参考文档
 

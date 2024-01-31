@@ -99,17 +99,7 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-我的本质问题是我准备编写一个在触摸屏设备上使用的带书写功能的应用，然而我发现 InkCanvas 是缺失的。恰好我有非常丰富的触摸屏以及笔迹书写算法的开发经验，我想要在 UNO 上添加一个充满自定义逻辑的 InkCanvas 控件。然而我发现在 UNO 里面缺乏一个基础的机制，这个基础的机制功能是对界面进行任意的绘图，也就是类似于 Microsoft.Maui.Graphics 提供的能力，或者是 WPF 的 DrawingContext 的能力。当前我只能通过 Microsoft.UI.Xaml.Shapes 来间接的实现此功能，但此方式的可控性以及性能上的表现都能糟糕，我为此编写过一个简单的 UnoInk 测试应用，经过了三个月的开发，我发现很难在没有类似于 Microsoft.Maui.Graphics 或 WPF 的 DrawingContext 等功能的帮助下实现一个能在产品化使用的功能
-
-事实上，我认为如果能够实现与 Microsoft.Maui.Graphics 的对接，甚至只是将 Skia 的绘图能力对 UIElement 等进行开放，我都有实现一个比较好的界面的能力。由于我接触 UNO 的时间还比较短，如果现在 UNO 已经有实现类似的功能，还请让我知道
-
-期待您的帮助和回复
-
-[Implement InkCanvas · Issue #1821 · unoplatform/uno]()
-
-https://github.com/unoplatform/uno/issues/1821 
-
-https://github.com/lindexi/lindexi_gd/tree/8d59a96e0d4e390ae78946ff556a759901961856/HallgaiwhiyiwaLejucona/UnoInk
+通过调用堆栈可以知道，触摸的行为受到了 Manipulation 的影响。由于触摸无法像鼠标一样简单处理 Manipulation 的逻辑，导致 WPF 只能在 ManipulationDevice 里面执行对触摸的拦截处理，防止触摸提升为鼠标影响到正常的逻辑。由于 Demo 里面的将 RepeatButton 放入到 ListBox 里面，而 ListBox 默认的样式将包含 ScrollViewer 对象，此 ScrollViewer 对象将设置 IsManipulationEnabled 为 true 的值。这就导致了放在 ListBox 里面的 RepeatButton 所收到的触摸被 Manipulation 消费，没有能够不断触发 Click 事件。如何证明这一点？尝试将 ListBox 的 ScrollViewer 的 IsManipulationEnabled 属性设置为 false 然后你就能发现 RepeatButton 可以在触摸下不断触发 Click 事件，具体的实现代码可以参阅我的 Demo 应用。另外，我阅读了 WPF 的源代码，发现这个问题可能是难以修复的，很抱歉我只能告诉你导致这个事情的原因，我可能无法帮助你修复这个问题。如果你觉得有任何不理解的地方，欢迎讨论
 ```
 
 ```

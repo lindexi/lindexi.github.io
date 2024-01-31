@@ -513,6 +513,9 @@ dpkg-deb: error: failed to open package info file '/DEBIAN/control' for reading:
 
 如果期望在打包之后运行安装的应用程序进行调试，要看到输出控制台，可以在打包过程中编辑 `.desktop` 文本文件，设置 Terminal 为 true 的值。如此将会在启动程序时显示控制台
 
+## 自动化工具
+
+请参阅 [Packaging.DebUOS 专门为 dotnet 应用制作 UOS 安装包](https://blog.lindexi.com/post/Packaging.DebUOS-%E4%B8%93%E9%97%A8%E4%B8%BA-dotnet-%E5%BA%94%E7%94%A8%E5%88%B6%E4%BD%9C-UOS-%E5%AE%89%E8%A3%85%E5%8C%85.html )
 
 如果有其他不明白的，还请加入 810052083 群进行交流
 
