@@ -1052,6 +1052,10 @@
 
  * [dotnet 桌面端基于 AppHost 的配置式自动切换更新后的应用程序路径](dotnet-桌面端基于-AppHost-的配置式自动切换更新后的应用程序路径.md)
 
+ * [dotnet 测试 Mutex 的 WaitOne 是否保持进入等待的顺序先进先出](dotnet-测试-Mutex-的-WaitOne-是否保持进入等待的顺序先进先出.md)
+
+ * [dotnet 测试 SemaphoreSlim 的 Wait 是否保持进入等待的顺序先进先出](dotnet-测试-SemaphoreSlim-的-Wait-是否保持进入等待的顺序先进先出.md)
+
  * [dotnet 测试在 Linux 系统上的 Environment.GetFolderPath 行为](dotnet-测试在-Linux-系统上的-Environment.GetFolderPath-行为.md)
 
  * [dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为](dotnet-测试在-UOS-Linux-上使用-Process-Start-打开文件的行为.md)
