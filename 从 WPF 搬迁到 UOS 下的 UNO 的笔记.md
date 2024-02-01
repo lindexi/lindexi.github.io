@@ -367,6 +367,32 @@ mc:Ignorable="d"
                 HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"></ContentControl>
 ```
 
+## 布局
+
+### Panel.ZIndex
+
+将 WPF 的 Panel.ZIndex 替换为 Canvas.ZIndex 即可，此 Canvas.ZIndex 可以用在 Grid 等等控件上。我感觉是 WinUI3 的不良设计，不应该将此附加属性放在 Canvas 上
+
+```xml
+  <Grid>
+    <Border Canvas.ZIndex="2" Background="Red" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+    <Border Background="Black"></Border>
+  </Grid>
+```
+
+效果如下
+
+<!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记4.png) -->
+![](http://image.acmx.xyz/lindexi%2F20241311448497816.jpg)
+
+可以看到尽管放在 Grid 里面，红色的 Border 可以显示到黑色的 Border 之上，证明 Canvas.ZIndex 可以作用到 Grid 控件里
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/34de9b1acec9bbb5c315f49c71d5cf607dd54304/JawwhurbujaJawcucalnawhoni) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/34de9b1acec9bbb5c315f49c71d5cf607dd54304/JawwhurbujaJawcucalnawhoni) 欢迎访问
+
+后台代码可以使用 `Canvas.SetZIndex(Border, 1)` 静态方法进行设置，等价于 XAML 的 `Canvas.ZIndex="1"` 代码
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/3b222759988fde2fd316ca3f15be55f3b5a26aaa/JawwhurbujaJawcucalnawhoni) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/3b222759988fde2fd316ca3f15be55f3b5a26aaa/JawwhurbujaJawcucalnawhoni) 欢迎访问
+
 ## 窗口
 
 不同于 WPF 的窗口化，为了更好的跨平台，推荐只做单个窗口然后在窗口里面进行页面切换逻辑。推荐修改 UI 交互方式
@@ -612,6 +638,8 @@ public partial record MainModel
 原因是源代码生成没有处理方法带 out 的
 
 [Fix missing 'out' keyword in ICommand binding generation in UNO's MVU · Issue #14900 · unoplatform/uno](https://github.com/unoplatform/uno/issues/14900 )
+
+可以在方法上添加 `[Uno.Extensions.Reactive.Commands.Command(false)]` 特性让源代码生成不要处理此方法
 
 ### Geometry.Empty 属性不支持
 
