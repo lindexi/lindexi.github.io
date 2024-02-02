@@ -3,6 +3,8 @@
 本文记录我测试 dotnet 里面的 Mutex 锁，在多线程进入 WaitOne 等待时，进行释放锁时，获取锁执行权限的顺序是否与进入 WaitOne 等待的顺序相同。测试的结果是 Mutex 的 WaitOne 是乱序的，不应该依赖 Mutex 的 WaitOne 做排队顺序
 
 <!--more-->
+<!-- CreateTime:2024/1/31 19:36:13 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

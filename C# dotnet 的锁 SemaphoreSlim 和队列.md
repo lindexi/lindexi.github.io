@@ -102,7 +102,7 @@
         }
 ```
 
-可以看到代码是按照顺序输出的
+可以看到代码是按照顺序输出的。但是按照官方文档说明，在 SemaphoreSlim 里面是不保证顺序的，尽管大部分情况下都能按照进入的队列顺序出来，但是开发者不应该依赖此行为，详细请参阅 [dotnet 测试 SemaphoreSlim 的 Wait 是否保持进入等待的顺序先进先出](https://blog.lindexi.com/post/dotnet-%E6%B5%8B%E8%AF%95-SemaphoreSlim-%E7%9A%84-Wait-%E6%98%AF%E5%90%A6%E4%BF%9D%E6%8C%81%E8%BF%9B%E5%85%A5%E7%AD%89%E5%BE%85%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%85%88%E8%BF%9B%E5%85%88%E5%87%BA.html )
 
 本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/cf8c1add01a571bafeb0548b6aa43da8670227c9/CallnernawbawceKairwemwhejeene)欢迎小伙伴访问
 
