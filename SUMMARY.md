@@ -2706,6 +2706,8 @@
 
  * [WPF 已知问题 在 WIC 层处理异常图片时 可能由于出现未处理异常导致进程退出](WPF-已知问题-在-WIC-层处理异常图片时-可能由于出现未处理异常导致进程退出.md)
 
+ * [WPF 已知问题 开启 IsManipulationEnabled 之后触摸长按 RepeatButton 不会触发连续的 Click 事件](WPF-已知问题-开启-IsManipulationEnabled-之后触摸长按-RepeatButton-不会触发连续的-Click-事件.md)
+
  * [WPF 已知问题 开启 WM_Pointer 消息之后 获取副屏触摸数据坐标偏移](WPF-已知问题-开启-WM_Pointer-消息之后-获取副屏触摸数据坐标偏移.md)
 
  * [WPF 已知问题 某些设备上的应用在 WindowChromeWorker 抛出 System.OverflowException 异常](WPF-已知问题-某些设备上的应用在-WindowChromeWorker-抛出-System.OverflowException-异常.md)
@@ -3120,6 +3122,8 @@
 
  * [中国最新手机号段划分情况](中国最新手机号段划分情况.md)
 
+ * [为 IIncrementalGenerator 增量 Source Generator 源代码生成项目添加单元测试](为-IIncrementalGenerator-增量-Source-Generator-源代码生成项目添加单元测试.md)
+
  * [为什么 WPF 软件在 win7 启动时会尝试调起 wisptis 进程](为什么-WPF-软件在-win7-启动时会尝试调起-wisptis-进程.md)
 
  * [为什么使用 GUID 做文件名不是好主意](为什么使用-GUID-做文件名不是好主意.md)
@@ -3173,6 +3177,8 @@
  * [使用 DISM 安全清理 C 盘 WinSxS 文件夹空间](使用-DISM-安全清理-C-盘-WinSxS-文件夹空间.md)
 
  * [使用 FastTunnel 做内网穿透远程计算机桌面服务器](使用-FastTunnel-做内网穿透远程计算机桌面服务器.md)
+
+ * [使用 ForAttributeWithMetadataName 提高 IIncrementalGenerator 增量 Source Generator 源代码生成开发效率和性能](使用-ForAttributeWithMetadataName-提高-IIncrementalGenerator-增量-Source-Generator-源代码生成开发效率和性能.md)
 
  * [使用 IncrediBuild 提升 VisualStudio 编译速度](使用-IncrediBuild-提升-VisualStudio-编译速度.md)
 
