@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/2/5 11:49:02 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -23,6 +25,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
   </PropertyGroup>
 
   <ItemGroup>
