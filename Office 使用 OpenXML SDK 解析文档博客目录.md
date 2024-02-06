@@ -264,7 +264,7 @@
 
 这个厂商从 2002 开始就在做 Office 相关开发，使用这个工具包可以在有 Office 或者在没有 Office 的情况下进行开发，可以渲染和编辑 Office 文档
 
-貌似要购买的话，找我也许有优惠…… 但一年大概也是 10w 左右
+~~貌似要购买的话，找我也许有优惠…… 但一年大概也是 10w 左右~~
 
 ### [grapecity](https://www.grapecity.com)
 
@@ -342,4 +342,6 @@ XCeed Software 的 DocX 库：
 
 以上的群非新手群
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+## 特别感觉
+
+特别感谢潘淳校长的大力支持和海量文档

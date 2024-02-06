@@ -3,6 +3,8 @@
 本文记录 WPF 的一个已知问题，在 RepeatButton 上开启 IsManipulationEnabled 漫游支持之后，将会导致触摸长按到 RepeatButton 之上时，不会收到源源不断的 Click 事件
 
 <!--more-->
+<!-- CreateTime:2024/2/5 9:22:14 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
