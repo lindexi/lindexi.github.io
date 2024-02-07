@@ -1384,6 +1384,10 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 另外，如果是调试 Linux 等服务器上的 dotnet 应用的内存占用，请看 [dotnet 用 gcdump 调试应用程序内存占用](https://blog.lindexi.com/post/dotnet-%E7%94%A8-gcdump-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8.html )
 
+更多博客：
+
+- [【译】解开托管内存的秘密：深入了解事件处理程序泄漏！ - MeteorSeed - 博客园](https://www.cnblogs.com/MeteorSeed/p/17987012 )
+
 ### 读写性能调试
 
 通过 dot trace 找到读写文件
