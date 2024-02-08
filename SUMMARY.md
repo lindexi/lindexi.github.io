@@ -882,6 +882,8 @@
 
  * [dotnet 写一个支持层层继承属性的对象](dotnet-写一个支持层层继承属性的对象.md)
 
+ * [dotnet 分享使用 D2D 绘制界面加 AOT 发布的应用开发经验](dotnet-分享使用-D2D-绘制界面加-AOT-发布的应用开发经验.md)
+
  * [dotnet 列表 Linq 的 Take 用法](dotnet-列表-Linq-的-Take-用法.md)
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
