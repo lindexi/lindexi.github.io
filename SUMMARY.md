@@ -882,8 +882,6 @@
 
  * [dotnet 写一个支持层层继承属性的对象](dotnet-写一个支持层层继承属性的对象.md)
 
- * [dotnet 分享使用 D2D 绘制界面加 AOT 发布的应用开发经验](dotnet-分享使用-D2D-绘制界面加-AOT-发布的应用开发经验.md)
-
  * [dotnet 列表 Linq 的 Take 用法](dotnet-列表-Linq-的-Take-用法.md)
 
  * [dotnet 删除只读文件](dotnet-删除只读文件.md)
@@ -3217,6 +3215,8 @@
  * [关于技术规划的想法](关于技术规划的想法.md)
 
  * [关闭 SublimeText 3.2.2 Build 3211 的拼写检查](关闭-SublimeText-3.2.2-Build-3211-的拼写检查.md)
+
+ * [分享一个在 dotnet 里使用 D2D 配合 AOT 开发小而美的应用开发经验](分享一个在-dotnet-里使用-D2D-配合-AOT-开发小而美的应用开发经验.md)
 
  * [分形和图论网络](分形和图论网络.md)
 
