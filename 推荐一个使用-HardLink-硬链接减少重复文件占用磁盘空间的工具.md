@@ -13,6 +13,10 @@
 
 此工具名为 UsingHardLinkToZipNtfsDiskSize 在 GitHub 上完全开源，请看 [https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK](https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK)
 
+下载地址： [UsingHardLinkToZipNtfsDiskSize_with_runtime_3.11.1-github-release](https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK/releases/tag/3.11.1 )
+
+本工具的下载地址挂在 github 上，如无法访问 github 或存在其他下载失败问题，还请发邮件私聊我，让我通过其他方式分享工具给你
+
 使用方法
 
 1. 启动 UsingHardLinkToZipNtfsDiskSize 工具

@@ -808,6 +808,8 @@
 
  * [dotnet 使用 CsWin32 库简化 Win32 函数调用逻辑](dotnet-使用-CsWin32-库简化-Win32-函数调用逻辑.md)
 
+ * [dotnet 使用 dnlib 检测插件程序集的 API 兼容性](dotnet-使用-dnlib-检测插件程序集的-API-兼容性.md)
+
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
  * [dotnet 使用 FileAccess 与 OpenOrCreate 对文件访问权限的影响](dotnet-使用-FileAccess-与-OpenOrCreate-对文件访问权限的影响.md)
