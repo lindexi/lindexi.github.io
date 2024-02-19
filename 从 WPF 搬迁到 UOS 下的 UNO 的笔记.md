@@ -23,6 +23,13 @@
 
 推荐同步也加上 Skia.WPF 和 Skia.GTK 项目，其中 GTK 可以同时在 Windows 和 Linux 系统上跑，但 GTK 在 Windows 上可能有一些奇奇怪怪的问题，此时换成 Skia.WPF 好了，毕竟真的发布在 Windows 平台的也不会那么想不开用 GTK 做底层
 
+当前 UNO 对于 XAML 智能提示，需要切换 XAML 使用 WinUI3 项目的编辑界面，否则将无法显示正确的 XAML 智能提示且出现大量的 XAML 报错。切换 XAML 使用 WinUI3 项目的编辑界面，需要先存在 WinUI3 项目，即在新建项目的时候需要勾选 Windows 项目，然后点击 XAML 选项卡下的项目，切换到 WinUI3 项目，如下图所示
+
+<!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记5.png) -->
+![](http://image.acmx.xyz/lindexi%2F20242191513544186.jpg)
+
+详细请参阅 [Intellisense not working, but project compiles · Issue #15517 · unoplatform/uno](https://github.com/unoplatform/uno/issues/15517 )
+
 ### 构建输出同步
 
 我是在 Windows 设备上进行开发的，在虚拟机里面运行 UOS 系统的。我需要在 Windows 上进行构建，将构建输出的内容在 UOS 系统上运行
@@ -186,7 +193,9 @@ SyncTool sync -a http://123.123.123.123:555
 
 以上代码注释掉的 `textBox.Spy();` 是我在调试下输出界面，方便调试是否获取正确滚动条，详细请看 [dotnet UNO 如何在调试下输出界面层级结构](https://blog.lindexi.com/post/dotnet-UNO-%E5%A6%82%E4%BD%95%E5%9C%A8%E8%B0%83%E8%AF%95%E4%B8%8B%E8%BE%93%E5%87%BA%E7%95%8C%E9%9D%A2%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.html )
 
-## 几何图形 StreamGeometry 资源
+## 几何系列
+
+### 几何图形 StreamGeometry 资源
 
 在 WPF 里面，经常有图标使用的是 Path 几何路径，作为矢量图标，放入到 StreamGeometry 资源里面。由单个 Path 制作的 StreamGeometry 资源可以通过 `x:String` 的方式在 UNO 里替换，如下面代码是一个原先放在 WPF 资源里的图标
 
@@ -255,9 +264,41 @@ SyncTool sync -a http://123.123.123.123:555
 <Button Style="{StaticResource Style.TitlebarButton}" Content="{StaticResource Geometry.Close}"/>
 ```
 
-## PathGeometry
+### PathGeometry
 
 有部分不受支持，请进行多平台测试，需要绕路
+
+### GeometryDrawing
+
+绕路，请使用多个 Path 界面控件代替，一般代替方法为创建一个 Canvas 容器，在容器里面存放多个 Shape 元素，从而实现类似与 GeometryDrawing 的效果。所添加的 Canvas 容器记得设置正确的尺寸，防止裁剪或界面看不见
+
+```xml
+ <Canvas x:Name="GeometryDrawingPanel" Width="30" Height="45">
+    <!-- 防止 Canvas 尺寸是 0 导致元素看不见 -->
+ </Canvas>
+```
+
+### Geometry.Parse
+
+从字符串创建出 Geometry 的 `Geometry.Parse("M0,0L1,1")` 等类似的转换代码为无法在后台代码实现，推荐在 XAML 里面，使用 Path 和 Data 属性进行代替
+
+```xml
+<Path
+  Data="M0,0L1,1" Fill="#F2EEEB"/>
+```
+
+在 UWP 和 WinUI3 以及 UNO 上，没有直接提供从 SVG Path (mini-lang) 转换为 Geometry 的方法，唯一的转换就是通过 XAML 设置 Path 的 Data 的方式
+
+强行后台代码转换的方式如下
+
+```csharp
+string data = "M 100,200 C 100,25 400,350 400,175 H 280";
+Path path = XamlReader.Load("<Path Data='" + data + "'/>") as Path;
+```
+
+详细请参阅 [c# - Convert path to geometric shape - Stack Overflow](https://stackoverflow.com/q/22989172/6116637 )
+
+
 
 ## XAML 系列
 
@@ -325,6 +366,23 @@ mc:Ignorable="d"
 
 以上这部分代码和 WPF 相同，直接抄即可
 
+### 类型是自定义控件类型将构建失败
+
+非必现问题，复现步骤：
+
+1. 创建一个自定义控件，无 XAML 类型，仅类型定义，比如 `public partial class Foo : ContentControl` 的方式的定义
+2. 创建一个带 XAML 的自定义控件，将其基础类型更改为 Foo 类型
+
+构建可能提示如下错误，且在 `Skia.WPF` 和 `Skia.Gtk` 项目能够构建通过
+
+Fx.xaml(1,2): XamlCompiler error WMC0001: Unknown type 'Foo' in XML namespace 'clr-namespace:LindexiDemo;assembly=LindexiDemo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null'
+
+遇到此错误只能绕路，去掉控件之间的继承
+
+此问题可能换成新的 `<Project Sdk="Uno.Sdk">` 可以修复，但是由于非必现问题，我暂时没有复现步骤
+
+
+
 ## 图片资源
 
 图片资源可以使用相对路径或绝对路径，在UNO的绝对路径的格式如下
@@ -366,6 +424,28 @@ mc:Ignorable="d"
 <ContentControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                 HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"></ContentControl>
 ```
+
+我编写了一个 ContentControl 示例代码，演示使用 ContentControl 移动一个橡皮擦界面样式的元素，代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/23afb397c027d2ab5025e44488cce7de83b48c83/RalllawfairlekolairHemyiqearkice) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/23afb397c027d2ab5025e44488cce7de83b48c83/RalllawfairlekolairHemyiqearkice) 上，可以使用如下命令行拉取代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 23afb397c027d2ab5025e44488cce7de83b48c83
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 23afb397c027d2ab5025e44488cce7de83b48c83
+```
+
+获取代码之后，进入 RalllawfairlekolairHemyiqearkice 文件夹，即可获取到源代码
+
+
 
 ## 布局
 
