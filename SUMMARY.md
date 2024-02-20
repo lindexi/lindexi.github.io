@@ -1082,6 +1082,8 @@
 
  * [dotnet 的 TaskCompletionSource 的 TrySetResult 是线程安全](dotnet-的-TaskCompletionSource-的-TrySetResult-是线程安全.md)
 
+ * [dotnet 禁用 SQLite 的 SQLiteFunction 扫描程序集提升启动性能](dotnet-禁用-SQLite-的-SQLiteFunction-扫描程序集提升启动性能.md)
+
  * [dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架](dotnet-简单方法在一个进程内同时跑起-WPF-和-ASP.NET-Core-框架.md)
 
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)

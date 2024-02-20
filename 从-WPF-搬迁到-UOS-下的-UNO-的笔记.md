@@ -756,6 +756,18 @@ public partial record MainModel
 
 可以替换为设置 ProcessStartInfo 的 UseShellExecute 为 true 进行打开文件或文件夹，或采用 xdg-open 代替 explorer 的部分功能。请参阅 [dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为](https://blog.lindexi.com/post/dotnet-%E6%B5%8B%E8%AF%95%E5%9C%A8-UOS-Linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-Process-Start-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%9A%84%E8%A1%8C%E4%B8%BA.html )
 
+## Debug.Assert 之类的代码构建不通过
+
+在任何的 UIElement 或其继承类里面编写任何 `Debug.*` 的代码都将在 android 平台构建不通过，提示错误如下
+
+```
+“ViewGroup.Debug(int)”是一个 方法，这在给定的上下文中无效 
+```
+
+原因是 UIElement 在安卓平台将会继承 Android.Views.ViewGroup 类型，在 Android.Views.ViewGroup 类型里面包含名为 `Debug()` 的方法，从而导致了 `Debug.Assert` 方法的 Debug 静态类与 `Debug()` 方法冲突
+
+解决方法，写全命名空间 `System.Diagnostics.Debug.*` 即可，如 `System.Diagnostics.Debug.Assert` 或 `System.Diagnostics.Debug.WriteLine` 等类似的代码
+
 ## 安装包
 
 请参阅：
