@@ -1440,6 +1440,8 @@
 
  * [ParaView](ParaView.md)
 
+ * [Pipelines.Sockets.Unofficial 一个纯托管实现对接 System.IO.Pipelines 的 Sockets 库](Pipelines.Sockets.Unofficial-一个纯托管实现对接-System.IO.Pipelines-的-Sockets-库.md)
+
  * [PowerShell 使用 WMI 获取信息](PowerShell-使用-WMI-获取信息.md)
 
  * [PowerShell 实现 curl 的用户名和密码逻辑](PowerShell-实现-curl-的用户名和密码逻辑.md)
@@ -1633,6 +1635,8 @@
  * [UNO 新建基础库项目构建提示 UNOB0002 错误](UNO-新建基础库项目构建提示-UNOB0002-错误.md)
 
  * [UNO 的 SamplesApp.Skia.Gtk 丢失字体文件抛出空异常](UNO-的-SamplesApp.Skia.Gtk-丢失字体文件抛出空异常.md)
+
+ * [UNO 设置平台进入全屏窗口模式的方法](UNO-设置平台进入全屏窗口模式的方法.md)
 
  * [UNO.Skia.Gtk 设置窗口尺寸变化方法](UNO.Skia.Gtk-设置窗口尺寸变化方法.md)
 
