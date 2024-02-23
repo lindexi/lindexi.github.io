@@ -578,7 +578,7 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
                     })
 ```
 
-以上的 ConfigureServices 是写在默认项目的 App.cs 代码里面，如此即可让 ViewModel 层使用 IDispatcherQueueProvider 进行 UI 调度。详细更改请参阅 https://github.com/dotnet-campus/dotnetCampus.FileDownloader/commit/2fc43a8050741564cdb4810266bc912149ca318f
+以上的 ConfigureServices 是写在默认项目的 App.cs 代码里面，如此即可让 ViewModel 层使用 IDispatcherQueueProvider 进行 UI 调度。详细更改请参阅 <https://github.com/dotnet-campus/dotnetCampus.FileDownloader/commit/2fc43a8050741564cdb4810266bc912149ca318f>
 
 
 ## 多语言
@@ -753,7 +753,16 @@ public partial record MainModel
 
 可以替换为设置 ProcessStartInfo 的 UseShellExecute 为 true 进行打开文件或文件夹，或采用 xdg-open 代替 explorer 的部分功能。请参阅 [dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为](https://blog.lindexi.com/post/dotnet-%E6%B5%8B%E8%AF%95%E5%9C%A8-UOS-Linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-Process-Start-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%9A%84%E8%A1%8C%E4%B8%BA.html )
 
-## Debug.Assert 之类的代码构建不通过
+## 安装包
+
+请参阅：
+
+- [一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包](https://blog.lindexi.com/post/%E4%B8%80%E6%AD%A5%E6%AD%A5%E6%95%99%E4%BD%A0%E5%9C%A8-Windows-%E4%B8%8A%E6%9E%84%E5%BB%BA-dotnet-%E7%B3%BB%E5%BA%94%E7%94%A8%E7%9A%84-UOS-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85.html )
+- [Packaging.DebUOS 专门为 dotnet 应用制作 UOS 安装包](https://blog.lindexi.com/post/Packaging.DebUOS-%E4%B8%93%E9%97%A8%E4%B8%BA-dotnet-%E5%BA%94%E7%94%A8%E5%88%B6%E4%BD%9C-UOS-%E5%AE%89%E8%A3%85%E5%8C%85.html )
+
+## 构建已知问题
+
+### Debug.Assert 之类的代码构建不通过
 
 在任何的 UIElement 或其继承类里面编写任何 `Debug.*` 的代码都将在 android 平台构建不通过，提示错误如下
 
@@ -765,12 +774,19 @@ public partial record MainModel
 
 解决方法，写全命名空间 `System.Diagnostics.Debug.*` 即可，如 `System.Diagnostics.Debug.Assert` 或 `System.Diagnostics.Debug.WriteLine` 等类似的代码
 
-## 安装包
+### 还原 NuGet 程序包时出错 还原输入无效 原始目标框架值必须与别名匹配
 
-请参阅：
+如遇到以下错误信息
 
-- [一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包](https://blog.lindexi.com/post/%E4%B8%80%E6%AD%A5%E6%AD%A5%E6%95%99%E4%BD%A0%E5%9C%A8-Windows-%E4%B8%8A%E6%9E%84%E5%BB%BA-dotnet-%E7%B3%BB%E5%BA%94%E7%94%A8%E7%9A%84-UOS-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85.html )
-- [Packaging.DebUOS 专门为 dotnet 应用制作 UOS 安装包](https://blog.lindexi.com/post/Packaging.DebUOS-%E4%B8%93%E9%97%A8%E4%B8%BA-dotnet-%E5%BA%94%E7%94%A8%E5%88%B6%E4%BD%9C-UOS-%E5%AE%89%E8%A3%85%E5%8C%85.html )
+```
+还原 NuGet 程序包时出错: 还原输入无效。原始目标框架值必须与别名匹配。原始目标框架: net8.0-windows10.0.19041;net8.0;net8.0;net8.0-ios;net8.0-maccatalyst;net8.0-android，别名: net8.0-windows10.0.19041;net8.0;net8.0-ios;net8.0-maccatalyst;net8.0-android。 
+```
+
+可以考虑修改 TargetFrameworks 内容进行处理，这在使用 5.1 版本 Uno.Sdk 更新旧项目时，可能会遇到的问题。更改例子如我在 github 上的 <https://github.com/lindexi/lindexi_gd/commit/d49ee7ce3f60c139076aa5cf21d88f0c305bf761> 更改内容
+
+### 代码更改不生效
+
+可能是 VisualStudio 增量构建的锅，记得打上断点
 
 ## 参考文档
 
