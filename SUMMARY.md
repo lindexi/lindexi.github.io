@@ -1768,6 +1768,8 @@
 
  * [VisualStudio 通过外部调试方法快速调试库代码](VisualStudio-通过外部调试方法快速调试库代码.md)
 
+ * [VisualStudio 通过配置 DefaultXamlRuntime 属性 让控制台项目里的 XAML 应用上智能提示](VisualStudio-通过配置-DefaultXamlRuntime-属性-让控制台项目里的-XAML-应用上智能提示.md)
+
  * [VisualStudio 配置多进程调试快捷键启动项目](VisualStudio-配置多进程调试快捷键启动项目.md)
 
  * [win 消息](win-消息.md)

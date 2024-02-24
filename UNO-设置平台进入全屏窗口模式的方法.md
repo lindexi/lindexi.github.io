@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/2/23 20:43:35 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -68,18 +70,21 @@ public class PlatformProvider : IPlatformProvider
 }
 ```
 
-对接的代码放在 AppHead.xaml.cs 的 OnLaunched 方法里面，如以下代码
+对接的代码放在 App.xaml.cs 的 构造 里面，如以下代码
 
 ```csharp
-    protected override void OnLaunched(LaunchActivatedEventArgs args)
+public partial class App : WpfApp
+{
+    public App()
     {
-        base.OnLaunched(args);
+        var host = new WpfHost(Dispatcher, () => new AppHead());
+        host.Run();
         PlatformHelper.PlatformProvider = new PlatformProvider(MainWindow!);
-        MainWindow.SetWindowIcon();
     }
+}
 ```
 
-由于 AppHead.xaml.cs 是与 WinUI 共用的代码，因此我这里推荐将 PlatformProvider 的定义的命名空间保持 WPF 和 WinUI 项目相同
+<!-- 由于 AppHead.xaml.cs 是与 WinUI 共用的代码，因此我这里推荐将 PlatformProvider 的定义的命名空间保持 WPF 和 WinUI 项目相同 -->
 
 下面是 WinUI 项目里面的定义，代码如下
 
@@ -105,7 +110,20 @@ internal class PlatformProvider : IPlatformProvider
 }
 ```
 
-由于 WinUI 和 WPF 共用 AppHead.xaml.cs 的代码，在 WPF 里面已经完成了注入平台实现的逻辑，因此在 WinUI 项目里面只需要完成以上定义即可
+对应的对接代码需要编写在 AppHead.xaml.cs 的 OnLaunched 里面，如以下代码
+
+```csharp
+    protected override void OnLaunched(LaunchActivatedEventArgs args)
+    {
+        base.OnLaunched(args);
+#if WINDOWS10_0_17763_0_OR_GREATER
+        PlatformHelper.PlatformProvider = new PlatformProvider(MainWindow!);
+#endif
+        MainWindow.SetWindowIcon();
+    }
+```
+
+额外的关于 UWP 的全屏，请参阅 [win10 UWP 全屏](https://blog.lindexi.com/post/win10-UWP-%E5%85%A8%E5%B1%8F.html )
 
 最后是 GTK 项目的平台定义，代码如下
 
@@ -148,6 +166,8 @@ public class GtkPlatformProvider : IPlatformProvider
     }
 ```
 
+如果仅需更改 GTK 窗口尺寸，请参阅 [UNO.Skia.Gtk 设置窗口尺寸变化方法](https://blog.lindexi.com/post/UNO.Skia.Gtk-%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E5%B0%BA%E5%AF%B8%E5%8F%98%E5%8C%96%E6%96%B9%E6%B3%95.html )
+
 以上代码就完成了 UNO 的 WPF 和 GTK 和 WinUI 桌面平台的窗口全屏的实现。为了测试效果，进入 MainPage.xaml 里面添加一个 ToggleButton 按钮，用来控制进入和退出全屏，界面代码如下
 
 ```xml
@@ -171,16 +191,19 @@ public class GtkPlatformProvider : IPlatformProvider
     }
 ```
 
-完成代码之后，分别切换到 UNO 的 WPF 和 GTK 和 WinUI 平台上，进行构建和运行项目。测试点击全屏按钮时，是否能够符合预期的进入和退出全屏模式
+完成代码之后，分别切换到 UNO 的 WPF 和 GTK 和 WinUI 平台上，进行构建和运行项目。测试点击全屏按钮时，是否能够符合预期的进入和退出全屏模式。如下图是在 UOS 上使用 Skia.GTK 的测试效果
 
-代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/f7eeba9cff79ba5f5f576d6b5454e5c55dceb037/RalllawfairlekolairHemyiqearkice) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/f7eeba9cff79ba5f5f576d6b5454e5c55dceb037/RalllawfairlekolairHemyiqearkice) 上，可以使用如下命令行拉取代码
+<!-- ![](image/UNO 设置平台进入全屏窗口模式的方法/UNO 设置平台进入全屏窗口模式的方法0.gif) -->
+![](http://image.acmx.xyz/lindexi%2FUNO%2520%25E8%25AE%25BE%25E7%25BD%25AE%25E5%25B9%25B3%25E5%258F%25B0%25E8%25BF%259B%25E5%2585%25A5%25E5%2585%25A8%25E5%25B1%258F%25E7%25AA%2597%25E5%258F%25A3%25E6%25A8%25A1%25E5%25BC%258F%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%25950.gif)
+
+代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0b1371317210b0a5e000484d57ee3ae7fc844e24/RalllawfairlekolairHemyiqearkice) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0b1371317210b0a5e000484d57ee3ae7fc844e24/RalllawfairlekolairHemyiqearkice) 上，可以使用如下命令行拉取代码
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
 ```
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
-git pull origin f7eeba9cff79ba5f5f576d6b5454e5c55dceb037
+git pull origin 0b1371317210b0a5e000484d57ee3ae7fc844e24
 ```
 
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
@@ -188,7 +211,7 @@ git pull origin f7eeba9cff79ba5f5f576d6b5454e5c55dceb037
 ```
 git remote remove origin
 git remote add origin https://github.com/lindexi/lindexi_gd.git
-git pull origin f7eeba9cff79ba5f5f576d6b5454e5c55dceb037
+git pull origin 0b1371317210b0a5e000484d57ee3ae7fc844e24
 ```
 
 获取代码之后，进入 RalllawfairlekolairHemyiqearkice 文件夹，即可获取到源代码
