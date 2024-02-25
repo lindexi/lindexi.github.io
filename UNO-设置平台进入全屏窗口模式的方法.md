@@ -11,7 +11,7 @@
 <!-- 发布 -->
 <!-- 博客 -->
 
-实现思路，添加抽象的 IPlatformProvider 接口，在接口里面分别添加进入全屏和退出全屏的方法，如以下代码，接着再分别在 Skia.GTK 和 Skia.WPF 和 WinUI 上实现对接方法。所谓跨平台，就是各个平台都实现一遍
+实现思路是添加抽象的 IPlatformProvider 接口，在接口里面分别添加进入全屏和退出全屏的方法，如以下代码。接着再分别在 Skia.GTK 和 Skia.WPF 和 WinUI 平台上实现对接方法。所谓跨平台，就是各个平台都实现一遍
 
 ```csharp
 public interface IPlatformProvider
@@ -21,7 +21,7 @@ public interface IPlatformProvider
 }
 ```
 
-为了方便让 UNO 统一平台的项目可以方便使用，再定义一个静态类，用于注入 IPlatformProvider 的各个平台的实现
+为了方便让 UNO 统一平台的项目可以方便使用，再定义一个静态类，用于注入 IPlatformProvider 的各个平台的实现。此处如果依赖注入机制方便对接的话，也可以对接一份进入到容器里，如果不方便对接，那就继续沿用静态类型
 
 ```csharp
 public static class PlatformHelper
@@ -83,8 +83,6 @@ public partial class App : WpfApp
     }
 }
 ```
-
-<!-- 由于 AppHead.xaml.cs 是与 WinUI 共用的代码，因此我这里推荐将 PlatformProvider 的定义的命名空间保持 WPF 和 WinUI 项目相同 -->
 
 下面是 WinUI 项目里面的定义，代码如下
 
