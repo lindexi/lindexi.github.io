@@ -3,6 +3,8 @@
 本文记录一个 VisualStudio 黑科技，通过配置 DefaultXamlRuntime 属性，即可让非 WPF 或 WinUI 或 MAUI 等系列类型的项目也可以拥有 XAML 的智能提示，智能提示方式和 WinUI 智能提示行为相同
 
 <!--more-->
+<!-- CreateTime:2024/2/24 15:33:28 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -168,3 +170,8 @@ git pull origin a68446eac510fa6a80757abafde4c2bffd963cda
 ```
 
 获取代码之后，进入 BellikarjeHakurheekall 文件夹，即可获取到源代码
+
+更多请参阅：
+
+- [Add globbing support for WinUI · Issue #3245 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3245 )
+- [adding XamlRuntime msbuild property/metadata by stevenbrix · Pull Request #3332 · dotnet/wpf](https://github.com/dotnet/wpf/pull/3332 )
