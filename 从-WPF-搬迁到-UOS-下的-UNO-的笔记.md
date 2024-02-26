@@ -728,6 +728,25 @@ public partial record MainModel
 
 绕路
 
+### ScaleTransform 不包含采用 2 个参数的构造函数
+
+以下代码将会构建不通过，原因是不再提供构造函数赋值
+
+```csharp
+new ScaleTransform(scaleX, scaleY);
+```
+
+解决方法：给属性赋值代替即可
+
+```csharp
+            new ScaleTransform()
+            {
+                ScaleX = scaleX,
+                ScaleY = scaleY
+            };
+```
+
+
 ## 文件系统
 
 所有路径都是采用 `/` 作为分割而不是采用 `\` 作为分割，必须小心各种拼接路径的写法。最好是使用 `Path.Combine` 或 `Path.Join` 方法辅助拼接路径，尽量不要自己使用分隔符拼接字符串
