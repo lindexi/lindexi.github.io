@@ -4,7 +4,6 @@
 
 
 <!-- CreateTime:2024/2/23 20:43:35 -->
-
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -65,6 +64,48 @@ public class PlatformProvider : IPlatformProvider
         FullScreenHelper.EndFullScreen(_window);
     }
 }
+```
+
+如果想要达成更好的效果，可以使用以下 [walterlv](https://blog.walterlv.com ) 大佬提供的方法，额外设置 WindowChrome 修复边框白边
+
+```csharp
+    internal class WindowPlatformProvider : IPlatformProvider
+    {
+        private readonly Window _window;
+        private readonly WindowChrome _windowChrome;
+
+        public WindowPlatformProvider(Window window)
+        {
+            _window = window;
+            _windowChrome = new WindowChrome
+            {
+                GlassFrameThickness = WindowChrome.GlassFrameCompleteThickness,
+                CaptionHeight = 32,
+                CornerRadius = new CornerRadius(),
+                ResizeBorderThickness = new Thickness(6),
+                UseAeroCaptionButtons = false,
+            };
+            WindowChrome.SetWindowChrome(_window, _windowChrome);
+        }
+
+        public bool IsFullScreen { get; private set; }
+
+        public void EnterFullScreen()
+        {
+            IsFullScreen = true;
+            _window.WindowStyle = WindowStyle.None;
+            WindowChrome.SetWindowChrome(_window, null);
+            FullScreenHelper.StartFullScreen(_window);
+        }
+
+        public void ExitFullScreen()
+        {
+            IsFullScreen = false;
+            _window.WindowStyle = WindowStyle.SingleBorderWindow;
+            WindowChrome.SetWindowChrome(_window, _windowChrome);
+            FullScreenHelper.EndFullScreen(_window);
+        }
+    }
 ```
 
 对接的代码放在 App.xaml.cs 的 构造 里面，如以下代码
