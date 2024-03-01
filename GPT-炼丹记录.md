@@ -99,27 +99,35 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-通过调用堆栈可以知道，触摸的行为受到了 Manipulation 的影响。由于触摸无法像鼠标一样简单处理 Manipulation 的逻辑，导致 WPF 只能在 ManipulationDevice 里面执行对触摸的拦截处理，防止触摸提升为鼠标影响到正常的逻辑。由于 Demo 里面的将 RepeatButton 放入到 ListBox 里面，而 ListBox 默认的样式将包含 ScrollViewer 对象，此 ScrollViewer 对象将设置 IsManipulationEnabled 为 true 的值。这就导致了放在 ListBox 里面的 RepeatButton 所收到的触摸被 Manipulation 消费，没有能够不断触发 Click 事件。如何证明这一点？尝试将 ListBox 的 ScrollViewer 的 IsManipulationEnabled 属性设置为 false 然后你就能发现 RepeatButton 可以在触摸下不断触发 Click 事件，具体的实现代码可以参阅我的 Demo 应用。另外，我阅读了 WPF 的源代码，发现这个问题可能是难以修复的，很抱歉我只能告诉你导致这个事情的原因，我可能无法帮助你修复这个问题。如果你觉得有任何不理解的地方，欢迎讨论
+很感谢 dotnet 团队在 .NET 8 里面作出了许多性能上的优化。但是我依然遇到了启动性能问题。最近半年，我帮助许多伙伴将他们的项目从 .NET Framework 更新到 .NET Core 里面，其中不乏有项目直接更新到 .NET 8 版本。然而坏消息是这些伙伴们普遍向我反馈更新到 .NET Core 之后的启动性能比原本 .NET Framework 慢。我担忧的是经过了这么多年的优化，似乎从桌面应用开发者的角度上，应用的启动性能还没有恢复到 .NET Framework 的水平，这将会伤害到桌面应用开发者的热情
+
+我认为依然有两点原因影响着 .NET Core 应用的启动性能，第一点是 ReadyToRun 尽管能够加速但是会导致 DLL 体积变大，进而导致文件 IO 时间较长；第二点是 .NET Core 在启动过程需要加载大量的 DLL 文件且难以和 .NET Framework 的 GAC 一样的共享，导致了 IO 压力很大，更坏的消息是随着不断有用户反馈 Windows Updater 损坏 .NET Core 环境，越来越多的桌面开发者被迫选用独立发布而不是框架依赖的方式，这又导致了应用程序在冷启动时的 DLL 将无法享受共享 DLL 带来的加速
+
+我知道这是一个很困难的任务，这也是一个充满挑战的任务，期望在未来能够看到 .NET 有更好的启动性能优化，让桌面开发者开心
 ```
 
 ```
 请帮我将以下内容转述为地道的英文：
 
-我现在遇到的最大的问题是我不知道如何将 SkiaSharp 与 UNO 的 FrameworkElement 关联起来。比如说我想要让这个 FrameworkElement 呈现我通过 SkiaSharp 绘制的内容。似乎除了走 WriteableBitmap 的方法之外，我还没找到其他的可实施方法
-
-假设现在我有一个 FrameworkElement 元素，我想要让这个元素在通过 Pointer 系列事件接收到触摸信息之后，根据触摸信息绘制出来我的自定义笔迹内容。那么我可以如何开始呢？
+博客里面的代码存在错误。博客里面的代码的 OutputPath 属性缺少 `>` 字符
 ```
 
 ```
 请帮我将以下内容转述为地道的英文：
 
-我编写了一个 Hack 的 Demo 代码，用于在 Uno.Skia 应用里面，使用 Visual 的 `Draw` 方法进行绘制界面。我的实现方法就是创建一个名为 `SamplesApp` 的项目，因为在 UNO 里面对此 AssemblyName 写了 InternalsVisibleToAttribute 特性，在此项目里面可以访问 internal 的成员，方便我编写 Hack 的代码
+我比较期望能够在 WPF 里面引入 IDisposable 的能力，这可以让 WPF 减少一些内存压力。因此我认为在这里存在 IDisposable 是合理的，尽管我不确定我的提案最终能否通过。
+```
 
-我写了一个继承 Visual 的名为 GraphicsCanvasVisual 的类型，让这个类型重写 Draw 方法。于是我在 GraphicsCanvasVisual 就可以使用参与到界面树 VisualTree 的绘制。然后我又编写了一个继承 FrameworkElement 的名为 GraphicsCanvasElement 的类型，我在这个类型的构造函数里面，将 GraphicsCanvasVisual 加入到 GraphicsCanvasElement 的 `Visual.Children` 里
+```
+请帮我将以下内容转述为地道的英文：
 
-只需要将 GraphicsCanvasElement 加入到 XAML 里，即可在界面绘制出我在 GraphicsCanvasVisual 的绘制内容。我感觉我可以在这个基础上封装出对 Microsoft.Maui.Graphics 的支持
+我理解你的意思，但是这将会导致咱无法创建一个运行稳定的应用程序。咱的应用程序无法给用户安全感。试想，如果你正在使用一个文本编辑器，你正在编写一篇巨作，然而某个时刻，你的文本编辑器崩溃了，于此同时你的灵感也消散在内存中，这是多么令人沮丧的呀。但是如果程序不崩溃，只是行为有些错误，那么此时也许开发者可以做一些补救措施，不会给用户带来如此巨大的损失
+```
 
-5db72c3d67f121becefb5c4e8a0eacd5099c4198
+```
+请帮我将以下内容转述为地道的英文：
+
+我不认为将 GlyphMetrics 放入到 ArrayPool 是一个真正的优化点。原因在于 GlyphMetrics 是一个仅在此处使用的数组类型，将无法通过 ArrayPool 与其他模块进行复用。而为了创建出 GlyphMetrics 数组共享，需要额外创建 `SharedArrayPool<GlyphMetrics>` 等一系列对象，这看起来代价比收益更高。更重要的一点是 GlyphMetrics 数组是一个频繁使用然后释放的对象，可以认为基本上现代的 WPF 应用程序都有文本，也就是将源源不断需要 GlyphMetrics 数组的获取和归还，此时也许可以考虑就使用一个局部的变量缓存起来。也许使用局部变量缓存起来的代价是最低的，且收益是最高的
 ```
 
 ```
