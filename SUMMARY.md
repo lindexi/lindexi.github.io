@@ -1650,6 +1650,8 @@
 
  * [UWP WinRT 使用系统自带的分词库对字符串文本进行分词](UWP-WinRT-使用系统自带的分词库对字符串文本进行分词.md)
 
+ * [UWP WinUI3 传入 AddHandler 的 RoutedEventHandler 类型与事件所需不匹配将抛出参数异常](UWP-WinUI3-传入-AddHandler-的-RoutedEventHandler-类型与事件所需不匹配将抛出参数异常.md)
+
  * [UWP 上架失败因为没有添加隐私策略](UWP-上架失败因为没有添加隐私策略.md)
 
  * [UWP 从文件 StorageFile 转 SoftwareBitmap 图片方法](UWP-从文件-StorageFile-转-SoftwareBitmap-图片方法.md)
