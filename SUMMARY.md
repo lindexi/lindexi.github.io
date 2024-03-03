@@ -1630,6 +1630,8 @@
 
  * [UNO UnoConf 2020 在线会议 了解全平台新开发框架 零距离接触官方开发者](UNO-UnoConf-2020-在线会议-了解全平台新开发框架-零距离接触官方开发者.md)
 
+ * [UNO WinUI 已知问题 在 XAML 条件构建里将 win 平台加入 Ignorable 将构建失败](UNO-WinUI-已知问题-在-XAML-条件构建里将-win-平台加入-Ignorable-将构建失败.md)
+
  * [UNO 已知问题 在后台线程触发 SKXamlCanvas 的 Invalidate 且在 PaintSurface 事件抛出异常将炸掉应用](UNO-已知问题-在后台线程触发-SKXamlCanvas-的-Invalidate-且在-PaintSurface-事件抛出异常将炸掉应用.md)
 
  * [UNO 新建基础库项目构建提示 UNOB0002 错误](UNO-新建基础库项目构建提示-UNOB0002-错误.md)
