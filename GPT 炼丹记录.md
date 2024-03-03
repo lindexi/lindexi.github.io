@@ -41,11 +41,21 @@
 ```
 
 ```
-我正在 github 上报告一个问题，请根据以下内容帮我拟定一个英文标题，要求标题简略：
+我正在 github 上报告一个问题，请根据以下内容帮我拟定一个英文标题和内容，要求标题简略：
 
 [Content Start]
 
-一个嵌入了 UWP 控件的 WPF 应用程序可能会在 AutomationInteropProvider.HostProviderFromHandle 里卡住
+我的 UNO 应用程序构建不通过了，提示错误信息是 `Xaml Internal Error error WMC9999: Unexpected 'NONE' in parse rule 'Element ::= . EmptyElement | ( StartElement ElementBody ).'.`
+
+我只记得我最后编写的代码是关于 `XAML conditional` 的代码
+
+最简的复现 demo 放在： https://github.com/lindexi/lindexi_gd/tree/eee7d7898c92da0bffd1cba4fdacaa64b3f79c01/KernarjeheeboLawbeeferedai
+
+仅在构建 WinUI 项目时才提示，构建 Skia.Wpf 等项目时不会提示任何错误信息
+
+整个的错误提示信息内容如下：
+
+xxx
 
 [Content End]
 
@@ -56,9 +66,17 @@
 我正在 github 上回复一个问题，请根据以下内容帮我编写符合程序员风格的英文内容：
 
 [Content Start]
-我可能无法在这个问题上帮助你。因为我尝试请了我的伙伴帮我下载 64k.mp3 文件，随后我使用 dotnet serve 工具开启本地 http 服务，接着我修改了 MediaElement 的 Source 为我的本地 http://127.0.0.1:5123/64k.mp3 源。结果我发现 PART_Media1 可以正常打开，进入 OnMediaOpened 方法
+原因是原来的代码将 win 放入到 `mc:Ignorable` 里面，这在 XAML 里面将意味着将 win 加入忽略列表里面。然而 win 代表的内容和默认命名空间相同，这就意味着整个默认命名空间都将加入忽略。于是导致了整个 XAML 的 Root 元素都被忽略。这就是 XAML 构建失败的原因。
 
-由于在我当地的网络不允许我访问 http://lhttp.qingting.fm/live/20083/64k.mp3 地址，因此我无法直接使用你给的代码进行复现问题
+如以下的代码，将 win 放入到 `mc:Ignorable` 里面，将导致 XAML 构建失败
+
+[The Code]
+
+根据官方文档的如下说明，不应该将 win 放入到 `mc:Ignorable` 里面。且在官方文档里面也列举出其他不能加入到忽略列表的前缀
+
+[官方文档]
+
+我找到了其他人在 stackoverflow 上的问题，请看 xxx
 
 [Content End]
 
@@ -69,24 +87,6 @@
 我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题和内容，要求标题简略：
 
 [Content Start]
-在 UNO 的 MVU 的生成的绑定代码里面，即在 BindableXxx.cs 里面所生成的代码里面，将会为 XxxModel 层生成对应的 ICommand 命令绑定属性，比如在 XxxModel 的以下方法
-
-    public void Foo(out int n)
-    {
-        n = 10;
-    }
-
-将会在 BindableXxx.cs 里面生成对应的 `public global::Uno.Extensions.Reactive.IAsyncCommand Foo { get; private set; }` 属性
-
-然而在生成 ICommand 命令绑定时，没有为 `out` 参数添加 out 关键字，如上述代码，当前代码生成内容如下
-
-              var n = reactive_arguments;
-
-              model.Foo(n);
-
-以上生成代码将不符合 C# 语法，将导致构建不通过，错误代号是 CS1620
-
-最简的复现 demo 放在： https://github.com/lindexi/lindexi_gd/tree/eeeb023df2f7ab638bafc29d56e1e62a3445cd29/UnoKearqeljikay
 
 [Content End]
 
@@ -96,29 +96,25 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-很感谢 dotnet 团队在 .NET 8 里面作出了许多性能上的优化。但是我依然遇到了启动性能问题。最近半年，我帮助许多伙伴将他们的项目从 .NET Framework 更新到 .NET Core 里面，其中不乏有项目直接更新到 .NET 8 版本。然而坏消息是这些伙伴们普遍向我反馈更新到 .NET Core 之后的启动性能比原本 .NET Framework 慢。我担忧的是经过了这么多年的优化，似乎从桌面应用开发者的角度上，应用的启动性能还没有恢复到 .NET Framework 的水平，这将会伤害到桌面应用开发者的热情
-
-我认为依然有两点原因影响着 .NET Core 应用的启动性能，第一点是 ReadyToRun 尽管能够加速但是会导致 DLL 体积变大，进而导致文件 IO 时间较长；第二点是 .NET Core 在启动过程需要加载大量的 DLL 文件且难以和 .NET Framework 的 GAC 一样的共享，导致了 IO 压力很大，更坏的消息是随着不断有用户反馈 Windows Updater 损坏 .NET Core 环境，越来越多的桌面开发者被迫选用独立发布而不是框架依赖的方式，这又导致了应用程序在冷启动时的 DLL 将无法享受共享 DLL 带来的加速
-
-我知道这是一个很困难的任务，这也是一个充满挑战的任务，期望在未来能够看到 .NET 有更好的启动性能优化，让桌面开发者开心
+我的业务需求是获取一张图片的尺寸，然后根据这个尺寸开展我的业务逻辑。现在我的进度卡在了如何在 UNO 里正确获取一张本地文件图片的尺寸信息。期望能得到你的帮助，感谢
 ```
 
 ```
 请帮我将以下内容转述为地道的英文：
 
-你可以使用 Clip 来实现此功能。在 WPF 里面，可以通过给 Clip 属性赋值的方式实现裁剪的功能。额外的，还可以在 DrawingContext 里面推送裁剪范围，从而实现更加底层的控制。以下是我所在的团队编写的 WPF 应用程序的使用效果图片，此应用程序里面是使用计算橡皮擦的轨迹几何，配合给 Clip 属性赋值实现擦除效果
+从 Intel 工程师的得知，这个问题是来自驱动层。大概的原因在当前版本的 Intel 里面，在 DX9 处理资源时，将会调用 Media 引擎去解压缩资源，即使当前已经没有任何的 Media 正在播放。这将导致占用更多的 GPU 资源。此问题将在后续的 Intel 驱动修复。再次感谢 Intel 支持
 ```
 
 ```
 请帮我将以下内容转述为地道的英文：
 
-我理解你的意思，但是这将会导致咱无法创建一个运行稳定的应用程序。咱的应用程序无法给用户安全感。试想，如果你正在使用一个文本编辑器，你正在编写一篇巨作，然而某个时刻，你的文本编辑器崩溃了，于此同时你的灵感也消散在内存中，这是多么令人沮丧的呀。但是如果程序不崩溃，只是行为有些错误，那么此时也许开发者可以做一些补救措施，不会给用户带来如此巨大的损失
+在阅读了 UNO 的源代码之后，我认为咱可以将原本的只从 Mouse 里面获取事件，更改为同时从 Stylus 和 Mouse 获取事件。且在 Mouse 里面判断当前的事件是来自于 Stylus 或 Touch 时，将自动忽略后续处理逻辑。根据 WPF 的触摸行为可以知道，触摸先触发 Touch 事件，随后提升为 Stylus 事件，最后提升为 Mouse 事件。于此同时 Pen 消息将会先触发 Stylus 事件，再提升为 Mouse 事件。这就意味着简单处理的话，直接使用 Stylus 事件即可同时处理 Touch 和 Pen 的情况。使用 Stylus 事件时，将可以自动支持多指触摸。且可以通过 GetPropertyValue 方法，传入 StylusPointProperties.Width 和 StylusPointProperties.Height 获取到可能存在的触摸的尺寸，用于填充实现 Microsoft.UI.Input.PointerPointProperties.ContactRect 属性。这将有利于触摸屏上面的 WPF 应用使用上 UNO 框架
 ```
 
 ```
 请帮我将以下内容转述为地道的英文：
 
-我不认为将 GlyphMetrics 放入到 ArrayPool 是一个真正的优化点。原因在于 GlyphMetrics 是一个仅在此处使用的数组类型，将无法通过 ArrayPool 与其他模块进行复用。而为了创建出 GlyphMetrics 数组共享，需要额外创建 `SharedArrayPool<GlyphMetrics>` 等一系列对象，这看起来代价比收益更高。更重要的一点是 GlyphMetrics 数组是一个频繁使用然后释放的对象，可以认为基本上现代的 WPF 应用程序都有文本，也就是将源源不断需要 GlyphMetrics 数组的获取和归还，此时也许可以考虑就使用一个局部的变量缓存起来。也许使用局部变量缓存起来的代价是最低的，且收益是最高的
+不断的计算当前鼠标落点和上个鼠标落点之间构建的几何形状，然后通过 Geometry.Combine 方式与当前 Clip 采用 GeometryCombineMode.Exclude 方式叠加，如果即可让裁剪部分源源不断减去当前鼠标的轨迹。鼠标轨迹如下图，就是两个圆形和矩形的拼接
 ```
 
 ```
