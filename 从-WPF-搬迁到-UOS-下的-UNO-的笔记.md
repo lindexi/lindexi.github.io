@@ -808,7 +808,87 @@ new ScaleTransform(scaleX, scaleY);
 
 ### 代码更改不生效
 
-可能是 VisualStudio 增量构建的锅，记得打上断点
+可能是 VisualStudio 增量构建的锅，记得打上断点，通过断点是否红点判断代码是否最新。如果提示白点或在断点添加感叹号说明构建没有使用到新的代码
+
+### Xaml Internal Error error WMC9999
+
+如遇到以下错误提示，可能是将 win 平台加入 `mc:Ignorable` 列表导致的构建失败，详细请参阅 [UNO WinUI 已知问题 在 XAML 条件构建里将 win 平台加入 Ignorable 将构建失败](https://blog.lindexi.com/post/UNO-WinUI-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%9C%A8-XAML-%E6%9D%A1%E4%BB%B6%E6%9E%84%E5%BB%BA%E9%87%8C%E5%B0%86-win-%E5%B9%B3%E5%8F%B0%E5%8A%A0%E5%85%A5-Ignorable-%E5%B0%86%E6%9E%84%E5%BB%BA%E5%A4%B1%E8%B4%A5.html )
+
+```
+Xaml Internal Error error WMC9999: Unexpected 'NONE' in parse rule 'Element ::= . EmptyElement | ( StartElement ElementBody ).'.
+```
+
+简单的复现代码如下
+
+```xml
+<Page x:Class="KernarjeheeboLawbeeferedai.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:KernarjeheeboLawbeeferedai"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:not_win="http://uno.ui/not_win"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      mc:Ignorable="d win not_win">
+  <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+    <win:TextBlock AutomationProperties.AutomationId="HelloTextBlock"
+                  Text="Hello Uno Platform"
+                  HorizontalAlignment="Center" />
+    <not_win:TextBlock AutomationProperties.AutomationId="HelloTextBlock"
+                       Text="Hello"
+                       HorizontalAlignment="Center" />
+  </StackPanel>
+</Page>
+```
+
+核心错误代码是 `mc:Ignorable="d win not_win"` 将 win 平台加入忽略列表
+
+解决方法就是将 win 平台从 `mc:Ignorable` 里删掉，更正后的代码是 `mc:Ignorable="d not_win"` 这么写的
+
+这是 WinUI 平台的问题，即使新建一个非 UNO 的纯 WinUI 3 项目也能复现此问题
+
+### 找不到 Uno.Sdk 错误
+
+可能是缺少 nuget.config 导致默认配置没有官方 NuGet 源，导致拉取不到库，提示以下错误
+
+```
+InvalidProjectFileException: The SDK 'Uno.Sdk' specified could not be found.
+```
+
+修复方法是添加 `nuget.config` 文件到 sln 文件同文件夹下，在 nuget.config 里面存放以下代码。如果当前项目不缺少 nuget.config 文件，则请尝试替换 nuget.config 为以下代码试试能够解决 Uno.Sdk 找不到的问题，从而确定是否当前项目的 nuget.config 文件存在编写错误
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <packageSources>
+        <!-- 
+            This specific line is required when building with .NET 8.0.100/VS 17.8 and earlier.
+            The error without this feed is as follows:
+
+            InvalidProjectFileException: The SDK 'Uno.Sdk' specified could not be found.
+         -->
+        <add key="NuGet official package source" value="https://api.nuget.org/v3/index.json" />
+    </packageSources>
+</configuration>
+```
+
+另一个可能错误点是缺少 global.json 文件或 global.json 里面没有定义 Uno.Sdk 的版本。可以尝试新建或替换 global.json 为如下代码，新建的 global.json 也同样需要放在 sln 文件所在的文件夹里面
+
+```json
+{
+  "msbuild-sdks": 
+  {
+    "Uno.Sdk": "5.1.79",
+    "Microsoft.Build.NoTargets": "3.7.56"
+  }
+}
+```
+
+如果以上的 global.json 定义的版本号错误，也可能导致 UNOB0004: The `$(UnoVersion)` property must match the version of the Uno.Sdk defined in global.json 错误。修复方法同上。详细请参阅 [How to upgrade Uno Platform NuGet Packages](https://platform.uno/docs/articles/upgrading-nuget-packages.html )
+
 
 ## 参考文档
 
@@ -826,9 +906,31 @@ new ScaleTransform(scaleX, scaleY);
 
 [dotnet 统信 UOS 运行 UNO FrameBuffer 应用错误 Failed to open FrameBuffer device](https://blog.lindexi.com/post/dotnet-%E7%BB%9F%E4%BF%A1-UOS-%E8%BF%90%E8%A1%8C-UNO-FrameBuffer-%E5%BA%94%E7%94%A8%E9%94%99%E8%AF%AF-Failed-to-open-FrameBuffer-device.html )
 
+[dotnet 统信 UOS 运行 UNO FrameBuffer 应用错误 Failed to open FrameBuffer device](https://blog.lindexi.com/post/dotnet-%E7%BB%9F%E4%BF%A1-UOS-%E8%BF%90%E8%A1%8C-UNO-FrameBuffer-%E5%BA%94%E7%94%A8%E9%94%99%E8%AF%AF-Failed-to-open-FrameBuffer-device.html )
+
+[dotnet UNO 如何在调试下输出界面层级结构](https://blog.lindexi.com/post/dotnet-UNO-%E5%A6%82%E4%BD%95%E5%9C%A8%E8%B0%83%E8%AF%95%E4%B8%8B%E8%BE%93%E5%87%BA%E7%95%8C%E9%9D%A2%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84.html )
+
+[UNO.Skia.Gtk 设置窗口尺寸变化方法](https://blog.lindexi.com/post/UNO.Skia.Gtk-%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E5%B0%BA%E5%AF%B8%E5%8F%98%E5%8C%96%E6%96%B9%E6%B3%95.html )
+
+[UNO 设置平台进入全屏窗口模式的方法](https://blog.lindexi.com/post/UNO-%E8%AE%BE%E7%BD%AE%E5%B9%B3%E5%8F%B0%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%8F%E7%AA%97%E5%8F%A3%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%96%B9%E6%B3%95.html )
+
+[从 Uno Platform 4 更新 Uno Platform 5 的迁移方法](https://blog.lindexi.com/post/%E4%BB%8E-Uno-Platform-4-%E6%9B%B4%E6%96%B0-Uno-Platform-5-%E7%9A%84%E8%BF%81%E7%A7%BB%E6%96%B9%E6%B3%95.html ) [腾讯云](https://cloud.tencent.com/developer/article/2380234 )
+
+[UNO 新建基础库项目构建提示 UNOB0002 错误](https://blog.lindexi.com/post/UNO-%E6%96%B0%E5%BB%BA%E5%9F%BA%E7%A1%80%E5%BA%93%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E6%8F%90%E7%A4%BA-UNOB0002-%E9%94%99%E8%AF%AF.html ) [腾讯云](https://cloud.tencent.com/developer/article/2380233 )
+
+[UNO 已知问题 在后台线程触发 SKXamlCanvas 的 Invalidate 且在 PaintSurface 事件抛出异常将炸掉应用](https://blog.lindexi.com/post/UNO-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%9C%A8%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B%E8%A7%A6%E5%8F%91-SKXamlCanvas-%E7%9A%84-Invalidate-%E4%B8%94%E5%9C%A8-PaintSurface-%E4%BA%8B%E4%BB%B6%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8%E5%B0%86%E7%82%B8%E6%8E%89%E5%BA%94%E7%94%A8.html ) [腾讯云](https://cloud.tencent.com/developer/article/2381479 )
+
+[UNO WinUI 已知问题 在 XAML 条件构建里将 win 平台加入 Ignorable 将构建失败](https://blog.lindexi.com/post/UNO-WinUI-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%9C%A8-XAML-%E6%9D%A1%E4%BB%B6%E6%9E%84%E5%BB%BA%E9%87%8C%E5%B0%86-win-%E5%B9%B3%E5%8F%B0%E5%8A%A0%E5%85%A5-Ignorable-%E5%B0%86%E6%9E%84%E5%BB%BA%E5%A4%B1%E8%B4%A5.html )
+
 [中文视频教程 I share a video of an app which created with uno · unoplatform/uno · Discussion #4962](https://github.com/unoplatform/uno/discussions/4962 )
 
 [A Journey of Migrating a WPF Project to UNO Framework: Triumphs and Challenges · unoplatform/uno · Discussion #14548](https://github.com/unoplatform/uno/discussions/14548 )
+
+## 开发社区
+
+如有 UNO 开发过程相关问题，欢迎加入 724181515 QQ群讨论
+
+如有国产系统开发的相关问题，欢迎加入 810052083 QQ群讨论
 
 
 
