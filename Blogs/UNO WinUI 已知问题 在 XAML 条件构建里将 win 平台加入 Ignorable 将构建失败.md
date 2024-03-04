@@ -1,7 +1,9 @@
-如果在 UNO 项目里面，为了进行 XAML 条件构建，将 win 平台加入到 mc:Ignorable 里面，将会在构建时提示 Xaml Internal Error error WMC9999: Unexpected 'NONE' in parse rule 'Element ::= . EmptyElement | ( StartElement ElementBody ).'. 错误
+如果在 UNO 项目里面，为了进行 XAML 条件构建，将 win 平台加入到 mc:Ignorable 里面，将会在构建时提示 Xaml Internal Error error WMC9999: Unexpected 'NONE' in parse rule 'Element ::= . EmptyElement ( StartElement ElementBody ).'. 错误
 
 <!--more-->
 
+
+<!-- CreateTime:2024/3/3 11:58:03 -->
 
 <!-- 发布 -->
 <!-- 博客 -->
