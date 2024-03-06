@@ -743,6 +743,17 @@ new ScaleTransform(scaleX, scaleY);
             };
 ```
 
+### 使用 TypeDescriptor.GetConverter 转换颜色
+
+如以下代码将会转换失败
+
+```csharp
+        var convertFromString = (Color) TypeDescriptor.GetConverter(typeof(Color)).ConvertFromString("#565656");
+```
+
+异常信息是 System.NotSupportedException:“TypeConverter cannot convert from System.String.”
+
+解决方法：参考 [win10 uwp 颜色转换](https://blog.lindexi.com/post/win10-uwp-%E9%A2%9C%E8%89%B2%E8%BD%AC%E6%8D%A2.html )
 
 ## 文件系统
 
