@@ -11,9 +11,9 @@
 
 ## 补丁
 
-开始之前，先来理一下所需补丁的情况，不想看补丁细节还请跳到下文主题这章。 准确来说，在当前 2021.12.25 官方推荐 Win7 系统打上的补丁是 KB3063858 补丁
+开始之前，先来理一下所需补丁的情况，不想看补丁细节还请跳到下文主题这章。 准确来说，在当前 2021.12.25 官方推荐 Win7 系统打上的补丁是 [KB3063858](http://support.microsoft.com/kb/KB3063858) 补丁
 
-> KB3063858: MS15-063：Windows 内核中的漏洞可能允许特权提升：2015 年 6 月 9 日
+> KB3063858: [MS15-063](https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2015/ms15-063)：Windows 内核中的漏洞可能允许特权提升：2015 年 6 月 9 日
 > 此安全更新可解决 Windows 中的一个漏洞。如果用户访问包含特殊设计的文件的网络共享（或指向网络共享的网站）时，此漏洞可能允许特权提升。但是在所有情况下，攻击者都无法强制用户访问此类网络共享或网站。
 
 也有伙伴推荐给我的是安装 KB4457144 补丁。但是 KB4457144 补丁太大了，包含太多内容，带上这个补丁没什么优势
@@ -26,7 +26,7 @@
 
 值得一说的是对需要安装 KB3063858 补丁的系统来说，大多数都需要额外加上证书，参阅 [https://www.microsoft.com/pkiops/Docs/Repository.htm](https://www.microsoft.com/pkiops/Docs/Repository.htm) 因此我认为对于客户端分发来说，打上 KB2533623 补丁似乎更好。但是 KB2533623 当前被微软下架了，请看 [Security update KB2533623 no longer available · Issue #20459 · dotnet/docs](https://github.com/dotnet/docs/issues/20459 ) 
 
-这是 KB2533623 的下载地址: [http://www.microsoft.com/download/details.aspx?familyid=c79c41b0-fbfb-4d61-b5d8-cadbe184b9fc](http://www.microsoft.com/download/details.aspx?familyid=c79c41b0-fbfb-4d61-b5d8-cadbe184b9fc)
+好在我从大佬们找到了之前的下载地址: [http://www.microsoft.com/download/details.aspx?familyid=c79c41b0-fbfb-4d61-b5d8-cadbe184b9fc](http://www.microsoft.com/download/details.aspx?familyid=c79c41b0-fbfb-4d61-b5d8-cadbe184b9fc)
 
 另外，在刚推送 dotnet core 3.0 的预览版本时，有伙伴在 WPF 官方仓库反馈说需要加上 [KB2999226](https://support.microsoft.com/kb/2999226) 补丁。此 KB2999226 补丁是 `Windows 中的 Universal C Runtime 更新` 的内容，参阅 [https://github.com/dotnet/wpf/issues/2009#issuecomment-543872453](https://github.com/dotnet/wpf/issues/2009#issuecomment-543872453)
 
@@ -34,7 +34,7 @@
 
 因此，对于客户端分发来说，似乎采用 KB2533623 最小补丁，然后在输出路径上拷贝好 [`api-xxxxx.dll`](https://www.nuget.org/packages/runtime.win7-x64.Microsoft.NETCore.Windows.ApiSets) 这些文件到输出路径是最佳方法
 
-下载地址：
+附下载地址：
 
 - [KB2533623 x86](http://image.acmx.xyz/Windows6.1-KB2533623-x86.msu)
   + MD5： EDF1D538C85F24EC0EF0991E6B27F0D7
@@ -43,7 +43,15 @@
   + MD5： 0A894C59C245DAD32E6E48ECBDBC8921
   + SHA1： 8A59EA3C7378895791E6CDCA38CC2AD9E83BEBFF
 - [KB3063858 32-bit](https://www.microsoft.com/en-us/download/details.aspx?id=47409)
+  + MD5： 6d2b63b73e20da5128490632995c4e65
+  + SHA1： 3d821d3f47789e11dc3145f436e112762935f126
 - [KB3063858 64-bit](https://www.microsoft.com/en-us/download/details.aspx?id=47442)
+  + MD5： 6235547a9ac3d931843fe931c15f8e51
+  + SHA1： 4ffeb8f40849fda81188e3aad055a30fd9972bd5
+
+以上地址如果下载失败，可发邮件向我要补丁包
+
+<!-- 补丁包本地地址： 团队工具\白板相关\修复工具\.NET Core Win7 修复补丁 KB2533623 -->
 
 ## 主题
 
@@ -212,4 +220,3 @@ namespace AddDllDirectoryDetectCs
 
 [Windows 7 SP 1 部署 .NET 6 Desktop Runtime 桌面运行时会遇到的问题-码农很忙](https://www.coderbusy.com/archives/1995.html )
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
