@@ -66,20 +66,35 @@ xxx
 ```
 
 ```
-我正在 github 上回复一个问题，请根据以下内容帮我编写符合程序员风格的英文内容：
+我正在 github 上分享我的成果，请根据以下内容帮我拟定英文标题和内容，要求标题简略，内容符合程序员风格，语气尽量激动，你可以修改内容顺序使逻辑更清晰：
 
 [Content Start]
-原因是原来的代码将 win 放入到 `mc:Ignorable` 里面，这在 XAML 里面将意味着将 win 加入忽略列表里面。然而 win 代表的内容和默认命名空间相同，这就意味着整个默认命名空间都将加入忽略。于是导致了整个 XAML 的 Root 元素都被忽略。这就是 XAML 构建失败的原因。
 
-如以下的代码，将 win 放入到 `mc:Ignorable` 里面，将导致 XAML 构建失败
+我制作了一个名为 UnoSpySnoop 的工具。这个 UnoSpySnoop 是一款用来辅助调试 Skia 平台下的 UNO 应用 UI 界面的工具。
 
-[The Code]
+为什么需要此工具？
 
-根据官方文档的如下说明，不应该将 win 放入到 `mc:Ignorable` 里面。且在官方文档里面也列举出其他不能加入到忽略列表的前缀
+因为在 Skia 平台下，无论是 WPF 还是 GTK 都采用一个 Surface 来渲染界面。这就导致了原本的 WPF 的 UI 调试工具，如 SnoopWpf 或 LiveVisualTree 等工具，将只能看到一张图片而不能获取正确的界面结构。通过 UnoSpySnoop 可以很好的在基于 Skia 的桌面平台，如 Skia.Wpf 和 Skia.Gtk 上，进行辅助界面开发调试，提高开发者的界面开发效率，特别是调试在 Linux 桌面上的 Skia.Gtk 应用的时候
 
-[官方文档]
+此工具的实现了类似于 《Inspecting the runtime visual tree of an Uno app》 文档介绍里面的 UWP 应用的内置在 VisualStudio 的 LiveVisualTree 工具的功能，此工具可以协助开发者了解 Skia 平台的应用的界面结构，可以获取某个 UIEelement 的各个属性
 
-我找到了其他人在 stackoverflow 上的问题，请看 xxx
+此工具在 GitHub 上使用最友好的 MIT 协议进行开源，请看：[Link1]
+
+我希望 UnoSpySnoop 工具能够帮助开发者真正提高 Skia 桌面平台应用的开发调试效率。如果你有任何的建议和问题我都十分欢迎收到反馈
+
+再次感谢 UNO 平台，感谢 UNO 的贡献者们
+
+[Content End]
+```
+
+```
+我正在 github 上编写文档，请根据以下内容帮我编写符合程序员风格的英文内容：
+
+[Content Start]
+
+## 为什么需要此工具
+
+因为在 Skia 平台下，无论是 WPF 还是 GTK 都采用一个 Surface 来渲染界面。这就导致了原本的 WPF 的 UI 调试工具，如 SnoopWpf 等工具，将只能看到一张图片而不能获取正确的界面结构。通过 UnoSpySnoop 可以很好的在基于 Skia 的桌面平台，如 Skia.Wpf 和 Skia.Gtk 上，进行辅助界面开发调试，提高开发者的界面开发效率，特别是调试在 Linux 桌面上的 Skia.Gtk 应用的时候
 
 [Content End]
 

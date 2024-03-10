@@ -384,6 +384,24 @@ Fx.xaml(1,2): XamlCompiler error WMC0001: Unknown type 'Foo' in XML namespace 'c
 
 此问题可能换成新的 `<Project Sdk="Uno.Sdk">` 可以修复，但是由于非必现问题，我暂时没有复现步骤
 
+### 命名空间引用错误
+
+这个常见于拷贝代码过程中，即在 WPF 这边的 `xmlns:foo="clr-namespace:Xxxxx` 中的 `clr-namespace` 应该是被替换为 `using` 才对。此类问题在于会在 XAML 代码里面发现明明类型能够找到，但是构建过程中却报错说找不到类型，如更明确的 `XamlCompiler error WMC0909: Cannot resolve DataType foo:Xxxxx` 错误
+
+以下代码是错误的：
+
+```xml
+xmlns:foo="clr-namespace:Xxxxx"
+```
+
+以下代码是正确的：
+
+```xml
+xmlns:foo="using:Xxxxx"
+```
+
+除了拷贝代码可能的出错，也有可能是 ReSharper 在修改类型的命名空间的时候，自动向 XAML 添加的代码错误
+
 
 
 ## 图片资源
@@ -636,6 +654,7 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 
 暂时在 WinUI3 项目上的多语言切换可能一直都会使用英文，无法正确识别到中文，但是 GTK 和 WPF 项目都没有此问题
 
+
 ## 缺乏的机制
 
 ### Visibility.Hidden
@@ -703,6 +722,12 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 ```
 
 或者是将 Button 放入到 ListView 的 ItemTemplate 里面，如此运行项目也许可以看到界面正在闪烁
+
+### 在 UIElement 的属性上标记 Obsolete 且为 true 导致构建失败
+
+任何直接或间接继承自 UIElement 的类型的属性，都不能标记 Obsolete 且为 true 否则将会导致 XamlTypeInfo.g.cs 生成代码构建失败
+
+因为在 XamlTypeInfo.g.cs 生成的代码将会访问所有的 UI 元素的属性。如果有某个属性标记为 Obsolete 且为 true 将会导致构建失败
 
 ### 在 MVU 下带 out 方法将导致构建不通过
 
@@ -785,6 +810,10 @@ new ScaleTransform(scaleX, scaleY);
 ```
 
 可以替换为设置 ProcessStartInfo 的 UseShellExecute 为 true 进行打开文件或文件夹，或采用 xdg-open 代替 explorer 的部分功能。请参阅 [dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为](https://blog.lindexi.com/post/dotnet-%E6%B5%8B%E8%AF%95%E5%9C%A8-UOS-Linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-Process-Start-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E7%9A%84%E8%A1%8C%E4%B8%BA.html )
+
+
+
+
 
 ## 安装包
 
@@ -901,6 +930,7 @@ InvalidProjectFileException: The SDK 'Uno.Sdk' specified could not be found.
 如果以上的 global.json 定义的版本号错误，也可能导致 UNOB0004: The `$(UnoVersion)` property must match the version of the Uno.Sdk defined in global.json 错误。修复方法同上。详细请参阅 [How to upgrade Uno Platform NuGet Packages](https://platform.uno/docs/articles/upgrading-nuget-packages.html )
 
 
+
 ## 参考文档
 
 [WPF 使用 MAUI 的自绘制逻辑](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-MAUI-%E7%9A%84%E8%87%AA%E7%BB%98%E5%88%B6%E9%80%BB%E8%BE%91.html )
@@ -932,6 +962,8 @@ InvalidProjectFileException: The SDK 'Uno.Sdk' specified could not be found.
 [UNO 已知问题 在后台线程触发 SKXamlCanvas 的 Invalidate 且在 PaintSurface 事件抛出异常将炸掉应用](https://blog.lindexi.com/post/UNO-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%9C%A8%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B%E8%A7%A6%E5%8F%91-SKXamlCanvas-%E7%9A%84-Invalidate-%E4%B8%94%E5%9C%A8-PaintSurface-%E4%BA%8B%E4%BB%B6%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8%E5%B0%86%E7%82%B8%E6%8E%89%E5%BA%94%E7%94%A8.html ) [腾讯云](https://cloud.tencent.com/developer/article/2381479 )
 
 [UNO WinUI 已知问题 在 XAML 条件构建里将 win 平台加入 Ignorable 将构建失败](https://blog.lindexi.com/post/UNO-WinUI-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%9C%A8-XAML-%E6%9D%A1%E4%BB%B6%E6%9E%84%E5%BB%BA%E9%87%8C%E5%B0%86-win-%E5%B9%B3%E5%8F%B0%E5%8A%A0%E5%85%A5-Ignorable-%E5%B0%86%E6%9E%84%E5%BB%BA%E5%A4%B1%E8%B4%A5.html )
+
+[UWP WinUI3 传入 AddHandler 的 RoutedEventHandler 类型与事件所需不匹配将抛出参数异常](https://blog.lindexi.com/post/UWP-WinUI3-%E4%BC%A0%E5%85%A5-AddHandler-%E7%9A%84-RoutedEventHandler-%E7%B1%BB%E5%9E%8B%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%89%80%E9%9C%80%E4%B8%8D%E5%8C%B9%E9%85%8D%E5%B0%86%E6%8A%9B%E5%87%BA%E5%8F%82%E6%95%B0%E5%BC%82%E5%B8%B8.html )
 
 [中文视频教程 I share a video of an app which created with uno · unoplatform/uno · Discussion #4962](https://github.com/unoplatform/uno/discussions/4962 )
 
