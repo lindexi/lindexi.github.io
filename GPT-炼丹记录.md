@@ -48,17 +48,9 @@
 
 [Content Start]
 
-我的 UNO 应用程序构建不通过了，提示错误信息是 `Xaml Internal Error error WMC9999: Unexpected 'NONE' in parse rule 'Element ::= . EmptyElement | ( StartElement ElementBody ).'.`
+我发现在 Skia 平台下使用 `FrameworkElement.ActualWidthProperty` 或 `FrameworkElement.ActualHeightProperty` 这两个 DependencyProperty 配合 GetValue 获取任何一个 FrameworkElement 的尺寸，都会返回 0 的值。但是与之相反的是，如果使用 ActualWidth 或 ActualHeight 属性直接获取，则能获取到正确的符合预期的值
 
-我只记得我最后编写的代码是关于 `XAML conditional` 的代码
-
-最简的复现 demo 放在： https://github.com/lindexi/lindexi_gd/tree/eee7d7898c92da0bffd1cba4fdacaa64b3f79c01/KernarjeheeboLawbeeferedai
-
-仅在构建 WinUI 项目时才提示，构建 Skia.Wpf 等项目时不会提示任何错误信息
-
-整个的错误提示信息内容如下：
-
-xxx
+我尝试将运行平台切换到 WinUI 3 时，无论是 ActualWidth 还是 `GetValue(FrameworkElement.ActualWidthProperty)` 都能返回相同的且正确的值。似乎在这一点看起来 WinUI 3 平台和 Skia 平台的行为有差异
 
 [Content End]
 
