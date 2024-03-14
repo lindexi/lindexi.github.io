@@ -37,10 +37,14 @@
 
 ## 翻译
 
-```csharp
+```
 请帮我将以下内容进行总结然后翻译成英文：
 
 我统计了我的应用，根据我从 3016336 位用户过去 7 天的数据里面，可以看到平均的启动耗时是 2.7 秒。这里需要进一步说明的是我的应用是一个复杂的应用，启动过程是相当复杂的
+```
+
+```
+请将我的博客翻译为英文，你可以修改写作的风格，以及调整语句让文章总体更具备可读性
 ```
 
 ```
@@ -84,9 +88,11 @@
 
 [Content Start]
 
-## 为什么需要此工具
+咱可以发现在 Microsoft.Maui.Graphics.Win2D 等实现上，在 PlatformDrawPath 和 FillPath 等方法上，从 PathF 获取到平台相关的 Path 或 Geometry 时，将会依赖 PathF.PlatformPath 属性作为缓存，如此可以提高重复绘制的性能，减少创建平台相关的对象的次数
 
-因为在 Skia 平台下，无论是 WPF 还是 GTK 都采用一个 Surface 来渲染界面。这就导致了原本的 WPF 的 UI 调试工具，如 SnoopWpf 等工具，将只能看到一张图片而不能获取正确的界面结构。通过 UnoSpySnoop 可以很好的在基于 Skia 的桌面平台，如 Skia.Wpf 和 Skia.Gtk 上，进行辅助界面开发调试，提高开发者的界面开发效率，特别是调试在 Linux 桌面上的 Skia.Gtk 应用的时候
+但是在 Microsoft.Maui.Graphics.Skia 上，每次都是重新创建 SKPath 对象，这就意味着重复绘制一个复杂的 PathF 将不能在 Microsoft.Maui.Graphics.Skia 获得较好的性能
+
+本次更改的作用就是让 Microsoft.Maui.Graphics.Skia 利用 PathF.PlatformPath 属性作为缓存，提高 Microsoft.Maui.Graphics.Skia 重复绘制复杂 PathF 的性能
 
 [Content End]
 
@@ -98,6 +104,8 @@
 
 [Content Start]
 
+修复对一个 PathF 进行多次绘制，其中首次绘制和后续的绘制传入的 SKPathFillType 参数不相同时，后续绘制无法使用上 SKPathFillType 参数的内容的问题
+
 [Content End]
 
 英文标题：
@@ -106,7 +114,7 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-我通过编写大量的博客，记录和宣传微软的先进技术，记录我开发过程中所遇到的问题，以及我的关注者们询问我的问题的解决方案。我在 2023 编写了 120 多篇博客，赢得超过 30 万次页面访问。我现在总共编写超过 1700 篇博客，去年的博客页面总访问量超过 350 万次。除了博客之外，我还积极参与开源社区的建设，我参与微软的开源项目，我帮助回答开发者们在 github 上提问的问题，我参与贡献代码，我参与代码审查
+事实上我参加了 WPF 的 roadmap 会议，但可惜的是由于时区的问题，会议时间刚好是我的深夜
 ```
 
 ```
@@ -386,6 +394,12 @@ https://github.com/lindexi/lindexi_gd/tree/dde76effc23ebb9ee974b6ec276b242c39a50
 #####
 
 #####
+```
+
+## 代码审查
+
+```
+你是一位代码审查者，以下是一些 WPF 的 XAML 的代码，你需要审查出代码里面的不匹配问题。不匹配问题指的是 SolidColorBrush 所使用的 Color 和 
 ```
 
 
