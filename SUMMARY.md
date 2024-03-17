@@ -3522,6 +3522,8 @@
 
  * [让 snoop 支持 .NET Core WPF 调试](让-snoop-支持-.NET-Core-WPF-调试.md)
 
+ * [记 Intel 的 31.0.101.5186 版本驱动带崩 WPF 程序](记-Intel-的-31.0.101.5186-版本驱动带崩-WPF-程序.md)
+
  * [记 Win8.1 某应用渲染抛出 OutOfMemoryException 异常及修复方法](记-Win8.1-某应用渲染抛出-OutOfMemoryException-异常及修复方法.md)
 
  * [记一次调试资源管理器未响应经验](记一次调试资源管理器未响应经验.md)
