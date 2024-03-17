@@ -49,9 +49,7 @@
 
 [Content Start]
 
-我发现在 Skia 平台下使用 `FrameworkElement.ActualWidthProperty` 或 `FrameworkElement.ActualHeightProperty` 这两个 DependencyProperty 配合 GetValue 获取任何一个 FrameworkElement 的尺寸，都会返回 0 的值。但是与之相反的是，如果使用 ActualWidth 或 ActualHeight 属性直接获取，则能获取到正确的符合预期的值
-
-我尝试将运行平台切换到 WinUI 3 时，无论是 ActualWidth 还是 `GetValue(FrameworkElement.ActualWidthProperty)` 都能返回相同的且正确的值。似乎在这一点看起来 WinUI 3 平台和 Skia 平台的行为有差异
+我发现在 Skia 平台下在 XAML 里使用 Path 时，给 Data Property 赋值之后，渲染时采用的 FillRule 是 Nonzero 而不是 EvenOdd。这将导致在 Skia 平台上渲染结果和 WinUI 平台存在差异
 
 [Content End]
 
@@ -101,7 +99,7 @@
 
 [Content Start]
 
-修复对一个 PathF 进行多次绘制，其中首次绘制和后续的绘制传入的 SKPathFillType 参数不相同时，后续绘制无法使用上 SKPathFillType 参数的内容的问题
+修复在 Skia 平台上对 StreamGeometry 设置 FillRule 无效问题。原因是在 Skia 平台上，忘记将 StreamGeometry 的 FillRule 赋值给到 SKPath 上，导致 SKPath 始终保持默认值，这将会导致在 Skia 平台上使用如 `<Path Data="xxxxx"/>` 的 XAML 代码时，所对应的 Path 的 Data 将使用 Nonzero 的 FillRule 方式，而不是保持和 WinUI 相同的 EvenOdd 默认的 FillRule 方式
 
 [Content End]
 
