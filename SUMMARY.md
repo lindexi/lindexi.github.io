@@ -522,6 +522,8 @@
 
  * [dotnet C# 获取本机外网 IP 地址](dotnet-C-获取本机外网-IP-地址.md)
 
+ * [dotnet C# 警惕可空结构体的方法内部赋值无效](dotnet-C-警惕可空结构体的方法内部赋值无效.md)
+
  * [dotnet C# 调用委托的 GetInvocationList 的对象分配](dotnet-C-调用委托的-GetInvocationList-的对象分配.md)
 
  * [dotnet C# 通过 Vortice 使用 Direct2D 特效入门](dotnet-C-通过-Vortice-使用-Direct2D-特效入门.md)
