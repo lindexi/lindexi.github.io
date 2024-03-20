@@ -1644,6 +1644,8 @@
 
  * [UNO.Skia.Gtk 设置窗口尺寸变化方法](UNO.Skia.Gtk-设置窗口尺寸变化方法.md)
 
+ * [UOS 开启 VisualStudio 远程调试 .NET 应用之旅](UOS-开启-VisualStudio-远程调试-.NET-应用之旅.md)
+
  * [UWP How to custom RichTextBlock right click menu](UWP-How-to-custom-RichTextBlock-right-click-menu.md)
 
  * [UWP how to get the touch width](UWP-how-to-get-the-touch-width.md)
