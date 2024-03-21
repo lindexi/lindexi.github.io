@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/03/21 07:05:36 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -15,12 +17,14 @@
 
 ## 准备
 
-第一步是保证 UOS 和 Windows 构成局域网网络，或可直接联通的网络。这一步可自行了解网络配置，只要双方网络能互通即可，其中挂在一个局域网内相同网段是最好的选择
+第一步是保证 UOS 和 Windows 构成局域网网络，或可直接联通的网络。这一步可自行了解网络配置，只要双方网络能互通即可，挂在一个局域网内相同网段是最好的选择
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅0.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20243201054501567.jpg)
 
 其次是在 UOS 里面开启开发者模式，开启方法请参阅 [如何打开开发者模式？-UOS官方文档](https://doc.chinauos.com/content/poVHjoEBplouMytzM6i8)
+
+准备工作就此两步，接下来就是进行配置
 
 ## 配置
 
@@ -84,7 +88,6 @@ PasswordAuthentication yes
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅7.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20243201116476856.jpg)
-
 
 ### 使用 VisualStudio 连接
 
@@ -171,7 +174,7 @@ PasswordAuthentication yes
 11:34:39:959	Failed: Unable to find debugger script at '/home/lin/.vs-debugger'.
 ```
 
-那就是 VisualStudio 创建 `.vs-debugger` 文件失败
+那就是 VisualStudio 创建 `.vs-debugger` 文件夹失败
 
 或提示 Failed: The specified directory /home/lin/.vs-debugger could not be created or accessed. 等信息
 
