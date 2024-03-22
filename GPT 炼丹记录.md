@@ -49,7 +49,7 @@
 
 [Content Start]
 
-我发现在 Skia 平台下在 XAML 里使用 Path 时，给 Data Property 赋值之后，渲染时采用的 FillRule 是 Nonzero 而不是 EvenOdd。这将导致在 Skia 平台上渲染结果和 WinUI 平台存在差异
+我发现在 Skia.Gtk 平台下，在 OnLaunched 里立刻使用 MainWindow.SetBackground 方法设置背景色是无效的，但如果进行一些延迟之后再设置则是有效的。这个行为和在 Skia.WPF 里面是不相同的，你可以运行我的 Demo 代码，分别切换 Skia.Gtk 和 Skia.Wpf 平台，查看其差异
 
 [Content End]
 
@@ -99,7 +99,11 @@
 
 [Content Start]
 
-修复在 Skia 平台上对 StreamGeometry 设置 FillRule 无效问题。原因是在 Skia 平台上，忘记将 StreamGeometry 的 FillRule 赋值给到 SKPath 上，导致 SKPath 始终保持默认值，这将会导致在 Skia 平台上使用如 `<Path Data="xxxxx"/>` 的 XAML 代码时，所对应的 Path 的 Data 将使用 Nonzero 的 FillRule 方式，而不是保持和 WinUI 相同的 EvenOdd 默认的 FillRule 方式
+修复在 Skia.Gtk 平台下，在 OnLaunched 里立刻使用 MainWindow.SetBackground 方法设置背景色是无效的问题
+
+问题原因是在 OnLaunched 里立刻使用 MainWindow.SetBackground 方法时，进入的 UnoGtkWindowHost.UpdateRendererBackground 里面，判断 `_renderer` 字段还没初始化，于是什么都不做。等待 InitializeAsync 执行 GtkRendererProvider.CreateForHostAsync 方法之后，才能获取到 `_renderer` 字段的值，然而此时将错过背景赋值逻辑
+
+修复方法是在 GtkRendererProvider.CreateForHostAsync 方法执行完成之后，补充对 `_renderer.BackgroundColor` 赋值
 
 [Content End]
 

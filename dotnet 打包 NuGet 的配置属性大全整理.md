@@ -139,6 +139,14 @@
 
 详细请参阅 [Package authoring best practices Microsoft Learn](https://learn.microsoft.com/en-us/nuget/create-packages/package-authoring-best-practices )
 
+如果想要保持每次打包都是最新年份，不用每一年都手动更新，那可以使用 `$([System.DateTime]::Now.ToString(`yyyy`))` 来表示当前年份，如以下代码
+
+```xml
+<Copyright>Copyright (c) dotnet-campus 2020-$([System.DateTime]::Now.ToString(`yyyy`))</Copyright>
+```
+
+加入以上代码之后，即可每次打包都设置版权信息为当前的年份
+
 ### PackageLicenseExpression
 
 许可证信息，可以在 Copyright 不存在时勉强当成版权信息。可以打入的是当前的包使用的是什么协议进行许可，比如当前是给一个 MIT 协议开源的仓库进行打包的，可以使用如下设置当前的 NuGet 包使用最友好的 MIT 协议
