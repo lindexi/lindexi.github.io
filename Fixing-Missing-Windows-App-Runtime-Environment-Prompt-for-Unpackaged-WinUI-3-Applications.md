@@ -1,5 +1,5 @@
 
-# Fixing "Missing Windows App Runtime Environment" Prompt for Unpackaged WinUI 3 Applications
+# Fixing Missing Windows App Runtime Environment Prompt for Unpackaged WinUI 3 Applications
 
 This article will tell you how to fix the prompt for a missing Windows App Runtime environment when running non-packaged WinUI 3 applications on a customer's machine.
 

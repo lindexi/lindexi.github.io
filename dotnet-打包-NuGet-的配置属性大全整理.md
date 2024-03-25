@@ -12,7 +12,7 @@
 
 本文将会持续更新，可以通过搜 《dotnet 打包 NuGet 的配置属性大全整理 林德熙》 找到我主站的博客，避免各个备份地址陈旧的内容误导
 
-本文更新于：2023.12.27
+本文更新于：2024.03.23
 
 如更新时间距离当前阅读时间过远，则表示可能你阅读的是转发的或转载的文章，推荐去到我主站的博客，了解更新的知识
 
@@ -31,6 +31,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
 </Project>
@@ -82,7 +83,7 @@
   </PropertyGroup>
 ```
 
-与此相关的还有 Version 属性，大部分情况下都采用 Version 属性。此 Version 属性将会被 PackageVersion 所使用。如果没有明确设置 PackageVersion 属性，将会使用已设置的 Version 属性
+与此相关的还有 Version 属性，大部分情况下都采用 Version 属性。此 Version 属性将会被 PackageVersion 和程序集版本号等所使用，用途较广。除非确实不想要让包版本号确实和程序集版本号相同，否则推荐使用 Version 属性。如果没有明确设置 PackageVersion 属性，将会使用已设置的 Version 属性
 
 ```xml
   <PropertyGroup>
@@ -264,6 +265,9 @@ Description 描述信息
     ...
 </ItemGroup>
 ```
+
+
+## 打包控制
 
 ### GeneratePackageOnBuild
 

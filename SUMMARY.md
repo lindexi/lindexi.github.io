@@ -1266,7 +1266,7 @@
 
  * [FileStream 的 FlushAsync 方法在 .NET Framework 与 .NET Core 行为的不同](FileStream-的-FlushAsync-方法在-.NET-Framework-与-.NET-Core-行为的不同.md)
 
- * [Fixing "Missing Windows App Runtime Environment" Prompt for Unpackaged WinUI 3 Applications](Fixing-Missing-Windows-App-Runtime-Environment-Prompt-for-Unpackaged-WinUI-3-Applications.md)
+ * [Fixing Missing Windows App Runtime Environment Prompt for Unpackaged WinUI 3 Applications](Fixing-Missing-Windows-App-Runtime-Environment-Prompt-for-Unpackaged-WinUI-3-Applications.md)
 
  * [gif 格式](gif-格式.md)
 
@@ -3343,6 +3343,8 @@
  * [如何让软件以 System 权限运行](如何让软件以-System-权限运行.md)
 
  * [如何通过命令行 msbuild 编译项目](如何通过命令行-msbuild-编译项目.md)
+
+ * [学习 CPF 框架笔记 了解 X11 窗口和消息基础知识](学习-CPF-框架笔记-了解-X11-窗口和消息基础知识.md)
 
  * [安装 aria2](安装-aria2.md)
 
