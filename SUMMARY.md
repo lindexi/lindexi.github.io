@@ -524,6 +524,8 @@
 
  * [dotnet C# 警惕可空结构体的方法内部赋值无效](dotnet-C-警惕可空结构体的方法内部赋值无效.md)
 
+ * [dotnet C# 设置 X11 应用窗口背景透明](dotnet-C-设置-X11-应用窗口背景透明.md)
+
  * [dotnet C# 调用委托的 GetInvocationList 的对象分配](dotnet-C-调用委托的-GetInvocationList-的对象分配.md)
 
  * [dotnet C# 通过 Vortice 使用 Direct2D 特效入门](dotnet-C-通过-Vortice-使用-Direct2D-特效入门.md)
@@ -1323,6 +1325,8 @@
  * [GPT 炼丹记录](GPT-炼丹记录.md)
 
  * [GtkSharp 获取触摸宽度高度面积尺寸信息](GtkSharp-获取触摸宽度高度面积尺寸信息.md)
+
+ * [GtkSharp 设置窗口背景透明](GtkSharp-设置窗口背景透明.md)
 
  * [How to fix nuget Unrecognized license type MIT when pack](How-to-fix-nuget-Unrecognized-license-type-MIT-when-pack.md)
 
