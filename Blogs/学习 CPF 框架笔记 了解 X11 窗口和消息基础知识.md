@@ -210,10 +210,10 @@ class App
         XMapWindow(Display, Window);
         XFlush(Info.Display);
 
-        XRaiseWindow(Display, Window);
+        XRaiseWindow(Display, Window); // 可选。理论上只需使用 XMapWindow 方法即可在屏幕里显示出窗口
 ```
 
-以上的代码就是最简单的显示窗口的代码。 为了能够在窗口里面绘制内容以及接收输入，还需要添加更多额外的代码。如使用 XSelectInput 方法配置此窗口接收哪些输入。如果没有调用 XSelectInput 方法，那在后续的 XNextEvent 将无法收到任何的输入消息
+以上的代码就是最简单的显示窗口的代码。 为了能够在窗口里面绘制内容以及接收输入，还需要添加更多额外的代码。如使用 XSelectInput 方法配置此窗口接收哪些输入。如果没有调用 XSelectInput 方法，那在后续的 XNextEvent 将无法收到任何的输入消息。以下代码是先设置有哪些消息是忽略的，再使用 `0xffffff ^ (int)ignoredMask` 即可获取到所有的不在忽略列表里面的事件
 
 ```csharp
         XEventMask ignoredMask = XEventMask.SubstructureRedirectMask | XEventMask.ResizeRedirectMask |
@@ -222,7 +222,7 @@ class App
         XSelectInput(Display, Window, mask);
 ```
 
-使用 XCreateGC 方法可以获取到用于绘图的指针，代码如下
+使用 XCreateGC 方法可以获取到用于绘图的指针，代码如下。后续可用 GC 属性辅助绘制界面内容
 
 ```csharp
 class App
