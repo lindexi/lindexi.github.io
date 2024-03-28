@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/03/28 07:23:22 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -51,7 +53,7 @@ internal sealed class DemoWindow : global::Gtk.Window
 }
 ```
 
-如果你运行代码没有看到窗口背景透明，那可能是你的系统里面的桌面窗口合成管理不正确或没安装，请自行解决，如安装 [compiz](https://en.wikipedia.org/wiki/Compiz) 窗口合成管理器
+如果你运行代码没有看到窗口背景透明，那可能是你的系统里面的桌面窗口合成管理不正确或没安装，请自行解决，如安装 [compiz](https://en.wikipedia.org/wiki/Compiz) 窗口合成管理器。详细请看 [dotnet C# 设置 X11 应用窗口背景透明](https://blog.lindexi.com/post/dotnet-C-%E8%AE%BE%E7%BD%AE-X11-%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E.html ) 这篇博客的窗口合成管理器处理部分
 
 本文代码放在 <https://github.com/walterlv/Walterlv.BlankUnoApp> 仓库里，欢迎大家拉取代码运行
 
