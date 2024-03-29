@@ -2324,6 +2324,8 @@
 
  * [WinDbg 设置在加载到某个 DLL 进入断点](WinDbg-设置在加载到某个-DLL-进入断点.md)
 
+ * [Window 计划任务设置夜间低性能节能模式](Window-计划任务设置夜间低性能节能模式.md)
+
  * [Windows 10 16251 添加的 api](Windows-10-16251-添加的-api.md)
 
  * [windows 10预览版升级win10 7月29 10240.16384](windows-10预览版升级win10-7月29-10240.16384.md)
