@@ -880,6 +880,8 @@
 
  * [dotnet 修复在 Linux 上使用 SkiaSharp 提示找不到 libSkiaSharp 库](dotnet-修复在-Linux-上使用-SkiaSharp-提示找不到-libSkiaSharp-库.md)
 
+ * [dotnet 修复多框架 TargetFrameworks 包含不受支持平台导致构建失败](dotnet-修复多框架-TargetFrameworks-包含不受支持平台导致构建失败.md)
+
  * [dotnet 修复找不到 System.ServiceProcess 定义](dotnet-修复找不到-System.ServiceProcess-定义.md)
 
  * [dotnet 入门到放弃 使用 .NET Core 卸载工具](dotnet-入门到放弃-使用-.NET-Core-卸载工具.md)
