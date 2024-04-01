@@ -2,12 +2,26 @@
 
 现在微软有一个开源项目 CoreRT 能通过将托管的 .NET Core 编译为单个无依赖的 Native 程序
 
-这个项目现在还没发布，但是能尝试使用，可以带来很多的性能提升
+~~这个项目现在还没发布，但是能尝试使用，可以带来很多的性能提升~~ 现在已经正式发布，合入到 dotnet 主干里，可以简单方便的使用
 
 <!--more-->
 <!-- CreateTime:2019/11/29 8:31:17 -->
 
 <!-- 标签：C#,dotnet,dotnetcore -->
+
+本文开始写于 2019.11 当前更新时间是 2024.3.30 截止当前，发布 Native AOT 方式已经合入到 dotnet 主干，只需在 csproj 里面加上 PublishAot 属性，以及确保 Framework 版本在 .NET 7 及以上即可
+
+```xml
+<PropertyGroup>
+    <PublishAot>true</PublishAot>
+</PropertyGroup>
+```
+
+详细请参阅：<https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot>
+
+以下为旧内容
+
+---
 
 使用 CoreRT 发布的优点：
 
