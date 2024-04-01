@@ -456,6 +456,8 @@
 
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
+ * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
+
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
 
  * [dotnet C# 使用 EqualityComparer 提升泛型值类型相等判断性能](dotnet-C-使用-EqualityComparer-提升泛型值类型相等判断性能.md)
@@ -2973,6 +2975,8 @@
  * [WPF 解决 ObservableCollection 提示 Cannot change ObservableCollection during a CollectionChanged event 异常](WPF-解决-ObservableCollection-提示-Cannot-change-ObservableCollection-during-a-CollectionChanged-event-异常.md)
 
  * [WPF 解决 PathTooLongException 路径太长](WPF-解决-PathTooLongException-路径太长.md)
+
+ * [WPF 解决 SelectionTextBrush 设置无效问题](WPF-解决-SelectionTextBrush-设置无效问题.md)
 
  * [WPF 解决 Skia 因为找不到字体而绘制不出中文字符](WPF-解决-Skia-因为找不到字体而绘制不出中文字符.md)
 

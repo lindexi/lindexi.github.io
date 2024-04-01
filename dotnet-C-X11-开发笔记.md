@@ -1,0 +1,101 @@
+
+# dotnet C# X11 开发笔记
+
+本文记录我学习开发 X11 应用的笔记
+
+<!--more-->
+
+
+<!-- 发布 -->
+<!-- 博客 -->
+
+## 如何设置X11里面两个窗口之间的层级关系
+
+如何类似 WPF 的 Owner 之类的关系？可使用 XSetTransientForHint 方法。比如有 a 和 b 两个窗口，使用下面代码即可设置 a 窗口一定在 b 窗口上方
+
+```csharp
+        // 我们使用XSetTransientForHint函数将窗口a设置为窗口b的子窗口。这将确保窗口a始终在窗口b的上方
+        XSetTransientForHint(Display, a, b);
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0331c5dd6057106df5cb179e45d34966a3eafd1b/GececurbaiduhaldiFokeejukolu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0331c5dd6057106df5cb179e45d34966a3eafd1b/GececurbaiduhaldiFokeejukolu) 上，可以使用如下命令行拉取代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 0331c5dd6057106df5cb179e45d34966a3eafd1b
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 0331c5dd6057106df5cb179e45d34966a3eafd1b
+```
+
+获取代码之后，进入 GececurbaiduhaldiFokeejukolu 文件夹，即可获取到源代码
+
+## 设置窗口无边框
+
+设置窗口的override_redirect属性为True，以避免窗口管理器的干预，如此即可实现无边框
+
+```csharp
+        var valueMask =
+            0
+            | SetWindowValuemask.OverrideRedirect;
+        var xSetWindowAttributes = new XSetWindowAttributes
+        {
+            override_redirect = true, // 设置窗口的override_redirect属性为True，以避免窗口管理器的干预
+        };
+
+        var handle = XCreateWindow(Display, rootWindow, 100, 100, 1000, 500, 5,
+            32,
+            (int) CreateWindowArgs.InputOutput,
+            visual,
+            (nuint) valueMask, ref xSetWindowAttributes);
+```
+
+以上代码的 SetWindowValuemask.OverrideRedirect 十分重要，如果没有加上将会导致 `override_redirect` 设置无效
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/dc1b79521e00300dfaef49d54226b6f687b25b3e/GececurbaiduhaldiFokeejukolu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/dc1b79521e00300dfaef49d54226b6f687b25b3e/GececurbaiduhaldiFokeejukolu) 上，可以使用如下命令行拉取代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin dc1b79521e00300dfaef49d54226b6f687b25b3e
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin dc1b79521e00300dfaef49d54226b6f687b25b3e
+```
+
+获取代码之后，进入 GececurbaiduhaldiFokeejukolu 文件夹，即可获取到源代码
+
+
+## 和 Avalonia 相互调用
+
+设置工具栏与 X11 窗口绘制的笔迹
+
+获取 Avalonia 的 X11 窗口
+
+```csharp
+    if (TryGetPlatformHandle()?.Handle is { } handle)
+    {
+    }
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/e42ddbb8989ca0dd7e859dd6fd9cb0ddbb4d3fd1/GececurbaiduhaldiFokeejukolu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/e42ddbb8989ca0dd7e859dd6fd9cb0ddbb4d3fd1/GececurbaiduhaldiFokeejukolu) 上
+
+
+
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
