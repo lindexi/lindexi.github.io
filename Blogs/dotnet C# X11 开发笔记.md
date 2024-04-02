@@ -3,6 +3,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/04/02 07:07:16 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -76,6 +78,10 @@ git pull origin dc1b79521e00300dfaef49d54226b6f687b25b3e
 ```
 
 获取代码之后，进入 GececurbaiduhaldiFokeejukolu 文件夹，即可获取到源代码
+
+## 设置窗口透明
+
+参阅： [dotnet C# 设置 X11 应用窗口背景透明](https://blog.lindexi.com/post/dotnet-C-%E8%AE%BE%E7%BD%AE-X11-%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E.html )
 
 
 ## 和 Avalonia 相互调用
