@@ -972,6 +972,8 @@
 
  * [dotnet 字典类找不到 TryAdd 方法](dotnet-字典类找不到-TryAdd-方法.md)
 
+ * [dotnet 学习 CPF 框架笔记 了解 X11 里如何获取触摸信息](dotnet-学习-CPF-框架笔记-了解-X11-里如何获取触摸信息.md)
+
  * [.NET 官方图标](NET-官方图标.md)
 
  * [dotnet 定制 ILogger 实现](dotnet-定制-ILogger-实现.md)

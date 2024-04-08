@@ -89,15 +89,17 @@ git pull origin dc1b79521e00300dfaef49d54226b6f687b25b3e
 
 ## 和 Avalonia 相互调用
 
-设置工具栏与 X11 窗口绘制的笔迹
+设置工具栏与 X11 窗口绘制的笔迹关联，要求 X11 笔迹窗口在下方，配合设置X11里面两个窗口之间的层级关系的方法即可实现
 
-获取 Avalonia 的 X11 窗口
+获取 Avalonia 的 X11 窗口，代码如下
 
 ```csharp
     if (TryGetPlatformHandle()?.Handle is { } handle)
     {
     }
 ```
+
+以上代码拿到的 handle 就是可以用来作为 X11 窗口的指针，类似于 Windows 下的窗口句柄概念
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/e42ddbb8989ca0dd7e859dd6fd9cb0ddbb4d3fd1/GececurbaiduhaldiFokeejukolu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/e42ddbb8989ca0dd7e859dd6fd9cb0ddbb4d3fd1/GececurbaiduhaldiFokeejukolu) 上
 
