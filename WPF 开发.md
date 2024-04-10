@@ -1428,6 +1428,19 @@ https://github.com/dotnet/wpf/issues/5937#issuecomment-1010510114
 
 可采用 Touch.FrameReported 事件获取
 
+## 如何知道 TouchLeave 是否因为 TouchUp 引起的
+
+可通过判断 TouchPoint.Action 判断是否为 TouchAction.Up 了解当前的 TouchLeave 是否由 TouchUp 触发
+
+```csharp
+            var touchAction = e.GetTouchPoint(this).Action;
+            if (touchAction == TouchAction.Up)
+            {
+                // 由于抬起的原因，那就不能算进离开窗口
+                return;
+            }
+```
+
 ## Helix 3d 加载资源
 
 可以采用对应的 Reader 加载，详细请看 HelixBiyawubiburwhoKaiwunaikarwheqar 项目
