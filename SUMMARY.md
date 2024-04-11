@@ -3546,6 +3546,8 @@
 
  * [让 snoop 支持 .NET Core WPF 调试](让-snoop-支持-.NET-Core-WPF-调试.md)
 
+ * [记 dotnet 8.0.4 修复的 WPF 的触摸模块安全问题](记-dotnet-8.0.4-修复的-WPF-的触摸模块安全问题.md)
+
  * [记 Intel 的 31.0.101.5186 版本驱动带崩 WPF 程序](记-Intel-的-31.0.101.5186-版本驱动带崩-WPF-程序.md)
 
  * [记 Win8.1 某应用渲染抛出 OutOfMemoryException 异常及修复方法](记-Win8.1-某应用渲染抛出-OutOfMemoryException-异常及修复方法.md)
