@@ -124,7 +124,7 @@
     - 现在，“m_managerLock”已经解锁，**`CComObject<CPimcManager>`** 对象可以在其引用计数降至零时被销毁，此时 **FinalRelease** 函数将运行。
 3. 因此，在所有成功的使用情况下，当此代码运行时，“m_managerLock”已经解锁（因为如果它仍然被锁定，锁本身将阻止引用计数达到零，从而阻止此函数运行）。
 4. 但是，在不成功的使用情况下，**`ATL CComCreator<T>::CreateInstance`** 机制可能会失败，这意味着它将在将错误返回给 **CreateInstance** 调用者之前销毁全新的 **CPimcManager** 实例。
-5. 销毁全新实例会触发 **`CComObject<CPimcManager>`** 析构函数，因此在 **`CComCreator<T>::CreateInstance`** 操作本身期间会调用此函数。
+5. 销毁全新实例会触发 **`CComObject<CPimcManager>`** 析构函数，因此在 **`CComCreator<T>::CreateInstance`**操作本身期间会调用此函数。
 6. **`CComCreator<T>::CreateInstance`** 的最后一步是查询新创建的对象，以获取已重新定义的任何接口。
 
-总之，这段注释详细描述了 **CPimcManager** 类的析构函数在不同使用情况下的行为和保证。¹²
+总之，这段注释详细描述了 **CPimcManager** 类的析构函数在不同使用情况下的行为和保证。
