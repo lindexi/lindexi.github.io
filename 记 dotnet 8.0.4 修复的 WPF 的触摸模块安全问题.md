@@ -3,14 +3,28 @@
 本文记录 dotnet 8.0.4 版本修复的 WPF 的触摸模块安全问题，此问题影响所有的 .NET 版本，修复方法是更新 SDK 和运行时
 
 <!--more-->
+<!-- CreateTime:2024/04/12 07:01:47 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
-宣布安全漏洞地址：<https://github.com/dotnet/wpf/issues/9003>
+宣布安全漏洞地址： <https://github.com/dotnet/wpf/issues/9003>
 
-漏洞代号：[CVE-2024-21409](https://www.cve.org/CVERecord?id=CVE-2024-21409)
+安全漏洞宣布地址： <https://github.com/dotnet/announcements/issues/303>
+
+漏洞代号： [CVE-2024-21409](https://www.cve.org/CVERecord?id=CVE-2024-21409)
 
 核心更改： <https://github.com/dotnet/wpf/commit/c15b5c68cd74ae28bc99af539d05880658c45024>
+
+影响模块： 触摸模块
+
+开发者侧的修复方法： 升级 .NET SDK 或运行时版本，携带此更新的版本分别如下
+
+- .NET 6 : 6.0.29
+- .NET 7 : 7.0.18
+- .NET 8 : 8.0.4
+
+微软系统更新 Microsoft Update 将会自动推送以上版本的 .NET Core 更新，以及相应的 .NET Framework 质量更新
 
 修复的原因和修复的方法请参阅核心请参阅核心更改里面的注释，注释内容如下
 
@@ -97,3 +111,20 @@
     // while still ensuring that FinalRelease will always run the crucial unlock in all
     // "unsuccessful usage" cases.
 ```
+
+以下是 new Bing 对上面注释的解释
+
+这段代码注释讨论的是一个关于 **CPimcManager** 类的析构函数（destructor）的问题。让我来解释一下：
+
+1. 首先，我们有一个 **CPimcManager** 类，它的析构函数（destructor）被称为 **FinalRelease**。
+2. 在成功使用 **CPimcManager** 的情况下，以下步骤发生：
+    - 托管的 WPF 代码使用 **CoCreateInstance** 来获取一个指向全新 **CPimcManager** 实例的 **IPimcManager2** 接口（由 **`ATL CComCreator<T>::CreateInstance`** 机制创建）。
+    - 这意味着 **FinalConstruct** 已经成功完成，也就是说，“m_managerLock”已经被锁定。
+    - 然后，托管的 WPF 代码通过发送 **RELEASE_MANAGER_EXT** 消息（参见 **UnsafeNativeMethods.ReleaseManagerExternalLock()**）来解锁 “m_managerLock”，表示不再需要 **CPimcManager** 对象。
+    - 现在，“m_managerLock”已经解锁，**`CComObject<CPimcManager>`** 对象可以在其引用计数降至零时被销毁，此时 **FinalRelease** 函数将运行。
+3. 因此，在所有成功的使用情况下，当此代码运行时，“m_managerLock”已经解锁（因为如果它仍然被锁定，锁本身将阻止引用计数达到零，从而阻止此函数运行）。
+4. 但是，在不成功的使用情况下，**`ATL CComCreator<T>::CreateInstance`** 机制可能会失败，这意味着它将在将错误返回给 **CreateInstance** 调用者之前销毁全新的 **CPimcManager** 实例。
+5. 销毁全新实例会触发 **`CComObject<CPimcManager>`** 析构函数，因此在 **`CComCreator<T>::CreateInstance`** 操作本身期间会调用此函数。
+6. **`CComCreator<T>::CreateInstance`** 的最后一步是查询新创建的对象，以获取已重新定义的任何接口。
+
+总之，这段注释详细描述了 **CPimcManager** 类的析构函数在不同使用情况下的行为和保证。¹²
