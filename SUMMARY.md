@@ -466,6 +466,8 @@
 
  * [dotnet C# 使用 Vortice 支持 Direct2D1 离屏渲染](dotnet-C-使用-Vortice-支持-Direct2D1-离屏渲染.md)
 
+ * [dotnet C# 使用 Win32 函数获取用户下载文件夹的路径的方法](dotnet-C-使用-Win32-函数获取用户下载文件夹的路径的方法.md)
+
  * [dotnet C# 使用无捕获的委托可以获得编译器缓存减少对象创建](dotnet-C-使用无捕获的委托可以获得编译器缓存减少对象创建.md)
 
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
@@ -1123,6 +1125,8 @@
  * [dotnet 获取网页里面 div 的方法](dotnet-获取网页里面-div-的方法.md)
 
  * [dotnet 获取进程命令行参数的工具](dotnet-获取进程命令行参数的工具.md)
+
+ * [dotnet 解决 Avalonia 在 OpenKylin 麒麟系统运行找不到默认字体启动失败](dotnet-解决-Avalonia-在-OpenKylin-麒麟系统运行找不到默认字体启动失败.md)
 
  * [dotnet 解析 TTF 字体文件格式](dotnet-解析-TTF-字体文件格式.md)
 
