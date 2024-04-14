@@ -866,6 +866,8 @@
 
  * [dotnet 使用 TypeNameFormatter 库格式化输出反射泛型类型](dotnet-使用-TypeNameFormatter-库格式化输出反射泛型类型.md)
 
+ * [dotnet 使用 windbg 运行脚本方式自动批量调试处理 dump 文件](dotnet-使用-windbg-运行脚本方式自动批量调试处理-dump-文件.md)
+
  * [dotnet 使用 WpfAnalyzers 辅助分析 WPF 应用代码缺陷](dotnet-使用-WpfAnalyzers-辅助分析-WPF-应用代码缺陷.md)
 
  * [dotnet 使用 XWT 构建跨平台客户端 入门篇](dotnet-使用-XWT-构建跨平台客户端-入门篇.md)
@@ -2649,6 +2651,8 @@
  * [WPF 基础 2D 图形学知识 求向量旋转角度](WPF-基础-2D-图形学知识-求向量旋转角度.md)
 
  * [WPF 基础 2D 图形学知识](WPF-基础-2D-图形学知识.md)
+
+ * [WPF 基础绘图 创建和加工图片](WPF-基础绘图-创建和加工图片.md)
 
  * [WPF 多个 StylusPlugIn 的事件触发顺序](WPF-多个-StylusPlugIn-的事件触发顺序.md)
 
