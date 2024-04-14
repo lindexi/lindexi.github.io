@@ -3,6 +3,8 @@
 本文将从控制台开始，告诉大家一个非常简单的 WPF 基础绘图方法，通过本文的方法可以调用 WPF 上层人类友好的方法，充分利用 GPU 资源，创建或加工图片，最终结果可以输出到本地文件，可支持编码出多种不同的图片格式
 
 <!--more-->
+<!-- CreateTime:2024/04/14 12:07:33 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -80,7 +82,7 @@ void Application_Startup(object sender, StartupEventArgs e)
     }
 ```
 
-实际使用中，可以在此替换为你所需的各种代码，包括先绘制图片，再绘制文本，从而制作文本水印等等。也可以加上更多复杂的编程控制逻辑，绘制更复杂的图片
+实际使用中，可以在此替换为你所需的各种代码，包括先绘制图片，再绘制文本，从而制作文本水印等等。也可以加上更多复杂的编程控制逻辑，绘制更复杂的图片。如绘制从本地文件读取出来的图片，请参阅 [WPF 通过 DrawingContext DrawImage 绘制图片](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-DrawingContext-DrawImage-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87.html ) 以及更复杂的绘制逻辑请看 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
 完成绘制之后，可使用 RenderTargetBitmap 与 BitmapEncoder 配合，将绘制的内容写入到本地图片文件里面
 
