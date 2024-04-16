@@ -190,7 +190,7 @@ Description: 下载器.
 
 再创建 `entries` 文件夹，在 `entries` 文件夹里面应该放入的内容是桌面/开始菜单的图标以及应用启动信息。在 `entries` 文件夹里面再创建 `applications` 文件夹，在 `applications` 文件夹里面创建 `AppId.desktop` 文本文件。同理请将 `AppId.desktop` 的 AppId 换成你的应用标识符，在本文例子里面，将创建的是 `C:\lindexi\Work\opt\apps\org.dotnetcampust.unofiledownloader\entries\applications\org.dotnetcampust.unofiledownloader.desktop` 文件
 
-接下来打开文本编辑器，编辑 `.desktop` 文本文件，同理要求此文件采用 UTF-8 编码格式。以下是 `org.dotnetcampust.unofiledownloader.desktop` 文件例子内容，此文件当前使用的是标准的 desktop 格式，相关标准及其他字段可以参考 [https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.1.html](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.1.html) 文档
+接下来打开文本编辑器，编辑 `.desktop` 文本文件，同理要求此文件采用 UTF-8 编码格式。以下是 `org.dotnetcampust.unofiledownloader.desktop` 文件例子内容，此文件当前使用的是标准的 desktop 格式，相关标准及其他字段可以参考 [https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.1.html](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.1.html) 文档或 [desktop文件规范 - DeepinWiki](https://wiki.deepin.org/zh/03_%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83/02_XDG%E8%A7%84%E8%8C%83/desktop%E6%96%87%E4%BB%B6%E8%A7%84%E8%8C%83 ) 文档
 
 ```
 [Desktop Entry] 

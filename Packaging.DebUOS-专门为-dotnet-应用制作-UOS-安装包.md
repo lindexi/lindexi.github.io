@@ -80,6 +80,8 @@ dotnet publish -c release -r linux-x64 --self-contained true -t:CreateDebUOS
   </PropertyGroup>
 ```
 
+完成以上配置即可构建出一个比较完备的 deb 安装包了
+
 以上的示例对应的真实项目代码变更请参阅： [加上更多打包属性 - dotnet-campus/dotnetCampus.FileDownloader@a834677 - GitHub](https://github.com/dotnet-campus/dotnetCampus.FileDownloader/commit/a83467712337b3fad303a30eb91126a4096f8dfd)
 
 如期望自动在发布之后输出符合 UOS 规范的 deb 包，期望不需要在命令行添加 `-t:CreateDebUOS` 参数，则可以通过配置 `<AutoCreateDebUOSAfterPublish>true</AutoCreateDebUOSAfterPublish>` 属性到 csproj 从而实现在发布之后，自动执行打包，如以下代码
