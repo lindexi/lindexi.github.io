@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/04/19 20:31:36 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -200,6 +202,12 @@ git pull origin df6a50e5af79104064e91aca92f72d331fac7161
 ```
 
 获取代码之后，进入 ChewukeriLudikanal 文件夹，即可获取到源代码
+
+其他字体相关请参阅：
+
+- [dotnet 解析 TTF 字体文件格式](https://blog.lindexi.com/post代码占用的空/dotnet-%E8%A7%A3%E6%9E%90-TTF-%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F.html )
+
+- [WPF 从文件加载字体](https://blog.lindexi.com/post/WPF-%E4%BB%8E%E6%96%87%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%AD%97%E4%BD%93.html )
 
 
 

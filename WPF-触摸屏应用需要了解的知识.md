@@ -168,6 +168,11 @@
 
 更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
 
+参考文档：
+
+- [交互触摸大屏概念整理 - 唐宋元明清2188 - 博客园](https://www.cnblogs.com/kybs0/p/17274899.html )
+
+
 
 
 
