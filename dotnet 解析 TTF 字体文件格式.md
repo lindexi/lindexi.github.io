@@ -368,3 +368,5 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 ```
 
 获取代码之后，进入 TtfReader 文件夹
+
+利用开源的 FreeType 库读取字体信息请参阅 [dotnet C# 使用 FreeType 读取和绘制字体](https://blog.lindexi.com/post/dotnet-C-%E4%BD%BF%E7%94%A8-FreeType-%E8%AF%BB%E5%8F%96%E5%92%8C%E7%BB%98%E5%88%B6%E5%AD%97%E4%BD%93.html )

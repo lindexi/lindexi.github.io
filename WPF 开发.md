@@ -558,6 +558,39 @@ textBox.SelectAll();
 var caretWidth = SystemParameters.CaretWidth;
 ```
 
+### 将字符渲染为 Geometry 几何
+
+可以通过 FormattedText 进行渲染
+
+```csharp
+           var fontFamily = new FontFamily("宋体");
+           Typeface typeface = new Typeface(fontFamily, FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
+
+           var formattedText = new FormattedText("林", CultureInfo.CurrentCulture, FlowDirection.LeftToRight, typeface, 20, Brushes.Black, new NumberSubstitution(), TextFormattingMode.Ideal, 96);
+           var geometry = formattedText.BuildGeometry(new Point());
+           Path.Data = geometry;
+
+           // 如果要拆开的话的例子
+           if (geometry is GeometryGroup geometryGroup)
+           {
+               foreach (var geometryGroupChild in geometryGroup.Children)
+               {
+                   if (geometryGroupChild is GeometryGroup subGeometryGroup)
+                   {
+                       foreach (var child in subGeometryGroup.Children)
+                       {
+                           if (child is PathGeometry pathGeometry)
+                           {
+                               foreach (var pathGeometryFigure in pathGeometry.Figures)
+                               {
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+```
+
 ## 获取屏幕可用大小
 
 ```csharp
@@ -1478,3 +1511,7 @@ drawingGroup.Transform = translateTransform;
 ```
 
 解决方法是替换漫游的方式，替换的方式是通过 DrawingContext 的 PushTransform 方法修改
+
+### 默认的 WindowStyle 类型是什么
+
+默认的 WindowStyle 是 SingleBorderWindow 类型的枚举
