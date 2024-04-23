@@ -1152,6 +1152,8 @@
 
  * [dotnet 记 TaskCompletionSource 的 SetException 可能将异常记录到 UnobservedTaskException 的问题](dotnet-记-TaskCompletionSource-的-SetException-可能将异常记录到-UnobservedTaskException-的问题.md)
 
+ * [dotnet 记在 Linux 上某些文件的文件长度为 0 但是存在内容](dotnet-记在-Linux-上某些文件的文件长度为-0-但是存在内容.md)
+
  * [dotnet 设计规范 · 抽象定义](dotnet-设计规范-·-抽象定义.md)
 
  * [dotnet 设计规范 · 抽象类](dotnet-设计规范-·-抽象类.md)
