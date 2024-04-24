@@ -484,6 +484,8 @@
 
  * [dotnet C# 在 finally 抛异常会发生什么](dotnet-C-在-finally-抛异常会发生什么.md)
 
+ * [dotnet C# 在 Linux 系统设置或获取音量以及变更音量收到通知](dotnet-C-在-Linux-系统设置或获取音量以及变更音量收到通知.md)
+
  * [dotnet C# 基于 INotifyPropertyChanged 实现一个 CLR 属性绑定辅助类](dotnet-C-基于-INotifyPropertyChanged-实现一个-CLR-属性绑定辅助类.md)
 
  * [dotnet C# 基础 为什么 GetHashCode 推荐只取只读属性或字段做哈希值](dotnet-C-基础-为什么-GetHashCode-推荐只取只读属性或字段做哈希值.md)
@@ -3311,6 +3313,8 @@
  * [在 VisualStudio 给文件起一个带分号的文件名会怎样](在-VisualStudio-给文件起一个带分号的文件名会怎样.md)
 
  * [在 Windows Defender 设置文件夹白名单提升 VisualStudio 编译速度](在-Windows-Defender-设置文件夹白名单提升-VisualStudio-编译速度.md)
+
+ * [在 windows 上运行的 podman 默认的挂载相对路径是什么](在-windows-上运行的-podman-默认的挂载相对路径是什么.md)
 
  * [在 Windows 下那些好用的调试软件](在-Windows-下那些好用的调试软件.md)
 
