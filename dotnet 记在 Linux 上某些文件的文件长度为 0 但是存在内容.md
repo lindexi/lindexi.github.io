@@ -123,3 +123,5 @@ git pull origin 0f8939a9c1ac51266ba472730bf6e4ccd22c34b5
 ```
 
 获取代码之后，进入 BehairracercairJifelalihay 文件夹，即可获取到源代码
+
+更多 Linux 和国产系统的开发相关博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
