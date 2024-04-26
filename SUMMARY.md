@@ -452,7 +452,7 @@
 
  * [dotnet 8 WPF 支持在 RDP 远程桌面状态下启用渲染硬件加速](dotnet-8-WPF-支持在-RDP-远程桌面状态下启用渲染硬件加速.md)
 
- * [dotnet 8 版本与银河麒麟V10和UOS系统的 glib 兼容性](dotnet-8-版本与银河麒麟V10和UOS系统的-glib-兼容性.md)
+ * [dotnet 8 版本与银河麒麟V10和UOS系统的 glibc 兼容性](dotnet-8-版本与银河麒麟V10和UOS系统的-glibc-兼容性.md)
 
  * [dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号](dotnet-8-破坏性改动-在-AssemblyInformationalVersionAttribute-添加上-git-的-commit-号.md)
 

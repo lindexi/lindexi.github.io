@@ -1,10 +1,12 @@
 
-# dotnet 8 版本与银河麒麟V10和UOS系统的 glib 兼容性
+# dotnet 8 版本与银河麒麟V10和UOS系统的 glibc 兼容性
 
-刚刚好 dotnet 8 的 glib 版本足够旧，可以运行
+刚刚好 dotnet 8 的 glibc 版本足够旧，可以运行
 
 <!--more-->
 
+
+<!-- CreateTime:2024/04/26 18:38:48 -->
 
 <!-- 发布 -->
 <!-- 博客 -->
