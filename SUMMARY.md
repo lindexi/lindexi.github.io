@@ -452,6 +452,8 @@
 
  * [dotnet 8 WPF 支持在 RDP 远程桌面状态下启用渲染硬件加速](dotnet-8-WPF-支持在-RDP-远程桌面状态下启用渲染硬件加速.md)
 
+ * [dotnet 8 版本与银河麒麟V10和UOS系统的 glib 兼容性](dotnet-8-版本与银河麒麟V10和UOS系统的-glib-兼容性.md)
+
  * [dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号](dotnet-8-破坏性改动-在-AssemblyInformationalVersionAttribute-添加上-git-的-commit-号.md)
 
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
@@ -521,6 +523,8 @@
  * [dotnet C# 推荐一个适合新手入门阅读学习的控制台游戏项目](dotnet-C-推荐一个适合新手入门阅读学习的控制台游戏项目.md)
 
  * [dotnet C# 根据椭圆长度和宽度和旋转角计算出椭圆中心点的方法](dotnet-C-根据椭圆长度和宽度和旋转角计算出椭圆中心点的方法.md)
+
+ * [dotnet C# 简单的追加文件夹到 ZipArchive 压缩文件的方法](dotnet-C-简单的追加文件夹到-ZipArchive-压缩文件的方法.md)
 
  * [dotnet C# 给结构体字段赋值非线程安全](dotnet-C-给结构体字段赋值非线程安全.md)
 
