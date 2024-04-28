@@ -3280,6 +3280,8 @@
 
  * [创建不带BOM 的UTF8](创建不带BOM-的UTF8.md)
 
+ * [制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像](制作一个能构建-dotnet-AOT-的-gitlab-ruuner-的-Debian-docker-镜像.md)
+
  * [制作的 dotnet tool 运行失败提示依赖缺失](制作的-dotnet-tool-运行失败提示依赖缺失.md)
 
  * [剪贴板被占用导致应用使用剪贴板拷贝内容失败抛出 COMException 0x800401D0 错误](剪贴板被占用导致应用使用剪贴板拷贝内容失败抛出-COMException-0x800401D0-错误.md)
@@ -3311,6 +3313,8 @@
  * [在 P2P 文件分享应用以文件或文件段为单位的优缺](在-P2P-文件分享应用以文件或文件段为单位的优缺.md)
 
  * [在 SublimeText 使用 dotnet 编译 C# 项目](在-SublimeText-使用-dotnet-编译-C-项目.md)
+
+ * [在 UOS 统信安装 dotnet sdk 失败 提示 failed the verification](在-UOS-统信安装-dotnet-sdk-失败-提示-failed-the-verification.md)
 
  * [在 UOS 统信运行 dotnet 程序提示没有通过系统安全验证无法运行](在-UOS-统信运行-dotnet-程序提示没有通过系统安全验证无法运行.md)
 
