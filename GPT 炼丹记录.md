@@ -400,3 +400,42 @@ https://github.com/lindexi/lindexi_gd/tree/dde76effc23ebb9ee974b6ec276b242c39a50
 ```
 你是一位代码审查者，以下是一些 WPF 的 XAML 的代码，你需要审查出代码里面的不匹配问题。不匹配问题指的是 SolidColorBrush 所使用的 Color 和 
 ```
+
+## 询问问题
+
+```
+请编写 deb 安装包脚本，要求实现在 deb 安装包安装完成之后，自动启动所安装的程序，避免启动的应用发生 XOpenDisplay 错误。postinst.sh 脚本代码：
+
+包含设置正确的 DISPLAY 的 postinst.sh 脚本代码：
+
+以上代码哪里设置正确的 DISPLAY ？
+
+请给出正确设置的 DISPLAY 的脚本，只给出设置 DISPLAY 的脚本，不要回答其他内容！！！
+
+#!/bin/sh
+set -e
+
+# 设置 DISPLAY 环境变量为本地主机上的第一个显示和屏幕
+export DISPLAY=:0.0
+
+上述代码的 set -e 是什么意思
+
+上述代码的 export DISPLAY=:0.0 是什么意思
+
+如果此时 X server 没有运行，可以如何进行检测。检测 X server 运行情况的脚本是：
+
+#!/bin/bash
+set -e
+
+# 检查 X server 是否运行
+if ! xset q &>/dev/null; then
+    echo "No X server at \$DISPLAY [$DISPLAY]" >&2
+    exit 1
+fi
+
+继续给出使用 xdpyinfo 和 xprop 检测 X server 运行情况的脚本
+
+deb 安装完成之后，启动安装的应用。安装的应用放在 /opt/apps/foo 文件夹，应用可执行文件是 fx ，应用是基于 X11 的，需要显示窗口。要求在 deb 安装之后，能够自动启动 fx 进程，使用普通用户身份运行，且让 fx 进程显示出窗口。postinst.sh 脚本代码：
+```
+
+debian 的 buster 是什么意思？
