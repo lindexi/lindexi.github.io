@@ -3,6 +3,8 @@
 在 UOS 统信安装 dotnet sdk 失败 提示 You cannot install '/home/lindexi/packages-microsoft-prod.deb' that failed the verification, please go to Security Center - Security Tools - Application Security to adjust
 
 <!--more-->
+<!-- CreateTime:2024/04/29 07:20:03 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
