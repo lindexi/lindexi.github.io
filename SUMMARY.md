@@ -3280,7 +3280,7 @@
 
  * [创建不带BOM 的UTF8](创建不带BOM-的UTF8.md)
 
- * [制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像](制作一个能构建-dotnet-AOT-的-gitlab-ruuner-的-Debian-docker-镜像.md)
+ * [制作一个能构建 dotnet AOT 的 gitlab runner 的 Debian docker 镜像](制作一个能构建-dotnet-AOT-的-gitlab-runner-的-Debian-docker-镜像.md)
 
  * [制作的 dotnet tool 运行失败提示依赖缺失](制作的-dotnet-tool-运行失败提示依赖缺失.md)
 
