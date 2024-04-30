@@ -19,6 +19,8 @@
 - 支持制作出来的包是 AOT 版本的
 - 可以使用 gitlab runner 对接自动构建
 
+- 能够支持 CPF 、 Avalonia 、 UNO 、MAUI 、 GTKSystem.Windows.Forms 等 UI 框架
+
 开始之前必须说明的是，对于 dotnet 应用来说，如果不需要 AOT 的话，完全可以在 Windows 上构建出其他 Linux 系统和其他平台适用的应用。仅仅只是在 AOT 下，强依赖平台构建时，才有需要在对应的系统平台构建
 
 ## 制作方法
@@ -526,6 +528,8 @@ ENTRYPOINT ["/usr/share/gitlab/gitlab-runner", "run"]
 - [在 Linux ARM 系统上安装 .Net - 快乐就在你的心 的个人博客](https://kljzndx.github.io/My-Blog/2020/03/06/Setup-.Net-on-Linux-ARM/ )
 - [dotnet 配置 Gitlab 的 Runner 做 CI 自动构建](https://blog.lindexi.com/post/dotnet-%E9%85%8D%E7%BD%AE-Gitlab-%E7%9A%84-Runner-%E5%81%9A-CI-%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA.html )
 - [dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因](https://blog.lindexi.com/post/dotnet-%E9%85%8D%E7%BD%AE-Gitlab-%E7%9A%84-CI-%E6%89%BE%E4%B8%8D%E5%88%B0-Runner-%E6%88%96%E6%89%BE%E9%94%99%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0.html )
+
+更多国产 UOS 系统开发相关，欢迎加入 810052083 群交流
 
 
 
