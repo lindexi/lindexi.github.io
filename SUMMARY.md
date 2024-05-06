@@ -2464,6 +2464,8 @@
 
  * [WPF 从触摸消息转触摸事件](WPF-从触摸消息转触摸事件.md)
 
+ * [WPF 从键盘事件 KeyEventArgs 里获取 Scan Code 的方法](WPF-从键盘事件-KeyEventArgs-里获取-Scan-Code-的方法.md)
+
  * [WPF 从零开始开发 dotnet Remoting 程序](WPF-从零开始开发-dotnet-Remoting-程序.md)
 
  * [WPF 从零手动创建承载 Xamarin Forms 项目](WPF-从零手动创建承载-Xamarin-Forms-项目.md)
