@@ -488,6 +488,8 @@
 
  * [dotnet C# 在 Linux 系统设置或获取音量以及变更音量收到通知](dotnet-C-在-Linux-系统设置或获取音量以及变更音量收到通知.md)
 
+ * [dotnet C# 在不同的机器 CPU 型号上的基准性能测试](dotnet-C-在不同的机器-CPU-型号上的基准性能测试.md)
+
  * [dotnet C# 基于 INotifyPropertyChanged 实现一个 CLR 属性绑定辅助类](dotnet-C-基于-INotifyPropertyChanged-实现一个-CLR-属性绑定辅助类.md)
 
  * [dotnet C# 基础 为什么 GetHashCode 推荐只取只读属性或字段做哈希值](dotnet-C-基础-为什么-GetHashCode-推荐只取只读属性或字段做哈希值.md)
@@ -1501,6 +1503,8 @@
  * [Resharper 去掉注释拼写](Resharper-去掉注释拼写.md)
 
  * [Resharper 如何把类里的类移动到其他文件](Resharper-如何把类里的类移动到其他文件.md)
+
+ * [ReSharper 显示使用的颜色](ReSharper-显示使用的颜色.md)
 
  * [resharper 自定义代码片](resharper-自定义代码片.md)
 
