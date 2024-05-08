@@ -456,6 +456,8 @@
 
  * [dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号](dotnet-8-破坏性改动-在-AssemblyInformationalVersionAttribute-添加上-git-的-commit-号.md)
 
+ * [dotnet 9 WPF 支持 Style 的 Setter 填充内容时可忽略 Value 标签](dotnet-9-WPF-支持-Style-的-Setter-填充内容时可忽略-Value-标签.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
