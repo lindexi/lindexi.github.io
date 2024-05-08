@@ -5,7 +5,7 @@
 <!--more-->
 <!-- 不发布 -->
 
-以下是我的测试结果，对应的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/287e5aee6b79fef16600eb8d76b64cf6e95eada0/BulowukaileFeanayjairwo) 上，可以在本文末尾找到下载代码的方法
+以下是我的测试结果，对应的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7a4584ca15a250812de76fc5b35adcaaca2e531d/BulowukaileFeanayjairwo) 上，可以在本文末尾找到下载代码的方法
 
 我十分推荐你自己拉取代码，在你自己的设备上跑一下，测试其性能。且在开始之前，期望你已经掌握了基础的性能测试知识，避免出现诡异的结论
 
@@ -119,16 +119,227 @@ RunStrategy=Throughput
 | NewArrayWithRandomVisit  | 1000000   |   497,132.01 ns |  9,841.562 ns | 12,796.810 ns |   490,990.22 ns |  1.08 |    0.03 |
 | NewArrayWithOrdinalVisit | 1000000   | 6,742,537.03 ns | 48,986.470 ns | 38,245.414 ns | 6,732,321.64 ns | 14.51 |    0.31 |
 
+## 数组拷贝
+
+### 测试维度
+
+参与测试的内容如下：
+
+- CopyByFor ： 使用 for 循环进行拷贝数组
+- Memcpy  ： 使用标准 C 提供的 memcpy 函数进行拷贝，在 linux 下使用 libc.so.6 导出函数，在 windows 下使用 msvcrt.dll 导出函数。这处于非常裸露的方式，更具体请参阅下文的数据说明内容
+- CopyBlockUnaligned ： 使用 dotnet 自带的 `Unsafe.CopyBlockUnaligned` 方法进行数组拷贝
 
 
-本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/287e5aee6b79fef16600eb8d76b64cf6e95eada0/BulowukaileFeanayjairwo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/287e5aee6b79fef16600eb8d76b64cf6e95eada0/BulowukaileFeanayjairwo) 上，可以使用如下命令行拉取代码
+### 英特尔 13th Gen Intel Core i7-13700K
+
+#### 数组较小
+
+小于 1000 的数组时，存在较大 P/Invoke 干扰，于是决定最小设置为 1000 的值
+
+```
+
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3447/23H2/2023Update/SunValley3)
+13th Gen Intel Core i7-13700K, 1 CPU, 24 logical and 16 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX2
+  Job-GCHWHL : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX2
+
+RunStrategy=Throughput  
+
+```
+
+| Method             | source       | dest         | Mean        | Error    | StdDev   | Ratio |
+|------------------- |------------- |------------- |------------:|---------:|---------:|------:|
+| **CopyByFor**          | **Int32[10000]** | **Int32[10000]** | **1,958.98 ns** | **8.391 ns** | **7.007 ns** | **1.000** |
+| Memcpy             | Int32[10000] | Int32[10000] |   609.35 ns | 3.266 ns | 3.055 ns | 0.311 |
+| CopyBlockUnaligned | Int32[10000] | Int32[10000] |   577.84 ns | 1.391 ns | 1.301 ns | 0.295 |
+| **CopyByFor**          | **Int32[1000]**  | **Int32[1000]**  |   **202.09 ns** | **0.376 ns** | **0.352 ns** | **0.103** |
+| Memcpy             | Int32[1000]  | Int32[1000]  |    32.21 ns | 0.323 ns | 0.302 ns | 0.016 |
+| CopyBlockUnaligned | Int32[1000]  | Int32[1000]  |    19.19 ns | 0.067 ns | 0.059 ns | 0.010 |
+
+根据上述测试数据可以看到，即使在较小数据量情况下，依然 memcpy 和 Unsafe.CopyBlockUnaligned 比 for 速度快
+
+#### 数组较大
+
+```
+
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3447/23H2/2023Update/SunValley3)
+13th Gen Intel Core i7-13700K, 1 CPU, 24 logical and 16 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX2
+  Job-DBDADP : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX2
+
+RunStrategy=Throughput  
+
+```
+| Method             | source           | dest             | Mean             | Error          | StdDev           | Median           | Ratio | RatioSD |
+|------------------- |----------------- |----------------- |-----------------:|---------------:|-----------------:|-----------------:|------:|--------:|
+| **CopyByFor**          | **Int32[100000000]** | **Int32[100000000]** | **41,348,684.32 ns** | **751,207.515 ns** | **1,028,261.326 ns** | **41,102,646.15 ns** | **1.000** |    **0.00** |
+| Memcpy             | Int32[100000000] | Int32[100000000] | 27,086,427.67 ns | 738,121.867 ns | 2,057,588.736 ns | 26,318,143.75 ns | 0.675 |    0.05 |
+| CopyBlockUnaligned | Int32[100000000] | Int32[100000000] | 24,020,801.37 ns | 467,035.642 ns |   458,691.448 ns | 23,894,810.94 ns | 0.579 |    0.02 |
+| **CopyByFor**          | **Int32[10000000]**  | **Int32[10000000]**  |  **3,800,486.40 ns** |  **69,523.151 ns** |   **162,508.123 ns** |  **3,748,857.23 ns** | **0.092** |    **0.01** |
+| Memcpy             | Int32[10000000]  | Int32[10000000]  |  2,313,413.90 ns |  75,362.059 ns |   208,827.911 ns |  2,248,826.17 ns | 0.058 |    0.01 |
+| CopyBlockUnaligned | Int32[10000000]  | Int32[10000000]  |  2,005,075.29 ns |  55,131.653 ns |   149,989.727 ns |  1,925,467.19 ns | 0.049 |    0.00 |
+| **CopyByFor**          | **Int32[1000000]**   | **Int32[1000000]**   |    **201,416.81 ns** |   **1,630.278 ns** |     **1,524.963 ns** |    **200,902.27 ns** | **0.005** |    **0.00** |
+| Memcpy             | Int32[1000000]   | Int32[1000000]   |    104,570.31 ns |   3,304.068 ns |     9,319.184 ns |    100,412.65 ns | 0.003 |    0.00 |
+| CopyBlockUnaligned | Int32[1000000]   | Int32[1000000]   |     99,385.15 ns |   1,824.888 ns |     1,617.716 ns |     99,135.09 ns | 0.002 |    0.00 |
+| **CopyByFor**          | **Int32[10000]**     | **Int32[10000]**     |      **1,958.87 ns** |       **4.267 ns** |         **3.783 ns** |      **1,959.42 ns** | **0.000** |    **0.00** |
+| Memcpy             | Int32[10000]     | Int32[10000]     |        624.06 ns |       4.451 ns |         4.164 ns |        622.60 ns | 0.000 |    0.00 |
+| CopyBlockUnaligned | Int32[10000]     | Int32[10000]     |        581.32 ns |       2.044 ns |         1.912 ns |        581.53 ns | 0.000 |    0.00 |
+| **CopyByFor**          | **Int32[1000]**      | **Int32[1000]**      |        **201.05 ns** |       **0.678 ns** |         **0.635 ns** |        **201.05 ns** | **0.000** |    **0.00** |
+| Memcpy             | Int32[1000]      | Int32[1000]      |         32.12 ns |       0.638 ns |         0.683 ns |         32.10 ns | 0.000 |    0.00 |
+| CopyBlockUnaligned | Int32[1000]      | Int32[1000]      |         21.02 ns |       0.090 ns |         0.085 ns |         21.04 ns | 0.000 |    0.00 |
+
+
+### 兆芯 ZHAOXIN KaiXian KX-U6780A
+
+#### 数组较小
+
+```
+
+BenchmarkDotNet v0.13.12, UnionTech OS Desktop 20 E
+ZHAOXIN KaiXian KX-U6780A2.7GHz (Max: 2.70GHz), 1 CPU, 8 logical and 8 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX
+  Job-SBDPDU : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX
+
+RunStrategy=Throughput  
+
+```
+| Method             | source       | dest         | Mean      | Error     | StdDev    | Median    | Ratio | RatioSD |
+|------------------- |------------- |------------- |----------:|----------:|----------:|----------:|------:|--------:|
+| **CopyByFor**          | **Int32[10000]** | **Int32[10000]** | **14.814 us** | **0.1734 us** | **0.1537 us** | **14.785 us** |  **1.00** |    **0.00** |
+| Memcpy             | Int32[10000] | Int32[10000] | 15.329 us | 0.2950 us | 0.5167 us | 15.313 us |  1.04 |    0.04 |
+| CopyBlockUnaligned | Int32[10000] | Int32[10000] | 13.125 us | 0.5590 us | 1.6482 us | 13.188 us |  0.94 |    0.09 |
+| **CopyByFor**          | **Int32[1000]**  | **Int32[1000]**  |  **1.127 us** | **0.0226 us** | **0.0211 us** |  **1.127 us** |  **0.08** |    **0.00** |
+| Memcpy             | Int32[1000]  | Int32[1000]  |  2.152 us | 0.0571 us | 0.1675 us |  2.197 us |  0.13 |    0.02 |
+| CopyBlockUnaligned | Int32[1000]  | Int32[1000]  |  2.297 us | 0.0453 us | 0.0863 us |  2.279 us |  0.16 |    0.01 |
+
+#### 数组较大
+
+```
+
+BenchmarkDotNet v0.13.12, UnionTech OS Desktop 20 E
+ZHAOXIN KaiXian KX-U6780A2.7GHz (Max: 2.70GHz), 1 CPU, 8 logical and 8 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX
+  Job-KKBWNV : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX
+
+RunStrategy=Throughput  
+
+```
+| Method             | source           | dest             | Mean           | Error         | StdDev         | Median         | Ratio | RatioSD |
+|------------------- |----------------- |----------------- |---------------:|--------------:|---------------:|---------------:|------:|--------:|
+| **CopyByFor**          | **Int32[100000000]** | **Int32[100000000]** | **334,741.708 μs** | **7,661.2780 μs** | **22,469.2022 μs** | **332,150.996 μs** | **1.000** |    **0.00** |
+| Memcpy             | Int32[100000000] | Int32[100000000] | 164,233.004 μs | 3,256.7894 μs |  8,406.8134 μs | 161,660.880 μs | 0.493 |    0.04 |
+| CopyBlockUnaligned | Int32[100000000] | Int32[100000000] | 164,128.312 μs | 3,671.9104 μs | 10,826.7108 μs | 162,440.250 μs | 0.492 |    0.05 |
+| **CopyByFor**          | **Int32[10000000]**  | **Int32[10000000]**  |  **33,404.753 μs** |   **663.0404 μs** |  **1,687.6494 μs** |  **32,963.932 μs** | **0.100** |    **0.01** |
+| Memcpy             | Int32[10000000]  | Int32[10000000]  |  23,405.518 μs | 1,142.2886 μs |  3,350.1346 μs |  24,879.320 μs | 0.070 |    0.01 |
+| CopyBlockUnaligned | Int32[10000000]  | Int32[10000000]  |  24,981.451 μs |   498.7301 μs |    899.3133 μs |  24,921.681 μs | 0.075 |    0.00 |
+| **CopyByFor**          | **Int32[1000000]**   | **Int32[1000000]**   |   **5,036.027 μs** |   **100.2153 μs** |    **195.4623 μs** |   **5,014.961 μs** | **0.015** |    **0.00** |
+| Memcpy             | Int32[1000000]   | Int32[1000000]   |   2,585.947 μs |    51.0945 μs |    106.6533 μs |   2,601.145 μs | 0.008 |    0.00 |
+| CopyBlockUnaligned | Int32[1000000]   | Int32[1000000]   |   2,529.769 μs |    50.4126 μs |     98.3259 μs |   2,516.467 μs | 0.008 |    0.00 |
+| **CopyByFor**          | **Int32[10000]**     | **Int32[10000]**     |      **13.663 μs** |     **0.2509 μs** |      **0.2224 μs** |      **13.680 μs** | **0.000** |    **0.00** |
+| Memcpy             | Int32[10000]     | Int32[10000]     |      10.112 μs |     0.1976 μs |      0.2957 μs |      10.131 μs | 0.000 |    0.00 |
+| CopyBlockUnaligned | Int32[10000]     | Int32[10000]     |      10.010 μs |     0.1742 μs |      0.1630 μs |       9.964 μs | 0.000 |    0.00 |
+| **CopyByFor**          | **Int32[1000]**      | **Int32[1000]**      |       **1.088 μs** |     **0.0058 μs** |      **0.0045 μs** |       **1.089 μs** | **0.000** |    **0.00** |
+| Memcpy             | Int32[1000]      | Int32[1000]      |       1.358 μs |     0.0266 μs |      0.0364 μs |       1.355 μs | 0.000 |    0.00 |
+| CopyBlockUnaligned | Int32[1000]      | Int32[1000]      |       1.349 μs |     0.0267 μs |      0.0461 μs |       1.334 μs | 0.000 |    0.00 |
+
+
+### 数据说明
+
+通过数据对比 Intel 和 兆芯 以上测试数据，可以看到在 `Int32[10000]` 的测试数据集里面，轻松就可以看到 Intel 比 兆芯 快了 10 倍，如下图所示
+
+<!-- ![](image/dotnet C# 在不同的机器 CPU 型号上的基准性能测试/dotnet C# 在不同的机器 CPU 型号上的基准性能测试0.png) -->
+![](http://image.acmx.xyz/lindexi%2F20245814511970.jpg)
+
+在如下图的对比 Intel 和 兆芯 的对较大的数组进行拷贝的性能，可以看到 Intel 平台也的确能够比 兆芯 快出 10 倍的性能
+
+<!-- ![](image/dotnet C# 在不同的机器 CPU 型号上的基准性能测试/dotnet C# 在不同的机器 CPU 型号上的基准性能测试2.png) -->
+![](http://image.acmx.xyz/lindexi%2F20245819345307.jpg)
+
+具体的性能比较如下
+
+<!-- ![](image/dotnet C# 在不同的机器 CPU 型号上的基准性能测试/dotnet C# 在不同的机器 CPU 型号上的基准性能测试3.png) -->
+![](http://image.acmx.xyz/lindexi%2Fdotnet%2520C%2523%2520%25E5%259C%25A8%25E4%25B8%258D%25E5%2590%258C%25E7%259A%2584%25E6%259C%25BA%25E5%2599%25A8%2520CPU%2520%25E5%259E%258B%25E5%258F%25B7%25E4%25B8%258A%25E7%259A%2584%25E5%259F%25BA%25E5%2587%2586%25E6%2580%25A7%25E8%2583%25BD%25E6%25B5%258B%25E8%25AF%25953.png)
+
+| 方法               | 数组长度         | Intel         | 兆芯           | Intel比兆芯  | 兆芯比Intel |
+| ------------------ | ---------------- | ------------- | -------------- | ------------ | ----------- |
+| CopyByFor          | Int32[100000000] | 41,348,684.32 | 334,741,708.00 | 0.1235241481 | 8.095583052 |
+| Memcpy             | Int32[100000000] | 27,086,427.67 | 164,233,004.00 | 0.1649268235 | 6.063295094 |
+| CopyBlockUnaligned | Int32[100000000] | 24,020,801.37 | 164,128,312.00 | 0.1463537953 | 6.832757553 |
+| CopyByFor          | Int32[10000000]  | 3,800,486.40  | 33,404,753.00  | 0.1137708278 | 8.789599405 |
+| Memcpy             | Int32[10000000]  | 2,313,413.90  | 23,405,518.00  | 0.0988405341 | 10.11730672 |
+| CopyBlockUnaligned | Int32[10000000]  | 2,005,075.29  | 24,981,451.00  | 0.0802625632 | 12.45910871 |
+| CopyByFor          | Int32[1000000]   | 201,416.81    | 5,036,027.00   | 0.0399951807 | 25.00301241 |
+| Memcpy             | Int32[1000000]   | 104,570.31    | 2,585,947.00   | 0.0404379169 | 24.72926589 |
+| CopyBlockUnaligned | Int32[1000000]   | 99,385.15     | 2,529,769.00   | 0.0392862550 | 25.45419512 |
+| CopyByFor          | Int32[10000]     | 1,958.87      | 13,663.00      | 0.1433704165 | 6.974939634 |
+| Memcpy             | Int32[10000]     | 624.06        | 10,112.00      | 0.0617147943 | 16.20357017 |
+| CopyBlockUnaligned | Int32[10000]     | 581.32        | 10,010.00      | 0.0580739261 | 17.21943164 |
+| CopyByFor          | Int32[1000]      | 201.05        | 1,088.00       | 0.1847886029 | 5.411589157 |
+| Memcpy             | Int32[1000]      | 32.12         | 1,358.00       | 0.0236524300 | 42.27895392 |
+| CopyBlockUnaligned | Int32[1000]      | 21.02         | 1,349.00       | 0.0155819125 | 64.17697431 |
+
+更具体的对 兆芯 的分析：在对较小的数组进行拷贝，使用 for 进行拷贝的速度比标准 C 的 memcpy 函数快，使用 for 循环进行拷贝与 dotnet 的 Unsafe.CopyBlockUnaligned 差不多。而在 Intel 平台下，无论是 标准 C 的 memcpy 还是 dotnet 的 Unsafe.CopyBlockUnaligned 都比 for 快几倍。这就意味着无论是 memcpy 还是 CopyBlockUnaligned 里面的指令优化，在 兆芯 下都是负优化
+
+在更大的数据两情况下，可以看到 Intel 平台的 memcpy 和 CopyBlockUnaligned 对 for 循环的优化比率不断下跌，其数据情况如下
+
+<!-- ![](image/dotnet C# 在不同的机器 CPU 型号上的基准性能测试/dotnet C# 在不同的机器 CPU 型号上的基准性能测试1.png) -->
+![](http://image.acmx.xyz/lindexi%2F2024581929549719.jpg)
+
+| 数组长度      | CopyByFor     | Memcpy        | CopyBlockUnaligned | CopyByFor与Memcpy比率 | CopyByFor与CopyBlockUnaligned比率 |
+| --------- | ------------- | ------------- | ------------------ | ------------------ | ------------------------------ |
+| 1000      | 201.05        | 32.12         | 21.02              | 6.259339975        | 9.564700285                    |
+| 10000     | 1,958.87      | 624.06        | 581.32             | 3.138912925        | 3.369693112                    |
+| 1000000   | 201,416.81    | 104,570.31    | 99,385.15          | 1.926137639        | 2.026628827                    |
+| 10000000  | 3,800,486.40  | 2,313,413.90  | 2,005,075.29       | 1.642804342        | 1.895433263                    |
+| 100000000 | 41,348,684.32 | 27,086,427.67 | 24,020,801.37      | 1.52654624         | 1.721369894                    |
+
+我的猜测是随着数组长度增加，将逐渐超过了 Intel 的 CPU 的缓存，导致了比率的下降。但无论如何，使用 memcpy 和 CopyBlockUnaligned 在 Intel 下都有优化
+
+这就是为什么在数组较大时，如在 100000000 长度时，相同的 Memcpy 方法下兆芯比Intel的耗时比例为 6.06 倍。相较于在 1000 长度时，兆芯比Intel的耗时比例为 42.27 倍小了非常多。如此可以看到其实也不能全怪兆芯，只是因为 Intel 的优化比较强，导致看起来差异比较大
+
+在数组长度比较大的时候，在 兆芯 上也是 memcpy 会比 for 循环拷贝更快。且 memcpy 和 CopyBlockUnaligned 的性能也是基本持平的。也就是说在数据量比较大的时候，使用 dotnet 自带的 `Unsafe.CopyBlockUnaligned` 方法还是很有意义的，既速度快又相对安全。在数据量比较小的时候，使用 CopyBlockUnaligned 依然不会有较大的性能损失
+
+<!-- 
+
+Builder b.UserXxx();
+
+PostInint(Action<Context> a =>{ a. })
+
+  PostSource()
+
+[对军<dotnetCampus.Ipc.LoggerProvider>(categoryName: "xxxx")]
+[对军<dotnetCampus.Cli.LoggerProvider>]
+[对军<EasiNote.Budiness.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+[对军<dotnetCampus.Ipc.LoggerProvider>]
+日指对军
+
+[assembly:XxxxLogger("xxxxxx")]
+
+ -->
+ 
+
+## 代码
+
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7a4584ca15a250812de76fc5b35adcaaca2e531d/BulowukaileFeanayjairwo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/7a4584ca15a250812de76fc5b35adcaaca2e531d/BulowukaileFeanayjairwo) 上，可以使用如下命令行拉取代码
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
 ```
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
-git pull origin 287e5aee6b79fef16600eb8d76b64cf6e95eada0
+git pull origin 7a4584ca15a250812de76fc5b35adcaaca2e531d
 ```
 
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
@@ -136,7 +347,7 @@ git pull origin 287e5aee6b79fef16600eb8d76b64cf6e95eada0
 ```
 git remote remove origin
 git remote add origin https://github.com/lindexi/lindexi_gd.git
-git pull origin 287e5aee6b79fef16600eb8d76b64cf6e95eada0
+git pull origin 7a4584ca15a250812de76fc5b35adcaaca2e531d
 ```
 
 获取代码之后，进入 BulowukaileFeanayjairwo 文件夹，即可获取到源代码
