@@ -121,9 +121,64 @@ RunStrategy=Throughput
 | NewArrayWithRandomVisit  | 1000000   |   497,132.01 ns |  9,841.562 ns | 12,796.810 ns |   490,990.22 ns |  1.08 |    0.03 |
 | NewArrayWithOrdinalVisit | 1000000   | 6,742,537.03 ns | 48,986.470 ns | 38,245.414 ns | 6,732,321.64 ns | 14.51 |    0.31 |
 
-<!-- ### 飞腾腾锐 Phytium D2000 -->
+### 飞腾腾锐 Phytium D2000
 
+```
 
+BenchmarkDotNet v0.13.12, Kylin V10 SP1
+Phytium,D2000/8 E8C, 8 logical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), Arm64 RyuJIT AdvSIMD
+  Job-NHRLJG : .NET 8.0.4 (8.0.424.16909), Arm64 RyuJIT AdvSIMD
+
+RunStrategy=Throughput  
+
+```
+| Method                   | ArraySize  | Mean                | Error             | StdDev             | Ratio | RatioSD |
+|------------------------- |----------- |--------------------:|------------------:|-------------------:|------:|--------:|
+| **NewArray**                 | **10**         |            **22.18 ns** |          **0.149 ns** |           **0.132 ns** |  **1.00** |    **0.00** |
+| GCZeroInitialized        | 10         |            92.43 ns |          0.564 ns |           0.440 ns |  4.17 |    0.02 |
+| GCZeroUninitialized      | 10         |            25.68 ns |          0.248 ns |           0.243 ns |  1.16 |    0.01 |
+| NewArrayWithRandomVisit  | 10         |           108.25 ns |          0.299 ns |           0.250 ns |  4.88 |    0.03 |
+| NewArrayWithOrdinalVisit | 10         |            34.55 ns |          0.126 ns |           0.112 ns |  1.56 |    0.01 |
+|                          |            |                     |                   |                    |       |         |
+| **NewArray**                 | **100**        |            **76.35 ns** |          **0.941 ns** |           **0.880 ns** |  **1.00** |    **0.00** |
+| GCZeroInitialized        | 100        |           163.69 ns |          0.952 ns |           0.743 ns |  2.14 |    0.03 |
+| GCZeroUninitialized      | 100        |            80.21 ns |          0.528 ns |           0.468 ns |  1.05 |    0.02 |
+| NewArrayWithRandomVisit  | 100        |           421.53 ns |          1.679 ns |           1.402 ns |  5.52 |    0.06 |
+| NewArrayWithOrdinalVisit | 100        |           300.66 ns |          1.274 ns |           1.130 ns |  3.94 |    0.05 |
+|                          |            |                     |                   |                    |       |         |
+| **NewArray**                 | **1000**       |           **640.11 ns** |          **4.059 ns** |           **3.598 ns** |  **1.00** |    **0.00** |
+| GCZeroInitialized        | 1000       |           672.06 ns |          3.242 ns |           3.032 ns |  1.05 |    0.01 |
+| GCZeroUninitialized      | 1000       |           483.70 ns |          2.202 ns |           1.952 ns |  0.76 |    0.01 |
+| NewArrayWithRandomVisit  | 1000       |         1,765.24 ns |          6.469 ns |           5.402 ns |  2.76 |    0.02 |
+| NewArrayWithOrdinalVisit | 1000       |         2,850.39 ns |         12.971 ns |          12.133 ns |  4.45 |    0.03 |
+|                          |            |                     |                   |                    |       |         |
+| **NewArray**                 | **10000**      |         **5,219.58 ns** |         **36.810 ns** |          **32.631 ns** |  **1.00** |    **0.00** |
+| GCZeroInitialized        | 10000      |         5,280.52 ns |         27.550 ns |          24.422 ns |  1.01 |    0.01 |
+| GCZeroUninitialized      | 10000      |         2,640.52 ns |         44.642 ns |          34.853 ns |  0.51 |    0.01 |
+| NewArrayWithRandomVisit  | 10000      |         8,992.89 ns |         20.367 ns |          19.052 ns |  1.72 |    0.01 |
+| NewArrayWithOrdinalVisit | 10000      |        26,983.43 ns |        355.773 ns |         297.086 ns |  5.17 |    0.05 |
+|                          |            |                     |                   |                    |       |         |
+| **NewArray**                 | **100000**     |        **45,506.61 ns** |        **431.868 ns** |         **403.970 ns** |  **1.00** |    **0.00** |
+| GCZeroInitialized        | 100000     |        45,543.14 ns |        432.449 ns |         404.513 ns |  1.00 |    0.01 |
+| GCZeroUninitialized      | 100000     |        44,461.84 ns |        331.168 ns |         309.775 ns |  0.98 |    0.01 |
+| NewArrayWithRandomVisit  | 100000     |        57,232.01 ns |        318.770 ns |         298.178 ns |  1.26 |    0.01 |
+| NewArrayWithOrdinalVisit | 100000     |       445,380.51 ns |      2,904.888 ns |       2,425.713 ns |  9.78 |    0.10 |
+|                          |            |                     |                   |                    |       |         |
+| **NewArray**                 | **1000000**    |       **318,862.16 ns** |      **1,899.267 ns** |       **1,683.651 ns** |  **1.00** |    **0.00** |
+| GCZeroInitialized        | 1000000    |       319,510.71 ns |      4,669.274 ns |       3,645.462 ns |  1.00 |    0.01 |
+| GCZeroUninitialized      | 1000000    |       314,884.17 ns |      5,637.859 ns |       4,401.669 ns |  0.99 |    0.02 |
+| NewArrayWithRandomVisit  | 1000000    |       357,843.40 ns |      3,063.527 ns |       2,865.625 ns |  1.12 |    0.01 |
+| NewArrayWithOrdinalVisit | 1000000    |     4,547,465.54 ns |     15,355.309 ns |      12,822.379 ns | 14.28 |    0.05 |
+|                          |            |                     |                   |                    |       |         |
+| **NewArray**                 | **1000000000** | **1,541,406,672.88 ns** | **35,733,853.844 ns** | **102,527,125.216 ns** | **1.000** |    **0.00** |
+| GCZeroInitialized        | 1000000000 | 1,548,370,215.42 ns | 38,407,327.571 ns | 110,197,822.498 ns | 1.009 |    0.10 |
+| GCZeroUninitialized      | 1000000000 |     1,486,735.21 ns |     28,605.254 ns |      26,757.372 ns | 0.001 |    0.00 |
+| NewArrayWithRandomVisit  | 1000000000 | 1,590,271,119.60 ns | 33,473,585.461 ns |  96,041,991.522 ns | 1.036 |    0.09 |
+| NewArrayWithOrdinalVisit | 1000000000 | 3,861,833,983.54 ns |  2,367,487.064 ns |   1,976,958.923 ns | 2.546 |    0.16 |
+
+以上的飞腾腾锐 Phytium D2000 最后的测试数据预计是不正常的
 
 ## 数组拷贝
 
