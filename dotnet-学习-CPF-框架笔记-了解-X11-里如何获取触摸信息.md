@@ -379,6 +379,8 @@ git pull origin 43711cd55b54616e0d75a70d61dec5591151ad2b
 - <https://www.kernel.org/doc/html/latest/input/multi-touch-protocol.html>
 - <https://source.android.google.cn/docs/core/interaction/input/touch-devices>
 
+对应的，我修复了 Avalonia 的触摸问题，详细请参阅 <https://github.com/AvaloniaUI/Avalonia/pull/15297> <https://github.com/AvaloniaUI/Avalonia/pull/15283>
+
 
 
 
