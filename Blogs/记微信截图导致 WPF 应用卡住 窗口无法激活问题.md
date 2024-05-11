@@ -46,7 +46,7 @@
   PresentationFramework.dll!System.Windows.Application.RunInternal(System.Windows.Window window = null)
   PresentationFramework.dll!System.Windows.Application.Run(System.Windows.Window window = null)
   PresentationFramework.dll!System.Windows.Application.Run() 
-  lindexi.dll!Cvte.lindexi.Program.Main(string[] args = {string[2]}) 
+  lindexi.dll!lindexi.Program.Main(string[] args = {string[2]}) 
   [本机到托管的转换]  
   hostpolicy.dll!542463c4()
   hostpolicy.dll!542465c2()
