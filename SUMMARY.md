@@ -792,6 +792,8 @@
 
  * [dotnet win32 使用 WIC 获取系统编解码器](dotnet-win32-使用-WIC-获取系统编解码器.md)
 
+ * [dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入](dotnet-X11-窗口之间发送鼠标消息-模拟鼠标输入.md)
+
  * [dotnet 一些代码审查套路](dotnet-一些代码审查套路.md)
 
  * [dotnet 三句命令行创建运行一个 web 服务程序](dotnet-三句命令行创建运行一个-web-服务程序.md)
@@ -932,6 +934,10 @@
 
  * [dotnet 双缓存数据结构设计 下载库的文件写入缓存框架](dotnet-双缓存数据结构设计-下载库的文件写入缓存框架.md)
 
+ * [dotnet 后台线程发送 X11 窗口消息](dotnet-后台线程发送-X11-窗口消息.md)
+
+ * [dotnet 后台线程设置 X11 窗口最小化](dotnet-后台线程设置-X11-窗口最小化.md)
+
  * [dotnet 启动 JIT 多核心编译提升启动性能](dotnet-启动-JIT-多核心编译提升启动性能.md)
 
  * [dotnet 启动进程传入不存在的文件夹作为工作目录行为变更](dotnet-启动进程传入不存在的文件夹作为工作目录行为变更.md)
@@ -973,6 +979,8 @@
  * [dotnet 基于 dotnet format 的 GitHub Action 自动代码格式化机器人](dotnet-基于-dotnet-format-的-GitHub-Action-自动代码格式化机器人.md)
 
  * [dotnet 多线程禁止同时调用相同的方法 禁止方法重入调用 双检锁的设计](dotnet-多线程禁止同时调用相同的方法-禁止方法重入调用-双检锁的设计.md)
+
+ * [dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口](dotnet-如何从-Gtk-3-的窗口到对应的-X11-窗口.md)
 
  * [dotnet 如何在 dotnet test 单元测试控制台里输出日志内容](dotnet-如何在-dotnet-test-单元测试控制台里输出日志内容.md)
 

@@ -128,7 +128,7 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-在阅读了 UNO 的源代码之后，我认为咱可以将原本的只从 Mouse 里面获取事件，更改为同时从 Stylus 和 Mouse 获取事件。且在 Mouse 里面判断当前的事件是来自于 Stylus 或 Touch 时，将自动忽略后续处理逻辑。根据 WPF 的触摸行为可以知道，触摸先触发 Touch 事件，随后提升为 Stylus 事件，最后提升为 Mouse 事件。于此同时 Pen 消息将会先触发 Stylus 事件，再提升为 Mouse 事件。这就意味着简单处理的话，直接使用 Stylus 事件即可同时处理 Touch 和 Pen 的情况。使用 Stylus 事件时，将可以自动支持多指触摸。且可以通过 GetPropertyValue 方法，传入 StylusPointProperties.Width 和 StylusPointProperties.Height 获取到可能存在的触摸的尺寸，用于填充实现 Microsoft.UI.Input.PointerPointProperties.ContactRect 属性。这将有利于触摸屏上面的 WPF 应用使用上 UNO 框架
+经过我在 Avalonia 的测试，使用 GTK 框架作为底层的性能比较差，原因是由于 GTK 底层将在每一帧告知 X11 渲染整个画面，导致了可能的性能问题。而如果将 X11 作为底层，可以通过 XPutImage 控制 X11 绘制渲染范围，从而提升性能。但坏消息是我似乎没有在 UNO 里面发现只刷新脏的范围的机制
 ```
 
 ```
