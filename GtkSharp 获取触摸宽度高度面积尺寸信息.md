@@ -258,14 +258,14 @@ class MainWindow : Window
 }
 ```
 
-本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/066cae4e4f6aa4f31d3e43eca9c278aa7b546b60/WarheelaigeQekeyelyai) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/066cae4e4f6aa4f31d3e43eca9c278aa7b546b60/WarheelaigeQekeyelyai) 上，可以使用如下命令行拉取代码
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/cb5b5c498e904897aabc0ecfb38ce1bb6fd52ff0/WarheelaigeQekeyelyai) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/cb5b5c498e904897aabc0ecfb38ce1bb6fd52ff0/WarheelaigeQekeyelyai) 上，可以使用如下命令行拉取代码
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
 ```
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
-git pull origin 066cae4e4f6aa4f31d3e43eca9c278aa7b546b60
+git pull origin cb5b5c498e904897aabc0ecfb38ce1bb6fd52ff0
 ```
 
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
@@ -273,7 +273,7 @@ git pull origin 066cae4e4f6aa4f31d3e43eca9c278aa7b546b60
 ```
 git remote remove origin
 git remote add origin https://github.com/lindexi/lindexi_gd.git
-git pull origin 066cae4e4f6aa4f31d3e43eca9c278aa7b546b60
+git pull origin cb5b5c498e904897aabc0ecfb38ce1bb6fd52ff0
 ```
 
 获取代码之后，进入 WarheelaigeQekeyelyai 文件夹，即可获取到源代码
