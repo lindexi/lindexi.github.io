@@ -30,7 +30,7 @@
 
 在开始之前，我推荐大家拉下我的代码到本地，通过自己更改实际修改代码可以理解整个 dotnet 的启动的 Native 部分逻辑
 
-本文放在 [github](https://github.com/lindexi/lindexi_gd/tree/3e19bffc/HostWithMscoree ) 欢迎小伙伴访问
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/3e19bffc/HostWithMscoree ) 上，欢迎小伙伴拉取代码
 
 <!-- ![](image/dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程/dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程0.png) -->
 
