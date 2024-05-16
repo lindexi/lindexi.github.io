@@ -3,6 +3,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/05/15 07:25:32 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -168,5 +170,6 @@ git pull origin 4ae5a45eb65cab5a3b9f8991852be9602dee6533
 ```
 
 获取代码之后，进入 LejarkeebemCowakiwhanar 文件夹，即可获取到源代码
+
 
 更多 GTK 开发请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )

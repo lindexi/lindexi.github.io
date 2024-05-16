@@ -3,12 +3,14 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/05/15 07:25:31 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
 核心设置 X11 窗口最小化的方法是 XIconifyWindow 方法，核心问题是在后台线程需要自己使用 XOpenDisplay 获取 Display 对象，且必须调用 XCloseDisplay 时才能生效
 
-核心代码如下
+核心 C# 代码如下
 
 ```csharp
 _ = Task.Run(async () =>
