@@ -3,6 +3,8 @@
 在 X11 里面有和 Win32 类似的窗口之间的关系机制，如 Owner-Owned 关系，以及 Parent-Child 关系。本文将告诉大家如何进行设置以及其行为
 
 <!--more-->
+<!-- CreateTime:2024/05/17 07:23:22 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -510,3 +512,5 @@ git pull origin bd9f8b2c8f3f42bea639677bf4ac69602b521fc0
 ```
 
 获取代码之后，进入 DikalehebeekaJaqunicobo 文件夹，即可获取到源代码
+
+更多 X11 相关，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
