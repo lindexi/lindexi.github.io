@@ -40,6 +40,9 @@ git pull origin 0331c5dd6057106df5cb179e45d34966a3eafd1b
 
 获取代码之后，进入 GececurbaiduhaldiFokeejukolu 文件夹，即可获取到源代码
 
+以上为 Owner-Owned 关系方法，还有 Parent-Child 关系方法，详细请看 [dotnet 设置 X11 建立窗口之间的父子关系](https://blog.lindexi.com/post/dotnet-%E8%AE%BE%E7%BD%AE-X11-%E5%BB%BA%E7%AB%8B%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB.html )
+<!-- [dotnet 设置 X11 建立窗口之间的父子关系 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18197088 ) -->
+
 ## 设置窗口无边框
 
 设置窗口的override_redirect属性为True，以避免窗口管理器的干预，如此即可实现无边框
@@ -111,6 +114,58 @@ git pull origin 8b5f024b002b2dbc2bd630c2ffcd24ece9b5a9c5
 获取代码之后，进入 DikalehebeekaJaqunicobo 文件夹，即可获取到源代码
 
 设置窗口坐标过程中，是不会存在窗口移动动画的
+
+
+## 配置 XCompositeRedirectSubwindows 将会导致窗口背景透明
+
+如使用以下代码即可创建不透明背景窗口
+
+```csharp
+var xSetWindowAttributes = new XSetWindowAttributes
+{
+    backing_store = 1,
+    bit_gravity = Gravity.NorthWestGravity,
+    win_gravity = Gravity.NorthWestGravity,
+    //override_redirect = true, // 设置窗口的override_redirect属性为True，以避免窗口管理器的干预
+    colormap = XCreateColormap(display, rootWindow, visual, 0),
+    border_pixel = 0,
+    background_pixel = new IntPtr(0xF5565656),
+};
+
+var childWindowHandle = XCreateWindow(display, rootWindow, 0, 0, xDisplayWidth, xDisplayHeight, 5,
+    32,
+    (int) CreateWindowArgs.InputOutput,
+    visual,
+    (nuint) valueMask, ref xSetWindowAttributes);
+```
+
+但是如果在此窗口加上 XCompositeRedirectSubwindows 将会导致窗口背景依然是透明的
+
+```csharp
+var overlayWindow = childWindowHandle;
+XCompositeRedirectSubwindows(display, overlayWindow, 1/*CompositeRedirectAutomatic*/);
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/4fb78fdd2e18de5d2f7b5461c4f1ec662db50b77/DikalehebeekaJaqunicobo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/4fb78fdd2e18de5d2f7b5461c4f1ec662db50b77/DikalehebeekaJaqunicobo) 上，可以使用如下命令行拉取代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 4fb78fdd2e18de5d2f7b5461c4f1ec662db50b77
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 4fb78fdd2e18de5d2f7b5461c4f1ec662db50b77
+```
+
+获取代码之后，进入 DikalehebeekaJaqunicobo 文件夹，即可获取到源代码
+
 
 ## 设置窗口透明
 
