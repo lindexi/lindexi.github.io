@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/05/21 17:01:25 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -90,6 +92,44 @@ System.DllNotFoundException: Unable to load shared library 'libXext.so' or one o
 ```
 
 更新之后的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/8f208442ada1049cc3a5f7be789df305acb66ab4/X11/DikalehebeekaJaqunicobo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/8f208442ada1049cc3a5f7be789df305acb66ab4/X11/DikalehebeekaJaqunicobo) 上，欢迎拉取代码阅读和构建
+
+以上方法用于设置全应用穿透，在此基础上，支持运行过程中，动态决定穿透范围。比如在某个逻辑里面，设置 （0，0，1000，1000）的范围内支持命中，其他范围依然穿透，可以使用如下代码进行更新
+
+```csharp
+                        var xRectangle = new XRectangle()
+                        {
+                            x = 0,
+                            y = 0, 
+                            width = 1000,
+                            height = 1000,
+                        };
+                        XRectangle* p = &xRectangle;
+                        XUnionRectWithRegion(p, region, region);
+                        XShapeCombineRegion(display, childWindowHandle, ShapeInput, 0, 0, region, ShapeSet);
+
+        [DllImport(libX11)]
+        public static extern int XUnionRectWithRegion(XRectangle* rectangle, IntPtr srcRegion, IntPtr destRegion);
+```
+
+更新之后的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0df132636a27746b1895b7f9a8fa347b1fe9540b/X11/DikalehebeekaJaqunicobo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0df132636a27746b1895b7f9a8fa347b1fe9540b/X11/DikalehebeekaJaqunicobo) 上，可以使用如下命令行拉取代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 0df132636a27746b1895b7f9a8fa347b1fe9540b
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 0df132636a27746b1895b7f9a8fa347b1fe9540b
+```
+
+获取代码之后，进入 X11/DikalehebeekaJaqunicobo 文件夹，即可获取到源代码
 
 参考文档：
 

@@ -674,6 +674,8 @@
 
  * [dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](dotnet-OpenXML-图片特效的-Color-Change-Effect-特效修改图片颜色.md)
 
+ * [dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本](dotnet-OpenXML-在-PPTX-表格单元格加上-VerticalMerge-或-HorizontalMerge-将导致-WPS-丢失文本.md)
+
  * [dotnet OpenXML 如何判断是形状还是文本](dotnet-OpenXML-如何判断是形状还是文本.md)
 
  * [dotnet OpenXML 如何获取 schemeClr 颜色](dotnet-OpenXML-如何获取-schemeClr-颜色.md)
@@ -953,6 +955,8 @@
  * [dotnet 在 NuGet 上搜寻好用的 dotnet tool 工具](dotnet-在-NuGet-上搜寻好用的-dotnet-tool-工具.md)
 
  * [dotnet 在 OpenXML SDK 的 HasValue 是什么含义](dotnet-在-OpenXML-SDK-的-HasValue-是什么含义.md)
+
+ * [dotnet 在 UNO 里获取 X11 窗口指针的方法](dotnet-在-UNO-里获取-X11-窗口指针的方法.md)
 
  * [dotnet 在 UOS 国产系统上使用 MonoDevelop 创建 GTK 全平台带界面应用](dotnet-在-UOS-国产系统上使用-MonoDevelop-创建-GTK-全平台带界面应用.md)
 
