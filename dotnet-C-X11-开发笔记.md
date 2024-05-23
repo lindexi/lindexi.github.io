@@ -188,10 +188,16 @@ git pull origin 4fb78fdd2e18de5d2f7b5461c4f1ec662db50b77
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/e42ddbb8989ca0dd7e859dd6fd9cb0ddbb4d3fd1/GececurbaiduhaldiFokeejukolu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/e42ddbb8989ca0dd7e859dd6fd9cb0ddbb4d3fd1/GececurbaiduhaldiFokeejukolu) 上
 
-## 和 UNO Gtk 相互调用
+## 和 UNO 相互调用
+
+### 和 UNO Gtk 相互调用
 
 参阅 [dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口](https://blog.lindexi.com/post/dotnet-%E5%A6%82%E4%BD%95%E4%BB%8E-Gtk-3-%E7%9A%84%E7%AA%97%E5%8F%A3%E5%88%B0%E5%AF%B9%E5%BA%94%E7%9A%84-X11-%E7%AA%97%E5%8F%A3.html )
 
+### 和 UNO X11 相互调用
+
+[dotnet 在 UNO 里获取 X11 窗口指针的方法](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-UNO-%E9%87%8C%E8%8E%B7%E5%8F%96-X11-%E7%AA%97%E5%8F%A3%E6%8C%87%E9%92%88%E7%9A%84%E6%96%B9%E6%B3%95.html )
+<!-- [dotnet 在 UNO 里获取 X11 窗口指针的方法 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18207530 ) -->
 
 ## 更多博客
 
