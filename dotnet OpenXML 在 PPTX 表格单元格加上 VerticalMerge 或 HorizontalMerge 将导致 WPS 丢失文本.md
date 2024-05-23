@@ -3,6 +3,8 @@
 本文记录 WPS 的一个已知问题，如果在表格的单元格里面配置了 VerticalMerge 或 HorizontalMerge 为 false 值时，则在此单元格内的文本将被丢失。此行为与 Office 的 PowerPoint 不同，预计是 WPS 的坑
 
 <!--more-->
+<!-- CreateTime:2024/05/23 07:25:19 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
