@@ -399,7 +399,11 @@ xmlns:foo="using:Xxxxx"
 
 除了拷贝代码可能的出错，也有可能是 ReSharper 在修改类型的命名空间的时候，自动向 XAML 添加的代码错误
 
+常见错误信息如下
 
+```
+XamlCompiler error WMC0001: Unknown type 'SKXamlCanvas' in XML namespace 'clr-namespace:SkiaSharp.Views.Windows;assembly=SkiaSharp.Views.Windows'
+```
 
 ## 图片资源
 
