@@ -185,6 +185,10 @@ namespace AddDllDirectoryDetectCs
 
 收到 [Vatsan Madhavan](https://github.com/vatsan-madhavan ) 大佬赞
 
+有什么方法可以不要补丁？可使用初雨团队的 [YY-Thunks](https://github.com/Chuyu-Team/YY-Thunks) 库，详细请看 [让.NET Native AOT应用兼容Windows 7/Vista - 知乎](https://zhuanlan.zhihu.com/p/695992746 )
+
+基于以上方法，对非 AOT 应用也可生效，需要自行构建 dotnet 运行时，让 dotnet 运行时的所有 Native dll 全都带上 [YY-Thunks](https://github.com/Chuyu-Team/YY-Thunks) 参与构建
+
 ## 参考
 
 [LoadLibraryExW function (libloaderapi.h) - Win32 apps Microsoft Docs](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw?WT.mc_id=WD-MVP-5003260 )

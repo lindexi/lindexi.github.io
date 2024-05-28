@@ -47,6 +47,8 @@ Android\obj\Debug\90\lp\39\jl\res : error APT2097: failed to open directory: 绯
 
 [Create a new Mobile.App (Xamarin.Forms) project, try to compile, but "Failed linking references" - Stack Overflow](https://stackoverflow.com/questions/57592847/create-a-new-mobile-app-xamarin-forms-project-try-to-compile-but-failed-lin)
 
+本文以上的 ChuwheaweaharfelkalBelqearjurnawnere 项目放在 <https://github.com/lindexi/lindexi_gd/tree/c265bb3f31155c45dab032cc50f4aa4215829666/Chuwheaweahar> 上，项目没有什么特殊的
+
 
 
 
