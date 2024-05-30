@@ -11,7 +11,7 @@
 <!-- 发布 -->
 <!-- 博客 -->
 
-在 X11 窗口中，想要实现让窗口不可命中，即所有的鼠标、触摸等的事件穿透到后面的窗口上，可以采用 libXext.so 提供的 XShapeCombineRegion 方法，也可以使用有[争议](https://en.wikipedia.org/wiki/XFixes)的 libXfixes.so 提供的 XFixesSetWindowShapeRegion 方法
+在 X11 窗口中，想要实现让 X11Window 窗口不可命中，即所有的鼠标、触摸等的事件点击穿透到后面的窗口上，可以采用 libXext.so 提供的 XShapeCombineRegion 方法，也可以使用有[争议](https://en.wikipedia.org/wiki/XFixes)的 libXfixes.so 提供的 XFixesSetWindowShapeRegion 方法
 
 通过以上两个方法即可让 X11 窗口不响应鼠标或触摸的点击输入，让其输入到窗口后面的窗口。适合用来制作一个仅用来展示渲染的窗口，让这个窗口不参与到交互里面
 
@@ -44,7 +44,7 @@ XShapeCombineRegion(display, childWindowHandle, ShapeInput, 0, 0, region, ShapeS
         public static extern void XShapeCombineRegion(IntPtr display, IntPtr dest, int destKind, int xOff, int yOff, IntPtr region, int op);
 ```
 
-我尝试创建两个窗口，其中一个窗口调用了 XShapeCombineRegion 方法，运行程序，将设置了的 XShapeCombineRegion 的窗口激活作为前台窗口，点击此窗口的内容，可以看到点击穿透到后面的窗口
+我尝试创建两个窗口，其中一个窗口调用了 XShapeCombineRegion 方法，运行程序，将设置了的 XShapeCombineRegion 的窗口激活作为前台窗口，点击此窗口的内容，可以看到点击穿透到后面的窗口。如此即可使用 C# dotnet 在 X11 应用里实现 Click Through 窗口点击穿透功能
 
 以上两个方法都能实现功能，且通过阅读 [X Server](https://github.com/XQuartz/xorg-server)的代码，可以发现以上两个方法核心实现基本相同。为了可能的坑点在于 libXfixes.so 可能在某些系统上被砍掉。只是这个 libXfixes.so 也足够旧了，基本上系统都会带的
 

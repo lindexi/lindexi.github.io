@@ -172,6 +172,24 @@ git pull origin 4fb78fdd2e18de5d2f7b5461c4f1ec662db50b77
 参阅： [dotnet C# 设置 X11 应用窗口背景透明](https://blog.lindexi.com/post/dotnet-C-%E8%AE%BE%E7%BD%AE-X11-%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E.html )
 
 
+## 多次调用 XInitThreads 的影响
+
+可以多次调用 XInitThreads 方法，不会炸
+
+在 UNO 底层已经调用
+
+参考文档： <https://tronche.com/gui/x/xlib/display/XInitThreads.html>
+
+It is only necessary to call this function if multiple threads might use Xlib concurrently. If all calls to Xlib functions are protected by some other access mechanism (for example, a mutual exclusion lock in a toolkit or through explicit client programming), Xlib thread initialization is not required. It is recommended that single-threaded programs not call this function.
+
+如以下代码不会炸
+
+```csharp
+  XInitThreads();
+  XInitThreads();
+  XInitThreads();
+```
+
 ## 和 Avalonia 相互调用
 
 设置工具栏与 X11 窗口绘制的笔迹关联，要求 X11 笔迹窗口在下方，配合设置X11里面两个窗口之间的层级关系的方法即可实现
