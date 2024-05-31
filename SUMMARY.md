@@ -480,6 +480,8 @@
 
  * [dotnet C# 全局 Windows 鼠标钩子](dotnet-C-全局-Windows-鼠标钩子.md)
 
+ * [dotnet C# 创建 X11 应用时设置窗口背景颜色](dotnet-C-创建-X11-应用时设置窗口背景颜色.md)
+
  * [dotnet C# 反射扫描程序集所有类型会不会触发类型静态构造函数](dotnet-C-反射扫描程序集所有类型会不会触发类型静态构造函数.md)
 
  * [dotnet C# 只创建对象不调用构造函数方法](dotnet-C-只创建对象不调用构造函数方法.md)
