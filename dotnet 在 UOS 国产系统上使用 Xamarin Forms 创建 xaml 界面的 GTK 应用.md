@@ -5,8 +5,6 @@
 <!--more-->
 <!-- CreateTime:2020/9/1 21:18:30 -->
 
-
-
 本文将使用特别底层的方法告诉大家如何一步步创建，而不是告诉大家如何在 IDE 上进行快速的创建。因此本文更适合用来告诉大家一些基础的内容，而不适合用来规模化创建上
 
 请注意，本文的步骤很多，只是我为了让大家能了解更多细节。实际上没有那么复杂
@@ -228,4 +226,42 @@ using Xamarin.Forms.Xaml;
 
 尽管官方文档里面说的是预览版，但是经过了2年的开发，现在不能的支持的点很少。另外，这里的 GTK 支持的代码都是完全开源的，刚好我改的动，所以用起来也不慌
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+本文以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/225bab6094a00631e7c383c3c6cef672a39b02b2/WokemhelurnawgelrallKearlallidallla) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/225bab6094a00631e7c383c3c6cef672a39b02b2/WokemhelurnawgelrallKearlallidallla) 上，可以使用如下命令行拉取代码
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 225bab6094a00631e7c383c3c6cef672a39b02b2
+```
+
+以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 225bab6094a00631e7c383c3c6cef672a39b02b2
+```
+
+获取代码之后，进入 WokemhelurnawgelrallKearlallidallla 文件夹，即可获取到源代码
+
+
+**更新**：
+
+本文提及功能已合入到 MAUI 里，现在是存放在 <https://github.com/jsuarezruiz/maui-linux/> 项目里面
+
+更多国产系统可选框架有很多，如以下列表，以下列表仅包括我有在使用的框架，排名部分先后：
+
+- MAUI
+- UNO
+- Avalonia
+- CPF
+- ETO
+- XPF
+- GTKSystem.Windows.Forms
+- XWT
+- GtkSharp
+- SkiaSharp
+
+欢迎大家加入 xamarin 国产系统开发群： 810052083 

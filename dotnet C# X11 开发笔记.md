@@ -214,6 +214,84 @@ It is only necessary to call this function if multiple threads might use Xlib co
 [dotnet 在 UNO 里获取 X11 窗口指针的方法](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-UNO-%E9%87%8C%E8%8E%B7%E5%8F%96-X11-%E7%AA%97%E5%8F%A3%E6%8C%87%E9%92%88%E7%9A%84%E6%96%B9%E6%B3%95.html )
 <!-- [dotnet 在 UNO 里获取 X11 窗口指针的方法 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18207530 ) -->
 
+## 已知问题
+
+### XIQueryDevice 可能停止渲染
+
+放在显示窗口之前进行 XIQueryDevice 不会让窗口停止渲染，否则将会在 XIQueryDevice 方法卡住
+
+```csharp
+// 放在显示窗口之前进行 XIQueryDevice 不会让窗口停止渲染，否则将会在 XIQueryDevice 方法卡住
+var devices = (XIDeviceInfo*) XLib.XIQueryDevice(Display,
+    (int) XiPredefinedDeviceId.XIAllMasterDevices, out int num);
+
+XMapWindow(display, X11WindowIntPtr);
+```
+
+反过来，让 XMapWindow 在 XIQueryDevice 则可能让其他的 X11 窗口停止渲染，且非必现问题，十分诡异。仅在统信 UOS 系统能够复现，其系统版本信息如下
+
+```
+uos@uos-PC:~$ cat /etc/os-version
+[Version]
+SystemName=UnionTech OS Desktop
+SystemName[zh_CN]=统信桌面操作系统
+ProductType=Desktop
+ProductType[zh_CN]=桌面
+EditionName=E
+EditionName[zh_CN]=E
+MajorVersion=20
+MinorVersion=1050
+OsBuild=11068.102
+```
+
+### XShapeCombineRegion 方法可能永不返回
+
+调用 XShapeCombineRegion 方法时，可以看到线程在这里卡住。诡异的事情是在另一个线程有控制台输出，则没有此问题，在我的 Demo 里的最简修复此问题的代码的更改请看 <https://github.com/lindexi/lindexi_gd/commit/fa08b6854bd9d43445fa3d9e93cb2ebc1d4a9cca>
+
+此问题也仅在统信 UOS 系统能够复现，其系统版本信息如下
+
+```
+uos@uos-PC:~$ cat /etc/os-release
+PRETTY_NAME="UnionTech OS Desktop 20 E"
+NAME="uos"
+VERSION_ID="20"
+VERSION="20"
+ID=uos
+HOME_URL="https://www.chinauos.com/"
+BUG_REPORT_URL="http://bbs.chinauos.com"
+VERSION_CODENAME=uranus
+uos@uos-PC:~$ cat /etc/os-version
+[Version]
+SystemName=UnionTech OS Desktop
+SystemName[zh_CN]=统信桌面操作系统
+ProductType=Desktop
+ProductType[zh_CN]=桌面
+EditionName=E
+EditionName[zh_CN]=E
+MajorVersion=20
+MinorVersion=1050
+OsBuild=11068.102
+```
+
+此 XShapeCombineRegion 用来实现命中穿透功能，详细请看
+
+[dotnet X11 设置窗口鼠标触摸命中穿透](https://blog.lindexi.com/post/dotnet-X11-%E8%AE%BE%E7%BD%AE%E7%AA%97%E5%8F%A3%E9%BC%A0%E6%A0%87%E8%A7%A6%E6%91%B8%E5%91%BD%E4%B8%AD%E7%A9%BF%E9%80%8F.html )
+<!-- [dotnet X11 设置窗口鼠标触摸命中穿透 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18204514 ) -->
+
+### 全屏下配置 `_NET_WM_STATE_ABOVE` 将导致 UNO 应用停止渲染
+
+```csharp
+            // 在 UNO 下，将会导致停止渲染
+            var topmostAtom = XInternAtom(display, "_NET_WM_STATE_ABOVE", true);
+            SendNetWMMessage(X11Info.WMStateAtom, new IntPtr(1), topmostAtom);
+```
+
+最简修复代码如下 <https://github.com/lindexi/lindexi_gd/commit/9dccf10b6dfceb4a85eb3d3b15fdd8e6f31c5a9f>
+
+只需将以上代码回滚即可获取一个复现的 Demo 代码，然而 Demo 不是最简的，且似乎我也没有能够构建出最简的
+
+
+
 ## 更多博客
 
 [dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入](https://blog.lindexi.com/post/dotnet-X11-%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E5%8F%91%E9%80%81%E9%BC%A0%E6%A0%87%E6%B6%88%E6%81%AF-%E6%A8%A1%E6%8B%9F%E9%BC%A0%E6%A0%87%E8%BE%93%E5%85%A5.html )
