@@ -1780,6 +1780,8 @@
 
  * [VisualStudio 好用插件集合](VisualStudio-好用插件集合.md)
 
+ * [VisualStudio 如何 SSH 远程调试 Linux 的 dotnet 应用的启动](VisualStudio-如何-SSH-远程调试-Linux-的-dotnet-应用的启动.md)
+
  * [VisualStudio 如何在 NuGet 包里面同时包含 DEBUG 和 RELEASE 的库](VisualStudio-如何在-NuGet-包里面同时包含-DEBUG-和-RELEASE-的库.md)
 
  * [VisualStudio 如何快速添加一个 Git Tag 推送](VisualStudio-如何快速添加一个-Git-Tag-推送.md)
