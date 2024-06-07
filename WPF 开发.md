@@ -1102,7 +1102,7 @@ IInvokeProvider invokeProv = peer.GetPattern(PatternInterface.Invoke) as IInvoke
 invokeProv.Invoke();
 ```
 
-详细请看 [https://stackoverflow.com/a/728444/6116637](https://stackoverflow.com/a/728444/6116637)
+详细请看 [https://stackoverflow.com/a/728444/6116637](https://stackoverflow.com/a/728444/6116637) 和 [【WPF】代码触发Button点击事件 - 霍莉雪特 - 博客园](https://www.cnblogs.com/guxin/p/wpf-programmatically-click-a-button.html?spm=a2c6h.12873639.article-detail.7.7f5b5421VWLdWL )
 
 ## EventTrigger
 
