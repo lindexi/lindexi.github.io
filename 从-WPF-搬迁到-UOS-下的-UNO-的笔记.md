@@ -973,6 +973,9 @@ InvalidProjectFileException: The SDK 'Uno.Sdk' specified could not be found.
 
 [A Journey of Migrating a WPF Project to UNO Framework: Triumphs and Challenges · unoplatform/uno · Discussion #14548](https://github.com/unoplatform/uno/discussions/14548 )
 
+[VisualStudio 如何 SSH 远程调试 Linux 的 dotnet 应用的启动](https://blog.lindexi.com/post/VisualStudio-%E5%A6%82%E4%BD%95-SSH-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95-Linux-%E7%9A%84-dotnet-%E5%BA%94%E7%94%A8%E7%9A%84%E5%90%AF%E5%8A%A8.html )
+<!-- [VisualStudio 如何 SSH 远程调试 Linux 的 dotnet 应用的启动 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18238164 ) -->
+
 ## 开发社区
 
 如有 UNO 开发过程相关问题，欢迎加入 724181515 QQ群讨论

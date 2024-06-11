@@ -10,6 +10,8 @@
 
  * [3分钟教你搭建 gitea 在 Centos 服务器](3分钟教你搭建-gitea-在-Centos-服务器.md)
 
+ * [Accessing Internal Members in the UNO Framework](Accessing-Internal-Members-in-the-UNO-Framework.md)
+
  * [asp dotnet core 3.0 接口返回 json 使用 PascalCase 格式](asp-dotnet-core-3.0-接口返回-json-使用-PascalCase-格式.md)
 
  * [asp dotnet core 不正经的提升效率的单元测试方法](asp-dotnet-core-不正经的提升效率的单元测试方法.md)
@@ -997,6 +999,8 @@
  * [dotnet 如何将 Microsoft.Maui.Graphics 对接到 UNO 框架](dotnet-如何将-Microsoft.Maui.Graphics-对接到-UNO-框架.md)
 
  * [dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值](dotnet-如何更改应用在任务管理器显示的进程名-AssemblyTitle-的值.md)
+
+ * [dotnet 如何访问到 UNO 框架里面的 internal 不公开成员](dotnet-如何访问到-UNO-框架里面的-internal-不公开成员.md)
 
  * [dotnet 如何调试 SmartSql 的实际执行 SQL 语句](dotnet-如何调试-SmartSql-的实际执行-SQL-语句.md)
 

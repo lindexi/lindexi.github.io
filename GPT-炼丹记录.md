@@ -155,6 +155,15 @@ X11SoftwareRenderer 是在使用软渲染时使用的，对应的 X11 窗口是�
 https://github.com/lindexi/lindexi_gd/tree/dde76effc23ebb9ee974b6ec276b242c39a50bdf/JagobawearjiNeewhiqakerki
 ```
 
+
+```
+你是一个专业英文文档撰写员，请根据以下中文文档，撰写计算机专业的英文文档
+
+[Content Start]
+
+[Content End]
+```
+
 ## 写通知
 
 ```csharp
