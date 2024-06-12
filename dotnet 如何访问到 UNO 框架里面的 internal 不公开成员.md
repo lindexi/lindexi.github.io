@@ -3,6 +3,8 @@
 本文和大家介绍一个 Hack 的方式，通过此方式可实现访问 UNO 框架里面的 internal 不公开成员，调用 UNO 框架里面的不公开的 API 方法和属性，访问 UNO 里面不公开的类型
 
 <!--more-->
+<!-- CreateTime:2024/06/12 07:09:12 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -157,3 +159,5 @@ git pull origin 5a2adba87164ab5c2de480cb4f04a8e28bb28bce
 
 获取代码之后，进入 UnoDemo/UnoSkiaWeelelqairjiwarfekemGahinabai 文件夹，即可获取到源代码
 
+由 new bing 翻译的英文版本：[Accessing Internal Members in the UNO Framework](https://blog.lindexi.com/post/Accessing-Internal-Members-in-the-UNO-Framework.html )
+<!-- [Accessing Internal Members in the UNO Framework - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18243187 ) -->

@@ -7,6 +7,19 @@
 <!-- 发布 -->
 <!-- 博客 -->
 
+在 2024.06 的 5.2.139 的 UNO 版本里面，可通过如下简单方法进入全屏
+
+```csharp
+Microsoft.UI.Xaml.Window window = ...
+window.AppWindow.SetPresenter(AppWindowPresenterKind.FullScreen);
+```
+
+通过如上方式即可让某个窗口进入全屏
+
+以下为旧实现方法
+
+---
+
 实现思路是添加抽象的 IPlatformProvider 接口，在接口里面分别添加进入全屏和退出全屏的方法，如以下代码。接着再分别在 Skia.GTK 和 Skia.WPF 和 WinUI 平台上实现对接方法。所谓跨平台，就是各个平台都实现一遍
 
 ```csharp
