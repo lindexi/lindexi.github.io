@@ -32,9 +32,9 @@
 
 ### 开启 SSH 的支持
 
-默认的 UOS 是没有开启 SSH 的支持的，本文将使用 Tame-complexity 大佬在博客园里面的写的 [Linux开启ssh - Tame-complexity - 博客园](https://www.cnblogs.com/linshengqian/p/15065571.html ) 博客里面的部分方法开启 ssh 连接，具体步骤如下
+默认的 UOS 是没有开启 SSH 的支持的，本文将使用 Tame-complexity 大佬在博客园里面的写的 [Linux开启ssh - Tame-complexity - 博客园](https://www.cnblogs.com/linshengqian/p/15065571.html ) 博客里面的部分方法开启 ssh 连接。如果只是想完成 UOS 系统下的 SSH 配置，那么按照本文的步骤即可，除非遇到问题否则不需要现在就去阅读 Tame-complexity 大佬的博客，防止大家只阅读了一半执行了错误的命令。本文将会给出大家具体且完全的步骤，具体步骤如下
 
-先修改sshd服务配置文件，修改此文件需要权限
+先修改sshd服务配置文件，修改此文件需要权限。以下命令是在 UOS 的终端里面输入的命令行代码，在 UOS 开启终端可使用 `ctrl+alt+T` 快捷键。这里的 UOS 的终端就和 Windows 的 cmd 命令行相似
 
 ```
 sudo su
@@ -45,7 +45,7 @@ vi /etc/ssh/sshd_config
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅1.png) -->
 ![](http://image.acmx.xyz/lindexi%2F2024320111235862.jpg)
 
-进入 `sshd_config` 编辑入以下代码，这里有一个可简化的输入方法，那就是一般此文件里面只是包含大量被注释掉的配置，只需要找到对应的配置，解开注释即可
+进入 `sshd_config` 编辑入以下代码，这里有一个可简化的输入方法，那就是一般此文件里面只是包含大量被注释掉的配置，只需要找到对应的配置，解开注释即可。解开注释就是去掉行首的 `#` 字符，在这份配置文档里面，使用 `#` 作为表示此行是注释的用途
 
 ```
 Port 22
@@ -59,12 +59,12 @@ PasswordAuthentication yes
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅2.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20243201113185834.jpg)
 
-相信阅读到这里的伙伴是知道 vim 的基础操作的，如果不了解的话，还请自行查阅一下 vim 如何编辑文件以及如何保存退出哈。简单说就是按下 `i` 键进入编辑模式，然后使用 `esc` 键盘退出编辑模式，再输入 `:wq` 即可完成保存退出
+相信阅读到这里的伙伴是知道 vim 的基础操作的，如果不了解的话，还请自行查阅一下 vim 如何编辑文件以及如何保存退出哈。简单说就是按下 `i` 键进入编辑模式，通过上下左右方向键定位光标，通过删除和输入字符进行编辑。完成编辑之后，使用 `esc` 键退出编辑模式，再输入 `:wq` 即可完成保存退出
 
-如果是解开注释的话，需要小心 PermitRootLogin 配置项默认是 prohibit-password 的值，需要改为 yes 才对
+如果是解开注释而不是从零写入的话，需要小心 PermitRootLogin 配置项默认是 prohibit-password 的值，需要改为 yes 才对
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅3.png) -->
-![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅4.png)
+![](http://image.acmx.xyz/lindexi%2FUOS%2520%25E5%25BC%2580%25E5%2590%25AF%2520VisualStudio%2520%25E8%25BF%259C%25E7%25A8%258B%25E8%25B0%2583%25E8%25AF%2595%2520.NET%2520%25E5%25BA%2594%25E7%2594%25A8%25E4%25B9%258B%25E6%2597%25853.png)
 
 配置完成之后，使用以下命令了解一下 ssh 的运行情况
 
@@ -103,7 +103,7 @@ PasswordAuthentication yes
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅9.png) -->
 ![](http://image.acmx.xyz/lindexi%2F2024320111938919.jpg)
 
-在连接目标里面输入 UOS 的网络地址，这里支持 IP 或域名，如果开启的 SSH 端口非 22 端口，这里也可以不用输入端口，可以在后续界面再输入。输入完成之后按回车，或者点查找按钮，但查找按钮有时候会不工作，推荐还是按回车好
+在连接目标里面输入 UOS 的网络地址，这里支持 IP 或域名，如果开启的 SSH 端口非 22 端口，这里也可以不用输入端口，可以在后续界面再输入。相信如何查看 UOS 的网络的 IP 地址你已经学会了，如果还不知道的话，请自行搜寻答案。输入完成之后按回车，或者点查找按钮，但查找按钮有时候会不工作，推荐还是按回车好
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅10.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20243201121357347.jpg)
@@ -123,7 +123,7 @@ PasswordAuthentication yes
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅13.png) -->
 ![](http://image.acmx.xyz/lindexi%2F20243201127108509.jpg)
 
-常见的错误就是网络连不通，以及输入错账号密码等
+常见的错误就是网络连不通，以及输入错账号密码等。比如说虚拟机进行了诡异的网络配置，导致物理机无法访问到虚拟机的网络等，这些就请大家自行解决网络问题
 
 ## 开启调试
 
