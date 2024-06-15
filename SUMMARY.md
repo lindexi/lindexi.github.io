@@ -1132,6 +1132,8 @@
 
  * [dotnet 禁用 SQLite 的 SQLiteFunction 扫描程序集提升启动性能](dotnet-禁用-SQLite-的-SQLiteFunction-扫描程序集提升启动性能.md)
 
+ * [dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询](dotnet-简单控制台使用-KernelMemory-向量化文本嵌入生成和查询.md)
+
  * [dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架](dotnet-简单方法在一个进程内同时跑起-WPF-和-ASP.NET-Core-框架.md)
 
  * [dotnet 线程静态字段](dotnet-线程静态字段.md)
@@ -3115,6 +3117,8 @@
  * [WPF 通过 RawInput 获取触摸消息](WPF-通过-RawInput-获取触摸消息.md)
 
  * [WPF 通过 ReadyToRun 提升性能](WPF-通过-ReadyToRun-提升性能.md)
+
+ * [WPF 通过 SetWindowDisplayAffinity 配置禁止对窗口进行截图或录屏](WPF-通过-SetWindowDisplayAffinity-配置禁止对窗口进行截图或录屏.md)
 
  * [WPF 通过 Switch.MS.Internal.EnableWeakEventMemoryImprovements 开关开启弱事件内存优化](WPF-通过-Switch.MS.Internal.EnableWeakEventMemoryImprovements-开关开启弱事件内存优化.md)
 
