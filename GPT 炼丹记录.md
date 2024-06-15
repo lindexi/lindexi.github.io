@@ -161,6 +161,35 @@ https://github.com/lindexi/lindexi_gd/tree/dde76effc23ebb9ee974b6ec276b242c39a50
 [Content End]
 ```
 
+```
+你是一个专业英文文档撰写员，请根据以下中文内容，撰写计算机专业的英文 Show and tell 文档。你可以修改和添加内容使文档更加流利，要求语气激动，内容富有激情
+
+[Content Start]
+
+标题： 介绍 UISpy.Uno 这款强力的调试 UNO UI 界面的工具的 1.0.0-alpha03 版本
+
+内容：随着 UNO 的 5.2 版本发布，现在 UNO 支持了多窗口功能。UISpy.Uno 这款强力的调试 UNO UI 界面的工具也紧跟着 UNO 的节奏，通过 UNO 的多窗口功能，在相同进程的另一个窗口开启了 UI 调试界面
+
+你可以通过 UISpy.Uno 了解到界面布局信息，界面元素的各个属性信息，甚至可以修改界面元素属性
+
+使用 UISpy.Uno 的方法非常简单，只需要安装 dotnetCampus.UISpy.Uno 库，然后在添加如下的少许代码到你的代码文件里面即可
+
+[Code1]
+
+在你的应用运行起来之后，你可以在你的应用所附加的元素获取键盘焦点时，按下 F12 键开启调试窗口。开启之后的调试界面示例图如下
+
+[Image1]
+
+此 UISpy.Uno 在 GitHub 上使用最好有的 MIT 协议进行开源，欢迎你的使用和参与开发，详细请看：[Link1]
+
+上一次的介绍链接：[Link2]
+
+[Content End]
+
+Title: 
+```
+
+
 ## 写通知
 
 ```csharp
@@ -170,7 +199,7 @@ https://github.com/lindexi/lindexi_gd/tree/dde76effc23ebb9ee974b6ec276b242c39a50
 ## 代码命名
 
 ```csharp
-我正在编写一个功能，这个功能是表示 导入的 PPTX 文件被加密的异常。我正在编写的是 C# 代码，请为这个功能起一个异常类型名，请给出多个候选命名给我选择
+我正在编写一个功能，这个功能是表示截图按钮。我正在编写的是 C# 代码，请为这个功能起一个属性名，要求使用 Take 开头，请给出多个候选命名给我选择
 ```
 
 ```csharp

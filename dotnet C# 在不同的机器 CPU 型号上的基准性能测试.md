@@ -5,7 +5,7 @@
 <!--more-->
 <!-- CreateTime:2024/05/09 07:29:08 -->
 
-<!-- 不发布 -->
+<!-- 发布 -->
 
 以下是我的测试结果，对应的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7a4584ca15a250812de76fc5b35adcaaca2e531d/BulowukaileFeanayjairwo) 上，可以在本文末尾找到下载代码的方法
 
