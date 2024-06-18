@@ -46,7 +46,7 @@ internal record struct X11Window(IntPtr Display, IntPtr Window, (int stencilBits
 
 通过以上方式即可获取到 X11 窗口指针
 
-但是必须说明的是，使用反射获取，也许在后续版本将会失效
+但是必须说明的是，使用反射获取，也许在后续版本将会失效。我已经和 UNO 团队提需求了，请看 <https://github.com/unoplatform/uno/issues/17194>
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0f1d39d4f2bde2e60d790cb14302b5397ca0ae9c/UnoDemo/ChuchejairqaibalNallnowequyalgaw) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0f1d39d4f2bde2e60d790cb14302b5397ca0ae9c/UnoDemo/ChuchejairqaibalNallnowequyalgaw) 上，可以使用如下命令行拉取代码
 
