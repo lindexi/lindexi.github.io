@@ -1030,6 +1030,8 @@
 
  * [dotnet 将文件删除到回收站](dotnet-将文件删除到回收站.md)
 
+ * [dotnet 将本地的 Phi-3 模型与 SemanticKernel 进行对接](dotnet-将本地的-Phi-3-模型与-SemanticKernel-进行对接.md)
+
  * [dotnet 将自动代码格式化机器人带入团队 GitLab 平台](dotnet-将自动代码格式化机器人带入团队-GitLab-平台.md)
 
  * [dotnet 已知问题 使用 Directory.EnumerateXXX 方法枚举 C 盘根路径可能错误的问题](dotnet-已知问题-使用-Directory.EnumerateXXX-方法枚举-C-盘根路径可能错误的问题.md)
