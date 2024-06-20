@@ -68,6 +68,14 @@ Condition="'$(TargetFramework)'=='net45'"
 
 判断 .NET Core 使用如下缩写 `netcoreapp1.0` 等
 
+判断是否 Windows App SDK 可使用 GetTargetPlatformIdentifier 辅助，如判断 `net6.0-windows10.0.19041` 版本
+
+```xml
+ <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
+
+ </ItemGroup>
+```
+
 ## 多个判断
 
 需要同时生效有两个写法，如判断只有在 .NET Framework 4.5 同时在调试下
