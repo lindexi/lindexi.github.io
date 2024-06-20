@@ -3,12 +3,14 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/06/20 07:05:26 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
 在我大部分的博客里面，都是使用 AzureAI 和 SemanticKernel 对接，所有的数据都需要发送到远端处理。这在离线的情况下比较不友好，在[上一篇](https://blog.lindexi.com/post/dotnet-%E5%9F%BA%E4%BA%8E-DirectML-%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%90%E8%A1%8C-Phi-3-%E6%A8%A1%E5%9E%8B.html )博客和大家介绍了如何基于 DirectML 控制台运行 Phi-3 模型。本文将在上一篇博客的基础上，告诉大家如何将本地的 Phi-3 模型与 SemanticKernel 进行对接
 
-依然是和[上一篇](https://blog.lindexi.com/post/dotnet-%E5%9F%BA%E4%BA%8E-DirectML-%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%90%E8%A1%8C-Phi-3-%E6%A8%A1%E5%9E%8B.html )博客一样准备好 Phi-3 模型的文件夹，本文这里我放在 `C:\lindexi\Phi3\directml-int4-awq-block-128` 路径下。如何大家下载时拉取不下来 <https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx/tree/main?clone=true> 仓库，可以发送邮件向我要，我将通过网盘分享给大家
+依然是和[上一篇](https://blog.lindexi.com/post/dotnet-%E5%9F%BA%E4%BA%8E-DirectML-%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BF%90%E8%A1%8C-Phi-3-%E6%A8%A1%E5%9E%8B.html )博客一样准备好 Phi-3 模型的文件夹，本文这里我放在 `C:\lindexi\Phi3\directml-int4-awq-block-128` 路径下。如果大家下载时拉取不下来 <https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx/tree/main?clone=true> 仓库，可以发送邮件向我要，我将通过网盘分享给大家
 
 准备好模型的下载工作之后，接下来咱将新建一个控制台项目用于演示
 
