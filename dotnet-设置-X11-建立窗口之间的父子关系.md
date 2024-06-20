@@ -35,7 +35,7 @@
         XSetTransientForHint(Display, a, b);
 ```
 
-通过关系的描述可以了解到，使用上面代码即可设置 a 窗口一定在 b 窗口上方
+通过关系的描述可以了解到，使用上面代码即可设置 a 窗口一定在 b 窗口上方。此方法在 XMapWindow 之前和之后调用都生效
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0331c5dd6057106df5cb179e45d34966a3eafd1b/GececurbaiduhaldiFokeejukolu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0331c5dd6057106df5cb179e45d34966a3eafd1b/GececurbaiduhaldiFokeejukolu) 上，可以使用如下命令行拉取代码
 
@@ -56,7 +56,32 @@ git pull origin 0331c5dd6057106df5cb179e45d34966a3eafd1b
 ```
 
 获取代码之后，进入 GececurbaiduhaldiFokeejukolu 文件夹，即可获取到源代码
- 
+
+### 建立三个窗口关系
+
+使用 XSetTransientForHint 时不能让一个窗口同时在两个窗口的上方，比如说有 win1 和 win2 和 win3 三个窗口，通过以下代码调用两次 XSetTransientForHint 方法，是不能让 win1 保持在 win2 和 win3 窗口的上方的
+
+```csharp
+XSetTransientForHint(display, win1, win2);
+XSetTransientForHint(display, win1, win3);
+```
+
+以上代码的效果只是让 win1 保持在 win3 的上方，而断开 win1 和 win2 的关系。此时可以看到 win2 可以放在 win1 的上方，即 XSetTransientForHint 是覆盖设置的用途，而不是追加的功能
+
+以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/e009992625ad0020f24e25cd7625f7ad669c0218/X11/JawalwhofuYageakaje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/e009992625ad0020f24e25cd7625f7ad669c0218/X11/JawalwhofuYageakaje) 上
+
+但如果是层叠关系则是可以的，即是 win1 在 win2 之上，而 win2 在 win3 之上，这是完全没有问题的，如以下代码
+
+```csharp
+XSetTransientForHint(display, win1, win2);
+XSetTransientForHint(display, win2, win3);
+```
+
+以上代码的效果就是 win3 在最底层，且 win2 保持在 win3 之上，而 win1 则在最上层
+
+以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b63bd60e31eca4ca9934befdede325b829fef154/X11/JawalwhofuYageakaje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b63bd60e31eca4ca9934befdede325b829fef154/X11/JawalwhofuYageakaje) 上
+
+
 ## Parent-Child 关系
 
 - 在这种关系中，一个窗口是另一个窗口的父窗口。
