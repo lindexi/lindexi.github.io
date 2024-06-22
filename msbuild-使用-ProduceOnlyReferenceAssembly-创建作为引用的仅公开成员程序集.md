@@ -53,6 +53,10 @@ msbuild /p:ProduceOnlyReferenceAssembly=true
 
 如果不想从源代码生成，期望从 DLL 里面重新导出，请参阅 [dotnet 使用 Refasmer 从现有的 DLL 里面导出公开的成员组装出新的仅作为引用用途的程序集](https://lindexi.gitee.io/post/dotnet-%E4%BD%BF%E7%94%A8-Refasmer-%E4%BB%8E%E7%8E%B0%E6%9C%89%E7%9A%84-DLL-%E9%87%8C%E9%9D%A2%E5%AF%BC%E5%87%BA%E5%85%AC%E5%BC%80%E7%9A%84%E6%88%90%E5%91%98%E7%BB%84%E8%A3%85%E5%87%BA%E6%96%B0%E7%9A%84%E4%BB%85%E4%BD%9C%E4%B8%BA%E5%BC%95%E7%94%A8%E7%94%A8%E9%80%94%E7%9A%84%E7%A8%8B%E5%BA%8F%E9%9B%86.html )
 
+此行为在 dotnet 6 被变更，详细请参阅：
+
+[dotnet 6 破坏性改动 仅引用程序集输出路径变更](https://blog.lindexi.com/post/dotnet-6-%E7%A0%B4%E5%9D%8F%E6%80%A7%E6%94%B9%E5%8A%A8-%E4%BB%85%E5%BC%95%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E8%BE%93%E5%87%BA%E8%B7%AF%E5%BE%84%E5%8F%98%E6%9B%B4.html )
+<!-- [dotnet 6 破坏性改动 仅引用程序集输出路径变更 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18261881 ) -->
 
 
 
