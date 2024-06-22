@@ -444,6 +444,8 @@
 
  * [dotnet 6 数组拷贝性能对比](dotnet-6-数组拷贝性能对比.md)
 
+ * [dotnet 6 破坏性改动 仅引用程序集输出路径变更](dotnet-6-破坏性改动-仅引用程序集输出路径变更.md)
+
  * [dotnet 6 精细控制 HttpClient 网络请求超时](dotnet-6-精细控制-HttpClient-网络请求超时.md)
 
  * [dotnet 6 通过 DOTNET_ROOT 让调起的应用的进程拿到共享的运行时文件夹](dotnet-6-通过-DOTNET_ROOT-让调起的应用的进程拿到共享的运行时文件夹.md)
