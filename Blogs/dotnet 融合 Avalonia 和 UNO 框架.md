@@ -10,7 +10,7 @@
 
 开始之前先聊会背景故事
 
-我比较看好 Avalonia 的现在和 UNO 的未来。但是我不怎么想在 Avalonia 的基础上造基础库和设施。我大概是在 2017 年的时候就参与了 Avalonia 的开发，但是随着更深入的投入发现了 Avalonia 团队的一些问题，那会感觉到 Avalonia 更像是一个玩具、一个实验场，而不是一个可产品化的应用。核心原因在于有一些意见上没能和我达成一致。一个框架开发需要比较全面的能力和知识，有一些知识属于特定领域的。但是 Avalonia 团队里面缺乏这部分知识，且很多时候都是拍脑袋按照自己想法进行实现的。这就导致了一些专业的模块实现过于奇怪。其输入法、文本相关、触摸相关部分实现都比较糟心。界面布局方式，以及一些基础实现和我预期相差较大。再加上版本之间的 API 稳定性和行为稳定性，导致了我不想在 Avalonia 的基础上进行投入基础库的制造和基础设施的搭建
+我比较看好 Avalonia 的现在和 UNO 的未来。但是我不怎么想在 Avalonia 的基础上造基础库和设施。我大概是在 2017 年的时候就参与了 Avalonia 的开发，但是随着更深入的投入发现了 Avalonia 团队的一些问题，那会感觉到 Avalonia 更像是一个玩具、一个实验场，而不是一个可产品化的应用（这里说的是很久之前的，不是说现在的，现在是产品级可用，支持大型项目）。核心原因在于有一些意见上没能和我达成一致。一个框架开发需要比较全面的能力和知识，有一些知识属于特定领域的。但是 Avalonia 团队里面缺乏这部分知识，且很多时候都是拍脑袋按照自己想法进行实现的。这就导致了一些专业的模块实现过于奇怪。其输入法、文本相关、触摸相关部分实现都比较糟心。界面布局方式，以及一些基础实现和我预期相差较大。再加上版本之间的 API 稳定性和行为稳定性，导致了我不想在 Avalonia 的基础上进行投入基础库的制造和基础设施的搭建
 
 好在 2023 的下半年（准确来说是3月，但是刚开始没有什么影响），进了一位 CEO 到 Avalonia 团队，在这个期间给 Avalonia 带来极大的提升，直接从一个玩具级提升到产品级。这个过程中 Avalonia 做了相当多的工作，包括进行了大规模的重构，大量基础设施的建设，优化了非常多的开发调试的能力。整体开发 Avalonia 起来也是非常舒坦，且有了支持大型项目的能力。得益于 Avalonia 非常长的开源时间作为底蕴，从 2013 年开源至今，在 Avalonia 框架里面积累了大量的跨平台经验，特别是在 Linux 的桌面端应用上的经验，进行了非常多的适配。再加上 2023 的[下半年](https://x.com/MikeCodesDotNET/status/1630893746253438976)进了 [Mike James](https://it.linkedin.com/in/micjames) 作为 Avalonia 的 CEO 角色，让 Avalonia 有了非常多的资源投入，以及拉动了非常多相关方的支持，使得 Avalonia 迎来一大波激进的优化。优化方面包括了框架底层到上层 API 的重构，也包括了拉来了 JetBrains 的 ReSharper 和 [Rider](https://www.jetbrains.com/guide/dotnet/links/unleashing-the-power-of-cross-platform-development-with-avalonia-ui-and-jetbrains-rider/) 的官方支持使得开发调试等各种方面的有了非常大的优化
 
@@ -21,10 +21,10 @@
 以下是从 <https://theorg.com/org/avalonia-ui/org-chart/mike-james> 里面拷贝的 Mike James 简介，可以看到他是很厉害的且有经验的
 
 > Mike James has a diverse work experience in the technology industry. Mike is currently serving as the Chief Executive Officer of Avalonia UI since March 2023. Prior to that, they worked at Microsoft from 2016 to 2023, where they held various roles including Senior Developer Advocate, Technical Solutions Professional, and Program Manager II. From 2013 to 2017, Mike worked at Xamarin as a Developer Evangelist/Advocate and a Customer Support Engineer. Mike started their career at Pharos Architectural Controls Ltd in 2010 as a Development Support Technician.
-
+ 
 这也就是为什么我看好 Avalonia 的现在的原因。当然了 Mike James 是一个原因，客套来说其整个团队也都功不可没。那接下来继续聊一下 UNO 框架
 
-整个 UNO 框架起初是建立在 WinUI 的侧边的，即在现有的 WinUI 或 UWP 应用里面，使用 UNO 框架将其构建出跨平台的版本。这样做的策略是 UNO 框架可以复用 UWP 的基础设施和 API 设计。从一开始上就规避了 Avalonia 里面混乱的 API 设计和基础设施。但是缺点也很明显，就是 WinUI 的 API 设计比 Win32 前辈差太多了，且 UWP 也砍掉了大量的 WPF 能力，导致了 UNO 被 WinUI 所拖累。再加上 UNO 开源时间还短，距今仅有 6 年时间，再加上 UNO 同时在啃食全平台，即移动端 和 WASM 和桌面端，导致了完善程度不如 Avalonia 高
+整个 UNO 框架起初是建立在 WinUI 的侧边的，即在现有的 WinUI 或 UWP 应用里面，使用 UNO 框架将其构建出跨平台的版本。这样做的策略是 UNO 框架可以复用 UWP 的基础设施和 API 设计。从一开始上就规避了 Avalonia 里面混乱的 API 设计和基础设施。但是缺点也很明显，就是 WinUI 的 API 设计比 Win32 前辈差太多了，且 UWP 也砍掉了大量的 WPF 能力，导致了 UNO 被 WinUI 所拖累。再加上 UNO 开源时间还短，距今仅有 6 年时间，再再叠加上 UNO 同时在啃食全平台，即移动端 和 WASM 和桌面端，工作量非常庞大，导致了完善程度不如 Avalonia 高
 
 但 UNO 的优势在于有强有力的控制管理，这和以前（特指 2023 之前）的容易受到社区投毒的 Avalonia 有着巨大的不同，其交付能力有所保证。其次是 UNO 的整体开发团队投入和卷的程度看起来比 Avalonia 更大得多。最后是使用了 WinUI 的 API 组织方式进行兜底，以及参考了 WinUI3 的设计，确保了很多专业性模块上的实现正确性。最后一点是和 Avalonia 策略上的差别，在 UNO 上是宁可不实现也尽量不给出知识性错误的实现方式，而 Avalonia 则是别人有我就得有，不管是否水土不服。再加上 WinUI 和 MAUI 团队对 UNO 的帮衬，让 UNO 的整体技术更加全面。这就是我比较看好 UNO 的未来的原因
 
