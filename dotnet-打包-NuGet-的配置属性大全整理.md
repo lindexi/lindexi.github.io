@@ -151,6 +151,10 @@
 
 加入以上代码之后，即可每次打包都设置版权信息为当前的年份
 
+#### CopyrightSlim
+
+只是 Copyright 的较短版本，默认不设置将采用 Copyright 的值
+
 ### PackageLicenseExpression
 
 许可证信息，可以在 Copyright 不存在时勉强当成版权信息。可以打入的是当前的包使用的是什么协议进行许可，比如当前是给一个 MIT 协议开源的仓库进行打包的，可以使用如下设置当前的 NuGet 包使用最友好的 MIT 协议
