@@ -81,6 +81,21 @@ XSetTransientForHint(display, win2, win3);
 
 以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b63bd60e31eca4ca9934befdede325b829fef154/X11/JawalwhofuYageakaje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b63bd60e31eca4ca9934befdede325b829fef154/X11/JawalwhofuYageakaje) 上
 
+### 窗口关系断开
+
+额外说明的是 XSetTransientForHint 关系的保持也会在 XUnmapWindow 之后断开
+
+如下面代码，设置 win1 和 win2 关系，让 win1 在 win2 的上方
+
+```csharp
+XSetTransientForHint(display, win1, win2);
+```
+
+此时如果先 XUnmapWindow 再 XMapWindow 显示 win1 窗口，那么 win1 和 win2 的关系依然保持，即依然 win1 在 win2 的上方
+
+此时如果 XUnmapWindow 再 XMapWindow 显示 win2 窗口，那么 win1 和 win2 的关系将被断开。即此时 win1 和 win2 谁在上方取决于谁被激活，不再保持 win1 一定在 win2 的上方
+
+以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/a27b0bcb13d944f961a7c3e0e00140afac6494bf/X11/JawalwhofuYageakaje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/a27b0bcb13d944f961a7c3e0e00140afac6494bf/X11/JawalwhofuYageakaje) 上
 
 ## Parent-Child 关系
 

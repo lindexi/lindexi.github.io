@@ -934,6 +934,90 @@ InvalidProjectFileException: The SDK 'Uno.Sdk' specified could not be found.
 如果以上的 global.json 定义的版本号错误，也可能导致 UNOB0004: The `$(UnoVersion)` property must match the version of the Uno.Sdk defined in global.json 错误。修复方法同上。详细请参阅 [How to upgrade Uno Platform NuGet Packages](https://platform.uno/docs/articles/upgrading-nuget-packages.html )
 
 
+## 已知问题
+
+### 调用 SKXamlCanvas 的 Invalidate 没有触发 PaintSurface 事件
+
+原因是 SKXamlCanvas 没有尺寸
+
+可以尝试看看 SKXamlCanvas 的尺寸
+
+最简复现代码请看： <https://github.com/lindexi/lindexi_gd/tree/e6093d810c34490fa522eaf1b71f0b959988fb8f/UnoDemo/LerkufufelchelDearrarfuguji>
+
+此问题我报告给官方，请看： <https://github.com/unoplatform/uno/issues/17326>
+
+
+### 无法在 Loaded 事件之后立刻获取到正确的 ActualWidth 和 ActualHeight 的值
+
+如下代码将会输出 `Width=0 Height=0` 的值
+
+```csharp
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        Loaded += MainPage_Loaded;
+    }
+
+    private void MainPage_Loaded(object sender, RoutedEventArgs e)
+    {
+        Debug.WriteLine($"Width={ActualWidth} Height={ActualHeight}");
+    }
+```
+
+此问题已经报告给官方： <https://github.com/unoplatform/uno/issues/17243> 
+
+此问题已在 `5.4.0-dev.51` 版本修复
+
+### 无法在 BitmapImage 的 ImageOpened 获取图片解码尺寸
+
+如以下代码，是无法获取到图片解码尺寸
+
+```csharp
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        var bitmapImage = new BitmapImage();
+        var file = Path.GetFullPath("Image.jpg");
+        bitmapImage.ImageOpened += (sender, args) =>
+        {
+            // Output zero in Skia
+            // Output image size in WinUI
+            System.Diagnostics.Debug.WriteLine($"DecodePixelWidth={bitmapImage.DecodePixelWidth} DecodePixelHeight={bitmapImage.DecodePixelHeight} PixelWidth={bitmapImage.PixelWidth} PixelHeight={bitmapImage.PixelHeight}");
+        };
+        bitmapImage.UriSource = new Uri(file);
+
+        var image = new Image()
+        {
+            Source = bitmapImage,
+        };
+        image.Loaded += (sender, args) =>
+        {
+           // Both Skia and WinUI will output zero size
+            System.Diagnostics.Debug.WriteLine($"ImageLoaded Width={bitmapImage.DecodePixelWidth} Height={bitmapImage.DecodePixelHeight}");
+        };
+
+        var border = new Border()
+        {
+            Width = 100,
+            Height = 100,
+            Child = image,
+        };
+
+        RootPanel.Children.Add(border);
+    }
+```
+
+所有输出的 DecodePixelWidth 和 DecodePixelHeight 都是没有值
+
+此问题已经报告给官方： <https://github.com/unoplatform/uno/issues/17285>
+
+此问题在报告给官方之后，只用 10 个小时就被修复了
+
+<!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记6.png) -->
+![](http://image.acmx.xyz/lindexi%2F2024627153539251.jpg)
+
 
 ## 参考文档
 
