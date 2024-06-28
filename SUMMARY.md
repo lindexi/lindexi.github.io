@@ -806,6 +806,8 @@
 
  * [dotnet X11 设置窗口鼠标触摸命中穿透](dotnet-X11-设置窗口鼠标触摸命中穿透.md)
 
+ * [dotnet X11 调用 XRootWindow 是否耗时](dotnet-X11-调用-XRootWindow-是否耗时.md)
+
  * [dotnet 一些代码审查套路](dotnet-一些代码审查套路.md)
 
  * [dotnet 三句命令行创建运行一个 web 服务程序](dotnet-三句命令行创建运行一个-web-服务程序.md)

@@ -97,6 +97,36 @@ XSetTransientForHint(display, win1, win2);
 
 以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/a27b0bcb13d944f961a7c3e0e00140afac6494bf/X11/JawalwhofuYageakaje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/a27b0bcb13d944f961a7c3e0e00140afac6494bf/X11/JawalwhofuYageakaje) 上
 
+继续测试。如果此时再次调用 `XSetTransientForHint(display, win1, win2)` 代码尝试建立窗口之间的关系，那将没有效果。无法让 win1 在 win2 的上方
+
+```csharp
+    XUnmapWindow(display, win2);
+    ...
+    XMapWindow(display, win2);
+    ...
+    XSetTransientForHint(display, win1, win2);
+```
+
+以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/97620dcf29799842c076c6909317f5aa363cc6d3/X11/JawalwhofuYageakaje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/97620dcf29799842c076c6909317f5aa363cc6d3/X11/JawalwhofuYageakaje) 上
+
+想要在 XUnmapWindow 之后再让 XSetTransientForHint 生效，需要在 XSetTransientForHint 之前先调用 XDeleteProperty 删除记录，大概代码如下
+
+```csharp
+    XUnmapWindow(display, win2);
+    ...
+    XMapWindow(display, win2);
+    ...
+    IntPtr XA_WM_TRANSIENT_FOR = (IntPtr) 68;
+    XDeleteProperty(display, win1, XA_WM_TRANSIENT_FOR);
+    XFlush(display);
+    ...
+    XSetTransientForHint(display, win1, win2);
+```
+
+以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7b5489fed420c4239d8635b4c826ceb690fbd773/X11/JawalwhofuYageakaje) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/7b5489fed420c4239d8635b4c826ceb690fbd773/X11/JawalwhofuYageakaje) 上
+
+以上方式不够稳健，最稳妥方式是对 win1 进行 XUnmapWindow 和 XMapWindow 之后再 XSetTransientForHint 才是稳妥的
+
 ## Parent-Child 关系
 
 - 在这种关系中，一个窗口是另一个窗口的父窗口。
