@@ -1728,6 +1728,8 @@
 
  * [UWP WinRT 使用系统自带的分词库对字符串文本进行分词](UWP-WinRT-使用系统自带的分词库对字符串文本进行分词.md)
 
+ * [UWP WinUI 制作一个路径矢量图标按钮样式入门](UWP-WinUI-制作一个路径矢量图标按钮样式入门.md)
+
  * [UWP WinUI3 传入 AddHandler 的 RoutedEventHandler 类型与事件所需不匹配将抛出参数异常](UWP-WinUI3-传入-AddHandler-的-RoutedEventHandler-类型与事件所需不匹配将抛出参数异常.md)
 
  * [UWP 上架失败因为没有添加隐私策略](UWP-上架失败因为没有添加隐私策略.md)
