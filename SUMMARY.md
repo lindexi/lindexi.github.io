@@ -802,6 +802,8 @@
 
  * [dotnet win32 使用 WIC 获取系统编解码器](dotnet-win32-使用-WIC-获取系统编解码器.md)
 
+ * [dotnet WinUI3 Win2D 翻转图片](dotnet-WinUI3-Win2D-翻转图片.md)
+
  * [dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入](dotnet-X11-窗口之间发送鼠标消息-模拟鼠标输入.md)
 
  * [dotnet X11 设置窗口鼠标触摸命中穿透](dotnet-X11-设置窗口鼠标触摸命中穿透.md)
