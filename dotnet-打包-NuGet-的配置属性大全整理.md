@@ -498,6 +498,8 @@ Description 描述信息
   </PropertyGroup>
 ```
 
+更多判断逻辑请参阅 [msbuild 项目文件常用判断条件](https://blog.lindexi.com/post/msbuild-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6.html )
+
 ## Target 时机
 
 ### 动态加入打包到 NuGet 包的文件时机
