@@ -9,13 +9,13 @@
 
 在看到重定向的输出里面包含以下乱码字符
 
-```csharp
+```
 [40m[32minfo[39m[22m[49m:
 ```
 
 或者如下乱码字符
 
-```csharp
+```
 [41m[30mfail[39m[22m[49m
 ```
 
@@ -38,7 +38,7 @@ public void ConfigureServices(IServiceCollection services)
 
 另外，在 WPF 之外，在 Kubernetes 上的重定向输出也会是差不多的乱码
 
-```csharp
+```
 �[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
       Now listening on: http://[::]:12312
 �[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
@@ -51,4 +51,15 @@ public void ConfigureServices(IServiceCollection services)
 
 解决方法和上面相同
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+---
+
+更新： 对于 .NET 5 及更加新的版本，需要使用以下代码禁用颜色
+
+```csharp
+loggingBuilder.AddSimpleConsole(options =>
+{
+    options.ColorBehavior = LoggerColorBehavior.Disabled;
+});
+```
+
+详细请看 <https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/obsolete-consoleloggeroptions-properties>
