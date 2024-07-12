@@ -1124,6 +1124,8 @@
 
  * [dotnet 理解 IConfigurationProvider 的 GetChildKeys 方法用途](dotnet-理解-IConfigurationProvider-的-GetChildKeys-方法用途.md)
 
+ * [dotnet 理解 X11 的 24 位或 32 位色深窗口](dotnet-理解-X11-的-24-位或-32-位色深窗口.md)
+
  * [dotnet 用 ASP.NET Core 制作一个可以上传库文件的 NuGet 服务器](dotnet-用-ASP.NET-Core-制作一个可以上传库文件的-NuGet-服务器.md)
 
  * [dotnet 用 gcdump 调试应用程序内存占用](dotnet-用-gcdump-调试应用程序内存占用.md)

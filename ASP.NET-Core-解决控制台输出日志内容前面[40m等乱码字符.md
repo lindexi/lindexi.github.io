@@ -12,13 +12,13 @@
 
 在看到重定向的输出里面包含以下乱码字符
 
-```csharp
+```
 [40m[32minfo[39m[22m[49m:
 ```
 
 或者如下乱码字符
 
-```csharp
+```
 [41m[30mfail[39m[22m[49m
 ```
 
@@ -41,7 +41,7 @@ public void ConfigureServices(IServiceCollection services)
 
 另外，在 WPF 之外，在 Kubernetes 上的重定向输出也会是差不多的乱码
 
-```csharp
+```
 �[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
       Now listening on: http://[::]:12312
 �[40m�[32minfo�[39m�[22m�[49m: Microsoft.Hosting.Lifetime[0]
@@ -54,6 +54,18 @@ public void ConfigureServices(IServiceCollection services)
 
 解决方法和上面相同
 
+---
+
+更新： 对于 .NET 5 及更加新的版本，需要使用以下代码禁用颜色
+
+```csharp
+loggingBuilder.AddSimpleConsole(options =>
+{
+    options.ColorBehavior = LoggerColorBehavior.Disabled;
+});
+```
+
+详细请看 <https://learn.microsoft.com/en-us/dotnet/core/compatibility/core-libraries/5.0/obsolete-consoleloggeroptions-properties>
 
 
 
