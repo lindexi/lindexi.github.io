@@ -49,9 +49,11 @@
 
 [Content Start]
 
-如何获取一个应用内所有窗口？
+GetIntermediatePoints 方法的实现是不正确的
 
-我似乎没有找到任何的 API 可以帮助我获取当前应用内所有开启状态的窗口，且我也没有从 WinUI3 找到实现此功能的 API 定义。是否在 UNO 里面有实现此功能的 API 可以被我调用？感谢你的帮助
+在 WinUI 或 UWP 的设计里面，开发者可以通过 GetIntermediatePoints 获取历史的输入点数据，这在 UI 繁忙的时候非常有用，意味着当 UI 来不及处理输入点的时候，积累的输入点将会加入到历史输入点数据里面，避免大量输入的触发导致 UI 进一步卡顿。然而我发现在 UNO 框架里面对 GetIntermediatePoints 方法的实现是不正确的，在 UNO 框架里面只是在 GetIntermediatePoints 返回当前的点。这就意味着当前的表现行为是，在 UNO 框架里面，当 UI 卡顿来不及处理输入时，将会不断触发输入事件，或丢失输入数据。在 X11 平台里，将会不断触发输入事件，加剧 UI 卡顿。在 WPF 平台里，将会丢失输入数据
+
+我期望的行为是 UNO 框架里面的 GetIntermediatePoints 方法实现能够和 WinUI 相同，当 UI 卡顿时将输入点收集起来放在历史输入点集合里面。在 UI 线程来不及处理输入数据时，可以减少输入事件的触发
 
 [Content End]
 
