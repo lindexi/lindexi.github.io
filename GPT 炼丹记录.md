@@ -150,17 +150,27 @@ GetIntermediatePoints 方法的实现是不正确的
 
 以下是我想要报告的问题：
 
-当前行为： 当我使用 SKXamlCanvas 时，如果我在 PaintSurface 事件里面抛出任何异常，且当前的 PaintSurface 事件是由后台线程触发的，那将导致我的进程崩溃
+当前行为： 当我使用 Storyboard 播放动画时，如果我的动画里面涉及到某些布局相关属性的时候，且我没有设置 EnableDependentAnimation 属性为 true 的值，那么此 Storyboard 动画的 Completed 事件将永不触发
 
-预期行为：即使在 PaintSurface 事件里面抛出任何异常，应用程序也可以正常工作且收集到异常，比如通过 TaskScheduler.UnobservedTaskException 事件收集到异常
+预期行为： 可以保持和 WinUI3 相同的行为，可以触发 Storyboard 动画的 Completed 事件
 
 复现步骤：
 
-1. 添加 SKXamlCanvas 到 xaml 里
-2. 订阅 SKXamlCanvas 的 PaintSurface 事件，且在事件实现方法抛出异常
-3. 在后台线程调用 SKXamlCanvas 的 Invalidate 方法
+1. 设置如下的 XAML 界面和动画资源
 
-https://github.com/lindexi/lindexi_gd/tree/dde76effc23ebb9ee974b6ec276b242c39a50bdf/JagobawearjiNeewhiqakerki
+[Code1]
+
+2. 通过代码执行动画，且监听 Completed 事件
+
+[Code2]
+
+3. 分别使用 Desktop 和 WinUI 平台运行项目
+
+你可以看到在 Desktop 平台里，永远不会进入 `Storyboard_Completed` 方法。而 WinUI 平台可以进入此方法，且在控制台进行输出
+
+你可以在此找到我的 demo 项目： [Link1]
+
+https://github.com/lindexi/lindexi_gd/tree/9bd249807ed238ad6fb5b1cd2f706a2749f472e4/UnoDemo/LairhalawcarchemKacallligekay
 ```
 
 
