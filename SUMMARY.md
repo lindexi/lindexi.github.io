@@ -1182,6 +1182,8 @@
 
  * [dotnet 解决 UNO 在 OpenKylin 麒麟系统运行找不到默认字体启动失败](dotnet-解决-UNO-在-OpenKylin-麒麟系统运行找不到默认字体启动失败.md)
 
+ * [dotnet 解决使用本地不安全 http 的 NuGet 源 NU1803 警告或构建失败问题](dotnet-解决使用本地不安全-http-的-NuGet-源-NU1803-警告或构建失败问题.md)
+
  * [dotnet 解析 TTF 字体文件格式](dotnet-解析-TTF-字体文件格式.md)
 
  * [dotnet 警惕 Assembly.Location 返回空](dotnet-警惕-Assembly.Location-返回空.md)
