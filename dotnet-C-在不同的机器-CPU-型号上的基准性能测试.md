@@ -10,7 +10,7 @@
 
 <!-- 发布 -->
 
-以下是我的测试结果，对应的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7a4584ca15a250812de76fc5b35adcaaca2e531d/BulowukaileFeanayjairwo) 上，可以在本文末尾找到下载代码的方法
+以下是我的测试结果，对应的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/1e20b4c8ef64b17604e1ee92f41f7ac25ad08d26/BulowukaileFeanayjairwo) 上，可以在本文末尾找到下载代码的方法
 
 我十分推荐你自己拉取代码，在你自己的设备上跑一下，测试其性能。且在开始之前，期望你已经掌握了基础的性能测试知识，避免出现诡异的结论
 
@@ -448,17 +448,116 @@ RunStrategy=Throughput
 | Memcpy             | Int32[1000]      | 32.12         | 1,358.00       | 250.30         | 0.0236524300 | 42.2789539228 | 7.7926525529  | 5.4254894127 |
 | CopyBlockUnaligned | Int32[1000]      | 21.02         | 1,349.00       | 235.80         | 0.0155819125 | 64.1769743102 | 11.2178877260 | 5.7209499576 |
 
+## 点的几何计算
+
+### 代码和性能测试的设计
+
+以下代码用于测试密集的计算过程中的各个设备之间的性能差异，其性能测试核心代码如下
+
+```csharp
+    [Benchmark()]
+    [ArgumentsSource(nameof(GetArgument))]
+    public void Test(Point[] source, double[] result)
+    {
+        for (int i = 1; i < source.Length - 1; i++)
+        {
+            var a = source[i - 1];
+            var b = source[i];
+            var c = source[i + 1];
+
+            var abx = b.X - a.X;
+            var aby = b.Y - a.Y;
+
+            var acx = c.X - a.X;
+            var acy = c.Y - a.Y;
+
+            var cross = abx * acy - aby * acx;
+            var abs = Math.Abs(cross);
+
+            var acl = Math.Sqrt(acx * acx + acy * acy);
+
+            result[i] = abs / acl;
+        }
+    }
+```
+
+以上性能测试中传入的 `Point[] source` 为输入数据，而 `double[] result` 为存放的输出数据，输出数据只是为了让计算结果有的存放，让 JIT 开森而已
+
+此性能测试中对代码逻辑的内存访问预测，即 CPU 缓存命中以及浮点计算要求较高。经过实际测试发现 Intel 在这方面的优化还是十分好的，但兆芯则有很大的优化空间
+
+### 英特尔 13th Gen Intel Core i7-13700K
+
+```
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3880/23H2/2023Update/SunValley3)
+13th Gen Intel Core i7-13700K, 1 CPU, 24 logical and 16 physical cores
+.NET SDK 9.0.100-preview.5.24307.3
+  [Host]     : .NET 8.0.6 (8.0.624.26715), X64 RyuJIT AVX2
+  Job-UGRNFG : .NET 8.0.6 (8.0.624.26715), X64 RyuJIT AVX2
+
+RunStrategy=Throughput  
+```
+
+| Method | source       | result        | Mean      | Error     | StdDev    |
+|------- |------------- |-------------- |----------:|----------:|----------:|
+| **万点**   | **Point[10000]** | **Double[10000]** | **19.622 μs** | **0.0914 μs** | **0.0810 μs** |
+| **千点**   | **Point[1000]**  | **Double[1000]**  | **1.974 μs** | **0.0108 μs** | **0.0101 μs** |
+
+### 兆芯 ZHAOXIN KaiXian KX-U6780A
+
+```
+BenchmarkDotNet v0.13.12, UnionTech OS Desktop 20 E
+ZHAOXIN KaiXian KX-U6780A2.7GHz (Max: 2.70GHz), 1 CPU, 8 logical and 8 physical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX
+  Job-BBRJWB : .NET 8.0.4 (8.0.424.16909), X64 RyuJIT AVX
+
+RunStrategy=Throughput
+```
+
+| Method | source       | result        | Mean      | Error    | StdDev    | Median    |
+|------- |------------- |-------------- |----------:|---------:|----------:|----------:|
+| **万点**   | Point[10000] | Double[10000] | 475.13 us | 8.295 us | 15.782 us | 467.05 us |
+| **千点**   | Point[1000]  | Double[1000]  |  50.89 us | 1.230 us |  3.626 us |  50.81 us |
+
+### 飞腾腾锐 Phytium D2000
+
+BenchmarkDotNet v0.13.12, Kylin V10 SP1
+Phytium,D2000/8 E8C, 8 logical cores
+.NET SDK 8.0.204
+  [Host]     : .NET 8.0.4 (8.0.424.16909), Arm64 RyuJIT AdvSIMD
+  Job-JCFXCW : .NET 8.0.4 (8.0.424.16909), Arm64 RyuJIT AdvSIMD
+
+RunStrategy=Throughput
+
+| Method | source       | result        | Mean      | Error    | StdDev   |
+|------- |------------- |-------------- |----------:|---------:|---------:|
+| **万点**   | Point[10000] | Double[10000] | 147.96 us | 0.015 us | 0.014 us |
+| **千点**   | Point[1000]  | Double[1000]  |  14.76 us | 0.004 us | 0.003 us |
+
+#### 数据说明和对比
+
+性能对比如下表，可以看到兆芯比Intel能慢上25倍左右，兆芯比飞腾慢上3倍左右
+
+| Method | source       | result        | Intel  | 兆芯     | 飞腾腾锐   | Intel比兆芯    | 兆芯比Intel    | 飞腾比Intel    | 兆芯比飞腾       |
+| ------ | ------------ | ------------- | ------ | ------ | ------ | ----------- | ----------- | ----------- | ----------- |
+| 万点     | Point[10000] | Double[10000] | 19.622 | 475.13 | 147.96 | 0.041298171 | 24.21414739 | 7.540515748 | 3.211205731 |
+| 千点     | Point[1000]  | Double[1000]  | 1.974  | 50.89  | 14.76  | 0.038789546 | 25.78014184 | 7.477203647 | 3.447831978 |
+
+<!-- ![](image/dotnet C# 在不同的机器 CPU 型号上的基准性能测试/dotnet C# 在不同的机器 CPU 型号上的基准性能测试5.png) -->
+![](http://image.acmx.xyz/lindexi%2F20247271045427472.jpg)
+
+通过上图可以看到，在进行基础的密集计算中，似乎兆芯做了负面优化
 
 ## 代码
 
-本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7a4584ca15a250812de76fc5b35adcaaca2e531d/BulowukaileFeanayjairwo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/7a4584ca15a250812de76fc5b35adcaaca2e531d/BulowukaileFeanayjairwo) 上，可以使用如下命令行拉取代码
+本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/1e20b4c8ef64b17604e1ee92f41f7ac25ad08d26/BulowukaileFeanayjairwo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/1e20b4c8ef64b17604e1ee92f41f7ac25ad08d26/BulowukaileFeanayjairwo) 上，可以使用如下命令行拉取代码
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
 ```
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
-git pull origin 7a4584ca15a250812de76fc5b35adcaaca2e531d
+git pull origin 1e20b4c8ef64b17604e1ee92f41f7ac25ad08d26
 ```
 
 以上使用的是 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码
@@ -466,7 +565,7 @@ git pull origin 7a4584ca15a250812de76fc5b35adcaaca2e531d
 ```
 git remote remove origin
 git remote add origin https://github.com/lindexi/lindexi_gd.git
-git pull origin 7a4584ca15a250812de76fc5b35adcaaca2e531d
+git pull origin 1e20b4c8ef64b17604e1ee92f41f7ac25ad08d26
 ```
 
 获取代码之后，进入 BulowukaileFeanayjairwo 文件夹，即可获取到源代码
