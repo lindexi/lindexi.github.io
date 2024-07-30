@@ -806,6 +806,8 @@
 
  * [dotnet WinUI3 Win2D 翻转图片](dotnet-WinUI3-Win2D-翻转图片.md)
 
+ * [dotnet X11 的多屏触摸行为测试](dotnet-X11-的多屏触摸行为测试.md)
+
  * [dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入](dotnet-X11-窗口之间发送鼠标消息-模拟鼠标输入.md)
 
  * [dotnet X11 设置窗口鼠标触摸命中穿透](dotnet-X11-设置窗口鼠标触摸命中穿透.md)
@@ -2497,6 +2499,8 @@
  * [WPF 下拉框选项做鼠标 Hover 预览效果](WPF-下拉框选项做鼠标-Hover-预览效果.md)
 
  * [WPF 不安装 WindowsAppSDK 使用 WinRT 功能的方法](WPF-不安装-WindowsAppSDK-使用-WinRT-功能的方法.md)
+
+ * [WPF 不带 TargetPlatformVersion 显示 Win10 的 Toast 通知的方法](WPF-不带-TargetPlatformVersion-显示-Win10-的-Toast-通知的方法.md)
 
  * [WPF 不禁用实时触摸而收到 WM_Touch 触摸消息方法](WPF-不禁用实时触摸而收到-WM_Touch-触摸消息方法.md)
 
