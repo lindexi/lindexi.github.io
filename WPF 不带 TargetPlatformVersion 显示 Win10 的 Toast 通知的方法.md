@@ -3,6 +3,8 @@
 本文将告诉大家如何在 WPF 不安装 WindowsAppSDK 包，且不在 TargetFramework 带上 TargetPlatformVersion 而弹出 Win10 的 Toast 通知的方法
 
 <!--more-->
+<!-- CreateTime:2024/07/31 07:19:36 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -45,9 +47,9 @@
         builder.Show();
 ```
 
-然而以上方法我感觉不够清真。接下来来将告诉大家一个我感觉比较清真的方法
+然而以上方法我感觉不够清真。接下来将告诉大家一个我感觉比较清真的方法，可以只在 TargetFramework 里面写 `net9.0-windows` 不用带 10.0.17763.0 版本
 
-使用 [WPF 不安装 WindowsAppSDK 使用 WinRT 功能的方法](https://blog.lindexi.com/post/WPF-%E4%B8%8D%E5%AE%89%E8%A3%85-WindowsAppSDK-%E4%BD%BF%E7%94%A8-WinRT-%E5%8A%9F%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%95.html ) 这篇博客提到的方法，即可不用指定 TargetPlatformVersion 就可以使用 WinRT 的功能
+核心是使用 [WPF 不安装 WindowsAppSDK 使用 WinRT 功能的方法](https://blog.lindexi.com/post/WPF-%E4%B8%8D%E5%AE%89%E8%A3%85-WindowsAppSDK-%E4%BD%BF%E7%94%A8-WinRT-%E5%8A%9F%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%95.html ) 这篇博客提到的方法，即可不用指定 TargetPlatformVersion 就可以使用 WinRT 的功能
 
 正好 Toast 就是 WinRT 的功能
 
@@ -76,7 +78,7 @@
 </Project>
 ```
 
-如此可以看到 csproj 不需要加上 TargetPlatformVersion 的引用，也没有 WindowsAppSDK 的引用。看起来清真
+如此可以看到 csproj 不需要加上 TargetPlatformVersion 的引用，也没有 WindowsAppSDK 的引用。看起来清真，只需简单的 `<TargetFramework>net9.0-windows</TargetFramework>` 即可完成。本文的方法不仅适用于 .NET 9 版本，也适用于 .NET 6 框架版本。如需使用 .NET 6 等版本，只需修改 net9.0 为 net6.0 即可
 
 完成以上代码之后，我在 MainWindow 的 Loaded 事件尝试弹出通知内容。先根据 <https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts?tabs=xml> 文档构建出 XML 代码，我这里的例子代码只显示一行文本
 
@@ -108,6 +110,8 @@
 ```
 
 使用 XML 直接写比较适合简单的业务，可以看到以上的代码十分简单
+
+上述代码的 `lang=xml` 是为了让智能提示和着色开森
 
 除了直接编写 XML 之外，还可以使用模版辅助，如下面代码，在 ToastNotificationManager 里面获取模版，然后在模版里面添加内容
 
