@@ -3,6 +3,8 @@
 在写正则或 json 等字符串的时候，期望有智能提示和语法纠错，在 VisualStudio 可以在字符串上面添加一句注释表示这个字符串的功能是什么，然后 VisualStudio 对下一句字符串定义的代码将会执行智能提示，本文告诉大家可以如何给任意的字符串添加智能提示
 
 <!--more-->
+<!-- CreateTime:2024/08/01 07:19:30 -->
+
 <!-- csdn -->
 
 请试试使用 VisualStudio 2019 新建一个控制台项目，无论是 dotnet core 的项目还是 dotnet framework 的项目都可以
