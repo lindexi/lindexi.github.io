@@ -193,7 +193,7 @@
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 笔刷/C# 从零开始写 SharpDx 应用 笔刷0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019623203542185)
+![](http://cdn.lindexi.site/lindexi%2F2019623203542185)
 
 在 `_d2dRenderTarget.Clear` 传入 null 将会使用透明的默认黑色清空画布
 
@@ -201,13 +201,13 @@
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 笔刷/C# 从零开始写 SharpDx 应用 笔刷1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962320405465)
+![](http://cdn.lindexi.site/lindexi%2F201962320405465)
 
 这就是对应的三个点，有了一条线，那么将这条线应用到线段上就做出了渐变笔刷
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 笔刷/C# 从零开始写 SharpDx 应用 笔刷2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019623204725727)
+![](http://cdn.lindexi.site/lindexi%2F2019623204725727)
 
 画出的渐变线需要配合渐变的起点和终点才能画出渐变效果，在使用的坐标是画布的坐标，可以让起点的坐标比终点的大
 
@@ -296,19 +296,19 @@
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 笔刷/C# 从零开始写 SharpDx 应用 笔刷3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962320590900)
+![](http://cdn.lindexi.site/lindexi%2F201962320590900)
 
 在上面图片的各个坐标如下
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 笔刷/C# 从零开始写 SharpDx 应用 笔刷4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019623219257)
+![](http://cdn.lindexi.site/lindexi%2F2019623219257)
 
 下图是设置 `GradientOriginOffset = new RawVector2(-10,-10)` 的效果，通过这个属性可以做出灯光的效果
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 笔刷/C# 从零开始写 SharpDx 应用 笔刷5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962321101297)
+![](http://cdn.lindexi.site/lindexi%2F201962321101297)
 
 ## 图片笔刷
 

@@ -16,7 +16,7 @@
 
 <!-- ![](image/WPF 漂亮的现代化控件 新 ModernWPF 界面库/WPF 漂亮的现代化控件 新 ModernWPF 界面库0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020910202507110.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020910202507110.jpg)
 
 使用方法简单，从 NuGet 上安装 ModernWpfUI 库，然后打开 App.xaml 添加下面代码
 

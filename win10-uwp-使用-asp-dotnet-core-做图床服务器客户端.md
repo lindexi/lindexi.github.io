@@ -52,13 +52,13 @@
 
 <!-- ![](image/win10 uwp 使用 asp dotnet core 做图床服务器客户端/win10 uwp 使用 asp dotnet core 做图床服务器客户端0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101820273610)
+![](http://cdn.lindexi.site/lindexi%2F2018101820273610)
 
 接下来就是选择刚才模型创建控制器
 
 <!-- ![](image/win10 uwp 使用 asp dotnet core 做图床服务器客户端/win10 uwp 使用 asp dotnet core 做图床服务器客户端1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181018202824441)
+![](http://cdn.lindexi.site/lindexi%2F20181018202824441)
 
 ### 添加上传下载代码
 
@@ -330,7 +330,7 @@
 
 <!-- ![](image/win10 uwp 使用 asp dotnet core 做图床服务器客户端/win10 uwp 使用 asp dotnet core 做图床服务器客户端2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181018203933380)
+![](http://cdn.lindexi.site/lindexi%2F20181018203933380)
 
 一般只需要修改端口就可以
 

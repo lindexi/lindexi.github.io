@@ -215,7 +215,7 @@ while (true)
 配置了以上代码，运行项目，可以看到鼠标在子窗口上时，只能收到子窗口的消息，如下图
 
 <!-- ![](image/dotnet 设置 X11 建立窗口之间的父子关系/dotnet 设置 X11 建立窗口之间的父子关系1.gif) -->
-![](http://image.acmx.xyz/lindexi%2Fdotnet%2520%25E8%25AE%25BE%25E7%25BD%25AE%2520X11%2520%25E5%25BB%25BA%25E7%25AB%258B%25E7%25AA%2597%25E5%258F%25A3%25E4%25B9%258B%25E9%2597%25B4%25E7%259A%2584%25E7%2588%25B6%25E5%25AD%2590%25E5%2585%25B3%25E7%25B3%25BB1.gif)
+![](http://cdn.lindexi.site/lindexi%2Fdotnet%2520%25E8%25AE%25BE%25E7%25BD%25AE%2520X11%2520%25E5%25BB%25BA%25E7%25AB%258B%25E7%25AA%2597%25E5%258F%25A3%25E4%25B9%258B%25E9%2597%25B4%25E7%259A%2584%25E7%2588%25B6%25E5%25AD%2590%25E5%2585%25B3%25E7%25B3%25BB1.gif)
 
 以上代码有所忽略，全部的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/07fa8637c7c744935419e5a122b38718d8bc87e3/DikalehebeekaJaqunicobo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/07fa8637c7c744935419e5a122b38718d8bc87e3/DikalehebeekaJaqunicobo) 上，可以使用如下命令行拉取代码
 
@@ -240,7 +240,7 @@ git pull origin 07fa8637c7c744935419e5a122b38718d8bc87e3
 设置 Parent-Child 关系之后，将限制子窗口只能在主窗口的客户区范围内，即子窗口不能超过主窗口范围，如下图所示
 
 <!-- ![](image/dotnet 设置 X11 建立窗口之间的父子关系/dotnet 设置 X11 建立窗口之间的父子关系0.png) -->
-![](http://image.acmx.xyz/lindexi%2F202451610407574.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202451610407574.jpg)
 
 以上代码是在 XReparentWindow 方法里面设置了子窗口的坐标，让子窗口超过主窗口的范围，代码如下
 
@@ -562,7 +562,7 @@ Console.WriteLine("Hello, World!");
 运行代码之后的效果如下图
 
 <!-- ![](image/dotnet 设置 X11 建立窗口之间的父子关系/dotnet 设置 X11 建立窗口之间的父子关系2.gif) -->
-![](http://image.acmx.xyz/lindexi%2Fdotnet%2520%25E8%25AE%25BE%25E7%25BD%25AE%2520X11%2520%25E5%25BB%25BA%25E7%25AB%258B%25E7%25AA%2597%25E5%258F%25A3%25E4%25B9%258B%25E9%2597%25B4%25E7%259A%2584%25E7%2588%25B6%25E5%25AD%2590%25E5%2585%25B3%25E7%25B3%25BB2.gif)
+![](http://cdn.lindexi.site/lindexi%2Fdotnet%2520%25E8%25AE%25BE%25E7%25BD%25AE%2520X11%2520%25E5%25BB%25BA%25E7%25AB%258B%25E7%25AA%2597%25E5%258F%25A3%25E4%25B9%258B%25E9%2597%25B4%25E7%259A%2584%25E7%2588%25B6%25E5%25AD%2590%25E5%2585%25B3%25E7%25B3%25BB2.gif)
 
 如上图，应用是透明窗口，可以看到背后的图片应用显示的内容。上述图片是使用 [WPF 基础绘图 创建和加工图片](https://blog.lindexi.com/post/WPF-%E5%9F%BA%E7%A1%80%E7%BB%98%E5%9B%BE-%E5%88%9B%E5%BB%BA%E5%92%8C%E5%8A%A0%E5%B7%A5%E5%9B%BE%E7%89%87.html ) 绘制的图片。可以看到无论是主窗口还是子窗口都能透过去。但是子窗口将会遮挡主窗口的绘制，即让子窗口直接显示窗口之后的部分内容，但不会与主窗口合成，即主窗口被子窗口挡住的部分就没有进行渲染
 

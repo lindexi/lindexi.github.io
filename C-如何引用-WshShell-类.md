@@ -15,7 +15,7 @@
 
 <!-- ![](image/C# 如何引用 WshShell 类/C# 如何引用 WshShell 类0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019319102415818)
+![](http://cdn.lindexi.site/lindexi%2F2019319102415818)
 
 添加命名空间 `using IWshRuntimeLibrary;` 就可以使用了
 

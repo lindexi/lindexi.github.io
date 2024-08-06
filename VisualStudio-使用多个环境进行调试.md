@@ -16,7 +16,7 @@
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201882819618478)
+![](http://cdn.lindexi.site/lindexi%2F201882819618478)
 
 可以看到原来的是启动的按钮，现在被我修改为 lindexi 和 逗比，那么我是如何做到的？这个有什么用呢？
 
@@ -32,13 +32,13 @@
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201882819948568)
+![](http://cdn.lindexi.site/lindexi%2F201882819948568)
 
 点击调试可以看到配置文件，默认的配置文件就是和项目相同，这时只需要点击新建按钮然后输入新的名字，就可以创建新的配置
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201882819135343)
+![](http://cdn.lindexi.site/lindexi%2F201882819135343)
 
 在不同的配置可以选择使用启动的是什么，如项目。选择项目就是启动这个项目进行调试，可以在调试的时候输入应用程序参数和设置工作文件夹。
 
@@ -46,13 +46,13 @@
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018828191648439)
+![](http://cdn.lindexi.site/lindexi%2F2018828191648439)
 
 我在主函数输出可以看到下面代码
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018828191834293)
+![](http://cdn.lindexi.site/lindexi%2F2018828191834293)
 
 那么工作文件夹又是做什么的呢？
 
@@ -60,7 +60,7 @@
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018828192030852)
+![](http://cdn.lindexi.site/lindexi%2F2018828192030852)
 
 在主函数添加下面代码然后运行
 
@@ -74,20 +74,20 @@
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018828192221481)
+![](http://cdn.lindexi.site/lindexi%2F2018828192221481)
 
 需要注意，添加的工作文件夹需要是存在的，不然会出现下面提示
 
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201882819232121)
+![](http://cdn.lindexi.site/lindexi%2F201882819232121)
 
 启动除了使用项目还可以使用外面的程序，可以选择启动可执行文件，然后写入可执行文件的路径
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018828192754686)
+![](http://cdn.lindexi.site/lindexi%2F2018828192754686)
 
 这时的 VisualStudio 执行的就是这个传入的软件，这个就和使用调试附加到进程一样。
 
@@ -95,7 +95,7 @@
 
 <!-- ![](image/VisualStudio 使用多个环境进行调试/VisualStudio 使用多个环境进行调试9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018828193927296)
+![](http://cdn.lindexi.site/lindexi%2F2018828193927296)
 
 The first is IIS Express that will use IIS Express to host this project and the second is `Project` that will run this project and debugging it.
 

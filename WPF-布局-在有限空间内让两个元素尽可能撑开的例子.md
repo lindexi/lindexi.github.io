@@ -17,37 +17,37 @@
 
 <!-- ![](image/WPF 布局 在有限空间内让两个元素尽可能撑开的例子/WPF 布局 在有限空间内让两个元素尽可能撑开的例子0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211262049238083.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211262049238083.jpg)
 
 - 账号较长，密码较短，但合起来的长度小于最大尺寸。期望能完全显示出来
 
 <!-- ![](image/WPF 布局 在有限空间内让两个元素尽可能撑开的例子/WPF 布局 在有限空间内让两个元素尽可能撑开的例子1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211262050133267.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211262050133267.jpg)
 
 - 账号超长，可以限制账号显示的最大长度
 
 <!-- ![](image/WPF 布局 在有限空间内让两个元素尽可能撑开的例子/WPF 布局 在有限空间内让两个元素尽可能撑开的例子2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211262051168944.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211262051168944.jpg)
 
 - 账号超长，密码较长，将会因为限制最大尺寸，而裁剪账号和密码显示内容
 
 <!-- ![](image/WPF 布局 在有限空间内让两个元素尽可能撑开的例子/WPF 布局 在有限空间内让两个元素尽可能撑开的例子3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211262051537524.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211262051537524.jpg)
 
 - 账号较短，密码较长，可以让密码占用更多的空间
 
 <!-- ![](image/WPF 布局 在有限空间内让两个元素尽可能撑开的例子/WPF 布局 在有限空间内让两个元素尽可能撑开的例子4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211262052403635.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211262052403635.jpg)
 
 - 如果账号还没达到限制的最大宽度，密码超长，那么裁剪密码内容
 
 <!-- ![](image/WPF 布局 在有限空间内让两个元素尽可能撑开的例子/WPF 布局 在有限空间内让两个元素尽可能撑开的例子5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211262053193647.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211262053193647.jpg)
 
 也就是说需要相当于在 Grid 里面造两个可以撑开的 `*` 长度的，但是限制最大尺寸的布局。不过本文将用另一个方法，采用 StackPanel 加上转换器来实现
 

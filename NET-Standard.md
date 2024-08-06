@@ -17,7 +17,7 @@
 
 如果大家发现有其他的博客，记得告诉我
 
-![](http://image.acmx.xyz/lindexi%2F201942912529158)
+![](http://cdn.lindexi.site/lindexi%2F201942912529158)
 
 
 

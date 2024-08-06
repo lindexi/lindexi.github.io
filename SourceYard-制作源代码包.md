@@ -29,19 +29,19 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812911718537)
+![](http://cdn.lindexi.site/lindexi%2F201812911718537)
 
 在我之前的博客[C# 金额转中文大写](https://lindexi.gitee.io/post/C-%E9%87%91%E9%A2%9D%E8%BD%AC%E4%B8%AD%E6%96%87%E5%A4%A7%E5%86%99.html )已经有了代码，可以从[码云复制](https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20 ) 复制的代码因为没有命名空间，需要手动添加，于是现在就创建了一个项目，这个项目包含一个类。
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129111242105)
+![](http://cdn.lindexi.site/lindexi%2F2018129111242105)
 
 使用 SourceYard 很简单，只需要在 TheLib 项目管理 Nuget 安装 SourceYard 就可以
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129111349653)
+![](http://cdn.lindexi.site/lindexi%2F2018129111349653)
 
 现在 SourceYard 还没正式发布，里面还存在一些坑，但是对于这么简单的项目已经可以使用。
 
@@ -51,7 +51,7 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129111533228)
+![](http://cdn.lindexi.site/lindexi%2F2018129111533228)
 
 如果需要将 TheLib 修改为 dotnet framework 的项目，只需要右击编辑 csproj 文件就可以，在[理解 C# 项目 csproj 文件格式的本质和编译流程](https://walterlv.gitee.io/post/understand-the-csproj.html )和[广州 .NET 微软技术俱乐部12月份活动](http://www.10tiao.com/html/391/201811/2654072986/1.html) 吕毅都讲了项目的格式，如果只需要修改 dotnet framework 不需要了解那么多，只需要在 TargetFramework 里面修改为 net45 就完成
 
@@ -79,37 +79,37 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129112917582)
+![](http://cdn.lindexi.site/lindexi%2F2018129112917582)
 
 文件可以通过 [Nuget 管理器](https://www.microsoft.com/store/productId/9WZDNCRDMDM3) 打开，这个文件可以在应用商店找到
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129113026481)
+![](http://cdn.lindexi.site/lindexi%2F2018129113026481)
 
 这里两个不同的文件，其他是传统的 Nuget 包，也就是 TheLib.1.0.2.nupkg 里面包含 dll 请打开文件很快就可以看到
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129113243747)
+![](http://cdn.lindexi.site/lindexi%2F2018129113243747)
 
 源代码的文件的格式也请小伙伴打开看一下，里面没有 dll 里面是代码，在安装这个文件就会引用代码，代码会编译在引用的项目。多个不同的源代码包会编译为一个程序集。
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812911383738)
+![](http://cdn.lindexi.site/lindexi%2F201812911383738)
 
 虽然有 Nuget 文件但是还不知道这个文件能不能使用，创建两个不同的项目用来用这两个文件，因为刚才已经修改项目为 dotnet framework 的，就需要创建一个 dotnet framework 的项目
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129115048210)
+![](http://cdn.lindexi.site/lindexi%2F2018129115048210)
 
 右击项目管理 Nuget 引用本地的 Nuget 文件的文件夹，如我这里的 Nuget 文件是在 `D:\lindexi\SourceYard\bin\Debug` 文件夹下，我就需要添加这样的路径，请看图片
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129115544606)
+![](http://cdn.lindexi.site/lindexi%2F2018129115544606)
 
 这里的程序包源的名称是可以随意给的，程序员最难的就是命名，好在有[Whitman](https://www.microsoft.com/store/productId/9P8LNZRNJX85 ) 这个工具可以按下 ctrl+, 输入第一个字符为小写的变量，按下 ctrl+shift+, 输入第一个字符为大写的变量。现在这个工具已经从 dotnet framework 升级到 dotnet core 请看 [将基于 .NET Framework 的 WPF 项目迁移到基于 .NET Core 3 - walterlv](https://walterlv.gitee.io/post/migrate-wpf-project-from-dotnet-framework-to-dotnet-core.html ) 关于 WPF 怎么可以在 dotnet core 运行，微软已经将 WPF 的 dotnet core 开源，可以在 [github](https://github.com/dotnet/wpf ) 找到
 
@@ -117,7 +117,7 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812912055633)
+![](http://cdn.lindexi.site/lindexi%2F201812912055633)
 
 刚才创建的 dotnet framework 程序还是比较不清真的，先进行卸载，然后编辑 csproj 文件，可以看到这里的文件内容非常多，这是很不清真的。从刚才的 TheLib 文件里面拷贝 csproj 文件到 AppUsingDll 项目里，记得需要先去掉 SourceYard 的部分
 
@@ -154,7 +154,7 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812913059674)
+![](http://cdn.lindexi.site/lindexi%2F201812913059674)
 
 如果此时进行编译会看到编译不通过，因为还需要删除 AssemblyInfo.cs 文件的很多代码，其实可以直接删除这个文件
 
@@ -162,7 +162,7 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812912055633)
+![](http://cdn.lindexi.site/lindexi%2F201812912055633)
 
 安装之后添加一点代码测试一下能否使用
 
@@ -178,13 +178,13 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129143342731)
+![](http://cdn.lindexi.site/lindexi%2F2018129143342731)
 
 右击项目管理 Nuget 安装源代码包，然后在主函数添加相同的测试代码
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129143448185)
+![](http://cdn.lindexi.site/lindexi%2F2018129143448185)
 
 ```csharp
         static void Main(string[] args)
@@ -201,11 +201,11 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812914371424)
+![](http://cdn.lindexi.site/lindexi%2F201812914371424)
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129143741224)
+![](http://cdn.lindexi.site/lindexi%2F2018129143741224)
 
 这时就可以看到 SourceYard 的好处，通过 SourceYard 可以将源代码作为 Nuget 包，这样不但减少 dll 的数量，同时做到源代码的兼容。在之前，无论是PCL还是多项目方式的 Nuget 包管理多个不同平台的兼容难度比较大，但是通过 SourceYard 只要源代码可以兼容就可以安装。在本文的控制台的使用的库是 dotnet framework 4.5 但是控制台项目使用的是 dotnet core 2.1 的，这样都可以使用。
 
@@ -219,7 +219,7 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129144418506)
+![](http://cdn.lindexi.site/lindexi%2F2018129144418506)
 
 相对来说，做 WPF 的库使用新项目格式要求对新的格式比较熟悉，所以请直接卸载项目，编辑一下项目文件，填入下面的代码
 
@@ -309,7 +309,7 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包18.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812914469889)
+![](http://cdn.lindexi.site/lindexi%2F201812914469889)
 
 现在右击重新编译，就可以在输出文件夹找到输出的两个 Nuget 包
 
@@ -352,7 +352,7 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包19.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129145744939)
+![](http://cdn.lindexi.site/lindexi%2F2018129145744939)
 
 然后取消除了中文的注释，请看代码
 
@@ -381,13 +381,13 @@
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包20.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129151516104)
+![](http://cdn.lindexi.site/lindexi%2F2018129151516104)
 
 此时在这个函数下面返回林德熙是逗比
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包21.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018129151516104)
+![](http://cdn.lindexi.site/lindexi%2F2018129151516104)
 
 按 F5 运行，可以看到输出的是 林德熙是逗比 也就是源代码已经修改
 

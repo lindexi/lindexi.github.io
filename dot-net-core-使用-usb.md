@@ -13,7 +13,7 @@
 
 首先需要打开 Nuget 安装 CoreCompat.LibUsbDotNet ，这是一个usb连接的库。
 
-![](http://image.acmx.xyz/lindexi%2F2018414152437169.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018414152437169.jpg)
 
 ## 获得通知
 

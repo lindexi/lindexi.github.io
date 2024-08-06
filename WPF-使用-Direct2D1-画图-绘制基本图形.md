@@ -46,7 +46,7 @@ Point2F 也是一个结构体，所以和 Point 类型差不多
             _renderTarget.CreateSolidColorBrush(new D2D.ColorF(1, 0, 0, 1)), 2);
 ```
 
-![](http://image.acmx.xyz/lindexi%2F20184191049105692.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20184191049105692.jpg)
 
 上面的代码运行在[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )文章的 OnRendering 方法，为了让大家也可以试试下面的代码，建议大家先去看这篇博客。
 
@@ -149,7 +149,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
             _renderTarget.EndDraw();
 ```
 
-![](http://image.acmx.xyz/lindexi%2F20184191145368673.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20184191145368673.jpg)
 
 ### Round
 
@@ -171,7 +171,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
             _renderTarget.EndDraw();
 ```
 
-![](http://image.acmx.xyz/lindexi%2F2018419114895088.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018419114895088.jpg)
 
 ### Square
 
@@ -191,7 +191,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
             _renderTarget.EndDraw();
 ```
 
-![](http://image.acmx.xyz/lindexi%2F2018419115013995.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018419115013995.jpg)
 
 ### Triangle
 
@@ -211,13 +211,13 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
             _renderTarget.EndDraw();
 ```
 
-![](http://image.acmx.xyz/lindexi%2F201841911520144.jpg)
+![](http://cdn.lindexi.site/lindexi%2F201841911520144.jpg)
 
 ### DashStyle
 
 如果需要画虚线就可以使用 DashStyle ，虚线显示就是使用 CapStyle
 
-![](http://image.acmx.xyz/lindexi%2F20184191158581837.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20184191158581837.jpg)
 
 ```csharp
 
@@ -262,7 +262,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 
 矩形的 StrokeStyle 和线段一样。
 
-![](http://image.acmx.xyz/lindexi%2F20184191445547057.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20184191445547057.jpg)
 
 ## 椭圆
 
@@ -284,7 +284,7 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
             var ellipse = new D2D.Ellipse(new D2D.Point2F(100, 100), 50, 50);
 ```
 
-![](http://image.acmx.xyz/lindexi%2F2018419145042837.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018419145042837.jpg)
 
 这就是绘制基本的图形。
 

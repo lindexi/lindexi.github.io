@@ -42,7 +42,7 @@
 
 <!-- ![](image/C# 程序集数量对软件启动性能的影响/C# 程序集数量对软件启动性能的影响0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101710821441)
+![](http://cdn.lindexi.site/lindexi%2F2018101710821441)
 
 
 |           工程            | 冷启动   | 第二次 | 第三次 |

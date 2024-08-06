@@ -44,7 +44,7 @@
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类/dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022315856539039.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022315856539039.jpg)
 
 |                  Method |      Mean |    StdDev |    Median | Scaled |
 |------------------------ |---------- |---------- |---------- |------- |

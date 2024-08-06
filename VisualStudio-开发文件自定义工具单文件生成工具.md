@@ -104,7 +104,7 @@
 
 <!-- ![](image/VisualStudio 开发文件自定义工具单文件生成工具/VisualStudio 开发文件自定义工具单文件生成工具0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20194261033760)
+![](http://cdn.lindexi.site/lindexi%2F20194261033760)
 
 此时就可以看到代码运行，输出的林德熙是逗比将会写入到 Foo.txt 下面的 Foo.generated.cs 文件里面
 

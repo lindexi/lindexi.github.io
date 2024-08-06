@@ -57,7 +57,7 @@
 
 更多请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html )
 
-![](http://image.acmx.xyz/lindexi%2F2019123205745682)
+![](http://cdn.lindexi.site/lindexi%2F2019123205745682)
 
 
 

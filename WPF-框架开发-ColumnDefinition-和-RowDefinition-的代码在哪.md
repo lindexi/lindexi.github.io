@@ -16,7 +16,7 @@
 
 以下是在 VisualStudio 2019 进行构建，十分简单，只需要部署环境完成之后进行构建即可
 
-![](http://image.acmx.xyz/lindexi%2F202188206162793.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202188206162793.jpg)
 
 然而在 VisualStudio 2022 里面，将会在构建的时候提示失败
 

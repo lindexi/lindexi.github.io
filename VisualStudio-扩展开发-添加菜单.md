@@ -16,7 +16,7 @@
 
 <!-- ![](image/VisualStudio 扩展开发 添加菜单/VisualStudio 扩展开发 添加菜单0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019221549454)
+![](http://cdn.lindexi.site/lindexi%2F2019221549454)
 
 在之前我写过 [VisualStudio 扩展开发](https://lindexi.gitee.io/post/VisualStudio-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91.html) 使用的是 VisualStudio 2015 开发，在开发 VisualStudio 2017 的插件和开发之前的版本几乎一样
 
@@ -24,17 +24,17 @@
 
 <!-- ![](image/VisualStudio 扩展开发 添加菜单/VisualStudio 扩展开发 添加菜单1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201922151358651)
+![](http://cdn.lindexi.site/lindexi%2F201922151358651)
 
 右击新建一个自定义命令，这里的命令的文件名可以随意写，如我就写了 NowkuPurqicowFourocafem 然后就可以去和小伙伴聊天，等待自动写的代码
 
 <!-- ![](image/VisualStudio 扩展开发 添加菜单/VisualStudio 扩展开发 添加菜单2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192215155309)
+![](http://cdn.lindexi.site/lindexi%2F20192215155309)
 
 <!-- ![](image/VisualStudio 扩展开发 添加菜单/VisualStudio 扩展开发 添加菜单3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201922151554225)
+![](http://cdn.lindexi.site/lindexi%2F201922151554225)
 
 现在只需要做很小的更改，就可以看到效果
 
@@ -91,7 +91,7 @@
 
 <!-- ![](image/VisualStudio 扩展开发 添加菜单/VisualStudio 扩展开发 添加菜单4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201922152319295)
+![](http://cdn.lindexi.site/lindexi%2F201922152319295)
 
 再和小伙伴聊天，现在可以和他说，我在开发 VS 然后告诉他知道为什么 VS 启动那么慢
 
@@ -99,7 +99,7 @@
 
 <!-- ![](image/VisualStudio 扩展开发 添加菜单/VisualStudio 扩展开发 添加菜单5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201922153359242)
+![](http://cdn.lindexi.site/lindexi%2F201922153359242)
 
 点击按钮就可以看到我博客
 

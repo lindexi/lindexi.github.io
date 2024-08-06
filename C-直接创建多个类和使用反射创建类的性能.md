@@ -31,7 +31,7 @@
 
 <!-- ![](image/C# 直接创建多个类和使用反射创建类的性能/C# 直接创建多个类和使用反射创建类的性能1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181012145053145)
+![](http://cdn.lindexi.site/lindexi%2F20181012145053145)
 
 如果关心这个结论是如何计算出来的，或者你也想使用 1000 个类，那么请继续翻到下一页
 
@@ -130,7 +130,7 @@ namespace LecuryouWuruhempa
 
 <!-- ![](image/C# 直接创建多个类和使用反射创建类的性能/C# 直接创建多个类和使用反射创建类的性能0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201810121128507)
+![](http://cdn.lindexi.site/lindexi%2F201810121128507)
 
 然后将这个文件夹导入到一个新创建的项目，要求这个项目是 dotnet Framework 4.6 以上，使用下面代码做测试
 

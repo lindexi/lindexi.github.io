@@ -26,7 +26,7 @@
 
 <!-- ![](image/Xamarin.Forms 按钮样式 圆角按钮/Xamarin.Forms 按钮样式 圆角按钮0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202022318525421.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202022318525421.jpg)
 
 设置按钮背景透明可以通过设置 BackgroundColor 为 Transparent 属性
 

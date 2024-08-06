@@ -15,7 +15,7 @@
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116201329903)
+![](http://cdn.lindexi.site/lindexi%2F2018116201329903)
 
 点击 add new 添加一个 UWP 程序，需要写出 app 的命名和选择是哪个平台
 
@@ -23,43 +23,43 @@
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116201455717)
+![](http://cdn.lindexi.site/lindexi%2F2018116201455717)
 
 创建完成之后可以看到下面的界面
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181162016472)
+![](http://cdn.lindexi.site/lindexi%2F20181162016472)
 
 点击 Build 标签，可以看到配置自动构建的界面
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116201730107)
+![](http://cdn.lindexi.site/lindexi%2F2018116201730107)
 
 因为 UWP 图床是放在 [github](https://github.com/lindexi/uwp) 所以这里选择 github 在弹出的页面选择 UWP 项目
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116201918333)
+![](http://cdn.lindexi.site/lindexi%2F2018116201918333)
 
 点击选择之后可以看到当前的分支，这里选择 master 分支
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116201957962)
+![](http://cdn.lindexi.site/lindexi%2F2018116201957962)
 
 然后点击配置编译
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116202027669)
+![](http://cdn.lindexi.site/lindexi%2F2018116202027669)
 
 在这个网站比较好的是会将所有的 sln 文件列出来，让大家选自己需要编译的文件，同时还可以设置编译的平台
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201811620211923)
+![](http://cdn.lindexi.site/lindexi%2F201811620211923)
 
 只需要设置需要编译哪个项目就可以啦，其他的东西都是自动配置的
 
@@ -69,7 +69,7 @@
 
 <!-- ![](image/win10 uwp 使用 AppCenter 自动构建/win10 uwp 使用 AppCenter 自动构建8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116202312684)
+![](http://cdn.lindexi.site/lindexi%2F2018116202312684)
 
 将内容复制出来，大概就是这样
 

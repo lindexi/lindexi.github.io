@@ -44,7 +44,7 @@
 
 <!-- ![](image/dotnet OpenXML 简单聊聊 PPT 文本解析/dotnet OpenXML 简单聊聊 PPT 文本解析0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020722178122775.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020722178122775.jpg)
 
 小伙伴可以看到在 PPT 软件的段落设置旁边有字体设置，这是对应放在 `<a:r>` 文本的内容，格式如下
 

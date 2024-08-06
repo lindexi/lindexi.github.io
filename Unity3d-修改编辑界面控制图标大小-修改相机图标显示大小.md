@@ -14,13 +14,13 @@
 
 <!-- ![](image/Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小/Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201311655153661.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201311655153661.jpg)
 
 点击之后修改 3d 图标大小就可以修改 Unity3d 相机图标显示大小
 
 <!-- ![](image/Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小/Unity3d 修改编辑界面控制图标大小 修改相机图标显示大小1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020131165639649.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020131165639649.jpg)
 
 这个控制让我找了半天，于是水了一篇博客
 

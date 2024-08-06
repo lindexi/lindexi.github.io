@@ -18,7 +18,7 @@
 
 <!-- ![](image/dotnet 对指针转换为结构体多个不同方法的性能分析/dotnet 对指针转换为结构体多个不同方法的性能分析0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021820854376452.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021820854376452.jpg)
 
 通过 Cast 转换的性能是最佳的，但是需要用上不安全代码，使用的时候也有很多注意的事项。而采用 Marshal 的 PtrToStructure 有两个重载的方法，一个是泛型的，一个是非泛型的，测试代码如下
 

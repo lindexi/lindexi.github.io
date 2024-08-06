@@ -17,37 +17,37 @@
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018921833164)
+![](http://cdn.lindexi.site/lindexi%2F2018921833164)
 
 登陆之后，可以在右上角看到自己的账号，点击一下可以看到下面界面，这时点击一个 Api key 因为在使用命令行发布的时候需要一个秘钥，通过上面的界面就可以创建秘钥
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189218412962)
+![](http://cdn.lindexi.site/lindexi%2F20189218412962)
 
 在 Api Key 界面可以看到 Create 这个按钮，没错，这是一个按钮
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189218523524)
+![](http://cdn.lindexi.site/lindexi%2F20189218523524)
 
 点击一下就可以创建一个 key 了，创建一个 key 可以给 key 不同的功能，具体请看下图
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892183656304)
+![](http://cdn.lindexi.site/lindexi%2F201892183656304)
 
 如果指定了可以修改版本的权限，可以设置有哪些轮子的版本号可以被这个 key 修改，请看下面
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892183755177)
+![](http://cdn.lindexi.site/lindexi%2F201892183755177)
 
 设置完成就可以点击 Create 了
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892183847127)
+![](http://cdn.lindexi.site/lindexi%2F201892183847127)
 
 创建之后需要复制这个 Key 的 序列，先将这个序列保存到文本，在之后会用到。注意，一个key只能在网页没关闭之前复制一次
 
@@ -57,13 +57,13 @@
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892184427574)
+![](http://cdn.lindexi.site/lindexi%2F201892184427574)
 
 然后我可以在地址栏输入 cmd 启动命令行，为什么需要在地址栏输入？原因是这样输入打开 cmd 就可以自动设置工作路径，请看下图，通过 cmd 打开的就是我需要的工作路径
 
 <!-- ![](image/Nuget 通过 dotnet 命令行发布/Nuget 通过 dotnet 命令行发布7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892184552795)
+![](http://cdn.lindexi.site/lindexi%2F201892184552795)
 
 这时可以通过下面的命令发布对应的 nuget 到 nuget.org 网站
 
@@ -106,7 +106,7 @@ dotnet nuget push *.nupkg -k 刚才复制的key -s https://api.nuget.org/v3/inde
 
 点击查看课件
 
-[![](http://image.acmx.xyz/lindexi%2F201892111425403)](https://r302.cc/RmLrp4)
+[![](http://cdn.lindexi.site/lindexi%2F201892111425403)](https://r302.cc/RmLrp4)
 
 
 

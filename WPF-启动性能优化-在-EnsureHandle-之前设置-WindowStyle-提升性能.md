@@ -15,13 +15,13 @@
 
 <!-- ![](image/WPF 启动性能优化 在 EnsureHandle 之前设置 WindowStyle 提升性能/WPF 启动性能优化 在 EnsureHandle 之前设置 WindowStyle 提升性能0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20238181613353535.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20238181613353535.jpg)
 
 可以看到在窗口 EnsureHandle 之后设置 WindowStyle 属性，需要等待 Win32 窗口的响应。再阅读 WPF 源代码，可以看到在窗口 EnsureHandle 之后设置 WindowStyle 属性，就需要等待 HwndStyleManager 的 Dispose 方法。以下是 WPF 的源代码
 
 <!-- ![](image/WPF 启动性能优化 在 EnsureHandle 之前设置 WindowStyle 提升性能/WPF 启动性能优化 在 EnsureHandle 之前设置 WindowStyle 提升性能1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2023818161476079.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023818161476079.jpg)
 
 看起来这是非常合理的耗时，在 Win32 窗口创建出来之后，也就是对应 EnsureHandle 拿到窗口句柄之后，这时如果设置 WindowStyle 属性，就需要同步给到 Win32 窗口。为了同步设置给到 Win32 窗口，自然就需要等待 Win32 窗口处理了，对应的就是以上代码的等待渲染线程挂载窗口的一次渲染逻辑。这里需要说明的是上文说的等待渲染线程挂载窗口的一次渲染逻辑是我的猜测，根据 wpfgfx_cor3.dll 以及 SyncFlush 方法进行猜测的
 

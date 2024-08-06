@@ -41,7 +41,7 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 文本字体获取详解/dotnet OpenXML 解析 PPT 文本字体获取详解0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208101034419639.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208101034419639.jpg)
 
 这就是需要让不同的字符选择不同的字体的功能，解析方式请看 [dotnet OpenXML 文本字体的选择规则](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E7%9A%84%E9%80%89%E6%8B%A9%E8%A7%84%E5%88%99.html)
 
@@ -257,7 +257,7 @@ Console.WriteLine($"字体是 {typeface}");
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 文本字体获取详解/dotnet OpenXML 解析 PPT 文本字体获取详解1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208101411367386.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208101411367386.jpg)
 
 从本文到当前只是在告诉大家如何拿到对的字体属性，字体属性是对于文本段 Run 来说的，而不是段落或文本的。但是如果文本段 Run 不存在字体的定义，那么此时需要尝试去获取段落的默认属性定义。但是如果段落没有任何默认属性定义，就需要获取文档的文本样式定义
 
@@ -319,7 +319,7 @@ private static readonly Regex ThemeFontTypePattern =
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 文本字体获取详解/dotnet OpenXML 解析 PPT 文本字体获取详解2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020810150571943.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020810150571943.jpg)
 
 这个主题可以如何获取？请看代码
 
@@ -441,7 +441,7 @@ if (ThemeFontTypePattern.IsMatch(typeface))
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 文本字体获取详解/dotnet OpenXML 解析 PPT 文本字体获取详解3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208101516112418.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208101516112418.jpg)
 
 为什么是读取 `<a:font script="Hans" typeface="逗比"/>` 作为字体的？原因就是需要先判断语言
 
@@ -593,7 +593,7 @@ if (ThemeFontTypePattern.IsMatch(typeface))
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 文本字体获取详解/dotnet OpenXML 解析 PPT 文本字体获取详解4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208101529131539.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208101529131539.jpg)
 
 如果 latin 也没有内容呢？将使用本机的默认语言字体
 
@@ -653,7 +653,7 @@ If this element is omitted, then the default fonts for each region as specified 
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 文本字体获取详解/dotnet OpenXML 解析 PPT 文本字体获取详解5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208101837395865.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208101837395865.jpg)
 
 可以看到英文字符用的是 `a:latin` 的，而不是使用语言的
 

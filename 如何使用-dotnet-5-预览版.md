@@ -24,7 +24,7 @@ https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json
 
 请看下图的方法添加
 
-![](http://image.acmx.xyz/lindexi%2F201958214432905)
+![](http://cdn.lindexi.site/lindexi%2F201958214432905)
 
 如果现有在某个项目使用而不是全部使用请看 [VisualStudio 给项目添加特殊的 Nuget 的链接](https://blog.lindexi.com/post/VisualStudio-%E7%BB%99%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E7%89%B9%E6%AE%8A%E7%9A%84-Nuget-%E7%9A%84%E9%93%BE%E6%8E%A5.html )
 

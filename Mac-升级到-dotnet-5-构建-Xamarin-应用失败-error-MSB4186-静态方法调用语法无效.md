@@ -16,7 +16,7 @@
 
 <!-- ![](image/Mac 升级到 dotnet 5 构建 Xamarin 应用失败 error MSB4186 静态方法调用语法无效/Mac 升级到 dotnet 5 构建 Xamarin 应用失败 error MSB4186 静态方法调用语法无效0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020123955448402.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020123955448402.jpg)
 
 
 

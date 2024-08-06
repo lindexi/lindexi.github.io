@@ -77,7 +77,7 @@ Error:
 
 <!-- ![](image/Roslyn 解决 dotnet core 应用进程间引用找不到 runtimeconfig 依赖文件/Roslyn 解决 dotnet core 应用进程间引用找不到 runtimeconfig 依赖文件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020931729581851.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020931729581851.jpg)
 
 原因是可执行项目输出的配置文件内容如下
 

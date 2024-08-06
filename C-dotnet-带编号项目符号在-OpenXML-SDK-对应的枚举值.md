@@ -29,43 +29,43 @@ EastAsianJapaneseDoubleBytePeriod  一. 二.
 ## ArabicPeriod
 
 <!-- ![](image/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值0.png) -->
-![](http://image.acmx.xyz/lindexi%2F2020326172152923.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020326172152923.jpg)
 
 ## RomanUpperCharacterPeriod
 
 <!-- ![](image/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20203261721428156.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20203261721428156.jpg)
 
 ## AlphaUpperCharacterPeriod
 
 <!-- ![](image/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020326172266980.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020326172266980.jpg)
 
 ## AlphaLowerCharacterParenR
 
 <!-- ![](image/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020326172231169.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020326172231169.jpg)
 
 ## CircleNumberDoubleBytePlain
 
 <!-- ![](image/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20203261729295719.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20203261729295719.jpg)
 
 ## EastAsianJapaneseDoubleBytePeriod
 
 <!-- ![](image/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20203261729517413.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20203261729517413.jpg)
 
 ## AlphaLowerCharacterPeriod
 
 <!-- ![](image/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值/C# dotnet 带编号项目符号在 OpenXML SDK 对应的枚举值5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20203261722596311.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20203261722596311.jpg)
 
 这就是 PPT 页面上的常用的枚举值
 

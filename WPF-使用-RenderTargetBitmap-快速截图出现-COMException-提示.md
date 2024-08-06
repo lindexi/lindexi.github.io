@@ -183,7 +183,7 @@ GC.WaitForPendingFinalizers();
 
 <!-- ![](image/WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示/WPF 使用 RenderTargetBitmap 快速截图出现 COMException 提示0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202053082836220.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202053082836220.jpg)
 
 
 

@@ -24,7 +24,7 @@
 
 <!-- ![](image/WPF 引用第三方库的控件在设计器加上设计时数据和属性/WPF 引用第三方库的控件在设计器加上设计时数据和属性0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202112493354799.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202112493354799.jpg)
 
 给 [HandyControl](https://github.com/HandyOrg/HandyControl) 加上设计时之前，需要加上此控件的设计时引用，如下面代码
 
@@ -62,7 +62,7 @@
 
 <!-- ![](image/WPF 引用第三方库的控件在设计器加上设计时数据和属性/WPF 引用第三方库的控件在设计器加上设计时数据和属性1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202112497382482.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202112497382482.jpg)
 
 更多请看
 

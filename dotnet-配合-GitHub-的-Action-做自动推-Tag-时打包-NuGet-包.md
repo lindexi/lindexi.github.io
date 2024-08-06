@@ -49,7 +49,7 @@ on:
 
 <!-- ![](image/dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包/dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205231446596402.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205231446596402.jpg)
 
 接下来就是根据项目的构建代码和上传 NuGet 库
 
@@ -75,7 +75,7 @@ on:
 
 <!-- ![](image/dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包/dotnet 配合 GitHub 的 Action 做自动推 Tag 时打包 NuGet 包1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020528105821550.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020528105821550.jpg)
 
 而为了让项目的打包能用到 Build 文件夹的版本号文件还需要修改这个项目
 

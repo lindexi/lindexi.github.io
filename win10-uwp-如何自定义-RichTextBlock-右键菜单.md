@@ -26,7 +26,7 @@
 
 运行上面代码可以看到这个图片
 
-![](http://image.acmx.xyz/lindexi%2F201932094724277)
+![](http://cdn.lindexi.site/lindexi%2F201932094724277)
 
 代码在 [github](https://github.com/lindexi/lindexi_gd/tree/7a716887868435aab72683997806c9e7133722b4/LekaryusijefowHirgemsterevepalltrallxay)
 

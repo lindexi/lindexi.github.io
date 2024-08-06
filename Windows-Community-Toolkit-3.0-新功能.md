@@ -39,7 +39,7 @@
 
 <!-- ![](image/Windows Community Toolkit 3.0 新功能/Windows Community Toolkit 3.0 新功能0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018531191028975.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018531191028975.jpg)
 
 现在通过 Nuget 安装 [Microsoft.Toolkit.Win32.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.Controls/ ) 就可以在 WinForms 和 WPF 使用 Edge 浏览器。
 
@@ -68,7 +68,7 @@ xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
 
 <!-- ![](image/Windows Community Toolkit 3.0 新功能/Windows Community Toolkit 3.0 新功能1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20185311925337786.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185311925337786.jpg)
 
 ## Microsoft Graph 控件
 
@@ -80,14 +80,14 @@ xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
 
 <!-- ![](image/Windows Community Toolkit 3.0 新功能/Windows Community Toolkit 3.0 新功能2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20185311930215405.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185311930215405.jpg)
 
 ### PeoplePicker
 
 从 一个组织的 AD 里面选择一个或多个用户的控件
 
 <!-- ![](image/Windows Community Toolkit 3.0 新功能/Windows Community Toolkit 3.0 新功能3.png) -->
-![](http://image.acmx.xyz/lindexi%2F20185311931523872.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185311931523872.jpg)
 
 ### SharePointFileList
 
@@ -95,7 +95,7 @@ xmlns:gaze="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
 
 <!-- ![](image/Windows Community Toolkit 3.0 新功能/Windows Community Toolkit 3.0 新功能4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20185311933125111.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185311933125111.jpg)
 
 ## 新控件和辅助方法
 
@@ -144,7 +144,7 @@ CameraPreviewControl.CameraHelper.FrameArrived += CameraPreviewControl_FrameArri
 
 <!-- ![](image/Windows Community Toolkit 3.0 新功能/Windows Community Toolkit 3.0 新功能5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20185311940413508.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185311940413508.jpg)
 
 详细的文档：[UniformGrid XAML Control](https://docs.microsoft.com/en-us/windows/uwpcommunitytoolkit/controls/uniformgrid )
 
@@ -154,7 +154,7 @@ CameraPreviewControl.CameraHelper.FrameArrived += CameraPreviewControl_FrameArri
 
 <!-- ![](image/Windows Community Toolkit 3.0 新功能/Windows Community Toolkit 3.0 新功能6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20185311940413508.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185311940413508.jpg)
 
 如果想做一个简单的 ppt 软件，直接使用这个控件就可以做到。
 

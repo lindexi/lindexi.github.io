@@ -67,7 +67,7 @@ Writing the tag as version by dotnet tool.
 
 <!-- ![](image/How to generate NuGet package with Git Tag version using GitHub Action/How to generate NuGet package with Git Tag version using GitHub Action0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205281056227454.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205281056227454.jpg)
 
 Building the package
 

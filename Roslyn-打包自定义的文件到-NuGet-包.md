@@ -177,7 +177,7 @@
 
 [Roslyn 通过 Target 修改编译的文件](https://blog.lindexi.com/post/Roslyn-%E9%80%9A%E8%BF%87-Target-%E4%BF%AE%E6%94%B9%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6.html )
 
-![](http://image.acmx.xyz/lindexi%2F20197917354626)
+![](http://cdn.lindexi.site/lindexi%2F20197917354626)
 
 
 

@@ -82,7 +82,7 @@ jobs:
 
 <!-- ![](image/手把手教你如何构建 WPF 官方开源框架源代码/手把手教你如何构建 WPF 官方开源框架源代码0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020423158486298.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020423158486298.jpg)
 
 在日志里面看到输出构建了 nupkg 文件就是构建成功
 

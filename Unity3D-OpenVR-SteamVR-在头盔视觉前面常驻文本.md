@@ -21,13 +21,13 @@
 
 如系列博客的内容，咱通过加入 SteamVR SDK 然后将 Player 拖入到咱的场景中，如下图
 
-![](http://image.acmx.xyz/lindexi%2F20215302212195348.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20215302212195348.jpg)
 
 在 Player 的 VRCamera 添加一个文本，设置 z 轴方向为正数，让文本在相机前
 
 <!-- ![](image/Unity3D OpenVR SteamVR 在头盔视觉前面常驻文本/Unity3D OpenVR SteamVR 在头盔视觉前面常驻文本0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20215312118557167.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20215312118557167.jpg)
 
 因为文本放在相机对象，因此文本随着相机，文本在相机前面，玩家可以看到文本
 

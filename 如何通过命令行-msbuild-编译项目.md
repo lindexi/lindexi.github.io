@@ -21,7 +21,7 @@
 
 <!-- ![](image/如何通过命令行 msbuild 编译项目/如何通过命令行 msbuild 编译项目0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019224153226228)
+![](http://cdn.lindexi.site/lindexi%2F2019224153226228)
 
 对于一个新的仓库，首先需要还原所有安装的 Nuget 包，此时建议将 Nuget 这个程序加入到环境变量，可以从 [官网](https://www.nuget.org/downloads ) 下载最新版本的 Nuget 程序，如我下载了 5.0 的版本，我将下载的 Nuget 程序放在了 `D:\lindexi\` 文件夹，将 Nuget 下载的程序修改文件名是 Nuget.exe 然后将 `D:\lindexi\nuget.exe` 加入到环境变量
 
@@ -31,13 +31,13 @@
 
 <!-- ![](image/如何通过命令行 msbuild 编译项目/如何通过命令行 msbuild 编译项目1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019224153659669)
+![](http://cdn.lindexi.site/lindexi%2F2019224153659669)
 
 在系统变量里面找到 Path 变量，双击就可以编辑，建议只修改用户的变量
 
 <!-- ![](image/如何通过命令行 msbuild 编译项目/如何通过命令行 msbuild 编译项目2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019224153757557)
+![](http://cdn.lindexi.site/lindexi%2F2019224153757557)
 
 在最后一行空白的地方双击一下，输入需要添加到环境变量的文件夹，如我上面的 `D:\lindexi` 文件夹
 

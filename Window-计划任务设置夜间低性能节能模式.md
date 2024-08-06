@@ -271,7 +271,7 @@ powercfg -query
 ```
 [Power Policy Settings - Win32 apps - Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/power/power-policy-settings )
 <!-- ![](image/Window 计划任务设置夜间低性能节能模式/Window 计划任务设置夜间低性能节能模式0.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024329921381138.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024329921381138.jpg)
 - Power Saver : a1841308-3541-4fab-bc81-f71556f20b4a
 - Balanced : 381b4222-f694-41f0-9685-ff5bb260df2e
 - High Performance : 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c

@@ -16,7 +16,7 @@
 
 <!-- ![](image/WPF 使用 VisualStudio 2017 项目文件/WPF 使用 VisualStudio 2017 项目文件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20187583113333.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20187583113333.jpg)
 
 注意需要查看图片的属性，如果图片的生成不是 Resources 那么在使用下面的代码还是找不到
 
@@ -47,7 +47,7 @@
 
 <!-- ![](image/WPF 使用 VisualStudio 2017 项目文件/WPF 使用 VisualStudio 2017 项目文件1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201875838422774.jpg)
+![](http://cdn.lindexi.site/lindexi%2F201875838422774.jpg)
 
 现在需要访问 B 项目的 NearzooRasterCairralJeajismowwir.jpg 就需要使用`pack://application:,,,/B;component/NearzooRasterCairralJeajismowwir.jpg`，格式就是`pack://application:,,,/程序集;component/相对B项目的文件`，需要注意右击看文件是不是 Resources 如果不是还是无法找到
 
@@ -59,7 +59,7 @@
 
 <!-- ![](image/WPF 使用 VisualStudio 2017 项目文件/WPF 使用 VisualStudio 2017 项目文件2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201875841112878.jpg)
+![](http://cdn.lindexi.site/lindexi%2F201875841112878.jpg)
 
 所以发现自己找不到资源，可能是项目名字和程序集不相同，需要右击查看程序集
 
@@ -88,7 +88,7 @@
 
 [win10 uwp 访问解决方案文件](https://blog.csdn.net/lindexi_gd/article/details/52639803 )
 
-![](http://image.acmx.xyz/lindexi%2F20186121956141913.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20186121956141913.jpg)
 
 
 

@@ -273,7 +273,7 @@
 
 代码请看 [github](https://github.com/lindexi/lindexi_gd/blob/353776a0d7b44c017b1a037a94fbd29718f2303f/RegeejairhemFurwhurrahuki/RegeejairhemFurwhurrahuki/Program.cs )
 
-![](http://image.acmx.xyz/lindexi%2F20198414445357)
+![](http://cdn.lindexi.site/lindexi%2F20198414445357)
 
 
 

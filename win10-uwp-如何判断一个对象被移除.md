@@ -41,7 +41,7 @@
 
 上面的代码使用的就是添加一个`WeakReference`引用对象，然后在判断对象是否被移除时，尝试获得对象，如果不能获得，那么就是对象被移除。
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171013131223.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171013131223.jpg)
 
 
 

@@ -16,7 +16,7 @@
 
 <!-- ![](image/dotnet 在 UOS 国产系统上安装 Mono 开发工具的方法/dotnet 在 UOS 国产系统上安装 Mono 开发工具的方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2Fdotnet%2520%25E5%259C%25A8%2520UOS%2520%25E5%259B%25BD%25E4%25BA%25A7%25E7%25B3%25BB%25E7%25BB%259F%25E4%25B8%258A%25E5%25AE%2589%25E8%25A3%2585%2520Mono%2520%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E5%2585%25B7%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%25950.png)
+![](http://cdn.lindexi.site/lindexi%2Fdotnet%2520%25E5%259C%25A8%2520UOS%2520%25E5%259B%25BD%25E4%25BA%25A7%25E7%25B3%25BB%25E7%25BB%259F%25E4%25B8%258A%25E5%25AE%2589%25E8%25A3%2585%2520Mono%2520%25E5%25BC%2580%25E5%258F%2591%25E5%25B7%25A5%25E5%2585%25B7%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%25950.png)
 
 进入 `/etc/apt` 文件夹，在终端输入下面代码
 
@@ -40,7 +40,7 @@ deb https://mirrors.ustc.edu.cn/debian buster main contrib non-free
 
 <!-- ![](image/dotnet 在 UOS 国产系统上安装 dotnet sdk 的方法/dotnet 在 UOS 国产系统上安装 dotnet sdk 的方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020931729581851.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020931729581851.jpg)
 
 按照 [在 Debian 上安装 .NET Core ](https://docs.microsoft.com/zh-cn/dotnet/core/install/linux-debian?WT.mc_id=WD-MVP-5003260 ) 的方法，在命令行输入下面代码，将 Microsoft 包签名密钥添加到受信任密钥列表，并添加包存储库
 

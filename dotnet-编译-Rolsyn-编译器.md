@@ -27,13 +27,13 @@
 
 <!-- ![](image/dotnet 编译 Rolsyn 编译器/dotnet 编译 Rolsyn 编译器0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020121848396081.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020121848396081.jpg)
 
 导入刚才拉下来的 Rolsyn 仓库的 .vsconfig 文件
 
 <!-- ![](image/dotnet 编译 Rolsyn 编译器/dotnet 编译 Rolsyn 编译器1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020121849177287.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020121849177287.jpg)
 
 等待 VS 的安装完成，然后切换到网络比较好的环境
 

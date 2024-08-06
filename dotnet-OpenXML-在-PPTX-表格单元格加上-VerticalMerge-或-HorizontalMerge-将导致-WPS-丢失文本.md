@@ -41,7 +41,7 @@
 此文档将会让 WPS 打开之后，可以正常显示表格元素，但是丢失表格的对应单元格内的文本。如下图为我使用代码生成的文档，分别在 WPS 和 Office 的 PowerPoint 打开的效果
 
 <!-- ![](image/dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本/dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本0.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024522927466151.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024522927466151.jpg)
 
 从上图可见 WPS 的表格的单元格内丢失了文本
 

@@ -15,7 +15,7 @@
 
 [Pen Devices ](https://docs.microsoft.com/en-us/windows-hardware/design/component-guidelines/pen-devices )
 
-![](http://image.acmx.xyz/lindexi%2F201915111149796)
+![](http://cdn.lindexi.site/lindexi%2F201915111149796)
 
 
 

@@ -15,7 +15,7 @@
 
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181121112323368)
+![](http://cdn.lindexi.site/lindexi%2F20181121112323368)
 
 因为托盘是程序的托盘，不是窗口的，所以推荐代码是写在 App.xaml.cs 里面
 
@@ -27,7 +27,7 @@
 
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018112111308299)
+![](http://cdn.lindexi.site/lindexi%2F2018112111308299)
 
 在 App.xaml 定义资源 TaskbarIcon 请看代码
 
@@ -65,7 +65,7 @@
 
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181121113330264)
+![](http://cdn.lindexi.site/lindexi%2F20181121113330264)
 
 鼠标移动在托盘上面显示文字，可以在 TaskbarIcon 添加代码
 
@@ -78,7 +78,7 @@
 ```
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181121113719352)
+![](http://cdn.lindexi.site/lindexi%2F20181121113719352)
 
 双击托盘运行代码需要添加命令，创建一个 ViewModel 用来绑定命令
 
@@ -222,7 +222,7 @@ StartupUri="MainWindow.xaml"
 
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018112114264590)
+![](http://cdn.lindexi.site/lindexi%2F2018112114264590)
 
 默认的软件设置是关闭最后一个窗口的时候应用就关闭，通过设置 App.ShutdownMode 可以在调用退出才关闭，打开 App.xaml 添加代码
 
@@ -273,7 +273,7 @@ StartupUri="MainWindow.xaml"
 
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181121143613667)
+![](http://cdn.lindexi.site/lindexi%2F20181121143613667)
 
 因为可以添加控件，发挥你的想法，如添加按钮
 
@@ -305,7 +305,7 @@ StartupUri="MainWindow.xaml"
 
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181121143952232)
+![](http://cdn.lindexi.site/lindexi%2F20181121143952232)
 
 显示气泡
 
@@ -317,7 +317,7 @@ Taskbar.ShowBalloonTip("标题", "内容", BalloonIcon.Info);
 
 <!-- ![](image/WPF 托盘显示/WPF 托盘显示7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181121145319625)
+![](http://cdn.lindexi.site/lindexi%2F20181121145319625)
 
 如果需要自定义气泡，定义一个继承 UIElement 的类，然后传入 TaskbarIcon.ShowCustomBalloon 就可以
 

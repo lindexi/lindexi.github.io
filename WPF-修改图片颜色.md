@@ -25,7 +25,7 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018732045136233.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018732045136233.jpg)
 
 读取解决方案的图片
 
@@ -101,7 +101,7 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20187320571094.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20187320571094.jpg)
 
 ## 读取数组
 
@@ -201,7 +201,7 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20187321933857.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20187321933857.jpg)
 
 代码：[WPF 修改图片颜色 1.2-CSDN下载](https://download.csdn.net/download/lindexi_gd/10517437 )
 
@@ -209,7 +209,7 @@
 
 <!-- ![](image/WPF 修改图片颜色/WPF 修改图片颜色3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018741612135373.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018741612135373.jpg)
 
 可以点击这里下载程序
 

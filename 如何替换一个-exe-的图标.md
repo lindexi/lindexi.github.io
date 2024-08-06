@@ -14,37 +14,37 @@
 
 <!-- ![](image/如何替换一个 exe 的图标/如何替换一个 exe 的图标0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227202913635)
+![](http://cdn.lindexi.site/lindexi%2F2019227202913635)
 
 打开 Resource Hacker 软件将需要修改的程序拖进去
 
 <!-- ![](image/如何替换一个 exe 的图标/如何替换一个 exe 的图标1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227203011496)
+![](http://cdn.lindexi.site/lindexi%2F2019227203011496)
 
 点击 Action 点击修改图标
 
 <!-- ![](image/如何替换一个 exe 的图标/如何替换一个 exe 的图标2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201922720304743)
+![](http://cdn.lindexi.site/lindexi%2F201922720304743)
 
 选择一个好看的图标
 
 <!-- ![](image/如何替换一个 exe 的图标/如何替换一个 exe 的图标3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227203115270)
+![](http://cdn.lindexi.site/lindexi%2F2019227203115270)
 
 点击替换
 
 <!-- ![](image/如何替换一个 exe 的图标/如何替换一个 exe 的图标4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227203230493)
+![](http://cdn.lindexi.site/lindexi%2F2019227203230493)
 
 点击保存就可以修改软件的图标
 
 <!-- ![](image/如何替换一个 exe 的图标/如何替换一个 exe 的图标5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201922720334394)
+![](http://cdn.lindexi.site/lindexi%2F201922720334394)
 
 
 

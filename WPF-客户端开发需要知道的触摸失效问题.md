@@ -37,7 +37,7 @@
 
 <!-- ![](image/WPF 客户端开发需要知道的触摸失效问题/WPF 客户端开发需要知道的触摸失效问题1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019918141544312)
+![](http://cdn.lindexi.site/lindexi%2F2019918141544312)
 
 以上图片从[windows 触摸架构](https://docs.microsoft.com/en-us/windows/win32/wintouch/architectural-overview )文章复制
 
@@ -57,20 +57,20 @@
 
 <!-- ![](image/WPF 客户端开发需要知道的触摸失效问题/WPF 客户端开发需要知道的触摸失效问题2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019918145238475)
+![](http://cdn.lindexi.site/lindexi%2F2019918145238475)
 
 <!-- ![](image/WPF 客户端开发需要知道的触摸失效问题/WPF 客户端开发需要知道的触摸失效问题3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019918145253696)
+![](http://cdn.lindexi.site/lindexi%2F2019918145253696)
 
 
 <!-- ![](image/WPF 客户端开发需要知道的触摸失效问题/WPF 客户端开发需要知道的触摸失效问题4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019918145824582)
+![](http://cdn.lindexi.site/lindexi%2F2019918145824582)
 
 <!-- ![](image/WPF 客户端开发需要知道的触摸失效问题/WPF 客户端开发需要知道的触摸失效问题5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201991815045796)
+![](http://cdn.lindexi.site/lindexi%2F201991815045796)
 
 如果是应用触摸失效，同时在启动的过程就触摸失效，那么可以做的方法是重启软件，重启软件将会重新告诉系统。此时系统可能返回对的值。如果系统很多次都没有给应用触摸，那么可能是系统的驱动没有安装对，或者系统的补丁没打对，或者系统是魔改的系统，此时可以尝试安装驱动，如果安装驱动没有用，那么尝试安装系统补丁或重装清真的系统
 

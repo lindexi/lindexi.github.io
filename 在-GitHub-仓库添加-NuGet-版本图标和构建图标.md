@@ -40,7 +40,7 @@
 
 <!-- ![](image/在 GitHub 仓库添加 NuGet 版本图标和构建图标/在 GitHub 仓库添加 NuGet 版本图标和构建图标0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202039948368297.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202039948368297.jpg)
 
 
 

@@ -11,7 +11,7 @@
 
 我写了2k个垃圾类代码，然后把他放在一个项目 BhgpsWnb，使用另一个项目去引用他。是不是觉得软件在运行的时候就需要很多的内存来放代码？
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171212144236.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171212144236.jpg)
 
 引用垃圾程序的项目是 ReKlnma ，先只是在引用添加项目引用，然后在不使用 BhgpsWnb 这个项目的代码，我运行下面的代码
 
@@ -46,7 +46,7 @@
 
 下面来换个方式写，取消对垃圾程序的直接引用。使用 Load 方法去加载，可以看到垃圾程序 BhgpsWnb 有 8M ，一般的库可没有那么大。
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017121214470.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017121214470.jpg)
 
 ```csharp
         static void Main(string[] args)

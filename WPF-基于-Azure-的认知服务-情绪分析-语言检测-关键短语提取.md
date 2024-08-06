@@ -20,7 +20,7 @@
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205181011295712.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205181011295712.jpg)
 
 在开始之前还请小伙伴看一下定价层是否是免费的哈，点击资源管理，点击定价层，选择免费，点击下方的选择按钮
 
@@ -28,7 +28,7 @@
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020518101444481.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020518101444481.jpg)
 
 在上面的图片可以看到有两个密钥，其实这两个密钥可以在代码里面使用任意一个，在这里放两个只是为了在一个失效之后可以备用另一个
 
@@ -55,7 +55,7 @@
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020518102062057.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020518102062057.jpg)
 
 ```xml
     <Grid>
@@ -181,29 +181,29 @@
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020518102062057.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020518102062057.jpg)
 
 语言检测主要用来分析当前输入文本属于哪个语言
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取3.png) -->
-![](http://image.acmx.xyz/lindexi%2F20205181035441445.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205181035441445.jpg)
 
 如输入英文就会判断当前是英文
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205181037545709.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205181037545709.jpg)
 
 命名实体用来分析文本里面的某些单词是属于什么，例如某些单词是人的名字，某些单词是时间等
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205181039192320.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205181039192320.jpg)
 
 关键短语提取可以用来提取一句话中的关键词
 
 <!-- ![](image/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取/WPF 基于 Azure 的认知服务 情绪分析 语言检测 关键短语提取6.png) -->
-![](http://image.acmx.xyz/lindexi%2F20205181039582509.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205181039582509.jpg)
 
 整体功能还是很爽的，特别是开发特别简单。而服务本文是中国微软速度也特别快，本文用的是同步的代码，但实际上界面也不卡
 

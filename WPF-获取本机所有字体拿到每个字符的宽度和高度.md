@@ -66,7 +66,7 @@
 
 <!-- ![](image/WPF 获取本机所有字体拿到每个字符的宽度和高度/WPF 获取本机所有字体拿到每个字符的宽度和高度1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020681150594249.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020681150594249.jpg)
 
 注意，这个值和最终文本渲染字符大小没有很本质的关系
 
@@ -74,7 +74,7 @@
 
 <!-- ![](image/WPF 获取本机所有字体拿到每个字符的宽度和高度/WPF 获取本机所有字体拿到每个字符的宽度和高度0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020681150357556.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020681150357556.jpg)
 
 ```csharp
 		size	{1.95666666666667,11.84}	System.Windows.Size

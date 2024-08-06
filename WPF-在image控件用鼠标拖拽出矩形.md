@@ -14,13 +14,13 @@
 
 <!-- ![](image/WPF 在image控件用鼠标拖拽出矩形/WPF 在image控件用鼠标拖拽出矩形.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018811152153967)
+![](http://cdn.lindexi.site/lindexi%2F2018811152153967)
 
 最简单的方法是在 Down 的时候记录按下的点，在 移动的时候重新计算所在的宽度
 
 <!-- ![](image/WPF 在image控件用鼠标拖拽出矩形/WPF 在image控件用鼠标拖拽出矩形0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201881115410158)
+![](http://cdn.lindexi.site/lindexi%2F201881115410158)
 
 先在界面使用一个图片和一个矩形
 

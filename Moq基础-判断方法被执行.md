@@ -114,7 +114,7 @@
 
 <!-- ![](image/Moq基础 判断方法被执行/Moq基础 判断方法被执行0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019117144456616)
+![](http://cdn.lindexi.site/lindexi%2F2019117144456616)
 
 下面将会详细告诉大家如何使用方法验证
 

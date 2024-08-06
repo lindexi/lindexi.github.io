@@ -149,7 +149,7 @@ public class A
 
 感谢 [walterlv](https://walterlv.oschina.io/ )
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101220537.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017101220537.jpg)
 
 
 

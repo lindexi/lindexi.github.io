@@ -24,7 +24,7 @@
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121625500)
+![](http://cdn.lindexi.site/lindexi%2F201883121625500)
 
 本文还需要下载 `basic-miktex-2.9.6069-x64` 工具，可以到 [http://miktex.org/](http://miktex.org/) 下载，或者在本文最后点击我的网盘下载。如果不能下载请和我说。
 
@@ -42,37 +42,37 @@
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831211343923)
+![](http://cdn.lindexi.site/lindexi%2F2018831211343923)
 
 1. 点击下一步，可以看到下面很多时候我都说下一步
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831211415999)
+![](http://cdn.lindexi.site/lindexi%2F2018831211415999)
 
 1. 接受协议
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831211435516)
+![](http://cdn.lindexi.site/lindexi%2F2018831211435516)
 
 1. 选择功能，点击下一步
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121153371)
+![](http://cdn.lindexi.site/lindexi%2F201883121153371)
 
 1. 选择安装文件夹，这个文件夹可以不放在 C 盘，如果自己的 C 盘空间不大
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121165538)
+![](http://cdn.lindexi.site/lindexi%2F201883121165538)
 
 1. 点击安装之后点击下一步
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121223195)
+![](http://cdn.lindexi.site/lindexi%2F201883121223195)
 
 ### 安装 basic-miktex
 
@@ -82,13 +82,13 @@
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文40.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201921310313513)
+![](http://cdn.lindexi.site/lindexi%2F201921310313513)
 
 如果是 windows 7 系统，通过右击 计算机 属性，可以看到是什么系统
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文41.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019213103126688)
+![](http://cdn.lindexi.site/lindexi%2F2019213103126688)
 
 如果看到你的设备显示的是 32 位的系统，请下载 [basic-miktex-2.9.6942.exe](https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x86/basic-miktex-2.9.6942.exe ) 版本，安装方法和 x64 相同请看下面
 
@@ -96,37 +96,37 @@
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831211838889)
+![](http://cdn.lindexi.site/lindexi%2F2018831211838889)
 
 1. 选择给所有用户，点击下一步
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121199443)
+![](http://cdn.lindexi.site/lindexi%2F201883121199443)
 
 1. 选择文件夹，这个文件很大，可以选择在其他文件夹，需要记住这个文件夹，因为在下面需要用到
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831211947190)
+![](http://cdn.lindexi.site/lindexi%2F2018831211947190)
 
 1. 点击下一步
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831212039174)
+![](http://cdn.lindexi.site/lindexi%2F2018831212039174)
 
 1. 点击开始安装
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831212135192)
+![](http://cdn.lindexi.site/lindexi%2F2018831212135192)
 
 1. 点击关闭
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831212231158)
+![](http://cdn.lindexi.site/lindexi%2F2018831212231158)
 
 现在就可以从开始菜单打开 WinEdt 和 TeXworks 但是我比较喜欢使用 TexStudio 这个软件安装比较简单。
 
@@ -138,7 +138,7 @@
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121274393)
+![](http://cdn.lindexi.site/lindexi%2F201883121274393)
 
 点击 Tex System 可以看到 MiKTeX 的路径，需要看一下这些路径是否正确，确定的方法是通过搜索 `MiKTeX 2.9` 的安装文件夹的方式
 
@@ -146,7 +146,7 @@
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831212947969) 
+![](http://cdn.lindexi.site/lindexi%2F2018831212947969) 
 
 <!-- ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=cbd5295a82030a015ea0a318299d1b4e) -->
 
@@ -177,17 +177,17 @@ File `comment.sty' not found.
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831213459864)
+![](http://cdn.lindexi.site/lindexi%2F2018831213459864)
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121360832)
+![](http://cdn.lindexi.site/lindexi%2F201883121360832)
 
 好像还没告诉大家是如何编译的，在软件点击编译就是下面的图标
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883121360832)
+![](http://cdn.lindexi.site/lindexi%2F201883121360832)
 
 
 
@@ -295,13 +295,13 @@ l.64 {\Pifont{psy}
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文21.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018831225838423)
+![](http://cdn.lindexi.site/lindexi%2F2018831225838423)
 
 现在编译就可以发现编译成功
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文22.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201883123151733)
+![](http://cdn.lindexi.site/lindexi%2F201883123151733)
 
 <!-- 这个在于我们打开的模板是`ecrc-template.tex`，在官网有下载，[ecrc-template.tex](https://www.elsevier.com/__data/assets/text_file/0007/56878/ecrc-template.tex)
 
@@ -354,7 +354,7 @@ l.64 {\Pifont{psy}
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文23.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189191227923)
+![](http://cdn.lindexi.site/lindexi%2F20189191227923)
 
 如输入下面代码
 
@@ -363,7 +363,7 @@ l.64 {\Pifont{psy}
 ```
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文24.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189191343658)
+![](http://cdn.lindexi.site/lindexi%2F20189191343658)
 
 <!-- ![](http://jycloud.9uads.com/web/GetObject.aspx?filekey=47006b8ad7f2cc53a29d35d4674f3f98) -->
 
@@ -381,13 +381,13 @@ l.64 {\Pifont{psy}
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文25.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189191710123)
+![](http://cdn.lindexi.site/lindexi%2F20189191710123)
 
 在页面下方可以看到这个界面
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文26.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189191838765)
+![](http://cdn.lindexi.site/lindexi%2F20189191838765)
 
 现在可以看到星直接存在逗号了，而且需要知道，这里的符号不只是可以写 `t1` 等，可以写为任意的字符
 
@@ -456,7 +456,7 @@ Latex用`\\`换行，在我们的地址比较长，可以用这换行
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文28.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189191838765)
+![](http://cdn.lindexi.site/lindexi%2F20189191838765)
 
 页面下方还有文字，只是我就不截图了
 
@@ -474,7 +474,7 @@ Latex用`\\`换行，在我们的地址比较长，可以用这换行
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文29.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189193656855)
+![](http://cdn.lindexi.site/lindexi%2F20189193656855)
 
 ### 关键字
 
@@ -502,7 +502,7 @@ CSDN \sep lindexi \sep windows.sc
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文30.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189193825291)
+![](http://cdn.lindexi.site/lindexi%2F20189193825291)
 
 下面就是正文了，写正文会遇到这些问题如何插入图片，插入算法，图片位置不对，下面让我一个个告诉大家如何做
 
@@ -523,7 +523,7 @@ CSDN \sep lindexi \sep windows.sc
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文31.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018919413019)
+![](http://cdn.lindexi.site/lindexi%2F2018919413019)
 
 尝试去掉 `\linenumbers` 就不会显示数字
 
@@ -540,7 +540,7 @@ CSDN \sep lindexi \sep windows.sc
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文32.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189194345992)
+![](http://cdn.lindexi.site/lindexi%2F20189194345992)
 
 然后添加二级标题 `blog.csdn.net/lindexi_gd` 请看代码
 
@@ -553,7 +553,7 @@ CSDN \sep lindexi \sep windows.sc
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文33.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018919455739)
+![](http://cdn.lindexi.site/lindexi%2F2018919455739)
 
 从上面的代码可以知道，一级标题是`\section{标题名}`而二级标题是`\subsection{标题名}`
 
@@ -657,7 +657,7 @@ CSDN \sep lindexi \sep windows.sc
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文34.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189112406128)
+![](http://cdn.lindexi.site/lindexi%2F20189112406128)
 
 关于参考文献请看[latex 自定义bst文件 - CSDN博客](https://blog.csdn.net/tinkle181129/article/details/49822171 )
 
@@ -741,7 +741,7 @@ Package natbib Error: Bibliography not compatible with author-year citations. (n
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文35.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201891124313693)
+![](http://cdn.lindexi.site/lindexi%2F201891124313693)
 
 
 ### 无序列表
@@ -1058,17 +1058,17 @@ Font U/psy/m/n/10=psyr at 10.0pt not loadable: Metric (TFM) file not found.
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文37.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201891144513552)
+![](http://cdn.lindexi.site/lindexi%2F201891144513552)
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文38.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189114474348)
+![](http://cdn.lindexi.site/lindexi%2F20189114474348)
 
 安装完成可以看到下面界面，下面是我通过在本地的 `E:\package ` 做安装文件夹在本地安装，因为我无法联网安装
 
 <!-- ![](image/Latex 论文elsevier，手把手如何用Latex写论文/Latex 论文elsevier，手把手如何用Latex写论文39.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201891144731213)
+![](http://cdn.lindexi.site/lindexi%2F201891144731213)
 
 
 

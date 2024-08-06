@@ -19,7 +19,7 @@
 
 ```
 
-![](http://image.acmx.xyz/lindexi%2F2018615202315544.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018615202315544.jpg)
 
 界面请直接复制
 

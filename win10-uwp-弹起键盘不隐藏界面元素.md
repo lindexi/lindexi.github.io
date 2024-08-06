@@ -47,7 +47,7 @@
 
 简单的界面：
 
-![](http://image.acmx.xyz/ae470125-e6d5-452b-8b4a-0c54bf2e5d3220161130214749.jpg)
+![](http://cdn.lindexi.site/ae470125-e6d5-452b-8b4a-0c54bf2e5d3220161130214749.jpg)
 
 写这个代码写在Main.xaml.cs不在ViewModel，界面变化是View要做的
 
@@ -67,9 +67,9 @@
 
 我的私密密码本在输入就使用隐藏，开始是界面有图，当弹起键盘，显示主要的
 
-![](http://image.acmx.xyz/0a7537fb-9ef0-49f8-b934-6cb779e8754bwp_ss_20161204_00012016124201938.jpg)
+![](http://cdn.lindexi.site/0a7537fb-9ef0-49f8-b934-6cb779e8754bwp_ss_20161204_00012016124201938.jpg)
 
-![](http://image.acmx.xyz/0a7537fb-9ef0-49f8-b934-6cb779e8754bwp_ss_20161204_00022016124202039.jpg)
+![](http://cdn.lindexi.site/0a7537fb-9ef0-49f8-b934-6cb779e8754bwp_ss_20161204_00022016124202039.jpg)
 
 http://www.cnblogs.com/manupstairs/p/5738387.html
 

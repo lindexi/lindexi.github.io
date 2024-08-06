@@ -14,15 +14,15 @@
 
 打开 Windows Defender 点击病毒和威胁功能
 
-![](http://image.acmx.xyz/lindexi%2F201931584912815)
+![](http://cdn.lindexi.site/lindexi%2F201931584912815)
 
 选择自己的代码仓库
 
-![](http://image.acmx.xyz/lindexi%2F201931584947231)
+![](http://cdn.lindexi.site/lindexi%2F201931584947231)
 
 这里可以选择文件、文件夹和进程，顺便将 VisualStudio 也选择
 
-![](http://image.acmx.xyz/lindexi%2F201931585023863)
+![](http://cdn.lindexi.site/lindexi%2F201931585023863)
 
 有小伙伴认为在编译的时候耗性能最大的是计算，其实现在的程序在编译的时候是 IO 才是最慢的，会有很多的文件读写
 

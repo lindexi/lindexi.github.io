@@ -46,7 +46,7 @@
 本文将替换上面代码的方法1部分，按照官方文档提供的另一个方法，通过创建 ID2D1Device 设备，从 ID2D1Device 设备创建出 ID2D1DeviceContext 对象，设置 ID2D1DeviceContext 的输出 Target 为 DXGI 平面，从而使用 ID2D1DeviceContext 绘制界面
 
 <!-- https://learn.microsoft.com/en-us/windows/win32/direct2d/images/devicecontextdiagram.png -->
-![](http://image.acmx.xyz/lindexi%2F2023521105422700.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023521105422700.jpg)
 
 按照上图的描述，从创建出来的 Direct3D Device 设备里面，使用 QueryInterface 获取到 DXGI Device 对象。然后分为两个路线，一个是获取 DXGI 的平面，也就是上一篇博客提供的方法，这一路线已完成。另一个就是通过 DXGI Device 设备在 ID2D1Factory1 工厂里创建出 Direct2D Device 设备。再通过 Direct2D Device 设备创建出 Direct2D Device Context 上下文，将 DXGI 的平面转换为 Direct2D Bitmap 作为 Direct2D Device Context 的输出源。如此即可在 Direct2D Device Context 绘制内容输出到窗口界面上
 

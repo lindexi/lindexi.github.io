@@ -263,7 +263,7 @@ for (uint i = 0; i < root.Count; i++)
 ```
 原来的是 Foo ，现在改为 KeyboardNavigationMode 结果还是一样
 
-![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201754151047.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201754151047.jpg)
 
 如果是数值的，容易出现这个错误那么如何使用枚举的字符串？
 
@@ -322,11 +322,11 @@ for (uint i = 0; i < root.Count; i++)
 
 默认的 SerializeObject 输出的字符串是不换行的。例如我序列化了下面的类
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222142547.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222142547.jpg)
 
 结果拿到的数据是：
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222142719.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222142719.jpg)
 
 通过下面的代码就可以让 json 在转换的时候换行
 
@@ -337,7 +337,7 @@ for (uint i = 0; i < root.Count; i++)
                 string str = JsonConvert.SerializeObject(obj, jsonSerializerSettings);
 ```
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222143058.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2018222143058.jpg)
 
 
 

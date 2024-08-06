@@ -17,11 +17,11 @@
 点击进入高级页面，如下图
 
 <!-- ![](image/WPF 界面打不开提示 System.ArithmeticException Overflow or underflow in the arithmetic operation 异常/WPF 界面打不开提示 System.ArithmeticException Overflow or underflow in the arithmetic operation 异常0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20229261737438118.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20229261737438118.jpg)
 
 英文版本的页面如下
 
-![](http://image.acmx.xyz/lindexi%2F20229261739475138.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20229261739475138.jpg)
 
 要求你的应用的配置和我的相同，例如设备配置文件里，推荐是 sRGB IEC61996-2.1 的等
 

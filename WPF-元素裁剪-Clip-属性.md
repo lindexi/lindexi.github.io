@@ -33,7 +33,7 @@
 
 <!-- ![](image/WPF 元素裁剪 Clip 属性/WPF 元素裁剪 Clip 属性0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191315599812)
+![](http://cdn.lindexi.site/lindexi%2F20191315599812)
 
 对他裁剪，设置裁剪的是矩形裁剪
 
@@ -46,7 +46,7 @@
 
 <!-- ![](image/WPF 元素裁剪 Clip 属性/WPF 元素裁剪 Clip 属性1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201913155954582)
+![](http://cdn.lindexi.site/lindexi%2F201913155954582)
 
 从图片很难看出来不同，只是可以看到两个矩形，第一个矩形比较大
 
@@ -62,7 +62,7 @@
 
 <!-- ![](image/WPF 元素裁剪 Clip 属性/WPF 元素裁剪 Clip 属性2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191316130761)
+![](http://cdn.lindexi.site/lindexi%2F20191316130761)
 
 可以看到显示的是圆形
 
@@ -83,7 +83,7 @@
 
 <!-- ![](image/WPF 元素裁剪 Clip 属性/WPF 元素裁剪 Clip 属性3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019131624411)
+![](http://cdn.lindexi.site/lindexi%2F2019131624411)
 
 上面代码使用 Geometry.Combine 合并两个图形
 

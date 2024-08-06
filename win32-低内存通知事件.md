@@ -39,14 +39,14 @@ MHandles[kLowMemoryNotification] =
 如果要查看内存资源通知事件，可以运行微软极品工具箱的 WinObj 工具，查看 KernelObjects 文件夹里面的大内存和小内存事件，如下图所示
 
 <!-- ![](image/win32 低内存通知事件/win32 低内存通知事件0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20246221432105968.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20246221432105968.jpg)
 
 双击即可看到对应的对象产生了多少句柄和引用
 
 如果想要了解系统中有哪些进程请求了内存资源通知，可以使用 Process Explorer 的 Find 菜单进行搜索句柄表，如下图
 
 <!-- ![](image/win32 低内存通知事件/win32 低内存通知事件1.png) -->
-![](http://image.acmx.xyz/lindexi%2F20246221432199785.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20246221432199785.jpg)
 
 更详细内容请大家自行阅读书籍
 

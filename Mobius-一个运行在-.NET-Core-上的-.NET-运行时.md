@@ -20,7 +20,7 @@
 
 <!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020422203038749.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020422203038749.jpg)
 
 作者[kkokosa](https://tooslowexception.com)决定开始试试水，这就是做 Mobius 运行时想法的原因。这个想法听起来很奇怪，连作者都不抱期望在一个世纪内将这个想法投入使用。不过作者的想法是想要了解如果写出整个 .NET 运行时需要多少的代码量。同时作者也发现了其实这个想法的作用其实很小，即使想象现在有一个 NuGet 包在安装完成之后就可以添加到咱的应用上，此时的这个包就包含了完整的运行时代码，其实好像也不能做什么
 
@@ -47,7 +47,7 @@
 
 <!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204222053343849.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204222053343849.jpg)
 
 如上图，我们有两层JIT构建的代码和底层实际运行时的本地 Native 代码。从图片看起来中间的这一层 .NET Core 基础设施的 Mobius 层是多余的。如果这一层是使用无分配对象的方式写的，那么不需要任何的 GC 方法。在预热之后，对 JIT 的调用也将会很少。这就允许咱假设在一个正常运行的应用程序中，大部分在 Mobius 层的内容都是经过了 JIT 编译优化完成之后运行的，这包括了常用的对 .NET Core 代码的 JIT 构建的代码，这将十分接近 .NET Core 的原生调用
 
@@ -55,7 +55,7 @@
 
 <!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020422210494182.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020422210494182.jpg)
 
 重写整个类型系统并不是一件很有趣的事情。我们甚至可以考虑在 Mobius 中重用相同的 GC 垃圾回收，所以使用 Mobius 给 .NET 应用提供对象将看起来不错。虽然上面的方法请看起来不错，但依然存在两个问题：
 
@@ -66,7 +66,7 @@
 
 <!-- ![](image/Mobius 一个运行在 .NET Core 上的 .NET 运行时/Mobius 一个运行在 .NET Core 上的 .NET 运行时4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202042385217211.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202042385217211.jpg)
 
 ## 当前状态
 

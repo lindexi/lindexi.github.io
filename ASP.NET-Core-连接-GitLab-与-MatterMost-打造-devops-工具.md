@@ -21,19 +21,19 @@
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201983172724985)
+![](http://cdn.lindexi.site/lindexi%2F201983172724985)
 
 之前都是纯手工发送链接，同时需要手工催审查者审查
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201983173028573)
+![](http://cdn.lindexi.site/lindexi%2F201983173028573)
 
 而用上了工具的效果如下
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20198317326951)
+![](http://cdn.lindexi.site/lindexi%2F20198317326951)
 
 核心用的技术就是 Gitlab 的 WebHook 和 [dotnet core 集成到 Mattermost 聊天工具](https://blog.lindexi.com/post/dotnet-core-%E9%9B%86%E6%88%90%E5%88%B0-Mattermost-%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7.html ) 两个技术
 
@@ -58,25 +58,25 @@ git clone git@github.com:dotnet-campus/DotNetGitLabWebHook.git
 
 点击主菜单，打开集成页面
 
-![](http://image.acmx.xyz/lindexi%2F201951784850976)
+![](http://cdn.lindexi.site/lindexi%2F201951784850976)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具1.png) -->
 
 点击添加钩子
 
-![](http://image.acmx.xyz/lindexi%2F20195178500833)
+![](http://cdn.lindexi.site/lindexi%2F20195178500833)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具2.png) -->
 
 输入一个标题和选择频道，我这里选择的是之前创建的代码审查频道
 
-![](http://image.acmx.xyz/lindexi%2F201951785037963)
+![](http://cdn.lindexi.site/lindexi%2F201951785037963)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具3.png) -->
 
 现在就可以看到一个链接了
 
-![](http://image.acmx.xyz/lindexi%2F201951785122324)
+![](http://cdn.lindexi.site/lindexi%2F201951785122324)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具4.png) -->
 
@@ -108,13 +108,13 @@ git clone git@github.com:dotnet-campus/DotNetGitLabWebHook.git
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201983174337151)
+![](http://cdn.lindexi.site/lindexi%2F201983174337151)
 
 点击 Integrations Settings 进行设置
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201983174358153)
+![](http://cdn.lindexi.site/lindexi%2F201983174358153)
 
 在 URL 填写自己的 IP 拼接的链接
 
@@ -124,23 +124,23 @@ http://你的ip:5006/GitLabWebHook/MergeRequest
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20198317456454)
+![](http://cdn.lindexi.site/lindexi%2F20198317456454)
 
 勾选 Merge request events 然后取消打开 SSL 和去掉 Push events 然后点击添加
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201983174556832)
+![](http://cdn.lindexi.site/lindexi%2F201983174556832)
 
 此时尝试新建一个 MergeRequest 测试一下
 
 <!-- ![](image/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具/ASP.NET Core 连接 GitLab 与 MatterMost 打造 devops 工具7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201983174644565)
+![](http://cdn.lindexi.site/lindexi%2F201983174644565)
 
 如果上面步骤没有错，应该可以在 MatterMost 上看到链接
 
-![](http://image.acmx.xyz/lindexi%2F20198317326951)
+![](http://cdn.lindexi.site/lindexi%2F20198317326951)
 
 嗯，代码现在还在进行优化，关键是将这个工具用起来，十分欢迎大家加入开发
 

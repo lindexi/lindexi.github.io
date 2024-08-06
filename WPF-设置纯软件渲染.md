@@ -44,7 +44,7 @@ RenderOptions.ProcessRenderMode = RenderMode.SoftwareOnly;
 
 <!-- ![](image/WPF 设置纯软件渲染/WPF 设置纯软件渲染0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201937185522636)
+![](http://cdn.lindexi.site/lindexi%2F201937185522636)
 
 现在微软已经不开放[Performance Profiling Tools for WPF](https://docs.microsoft.com/en-us/previous-versions/aa969767(v=vs.110) )下载，请点击这个[链接](https://download.microsoft.com/download/A/6/A/A6AC035D-DA3F-4F0C-ADA4-37C8E5D34E3D/setup/WinSDKPerformanceToolKit_amd64/wpt_x64.msi)下载
 

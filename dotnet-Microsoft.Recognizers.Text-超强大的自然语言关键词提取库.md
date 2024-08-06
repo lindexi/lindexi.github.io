@@ -14,13 +14,13 @@
 
 <!-- ![](image/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205231731176970.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205231731176970.jpg)
 
 新建一个 WPF 项目，大概运行效果如下
 
 <!-- ![](image/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020523191408384.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020523191408384.jpg)
 
 先编辑 csproj 文件，在里面添加安装库的代码
 
@@ -97,7 +97,7 @@ var recognizeUrl = SequenceRecognizer.RecognizeURL(text, Culture.Chinese);
 
 <!-- ![](image/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库/dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20207311417384291.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20207311417384291.jpg)
 
 ## 电话号
 

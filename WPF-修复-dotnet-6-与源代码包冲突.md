@@ -47,7 +47,7 @@ C:\Program Files\dotnet\sdk\6.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET
 
 <!-- ![](image/WPF 修复 dotnet 6 与源代码包冲突/WPF 修复 dotnet 6 与源代码包冲突0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202112291523193526.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202112291523193526.jpg)
 
 加上 IncludePackageReferencesDuringMarkupCompilation 之后将会导致 WPF 项目可能使用 Source Generators 功能时提示找不到某些类型，详细请看 [WPF 设置 IncludePackageReferencesDuringMarkupCompilation 属性导致分析器不工作](https://blog.lindexi.com/post/WPF-%E8%AE%BE%E7%BD%AE-IncludePackageReferencesDuringMarkupCompilation-%E5%B1%9E%E6%80%A7%E5%AF%BC%E8%87%B4%E5%88%86%E6%9E%90%E5%99%A8%E4%B8%8D%E5%B7%A5%E4%BD%9C.html )
 

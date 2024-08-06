@@ -25,7 +25,7 @@
 
 <!-- ![](image/win10 uwp 去掉 Flyout 边框/win10 uwp 去掉 Flyout 边框0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227174512312)
+![](http://cdn.lindexi.site/lindexi%2F2019227174512312)
 
 通过重写 FlyoutPresenterStyle 可以修改边框的距离
 
@@ -49,7 +49,7 @@
 
 <!-- ![](image/win10 uwp 去掉 Flyout 边框/win10 uwp 去掉 Flyout 边框1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227174643670)
+![](http://cdn.lindexi.site/lindexi%2F2019227174643670)
 
 更多 Flyout 请看
 

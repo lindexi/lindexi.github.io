@@ -18,7 +18,7 @@
 
 本文告诉大家如何做出下面的控件，可以看到这使用的是 ListView ，但是第一个元素显示和其他的元素不同，看起来就是面包屑导航
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017930193749.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017930193749.jpg)
 
 需要定义第一个元素和其他元素的代码，于是使用 Path 做出来，因为本文不是说如何使用 Path 所以就不多说，直接写代码。
 
@@ -96,7 +96,7 @@
 
 但是这样看起来还是不是我要的，把鼠标放上去，发现出现背景
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017%25E5%25B9%25B49%25E6%259C%25881%25E6%2597%25A5%252015.gif)
 
 如何去背景请看[win10 UWP ListView](https://blog.lindexi.com/post/win10-UWP-ListView.html )
 
@@ -208,7 +208,7 @@
 
 <!-- ![](image/win10-uwp-列表模板选择器/win10-uwp-列表模板选择器0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962311358880)
+![](http://cdn.lindexi.site/lindexi%2F201962311358880)
 
 如果使用的数据，传入的列是男生的，那么就会使用`MaleData`，于是就可以对不同的数据使用不同的`DataTemplate`。上面的例子只是很简单使用两个不同的数据，如果有很多不同的数据，或者数据里，需要按照数据内容，进行自定义的显示，那么使用选择器也是可以做到。
 

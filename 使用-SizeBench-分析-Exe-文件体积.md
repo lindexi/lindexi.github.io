@@ -27,7 +27,7 @@
 
 <!-- ![](image/使用 SizeBench 分析 Exe 文件体积/使用 SizeBench 分析 Exe 文件体积0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202382844425092.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202382844425092.jpg)
 
 选择完成之后即可进入分析界面，分析界面的内容里面将会包含 PE 文件的各个部分的大小，比如包含的资源的大小，引用的静态库占用的大小。重复的字符串等内容的大小
 

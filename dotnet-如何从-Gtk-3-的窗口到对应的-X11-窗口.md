@@ -18,7 +18,7 @@
 通过阅读文档发现了以下的 gtk 架构图，即 gtk 的窗口和 gdk 窗口是不相同的，可以通过 `gtk_widget_get_window` 方法获取，在 C# dotnet 里面可直接使用 Gtk.Window 的 Window 属性，更多请参阅：<https://en.wikipedia.org/wiki/GDK>
 
 <!-- ![](image/dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口/dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口0.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024514155265066.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024514155265066.jpg)
 
 从 Gtk 的 Window 窗口获取 Gdk 的 Window 窗口，可使用以下简单代码获取
 
@@ -150,7 +150,7 @@ public partial class Window : Gtk.Bin
 打开另一个命令行，输入以下命令，将 XID 传入 xwininfo 命令，即可看到显示的窗口标题和当前运行的窗口是相同的
 
 <!-- ![](image/dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口/dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口1.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024514151948599.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024514151948599.jpg)
 
 我核心踩坑就是搜到的是 GTK 2 的使用方法，以及将 gtk 的窗口当成 gdk 的窗口传入方法
 

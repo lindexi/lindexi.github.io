@@ -16,7 +16,7 @@
 
 <!-- ![](image/VisualStudio 插件 翻译注释/VisualStudio 插件 翻译注释2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227155027391)
+![](http://cdn.lindexi.site/lindexi%2F2019227155027391)
 
 在设置里面可以设置从哪个语言翻译为哪个语言，同时支持调用翻译的 API 在线翻译，默认使用的是谷歌翻译
 
@@ -28,7 +28,7 @@
 
 <!-- ![](image/VisualStudio 插件 翻译注释/VisualStudio 插件 翻译注释1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019227154946934)
+![](http://cdn.lindexi.site/lindexi%2F2019227154946934)
 
 
 

@@ -98,7 +98,7 @@ var featureLevel = _d3DDevice.FeatureLevel;
 
 如上面代码在我的设备上输出的 FeatureLevel 是 `SharpDX.Direct3D.FeatureLevel.Level_12_1` 因为我在 Win10 的设备上运行
 
-![](http://image.acmx.xyz/lindexi%2F20211101215457949.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211101215457949.jpg)
 
 在 WPF 中的 MIL 层的渲染其实也用到了这个功能，这样也就支持了在不同的设备上能跑起来。如上文所说，功能等级只是代表有多少功能而已，和性能无关
 

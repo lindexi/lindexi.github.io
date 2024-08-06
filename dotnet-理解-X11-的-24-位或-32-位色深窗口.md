@@ -18,7 +18,7 @@
 在 X11 里面，简单的创建窗口的代码大概如下图所示（看不见图片的话，开浏览器的不安全内容兼容，我的图片是 http 的不是 https 的）
 
 <!-- ![](image/dotnet 理解 X11 的 24 位或 32 位色深窗口/dotnet 理解 X11 的 24 位或 32 位色深窗口0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20247122012111185.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20247122012111185.jpg)
 
 此时创建出来的窗口是默认 24 色的
 
@@ -70,7 +70,7 @@ Window XCreateSimpleWindow(
 在 X11 里面，所有的窗口都是 RootWindow 窗口的子窗口
 
 <!-- ![](image/dotnet 理解 X11 的 24 位或 32 位色深窗口/dotnet 理解 X11 的 24 位或 32 位色深窗口1.png) -->
-![](http://image.acmx.xyz/lindexi%2F20247122015385199.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20247122015385199.jpg)
 
 尝试使用以下代码来获取 RootWindow 的色深
 
@@ -91,7 +91,7 @@ Console.WriteLine($"RootWindowDepth={rootWindowWindowAttributes.depth}");
 在[堆栈网](https://stackoverflow.com/a/6099890)上也有大佬说了这个事情
 
 <!-- ![](image/dotnet 理解 X11 的 24 位或 32 位色深窗口/dotnet 理解 X11 的 24 位或 32 位色深窗口2.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024712201733232.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024712201733232.jpg)
 
 在很古老的时候默认的 X11 就使用的是 24 色，不包含透明色
 

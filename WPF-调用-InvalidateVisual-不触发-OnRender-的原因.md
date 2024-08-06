@@ -50,7 +50,7 @@
 
 <!-- ![](image/WPF 调用 InvalidateVisual 不触发 OnRender 的原因/WPF 调用 InvalidateVisual 不触发 OnRender 的原因0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202031093409154.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202031093409154.jpg)
 
 此时可以看到点击 InvalidateVisual 按钮默认会触发 OnRender 方法，可以在界面的文本控件的时间看到，点击按钮之后时间更新
 
@@ -58,7 +58,7 @@
 
 <!-- ![](image/WPF 调用 InvalidateVisual 不触发 OnRender 的原因/WPF 调用 InvalidateVisual 不触发 OnRender 的原因.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2FWPF%2520%25E8%25B0%2583%25E7%2594%25A8%2520InvalidateVisual%2520%25E4%25B8%258D%25E8%25A7%25A6%25E5%258F%2591%2520OnRender%2520%25E7%259A%2584%25E5%258E%259F%25E5%259B%25A0.gif)
+![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E8%25B0%2583%25E7%2594%25A8%2520InvalidateVisual%2520%25E4%25B8%258D%25E8%25A7%25A6%25E5%258F%2591%2520OnRender%2520%25E7%259A%2584%25E5%258E%259F%25E5%259B%25A0.gif)
 
 原理是在控件的 OnRender 触发条件是控件需要在视觉树上，如果控件不在视觉树上，如被从上层元素移除或元素被设置 Collapsed 那么 OnRender 将不会触发
 

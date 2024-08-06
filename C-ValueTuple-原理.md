@@ -25,7 +25,7 @@
 
 实际上输出的是 `{"Item1":"lindexi","Item2":"blog.csdn.net/lindexi_gd"}`
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822162054.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822162054.jpg)
 
 那么刚才的命名在哪？
 

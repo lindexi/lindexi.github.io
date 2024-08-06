@@ -75,7 +75,7 @@ Install-Package BenchmarkDotNet
 
 <!-- ![](image/C# 标准性能测试/C# 标准性能测试0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018618164266938.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018618164266938.jpg)
 
 这时看到的就是标准的测试，可以把这个测试告诉小伙伴
 
@@ -155,7 +155,7 @@ Benchmark was built without optimization enabled (most probably a DEBUG configur
 
 <!-- ![](image/C# 标准性能测试/C# 标准性能测试1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20186211141464158.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20186211141464158.jpg)
 
 在控制台输入下面的命令安装 xunit.performance.api 
 
@@ -167,13 +167,13 @@ Install-Package xunit.performance.api -Version 1.0.0-beta-build0019 -Source http
 
 <!-- ![](image/C# 标准性能测试/C# 标准性能测试2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20186211148241177.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20186211148241177.jpg)
 
 搜索 xunit  performance 然后安装，如果搜索不到，点击程序包源，选择全部
 
 <!-- ![](image/C# 标准性能测试/C# 标准性能测试3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20186211149128413.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20186211149128413.jpg)
 
 安装 Microsoft.Diagnostics.Tracing.TraceEvent 在 Nuget.org 就可以找到
 

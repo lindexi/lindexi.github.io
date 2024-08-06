@@ -15,7 +15,7 @@
 
 <!-- ![](image/WPF 推荐一个剪贴板内容查看工具/WPF 推荐一个剪贴板内容查看工具0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202193208176858.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202193208176858.jpg)
 
 下载地址：
 

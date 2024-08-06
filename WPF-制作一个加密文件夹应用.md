@@ -32,7 +32,7 @@
 
 看看界面效果
 
-![](http://image.acmx.xyz/lindexi%2FEncryptionDirectory.Wpf.1.0.0.png)
+![](http://cdn.lindexi.site/lindexi%2FEncryptionDirectory.Wpf.1.0.0.png)
 
 界面没啥设计的，欢迎大家来参与开发，写一个漂亮的界面
 

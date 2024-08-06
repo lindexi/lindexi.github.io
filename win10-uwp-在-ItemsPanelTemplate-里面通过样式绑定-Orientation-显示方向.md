@@ -171,7 +171,7 @@
 
 现在看起来的界面是
 
-![](http://image.acmx.xyz/lindexi%2F201931610244652)
+![](http://cdn.lindexi.site/lindexi%2F201931610244652)
 
 写到这里的代码请看 [https://github.com/lindexi/lindexi_gd/tree/43ee46e847179b61157c5bfbbdec0382ccc97268/KeejemairbouLirallpurpallnasfakaw](https://github.com/lindexi/lindexi_gd/tree/43ee46e847179b61157c5bfbbdec0382ccc97268/KeejemairbouLirallpurpallnasfakaw)
 

@@ -100,7 +100,7 @@
 
 <!-- ![](image/WPF 通过 DrawingContext DrawImage 绘制图片/WPF 通过 DrawingContext DrawImage 绘制图片0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018112616324815)
+![](http://cdn.lindexi.site/lindexi%2F2018112616324815)
 
 需要需要裁剪圆形，可以依靠 PushClip 裁剪
 
@@ -136,7 +136,7 @@
 
 <!-- ![](image/WPF 通过 DrawingContext DrawImage 绘制图片/WPF 通过 DrawingContext DrawImage 绘制图片1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018112616108315)
+![](http://cdn.lindexi.site/lindexi%2F2018112616108315)
 
 
 

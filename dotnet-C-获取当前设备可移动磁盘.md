@@ -28,13 +28,13 @@
 
 <!-- ![](image/dotnet C# 获取当前设备可移动磁盘/dotnet C# 获取当前设备可移动磁盘0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211130852167894.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211130852167894.jpg)
 
 获取到的就是我插入的 U 盘
 
 <!-- ![](image/dotnet C# 获取当前设备可移动磁盘/dotnet C# 获取当前设备可移动磁盘1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211130853222901.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211130853222901.jpg)
 
 
 

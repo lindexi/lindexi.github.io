@@ -39,7 +39,7 @@ Array.Fill(data, true);
 
 <!-- ![](image/dotnet core 用值初始化整个数组/dotnet core 用值初始化整个数组0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191111995339)
+![](http://cdn.lindexi.site/lindexi%2F20191111995339)
 
 那么这个方法是如何做到高性能的？
 

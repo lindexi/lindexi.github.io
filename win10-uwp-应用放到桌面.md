@@ -11,15 +11,15 @@
 
 打开运行`win+R`，输入`shell:AppsFolder`打开应用安装文件夹
 
-![](http://image.acmx.xyz/c03c8fcd-a6d4-4a5c-bab8-910b77a690982016123102226.jpg)
+![](http://cdn.lindexi.site/c03c8fcd-a6d4-4a5c-bab8-910b77a690982016123102226.jpg)
 
 进入所有应用安装，这里可以找到所有安装的应用
 
-![](http://image.acmx.xyz/c03c8fcd-a6d4-4a5c-bab8-910b77a690982016123102257.jpg)
+![](http://cdn.lindexi.site/c03c8fcd-a6d4-4a5c-bab8-910b77a690982016123102257.jpg)
 
 右击应用就可以设置快捷方式，放到桌面
 
-![](http://image.acmx.xyz/c03c8fcd-a6d4-4a5c-bab8-910b77a690982016123102738.jpg)
+![](http://cdn.lindexi.site/c03c8fcd-a6d4-4a5c-bab8-910b77a690982016123102738.jpg)
 
 
 

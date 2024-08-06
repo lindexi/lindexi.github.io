@@ -12,7 +12,7 @@
 
 <!-- ![](image/WPF 使用 HandyControl 给 ListView 添加漂亮的表头效果/WPF 使用 HandyControl 给 ListView 添加漂亮的表头效果0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20207111635465.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20207111635465.jpg)
 
 完成上面的效果很简单，让我一步步告诉大家如何做
 

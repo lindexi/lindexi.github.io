@@ -23,7 +23,7 @@
 
 <!-- ![](image/ASP.NET Core 引用其他程序集项目里面的 Controller 控制器/ASP.NET Core 引用其他程序集项目里面的 Controller 控制器0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202142383937820.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202142383937820.jpg)
 
 如上图的项目创建方式，创建一个 ASP.NET Core 项目，在里面放一个控制器，将其他的文件都删除。接着再创建一个 ASP.NET Core 项目，删除掉所有的控制器，接着引用刚才第一个创建的项目。此时在第二个项目的 Startup 放入上面代码即可，此时第一个的项目的控制器可以被第二个项目使用到
 

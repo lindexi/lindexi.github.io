@@ -38,7 +38,7 @@ short converted = BitConverter.ToInt16(numberBytes);
 
 https://stackoverflow.com/q/1442583/6116637
 
-![](http://image.acmx.xyz/lindexi%2F201942912529158)
+![](http://cdn.lindexi.site/lindexi%2F201942912529158)
 
 
 

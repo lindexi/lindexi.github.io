@@ -21,7 +21,7 @@
 
 <!-- ![](image/UWP WinRT 使用系统自带的分词库对字符串文本进行分词/UWP WinRT 使用系统自带的分词库对字符串文本进行分词0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2023427849138501.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023427849138501.jpg)
 
 开始之前，先写一点有趣的界面方便进行测试，界面代码如下，本文所有的代码都可以在本文末尾找到下载方式
 

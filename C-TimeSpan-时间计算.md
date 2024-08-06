@@ -72,7 +72,7 @@ Task.Delay(needCount)
 
 尝试不使用 TimeSpan 想想需要怎么写
 
-![](http://image.acmx.xyz/lindexi%2F2018612935409133.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018612935409133.jpg)
 
 
 

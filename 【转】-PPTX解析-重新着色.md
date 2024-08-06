@@ -16,7 +16,7 @@ PPT对图片进行**重新着色**和**设置透明颜色**这两个行为，并
 
 首先，让我们来看一下PPTX提供了哪些**重新着色**的选项：
 
-![](http://image.acmx.xyz/lindexi%2Fimage-1627524289095.png)
+![](http://cdn.lindexi.site/lindexi%2Fimage-1627524289095.png)
 <!-- ![file](https://imxcg.com/wp-content/uploads/2021/07/image-1627524289095.png) -->
 
 **可以看到，PPT的着色选项大体分为以下几类：**

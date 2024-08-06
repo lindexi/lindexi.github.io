@@ -14,7 +14,7 @@
 
 <!-- ![](image/WPF 隐藏系统窗口菜单/WPF 隐藏系统窗口菜单0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201965171728198)
+![](http://cdn.lindexi.site/lindexi%2F201965171728198)
 
 通过在消息里面钩调一些消息的方式，此方法由 黄滨滨 大佬提供
 

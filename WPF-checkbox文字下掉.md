@@ -10,7 +10,7 @@
 
 <div id="toc"></div>
 
-![](http://image.acmx.xyz/2af64c0d-f144-4f44-985d-3e155a8209532016121185647.jpg)
+![](http://cdn.lindexi.site/2af64c0d-f144-4f44-985d-3e155a8209532016121185647.jpg)
 
 可以使用
 

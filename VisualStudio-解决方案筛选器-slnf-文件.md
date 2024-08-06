@@ -26,31 +26,31 @@
 
 <!-- ![](image/VisualStudio 解决方案筛选器 slnf 文件/VisualStudio 解决方案筛选器 slnf 文件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20194711323285)
+![](http://cdn.lindexi.site/lindexi%2F20194711323285)
 
 这时打开的项目都是不加载的，虽然打开很快，但是我需要手动加载我需要使用的项目。如果每个小伙伴都需要这样手动加载，估计我又会被拉出去
 
 <!-- ![](image/VisualStudio 解决方案筛选器 slnf 文件/VisualStudio 解决方案筛选器 slnf 文件2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019471172599)
+![](http://cdn.lindexi.site/lindexi%2F2019471172599)
 
 在 VisualStudio 2019 可以在第一次手动加载需要的项目之后保存解决方案筛选器 slnf 文件，当然不需要每个项目都点击重新加载，定义指定一个高层的项目，右击点击加载依赖项目，于是所有被他依赖的项目都会加载
 
 <!-- ![](image/VisualStudio 解决方案筛选器 slnf 文件/VisualStudio 解决方案筛选器 slnf 文件1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20194711510679)
+![](http://cdn.lindexi.site/lindexi%2F20194711510679)
 
 下次小伙伴直接打开 slnf 文件的时候就可以看到只有我上次加载的项目，其他的项目默认是隐藏的
 
 <!-- ![](image/VisualStudio 解决方案筛选器 slnf 文件/VisualStudio 解决方案筛选器 slnf 文件3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201947111616834)
+![](http://cdn.lindexi.site/lindexi%2F201947111616834)
 
 如果小伙伴忽然需要某个项目，可以右击显示隐藏的项目
 
 <!-- ![](image/VisualStudio 解决方案筛选器 slnf 文件/VisualStudio 解决方案筛选器 slnf 文件4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201947111656836)
+![](http://cdn.lindexi.site/lindexi%2F201947111656836)
 
 那么使用 slnf 文件有什么好处？
 

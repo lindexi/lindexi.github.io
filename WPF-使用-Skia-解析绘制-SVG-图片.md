@@ -14,7 +14,7 @@
 
 <!-- ![](image/WPF 使用 Skia 解析绘制 SVG 图片/WPF 使用 Skia 解析绘制 SVG 图片0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022881931555567.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022881931555567.jpg)
 
 详细请看 [https://github.com/mono/SkiaSharp.Extended/issues/87#issuecomment-552113673](https://github.com/mono/SkiaSharp.Extended/issues/87#issuecomment-552113673)
 

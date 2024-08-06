@@ -22,23 +22,23 @@
 
 打开的时候就发现所有的项目都没有加载，但是这样就需要手动加载一些项目才可以开始。但是下一次打开是不是还需要打开不加载项目，然后手动加载需要的项目？其实有这个功能，支持保存解决方案加载的项目，也就是假如我有10个项目，我需要在启动的过程不加载其中的5个单元测试项目，就可以通过这个方法另存 slnf 文件，下次打开这个文件就会加载需要的项目，详细请看[VisualStudio 解决方案筛选器 slnf 文件](https://blog.lindexi.com/post/VisualStudio-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AD%9B%E9%80%89%E5%99%A8-slnf-%E6%96%87%E4%BB%B6.html)
 
-![](http://image.acmx.xyz/lindexi%2F201941194410257)
+![](http://cdn.lindexi.site/lindexi%2F201941194410257)
 
 在设置里面默认打开了允许并行项目初始化，如果打开大项目就会发现整个 CPU 和硬盘都在被 VisualStudio 使用，这样可以做到很快的加载
 
-![](http://image.acmx.xyz/lindexi%2F201941194516172)
+![](http://cdn.lindexi.site/lindexi%2F201941194516172)
 
 在 VisualStudio 经过用户的上报发现用户用的最多的是 Blue 主题，同时也只有对 Blue 主题做优化才有产出比，如果是深色主题，无论怎么优化的对比度都不如优化 Blue 的，于是微软就对 Blue 主题做了优化，添加了额外对比度，实际上我看不出差别
 
-![](http://image.acmx.xyz/lindexi%2F20194119465644)
+![](http://cdn.lindexi.site/lindexi%2F20194119465644)
 
 然后对代码还有新的高亮
 
-![](http://image.acmx.xyz/lindexi%2F201941194638185)
+![](http://cdn.lindexi.site/lindexi%2F201941194638185)
 
 在 Windows10 会启动 Per-Monitor Awareness 提高清晰
 
-![](http://image.acmx.xyz/lindexi%2F20194119471192)
+![](http://cdn.lindexi.site/lindexi%2F20194119471192)
 
 在小伙伴对 VisualStudio 的另一个吐槽是更新太慢，原因是 VisualStudio 更新需要下载很多的文件，所以不到不需要使用的时候才不更新。
 
@@ -46,15 +46,15 @@
 
 因为 VisualStudio 主要功能在于写代码，需要将更多的空间给代码，在 VisualStudio 2019 将标题栏放在了下一行，这样可以让代码可以使用的空间多了标题栏
 
-![](http://image.acmx.xyz/lindexi%2F201941195235982)
+![](http://cdn.lindexi.site/lindexi%2F201941195235982)
 
 可以发现 VisualStudio 2019 带来一波很有用的性能提示，但是也有另一些没有什么用的性能提升，如性能管理器
 
-![](http://image.acmx.xyz/lindexi%2F201941195333378)
+![](http://cdn.lindexi.site/lindexi%2F201941195333378)
 
 打开这个界面可以看到基本只有一个不能卸载的插件是降低性能
 
-![](http://image.acmx.xyz/lindexi%2F201941195359275)
+![](http://cdn.lindexi.site/lindexi%2F201941195359275)
 
 现在的微软的策略是开源，于是需要更多社区的支持
 
@@ -62,11 +62,11 @@
 
 但是打包存在一个问题是许可证，可以设置表达式或文件，表达式就是如 Apache 协议，文件就是放一个文件在库，这样可以用自己的合同，如使用 996 协议
 
-![](http://image.acmx.xyz/lindexi%2F201941195540823)
+![](http://cdn.lindexi.site/lindexi%2F201941195540823)
 
 在社区的支持另一个容易让小伙伴打起来的是格式化，于是微软弄了开源项目[dotnet format](https://github.com/dotnet/format) 在不同的工具使用相同的格式化
 
-![](http://image.acmx.xyz/lindexi%2F201941195654423)
+![](http://cdn.lindexi.site/lindexi%2F201941195654423)
 
 虽然有格式化工具但是小伙伴还是会觉得别人的格式化不对，于是这个工具还支持小伙伴在自己的仓库使用私有的 editor config 配置
 
@@ -74,23 +74,23 @@
 
 编辑工具现在有很多原有的 Resharper 的功能，如界面可以提示当前打开的文件存在哪些可以优化的代码
 
-![](http://image.acmx.xyz/lindexi%2F201941195919863)
+![](http://cdn.lindexi.site/lindexi%2F201941195919863)
 
 可以点击按钮转到下一个提示
 
-![](http://image.acmx.xyz/lindexi%2F201941195919863)
+![](http://cdn.lindexi.site/lindexi%2F201941195919863)
 
 还在界面添加了清理代码的功能，如果用过 Resharper 的小伙伴就发现，在 Resharper 有两个格式化的方法，一个是 ctrl+alt+enter 格式，另一个是 clean file 格式，如果格式化的功能多了，那么格式化的速度就会比较慢。所以 VisualStudio 提供两个格式化选择，默认的第一个就是简单的格式化，同时支持配置格式化包括的修补
 
-![](http://image.acmx.xyz/lindexi%2F2019412031922)
+![](http://cdn.lindexi.site/lindexi%2F2019412031922)
 
 在写代码的时候，如果打一个字要等半天是不是会砸键盘，在 VisualStudio 2019 可以设置插件可以拖慢的时间，如果超过时间就会杀线程，也就是这个功能可以看到 Resharper 停止工作
 
-![](http://image.acmx.xyz/lindexi%2F20194120512942)
+![](http://cdn.lindexi.site/lindexi%2F20194120512942)
 
 另一个主要功能调试也有了一些优化，在自动窗口、局部变量窗口、监视都支持搜变量和内容，同时对于对象树可以设置深度
 
-![](http://image.acmx.xyz/lindexi%2F20194120721367)
+![](http://cdn.lindexi.site/lindexi%2F20194120721367)
 
 在 VisualStudio 还有一个很好用，但是很少有小伙伴知道的功能是格式化变量显示
 
@@ -98,21 +98,21 @@
 
 在调试性能工具细化了功能，对于 VisualStudio 2017 添加了两个功能，还有热路径
 
-![](http://image.acmx.xyz/lindexi%2F20194120119454)
+![](http://cdn.lindexi.site/lindexi%2F20194120119454)
 
 点击热路径就会显示建议优化的调用
 
-![](http://image.acmx.xyz/lindexi%2F201941201136511)
+![](http://cdn.lindexi.site/lindexi%2F201941201136511)
 
 对语言 与 .NET Core 也有很多优化，特别是 .NET Core 桌面开发
 
-![](http://image.acmx.xyz/lindexi%2F201941201246899)
+![](http://cdn.lindexi.site/lindexi%2F201941201246899)
 
 还有很多有趣的功能，就需要小伙伴下载安装
 
-<!-- ![](http://image.acmx.xyz/lindexi%2F20194120133155) -->
+<!-- ![](http://cdn.lindexi.site/lindexi%2F20194120133155) -->
 
-![](http://image.acmx.xyz/lindexi%2F20194310939421)
+![](http://cdn.lindexi.site/lindexi%2F20194310939421)
 
 其实还有很多我没有说到的细节，此时请大家看大佬们的视频 [Visual Studio 2019 新特性大揭秘](https://devopslive.bopoda.cn/live/azuredevops101-20190403?from=groupmessage&isappinstalled=0 )
 

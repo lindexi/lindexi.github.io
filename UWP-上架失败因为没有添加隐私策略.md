@@ -12,7 +12,7 @@
 
 如果是个人开发者，我的推荐是在 github 或 gitee 创建一个叫隐私策略的文件，复制这个链接填写在应用商店管理的属性上，请看下图
 
-![](http://image.acmx.xyz/lindexi%2F2020216106457921.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020216106457921.jpg)
 
 如何写隐私策略请看 [win10 uwp 隐私声明](https://blog.lindexi.com/post/win10-uwp-%E9%9A%90%E7%A7%81%E5%A3%B0%E6%98%8E.html ) 注意修改软件名
 
@@ -55,13 +55,13 @@ Thank you.
 
 <!-- ![](image/UWP 上架失败因为没有添加隐私策略/UWP 上架失败因为没有添加隐私策略1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20202161017229707.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20202161017229707.jpg)
 
 可以找到应用号
 
 <!-- ![](image/UWP 上架失败因为没有添加隐私策略/UWP 上架失败因为没有添加隐私策略2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20202161018384856.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20202161018384856.jpg)
 
 下面是微软发给我的信息
 

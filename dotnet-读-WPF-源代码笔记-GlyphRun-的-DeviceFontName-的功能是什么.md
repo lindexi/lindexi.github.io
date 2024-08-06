@@ -53,7 +53,7 @@
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 GlyphRun 的 DeviceFontName 的功能是什么/dotnet 读 WPF 源代码笔记 GlyphRun 的 DeviceFontName 的功能是什么0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2023111177506058.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023111177506058.jpg)
 
 至于 `DeviceFontName` 属性，完全只有一个逻辑在使用，那就是用来创建 GlyphRun 副本时作为参数传入，如下面代码
 

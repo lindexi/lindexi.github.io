@@ -124,7 +124,7 @@ PointerPoint point = e.GetCurrentPoint(btn);
 
 做好之后，我们发现实在奇怪
 
-![](http://image.acmx.xyz/%E6%8B%96%E5%8A%A8%E6%8E%A7%E4%BB%B62016%E5%B9%B412%E6%9C%8818%E6%97%A5151534.gif)
+![](http://cdn.lindexi.site/%E6%8B%96%E5%8A%A8%E6%8E%A7%E4%BB%B62016%E5%B9%B412%E6%9C%8818%E6%97%A5151534.gif)
 
 
 ```csharp

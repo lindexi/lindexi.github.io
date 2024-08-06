@@ -38,7 +38,7 @@
 为什么走 RealTimeStylus 实时触摸可以较低延迟获取到触摸信息？这是因为 RealTimeStylus 的触摸数据是由 wisptis 模块提供的（Win10下暂未确定）触摸数据，在每次触摸数据收集到时，将会释放进程锁让 RealTimeStylus 层读取共享内存里的触摸数据。也就是说从触摸进到 PC 到 RealTimeStylus 层获取，这个中间隔的中间商不多
 
 <!-- ![](image/WPF 从零自己实现从 RealTimeStylus 获取触摸信息/WPF 从零自己实现从 RealTimeStylus 获取触摸信息0.png) -->
-![](http://image.acmx.xyz/lindexi%2F2023327841403244.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023327841403244.jpg)
 
 而 `WM_Touch` 和 `WM_Pointer` 走的是 Win32 消息机制，会受到许多第三方的干扰，再加上应用的主线程不一定能够及时处理消息。叠加上来的结果就是比 RealTimeStylus 实时触摸稍微慢一些。具体测试数据我放在本文末尾。但更推荐大家自行测试，预计不同的硬件设备和不同的系统下，会有一些差异
 
@@ -86,7 +86,7 @@ internal interface IRealTimeStylus
 按照[官方文档](https://learn.microsoft.com/en-us/windows/win32/tablet/working-with-the-realtimestylus-class)提供的信息可以了解到，这个 C6C77F97-545E-4873-85F2-E0FEE550B2E9 的 IRealTimeStylus 接口是属于一个入口 API 接口，想要获取触摸消息，还需要更进一层的 IStylusPlugin 才能接收
 
 <!-- ![](image/WPF 从零自己实现从 RealTimeStylus 获取触摸信息/WPF 从零自己实现从 RealTimeStylus 获取触摸信息1.png) -->
-![](http://image.acmx.xyz/lindexi%2F2023327845212512.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023327845212512.jpg)
 
 按照[官方文档](https://learn.microsoft.com/en-us/windows/win32/api/rtscom/nn-rtscom-irealtimestylus)如下的建议是更加推荐使用异步的接口，而不是同步的接口。但是由于异步的接口实现相对复杂一点点，本文使用同步的接口作为例子
 
@@ -366,7 +366,7 @@ internal sealed class StylusSyncPluginNativeShim : IStylusSyncPluginNative2, ISt
 
 <!-- ![](image/WPF 从零自己实现从 RealTimeStylus 获取触摸信息/WPF 从零自己实现从 RealTimeStylus 获取触摸信息2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20233271050241645.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20233271050241645.jpg)
 
 ```
     WhefallralajaHubeanerelair.dll!WhefallralajaHubeanerelair.StylusSyncPluginNativeShim.WhefallralajaHubeanerelair.StylusSyncPluginNative.Packets(WhefallralajaHubeanerelair.IRealTimeStylusNative realTime, WhefallralajaHubeanerelair.StylusInfo stylusInfo, uint pktCount, uint cPktBuffLength, int[] pktArray, ref uint cInOutPkts, ref nint InOutPkts)
@@ -438,7 +438,7 @@ git pull origin f9b86511284baf14b5579146736c121b6b571200
 以下是反编译的代码，感谢 [lsj](https://blog.sdlsj.net) 大佬提供
 
 <!-- ![](image/WPF 从零自己实现从 RealTimeStylus 获取触摸信息/WPF 从零自己实现从 RealTimeStylus 获取触摸信息3.png) -->
-![](http://image.acmx.xyz/lindexi%2F20233271731347622.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20233271731347622.jpg)
 
 以上的 581 和 582 等就是对应的 `WM_Pointer` 消息号。只不过再底层是从哪里调过来的，就不知道了
 

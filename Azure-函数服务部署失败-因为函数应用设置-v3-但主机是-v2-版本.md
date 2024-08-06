@@ -18,7 +18,7 @@ Your function app is targeting v3, but Azure host has function version ~2, \nple
 
 <!-- ![](image/Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本/Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020513855502953.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020513855502953.jpg)
 
 在使用 git 推送可以看到下面代码
 
@@ -33,13 +33,13 @@ remote: Error - Changes committed to remote repository but deployment to website
 
 <!-- ![](image/Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本/Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020513856297924.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020513856297924.jpg)
 
 在部署中心里面将运行时版本修改为 `~3` 然后回到函数服务点击重新部署，或者新推送空白内容都可以
 
 <!-- ![](image/Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本/Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020513857115882.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020513857115882.jpg)
 
 
 

@@ -14,7 +14,7 @@
 
 <!-- ![](image/win10 uwp 鼠标移动到图片上切换图片/win10 uwp 鼠标移动到图片上切换图片0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019316143024538)
+![](http://cdn.lindexi.site/lindexi%2F2019316143024538)
 
 在[Microsoft.Xaml.Behaviors.Uwp.Managed](https://www.nuget.org/packages/Microsoft.Xaml.Behaviors.Uwp.Managed/ ) 提供了 EventTriggerBehavior 可以用来在触发了某个事件就调用里面的 Action 方法。同时有 ControlStoryboardAction 可以用来播放动画
 
@@ -75,7 +75,7 @@
 
 运行代码可以看到下面图片
 
-![](http://image.acmx.xyz/lindexi%2F2019316143950672)
+![](http://cdn.lindexi.site/lindexi%2F2019316143950672)
 
 我将所有代码放在 github 请看[https://github.com/lindexi/lindexi_gd/tree/7f0dcf62f38eda513b3455658b9dffd6c4974847/PernemtanowsearDeerawkurkosa](https://github.com/lindexi/lindexi_gd/tree/7f0dcf62f38eda513b3455658b9dffd6c4974847/PernemtanowsearDeerawkurkosa) 直接下载代码，选择 x86 就可以运行
 

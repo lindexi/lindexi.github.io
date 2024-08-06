@@ -41,11 +41,11 @@
 
 <!-- ![](image/如何在国内发布 UWP 应用/如何在国内发布 UWP 应用0.png) -->
 
-<!-- ![](http://image.acmx.xyz/lindexi%2F20192171128386) -->
+<!-- ![](http://cdn.lindexi.site/lindexi%2F20192171128386) -->
 
 <!-- ![](image/如何在国内发布 UWP 应用/如何在国内发布 UWP 应用1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201921711362813)
+![](http://cdn.lindexi.site/lindexi%2F201921711362813)
 
 也许剩下的优势是信仰
 

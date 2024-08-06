@@ -14,7 +14,7 @@
 
 <!-- ![](image/WPF 手绘对称图形控件/WPF 手绘对称图形控件0.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F%25E5%25AF%25B9%25E7%25A7%25B0%25E5%259B%25BE%25E5%25BD%25A2.gif)
+![](http://cdn.lindexi.site/lindexi%2F%25E5%25AF%25B9%25E7%25A7%25B0%25E5%259B%25BE%25E5%25BD%25A2.gif)
 
 我将这个控件在GitHub上完全开源，代码放在 [https://github.com/lindexi/uwp](https://github.com/lindexi/uwp)
 
@@ -76,7 +76,7 @@ Install-Package Lindexi.Control.WPFFlipDrawingCanvas -Version 1.0.0
 
 <!-- ![](image/WPF 手绘对称图形控件/WPF 手绘对称图形控件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201017161531776.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201017161531776.jpg)
 
 详细请看 [How to: Flip a UIElement Horizontally or Vertically - WPF .NET Framework](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/advanced/how-to-flip-a-uielement-horizontally-or-vertically?view=netframeworkdesktop-4.8&WT.mc_id=WD-MVP-5003260 )
 

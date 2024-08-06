@@ -92,7 +92,7 @@ foreach (Row row in rows)
 
 <!-- ![](image/C# dotnet 使用 OpenXml 解析 Excel 文件/C# dotnet 使用 OpenXml 解析 Excel 文件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020327827229928.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020327827229928.jpg)
 
 代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/21318ca39e614382a512ea354dfebf31b9fccf8e/Babukeelleneeoai) 欢迎小伙伴访问
 

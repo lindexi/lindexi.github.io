@@ -32,7 +32,7 @@
 
 <!-- ![](image/dotnet 使用 ShowMeTheXAML 显示 WPF 的 XAML 控件内容/dotnet 使用 ShowMeTheXAML 显示 WPF 的 XAML 控件内容0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202141848155823.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202141848155823.jpg)
 
 可以看到在界面将写在 XamlDisplay 控件里面的代码显示出来，这样就方便库的开发者提供示例项目给其他开发者阅读，可以看到界面逻辑
 

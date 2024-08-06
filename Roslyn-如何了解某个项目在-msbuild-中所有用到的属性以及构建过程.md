@@ -29,7 +29,7 @@ dotnet msbuild -pp:FullProject.xml
 
 <!-- ![](image/Roslyn 如何了解某个项目在 msbuild 中所有用到的属性以及构建过程/Roslyn 如何了解某个项目在 msbuild 中所有用到的属性以及构建过程0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020618205568088.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020618205568088.jpg)
 
 可以加上平台，只输出某个平台下使用的构建过程
 

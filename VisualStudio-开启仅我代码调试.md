@@ -16,7 +16,7 @@
 
 <!-- ![](image/VisualStudio 开启仅我代码调试/VisualStudio 开启仅我代码调试0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201965192545316)
+![](http://cdn.lindexi.site/lindexi%2F201965192545316)
 
 此时会自动跳过库里面的代码调试，同时也会跳过使用[DebuggerNonUserCodeAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debuggernonusercodeattribute?wt.mc_id=MVP )标记的代码
 

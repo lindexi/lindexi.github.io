@@ -29,7 +29,7 @@
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/8beda1f5/LejairbairwecarnelLelearnawcana) 欢迎小伙伴访问
 
-![](http://image.acmx.xyz/lindexi%2FIMG_75762.jpg)
+![](http://cdn.lindexi.site/lindexi%2FIMG_75762.jpg)
 
 
 

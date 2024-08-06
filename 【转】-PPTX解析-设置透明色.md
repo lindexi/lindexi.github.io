@@ -9,7 +9,7 @@
 <!-- CreateTime:2021/11/22 9:11:23 -->
 
 
-![](http://image.acmx.xyz/lindexi%2Fimage-1628836752925.png)
+![](http://cdn.lindexi.site/lindexi%2Fimage-1628836752925.png)
 <!-- ![file](https://imxcg.com/wp-content/uploads/2021/08/image-1628836752925.png) -->
 
 原文：[[PPTX解析] 图片效果算法篇：设置透明色 - 仙尘阁](https://imxcg.com/technology/dot-net/pptx-analysis/pptx-analysis-set-transparent-color/ )

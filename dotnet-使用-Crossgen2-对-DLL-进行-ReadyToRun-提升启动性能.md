@@ -87,7 +87,7 @@ C:\lindexi\Code\empty\KokicakawheeyeeWhemhedawfelawnemhel\KokicakawheeyeeWhemhed
 
 以下是测试的对 dotnet runtime 底层和 WPF 框架的 DLL 进行 ReadyToRun 优化之后，对 walterlv 大佬的某个应用的启动性能的影响，值得一提的是对于不同的应用，测试的数据将会存在很大的出入，核心原因在于不同的应用启动过程将访问的模块有所不同
 
-![](http://image.acmx.xyz/lindexi%2F20225282146453265.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20225282146453265.jpg)
 
 这个数据是没有多少参考价值的，因为对于不同的应用来说，以上的结果将会有变化。如果你想要采用 ReadyToRun 技术提升应用启动性能，还请必须测量每个 DLL 在经过 ReadyToRun 对启动性能的影响。如果你的时间充裕的话，还可以测量对多个 DLL 优化的组合对启动性能的影响
 

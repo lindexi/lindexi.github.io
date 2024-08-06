@@ -20,7 +20,7 @@
 
 而文件段作为单位的，依然可以使用原文件作为资源，此时需要额外记录文件偏移量
 
-![](http://image.acmx.xyz/lindexi%2F2019911101712215)
+![](http://cdn.lindexi.site/lindexi%2F2019911101712215)
 
 ## 索引
 

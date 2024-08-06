@@ -112,7 +112,7 @@ Linux ~/.config/NuGet/NuGet.Config
 
 参见：[NuGet File Locations - Matt Ward](http://lastexitcode.com/projects/NuGet/FileLocations/ )
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822814119.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201822814119.jpg)
 
 
 

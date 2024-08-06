@@ -96,7 +96,7 @@ public partial class App : Application
 在复现时，可以看到线程 Id 为 22436 的主 UI 线程在等待 ContentPresenter 的静态构造函数完成，如下图
 
 <!-- ![](https://user-images.githubusercontent.com/16054566/169640528-d5972c5c-ae40-4813-a484-f589edb6192b.png) -->
-![](http://image.acmx.xyz/lindexi%2F20225211828538986.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20225211828538986.jpg)
 
 这是因为在 .NET 里面，一个类型的静态构造函数，只能由一个线程执行，不会存在多线程同时执行静态构造函数。如果有某个线程在执行静态构造函数，那么其他的线程将需要等待静态构造函数执行完成才能继续碰类型。也就是相当于静态构造函数进入时加了锁，需要在执行完成之后才会释放锁，其他的线程都在等待静态构造函数的锁，也就是等待静态构造函数执行完
 
@@ -104,7 +104,7 @@ public partial class App : Application
 
 <!-- ![](https://user-images.githubusercontent.com/16054566/169640586-81efdacf-045c-4beb-a64f-d3eaec30493c.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20225211829329892.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20225211829329892.jpg)
 
 ## 原理
 

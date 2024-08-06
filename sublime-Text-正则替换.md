@@ -25,7 +25,7 @@ Sumlime 还可以创建代码行，做法也很简单。
 点击 Tools   New Snippet 
 
 
-![](http://image.acmx.xyz/d021ae55-501f-4838-a9a0-f09ee95a83b82016121992723.jpg)
+![](http://cdn.lindexi.site/d021ae55-501f-4838-a9a0-f09ee95a83b82016121992723.jpg)
 
 
 ```xml

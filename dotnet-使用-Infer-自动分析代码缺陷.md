@@ -40,7 +40,7 @@
 
 <!-- ![](image/dotnet 使用 Infer# 自动分析代码缺陷/dotnet 使用 Infer# 自动分析代码缺陷0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202111191944415549.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202111191944415549.jpg)
 
 可以看到输出了资源没有释放和线程安全问题
 

@@ -16,7 +16,7 @@
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019626212729956)
+![](http://cdn.lindexi.site/lindexi%2F2019626212729956)
 
 可以尝试设置一些参数画出好看的线，这个程序全部开源，可以在[github](https://github.com/lindexi/lindexi_gd/tree/b332e647a9ac55cb3134f5a2b25934e877d76ad5/WaveLineDemo)下载全部源代码，核心源代码将会放在本文后面
 
@@ -28,23 +28,23 @@
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962784935135)
+![](http://cdn.lindexi.site/lindexi%2F201962784935135)
 
 将控制点和锚点链接作为贝塞尔的效果如下图
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962784935135)
+![](http://cdn.lindexi.site/lindexi%2F201962784935135)
 
 这里用到了两个控制点和一个锚点画贝塞尔，这里需要用到 Path 绘制的特性。在 Path 绘制的时候将会不断记住上一个点的值，也就是我输入的点其实会影响到上一条绘制命令的点如在我已经知道了两个控制点和一个锚点组成的数组。我每次调用 `streamGeometryContext.BezierTo` 的时候都需要传入三个点，第一个点控制点用来控制前一个命令的锚点而第二个点也是控制点用于控制本次调用方法里面的锚点也就是第三个点
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962791758660)
+![](http://cdn.lindexi.site/lindexi%2F201962791758660)
 
 从上面可以知道绘制曲线会受到很多常量的影响，这些常量建议作为用户定义。为了让大家能和代码关联起来，先定义一些变量，如增幅和频率等，可以下载我的[代码](https://github.com/lindexi/lindexi_gd/tree/b332e647a9ac55cb3134f5a2b25934e877d76ad5/WaveLineDemo)运行一下，自己修改这些值
 
-![](http://image.acmx.xyz/lindexi%2F201962621204203)
+![](http://cdn.lindexi.site/lindexi%2F201962621204203)
 
 知道了曲线是如何画的，现在的问题就是如何求出这两个控制点和一个锚点的值
 
@@ -52,7 +52,7 @@
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019626215830770)
+![](http://cdn.lindexi.site/lindexi%2F2019626215830770)
 
 这里的 bcpInclination 是摆角表示波形的高度，这个值配合频率可以决定波形的高度，反过来知道频率和高度就可以计算出这个值
 
@@ -62,7 +62,7 @@
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962792813590)
+![](http://cdn.lindexi.site/lindexi%2F201962792813590)
 
 从图片可以看到三角形 abc 的两个值，如 a 的值就是四分之一的频率，三角形的 b 的值就是波形的高度的一半
 
@@ -102,7 +102,7 @@ var waveInterval = distance / howManyWaves;
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962622221657)
+![](http://cdn.lindexi.site/lindexi%2F201962622221657)
 
 用三角形的计算方法，在知道 a 和 b 的时候求 c 边的长度可以使用下面方法
 
@@ -117,7 +117,7 @@ var maxBcpLength =
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962793944976)
+![](http://cdn.lindexi.site/lindexi%2F201962793944976)
 
 如上图可以知道 bcpLength 的值就是控制点距离锚点的距离
 
@@ -139,7 +139,7 @@ var maxBcpLength =
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201962795011561)
+![](http://cdn.lindexi.site/lindexi%2F201962795011561)
 
 ```csharp
 var flexPt = new Point(prevFlexPt.X + Math.Cos(angle) * waveInterval / 2.0,
@@ -152,7 +152,7 @@ var flexPt = new Point(prevFlexPt.X + Math.Cos(angle) * waveInterval / 2.0,
 
 <!-- ![](image/WPF 如何给定两个点画出一条波浪线/WPF 如何给定两个点画出一条波浪线9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019627101318248)
+![](http://cdn.lindexi.site/lindexi%2F2019627101318248)
 
 可以知道倾斜角和摆角相关，在知道锚点的坐标和距离和倾斜角就可以计算出控制点的坐标，在知道控制点和锚点就可以画出曲线
 

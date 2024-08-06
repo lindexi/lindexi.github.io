@@ -39,7 +39,7 @@
 
 <!-- ![](image/WPF 使用 TranslatePoint 换算元素之间相对坐标/WPF 使用 TranslatePoint 换算元素之间相对坐标0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20203188431364.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20203188431364.jpg)
 
 本文代码放在[github](https://github.com/lindexi/lindexi_gd/tree/502e65befeee340520968976b023cf9b8b4b70a9/JeelifuwheChaykicinelniyearje)欢迎小伙伴访问
 

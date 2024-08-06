@@ -204,7 +204,7 @@
 
 <!-- ![](image/Windows 客户端软件自动更新服务的开发有哪些需求/Windows 客户端软件自动更新服务的开发有哪些需求0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022471939386107.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022471939386107.jpg)
 
 ## 后台
 

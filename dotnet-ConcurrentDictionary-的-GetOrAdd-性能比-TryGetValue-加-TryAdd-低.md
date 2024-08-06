@@ -55,7 +55,7 @@
 
 <!-- ![](image/dotnet ConcurrentDictionary 的 GetOrAdd 性能比 TryGetValue 加 TryAdd 低/dotnet ConcurrentDictionary 的 GetOrAdd 性能比 TryGetValue 加 TryAdd 低0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020716116373889.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020716116373889.jpg)
 
 |  Method |     Mean |    Error |   StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |-------- |---------:|---------:|---------:|-------:|------:|------:|----------:|

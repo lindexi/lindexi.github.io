@@ -48,7 +48,7 @@ https://vsdebugger.azureedge.net/vsdbg-16-6-20415-1/vsdbg-linux-x64.zip
 
 <!-- ![](image/VisualStudio 解决首次调试 docker 的 vs2017u5 exists, deleting 太慢问题/VisualStudio 解决首次调试 docker 的 vs2017u5 exists, deleting 太慢问题0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020622110174143.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020622110174143.jpg)
 
 
 接下来在 `C:\Users\lindexi\vsdbg\vs2017u5` 文件夹创建两个文件，分别是 success_version.txt 和 success_rid.txt 文件

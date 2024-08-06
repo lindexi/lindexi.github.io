@@ -14,7 +14,7 @@
 
 <!-- ![](image/WPF 如何在静态资源定义字体大小/WPF 如何在静态资源定义字体大小0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020417839401095.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020417839401095.jpg)
 
 ```xml
             <TextBlock Margin="10,10,10,10"
@@ -29,7 +29,7 @@
 
 <!-- ![](image/WPF 如何在静态资源定义字体大小/WPF 如何在静态资源定义字体大小1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020417840398346.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020417840398346.jpg)
 
 这是在 xaml 写的，如果想要在资源里面写，如下面代码，将不能通过运行
 

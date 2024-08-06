@@ -14,13 +14,13 @@
 
 <!-- ![](image/Github 给仓库上传 NuGet 库/Github 给仓库上传 NuGet 库0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191019155624816)
+![](http://cdn.lindexi.site/lindexi%2F20191019155624816)
 
 点击打开一个项目的 Package 默认会邀请你加入，点击开启功能
 
 <!-- ![](image/Github 给仓库上传 NuGet 库/Github 给仓库上传 NuGet 库1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191019155739966)
+![](http://cdn.lindexi.site/lindexi%2F20191019155739966)
 
 在 Github 会显示如何做 NuGet 的上传，上面的 `GH_TOKEN` 就是自己生成的代表自己密码，请看文档 [创建用于命令行的个人访问令牌 - GitHub 帮助](https://help.github.com/cn/articles/creating-a-personal-access-token-for-the-command-line )
 
@@ -40,7 +40,7 @@
 
 <!-- ![](image/Github 给仓库上传 NuGet 库/Github 给仓库上传 NuGet 库2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019101916040343)
+![](http://cdn.lindexi.site/lindexi%2F2019101916040343)
 
 将页面拉到最下，点击 Generate token 按钮就可以创建密码
 
@@ -48,7 +48,7 @@
 
 <!-- ![](image/Github 给仓库上传 NuGet 库/Github 给仓库上传 NuGet 库3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019101916321866)
+![](http://cdn.lindexi.site/lindexi%2F2019101916321866)
 
 然后在对应的仓库配置密码，在默认打开 package 页面的时候就可以看到
 
@@ -95,7 +95,7 @@ nuget push Lindexi_gd.1.0.0.nupkg -Source GithubLindexi
 
 <!-- ![](image/Github 给仓库上传 NuGet 库/Github 给仓库上传 NuGet 库4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019101916111211)
+![](http://cdn.lindexi.site/lindexi%2F2019101916111211)
 
 如果在上传的时候提示下面代码
 

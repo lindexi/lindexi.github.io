@@ -14,7 +14,7 @@
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20239201555207210.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20239201555207210.jpg)
 
 如上图，在 Windows 上依然采用 WPF 框架，只是这时的 WPF 框架是作为底层框架使用，业务代码大部分不会直接接触 WPF 框架，只有部分平台兼容适配代码才会接触 WPF 框架。其他的业务代码都是通过 UNO 和 MAUI 框架间接使用到 WPF 框架。在 UOS 系统上，是采用 GTK 应用框架进行承载，同理也只有平台兼容适配代码才会接触 GTK 应用框架，大部分业务代码不会直接碰到
 
@@ -29,7 +29,7 @@
 当前 UNO 对于 XAML 智能提示，需要切换 XAML 使用 WinUI3 项目的编辑界面，否则将无法显示正确的 XAML 智能提示且出现大量的 XAML 报错。切换 XAML 使用 WinUI3 项目的编辑界面，需要先存在 WinUI3 项目，即在新建项目的时候需要勾选 Windows 项目，然后点击 XAML 选项卡下的项目，切换到 WinUI3 项目，如下图所示
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记5.png) -->
-![](http://image.acmx.xyz/lindexi%2F20242191513544186.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20242191513544186.jpg)
 
 详细请参阅 [Intellisense not working, but project compiles · Issue #15517 · unoplatform/uno](https://github.com/unoplatform/uno/issues/15517 )
 
@@ -135,10 +135,10 @@ SyncTool sync -a http://123.123.123.123:555
 如此的逻辑将会在输入的过程看到文本内容被裁剪，基本在 Skia.WPF 和 Skia.GTK 项目下可以看到文本内容被裁剪
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记1.png) -->
-![](http://image.acmx.xyz/lindexi%2F202311161640203139.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202311161640203139.jpg)
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记2.png) -->
-![](http://image.acmx.xyz/lindexi%2F202311161640505448.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202311161640505448.jpg)
 
 暂时只能绕路，现在是 UNO 5.0 版本，依然难以修复此问题
 
@@ -488,7 +488,7 @@ git pull origin 23afb397c027d2ab5025e44488cce7de83b48c83
 效果如下
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记4.png) -->
-![](http://image.acmx.xyz/lindexi%2F20241311448497816.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20241311448497816.jpg)
 
 可以看到尽管放在 Grid 里面，红色的 Border 可以显示到黑色的 Border 之上，证明 Canvas.ZIndex 可以作用到 Grid 控件里
 
@@ -648,7 +648,7 @@ Normal  0   正常优先级。 委托按计划的顺序进行处理。
 然后在 Resources.resw 里面使用如下记录
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记3.png) -->
-![](http://image.acmx.xyz/lindexi%2F2023121915268390.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023121915268390.jpg)
 
 但推荐尽量使用 `_` 下划线，下划线的兼容性更好一些。防止中间下划线被有时识别为属性名，导致找不到多语言，如以下官方文档
 
@@ -1016,7 +1016,7 @@ InvalidProjectFileException: The SDK 'Uno.Sdk' specified could not be found.
 此问题在报告给官方之后，只用 10 个小时就被修复了
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记6.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024627153539251.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024627153539251.jpg)
 
 
 ## 参考文档

@@ -24,7 +24,7 @@
 
 <!-- ![](image/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20187248521794)
+![](http://cdn.lindexi.site/lindexi%2F20187248521794)
 
 如图，可以看到超过 Canvas 的元素不会被裁剪
 
@@ -45,7 +45,7 @@
 
 <!-- ![](image/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201872485418713)
+![](http://cdn.lindexi.site/lindexi%2F201872485418713)
 
 那么在 WPF 是怎样呢？
 
@@ -61,7 +61,7 @@
 
 <!-- ![](image/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201872485820743)
+![](http://cdn.lindexi.site/lindexi%2F201872485820743)
 
 
 

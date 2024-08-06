@@ -24,7 +24,7 @@
 
 <!-- ![](image/dotnet 使用 Environment.FailFast 结束程序/dotnet 使用 Environment.FailFast 结束程序0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20193115656111)
+![](http://cdn.lindexi.site/lindexi%2F20193115656111)
 
 通过这个方法不仅可以记日志，还可以自动创建一个 DUMP 文件，至于这个 DUMP 放在哪里，请看[win10 uwp 收集 DUMP 文件](https://lindexi.gitee.io/post/win10-uwp-%E6%94%B6%E9%9B%86-DUMP-%E6%96%87%E4%BB%B6.html )
 

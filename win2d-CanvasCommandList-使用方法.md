@@ -111,7 +111,7 @@
 
 <!-- ![](image/win2d CanvasCommandList 使用方法/win2d CanvasCommandList 使用方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018119193546571)
+![](http://cdn.lindexi.site/lindexi%2F2018119193546571)
 
 ## 相对移动
 
@@ -133,7 +133,7 @@
 
 <!-- ![](image/win2d CanvasCommandList 使用方法/win2d CanvasCommandList 使用方法1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018119193935518)
+![](http://cdn.lindexi.site/lindexi%2F2018119193935518)
 
 ## 复用命令
 
@@ -147,7 +147,7 @@
 
 <!-- ![](image/win2d CanvasCommandList 使用方法/win2d CanvasCommandList 使用方法2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018119194727968)
+![](http://cdn.lindexi.site/lindexi%2F2018119194727968)
 
 如果不使用 canvasCommandList 需要计算每个元素的坐标，这样的代码看起来不好，于是在使用了之后就可以十分快速使用下面代码画出
 
@@ -268,7 +268,7 @@
 
 <!-- ![](image/win2d CanvasCommandList 使用方法/win2d CanvasCommandList 使用方法3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201811920340600)
+![](http://cdn.lindexi.site/lindexi%2F201811920340600)
 
 现在添加 DirectionalBlurEffect  特效
 
@@ -291,7 +291,7 @@
 
 <!-- ![](image/win2d CanvasCommandList 使用方法/win2d CanvasCommandList 使用方法4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181192073394)
+![](http://cdn.lindexi.site/lindexi%2F20181192073394)
 
 所有代码
 

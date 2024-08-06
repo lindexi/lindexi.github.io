@@ -14,7 +14,7 @@
 
 <!-- ![](image/Win10 的 WPF 程序的 wisptis 服务是附加到进程的窗口/Win10 的 WPF 程序的 wisptis 服务是附加到进程的窗口0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20207301722262659.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20207301722262659.jpg)
 
 更多关于 WPF 触摸请看
 

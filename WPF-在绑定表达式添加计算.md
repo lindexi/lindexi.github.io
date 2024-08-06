@@ -15,7 +15,7 @@
 
 <!-- ![](image/WPF 在绑定表达式添加计算/WPF 在绑定表达式添加计算0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201812221544983)
+![](http://cdn.lindexi.site/lindexi%2F201812221544983)
 
 在使用这个库之前需要引用命名空间，打开 MainWindow.xaml 文件，添加命名空间
 
@@ -113,7 +113,7 @@ xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
 
 <!-- ![](image/WPF 在绑定表达式添加计算/WPF 在绑定表达式添加计算1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181222155732456)
+![](http://cdn.lindexi.site/lindexi%2F20181222155732456)
 
 如果此时的还有一些布尔量怎么办？打开 ViewModel 类添加下面代码
 
@@ -174,7 +174,7 @@ xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
 
 <!-- ![](image/WPF 在绑定表达式添加计算/WPF 在绑定表达式添加计算2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018122216214143)
+![](http://cdn.lindexi.site/lindexi%2F2018122216214143)
 
 其他可以写的是表达式
 

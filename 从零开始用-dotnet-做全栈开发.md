@@ -30,7 +30,7 @@
 
 打开 VisualStudio 2019 点击新建项目
 
-![](http://image.acmx.xyz/lindexi%2F20191211834386266.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191211834386266.jpg)
 
 选择控制台项目
 
@@ -40,13 +40,13 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912119171149.jpg)
+![](http://cdn.lindexi.site/lindexi%2F201912119171149.jpg)
 
 创建完成之后，如果发现界面的代码提示错误，只需要等待一下 NuGet 的还原就可以了，此时什么都不需要做，等一下缓慢的 VisualStudio 加载，加载完成之后就可以看到代码高亮，此时点击运行按钮就可以运行代码。点击工具栏调试->开始调试 或者按下快捷键 F5 就可以开始运行
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121194255359.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121194255359.jpg)
 
 此时运行可以看到控制台输出，没有任何业务功能
 
@@ -54,7 +54,7 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121196345949.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121196345949.jpg)
 
 现在的 WPF 有两个版本，一个是 .NET Core 的 一个是 .NET Framework 的，这里请先不要管两者的差别，就算是我布置下来的作业，等跟随本文玩过之后再去寻找博客，请问 .NET Core 和 .NET Framework 有什么不同
 
@@ -64,19 +64,19 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121191672587.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121191672587.jpg)
 
 如果是在相同的解决方案添加项目创建的 WPF 程序，那么就需要先设置 WPF 程序作为启动项目，通过右击项目点击设为启动项目就可以，运行项目的方法和控制台相同
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191211917445319.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191211917445319.jpg)
 
 现在已经能看到一个空白的界面了，在 WPF 中写界面推荐用的是 xaml 语言，而后台逻辑依然使用 C# 写，展开一个 MainWindow.xaml 文件可以看到 MainWindow.xaml.cs 文件
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121191977275.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121191977275.jpg)
 
 双击 MainWindow.xaml.cs 文件就可以看到熟悉的 C# 代码了。当然想要开发 WPF 项目，还是需要了解一点 WPF 界面开发相关知识，例如如何创建一个按钮，如何创建一个文本框，更高级的是如何进行布局等，当然在这里就先跳过了
 
@@ -84,19 +84,19 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121192264896.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121192264896.jpg)
 
 在 ASP.NET Core 项目有很多可以选的功能，此时请选择 API 因为用这个功能创建的项目不会包含太多其他的后台相关知识，同时也创建好了简单可以运行的逻辑，和默认的空项目不同，因为空项目里面几乎没有内容，不适合快速开始，而其他功能的内容太多，也不适合。另外请去掉勾选的 https 和 docker 容器，这两部分都需要额外的配置
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121192611296.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121192611296.jpg)
 
 默认的 ASP.NET Core 项目包含了以下文件，其中入口文件就是 `XxController` 类，如下面的 WeatherForecastController 类
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121192713803.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121192713803.jpg)
 
 此时依然运行此项目，可以看到浏览器打开了一个网址，这个网址是 localhost 也就是本机的服务
 
@@ -104,7 +104,7 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191211930201133.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191211930201133.jpg)
 
 将上面的代码修改一些字符的返回值
 
@@ -127,7 +127,7 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191211932538125.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191211932538125.jpg)
 
 使用 ASP.NET Core 项目对比之前使用 Socket 等做 web 开发的一个好处是不需要了解访问是从哪里过来的，也不需要了解里面的传输，只需要在控制器里面写对应的方法就可以了。当然这只是入门的说法，如果想要做出 StackOverflow 这么大的一个网站，还是需要学习超级多的知识
 
@@ -137,7 +137,7 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191211937578231.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191211937578231.jpg)
 
 其实在移动端开发的时候就可以自动选择创建后台服务，但是这里创建的后台服务相对内容比较多，没有上面的项目简单，所以这里默认勾选了安装和 ios 开发
 
@@ -145,7 +145,7 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191211940239714.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191211940239714.jpg)
 
 没关系，先右击安卓项目，设置为启动项目运行
 
@@ -174,13 +174,13 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191211950399490.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191211950399490.jpg)
 
 如果此时进入调试失败，请删除 bin 和 obj 文件夹多试几次，大概是有资源被墙了。进入调试可以看到下面界面，可以尝试玩一下这个软件
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发20.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912120243630.jpg)
+![](http://cdn.lindexi.site/lindexi%2F201912120243630.jpg)
 
 这就完成了移动端的项目创建，虽然进行移动端开发的开始需要下载很多的内容，但我相信小伙伴的网速都不错
 
@@ -190,25 +190,25 @@
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121203143755.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121203143755.jpg)
 
 搜 UNO 就能找到插件
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019121205261023.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2019121205261023.jpg)
 
 点击下载安装然后重启 VisualStudio 此时在新建项目可以选择 UNO 创建全平台项目，这里全平台指的是这个项目可以用来开发移动端应用，桌面端应用和前端应用。因为这个项目主要是做 WebAssembly 前端项目，所以本文也只是将这个做前端软件
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发18.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191212011156453.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191212011156453.jpg)
 
 刚才说 Xamarin 的项目很多，其实 UNO 的项目更多
 
 <!-- ![](image/从零开始用 dotnet 做全栈开发/从零开始用 dotnet 做全栈开发19.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191212012546309.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20191212012546309.jpg)
 
 其实 UNO 的跨平台就是通过 Xamarin 实现大部分，设置 Wasm 项目作为启动项目，也就是解决方案里面的 `Xx.Wasm` 项目，这里的 Xx 就是小伙伴的项目命名，这个项目就是前端代码
 

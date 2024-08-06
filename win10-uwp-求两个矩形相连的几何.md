@@ -15,7 +15,7 @@
 
 <!-- ![](image/win10 uwp 求两个矩形相连的几何/win10 uwp 求两个矩形相连的几何.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181224205047425)
+![](http://cdn.lindexi.site/lindexi%2F20181224205047425)
 
 本文采用的坐标是左上角是 (0,0) 点，从左向右坐标变大，从上到下坐标变大
 

@@ -22,13 +22,13 @@
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019619880908)
+![](http://cdn.lindexi.site/lindexi%2F2019619880908)
 
 从 Github 上找到自己期望接入的开源项目
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20196198833235)
+![](http://cdn.lindexi.site/lindexi%2F20196198833235)
 
 在这个页面的右边将会列出你的所有项目，鼠标移动到项目上可以看到 Add 按钮，点击就可以添加
 
@@ -42,19 +42,19 @@
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961981211515)
+![](http://cdn.lindexi.site/lindexi%2F201961981211515)
 
 在这个环境标签还可以设置编译时的环境变量和 HOST 等
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20196198148843)
+![](http://cdn.lindexi.site/lindexi%2F20196198148843)
 
 在准备完成了环境，下一步就是 Build 了，在开始选择了自己的项目之后，在自动构建里面将会自动识别这是一个 .NET 的程序，可以使用 msbuild 编译，于是很多预设的配置就已经写好
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961981552598)
+![](http://cdn.lindexi.site/lindexi%2F201961981552598)
 
 在 Configuration 上可以配置以什么方式编译，如 DEBUG 还是 RELEASE 编译，在 Platform 上可以选择编译平台，这些选项都支持多选
 
@@ -62,7 +62,7 @@
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961981657609)
+![](http://cdn.lindexi.site/lindexi%2F201961981657609)
 
 在使用的 VisualStudio 2019 镜像已经添加了很多环境变量和安装了很多程序，这里可以直接写 NuGet 而不需要先下载
 
@@ -72,19 +72,19 @@
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961982215113)
+![](http://cdn.lindexi.site/lindexi%2F201961982215113)
 
 自动构建完成是不是需要和小伙伴炫耀一下？在 [ci.appveyor.com](https://ci.appveyor.com) 提供了好看的图标，可以用来放在项目的首页
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建7.png)  -->
 
-![](http://image.acmx.xyz/lindexi%2F2019619851186)
+![](http://cdn.lindexi.site/lindexi%2F2019619851186)
 
 点击设置在 Badges 页面将 markdown code 复制放在自己开源项目的首页文档里面，这样就可以看到下图效果
 
 <!-- ![](image/开源项目使用 appveyor 自动构建/开源项目使用 appveyor 自动构建8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961985512738)
+![](http://cdn.lindexi.site/lindexi%2F201961985512738)
 
 嗯，上图是因为我写了逗比代码，没有编译成功。小伙伴一看这个项目就知道这个项目的作者是不是逗比了，一个编译不通过的项目都敢放在这
 

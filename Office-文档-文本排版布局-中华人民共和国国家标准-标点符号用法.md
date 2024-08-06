@@ -16,13 +16,13 @@
 
 
 
-![](http://image.acmx.xyz/lindexi%2F202071711844743.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202071711844743.jpg)
 
 其中标点符号规则相对复杂，规范如下
 
 <!-- ![](image/Office 文档 文本排版布局 中华人民共和国国家标准 标点符号用法/Office 文档 文本排版布局 中华人民共和国国家标准 标点符号用法1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020717118259456.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020717118259456.jpg)
 
 详细请看 GB/T 15834 标点符号用法
 

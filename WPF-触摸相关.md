@@ -150,7 +150,7 @@
 
 [WPF and multi-touch - CodeProject](https://www.codeproject.com/Articles/692286/WPF-and-multi-touch )
 
-![](http://image.acmx.xyz/lindexi%2F72551177_p0.jpg)
+![](http://cdn.lindexi.site/lindexi%2F72551177_p0.jpg)
 
 
 

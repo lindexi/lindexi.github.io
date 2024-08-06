@@ -143,7 +143,7 @@
 
 代码：http://download.csdn.net/detail/lindexi_gd/9826807
 
-![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F%25E5%2588%2597%25E8%25A1%25A8.gif)
+![](http://cdn.lindexi.site/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F%25E5%2588%2597%25E8%25A1%25A8.gif)
 
 
 

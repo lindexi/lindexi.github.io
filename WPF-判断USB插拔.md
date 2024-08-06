@@ -41,7 +41,7 @@
 
 <!-- ![](image/WPF 判断USB插拔/WPF 判断USB插拔0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201885141035318)
+![](http://cdn.lindexi.site/lindexi%2F201885141035318)
 
 使用这个的方法很简单，请看下面代码
 

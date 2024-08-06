@@ -225,7 +225,7 @@ System.IO.FileNotFoundException:“找不到指定的模块。 (异常来自 HRE
 
 <!-- ![](image/WPF 使用 Win2d 渲染/WPF 使用 Win2d 渲染0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201973103135536)
+![](http://cdn.lindexi.site/lindexi%2F201973103135536)
 
 然后确定在 `bin\debug` 文件夹里面是否存在以下文件
 

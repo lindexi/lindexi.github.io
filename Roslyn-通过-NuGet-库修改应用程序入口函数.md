@@ -21,7 +21,7 @@
 
 <!-- ![](image/Roslyn 通过 NuGet 库修改应用程序入口函数/Roslyn 通过 NuGet 库修改应用程序入口函数0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019421164746788)
+![](http://cdn.lindexi.site/lindexi%2F2019421164746788)
 
 安装完成可以在用户名的 .nuget 文件夹找到
 

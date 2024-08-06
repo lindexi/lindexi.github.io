@@ -68,7 +68,7 @@
 
 <!-- ![](image/C# 在 构造函数添加 CallerMemberName 会怎样/C# 在 构造函数添加 CallerMemberName 会怎样1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191219148624)
+![](http://cdn.lindexi.site/lindexi%2F20191219148624)
 
 但是如果此时修改 F2 函数，这时输出的就是 `.ctor` 因为 CallerMemberName 是编译做的
 
@@ -84,7 +84,7 @@
 
 <!-- ![](image/C# 在 构造函数添加 CallerMemberName 会怎样/C# 在 构造函数添加 CallerMemberName 会怎样0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912191321979)
+![](http://cdn.lindexi.site/lindexi%2F201912191321979)
 
 分析一下两个的 IL 代码就知道，在 `public F2() : base()` 的 IL 代码
 

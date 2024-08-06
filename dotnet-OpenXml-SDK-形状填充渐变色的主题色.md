@@ -148,13 +148,13 @@ FormatScheme formatScheme = slidePart?.ThemeOverridePart?.ThemeOverride?.FormatS
 
 <!-- ![](image/dotnet OpenXml SDK 形状填充渐变色的主题色/dotnet OpenXml SDK 形状填充渐变色的主题色0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205201421454732.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205201421454732.jpg)
 
 请看下图就知道如何获取
 
 <!-- ![](image/dotnet OpenXml SDK 形状填充渐变色的主题色/dotnet OpenXml SDK 形状填充渐变色的主题色1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205201425124820.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205201425124820.jpg)
 
 大部分的存在继承关系和联系的都在 OpenXML SDK 里面写出来关系了，只有这些比较边角的功能需要自己实现
 

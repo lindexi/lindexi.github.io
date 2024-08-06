@@ -24,37 +24,37 @@
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208312037516614.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208312037516614.jpg)
 
 选择文本，设置文本内容是空字符串
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208312038494826.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208312038494826.jpg)
 
 按钮点击的事件，可以在属性的信号里面找到点击事件
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208312039183956.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208312039183956.jpg)
 
 填写事件名，此时将会在 MainWindow.cs 文件创建方法
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208312039488826.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208312039488826.jpg)
 
 返回代码，在按钮点击方法里面设置文本内容
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208312040217849.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208312040217849.jpg)
 
 此时运行代码，可以看到如下界面
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 进行拖控件开发 GTK 应用/点击按钮.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F%25E7%2582%25B9%25E5%2587%25BB%25E6%258C%2589%25E9%2592%25AE.gif)
+![](http://cdn.lindexi.site/lindexi%2F%25E7%2582%25B9%25E5%2587%25BB%25E6%258C%2589%25E9%2592%25AE.gif)
 
 这就是最简单的拖控件的方法
 

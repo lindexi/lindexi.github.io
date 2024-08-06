@@ -14,7 +14,7 @@
 
 <!-- ![](image/WPF 文字描边/WPF 文字描边0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019124194225821)
+![](http://cdn.lindexi.site/lindexi%2F2019124194225821)
 
 首先创建一个类继承 UIElement 这样就可以重写 OnRender 方法在里面画出文字
 
@@ -47,7 +47,7 @@
 
 <!-- ![](image/WPF 文字描边/WPF 文字描边1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019124194524426)
+![](http://cdn.lindexi.site/lindexi%2F2019124194524426)
 
 调用 formattedText.BuildGeometry 可以创建 Geometry 参数传入左上角坐标
 

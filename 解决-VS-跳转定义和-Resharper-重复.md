@@ -15,7 +15,7 @@
 
 VS 的设置
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017117145631.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017117145631.jpg)
 
 Resharper 的设置在 Environment->Editor->search & Navigation 里的 Rich mouse navigation in the edior
 
@@ -23,7 +23,7 @@ Resharper 的设置在 Environment->Editor->search & Navigation 里的 Rich mous
 
 最近我还在玩游戏[铁血战记](http://m.94wan.cn//games/2017-10-13/40968.html)，感觉不错，我的是iso端的：[下载地址](http://m.94wan.cn/tg/index.php?tuiId=6317) ，还有[安卓端](http://m.94wan.cn/tg/index.php?tuiId=6316)就是人不是很多，所以给他一个广告
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017117185240.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017117185240.jpg)
 
  
 

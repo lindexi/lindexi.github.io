@@ -14,7 +14,7 @@
 
 <!-- ![](image/github 设置自动删除合并的分支/github 设置自动删除合并的分支0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020220933374408.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020220933374408.jpg)
 
 
 

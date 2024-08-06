@@ -32,7 +32,7 @@
 
 画半圆的方法就是画一个圆，然后裁剪一半
 
-![](http://image.acmx.xyz/lindexi%2F20211251953294101.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211251953294101.jpg)
 
 用相同的方法，画出黑色的底色
 
@@ -87,7 +87,7 @@
             </Viewbox>
 ```
 
-![](http://image.acmx.xyz/lindexi%2FScreenshot%25202021-12-05%2520193603.png)
+![](http://cdn.lindexi.site/lindexi%2FScreenshot%25202021-12-05%2520193603.png)
 
 给 Grid 加上旋转，代码如下
 

@@ -13,7 +13,7 @@
 
 <!-- ![](image/C# 里面很少人知道但很好用的 Tuple 转换/C# 里面很少人知道但很好用的 Tuple 转换0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020330838122221.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020330838122221.jpg)
 
 我可以将 Lindexi 类解析为 `(string name, string doubi)` 的元组，只需要 Lindexi 存在Deconstruct方法，存在这个方法的类不需要继承任何接口，只需要方法名是 Deconstruct 参数全部都是 out 的就可以
 

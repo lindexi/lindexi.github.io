@@ -83,7 +83,7 @@ public class Model
 
 <!-- ![](image/WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误/WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20232618034628.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20232618034628.jpg)
 
 在 Loaded 事件里面，将 List 的第 1 项删除，代码如下
 
@@ -120,7 +120,7 @@ System.InvalidOperationException:“Cannot change ObservableCollection during a 
 
 <!-- ![](image/WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误/WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202326182471683.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202326182471683.jpg)
 
 以上就是最简单的方法让大家了解到问题
 
@@ -155,7 +155,7 @@ System.InvalidOperationException:“Cannot change ObservableCollection during a 
 
 <!-- ![](image/WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误/WPF 已知问题 在 ObservableCollection 的 CollectionChanged 修改集合内容将让 UI 显示错误2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20232618703073.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20232618703073.jpg)
 
 第二个方法是强行刷 ItemsSource 内容，强行刷不能在 `List_CollectionChanged` 立即调用，否则将会抛出 InvalidOperationException 异常
 

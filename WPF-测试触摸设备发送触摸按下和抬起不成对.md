@@ -20,7 +20,7 @@
 
 <!-- ![](image/WPF 测试触摸设备发送触摸按下和抬起不成对/WPF 测试触摸设备发送触摸按下和抬起不成对0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201971585852994)
+![](http://cdn.lindexi.site/lindexi%2F201971585852994)
 
 其实在 HID 设备里面，对于按下和移动用的都是 0x07 而对抬起用的是 0x04 详细请看[Windows 的 Pen 协议](https://blog.lindexi.com/post/Windows-%E7%9A%84-Pen-%E5%8D%8F%E8%AE%AE.html)
 

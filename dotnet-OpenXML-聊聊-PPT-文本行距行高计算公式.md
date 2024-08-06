@@ -16,7 +16,7 @@
 
 <!-- ![](image/dotnet OpenXML 聊聊 PPT 文本行距行高计算公式/dotnet OpenXML 聊聊 PPT 文本行距行高计算公式0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021122855273985.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021122855273985.jpg)
 
 行距 = 上边距+下边距
 

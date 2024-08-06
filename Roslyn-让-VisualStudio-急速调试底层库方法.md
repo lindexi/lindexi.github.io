@@ -70,7 +70,7 @@
 
 <!-- ![](image/Roslyn 让 VisualStudio 急速调试底层库方法/Roslyn 让 VisualStudio 急速调试底层库方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20195291993337)
+![](http://cdn.lindexi.site/lindexi%2F20195291993337)
 
 此时就可以在底层库里面点击运行进行调试，同时可以做二进制兼容的改动。关于二进制兼容请看[VisualStudio 通过外部调试方法快速调试库代码](ttps://blog.lindexi.com/post/VisualStudio-%E9%80%9A%E8%BF%87%E5%A4%96%E9%83%A8%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95%E5%BF%AB%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%93%E4%BB%A3%E7%A0%81.html )
 

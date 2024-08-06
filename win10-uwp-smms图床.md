@@ -22,7 +22,7 @@
 
 <!-- ![](image/win10_uwp_smmstu_chuang/win10_uwp_smmstu_chuang0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202032914798525.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202032914798525.jpg)
 
 将这串 Api Key 保存到本地记事本上，接下来将会用到
 

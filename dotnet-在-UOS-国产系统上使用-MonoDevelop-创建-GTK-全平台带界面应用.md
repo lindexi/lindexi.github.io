@@ -16,13 +16,13 @@
 
 <!-- ![](image/dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具/dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208311957535612.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208311957535612.jpg)
 
 打开之后，点击新建项目
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 创建 GTK 全平台带界面应用/dotnet 在 UOS 国产系统上使用 MonoDevelop 创建 GTK 全平台带界面应用0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208312011468845.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208312011468845.jpg)
 
 选择新建 GTK# 2.0 的项目，点击下一步，选择路径，加上项目名
 
@@ -32,7 +32,7 @@
 
 <!-- ![](image/dotnet 在 UOS 国产系统上使用 MonoDevelop 创建 GTK 全平台带界面应用/dotnet 在 UOS 国产系统上使用 MonoDevelop 创建 GTK 全平台带界面应用1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208312012512841.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208312012512841.jpg)
 
 新建的项目默认啥都没有，可以按下 F5 开始执行
 

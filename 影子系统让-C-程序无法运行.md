@@ -14,7 +14,7 @@
 
 <!-- ![](image/影子系统让程序无法运行/影子系统让程序无法运行0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019515151657277)
+![](http://cdn.lindexi.site/lindexi%2F2019515151657277)
 
 从系统日志可以看到下面代码
 

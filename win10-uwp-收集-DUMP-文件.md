@@ -16,7 +16,7 @@
 
 <!-- ![](image/win10 uwp 收集 DUMP 文件/win10 uwp 收集 DUMP 文件1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018111584338869)
+![](http://cdn.lindexi.site/lindexi%2F2018111584338869)
 
 如果不存在 LocalDumps 文件夹，请右击创建一个
 
@@ -24,13 +24,13 @@
 
 <!-- ![](image/win10 uwp 收集 DUMP 文件/win10 uwp 收集 DUMP 文件3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018111584453145)
+![](http://cdn.lindexi.site/lindexi%2F2018111584453145)
 
 右击新建一个可扩展字符串，写入 DumpFolder 然后双击输入 DUMP 文件可以存放的文件夹，注意这个文件夹需要有权限
 
 <!-- ![](image/win10 uwp 收集 DUMP 文件/win10 uwp 收集 DUMP 文件4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018111584635904)
+![](http://cdn.lindexi.site/lindexi%2F2018111584635904)
 
 接着右击新建 DWORD 32 位，输入 DumpCount 再双击输入值，这个表示最多可以存放多少个 DUMP 文件，默认值是 10 个
 
@@ -85,7 +85,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting
 
 <!-- ![](image/win10 uwp 收集 DUMP 文件/win10 uwp 收集 DUMP 文件5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201811159442184)
+![](http://cdn.lindexi.site/lindexi%2F201811159442184)
 
 ## 调试 DUMP 文件
 
@@ -95,7 +95,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting
 
 <!-- ![](image/win10 uwp 收集 DUMP 文件/win10 uwp 收集 DUMP 文件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201811158415972)
+![](http://cdn.lindexi.site/lindexi%2F201811158415972)
 
 直接双击 DUMP 文件使用 WinDbg Preview 打开
 

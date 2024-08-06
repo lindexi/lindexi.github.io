@@ -18,7 +18,7 @@
 
 <!-- ![](image/WPF 将 docx 的 Word 文件转换为 FlowDocument 显示/WPF 将 docx 的 Word 文件转换为 FlowDocument 显示0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202084193134675.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202084193134675.jpg)
 
 详细请看 [Show Word File in WPF - CodeProject](https://www.codeproject.com/Articles/649064/Show-Word-file-in-WPF )
 

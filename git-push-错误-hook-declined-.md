@@ -55,7 +55,7 @@ error: failed to push some refs to 'http://127.0.0.1:3000/lindexi/gogs.git'
 
 进入控制板，重新生成所有仓库的 Update 钩子。这样就好了。
 
-![](http://image.acmx.xyz/4b3afb91-e4b6-4548-a7e0-ab239e814a372017211153253.jpg)
+![](http://cdn.lindexi.site/4b3afb91-e4b6-4548-a7e0-ab239e814a372017211153253.jpg)
 
 那么对于备份了 gogs 要恢复，需要如何做？
 

@@ -16,7 +16,7 @@
 
 先给大家看一下界面
 
-![](http://image.acmx.xyz/lindexi%2F2018551724559489.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018551724559489.jpg)
 
 不要以为这个界面很复杂，实际上他需要的代码很少。
 

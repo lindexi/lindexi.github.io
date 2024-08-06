@@ -122,7 +122,7 @@ Intel Core i7-9700K CPU 3.60GHz (Coffee Lake), 1 CPU, 8 logical and 8 physical c
 
 <!-- ![](image/dotnet 6 数组拷贝性能对比/dotnet 6 数组拷贝性能对比0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202183085157938.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202183085157938.jpg)
 
 可以看到，在对比使用 `for` 循环拷贝和使用 `Array.Copy` 拷贝中，使用 `Array.Copy` 拷贝的性能更好，在拷贝的数组长度越长的时候，使用 Array.Copy 拷贝性能优势就更好
 
@@ -144,7 +144,7 @@ Intel Core i7-9700K CPU 3.60GHz (Coffee Lake), 1 CPU, 8 logical and 8 physical c
 
 <!-- ![](image/dotnet 6 数组拷贝性能对比/dotnet 6 数组拷贝性能对比2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20218302017382.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20218302017382.jpg)
 
 可以看到 Span 的性能比 `Array.Copy` 拷贝性能更强
 
@@ -267,7 +267,7 @@ Intel Core i7-9700K CPU 3.60GHz (Coffee Lake), 1 CPU, 8 logical and 8 physical c
 
 <!-- ![](image/dotnet 6 数组拷贝性能对比/dotnet 6 数组拷贝性能对比1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021830857234540.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021830857234540.jpg)
 
 以上是给 WPF 框架做性能优化时测试的，详细请看
 

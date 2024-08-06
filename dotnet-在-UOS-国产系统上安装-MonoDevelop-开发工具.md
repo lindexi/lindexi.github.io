@@ -57,7 +57,7 @@ sudo apt-get install monodevelop
 
 <!-- ![](image/dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具/dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20208311957535612.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208311957535612.jpg)
 
 
 

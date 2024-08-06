@@ -33,13 +33,13 @@
 
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101585516689)
+![](http://cdn.lindexi.site/lindexi%2F2018101585516689)
 
 下面的图片是修改之后
 
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101593416619)
+![](http://cdn.lindexi.site/lindexi%2F2018101593416619)
 
 具体请看 https://stackoverflow.com/a/3025944/6116637
 
@@ -53,7 +53,7 @@
 
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101584938619)
+![](http://cdn.lindexi.site/lindexi%2F2018101584938619)
 
 参见 https://stackoverflow.com/a/4868459/6116637
 
@@ -72,7 +72,7 @@
 
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101585055784)
+![](http://cdn.lindexi.site/lindexi%2F2018101585055784)
 
 具体请看 https://stackoverflow.com/a/5416394/6116637
 
@@ -91,13 +91,13 @@
 
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101585516689)
+![](http://cdn.lindexi.site/lindexi%2F2018101585516689)
 
 设置为 false 就看不到
 
 <!-- ![](image/Winforms 可能遇到的 1000 个问题/Winforms 可能遇到的 1000 个问题7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201810159359115)
+![](http://cdn.lindexi.site/lindexi%2F201810159359115)
 
 
 

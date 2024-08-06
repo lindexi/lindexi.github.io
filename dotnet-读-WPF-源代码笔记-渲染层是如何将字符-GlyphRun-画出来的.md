@@ -15,7 +15,7 @@
 
 为了方便大家了解本文所聊的是文本绘制渲染的哪个阶段，我画了如下示意图
 
-![](http://image.acmx.xyz/lindexi%2F20231141710597463.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20231141710597463.jpg)
 
 如上图，本文核心聊的只是文本字符渲染里面的 MIL 层的实现方法，不包括具体的 DirectX 行为和文本排版布局方法。如对文本排版布局感兴趣，请参阅 [dotnet 读 WPF 源代码笔记 简单聊聊文本布局换行逻辑](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E7%AE%80%E5%8D%95%E8%81%8A%E8%81%8A%E6%96%87%E6%9C%AC%E5%B8%83%E5%B1%80%E6%8D%A2%E8%A1%8C%E9%80%BB%E8%BE%91.html ) 博客。示意图仅仅只是用来告诉大家本文所聊的范围，而不是真正实际的文本字符排版布局绘制渲染过程
 
@@ -31,7 +31,7 @@
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 渲染层是如何将字符 GlyphRun 画出来的/dotnet 读 WPF 源代码笔记 渲染层是如何将字符 GlyphRun 画出来的0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20231121619429757.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20231121619429757.jpg)
 
 上图的灰色底黑字就是 Alpha 纹理的示意图，灰色代表着全透明，黑色代表着不透明。红色的矩形表示的是前景色是红色的字符的绘制范围。在绘制出来的红色矩形上叠加 Alpha 纹理加裁剪的效果就是只有不透明的部分可见，透明的部分就是透明的，于是结果就是最后一个等于号的红色的字的效果
 
@@ -99,7 +99,7 @@ CMilSlaveRenderData::Draw(
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 渲染层是如何将字符 GlyphRun 画出来的/dotnet 读 WPF 源代码笔记 渲染层是如何将字符 GlyphRun 画出来的1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20231121717336276.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20231121717336276.jpg)
 
 以上代码的 `IFC` 是一个宏，用途就是判断方法执行是否成功。如果方法执行失败，将会调用 goto 关键字跳转到 Cleanup 标签里面。如下面代码例子，如果 GetFirstItemSafe 方法执行失败，将会 goto 到 Cleanup 的代码，进行清理和返回
 

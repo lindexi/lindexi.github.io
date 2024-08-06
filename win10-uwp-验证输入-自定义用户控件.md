@@ -19,7 +19,7 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
 
 用Nuget搜索`WinUX.UWP.Xaml.Controls`
 
-![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a2016121214411.jpg)
+![](http://cdn.lindexi.site/fc7733af-8526-44d2-84b9-99b41ef99f4a2016121214411.jpg)
 
 下载完成就好
 
@@ -88,7 +88,7 @@ TextBox是给用户输入，我们有时要用户只输入数字，而用户输�
  
 ```
 
-![](http://image.acmx.xyz/validaTextbox20161212145937.gif)
+![](http://cdn.lindexi.site/validaTextbox20161212145937.gif)
 
 `MaxLength` 最大长度
 

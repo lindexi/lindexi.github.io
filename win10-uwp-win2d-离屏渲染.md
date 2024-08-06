@@ -138,7 +138,7 @@
 
 <!-- ![](image/win10 uwp win2d 离屏渲染/win10 uwp win2d 离屏渲染0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20185291124429004.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185291124429004.jpg)
 
 需要注意，这时的特效的计算是在`CanvasControl_OnDraw`这时渲染才计算特效。
 

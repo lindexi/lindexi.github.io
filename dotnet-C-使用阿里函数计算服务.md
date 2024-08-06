@@ -15,19 +15,19 @@
 
 <!-- ![](image/dotnet C# 使用阿里函数计算服务/dotnet C# 使用阿里函数计算服务0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020132153152617.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020132153152617.jpg)
 
 先创建事件函数，这个函数最简单
 
 <!-- ![](image/dotnet C# 使用阿里函数计算服务/dotnet C# 使用阿里函数计算服务1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202013215343152.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202013215343152.jpg)
 
 下一步需要选择使用 dotnet core 2.1 服务，然后填写所在服务和函数名称，这里的函数入口的填写将会存在一点坑，可以先使用默认的值，接下来再修改
 
 <!-- ![](image/dotnet C# 使用阿里函数计算服务/dotnet C# 使用阿里函数计算服务2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202013215537561.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202013215537561.jpg)
 
 先尝试在本地创建一个 dotnet core 2.1 版本的控制台项目，注意创建的框架需要使用 dotnet core 2.1 版本，可以在 csproj 文件里面通过修改 TargetFramework 的值修改版本
 

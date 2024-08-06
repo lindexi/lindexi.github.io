@@ -15,7 +15,7 @@
 
 <!-- ![](image/WPF 滑动修改音量控件/WPF 滑动修改音量控件0.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2FWPF%2520%25E6%25BB%2591%25E5%258A%25A8%25E4%25BF%25AE%25E6%2594%25B9%25E9%259F%25B3%25E9%2587%258F%25E6%258E%25A7%25E4%25BB%25B60.gif)
+![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E6%25BB%2591%25E5%258A%25A8%25E4%25BF%25AE%25E6%2594%25B9%25E9%259F%25B3%25E9%2587%258F%25E6%258E%25A7%25E4%25BB%25B60.gif)
 
 这是一个特别简单的控件，代码放在[github](https://github.com/lindexi/lindexi_gd/tree/aa1ba2b2/KeenaihemchiQallhawearhina)欢迎小伙伴访问
 

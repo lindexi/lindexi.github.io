@@ -24,7 +24,7 @@
 
 <!-- ![](image/dotnet 探究 SemanticKernel 的 planner 的原理/dotnet 探究 SemanticKernel 的 planner 的原理0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2023115172604099.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023115172604099.jpg)
 
 先按照 [dotnet SemanticKernel 入门 将技能导入框架](https://blog.lindexi.com/post/dotnet-SemanticKernel-%E5%85%A5%E9%97%A8-%E5%B0%86%E6%8A%80%E8%83%BD%E5%AF%BC%E5%85%A5%E6%A1%86%E6%9E%B6.html ) 博客提供的方法，向 SemanticKernel 框架里面导入两个 SemanticFunction 函数，分别是作诗和翻译
 

@@ -44,7 +44,7 @@
 
 运行上面代码，可以看到一个有趣的代码
 
-![](http://image.acmx.xyz/lindexi%2F20193208581815)
+![](http://cdn.lindexi.site/lindexi%2F20193208581815)
 
 自己解决不合法的字符串可以通过 JsonSerializerSettings 的方法，里面有一个委托，在发现有不清真的字符串的时候就会调用这个委托
 

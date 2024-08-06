@@ -125,7 +125,7 @@ using lindexi.linq;
 
 <!-- ![](image/C# 如何写 DEBUG 输出/C# 如何写 DEBUG 输出0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201976144722703)
+![](http://cdn.lindexi.site/lindexi%2F201976144722703)
 
 ## 过滤输出
 
