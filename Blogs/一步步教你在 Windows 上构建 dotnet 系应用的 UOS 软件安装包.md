@@ -296,7 +296,7 @@ entries/icons/hicolor/16x16/apps/${appid}.png
 这里需要额外提醒大家，在 UOS 的官方文档提供的 info 文件例子里面，其文件内容的 json 格式是错误的，在 `permissions` 属性和下一个属性之间少了一个逗号，如果想要拷贝官方的例子，还请自行确保 json 格式正确
 
 <!-- ![](image/一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包/一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20231225124323520.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20231225124323520.jpg)
 
 写到这里，文件结构就完成了，本例子完成之后的文件结构如下
 

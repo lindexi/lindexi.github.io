@@ -14,7 +14,7 @@
 
 <!-- ![](image/WPF 动画性能测试应用 一千个半透明矩形做动画/WPF 动画性能测试应用 一千个半透明矩形做动画0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20221024817334076.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20221024817334076.jpg)
 
 接下来将告诉大家这个测试应用是如何做的
 

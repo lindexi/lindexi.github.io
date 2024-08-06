@@ -40,7 +40,7 @@ git pull origin 1d3883ac7feba5dd7752e1edccd33f943c02f7f9
 
 我创建了 100 张图片，将这些图片作为资源的存在，接着写一个 资源字典 引用这 100 张图片。这 100 张图片都属于不同的图片，最后构建出来的 DLL 文件大概有 300 MB 这么大
 
-![](http://image.acmx.xyz/lindexi%2F20234221458573021.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20234221458573021.jpg)
 
 将资源字典同样在 App.xaml 里引用加入，测量 App 的 InitializeComponent 时间发现近乎没有受到图片数量的影响。在我的设置上 Debug 模式下仅不到百毫秒即可完成，即使我是放在机械硬盘上运行的
 

@@ -11,13 +11,13 @@
 先来看看问题的动态图片
 
 <!-- ![](image/dotnet 7 已知问题 WPF 的 TreeView 开启虚拟化之后只显示首项/dotnet 7 已知问题 WPF 的 TreeView 开启虚拟化之后只显示首项0.gif) -->
-![](http://image.acmx.xyz/lindexi%2F204414287-98131db3-fbe3-45bf-87ad-f05789be25ad.gif)
+![](http://cdn.lindexi.site/lindexi%2F204414287-98131db3-fbe3-45bf-87ad-f05789be25ad.gif)
 
 此问题影响的不仅仅只是 TreeView 开启虚拟化的情况。也影响到 DataGrid 控件，让 DataGrid 控件只显示首项，如下图
 
 <!-- ![](image/dotnet 7 已知问题 WPF 的 TreeView 开启虚拟化之后只显示首项/dotnet 7 已知问题 WPF 的 TreeView 开启虚拟化之后只显示首项0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2023111842552541.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023111842552541.jpg)
 
 最简复现代码请看 [https://github.com/lindexi/lindexi_gd/commit/49d40420d1a99b09a129c31c240466032fb69e46](https://github.com/lindexi/lindexi_gd/commit/49d40420d1a99b09a129c31c240466032fb69e46)
 

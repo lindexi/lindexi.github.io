@@ -39,7 +39,7 @@
 此改进是在许多年前，由 [Thomas Levesque](https://github.com/thomaslevesque) 大佬在 <https://github.com/dotnet/wpf/issues/84> 提出的。被微软的 [Anjali](https://github.com/anjali-wpf) 在 <https://github.com/dotnet/wpf/pull/8534> 实现
 
 <!-- ![](image/dotnet 9 WPF 支持 Style 的 Setter 填充内容时可忽略 Value 标签/dotnet 9 WPF 支持 Style 的 Setter 填充内容时可忽略 Value 标签0.png) -->
-![](http://image.acmx.xyz/lindexi%2F202458926253943.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202458926253943.jpg)
 
 此变更将影响 XAML 语法，对应的文档也进行了同步更新，详细请看 <https://github.com/dotnet/dotnet-api-docs/pull/9581>
 

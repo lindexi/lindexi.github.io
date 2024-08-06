@@ -22,6 +22,6 @@
 
 <!-- ![](image/git fatal detected dubious ownership in repository 的解决方法/git fatal detected dubious ownership in repository 的解决方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2023228124415551.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2023228124415551.jpg)
 
 更改所有者之后，再次试试 git 命令，预计此时就可以使用
