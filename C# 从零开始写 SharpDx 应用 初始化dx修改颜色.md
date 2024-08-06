@@ -190,7 +190,7 @@ using SharpDX.Direct3D;
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 初始化dx修改颜色/C# 从零开始写 SharpDx 应用 初始化dx修改颜色0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201872164929884.jpg)
+![](http://cdn.lindexi.site/lindexi%2F201872164929884.jpg)
 
 ## 修改颜色
 
@@ -228,7 +228,7 @@ using SharpDX.Direct3D;
 
 <!-- ![](image/C# 从零开始写 SharpDx 应用 初始化dx修改颜色/C# 从零开始写 SharpDx 应用 初始化dx修改颜色1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181020172328699)
+![](http://cdn.lindexi.site/lindexi%2F20181020172328699)
 
 更多关于渲染管线请看 [渲染管线 - 冠位仓鼠 - CSDN博客](https://blog.csdn.net/u010333737/article/details/78556583?utm_source=blogxgwz1 )
 

@@ -27,7 +27,7 @@
 
 <!-- ![](image/上海展盟网络科技有限公司的 gamebox 组件注入进程导致软件崩溃/上海展盟网络科技有限公司的 gamebox 组件注入进程导致软件崩溃0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2Fimage2020-9-18_17-50-21.png)
+![](http://cdn.lindexi.site/lindexi%2Fimage2020-9-18_17-50-21.png)
 
 或者尝试在用户的电脑上尝试找到 %appdata%\Heinote\gamebox 文件夹是否存在，如果存在，也许就是 [小黑记事本](http://www.heinote.com/) 带了  上海展盟网络科技有限公司的  gamebox_shell.dll  组件，此时尝试删除此软件和对应的文件。如果软件能正常，那么证明是此问题
 
@@ -57,7 +57,7 @@
 
 <!-- ![](image/上海展盟网络科技有限公司的 gamebox 组件注入进程导致软件崩溃/上海展盟网络科技有限公司的 gamebox 组件注入进程导致软件崩溃1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020103199181412.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020103199181412.jpg)
 
 默认从官网下载的 小黑记事本 软件不会带上 gamebox_shell.dll 组件，只有在触发了 小黑记事本 的自动更新之后，通过它下载的 Heinoteupdate_gw_001.exe 才带上了 gamebox_shell.dll 组件。通过下载的文件的软件签名可以了解到这两个包都是存在官方签名的
 

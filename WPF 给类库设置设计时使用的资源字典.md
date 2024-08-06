@@ -19,7 +19,7 @@
 
 <!-- ![](image/WPF 给类库设置设计时使用的资源字典/WPF 给类库设置设计时使用的资源字典0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202142292019449.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202142292019449.jpg)
 
 这个文件的命名规则是有约定的，不推荐自己修改。在 csproj 上添加如下代码
 
@@ -59,7 +59,7 @@
 
 <!-- ![](image/WPF 给类库设置设计时使用的资源字典/WPF 给类库设置设计时使用的资源字典2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021422932291920.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021422932291920.jpg)
 
 接下来新建 `Properties\DesignTimeResources.xaml` 资源字典文件，在这个资源字典文件里面添加如下代码
 
@@ -110,7 +110,7 @@
 
 <!-- ![](image/WPF 给类库设置设计时使用的资源字典/WPF 给类库设置设计时使用的资源字典1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021422930159898.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021422930159898.jpg)
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/41f631f0/HallnebubeaChelnawjecere ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/41f631f0/HallnebubeaChelnawjecere) 欢迎下载执行
 

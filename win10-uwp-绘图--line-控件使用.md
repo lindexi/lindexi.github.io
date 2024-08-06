@@ -33,17 +33,17 @@
 
 有了直线，可以在设计看到一条线，但是运行是没有看到的，因为我们没有给线大小。
 
-![](http://image.acmx.xyz/3d1cee81-4688-4db3-80d6-14ea8c9ce64c20161125145232.jpg)
+![](http://cdn.lindexi.site/3d1cee81-4688-4db3-80d6-14ea8c9ce64c20161125145232.jpg)
 
 Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是线段的大小
 
 我们写上`Stroke="Black" StrokeThickness="5"`
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515218.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515218.jpg)
 
 如果我们把大小写为50，那么就会看到很不好看
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515413.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515413.jpg)
 
 于是我们想要裁剪他，裁剪可以用Clip
 
@@ -53,11 +53,11 @@ Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是�
 
 可以看到线段裁剪了
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515727.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515727.jpg)
 
 被一个大小为150的矩形裁剪了
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515828.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515828.jpg)
 
 接着就是ms-uap 写的 http://www.cnblogs.com/ms-uap/p/4641419.html
 
@@ -73,13 +73,13 @@ Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是�
                 </Line>
 ```
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac9520161125151239.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac9520161125151239.jpg)
 
 需要知道，0.1的宽度是`0.1*StrokeThickness`的宽度
 
 我们把宽度大一些
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac9520161125151552.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac9520161125151552.jpg)
 
 然后加个线条，就可以做出ms-uap写的图
 
@@ -89,13 +89,13 @@ Stroke就是线段设置颜色或用其他渐变填充，StrokeThickness就是�
 StrokeStartLineCap="Round"
 ```
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac9520161125151939.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac9520161125151939.jpg)
 
 ```csharp
 StrokeStartLineCap="Triangle"
 ```
 
-![](http://image.acmx.xyz/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515214.jpg)
+![](http://cdn.lindexi.site/a6d555d5-766d-4ca9-83d6-51270fdaac952016112515214.jpg)
 
 线段两头尖的画法就是在设置后面的`StrokeEndLineCap`
 

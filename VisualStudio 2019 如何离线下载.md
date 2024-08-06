@@ -11,7 +11,7 @@
 
 先从[官网](https://docs.microsoft.com/en-us/visualstudio/install/create-an-offline-installation-of-visual-studio?view=vs-2019 )选择自己需要下载的 VisualStudio 版本，可以选择社区版、专业版和企业版。只有社区版是免费的
 
-![](http://image.acmx.xyz/lindexi%2F20194394145961)
+![](http://cdn.lindexi.site/lindexi%2F20194394145961)
  
 如我选择 Visual Studio Community 社区版，于是下载的 exe 就是 vs_community.exe 如果下载的是 Visual Studio Professional 对应的 exe 就是 vs_professional.exe 请替换本文的代码里面用到的程序为你下载的版本
 

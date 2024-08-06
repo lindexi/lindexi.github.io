@@ -34,7 +34,7 @@
 在使用 dotnet 8 的 SDK 构建时，无论使用的运行时是 dotnet 6 还是 dotnet 7 等，都会在 InformationalVersion 里面拿到 `版本号+commit` 格式的字符串，如下图
 
 <!-- ![](image/dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号/dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20231123202119736.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20231123202119736.jpg)
 
 此变更不仅修改了版本号字符串，还影响了 VisualStudio 的热重载
 
@@ -62,7 +62,7 @@ obj\Debug\net7.0-windows\Xxx.AssemblyInfo.cs (第 17 行): 错误 ENC0003: 更�
 修改之后的重新构建应用运行，可以看到此时界面只显示版本号
 
 <!-- ![](image/dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号/dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号1.png) -->
-![](http://image.acmx.xyz/lindexi%2F202311232023417082.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202311232023417082.jpg)
 
 如果想要自定义版本号后面添加的信息，可以通过配置 SourceRevisionId 属性。在没有设置 IncludeSourceRevisionInInformationalVersion 为 false 的前提下，设置 SourceRevisionId 属性的值，即可让 SourceRevisionId 设置的内容在 InformationalVersion 属性里面追加到版本号字符串后面
 
@@ -89,7 +89,7 @@ obj\Debug\net7.0-windows\Xxx.AssemblyInfo.cs (第 17 行): 错误 ENC0003: 更�
 
 <!-- ![](image/dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号/dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202311232028231201.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202311232028231201.jpg)
 
 更多请参阅：
 

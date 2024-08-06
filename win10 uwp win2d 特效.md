@@ -13,11 +13,11 @@
 
 <!-- ![](image/win10 uwp win2d 特效/win10 uwp win2d 特效0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201893019443349)
+![](http://cdn.lindexi.site/lindexi%2F201893019443349)
 
 通过 Nuget 安装 Win2d 库
 
-![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F20173262046.jpg)
 
 先在主页面添加引用 `xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"` 然后创建空白的 Canvas 请看代码
 
@@ -124,7 +124,7 @@ using Microsoft.Graphics.Canvas.Effects;
 
 <!-- ![](image/win10 uwp win2d 特效/win10 uwp win2d 特效1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018930201612575)
+![](http://cdn.lindexi.site/lindexi%2F2018930201612575)
 
 更多关于 AlphaMaskEffect 请看 [win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/lindexi/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
 
@@ -171,7 +171,7 @@ Offset = 0
 
 <!-- ![](image/win10 uwp win2d 特效/win10 uwp win2d 特效2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018930201612575)
+![](http://cdn.lindexi.site/lindexi%2F2018930201612575)
 
 通过修改 Source1Amount 和 Source2Amount 可以看到不同的相加效果
 
@@ -213,7 +213,7 @@ Offset = 0
 
 <!-- ![](image/win10 uwp win2d 特效/win10 uwp win2d 特效4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018930203356206)
+![](http://cdn.lindexi.site/lindexi%2F2018930203356206)
 
 ### 相减
 
@@ -279,7 +279,7 @@ Offset = 1
 
 代码 [win2d ArithmeticCompositeEffect-CSDN下载](https://download.csdn.net/download/lindexi_gd/10698545 ) 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/bf1d732f629a076a4b44fe36f5df1daa7c31581f/BallciBarabow) 欢迎小伙伴访问
 
-![](http://image.acmx.xyz/lindexi%2F20186121956329217.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20186121956329217.jpg)
 
 [第三章(介绍篇) 图像特效Effect](https://zhuanlan.zhihu.com/p/37131345 )
 

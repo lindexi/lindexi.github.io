@@ -17,7 +17,7 @@
 
 <!-- ![](image/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020511165274952.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020511165274952.jpg)
 
 保存之后，将后缀名修改为 zip 然后解压缩
 
@@ -29,13 +29,13 @@ move 文本项目符号.pptx 文本项目符号.pptx.zip
 
 <!-- ![](image/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205111610382342.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205111610382342.jpg)
 
 打开 `f:\temp\文本项目符号\ppt\slides\slide1.xml` 文件
 
 <!-- ![](image/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20205111614165948.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20205111614165948.jpg)
 
 在段落属性添加 `<a:buNone/>` 如上图，注意不要格式化，上面格式化只是让小伙伴们阅读起来不会要打我
 
@@ -45,7 +45,7 @@ move 文本项目符号.pptx 文本项目符号.pptx.zip
 
 <!-- ![](image/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义/dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202051116928644.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202051116928644.jpg)
 
 当然此时的 WPS 是玩不过 Office 的，在 WPS 里面解析错了，将项目符号显示出来
 

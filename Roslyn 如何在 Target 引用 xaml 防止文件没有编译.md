@@ -183,7 +183,7 @@ Program.cs(15,17): Error CS1061: “App”未包含“InitializeComponent”的�
 
 <!-- ![](image/Roslyn 如何在 Target 引用 xaml 防止文件没有编译/Roslyn 如何在 Target 引用 xaml 防止文件没有编译1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018949362284)
+![](http://cdn.lindexi.site/lindexi%2F2018949362284)
 
 但是如果放在 Target 里就无法看到引用的文件夹，也就无法删除文件夹，通过这个方法可以让我使用源代码打包
 
@@ -200,7 +200,7 @@ Program.cs(15,17): Error CS1061: “App”未包含“InitializeComponent”的�
 
 <!-- ![](image/Roslyn 如何在 Target 引用 xaml 防止文件没有编译/Roslyn 如何在 Target 引用 xaml 防止文件没有编译2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201894935986)
+![](http://cdn.lindexi.site/lindexi%2F201894935986)
 
 源代码打包项目是为了解决很小的代码，都需要做出一个 nuget 包，这个 nuget 包是 dll 也就是软件会引用太多的 dll ，大家都知道如果引用的 dll 多了，软件启动速度也就是变慢了。所以我就使用打包 nuget 包但是引用的是源代码的方式，这样开发者在安装 nuget 之后可以快速调试安装的库的源代码。
 

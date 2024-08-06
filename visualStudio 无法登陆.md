@@ -10,7 +10,7 @@
 
 打开设置、网络、代理，关了它，试试
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162926.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162926.jpg)
 
 
 如果遇到下面的问题：
@@ -20,7 +20,7 @@
 No home tenant info found.
 
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162719.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017616162719.jpg)
 
 那么可以尝试下面的方法：
 

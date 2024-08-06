@@ -16,31 +16,31 @@
 
 然后点击打开集成页面
 
-![](http://image.acmx.xyz/lindexi%2F201951784850976)
+![](http://cdn.lindexi.site/lindexi%2F201951784850976)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具0.png) -->
 
 在这里选择引入 Webhook 的方式
 
-![](http://image.acmx.xyz/lindexi%2F201951784924310)
+![](http://cdn.lindexi.site/lindexi%2F201951784924310)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具1.png) -->
 
 点击添加钩子
 
-![](http://image.acmx.xyz/lindexi%2F20195178500833)
+![](http://cdn.lindexi.site/lindexi%2F20195178500833)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具2.png) -->
 
 输入一个标题和选择频道
 
-![](http://image.acmx.xyz/lindexi%2F201951785037963)
+![](http://cdn.lindexi.site/lindexi%2F201951785037963)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具3.png) -->
 
 现在就可以看到一个链接了
 
-![](http://image.acmx.xyz/lindexi%2F201951785122324)
+![](http://cdn.lindexi.site/lindexi%2F201951785122324)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具4.png) -->
 
@@ -87,7 +87,7 @@
 
 访问之后可以看到刚才创建的频道显示了信息
 
-![](http://image.acmx.xyz/lindexi%2F201951792512127)
+![](http://cdn.lindexi.site/lindexi%2F201951792512127)
 
 <!-- ![](image/dotnet core 集成到 Mattermost 聊天工具/dotnet core 集成到 Mattermost 聊天工具5.png) -->
 

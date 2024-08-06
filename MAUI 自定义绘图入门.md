@@ -73,11 +73,11 @@ public class GraphicsDrawable : IDrawable
 
 运行程序，即可看到界面画出一条线
 
-![](http://image.acmx.xyz/lindexi%2F202265124335331.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202265124335331.jpg)
 
 可以看到调用堆栈如下
 
-![](http://image.acmx.xyz/lindexi%2F20226512326813.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20226512326813.jpg)
 
 也就是实际的实现是由 Win2D 提供的
 
@@ -85,11 +85,11 @@ public class GraphicsDrawable : IDrawable
 
 接下来在安卓平台上跑一下
 
-![](http://image.acmx.xyz/lindexi%2F2022651159458266.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022651159458266.jpg)
 
 同样也看一下调用堆栈
 
-![](http://image.acmx.xyz/lindexi%2F2022651158524428.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022651158524428.jpg)
 
 可以看到调用堆栈和 Windows 平台上，符合预期的不同，也就是说 Microsoft.Maui.Graphics 根据不同的平台选用不同的绘制底层技术
 

@@ -11,13 +11,13 @@
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021411457348467.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021411457348467.jpg)
 
 默认放入到 PPT 里面的效果如下
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021411458198277.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021411458198277.jpg)
 
 而如果按照 ECMA-376 的 ClrChange (Color Change Effect) 功能，给图片加上了 ClrChange 特效，如以下代码，可以看到背景被去掉
 
@@ -38,7 +38,7 @@
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021411459367577.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021411459367577.jpg)
 
 而 ColorChangeEffect 特效的定义如下，其实咱上面的代码没有写全，有一个叫 `useA` 的属性被忽略。这个属性的含义就是是否应该使用 Alpha 透明通道，好在默认值是 true 也就是应该采用透明通道
 
@@ -73,7 +73,7 @@
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20214115314999.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20214115314999.jpg)
 
 如果有多个颜色需要修改呢？此时可以叠加很多 Color Change 特效
 
@@ -116,7 +116,7 @@
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202141158452360.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202141158452360.jpg)
 
 以上去背景仅仅只是通过设置 Alpha 为 0 实现，其实本质的功能是替换颜色，如下面代码
 
@@ -156,7 +156,7 @@
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021411510167909.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021411510167909.jpg)
 
 这个特效更多是作为去背景使用，在 PPT 里面的图片的颜色，设置透明色用上
 

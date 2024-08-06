@@ -15,13 +15,13 @@
 
 <!-- ![](image/微软最具价值专家 MVP 如何获得 Resharper 的免费功能/微软最具价值专家 MVP 如何获得 Resharper 的免费功能0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181221112437100)
+![](http://cdn.lindexi.site/lindexi%2F20181221112437100)
 
 这里有链接是 Verification link 要求写自己的链接，在 [MVP](https://mvp.microsoft.com/en-us/MvpSearch?sc=s) 网站找到自己的信息，如我的信息 [Dexi Lin](https://mvp.microsoft.com/en-us/PublicProfile/5003260?fullName=Dexi%20Lin ) 复制链接填写，填写完成就点击接受
 
 <!-- ![](image/微软最具价值专家 MVP 如何获得 Resharper 的免费功能/微软最具价值专家 MVP 如何获得 Resharper 的免费功能1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181221112556965)
+![](http://cdn.lindexi.site/lindexi%2F20181221112556965)
 
 当前还可以点击一下看一下协议有什么，我看了一遍，和普通的软件的协议差不多
 
@@ -29,7 +29,7 @@
 
 <!-- ![](image/微软最具价值专家 MVP 如何获得 Resharper 的免费功能/微软最具价值专家 MVP 如何获得 Resharper 的免费功能2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018122111274564)
+![](http://cdn.lindexi.site/lindexi%2F2018122111274564)
 
 所以作为微软最具价值专家 MVP 的福利还是很多的，最近微软修改了成为 MVP 的条件，暂时不支持个人的申请，想要申请 MVP 需要由现在的 MVP 推荐，刚好我现在就是 MVP 可以推荐。
 

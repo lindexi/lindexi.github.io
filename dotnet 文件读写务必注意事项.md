@@ -17,7 +17,7 @@
 
    <!-- ![](image/dotnet 文件读写务必注意事项/dotnet 文件读写务必注意事项0.png) -->
 
-   ![](http://image.acmx.xyz/lindexi%2F20191017112522907)
+   ![](http://cdn.lindexi.site/lindexi%2F20191017112522907)
 
 - 读写权限的判断
 - 区分相对路径、绝对路径

@@ -19,13 +19,13 @@
 
 <!-- ![](image/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020741037174879.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020741037174879.jpg)
 
 点击视图的模版
 
 <!-- ![](image/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020741040394015.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020741040394015.jpg)
 
 此时你就可以看到第一个大页面就是 Slide Master 页面，后续的每个页面就是 Slide Layout 页面。在 PPT文件中，可以创建多个母版 Slide Master 页面，每一个母版创建多个布局 Slide Layout 页面
 
@@ -35,7 +35,7 @@
 
 <!-- ![](image/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么/dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202011181425387683.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202011181425387683.jpg)
 
 这里的 Slide Layout 的顺序和页面顺序对应，也就是一个页面对应一个 Slide Layout 页面，而所有页面都对应相同的一个 Slide Master 页面
 

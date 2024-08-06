@@ -19,7 +19,7 @@
 
 下面的图片是从[WPF Architecture](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture ) 找到
 
-![](http://image.acmx.xyz/lindexi%2F2018715163555502.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018715163555502.jpg)
 
 WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础层
 
@@ -29,7 +29,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 我在下面偷了一张图，图片是从[Overview of Windows Presentation Foundation (WPF) Architecture](https://www.c-sharpcorner.com/UploadFile/819f33/overview-of-windows-presentation-foundation-wpf-architectu/ )找到，在 WPF 可以分为三层。第一层就是 WPF 的托管层，这一层的代码都是托管代码。第二层就是 WPF 的非托管层，包括刚才告诉大家的模块。最后一层就是系统核心元素层。下面简单介绍一下 WPF 的体系结构
 
-![](http://image.acmx.xyz/lindexi%2F20187151612442426.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20187151612442426.jpg)
 
 如果觉得对 WPF 的体系结构已经足够了解，那么请跳到下一节。
 
@@ -135,7 +135,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018824143053905)
+![](http://cdn.lindexi.site/lindexi%2F2018824143053905)
 
 所以核心就是 SetWindowLongPtrWndProc 调用 SetWindowLongWrapper 设置获得消息
 
@@ -280,13 +280,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018824143248706)
+![](http://cdn.lindexi.site/lindexi%2F2018824143248706)
 
 最核心的处理消息就是 Dispatcher 的 WndProcHook 这个方法实际上只是调用 ProcessQueue 方法。
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018824143341860)
+![](http://cdn.lindexi.site/lindexi%2F2018824143341860)
 
 在 SubclassWndProc 调用的`dispatcher.Invoke( DispatcherPriority.Send,_dispatcherOperationCallback,param)`就是调用`WndProcHook` 函数传入参数 
 
@@ -314,7 +314,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018824143426746)
+![](http://cdn.lindexi.site/lindexi%2F2018824143426746)
 
 通过 DUCE.CompositionNode.SetContent 调用 `channel.SendCommand` 就可以发送到渲染线程
 
@@ -333,7 +333,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018824143551331)
+![](http://cdn.lindexi.site/lindexi%2F2018824143551331)
 
 上面代码的 DUCE 是 `Dynamic Unified Composition Engine` 的意思，翻译过来的含义大概是 动态统一合成引擎
 
@@ -363,7 +363,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201882414350316)
+![](http://cdn.lindexi.site/lindexi%2F201882414350316)
 
 那么这个消息是怎么发送，在`UIElement.InvalidateVisual`函数会调用`MediaContext.PostRender`这里就发送自定义消息，于是就可以开始渲染
 
@@ -373,7 +373,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018824143724132)
+![](http://cdn.lindexi.site/lindexi%2F2018824143724132)
 
 这一部分没有完全跟源代码，如果有哪些地方和实际不相同，请告诉我
 
@@ -381,13 +381,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201882414397412)
+![](http://cdn.lindexi.site/lindexi%2F201882414397412)
 
 在绘制的时候需要使用 MIL 解码一些图片和一些形状才可以用到 dx 进行渲染
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20188241440119)
+![](http://cdn.lindexi.site/lindexi%2F20188241440119)
 
 基本上的 WPF 对图片的解码都是调用 WIC 机制进行图片解码，这意味着需要用户本机安装有对应的图片解码器。当然手动解码绘制到 WriteableBitmap 也是可以的，这部分都算业务层的逻辑
 
@@ -397,7 +397,7 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20188241442531)
+![](http://cdn.lindexi.site/lindexi%2F20188241442531)
 
 那么这里 DWM 是什么？请看下面
 
@@ -427,13 +427,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20187259253718)
+![](http://cdn.lindexi.site/lindexi%2F20187259253718)
 
 在 Dispatcher 收到消息之后就可以把渲染任务放在队列，按照优先级一个个出队
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20187259612416)
+![](http://cdn.lindexi.site/lindexi%2F20187259612416)
 
 这时在 Dispatcher 内部通过渲染的调用就会通过 DispatcherOperation 执行对应的任务
 
@@ -441,13 +441,13 @@ WPF 有三个主要的模块 PresentationFramework、 PresentationCore 和基础
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201872593025761)
+![](http://cdn.lindexi.site/lindexi%2F201872593025761)
 
 总的渲染结构请看下图
 
 <!-- ![](image/WPF 渲染原理/WPF 渲染原理3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018824142840517)
+![](http://cdn.lindexi.site/lindexi%2F2018824142840517)
 
 渲染需要经过消息循环和 Dispatcher 循环，也就是渲染的方法不是直接通过控件调用渲染。控件是通过发送消息经过消息循环再调用到控件的 OnRender 方法。再 OnRender 方法里，经过 Drawing 方法输出绘制原语到渲染线程。渲染线程经过 MIL 和 Dx 渲染界面到窗口。屏幕管理更新窗口让用户在屏幕可以看到
 

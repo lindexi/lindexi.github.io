@@ -62,7 +62,7 @@ dotnet build
 
 <!-- ![](image/WPF 使用 Composition API 做高性能渲染/WPF 使用 Composition API 做高性能渲染0.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019328102935615)
+![](http://cdn.lindexi.site/lindexi%2F2019328102935615)
 
 ## 项目主要代码
 

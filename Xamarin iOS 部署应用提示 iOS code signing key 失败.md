@@ -15,19 +15,19 @@
 
 <!-- ![](image/Xamarin iOS 部署应用提示 iOS code signing key 失败/Xamarin iOS 部署应用提示 iOS code signing key 失败0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201232033229543.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201232033229543.jpg)
 
 添加之后选择自己的账号，然后点击确定
 
 <!-- ![](image/Xamarin iOS 部署应用提示 iOS code signing key 失败/Xamarin iOS 部署应用提示 iOS code signing key 失败1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020123203447164.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020123203447164.jpg)
 
 接着进入项目中，编辑选项，进入 iOS 捆绑包签名这里，选择好签名标识和预配配置文件
 
 <!-- ![](image/Xamarin iOS 部署应用提示 iOS code signing key 失败/Xamarin iOS 部署应用提示 iOS code signing key 失败2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201232034498700.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201232034498700.jpg)
 
 如果不知道如何设置预配配置文件，请看 [Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法](https://blog.lindexi.com/post/Xamarin-iOS-%E5%88%87%E6%8D%A2%E5%BC%80%E5%8F%91%E8%80%85%E8%B4%A6%E5%8F%B7%E4%B9%8B%E5%90%8E%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A0%87%E8%AF%86%E5%92%8C%E9%A2%84%E9%85%8D%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95.html )
 

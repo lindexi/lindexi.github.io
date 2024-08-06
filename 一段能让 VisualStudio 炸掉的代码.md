@@ -24,13 +24,13 @@
 
 <!-- ![](image/一段能让 VisualStudio 炸掉的代码/一段能让 VisualStudio 炸掉的代码0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201911517649978)
+![](http://cdn.lindexi.site/lindexi%2F201911517649978)
 
 然后双击一下值，尝试修改 foo 的值
 
 <!-- ![](image/一段能让 VisualStudio 炸掉的代码/一段能让 VisualStudio 炸掉的代码1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191151773418)
+![](http://cdn.lindexi.site/lindexi%2F20191151773418)
 
 可以看到你的 VS 已经变颜色了
 
@@ -74,7 +74,7 @@
 
 现在尝试运行代码，可以看到下面的界面，打开的时候发现 TextBox 填充整个页面，再点击的时候就还原了。
 
-![](http://image.acmx.xyz/lindexi%2F20191179354379)
+![](http://cdn.lindexi.site/lindexi%2F20191179354379)
 
 已经将这个坑放在了 github 上 [UWP TextBox will Fill of the Page if they display text with too many combining marks](https://github.com/Microsoft/microsoft-ui-xaml/issues/194 ) 欢迎小伙伴帮我修语法
 

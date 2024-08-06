@@ -88,19 +88,19 @@ dotnet add package DocumentFormat.OpenXml
 
 <!-- ![](image/程序猿修养 使用 NuGet 发射卫星只需要三步/程序猿修养 使用 NuGet 发射卫星只需要三步0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020223136561154.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020223136561154.jpg)
 
 点击之后可以看到此页面
 
 <!-- ![](image/程序猿修养 使用 NuGet 发射卫星只需要三步/程序猿修养 使用 NuGet 发射卫星只需要三步1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020223137569055.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020223137569055.jpg)
 
 这里提供了安装 NuGet 库的功能以及卸载库的功能，只需要在搜寻里面输入对应的库的名字，支持模糊搜寻的功能，找到对应的库，点击安装就可以了
 
 <!-- ![](image/程序猿修养 使用 NuGet 发射卫星只需要三步/程序猿修养 使用 NuGet 发射卫星只需要三步2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020223139235471.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020223139235471.jpg)
 
 多使用 NuGet 库，可以减少自己写的代码的时间，如果看到一个库里面的下载量很多，那么证明这个库还是有比较多小伙伴用的。换句话就是有很多小伙伴帮你踩坑了，基本上可以放心使用
 
@@ -108,7 +108,7 @@ dotnet add package DocumentFormat.OpenXml
 
 很简单，在 VisualStudio 右击打包就可以啦
 
-![](http://image.acmx.xyz/lindexi%2F20181015112052382)
+![](http://cdn.lindexi.site/lindexi%2F20181015112052382)
 
 请看 [VisualStudio 使用新项目格式快速打出 Nuget 包](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E5%BF%AB%E9%80%9F%E6%89%93%E5%87%BA-Nuget-%E5%8C%85.html) 基本上5分钟内就可以完成打包啦
 

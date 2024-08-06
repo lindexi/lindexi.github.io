@@ -47,19 +47,19 @@ dotnet pack
 
 <!-- ![](image/NuGet 如何设置图标/NuGet 如何设置图标0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019427171314631)
+![](http://cdn.lindexi.site/lindexi%2F2019427171314631)
 
 通过 VisualStudio 的 Nuget 包管理设置本地的包为 `Lindexi.1.0.0.nupkg` 文件的文件夹，就可以找到这个文件
 
 <!-- ![](image/NuGet 如何设置图标/NuGet 如何设置图标1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019427171628317)
+![](http://cdn.lindexi.site/lindexi%2F2019427171628317)
 
 在 VisualStudio 右击一个项目，选择刚才设置的源，就可以找到这个文件
 
 <!-- ![](image/NuGet 如何设置图标/NuGet 如何设置图标2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019427171719941)
+![](http://cdn.lindexi.site/lindexi%2F2019427171719941)
 
 这时可以看到图标使用的是默认的图标，下面就是如何修改这个图标
 
@@ -67,7 +67,7 @@ dotnet pack
 
 <!-- ![](image/NuGet 如何设置图标/NuGet 如何设置图标3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019427171845798)
+![](http://cdn.lindexi.site/lindexi%2F2019427171845798)
 
 ## 通过 URL 设置图标
 
@@ -109,13 +109,13 @@ nuget pack
 
 <!-- ![](image/NuGet 如何设置图标/NuGet 如何设置图标4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019427172758582)
+![](http://cdn.lindexi.site/lindexi%2F2019427172758582)
 
 做到这个效果的另一个简单方法是在[NuGet工具](https://www.microsoft.com/store/productId/9WZDNCRDMDM3)点击更改，在 Icon Url 修改链接
 
 <!-- ![](image/NuGet 如何设置图标/NuGet 如何设置图标5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201942885043521)
+![](http://cdn.lindexi.site/lindexi%2F201942885043521)
 
 ## 通过文件
 

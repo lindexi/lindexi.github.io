@@ -72,19 +72,19 @@ ReleaseToDev:
 
 <!-- ![](image/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202111301957157005.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202111301957157005.jpg)
 
 点击设置界面的 Access Tokens 选项，即可看到如下界面
 
 <!-- ![](image/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202111301956303214.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202111301956303214.jpg)
 
 填写 Token name 为你期望的字符串，如 `TestFoo` 等。这个用来给你了解此 Token 的用途，是给你自己看的内容，接着在 `Select scopes` 上全部打上勾
 
 <!-- ![](image/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021113020041198.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021113020041198.jpg)
 
 完成之后，点击 Create personal access token 按钮即可
 
@@ -92,19 +92,19 @@ ReleaseToDev:
 
 <!-- ![](image/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021113020193779.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021113020193779.jpg)
 
 拷贝如上 access token 代码，进入到 CI/CD Settings 设置，点开 Variables 点击 Add variable 按钮添加变量
 
 <!-- ![](image/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202111302010107347.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202111302010107347.jpg)
 
 添加一个 Key 叫 Token 且值是刚才复制的 access token 代码
 
 <!-- ![](image/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具/dotnet tool 创建 GitLab 合并请求 Merge Requests 工具6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202111302011426983.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202111302011426983.jpg)
 
 这样就完成了配置。在 GitLab 上，即可通过 `$Token` 变量获取到刚才设置的 access token 代码
 

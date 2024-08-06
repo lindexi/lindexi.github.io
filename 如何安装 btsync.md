@@ -42,32 +42,32 @@ btsync 把自己的电脑作为网盘，不限空间流量，适合局域网同�
 
 [Resilio-Sync btsync x64 2.6.1-CSDN下载](https://download.csdn.net/download/lindexi_gd/10705179 )
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412536.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732412536.jpg)
 
 我接下来分享的都会在 btsync ，那么如何分享？
 
 需要拖入一个文件夹，可以看到自动出现文件秘钥
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125426.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125426.jpg)
 
 复制只读秘钥发给朋友，他就可以使用。
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125512.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125512.jpg)
 
 那么拿到秘钥如何获得资源？
 
 点击手动链接
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125540.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125540.jpg)
 
 
 输入秘钥
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125612.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125612.jpg)
 
 新建文件夹，之后的文件就会放在这个文件夹
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125659.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017324125659.jpg)
 
 一个秘钥一般需要新建一个文件夹。
 
@@ -199,7 +199,7 @@ vi btsync.conf
 
 首先创建一个文件夹，然后点击设置
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111191010.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F2017111191010.jpg)
 
 例如我添加字体文件，点击设置 打开dht和添加主机，这时不需要设置代理就可以下载，不过需要等很久
 

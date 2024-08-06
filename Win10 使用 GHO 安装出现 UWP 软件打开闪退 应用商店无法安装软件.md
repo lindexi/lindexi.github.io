@@ -18,7 +18,7 @@
 
 <!-- ![](image/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018108173558582)
+![](http://cdn.lindexi.site/lindexi%2F2018108173558582)
 
 点击设置更新发现无法更新，错误码是 0x80070422
 
@@ -50,7 +50,7 @@
 
 <!-- ![](image/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件/Win10 使用 GHO 安装出现 UWP 软件打开闪退 应用商店无法安装软件2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018108173822639)
+![](http://cdn.lindexi.site/lindexi%2F2018108173822639)
 
 ## 解决方法
 
@@ -60,15 +60,15 @@
 
 保持设备联网，运行 wu170509.diagcab 点击管理员运行
 
-![](http://image.acmx.xyz/lindexi%2F2018108171122169)
+![](http://cdn.lindexi.site/lindexi%2F2018108171122169)
 
 等待修补之后，可以发现更新可以下载
 
-![](http://image.acmx.xyz/lindexi%2F2018108172710734)
+![](http://cdn.lindexi.site/lindexi%2F2018108172710734)
 
 点击设置更新，等待更新之后重启，可以发现 UWP 应用可以正常使用
 
-![](http://image.acmx.xyz/lindexi%2F2018108172747548)
+![](http://cdn.lindexi.site/lindexi%2F2018108172747548)
 
 [Fix Windows Update 170509-CSDN下载](https://download.csdn.net/download/lindexi_gd/10706572 )
 

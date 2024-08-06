@@ -7,7 +7,7 @@
 
 <!-- csdn -->
 
-![](http://image.acmx.xyz/lindexi%2F201938104445786)
+![](http://cdn.lindexi.site/lindexi%2F201938104445786)
 
 课件 [水平对齐和垂直对齐](https://r302.cc/AnGyJn?platform=enpc&channel=copylink)
 

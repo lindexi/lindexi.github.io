@@ -80,7 +80,7 @@ ArrayPool<byte>.Shared.Return(buffer);
 
 假设收到的数据是 data ，里面的前两个 byte 是不需要的，格式如下图
 
-![](http://image.acmx.xyz/lindexi%2F2018528102650406.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018528102650406.jpg)
 
 也就是需要复制出第2个到第5个byte出来，转换这个数据反序。
 

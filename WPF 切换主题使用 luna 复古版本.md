@@ -56,7 +56,7 @@
 
 <!-- ![](image/WPF 切换主题使用 luna 复古版本/WPF 切换主题使用 luna 复古版本0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022519202451651.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022519202451651.jpg)
 
 再换成 Aero 效果，修改代码如下
 
@@ -71,7 +71,7 @@
 
 <!-- ![](image/WPF 切换主题使用 luna 复古版本/WPF 切换主题使用 luna 复古版本1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022519207379131.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022519207379131.jpg)
 
 以上方法实际上在很久之前就有大佬写了，详细请看 [danielmoore/SystemThemeChange: A demonstration of a theme change helper for WPF](https://github.com/danielmoore/SystemThemeChange )
 

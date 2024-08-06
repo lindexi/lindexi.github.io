@@ -15,7 +15,7 @@
 首先安装 Nuget System.Memory 库，要求 dotnet framework 4.5 以上，在 UWP 16299 以上，在 dotnet core 2.0 以上
 
 <!-- ![](image/C# Span 入门/C# Span 入门0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20186181120389359.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20186181120389359.jpg)
 
 先来写一个简单的程序，创建一个数组，然后使用 Span 指定数组的某一段
 
@@ -60,7 +60,7 @@
 
 <!-- ![](image/C# Span 入门/C# Span 入门1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20186181133158630.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20186181133158630.jpg)
 
 然后点击生成高级，选择 C# 7.2 以上
 

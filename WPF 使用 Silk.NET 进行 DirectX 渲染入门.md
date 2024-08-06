@@ -55,7 +55,7 @@
 
 <!-- ![](image/WPF 使用 Silk.NET 进行 DirectX 渲染入门/WPF 使用 Silk.NET 进行 DirectX 渲染入门0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202112232016226808.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202112232016226808.jpg)
 
 使用 DirectX 时，初始化参数的代码将会特别多。由于 Silk.NET 只是对 DirectX 的底层封装，没有细节隐藏，也就是说使用过程的复杂度也会特别多
 

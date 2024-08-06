@@ -33,7 +33,7 @@
 
 <!-- ![](image/dotnet core 隐藏控制台/dotnet core 隐藏控制台0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201921111517349)
+![](http://cdn.lindexi.site/lindexi%2F201921111517349)
 
 或者修改 csproj 文件，将 OutputType 修改为 WinExe 请看代码
 

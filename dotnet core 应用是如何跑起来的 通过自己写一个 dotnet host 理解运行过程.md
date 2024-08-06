@@ -34,7 +34,7 @@
 
 <!-- ![](image/dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程/dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020125131185274.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020125131185274.jpg)
 
 在代码仓库里面保护了两个模块，一个就是 SampleHost.vcxproj 包含的代码，这里就是 Native 的逻辑。另一个就是 ManagedLibrary 也就是咱 C# 的托管代码。下面让我来告诉大家这个仓库可以如何玩
 
@@ -78,7 +78,7 @@ int wmain(int argc, wchar_t* argv[])
 
 <!-- ![](image/dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程/dotnet core 应用是如何跑起来的 通过自己写一个 dotnet host 理解运行过程1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201251316599609.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201251316599609.jpg)
 
 只有一句 这是在 dotnet 的输出 是跑在咱的 dotnet 应用里面的，其他都是 SampleHost 的
 

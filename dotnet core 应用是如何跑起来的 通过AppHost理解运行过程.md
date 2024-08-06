@@ -174,7 +174,7 @@ int exe_start(const int argc, const pal::char_t* argv[])
 
 <!-- ![](image/dotnet core 应用是如何跑起来的 通过AppHost理解运行过程/dotnet core 应用是如何跑起来的 通过AppHost理解运行过程0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020121219596779.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020121219596779.jpg)
 
 想要达成这个效果很简单，如上面描述的原理，可以通过修改 AppHost.exe 文件的二进制内容，设置入口 dll 的路径来实现
 

@@ -16,7 +16,7 @@
 
 <!-- ![](image/dotnet 6 为什么网络请求不跟随系统网络代理变化而动态切换代理/dotnet 6 为什么网络请求不跟随系统网络代理变化而动态切换代理0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202271985521104.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202271985521104.jpg)
 
 在 .NET Core 下，网络代理的获取只有一次，获取到的代理没有再去监听注册表的变更，也就没有再次刷新。此问题已反馈给官方，详细请看 [https://github.com/dotnet/runtime/issues/46910](https://github.com/dotnet/runtime/issues/46910)
 

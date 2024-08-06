@@ -72,7 +72,7 @@
 
 <!-- ![](image/dotnet 将文件删除到回收站/dotnet 将文件删除到回收站0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201932293939961)
+![](http://cdn.lindexi.site/lindexi%2F201932293939961)
 
 如果可以引用`Microsoft.VisualBasic`那么写起来就很清真
 

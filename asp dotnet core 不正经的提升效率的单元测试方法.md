@@ -42,7 +42,7 @@ public class DemoTest
 
 运行单元测试将看到这样的结果视图
 
-![](http://image.acmx.xyz/lindexi%2F20202111018744.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20202111018744.jpg)
 
 只要有任何一个单元测试炸了，相信小伙伴看提示特别快就知道哪里炸了
 

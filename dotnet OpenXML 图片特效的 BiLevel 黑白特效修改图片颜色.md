@@ -11,13 +11,13 @@
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021411457348467.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021411457348467.jpg)
 
 默认放入到 PPT 里面的效果如下
 
 <!-- ![](image/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色/dotnet OpenXML 图片的 Color Change Effect 特效修改图片颜色1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021411458198277.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021411458198277.jpg)
 
 如果按照 ECMA-376 的 biLevel (Black White Effect) 功能，给图片加上了 Bi-Level 特效，如以下代码，可以看到图片变成黑白
 
@@ -29,7 +29,7 @@
 
 <!-- ![](image/dotnet OpenXML 图片特效的 BiLevel 黑白特效修改图片颜色/dotnet OpenXML 图片特效的 BiLevel 黑白特效修改图片颜色0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021411532473478.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021411532473478.jpg)
 
 在 ECMA 376 里面的 第 20.1.8.11 章的 Bi-Level 特效有介绍使用方法。在 `a:biLevel` 里面的属性只有 thresh 一个属性，这个属性的含义是如果图片的每个像素点，如果像素点的亮度大于或等于给定的 thresh 也就是 Threshold 阈值那么将显示白色，否则将显示黑色
 

@@ -21,7 +21,7 @@
 
 <!-- ![](image/Roslyn 使用 Directory.Build.props 管理多个项目配置/Roslyn 使用 Directory.Build.props 管理多个项目配置0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018920151353506)
+![](http://cdn.lindexi.site/lindexi%2F2018920151353506)
 
 我创建了 Build 文件夹，这个文件夹里面就放一个文件，这个文件就是管理版本号
 

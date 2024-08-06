@@ -30,7 +30,7 @@
 ```
 
 <!-- ![](image/记因为 NVIDIA 显驱错误而让 WPF 应用启动闪退问题/记因为 NVIDIA 显驱错误而让 WPF 应用启动闪退问题0.png) -->
-![](http://image.acmx.xyz/lindexi%2F2022215204501807.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022215204501807.jpg)
 
 此异常是在 `wpfgfx_v0400.dll thread` 线程上炸掉的，是在 `d3d9.dll` 调用 NVIDIA 显卡驱动时挂掉的，这在托管层是接不住的。以上是将拿到的 190055 的 DUMP 文件放在 VisualStudio 里，选择混合调试
 

@@ -34,7 +34,7 @@ using System.Diagnostics;
 
 另外如果需要使用 Trace 输出要求勾选生成的 Trace 命令
 
-![](http://image.acmx.xyz/lindexi%2F201851615734398.jpg)
+![](http://cdn.lindexi.site/lindexi%2F201851615734398.jpg)
 
 官网：[DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview )
 

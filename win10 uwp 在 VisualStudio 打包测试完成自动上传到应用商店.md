@@ -11,19 +11,19 @@
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201783843788)
+![](http://cdn.lindexi.site/lindexi%2F20201783843788)
 
 打开合作伙伴页面 [https://partner.microsoft.com](https://partner.microsoft.com) 点击右上角的设置图标
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202016212149880)
+![](http://cdn.lindexi.site/lindexi%2F202016212149880)
 
 点击开发人员设置，点击租户。如果没有公司创建 Azure AD 那么点击新建 Azure AD 添加帐号
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201783931901)
+![](http://cdn.lindexi.site/lindexi%2F20201783931901)
 
 新建完成之后，点击右上角退出登录，然后重新用刚才注册的帐号登录
 
@@ -39,7 +39,7 @@ lindexi@lindexi.onmicrosoft.com
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020178429966)
+![](http://cdn.lindexi.site/lindexi%2F2020178429966)
 
 点击添加 Azure AD 应用，点击新建应用
 
@@ -47,7 +47,7 @@ lindexi@lindexi.onmicrosoft.com
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201784618831)
+![](http://cdn.lindexi.site/lindexi%2F20201784618831)
 
 这里的 答复 URL 是在让用户通过这个链接登录，而 App ID URI 是用来单点登录。这两个属性在 VisualStudio 上传都用不到，所以随意写，例如写我的博客
 
@@ -57,13 +57,13 @@ lindexi@lindexi.onmicrosoft.com
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201785128)
+![](http://cdn.lindexi.site/lindexi%2F20201785128)
 
 点击用户，可以看到刚才创建的应用，点击刚才创建的应用
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201785153943)
+![](http://cdn.lindexi.site/lindexi%2F20201785153943)
 
 记下 租户 ID 和 客户端 ID 到记事本
 
@@ -71,19 +71,19 @@ lindexi@lindexi.onmicrosoft.com
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201785248958)
+![](http://cdn.lindexi.site/lindexi%2F20201785248958)
 
 将密钥复制到记事本
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201785325225)
+![](http://cdn.lindexi.site/lindexi%2F20201785325225)
 
 返回 VisualStudio 界面
 
 <!-- ![](image/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店/win10 uwp 在 VisualStudio 打包测试完成自动上传到应用商店9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201785614861)
+![](http://cdn.lindexi.site/lindexi%2F20201785614861)
 
 输入刚才记事本记录的值点击确定，然后点击启动 Windows 应用程序认证包
 

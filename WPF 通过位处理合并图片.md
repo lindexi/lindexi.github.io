@@ -12,7 +12,7 @@
 
 <!-- ![](image/WPF 通过位处理合并图片/WPF 通过位处理合并图片0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181020164898)
+![](http://cdn.lindexi.site/lindexi%2F20181020164898)
 
 这就是通过将左边的两张图片叠加合并为一张图片，这里的蓝色的通道就是通过位或的方式，绿色通道使用与的方式，红色也使用或的方式。
 
@@ -26,7 +26,7 @@
 
 <!-- ![](image/WPF 通过位处理合并图片/WPF 通过位处理合并图片1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018102016749890)
+![](http://cdn.lindexi.site/lindexi%2F2018102016749890)
 
 在 WPF 的读取资源是使用 URL 的方式，我这里在解决方案放的图片是在项目的文件夹，可以通过下面的链接获取
 
@@ -84,7 +84,7 @@ pack://application:,,,/图片文件夹/图片名.jpg
 
 <!-- ![](image/WPF 通过位处理合并图片/WPF 通过位处理合并图片3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018102016178653)
+![](http://cdn.lindexi.site/lindexi%2F2018102016178653)
 
 通过上面的方法拿到两个图片的所有像素，然后将像素一一对应，这里我使用的两张图片的像素长度和像素宽度都是相同的，所以直接通过对应的数组下标就可以对应每个像素，如果是像素不相等的图片，具体业务是怎么处理就进行对应的方法
 
@@ -336,6 +336,6 @@ pack://application:,,,/图片文件夹/图片名.jpg
 
 <!-- ![](image/WPF 通过位处理合并图片/WPF 通过位处理合并图片2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181020161613163)
+![](http://cdn.lindexi.site/lindexi%2F20181020161613163)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

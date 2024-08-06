@@ -11,7 +11,7 @@
 
 先新建一个简单的 Word 文件
 
-![](http://image.acmx.xyz/lindexi%2F2020952036365930.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020952036365930.jpg)
 
 然后新建一个 WPF 程序，在这个程序里面添加简单的界面
 
@@ -58,7 +58,7 @@
             }
 ```
 
-![](http://image.acmx.xyz/lindexi%2F202095203446551.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202095203446551.jpg)
 
 可以看到代码非常简单，但是如果想要将整个 Word 的文档的内容解析出来，这个就复杂一些
 

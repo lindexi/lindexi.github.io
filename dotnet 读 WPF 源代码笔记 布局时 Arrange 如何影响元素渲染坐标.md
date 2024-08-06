@@ -14,7 +14,7 @@
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021925927281725.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021925927281725.jpg)
 
 在 WPF 里面，最底层的界面元素是 Visual 类，在此类型上包含了一个 protected internal 访问权限的 VisualOffset 属性，大概定义如下
 
@@ -24,7 +24,7 @@ protected internal Vector VisualOffset { set; get; }
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202192593498041.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202192593498041.jpg)
 
 当然了，在 WPF 框架里面，在 VisualOffset 属性的 set 方法上是有很多代码的，不过这里面代码不是本文的主角，还请大家忽略
 
@@ -221,7 +221,7 @@ protected internal Vector VisualOffset { set; get; }
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021925104574435.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021925104574435.jpg)
 
 在 MIL 层将会根据 `command.Type = MILCMD.MilCmdVisualSetOffset;` 通过一个很大的 switch 语句，进入到大概如下代码
 
@@ -302,7 +302,7 @@ CMilVisual::SetOffset(
 
 <!-- ![](image/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标/dotnet 读 WPF 源代码笔记 布局时 Arrange 如何影响元素渲染坐标0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202192592417515.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202192592417515.jpg)
 
 在 Visual 的 Render 方法里面，将会传输 VisualOffset 的数据到 MIL 层，由底层控制渲染的 MIL 层使用此属性决定渲染命令的偏移量
 

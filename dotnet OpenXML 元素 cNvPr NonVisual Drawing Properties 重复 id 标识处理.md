@@ -102,7 +102,7 @@
 
 <!-- ![](image/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 重复 id 标识处理0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020927201949306.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020927201949306.jpg)
 
 测试课件请点击 [元素不存在按序号.pptx](https://github.com/lindexi/lindexi_gd/blob/f366cb079ba594a13bec662af39024c1f8a90ca9/%E5%85%83%E7%B4%A0id%E9%87%8D%E5%A4%8D/%E5%85%83%E7%B4%A0%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%8C%89%E5%BA%8F%E5%8F%B7.pptx) 下载
 

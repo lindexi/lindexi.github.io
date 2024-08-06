@@ -12,25 +12,25 @@
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018816193233162)
+![](http://cdn.lindexi.site/lindexi%2F2018816193233162)
 
 在触摸线程各个模块的关系请看下面
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201881619392311)
+![](http://cdn.lindexi.site/lindexi%2F201881619392311)
 
 从触摸线程转换到主线程，然后从主线程封装为路由事件的模块请看下面
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018816194254592)
+![](http://cdn.lindexi.site/lindexi%2F2018816194254592)
 
 路由事件需要封装触摸消息并且找到命中的元素
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201881620518558)
+![](http://cdn.lindexi.site/lindexi%2F201881620518558)
 
 实际上看到这里，整个触摸就告诉了大家过程，从大的方面已经可以知道过程，触摸是如何转路由。具体代码是如何做的请看下面
 
@@ -141,7 +141,7 @@ while (!this.__disposed)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815115135159)
+![](http://cdn.lindexi.site/lindexi%2F2018815115135159)
 
 现在就将事件传入到 ProcessInput 并且告诉 `RawStylusActions` 这个函数会调用 `WispLogic` 的 ProcessInput 在这里使用函数的原因是为了传入的时候加上 `_inputSource` 这里的 `WispLogic` 可能是 StylusLogic 现在的代码就到了比较熟悉的 StylusLogic 函数
 
@@ -165,7 +165,7 @@ while (!this.__disposed)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815111230935)
+![](http://cdn.lindexi.site/lindexi%2F2018815111230935)
 
 在处理完参数会调用 `InvokeStylusPluginCollection` 这个函数会回到 PenContexts 请看代码
 
@@ -181,7 +181,7 @@ while (!this.__disposed)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815111441251)
+![](http://cdn.lindexi.site/lindexi%2F2018815111441251)
 
 这里需要告诉大家，从读微软的源代码一个很重要的就是学习微软的写法。在这里这样写是可以做到写出尽量短的代码，将一个功能拆到一个函数。如上面的代码，在 `WispLogic` 的 `ProcessInput` 将多个参数转换为一个类，然后再调用重载的 `ProcessInput` 方法。在重载的 `WispLogic` 的 `ProcessInput` 只是用来添加参数，添加完成就调用本地的 `InvokeStylusPluginCollection` 方法，同时 `InvokeStylusPluginCollection` 也只做调用 `PenContexts` 的函数
 
@@ -248,7 +248,7 @@ internal sealed class PenContexts
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815111441251)
+![](http://cdn.lindexi.site/lindexi%2F2018815111441251)
 
 在 PenContexts 的 InvokeStylusPluginCollection 函数有一个重要的过程就是找到 `StylusPlugIn` 调用
 
@@ -294,13 +294,13 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201881511310278)
+![](http://cdn.lindexi.site/lindexi%2F201881511310278)
 
 具体 StylusPlugIn 的调用本文就不多讲，在调用完成 InvokeStylusPluginCollection 也就是先告诉了很多类触摸了，现在就到了告诉路由事件的时候了。在 WispLogic 的 ProcessInputReport 函数调用 InvokeStylusPluginCollection 完成就会调用 CoalesceAndQueueStylusEvent 这个方法就是从触摸消息转路由的第一个方法，从上面代码可以说明 StylusPlugIn 的执行是比路由事件快，所以要做到比较快的触摸就需要使用这个方法。更多关于 StylusPlugIn 请看 [WPF 高速书写 StylusPlugIn 原理](https://lindexi.gitee.io/post/WPF-%E9%AB%98%E9%80%9F%E4%B9%A6%E5%86%99-StylusPlugIn-%E5%8E%9F%E7%90%86.html )
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815113656530)
+![](http://cdn.lindexi.site/lindexi%2F2018815113656530)
 
 函数 CoalesceAndQueueStylusEvent 主要是添加一些参数，然后调用 QueueStylusEvent 函数将触摸的参数放在 `_queueStylusEvents` 也就是一个队列。在触摸线程使用入栈的方式，然后通过 Dispatcher 告诉主线程。
 
@@ -318,13 +318,13 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815114225799)
+![](http://cdn.lindexi.site/lindexi%2F2018815114225799)
 
 主线程从 `_dlgInputManagerProcessInput` 就是调用 `InputManagerProcessInput` 方法，是使用出队的方式拿到触摸线程的触摸。上面的图片写了入栈实际上是入队。
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815114937819)
+![](http://cdn.lindexi.site/lindexi%2F2018815114937819)
 
 在 InputManagerProcessInput 主要就是创建 InputReportEventArgs 然后传入 InputManagerProcessInputEventArgs 通过这个函数调用 `InputManager` 的 ProcessInput 从上面图片可以看到是如何调用
 
@@ -353,7 +353,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018815115538129)
+![](http://cdn.lindexi.site/lindexi%2F2018815115538129)
 
 在 InputManagerProcessInputEventArgs 主要就是调用 InputManager 的 ProcessInput 实际是没有代码
 
@@ -368,7 +368,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201881512418965)
+![](http://cdn.lindexi.site/lindexi%2F201881512418965)
 
 在 ProcessStagingArea 函数相对还是比较复杂的，因为  InputManager 负责协调整个 WPF 的输入，包括键盘、鼠标、触摸输入。
 
@@ -467,7 +467,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018810171441731)
+![](http://cdn.lindexi.site/lindexi%2F2018810171441731)
 
 这样就创建了 penContext 但是这时还需要将 penContext 加入到 PenThreadWorker 加入的方法是调用 `PenContext.Enable` 通过下面的流程调用 PenThreadWorker.WorkerAddPenContext 添加
 
@@ -489,7 +489,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018810175638248)
+![](http://cdn.lindexi.site/lindexi%2F2018810175638248)
 
 图片的实线就是表示直接在方法内调用，而虚线表示是在这个方法执行完的下一步，也就是不是方法直接调用。
 
@@ -647,7 +647,7 @@ internal void FireRawStylusInput(RawStylusInput args)
 
 课件
 
-[![](http://image.acmx.xyz/lindexi%2F20181113105010622)](https://r302.cc/DKzkRX)
+[![](http://cdn.lindexi.site/lindexi%2F20181113105010622)](https://r302.cc/DKzkRX)
 
 更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
 

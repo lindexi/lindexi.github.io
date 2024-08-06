@@ -13,7 +13,7 @@
 
 <!-- ![](image/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206121246568787.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206121246568787.jpg)
 
 如上图采用的是 dotnet-campus 的服务器
 
@@ -22,7 +22,7 @@
 
 <!-- ![](image/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206121247556773.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206121247556773.jpg)
 
 ## 没有开启 Piplines 权限
 
@@ -30,13 +30,13 @@
 
 <!-- ![](image/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206121248405534.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206121248405534.jpg)
 
 确定下面权限打开
 
 <!-- ![](image/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206121249268612.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206121249268612.jpg)
 
 ## 配置的Tag和Runner的Tag不匹配
 
@@ -46,16 +46,16 @@
 
 <!-- ![](image/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206121250263619.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206121250263619.jpg)
 
 而如下图的 Runner 指定了 Tag 是 dev 也就是要求在配置文件指定在 dev 的服务器上运行
 
 <!-- ![](image/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206121251466177.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206121251466177.jpg)
 
 <!-- ![](image/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因/dotnet 配置 Gitlab 的 CI 找不到 Runner 或找错的可能原因6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020612125376797.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020612125376797.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

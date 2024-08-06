@@ -91,13 +91,13 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 当然了，对于大部分的开发模型来说，都不会在次级的资源字典里面存放具体的资源或样式等的定义。例如没有在 App.xaml 引用 DictionaryB 资源字典，而是将 DictionaryB 放入到 DictionaryA 里面引用，关系如下
 
-![](http://image.acmx.xyz/lindexi%2F2022529151513068.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022529151513068.jpg)
 
 这个引用关系是没有问题的，依然可以在资源字典 DictionaryB 里面找到 DictionaryC 的资源。更新之后的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ab087c32a9bae3d7f5bf11914b52a007da440941/GeacejalcurnawLarjearemwhear) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/ab087c32a9bae3d7f5bf11914b52a007da440941/GeacejalcurnawLarjearemwhear) 欢迎访问
 
 那如果继续让 DictionaryC 的实际定义放在更底层呢？例如引入 DictionaryD.xaml 定义的资源呢，引用的关系如下
 
-![](http://image.acmx.xyz/lindexi%2F202252915428337.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202252915428337.jpg)
 
 在 DictionaryC.xaml 的代码变更如下
 
@@ -137,7 +137,7 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 同理，再次提升层级进行测试，结果依然是能找到资源的。再定义 DictionaryE.xaml 和 DictionaryF.xaml 资源字典，让 DictionaryE.xaml 去引用 DictionaryF.xaml 的资源，其引用关系如下
 
-![](http://image.acmx.xyz/lindexi%2F20225291583679.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20225291583679.jpg)
 
 更新之后的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7cfa0e9117e953fabf7d77b2efc35cb05334ff08/GeacejalcurnawLarjearemwhear) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/7cfa0e9117e953fabf7d77b2efc35cb05334ff08/GeacejalcurnawLarjearemwhear) 欢迎访问
 
@@ -147,7 +147,7 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 但是又有一项带坑的设计，那就是在除了 App.xaml 这个 Root 顶层资源之后的资源字典树，在资源字典树内是不能跨节点引用。例如以下的关系，将会找不到资源
 
-![](http://image.acmx.xyz/lindexi%2F20225291512389807.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20225291512389807.jpg)
 
 如上图，在 DictionaryA.xaml 资源字典里面引用了 DictionaryC.xaml 和 DictionaryB.xaml 两个资源字典，代码如下
 
@@ -285,7 +285,7 @@ To use `ButtonStyleInB` resource, I add the code to MainWindow.
 </Window>
 ```
 
-![](http://image.acmx.xyz/lindexi%2F20225291512389807.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20225291512389807.jpg)
 
 Run the code and you can find the XamlParseException, unless you replace the StaticResourceExtension to DynamicResourceExtension.
 

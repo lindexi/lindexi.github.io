@@ -21,7 +21,7 @@
 
 <!-- ![](image/优雅调试 REST API 的工具/优雅调试 REST API 的工具1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019101020626159)
+![](http://cdn.lindexi.site/lindexi%2F2019101020626159)
 
 我可以对一个项目的不同功能设置不同的分组，同时还可以切换工作空间
 

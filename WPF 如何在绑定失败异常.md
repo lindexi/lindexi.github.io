@@ -53,7 +53,7 @@
 
 现在运行一下，你猜是不是会显示两行，一行是 lindexi 一行是 lindexi.gitee.io ，实际上你看到只有一行，因为第二个绑定写错了
 
-![](http://image.acmx.xyz/lindexi%2F2018517144793266.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018517144793266.jpg)
 
 第二个在 ViewModel 的属性是 JaslorbafelStojou 但是 xaml 写的是 JaslorbafelStoj ，如果这时看到了输出，就会看到下面代码
 
@@ -176,7 +176,7 @@ public class BindingErrorException : Exception
 
 这时会发现代码抛出异常
 
-![](http://image.acmx.xyz/lindexi%2F2018517158181899.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018517158181899.jpg)
 
 但是抛出了异常建议弹出窗口，这样开发者才会看到
 
@@ -203,7 +203,7 @@ public class BindingErrorException : Exception
          }
 ```
 
-![](http://image.acmx.xyz/lindexi%2F20185171510425622.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20185171510425622.jpg)
 
 ## 自动提示
 

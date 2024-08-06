@@ -17,7 +17,7 @@ msbuild /bl
 
 <!-- ![](image/MSBuild 输出日志可视化工具 MSBuild Structured Log Viewer 简介/MSBuild 输出日志可视化工具 MSBuild Structured Log Viewer 简介0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202052116956826.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202052116956826.jpg)
 
 从官网 [MSBuild Log Viewer](https://msbuildlog.com/ ) 下载最新版本
 
@@ -27,7 +27,7 @@ msbuild /bl
 
 <!-- ![](image/MSBuild 输出日志可视化工具 MSBuild Structured Log Viewer 简介/MSBuild 输出日志可视化工具 MSBuild Structured Log Viewer 简介1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020521161167844.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020521161167844.jpg)
 
 另外这个工具还提供了 NuGet 库可以用来读取 binlog 文件
 

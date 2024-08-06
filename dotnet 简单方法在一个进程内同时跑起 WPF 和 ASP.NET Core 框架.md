@@ -13,7 +13,7 @@
 只有将 WPF 更新到使用 dotnet core 版本（包含 dotnet 5 、dotnet 6 等等）即可非常简单和 ASP.NET Core 框架在一起跑。接下来我给出一张截图，说不定大家看到了截图就知道了实现方式了
 
 <!-- ![](image/dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架/dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20231125181051586.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20231125181051586.jpg)
 
 如上图，我在 WPF 应用的按钮里面点击的时候，启动了 ASP.NET Core 框架
 

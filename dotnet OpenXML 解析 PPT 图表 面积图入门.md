@@ -14,13 +14,13 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 面积图入门/dotnet OpenXML 解析 PPT 图表 面积图入门0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202284171187600.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202284171187600.jpg)
 
 对应的数据如图
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 面积图入门/dotnet OpenXML 解析 PPT 图表 面积图入门1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022841715114489.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022841715114489.jpg)
 
 如上图可以看到在 PPT 里面的图表是可以使用 Excel 的数据，将 Excel 文件内嵌到 PPT 里面。但这不代表要解析图表的数据就一定需要先了解 Excel 的内容，本文将绕过对 Excel 的任何读取，通过 PPT 里面的内容拿到图表的数据
 
@@ -34,7 +34,7 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 面积图入门/dotnet OpenXML 解析 PPT 图表 面积图入门2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022841720599455.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022841720599455.jpg)
 
 在 OpenXML SDK 里面，采用 `DocumentFormat.OpenXml.Drawing.Charts.CategoryAxisData` 存放
 
@@ -46,7 +46,7 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 面积图入门/dotnet OpenXML 解析 PPT 图表 面积图入门3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022841726527914.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022841726527914.jpg)
 
 ### 数据系列
 
@@ -56,7 +56,7 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 面积图入门/dotnet OpenXML 解析 PPT 图表 面积图入门4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202284173329890.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202284173329890.jpg)
 
 系列名称大部分时候都放在图例里面，也就是图例里面的内容就是由系列名称提供的
 
@@ -66,7 +66,7 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 面积图入门/dotnet OpenXML 解析 PPT 图表 面积图入门5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022841735278798.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022841735278798.jpg)
 
 如图，面积图有两个数据系列，通过上面的 Excel 内容可以了解到两个系列的数据分别如下
 
@@ -83,7 +83,7 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 面积图入门/dotnet OpenXML 解析 PPT 图表 面积图入门6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022841737579928.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022841737579928.jpg)
 
 下面将告诉大家如何根据 OpenXML SDK 提供的方法读取到图表的内容
 

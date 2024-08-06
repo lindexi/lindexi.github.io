@@ -32,19 +32,19 @@
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517857237311.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517857237311.jpg)
 
 如果以上没有任何抽象交互符合预期，请点击 Add 按钮添加新的自定义交互动作，点击 Add 按钮之后可以看到如下界面，咱添加一个新的交互动作
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517858265869.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517858265869.jpg)
 
 自定义交互需要关注的点是交互的命名，默认的命名是 NewAction 默认的输入类型是 `SteamVR_Action_Boolean` 类型。咱进行一些定制化，如为了支持 input 属性的类型是 `SteamVR_Action_Vector2` 类型，将类型设置为 Vector2 顺便修改一下命名为 `DirectMovement` 动作，和加上本地化的字符串
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517932369346.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517932369346.jpg)
 
 
 以上默认加入到 `default` 的动作组里面，推荐不要删除 `default` 动作组，原因是在 SteamVR 组件里面有很多组件都用到了 default 动作组里的动作，删除会导致无法看见手和手柄
@@ -53,7 +53,7 @@
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517934126078.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517934126078.jpg)
 
 此时就完成了 定义交互数据类型字段 和 绑定交互数据与 VR 抽象输入动作，接下来是将此抽象的动作绑定到具体的交互设备上
 
@@ -61,31 +61,31 @@
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517936371705.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517936371705.jpg)
 
 在 `SteamVR Input` 窗口里面，点击 `Open binding UI` 按钮，打开 SteamVR 的 控制器按键设置 界面
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517937265122.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517937265122.jpg)
 
 进入到 SteamVR 的 控制器按键设置 界面，点击当前按键设置的编辑按钮即可进入编辑。如果后续此应用或游戏发布后，玩家自定义按键也是通过此界面
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517939306775.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517939306775.jpg)
 
 接下来配置上文定义 DirectMovement 动作，做法是点击 Thumb Stick 的加号，作为摇杆使用，点击位置，选择 DirectMovement 动作
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021517941304929.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021517941304929.jpg)
 
 完成配置之后，点击 `替换默认按键设置` 按钮
 
 <!-- ![](image/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法/Unity3D OpenVR SteamVR 获取输入动作按键 交互设备数据方法8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202151794229102.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202151794229102.jpg)
 
 此时将会更改 Unity3D 里面的按键配置记录文件，同时关闭此窗口
 

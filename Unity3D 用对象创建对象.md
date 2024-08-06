@@ -29,7 +29,7 @@
 
 <!-- ![](image/Unity3D 用对象创建对象/Unity3D 用对象创建对象0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20203172214153914.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20203172214153914.jpg)
 
 可以在相机的 Component 看到有脚本代码，所以反过来点击 Add Component 添加代码也是可以的
 
@@ -56,7 +56,7 @@
 
 <!-- ![](image/Unity3D 用对象创建对象/Unity3D 用对象创建对象1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20203172219565817.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20203172219565817.jpg)
 
 可以通过物体的 transform 属性进行移动物体，可以先移动到相机所在的地方，然后再次移动到相机前面
 

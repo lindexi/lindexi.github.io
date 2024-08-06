@@ -39,7 +39,7 @@
 
 现在他会输出什么？
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024152546.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171024152546.jpg)
 
 看起来没有问题，但是如果再做出一些修改，请看下面代码
 

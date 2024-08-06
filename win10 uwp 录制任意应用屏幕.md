@@ -12,7 +12,7 @@
 
 <!-- ![](image/win10 uwp 录制任意应用屏幕/win10 uwp 录制任意应用屏幕1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019101220352053)
+![](http://cdn.lindexi.site/lindexi%2F2019101220352053)
 
 下面请让我告诉大家如何使用
 
@@ -20,7 +20,7 @@
 
 <!-- ![](image/win10 uwp 录制任意应用屏幕/win10 uwp 录制任意应用屏幕0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191012202230170)
+![](http://cdn.lindexi.site/lindexi%2F20191012202230170)
 
 此时写一个简单的函数用来让用户选择捕获的应用
 
@@ -43,7 +43,7 @@
 
 <!-- ![](image/win10 uwp 录制任意应用屏幕/win10 uwp 录制任意应用屏幕2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019101220374230)
+![](http://cdn.lindexi.site/lindexi%2F2019101220374230)
 
 当然在你的设备上应该看到的不是这个界面，因为你打开的应用应该和我不一样
 

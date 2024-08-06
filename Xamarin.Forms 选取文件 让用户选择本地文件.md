@@ -45,7 +45,7 @@ using Plugin.FilePicker;
 
 此时用户可以不选择文件，如果用户不选择文件，那么将拿到一个空值
 
-![](http://image.acmx.xyz/lindexi%2FScreenshot_1582444733.png)
+![](http://cdn.lindexi.site/lindexi%2FScreenshot_1582444733.png)
 
 现在 CrossFilePicker 的 Open 和 Save 方法都过时了，请使用 `Xamarin.Essentials.FileSystem` 代替，或者用 `Xamarin.Essentials.ShareFile` 将文件分享给其他应用打开
 

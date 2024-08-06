@@ -50,7 +50,7 @@ using System.Runtime.CompilerServices;
 
 大概的项目组织如下图
 
-![](http://image.acmx.xyz/lindexi%2F20236171619301553.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20236171619301553.jpg)
 
 修改 Analyzers 项目，让这个项目成为 Roslyn 分析器项目，修改之后的 csproj 项目文件代码如下
 

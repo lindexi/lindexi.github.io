@@ -18,7 +18,7 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214192658579)
+![](http://cdn.lindexi.site/lindexi%2F20181214192658579)
 
 前端小伙伴问那难不难，我就再问他，有没有一个东西，这个东西里面支持画点画线画文字这些，然后这个东西可以被画到 Canvas 的任何一个地方？虽然这句话比较饶，大概的意思就是 Canvas 可以嵌套 Canvas 类似的东西不？被嵌套的 Canvas 能否在任意的坐标开始画。解释清楚之后，前端小伙伴说可以啊。
 
@@ -36,13 +36,13 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214192746198)
+![](http://cdn.lindexi.site/lindexi%2F20181214192746198)
 
 刚才说到了绘制原语，需要解释一下，开始之前，先问一下，不知有没小伙伴不知道拼音的？如果学会了拼音，就可以使用拼音拼出普通话。对应的，电脑知道绘制原语就画出界面。从计算机图形学上，只要支持绘制原语就基本能画出所有类型的界面。
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214192830285)
+![](http://cdn.lindexi.site/lindexi%2F20181214192830285)
 
 能知道在任意坐标，画出任意颜色的点，理论上就可以画出任何的界面。如果还可以在任意的坐标上，画出任意颜色的几何图形，几何图形包括填充或描线两个方式，那就可以高效画出任何界面。至于其他的画圆、画文字、画图片这些，如果有，开发起来会更加简单，但这些如果没有原生的支持，那么想要做一个高性能的UI框架是很难的。
 
@@ -52,7 +52,7 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018111919201102)
+![](http://cdn.lindexi.site/lindexi%2F2018111919201102)
 
 再引入元素的概念，元素的边框就是一个矩形，元素将可以在自己的矩形之内使用绘制原语画出元素的界面效果。元素的概念属于框架级的，也就是原生是没有这个概念，原生只有绘制原语的概念。
 
@@ -261,49 +261,49 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214193214375)
+![](http://cdn.lindexi.site/lindexi%2F20181214193214375)
 
 这里定义简单元素和组合元素，简单元素是由多个基础元素组成
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214193226208)
+![](http://cdn.lindexi.site/lindexi%2F20181214193226208)
 
 多个简单的元素可以作为一个复杂元素，复杂元素实际就是 WPF 的按钮等元素
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018121419337798)
+![](http://cdn.lindexi.site/lindexi%2F2018121419337798)
 
 从定义可以看到，如果是一个简单元素，基础元素之间如何确定坐标？难道需要知道基础元素构成的简单元素所在画布的坐标，然后再计算基础元素相对于简单元素的内部坐标画在画布上？
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214193448813)
+![](http://cdn.lindexi.site/lindexi%2F20181214193448813)
 
 框架就是用来做这部分的封装，这时需要引入容器的概念。
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018121419354236)
+![](http://cdn.lindexi.site/lindexi%2F2018121419354236)
 
 容器本身在画布上是有 Bounds 的概念，也就是容器相对于画布的坐标和容器本身的宽度和高度，同时容器提供容器内的坐标。
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018121419369535)
+![](http://cdn.lindexi.site/lindexi%2F2018121419369535)
 
 如果在容器内部放一个元素，元素只需要知道容器，不需要知道容器之外。元素知道元素在容器内部的坐标就可以，容器知道容器在画布的坐标，于是画出元素就只需要将元素的坐标加上容器的坐标
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214193725905)
+![](http://cdn.lindexi.site/lindexi%2F20181214193725905)
 
 现在可以看到画布有坐标、宽高的概念，容器有坐标、宽高的概念，元素也有坐标和宽高的概念，有了这些就可以开始做布局
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214193826799)
+![](http://cdn.lindexi.site/lindexi%2F20181214193826799)
 
 这里布局的方法是采用矩形布局的方法，矩形布局就是将所有的元素和容器都看做矩形，对矩形进行布局。当前的 WPF 就是使用矩形布局的方法，这个方法的性能很高。当然本文不会考虑旋转，不规则元素和透明元素的布局。
 
@@ -311,13 +311,13 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214194012536)
+![](http://cdn.lindexi.site/lindexi%2F20181214194012536)
 
 容器和复杂元素都可以抽象为元素，容器里面可以放元素，元素里面可以通过容器再放元素。就和WPF的控件一样，在 WPF 的用户控件是可以放 Grid 的，这是一个面板控件，里面还可以继续套普通的元素或者再套一个 Grid 控件
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214194151135)
+![](http://cdn.lindexi.site/lindexi%2F20181214194151135)
 
 这里是将容器看做特殊的元素，因为容器本身可以放元素，如果放的元素是容器，那么容器内部就可以嵌套容器。
 
@@ -325,37 +325,37 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214194315355)
+![](http://cdn.lindexi.site/lindexi%2F20181214194315355)
 
 现在容器的概念已经清楚了，布局做的就是解决容器内部的元素如何排列的问题
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214194353757)
+![](http://cdn.lindexi.site/lindexi%2F20181214194353757)
 
 在 WPF 中有很多布局的控件，布局的控件如 Grid 等这些，实际上就是按照一定的规则排列元素
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214194450478)
+![](http://cdn.lindexi.site/lindexi%2F20181214194450478)
 
 但是如 StackPanel 的控件，在排列元素布局之前，是需要知道元素的宽高和大小的
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214194525458)
+![](http://cdn.lindexi.site/lindexi%2F20181214194525458)
 
 于是容器在布局之前是需要先做测量，测量就是获得容器里面的元素的宽度和高度。但是容器里面的元素假如是容器，就需要递归询问元素
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架18.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018121419502634)
+![](http://cdn.lindexi.site/lindexi%2F2018121419502634)
 
 在知道了每个元素的宽高，如何布局就是业务的事情，这里就不是框架内部需要做的
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架19.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214195344542)
+![](http://cdn.lindexi.site/lindexi%2F20181214195344542)
 
 布局完成了，渲染也就是十分简单了，如有一个基础的元素，需要在画布渲染，只需要将这个元素外层所有容器的坐标和元素自己相对于容器的坐标加起来就可以计算出元素在画布的坐标，画出元素就可以了。
 
@@ -363,7 +363,7 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架20.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214195549700)
+![](http://cdn.lindexi.site/lindexi%2F20181214195549700)
 
 渲染的时候需要一层层遍历视觉树，然后加上坐标。当然这些都应该在框架内部做，还记得刚才创建基础元素的 DrawingContext 不？
 
@@ -371,7 +371,7 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架21.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018121420539798)
+![](http://cdn.lindexi.site/lindexi%2F2018121420539798)
 
 在上面已经实现了画椭圆的方法，其他的方法假设都已经实现了。绘制的时候都是按照元素自己的坐标进行绘制椭圆的，但是在绘制的时候需要加上元素的外层坐标才可以在画布的正确的坐标进行绘制
 
@@ -379,19 +379,19 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架22.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018121420835739)
+![](http://cdn.lindexi.site/lindexi%2F2018121420835739)
 
 于是画布会找到画布里面的所有元素，对每个元素都创建一个 DrawingContext 给他，但是绘制原语部分都是引用相同的平台绘制
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架23.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018121420115194)
+![](http://cdn.lindexi.site/lindexi%2F2018121420115194)
 
 对于容器里面的元素，就需要递归给每个元素创建一个新的 DrawingContext 叠加上容器本身的外层坐标加上元素在容器的偏移的坐标
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架24.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214201232339)
+![](http://cdn.lindexi.site/lindexi%2F20181214201232339)
 
 于是这样一层层加上去就可以做到传给基础元素的时候已经计算好了基础元素相对于画布的坐标
 
@@ -399,37 +399,37 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架25.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214201610317)
+![](http://cdn.lindexi.site/lindexi%2F20181214201610317)
 
 从原理就可以知道如何封装绘制的接口，在元素进行渲染的时候，需要判断元素是否基础元素，如果不是基础元素就需要封装 DrawingContext 传入元素里面的元素，也就是外层容器拿到自己的 DrawingContext 封装为给每个元素的 DrawingContext 传入元素的绘制方法
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架26.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214202340753)
+![](http://cdn.lindexi.site/lindexi%2F20181214202340753)
 
 此时对于基础元素只需要关注元素内部的坐标进行绘制，如绘制一个三角形，就需要知道三角形是在元素的哪里进行绘制，而不需要关注这个元素是被放在哪里
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架27.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214202444159)
+![](http://cdn.lindexi.site/lindexi%2F20181214202444159)
 
 但是元素调用的绘制方法，如上面的代码实际是掉基础渲染的方法，在基础渲染的方法修改坐标加上外层坐标
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架28.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214202529560)
+![](http://cdn.lindexi.site/lindexi%2F20181214202529560)
 
 框架的工作就是将画布视为容器，将容器视为元素，递归调用元素渲染，同时在调用的过程不断根据元素封装 DrawingContext 的坐标，当然对于基础元素就直接调用绘制的方法
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架29.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214202754140)
+![](http://cdn.lindexi.site/lindexi%2F20181214202754140)
 
 这样就可以将元素投影到画布上，在渲染的时候是没有容器的概念，也没有复杂元素的概念，只有基础的元素的概念
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架30.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214203215919)
+![](http://cdn.lindexi.site/lindexi%2F20181214203215919)
 
 等等，是不是忘了什么，元素的层级怎么办？
 
@@ -437,7 +437,7 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架31.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214205030874)
+![](http://cdn.lindexi.site/lindexi%2F20181214205030874)
 
 现在就可以说，布局完成了，渲染也就完成了。
 
@@ -447,13 +447,13 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架32.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214205228244)
+![](http://cdn.lindexi.site/lindexi%2F20181214205228244)
 
 此时需要按照元素的层级排序，因为顶层的元素会挡住底层的元素，需要先计算顶层元素的命中测试才能计算底层的元素。当然在层级排序的时候需要去掉不做交互的元素。
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架33.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214205414289)
+![](http://cdn.lindexi.site/lindexi%2F20181214205414289)
 
 元素的命中测试就是判断点击是否在元素的矩形内，如果在元素的矩形内，就在元素内部再寻找是否在元素里面的元素的矩形内，递归找到最底层的元素，然后告诉他，被命中了。
 
@@ -463,13 +463,13 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架34.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214205825744)
+![](http://cdn.lindexi.site/lindexi%2F20181214205825744)
 
 总结一下，框架主要包含的就是对基础的渲染进行封装，元素的概念，在元素之上做了容器，有了容器就可以用来做布局。有了布局就可以让基础元素不需要关注外层的坐标，同时有了布局容器可以做注入渲染，有了注入渲染需要进行封装接口，同时布局之后可以按照调用渲染的顺序做出元素的层级。在布局完成了也就确定了每个元素的矩形范围，这时就可以用来做命中测试
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架35.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181214205857185)
+![](http://cdn.lindexi.site/lindexi%2F20181214205857185)
 
 这就是 UI 框架最核心的内容，看起来还是很简单的，对照博客看看 WPF 的源代码，其实很容易就理解 WPF 是如何封装。对应起来的就是 Visual 提供了对基础的渲染的封装，其实写一个 DrawingVisual 去查看里面的方法，在 RenderDataDrawingContext 里面就对底层的绘制进行了封装。在 WPF 底层的绘制提供的是 RenderData 的方法进行收集，之后发送给渲染线程，但是通过 RenderDataDrawingContext 继承抽象的 DrawingContext 的类可以封装为容易使用的方法
 
@@ -489,6 +489,6 @@
 
 <!-- ![](image/WPF 源代码 从零开始写一个 UI 框架/WPF 源代码 从零开始写一个 UI 框架36.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181221165716594)
+![](http://cdn.lindexi.site/lindexi%2F20181221165716594)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

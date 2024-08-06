@@ -13,13 +13,13 @@
 
 <!-- ![](image/WPF 使用 MAUI 的自绘制逻辑/WPF 使用 MAUI 的自绘制逻辑0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202262020691058.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202262020691058.jpg)
 
 制作一个跨平台的 UI 框架有很多个方式，例如使用各个平台提供的原生控件，也就是说在 Windows 平台上，采用 WinUI 的按钮，在 iOS 平台上使用苹果提供的按钮，具体的按钮样式等等就需要取平台最小集以及开放定制性，最重要的代表就是原先的 Xamarin 的方式。采用各个平台的提供的原生控件的一个优势在于可以获取平台提供的功能，更加贴合具体平台的视觉和交互，缺点是不同的平台的视觉效果有所差异。另一个方式是做中间较底层的自绘，基本上各个平台都会提供自绘的能力，如 WPF 下的 DrawingContext 和 Win2D 等等，基于此方式做自绘，可以更加方便接入原有的平台，降低原有的应用接入的成本，而这就是本文的重点。最后一个方式是做底层的自绘，使用平台最底层的绘制逻辑，或者其他渲染框架的封装进行二次封装，如 Skia 或 GTK 等，对此进行渲染。使用底层的自绘逻辑可以做到更多的可控性，但缺点也在于可控性导致开发起来十分麻烦，与现有的应用接入也相对来说无法实现最好的性能
 
 <!-- ![](image/WPF 使用 MAUI 的自绘制逻辑/WPF 使用 MAUI 的自绘制逻辑1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202262020942676.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202262020942676.jpg)
 
 很多的 UI 框架都会采用其中的一个方式。然而别忘了 MAUI 是某软主力做的，按照某软的想法，那就是都要。在 MAUI 里面，既可以使用平台提供的原生控件进行拼接制作界面，也可以使用基于的各个平台的独立 UI 框架提供的自绘能力绘制界面，也可以调用到底层的渲染逻辑进行渲染
 
@@ -31,7 +31,7 @@
 
 <!-- ![](image/WPF 使用 MAUI 的自绘制逻辑/WPF 使用 MAUI 的自绘制逻辑2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20226202012174730.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20226202012174730.jpg)
 
 接下来是在有 [Microsoft.Maui.Graphics](https://github.com/dotnet/Microsoft.Maui.Graphics) 的基础上，也就是在能提供各个平台上层统一的绘制能力之后，进行实现各个基础控件。这就是 [Microsoft.Maui.Graphics.Controls](https://github.com/dotnet/Microsoft.Maui.Graphics.Controls) 仓库，这个仓库的需求就是制作自绘的控件。如此即可实现各个平台上像素级的统一，或者是更加方便接入原有的应用的 UI 框架
 
@@ -41,7 +41,7 @@
 
 <!-- ![](image/WPF 使用 MAUI 的自绘制逻辑/WPF 使用 MAUI 的自绘制逻辑3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20226202013293401.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20226202013293401.jpg)
 
 核心的实现方法是 WPF 提供画布功能，让 MAUI 可以在 WPF 上面画元素。在 MAUI 里面提供框架，以及具体的绘制指导，和上层 API 调用
 

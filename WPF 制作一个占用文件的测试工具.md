@@ -10,7 +10,7 @@
 先给大家看一下效果：
 
 <!-- ![](image/WPF 制作一个占用文件的测试工具/WPF 制作一个占用文件的测试工具0.png) -->
-![](http://image.acmx.xyz/lindexi%2F202111121923211935.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202111121923211935.jpg)
 
 以上是拖入文件到灰色部分，将会让此文件被占用。点击释放按钮即可释放对此文件的占用
 
@@ -18,7 +18,7 @@
 
 <!-- ![](image/WPF 制作一个占用文件的测试工具/WPF 制作一个占用文件的测试工具1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211112192511185.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211112192511185.jpg)
 
 此工具的制作十分简单，先看看界面部分，代码如下
 

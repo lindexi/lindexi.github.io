@@ -214,7 +214,7 @@ UpdateLayeredWindowEx(
 
 <!-- ![](image/WPF 从最底层源代码了解 AllowsTransparency 性能差的原因/WPF 从最底层源代码了解 AllowsTransparency 性能差的原因0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202010301956101811.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202010301956101811.jpg)
 
 也就是说整个 WPF 的 AllowsTransparency 设置透明的一个最底层核心逻辑就是调用 [UpdateLayeredWindow](https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-updatelayeredwindow?WT.mc_id=WD-MVP-5003260) 或 [UpdateLayeredWindowIndirect](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms633557(v=vs.85)?WT.mc_id=WD-MVP-5003260) 方法实现
 

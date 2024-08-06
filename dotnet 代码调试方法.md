@@ -109,13 +109,13 @@ if (foo)
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201965162133506)
+![](http://cdn.lindexi.site/lindexi%2F201965162133506)
 
 断点可以在运行调试之前添加，也可以在调试的过程添加断点。添加成功了断点则可以在代码左边看到红点，添加失败将会显示白点。当代码执行到断点的地方，程序将会停在断点这里
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201965162318563)
+![](http://cdn.lindexi.site/lindexi%2F201965162318563)
 
 除了在打开代码文件，在某一行进行断点之外，还可以点击工具栏的 调试-窗口-断点 打开断点设置。通过断点设置，可以在更多的地方加上断点
 
@@ -137,7 +137,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201965163417289)
+![](http://cdn.lindexi.site/lindexi%2F201965163417289)
 
 在对应的调用方法右击点击断点可以新建断点
 
@@ -163,7 +163,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法24.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202142598467428.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202142598467428.jpg)
 
 反过来，如果看到自己在调试的时候，在自动窗口或局部变量看不到属性的内容，提示关闭隐函数求值等，相信大家也知道从哪里打开
 
@@ -203,7 +203,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法18.png) -->
 
-[![](http://image.acmx.xyz/lindexi%2F2019107123420756)](https://r302.cc/xy1ar5)
+[![](http://cdn.lindexi.site/lindexi%2F2019107123420756)](https://r302.cc/xy1ar5)
 
 以上课件的背景是我需要开发一个RSS订阅的工具，但是软件的输出内容的博客时间不对，同时只输出一个博客的内容，另一个博客的内容没有输出
 
@@ -219,11 +219,11 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 打开 dotPeek 然后点击启动符号服务器，然后选择所有的程序集都需要反编译创建符号
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798184736.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798184736.jpg)
 
 点击 dotPeek 的工具设置，可以看到这个页面，选择所有符号都需要同时复制 dotPeek 创建的符号服务器的端口
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798185154.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201798185154.jpg)
 
 这时在 dotPeek 就创建了一个符号服务器，可以提供任意的库的符号，在 VisualStudio 调试的时候发现有某个模块没有加载符号就会尝试去符号服务器加载符号
 
@@ -245,7 +245,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961014267518)
+![](http://cdn.lindexi.site/lindexi%2F201961014267518)
 
 在 GetName 方法判断传入的属性是否为空，如果为空就异常
 
@@ -263,25 +263,25 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961014283411)
+![](http://cdn.lindexi.site/lindexi%2F201961014283411)
 
 但还是发现了异常，我通过搜代码的 Name 的属性赋值，发现只有上面的代码才会赋值
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019610142927709)
+![](http://cdn.lindexi.site/lindexi%2F2019610142927709)
 
 此时就可以尝试通过断点调试里面的给对象设置 id 的方法调试，我给了 F1 设置了一个 id 通过局部变量找到这个属性，右击创建分配了 `$1` 给这个属性
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961014311346)
+![](http://cdn.lindexi.site/lindexi%2F201961014311346)
 
 然后在 GetName 方法添加断点，此时发现了现在的 F1 对象没有被标记，而存在标记的值和当前的 F1 不是同一个值，也就是说明有一段代码更改了 F1 的值
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019610143215420)
+![](http://cdn.lindexi.site/lindexi%2F2019610143215420)
 
 而可惜我看到了 F1 代码的定义如下
 
@@ -314,13 +314,13 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法21.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202142492585642.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202142492585642.jpg)
 
 附加进程调试也可以用来做远程调试，只需要点击查找，然后输入远程设备的 ip 地址和端口即可。支持调试 Docker 容器的进程
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法22.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021424931201088.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021424931201088.jpg)
 
 更多关于远程调试相关，请看下文章节
 
@@ -365,13 +365,13 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201965175627473)
+![](http://cdn.lindexi.site/lindexi%2F201965175627473)
 
 通过输入可以发现运行过程的异常，然后在调试-窗口-异常打开输出里面的异常，如我看到输出里面显示了`引发的异常:“System.ArgumentException”(位于 WegaljifoWhelbaichewair.dll 中)` 此时可以在异常里面开启
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019651811641)
+![](http://cdn.lindexi.site/lindexi%2F2019651811641)
 
 因为异常很多，建议通过搜的方式开启需要调试的异常而不是打开全部异常
 
@@ -379,7 +379,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201965185843562)
+![](http://cdn.lindexi.site/lindexi%2F201965185843562)
 
 找到了异常的代码，可以在代码的调用上下进行断点调试
 
@@ -397,7 +397,7 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019728173838483)
+![](http://cdn.lindexi.site/lindexi%2F2019728173838483)
 
 在看到这个提示的时候首先应该看的是这是一个什么异常，从界面看到 InvalidCastException 表示转换错误，然后通过信息 `Unable to cast object of type 'System.String' to type 'System.Int32'` 可以知道在执行到当前这句代码的时候无法转换对象
 
@@ -405,13 +405,13 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019728174054354)
+![](http://cdn.lindexi.site/lindexi%2F2019728174054354)
 
 也就是执行到将 `foo.Name` 转换为 int 的时候错误，此时应该打开局部窗口看对应的 Name 是什么
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019728174444890)
+![](http://cdn.lindexi.site/lindexi%2F2019728174444890)
 
 通过上面图可以看到对应的 `Name` 的定义在 Foo 里面是 `object` 而实际上的类型是 `string` 类型
 
@@ -755,7 +755,7 @@ Foo();
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019610162630273)
+![](http://cdn.lindexi.site/lindexi%2F2019610162630273)
 
 开启所有的异常的方法是在调试窗口异常设置里面，如果前面的分类是一个方形那么就是开启默认的异常，此时有很多异常都是被忽略的。再点击一次变成勾就可以开启所有的异常
 
@@ -775,7 +775,7 @@ Foo();
 
 这里推荐插件[调试神器OzCode](https://walterlv.github.io/post/using-ozcode-to-improve-debug.html)可以协助看代码逻辑
   
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812116914.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F201812116914.jpg)
 
 通过调用堆栈和异常的方法可以快速定位代码调用是否符合预期，各个函数传入参数是否符合预期，此时的调试不限在 DEBUG 下，同时适合在用户端调试发布的代码
 
@@ -836,7 +836,7 @@ Foo();
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20196519594412)
+![](http://cdn.lindexi.site/lindexi%2F20196519594412)
 
 在阅读完无异常调试的时候，相信小伙伴都了解到了异常的作用，以及在某些地方如何防逗比了
 
@@ -870,7 +870,7 @@ Foo();
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019610154727643)
+![](http://cdn.lindexi.site/lindexi%2F2019610154727643)
 
 还是刚才的代码，我在两个方法里面修改了 Name 这个属性，然后在第三个方法判断了 Name 的值
 
@@ -1196,7 +1196,7 @@ public static int Count { set; get; }
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法23.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021424952531384.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021424952531384.jpg)
 
 ## 模拟调试
 
@@ -1359,7 +1359,7 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法20.png) -->
 
-[![](http://image.acmx.xyz/lindexi%2F2019107125425297)](https://r302.cc/g5bR9W)
+[![](http://cdn.lindexi.site/lindexi%2F2019107125425297)](https://r302.cc/g5bR9W)
 
 如果只是程序运行比较卡，而不是卡住，可以通过 dotTrace 调试，分析是哪些模块执行比较卡
 
@@ -1378,7 +1378,7 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 <!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法19.png) -->
 
-[![](http://image.acmx.xyz/lindexi%2F2019107124436606)](https://r302.cc/B0mV0z)
+[![](http://cdn.lindexi.site/lindexi%2F2019107124436606)](https://r302.cc/B0mV0z)
 
 [VisualStudio 调试内存泄漏方法](https://blog.lindexi.com/post/VisualStudio-%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%96%B9%E6%B3%95.html )
 

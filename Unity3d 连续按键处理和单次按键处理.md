@@ -51,13 +51,13 @@
 
 <!-- ![](image/Unity3d 连续按键处理和单次按键处理/Unity3d 连续按键处理和单次按键处理0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201311718417252.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201311718417252.jpg)
 
 搭建界面的方法就是右击创建 3d object 如下面图片
 
 <!-- ![](image/Unity3d 连续按键处理和单次按键处理/Unity3d 连续按键处理和单次按键处理1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201311719215966.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201311719215966.jpg)
 
 接着看界面你也就知道如何搭界面出来了，当然如果想要做游戏开发，很多时候都需要美工或在网上找一些素材，很少有自己画的
 
@@ -65,13 +65,13 @@
 
 <!-- ![](image/Unity3d 连续按键处理和单次按键处理/Unity3d 连续按键处理和单次按键处理2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201311720437180.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201311720437180.jpg)
 
 我这个布局是 Tall 布局，我比较喜欢这个布局，在 Unity3d 的右上角点击 Layout 然后选择 Tall 就可以
 
 <!-- ![](image/Unity3d 连续按键处理和单次按键处理/Unity3d 连续按键处理和单次按键处理3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020131172296573.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020131172296573.jpg)
 
 右击创建的 C# 脚本，用 VisualStudio 编辑，也就是点击 Open C# project 按钮
 

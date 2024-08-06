@@ -43,7 +43,7 @@ class F2
 
 <!-- ![](image/dotnet 已知问题 错误标记 MethodImplOptions.InternalCall 特性参数将会在类型访问之前抛出 TypeLoadException 异常/dotnet 已知问题 错误标记 MethodImplOptions.InternalCall 特性参数将会在类型访问之前抛出 TypeLoadException 异常0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202311191122288520.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202311191122288520.jpg)
 
 这也就是导致了此问题更加难以调试的原因
 

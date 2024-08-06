@@ -828,7 +828,7 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 完成以上代码运行的界面如下，可以看到这是一个非全屏也非最大化的窗口
 
 <!-- ![](image/WPF 稳定的全屏化窗口方法/WPF 稳定的全屏化窗口方法0.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024511104751566.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024511104751566.jpg)
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c8b8e6550b38d7fe109da5ed8fc63ab90c4dd7c5/KenafearcuweYemjecahee) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c8b8e6550b38d7fe109da5ed8fc63ab90c4dd7c5/KenafearcuweYemjecahee) 上，可以使用如下命令行拉取代码
 

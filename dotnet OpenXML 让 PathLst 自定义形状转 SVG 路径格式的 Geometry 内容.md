@@ -14,13 +14,13 @@
 
 <!-- ![](image/dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容/dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021211430402141.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021211430402141.jpg)
 
 下面是一个简单的 WPF 应用，读取这份文档的内容，将里面的形状显示出来
 
 <!-- ![](image/dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容/dotnet OpenXML 让 PathLst 自定义形状转 SVG 路径格式的 Geometry 内容1.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2Fdotnet%2520OpenXML%2520%25E8%25AE%25A9%2520PathLst%2520%25E8%2587%25AA%25E5%25AE%259A%25E4%25B9%2589%25E5%25BD%25A2%25E7%258A%25B6%25E8%25BD%25AC%2520SVG%2520%25E8%25B7%25AF%25E5%25BE%2584%25E6%25A0%25BC%25E5%25BC%258F%25E7%259A%2584%2520Geometry%2520%25E5%2586%2585%25E5%25AE%25B91.gif)
+![](http://cdn.lindexi.site/lindexi%2Fdotnet%2520OpenXML%2520%25E8%25AE%25A9%2520PathLst%2520%25E8%2587%25AA%25E5%25AE%259A%25E4%25B9%2589%25E5%25BD%25A2%25E7%258A%25B6%25E8%25BD%25AC%2520SVG%2520%25E8%25B7%25AF%25E5%25BE%2584%25E6%25A0%25BC%25E5%25BC%258F%25E7%259A%2584%2520Geometry%2520%25E5%2586%2585%25E5%25AE%25B91.gif)
 
 以上的全部代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/adcdd72536b1405c70c7c7cf6fe4e2876da891dd/LalyearnabodaLayheryacucha) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/adcdd72536b1405c70c7c7cf6fe4e2876da891dd/LalyearnabodaLayheryacucha) 欢迎下载测试
 

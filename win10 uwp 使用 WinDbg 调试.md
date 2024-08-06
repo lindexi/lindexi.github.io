@@ -19,7 +19,7 @@
 
 <!-- ![](image/win10 uwp 使用 WinDbg 调试/win10 uwp 使用 WinDbg 调试0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20198319345802)
+![](http://cdn.lindexi.site/lindexi%2F20198319345802)
 
 用这个版本输入下面代码将会提示 `Syntax error in '.querypackages'` 也就是不支持 UWP 调试
 
@@ -32,7 +32,7 @@
 
 <!-- ![](image/win10 uwp 使用 WinDbg 调试/win10 uwp 使用 WinDbg 调试1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201983193552220)
+![](http://cdn.lindexi.site/lindexi%2F201983193552220)
 
 ## 附加进程调试
 

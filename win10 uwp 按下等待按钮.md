@@ -2,7 +2,7 @@
 
 我们经常需要一个按钮，在按下时，后台执行Task，这时不能再次按下按钮。
 
-![](http://image.acmx.xyz/be842536-5c96-47f4-a49d-354e749a826aProgressButton.gif)
+![](http://cdn.lindexi.site/be842536-5c96-47f4-a49d-354e749a826aProgressButton.gif)
 
 <!--more-->
 <!-- CreateTime:2018/8/10 19:16:50 -->

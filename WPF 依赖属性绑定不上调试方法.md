@@ -84,7 +84,7 @@
 
 <!-- ![](image/WPF 依赖属性绑定不上调试方法/WPF 依赖属性绑定不上调试方法3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206181034574822.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206181034574822.jpg)
 
 如果能进入 SetValue 断点但是不能进去 PropertyChangedCallback 断点，那么证明定义没有写对。如上图写错的代码是将 `typeof(Foo)` 写成了 `typeof(F2)` 这个类写错了，就不会进入触发
 
@@ -100,13 +100,13 @@
 
 <!-- ![](image/WPF 依赖属性绑定不上调试方法/WPF 依赖属性绑定不上调试方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20198218549438)
+![](http://cdn.lindexi.site/lindexi%2F20198218549438)
 
 例如查看 TextBlock 的属性绑定，如果看到了是绑定表达式，那么证明至少绑定存在
 
 <!-- ![](image/WPF 依赖属性绑定不上调试方法/WPF 依赖属性绑定不上调试方法1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201982185436807)
+![](http://cdn.lindexi.site/lindexi%2F201982185436807)
 
 ## 绑定属性被修改
 
@@ -154,7 +154,7 @@
 
 <!-- ![](image/WPF 依赖属性绑定不上调试方法/WPF 依赖属性绑定不上调试方法2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201982191819540)
+![](http://cdn.lindexi.site/lindexi%2F201982191819540)
 
 这个方法会用在列表里面的元素和用户控件绑定不上，因为在列表和用户控件里面的上下文可能不是上层元素的上下文而是被指定的，请看[WPF Frame 的 DataContext 不能被 Page 继承](https://blog.lindexi.com/post/wpf-frame-%E7%9A%84-datacontext-%E4%B8%8D%E8%83%BD%E8%A2%AB-page-%E7%BB%A7%E6%89%BF )
 

@@ -32,11 +32,11 @@
 
 如果打开一个之前版本的，会提示
 
-![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751892557.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751892557.jpg)
 
 这时可以修改 项目 来打开
 
-![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751892636.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F201751892636.jpg)
 
 把10240改为 15063 我就可以打开
 

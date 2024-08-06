@@ -12,7 +12,7 @@
 
 从网上拿图来说
 
-![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017427204051.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017427204051.jpg)
 
 打开文件夹自动选择所有文件
 

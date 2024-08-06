@@ -40,7 +40,7 @@
 
 <!-- ![](image/WPF 设置 ShowInTaskbar 对窗口最小化的影响/WPF 设置 ShowInTaskbar 对窗口最小化的影响0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021318163155400.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021318163155400.jpg)
 
 如果不想要这个标题栏窗口，那么除非不要使用最小化，而是使用 `Visibility = Visibility.Collapsed` 或者 Hide 方法，如下面代码
 

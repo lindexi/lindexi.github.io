@@ -12,7 +12,7 @@ Before I begin, let me explain my requirements. I currently have [a small WPF ap
 As we all know, there are many multi-platform development frameworks available in the current dotnet system. This time, I decided to try developing with the UNO/MAUI approach. The overall technical architecture is shown in the diagram below.
 
 <!-- ![](image/Notes on Migrating from WPF to UNO under UOS/Notes on Migrating from WPF to UNO under UOS0.png) -->
-![](http://image.acmx.xyz/lindexi%2F20231126112176598.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20231126112176598.jpg)
 
 As shown in the diagram, I still use the WPF framework on Windows. However, this time the WPF framework is used as the underlying framework. Most of the business code will not directly touch the WPF framework, only some platform compatibility adaptation code will. The rest of the business code will indirectly use the WPF framework through the UNO and MAUI frameworks. On the UOS, the GTK application framework is used. Similarly, only platform compatibility adaptation code will touch the GTK application framework, and most business code will not directly interact with it.
 
@@ -55,10 +55,10 @@ If there is content that depends on the space stretched by the measurement durin
 With this logic, you will see the text content being clipped during the input process. Basically, you can see the text content being clipped under the Skia.WPF and Skia.GTK projects.
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记1.png) -->
-![](http://image.acmx.xyz/lindexi%2F202311161640203139.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202311161640203139.jpg)
 
 <!-- ![](image/从 WPF 搬迁到 UOS 下的 UNO 的笔记/从 WPF 搬迁到 UOS 下的 UNO 的笔记2.png) -->
-![](http://image.acmx.xyz/lindexi%2F202311161640505448.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202311161640505448.jpg)
 
 For now, the only workaround is to modify the interface design.
 

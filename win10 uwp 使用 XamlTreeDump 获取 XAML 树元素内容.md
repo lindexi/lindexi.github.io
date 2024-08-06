@@ -12,7 +12,7 @@
 
 <!-- ![](image/win10 uwp 使用 XamlTreeDump 获取 XAML 树元素内容/win10 uwp 使用 XamlTreeDump 获取 XAML 树元素内容0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20215896206650.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20215896206650.jpg)
 
 假定咱有 UI 界面代码如下
 

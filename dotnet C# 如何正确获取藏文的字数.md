@@ -9,7 +9,7 @@
 
 先给大家来一个简单的藏文字 དིོེུ 这个字其实是由 ད + ུ + ི + ོ + ེ 这几个字符组成的
 
-![](http://image.acmx.xyz/lindexi%2F202182285086064.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202182285086064.jpg)
 
 用 string.Length 获取到的 དིོེུ 这个字也是符合预期 5 个字符，当然这也是不符合预期的字数
 

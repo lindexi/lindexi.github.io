@@ -5,7 +5,7 @@
 
 
 
-[![](http://image.acmx.xyz/lindexi%2F202041682863763.jpg)](https://r302.cc/B4z5Oj)
+[![](http://cdn.lindexi.site/lindexi%2F202041682863763.jpg)](https://r302.cc/B4z5Oj)
 
 点击上面图片跳转课件
 

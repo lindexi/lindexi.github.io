@@ -12,7 +12,7 @@
 
 <!-- ![](image/WPF 笔迹触摸点收集工具/WPF 笔迹触摸点收集工具0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202138195624468.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202138195624468.jpg)
 
 实现方式其实就在触摸的时候收集触摸点信息，上面的工具有很多功能都没有实现的。笔迹绘制的功能使用 [WPF 最简逻辑实现多指顺滑的笔迹书写](https://blog.lindexi.com/post/WPF-%E6%9C%80%E7%AE%80%E9%80%BB%E8%BE%91%E5%AE%9E%E7%8E%B0%E5%A4%9A%E6%8C%87%E9%A1%BA%E6%BB%91%E7%9A%84%E7%AC%94%E8%BF%B9%E4%B9%A6%E5%86%99.html) 博客的方法实现
 

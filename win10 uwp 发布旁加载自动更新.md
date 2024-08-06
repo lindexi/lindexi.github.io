@@ -15,7 +15,7 @@
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192315230445)
+![](http://cdn.lindexi.site/lindexi%2F20192315230445)
 
 虽然旁加载对于证书不是很友好，但是因为我的应用都是预装的，本来的两大问题一个就是自动更新问题，另一个是从应用商店下载的问题，通过预装可以解决应用商店下载问题。解决了下载的坑，最大的问题在于更新问题，如果能使用自己的服务器，那么在国内更新是没有网络问题
 
@@ -54,19 +54,19 @@
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192315241464)
+![](http://cdn.lindexi.site/lindexi%2F20192315241464)
 
 这里只是做演示，所以只勾选 x86 的，这样创建速度比较快
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192315276124)
+![](http://cdn.lindexi.site/lindexi%2F20192315276124)
 
 点击下一步，在这里写入 URL 这里需要拿到本地的内网的 IP 这样在可以在后面在其他的设备安装 UWP 应用，我这里已经写上了自己的 IP 和端口号，还有一个路径
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019231602919)
+![](http://cdn.lindexi.site/lindexi%2F2019231602919)
 
 在本文下面将会告诉大家如何让 asp dotnet core 程序支持上面的路径下载程序，当然需要将 IP 修改为你的内网IP才可以
 
@@ -90,7 +90,7 @@
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201923153726506)
+![](http://cdn.lindexi.site/lindexi%2F201923153726506)
 
 大概现在 UWP 程序已经编译完成，将编译的文件复制到 E:\package 文件夹，可以看到里面的文件有很多 asp dotnet core 不认识的文件，在 asp dotnet core 如果想要让用户下载某个文件，需要设置这个文件的 IMME 只需要创建 FileExtensionContentTypeProvider 就会添加很多已知的文件，如刚才访问的 txt 文件
 
@@ -234,7 +234,7 @@
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192315470738)
+![](http://cdn.lindexi.site/lindexi%2F20192315470738)
 
 当然因为大家创建的测试的 UWP 程序的命名不一样，看到界面也有一些不一样
 
@@ -265,37 +265,37 @@ CheckNetIsolation.exe LoopbackExempt -a -n="microsoft.desktopappinstaller_8wekyb
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201923155136617)
+![](http://cdn.lindexi.site/lindexi%2F201923155136617)
 
 因为他需要先下载证书，在使用旁加载就需要手动安装证书，因为测试程序使用的证书是不可信的，点击其他链接，下载证书
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201923155237197)
+![](http://cdn.lindexi.site/lindexi%2F201923155237197)
 
 打开证书，然后点击安装证书，选放在本地计算机
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201923155329217)
+![](http://cdn.lindexi.site/lindexi%2F201923155329217)
 
 然后点击将所有的证书放在受信任的根证书颁发
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201923155538335)
+![](http://cdn.lindexi.site/lindexi%2F201923155538335)
 
 点击完成
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192315563655)
+![](http://cdn.lindexi.site/lindexi%2F20192315563655)
 
 现在点击获取应用，等待安装，现在就可以看到下面界面
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201923151143915)
+![](http://cdn.lindexi.site/lindexi%2F201923151143915)
 
 那么如何做到自动更新，刚才创建的时候设置是每次打开的时候都判断有没有可以更新的，现在尝试点击打包，自动会更新版本号
 
@@ -307,7 +307,7 @@ CheckNetIsolation.exe LoopbackExempt -a -n="microsoft.desktopappinstaller_8wekyb
 
 <!-- ![](image/win10 uwp 发布旁加载自动更新/win10 uwp 发布旁加载自动更新12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192316523492)
+![](http://cdn.lindexi.site/lindexi%2F20192316523492)
 
 看起来自己做一个服务器让用户安装 UWP 程序还是很简单的
 

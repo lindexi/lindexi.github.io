@@ -12,7 +12,7 @@
 
 <!-- ![](image/Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法/Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201026119519989.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201026119519989.jpg)
 
 我推荐在苹果上切换开发者的时候，先删除原有的证书文件，删除方法是在命令行输入下面代码
 
@@ -23,7 +23,7 @@ rm *
 
 <!-- ![](image/Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法/Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202010261110507273.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202010261110507273.jpg)
 
 删除完成之后，重新在 XCode 的选项账户里面点击 Download Manual Profiles 按钮
 
@@ -31,7 +31,7 @@ rm *
 
 <!-- ![](image/Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法/Xamarin iOS 切换开发者账号之后的签名标识和预配配置文件更新方法2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202010261112186489.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202010261112186489.jpg)
 
 参考文档：
 

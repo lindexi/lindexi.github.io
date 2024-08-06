@@ -17,11 +17,11 @@ CodePlex是微软开源项目网站，有很多人都在上面传代码，我们
 
 去https://www.codeplex.com/ 选`Creat Project`
 
-![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135425.jpg)
+![](http://cdn.lindexi.site/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135425.jpg)
 
 填写标题、域名、选择git上传
 
-![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135510.jpg)
+![](http://cdn.lindexi.site/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135510.jpg)
 
 创建
 
@@ -29,7 +29,7 @@ CodePlex是微软开源项目网站，有很多人都在上面传代码，我们
 
 点击 `Source Code`
 
-![](http://image.acmx.xyz/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135552.jpg)
+![](http://cdn.lindexi.site/fc7733af-8526-44d2-84b9-99b41ef99f4a20161212135552.jpg)
 
 点击`Clone`
 

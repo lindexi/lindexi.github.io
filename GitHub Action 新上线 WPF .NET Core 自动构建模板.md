@@ -19,19 +19,19 @@ dotnet new wpf -o Foo
 
 <!-- ![](image/GitHub Action 新上线 WPF .NET Core 自动构建模板/GitHub Action 新上线 WPF .NET Core 自动构建模板0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204302228221572.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204302228221572.jpg)
 
 暂时先使用测试的证书，创建测试证书的方法就是双击打包项目的 Package.appxmanifest 文件，点击打包，然后点击选择证书
 
 <!-- ![](image/GitHub Action 新上线 WPF .NET Core 自动构建模板/GitHub Action 新上线 WPF .NET Core 自动构建模板1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204302229314549.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204302229314549.jpg)
 
 点击创建然后输入名字点击确定就可以，请看下图
 
 <!-- ![](image/GitHub Action 新上线 WPF .NET Core 自动构建模板/GitHub Action 新上线 WPF .NET Core 自动构建模板2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204302230254238.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204302230254238.jpg)
 
 此时就创建了 `Foo_TemporaryKey.pfx` 证书文件，当然你的证书名应该和我不相同
 
@@ -64,7 +64,7 @@ base64 -f Foo_TemporaryKey.pfx -o base64.txt
 <!-- ![](image/GitHub Action 新上线 WPF .NET Core 自动构建模板/GitHub Action 新上线 WPF .NET Core 自动构建模板3.png) -->
 
 
-![](http://image.acmx.xyz/lindexi%2F20204302238184084.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204302238184084.jpg)
 
 点击 Add a new secret 新建保密信息
 
@@ -72,14 +72,14 @@ base64 -f Foo_TemporaryKey.pfx -o base64.txt
 
 <!-- ![](image/GitHub Action 新上线 WPF .NET Core 自动构建模板/GitHub Action 新上线 WPF .NET Core 自动构建模板4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020430224019618.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020430224019618.jpg)
 
 点击添加，然后进入 Action 页面
 
 <!-- ![](image/GitHub Action 新上线 WPF .NET Core 自动构建模板/GitHub Action 新上线 WPF .NET Core 自动构建模板5.png) -->
 
 
-![](http://image.acmx.xyz/lindexi%2F20204302240577115.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204302240577115.jpg)
 
 此时可以看到新推出的 WPF 构建项目
 

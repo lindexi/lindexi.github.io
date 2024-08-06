@@ -16,43 +16,43 @@
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116203842298)
+![](http://cdn.lindexi.site/lindexi%2F2018116203842298)
 
 创建的时候需要等待很久，创建之后点击 Repos 导入 github 的仓库作为代码库，或者自己使用创建的项目提交代码
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116203944879)
+![](http://cdn.lindexi.site/lindexi%2F2018116203944879)
 
 本文是导入开源在 github 的 uwp 图床项目，点击导入
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204014790)
+![](http://cdn.lindexi.site/lindexi%2F2018116204014790)
 
 输入自己的仓库地址
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204040211)
+![](http://cdn.lindexi.site/lindexi%2F2018116204040211)
 
 点击 Pipelines 点击 Build 配置自动构建
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204137570)
+![](http://cdn.lindexi.site/lindexi%2F2018116204137570)
 
 创建新的构建
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204156981)
+![](http://cdn.lindexi.site/lindexi%2F2018116204156981)
 
 因为刚才已经导入代码，现在就可以直接导入代码
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204240144)
+![](http://cdn.lindexi.site/lindexi%2F2018116204240144)
 
 直接点击下一步就可以
 
@@ -60,7 +60,7 @@
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204342413)
+![](http://cdn.lindexi.site/lindexi%2F2018116204342413)
 
 点击应用
 
@@ -68,31 +68,31 @@
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201811620481520)
+![](http://cdn.lindexi.site/lindexi%2F201811620481520)
 
 这里选择项目之后点击保存
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204850186)
+![](http://cdn.lindexi.site/lindexi%2F2018116204850186)
 
 点击队列按钮就可以进行构建
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205047145)
+![](http://cdn.lindexi.site/lindexi%2F2018116205047145)
 
 这样就设置好了构建的方法，点击 Triggers 设置触发，可以设置有 push 上去就进行构建，也可以设置在某个时间进行构建
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205245547)
+![](http://cdn.lindexi.site/lindexi%2F2018116205245547)
 
 点击添加任务，可以设置在某一天的时间构建
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205334255)
+![](http://cdn.lindexi.site/lindexi%2F2018116205334255)
 
 设置完成点击保存就可以
 
@@ -100,19 +100,19 @@
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116204711359)
+![](http://cdn.lindexi.site/lindexi%2F2018116204711359)
 
 选择需要编译的项目，如果有单元测试项目就设置单元测试项目
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205553394)
+![](http://cdn.lindexi.site/lindexi%2F2018116205553394)
 
 如果没有单元测试项目就点击移除单元测试项目
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205622467)
+![](http://cdn.lindexi.site/lindexi%2F2018116205622467)
 
 设置完成之后点击保存
 
@@ -122,7 +122,7 @@
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205840156)
+![](http://cdn.lindexi.site/lindexi%2F2018116205840156)
 
 直接点击队列按钮就可以
 
@@ -130,13 +130,13 @@
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205911728)
+![](http://cdn.lindexi.site/lindexi%2F2018116205911728)
 
 再次点击 Build 就可以看到当前的构建
 
 <!-- ![](image/win10 uwp 使用 Azure DevOps 自动构建/win10 uwp 使用 Azure DevOps 自动构建18.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018116205939773)
+![](http://cdn.lindexi.site/lindexi%2F2018116205939773)
 
 点击 Option 可以将构建是否成功的图标复制出来
 

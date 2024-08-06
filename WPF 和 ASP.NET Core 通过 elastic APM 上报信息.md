@@ -65,7 +65,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 <!-- ![](image/WPF 和 ASP.NET Core 通过 elastic APM 上报信息/WPF 和 ASP.NET Core 通过 elastic APM 上报信息0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020317184415908.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020317184415908.jpg)
 
 如果是 WPF 接入，基本上用来上报异常信息，可以通过下面代码上报
 

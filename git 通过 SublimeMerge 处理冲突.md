@@ -43,13 +43,13 @@ lindexi@DESKTOP-KA2CD6M MINGW64 /c/lindexi (master|MERGING)
 
 <!-- ![](image/git 通过 SublimeMerge 处理冲突/git 通过 SublimeMerge 处理冲突0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019610105842945)
+![](http://cdn.lindexi.site/lindexi%2F2019610105842945)
 
 在两侧分别代表的是两个分支的代码，中间的部分表示合并出来的代码，通过点击 Next Confict 可以找到下一个冲突，可以看到在冲突的代码里面的左侧都有三角形，此时点击三角形就是应用这部分代码，可以看到中间的代码修改
 
 <!-- ![](image/git 通过 SublimeMerge 处理冲突/git 通过 SublimeMerge 处理冲突1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201961011118256)
+![](http://cdn.lindexi.site/lindexi%2F201961011118256)
 
 修改完成合并点击右上角的保存按钮，这样就完成了合并
 

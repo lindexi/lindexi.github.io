@@ -129,7 +129,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
             <AppBarButton Label="按钮" HorizontalContentAlignment="Center"/>
 ```
 
-![](http://image.acmx.xyz/16-3-28/82963283.jpg)
+![](http://cdn.lindexi.site/16-3-28/82963283.jpg)
 
 我们可以加上内容
 
@@ -141,7 +141,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
                 </Grid>
             </AppBarButton>
 ```
-![](http://image.acmx.xyz/16-3-28/51594850.jpg)
+![](http://cdn.lindexi.site/16-3-28/51594850.jpg)
 
 我们可以在按钮加浮出的效果
 
@@ -159,9 +159,9 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 运行代码可以看到下面的界面
 
-![](http://image.acmx.xyz/16-3-28/93606598.jpg)
+![](http://cdn.lindexi.site/16-3-28/93606598.jpg)
 
-![](http://image.acmx.xyz/16-3-28/29257708.jpg)
+![](http://cdn.lindexi.site/16-3-28/29257708.jpg)
 
 ### App bar separator
 
@@ -175,7 +175,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
             <AppBarButton Content="csdn"></AppBarButton>
 ```
 
-![](http://image.acmx.xyz/16-3-28/87280713.jpg)
+![](http://cdn.lindexi.site/16-3-28/87280713.jpg)
 
  
 
@@ -210,7 +210,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
             </AppBarButton>
         </CommandBar>
 ```
-![](http://image.acmx.xyz/16-3-28/32449489.jpg)
+![](http://cdn.lindexi.site/16-3-28/32449489.jpg)
 
 我们也看到最后的按钮，如果有按钮不是常用的，就可以放在 SecondaryCommands 进行折叠
 
@@ -221,7 +221,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
             </CommandBar.SecondaryCommands>
 ```
 
-![](http://image.acmx.xyz/16-3-28/15333552.jpg)
+![](http://cdn.lindexi.site/16-3-28/15333552.jpg)
 
 ## Buttons
 
@@ -233,7 +233,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 <Button Margin="72,163,0,0" Content="请勿转载"></Button>
 ```
 
-![](http://image.acmx.xyz/16-3-28/84807449.jpg)
+![](http://cdn.lindexi.site/16-3-28/84807449.jpg)
 
 按钮点击可以使用`X:Bind`绑定 ViewModel 的方法
 
@@ -330,7 +330,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018112619448552)
+![](http://cdn.lindexi.site/lindexi%2F2018112619448552)
 
 ## Date and time controls
 
@@ -338,7 +338,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 日历日期选择器
 
-![](http://image.acmx.xyz/lindexi%2F2018112619393562)
+![](http://cdn.lindexi.site/lindexi%2F2018112619393562)
 
 <!-- ![这里写图片描述](http://img.blog.csdn.net/20160328100448795) -->
 
@@ -350,7 +350,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194222738)
+![](http://cdn.lindexi.site/lindexi%2F20181126194222738)
 
 ### Time picker
 
@@ -360,7 +360,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194313564)
+![](http://cdn.lindexi.site/lindexi%2F20181126194313564)
 
 ## Flyouts
 
@@ -380,7 +380,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
         </Button>
 ```
 
-![](http://image.acmx.xyz/lindexi%2F20181126194153688)
+![](http://cdn.lindexi.site/lindexi%2F20181126194153688)
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function0.png) -->
 
@@ -426,7 +426,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018112619443717)
+![](http://cdn.lindexi.site/lindexi%2F2018112619443717)
 
 如果需要gif的图片显示请看 http://www.songsong.org/post/2015/10/11/ImageLib.html
 
@@ -444,7 +444,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194452388)
+![](http://cdn.lindexi.site/lindexi%2F20181126194452388)
 
 更多关于笔迹请看 [win10 uwp 使用油墨输入](https://blog.csdn.net/lindexi_gd/article/details/51119878 )
 
@@ -487,15 +487,15 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194546865)
+![](http://cdn.lindexi.site/lindexi%2F20181126194546865)
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194556519)
+![](http://cdn.lindexi.site/lindexi%2F20181126194556519)
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018112619465737)
+![](http://cdn.lindexi.site/lindexi%2F2018112619465737)
 
 
 ## Layout controls
@@ -555,7 +555,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194635434)
+![](http://cdn.lindexi.site/lindexi%2F20181126194635434)
 
 ## Media controls
 
@@ -578,7 +578,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194736481)
+![](http://cdn.lindexi.site/lindexi%2F20181126194736481)
 
 其实我之前用它播放音频，使用的项目请看 https://github.com/lindexi/Markdown
 
@@ -653,7 +653,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126194913444)
+![](http://cdn.lindexi.site/lindexi%2F20181126194913444)
 
 通过设置属性 IsIndeterminate 可以设置为不带进度的进度条
 
@@ -700,7 +700,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126195126391)
+![](http://cdn.lindexi.site/lindexi%2F20181126195126391)
 
 ### Password box
 
@@ -715,7 +715,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126195139731)
+![](http://cdn.lindexi.site/lindexi%2F20181126195139731)
 
 ### Rich edit box
 
@@ -768,7 +768,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function18.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126195226522)
+![](http://cdn.lindexi.site/lindexi%2F20181126195226522)
 
 ### Text box
 
@@ -783,7 +783,7 @@ Windows的 XAML UI 框架提供了很多控件，支持用户界面开发库。
 
 <!-- ![](image/win10_uwp_controls_by_function/win10_uwp_controls_by_function19.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181126195241312)
+![](http://cdn.lindexi.site/lindexi%2F20181126195241312)
 
 博客：http://blog.csdn.net/lindexi_gd
 

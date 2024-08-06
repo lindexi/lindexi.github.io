@@ -38,7 +38,7 @@ namespace LecuryouWuruhempa
 
 <!-- ![](image/C# 性能分析 反射 VS 配置文件 VS 预编译/C# 性能分析 反射 VS 配置文件 VS 预编译0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101521519594)
+![](http://cdn.lindexi.site/lindexi%2F2018101521519594)
 
 | Method |        Mean |      Error |      StdDev |      Median | Scaled | ScaledSD |
 |------- |------------:|-----------:|------------:|------------:|-------:|---------:|
@@ -50,7 +50,7 @@ namespace LecuryouWuruhempa
 
 <!-- ![](image/C# 性能分析 反射 VS 配置文件 VS 预编译/C# 性能分析 反射 VS 配置文件 VS 预编译1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201810169372573)
+![](http://cdn.lindexi.site/lindexi%2F201810169372573)
 
 | Method          |        Mean |      Error |      StdDev | Scaled | ScaledSD |
 | --------------- | ----------: | ---------: | ----------: | -----: | -------: |

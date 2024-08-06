@@ -11,13 +11,13 @@
 
 <!-- ![](image/TotalCommander 设置 VisualStudio 开发者命令行/TotalCommander 设置 VisualStudio 开发者命令行0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020138414306)
+![](http://cdn.lindexi.site/lindexi%2F2020138414306)
 
 点击添加按钮
 
 <!-- ![](image/TotalCommander 设置 VisualStudio 开发者命令行/TotalCommander 设置 VisualStudio 开发者命令行1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020138517489)
+![](http://cdn.lindexi.site/lindexi%2F2020138517489)
 
 此时通过开始菜单，搜寻 Developer Command Prompt 右击打开所在文件夹，可以找到快捷方式
 
@@ -35,7 +35,7 @@
 
 <!-- ![](image/TotalCommander 设置 VisualStudio 开发者命令行/TotalCommander 设置 VisualStudio 开发者命令行2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020138830649)
+![](http://cdn.lindexi.site/lindexi%2F2020138830649)
 
 此时在 TotalCommnader 进入文件夹，可以点击命令行图标进入开发者命令行，同时自动设置了命令行当前文件夹是进入的文件夹
 
@@ -61,6 +61,6 @@ C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -noe -c "&{Import-Modu
 
 <!-- ![](image/TotalCommander 设置 VisualStudio 开发者命令行/TotalCommander 设置 VisualStudio 开发者命令行3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201381913424)
+![](http://cdn.lindexi.site/lindexi%2F20201381913424)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

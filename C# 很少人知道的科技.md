@@ -340,7 +340,7 @@ int* block = stackalloc int[100];
 
 很少人知道实际上重写 `==` 可以返回任意的类型，而不是只有 bool 类型，请看下面代码
 
-![](http://image.acmx.xyz/lindexi%2F2018422105951305.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2018422105951305.jpg)
 
 是可以编译通过的，因为我重写运算
 
@@ -397,9 +397,9 @@ await await await await await await await await await await await await await aw
         }
 ```
 
-![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102739.jpg)
+![](http://cdn.lindexi.site/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102739.jpg)
 
-![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102848.jpg)
+![](http://cdn.lindexi.site/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F2018316102848.jpg)
 
 甚至以下的奇侠代码后续也许还能编过，当然现在还是不行的哦
 
@@ -598,7 +598,7 @@ static void Main(string[] args)
     }
 ```
 
-![](http://image.acmx.xyz/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201831693435.jpg)
+![](http://cdn.lindexi.site/65fb6078-c169-4ce3-cdd9-e35752d07be0%2F201831693435.jpg)
 
 但是如果 ToString 被其他地方用了，如何显示？
 

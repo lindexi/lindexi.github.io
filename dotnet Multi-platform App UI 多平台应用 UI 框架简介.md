@@ -13,7 +13,7 @@
 
 <!-- ![](image/dotnet Multi-platform App UI 多平台应用 UI 框架简介/dotnet Multi-platform App UI 多平台应用 UI 框架简介0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020520843305122.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020520843305122.jpg)
 
 ## 什么是 .NET MAUI 框架
 
@@ -27,7 +27,7 @@
 
 <!-- ![](image/dotnet Multi-platform App UI 多平台应用 UI 框架简介/dotnet Multi-platform App UI 多平台应用 UI 框架简介1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020520851548517.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020520851548517.jpg)
 
 如上图所示，这提供了：
 

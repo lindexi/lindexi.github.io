@@ -15,7 +15,7 @@
 
 <!-- ![](image/如何给 CI CD 服务器搭建上 .NET 5 构建和运行环境/如何给 CI CD 服务器搭建上 .NET 5 构建和运行环境0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201118838593805.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201118838593805.jpg)
 
 好的，现在进入搭建服务器状态。我有多个不同类型的服务器需要搭建，包括用来跑 GitLab Runner 的虚拟机，以及用来接入运维团队 devops 的 docker 服务器（准确来说 docker 不是服务器）两个不同类型的服务器。这两个不同类型的服务器分别是 Windows 和 Linux 系统
 

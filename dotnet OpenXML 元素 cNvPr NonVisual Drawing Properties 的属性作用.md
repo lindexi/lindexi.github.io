@@ -68,7 +68,7 @@ public void Foo(NonVisualDrawingProperties nonVisualDrawingProperties)
 
 <!-- ![](image/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20209271722151549.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20209271722151549.jpg)
 
 在 OpenXML SDK 的读取方法如下
 
@@ -97,7 +97,7 @@ public void Foo(NonVisualDrawingProperties nonVisualDrawingProperties)
 
 <!-- ![](image/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20209271727309455.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20209271727309455.jpg)
 
 另一个在 PPT 可见的是在动画的窗格
 
@@ -144,7 +144,7 @@ public void Foo(NonVisualDrawingProperties nonVisualDrawingProperties)
 
 <!-- ![](image/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20209271742366060.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20209271742366060.jpg)
 
 测试课件请点击 [元素标题.pptx](https://github.com/lindexi/lindexi_gd/blob/b57cf920518bde16b8eab09d38b2d9037305d54b/KedewallawFudeneanairchea/%E5%85%83%E7%B4%A0%E6%A0%87%E9%A2%98.pptx) 下载
 
@@ -164,19 +164,19 @@ public void Foo(NonVisualDrawingProperties nonVisualDrawingProperties)
 
 <!-- ![](image/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20209271657456329.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20209271657456329.jpg)
 
 如果去掉上面这个 `hidden="true"` 属性，那么可以看到选择窗格里面的可见图标修改
 
 <!-- ![](image/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20209271658398116.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20209271658398116.jpg)
 
 打开选择窗格的方法是在 PPT 的选择下拉，点击选择窗格
 
 <!-- ![](image/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用/dotnet OpenXML 元素 cNvPr NonVisual Drawing Properties 的属性作用2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20209271659213275.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20209271659213275.jpg)
 
 在 OpenXML SDK 的读取方法如下
 

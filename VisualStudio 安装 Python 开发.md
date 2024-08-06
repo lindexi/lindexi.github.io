@@ -17,7 +17,7 @@
 
 <!-- ![](image/VisualStudio 安装 Python 开发/VisualStudio 安装 Python 开发0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019120102842707)
+![](http://cdn.lindexi.site/lindexi%2F2019120102842707)
 
 这时可能会让用户点击确定，请点击一下
 
@@ -25,7 +25,7 @@
 
 <!-- ![](image/VisualStudio 安装 Python 开发/VisualStudio 安装 Python 开发1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019120102942335)
+![](http://cdn.lindexi.site/lindexi%2F2019120102942335)
 
 出去和小伙伴聊聊天，然后回来可能看到下面的界面，如果没有看到，那么就请你的小伙伴去吃个饭，如果还是还没有看到，请看看你的设备联网了没
 
@@ -37,7 +37,7 @@
 
 <!-- ![](image/VisualStudio 安装 Python 开发/VisualStudio 安装 Python 开发3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019120103142303)
+![](http://cdn.lindexi.site/lindexi%2F2019120103142303)
 
 如果是英文版的系统请点击下面的图片的按钮
 
@@ -59,7 +59,7 @@
 
 ![](https://docs.microsoft.com/en-us/visualstudio/python/media/vs-getting-started-python-01-new-project.png?wt.mc_id=MVP)
 
-![](http://image.acmx.xyz/lindexi%2F2019120104544736)
+![](http://cdn.lindexi.site/lindexi%2F2019120104544736)
 
 现在就安装完成了
 

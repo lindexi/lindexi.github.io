@@ -18,92 +18,92 @@
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185195956044.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185195956044.jpg)
 
 点击联机选项，搜寻 Windows Template Studio 即可找到插件
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021851959283479.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021851959283479.jpg)
 
 点击下载即可自动下载安装
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20218520095436.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20218520095436.jpg)
 
 安装完成之后，记得重启 VisualStudio 哦。打开 VisualStudio 在首页新建项目可以看到添加的模版，在 Windows Template Studio 工具不仅包含了 WPF 项目的，还包含了 UWP 等项目的，本文只使用 WPF 作为例子，对于其他的项目，大概是差不多
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185201236721.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185201236721.jpg)
 
 点击创建，然后输入项目名和选择项目的文件夹
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185201475022.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185201475022.jpg)
 
 
 点击创建，此时将会给一个选项卡用来逐步选择。首次打开需要稍等一下
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185202171396.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185202171396.jpg)
 
 开始的时候是选择项目的大框架，也就是项目的组织方式是什么。如我选择了 MenuBar 类型的项目
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185202475636.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185202475636.jpg)
 
 选择之后点击下一步，选择应用需要包含的页面，如空白页面和设置面等
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185203297503.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185203297503.jpg)
 
 页面是可以重复多次选择的，也可以做右侧进行删除
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185203563332.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185203563332.jpg)
 
 点击下一步，开始选择支持的功能，如加上 MSIX 打包功能
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185204238428.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185204238428.jpg)
 
 点击下一步，选择应用需要包含的服务，如账号登录功能
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185204469633.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185204469633.jpg)
 
 点击下一步，给应用程序加上单元测试，有多个不同的单元测试可以选择
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20218520592447.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20218520592447.jpg)
 
 点击创建即可开始创建项目
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20218520530479.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20218520530479.jpg)
 
 等待一下即可创建出一个解决方案
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185205498286.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185205498286.jpg)
 
 啥都不要做，按下 F5 即可进行构建和运行
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185206146422.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185206146422.jpg)
 
 以上就是我运行的 demo 应用
 
@@ -112,7 +112,7 @@
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185207331059.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185207331059.jpg)
 
 解决方法是在 appsettings.json 文件里面加上 identityClientId 的值，如下面代码
 
@@ -137,13 +137,13 @@
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20218520904523.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20218520904523.jpg)
 
 大概的逻辑和默认的 WPF 应用差不多，但是实际上这个自动创建的项目用上了现代化的 IOC 容器的方式。整套逻辑都保持现代化的 dotnet 写法，此写法和 ASP.NET Core 的写法差不多，都是一脉的方法。如启动的时候先做的服务配置
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021852010329569.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021852010329569.jpg)
 
 可以看到在这里面实现了大量的服务的注入，包括 ViewModel 以及其他用到的逻辑
 
@@ -151,20 +151,20 @@
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目18.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185201133971.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185201133971.jpg)
 
 
 以上的 ApplicationHostService 是一个继承 IHostedService 的类型，读到这里就要求大家对 dotnet 的默认框架有所了解
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目19.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021852012161084.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021852012161084.jpg)
 
 如果不想去阅读 dotnet 的默认框架的设计，那只需要知道，在应用启动之后，将会调用 StartAsync 方法即可
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目20.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021852012525579.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021852012525579.jpg)
 
 以上代码是进行初始化，以及初始化登录模块
 
@@ -172,13 +172,13 @@
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目21.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021852013264333.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021852013264333.jpg)
 
 在判断当前还没有启动任何窗口的时候，将会启动 MainWindow 作为主创建，但是启动窗口的方法是通过 MainViewModel 进行的
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目22.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021852014203003.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021852014203003.jpg)
 
 
 如下面代码
@@ -212,7 +212,7 @@
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目23.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202185201514462.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202185201514462.jpg)
 
 我很熟悉 MVVM 因此一看就知道各个文件是做什么的，通过此工具创建也可以让新手了解如何编写 MVVM 代码
 
@@ -220,7 +220,7 @@
 
 <!-- ![](image/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目/WPF 通过 Windows Template Studio 快速搭建项目框架和上手项目24.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021852016447323.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021852016447323.jpg)
 
 通过 Windows Template Studio 工具搭建的界面，可以在很快的速度，搭建出来一个能用的框架
 

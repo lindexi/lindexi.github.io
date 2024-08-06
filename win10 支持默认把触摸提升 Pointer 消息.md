@@ -13,7 +13,7 @@
 
 打开新建的工程，设置框架。
 
-![](http://image.acmx.xyz/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017417165611.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFADbzBgABAAQArj4BAGZDAgBo6AkA6Nk%3D%2F2017417165611.jpg)
 
 然后打开 App.config，添加支持把触摸和笔到鼠标
 

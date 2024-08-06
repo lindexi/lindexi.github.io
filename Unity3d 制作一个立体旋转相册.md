@@ -11,7 +11,7 @@
 
 <!-- ![](image/Unity3d 制作一个立体旋转相册/Unity3d 制作一个立体旋转相册0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020426832161010.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020426832161010.jpg)
 
 本来是打算做个 Gif 动态图给大家看效果的，但是图片太大了 25M 我就不敢放出来了，在文章最后放了运行效果的链接
 
@@ -23,19 +23,19 @@
 
 <!-- ![](image/Unity3d 制作一个立体旋转相册/Unity3d 制作一个立体旋转相册1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202042683893760.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202042683893760.jpg)
 
 将磁盘的随意一张图片拖到资源里面，如我这里放的 s1 这张图片
 
 <!-- ![](image/Unity3d 制作一个立体旋转相册/Unity3d 制作一个立体旋转相册2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202042683985037.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202042683985037.jpg)
 
 接着选择 Cube 将图片 s1 拖放到 Cube 上，大概的效果就是在 Cube 的 Mesh Renderer 的材料的元素0显示了拖进去 s1 元素，同时可以看到 Cube 被 S1 贴图
 
 <!-- ![](image/Unity3d 制作一个立体旋转相册/Unity3d 制作一个立体旋转相册3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020426840481058.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020426840481058.jpg)
 
 ## 切换贴图内容
 

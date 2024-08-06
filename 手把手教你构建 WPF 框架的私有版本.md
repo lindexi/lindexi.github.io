@@ -27,13 +27,13 @@ Console.WriteLine("林德熙是逗比");
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204251521256693.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204251521256693.jpg)
 
 给自己的私有源一个链接
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204251522147375.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204251522147375.jpg)
 
 可以设置为公开的或私有的
 
@@ -41,7 +41,7 @@ Console.WriteLine("林德熙是逗比");
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020425152386349.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020425152386349.jpg)
 
 回到 WPF 仓库的 `.github\workflows\dotnetcore.yml` 文件，此时给他添加构建之后推送的代码
 
@@ -82,13 +82,13 @@ jobs:
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204251531363201.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204251531363201.jpg)
 
 返回自己的私有 NuGet 仓库，就可以看到刚才上传的 NuGet 文件
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204251532242149.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204251532242149.jpg)
 
 这就是通过 GitHub 的 Action 加上 myget 的构建私有版本的方法，当然如果只是想要让 NuGet 库可以下载，还可以用到 GitHub 的 Artifact 功能
 
@@ -135,7 +135,7 @@ jobs:
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204251538584352.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204251538584352.jpg)
 
 此时通过梯子下载输出的 zip 包，然后本地解压缩，这样就可以拿到输出文件了
 
@@ -145,13 +145,13 @@ jobs:
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204251541335608.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204251541335608.jpg)
 
 但是过了很久，其实他连项目都没开起来，于是我就想问他是不是还活着
 
 <!-- ![](image/手把手教你构建 WPF 框架的私有版本/手把手教你构建 WPF 框架的私有版本8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202042515425774.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202042515425774.jpg)
 
 特别感谢微软提供的 GitHub 平台免费的构建服务器，这样可以让我很低成本的上手。能够自己对框架源代码定制化，才能认为这个框架是真正的可用的开源项目
 

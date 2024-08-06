@@ -13,7 +13,7 @@
 
 <!-- ![](image/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202065184948104.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202065184948104.jpg)
 
 接着将这个渲染器纹理改一下名字，如修改为 RenderTexture1 的名字
 
@@ -21,19 +21,19 @@
 
 <!-- ![](image/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202065185346161.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202065185346161.jpg)
 
 然后将这个 RenderTexture1 拖放到物体上，如一个 Cube 上，此时这个 Cube 就会显示相机的内容
 
 <!-- ![](image/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020651855452148.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020651855452148.jpg)
 
 现在可以看到的效果如下图，下图选中的摄像机的画面将会作为纹理贴到立方体上
 
 <!-- ![](image/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果/Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202065185702346.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202065185702346.jpg)
 
 实在不知道怎么做的，不妨看看我的视频 [Unity 2019.3 将 RenderTexture 绑定到相机和物体作出镜子效果_一起学精彩视频_虎牙视频](https://v.huya.com/play/347702616.html)
 

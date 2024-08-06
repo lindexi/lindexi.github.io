@@ -11,13 +11,13 @@
 
 <!-- ![](image/dotnet 一些代码审查套路/dotnet 一些代码审查套路0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202066945231794.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202066945231794.jpg)
 
 这是我截图某一天的一个核心项目的在 Gitlab 上的 MR 情况，我觉得头像应该是不用保密的，这样知道的小伙伴自然就知道了。对了，那些挂了超过3天的都是标记 WIP 还在开发中的
 
 <!-- ![](image/dotnet 一些代码审查套路/dotnet 一些代码审查套路1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202066949354081.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202066949354081.jpg)
 
 回到主题，代码审查时有哪些套路？
 
@@ -746,7 +746,7 @@ lock ("林德熙是逗比")
 
 <!-- ![](image/dotnet 一些代码审查套路/dotnet 一些代码审查套路3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020661615332939.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020661615332939.jpg)
 
 看到 `await Task.Delay(TimeSpan.FromSeconds(2));` 的代码需要留意一下，也许这是逗比代码
 
@@ -1156,7 +1156,7 @@ public ChildModalWindow()
 
 <!-- ![](image/dotnet 一些代码审查套路/dotnet 一些代码审查套路2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020661526116350.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020661526116350.jpg)
 
 
 

@@ -11,7 +11,7 @@
 
 <!-- ![](image/Unity3d 通过 Ctrl 键让移动是固定步距/Unity3d 通过 Ctrl 键让移动是固定步距0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202068221603769.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202068221603769.jpg)
 
 此时设置的值就是按下 ctrl 的时候移动的最小距离，也是移动的固定距离
 

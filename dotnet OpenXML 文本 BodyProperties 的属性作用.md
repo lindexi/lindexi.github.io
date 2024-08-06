@@ -37,7 +37,7 @@ TextWrappingValues textWrapping = bodyProperties?.Wrap?.Value;
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020728167134295.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020728167134295.jpg)
 
 我写了一个 WPF 应用，用来告诉大家如何拿到这个属性，代码放在[github](https://github.com/lindexi/lindexi_gd/tree/4e3b373f658864bbb6a60a4ce82d695cf7c7e1fd/KiwejeejiWhalfalqenel)欢迎小伙伴访问。代码包含了上面图片两个测试的 PPT 文件
 
@@ -80,19 +80,19 @@ TextWrappingValues textWrapping = bodyProperties?.Wrap?.Value;
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020728164502443.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020728164502443.jpg)
 
 在 PPT 显示的是厘米单位，转换存在误差，例如上边距，采用 [dotnetCampus.OfficeDocumentZipper](https://github.com/dotnet-campus/dotnetCampus.OfficeDocumentZiper) 工具可以辅助计算，可以看到如上面代码的 `0.05 Inch` 上边距，对应的是 `0.127 厘米` 但是在 PPT 实际显示的是 0.13 厘米
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20207281646172465.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20207281646172465.jpg)
 
 我写了一个 WPF 应用读取 PPT 文件的文本框的边距
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020728175361077.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020728175361077.jpg)
 
 代码放在[github](https://github.com/lindexi/lindexi_gd/tree/11ee2825f2b1eee1e5a68efe172e7346f866ad41/GakagaycalhechemNerehejejairairway)欢迎小伙伴访问。代码包含了上面图片测试的 PPT 文件
 
@@ -111,7 +111,7 @@ OpneXMl SDK: `var rotation = textBodyProperties.Rotation;`
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020729122273011.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020729122273011.jpg)
 
 用来表示整个文本框的旋转，可以使用负数。和使用 `a:xfrm` 的旋转不同的是，这里只是旋转文本框而不是旋转形状。旋转点是文本的左上角，注意是文本的左上角，会被 文本边距 影响，如修改文本边距比较大
 
@@ -124,7 +124,7 @@ OpneXMl SDK: `var rotation = textBodyProperties.Rotation;`
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20207291225379437.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20207291225379437.jpg)
 
 文字的宽度等排版依然按照文本没有旋转排版，在排版之后再对文本进行旋转，因此文本可以超过文本框
 
@@ -147,13 +147,13 @@ OpneXMl SDK: `var upRight = textBodyProperties.UpRight;`
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20207291420455688.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20207291420455688.jpg)
 
 而如果旋转了形状，可以看到文本的旋转角度没有变化
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20207291421248352.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20207291421248352.jpg)
 
 这个属性默认值是 false 也就是跟随形状的旋转。这个属性除了影响跟随旋转同时也影响文本的旋转中心
 
@@ -161,7 +161,7 @@ OpneXMl SDK: `var upRight = textBodyProperties.UpRight;`
 
 <!-- ![](image/dotnet OpenXML 文本 BodyProperties 的属性作用/dotnet OpenXML 文本 BodyProperties 的属性作用8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020729142559203.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020729142559203.jpg)
 
 此时的形状旋转让原本形状的作为高度的一边更靠近水平，于是就将原本高度的边作为文本宽度
 

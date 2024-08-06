@@ -16,7 +16,7 @@
 
 <!-- ![](image/WPF 开机启动因为触摸初始化锁住界面显示/WPF 开机启动因为触摸初始化锁住界面显示0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206161131494577.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206161131494577.jpg)
 
 实际上的进入锁的代码是没有意义的，需要看是业务上哪里进入了锁
 
@@ -24,13 +24,13 @@
 
 <!-- ![](image/WPF 开机启动因为触摸初始化锁住界面显示/WPF 开机启动因为触摸初始化锁住界面显示1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020616114732306.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020616114732306.jpg)
 
 通过 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html ) 可以了解到这是在等待触摸线程执行
 
 <!-- ![](image/WPF 开机启动因为触摸初始化锁住界面显示/WPF 开机启动因为触摸初始化锁住界面显示2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206161149181309.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206161149181309.jpg)
 
 这是在 dnspy 断点不够准，实际的代码是 [getTablets.DoneEvent.WaitOne();](https://github.com/dotnet/wpf/blob/08dc7bcdecb27ab25d279d0b9d05f35393852ae9/src/Microsoft.DotNet.Wpf/src/PresentationCore/System/Windows/Input/Stylus/Wisp/PenThreadWorker.cs#L588)
 
@@ -38,7 +38,7 @@
 
 <!-- ![](image/WPF 开机启动因为触摸初始化锁住界面显示/WPF 开机启动因为触摸初始化锁住界面显示3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20206161154445424.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20206161154445424.jpg)
 
 这个 Stylus Input 线程在等待触摸消息，这就有趣了。主线程在等待触摸线程执行获取 Tablet 信息，而触摸线程在等待主线程初始化完成之后可以获取触摸消息
 

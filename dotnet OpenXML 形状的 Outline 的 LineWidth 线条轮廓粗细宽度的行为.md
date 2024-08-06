@@ -17,7 +17,7 @@
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20217241453595631.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20217241453595631.jpg)
 
 如以下的简单形状的 OpenXML 文档内容
 
@@ -47,13 +47,13 @@
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20217241458543508.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20217241458543508.jpg)
 
 尝试缩放一下 PowerPoint 的画布，可以看到形状的轮廓粗细跟随缩放
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20217241459433188.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20217241459433188.jpg)
 
 使用 OpenXML SDK 读取此属性的方法如下
 
@@ -133,19 +133,19 @@ Specifies the width to be used for the underline stroke. If this attribute is om
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20217241514425718.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20217241514425718.jpg)
 
 接着将 PowerPoint 的画布缩放到最大，可以看到形状的轮廓粗细依然没有任何变化，保持屏幕一个像素的大小
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021724151958869.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021724151958869.jpg)
 
 通过 PowerPoint 的属性面板可以看到形状的宽度确实是 0 的大小
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021724152023430.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021724152023430.jpg)
 
 以上的文档放在 [github](https://github.com/lindexi/lindexi_gd/tree/bd42ea52bc85c51e46a91fa2d74903073909a1c5/PptxDemo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/bd42ea52bc85c51e46a91fa2d74903073909a1c5/PptxDemo) 欢迎访问
 
@@ -183,13 +183,13 @@ git pull origin bd42ea52bc85c51e46a91fa2d74903073909a1c5
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021724152602654.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021724152602654.jpg)
 
 将画布缩放到最大，可以看到的界面如下
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20217241526414796.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20217241526414796.jpg)
 
 有趣的是行为和 ECMA 376 说的不相同，似乎默认值不是 0 的值。因为如果是 0 的值，那么行为上应该是不跟随界面的缩放
 
@@ -197,13 +197,13 @@ git pull origin bd42ea52bc85c51e46a91fa2d74903073909a1c5
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021724152819149.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021724152819149.jpg)
 
 根据国际的定义，刚好 0.75 磅就是一像素
 
 <!-- ![](image/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为/dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20217241453595631.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20217241453595631.jpg)
 
 以上文档和代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/173fbaf7c68023cf5064888bceeb197bd463538f/PptxDemo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/173fbaf7c68023cf5064888bceeb197bd463538f/PptxDemo) 欢迎访问
 

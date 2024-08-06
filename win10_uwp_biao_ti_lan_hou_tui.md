@@ -13,7 +13,7 @@
 
 <!-- ![这里写图片描述](http://img.blog.csdn.net/20160201125801185) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189142075776)
+![](http://cdn.lindexi.site/lindexi%2F20189142075776)
 
 <!-- ![](image/win10_uwp_biao_ti_lan_hou_tui/win10_uwp_biao_ti_lan_hou_tui0.png) -->
 
@@ -27,7 +27,7 @@
 
 <!-- ![](image/win10_uwp_biao_ti_lan_hou_tui/win10_uwp_biao_ti_lan_hou_tui1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189142092410)
+![](http://cdn.lindexi.site/lindexi%2F20189142092410)
 
 在用户点击标题栏的后退按钮的时候，可以通过下面代码拿到事件
 

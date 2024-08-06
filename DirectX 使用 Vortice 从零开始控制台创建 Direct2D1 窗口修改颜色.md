@@ -305,7 +305,7 @@ VIRTUAL_KEY
 
 下图是从官方文档拷贝的，一个电脑加两个显卡的对象关系
 
-![](http://image.acmx.xyz/lindexi%2F2022924218404239.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022924218404239.jpg)
 
 先尝试使用 [IDXGIFactory6](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nn-dxgi1_6-idxgifactory6) 提供的 [EnumAdapterByGpuPreference](https://learn.microsoft.com/zh-cn/windows/win32/api/dxgi1_6/nf-dxgi1_6-idxgifactory6-enumadapterbygpupreference) 方法枚举显卡，这个方法的功能是可以按照给定的参数进行排序，特别方便开发时，获取首个可用显卡
 
@@ -602,7 +602,7 @@ Console.WriteLine($"枚举到 {adapter.Description1.Description} 显卡");
 
 如下图，通过 D3D 承载 D2D 的内容。以上完成了 D3D 的初始化，接下来可以通过 DXGI 辅助创建 D2D 的 [ID2D1RenderTarget](https://learn.microsoft.com/en-us/windows/win32/api/d2d1/nn-d2d1-id2d1rendertarget) 画布
 
-![](http://image.acmx.xyz/lindexi%2F20229241621359040.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20229241621359040.jpg)
 
 如上图的框架，想要使用 D2D 之前，需要先解决让 D2D 绘制到哪。让 D2D 绘制的输出，可以是一个 IDXGISurface 对象。通过 CreateDxgiSurfaceRenderTarget 方法既可以在 IDXGISurface 创建 ID2D1RenderTarget 对象，让绘制可以输出。而 IDXGISurface 可以从 ID3D11Texture2D 获取到。通过交换链的 GetBuffer 方法可以获取到 ID3D11Texture2D 对象
 

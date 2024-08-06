@@ -32,7 +32,7 @@
 
 <!-- ![](image/win10 uwp 如何修改 Flyout 的宽度或高度/win10 uwp 如何修改 Flyout 的宽度或高度0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020319195303952.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020319195303952.jpg)
 
 可以通过两个方法修改 Flyout 的宽度或高度
 

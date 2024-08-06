@@ -79,7 +79,7 @@
 
 绘制界面大概如下
 
-![](http://image.acmx.xyz/lindexi%2F20208301919281724.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20208301919281724.jpg)
 
 本文的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/e414c652ae503d882ad13eb844e70f8bc787f287/ReewheaberekaiNayweelehe) 欢迎小伙伴访问
 

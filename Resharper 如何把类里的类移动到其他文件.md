@@ -30,7 +30,7 @@
 
 然后选择 B ，按 ctrl+shift+R
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732420813.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F201732420813.jpg)
 
 移动到其他文件，第一个
 

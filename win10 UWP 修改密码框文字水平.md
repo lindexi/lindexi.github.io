@@ -2,9 +2,9 @@
 
 一般的密码框输入左对齐，如何让他不左对齐
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017315175218.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017315175218.jpg)
 
-![](http://image.acmx.xyz/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017315175617.jpg)
+![](http://cdn.lindexi.site/AwCCAwMAItoFAMV%2BBQA28wYAAQAEAK4%2BAQBmQwIAaOgJAOjZ%2F2017315175617.jpg)
 
 <!--more-->
 <!-- CreateTime:2018/8/10 19:17:19 -->

@@ -33,11 +33,11 @@ msbuild /t:pack Foo.csproj /p:IncludeSymbols=true /p:SymbolPackageFormat=snupkg
 
 上传的方法是打开[nuget.org](https://www.nuget.org/packages/manage/upload)点击上传，传入文件
 
-![](http://image.acmx.xyz/lindexi%2F201958213818688)
+![](http://cdn.lindexi.site/lindexi%2F201958213818688)
 
 在 VisualStudio 使用 NuGet 符号服务器的方法是添加符号服务器 `https://symbols.nuget.org/download/symbols` 到工具-选项-调试-符号
 
-![](http://image.acmx.xyz/lindexi%2F201958214432905)
+![](http://cdn.lindexi.site/lindexi%2F201958214432905)
 
 注意，当前的符号服务器支持的 `.snupkg` 文件需要使用最新的[portable pdb](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md ) 格式，关于 [portable pdb](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md ) 请看[介绍Portable PDB](https://www.infoq.cn/article/2017/02/Portable-PDB )
 

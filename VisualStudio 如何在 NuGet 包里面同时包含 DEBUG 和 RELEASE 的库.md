@@ -36,7 +36,7 @@ namespace LerewararraNurfabeyo
 
 使用右击一键打包 NuGet 的方法创建一个 NuGet 包，这是 VisualStudio 2017 的 [VisualStudio 使用新项目格式快速打出 Nuget 包](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E5%BF%AB%E9%80%9F%E6%89%93%E5%87%BA-Nuget-%E5%8C%85.html) 功能很好用
 
-![](http://image.acmx.xyz/lindexi%2F2019415144444107)
+![](http://cdn.lindexi.site/lindexi%2F2019415144444107)
 
 再创建一个项目，为了直接引用上面测试项目的 NuGet 需要做一点黑科技，第一步是让测试项目的 NuGet 输出到一个文件夹
 

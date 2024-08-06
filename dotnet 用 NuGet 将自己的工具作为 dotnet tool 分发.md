@@ -29,7 +29,7 @@
 
 <!-- ![](image/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020228858381651.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020228858381651.jpg)
 
 在里面添加下面代码
 
@@ -41,7 +41,7 @@
 
 <!-- ![](image/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202022885910226.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202022885910226.jpg)
 
 上面代码的 PackAsTool 就是告诉 VS 等工具这是一个 dotnet tool 工具，到时候将它输出为 NuGet 库，同时在 NuGet 库里面标记这是工具
 
@@ -53,7 +53,7 @@
 
 <!-- ![](image/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202022885949895.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202022885949895.jpg)
 
 测试方法非必要，作为一个自信的程序员，自己写出来的工具怎么需要测试呢？反正有问题了再升级一个版本发布咯
 
@@ -69,19 +69,19 @@
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101511234592)
+![](http://cdn.lindexi.site/lindexi%2F2018101511234592)
 
 点击设置
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101511246876)
+![](http://cdn.lindexi.site/lindexi%2F2018101511246876)
 
 点击添加一个本地的包，修改输出包的文件夹
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112432959)
+![](http://cdn.lindexi.site/lindexi%2F20181015112432959)
 
 设置完成之后打开cmd命令行输入下面代码安装自己的 NuGet 库
 
@@ -99,7 +99,7 @@ dotnet tool install -g NugetMergeFixTool
 
 <!-- ![](image/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202022898331084.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202022898331084.jpg)
 
 有微软帐号的用微软帐号，没有微软帐号的，自己注册一个，注册步骤很简单，基本上看界面就会了
 
@@ -107,7 +107,7 @@ dotnet tool install -g NugetMergeFixTool
 
 <!-- ![](image/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发/dotnet 用 NuGet 将自己的工具作为 dotnet tool 分发4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202022899306735.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202022899306735.jpg)
 
 理论上只要不是有提示出错的，其他都可以忽略，点击上传之后就等待一小段时间，如去吃个饭。回来基本上就可以看到发布完成了，此时可以告诉小伙伴在命令行输入一段神奇的代码安装你的工具，然后使用一段有趣的代码启动你的工具
 

@@ -11,31 +11,31 @@
 
 <!-- ![](image/VisualStudio 如何快速添加一个 Git Tag 推送/VisualStudio 如何快速添加一个 Git Tag 推送0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204171135492210.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204171135492210.jpg)
 
 点击 Tags 进入标记界面
 
 <!-- ![](image/VisualStudio 如何快速添加一个 Git Tag 推送/VisualStudio 如何快速添加一个 Git Tag 推送1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204171137237845.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204171137237845.jpg)
 
 此时可以通过点击 新建Tag按钮 新建一个 Tag 给他版本号和信息，请看下图
 
 <!-- ![](image/VisualStudio 如何快速添加一个 Git Tag 推送/VisualStudio 如何快速添加一个 Git Tag 推送2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020417113959016.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020417113959016.jpg)
 
 点击创建按钮就可以完成了创建，上面代码只有 Tag 号是必须的，而信息是不必须的。当然有信息可以协助小伙伴更好了解这个 Tag 对应的功能
 
 <!-- ![](image/VisualStudio 如何快速添加一个 Git Tag 推送/VisualStudio 如何快速添加一个 Git Tag 推送3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020417114041309.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020417114041309.jpg)
 
 此时就可以看到刚才新建的 Tag 了，右击这个新建的 Tag 号就可以找到推送按钮，点击推送按钮就可以将 Tag 推送到服务器了
 
 <!-- ![](image/VisualStudio 如何快速添加一个 Git Tag 推送/VisualStudio 如何快速添加一个 Git Tag 推送4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20204171141525045.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20204171141525045.jpg)
 
 熟悉这个方法可以快速给代码添加一个 Tag 号
 

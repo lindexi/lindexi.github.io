@@ -32,13 +32,13 @@ namespace KejerbopaNekereyeresereJemayRouxouqou
 
 <!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181012962573)
+![](http://cdn.lindexi.site/lindexi%2F20181012962573)
 
 附加调试可以看到运行的时间都不是自己写的代码的时间，总时间是 138ms 实际运行的时间会比这个少。每个人的设备测试的时间都会不相同，而且每个时间运行的值都不太一样
 
 <!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101291430892)
+![](http://cdn.lindexi.site/lindexi%2F2018101291430892)
 
 我接着运行了2次，收集到的空控制台窗口的运行时间
 
@@ -116,7 +116,7 @@ namespace LecuryouWuruhempa
 
 <!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101291718318)
+![](http://cdn.lindexi.site/lindexi%2F2018101291718318)
 
 我同样运行3次，收集到下面信息
 
@@ -136,7 +136,7 @@ namespace LecuryouWuruhempa
 
 <!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181012103919886)
+![](http://cdn.lindexi.site/lindexi%2F20181012103919886)
 
 同样测试三次
 

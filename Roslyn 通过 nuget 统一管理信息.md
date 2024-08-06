@@ -63,7 +63,7 @@
 
 <!-- ![](image/Roslyn 通过 nuget 统一管理信息/Roslyn 通过 nuget 统一管理信息1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892115453256)
+![](http://cdn.lindexi.site/lindexi%2F201892115453256)
 
 或者点击下面的链接安装 https://www.microsoft.com/store/productId/9WZDNCRDMDM3
 
@@ -71,7 +71,7 @@
 
 <!-- ![](image/Roslyn 通过 nuget 统一管理信息/Roslyn 通过 nuget 统一管理信息2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189212219350)
+![](http://cdn.lindexi.site/lindexi%2F20189212219350)
 
 如果可以看到这个界面就是成功创建了，当然引用 `林德熙逗比` 包是不可能的，但是如果是按照我上面的方法写的话是不会看到引用的。
 
@@ -112,31 +112,31 @@ lindexi.targets
 
 <!-- ![](image/Roslyn 通过 nuget 统一管理信息/Roslyn 通过 nuget 统一管理信息3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018921242123)
+![](http://cdn.lindexi.site/lindexi%2F2018921242123)
 
 在添加的下面写出本地打包的文件，也就是 `lindexi.1.0.0.nupkg` 文件所在的文件夹和随意的一个命名
 
 <!-- ![](image/Roslyn 通过 nuget 统一管理信息/Roslyn 通过 nuget 统一管理信息4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892143544957)
+![](http://cdn.lindexi.site/lindexi%2F201892143544957)
 
 记得点击更新保存，然后再选择刚才设置的文件夹
 
 <!-- ![](image/Roslyn 通过 nuget 统一管理信息/Roslyn 通过 nuget 统一管理信息5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892143624347)
+![](http://cdn.lindexi.site/lindexi%2F201892143624347)
 
 现在点击浏览就可以看到刚才的 nuget 包
 
 <!-- ![](image/Roslyn 通过 nuget 统一管理信息/Roslyn 通过 nuget 统一管理信息0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892115027450)
+![](http://cdn.lindexi.site/lindexi%2F201892115027450)
 
 安装之后右击项目打包，就可以看到创建的项目打包，而且里面的信息就是刚才设置的信息
 
 <!-- ![](image/Roslyn 通过 nuget 统一管理信息/Roslyn 通过 nuget 统一管理信息6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20189214390416)
+![](http://cdn.lindexi.site/lindexi%2F20189214390416)
 
 如果需要替换某个信息，例如修改 Description 的信息，就可以通过右击修改项目文件添加 Description 的设置就替换了默认的值。
 

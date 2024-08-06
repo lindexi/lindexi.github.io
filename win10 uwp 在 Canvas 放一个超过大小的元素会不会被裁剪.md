@@ -22,7 +22,7 @@
 
 <!-- ![](image/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20187248521794)
+![](http://cdn.lindexi.site/lindexi%2F20187248521794)
 
 如图，可以看到超过 Canvas 的元素不会被裁剪
 
@@ -43,7 +43,7 @@
 
 <!-- ![](image/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201872485418713)
+![](http://cdn.lindexi.site/lindexi%2F201872485418713)
 
 那么在 WPF 是怎样呢？
 
@@ -59,6 +59,6 @@
 
 <!-- ![](image/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪/win10 uwp 在 Canvas 放一个超过大小的元素会不会被裁剪2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201872485820743)
+![](http://cdn.lindexi.site/lindexi%2F201872485820743)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

@@ -76,7 +76,7 @@
 
 <!-- ![](image/dotnet 从零开始写一个人工智能 从一个神经元开始/dotnet 从零开始写一个人工智能 从一个神经元开始0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20202251159323130.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20202251159323130.jpg)
 
 好在有了定义之后就好玩了，代码里面需要包含一个叫输入的权重的，另外为了调试方便也顺便添加一个输入个数。也就是咱这个神经元是固定输入个数的，在创建出来的时候就知道输入有多少个啦。当然动态改变个数也可以，只是这样就复杂了一丁点啦
 
@@ -129,7 +129,7 @@
 
 <!-- ![](image/dotnet 从零开始写一个人工智能 从一个神经元开始/dotnet 从零开始写一个人工智能 从一个神经元开始1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2020225122468779.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2020225122468779.jpg)
 
 定义好了之后，问题来了，请问初始的时候权重和阀值的值是多少呢？这个值我也不知道，那就随机给吧。随机的范围是多少为好，建议先用 [-1,1] 的范围，给定随机数范围可以写一个简单的帮助类
 
@@ -306,7 +306,7 @@ sum = a * x1 + b * x2 + t
 
 <!-- ![](image/dotnet 从零开始写一个人工智能 从一个神经元开始/dotnet 从零开始写一个人工智能 从一个神经元开始2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20202252136498502.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20202252136498502.jpg)
 
 本文所有代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/6ffd44b95d97f1956a2afb68a41b7443ff9eb6eb/JardalllojoHayeajemjuli) 这是一个 Xamarin 应用，下载之后的构建还需要一定的技术
 

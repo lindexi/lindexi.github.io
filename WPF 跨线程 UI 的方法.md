@@ -183,7 +183,7 @@ public MainWindow()
 
 <!-- ![](image/WPF 跨线程 UI 的方法/WPF 跨线程 UI 的方法0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101893923600)
+![](http://cdn.lindexi.site/lindexi%2F2018101893923600)
 
 代码请看 https://github.com/lindexi/UWP/tree/master/wpf/CaitrairSodeyatarFowfurur
 

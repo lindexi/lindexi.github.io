@@ -108,11 +108,11 @@ http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (W
 
 打开 https://passport.csdn.net/account/login 可以看到这个界面
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171027142056.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171027142056.jpg)
 
 右击查看源代码，可以拿到上传需要使用的两个变量 lt 和 execution
 
-![](http://image.acmx.xyz/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171027142158.jpg)
+![](http://cdn.lindexi.site/34fdad35-5dfe-a75b-2b4b-8c5e313038e2%2F20171027142158.jpg)
 
 在登陆的时候，使用 post 把账号密码、lt execution 上传就可以登陆
 

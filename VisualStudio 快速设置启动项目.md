@@ -30,7 +30,7 @@ Project.SetasStartUpProject
 
 <!-- ![](image/VisualStudio 快速设置启动项目/VisualStudio 快速设置启动项目0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201971142743883)
+![](http://cdn.lindexi.site/lindexi%2F201971142743883)
 
 然后分配一个快捷键给他就可以
 

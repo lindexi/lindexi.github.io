@@ -98,7 +98,7 @@ dism /online /Cleanup-Image /RestoreHealth
 执行输出如下图
 
 <!-- ![](image/记 Win8.1 某应用渲染抛出 OutOfMemoryException 异常及修复方法/记 Win8.1 某应用渲染抛出 OutOfMemoryException 异常及修复方法0.png) -->
-![](http://image.acmx.xyz/lindexi%2F202297117491956.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202297117491956.jpg)
 
 修复完成之后，发现应用程序可以正常使用
 

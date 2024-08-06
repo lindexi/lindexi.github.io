@@ -18,13 +18,13 @@
 
 <!-- ![](image/WPF 基础 2D 图形学知识/根据点集求外接矩形.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F%25E6%25A0%25B9%25E6%258D%25AE%25E7%2582%25B9%25E9%259B%2586%25E6%25B1%2582%25E5%25A4%2596%25E6%258E%25A5%25E7%259F%25A9%25E5%25BD%25A2.gif)
+![](http://cdn.lindexi.site/lindexi%2F%25E6%25A0%25B9%25E6%258D%25AE%25E7%2582%25B9%25E9%259B%2586%25E6%25B1%2582%25E5%25A4%2596%25E6%258E%25A5%25E7%259F%25A9%25E5%25BD%25A2.gif)
 
 传入的是 `List<Point> pointList` 要求传出的是 Rect 类，实现代码如下
 
 <!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021127194264742.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021127194264742.jpg)
 
 在新建矩形的时候，采用了第一个点创建，如果没有传入点，将使用默认的原点
 
@@ -58,7 +58,7 @@
 
 <!-- ![](image/WPF 基础 2D 图形学知识/绘制闭合折线.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F%25E7%25BB%2598%25E5%2588%25B6%25E9%2597%25AD%25E5%2590%2588%25E6%258A%2598%25E7%25BA%25BF.gif)
+![](http://cdn.lindexi.site/lindexi%2F%25E7%25BB%2598%25E5%2588%25B6%25E9%2597%25AD%25E5%2590%2588%25E6%258A%2598%25E7%25BA%25BF.gif)
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0d947fe2/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0d947fe2/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
 
@@ -77,7 +77,7 @@ Geometry.FillContains(position)
 
 <!-- ![](image/WPF 基础 2D 图形学知识/判断点在几何内.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2F%25E5%2588%25A4%25E6%2596%25AD%25E7%2582%25B9%25E5%259C%25A8%25E5%2587%25A0%25E4%25BD%2595%25E5%2586%2585.gif)
+![](http://cdn.lindexi.site/lindexi%2F%25E5%2588%25A4%25E6%2596%25AD%25E7%2582%25B9%25E5%259C%25A8%25E5%2587%25A0%25E4%25BD%2595%25E5%2586%2585.gif)
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/5f804a35/LeajemhurhoCaiwhemqurhahawwhaw ) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/5f804a35/LeajemhurhoCaiwhemqurhahawwhaw ) 欢迎小伙伴访问
 
@@ -91,7 +91,7 @@ Geometry.FillContains(position)
 
 <!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211272028498690.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211272028498690.jpg)
 
 给定中心点 O1 和宽度高度，以及使用弧度表示的旋转角度可以创建旋转矩形，代码逻辑如下
 
@@ -181,7 +181,7 @@ AB = B - A;
 
 <!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202133103233804.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202133103233804.jpg)
 
 ## [求向量旋转角度](https://blog.lindexi.com/post/WPF-%E5%9F%BA%E7%A1%80-2D-%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%9F%A5%E8%AF%86-%E6%B1%82%E5%90%91%E9%87%8F%E6%97%8B%E8%BD%AC%E8%A7%92%E5%BA%A6.html )
 
@@ -242,7 +242,7 @@ var 角度 = 弧度 / Math.PI * 180;
 - 点 P 在对角线 a c 上
 
 <!-- ![](image/WPF 基础 2D 图形学知识/WPF 基础 2D 图形学知识8.png) -->
-![](http://image.acmx.xyz/lindexi%2F2024412194542522.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024412194542522.jpg)
 
 如上图，大家一眼就看到，以上的描述在经典几何里面是正确的。但如果在进行浮点数计算过程中，可能存在以上三个陈述都是错误的情况。这就意味着经典几何实数计算里面大量默认一个命题非真即假的判断条件可能都在浮点计算里面失效，可能导致开发者明明按照经典几何提供的公式进行计算，然而实际结果却不符合预期
 

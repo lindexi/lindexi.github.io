@@ -54,7 +54,7 @@
 
 这时修改语言区域就可以看到变化
 
-![](http://image.acmx.xyz/lindexi%2F2018101211845978)
+![](http://cdn.lindexi.site/lindexi%2F2018101211845978)
 
 参见 [C#: Get current keyboard layout\input language](https://yal.cc/csharp-get-current-keyboard-layout/ )
 

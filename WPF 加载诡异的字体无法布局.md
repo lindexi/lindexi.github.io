@@ -81,7 +81,7 @@ System.IO.FileFormatException: Invalid file format.
 
 对于 UWP 来说也一样，尝试在界面中放和上面 WPF 相同的代码，可以看到设计器给出了提示
 
-![](http://image.acmx.xyz/lindexi%2F202131316131196.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202131316131196.jpg)
 
 运行 UWP 应用，将可以看到进入了下面代码
 

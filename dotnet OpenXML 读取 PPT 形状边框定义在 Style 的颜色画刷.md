@@ -168,7 +168,7 @@
 
 <!-- ![](image/dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷/dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F202182714145017.jpg)
+![](http://cdn.lindexi.site/lindexi%2F202182714145017.jpg)
 
 可以看到颜色其实有些差距，原因是以上使用的 SchemeColor 没有加上颜色特效，在 PPTX 文件定义的颜色代码如下
 
@@ -189,7 +189,7 @@
 
 <!-- ![](image/dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷/dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20218271417483322.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20218271417483322.jpg)
 
 本文以上所有测试文件和代码放在[github](https://github.com/lindexi/lindexi_gd/tree/d06378705fcc1a1ff19ea7d1f2544757fb0777c7/Pptx) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/d06378705fcc1a1ff19ea7d1f2544757fb0777c7/Pptx) 欢迎访问
 
@@ -358,7 +358,7 @@ var solidFill = themeOutline.GetFirstChild<SolidFill>()!;
 
 <!-- ![](image/dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷/dotnet OpenXML 读取 PPT 形状边框定义在 Style 的颜色画刷2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021827164253118.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021827164253118.jpg)
 
 
 本文以上更新的测试文件和代码放在[github](https://github.com/lindexi/lindexi_gd/tree/868ad6c1a39853764167053e319b68a6db0a2c6b/Pptx) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/868ad6c1a39853764167053e319b68a6db0a2c6b/Pptx) 欢迎访问

@@ -81,7 +81,7 @@
 
 <!-- ![](image/WPF 通过 EXIF 设置和读取图片的旋转信息/WPF 通过 EXIF 设置和读取图片的旋转信息0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022930164673438.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022930164673438.jpg)
 
 本文所需要的旋转信息，也是设置到 BitmapMetadata 内容，使用 SetQuery 方法进行设置
 

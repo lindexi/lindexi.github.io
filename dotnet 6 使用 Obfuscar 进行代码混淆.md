@@ -110,7 +110,7 @@ cd C\lindexi\Code\lindexi\HeenerholiCeleehano\HeenerholiCeleehano\bin\Release\ne
 
 执行如上的命令行进行混淆，即可实现命名混淆效果
 
-![](http://image.acmx.xyz/lindexi%2F2022431548139699.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022431548139699.jpg)
 
 使用 dotPeek 反编译可以看到字段被混淆为如下内容
 

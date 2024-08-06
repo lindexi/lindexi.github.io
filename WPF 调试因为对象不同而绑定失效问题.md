@@ -13,19 +13,19 @@
 
 <!-- ![](image/WPF 调试因为对象不同而绑定失效问题/WPF 调试因为对象不同而绑定失效问题0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201141517524547.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201141517524547.jpg)
 
 在 ToggleButton 的 IsChecked 变化的时候，将会自动更改 TextBlock 的内容
 
 <!-- ![](image/WPF 调试因为对象不同而绑定失效问题/WPF 调试因为对象不同而绑定失效问题1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20201141518488897.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20201141518488897.jpg)
 
 大概的效果如下图
 
 <!-- ![](image/WPF 调试因为对象不同而绑定失效问题/WPF 调试因为对象不同而绑定失效问题.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2FWPF%2520%25E8%25B0%2583%25E8%25AF%2595%25E5%259B%25A0%25E4%25B8%25BA%25E5%25AF%25B9%25E8%25B1%25A1%25E4%25B8%258D%25E5%2590%258C%25E8%2580%258C%25E7%25BB%2591%25E5%25AE%259A%25E5%25A4%25B1%25E6%2595%2588%25E9%2597%25AE%25E9%25A2%2598.gif)
+![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E8%25B0%2583%25E8%25AF%2595%25E5%259B%25A0%25E4%25B8%25BA%25E5%25AF%25B9%25E8%25B1%25A1%25E4%25B8%258D%25E5%2590%258C%25E8%2580%258C%25E7%25BB%2591%25E5%25AE%259A%25E5%25A4%25B1%25E6%2595%2588%25E9%2597%25AE%25E9%25A2%2598.gif)
 
 界面的代码大概如下
 

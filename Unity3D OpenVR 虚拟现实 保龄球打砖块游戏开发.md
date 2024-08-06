@@ -18,25 +18,25 @@
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发3.png) -->
 
-[![](http://image.acmx.xyz/lindexi%2F20215162040232749.jpg)](https://r302.cc/erJknAA)
+[![](http://cdn.lindexi.site/lindexi%2F20215162040232749.jpg)](https://r302.cc/erJknAA)
 
 写代码就和搬砖一样，一开始咱先使用 [Unity OpenVR 虚拟现实入门二：一个最简单的虚拟现实游戏/程序](https://blog.walterlv.com/post/unity-openvr-starting-2.html) 的方法搭建出来一个放在 SteamVR SDK 里面的 Sample 的内容，开始进行砌墙
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021516202783990.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021516202783990.jpg)
 
 以上墙里面的各个砖块记得加上刚体（Rigidbody）同时设置质量为 0.2 不然咱可打不掉砖块
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021516202919858.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021516202919858.jpg)
 
 接下来咱来创建保龄球子弹，按照约定创建 Prefabs 文件夹，在里面创建一个叫 Bullet 的圆球
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20215162030537346.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20215162030537346.jpg)
 
 如上图，同样给此子弹加上刚体，设置比较大的质量。如上图给了质量是 10 这样才好将砖块打到地板下。请不要将地板加上刚体哦，默认的刚体是加上重力的，刚进入调试发现地板掉了，这可不是在做恐怖游戏哈
 
@@ -92,20 +92,20 @@ public SteamVR_Action_Boolean Shooting;
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20215162053441264.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20215162053441264.jpg)
 
 咱选择 InteracetUI 这个动作，默认在 SteamVR 里面就是扣扳机这个交互，当然，用户也可以自己设置到其他按键里面
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20215162054247395.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20215162054247395.jpg)
 
 此时我推荐大家如果之前没有做过 SteamVR 的交互，那请尝试在 VisualStudio 里面附加 Unity3D 调试，在 Update 方法里面获取 Shooting 字段的值了解这部分的交互
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发6.png) -->
 
 
-![](http://image.acmx.xyz/lindexi%2F20215162059327734.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20215162059327734.jpg)
 
 如上图，此时咱将 Shooting 字段和 InteracetUI 这个动作绑定
 
@@ -263,7 +263,7 @@ public class ShootWithRotation : MonoBehaviour
 
 <!-- ![](image/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发/Unity3D OpenVR 虚拟现实 保龄球打砖块游戏开发7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021516212433402.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021516212433402.jpg)
 
 再给子弹添加一个 Throwable 脚本，让这个球可以被扔掉
 

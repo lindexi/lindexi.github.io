@@ -11,13 +11,13 @@
 
 <!-- ![](image/WPF 鼠标光标大全/WPF 鼠标光标大全0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021851924259929.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021851924259929.jpg)
 
 鼠标移动到不同的属性上，即可修改当前的鼠标外观
 
 <!-- ![](image/WPF 鼠标光标大全/WPF 鼠标光标大全1.gif) -->
 
-![](http://image.acmx.xyz/lindexi%2FWPF%2520%25E9%25BC%25A0%25E6%25A0%2587%25E5%2585%2589%25E6%25A0%2587%25E5%25A4%25A7%25E5%2585%25A81.gif)
+![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E9%25BC%25A0%25E6%25A0%2587%25E5%2585%2589%25E6%25A0%2587%25E5%25A4%25A7%25E5%2585%25A81.gif)
 
 这个应用我在 [github](https://github.com/lindexi/lindexi_gd/tree/0db985a1c785e0a3d090c2eb2bcb2da9e032f156/KeregabaneyairWeqainowafobar) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0db985a1c785e0a3d090c2eb2bcb2da9e032f156/KeregabaneyairWeqainowafobar) 上完全开源
 

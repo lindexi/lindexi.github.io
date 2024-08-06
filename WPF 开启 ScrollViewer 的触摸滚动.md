@@ -40,7 +40,7 @@
 
 <!-- ![](image/WPF 开启 ScrollViewer 的触摸滚动/WPF 开启 ScrollViewer 的触摸滚动0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018122612330218)
+![](http://cdn.lindexi.site/lindexi%2F2018122612330218)
 
 同时触摸的时候没有输出
 

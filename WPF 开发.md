@@ -76,7 +76,7 @@ pack://application:,,,/ReferencedAssembly;v1.0.0.1;component/ResourceFile.xaml
 获取资源时，需要区分是 Resources 资源还是 Content 资源
 
 <!-- ![](image/WPF 开发/WPF 开发0.png) -->
-![](http://image.acmx.xyz/lindexi%2FWPF%2520%25E5%25BC%2580%25E5%258F%25910.png)
+![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E5%25BC%2580%25E5%258F%25910.png)
 
 一个资源属于 Resources 资源还是 Content 资源取决于资源的生成方式。可以在项目里面，右击某个资源文件，点击属性，看他的生成操作是什么。如果生成操作是资源就是资源，生成操作是内容就是内容
 

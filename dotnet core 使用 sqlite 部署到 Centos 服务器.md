@@ -16,7 +16,7 @@
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892720503941)
+![](http://cdn.lindexi.site/lindexi%2F201892720503941)
 
 这里需要随意给一个项目的名，我这里给了 `CataiLerlasur` 随机的名，点击确定，选择 API 主要不要设置身份验证和启动 Docker 支持，关闭 https 这样才比较简单
 
@@ -24,7 +24,7 @@
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器1.png) -->
 
 
-![](http://image.acmx.xyz/lindexi%2F2018927205122243)
+![](http://cdn.lindexi.site/lindexi%2F2018927205122243)
 
 ## 创建模型
 
@@ -45,31 +45,31 @@
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927205450633)
+![](http://cdn.lindexi.site/lindexi%2F2018927205450633)
 
 通过这个方式可以快速创建
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892720555568)
+![](http://cdn.lindexi.site/lindexi%2F201892720555568)
 
 现在可以选择模型类，也就是刚才创建的模型
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927205635970)
+![](http://cdn.lindexi.site/lindexi%2F2018927205635970)
 
 然后点击加号添加上下文
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892720579669)
+![](http://cdn.lindexi.site/lindexi%2F201892720579669)
 
 添加上下文等待 VisualStudio 创建类
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927205758438)
+![](http://cdn.lindexi.site/lindexi%2F2018927205758438)
 
 ## 安装 Sqlite 
 
@@ -77,7 +77,7 @@
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892720598596)
+![](http://cdn.lindexi.site/lindexi%2F201892720598596)
 
 ## 设置连接
 
@@ -85,7 +85,7 @@
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892721113181)
+![](http://cdn.lindexi.site/lindexi%2F201892721113181)
 
 注意这里写的连接字符串是 `Filename=./xx.db` 这里的 xx.db 需要存在这个数据库，通过下面的命令行可以创建数据库
 
@@ -95,7 +95,7 @@
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927211144928)
+![](http://cdn.lindexi.site/lindexi%2F2018927211144928)
 
 输入下面两句代码
 
@@ -115,11 +115,11 @@ Update-Database
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927211716111)
+![](http://cdn.lindexi.site/lindexi%2F2018927211716111)
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927211716111)
+![](http://cdn.lindexi.site/lindexi%2F2018927211716111)
 
 现在可以看到项目多了一个文件 `csdn.db` 和 Migrations 文件夹
 
@@ -155,13 +155,13 @@ Update-Database
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927212642225)
+![](http://cdn.lindexi.site/lindexi%2F2018927212642225)
 
 现在运行一下，可以看到出现了刚才放进去的字符
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892721287551)
+![](http://cdn.lindexi.site/lindexi%2F201892721287551)
 
 在部署到 Linux 之前，需要设置端口和 ip 才可以在本地访问服务器的程序，在 ASP.NET Core 设置端口的方法很简单，通过在 Program 类添加设置 `UseUrls("http://0.0.0.0:5000")` 就可以
 
@@ -180,7 +180,7 @@ Update-Database
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器14.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927213232378)
+![](http://cdn.lindexi.site/lindexi%2F2018927213232378)
 
 在运行 `dotnet run` 就完成了在服务器部署了，现在可以在本地访问刚才的程序
 
@@ -190,7 +190,7 @@ Update-Database
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器15.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892721349331)
+![](http://cdn.lindexi.site/lindexi%2F201892721349331)
 
 用 Sqlite 可以简单将数据保存在服务器，只需要定期保存文件就可以，这个文件可以放在 Window 进行调试，也就是在 Window 和 Linux 可以使用相同的 Sqlite 这样开发很简单
 
@@ -198,12 +198,12 @@ Update-Database
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器16.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018927213928437)
+![](http://cdn.lindexi.site/lindexi%2F2018927213928437)
 
 点击打开数据库文件，点击对应的数据就可以看到写进入的，不需要通过写 sql 语句就可以创建一个表，在表里添加列
 
 <!-- ![](image/dotnet core 使用 sqlite 部署到 Centos 服务器/dotnet core 使用 sqlite 部署到 Centos 服务器17.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201892721404323)
+![](http://cdn.lindexi.site/lindexi%2F201892721404323)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

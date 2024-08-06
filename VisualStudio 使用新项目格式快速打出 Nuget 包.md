@@ -72,11 +72,11 @@ nuget.exe spec
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112052382)
+![](http://cdn.lindexi.site/lindexi%2F20181015112052382)
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112112209)
+![](http://cdn.lindexi.site/lindexi%2F20181015112112209)
 
 当然这个粗糙的包还可以做一些修改，例如修改这个包的 id 在 新的项目格式会使用 AssemblyName 作为默认的包的 id 来尝试修改这个值看打出来的包是什么
 
@@ -92,13 +92,13 @@ nuget.exe spec
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112130992)
+![](http://cdn.lindexi.site/lindexi%2F20181015112130992)
 
 这时右击项目打包就会在 `bin\Debug` 文件夹找到 lindexi.1.0.0.nupkg 文件
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101511215649)
+![](http://cdn.lindexi.site/lindexi%2F2018101511215649)
 
 如果想要自己定义一个 nuget 包的 id 和 AssemblyName 不相同，可以通过修改 PackageId 的方式，具体请看[项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - walterlv](https://blog.walterlv.com/post/known-nuget-properties-in-csproj.html )
 
@@ -106,11 +106,11 @@ nuget.exe spec
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112224371)
+![](http://cdn.lindexi.site/lindexi%2F20181015112224371)
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112259646)
+![](http://cdn.lindexi.site/lindexi%2F20181015112259646)
 
 那么如何验证打出来的包是可以使用的？做法很简单，就是使用 Nuget 安装本地的包的方式
 
@@ -118,37 +118,37 @@ nuget.exe spec
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包8.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101511234592)
+![](http://cdn.lindexi.site/lindexi%2F2018101511234592)
 
 点击设置
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包9.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2018101511246876)
+![](http://cdn.lindexi.site/lindexi%2F2018101511246876)
 
 点击添加一个本地的包，修改输出包的文件夹
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包10.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112432959)
+![](http://cdn.lindexi.site/lindexi%2F20181015112432959)
 
 切换本地包
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包11.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112451513)
+![](http://cdn.lindexi.site/lindexi%2F20181015112451513)
 
 点击浏览
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包12.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112512931)
+![](http://cdn.lindexi.site/lindexi%2F20181015112512931)
 
 点击刚才创建的包
 
 <!-- ![](image/VisualStudio 使用新项目格式快速打出 Nuget 包/VisualStudio 使用新项目格式快速打出 Nuget 包13.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20181015112528247)
+![](http://cdn.lindexi.site/lindexi%2F20181015112528247)
 
 这时就可以看到刚才快速创建的包
 
@@ -156,7 +156,7 @@ nuget.exe spec
 
 课件 
 
-[![](http://image.acmx.xyz/lindexi%2F20181115145816608)](https://r302.cc/xejeg0)
+[![](http://cdn.lindexi.site/lindexi%2F20181115145816608)](https://r302.cc/xejeg0)
 
 [Create and publish a .NET Standard package using Visual Studio on Windows](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio )
 

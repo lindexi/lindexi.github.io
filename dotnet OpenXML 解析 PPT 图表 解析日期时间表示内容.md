@@ -13,7 +13,7 @@
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 解析日期时间表示内容/dotnet OpenXML 解析 PPT 图表 解析日期时间表示内容0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20228101758163271.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20228101758163271.jpg)
 
 存储的代码如下
 
@@ -189,7 +189,7 @@ var useDate1904 = chartSpace.Date1904?.Val?.Value ?? false;
 
 <!-- ![](image/dotnet OpenXML 解析 PPT 图表 解析日期时间表示内容/dotnet OpenXML 解析 PPT 图表 解析日期时间表示内容1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2022810181627672.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2022810181627672.jpg)
 
 本文以上的测试文件和代码放在[github](https://github.com/lindexi/lindexi_gd/tree/9edb86c15c3f7c9aff9896ffc2de903464b2feb7/Pptx) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9edb86c15c3f7c9aff9896ffc2de903464b2feb7/Pptx) 欢迎访问
 

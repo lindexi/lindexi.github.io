@@ -28,7 +28,7 @@ name: publish nuget
 
 上面的代码就会添加命名是 `publish nuget` 的 workflow 在 action 页面可以通过对应的命名找到不同的 workflow 如
 
-![](http://image.acmx.xyz/lindexi%2F2019128152151911)
+![](http://cdn.lindexi.site/lindexi%2F2019128152151911)
 
 ## 触发条件
 
@@ -86,7 +86,7 @@ jobs:
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019128153156985)
+![](http://cdn.lindexi.site/lindexi%2F2019128153156985)
 
 在安装 dotnet 应用将会使用现有的脚本，其实在上一步的 `uses: actions/checkout@v1` 其实就是使用 github 的 `https://github.com/actions/checkout` 仓库的脚本
 
@@ -176,19 +176,19 @@ jobs:
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2019128155016416)
+![](http://cdn.lindexi.site/lindexi%2F2019128155016416)
 
 进入之后按照下图给配置，或根据自己的需要给配置
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912816257779)
+![](http://cdn.lindexi.site/lindexi%2F201912816257779)
 
 点击完成，将 API key 复制
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912816427603)
+![](http://cdn.lindexi.site/lindexi%2F201912816427603)
 
 小伙伴也不想将这个的 API Key 放在脚本里面，如果放在脚本里面，也许有逗比会哪这个 API Key 传一些有趣的库，所以需要在这个 API Key 放在安全的地方。这个安全的地方就是 GitHub 的凭据管理器。设置方法如下
 
@@ -196,25 +196,25 @@ jobs:
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912816628658)
+![](http://cdn.lindexi.site/lindexi%2F201912816628658)
 
 点击安全
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件5.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191281674137)
+![](http://cdn.lindexi.site/lindexi%2F20191281674137)
 
 点击新建安全
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件6.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191281684809)
+![](http://cdn.lindexi.site/lindexi%2F20191281684809)
 
 粘贴刚才复制的 API Key 到内容
 
 <!-- ![](image/dotnet 配置 github 自动打包上传 nuget 文件/dotnet 配置 github 自动打包上传 nuget 文件7.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912816938783)
+![](http://cdn.lindexi.site/lindexi%2F201912816938783)
 
 这样就将 API Key 存放到 GitHub 安全里面了
 

@@ -21,7 +21,7 @@ IOS ： https://itunes.apple.com/cn/app/qpush-kuai-tui-cong-dian-nao/id776837597
 
 <!-- ![](image/dotnet 使用 Qpush 快速从电脑到手机推送文字/dotnet 使用 Qpush 快速从电脑到手机推送文字0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201911491643124)
+![](http://cdn.lindexi.site/lindexi%2F201911491643124)
 
 但是这个工具有一个缺点就是没有 Windows 客户端，于是我就先做了一个轮子
 
@@ -33,7 +33,7 @@ IOS ： https://itunes.apple.com/cn/app/qpush-kuai-tui-cong-dian-nao/id776837597
 
 <!-- ![](image/dotnet 使用 Qpush 快速从电脑到手机推送文字/dotnet 使用 Qpush 快速从电脑到手机推送文字1.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201911492418362)
+![](http://cdn.lindexi.site/lindexi%2F201911492418362)
 
 安装之后就可以通过下面代码从电脑输入内容
 
@@ -60,13 +60,13 @@ using lindexi.src;
 
 <!-- ![](image/dotnet 使用 Qpush 快速从电脑到手机推送文字/dotnet 使用 Qpush 快速从电脑到手机推送文字2.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191149398892)
+![](http://cdn.lindexi.site/lindexi%2F20191149398892)
 
 此时就可以看到手机收到信息
 
 <!-- ![](image/dotnet 使用 Qpush 快速从电脑到手机推送文字/dotnet 使用 Qpush 快速从电脑到手机推送文字3.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20191149401883)
+![](http://cdn.lindexi.site/lindexi%2F20191149401883)
 
 这个工具做起来难度很低，但是我做出了一个 dll 库，虽然这个库里面就只有一个类
 
@@ -74,7 +74,7 @@ using lindexi.src;
 
 <!-- ![](image/dotnet 使用 Qpush 快速从电脑到手机推送文字/dotnet 使用 Qpush 快速从电脑到手机推送文字4.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F201912916184731)
+![](http://cdn.lindexi.site/lindexi%2F201912916184731)
 
 如果想要看 UWP 的源代码，请到 [github](https://github.com/lindexi/UWP/tree/fc9a10c6db9ec3f4f9396134ff4e4246c6cccab9/uwp/src/CipuPursur) 如果发现代码有哪里不清真，欢迎联系
 

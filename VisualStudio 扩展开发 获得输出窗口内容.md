@@ -69,7 +69,7 @@
 
 <!-- ![](image/VisualStudio 扩展开发 获得输出窗口内容/VisualStudio 扩展开发 获得输出窗口内容0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20192399836)
+![](http://cdn.lindexi.site/lindexi%2F20192399836)
 
 这里的一个就是一个 Pane 都是在输出窗口里面
 

@@ -39,7 +39,7 @@
 
 <!-- ![](image/dotnet 通过 Elmish.WPF 使用 F# 编写 WPF 应用/dotnet 通过 Elmish.WPF 使用 F# 编写 WPF 应用0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F2021518204142412.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2021518204142412.jpg)
 
 基本功能是点击加号和减号分别实现当前数值的加减
 

@@ -12,7 +12,7 @@
 
 <!-- ![](image/dotnet OpenXML 转换 PathFillModeValues 为颜色特效/dotnet OpenXML 转换 PathFillModeValues 为颜色特效0.png) -->
 
-![](http://image.acmx.xyz/lindexi%2F20211121927162191.jpg)
+![](http://cdn.lindexi.site/lindexi%2F20211121927162191.jpg)
 
 通过 ECMA 376 文档可以了解到 Cube 由 4 个 Path 组成，公式代码如下
 
