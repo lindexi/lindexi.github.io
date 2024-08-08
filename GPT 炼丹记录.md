@@ -49,11 +49,7 @@
 
 [Content Start]
 
-GetIntermediatePoints 方法的实现是不正确的
-
-在 WinUI 或 UWP 的设计里面，开发者可以通过 GetIntermediatePoints 获取历史的输入点数据，这在 UI 繁忙的时候非常有用，意味着当 UI 来不及处理输入点的时候，积累的输入点将会加入到历史输入点数据里面，避免大量输入的触发导致 UI 进一步卡顿。然而我发现在 UNO 框架里面对 GetIntermediatePoints 方法的实现是不正确的，在 UNO 框架里面只是在 GetIntermediatePoints 返回当前的点。这就意味着当前的表现行为是，在 UNO 框架里面，当 UI 卡顿来不及处理输入时，将会不断触发输入事件，或丢失输入数据。在 X11 平台里，将会不断触发输入事件，加剧 UI 卡顿。在 WPF 平台里，将会丢失输入数据
-
-我期望的行为是 UNO 框架里面的 GetIntermediatePoints 方法实现能够和 WinUI 相同，当 UI 卡顿时将输入点收集起来放在历史输入点集合里面。在 UI 线程来不及处理输入数据时，可以减少输入事件的触发
+在 Linux 系统上，使用 PointToScreen 在 Loaded 和 Activated 事件里面获取不到正确的坐标。而在 Windows 系统上，使用 PointToScreen 可以在 Loaded 时就获取到正确的屏幕坐标
 
 [Content End]
 
