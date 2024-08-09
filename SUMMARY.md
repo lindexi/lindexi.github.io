@@ -64,6 +64,8 @@
 
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
+ * [Avalonia 11.1 已知问题 应用启动时 PointToScreen 无法获取正确坐标](Avalonia-11.1-已知问题-应用启动时-PointToScreen-无法获取正确坐标.md)
+
  * [Avalonia 11.1 获取平台调用的窗口的方法](Avalonia-11.1-获取平台调用的窗口的方法.md)
 
  * [Avalonia 在 X11 下使用软渲染的方法](Avalonia-在-X11-下使用软渲染的方法.md)
@@ -476,6 +478,8 @@
 
  * [dotnet C# 使用 FreeType 读取和绘制字体](dotnet-C-使用-FreeType-读取和绘制字体.md)
 
+ * [dotnet C# 使用 SHFileOperation 调用 Win32 的文件复制对话框](dotnet-C-使用-SHFileOperation-调用-Win32-的文件复制对话框.md)
+
  * [dotnet C# 使用 using 关键字释放 IDisposable 的结构体是否会装箱](dotnet-C-使用-using-关键字释放-IDisposable-的结构体是否会装箱.md)
 
  * [dotnet C# 使用 Vortice 创建 Direct2D1 的 ID2D1SolidColorBrush 纯色画刷](dotnet-C-使用-Vortice-创建-Direct2D1-的-ID2D1SolidColorBrush-纯色画刷.md)
@@ -489,6 +493,8 @@
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
 
  * [dotnet C# 全局 Windows 鼠标钩子](dotnet-C-全局-Windows-鼠标钩子.md)
+
+ * [dotnet C# 分享基础 for 循环的写法](dotnet-C-分享基础-for-循环的写法.md)
 
  * [dotnet C# 创建 X11 应用时设置窗口背景颜色](dotnet-C-创建-X11-应用时设置窗口背景颜色.md)
 
