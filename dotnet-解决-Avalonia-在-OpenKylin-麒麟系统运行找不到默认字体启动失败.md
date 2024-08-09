@@ -73,6 +73,7 @@ internal class Program
 参考文档：
 
 - [OpenKylin上运行Avalonia应用 - louzi - 博客园](https://www.cnblogs.com/louzixl/p/17631717.html )
+- <https://github.com/AvaloniaUI/Avalonia/issues/16612>
 
 
 

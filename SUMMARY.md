@@ -64,6 +64,8 @@
 
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
+ * [Avalonia 11.1 获取平台调用的窗口的方法](Avalonia-11.1-获取平台调用的窗口的方法.md)
+
  * [Avalonia 在 X11 下使用软渲染的方法](Avalonia-在-X11-下使用软渲染的方法.md)
 
  * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
