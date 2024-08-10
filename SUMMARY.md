@@ -3614,6 +3614,8 @@
 
  * [程序猿修养 给属性一个单位](程序猿修养-给属性一个单位.md)
 
+ * [简单在 WinUI 仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能](简单在-WinUI-仿造-WPF-的-ColumnDefinition-SharedSizeGroup-共享列宽功能.md)
+
  * [简单搭建自己的博客](简单搭建自己的博客.md)
 
  * [给博客添加rss订阅](给博客添加rss订阅.md)
