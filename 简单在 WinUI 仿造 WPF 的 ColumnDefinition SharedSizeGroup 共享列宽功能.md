@@ -3,6 +3,8 @@
 本文将告诉大家如何在 WinUI 3 或 UNO 里面，仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能
 
 <!--more-->
+<!-- CreateTime:2024/08/11 07:25:46 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
