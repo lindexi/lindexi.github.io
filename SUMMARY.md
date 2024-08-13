@@ -816,6 +816,8 @@
 
  * [dotnet X11 的多屏触摸行为测试](dotnet-X11-的多屏触摸行为测试.md)
 
+ * [dotnet X11 窗口 Destroy 之后是否可以再次 Map 显示](dotnet-X11-窗口-Destroy-之后是否可以再次-Map-显示.md)
+
  * [dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入](dotnet-X11-窗口之间发送鼠标消息-模拟鼠标输入.md)
 
  * [dotnet X11 设置窗口鼠标触摸命中穿透](dotnet-X11-设置窗口鼠标触摸命中穿透.md)
