@@ -85,11 +85,11 @@
 
 [Content Start]
 
-咱可以发现在 Microsoft.Maui.Graphics.Win2D 等实现上，在 PlatformDrawPath 和 FillPath 等方法上，从 PathF 获取到平台相关的 Path 或 Geometry 时，将会依赖 PathF.PlatformPath 属性作为缓存，如此可以提高重复绘制的性能，减少创建平台相关的对象的次数
+我编写了一个测试程序用于说明我所遇到的困惑。我尝试使用一个布尔变量切换使用 XFlush 和 XSync 方法的调用，从而测试和对比两者的性能。为了减少影响，我编写的代码是一个将 Avalonia 里面的实际实现逻辑简化和拆分出来。我遇到的这个问题也是我在使用 Avalonia 过程中遇到的问题。我将代码运行到我的设备上，我的设备使用的是 UOS 系统，其处理器型号是 ZHAOXIN KaiXian KX-U6780A，这个处理器是一个低性能的处理器，运行的日志输出内容如下
 
-但是在 Microsoft.Maui.Graphics.Skia 上，每次都是重新创建 SKPath 对象，这就意味着重复绘制一个复杂的 PathF 将不能在 Microsoft.Maui.Graphics.Skia 获得较好的性能
+[日志内容]
 
-本次更改的作用就是让 Microsoft.Maui.Graphics.Skia 利用 PathF.PlatformPath 属性作为缓存，提高 Microsoft.Maui.Graphics.Skia 重复绘制复杂 PathF 的性能
+我的测试代码放在 [链接1] 上，你可以拉取我的代码然后运行，运行过程中按下回车键即可模拟触发曝光从而执行推送图片渲染
 
 [Content End]
 
