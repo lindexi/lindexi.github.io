@@ -358,9 +358,22 @@ Error: building at STEP "RUN apt update": while running runtime: exit status 100
 
 重新参考了 [替换docker容器默认的debian镜像 - OrcHome](https://www.orchome.com/8173 ) 博客，结果依然配置失败。核心原因是配置的版本不正确
 
-我当前使用的是 debian 是 10.13 版本，需要根据 [debian镜像_debian下载地址_debian安装教程-阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/debian ) 教程文档，更新对应的 `debian 10.x (buster)` 的配置
+我当前使用的是 debian 是 10.13 版本，需要根据 [debian镜像_debian下载地址_debian安装教程-阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/debian ) 教程文档，更新对应的 `debian 10.x (buster)` 的配置，即如下内容
 
-我是如何知道 debian 版本的，我通过运行镜像，输入 `cat /etc/debian_version` 命令获取到版本
+```
+debian 10.x (buster)
+
+编辑/etc/apt/sources.list文件(需要使用sudo), 在文件最前面添加以下条目(操作前请做好相应备份)
+
+deb https://mirrors.aliyun.com/debian/ buster main non-free contrib
+deb-src https://mirrors.aliyun.com/debian/ buster main non-free contrib
+deb https://mirrors.aliyun.com/debian-security buster/updates main
+deb-src https://mirrors.aliyun.com/debian-security buster/updates main
+deb https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+deb-src https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+```
+
+我是如何知道我当前的 debian 版本的？我通过运行镜像，输入 `cat /etc/debian_version` 命令获取到版本
 
 ### No system certificates available
 
@@ -413,6 +426,8 @@ RUN ln -s /root/dotnet/dotnet /usr/bin/dotnet
 
 原因是在 windows 下的 docker desktop 是收费的，于是我用平替的 podman 工具
 
+详细请看 [如何在 Windows 使用 Podman Desktop 取代 Docker Desktop - 张善友 - 博客园](https://www.cnblogs.com/shanyou/p/18288298 )
+
 ### 还原速度过慢
 
 由于 docker 本身是不带持久化存储文件，只有通过挂载本机存储的方式，才能让 docker 里面的文件持久化存放
@@ -426,6 +441,24 @@ RUN ln -s /root/dotnet/dotnet /usr/bin/dotnet
 ```
 
 我这里挂载写的是相对路径，如 `nuget_global` 等路径，相对路径在 podman 下将会存放到 wsl 里面，详细请看 [在 windows 上运行的 podman 默认的挂载相对路径是什么](https://blog.lindexi.com/post/%E5%9C%A8-windows-%E4%B8%8A%E8%BF%90%E8%A1%8C%E7%9A%84-podman-%E9%BB%98%E8%AE%A4%E7%9A%84%E6%8C%82%E8%BD%BD%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88.html )
+
+另一个方法就是搭建本地的 NuGet 源。比如我用 BaGet 搭建一个本地 NuGet 源，然后设置自动 Mirror 其他 NuGet 源，配置如下
+
+```json
+{
+    ...
+
+    "Mirror": 
+    {
+        "Enabled":  true,
+        "PackageSource": "https://api.nuget.org/v3/index.json"
+    },
+
+    ...
+}
+```
+
+详细请看 <https://github.com/loic-sharma/BaGet>
 
 ### 为什么代码仓库路径不挂载
 
