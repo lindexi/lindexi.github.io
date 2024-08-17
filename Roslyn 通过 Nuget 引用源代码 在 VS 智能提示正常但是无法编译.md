@@ -9,7 +9,15 @@
 
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
-这个问题是 msbuild 的一个坑，主要是没有主动引用 `.nuget.g.props` 和 `.nuget.g.targets` 文件，使用 Microsoft.NET.Sdk 作为 Sdk 的项目文件会自动在 obj 文件夹下生成 project.assets.json、$(ProjectName).csproj.nuget.cache、$(ProjectName).csproj.nuget.g.props 和 $(ProjectName).csproj.nuget.g.targets 文件；其中 .nuget.g.props 和 .nuget.g.targets 中生成了 Import 包中编译相关文件的代码。具体请看[MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://blog.walterlv.com/post/problems-of-msbuild-and-nuget.html )
+更新： 此问题已在 dotnet 6 修复，只需更新 SDK 版本即可解决。如发现未解决，请 IncludePackageReferencesDuringMarkupCompilation 属性是 True 或未指定，再删除 bin 和 obj 文件夹，重启 VisualStudio 构建
+
+```xml
+    <IncludePackageReferencesDuringMarkupCompilation>True</IncludePackageReferencesDuringMarkupCompilation>
+```
+
+以下是在 dotnet 6 之前出现此问题的原因和解决方法：
+
+这个问题是 msbuild 的一个坑，主要原因是没有主动引用 `.nuget.g.props` 和 `.nuget.g.targets` 文件，使用 Microsoft.NET.Sdk 作为 Sdk 的项目文件会自动在 obj 文件夹下生成 project.assets.json、$(ProjectName).csproj.nuget.cache、$(ProjectName).csproj.nuget.g.props 和 $(ProjectName).csproj.nuget.g.targets 文件；其中 .nuget.g.props 和 .nuget.g.targets 中生成了 Import 包中编译相关文件的代码。具体请看[MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://blog.walterlv.com/post/problems-of-msbuild-and-nuget.html )
 
 但是在使用 Nuget 引用源代码的时候，因为此时源代码还没加入到编译，在编译的时候 msbuild 找不到类，于是就没继续执行，只是就无法编译通过
 
@@ -68,5 +76,3 @@ e\SopisatraJowje\SopisatraJowje_rb00pftp_wpftmp.csproj]
 [MSBuild/Roslyn 和 NuGet 的 100 个坑 - walterlv](https://blog.walterlv.com/post/problems-of-msbuild-and-nuget.html )
 
 ![](http://cdn.lindexi.site/lindexi%2F2018927201059809)
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
