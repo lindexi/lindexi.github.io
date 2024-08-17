@@ -1630,6 +1630,8 @@
 
  * [Roslyn 禁止 sdk style csproj 默认引用 Compile 代码文件](Roslyn-禁止-sdk-style-csproj-默认引用-Compile-代码文件.md)
 
+ * [Roslyn 简单实现代码智能提示补全功能](Roslyn-简单实现代码智能提示补全功能.md)
+
  * [Roslyn 给 SourceYard 添加源代码包引用依赖](Roslyn-给-SourceYard-添加源代码包引用依赖.md)
 
  * [Roslyn 节点的 Span 和  FullSpan 有什么区别](Roslyn-节点的-Span-和-FullSpan-有什么区别.md)
