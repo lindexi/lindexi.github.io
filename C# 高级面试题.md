@@ -352,6 +352,36 @@ class Test
 
 感谢 炜来 指出括号的问题
 
+这些其实都是运算符优先级问题，详细请参阅 [C# 运算符和表达式 - C# 参考 - Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/#operator-precedence ) 官方文档
+
+举一反三： 如使用 switch 等关键词参与计算的问题，如以下代码，猜猜 x 的值是多少
+
+```csharp
+int c = 3;
+int x = c * 3 switch
+{
+    0 => c / 3,
+    1 => (c - 1) / 3 + 2,
+    _ => (c - 2) / 3 + 3,
+};
+```
+
+答案是由于 switch 优先级比 `*` 高，上述代码等价于如下代码
+
+```csharp
+int c = 3;
+int x = c * (3 switch
+{
+    0 => c / 3,
+    1 => (c - 1) / 3 + 2,
+    _ => (c - 2) / 3 + 3,
+});
+```
+
+许多开发者印象里面都是乘法运算符比 switch 高，这是不对的
+
+现实开发我是更推荐多加括号的写法，不要让开发者去猜优先级
+
 ## 模式匹配
 
 请问下面代码输出什么？
