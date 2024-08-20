@@ -822,6 +822,8 @@
 
  * [dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入](dotnet-X11-窗口之间发送鼠标消息-模拟鼠标输入.md)
 
+ * [dotnet X11 简单使用 MIT-SHM 共享内存推送图片](dotnet-X11-简单使用-MIT-SHM-共享内存推送图片.md)
+
  * [dotnet X11 设置窗口鼠标触摸命中穿透](dotnet-X11-设置窗口鼠标触摸命中穿透.md)
 
  * [dotnet X11 调用 XRootWindow 是否耗时](dotnet-X11-调用-XRootWindow-是否耗时.md)
