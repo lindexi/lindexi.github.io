@@ -64,6 +64,8 @@
 
  * [AutoHotKey 用打码的快捷键](AutoHotKey-用打码的快捷键.md)
 
+ * [Avalonia 11.1 已知问题 IterationCount 为 Infinite 的动画播放出现异常](Avalonia-11.1-已知问题-IterationCount-为-Infinite-的动画播放出现异常.md)
+
  * [Avalonia 11.1 已知问题 应用启动时 PointToScreen 无法获取正确坐标](Avalonia-11.1-已知问题-应用启动时-PointToScreen-无法获取正确坐标.md)
 
  * [Avalonia 11.1 获取平台调用的窗口的方法](Avalonia-11.1-获取平台调用的窗口的方法.md)
@@ -815,6 +817,8 @@
  * [dotnet win32 使用 WIC 获取系统编解码器](dotnet-win32-使用-WIC-获取系统编解码器.md)
 
  * [dotnet WinUI3 Win2D 翻转图片](dotnet-WinUI3-Win2D-翻转图片.md)
+
+ * [dotnet X11 栈空间被回收导致调用 XPutShmImage 闪退](dotnet-X11-栈空间被回收导致调用-XPutShmImage-闪退.md)
 
  * [dotnet X11 的多屏触摸行为测试](dotnet-X11-的多屏触摸行为测试.md)
 
