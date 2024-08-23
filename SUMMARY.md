@@ -552,6 +552,8 @@
 
  * [dotnet C# 简单的追加文件夹到 ZipArchive 压缩文件的方法](dotnet-C-简单的追加文件夹到-ZipArchive-压缩文件的方法.md)
 
+ * [dotnet C# 结构体出方法弹栈之后的行为](dotnet-C-结构体出方法弹栈之后的行为.md)
+
  * [dotnet C# 给结构体字段赋值非线程安全](dotnet-C-给结构体字段赋值非线程安全.md)
 
  * [dotnet C# 获取一个可用的端口的方法](dotnet-C-获取一个可用的端口的方法.md)
@@ -817,6 +819,8 @@
  * [dotnet win32 使用 WIC 获取系统编解码器](dotnet-win32-使用-WIC-获取系统编解码器.md)
 
  * [dotnet WinUI3 Win2D 翻转图片](dotnet-WinUI3-Win2D-翻转图片.md)
+
+ * [dotnet X11 多次调用 XPutImage 是否能做到渲染同步](dotnet-X11-多次调用-XPutImage-是否能做到渲染同步.md)
 
  * [dotnet X11 栈空间被回收导致调用 XPutShmImage 闪退](dotnet-X11-栈空间被回收导致调用-XPutShmImage-闪退.md)
 
@@ -1351,6 +1355,8 @@
  * [dotnet 集成测试 SmartSql 存在静态量导致多个主机启动提示 Alias 已存在](dotnet-集成测试-SmartSql-存在静态量导致多个主机启动提示-Alias-已存在.md)
 
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
+
+ * [dotnet 默认创建的 JsonContent 没有 Content Lenght 的内容头](dotnet-默认创建的-JsonContent-没有-Content-Lenght-的内容头.md)
 
  * [dotnet6 C# 一个国内还能用的 NTP 时间校准客户端的实现](dotnet6-C-一个国内还能用的-NTP-时间校准客户端的实现.md)
 
