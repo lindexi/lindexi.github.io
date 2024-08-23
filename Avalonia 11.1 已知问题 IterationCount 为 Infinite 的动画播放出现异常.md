@@ -3,6 +3,8 @@
 如果在 Avalonia 后台代码播放一个动画，这个动画的 Animation 的 IterationCount 被设置为 Infinite 那么将在播放的时候抛出 InvalidOperationException 异常
 
 <!--more-->
+<!-- CreateTime:2024/08/23 07:17:22 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
