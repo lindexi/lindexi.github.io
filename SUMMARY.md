@@ -476,6 +476,8 @@
 
  * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
 
+ * [dotnet C# 从控制台开始 关联 Win2D 和 WinUI 3 应用](dotnet-C-从控制台开始-关联-Win2D-和-WinUI-3-应用.md)
+
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
 
  * [dotnet C# 使用 EqualityComparer 提升泛型值类型相等判断性能](dotnet-C-使用-EqualityComparer-提升泛型值类型相等判断性能.md)
