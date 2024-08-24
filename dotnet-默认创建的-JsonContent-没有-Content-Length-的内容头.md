@@ -1,10 +1,12 @@
 
-# dotnet 默认创建的 JsonContent 没有 Content Lenght 的内容头
+# dotnet 默认创建的 JsonContent 没有 Content Length 的内容头
 
 本文记录一个 dotnet 的设计问题，默认创建出来的 JsonContent 对象的 Headers 里，是没有 Content-Length 信息的
 
 <!--more-->
 
+
+<!-- CreateTime:2024/08/24 07:07:25 -->
 
 <!-- 发布 -->
 <!-- 博客 -->

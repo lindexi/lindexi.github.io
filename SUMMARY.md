@@ -1356,7 +1356,7 @@
 
  * [dotnet 非泛型 类型 System.Collections.IEnumerable 不能与类型实参一起使用](dotnet-非泛型-类型-System.Collections.IEnumerable-不能与类型实参一起使用.md)
 
- * [dotnet 默认创建的 JsonContent 没有 Content Lenght 的内容头](dotnet-默认创建的-JsonContent-没有-Content-Lenght-的内容头.md)
+ * [dotnet 默认创建的 JsonContent 没有 Content Length 的内容头](dotnet-默认创建的-JsonContent-没有-Content-Length-的内容头.md)
 
  * [dotnet6 C# 一个国内还能用的 NTP 时间校准客户端的实现](dotnet6-C-一个国内还能用的-NTP-时间校准客户端的实现.md)
 
