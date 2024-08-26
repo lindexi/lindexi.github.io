@@ -38,7 +38,7 @@
 
 为了减少细节的干扰，本文这里采用的是引用 Microsoft.WindowsAppSDK 的方式而不是自己编写所有与 COM 连接的基础代码。如果对细节逻辑好奇的话，推荐阅读开源的 Microsoft.WindowsAppSDK 的源代码： [https://github.com/microsoft/windowsAppSDK](https://github.com/microsoft/windowsAppSDK)
 
-如果自己编写所有和 COM 连接的基础代码，以上的 csproj 的 `net6.0-windows10.0.19041` 等限制是可以去掉的
+如果自己编写所有和 COM 连接的基础代码`，以上的 csproj 的 `net6.0-windows10.0.19041` 等限制是可以去掉的
 
 接下来进入到 Program.cs 文件里面，咱将在这个文件里面编写创建 WinUI 3 应用的代码。在开始之前，还需要编写一个辅助类型，用于方便编写出代码，辅助类型的代码如下
 
