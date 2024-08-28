@@ -1405,6 +1405,9 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 - [使用VS远程调试其他电脑上安装的软件 - 杜文龙 - 博客园](https://www.cnblogs.com/duwenlong/p/14979056.html )
 - [VisualStudio 使用 FastTunnel 辅助搭建远程调试环境](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8-FastTunnel-%E8%BE%85%E5%8A%A9%E6%90%AD%E5%BB%BA%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.html )
+- [UOS 开启 VisualStudio 远程调试 .NET 应用之旅](https://blog.lindexi.com/post/UOS-%E5%BC%80%E5%90%AF-VisualStudio-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95-.NET-%E5%BA%94%E7%94%A8%E4%B9%8B%E6%97%85.html )
+- [VisualStudio 如何 SSH 远程调试 Linux 的 dotnet 应用的启动](https://blog.lindexi.com/post/VisualStudio-%E5%A6%82%E4%BD%95-SSH-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95-Linux-%E7%9A%84-dotnet-%E5%BA%94%E7%94%A8%E7%9A%84%E5%90%AF%E5%8A%A8.html )
+<!-- [VisualStudio 如何 SSH 远程调试 Linux 的 dotnet 应用的启动 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18238164 ) -->
 
 ## 经验
 
@@ -1419,6 +1422,8 @@ ntdll.dll!_DbgUiRemoteBreakin
 - [dotnet 读 WPF 源代码笔记 为什么自定义的 UserControl 用户控件不能跨程序集继承](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84-UserControl-%E7%94%A8%E6%88%B7%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%83%BD%E8%B7%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%BB%A7%E6%89%BF.html )
 
 - [【细致完整】终章：模拟.NET应用场景，综合应用反编译、第三方库调试、拦截、一库多版本兼容方案 - Dotnet9](https://dotnet9.com/m5 )
+
+- [记一次有教益的内存碎片转储文件分析经历-编程技术-看雪-安全社区kanxue.com](https://bbs.kanxue.com/thread-273799.htm )
 
 ### 应用程序闪退调试
 
