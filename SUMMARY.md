@@ -530,6 +530,8 @@
 
  * [dotnet C# 如何使用 MemoryFailPoint 检查是否有足够的内存资源来执行操作](dotnet-C-如何使用-MemoryFailPoint-检查是否有足够的内存资源来执行操作.md)
 
+ * [dotnet C# 如何在顶级语句定义属性](dotnet-C-如何在顶级语句定义属性.md)
+
  * [dotnet C# 如何正确获取藏文的字数](dotnet-C-如何正确获取藏文的字数.md)
 
  * [dotnet C# 如何让 Json 序列化数组时序列化继承类的属性](dotnet-C-如何让-Json-序列化数组时序列化继承类的属性.md)
@@ -3123,6 +3125,8 @@
  * [WPF 让 TextBox 支持水平滚动](WPF-让-TextBox-支持水平滚动.md)
 
  * [WPF 让窗口激活作为前台最上层窗口的方法](WPF-让窗口激活作为前台最上层窗口的方法.md)
+
+ * [WPF 记一个特别简单的点集滤波平滑方法](WPF-记一个特别简单的点集滤波平滑方法.md)
 
  * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
 

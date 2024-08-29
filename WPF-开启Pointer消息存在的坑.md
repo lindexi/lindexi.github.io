@@ -9,7 +9,6 @@
 <!-- CreateTime:2019/12/24 14:33:41 -->
 
 
-
 ## 屏幕键盘
 
 启用了Pointer之后，调用Textbox.Focus()，起不来屏幕键盘，必须点在它之上才行，触摸在它之上才行
@@ -118,9 +117,98 @@
 
 [WPF 已知问题 开启 WM_Pointer 消息之后 获取副屏触摸数据坐标偏移](https://blog.lindexi.com/post/WPF-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E5%BC%80%E5%90%AF-WM_Pointer-%E6%B6%88%E6%81%AF%E4%B9%8B%E5%90%8E-%E8%8E%B7%E5%8F%96%E5%89%AF%E5%B1%8F%E8%A7%A6%E6%91%B8%E6%95%B0%E6%8D%AE%E5%9D%90%E6%A0%87%E5%81%8F%E7%A7%BB.html )
 
+## 开启 RegisterTouchWindow 不用禁用实时触摸依然可以收到消息
+
+在没有开启 WM_Pointer 消息之前，需要先禁用实时触摸才能收到 WM_Touch 消息，详细请看 [WPF 禁用实时触摸](https://blog.lindexi.com/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html )
+
+然而在开启 POINTER 消息之后，只要调用 RegisterTouchWindow 方法，即可让窗口收到 WM_TOUCH 消息。如以下测试代码所示
+
+```csharp
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        SourceInitialized += OnSourceInitialized;
+    }
+
+    private void OnSourceInitialized(object? sender, EventArgs e)
+    {
+        var windowInteropHelper = new WindowInteropHelper(this);
+        var hwnd = windowInteropHelper.Handle;
+
+        PInvoke.RegisterTouchWindow(new HWND(hwnd), 0);
+
+        HwndSource source = HwndSource.FromHwnd(hwnd)!;
+        source.AddHook(Hook);
+    }
+
+    private unsafe IntPtr Hook(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam, ref bool handled)
+    {
+        if ((uint)msg is PInvoke.WM_TOUCH)
+        {
+            var touchInputCount = wparam.ToInt32();
+
+            var pTouchInputs = stackalloc TOUCHINPUT[touchInputCount];
+            if (PInvoke.GetTouchInputInfo(new HTOUCHINPUT(lparam), (uint)touchInputCount, pTouchInputs,
+                    sizeof(TOUCHINPUT)))
+            {
+                for (var i = 0; i < touchInputCount; i++)
+                {
+                    var touchInput = pTouchInputs[i];
+                    var point = new System.Drawing.Point(touchInput.x / 100, touchInput.y / 100);
+                    PInvoke.ScreenToClient(new HWND(hwnd), ref point);
+
+                    Debug.WriteLine($"Touch {touchInput.dwID} XY={point.X}, {point.Y}");
+                }
+
+                PInvoke.CloseTouchInputHandle(new HTOUCHINPUT(lparam));
+            }
+        }
+
+        return IntPtr.Zero;
+    }
+}
+```
+
+只需要按照 [WPF dotnet core 如何开启 Pointer 消息的支持](https://blog.lindexi.com/post/WPF-dotnet-core-%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF-Pointer-%E6%B6%88%E6%81%AF%E7%9A%84%E6%94%AF%E6%8C%81.html ) 提供的方法，在 App 构造函数里面使用如下代码进行开启 WM_POINTER 消息，和对比不开启的调试输出，即可看到调试下的输出差别
+
+```csharp
+    public App()
+    {
+        AppContext.SetSwitch("Switch.System.Windows.Input.Stylus.EnablePointerSupport", true);
+    }
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/6354ef906a85be0d2cdcb6d545c094b098c34544/WPFDemo/GibibealaFoheyufairha) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/6354ef906a85be0d2cdcb6d545c094b098c34544/WPFDemo/GibibealaFoheyufairha) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 6354ef906a85be0d2cdcb6d545c094b098c34544
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 6354ef906a85be0d2cdcb6d545c094b098c34544
+```
+
+获取代码之后，进入 WPFDemo/GibibealaFoheyufairha 文件夹，即可获取到源代码
 
 
-更多请看
+## 更多阅读
+
+[WPF 如何确定应用程序开启了 Pointer 触摸消息的支持](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%90%AF%E4%BA%86-Pointer-%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF%E7%9A%84%E6%94%AF%E6%8C%81.html )
+
+[win10 支持默认把触摸提升 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html) 
+
+[WPF dotnet core 如何开启 Pointer 消息的支持](https://blog.lindexi.com/post/WPF-dotnet-core-%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF-Pointer-%E6%B6%88%E6%81%AF%E7%9A%84%E6%94%AF%E6%8C%81.html )
 
 [WPF can not work well with set IsPressAndHoldEnabled to false when enable pointer message · Issue #3379 · dotnet/wpf](https://github.com/dotnet/wpf/issues/3379 )
 
@@ -135,15 +223,6 @@
 [c# - Calling SetGestureConfig method affects onmousemove override of control - Stack Overflow](https://stackoverflow.com/questions/53274234/calling-setgestureconfig-method-affects-onmousemove-override-of-control )
 
 [SetGestureConfig 函数-中文整理_Augusdi的专栏-CSDN博客](https://blog.csdn.net/Augusdi/article/details/8885396 )
-
-## 更多阅读
-
-[WPF 如何确定应用程序开启了 Pointer 触摸消息的支持](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%90%AF%E4%BA%86-Pointer-%E8%A7%A6%E6%91%B8%E6%B6%88%E6%81%AF%E7%9A%84%E6%94%AF%E6%8C%81.html )
-
-[win10 支持默认把触摸提升 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html) 
-
-[WPF dotnet core 如何开启 Pointer 消息的支持](https://blog.lindexi.com/post/WPF-dotnet-core-%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF-Pointer-%E6%B6%88%E6%81%AF%E7%9A%84%E6%94%AF%E6%8C%81.html )
-
 
 
 
