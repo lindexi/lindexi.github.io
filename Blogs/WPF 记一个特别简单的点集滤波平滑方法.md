@@ -3,14 +3,16 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/08/30 07:07:55 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
 我的本质错误是使用 WM_POINTER 消息的 [ptPixelLocationRaw](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-pointer_info) 字段而不是 ptHimetricLocationRaw 字段
 
-由于后面在 [walterlv](https://blog.walterlv.com) 的帮助之下修复了触摸点收集，附带他也给 Avalonia 做了贡献，详细请看 <https://github.com/AvaloniaUI/Avalonia/pull/16850>
+由于后面在 [walterlv](https://blog.walterlv.com) 的帮助之下修复了触摸点收集，于是就没有真的使用本文提供的点集滤波平滑方法，这就导致了本文提供的代码属于乱遭遭的代码。感谢 [walterlv](https://blog.walterlv.com) 帮忙解决了平滑问题，附带他也给 Avalonia 做了贡献，详细请看 <https://github.com/AvaloniaUI/Avalonia/pull/16850>
 
-故事的开始是我用 Avalonia 使用的是 WM_Pointer 的 [ptPixelLocation](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-pointer_info) 字段，此字段是带预测的，这不符合我预期。为了减少 Avalonia 的干扰，我就写了一个简单的 WPF 程序去接收 WM_Pointer 消息，自己处理消息。然而这个过程里面我发现写出来的笔迹不平滑，远远不如从 Touch 事件里面收到的点平滑
+故事的开始是我看 Avalonia 使用的是 WM_Pointer 的 [ptPixelLocation](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-pointer_info) 字段，此字段是带预测的，这不符合我预期。为了减少 Avalonia 的干扰，我就写了一个简单的 WPF 程序去接收 WM_Pointer 消息，自己处理消息。然而这个过程里面我发现写出来的笔迹不平滑，远远不如从 Touch 事件里面收到的点平滑
 
 以下是微软 [官方文档](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-pointer_info) 对 [ptPixelLocation](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-pointer_info) 的描述
 
@@ -111,6 +113,26 @@ The predicted value is based on the pointer position reported by the digitizer a
 ```
 
 大家可以自行注释掉平滑过滤，测试前后的平滑度变化
+
+效果图：
+
+<!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法0.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024830160201068.jpg)
+
+<!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法2.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024830160364905.jpg)
+
+带边缘采样：
+
+<!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法3.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024830160537114.jpg)
+
+在实际的大尺寸触摸屏的效果：
+
+<!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法1.gif) -->
+![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E8%25AE%25B0%25E4%25B8%2580%25E4%25B8%25AA%25E7%2589%25B9%25E5%2588%25AB%25E7%25AE%2580%25E5%258D%2595%25E7%259A%2584%25E7%2582%25B9%25E9%259B%2586%25E6%25BB%25A4%25E6%25B3%25A2%25E5%25B9%25B3%25E6%25BB%2591%25E6%2596%25B9%25E6%25B3%25951.gif)
+
+上图的黑色的线就是一条直接从 Move 事件收到的点绘制的折线，红色的线是经过平滑之后的线
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/68654061ac8cced2abe6736141c37bbb6303ccdb/WPFDemo/FalwhekaylearchaKuhiyehakemchaije) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/68654061ac8cced2abe6736141c37bbb6303ccdb/WPFDemo/FalwhekaylearchaKuhiyehakemchaije) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
