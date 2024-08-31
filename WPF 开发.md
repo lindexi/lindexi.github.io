@@ -1515,3 +1515,42 @@ drawingGroup.Transform = translateTransform;
 ### 默认的 WindowStyle 类型是什么
 
 默认的 WindowStyle 是 SingleBorderWindow 类型的枚举
+
+
+## 获取 ContextMenu 附加关联的控件
+
+取 ContextMenu 的 PlacementTarget 属性。如附加到 Grid 上的 ContextMenu 在右击时，尝试获取到 Grid 控件，可使用如下代码
+
+```csharp
+    private void MenuItem_OnClick(object sender, RoutedEventArgs e)
+    {
+        var menuItem = (MenuItem) sender;
+
+        DependencyObject t = menuItem;
+        while (t != null)
+        {
+            t = LogicalTreeHelper.GetParent(t);
+
+            if (t is ContextMenu)
+            {
+                break;
+            }
+        }
+
+        var c = t as ContextMenu;
+        var placementTarget = c?.PlacementTarget as Grid;
+    }
+```
+
+界面 XAML 代码如下
+
+```xml
+    <Grid Background="Transparent">
+
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Click="MenuItem_OnClick"></MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+    </Grid>
+```

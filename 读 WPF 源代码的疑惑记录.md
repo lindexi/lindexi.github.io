@@ -41,7 +41,7 @@
         }
 ```
 
-此时的转换，理论上应该出类型不相同
+此时的转换，理论上应该出类型不相同错误
 
 回答： [dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8A%A0%E4%B8%8A-BooleanBoxes-%E7%B1%BB.html)
 
@@ -113,4 +113,4 @@ Cleanup:
 
 也就是说在 Visual 层，收集的绘制指令，制作的 CMilVisual 数据，将会构建出 IGraphNode 用来实现绘制逻辑。也就是实际 VisualBrush 是需要在底层进行重复绘制
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+
