@@ -1520,6 +1520,45 @@ drawingGroup.Transform = translateTransform;
 默认的 WindowStyle 是 SingleBorderWindow 类型的枚举
 
 
+## 获取 ContextMenu 附加关联的控件
+
+取 ContextMenu 的 PlacementTarget 属性。如附加到 Grid 上的 ContextMenu 在右击时，尝试获取到 Grid 控件，可使用如下代码
+
+```csharp
+    private void MenuItem_OnClick(object sender, RoutedEventArgs e)
+    {
+        var menuItem = (MenuItem) sender;
+
+        DependencyObject t = menuItem;
+        while (t != null)
+        {
+            t = LogicalTreeHelper.GetParent(t);
+
+            if (t is ContextMenu)
+            {
+                break;
+            }
+        }
+
+        var c = t as ContextMenu;
+        var placementTarget = c?.PlacementTarget as Grid;
+    }
+```
+
+界面 XAML 代码如下
+
+```xml
+    <Grid Background="Transparent">
+
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Click="MenuItem_OnClick"></MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+    </Grid>
+```
+
+
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

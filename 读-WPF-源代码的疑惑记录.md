@@ -44,7 +44,7 @@
         }
 ```
 
-此时的转换，理论上应该出类型不相同
+此时的转换，理论上应该出类型不相同错误
 
 回答： [dotnet 读 WPF 源代码笔记 为什么加上 BooleanBoxes 类](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8A%A0%E4%B8%8A-BooleanBoxes-%E7%B1%BB.html)
 
@@ -115,6 +115,7 @@ Cleanup:
 获取输入的 Visual 的绘制树，接着调用底层的 DrawingContext 的 DrawVisualTree 方法。在底层，将让 CMilVisual 继承 IGraphNode 接口，实际逻辑就是走树遍历，让里层每一个进行绘制
 
 也就是说在 Visual 层，收集的绘制指令，制作的 CMilVisual 数据，将会构建出 IGraphNode 用来实现绘制逻辑。也就是实际 VisualBrush 是需要在底层进行重复绘制
+
 
 
 

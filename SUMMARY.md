@@ -1282,6 +1282,8 @@
 
  * [dotnet 读 WPF 源代码笔记 了解 WPF 已知问题 用户设备上不存在 Arial 字体将导致应用闪退](dotnet-读-WPF-源代码笔记-了解-WPF-已知问题-用户设备上不存在-Arial-字体将导致应用闪退.md)
 
+ * [dotnet 读 WPF 源代码笔记 从 WM_POINTER 消息到 Touch 事件](dotnet-读-WPF-源代码笔记-从-WM_POINTER-消息到-Touch-事件.md)
+
  * [dotnet 读 WPF 源代码笔记 使用 Win32 方法修改窗口的坐标和大小对窗口依赖属性的影响](dotnet-读-WPF-源代码笔记-使用-Win32-方法修改窗口的坐标和大小对窗口依赖属性的影响.md)
 
  * [dotnet 读 WPF 源代码笔记 创建 SolidColorBrush 性能没有想象那么差](dotnet-读-WPF-源代码笔记-创建-SolidColorBrush-性能没有想象那么差.md)
@@ -2557,6 +2559,8 @@
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
 
  * [WPF 从最底层源代码了解 AllowsTransparency 性能差的原因](WPF-从最底层源代码了解-AllowsTransparency-性能差的原因.md)
+
+ * [WPF 从裸 Win 32 的 WM_Pointer 消息获取触摸点绘制笔迹](WPF-从裸-Win-32-的-WM_Pointer-消息获取触摸点绘制笔迹.md)
 
  * [WPF 从触摸消息转触摸事件](WPF-从触摸消息转触摸事件.md)
 
