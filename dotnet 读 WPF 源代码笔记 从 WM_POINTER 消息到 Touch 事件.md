@@ -112,6 +112,221 @@ git pull origin 322313ee55d0eeaae7148b24ca279e1df087871e
 
 ## 在 WPF 框架的对接
 
+了解了一个 Win32 应用与 WM_POINTER 消息的对接方式，咱来看看 WPF 具体是如何做的。了解了对接方式之后，阅读 WPF 源代码的方式可以是通过必须调用的方法的引用，找到整个 WPF 的脉络
+
+在 WPF 里面，触摸初始化的故事开始是在 `PointerTabletDeviceCollection.cs` 里面，调用 [GetPointerDevices](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevices ) 方法进行初始化获取设备数量，之后的每个设备都调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 方法，获取 HID 描述符上报的对应设备属性，有删减的代码如下
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{
+    /// <summary>
+    /// Maintains a collection of pointer device information for currently installed pointer devices
+    /// </summary>
+    internal class PointerTabletDeviceCollection : TabletDeviceCollection
+    {
+        internal void Refresh()
+        {
+            ... // 忽略其他代码
+                    UnsafeNativeMethods.POINTER_DEVICE_INFO[] deviceInfos
+                         = new UnsafeNativeMethods.POINTER_DEVICE_INFO[deviceCount];
+
+                    IsValid = UnsafeNativeMethods.GetPointerDevices(ref deviceCount, deviceInfos);
+            ... // 忽略其他代码
+        }
+    }
+}
+```
+
+获取到设备之后，将其转换放入到 WPF 定义的 PointerTabletDevice 里面，大概的代码如下
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{
+    /// <summary>
+    /// Maintains a collection of pointer device information for currently installed pointer devices
+    /// </summary>
+    internal class PointerTabletDeviceCollection : TabletDeviceCollection
+    {
+        internal void Refresh()
+        {
+            ... // 忽略其他代码
+                    UnsafeNativeMethods.POINTER_DEVICE_INFO[] deviceInfos
+                         = new UnsafeNativeMethods.POINTER_DEVICE_INFO[deviceCount];
+
+                    IsValid = UnsafeNativeMethods.GetPointerDevices(ref deviceCount, deviceInfos);
+
+                    if (IsValid)
+                    {
+                        foreach (var deviceInfo in deviceInfos)
+                        {
+                            // Old PenIMC code gets this id via a straight cast from COM pointer address
+                            // into an int32.  This does a very similar thing semantically using the pointer
+                            // to the tablet from the WM_POINTER stack.  While it may have similar issues
+                            // (chopping the upper bits, duplicate ids) we don't use this id internally
+                            // and have never received complaints about this in the WISP stack.
+                            int id = MS.Win32.NativeMethods.IntPtrToInt32(deviceInfo.device);
+
+                            PointerTabletDeviceInfo ptdi = new PointerTabletDeviceInfo(id, deviceInfo);
+
+                            // Don't add a device that fails initialization.  This means we will try a refresh
+                            // next time around if we receive stylus input and the device is not available.
+                            // <see cref="HwndPointerInputProvider.UpdateCurrentTabletAndStylus">
+                            if (ptdi.TryInitialize())
+                            {
+                                PointerTabletDevice tablet = new PointerTabletDevice(ptdi);
+
+                                _tabletDeviceMap[tablet.Device] = tablet;
+                                TabletDevices.Add(tablet.TabletDevice);
+                            }
+                        }
+                    }
+            ... // 忽略其他代码
+        }
+
+        /// <summary>
+        /// Holds a mapping of TabletDevices from their WM_POINTER device id
+        /// </summary>
+        private Dictionary<IntPtr, PointerTabletDevice> _tabletDeviceMap = new Dictionary<IntPtr, PointerTabletDevice>();
+    }
+}
+
+namespace System.Windows.Input
+{
+    /// <summary>
+    ///     Collection of the tablet devices that are available on the machine.
+    /// </summary>
+    public class TabletDeviceCollection : ICollection, IEnumerable
+    {
+        internal List<TabletDevice> TabletDevices { get; set; } = new List<TabletDevice>();
+    }
+}
+```
+
+在 PointerTabletDeviceInfo 的 TryInitialize 方法，即 `if (ptdi.TryInitialize())` 这行代码里面，将会调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 获取设备属性信息，其代码逻辑如下
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{
+    /// <summary>
+    /// WM_POINTER specific information about a TabletDevice
+    /// </summary>
+    internal class PointerTabletDeviceInfo : TabletDeviceInfo
+    {
+        internal PointerTabletDeviceInfo(int id, UnsafeNativeMethods.POINTER_DEVICE_INFO deviceInfo)
+        {
+            _deviceInfo = deviceInfo;
+
+            Id = id;
+            Name = _deviceInfo.productString;
+            PlugAndPlayId = _deviceInfo.productString;
+        }
+
+        internal bool TryInitialize()
+        {
+            ... // 忽略其他代码
+
+            var success = TryInitializeSupportedStylusPointProperties();
+
+            ... // 忽略其他代码
+
+            return success;
+        }
+
+        private bool TryInitializeSupportedStylusPointProperties()
+        {
+            bool success = false;
+
+            ... // 忽略其他代码
+
+            // Retrieve all properties from the WM_POINTER stack
+            success = UnsafeNativeMethods.GetPointerDeviceProperties(Device, ref propCount, null);
+
+            if (success)
+            {
+                success = UnsafeNativeMethods.GetPointerDeviceProperties(Device, ref propCount, SupportedPointerProperties);
+
+                if (success)
+                {
+                    ... // 执行更具体的初始化逻辑
+                }
+            }
+
+            ... // 忽略其他代码
+        }
+
+        /// <summary>
+        /// The specific id for this TabletDevice
+        /// </summary>
+        internal IntPtr Device { get { return _deviceInfo.device; } }
+
+        /// <summary>
+        /// Store the WM_POINTER device information directly
+        /// </summary>
+        private UnsafeNativeMethods.POINTER_DEVICE_INFO _deviceInfo;
+    }
+}
+```
+
+为什么这里会调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 两次？第一次只是拿数量，第二次才是真正的拿值
+
+回顾以上代码，可以看到 PointerTabletDeviceInfo 对象是在 PointerTabletDeviceCollection 的 Refresh 方法里面创建的，如以下代码所示
+
+```csharp
+    internal class PointerTabletDeviceCollection : TabletDeviceCollection
+    {
+        internal void Refresh()
+        {
+            ... // 忽略其他代码
+                    UnsafeNativeMethods.POINTER_DEVICE_INFO[] deviceInfos
+                         = new UnsafeNativeMethods.POINTER_DEVICE_INFO[deviceCount];
+
+                    IsValid = UnsafeNativeMethods.GetPointerDevices(ref deviceCount, deviceInfos);
+                        foreach (var deviceInfo in deviceInfos)
+                        {
+                            // Old PenIMC code gets this id via a straight cast from COM pointer address
+                            // into an int32.  This does a very similar thing semantically using the pointer
+                            // to the tablet from the WM_POINTER stack.  While it may have similar issues
+                            // (chopping the upper bits, duplicate ids) we don't use this id internally
+                            // and have never received complaints about this in the WISP stack.
+                            int id = MS.Win32.NativeMethods.IntPtrToInt32(deviceInfo.device);
+
+                            PointerTabletDeviceInfo ptdi = new PointerTabletDeviceInfo(id, deviceInfo);
+
+                            if (ptdi.TryInitialize())
+                            {
+                                
+                            }
+                        }
+            ... // 忽略其他代码
+        }
+    }
+```
+
+从 GetPointerDevices 获取到的 `POINTER_DEVICE_INFO` 信息会存放在 `PointerTabletDeviceInfo` 的 `_deviceInfo` 字段里面，如下面代码所示
+
+```csharp
+    internal class PointerTabletDeviceInfo : TabletDeviceInfo
+    {
+        internal PointerTabletDeviceInfo(int id, UnsafeNativeMethods.POINTER_DEVICE_INFO deviceInfo)
+        {
+            _deviceInfo = deviceInfo;
+
+            Id = id;
+        }
+
+        /// <summary>
+        /// The specific id for this TabletDevice
+        /// </summary>
+        internal IntPtr Device { get { return _deviceInfo.device; } }
+
+        /// <summary>
+        /// Store the WM_POINTER device information directly
+        /// </summary>
+        private UnsafeNativeMethods.POINTER_DEVICE_INFO _deviceInfo;
+    }
+```
+
+调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 时，就会将 `POINTER_DEVICE_INFO` 的 `device` 字段作为参数传入，从而获取到 `POINTER_DEVICE_PROPERTY` 结构体信息
 
 
 这里需要和不开 WM_POINTER 消息的从 COM 获取触摸设备信息区分，和 [dotnet 读 WPF 源代码笔记 插入触摸设备的初始化获取设备信息](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E6%8F%92%E5%85%A5%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF.html ) 提供的方法是不相同的
