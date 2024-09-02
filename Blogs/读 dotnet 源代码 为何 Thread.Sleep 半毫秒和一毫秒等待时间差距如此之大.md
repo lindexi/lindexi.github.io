@@ -76,9 +76,108 @@ namespace System.Threading
 
 于是即使是 0.99 毫秒，在这里的转换之下，依然会返回 0 毫秒回去
 
-而 Thread.Sleep 底层里面专门为传入 0 毫秒做了特殊处理，将会进入自旋逻辑。大家都知道，进入自旋时，自旋的速度是非常快的
+而 Thread.Sleep 底层里面专门为传入 0 毫秒做了特殊处理，~~将会进入自旋逻辑。大家都知道，进入自旋时，自旋的速度是非常快的~~ 将会直接出让线程执行时间片。也就是说假设系统给当前线程分配了 10 毫秒的执行时间，当前线程执行到 Thread.Sleep 之前，只花了 5 毫秒，当执行了 Thread.Sleep 将会直接让线程出让执行权，无论线程还剩余多少可执行时间。出让之后线程会重新加入调度，这个过程也是非常快速的。在 dotnet 里面的自旋 SpinWait 辅助类里面，是对 Thread.Sleep 和 Thread.Yield 之间的封装，确保不会进入长时间的自旋而导致影响系统整体运行
 
-以上的 `Thread.Sleep(TimeSpan.FromMilliseconds(0.99));` 代码和 `Thread.Sleep(0)` 在执行上等价的，意味着第一次只执行了一千次自旋，自然就几乎测试不出来耗时了
+从狭义的自旋锁定义上看，自旋锁要求线程在这一过程中保持执行。因此自旋锁从定义上和 Thread.Sleep 会出让的行为是冲突的。但是在工程上，实现“自旋”概念的行为时，却会间断采用 `Thread.Sleep(0)` 等出让的方式，用于减少 CPU 的空转，如以下的 dotnet 源代码所示
+
+```csharp
+        public void SpinOnce(int sleep1Threshold)
+        {
+            ArgumentOutOfRangeException.ThrowIfLessThan(sleep1Threshold, -1);
+
+            if (sleep1Threshold >= 0 && sleep1Threshold < YieldThreshold)
+            {
+                sleep1Threshold = YieldThreshold;
+            }
+
+            SpinOnceCore(sleep1Threshold);
+        }
+
+        private void SpinOnceCore(int sleep1Threshold)
+        {
+            Debug.Assert(sleep1Threshold >= -1);
+            Debug.Assert(sleep1Threshold < 0 || sleep1Threshold >= YieldThreshold);
+
+            // (_count - YieldThreshold) % 2 == 0: The purpose of this check is to interleave Thread.Yield/Sleep(0) with
+            // Thread.SpinWait. Otherwise, the following issues occur:
+            //   - When there are no threads to switch to, Yield and Sleep(0) become no-op and it turns the spin loop into a
+            //     busy-spin that may quickly reach the max spin count and cause the thread to enter a wait state, or may
+            //     just busy-spin for longer than desired before a Sleep(1). Completing the spin loop too early can cause
+            //     excessive context switcing if a wait follows, and entering the Sleep(1) stage too early can cause
+            //     excessive delays.
+            //   - If there are multiple threads doing Yield and Sleep(0) (typically from the same spin loop due to
+            //     contention), they may switch between one another, delaying work that can make progress.
+            if ((
+                    _count >= YieldThreshold &&
+                    ((_count >= sleep1Threshold && sleep1Threshold >= 0) || (_count - YieldThreshold) % 2 == 0)
+                ) ||
+                Environment.IsSingleProcessor)
+            {
+                //
+                // We must yield.
+                //
+                // We prefer to call Thread.Yield first, triggering a SwitchToThread. This
+                // unfortunately doesn't consider all runnable threads on all OS SKUs. In
+                // some cases, it may only consult the runnable threads whose ideal processor
+                // is the one currently executing code. Thus we occasionally issue a call to
+                // Sleep(0), which considers all runnable threads at equal priority. Even this
+                // is insufficient since we may be spin waiting for lower priority threads to
+                // execute; we therefore must call Sleep(1) once in a while too, which considers
+                // all runnable threads, regardless of ideal processor and priority, but may
+                // remove the thread from the scheduler's queue for 10+ms, if the system is
+                // configured to use the (default) coarse-grained system timer.
+                //
+
+                if (_count >= sleep1Threshold && sleep1Threshold >= 0)
+                {
+                    Thread.Sleep(1);
+                }
+                else
+                {
+                    int yieldsSoFar = _count >= YieldThreshold ? (_count - YieldThreshold) / 2 : _count;
+                    if ((yieldsSoFar % Sleep0EveryHowManyYields) == (Sleep0EveryHowManyYields - 1))
+                    {
+                        Thread.Sleep(0);
+                    }
+                    else
+                    {
+                        Thread.Yield();
+                    }
+                }
+            }
+            else
+            {
+                //
+                // Otherwise, we will spin.
+                //
+                // We do this using the CLR's SpinWait API, which is just a busy loop that
+                // issues YIELD/PAUSE instructions to ensure multi-threaded CPUs can react
+                // intelligently to avoid starving. (These are NOOPs on other CPUs.) We
+                // choose a number for the loop iteration count such that each successive
+                // call spins for longer, to reduce cache contention.  We cap the total
+                // number of spins we are willing to tolerate to reduce delay to the caller,
+                // since we expect most callers will eventually block anyway.
+                //
+                // Also, cap the maximum spin count to a value such that many thousands of CPU cycles would not be wasted doing
+                // the equivalent of YieldProcessor(), as at that point SwitchToThread/Sleep(0) are more likely to be able to
+                // allow other useful work to run. Long YieldProcessor() loops can help to reduce contention, but Sleep(1) is
+                // usually better for that.
+                int n = Thread.OptimalMaxSpinWaitsPerSpinIteration;
+                if (_count <= 30 && (1 << _count) < n)
+                {
+                    n = 1 << _count;
+                }
+                Thread.SpinWait(n);
+            }
+
+            // Finally, increment our spin counter.
+            _count = (_count == int.MaxValue ? YieldThreshold : _count + 1);
+        }
+```
+
+以上的代码虽然是写在 SpinOnce 里面，但不意味着一定会占用着 CPU 进行空跑，而是会根据其等待时间决定是否将线程切出去，从而最大化利用系统资源
+
+通过上文的分析，可以看到 `Thread.Sleep(TimeSpan.FromMilliseconds(0.99));` 代码和 `Thread.Sleep(0)` 在执行上等价的，意味着第一次只执行了一千次~~自旋~~线程出让，自然就几乎测试不出来耗时了
 
 在 Windows 下的 Thread.Sleep 底层代码是写在 Thread.Windows.cs 代码里的，实现如下
 
