@@ -1229,13 +1229,101 @@ public static int Count { set; get; }
 
 ## 文件读写调试
 
-找不到库找不到文件
+文件读写调试里面包含了两大方面，分别是依赖库的加载调试和其他文件的读写访问问题的调试。常见的问题就是加载库找不到或加载库出错，或加载库时机不正确等问题。以及对具体的文件进行读写时，定位到具体的对文件读写的模块的问题
 
 ### 加载库调试
 
-判断文件加载的是哪些库
+调试哪些库被进程加载，或进程在什么时机加载了库，可用到加载库调试方法。加载库调试方法分为静态调试和动态运行调试。静态调试的意思就是不运行进程，直接查看在某个机器上的依赖库引用路径。动态运行调试则可以了解到在什么时机加载了库
 
-填坑
+#### 静态调试
+
+什么时候会用到静态调试？常见的就是程序猿经常说的话，在我电脑上跑得好好的，为什么在你的电脑就炸了。静态调试适用于在非开发机上，如用户的设备上进行调试。静态调试加载库的重点在于尝试解决依赖缺失问题
+
+依赖缺失问题可能包含的表现如下：
+
+- 在我电脑上跑得好好的，为什么在你的电脑就炸了
+- 软件运行到某个模块就崩溃
+- 软件无法启动
+
+软件运行过程中，需要依赖许多组件，包括直接依赖和间接依赖。在复杂的用户环境可能遭遇投毒问题
+
+静态调试依赖缺失等问题，可以使用 [Dependencies](https://github.com/lucasg/Dependencies) 工具
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法25.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024932036267775.jpg)
+
+使用 Dependencies 工具可以重点在可了解是否在目标机器上有依赖缺失，用人话说就是有没有缺少 DLL 依赖。以及应用程序将加载的依赖在哪，即是否被投毒
+
+如下图所示，我拖入了一个名为 `Application.exe` 的应用程序到 Dependencies 工具里面，看到了有一项名为 Lindexi.dll 被标记找不到。这就是证明存在依赖缺失问题
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法26.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024932038356399.jpg)
+
+常见的依赖缺失问题如下图所示
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法27.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024932039131463.jpg)
+
+某些仅有开发机才有的负载是常见的问题，如上图的 Lindexi.dll 就只有我电脑才有，自然别人家的电脑由于没有我这个 DLL 从而跑不起来。这就是程序猿说的在我电脑上跑得好好的，为什么在你的电脑就跑不起来的常见原因
+
+额外的，特别注意是否存在名为 `vcruntime140d.dll` 的缺失。这个 `vcruntime140d.dll` 是 VC++ runtime 14.0 debug 版本的 dll 的意思。如果看到有这个 dll 的依赖，证明你的相关方提供给你的 C++ 库是使用 Debug 版本构建的，这是不能给到用户端的。最佳方法是重新让其构建一个 Release 版本的 DLL 给你。只有在实在没有办法的时候，才考虑在用户端配上开发环境
+
+使用 Dependencies 工具除了找依赖缺失之外，还可以用来找到是否被投毒的问题。如下图所示，看大家是否能够快速看出来问题
+
+<!-- ![](image/dotnet 代码调试方法/dotnet 代码调试方法28.png) -->
+![](http://cdn.lindexi.site/lindexi%2F202493204401297.jpg)
+
+上图里面其实存在一个比较大的问题，那就是 vcruntime140.dll 加载的居然是在 `C:\Program Files (x86)\Foo` 文件夹里，这就证明被投毒了。大家可以在工具里面看看有没有存在不熟悉或奇怪的路径，如果有，那就可能是投毒的问题
+
+如我记录的 [影子系统让 C++ 程序无法运行](https://blog.lindexi.com/post/%E5%BD%B1%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AE%A9-C++-%E7%A8%8B%E5%BA%8F%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.html ) 这篇博客提到的就是非常标准的被投毒的问题，大家可以看到 MSVCR100.dll 加载的路径是在 `C:\Program Files\PowerShadow\App` 文件夹里面
+
+#### 动态调试
+
+动态调试分为改动代码的方式和不改动代码通过 WinDbg 调试的方式
+
+##### VisualStudio 配合改动代码调试
+
+在代码里面添加监听程序集加载的 AssemblyResolve 事件或 Resolving 事件，判断加载程序集名，进入断点。如以下代码
+
+```csharp
+        AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+        {
+            if (args.Name.Contains("Lindexi"))
+            {
+                Debugger.Break();
+            }
+
+            return null;
+        };
+```
+
+或如下代码
+
+```csharp
+        AssemblyLoadContext.Default.Resolving += (context, name) =>
+        {
+            if (name.Name?.Contains("Lindexi") is true)
+            {
+                Debugger.Break();
+            }
+
+            return null;
+        };
+```
+
+以上代码的 `Debugger.Break` 方法就可以让应用程序进程进入断点，和在 Visual Studio 手动打上断点效果差不多
+
+通过这样的方法，配合 Visual Studio 的调用堆栈，即可方便知道是哪个模块加载了程序集，在什么时机加载了程序集
+
+##### WinDbg 设置在加载到某个 DLL 进入断点
+
+在 WinDbg 里设置在加载到某个 DLL 进入断点，可以使用如下命令
+
+```
+sxe ld:xxx.dll
+```
+
+更具体用法请参阅 [WinDbg 设置在加载到某个 DLL 进入断点](https://blog.lindexi.com/post/WinDbg-%E8%AE%BE%E7%BD%AE%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%88%B0%E6%9F%90%E4%B8%AA-DLL-%E8%BF%9B%E5%85%A5%E6%96%AD%E7%82%B9.html )
 
 ### 调试某个文件是哪个代码创建
 
@@ -1501,6 +1589,59 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 [VisualStudio 使用 FastTunnel 辅助搭建远程调试环境](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8-FastTunnel-%E8%BE%85%E5%8A%A9%E6%90%AD%E5%BB%BA%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.html )
 
+### ProcessExplorer
+
+工具下载地址： <https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer>
+
+#### 使用 ProcessExplorer 了解某个进程由谁启动
+
+故事的背景是我有一个应用被开启自启动了，但是我在各个开机启动项都找不到启动记录，不知道这个应用是怎么被启动的
+
+我找了哪些地方？我找了常用的开机启动文件夹和注册表路径
+
+- 当前用户专有的启动文件夹： `%AppData%\Microsoft\Windows\Start Menu\Programs`
+- 所有用户有效的启动文件夹： `%ProgramData%\Microsoft\Windows\Start Menu\Programs`
+- Userinit注册键
+  - 注册表地址： `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon`
+  - 通常该注册表下面有一个`C:\Windows\system32\userinit.exe,`值，但这个键值是允许用逗号来分隔多个程序的，比如 C:\Windows\system32\userinit.exe,C:\lindexi.exe(举例)
+- Explorer\Run注册键
+  - 当前用户的注册表地址：`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run`
+  - 机器级的注册表地址：`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run`
+- RunServicesOnce注册键
+  - 当前用户的注册表地址：`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce`
+  - 机器级的注册表地址：`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce`
+  - RunServicesOnce注册键是用来启动服务的，启动时间是在用户登录之前，而且是先于其它通过注册键启动的程序
+- RunServices注册键
+  - 当前用户的注册表地址：`HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices`
+  - 机器级的注册表地址：`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunServices`
+  - RunServices注册键指定的程序紧接RunServicesOnce指定的程序之后运行，启动时间也是在用户登录之前
+- RunOnce注册键
+  - 注册表地址：
+    - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`
+    - `HKEY_LOCAL_MACHINE\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnce`
+    - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce`
+  - HKEY_LOCAL_MACHINE下面的RunOnce注册键会在用户登录之后立即运行程序，运行的时机是在其它Run键指定的程序之前
+  - HKEY_CURRENT_USER则会启动比较慢，它会在操作系统处理其他Run键以及“启动”文件夹的内容之后运行
+- Run注册键
+  - 注册表地址：
+    - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+    - `HKEY_LOCAL_MACHINE\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Run`
+    - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`
+  - Run是自动运行程序最常用的注册表。会先执行HKEY_LOCAL_MACHINE下的Run注册键内容，再执行HKEY_CURRENT_USER下的Run注册键内容，但两者都是在处理“启动文件夹”之前
+
+这些地方统统都没有找到应用程序的启动配置，那只剩一个可能，那就是被其他进程拉起来的
+
+打开 ProcessExplorer 工具，如果没有使用树的方式显示进程，则点击工具栏的 Process Tree 按钮
+
+找到自己的应用程序，可以快速看到上一级的进程是哪个，从而知道是哪个进程拉起来的
+
+以上的方法只适用于拉起应用程序的进程还存活。如果拉取应用程序的进程已经退出，则通过 ProcessExplorer 工具是找不到拉起的进程的
+
+此时最佳解决方法就是尝试重新复现问题，通过 [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) 开机启动收集，获取到进程启动信息，从而了解到是哪个进程启动应用程序
+
+使用 [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) 定位应用程序被哪个进程拉起的前提是需要能够复现，如果应用程序已经被拉起了，那将无法抓取到有效信息。且使用 [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) 将会输出大量的日志，分析工作量有一些
+
+这就是为什么推荐先使用 ProcessExplorer 工具的原因。使用 ProcessExplorer 只要拉起应用程序的进程没有退出，就能快速找到拉起应用程序的进程
 
 
 
