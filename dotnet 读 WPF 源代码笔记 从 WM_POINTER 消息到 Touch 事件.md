@@ -326,7 +326,526 @@ namespace System.Windows.Input.StylusPointer
     }
 ```
 
-调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 时，就会将 `POINTER_DEVICE_INFO` 的 `device` 字段作为参数传入，从而获取到 `POINTER_DEVICE_PROPERTY` 结构体信息
+调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 时，就会将 `POINTER_DEVICE_INFO` 的 `device` 字段作为参数传入，从而获取到 `POINTER_DEVICE_PROPERTY` 结构体列表信息
 
+获取到的 `POINTER_DEVICE_PROPERTY` 结构体信息和 HID 描述符上报的信息非常对应。结构体的定义代码大概如下
 
-这里需要和不开 WM_POINTER 消息的从 COM 获取触摸设备信息区分，和 [dotnet 读 WPF 源代码笔记 插入触摸设备的初始化获取设备信息](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E6%8F%92%E5%85%A5%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF.html ) 提供的方法是不相同的
+```csharp
+        /// <summary>
+        /// A struct representing the information for a particular pointer property.
+        /// These correspond to the raw data from WM_POINTER.
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        internal struct POINTER_DEVICE_PROPERTY
+        {
+            internal Int32 logicalMin;
+            internal Int32 logicalMax;
+            internal Int32 physicalMin;
+            internal Int32 physicalMax;
+            internal UInt32 unit;
+            internal UInt32 unitExponent;
+            internal UInt16 usagePageId;
+            internal UInt16 usageId;
+        }
+```
+
+根据 HID 基础知识可以知道，通过 `usagePageId` 和 `usageId` 即可了解到此设备属性的具体含义。更多请参阅 HID 标准文档： <http://www.usb.org/developers/hidpage/Hut1_12v2.pdf>
+
+在 WPF 使用到的 Pointer 的 `usagePageId` 的只有以下枚举所列举的值
+
+```csharp
+        /// <summary>
+        ///
+        /// WM_POINTER stack must parse out HID spec usage pages
+        /// <see cref="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf"/> 
+        /// </summary>
+        internal enum HidUsagePage
+        {
+            Undefined = 0x00,
+            Generic = 0x01,
+            Simulation = 0x02,
+            Vr = 0x03,
+            Sport = 0x04,
+            Game = 0x05,
+            Keyboard = 0x07,
+            Led = 0x08,
+            Button = 0x09,
+            Ordinal = 0x0a,
+            Telephony = 0x0b,
+            Consumer = 0x0c,
+            Digitizer = 0x0d,
+            Unicode = 0x10,
+            Alphanumeric = 0x14,
+            BarcodeScanner = 0x8C,
+            WeighingDevice = 0x8D,
+            MagneticStripeReader = 0x8E,
+            CameraControl = 0x90,
+            MicrosoftBluetoothHandsfree = 0xfff3,
+        }
+```
+
+在 WPF 使用到的 Pointer 的 `usageId` 的只有以下枚举所列举的值
+
+```csharp
+       /// <summary>
+       ///
+       /// 
+       /// WISP pre-parsed these, WM_POINTER stack must do it itself
+       /// 
+       /// See Stylus\biblio.txt - 1
+       /// <see cref="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf"/> 
+       /// </summary>
+       internal enum HidUsage
+       {
+           TipPressure = 0x30,
+           X = 0x30,
+           BarrelPressure = 0x31,
+           Y = 0x31,
+           Z = 0x32,
+           XTilt = 0x3D,
+           YTilt = 0x3E,
+           Azimuth = 0x3F,
+           Altitude = 0x40,
+           Twist = 0x41,
+           TipSwitch = 0x42,
+           SecondaryTipSwitch = 0x43,
+           BarrelSwitch = 0x44,
+           TouchConfidence = 0x47,
+           Width = 0x48,
+           Height = 0x49,
+           TransducerSerialNumber = 0x5B,
+       }
+```
+
+在 WPF 的古老版本里面，约定了使用 GUID 去获取 StylusPointDescription 里面的额外数据信息。为了与此行为兼容，在 WPF 里面就定义了 HidUsagePage 和 HidUsage 与 GUID 的对应关系，实现代码如下
+
+```csharp
+namespace System.Windows.Input
+{
+    /// <summary>
+    /// StylusPointPropertyIds
+    /// </summary>
+    /// <ExternalAPI/>
+    internal static class StylusPointPropertyIds
+    {
+        /// <summary>
+        /// The x-coordinate in the tablet coordinate space.
+        /// </summary>
+        /// <ExternalAPI/>
+        public static readonly Guid X = new Guid(0x598A6A8F, 0x52C0, 0x4BA0, 0x93, 0xAF, 0xAF, 0x35, 0x74, 0x11, 0xA5, 0x61);
+        /// <summary>
+        /// The y-coordinate in the tablet coordinate space.
+        /// </summary>
+        /// <ExternalAPI/>
+        public static readonly Guid Y = new Guid(0xB53F9F75, 0x04E0, 0x4498, 0xA7, 0xEE, 0xC3, 0x0D, 0xBB, 0x5A, 0x90, 0x11);
+
+        public static readonly Guid Z = ...
+
+        ...
+
+        /// <summary>
+        ///
+        /// WM_POINTER stack usage preparation based on associations maintained from the legacy WISP based stack
+        /// </summary>
+        private static Dictionary<HidUsagePage, Dictionary<HidUsage, Guid>> _hidToGuidMap = new Dictionary<HidUsagePage, Dictionary<HidUsage, Guid>>()
+        {
+            { HidUsagePage.Generic,
+                new Dictionary<HidUsage, Guid>()
+                {
+                    { HidUsage.X, X },
+                    { HidUsage.Y, Y },
+                    { HidUsage.Z, Z },
+                }
+            },
+            { HidUsagePage.Digitizer,
+                new Dictionary<HidUsage, Guid>()
+                {
+                    { HidUsage.Width, Width },
+                    { HidUsage.Height, Height },
+                    { HidUsage.TouchConfidence, SystemTouch },
+                    { HidUsage.TipPressure, NormalPressure },
+                    { HidUsage.BarrelPressure, ButtonPressure },
+                    { HidUsage.XTilt, XTiltOrientation },
+                    { HidUsage.YTilt, YTiltOrientation },
+                    { HidUsage.Azimuth, AzimuthOrientation },
+                    { HidUsage.Altitude, AltitudeOrientation },
+                    { HidUsage.Twist, TwistOrientation },
+                    { HidUsage.TipSwitch, TipButton },
+                    { HidUsage.SecondaryTipSwitch, SecondaryTipButton },
+                    { HidUsage.BarrelSwitch, BarrelButton },
+                    { HidUsage.TransducerSerialNumber, SerialNumber },
+                }
+            },
+        };
+
+        /// <summary>
+        /// Retrieves the GUID of the stylus property associated with the usage page and usage ids
+        /// within the HID specification.
+        /// </summary>
+        /// <param name="page">The usage page id of the HID specification</param>
+        /// <param name="usage">The usage id of the HID specification</param>
+        /// <returns>
+        /// If known, the GUID associated with the usagePageId and usageId.
+        /// If not known, GUID.Empty
+        /// </returns>
+        internal static Guid GetKnownGuid(HidUsagePage page, HidUsage usage)
+        {
+            Guid result = Guid.Empty;
+
+            Dictionary<HidUsage, Guid> pageMap = null;
+
+            if (_hidToGuidMap.TryGetValue(page, out pageMap))
+            {
+                pageMap.TryGetValue(usage, out result);
+            }
+
+            return result;
+        }
+    }
+}
+```
+
+通过以上的 `_hidToGuidMap` 的定义关联关系，调用 GetKnownGuid 方法，即可将 `POINTER_DEVICE_PROPERTY` 描述信息关联到 WPF 框架层的定义
+
+具体的对应逻辑如下
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{
+    /// <summary>
+    /// Contains a WM_POINTER specific functions to parse out stylus property info
+    /// </summary>
+    internal class PointerStylusPointPropertyInfoHelper
+    {
+        /// <summary>
+        /// Creates WPF property infos from WM_POINTER device properties.  This appropriately maps and converts HID spec
+        /// properties found in WM_POINTER to their WPF equivalents.  This is based on code from the WISP implementation
+        /// that feeds the legacy WISP based stack.
+        /// </summary>
+        /// <param name="prop">The pointer property to convert</param>
+        /// <returns>The equivalent WPF property info</returns>
+        internal static StylusPointPropertyInfo CreatePropertyInfo(UnsafeNativeMethods.POINTER_DEVICE_PROPERTY prop)
+        {
+            StylusPointPropertyInfo result = null;
+
+            // Get the mapped GUID for the HID usages
+            Guid propGuid =
+                StylusPointPropertyIds.GetKnownGuid(
+                    (StylusPointPropertyIds.HidUsagePage)prop.usagePageId,
+                    (StylusPointPropertyIds.HidUsage)prop.usageId);
+
+            if (propGuid != Guid.Empty)
+            {
+                StylusPointProperty stylusProp = new StylusPointProperty(propGuid, StylusPointPropertyIds.IsKnownButton(propGuid));
+
+                // Set Units
+                StylusPointPropertyUnit? unit = StylusPointPropertyUnitHelper.FromPointerUnit(prop.unit);
+
+                // If the parsed unit is invalid, set the default
+                if (!unit.HasValue)
+                {
+                    unit = StylusPointPropertyInfoDefaults.GetStylusPointPropertyInfoDefault(stylusProp).Unit;
+                }
+
+                // Set to default resolution
+                float resolution = StylusPointPropertyInfoDefaults.GetStylusPointPropertyInfoDefault(stylusProp).Resolution;
+
+                short mappedExponent = 0;
+
+                if (_hidExponentMap.TryGetValue((byte)(prop.unitExponent & HidExponentMask), out mappedExponent))
+                {
+                    float exponent = (float)Math.Pow(10, mappedExponent);
+
+                    // Guard against divide by zero or negative resolution
+                    if (prop.physicalMax - prop.physicalMin > 0)
+                    {
+                        // Calculated resolution is a scaling factor from logical units into the physical space
+                        // at the given exponentiation.
+                        resolution =
+                            (prop.logicalMax - prop.logicalMin) / ((prop.physicalMax - prop.physicalMin) * exponent);
+                    }
+                }
+
+                result = new StylusPointPropertyInfo(
+                      stylusProp,
+                      prop.logicalMin,
+                      prop.logicalMax,
+                      unit.Value,
+                      resolution);
+            }
+
+            return result;
+        }
+    }
+}
+```
+
+以上的一个小细节点在于对 unit 单位的处理，即 `StylusPointPropertyUnit? unit = StylusPointPropertyUnitHelper.FromPointerUnit(prop.unit);` 这行代码的实现定义，具体实现如下
+
+```csharp
+    internal static class StylusPointPropertyUnitHelper
+    {
+        /// <summary>
+        /// Convert WM_POINTER units to WPF units
+        /// </summary>
+        /// <param name="pointerUnit"></param>
+        /// <returns></returns>
+        internal static StylusPointPropertyUnit? FromPointerUnit(uint pointerUnit)
+        {
+            StylusPointPropertyUnit unit = StylusPointPropertyUnit.None;
+
+            _pointerUnitMap.TryGetValue(pointerUnit & UNIT_MASK, out unit);
+
+            return (IsDefined(unit)) ? unit : (StylusPointPropertyUnit?)null;
+        }
+
+        /// <summary>
+        /// Mapping for WM_POINTER based unit, taken from legacy WISP code
+        /// </summary>
+        private static Dictionary<uint, StylusPointPropertyUnit> _pointerUnitMap = new Dictionary<uint, StylusPointPropertyUnit>()
+        {
+            { 1, StylusPointPropertyUnit.Centimeters },
+            { 2, StylusPointPropertyUnit.Radians },
+            { 3, StylusPointPropertyUnit.Inches },
+            { 4, StylusPointPropertyUnit.Degrees },
+        };
+
+        /// <summary>
+        /// Mask to extract units from raw WM_POINTER data
+        /// <see cref="http://www.usb.org/developers/hidpage/Hut1_12v2.pdf"/> 
+        /// </summary>
+        private const uint UNIT_MASK = 0x000F;
+    }
+```
+
+这里的单位的作用是什么呢？用于和 `POINTER_DEVICE_PROPERTY` 的物理值做关联对应关系，比如触摸面积 Width 和 Height 的物理尺寸就是通过大概如下算法计算出来的
+
+```csharp
+                short mappedExponent = 0;
+
+                if (_hidExponentMap.TryGetValue((byte)(prop.unitExponent & HidExponentMask), out mappedExponent))
+                {
+                    float exponent = (float)Math.Pow(10, mappedExponent);
+
+                    // Guard against divide by zero or negative resolution
+                    if (prop.physicalMax - prop.physicalMin > 0)
+                    {
+                        // Calculated resolution is a scaling factor from logical units into the physical space
+                        // at the given exponentiation.
+                        resolution =
+                            (prop.logicalMax - prop.logicalMin) / ((prop.physicalMax - prop.physicalMin) * exponent);
+                    }
+                }
+
+        /// <summary>
+        /// Contains the mappings from WM_POINTER exponents to our local supported values.
+        /// This mapping is taken from WISP code, see Stylus\Biblio.txt - 4,
+        /// as an array of HidExponents.
+        /// </summary>
+        private static Dictionary<byte, short> _hidExponentMap = new Dictionary<byte, short>()
+        {
+            { 5, 5 },
+            { 6, 6 },
+            { 7, 7 },
+            { 8, -8 },
+            { 9, -7 },
+            { 0xA, -6 },
+            { 0xB, -5 },
+            { 0xC, -4 },
+            { 0xD, -3 },
+            { 0xE, -2 },
+            { 0xF, -1 },
+        };
+```
+
+通过 resolution 与具体后续收到的触摸点的值进行计算，带上 StylusPointPropertyUnit 单位，这就是触摸设备上报的物理尺寸了
+
+以上 `logicalMax` 和 `logicalMin` 在行业内常被称为逻辑值，以上的 `physicalMax` 和 `physicalMin` 常被称为物理值
+
+<!-- 许多触摸设备厂商，特别是大尺寸的红外框，都默认将逻辑值和物理值设置为相同的值 -->
+
+经过以上的处理之后，即可将 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 拿到的设备属性列表给转换为 WPF 框架对应的定义属性内容
+
+以上过程有一个细节，那就是 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 拿到的设备属性列表的顺序是非常关键的，设备属性列表的顺序和在后续 WM_POINTER 消息拿到的裸数据的顺序是直接对应的
+
+大家可以看到，在开启 Pointer 消息时，触摸模块初始化获取触摸信息是完全通过 Win32 的 WM_POINTER 模块提供的相关方法完成的。这里需要和不开 WM_POINTER 消息的从 COM 获取触摸设备信息区分，和 [dotnet 读 WPF 源代码笔记 插入触摸设备的初始化获取设备信息](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E6%8F%92%E5%85%A5%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E8%8E%B7%E5%8F%96%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF.html ) 提供的方法是不相同的
+
+完成上述初始化逻辑之后，接下来看看消息循环收到 WM_POINTER 消息的处理
+
+收到 WM_POINTER 消息时，调用 [GetRawPointerDeviceData](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getrawpointerdevicedata) 获取最原始的触摸信息，再对原始触摸信息进行解析处理
+
+在 WPF 里面，大家都知道，底层的消息循环处理的在 `HwndSource.cs` 里面定义，输入处理部分如下
+
+```csharp
+namespace System.Windows.Interop
+{
+    /// <summary>
+    ///     The HwndSource class presents content within a Win32 HWND.
+    /// </summary>
+    public class HwndSource : PresentationSource, IDisposable, IWin32Window, IKeyboardInputSink
+    {
+        private IntPtr InputFilterMessage(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            ... // 忽略其他代码
+            // NOTE (alexz): invoke _stylus.FilterMessage before _mouse.FilterMessage
+            // to give _stylus a chance to eat mouse message generated by stylus
+            if (!_isDisposed && _stylus != null && !handled)
+            {
+                result = _stylus.Value.FilterMessage(hwnd, message, wParam, lParam, ref handled);
+            }
+            ... // 忽略其他代码
+        }
+
+        private SecurityCriticalDataClass<IStylusInputProvider>        _stylus;
+    }
+}
+```
+
+以上代码的 `_stylus` 就是根据不同的配置参数决定是否使用 Pointer 消息处理的 HwndPointerInputProvider 类型，代码如下
+
+```csharp
+namespace System.Windows.Interop
+{
+    /// <summary>
+    ///     The HwndSource class presents content within a Win32 HWND.
+    /// </summary>
+    public class HwndSource : PresentationSource, IDisposable, IWin32Window, IKeyboardInputSink
+    {
+        private void Initialize(HwndSourceParameters parameters)
+        {
+            ... // 忽略其他代码
+            if (StylusLogic.IsStylusAndTouchSupportEnabled)
+            {
+                // Choose between Wisp and Pointer stacks
+                if (StylusLogic.IsPointerStackEnabled)
+                {
+                    _stylus = new SecurityCriticalDataClass<IStylusInputProvider>(new HwndPointerInputProvider(this));
+                }
+                else
+                {
+                    _stylus = new SecurityCriticalDataClass<IStylusInputProvider>(new HwndStylusInputProvider(this));
+                }
+            }
+            ... // 忽略其他代码
+        }
+    }
+}
+```
+
+在本文这里初始化的是 HwndPointerInputProvider 类型，将会进入到 HwndPointerInputProvider 的 FilterMessage 方法处理输入数据
+
+```csharp
+namespace System.Windows.Interop
+{
+    /// <summary>
+    /// Implements an input provider per hwnd for WM_POINTER messages
+    /// </summary>
+    internal sealed class HwndPointerInputProvider : DispatcherObject, IStylusInputProvider
+    {
+        /// <summary>
+        /// Processes the message loop for the HwndSource, filtering WM_POINTER messages where needed
+        /// </summary>
+        /// <param name="hwnd">The hwnd the message is for</param>
+        /// <param name="msg">The message</param>
+        /// <param name="wParam"></param>
+        /// <param name="lParam"></param>
+        /// <param name="handled">If this has been successfully processed</param>
+        /// <returns></returns>
+        IntPtr IStylusInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            handled = false;
+
+            // Do not process any messages if the stack was disabled via reflection hack
+            if (PointerLogic.IsEnabled)
+            {
+                switch (msg)
+                {
+                    case WindowMessage.WM_ENABLE:
+                        {
+                            IsWindowEnabled = MS.Win32.NativeMethods.IntPtrToInt32(wParam) == 1;
+                        }
+                        break;
+                    case WindowMessage.WM_POINTERENTER:
+                        {
+                            // Enter can be processed as an InRange.  
+                            // The MSDN documentation is not correct for InRange (according to feisu)
+                            // As such, using enter is the correct way to generate this.  This is also what DirectInk uses.
+                            handled = ProcessMessage(GetPointerId(wParam), RawStylusActions.InRange, Environment.TickCount);
+                        }
+                        break;
+                    case WindowMessage.WM_POINTERUPDATE:
+                        {
+                            handled = ProcessMessage(GetPointerId(wParam), RawStylusActions.Move, Environment.TickCount);
+                        }
+                        break;
+                    case WindowMessage.WM_POINTERDOWN:
+                        {
+                            handled = ProcessMessage(GetPointerId(wParam), RawStylusActions.Down, Environment.TickCount);
+                        }
+                        break;
+                    case WindowMessage.WM_POINTERUP:
+                        {
+                            handled = ProcessMessage(GetPointerId(wParam), RawStylusActions.Up, Environment.TickCount);
+                        }
+                        break;
+                    case WindowMessage.WM_POINTERLEAVE:
+                        {
+                            // Leave can be processed as an OutOfRange.  
+                            // The MSDN documentation is not correct for OutOfRange (according to feisu)
+                            // As such, using leave is the correct way to generate this.  This is also what DirectInk uses.
+                            handled = ProcessMessage(GetPointerId(wParam), RawStylusActions.OutOfRange, Environment.TickCount);
+                        }
+                        break;
+                }
+            }
+
+            return IntPtr.Zero;
+        }
+
+        ... // 忽略其他代码
+    }
+}
+```
+
+对于收到 Pointer 的按下移动抬起消息，都会进入到 ProcessMessage 方法
+
+进入之前调用的 `GetPointerId(wParam)` 代码的 GetPointerId 方法实现如下
+
+```csharp
+        /// <summary>
+        /// Extracts the pointer id
+        /// </summary>
+        /// <param name="wParam">The parameter containing the id</param>
+        /// <returns>The pointer id</returns>
+        private uint GetPointerId(IntPtr wParam)
+        {
+            return (uint)MS.Win32.NativeMethods.SignedLOWORD(wParam);
+        }
+
+    internal partial class NativeMethods
+    {
+        public static int SignedLOWORD(IntPtr intPtr)
+        {
+            return SignedLOWORD(IntPtrToInt32(intPtr));
+        }
+
+        public static int IntPtrToInt32(IntPtr intPtr)
+        {
+            return unchecked((int)intPtr.ToInt64());
+        }
+
+        public static int SignedLOWORD(int n)
+        {
+            int i = (int)(short)(n & 0xFFFF);
+
+            return i;
+        }
+    }
+```
+
+当然了，以上代码简单写就和下面代码差不多
+
+```csharp
+            var pointerId = (uint) (ToInt32(wparam) & 0xFFFF);
+```
+
