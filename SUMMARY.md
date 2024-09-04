@@ -1074,6 +1074,8 @@
 
  * [dotnet 已知问题 使用 Directory.EnumerateXXX 方法枚举 C 盘根路径可能错误的问题](dotnet-已知问题-使用-Directory.EnumerateXXX-方法枚举-C-盘根路径可能错误的问题.md)
 
+ * [dotnet 已知问题 警惕 StreamReader 的 EndOfStream 卡住线程](dotnet-已知问题-警惕-StreamReader-的-EndOfStream-卡住线程.md)
+
  * [dotnet 已知问题 错误标记 MethodImplOptions.InternalCall 特性参数将会在类型访问之前抛出 TypeLoadException 异常](dotnet-已知问题-错误标记-MethodImplOptions.InternalCall-特性参数将会在类型访问之前抛出-TypeLoadException-异常.md)
 
  * [dotnet 开发的单代码仓库和多代码仓库的优劣](dotnet-开发的单代码仓库和多代码仓库的优劣.md)
@@ -1697,6 +1699,8 @@
  * [SkiaSharp 渲染输出 SVG 文件](SkiaSharp-渲染输出-SVG-文件.md)
 
  * [SourceYard 制作源代码包](SourceYard-制作源代码包.md)
+
+ * [SQLite 由于 mscoree.dll 损坏导致 BadImageFormatException 试图加载格式不正确的程序](SQLite-由于-mscoree.dll-损坏导致-BadImageFormatException-试图加载格式不正确的程序.md)
 
  * [Sublime Text 好用的插件](Sublime-Text-好用的插件.md)
 

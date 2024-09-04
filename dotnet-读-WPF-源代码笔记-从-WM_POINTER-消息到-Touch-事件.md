@@ -117,6 +117,8 @@ git pull origin 322313ee55d0eeaae7148b24ca279e1df087871e
 
 了解了一个 Win32 应用与 WM_POINTER 消息的对接方式，咱来看看 WPF 具体是如何做的。了解了对接方式之后，阅读 WPF 源代码的方式可以是通过必须调用的方法的引用，找到整个 WPF 的脉络
 
+在开始之前必须说明的是，本文的大部分代码都是有删减的代码，只保留和本文相关的部分。现在 WPF 是完全开源的，基于最友好的 MIT 协议，可以自己拉下来代码进行二次修改发布，想看完全的代码和调试整个过程可以自己从开源地址拉取整个仓库下来，开源地址是： <https://github.com/dotnet/wpf>
+
 在 WPF 里面，触摸初始化的故事开始是在 `PointerTabletDeviceCollection.cs` 里面，调用 [GetPointerDevices](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevices ) 方法进行初始化获取设备数量，之后的每个设备都调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 方法，获取 HID 描述符上报的对应设备属性，有删减的代码如下
 
 ```csharp
@@ -851,6 +853,171 @@ namespace System.Windows.Interop
 ```csharp
             var pointerId = (uint) (ToInt32(wparam) & 0xFFFF);
 ```
+
+在 WM_POINTER 的设计上，将会源源不断通过消息循环发送指针消息，发送的指针消息里面不直接包含具体的数据信息，而是只将 PointerId 当成 wparam 发送。咱从消息循环里面拿到的只有 PointerId 的值，转换方法如上述代码所示
+
+为什么是这样设计的呢？考虑到现在大部分触摸屏的精度都不低，至少比许多很便宜鼠标的高，这就可能导致应用程序完全无法顶得住每次触摸数据过来都通过消息循环怼进来。在 WM_POINTER 的设计上，只是将 PointerId 通过消息循环发送过来，具体的消息体数据需要使用 [GetPointerInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerinfo) 方法来获取。这么设计有什么优势？这么设计是用来解决应用卡顿的时候，被堆积消息的问题。假定现在有三个触摸消息进来，第一个触摸消息进来就发送了 Win32 消息给到应用，然而应用等待到系统收集到了三个触摸点消息时，才调用 [GetPointerInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerinfo) 方法。那此时系统触摸模块就可以很开森的知道了应用处于卡顿状态，即第二个和第三个触摸消息到来时，判断第一个消息还没被应用消费，就不再发送 Win32 消息给到应用。当应用调用 [GetPointerInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerinfo) 方法时，就直接返回第三个点给到应用，跳过中间第一个和第二个触摸点。同时，使用历史点的概念，将第一个点和第二个点和第三个点给到应用，如果此时应用感兴趣的话
+
+利用如上所述机制，即可实现到当触摸设备产生的触摸消息过快时，不会让应用的消息循环过度忙碌，而是可以让应用有机会一次性拿到过去一段时间内的多个触摸点信息。如此可以提升整体系统的性能，减少应用程序忙碌于处理过往的触摸消息
+
+举一个虚拟的例子，让大家更好的理解这套机制的思想。假定咱在制作一个应用，应用有一个功能，就是有一个矩形元素，这个元素可以响应触摸拖动，可以用触摸拖动矩形元素。这个应用编写的有些离谱，每次拖动的做法就是设置新的坐标点为当前触摸点，但是这个过程需要 15 毫秒，因为中间添加了一些有趣且保密（其实我还没编出来）的算法。当应用跑在一个触摸设备上，这个触摸设备在触摸拖动的过程中，每 10 毫秒将产生一次触摸点信息报告给到系统。假定当前的系统的触摸模块是如实的每次收到设备发送过来的触摸点，都通过 Win32 消息发送给到应用，那将会让应用的消费速度慢于消息的生产速度，这就意味着大家可以明显看到拖动矩形元素时具备很大的延迟感。如拖着拖着才发现矩形元素还在后面慢慢挪动，整体的体验比较糟糕。那如果采用现在的这套玩法呢？应用程序从 Win32 消息收到的是 PointerId 信息，再通过 [GetPointerInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerinfo) 方法获取触摸点信息，此时获取到的触摸点就是最后一个触摸点，对于咱这个应用来说刚刚好，直接就是响应设置矩形元素坐标为最后一个触摸点的对应坐标。如此即可看到矩形元素飞快跳着走，且由于刚好矩形元素拖动过程为 15 毫秒，小于 16 毫秒，意味着大部分情况下大家看到的是矩形元素平滑的移动，即飞快跳着走在人类看来是一个连续移动的过程
+
+期望通过以上的例子可以让大家了解到微软的“良苦”用心
+
+<!-- DirectInk -->
+
+这里需要额外说明的是 PointerId 和 TouchDevice 等的 Id 是不一样的，在下文将会给出详细的描述
+
+在 WPF 这边，如上面代码所示，收到触摸点信息之后，将会进入到 ProcessMessage 方法，只是这个过程中我感觉有一点小锅的是，时间戳拿的是当前系统时间戳 Environment.TickCount 的值，而不是取 Pointer 消息里面的时间戳内容
+
+继续看一下 ProcessMessage 方法的定义和实现
+
+```csharp
+namespace System.Windows.Interop
+{
+    /// <summary>
+    /// Implements an input provider per hwnd for WM_POINTER messages
+    /// </summary>
+    internal sealed class HwndPointerInputProvider : DispatcherObject, IStylusInputProvider
+    {
+        /// <summary>
+        /// Processes the latest WM_POINTER message and forwards it to the WPF input stack.
+        /// </summary>
+        /// <param name="pointerId">The id of the pointer message</param>
+        /// <param name="action">The stylus action being done</param>
+        /// <param name="timestamp">The time (in ticks) the message arrived</param>
+        /// <returns>True if successfully processed (handled), false otherwise</returns>
+        private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)
+        {
+            ... // 忽略其他代码
+        }
+    }
+
+    ... // 忽略其他代码
+}
+```
+
+在 ProcessMessage 里面将创建 PointerData 对象，这个 PointerData 类型是一个辅助类，在构造函数里面将调用 [GetPointerInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerinfo) 方法获取指针点信息
+
+```csharp
+        private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)
+        {
+            bool handled = false;
+
+            // Acquire all pointer data needed
+            PointerData data = new PointerData(pointerId);
+
+            ... // 忽略其他代码
+        }
+```
+
+以下是 PointerData 构造函数的简单定义的有删减的代码
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{
+    /// <summary>
+    /// Provides a wrapping class that aggregates Pointer data from a pointer event/message
+    /// </summary>
+    internal class PointerData
+    {
+        /// <summary>
+        /// Queries all needed data from a particular pointer message and stores
+        /// it locally.
+        /// </summary>
+        /// <param name="pointerId">The id of the pointer message</param>
+        internal PointerData(uint pointerId)
+        {
+            if (IsValid = GetPointerInfo(pointerId, ref _info))
+            {
+                _history = new POINTER_INFO[_info.historyCount];
+
+                // Fill the pointer history
+                // If we fail just return a blank history
+                if (!GetPointerInfoHistory(pointerId, ref _info.historyCount, _history))
+                {
+                    _history = Array.Empty<POINTER_INFO>();
+                }
+
+                ... // 忽略其他代码
+            }
+        }
+
+        /// <summary>
+        /// Standard pointer information
+        /// </summary>
+        private POINTER_INFO _info;
+
+        /// <summary>
+        /// The full history available for the current pointer (used for coalesced input)
+        /// </summary>
+        private POINTER_INFO[] _history;
+
+        /// <summary>
+        /// If true, we have correctly queried pointer data, false otherwise.
+        /// </summary>
+        internal bool IsValid { get; private set; } = false;
+    }
+```
+
+通过上述代码可以看到，开始是调用 [GetPointerInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerinfo) 方法获取指针点信息。在 WPF 的基础事件里面也是支持历史点的，意图和 Pointer 的设计意图差不多，都是为了解决业务端的消费数据速度问题。于是在 WPF 底层也就立刻调用 [GetPointerInfoHistory](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerinfohistory) 获取历史点信息
+
+对于 Pointer 消息来说，对触摸和触笔有着不同的数据提供分支，分别是 [GetPointerTouchInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointertouchinfo) 方法和 [GetPointerPenInfo](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerpeninfo) 方法
+
+在 PointerData 构造函数里面，也通过判断 `POINTER_INFO` 的 `pointerType` 字段决定调用不同的方法，代码如下
+
+```csharp
+            if (IsValid = GetPointerInfo(pointerId, ref _info))
+            {
+                switch (_info.pointerType)
+                {
+                    case POINTER_INPUT_TYPE.PT_TOUCH:
+                        {
+                            // If we have a touch device, pull the touch specific information down
+                            IsValid &= GetPointerTouchInfo(pointerId, ref _touchInfo);
+                        }
+                        break;
+                    case POINTER_INPUT_TYPE.PT_PEN:
+                        {
+                            // Otherwise we have a pen device, so pull down pen specific information
+                            IsValid &= GetPointerPenInfo(pointerId, ref _penInfo);
+                        }
+                        break;
+                    default:
+                        {
+                            // Only process touch or pen messages, do not process mouse or touchpad
+                            IsValid = false;
+                        }
+                        break;
+                }
+            }
+```
+
+对于 WPF 的 HwndPointerInputProvider 模块来说，只处理 PT_TOUCH 和 PT_PEN 消息，即触摸和触笔消息。对于 Mouse 鼠标和 Touchpad 触摸板来说都不走 Pointer 处理，依然是走原来的 Win32 消息。为什么这么设计呢？因为 WPF 里面没有 Pointer 路由事件，在 WPF 里面分开了 Touch 和 Stylus 和 Mouse 事件。就不需要全部都在 Pointer 模块处理了，依然在原来的消息循环里面处理，既减少 Pointer 模块的工作量，也能减少后续从 Pointer 分发到 Touch 和 Stylus 和 Mouse 事件的工作量。原先的模块看起来也跑得很稳，那就一起都不改了
+
+完成 PointerData 的构造函数之后，继续到 HwndPointerInputProvider 的 ProcessMessage 函数里面，在此函数里面判断是 PT_TOUCH 和 PT_PEN 消息，则进行处理
+
+```csharp
+        private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)
+        {
+            bool handled = false;
+
+            // Acquire all pointer data needed
+            PointerData data = new PointerData(pointerId);
+
+            // Only process touch or pen messages, do not process mouse or touchpad
+            if (data.IsValid
+                && (data.Info.pointerType == UnsafeNativeMethods.POINTER_INPUT_TYPE.PT_TOUCH
+                || data.Info.pointerType == UnsafeNativeMethods.POINTER_INPUT_TYPE.PT_PEN))
+            {
+                ... // 忽略其他代码
+            }
+
+            return handled;
+        }
+```
+
+对于触摸和触笔的处理上，先是执行触摸设备关联。触摸设备关联一个在上层业务的表现就是让当前的指针消息关联上 TouchDevice 的 Id 或 StylusDevice 的 Id 值
 
 
 
