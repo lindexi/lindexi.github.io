@@ -3,10 +3,12 @@
 在 dotnet 里面，咱会经常使用 StreamReader 辅助类读取 Stream 的内容，比如按行读取等。如果在判断是否读取完成时，使用的是 StreamReader 的 EndOfStream 属性，则可能破坏原本的异步出让逻辑，导致线程被卡住
 
 <!--more-->
+<!-- CreateTime:2024/09/05 07:21:35 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
-对于带 UI 的应用程序，如 WPF 等应用来说，如果 UI 线程被卡住，可能会是一个比较重的坑。在 dotnet 里面的 StreamReader 类里面的 EndOfStream 存在一个设计上的问题。访问 EndOfStream 会导致 StreamReader 执行一次同步读取 Stream 的过程
+对于带 UI 的应用程序，如 WPF 等应用来说，如果 UI 线程被卡住，可能会是一个比较重的坑。在 dotnet 里面的 StreamReader 类里面的 EndOfStream 存在一个设计上的问题。访问 EndOfStream 会导致 StreamReader 执行一次同步读取 Stream 的过程。此问题属于 dotnet 的设计问题，已经被 [Stephen Toub](https://github.com/stephentoub) 大佬在 github 上提出，详细请看 <https://github.com/dotnet/runtime/issues/98834>
 
 假定 Stream 是一个读取非常慢的对象，如卡顿的网络下的响应内容。此时使用 StreamReader 类进行异步读取，自然不会卡住线程。假定异步读取的是 ReadLineAsync 按行读取，那开发者可能的需求是知道读取完成，常见错误的写法如下
 
@@ -31,12 +33,13 @@ while (true)
     var line = await streamReader.ReadLineAsync();
     if (line is null)
     {
+        // 读取完成，即 IsEnd = line is null; 判断成立。此时就应该结束
         break;
     }
 }
 ```
 
-在 ReadLineAsync 或 ReadLine 方法里面，如果一行里面是空文本，则会返回 `""` 空字符串。当读取完成的时候，则会返回 `null` 值
+在 ReadLineAsync 或 ReadLine 方法里面，如果一行里面是空文本，则会返回 `""` 空字符串。当读取完成的时候，则会返回 `null` 值。因此判断 `line` 是 null 就退出循环是非常正确的
 
 <!-- - 警惕 StreamReader.EndOfStream 卡主线程，原因是如果还没完成，会执行一次同步读 ReadBuffer 导致卡顿。正确做法是 ReadLineAsync 判断 null 的值 -->
 

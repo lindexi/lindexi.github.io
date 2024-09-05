@@ -1016,3 +1016,501 @@ namespace System.Windows.Input.StylusPointer
 
 对于触摸和触笔的处理上，先是执行触摸设备关联。触摸设备关联一个在上层业务的表现就是让当前的指针消息关联上 TouchDevice 的 Id 或 StylusDevice 的 Id 值
 
+关联的方法是通过 [GetPointerCursorId](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointercursorid) 方法先获取 CursorId 的值，再配合对应的输入的 Pointer 的输入设备 `POINTER_INFO` 的 `sourceDevice` 字段，即可与初始化过程中创建的设备相关联，实现代码如下
+
+```csharp
+            if (data.IsValid
+                && (data.Info.pointerType == UnsafeNativeMethods.POINTER_INPUT_TYPE.PT_TOUCH
+                || data.Info.pointerType == UnsafeNativeMethods.POINTER_INPUT_TYPE.PT_PEN))
+            {
+                uint cursorId = 0;
+
+                if (UnsafeNativeMethods.GetPointerCursorId(pointerId, ref cursorId))
+                {
+                    IntPtr deviceId = data.Info.sourceDevice;
+
+                    // If we cannot acquire the latest tablet and stylus then wait for the
+                    // next message.
+                    if (!UpdateCurrentTabletAndStylus(deviceId, cursorId))
+                    {
+                        return false;
+                    }
+
+                     ... // 忽略其他代码
+                }
+
+                ... // 忽略其他代码
+            }
+```
+
+在 WPF 初始化工作里面将输入的 Pointer 的输入设备 `POINTER_INFO` 的 `sourceDevice` 当成 `deviceId` 的概念，即 TabletDevice 的 Id 值。而 `cursorId` 则是对应 StylusDevice 的 Id 值，其更新代码的核心非常简单，如下面代码
+
+```csharp
+        /// <summary>
+        /// Attempts to update the current stylus and tablet devices for the latest WM_POINTER message.
+        /// Will attempt retries if the tablet collection is invalid or does not contain the proper ids.
+        /// </summary>
+        /// <param name="deviceId">The id of the TabletDevice</param>
+        /// <param name="cursorId">The id of the StylusDevice</param>
+        /// <returns>True if successfully updated, false otherwise.</returns>
+        private bool UpdateCurrentTabletAndStylus(IntPtr deviceId, uint cursorId)
+        {
+            _currentTabletDevice = tablets?.GetByDeviceId(deviceId);
+
+            _currentStylusDevice = _currentTabletDevice?.GetStylusByCursorId(cursorId);
+            
+            ... // 忽略其他代码
+
+                if (_currentTabletDevice == null || _currentStylusDevice == null)
+                {
+                    return false;
+                }
+            
+
+            return true;
+        }
+```
+
+对应的 GetByDeviceId 方法的代码如下
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{
+    /// <summary>
+    /// Maintains a collection of pointer device information for currently installed pointer devices
+    /// </summary>
+    internal class PointerTabletDeviceCollection : TabletDeviceCollection
+    {
+        /// <summary>
+        /// Holds a mapping of TabletDevices from their WM_POINTER device id
+        /// </summary>
+        private Dictionary<IntPtr, PointerTabletDevice> _tabletDeviceMap = new Dictionary<IntPtr, PointerTabletDevice>();
+
+         ... // 忽略其他代码
+
+        /// <summary>
+        /// Retrieve the TabletDevice associated with the device id
+        /// </summary>
+        /// <param name="deviceId">The device id</param>
+        /// <returns>The TabletDevice associated with the device id</returns>
+        internal PointerTabletDevice GetByDeviceId(IntPtr deviceId)
+        {
+            PointerTabletDevice tablet = null;
+
+            _tabletDeviceMap.TryGetValue(deviceId, out tablet);
+
+            return tablet;
+        }
+    }
+}
+```
+
+对应的 GetStylusByCursorId 的代码如下
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{  
+    /// <summary>
+    /// A WM_POINTER based implementation of the TabletDeviceBase class.
+    /// </summary>
+    internal class PointerTabletDevice : TabletDeviceBase
+    {
+        /// <summary>
+        /// A mapping from StylusDevice id to the actual StylusDevice for quick lookup.
+        /// </summary>
+        private Dictionary<uint, PointerStylusDevice> _stylusDeviceMap = new Dictionary<uint, PointerStylusDevice>();
+
+        /// <summary>
+        /// Retrieves the StylusDevice associated with the cursor id.
+        /// </summary>
+        /// <param name="cursorId">The id of the StylusDevice to retrieve</param>
+        /// <returns>The StylusDevice associated with the id</returns>
+        internal PointerStylusDevice GetStylusByCursorId(uint cursorId)
+        {
+            PointerStylusDevice stylus = null;
+            _stylusDeviceMap.TryGetValue(cursorId, out stylus);
+            return stylus;
+        }
+    }
+}
+```
+
+调用了 UpdateCurrentTabletAndStylus 的一个副作用就是同步更新了 `_currentTabletDevice` 和 `_currentStylusDevice` 字段的值，后续逻辑即可直接使用这两个字段而不是传参数
+
+完成关联逻辑之后，即进入 GenerateRawStylusData 方法，这个方法是 WPF 获取 Pointer 具体的消息的核心方法，方法签名如下
+
+```csharp
+namespace System.Windows.Interop
+{
+    /// <summary>
+    /// Implements an input provider per hwnd for WM_POINTER messages
+    /// </summary>
+    internal sealed class HwndPointerInputProvider : DispatcherObject, IStylusInputProvider
+    {
+        /// <summary>
+        /// Creates raw stylus data from the raw WM_POINTER properties
+        /// </summary>
+        /// <param name="pointerData">The current pointer info</param>
+        /// <param name="tabletDevice">The current TabletDevice</param>
+        /// <returns>An array of raw pointer data</returns>
+        private int[] GenerateRawStylusData(PointerData pointerData, PointerTabletDevice tabletDevice)
+        {
+            ... // 忽略其他代码
+        }
+
+        ... // 忽略其他代码
+    }
+}
+```
+
+此 GenerateRawStylusData 被调用是这么写的
+
+```csharp
+namespace System.Windows.Interop
+{
+    /// <summary>
+    /// Implements an input provider per hwnd for WM_POINTER messages
+    /// </summary>
+    internal sealed class HwndPointerInputProvider : DispatcherObject, IStylusInputProvider
+    {
+        /// <summary>
+        /// Processes the latest WM_POINTER message and forwards it to the WPF input stack.
+        /// </summary>
+        /// <param name="pointerId">The id of the pointer message</param>
+        /// <param name="action">The stylus action being done</param>
+        /// <param name="timestamp">The time (in ticks) the message arrived</param>
+        /// <returns>True if successfully processed (handled), false otherwise</returns>
+        private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)
+        {
+            PointerData data = new PointerData(pointerId);
+
+            ... // 忽略其他代码
+                uint cursorId = 0;
+                if (UnsafeNativeMethods.GetPointerCursorId(pointerId, ref cursorId))
+                {
+                    ... // 忽略其他代码
+                    GenerateRawStylusData(data, _currentTabletDevice);
+                    ... // 忽略其他代码
+                }
+
+        }
+        ... // 忽略其他代码
+    }
+}
+```
+
+在 GenerateRawStylusData 方法里面，先通过 PointerTabletDevice 取出支持的 Pointer 的设备属性列表的长度，用于和输入点的信息进行匹配。回忆一下，这部分获取逻辑是在上文介绍到对 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 函数的调用提到的，且也说明了此函数拿到的设备属性列表的顺序是非常关键的，设备属性列表的顺序和在后续 WM_POINTER 消息拿到的裸数据的顺序是直接对应的
+
+```csharp
+namespace System.Windows.Interop
+{
+    /// <summary>
+    /// Implements an input provider per hwnd for WM_POINTER messages
+    /// </summary>
+    internal sealed class HwndPointerInputProvider : DispatcherObject, IStylusInputProvider
+    {
+        /// <summary>
+        /// Creates raw stylus data from the raw WM_POINTER properties
+        /// </summary>
+        /// <param name="pointerData">The current pointer info</param>
+        /// <param name="tabletDevice">The current TabletDevice</param>
+        /// <returns>An array of raw pointer data</returns>
+        private int[] GenerateRawStylusData(PointerData pointerData, PointerTabletDevice tabletDevice)
+        {
+            // Since we are copying raw pointer data, we want to use every property supported by this pointer.
+            // We may never access some of the unknown (unsupported by WPF) properties, but they should be there
+            // for consumption by the developer.
+            int pointerPropertyCount = tabletDevice.DeviceInfo.SupportedPointerProperties.Length;
+
+            // The data is as wide as the pointer properties and is per history point
+            int[] rawPointerData = new int[pointerPropertyCount * pointerData.Info.historyCount];
+
+            ... // 忽略其他代码
+        }
+
+        ... // 忽略其他代码
+    }
+}
+```
+
+由每个 Pointer 的属性长度配合总共的历史点数量，即可获取到这里面使用到的 `rawPointerData` 数组的长度。这部分代码相信大家很好就理解了
+
+接着就是核心部分，调用 [GetRawPointerDeviceData](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getrawpointerdevicedata) 获取最原始的触摸信息，再对原始触摸信息进行解析处理
+
+```csharp
+            int pointerPropertyCount = tabletDevice.DeviceInfo.SupportedPointerProperties.Length;
+
+            // The data is as wide as the pointer properties and is per history point
+            int[] rawPointerData = new int[pointerPropertyCount * pointerData.Info.historyCount];
+
+            // Get the raw data formatted to our supported properties
+            if (UnsafeNativeMethods.GetRawPointerDeviceData(
+                pointerData.Info.pointerId,
+                pointerData.Info.historyCount,
+                (uint)pointerPropertyCount,
+                tabletDevice.DeviceInfo.SupportedPointerProperties,
+                rawPointerData))
+            {
+                ... // 忽略其他代码
+            }
+```
+
+在 Pointer 的设计里面，历史点 `historyCount` 是包含当前点的，且当前点就是最后一个点。这就是为什么这里只需要传入历史点数量即可，换句话说就是历史点最少包含一个点，那就是当前点
+
+由于 Pointer 获取到的点都是相对于屏幕坐标的，这里需要先偏移一下修改为窗口坐标系，代码如下
+
+```csharp
+                // Get the X and Y offsets to translate device coords to the origin of the hwnd
+                int originOffsetX, originOffsetY;
+                GetOriginOffsetsLogical(out originOffsetX, out originOffsetY);
+
+        private void GetOriginOffsetsLogical(out int originOffsetX, out int originOffsetY)
+        {
+            Point originScreenCoord = _source.Value.RootVisual.PointToScreen(new Point(0, 0));
+
+            // Use the inverse of our logical tablet to screen matrix to generate tablet coords
+            MatrixTransform screenToTablet = new MatrixTransform(_currentTabletDevice.TabletToScreen);
+            screenToTablet = (MatrixTransform)screenToTablet.Inverse;
+
+            Point originTabletCoord = originScreenCoord * screenToTablet.Matrix;
+
+            originOffsetX = (int)Math.Round(originTabletCoord.X);
+            originOffsetY = (int)Math.Round(originTabletCoord.Y);
+        }
+
+        /// <summary>
+        /// The HwndSource for WM_POINTER messages
+        /// </summary>
+        private SecurityCriticalDataClass<HwndSource> _source;
+```
+
+这里的 GetOriginOffsetsLogical 的实现逻辑就是去窗口的 0,0 点，看这个点会在屏幕的哪里，从而知道其偏移量。至于添加的 MatrixTransform 矩阵的 TabletToScreen 则在后文的具体转换逻辑会讲到，这里先跳过
+
+获取到相对于窗口的坐标偏移量之后，即可将其叠加给到每个点上，用于将这些点转换为窗口坐标系。但是在此之前还需要将获取到的 `rawPointerData` 进行加工。这一个步骤仅仅只是在 WPF 有需求，仅仅只是为了兼容 WISP 获取到的裸数据的方式。其相差点在于通过 Pointer 获取到的 `rawPointerData` 的二进制数据格式里面，没有带上按钮的支持情况的信息，在 WPF 这边需要重新创建一个数组对 `rawPointerData` 重新排列，确保每个点的数据都加上按钮的信息数据
+
+这部分处理仅只是为了兼容考虑，让后续的 StylusPointCollection 开森而已，咱就跳着看就好了
+
+```csharp
+                int numButtons = tabletDevice.DeviceInfo.SupportedPointerProperties.Length - tabletDevice.DeviceInfo.SupportedButtonPropertyIndex;
+
+                int rawDataPointSize = (numButtons > 0) ? pointerPropertyCount - numButtons + 1 : pointerPropertyCount;
+
+                // Instead of a single entry for each button we use one entry for all buttons so reflect that in the raw data size
+                data = new int[rawDataPointSize * pointerData.Info.historyCount];
+
+                for (int i = 0, j = rawPointerData.Length - pointerPropertyCount; i < data.Length; i += rawDataPointSize, j -= pointerPropertyCount)
+                {
+                    Array.Copy(rawPointerData, j, data, i, rawDataPointSize);
+
+                    // Apply offsets from the origin to raw pointer data here
+                    data[i + StylusPointDescription.RequiredXIndex] -= originOffsetX;
+                    data[i + StylusPointDescription.RequiredYIndex] -= originOffsetY;
+
+                    ... // 忽略其他代码
+                }
+
+             ... // 忽略其他代码
+            return data;
+```
+
+重新拷贝的过程，还将点的坐标更换成窗口坐标系，即以上的 `data[i + StylusPointDescription.RequiredXIndex] -= originOffsetX;` 和 `data[i + StylusPointDescription.RequiredYIndex] -= originOffsetY;` 两个代码
+
+完成获取之后，就将获取到的裸数据给返回了，这就是 GenerateRawStylusData 的内容
+
+在 ProcessMessage 方法里面获取到 GenerateRawStylusData 返回的原始指针信息，即可将其给到 RawStylusInputReport 作为参数，代码如下
+
+```csharp
+                    // Generate a raw input to send to the input manager to start the event chain in PointerLogic
+                    Int32[] rawData = GenerateRawStylusData(data, _currentTabletDevice);
+                    RawStylusInputReport rsir =
+                        new RawStylusInputReport(
+                            InputMode.Foreground,
+                            timestamp,
+                            _source.Value,
+                            action,
+                            () => { return _currentTabletDevice.StylusPointDescription; },
+                            _currentTabletDevice.Id,
+                            _currentStylusDevice.Id,
+                            rawData)
+                        {
+                            StylusDevice = _currentStylusDevice.StylusDevice,
+                        };
+```
+
+将创建的 RawStylusInputReport 更新到当前的设备，作为设备的最后的指针信息
+
+```csharp
+        private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)
+        {
+
+            PointerData data = new PointerData(pointerId);
+
+             ... // 忽略其他代码
+
+                    _currentStylusDevice.Update(this, _source.Value, data, rsir);
+             ... // 忽略其他代码
+        }
+
+        private SecurityCriticalDataClass<HwndSource> _source;
+```
+
+且还加入到 InputManager 的 ProcessInput 里面，进入 WPF 的框架内的消息调度
+
+```csharp
+        private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)
+        {
+
+            PointerData data = new PointerData(pointerId);
+
+             ... // 忽略其他代码
+
+                    _currentStylusDevice.Update(this, _source.Value, data, rsir);
+                    // Now send the input report
+                    InputManager.UnsecureCurrent.ProcessInput(irea);
+             ... // 忽略其他代码
+        }
+```
+
+在进入 InputManager 的 ProcessInput 调度消息之前，先看看 `_currentStylusDevice.Update` 里面的对原始指针信息的解析实现逻辑
+
+在 `_currentStylusDevice.Update` 里面的对原始指针信息的解析实现完全是靠 StylusPointCollection 和 StylusPoint 的构造函数实现的
+
+```csharp
+namespace System.Windows.Input.StylusPointer
+{
+    /// <summary>
+    /// A WM_POINTER specific implementation of the StylusDeviceBase.
+    /// 
+    /// Supports direct access to WM_POINTER structures and basing behavior off of the WM_POINTER data.
+    /// </summary>
+    internal class PointerStylusDevice : StylusDeviceBase
+    {
+        /// <summary>
+        /// Updates the internal StylusDevice state based on the WM_POINTER input and the formed raw data.
+        /// </summary>
+        /// <param name="provider">The hwnd associated WM_POINTER provider</param>
+        /// <param name="inputSource">The PresentationSource where this message originated</param>
+        /// <param name="pointerData">The aggregated pointer data retrieved from the WM_POINTER stack</param>
+        /// <param name="rsir">The raw stylus input generated from the pointer data</param>
+        internal void Update(HwndPointerInputProvider provider, PresentationSource inputSource,
+            PointerData pointerData, RawStylusInputReport rsir)
+        {
+             ... // 忽略其他代码
+
+            // First get the initial stylus points.  Raw data from pointer input comes in screen coordinates, keep that here since that is what we expect.
+            _currentStylusPoints = new StylusPointCollection(rsir.StylusPointDescription, rsir.GetRawPacketData(), GetTabletToElementTransform(null), Matrix.Identity);
+
+             ... // 忽略其他代码
+        }
+    }
+}
+```
+
+这里的 `rsir.GetRawPacketData()` 是返回上文提到的 `GenerateRawStylusData` 方法给出的裸数据的拷贝，代码如下
+
+```csharp
+    internal class RawStylusInputReport : InputReport
+    {
+        /// <summary>
+        ///     Read-only access to the raw data that was reported.
+        /// </summary>
+        internal int[] GetRawPacketData()
+        {
+            if (_data == null)
+                return null;
+            return (int[])_data.Clone();
+        }
+
+        /// <summary>
+        /// The raw data for this input report
+        /// </summary>
+        int[] _data;
+
+        ... // 忽略其他代码
+    }
+```
+
+这里的 GetTabletToElementTransform 包含了一个核心转换，方法代码如下
+
+```csharp
+    internal class PointerStylusDevice : StylusDeviceBase
+    {
+        /// <summary>
+        ///     Returns the transform for converting from tablet to element
+        ///     relative coordinates.
+        /// </summary>
+        internal GeneralTransform GetTabletToElementTransform(IInputElement relativeTo)
+        {
+            GeneralTransformGroup group = new GeneralTransformGroup();
+            Matrix toDevice = _inputSource.Value.CompositionTarget.TransformToDevice;
+            toDevice.Invert();
+            group.Children.Add(new MatrixTransform(PointerTabletDevice.TabletToScreen * toDevice));
+            group.Children.Add(StylusDevice.GetElementTransform(relativeTo));
+            return group;
+        }
+
+        ... // 忽略其他代码
+    }
+```
+
+这里面方法存在重点内容，那就是 PointerTabletDevice 的 TabletToScreen 属性的计算方法。这个矩阵的计算需要用到开始初始化过程的 [GetPointerDeviceRects](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevicerects) 函数获取 的 `displayRect` 尺寸，以及 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 获取的 X 和 Y 属性描述信息，属性的定义代码如下
+
+```csharp
+        internal Matrix TabletToScreen
+        {
+            get
+            {
+                return new Matrix(_tabletInfo.SizeInfo.ScreenSize.Width / _tabletInfo.SizeInfo.TabletSize.Width, 0,
+                                   0, _tabletInfo.SizeInfo.ScreenSize.Height / _tabletInfo.SizeInfo.TabletSize.Height,
+                                   0, 0);
+            }
+        }
+```
+
+可以看到这是一个用于缩放的 Matrix 对象，正是 [GetPointerDeviceRects](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevicerects) 获取的屏幕尺寸以及 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 获取的 X 和 Y 属性描述信息构成的 TabletSize 的比值
+
+回顾一下 `_tabletInfo` 的 SizeInfo 的创建代码，可以看到 TabletSize 完全是由描述符的尺寸决定，代码如下
+
+```csharp
+            // 以下代码在 PointerTabletDeviceInfo.cs 文件中
+            // private bool TryInitializeSupportedStylusPointProperties()
+            SupportedPointerProperties = new UnsafeNativeMethods.POINTER_DEVICE_PROPERTY[propCount];
+
+            success = UnsafeNativeMethods.GetPointerDeviceProperties(Device, ref propCount, SupportedPointerProperties);
+
+            ... // 忽略其他代码
+
+            // private bool TryInitializeDeviceRects()
+            var deviceRect = new UnsafeNativeMethods.RECT();
+            var displayRect = new UnsafeNativeMethods.RECT();
+
+            success = UnsafeNativeMethods.GetPointerDeviceRects(_deviceInfo.device, ref deviceRect, ref displayRect);
+
+            if (success)
+            {
+                // We use the max X and Y properties here as this is more readily useful for raw data
+                // which is where all conversions come from.
+                SizeInfo = new TabletDeviceSizeInfo
+                (
+                    new Size(SupportedPointerProperties[StylusPointDescription.RequiredXIndex].logicalMax,
+                    SupportedPointerProperties[StylusPointDescription.RequiredYIndex].logicalMax),
+
+                    new Size(displayRect.right - displayRect.left, displayRect.bottom - displayRect.top)
+                );
+            }
+
+    internal struct TabletDeviceSizeInfo
+    {
+        public Size TabletSize;
+        public Size ScreenSize;
+
+        // Constructor
+        internal TabletDeviceSizeInfo(Size tabletSize, Size screenSize)
+        {
+            TabletSize = tabletSize;
+            ScreenSize = screenSize;
+        }
+    }
+```
+
+如此即可使用 TabletToScreen 属性将收到的基于 Tablet 坐标系的裸指针消息的坐标转换为屏幕坐标，再配合 TransformToDevice 取反即可转换到 WPF 坐标系
