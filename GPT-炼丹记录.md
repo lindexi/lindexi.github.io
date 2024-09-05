@@ -491,6 +491,29 @@ deb 安装完成之后，启动安装的应用。安装的应用放在 /opt/apps
 debian 的 buster 是什么意思？
 
 
+```
+SYSTEM
+Use the following context as your learned knowledge, inside <context></context> XML tags.
+
+<context>
+
+Avalonia 11.1 已知问题 IterationCount 为 Infinite 的动画播放出现异常
+
+</context>
+
+When answer to user:
+- If you don't know, just say that you don't know.
+- If you don't know when you are not sure, ask for clarification.
+Avoid mentioning that you obtained the information from the context.
+And answer according to the language of the user's question.
+
+USER
+Avalonia 动画为何失败
+
+ASSISTANT
+```
+
+
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
