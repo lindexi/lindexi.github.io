@@ -38,6 +38,9 @@
 [WPF 从裸 Win 32 的 WM_Pointer 消息获取触摸点绘制笔迹](https://blog.lindexi.com/post/WPF-%E4%BB%8E%E8%A3%B8-Win-32-%E7%9A%84-WM_Pointer-%E6%B6%88%E6%81%AF%E8%8E%B7%E5%8F%96%E8%A7%A6%E6%91%B8%E7%82%B9%E7%BB%98%E5%88%B6%E7%AC%94%E8%BF%B9.html )
 <!-- [WPF 从裸 Win 32 的 WM_Pointer 消息获取触摸点绘制笔迹 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18390983 ) -->
 
+[dotnet 读 WPF 源代码笔记 从 WM_POINTER 消息到 Touch 事件](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%BB%8E-WM_POINTER-%E6%B6%88%E6%81%AF%E5%88%B0-Touch-%E4%BA%8B%E4%BB%B6.html )
+<!-- [dotnet 读 WPF 源代码笔记 从 WM_POINTER 消息到 Touch 事件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18403860 ) -->
+
 ## 功能
 
 [WPF 多指触摸拖拽窗口 拖动修改窗口坐标](https://blog.lindexi.com/post/WPF-%E5%A4%9A%E6%8C%87%E8%A7%A6%E6%91%B8%E6%8B%96%E6%8B%BD%E7%AA%97%E5%8F%A3-%E6%8B%96%E5%8A%A8%E4%BF%AE%E6%94%B9%E7%AA%97%E5%8F%A3%E5%9D%90%E6%A0%87.html )

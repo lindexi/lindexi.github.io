@@ -8,7 +8,9 @@
 <!-- csdn -->
 <!-- 标签：WPF，触摸，源代码分析 -->
 
-在 WPF 界面框架核心就是交互和渲染，触摸是交互的一部分。在 WPF 是需要使用多个线程来做触摸和渲染，触摸是单独一个线程，这个线程就是只获得触摸，而将触摸转路由是在主线程。
+在 WPF 界面框架核心就是交互和渲染，触摸是交互的一部分。在 WPF 是需要使用多个线程来做触摸和渲染，触摸是单独一个线程，这个线程就是只获得触摸，而将触摸转路由的逻辑是在主线程执行
+
+在 WPF 的触摸逻辑包含了开启 WM_POINTER 支持和不开启 WM_POINTER 支持的两个不同模式，本文重点在于不开启 WM_POINTER 支持下的逻辑行为。如对开启 WM_POINTER 支持时的逻辑感兴趣，还请参阅 [dotnet 读 WPF 源代码笔记 从 WM_POINTER 消息到 Touch 事件](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%BB%8E-WM_POINTER-%E6%B6%88%E6%81%AF%E5%88%B0-Touch-%E4%BA%8B%E4%BB%B6.html )
 
 <!-- ![](image/WPF 触摸到事件/WPF 触摸到事件11.png) -->
 
@@ -441,7 +443,8 @@ internal void FireRawStylusInput(RawStylusInput args)
 		}
 ```
 
-本文不告诉大家 PointerLogic 相关的方法，如何开启 Pointer 消息请看[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html )，这里假如是创建 `WispLogic` 就会进入构造，这里只是简单的初始化属性
+本文没有告诉大家的部分是开启 WM_POINTER 支持时的逻辑。开启 WM_POINTER 支持将会激活 PointerLogic 的相关实现逻辑，如大家对这部分感兴趣，还请参阅 [dotnet 读 WPF 源代码笔记 从 WM_POINTER 消息到 Touch 事件](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%BB%8E-WM_POINTER-%E6%B6%88%E6%81%AF%E5%88%B0-Touch-%E4%BA%8B%E4%BB%B6.html )
+<!-- 本文不告诉大家 PointerLogic 相关的方法，如何开启 Pointer 消息请看[win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html )，这里假如是创建 `WispLogic` 就会进入构造，这里只是简单的初始化属性 -->
 
 在 HwndStylusInputProvider.HwndStylusInputProvider 除了创建 StylusLogic 还调用 RegisterHwndForInput 这里传入的是 InputManager HwndSource 通过这两个创建 WispTabletDevices 、 PenContexts 并且通过 IPimcManager2 拿到值
 
@@ -660,5 +663,3 @@ internal void FireRawStylusInput(RawStylusInput args)
 [win10 支持默认把触摸提升鼠标事件 打开 Pointer 消息](https://blog.lindexi.com/post/win10-%E6%94%AF%E6%8C%81%E9%BB%98%E8%AE%A4%E6%8A%8A%E8%A7%A6%E6%91%B8%E6%8F%90%E5%8D%87-Pointer-%E6%B6%88%E6%81%AF.html )
 
 [WPF 禁用实时触摸](https://lindexi.gitee.io/post/WPF-%E7%A6%81%E7%94%A8%E5%AE%9E%E6%97%B6%E8%A7%A6%E6%91%B8.html )
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
