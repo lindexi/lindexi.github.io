@@ -5,7 +5,8 @@
 <!--more-->
 <!-- CreateTime:2024/09/01 07:15:29 -->
 
-<!-- 草稿 -->
+<!-- 发布 -->
+<!-- 博客 -->
 
 由于 WPF 触摸部分会兼顾开启 Pointer 消息和不开启 Pointer 消息，为了方便大家理解，本文分为两个部分。第一个部分是脱离 WPF 框架，聊聊一个 Win32 程序如何从 Win32 的消息循环获取到的 WM_POINTER 消息处理转换为输入坐标点，以及在触摸下获取触摸信息。第二部分是 WPF 框架是如何安排上这些处理逻辑，如何和 WPF 框架的进行对接
 
@@ -1202,8 +1203,6 @@ namespace System.Windows.Interop
 在 GenerateRawStylusData 方法里面，先通过 PointerTabletDevice 取出支持的 Pointer 的设备属性列表的长度，用于和输入点的信息进行匹配。回忆一下，这部分获取逻辑是在上文介绍到对 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 函数的调用提到的，且也说明了此函数拿到的设备属性列表的顺序是非常关键的，设备属性列表的顺序和在后续 WM_POINTER 消息拿到的裸数据的顺序是直接对应的
 
 ```csharp
-namespace System.Windows.Interop
-{
     /// <summary>
     /// Implements an input provider per hwnd for WM_POINTER messages
     /// </summary>
@@ -1230,7 +1229,6 @@ namespace System.Windows.Interop
 
         ... // 忽略其他代码
     }
-}
 ```
 
 由每个 Pointer 的属性长度配合总共的历史点数量，即可获取到这里面使用到的 `rawPointerData` 数组的长度。这部分代码相信大家很好就理解了
@@ -1504,7 +1502,6 @@ namespace System.Windows.Input.StylusPointer
         public Size TabletSize;
         public Size ScreenSize;
 
-        // Constructor
         internal TabletDeviceSizeInfo(Size tabletSize, Size screenSize)
         {
             TabletSize = tabletSize;
@@ -1514,3 +1511,252 @@ namespace System.Windows.Input.StylusPointer
 ```
 
 如此即可使用 TabletToScreen 属性将收到的基于 Tablet 坐标系的裸指针消息的坐标转换为屏幕坐标，再配合 TransformToDevice 取反即可转换到 WPF 坐标系
+
+在以上代码里面，由于传入 GetTabletToElementTransform 的 `relativeTo` 参数是 null 的值，将导致 `StylusDevice.GetElementTransform(relativeTo)` 返回一个单位矩阵，这就意味着在 GetTabletToElementTransform 方法里面的 `group.Children.Add(StylusDevice.GetElementTransform(relativeTo));` 是多余的，也许后续 WPF 版本这里会被我优化掉
+
+回顾一下 StylusPointCollection 的构造函数参数，有用的参数只有前三个，分别是 `rsir.StylusPointDescription` 传入描述符信息，以及 `rsir.GetRawPacketData()` 返回裸指针数据，以及 `GetTabletToElementTransform(null)` 方法返回转换为 WPF 坐标系的矩阵
+
+```csharp
+_currentStylusPoints = new StylusPointCollection(rsir.StylusPointDescription, rsir.GetRawPacketData(), GetTabletToElementTransform(null), Matrix.Identity);
+```
+
+那 StylusPointCollection 的最后一个参数，即上述代码传入的 `Matrix.Identity` 有什么用途？其实在 StylusPointCollection 的设计里面，第三个参数和第四个参数是二选一的，且第三个参数的优先级大于第四个参数。即在 StylusPointCollection 底层会判断第三个参数是否有值，如果没有值才会使用第四个参数
+
+在 StylusPointCollection 构造函数里面将会对裸 Pointer 数据进行处理，现在 GetRawPacketData 拿到的裸 Pointer 数据的 int 数组里面的数据排列内容大概如下
+
+```
+| X 坐标 | Y 坐标 | 压感（可选）| StylusPointDescription 里面的属性列表一一对应 |
+| X 坐标 | Y 坐标 | 压感（可选）| StylusPointDescription 里面的属性列表一一对应 |
+| X 坐标 | Y 坐标 | 压感（可选）| StylusPointDescription 里面的属性列表一一对应 |
+```
+
+存放的是一个或多个点信息，每个点的信息都是相同的二进制长度，分包非常简单
+
+进入到 StylusPointCollection 的构造函数，看看其代码签名定义
+
+```csharp
+namespace System.Windows.Input
+{
+    public class StylusPointCollection : Collection<StylusPoint>
+    {
+        internal StylusPointCollection(StylusPointDescription stylusPointDescription, int[] rawPacketData, GeneralTransform tabletToView, Matrix tabletToViewMatrix)
+        {
+            ... // 忽略其他代码
+        }
+    }
+}
+```
+
+在构造函数里面，先调用 StylusPointDescription 的 GetInputArrayLengthPerPoint 方法，获取每个点的二进制长度，代码如下
+
+```csharp
+    public class StylusPointCollection : Collection<StylusPoint>
+    {
+        internal StylusPointCollection(StylusPointDescription stylusPointDescription, int[] rawPacketData, GeneralTransform tabletToView, Matrix tabletToViewMatrix)
+        {
+            ... // 忽略其他代码
+            int lengthPerPoint = stylusPointDescription.GetInputArrayLengthPerPoint();
+
+            ... // 忽略其他代码
+        }
+    }
+```
+
+获取到了一个点的二进制长度，自然就能算出传入的 `rawPacketData` 参数包含多少个点的信息
+
+```csharp
+        internal StylusPointCollection(StylusPointDescription stylusPointDescription, int[] rawPacketData, GeneralTransform tabletToView, Matrix tabletToViewMatrix)
+        {
+            ... // 忽略其他代码
+            int lengthPerPoint = stylusPointDescription.GetInputArrayLengthPerPoint();
+            int logicalPointCount = rawPacketData.Length / lengthPerPoint;
+            Debug.Assert(0 == rawPacketData.Length % lengthPerPoint, "Invalid assumption about packet length, there shouldn't be any remainder");
+            ... // 忽略其他代码
+        }
+```
+
+以上代码的 `Debug.Assert` 就是要确保传入的 `rawPacketData` 是可以被 `lengthPerPoint` 即每个点的二进制长度所整除
+
+完成准备工作之后，接下来就可以将 `rawPacketData` 解出点了，如下面代码所示
+
+```csharp
+            int lengthPerPoint = stylusPointDescription.GetInputArrayLengthPerPoint();
+            int logicalPointCount = rawPacketData.Length / lengthPerPoint;
+
+            for (int count = 0, i = 0; count < logicalPointCount; count++, i += lengthPerPoint)
+            {
+                //first, determine the x, y values by xf-ing them
+                Point p = new Point(rawPacketData[i], rawPacketData[i + 1]);
+
+                ... // 忽略其他代码
+
+                int startIndex = 2;
+
+                ... // 忽略其他代码
+
+                int[] data = null;
+                int dataLength = lengthPerPoint - startIndex;
+                if (dataLength > 0)
+                {
+                    //copy the rest of the data
+                    var rawArrayStartIndex = i + startIndex;
+                    data = rawPacketData.AsSpan(rawArrayStartIndex, dataLength).ToArray();
+                }
+
+                StylusPoint newPoint = new StylusPoint(p.X, p.Y, StylusPoint.DefaultPressure, _stylusPointDescription, data, false, false);
+
+                ... // 忽略其他代码
+
+                ((List<StylusPoint>)this.Items).Add(newPoint);
+            }
+```
+
+以上代码忽略的部分包含了一些细节，如对 Point 的坐标转换，使用 `Point p = new Point(rawPacketData[i], rawPacketData[i + 1]);` 拿到的点的坐标是属于 Tablet 坐标，需要使用传入的参数转换为 WPF 坐标，如下面代码所示
+
+```csharp
+        internal StylusPointCollection(StylusPointDescription stylusPointDescription, int[] rawPacketData, GeneralTransform tabletToView, Matrix tabletToViewMatrix)
+        {
+                ... // 忽略其他代码
+
+                Point p = new Point(rawPacketData[i], rawPacketData[i + 1]);
+                if (tabletToView != null)
+                {
+                    tabletToView.TryTransform(p, out p);
+                }
+                else
+                {
+                    p = tabletToViewMatrix.Transform(p);
+                }
+
+                ... // 忽略其他代码
+        }
+```
+
+通过以上的代码就可以看到 StylusPointCollection 构造函数使用了第三个或第四个参数作为变换，如果第三个参数存在则优先使用第三个参数
+
+其他处理的逻辑就是对压感的额外处理，压感作为 StylusPoint 的一个明确参数，需要额外判断处理
+
+```csharp
+                int startIndex = 2; // X 和 Y 占用了两个元素
+                bool containsTruePressure = stylusPointDescription.ContainsTruePressure;
+                if (containsTruePressure)
+                {
+                    // 如果有压感的话，压感也需要多占一个元素
+                    //don't copy pressure in the int[] for extra data
+                    startIndex++;
+                }
+
+                StylusPoint newPoint = new StylusPoint(p.X, p.Y, StylusPoint.DefaultPressure, _stylusPointDescription, data, false, false);
+                if (containsTruePressure)
+                {
+                    // 压感必定是第三个元素，有压感则更新压感
+                    //use the algorithm to set pressure in StylusPoint
+                    int pressure = rawPacketData[i + 2];
+                    newPoint.SetPropertyValue(StylusPointProperties.NormalPressure, pressure);
+                }
+```
+
+如此即可解包 `| X 坐标 | Y 坐标 | 压感（可选）| StylusPointDescription 里面的属性列表一一对应 |` 里面前三个元素，其中压感是可选的。后续的 `StylusPointDescription 里面的属性列表一一对应` 部分需要重新创建 data 数组传入到各个 StylusPoint 里面，代码如下
+
+```csharp
+                int[] data = null;
+                int dataLength = lengthPerPoint - startIndex;
+                if (dataLength > 0)
+                {
+                    //copy the rest of the data
+                    var rawArrayStartIndex = i + startIndex;
+                    data = rawPacketData.AsSpan(rawArrayStartIndex, dataLength).ToArray();
+                }
+```
+
+后续对 StylusPoint 获取属性时，即可通过描述信息获取，描述信息获取到值的方式就是取以上代码传入的 `data` 二进制数组的对应下标的元素，比如触摸点的宽度或高度信息
+
+完成转换为 StylusPointCollection 之后，即可使用 `InputManager.UnsecureCurrent.ProcessInput` 方法将裸输入信息调度到 WPF 输入管理器
+
+```csharp
+        private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)
+        {
+             ... // 忽略其他代码
+                    InputReportEventArgs irea = new InputReportEventArgs(_currentStylusDevice.StylusDevice, rsir)
+                    {
+                        RoutedEvent = InputManager.PreviewInputReportEvent,
+                    };
+
+                    // Now send the input report
+                    InputManager.UnsecureCurrent.ProcessInput(irea);
+             ... // 忽略其他代码
+        }
+```
+
+进入到 ProcessInput 里面将会走标准的路由事件机制，通过路由机制触发 Touch 或 Stylus 事件，接下来的逻辑看一下调用堆栈即可，和其他的输入事件逻辑差不多
+
+```
+>   Lindexi.dll!Lindexi.MainWindow.MainWindow_TouchDown(object sender, System.Windows.Input.TouchEventArgs e)
+    PresentationCore.dll!System.Windows.RoutedEventArgs.InvokeHandler(System.Delegate handler, object target)
+    PresentationCore.dll!System.Windows.EventRoute.InvokeHandlersImpl(object source, System.Windows.RoutedEventArgs args, bool reRaised) 
+    PresentationCore.dll!System.Windows.UIElement.RaiseEventImpl(System.Windows.DependencyObject sender, System.Windows.RoutedEventArgs args)
+    PresentationCore.dll!System.Windows.UIElement.RaiseTrustedEvent(System.Windows.RoutedEventArgs args) 
+    PresentationCore.dll!System.Windows.Input.InputManager.ProcessStagingArea()
+    PresentationCore.dll!System.Windows.Input.TouchDevice.RaiseTouchDown() 
+    PresentationCore.dll!System.Windows.Input.TouchDevice.ReportDown() 
+    PresentationCore.dll!System.Windows.Input.StylusTouchDeviceBase.OnDown() 
+    PresentationCore.dll!System.Windows.Input.StylusPointer.PointerLogic.PromoteMainDownToTouch(System.Windows.Input.StylusPointer.PointerStylusDevice stylusDevice, System.Windows.Input.StagingAreaInputItem stagingItem)
+    PresentationCore.dll!System.Windows.Input.InputManager.RaiseProcessInputEventHandlers(System.Tuple<System.Windows.Input.ProcessInputEventHandler, System.Delegate[]> postProcessInput, System.Windows.Input.ProcessInputEventArgs processInputEventArgs) 
+    PresentationCore.dll!System.Windows.Input.InputManager.ProcessStagingArea()
+    PresentationCore.dll!System.Windows.Interop.HwndPointerInputProvider.ProcessMessage(uint pointerId, System.Windows.Input.RawStylusActions action, int timestamp) 
+    PresentationCore.dll!System.Windows.Interop.HwndPointerInputProvider.System.Windows.Interop.IStylusInputProvider.FilterMessage(nint hwnd, MS.Internal.Interop.WindowMessage msg, nint wParam, nint lParam, ref bool handled) 
+    PresentationCore.dll!System.Windows.Interop.HwndSource.InputFilterMessage(nint hwnd, int msg, nint wParam, nint lParam, ref bool handled)
+```
+
+由于我跑的是 Release 版本的 WPF 导致了有一些函数被内联，如从 `HwndPointerInputProvider.ProcessMessage` 到 `InputManager.ProcessStagingArea` 中间就少了 `InputManager.ProcessInput` 函数，完全的无函数内联的堆栈应该如下
+
+```csharp
+    PresentationCore.dll!System.Windows.Input.InputManager.ProcessStagingArea()
+    PresentationCore.dll!System.Windows.Input.InputManager.ProcessInput()
+    PresentationCore.dll!System.Windows.Interop.HwndPointerInputProvider.ProcessMessage(uint pointerId, System.Windows.Input.RawStylusActions action, int timestamp)
+```
+
+如下面代码是 ProcessInput 函数的代码
+
+```csharp
+    public sealed class InputManager : DispatcherObject
+    {
+        public bool ProcessInput(InputEventArgs input)
+        {
+            ... // 忽略其他代码
+            PushMarker();
+            PushInput(input, null);
+            RequestContinueProcessingStagingArea();
+
+            bool handled = ProcessStagingArea();
+            return handled;
+        }
+    }
+```
+
+进入到 ProcessStagingArea 方法会执行具体的调度逻辑，用上述触摸按下的堆栈作为例子，将会进入到 PointerLogic 的 PostProcessInput 方法里面，由 PostProcessInput 方法调用到 PromoteMainToOther 再到 PromoteMainToTouch 最后到 PromoteMainDownToTouch 方法。只不过中间的几个方法被内联了，直接从堆栈上看就是从 RaiseProcessInputEventHandlers 到 PromoteMainDownToTouch 方法，堆栈如下
+
+```
+PresentationCore.dll!System.Windows.Input.StylusPointer.PointerLogic.PromoteMainDownToTouch(...)
+PresentationCore.dll!System.Windows.Input.InputManager.RaiseProcessInputEventHandlers(...)
+```
+
+核心触发按下的代码就在 PromoteMainDownToTouch 里，其代码大概如下
+
+```csharp
+        private void PromoteMainDownToTouch(PointerStylusDevice stylusDevice, StagingAreaInputItem stagingItem)
+        {
+            PointerTouchDevice touchDevice = stylusDevice.TouchDevice;
+
+            ... // 忽略其他代码
+
+            touchDevice.OnActivate();
+            touchDevice.OnDown();
+        }
+```
+
+从上文可以知道，在 HwndPointerInputProvider 的 ProcessMessage 里面调用了 `_currentStylusDevice.Update` 方法时，就将输入的数据存放到 PointerStylusDevice 里面
+
+后续的逻辑就和 [WPF 模拟触摸设备](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F%E8%A7%A6%E6%91%B8%E8%AE%BE%E5%A4%87.html ) 提到的使用方法差不多，只是数据提供源是从 PointerStylusDevice 提供。如果大家对进入到 InputManager 的后续逻辑感兴趣，可参考 [WPF 通过 InputManager 模拟调度触摸事件](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-InputManager-%E6%A8%A1%E6%8B%9F%E8%B0%83%E5%BA%A6%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6.html ) 提供的方法自己跑一下
+
+更多触摸请看 [WPF 触摸相关](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E7%9B%B8%E5%85%B3.html )
