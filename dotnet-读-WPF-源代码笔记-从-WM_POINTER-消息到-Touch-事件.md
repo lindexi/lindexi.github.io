@@ -1,17 +1,19 @@
 
 # dotnet 读 WPF 源代码笔记 从 WM_POINTER 消息到 Touch 事件
 
-本文记录我读 WPF 源代码的笔记，在 WPF 底层是如何从 Win32 的消息循环获取到的 WM_POINTER 消息处理转换作为 Touch 事件的参数
+本文记录我读 WPF 源代码的笔记，本文将介绍在 WPF 底层是如何从 Win32 的消息循环里获取到的 WM_POINTER 消息处理转换作为 Touch 事件的参数
 
 <!--more-->
 
 
 <!-- CreateTime:2024/09/01 07:15:29 -->
-
+<!-- 置顶1 -->
 <!-- 发布 -->
 <!-- 博客 -->
 
-由于 WPF 触摸部分会兼顾开启 Pointer 消息和不开启 Pointer 消息，为了方便大家理解，本文分为两个部分。第一个部分是脱离 WPF 框架，聊聊一个 Win32 程序如何从 Win32 的消息循环获取到的 WM_POINTER 消息处理转换为输入坐标点，以及在触摸下获取触摸信息。第二部分是 WPF 框架是如何安排上这些处理逻辑，如何和 WPF 框架的进行对接
+由于 WPF 触摸部分会兼顾开启 Pointer 消息和不开启 Pointer 消息，在 WPF 框架里面的逻辑会有部分是兼容逻辑，为了方便大家理解，本文分为两个部分。第一个部分是脱离 WPF 框架，聊聊一个 Win32 程序如何从 Win32 的消息循环获取到的 WM_POINTER 消息处理转换为输入坐标点，以及在触摸下获取触摸信息。第二部分是 WPF 框架是如何安排上这些处理逻辑，如何和 WPF 框架的进行对接
+
+第一部分脱离了 WPF 框架，也就没有了兼容不开启 Pointer 消息的负担，我将使用简单的描述点出关键部分
 
 ## 处理 Pointer 消息
 
@@ -35,7 +37,7 @@
 
 只是从获取 [POINTER_INFO](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-pointer_info) 的 `ptPixelLocationRaw` 字段换成 `ptHimetricLocationRaw` 字段
 
-使用 `ptHimetricLocationRaw` 字段的优势在于可以获取不丢失精度的信息，但需要额外调用 [GetPointerDeviceRects](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevicerects) 函数获取 `displayRect` 和 `pointerDeviceRect` 信息用于转换坐标点
+使用 `ptHimetricLocationRaw` 字段的优势在于可以获取不丢失精度的信息，但需要额外调用 [GetPointerDeviceRects](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevicerects) 函数获取 `displayRect` 和 `pointerDeviceRect` 信息用于转换坐标点，转换逻辑如以下代码所示
 
 ```csharp
             PInvoke.GetPointerDeviceRects(pointerInfo.sourceDevice, &pointerDeviceRect, &displayRect);
@@ -119,6 +121,8 @@ git pull origin 322313ee55d0eeaae7148b24ca279e1df087871e
 了解了一个 Win32 应用与 WM_POINTER 消息的对接方式，咱来看看 WPF 具体是如何做的。了解了对接方式之后，阅读 WPF 源代码的方式可以是通过必须调用的方法的引用，找到整个 WPF 的脉络
 
 在开始之前必须说明的是，本文的大部分代码都是有删减的代码，只保留和本文相关的部分。现在 WPF 是完全开源的，基于最友好的 MIT 协议，可以自己拉下来代码进行二次修改发布，想看完全的代码和调试整个过程可以自己从开源地址拉取整个仓库下来，开源地址是： <https://github.com/dotnet/wpf>
+
+本文以下部分仅为开启 WM_POINTER 消息时的 WPF 框架对接的逻辑，如对不开启 WM_POINTER 支持时的逻辑感兴趣，还请参阅 [WPF 触摸到事件](https://blog.lindexi.com/post/WPF-%E8%A7%A6%E6%91%B8%E5%88%B0%E4%BA%8B%E4%BB%B6.html )
 
 在 WPF 里面，触摸初始化的故事开始是在 `PointerTabletDeviceCollection.cs` 里面，调用 [GetPointerDevices](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevices ) 方法进行初始化获取设备数量，之后的每个设备都调用 [GetPointerDeviceProperties](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdeviceproperties ) 方法，获取 HID 描述符上报的对应设备属性，有删减的代码如下
 
@@ -1139,6 +1143,8 @@ namespace System.Windows.Input.StylusPointer
 }
 ```
 
+通过以上方式即可通过 PointerId 获取的 `cursorId` 进而获取到对应 WPF 里面的设备对象，进而拿到 WPF 里面的设备 Id 号。通过上文的描述也可以看到 PointerId 和 TouchDevice 等的 Id 是不一样的，但是之间有关联关系
+
 调用了 UpdateCurrentTabletAndStylus 的一个副作用就是同步更新了 `_currentTabletDevice` 和 `_currentStylusDevice` 字段的值，后续逻辑即可直接使用这两个字段而不是传参数
 
 完成关联逻辑之后，即进入 GenerateRawStylusData 方法，这个方法是 WPF 获取 Pointer 具体的消息的核心方法，方法签名如下
@@ -1338,7 +1344,7 @@ namespace System.Windows.Interop
                         };
 ```
 
-将创建的 RawStylusInputReport 更新到当前的设备，作为设备的最后的指针信息
+将创建的 RawStylusInputReport 更新到当前的设备，作为设备的最新的指针信息
 
 ```csharp
         private bool ProcessMessage(uint pointerId, RawStylusActions action, int timestamp)

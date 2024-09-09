@@ -1042,6 +1042,8 @@
 
  * [dotnet 如何更改应用在任务管理器显示的进程名 AssemblyTitle 的值](dotnet-如何更改应用在任务管理器显示的进程名-AssemblyTitle-的值.md)
 
+ * [dotnet 如何给代码写性能测试 入门篇](dotnet-如何给代码写性能测试-入门篇.md)
+
  * [dotnet 如何访问到 UNO 框架里面的 internal 不公开成员](dotnet-如何访问到-UNO-框架里面的-internal-不公开成员.md)
 
  * [dotnet 如何调试 SmartSql 的实际执行 SQL 语句](dotnet-如何调试-SmartSql-的实际执行-SQL-语句.md)
