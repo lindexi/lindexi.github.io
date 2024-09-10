@@ -49,7 +49,28 @@
 
 [Content Start]
 
-在 Linux 系统上，使用 PointToScreen 在 Loaded 和 Activated 事件里面获取不到正确的坐标。而在 Windows 系统上，使用 PointToScreen 可以在 Loaded 时就获取到正确的屏幕坐标
+在 WPF 里面，如果使用了 ManagementEventWatcher 监听 WMI 变更，则会导致触摸失效
+
+复现步骤如下
+
+1. 安装 System.Management 库用于使用 WqlEventQuery 监听 WMI 变更
+2. 监听 TouchDown 事件输出断点信息
+
+整个代码如下
+
+[Code1]
+
+当我注释掉 `insertWatcher.Start();` 这行代码的时候，我触摸我的窗口，我可以看到 `MainWindow_TouchDown` 方法的断点被命中。当我执行过 `insertWatcher.Start();` 这行代码的时候，无论我如何触摸窗口，都不会进入 `MainWindow_TouchDown` 方法
+
+且此时可以看到 FirstChanceException 事件被触发，打印的异常信息如下
+
+[Code2]
+
+我所使用的代码的 MainWindow 文件内容如下
+
+[Code3]
+
+我将我的最小复现项目上传到 github 上，你可以拉取我的项目复现问题
 
 [Content End]
 
