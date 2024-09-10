@@ -2874,6 +2874,8 @@
 
  * [WPF 已知问题 清空 CollectionView 的 SortDescriptions 可能抛出空异常](WPF-已知问题-清空-CollectionView-的-SortDescriptions-可能抛出空异常.md)
 
+ * [WPF 已知问题 监听 WMI 事件导致触摸失效](WPF-已知问题-监听-WMI-事件导致触摸失效.md)
+
  * [WPF 已知问题 窗口在屏幕外创建将不会刷新渲染](WPF-已知问题-窗口在屏幕外创建将不会刷新渲染.md)
 
  * [WPF 已知问题 资源字典树引用与资源寻找的坑](WPF-已知问题-资源字典树引用与资源寻找的坑.md)

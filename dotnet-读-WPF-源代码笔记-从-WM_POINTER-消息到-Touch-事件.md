@@ -361,7 +361,7 @@ namespace System.Windows.Input.StylusPointer
 
 根据 HID 基础知识可以知道，通过 `usagePageId` 和 `usageId` 即可了解到此设备属性的具体含义。更多请参阅 HID 标准文档： <http://www.usb.org/developers/hidpage/Hut1_12v2.pdf>
 
-在 WPF 使用到的 Pointer 的 `usagePageId` 的只有以下枚举所列举的值
+在 WPF 使用到的 Pointer 的 `usagePageId` 只有以下枚举所列举的值
 
 ```csharp
         /// <summary>
@@ -394,7 +394,7 @@ namespace System.Windows.Input.StylusPointer
         }
 ```
 
-在 WPF 使用到的 Pointer 的 `usageId` 的只有以下枚举所列举的值
+在 WPF 使用到的 Pointer 的 `usageId` 只有以下枚举所列举的值
 
 ```csharp
        /// <summary>
@@ -1291,7 +1291,7 @@ namespace System.Windows.Interop
         private SecurityCriticalDataClass<HwndSource> _source;
 ```
 
-这里的 GetOriginOffsetsLogical 的实现逻辑就是去窗口的 0,0 点，看这个点会在屏幕的哪里，从而知道其偏移量。至于添加的 MatrixTransform 矩阵的 TabletToScreen 则在后文的具体转换逻辑会讲到，这里先跳过
+这里的 GetOriginOffsetsLogical 的实现逻辑就是取窗口的 0,0 点，看这个点会在屏幕的哪里，从而知道其偏移量。至于添加到 MatrixTransform 矩阵的 TabletToScreen 则在后文的具体转换逻辑会讲到，这里先跳过
 
 获取到相对于窗口的坐标偏移量之后，即可将其叠加给到每个点上，用于将这些点转换为窗口坐标系。但是在此之前还需要将获取到的 `rawPointerData` 进行加工。这一个步骤仅仅只是在 WPF 有需求，仅仅只是为了兼容 WISP 获取到的裸数据的方式。其相差点在于通过 Pointer 获取到的 `rawPointerData` 的二进制数据格式里面，没有带上按钮的支持情况的信息，在 WPF 这边需要重新创建一个数组对 `rawPointerData` 重新排列，确保每个点的数据都加上按钮的信息数据
 
