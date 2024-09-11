@@ -118,6 +118,9 @@
 
 [WPF dotnet 6 开启 PM v2 的 DPI 感知 导致触摸线程访问 UI 属性抛异常](https://blog.lindexi.com/post/WPF-dotnet-6-%E5%BC%80%E5%90%AF-PM-v2-%E7%9A%84-DPI-%E6%84%9F%E7%9F%A5-%E5%AF%BC%E8%87%B4%E8%A7%A6%E6%91%B8%E7%BA%BF%E7%A8%8B%E8%AE%BF%E9%97%AE-UI-%E5%B1%9E%E6%80%A7%E6%8A%9B%E5%BC%82%E5%B8%B8.html )
 
+[WPF 已知问题 监听 WMI 事件导致触摸失效](https://blog.lindexi.com/post/WPF-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E7%9B%91%E5%90%AC-WMI-%E4%BA%8B%E4%BB%B6%E5%AF%BC%E8%87%B4%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )
+<!-- [WPF 已知问题 监听 WMI 事件导致触摸失效 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18407581 ) -->
+
 ## 笔迹
 
 - [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )

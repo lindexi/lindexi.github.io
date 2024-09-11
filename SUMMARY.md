@@ -1802,6 +1802,8 @@
 
  * [visual Studio 无法调试，提示程序跟踪已退出](visual-Studio-无法调试，提示程序跟踪已退出.md)
 
+ * [Visual Studio 查看项目的能力](Visual-Studio-查看项目的能力.md)
+
  * [visual studio 2015 warning MSB3246](visual-studio-2015-warning-MSB3246.md)
 
  * [Visual studio 创建项目失败vstemplate](Visual-studio-创建项目失败vstemplate.md)
