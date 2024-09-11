@@ -50,6 +50,8 @@ System.InvalidCastException: 没有注册接口
    at MS.Win32.Penimc.UnsafeNativeMethods.CoCreateInstance(Guid& clsid, Object punkOuter, Int32 context, Guid& iid)
 ```
 
+规避方法是不要在软件启动的时候立刻调用 WMI 组件，如让 ManagementEventWatcher 延迟几秒执行
+
 此问题已经报告给 WPF 官方，请看 <https://github.com/dotnet/wpf/issues/9752>
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/308096e0c8ede019f6dbe5bfe974ae1a12d7de42/WPFDemo/YanerehaylemJeekalhebel) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/308096e0c8ede019f6dbe5bfe974ae1a12d7de42/WPFDemo/YanerehaylemJeekalhebel) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快

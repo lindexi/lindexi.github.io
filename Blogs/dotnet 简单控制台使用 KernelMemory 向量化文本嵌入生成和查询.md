@@ -31,17 +31,17 @@ Microsoft.KernelMemory 是一个开源的服务和插件，专门用于通过自
 先点击`创建部署`按钮，如下图
 
 <!-- ![](image/dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询/dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024615119314318.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240912072854474-288760761.png)
 
 接着在选择模型这里选择 TextEmbedding 模型，本文这里选择的是 text-embedding-ada-002 模型，这是当前总体表现都很好的模型
 
 <!-- ![](image/dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询/dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20246151110233109.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240912072854910-1772725044.png)
 
 创建模型时需要给模型命名，这个命名将在后续咱的代码里面调用。我这里的部署名称使用的是 `Embedding` 名称，完成部署之后的界面内容大概如下
 
 <!-- ![](image/dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询/dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20246151114535686.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240912072855301-1129153691.png)
 
 
 完成以上准备工作之后，接下来可以开始新建控制台编写代码了。先新建一个 .NET 8 框架的控制台，当然了，这个时间点你要是激进一些也可以创建 .NET 9 框架的
