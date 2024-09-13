@@ -186,7 +186,7 @@ ClientToScreen
 然而以上的方法也存在不少的问题，比如忽略了 DPI 问题，以及精度问题。在大尺寸触摸屏上，直接使用 `ptPixelLocation` 字段将会画出锯齿的笔迹。如下图，黑色的线是直接使用 `ptPixelLocation` 字段收到的触摸点连接的折线
 
 <!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法2.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240913091327031-179054906.png)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240913092402712-133823995.png)
 
 上图红色的曲线是使用 [WPF 记一个特别简单的点集滤波平滑方法](https://blog.lindexi.com/post/WPF-%E8%AE%B0%E4%B8%80%E4%B8%AA%E7%89%B9%E5%88%AB%E7%AE%80%E5%8D%95%E7%9A%84%E7%82%B9%E9%9B%86%E6%BB%A4%E6%B3%A2%E5%B9%B3%E6%BB%91%E6%96%B9%E6%B3%95.html ) 博客提供的方法进行平滑的笔迹线
 <!-- [WPF 记一个特别简单的点集滤波平滑方法 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18387840 ) -->
