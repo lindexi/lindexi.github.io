@@ -1516,6 +1516,23 @@ drawingGroup.Transform = translateTransform;
 
 默认的 WindowStyle 是 SingleBorderWindow 类型的枚举
 
+### 隐藏窗口再调用 Maximized 属性
+
+如下代码
+
+```csharp
+    private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        await Task.Delay(2000);
+        Hide();
+        await Task.Delay(2000);
+        WindowState = WindowState.Maximized;
+        await Task.Delay(1000);
+        Show();
+    }
+```
+
+可以看到窗口调用 Hide 之后，调用 `WindowState = WindowState.Maximized;` 是没有效果的，窗口没有出现也没有最大化。等待调用 Show 方法的时候，将会显示窗口，窗口是最大化
 
 ## 获取 ContextMenu 附加关联的控件
 
