@@ -19,5 +19,16 @@
   "image\\一些好用的开发者工具\\一些好用的开发者工具4.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240913092406032-1222121562.png",
   "image\\一些好用的开发者工具\\一些好用的开发者工具5.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240913092406415-928547078.png",
   "image\\简单在 WinUI 仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能\\简单在 WinUI 仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能0.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240913092406900-1909248012.gif",
-  "image\\记内存条硬件损坏蓝屏的 dump 文件分析\\记内存条硬件损坏蓝屏的 dump 文件分析0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240913092407326-1395200233.png"
+  "image\\记内存条硬件损坏蓝屏的 dump 文件分析\\记内存条硬件损坏蓝屏的 dump 文件分析0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240913092407326-1395200233.png",
+  "image\\dotnet 9 WPF 支持 Style 的 Setter 填充内容时可忽略 Value 标签\\dotnet 9 WPF 支持 Style 的 Setter 填充内容时可忽略 Value 标签0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070907109-1844557942.png",
+  "image\\dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本\\dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070908396-1384610876.png",
+  "image\\dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口\\dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070909622-626182065.png",
+  "image\\dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口\\dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口1.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070910010-233821819.png",
+  "image\\dotnet 设置 X11 建立窗口之间的父子关系\\dotnet 设置 X11 建立窗口之间的父子关系1.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070911112-193720863.gif",
+  "image\\dotnet 设置 X11 建立窗口之间的父子关系\\dotnet 设置 X11 建立窗口之间的父子关系0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070911951-865414652.png",
+  "image\\dotnet 设置 X11 建立窗口之间的父子关系\\dotnet 设置 X11 建立窗口之间的父子关系2.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070912524-381628619.gif",
+  "image\\ReSharper 显示使用的颜色\\ReSharper 显示使用的颜色0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070913665-1514867230.png",
+  "image\\ReSharper 显示使用的颜色\\ReSharper 显示使用的颜色1.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070913991-995513222.png",
+  "image\\ReSharper 显示使用的颜色\\ReSharper 显示使用的颜色2.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070914424-2101740530.png",
+  "image\\学习 Avalonia 框架笔记 设置 X11 窗口从最小化状态还原为正常状态\\学习 Avalonia 框架笔记 设置 X11 窗口从最小化状态还原为正常状态0.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240915070917376-300435389.gif"
 }
