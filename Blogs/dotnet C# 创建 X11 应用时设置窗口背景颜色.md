@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 创建 X11 应用时设置窗口背景颜色
 description: 本文将告诉大家如何在 X11 里面创建一个窗口时，设置窗口的背景颜色
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,X11,C#
 category: 
 ---
 

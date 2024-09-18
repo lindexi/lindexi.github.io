@@ -1,10 +1,7 @@
 ---
 title: dotnet X11 的多屏触摸行为测试
 description: 故事的背景是我在给 Avalonia 加上触摸尺寸的支持时，代码审查过程中大佬提出了在多屏上的 X11 行为问题，为此我找了两个触摸屏进行测试 X11 的多屏触摸行为。由于我的设备有限，本文只记录我所测试到的行为
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,X11
 category: 
 ---
 

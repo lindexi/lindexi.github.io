@@ -1,10 +1,7 @@
 ---
 title: 从 Uno Platform 4 更新 Uno Platform 5 的迁移方法
 description: 本文记录我的一个小项目从 Uno Platform 4 更新 Uno Platform 5 的一些变更和迁移方法，由于项目太小，可能踩到的坑不多
-
-<!--more-->
-
-tags: 
+tags: UNO
 category: 
 ---
 

@@ -1,9 +1,6 @@
 ---
 title: WPF 将 StaticResource 和 ResourceDictionary 放在一起的魔幻行为
 description: 本文将记录一些在 WPF 里面，使用 StaticResource 将 ResourceDictionary 玩坏的做法。大家可以放心的是，这些玩法基本只有高级玩家或逗比开发者才会使用到
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

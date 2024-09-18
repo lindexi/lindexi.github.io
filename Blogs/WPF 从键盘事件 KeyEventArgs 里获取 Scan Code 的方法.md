@@ -1,9 +1,6 @@
 ---
 title: WPF 从键盘事件 KeyEventArgs 里获取 Scan Code 的方法
 description: 本文将告诉大家如何在 WPF 里面，从键盘事件 KeyEventArgs 参数里获取到 Scan Code 键盘按键的设备独立标识符的方法
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

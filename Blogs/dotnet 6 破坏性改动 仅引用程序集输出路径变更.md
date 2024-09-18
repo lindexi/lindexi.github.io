@@ -1,9 +1,6 @@
 ---
 title: dotnet 6 破坏性改动 仅引用程序集输出路径变更
 description: 在 dotnet 5 开始，可以设置 ProduceReferenceAssembly 为 true 让项目构建时输出仅引用程序集。仅引用程序集是仅导出项目的公开成员定义，而不包含具体的实现的代码逻辑。只用来被其他项目引用，体积很小，但不用来作为最终发布文件
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

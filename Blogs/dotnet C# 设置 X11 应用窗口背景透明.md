@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 设置 X11 应用窗口背景透明
 description: 本文将告诉大家如何在 X11 里面设置窗口透明
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,X11,C#
 category: 
 ---
 

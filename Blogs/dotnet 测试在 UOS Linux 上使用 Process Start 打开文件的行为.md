@@ -1,9 +1,6 @@
 ---
 title: dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为
 description: 本文记录我在 UOS Linux 系统上使用 Process.Start 打开文件的行为
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

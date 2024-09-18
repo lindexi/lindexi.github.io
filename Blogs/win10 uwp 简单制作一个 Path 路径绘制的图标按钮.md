@@ -1,10 +1,7 @@
 ---
 title: win10 uwp 简单制作一个 Path 路径绘制的图标按钮
 description: 本文告诉大家在 UWP 或 WinUI 3 里面如何简单制作一个由 Path 几何路径图形绘制的图标按钮
-
-<!--more-->
-
-tags: Win10 UWP
+tags: Win10,UWP
 category: 
 ---
 

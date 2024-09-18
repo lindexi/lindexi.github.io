@@ -1,9 +1,6 @@
 ---
 title: WPF 的 Viewport3D 等 3D 模块在带 Intel UHD 770 设备上抛出渲染异常
 description: 在带 Intel UHD 770 的设备上，使用旧版本驱动，即小于 30.0.101.1660 版本驱动，将会导致 WPF 的 3D 模块出现渲染异常。此问题和 WPF 无关，此问题是 Intel 的 bug 且最新驱动版本已修复
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

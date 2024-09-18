@@ -1,10 +1,7 @@
 ---
 title: VisualStudio 如何 SSH 远程调试 Linux 的 dotnet 应用的启动
 description: 本文将告诉大家，如何使用 VisualStudio 2022 工具，通过 SSH 远程调试运行在 Linux 系统上的 dotnet 系应用的启动过程
-
-<!--more-->
-
-tags: VisualStudio dotnet
+tags: VisualStudio,dotnet
 category: 
 ---
 

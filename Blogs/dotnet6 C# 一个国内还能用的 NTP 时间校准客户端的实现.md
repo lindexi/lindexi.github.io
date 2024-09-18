@@ -1,10 +1,7 @@
 ---
 title: dotnet6 C# 一个国内还能用的 NTP 时间校准客户端的实现
 description: 本文来记录一个我自己在使用的 NTP 时间校准客户端的实现
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

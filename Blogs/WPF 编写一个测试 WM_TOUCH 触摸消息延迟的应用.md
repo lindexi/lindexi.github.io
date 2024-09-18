@@ -1,9 +1,6 @@
 ---
 title: WPF 编写一个测试 WM_TOUCH 触摸消息延迟的应用
 description: 我听说在 Win10 到 Win11 的系统版本左右，微软加上了一大波触摸性能优化，准确来说是 HID 性能优化。我想测试一下在这些系统下，采用从 Windows 消息接收到 WM_TOUCH 触摸消息的延迟将会是多少。本文将告诉大家我编写的测试应用
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

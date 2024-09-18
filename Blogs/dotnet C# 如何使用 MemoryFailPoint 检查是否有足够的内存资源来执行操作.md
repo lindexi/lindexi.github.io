@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 如何使用 MemoryFailPoint 检查是否有足够的内存资源来执行操作
 description: 在 dotnet 里面的 MemoryFailPoint 可用来测试当前进程是否还能分配申请给定大小的内存空间，这个是一个高级编程的类型，大部分情况下都不需要用到。本文内容由 New Bing 编写，将和大家介绍 MemoryFailPoint 的使用方法
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

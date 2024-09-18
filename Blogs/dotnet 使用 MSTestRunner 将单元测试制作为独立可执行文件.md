@@ -1,9 +1,6 @@
 ---
 title: dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件
 description: 以往的单元测试都是不能单独作为一个独立的可执行文件跑的，需要在 VisualStudio 或 VSTest 或 dotnet test 里面运行。这就限制了运行单元测试的环境了，有时候开发者可能期望在无 SDK 或开发环境下执行单元测试，这时就可以用到本文介绍的 MSTestRunner 功能，将单元测试制作为独立可执行文件
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

@@ -1,10 +1,7 @@
 ---
 title: dotnet 记 TaskCompletionSource 的 SetException 可能将异常记录到 UnobservedTaskException 的问题
 description: 本文将记录 dotnet 的一个已知问题，且是设计如此的问题。假定有一个 TaskCompletionSource 对象，此对象的 Task 没有被任何地方引用等待。在 TaskCompletionSource 被调用 SetException 或 TrySetException 方法时，将会记录一个存在异常且未捕获的 Task 对象。此 Task 对象将会在被 GC 回收时，进入 TaskScheduler.UnobservedTaskException 事件里面，尽管没有明确副作用，但是会吓到不明真相的开发者
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,UNO
 category: 
 ---
 

@@ -1,10 +1,7 @@
 ---
 title: dotnet 后台线程设置 X11 窗口最小化
 description: 本文将告诉大家如何在 dotnet 里面的后台线程设置 X11 窗口的最小化
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,X11
 category: 
 ---
 

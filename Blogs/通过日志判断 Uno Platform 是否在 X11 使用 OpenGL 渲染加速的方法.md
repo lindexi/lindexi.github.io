@@ -1,10 +1,7 @@
 ---
 title: 通过日志判断 Uno Platform 是否在 X11 使用 OpenGL 渲染加速的方法
 description: 本文告诉大家如何在 UNO 里面，如何通过日志信息判断是否在 Linux 的 X11 平台上使用 OpenGL 渲染加速
-
-<!--more-->
-
-tags: 
+tags: UNO,X11
 category: 
 ---
 

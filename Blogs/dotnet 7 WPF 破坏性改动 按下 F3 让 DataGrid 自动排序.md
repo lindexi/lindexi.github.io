@@ -1,10 +1,7 @@
 ---
 title: dotnet 7 WPF 破坏性改动 按下 F3 让 DataGrid 自动排序
 description: 本文记录在 dotnet 7 下的 WPF 的一个破坏性改动。在 dotnet 7 下的 WPF 支持 DataGrid 在按下 F3 键的时候，自动按照当前所选列进行列自动排序。这将会让原本采用 F3 键进行其他业务逻辑的代码，工作起来有些非预期
-
-<!--more-->
-
-tags: WPF dotnet
+tags: WPF,dotnet
 category: 
 ---
 

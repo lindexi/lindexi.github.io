@@ -1,10 +1,7 @@
 ---
 title: dotnet X11 栈空间被回收导致调用 XPutShmImage 闪退
 description: 本文记录在使用 X11 过程中的问题，由于不正确使用导致栈空间被回收，从而在调用 XPutShmImage 时让应用闪退，此问题本质上讲只和 X11 的设计有一分钱关系，更多的问题在于我的写法上
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,X11
 category: 
 ---
 

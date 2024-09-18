@@ -1,9 +1,6 @@
 ---
 title: dotnet 解决使用本地不安全 http 的 NuGet 源 NU1803 警告或构建失败问题
 description: 出于安全性考虑，微软在 NuGet 的 6.3 版本开始引入 NU1803 警告，此警告将在遇到使用的 NuGet 源为 http 源时触发。 微软推荐 NuGet 的源应该都是安全的 https 源，甚至在 dotnet 9 预览版本里面将其视为构建错误
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

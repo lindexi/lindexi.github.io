@@ -1,9 +1,6 @@
 ---
 title: 探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现
 description: 本文将和大家介绍专为 WPF 触摸模块提供的 ITabletManager 的 GetTabletCount 方法在 Windows 11 系统的底层实现
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

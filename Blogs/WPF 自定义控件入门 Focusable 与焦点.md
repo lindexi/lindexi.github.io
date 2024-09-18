@@ -1,9 +1,6 @@
 ---
 title: WPF 自定义控件入门 Focusable 与焦点
 description: 自定义控件时，如果自定义的控件需要用来接收键盘消息或者是输入法的输入内容，那就需要关注到控件的焦点
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

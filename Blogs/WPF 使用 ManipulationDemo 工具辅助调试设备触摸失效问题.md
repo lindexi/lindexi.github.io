@@ -1,9 +1,6 @@
 ---
 title: WPF 使用 ManipulationDemo 工具辅助调试设备触摸失效问题
 description: 本文将和大家介绍我所在的团队开源的 ManipulationDemo 工具。通过 ManipulationDemo 工具可以提升调试设备触摸失效的效率
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

@@ -1,9 +1,6 @@
 ---
 title: WPF 通过 EXIF 设置和读取图片的旋转信息
 description: 本文将告诉大家如何在 WPF 里面设置图片的 EXIF 信息，包括如何设置图片的旋转信息，以及如何读取 EXIF 的内容
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

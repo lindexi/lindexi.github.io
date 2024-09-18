@@ -1,9 +1,6 @@
 ---
 title: WPF 字体 FontStyle 的 Italic 和 Oblique 的区别
 description: 本文介绍在 WPF 里面的字体属性 FontStyle 的 Italic 和 Oblique 的斜体差别
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

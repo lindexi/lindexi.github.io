@@ -1,9 +1,6 @@
 ---
 title: 使用 DISM 安全清理 C 盘 WinSxS 文件夹空间
 description: 本文将介绍如何使用系统内置 DISM 工具进行安全清理 C 盘空间，清理 WinSxS 文件夹里面的可回收删除的程序包空间
-
-<!--more-->
-
 tags: 
 category: 
 ---

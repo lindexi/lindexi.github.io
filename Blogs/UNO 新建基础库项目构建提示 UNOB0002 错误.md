@@ -1,10 +1,7 @@
 ---
 title: UNO 新建基础库项目构建提示 UNOB0002 错误
 description: 当咱新建了一个 UNO 的基础库或被引用的项目时，可能采用的是默认的基础库或库项目创建方法，被引用的程序集没有带上 WinUI 的黑科技，导致构建提示 UNOB0002: Project XX contains a reference to Uno Platform but does not contain a WinAppSDK compatible target framework. 失败
-
-<!--more-->
-
-tags: 
+tags: UNO
 category: 
 ---
 

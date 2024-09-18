@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 分享基础 for 循环的写法
 description: 本文来和大家聊聊在 dotnet C# 里面的基础的 for 循环语法的写法
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

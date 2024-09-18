@@ -1,10 +1,7 @@
 ---
 title: 简单在 WinUI 仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能
 description: 本文将告诉大家如何在 WinUI 3 或 UNO 里面，仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能
-
-<!--more-->
-
-tags: WPF
+tags: WPF,WinUI
 category: 
 ---
 

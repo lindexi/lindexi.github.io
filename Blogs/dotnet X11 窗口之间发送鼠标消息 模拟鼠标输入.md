@@ -1,10 +1,7 @@
 ---
 title: dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入
 description: 本文记录我阅读 Avalonia 代码过程中所学习到的在 X11 的窗口之间发送鼠标消息，可以跨进程给其他进程的窗口发送鼠标消息，通过此方式可以实现模拟鼠标输入
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,X11
 category: 
 ---
 

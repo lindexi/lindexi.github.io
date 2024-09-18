@@ -1,9 +1,6 @@
 ---
 title: OpenTK 入门 Vsync 垂直同步对刷新率的影响
 description: 本文将和大家介绍 Vsync 垂直同步的开启对 OpenTK 应用的刷新率的影响
-
-<!--more-->
-
 tags:  渲染
 category: 
 ---

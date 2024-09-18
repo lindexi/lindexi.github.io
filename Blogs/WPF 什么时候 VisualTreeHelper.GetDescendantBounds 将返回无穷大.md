@@ -1,9 +1,6 @@
 ---
 title: WPF 什么时候 VisualTreeHelper.GetDescendantBounds 将返回无穷大
 description: 本文将和大家介绍在什么情况下 WPF 将会在调用 VisualTreeHelper.GetDescendantBounds 方法时，返回一个无穷大的范围尺寸
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

@@ -1,9 +1,6 @@
 ---
 title: Win32 使用 CreateProcess 方法让任务管理器里的命令行不显示应用文件路径
 description: 本文记录一个 Win32 的有趣行为，调用 CreateProcess 方法传入特别的参数，可以让任务管理器里的命令行不显示应用文件路径
-
-<!--more-->
-
 tags: 
 category: 
 ---

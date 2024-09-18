@@ -1,9 +1,6 @@
 ---
 title: SemanticKernel 将 LLM 自然语言函数和传统编程融合到一起
 description: 本文将继续和大家介绍 SemanticKernel 神奇的魔法，将使用 LLM 大语言模型编写的自然语言函数和传统的编程语言编写的函数融合到一起的例子。通过本文的例子，大家可以看到 SemanticKernel 框架所推荐的一个工作模式，同时可以更好的理解 SemanticKernel 框架的用法
-
-<!--more-->
-
 tags: 
 category: 
 ---

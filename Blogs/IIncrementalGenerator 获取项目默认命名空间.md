@@ -1,10 +1,7 @@
 ---
 title: IIncrementalGenerator 增量 Source Generator 生成代码入门 获取项目默认命名空间
 description: 本文将告诉大家如何在分析器里面获取到项目的默认命名空间
-
-<!--more-->
-
-tags: Roslyn MSBuild 编译器 SourceGenerator 生成代码
+tags: Roslyn,MSBuild,编译器,SourceGenerator,生成代码
 category: 
 ---
 

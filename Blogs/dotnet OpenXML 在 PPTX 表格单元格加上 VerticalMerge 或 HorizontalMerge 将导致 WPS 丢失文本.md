@@ -1,10 +1,7 @@
 ---
 title: dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本
 description: 本文记录 WPS 的一个已知问题，如果在表格的单元格里面配置了 VerticalMerge 或 HorizontalMerge 为 false 值时，则在此单元格内的文本将被丢失。此行为与 Office 的 PowerPoint 不同，预计是 WPS 的坑
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,OpenXML
 category: 
 ---
 

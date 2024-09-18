@@ -1,10 +1,7 @@
 ---
 title: dotnet WinUI3 Win2D 翻转图片
 description: 本文将告诉大家如何在 WinUI3 里面使用 Win2D 进行图片的翻转，本文的方法也适用于 UWP 框架
-
-<!--more-->
-
-tags: dotnet win2d
+tags: dotnet,win2d,WinUI
 category: 
 ---
 

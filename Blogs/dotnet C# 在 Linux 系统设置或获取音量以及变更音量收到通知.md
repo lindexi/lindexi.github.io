@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 在 Linux 系统设置或获取音量以及变更音量收到通知
 description: 本文记录使用 PulseAudio 在 Linux 系统上进行设置和获取当前音量，以及是否静音。当系统音量发生变更时，收到事件通知
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

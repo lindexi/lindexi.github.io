@@ -1,9 +1,6 @@
 ---
 title: WPF 修复引用库报错 所使用的 PresentationFramework 6.0.2 高于所引用的标识为 6.0.0 程序集
 description: 本文记录一个 WPF 构建的坑，这是 WPF 仓库的运维管理大意挖的坑。将会在大家使用低版本的 dotnet 6 如 6.0.1 版本时，引用其他人使用高 dotnet 6 版本，如 dotnet 6.0.12 版本构建出来的使用 WPF 的程序集时，将会提示引用存在版本差异从而构建失败。本文将告诉大家如何解决以及原因
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

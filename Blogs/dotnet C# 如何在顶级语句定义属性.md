@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 如何在顶级语句定义属性
 description: 随着 dotnet 6 开始，现在的 C# dotnet 可以使用顶级语句非常方便创建一个小型项目，包含的代码也特别少。本文将和大家介绍如何在顶级语句里面定义属性
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

@@ -1,9 +1,6 @@
 ---
 title: WPF 触摸下如何给 StylusPointCollection 添加点
 description: 本文告诉大家如何在触摸下给 WPF 的 StylusPointCollection 添加新的点
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

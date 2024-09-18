@@ -1,10 +1,7 @@
 ---
 title: VisualStudio 2022 如何显示 dotnet 6 及以上版本的框架的代码注释为中文
 description: 官方现在只将中文注释维护到 .NET 5 版本，没有为 .NET 6 和 .NET 7 和 .NET 8 版本维护框架的中文注释。想要使用中文注释，需要使用第三方工具
-
-<!--more-->
-
-tags: VisualStudio dotnet
+tags: VisualStudio,dotnet
 category: 
 ---
 

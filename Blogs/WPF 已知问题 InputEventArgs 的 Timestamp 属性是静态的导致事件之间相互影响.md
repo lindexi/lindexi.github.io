@@ -1,9 +1,6 @@
 ---
 title: WPF 已知问题 InputEventArgs 的 Timestamp 属性是静态的导致事件之间相互影响
 description: 本文记录一个 WPF 已知的设计问题，当前此问题已经被大佬修复，这个设计问题刚好属于比较边缘的模块，我写了这么多年的代码还没有踩到这个坑一次，也没有听到有谁提到这个坑
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

@@ -1,10 +1,7 @@
 ---
 title: dotnet C# X11 开发笔记
 description: 本文记录我学习开发 X11 应用的笔记
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,X11,C#
 category: 
 ---
 

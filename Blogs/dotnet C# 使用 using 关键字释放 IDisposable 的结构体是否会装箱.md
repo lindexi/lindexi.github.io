@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 使用 using 关键字释放 IDisposable 的结构体是否会装箱
 description: 在 C# 里面的 using 关键字可以非常方便调用 IDisposable 接口的 Dispose 方法，进行一些资源的释放或实现有趣的逻辑的执行
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

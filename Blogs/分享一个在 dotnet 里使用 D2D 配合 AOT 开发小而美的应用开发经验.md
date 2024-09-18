@@ -1,10 +1,7 @@
 ---
 title: 分享一个在 dotnet 里使用 D2D 配合 AOT 开发小而美的应用开发经验
 description: 本文将分享我在 dotnet 里面使用 Direct2D 配合 AOT 开发一个简单的测试应用的经验。这是我用不到 370 行代码，从零开始控制台创建 Win32 窗口，再挂上交换链，在窗口上使用 D2D 绘制界面内容，最后使用 AOT 方式发布的测试应用。成品文件体积不超过 10MB 且运行内存稳定在 60MB 以内，满帧率运行但 CPU 近乎不动
-
-<!--more-->
-
-tags: C# D2D DirectX Vortice Direct2D
+tags: C#,D2D,DirectX,Vortice,Direct2D
 category: 
 ---
 

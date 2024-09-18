@@ -1,10 +1,7 @@
 ---
 title: 制作一个能构建 dotnet AOT 的 gitlab runner 的 Debian docker 镜像
 description: 我的需求是需要有一个能够构建出 dotnet 的 AOT 包的环境，要求这个环境能解决 glibc 兼容依赖的问题，能打出来 x64 和 arm64 的 AOT 的包，且能够运行 gitlab runner 对接自动构建
-
-<!--more-->
-
-tags: git dotnet
+tags: git,dotnet
 category: 
 ---
 

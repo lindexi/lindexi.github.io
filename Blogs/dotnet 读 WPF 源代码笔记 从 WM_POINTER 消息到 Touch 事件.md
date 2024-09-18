@@ -1,10 +1,7 @@
 ---
 title: dotnet 读 WPF 源代码笔记 从 WM_POINTER 消息到 Touch 事件
 description: 本文记录我读 WPF 源代码的笔记，本文将介绍在 WPF 底层是如何从 Win32 的消息循环里获取到的 WM_POINTER 消息处理转换作为 Touch 事件的参数
-
-<!--more-->
-
-tags: WPF dotnet
+tags: WPF,dotnet
 category: 
 ---
 

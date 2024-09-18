@@ -1,9 +1,6 @@
 ---
 title: WPF 设置 IncludePackageReferencesDuringMarkupCompilation 属性导致分析器不工作
 description: 本文记录在 WPF 项目里面设置 IncludePackageReferencesDuringMarkupCompilation 属性为 False 导致了项目所安装的分析器不能符合预期工作
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

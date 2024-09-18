@@ -1,9 +1,6 @@
 ---
 title: dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询
 description: 本文将和大家简单介绍一下如何在控制台里面使用 Microsoft.KernelMemory 调用 TextEmbedding 对一些文本知识库内容生成向量化信息，以及进行向量化查询
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

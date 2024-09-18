@@ -1,9 +1,6 @@
 ---
 title: WPF 从零自己实现从 RealTimeStylus 获取触摸信息
 description: 本文将告诉大家什么是 RealTimeStylus 以及如何从零开始不使用 WPF 框架提供的功能从 RealTimeStylus 获取到触摸信息
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

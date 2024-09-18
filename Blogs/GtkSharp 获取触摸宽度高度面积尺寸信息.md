@@ -1,9 +1,6 @@
 ---
 title: GtkSharp 获取触摸宽度高度面积尺寸信息
 description: 本文将告诉大家如何在 C# dotnet 里面，从 GTK 里面获取到触摸的宽度高度信息，即触摸面积或触摸尺寸信息
-
-<!--more-->
-
 tags: 
 category: 
 ---

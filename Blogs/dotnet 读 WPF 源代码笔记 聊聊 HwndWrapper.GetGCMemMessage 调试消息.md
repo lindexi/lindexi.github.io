@@ -1,10 +1,7 @@
 ---
 title: dotnet 读 WPF 源代码笔记 聊聊 HwndWrapper.GetGCMemMessage 调试消息
 description: 我在阅读 WPF 源代码，在 HwndWrapper 的静态构造函数看到了申请了 HwndWrapper.GetGCMemMessage 这个 Windows 消息，好奇这个消息是什么功能的。通过阅读 WPF 源代码和写测试应用，了解到这是一个完全用来内部测试或调试的消息，没有任何业务上的功能
-
-<!--more-->
-
-tags: WPF dotnet
+tags: WPF,dotnet
 category: 
 ---
 

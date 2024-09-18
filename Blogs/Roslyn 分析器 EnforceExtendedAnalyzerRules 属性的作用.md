@@ -1,10 +1,7 @@
 ---
 title: Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用
 description: 在开始编写 dotnet 的 Roslyn 分析器项目时，会被 VisualStudio 通过 RS1036 要求在项目文件配置上 EnforceExtendedAnalyzerRules 属性，本文将和大家介绍 EnforceExtendedAnalyzerRules 属性的作用
-
-<!--more-->
-
-tags: Roslyn MSBuild 编译器 SourceGenerator 生成代码
+tags: Roslyn,MSBuild,编译器,SourceGenerator,生成代码
 category: 
 ---
 

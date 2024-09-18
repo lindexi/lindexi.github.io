@@ -1,10 +1,7 @@
 ---
 title: 学习 Avalonia 框架笔记 如何创建一个全屏置顶的 X11 应用窗口
 description: 本文记录我从 Avalonia 框架里面学到如何创建一个全屏置顶的 X11 应用窗口的方法
-
-<!--more-->
-
-tags: 
+tags: Avalonia,X11
 category: 
 ---
 

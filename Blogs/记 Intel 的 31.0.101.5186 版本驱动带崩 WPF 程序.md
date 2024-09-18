@@ -1,9 +1,6 @@
 ---
 title: 记 Intel 的 31.0.101.5186 版本驱动带崩 WPF 程序
 description: 本文记录一个 Intel 显卡驱动问题，暂时只在 Intel UHD Graphics 770 显卡带 31.0.101.5186 版本的显卡驱动时，才概率复现问题
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

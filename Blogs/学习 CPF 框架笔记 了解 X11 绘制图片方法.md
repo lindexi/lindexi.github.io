@@ -1,10 +1,7 @@
 ---
 title: 学习 CPF 框架笔记 了解 X11 绘制图片方法
 description: 本文记录我学习 CPF 框架的笔记，本文将记录我从 CPF 框架里面学习到的如何 X11 绘制图片的方法
-
-<!--more-->
-
-tags: 
+tags: X11
 category: 
 ---
 

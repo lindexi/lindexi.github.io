@@ -1,10 +1,7 @@
 ---
 title: UNO 设置平台进入全屏窗口模式的方法
 description: 本文记录在 UNO Platform 的桌面窗口项目里，进入和退出全屏窗口的方法，此方法包括 UNO 的 WPF 和 GTK 和 WinUI 版本的实现
-
-<!--more-->
-
-tags: 
+tags: UNO
 category: 
 ---
 

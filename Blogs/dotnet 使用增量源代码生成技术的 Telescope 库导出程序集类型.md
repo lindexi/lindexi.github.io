@@ -1,9 +1,6 @@
 ---
 title: dotnet 使用增量源代码生成技术的 Telescope 库导出程序集类型
 description: 本文将告诉大家在 dotnet 里面使用免费完全开源的基于增量源代码生成技术的 Telescope 库，进行收集导出项目程序集里面指定类型。可以实现性能极高的指定类型收集，方便多模块对接入自己的业务框架
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

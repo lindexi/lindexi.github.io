@@ -1,10 +1,7 @@
 ---
 title: dotnet 学习 CPF 框架笔记 了解 X11 里如何获取触摸信息
 description: 本文记录我学习 CPF 框架的笔记，本文记录我阅读 CPF 框架，学习到了如何在 dotnet C# 里面获取到 X11 的触摸信息，获取到多指触摸以及触摸点的面积和触摸点压感等信息的方法
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,X11
 category: 
 ---
 

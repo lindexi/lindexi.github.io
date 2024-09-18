@@ -1,9 +1,6 @@
 ---
 title: WPF 已知问题 开启 IsManipulationEnabled 之后触摸长按 RepeatButton 不会触发连续的 Click 事件
 description: 本文记录 WPF 的一个已知问题，在 RepeatButton 上开启 IsManipulationEnabled 漫游支持之后，将会导致触摸长按到 RepeatButton 之上时，不会收到源源不断的 Click 事件
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

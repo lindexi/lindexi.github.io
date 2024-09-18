@@ -1,9 +1,6 @@
 ---
 title: dotnet 使用 dnlib 检测插件程序集的 API 兼容性
 description: 本文将和大家介绍在开发 dotnet 的插件时，如何通过 dnlib 库检测当前的插件是否由于主应用程序的版本差异导致存在 API 兼容性问题
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

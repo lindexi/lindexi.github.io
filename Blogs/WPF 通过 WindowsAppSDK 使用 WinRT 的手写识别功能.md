@@ -1,9 +1,6 @@
 ---
 title: WPF 通过 WindowsAppSDK 使用 WinRT 的手写识别功能
 description: 本文告诉大家如何在基于 .NET 6 的 WPF 使用 WinRT 的手写识别功能
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

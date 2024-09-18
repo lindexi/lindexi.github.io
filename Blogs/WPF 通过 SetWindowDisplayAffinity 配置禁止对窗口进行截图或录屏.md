@@ -1,9 +1,6 @@
 ---
 title: WPF 通过 SetWindowDisplayAffinity 配置禁止对窗口进行截图或录屏
 description: 有些应用程序比较机密或隐私，不期望被其他截图软件截图到应用的窗口，或者被录屏软件录制到。简单的方法是通过 SetWindowDisplayAffinity 方法进行配置窗口阻止截图软件对其截图
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

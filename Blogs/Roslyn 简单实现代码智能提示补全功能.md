@@ -1,10 +1,7 @@
 ---
 title: Roslyn 简单实现代码智能提示补全功能
 description: 相信有很多伙伴热衷于编写 IDE 应用，在 dotnet 系下，通过 Roslyn 友好的 API 和强大的能力，实现一个代码智能提示是非常简单的事情。本文将和大家简单介绍一下如何使用 Roslyn 实现简单的代码智能提示补全功能
-
-<!--more-->
-
-tags: Roslyn MSBuild 编译器
+tags: Roslyn,MSBuild,编译器
 category: 
 ---
 

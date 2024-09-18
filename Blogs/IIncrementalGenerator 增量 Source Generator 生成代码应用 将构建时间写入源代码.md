@@ -1,10 +1,7 @@
 ---
 title: IIncrementalGenerator 增量 Source Generator 生成代码应用 将构建时间写入源代码
 description: 本文将和大家介绍一个 IIncrementalGenerator 增量 Source Generator 生成代码技术的应用例子，将当前的构建时间写入到代码里面。这个功能可以比较方便实现某些功能的开关，比如说设置某个功能自动在具体应用发布之后过一段时间就失效等功能
-
-<!--more-->
-
-tags: 
+tags: SourceGenerator
 category: 
 ---
 

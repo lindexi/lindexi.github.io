@@ -1,9 +1,6 @@
 ---
 title: 一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包
 description: 本文将详细指导大家如何逐步为 dotnet 系列应用创建满足 UOS 统信系统软件安装包的要求。在这里，我们所说的 dotnet 系列应用是指那些能够在 Linux 平台上构建 UI 框架的应用，包括但不限于 CPF 应用、UNO 应用、Avalonia 应用等
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

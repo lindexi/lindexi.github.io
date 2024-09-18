@@ -1,10 +1,7 @@
 ---
 title: dotnet 读 WPF 源代码笔记 GlyphRun 的 DeviceFontName 的功能是什么
 description: 在 WPF 里面的 GlyphRun 里，有一个令人迷惑的 DeviceFontName 属性，似乎给这个属性传入什么值，结果都不会有变更。通过阅读源代码，可以了解到，这是一个没什么用途的属性。本文将告诉大家这个属性的细节逻辑
-
-<!--more-->
-
-tags: WPF 渲染 WPF源代码
+tags: WPF,渲染,WPF源代码
 category: 
 ---
 

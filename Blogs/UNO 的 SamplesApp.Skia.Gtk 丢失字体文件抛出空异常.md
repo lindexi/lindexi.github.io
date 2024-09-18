@@ -1,10 +1,7 @@
 ---
 title: UNO 的 SamplesApp.Skia.Gtk 丢失字体文件抛出空异常
 description: 在运行 UNO 的 SamplesApp.Skia.Gtk 例子程序时，如果没有拷贝字体文件夹，导致字体丢失，将会在运行的时候抛出 NullReferenceException 空异常
-
-<!--more-->
-
-tags: 
+tags: UNO
 category: 
 ---
 

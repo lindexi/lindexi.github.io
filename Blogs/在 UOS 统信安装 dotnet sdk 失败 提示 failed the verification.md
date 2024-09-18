@@ -1,9 +1,6 @@
 ---
 title: 在 UOS 统信安装 dotnet sdk 失败 提示 failed the verification
 description: 在 UOS 统信安装 dotnet sdk 失败 提示 You cannot install '/home/lindexi/packages-microsoft-prod.deb' that failed the verification, please go to Security Center - Security Tools - Application Security to adjust
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

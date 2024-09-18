@@ -1,10 +1,7 @@
 ---
 title: dotnet X11 调用 XRootWindow 是否耗时
 description: 本文将通过阅读 lib x11 代码告诉大家，调用 XRootWindow 函数是不耗时的，没有成本的
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,X11
 category: 
 ---
 

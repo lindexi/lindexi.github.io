@@ -1,9 +1,6 @@
 ---
 title: WPF 开启Pointer消息存在的坑
 description: 本文记录在 WPF 开启 Pointer 消息的坑
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

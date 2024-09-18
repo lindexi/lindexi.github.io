@@ -1,9 +1,6 @@
 ---
 title: dotnet 已知问题 警惕 StreamReader 的 EndOfStream 卡住线程
 description: 在 dotnet 里面，咱会经常使用 StreamReader 辅助类读取 Stream 的内容，比如按行读取等。如果在判断是否读取完成时，使用的是 StreamReader 的 EndOfStream 属性，则可能破坏原本的异步出让逻辑，导致线程被卡住
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

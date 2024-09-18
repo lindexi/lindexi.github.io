@@ -1,9 +1,6 @@
 ---
 title: WPF 已知问题 Separator 无法应用 ContextMenu 定义的默认样式
 description: 本文记录一个 WPF 已知问题，在 ContextMenu 的 Resources 里定义 Separator 的默认样式，在 ContextMenu 里面的 Separator 将应用不上，或者说不会找到此默认的样式。需要明确给 Style 一个 Key 且在 Separator 写明此 Key 才能应用上
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

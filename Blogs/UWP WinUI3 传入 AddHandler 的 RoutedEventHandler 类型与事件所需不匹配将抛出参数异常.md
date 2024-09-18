@@ -1,10 +1,7 @@
 ---
 title: UWP WinUI3 传入 AddHandler 的 RoutedEventHandler 类型与事件所需不匹配将抛出参数异常
 description: 本文记录一个 UWP 或 WinUI3 的开发过程中的问题，当开发者调用 AddHandler 时，所需的 Handler 参数类型为 RoutedEventHandler 类型，然而实际上正确类型是需要与所监听事件匹配才能符合预期工作，否则将抛出缺乏信息的参数异常
-
-<!--more-->
-
-tags: UWP
+tags: UWP,WinUI
 category: 
 ---
 

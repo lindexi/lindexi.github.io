@@ -1,10 +1,7 @@
 ---
 title: dotnet DirectX 通过 Vortice 控制台使用 ID2D1DeviceContext 绘制画面
 description: 在上一篇博客里面告诉大家，如何使用 Vortice 从零开始控制台创建 Direct2D1 窗口。上一篇博客采用的是 CreateDxgiSurfaceRenderTarget 的方式拿到了 ID2D1RenderTarget 进行绘制，本文将和大家介绍另一个方式，通过 ID2D1DeviceContext 绘制画面。从底层来说，这两个方式底层都是相同的，只是上层的 API 调用方法不相同而已
-
-<!--more-->
-
-tags: C# D2D DirectX Vortice Direct2D
+tags: C#,D2D,DirectX,Vortice,Direct2D
 category: 
 ---
 

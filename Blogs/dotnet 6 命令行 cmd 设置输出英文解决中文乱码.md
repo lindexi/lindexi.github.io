@@ -1,9 +1,6 @@
 ---
 title: dotnet 6 命令行 cmd 设置输出英文解决中文乱码
 description: 我遇到在部署 CI 服务器，执行 cmd 命令构建，输出的中文是乱码。我期望让 dotnet 命令行输出使用英文解决乱码问题。通过设置 dotnet 命令行的语言文化，即可解决此问题
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

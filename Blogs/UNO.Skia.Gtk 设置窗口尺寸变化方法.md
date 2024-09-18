@@ -1,10 +1,7 @@
 ---
 title: UNO.Skia.Gtk 设置窗口尺寸变化方法
 description: 本文记录一个简单的在 UNO.Skia.Gtk 应用里面，配置 GTK 平台修改窗口尺寸的方法
-
-<!--more-->
-
-tags: 
+tags: UNO
 category: 
 ---
 

@@ -1,10 +1,7 @@
 ---
 title: 记 dotnet 8.0.4 修复的 WPF 的触摸模块安全问题
 description: 本文记录 dotnet 8.0.4 版本修复的 WPF 的触摸模块安全问题，此问题影响所有的 .NET 版本，修复方法是更新 SDK 和运行时
-
-<!--more-->
-
-tags: WPF dotnet
+tags: WPF,dotnet
 category: 
 ---
 

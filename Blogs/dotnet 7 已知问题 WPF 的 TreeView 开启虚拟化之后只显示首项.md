@@ -1,10 +1,7 @@
 ---
 title: dotnet 7 已知问题 WPF 的 TreeView 开启虚拟化之后只显示首项
 description: 本文记录 WPF 在 dotnet 7 的一个已知问题，此问题当前已修复，只需更新 SDK 或运行时即可。使用 TreeView 在开启虚拟化之后只显示首项，其他项不显示。本文将告诉大家此问题的原因和修复方式
-
-<!--more-->
-
-tags: WPF dotnet
+tags: WPF,dotnet
 category: 
 ---
 

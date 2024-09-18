@@ -1,9 +1,6 @@
 ---
 title: 记联软 UniAccess 导致 NSIS 安装包启动进程失效
 description: 本文记录联软 UniAccess 注入的 C:\Window\LVUAAgentInstBaseRoot\syswow64\MozartBreathCore.dll 导致 NSIS 安装包启动进程失效，启动进程直接结束问题。且给出 NSIS 安装包脚本的规避方法
-
-<!--more-->
-
 tags: 
 category: 
 ---

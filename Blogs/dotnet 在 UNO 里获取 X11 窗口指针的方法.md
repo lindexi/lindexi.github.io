@@ -1,10 +1,7 @@
 ---
 title: dotnet 在 UNO 里获取 X11 窗口指针的方法
 description: 在 UNO 的 5.2 版本，可以使用 X11 平台承载 UNO 应用。此时我需要获取到 UNO 应用的窗口的 X11 窗口指针，如此即可调用 X11 平台相关逻辑对 UNO 窗口执行一些交互
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,UNO,X11
 category: 
 ---
 

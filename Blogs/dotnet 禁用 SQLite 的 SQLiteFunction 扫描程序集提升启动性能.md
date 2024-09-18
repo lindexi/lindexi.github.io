@@ -1,9 +1,6 @@
 ---
 title: dotnet 禁用 SQLite 的 SQLiteFunction 扫描程序集提升启动性能
 description: 在我所在的团队开发的一个 WPF 应用程序里面，使用到了 SQLite 作为本地数据库。在优化启动性能过程中，发现了在启动过程一旦访问 SQLite 将会因为 SQLiteFunction 扫描程序集导致 CPU 损耗，从而影响启动性能。本文将告诉大家如何禁用 SQLite 的 SQLiteFunction 扫描程序集
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

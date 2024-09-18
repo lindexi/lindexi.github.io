@@ -1,10 +1,7 @@
 ---
 title: dotnet 统信 UOS 运行 UNO FrameBuffer 应用错误 Failed to open FrameBuffer device
 description: 本文记录在 UOS 统信系统上运行 UNO 的基于 Skia 的 FrameBuffer 应用报错问题，错误提示是 Unhandled exception. System.InvalidOperationException: Failed to open FrameBuffer device /dev/fb0 (13) 的问题。问题原因是 UNO 应用的 FrameBuffer 写入失败，本文将告诉大家调查方法
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,UNO
 category: 
 ---
 

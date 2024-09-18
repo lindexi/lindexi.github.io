@@ -1,9 +1,6 @@
 ---
 title: WPF 已知问题 清空 CollectionView 的 SortDescriptions 可能抛出空异常
 description: 本文记录一个 WPF 的已知问题，在通过 CollectionViewSource 获取到 CollectionView 之后，如果 CollectionViewSource 对象已被 GC 回收，将可能在调用 CollectionView 的 SortDescriptions 属性进行清空或者移除项时，也就是使用 SortDescriptionCollection 类型的清空或者移除项时，在 WPF 框架里面抛出空异常
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

@@ -1,9 +1,6 @@
 ---
 title: WPF 记一个特别简单的点集滤波平滑方法
 description: 本文记录我想要解决自己从窗口接收 WM_Pointer 消息时，获取到的触摸点不平滑的问题而使用的特别简单且性能垃圾的点集滤波平滑方法
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

@@ -1,10 +1,7 @@
 ---
 title: dotnet 修复 GitHub Action 构建过程提示 NETSDK1127 错误
 description: 本文告诉大家，如何修复 GitHub Action 构建过程提示 error NETSDK1127: The targeting pack Microsoft.WindowsDesktop.App.WindowsForms is not installed. Please restore and try again. 错误
-
-<!--more-->
-
-tags: git dotnet
+tags: git,dotnet
 category: 
 ---
 

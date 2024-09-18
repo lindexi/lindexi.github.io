@@ -1,9 +1,6 @@
 ---
 title: dotnet 警惕 ConcurrentDictionary 使用 FirstOrDefault 获取到非预期的首项
 description: 在 dotnet 里面的 ConcurrentDictionary 是一个支持并发读写的线程安全字典，在这个字典里面有一些行为会出现随机性，即多次执行相同的代码返回的结果可能不相同。本文记录在 ConcurrentDictionary 使用 FirstOrDefault 获取到非预期的首项的问题
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

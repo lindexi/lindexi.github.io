@@ -1,10 +1,7 @@
 ---
 title: Avalonia 在 X11 下使用软渲染的方法
 description: 本文的方法适用于 11.0 的 Avalonia 版本
-
-<!--more-->
-
-tags: 
+tags: Avalonia,X11
 category: 
 ---
 

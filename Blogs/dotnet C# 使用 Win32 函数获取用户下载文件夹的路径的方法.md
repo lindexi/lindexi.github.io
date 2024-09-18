@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 使用 Win32 函数获取用户下载文件夹的路径的方法
 description: 大家都知道，在 dotnet 里面的可以使用 Environment.GetFolderPath 方法配合 Environment.SpecialFolder 枚举列出当前运行环境下的一些特殊文件夹。然而 SpecialFolder 枚举不包含对 Download 下载文件夹的枚举值，如咱需要获取用户当前的下载文件夹，需要使用 Win32 方法来辅助获取
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

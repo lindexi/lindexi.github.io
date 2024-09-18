@@ -1,9 +1,6 @@
 ---
 title: 在 UOS 统信运行 dotnet 程序提示没有通过系统安全验证无法运行
 description: 本文记录 dotnet 应用程序在 UOS 统信系统上运行时，提示 没有通过系统安全验证，无法运行 的问题
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

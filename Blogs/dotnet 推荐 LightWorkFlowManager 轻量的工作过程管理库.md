@@ -1,9 +1,6 @@
 ---
 title: dotnet 推荐 LightWorkFlowManager 轻量的工作过程管理库
 description: 本文将和大家推荐我团队开源的 LightWorkFlowManager 轻量的工作过程管理库，适合任何需要执行工作过程的应用逻辑，可以方便将多个工作过程拼凑起来，且自动集成重试和失败处理，以及日志和上报功能
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

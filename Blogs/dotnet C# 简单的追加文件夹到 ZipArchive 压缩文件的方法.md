@@ -1,10 +1,7 @@
 ---
 title: dotnet C# 简单的追加文件夹到 ZipArchive 压缩文件的方法
 description: 本文将告诉大家一个在 ZipArchive 里追加文件夹，以及添加过滤文件处理的压缩文件辅助方法
-
-<!--more-->
-
-tags: dotnet C#
+tags: dotnet,C#
 category: 
 ---
 

@@ -1,9 +1,6 @@
 ---
 title: WPF 已知问题 监听 WMI 事件导致触摸失效
 description: 本文记录 WPF 的已知问题，在 .NET Core 版本的 WPF 应用里面，应用启动的过程监听 WMI 事件，将导致触摸模块 COM 接口获取失败，进而导致触摸失效
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

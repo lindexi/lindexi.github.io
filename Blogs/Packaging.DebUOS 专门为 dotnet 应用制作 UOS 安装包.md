@@ -1,9 +1,6 @@
 ---
 title: Packaging.DebUOS 专门为 dotnet 应用制作 UOS 安装包
 description: Packaging.DebUOS 是我所在的团队开发开源的一款专门用在为 dotnet 的应用制作成为符合要求的 UOS 统信系统软件安装包的工具，此工具可以辅助开发者使用现有的工具链经过简单的配置即可完成安装包的制作
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

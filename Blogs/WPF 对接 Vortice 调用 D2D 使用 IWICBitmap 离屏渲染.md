@@ -1,10 +1,7 @@
 ---
 title: WPF 对接 Vortice 调用 D2D 使用 IWICBitmap 离屏渲染
 description: 通过 Vortice 库可以使用非常底层的方式调用到 Direct2D1 进行渲染，本文将使用 D2D 离屏渲染到 IWICBitmap 上，再使用一点点反射黑科技，直接将此 IWICBitmap 对接到 WPF 框架里。本文提供的这个方法可以实现极高性能且只有很少的转换损耗的离屏渲染方式，唯一的一个缺点是需要进行一点反射调用，适合用来静态画面渲染上
-
-<!--more-->
-
-tags: C# D2D DirectX Vortice Direct2D
+tags: C#,D2D,DirectX,Vortice,Direct2D
 category: 
 ---
 

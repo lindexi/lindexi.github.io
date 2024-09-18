@@ -1,9 +1,6 @@
 ---
 title: VisualStudio 通过配置 DefaultXamlRuntime 属性 让控制台项目里的 XAML 应用上智能提示
 description: 本文记录一个 VisualStudio 黑科技，通过配置 DefaultXamlRuntime 属性，即可让非 WPF 或 WinUI 或 MAUI 等系列类型的项目也可以拥有 XAML 的智能提示，智能提示方式和 WinUI 智能提示行为相同
-
-<!--more-->
-
 tags: VisualStudio
 category: 
 ---

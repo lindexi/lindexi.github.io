@@ -1,10 +1,7 @@
 ---
 title: WinUI 3 修复非打包应用运行提示缺少 Windows App Runtime 环境
 description: 本文将告诉大家如何修复 WinUI 3 非打包的应用，在分发给到客户时，在客户的机器上运行提示缺少 Windows App Runtime 环境
-
-<!--more-->
-
-tags: 
+tags: WinUI
 category: 
 ---
 

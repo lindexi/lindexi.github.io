@@ -1,9 +1,6 @@
 ---
 title: dotnet 使用 windbg 运行脚本方式自动批量调试处理 dump 文件
 description: 本文将和大家介绍一个简单且实际用途不大的使用 windbg 配合脚本的方式，进行自动化的大批量对 dotnet 系应用的 dump 进行自动化分析调试处理，可以自动根据调试需求输出 dump 文件的一些信息
-
-<!--more-->
-
 tags: dotnet
 category: 
 ---

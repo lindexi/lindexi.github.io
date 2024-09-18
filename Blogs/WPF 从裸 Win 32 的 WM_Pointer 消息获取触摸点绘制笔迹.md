@@ -1,9 +1,6 @@
 ---
 title: WPF 从裸 Win 32 的 WM_Pointer 消息获取触摸点绘制笔迹
 description: 本文将告诉大家如何在 WPF 里面，接收裸 Win 32 的 WM_Pointer 消息，从消息里面获取触摸点信息，使用触摸点信息绘制简单的笔迹
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

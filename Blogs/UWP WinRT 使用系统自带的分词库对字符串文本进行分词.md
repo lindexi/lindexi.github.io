@@ -1,9 +1,6 @@
 ---
 title: UWP WinRT 使用系统自带的分词库对字符串文本进行分词
 description: 本文将和大家介绍在 UWP 应用，或其他能接入 WinRT 的应用里，使用系统自带的分词库，对中文、英文等等自然语言的字符串文本进行分词
-
-<!--more-->
-
 tags: UWP
 category: 
 ---

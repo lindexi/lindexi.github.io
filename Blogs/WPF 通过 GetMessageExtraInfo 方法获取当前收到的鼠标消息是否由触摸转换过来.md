@@ -1,9 +1,6 @@
 ---
 title: WPF 通过 GetMessageExtraInfo 方法获取当前收到的鼠标消息是否由触摸转换过来
 description: 本文将告诉大家如何在 WPF 或者其他 Win32 应用里面，在收到鼠标消息时，通过 GetMessageExtraInfo 方法获取当前收到的鼠标消息是否由触摸消息提升而来
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

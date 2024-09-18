@@ -1,10 +1,7 @@
 ---
 title: dotnet 在 UOS 统信系统上运行 UNO 程序输入时闪烁黑屏问题
 description: 本文记录我在虚拟机内安装了 UOS 统信系统，运行 UNO 的基于 Skia 的 Gtk 应用程序时，在输入的过程中不断窗口闪黑问题
-
-<!--more-->
-
-tags: dotnet
+tags: dotnet,UNO
 category: 
 ---
 

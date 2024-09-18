@@ -1,9 +1,6 @@
 ---
 title: Visual Studio 查看项目的能力
 description: 在 Visual Studio 里面，可以在项目里面通过配置 DiagnoseCapabilities 查看项目的能力。什么是项目的能力？项目的能力就是对当前项目来说，可以具备 VS 支持的功能，项目功能是确定项目类型、平台和特性的推荐方法
-
-<!--more-->
-
 tags: 
 category: 
 ---

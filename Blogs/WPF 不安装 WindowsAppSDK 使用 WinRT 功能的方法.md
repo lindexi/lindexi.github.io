@@ -1,9 +1,6 @@
 ---
 title: WPF 不安装 WindowsAppSDK 使用 WinRT 功能的方法
 description: 安装 Microsoft.WindowsAppSDK 库会限制应用程序只能分发 windows 10 应用，如果自己的应用程序依然需要兼容 Win7 等旧系统，那直接采用安装 WindowsAppSDK 方法将会丧失兼容旧系统能力。本文和大家介绍无需安装 Microsoft.WindowsAppSDK 即可使用 WinRT 功能的方法，此方法可以让应用程序继续兼容旧系统，可以在应用程序内判断系统版本之后自行决定调用 WinRT 功能
-
-<!--more-->
-
 tags: WPF
 category: 
 ---

@@ -1,10 +1,7 @@
 ---
 title: Avalonia 后台代码简单播放动画示例
 description: 本文将演示如何在 Avalonia 的后台代码里面创建 Animation 执行播放
-
-<!--more-->
-
-tags: 
+tags: Avalonia
 category: 
 ---
 

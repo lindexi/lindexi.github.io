@@ -1,9 +1,6 @@
 ---
 title: 非技术 对以后各大应用功能与 AI 助手的思考
 description: 本文记录我对于 AI 助手在未来给各大应用或网站或设备带来的影响的思考
-
-<!--more-->
-
 tags: 
 category: 
 ---
