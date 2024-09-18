@@ -187,6 +187,21 @@ It is only necessary to call this function if multiple threads might use Xlib co
   XInitThreads();
 ```
 
+## 多次调用 XMatchVisualInfo 将返回相同结果
+
+多次调用 XMatchVisualInfo 返回的 Visual 是相同的
+
+经过测试这是相同的
+
+```csharp
+    XLib.XMatchVisualInfo(display, screen, 32, 4, out var info);
+    IntPtr visual = info.visual;
+
+    XLib.XMatchVisualInfo(display, screen, 32, 4, out var info2);
+    IntPtr visual2 = info2.visual;
+    Console.WriteLine($"Visual==Visual2 {visual}=={visual2}");
+```
+
 ## 和 Avalonia 相互调用
 
 设置工具栏与 X11 窗口绘制的笔迹关联，要求 X11 笔迹窗口在下方，配合设置X11里面两个窗口之间的层级关系的方法即可实现
