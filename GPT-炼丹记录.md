@@ -158,27 +158,22 @@
 
 以下是我想要报告的问题：
 
-当前行为： 当我使用 Storyboard 播放动画时，如果我的动画里面涉及到某些布局相关属性的时候，且我没有设置 EnableDependentAnimation 属性为 true 的值，那么此 Storyboard 动画的 Completed 事件将永不触发
+WPF 应用程序在 Intel 设备上可能存在的高内存占用或者内存泄露问题
 
-预期行为： 可以保持和 WinUI3 相同的行为，可以触发 Storyboard 动画的 Completed 事件
+此问题是在 WPF 仓库的 issues 报告的，经过了漫长时间的调查，我没有什么收获。同时我也感受到了我的能力上的不足，恳请微软能够为此问题投入更多的关注。问题地址是： https://github.com/dotnet/wpf/issues/7704
 
-复现步骤：
+经过我的初步调查（我的结论可能是错误的），这个问题和 D3D9On12 有比较大的关联关系，即在 D3D9On12 模块下，将原先统计在 GPU 占用的内存部分统计到了进程里面。或者是在 D3D9On12 里面确实会申请或占用更多的内存
 
-1. 设置如下的 XAML 界面和动画资源
+此问题一开始是 Edi Wang 报告的，随后经过我的调查，但这个过程中我两都没有什么收获和进度。但随着时间的推移，越来越多的伙伴报告了更多的问题，特别是如 [Link1] 的 ShannonZ 伙伴报告的更加严重的问题
 
-[Code1]
+我追踪了很多个 Intel 驱动版本，但从 31.0.101.4032 版本到 32.0.101.5768 版本都没有对此版本有帮助
 
-2. 通过代码执行动画，且监听 Completed 事件
 
-[Code2]
+"Edi Wang"<Edi.Wang@outlook.com>
 
-3. 分别使用 Desktop 和 WinUI 平台运行项目
+High memory consumption or memory leak on Intel integrated graphics
 
-你可以看到在 Desktop 平台里，永远不会进入 `Storyboard_Completed` 方法。而 WinUI 平台可以进入此方法，且在控制台进行输出
-
-你可以在此找到我的 demo 项目： [Link1]
-
-https://github.com/lindexi/lindexi_gd/tree/9bd249807ed238ad6fb5b1cd2f706a2749f472e4/UnoDemo/LairhalawcarchemKacallligekay
+https://github.com/dotnet/wpf/issues/7704#issuecomment-2311574479
 ```
 
 
