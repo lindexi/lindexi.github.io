@@ -1,7 +1,12 @@
-刚刚好 dotnet 8 的 glibc 版本足够旧，可以运行
+---
+title: dotnet 8 版本与银河麒麟V10和UOS系统的 glibc 兼容性
+description: 刚刚好 dotnet 8 的 glibc 版本足够旧，可以运行
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/04/26 18:38:48 -->
 

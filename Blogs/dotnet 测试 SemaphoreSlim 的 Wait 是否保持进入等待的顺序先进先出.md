@@ -1,7 +1,12 @@
-本文记录我测试 dotnet 里面的 SemaphoreSlim 锁，在多线程进入 Wait 等待时，进行释放锁时，获取锁执行权限的顺序是否与进入 Wait 等待的顺序相同。测试的结果是 SemaphoreSlim 的 Wait 大部分情况是先进先出，按照 Wait 的顺序出来的，但是压力测试下也存在乱序，根据官方文档说明不应该依赖 SemaphoreSlim 的 Wait 做排队顺序
+---
+title: dotnet 测试 SemaphoreSlim 的 Wait 是否保持进入等待的顺序先进先出
+description: 本文记录我测试 dotnet 里面的 SemaphoreSlim 锁，在多线程进入 Wait 等待时，进行释放锁时，获取锁执行权限的顺序是否与进入 Wait 等待的顺序相同。测试的结果是 SemaphoreSlim 的 Wait 大部分情况是先进先出，按照 Wait 的顺序出来的，但是压力测试下也存在乱序，根据官方文档说明不应该依赖 SemaphoreSlim 的 Wait 做排队顺序
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/1/31 19:49:53 -->
 

@@ -1,7 +1,12 @@
-本文将告诉大家如何在 Gtk3 的 Gtk.Window 或 Gdk.Window 里面获取到对应的 X11 窗口 XID 号
+---
+title: dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口
+description: 本文将告诉大家如何在 Gtk3 的 Gtk.Window 或 Gdk.Window 里面获取到对应的 X11 窗口 XID 号
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/05/15 07:25:32 -->
 

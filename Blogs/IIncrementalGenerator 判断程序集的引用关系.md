@@ -1,7 +1,12 @@
-本文将告诉大家如何在 IIncrementalGenerator 增量 Source Generator 生成代码里面，在 Roslyn 分析器里面判断两个程序集是否存在引用关系
+---
+title: IIncrementalGenerator 增量 Source Generator 生成代码入门 判断程序集的引用关系
+description: 本文将告诉大家如何在 IIncrementalGenerator 增量 Source Generator 生成代码里面，在 Roslyn 分析器里面判断两个程序集是否存在引用关系
 
 <!--more-->
 
+tags: Roslyn MSBuild 编译器 SourceGenerator 生成代码
+category: 
+---
 
 <!-- CreateTime:2023/8/23 10:03:24 -->
 <!-- 标题： IIncrementalGenerator 判断程序集的引用关系 -->

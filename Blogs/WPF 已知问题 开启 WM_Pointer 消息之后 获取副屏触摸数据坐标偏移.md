@@ -1,7 +1,12 @@
-本文记录 WPF 触摸的一个已知问题，仅在开启 WM_Pointer 消息之后，将应用程序运行在包含多个屏幕的带触摸屏的设备上，如此时在非主屏幕的触摸屏上进行触摸，使用 GetStylusPoint 或 GetIntermediateTouchPoints 方法获取触摸点时，将会发现所获取的触摸点的坐标是偏的，偏的坐标差值刚好是整个屏幕距离
+---
+title: WPF 已知问题 开启 WM_Pointer 消息之后 获取副屏触摸数据坐标偏移
+description: 本文记录 WPF 触摸的一个已知问题，仅在开启 WM_Pointer 消息之后，将应用程序运行在包含多个屏幕的带触摸屏的设备上，如此时在非主屏幕的触摸屏上进行触摸，使用 GetStylusPoint 或 GetIntermediateTouchPoints 方法获取触摸点时，将会发现所获取的触摸点的坐标是偏的，偏的坐标差值刚好是整个屏幕距离
 
 <!--more-->
 
+tags: WPF
+category: 
+---
 
 <!-- CreateTime:2023/12/9 9:45:28 -->
 <!-- 发布 -->

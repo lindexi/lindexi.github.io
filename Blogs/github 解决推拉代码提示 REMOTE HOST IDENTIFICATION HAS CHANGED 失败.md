@@ -1,7 +1,12 @@
-本文记录最近 github 推送或拉取代码时提示 WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 而失败的解决方法
+---
+title: github 解决推拉代码提示 REMOTE HOST IDENTIFICATION HAS CHANGED 失败
+description: 本文记录最近 github 推送或拉取代码时提示 WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 而失败的解决方法
 
 <!--more-->
 
+tags: git
+category: 
+---
 
 <!-- CreateTime:2023/3/27 8:39:35 -->
 

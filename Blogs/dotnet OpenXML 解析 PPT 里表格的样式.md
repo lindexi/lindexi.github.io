@@ -1,7 +1,12 @@
-在 PPT 里面的表格可以通过表格样式配置决定表格的样式，本文将和大家介绍如何获取和解析表格的样式
+---
+title: dotnet OpenXML 解析 PPT 里表格的样式
+description: 在 PPT 里面的表格可以通过表格样式配置决定表格的样式，本文将和大家介绍如何获取和解析表格的样式
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/2/23 8:46:25 -->
 

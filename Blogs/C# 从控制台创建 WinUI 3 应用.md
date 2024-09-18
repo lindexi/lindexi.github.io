@@ -1,7 +1,12 @@
-本文将告诉大家如何从控制台而不是 WinUI3 模版项目，从零一步步创建出 WinUI 3 应用
+---
+title: C# 从控制台创建 WinUI 3 应用
+description: 本文将告诉大家如何从控制台而不是 WinUI3 模版项目，从零一步步创建出 WinUI 3 应用
 
 <!--more-->
 
+tags: C#
+category: 
+---
 
 <!-- CreateTime:2023/7/31 16:35:10 -->
 

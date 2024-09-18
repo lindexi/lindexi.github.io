@@ -1,7 +1,12 @@
-经过我的测试，在 X11 里面，如果先使用 XDestroyWindow 销毁窗口，将不能再次使用 XMapWindow 显示窗口
+---
+title: dotnet X11 窗口 Destroy 之后是否可以再次 Map 显示
+description: 经过我的测试，在 X11 里面，如果先使用 XDestroyWindow 销毁窗口，将不能再次使用 XMapWindow 显示窗口
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/08/14 07:27:21 -->
 

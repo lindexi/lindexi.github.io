@@ -1,7 +1,12 @@
-从设计架构上，无论是 WPF 还是 ASP.NET Core 框架，都是在 dotnet 运行时上层的应用，两个框架处于平级的结构。理论上讲，两个平级的框架只要不存在特殊的情况，都是能够相容存在的。本文将和大家介绍一个非常简单的方法，在一个进程内同时跑起 WPF 和 ASP.NET Core 框架
+---
+title: dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架
+description: 从设计架构上，无论是 WPF 还是 ASP.NET Core 框架，都是在 dotnet 运行时上层的应用，两个框架处于平级的结构。理论上讲，两个平级的框架只要不存在特殊的情况，都是能够相容存在的。本文将和大家介绍一个非常简单的方法，在一个进程内同时跑起 WPF 和 ASP.NET Core 框架
 
 <!--more-->
 
+tags: WPF dotnet
+category: 
+---
 
 <!-- CreateTime:2023/11/25 18:09:51 -->
 

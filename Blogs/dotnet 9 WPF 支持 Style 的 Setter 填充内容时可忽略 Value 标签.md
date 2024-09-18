@@ -1,7 +1,12 @@
-本文记录 WPF 在 dotnet 9 的一项 XAML 编写语法改进点，此改进点用于解决编写 Style 的 Setter 进行给 Value 赋值时，不能将 Value 当成默认内容，需要多写 Value 标签的问题。通过此改进点可减少两行 XAML 代码
+---
+title: dotnet 9 WPF 支持 Style 的 Setter 填充内容时可忽略 Value 标签
+description: 本文记录 WPF 在 dotnet 9 的一项 XAML 编写语法改进点，此改进点用于解决编写 Style 的 Setter 进行给 Value 赋值时，不能将 Value 当成默认内容，需要多写 Value 标签的问题。通过此改进点可减少两行 XAML 代码
 
 <!--more-->
 
+tags: WPF dotnet
+category: 
+---
 
 <!-- CreateTime:2024/05/09 07:29:07 -->
 

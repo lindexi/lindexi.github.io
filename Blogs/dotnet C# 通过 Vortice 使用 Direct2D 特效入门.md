@@ -1,7 +1,12 @@
-本文将告诉大家如何通过 Vortice 使用 D2D 的特效
+---
+title: dotnet C# 通过 Vortice 使用 Direct2D 特效入门
+description: 本文将告诉大家如何通过 Vortice 使用 D2D 的特效
 
 <!--more-->
 
+tags: C# D2D DirectX Vortice Direct2D
+category: 
+---
 
 <!-- CreateTime:2023/5/22 8:51:31 -->
 

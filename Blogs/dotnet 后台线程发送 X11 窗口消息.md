@@ -1,7 +1,12 @@
-本文将告诉大家如何在 dotnet 里面的后台线程向自己进程内的窗口发送消息
+---
+title: dotnet 后台线程发送 X11 窗口消息
+description: 本文将告诉大家如何在 dotnet 里面的后台线程向自己进程内的窗口发送消息
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/05/15 07:25:31 -->
 

@@ -1,7 +1,12 @@
-本文将和大家介绍如何在 C# dotnet 里面的控制台应用里面，使用 DirectML 将 Phi-3 模型在本地运行起来
+---
+title: dotnet 基于 DirectML 控制台运行 Phi-3 模型
+description: 本文将和大家介绍如何在 C# dotnet 里面的控制台应用里面，使用 DirectML 将 Phi-3 模型在本地运行起来
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/06/13 07:27:21 -->
 

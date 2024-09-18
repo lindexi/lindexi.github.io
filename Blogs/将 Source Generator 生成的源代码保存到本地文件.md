@@ -1,7 +1,12 @@
-默认的源代码生成器所生成的代码都是没有直接存放到项目文件夹里面的，不受源代码管理工具管理，对使用方的开发者来说很难直接阅读或查找到 Source Generator 生成的源代码。本文将和大家介绍如何使用 EmitCompilerGeneratedFiles 属性配置将生成的代码保存到本地文件
+---
+title: 将 Source Generator 生成的源代码保存到本地文件
+description: 默认的源代码生成器所生成的代码都是没有直接存放到项目文件夹里面的，不受源代码管理工具管理，对使用方的开发者来说很难直接阅读或查找到 Source Generator 生成的源代码。本文将和大家介绍如何使用 EmitCompilerGeneratedFiles 属性配置将生成的代码保存到本地文件
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2024/2/7 9:56:37 -->
 <!-- 发布 -->

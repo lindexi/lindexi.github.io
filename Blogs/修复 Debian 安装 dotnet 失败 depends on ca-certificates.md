@@ -1,7 +1,12 @@
-本文记录我在 Debian 安装 dotnet 失败，报错信息是 packages-microsoft-prod depends on ca-certificates; however:  Package ca-certificates is not installed.
+---
+title: 修复 Debian 安装 dotnet 失败 depends on ca-certificates
+description: 本文记录我在 Debian 安装 dotnet 失败，报错信息是 packages-microsoft-prod depends on ca-certificates; however:  Package ca-certificates is not installed.
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/2/28 14:30:37 -->
 

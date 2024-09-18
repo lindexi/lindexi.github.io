@@ -1,7 +1,12 @@
-本文记录一个 dotnet 6 已知问题，此问题预计是在 .NET Framework 4.5 时就引入的，我没有考古在 .NET Framework 4.5 之前是否还存在此问题。当前这个问题在 .NET 7 修复
+---
+title: dotnet 6 已知问题 ManualResetEventSlim 的 Set 方法抛出空异常
+description: 本文记录一个 dotnet 6 已知问题，此问题预计是在 .NET Framework 4.5 时就引入的，我没有考古在 .NET Framework 4.5 之前是否还存在此问题。当前这个问题在 .NET 7 修复
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/6/25 8:43:13 -->
 

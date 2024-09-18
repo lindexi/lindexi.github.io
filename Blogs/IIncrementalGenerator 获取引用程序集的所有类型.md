@@ -1,7 +1,12 @@
-本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何获取到当前正在分析的程序集所引用的所有的程序集，以及引用的程序集里面的所有类型
+---
+title: IIncrementalGenerator 增量 Source Generator 生成代码入门 获取引用程序集的所有类型
+description: 本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何获取到当前正在分析的程序集所引用的所有的程序集，以及引用的程序集里面的所有类型
 
 <!--more-->
 
+tags: Roslyn MSBuild 编译器 SourceGenerator 生成代码
+category: 
+---
 
 <!-- CreateTime:2023/6/19 8:39:59 -->
 <!-- 标题： IIncrementalGenerator 获取引用程序集的所有类型 -->

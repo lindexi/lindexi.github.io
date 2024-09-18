@@ -1,7 +1,12 @@
-本文记录一个 WPF 已知问题，当 WPF 的 RadioButton 指定 GroupName 且将 IsChecked 状态绑定到 ViewModel 上，将包含以上控件的代码的窗口显示两个，接着关闭其中一个。此时可以看到依然开着的窗口的 RadioButton 控件无法正确在用户界面上点击选中
+---
+title: WPF 已知问题 RadioButton 指定 GroupName 后关闭窗口可能导致无法选中
+description: 本文记录一个 WPF 已知问题，当 WPF 的 RadioButton 指定 GroupName 且将 IsChecked 状态绑定到 ViewModel 上，将包含以上控件的代码的窗口显示两个，接着关闭其中一个。此时可以看到依然开着的窗口的 RadioButton 控件无法正确在用户界面上点击选中
 
 <!--more-->
 
+tags: WPF
+category: 
+---
 
 <!-- CreateTime:2023/10/20 19:29:55 -->
 

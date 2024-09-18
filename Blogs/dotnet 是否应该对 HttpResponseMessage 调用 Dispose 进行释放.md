@@ -1,7 +1,12 @@
-对于 HttpClient 的请求响应值 HttpResponseMessage 来说，既然继承了 IDisposable 接口，自然就是想让大家可以通过 using 或者手动调用 Dispose 进行释放的。本文将来聊聊对 HttpResponseMessage 调用 Dispose 进行释放的意义有多大，有没有必要性的问题
+---
+title: dotnet 是否应该对 HttpResponseMessage 调用 Dispose 进行释放
+description: 对于 HttpClient 的请求响应值 HttpResponseMessage 来说，既然继承了 IDisposable 接口，自然就是想让大家可以通过 using 或者手动调用 Dispose 进行释放的。本文将来聊聊对 HttpResponseMessage 调用 Dispose 进行释放的意义有多大，有没有必要性的问题
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/7/18 19:54:27 -->
 

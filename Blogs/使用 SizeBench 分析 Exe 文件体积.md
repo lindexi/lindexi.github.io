@@ -1,7 +1,12 @@
-本文将介绍微软开源免费的 SizeBench 工具，使用 SizeBench 工具可以用来分析 Exe 二进制文件的体积，分析 Exe 文件大小里面有哪些是可以优化的
+---
+title: 使用 SizeBench 分析 Exe 文件体积
+description: 本文将介绍微软开源免费的 SizeBench 工具，使用 SizeBench 工具可以用来分析 Exe 二进制文件的体积，分析 Exe 文件大小里面有哪些是可以优化的
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2023/8/2 8:40:27 -->
 

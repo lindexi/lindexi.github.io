@@ -1,7 +1,12 @@
-我将在一个 .NET Framework 项目升级到 dotnet 6 时发现构建不通过，因为原先的代码使用到了 EnumeratorToEnumVariantMarshaler 类型，在 dotnet 6 里面找不到。本文将告诉大家如何修复此问题
+---
+title: dotnet 6 修复找不到 EnumeratorToEnumVariantMarshaler 问题
+description: 我将在一个 .NET Framework 项目升级到 dotnet 6 时发现构建不通过，因为原先的代码使用到了 EnumeratorToEnumVariantMarshaler 类型，在 dotnet 6 里面找不到。本文将告诉大家如何修复此问题
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/3/28 14:54:11 -->
 

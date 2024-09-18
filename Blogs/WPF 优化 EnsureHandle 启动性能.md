@@ -1,7 +1,12 @@
-本文将记录一个在 WPF 应用程序启动过程中的性能优化点。如果一个窗口需要设置 WindowStyle 属性，那么在窗口 EnsureHandle 之前，设置 WindowStyle 属性将会比在 EnsureHandle 之后设置快不少
+---
+title: WPF 启动性能优化 在 EnsureHandle 之前设置 WindowStyle 提升性能
+description: 本文将记录一个在 WPF 应用程序启动过程中的性能优化点。如果一个窗口需要设置 WindowStyle 属性，那么在窗口 EnsureHandle 之前，设置 WindowStyle 属性将会比在 EnsureHandle 之后设置快不少
 
 <!--more-->
 
+tags: WPF
+category: 
+---
 
 <!-- CreateTime:2023/8/19 16:13:03 -->
 <!-- 标题： WPF 优化 EnsureHandle 启动性能 -->

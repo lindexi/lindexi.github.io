@@ -1,7 +1,12 @@
-本文将告诉大家如何修复 dotnet 项目里的多框架 TargetFrameworks 如果包含了当前系统无法支持的平台时，如何进行跳过。解决在 Linux 平台构建时提示 Mac Catalyst 不受支持而构建失败
+---
+title: dotnet 修复多框架 TargetFrameworks 包含不受支持平台导致构建失败
+description: 本文将告诉大家如何修复 dotnet 项目里的多框架 TargetFrameworks 如果包含了当前系统无法支持的平台时，如何进行跳过。解决在 Linux 平台构建时提示 Mac Catalyst 不受支持而构建失败
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/03/31 07:13:30 -->
 

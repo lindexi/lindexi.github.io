@@ -1,7 +1,12 @@
-这是一个在 dotnet 6 早就引入的功能，此功能的使用方法能简单，提升的效果也很棒。使用的时候需要将 Json 序列化工具类换成 dotnet 运行时自带的 System.Text.Json 进行序列化，再加上约 5 行的辅助代码，即可完成对接
+---
+title: dotnet 6 在 System.Text.Json 使用 source generation 源代码生成提升 JSON 序列化性能
+description: 这是一个在 dotnet 6 早就引入的功能，此功能的使用方法能简单，提升的效果也很棒。使用的时候需要将 Json 序列化工具类换成 dotnet 运行时自带的 System.Text.Json 进行序列化，再加上约 5 行的辅助代码，即可完成对接
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2022/10/31 8:09:00 -->
 

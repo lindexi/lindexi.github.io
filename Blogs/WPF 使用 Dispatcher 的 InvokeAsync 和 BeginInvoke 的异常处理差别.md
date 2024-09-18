@@ -1,7 +1,12 @@
-一般认为 WPF 的 Dispatcher 的 InvokeAsync 方法是 BeginInvoke 方法的平替方法和升级版，接近在任何情况下都应该在业务层使用 InvokeAsync 方法代替 BeginInvoke 方法。然而在异常的处理上，这两个方法还是有细微的差别的，不能说是坏事，依然可以认为使用 InvokeAsync 方法代替 BeginInvoke 方法是正确的。本文将记录这两个在抛出异常时，进入的统一异常处理事件的差别
+---
+title: WPF 使用 Dispatcher 的 InvokeAsync 和 BeginInvoke 的异常处理差别
+description: 一般认为 WPF 的 Dispatcher 的 InvokeAsync 方法是 BeginInvoke 方法的平替方法和升级版，接近在任何情况下都应该在业务层使用 InvokeAsync 方法代替 BeginInvoke 方法。然而在异常的处理上，这两个方法还是有细微的差别的，不能说是坏事，依然可以认为使用 InvokeAsync 方法代替 BeginInvoke 方法是正确的。本文将记录这两个在抛出异常时，进入的统一异常处理事件的差别
 
 <!--more-->
 
+tags: WPF
+category: 
+---
 
 <!-- CreateTime:2023/6/14 16:49:04 -->
 

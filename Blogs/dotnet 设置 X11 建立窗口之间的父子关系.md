@@ -1,7 +1,12 @@
-在 X11 里面有和 Win32 类似的窗口之间的关系机制，如 Owner-Owned 关系，以及 Parent-Child 关系。本文将告诉大家如何进行设置以及其行为
+---
+title: dotnet 设置 X11 建立窗口之间的父子关系
+description: 在 X11 里面有和 Win32 类似的窗口之间的关系机制，如 Owner-Owned 关系，以及 Parent-Child 关系。本文将告诉大家如何进行设置以及其行为
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/05/17 07:23:22 -->
 

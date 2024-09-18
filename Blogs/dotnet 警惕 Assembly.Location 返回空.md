@@ -1,7 +1,12 @@
-在大部分情况下，获取当前所运行的应用程序的所在路径时，常用的就是 Assembly.Location 属性，按照之前的经验，使用 Assembly.Location 是最为稳定的做法，然而在 dotnet 发布单文件时，此属性将会为空，导致一些不符合预期的行为
+---
+title: dotnet 警惕 Assembly.Location 返回空
+description: 在大部分情况下，获取当前所运行的应用程序的所在路径时，常用的就是 Assembly.Location 属性，按照之前的经验，使用 Assembly.Location 是最为稳定的做法，然而在 dotnet 发布单文件时，此属性将会为空，导致一些不符合预期的行为
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/10/16 19:53:54 -->
 

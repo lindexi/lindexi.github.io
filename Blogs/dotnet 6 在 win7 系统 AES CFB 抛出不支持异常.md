@@ -1,7 +1,12 @@
-本文记录在 win7 系统上调用 AES 加密时，采用 CFB 模式，可能抛出 CryptographicException 异常
+---
+title: dotnet 6 在 win7 系统 AES CFB 抛出不支持异常
+description: 本文记录在 win7 系统上调用 AES 加密时，采用 CFB 模式，可能抛出 CryptographicException 异常
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/8/25 14:36:56 -->
 

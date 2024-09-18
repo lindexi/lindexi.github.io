@@ -1,7 +1,12 @@
-本文记录一个 WPF 已知问题，此问题已经被我修复。传入错误的数据给到 WriteableBitmap 对象，比如调用 WritePixels 时传入错误的 stride 数值，将可能导致渲染线程进入无限自旋锁
+---
+title: WPF 已知问题 传入错误数据给到 WriteableBitmap 可能导致渲染线程锁住
+description: 本文记录一个 WPF 已知问题，此问题已经被我修复。传入错误的数据给到 WriteableBitmap 对象，比如调用 WritePixels 时传入错误的 stride 数值，将可能导致渲染线程进入无限自旋锁
 
 <!--more-->
 
+tags: WPF WPF源代码
+category: 
+---
 
 <!-- CreateTime:2023/9/11 8:50:10 -->
 

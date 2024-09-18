@@ -1,7 +1,12 @@
-本文记录我读 dotnet 的源代码了解到为什么调用 Thread.Sleep 的时候，传入的是不足一毫秒，如半毫秒时或 0.99 毫秒，与传入是一毫秒时，两者的等待时间差距非常大
+---
+title: 读 dotnet 源代码 为何 Thread.Sleep 半毫秒和一毫秒等待时间差距如此之大
+description: 本文记录我读 dotnet 的源代码了解到为什么调用 Thread.Sleep 的时候，传入的是不足一毫秒，如半毫秒时或 0.99 毫秒，与传入是一毫秒时，两者的等待时间差距非常大
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/08/27 07:12:02 -->
 

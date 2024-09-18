@@ -1,7 +1,12 @@
-本文告诉大家如何通过 Vortice 在 Direct2D 里面绘制图片，图片的来源是 WIC 加载出的图片
+---
+title: WPF 对接 Vortice 在 Direct2D 绘制从 WIC 加载的图片
+description: 本文告诉大家如何通过 Vortice 在 Direct2D 里面绘制图片，图片的来源是 WIC 加载出的图片
 
 <!--more-->
 
+tags: C# D2D DirectX Vortice Direct2D
+category: 
+---
 
 <!-- CreateTime:2023/5/15 8:38:17 -->
 <!-- 标题： WPF 对接 Vortice 绘制 WIC 图片 -->

@@ -1,7 +1,12 @@
-本文记录一个已知问题，或者准确来说是设计如此的行为，在 dotnet core 下，无论是 dotnet core 3.1 还是 dotnet 5 或 dotnet 6 或 dotnet 7 等，如果访问的 https 链接返回 302 状态码，且跳转的链接是一个 http 链接，那将不会自动跳转
+---
+title: dotnet core 不自动从 https 到 http 的 302 重定向
+description: 本文记录一个已知问题，或者准确来说是设计如此的行为，在 dotnet core 下，无论是 dotnet core 3.1 还是 dotnet 5 或 dotnet 6 或 dotnet 7 等，如果访问的 https 链接返回 302 状态码，且跳转的链接是一个 http 链接，那将不会自动跳转
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2022/12/7 19:36:33 -->
 <!-- 发布 -->

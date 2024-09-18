@@ -1,7 +1,12 @@
-本文将告诉大家如何通过 Vortice 库从底层的方式使用 WIC 层加载本地图片文件，解码为 IWICBitmap 图片，然后将 IWICBitmap 图片交给 WPF 进行渲染
+---
+title: WPF 对接 Vortice 调用 WIC 加载图片
+description: 本文将告诉大家如何通过 Vortice 库从底层的方式使用 WIC 层加载本地图片文件，解码为 IWICBitmap 图片，然后将 IWICBitmap 图片交给 WPF 进行渲染
 
 <!--more-->
 
+tags: C# D2D DirectX Vortice Direct2D
+category: 
+---
 
 <!-- CreateTime:2023/5/15 8:38:17 -->
 

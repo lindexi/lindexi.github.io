@@ -1,7 +1,12 @@
-本文将告诉大家如何在 WPF 不安装 WindowsAppSDK 包，且不在 TargetFramework 带上 TargetPlatformVersion 而弹出 Win10 的 Toast 通知的方法
+---
+title: WPF 不带 TargetPlatformVersion 显示 Win10 的 Toast 通知的方法
+description: 本文将告诉大家如何在 WPF 不安装 WindowsAppSDK 包，且不在 TargetFramework 带上 TargetPlatformVersion 而弹出 Win10 的 Toast 通知的方法
 
 <!--more-->
 
+tags: WPF Win10
+category: 
+---
 
 <!-- CreateTime:2024/07/31 07:19:36 -->
 

@@ -1,7 +1,12 @@
-本文记录在 X11 里面的窗口与颜色的位色深关系
+---
+title: dotnet 理解 X11 的 24 位或 32 位色深窗口
+description: 本文记录在 X11 里面的窗口与颜色的位色深关系
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/07/13 07:07:24 -->
 

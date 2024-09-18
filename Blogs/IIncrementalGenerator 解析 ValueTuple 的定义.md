@@ -1,7 +1,12 @@
-本文将告诉大家如何在分析器里面解析代码里面对于 ValueTuple 的定义，包括如何获取 ValueTuple 里面的 Item 的类型和命名
+---
+title: IIncrementalGenerator 增量 Source Generator 生成代码入门 读取解析 ValueTuple 的定义
+description: 本文将告诉大家如何在分析器里面解析代码里面对于 ValueTuple 的定义，包括如何获取 ValueTuple 里面的 Item 的类型和命名
 
 <!--more-->
 
+tags: Roslyn MSBuild 编译器 SourceGenerator 生成代码
+category: 
+---
 
 <!-- CreateTime:2023/8/21 19:51:17 -->
 <!-- 标题： IIncrementalGenerator 解析 ValueTuple 的定义 -->

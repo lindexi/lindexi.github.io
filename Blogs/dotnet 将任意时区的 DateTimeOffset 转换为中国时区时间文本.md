@@ -1,7 +1,12 @@
-本文告诉大家在拿到任意时区的 DateTimeOffset 对象，将 DateTimeOffset 转换为使用中国的 +8 时区表示的时间
+---
+title: dotnet 将任意时区的 DateTimeOffset 转换为中国时区时间文本
+description: 本文告诉大家在拿到任意时区的 DateTimeOffset 对象，将 DateTimeOffset 转换为使用中国的 +8 时区表示的时间
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2022/10/24 17:34:45 -->
 

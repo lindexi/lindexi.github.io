@@ -1,7 +1,12 @@
-本文将和大家介绍如何在 dotnet C# 里面使用 SHFileOperation 调用 Windows 自带的文件复制对话框进行文件复制
+---
+title: dotnet C# 使用 SHFileOperation 调用 Win32 的文件复制对话框
+description: 本文将和大家介绍如何在 dotnet C# 里面使用 SHFileOperation 调用 Windows 自带的文件复制对话框进行文件复制
 
 <!--more-->
 
+tags: dotnet C#
+category: 
+---
 
 <!-- CreateTime:2024/08/10 07:19:12 -->
 

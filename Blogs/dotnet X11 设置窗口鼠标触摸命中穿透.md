@@ -1,7 +1,12 @@
-本文记录如何在 X11 应用里面，使用 XShapeCombineRegion 方法配置一个 X11 窗口支持和 Win32 窗口一样的命中测试穿透功能，即对应 Win32 的 WS_EX_TRANSPARENT 的鼠标、触摸等的点击等动作的穿透功能，可以实现在窗口中挖空一块范围直接穿透到后面的窗口
+---
+title: dotnet X11 设置窗口鼠标触摸命中穿透
+description: 本文记录如何在 X11 应用里面，使用 XShapeCombineRegion 方法配置一个 X11 窗口支持和 Win32 窗口一样的命中测试穿透功能，即对应 Win32 的 WS_EX_TRANSPARENT 的鼠标、触摸等的点击等动作的穿透功能，可以实现在窗口中挖空一块范围直接穿透到后面的窗口
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/05/21 17:01:25 -->
 

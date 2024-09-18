@@ -1,7 +1,12 @@
-This article introduces a hack that allows access to internal, non-public members of the UNO framework. This includes calling non-public API methods and properties, and accessing non-public types within UNO.
+---
+title: Accessing Internal Members in the UNO Framework
+description: This article introduces a hack that allows access to internal, non-public members of the UNO framework. This includes calling non-public API methods and properties, and accessing non-public types within UNO.
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2024/06/12 07:09:03 -->
 

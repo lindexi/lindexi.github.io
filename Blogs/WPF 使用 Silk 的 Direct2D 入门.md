@@ -1,7 +1,12 @@
-在上一篇博客的基础上，使用 dotnet 基金会新开源的 Silk.NET 库，让 Silk.NET 创建的 DX 设备和 WPF 对接渲染。接下来本文将告诉大家如何使用 Silk.NET 提供的 Direct2D 底层封装，在 WPF 上绘制出界面
+---
+title: WPF 使用 Silk.NET 进行 Direct2D 渲染入门
+description: 在上一篇博客的基础上，使用 dotnet 基金会新开源的 Silk.NET 库，让 Silk.NET 创建的 DX 设备和 WPF 对接渲染。接下来本文将告诉大家如何使用 Silk.NET 提供的 Direct2D 底层封装，在 WPF 上绘制出界面
 
 <!--more-->
 
+tags: WPF DirectX 渲染
+category: 
+---
 
 <!-- CreateTime:2023/4/10 8:38:39 -->
 <!-- 标题： WPF 使用 Silk 的 Direct2D 入门 -->

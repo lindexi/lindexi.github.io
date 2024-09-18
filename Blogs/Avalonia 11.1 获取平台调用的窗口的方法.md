@@ -1,7 +1,12 @@
-本文和大家介绍如何在 11.1 版本的 Avalonia 里获取平台调用的窗口的方法，如 Windows 获取窗口句柄，在 Linux 下获取 X11 的 xid 窗口信息
+---
+title: Avalonia 11.1 获取平台调用的窗口的方法
+description: 本文和大家介绍如何在 11.1 版本的 Avalonia 里获取平台调用的窗口的方法，如 Windows 获取窗口句柄，在 Linux 下获取 X11 的 xid 窗口信息
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2024/08/09 09:07:49 -->
 

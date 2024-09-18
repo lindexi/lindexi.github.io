@@ -1,7 +1,12 @@
-本文将和大家介绍在 C# 里面简单使用 SharpFont 对 FreeType 的封装，读取 ttf 等字体文件信息，绘制出某个文字到图片文件
+---
+title: dotnet C# 使用 FreeType 读取和绘制字体
+description: 本文将和大家介绍在 C# 里面简单使用 SharpFont 对 FreeType 的封装，读取 ttf 等字体文件信息，绘制出某个文字到图片文件
 
 <!--more-->
 
+tags: dotnet C#
+category: 
+---
 
 <!-- CreateTime:2024/04/19 20:31:36 -->
 

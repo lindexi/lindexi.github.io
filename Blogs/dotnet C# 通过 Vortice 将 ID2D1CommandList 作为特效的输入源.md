@@ -1,7 +1,12 @@
-使用 Direct2D 过程中将可以使用到 Direct2D 强大的特效功能，比如给某些界面绘制内容添加特效支持。本文将告诉大家如何通过 Vortice 将 ID2D1CommandList 作为特效的输入源，从而实现给某些绘制好的界面元素叠加特效
+---
+title: dotnet C# 通过 Vortice 将 ID2D1CommandList 作为特效的输入源
+description: 使用 Direct2D 过程中将可以使用到 Direct2D 强大的特效功能，比如给某些界面绘制内容添加特效支持。本文将告诉大家如何通过 Vortice 将 ID2D1CommandList 作为特效的输入源，从而实现给某些绘制好的界面元素叠加特效
 
 <!--more-->
 
+tags: C# D2D DirectX Vortice Direct2D
+category: 
+---
 
 <!-- CreateTime:2023/6/15 8:35:55 -->
 

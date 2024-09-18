@@ -1,7 +1,12 @@
-在应用软件启动过程中，客户端应用软件是对性能敏感的。比如在解析命令行参数的时候，有时候需要进行字符串处理逻辑。一般来说命令行参数都是语言文化无关的，在需要进行全大写或全小写转换过程中，采用 ToUpperInvariant 替换 ToUpper 方法可以避免初始化 icu 模块，减少 icu 模块初始化过慢影响启动性能
+---
+title: dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢
+description: 在应用软件启动过程中，客户端应用软件是对性能敏感的。比如在解析命令行参数的时候，有时候需要进行字符串处理逻辑。一般来说命令行参数都是语言文化无关的，在需要进行全大写或全小写转换过程中，采用 ToUpperInvariant 替换 ToUpper 方法可以避免初始化 icu 模块，减少 icu 模块初始化过慢影响启动性能
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/8/10 12:09:28 -->
 <!-- 标题： dotnet 提升 ToUpper 性能 -->

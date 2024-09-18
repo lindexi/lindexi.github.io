@@ -1,7 +1,12 @@
-本文记录 SQLite.Interop.dll 由于 mscoree.dll 文件损坏而在加载时抛出 BadImageFormatException 错误，错误信息是 0x8007000B 试图加载格式不正确的程序
+---
+title: SQLite 由于 mscoree.dll 损坏导致 BadImageFormatException 试图加载格式不正确的程序
+description: 本文记录 SQLite.Interop.dll 由于 mscoree.dll 文件损坏而在加载时抛出 BadImageFormatException 错误，错误信息是 0x8007000B 试图加载格式不正确的程序
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2024/09/05 07:21:42 -->
 

@@ -1,7 +1,12 @@
-本文告诉大家在 WPF 里面设置 SelectionTextBrush 无效的问题，可以通过 AppContext 的开关开启其行为
+---
+title: WPF 解决 SelectionTextBrush 设置无效问题
+description: 本文告诉大家在 WPF 里面设置 SelectionTextBrush 无效的问题，可以通过 AppContext 的开关开启其行为
 
 <!--more-->
 
+tags: WPF
+category: 
+---
 
 <!-- CreateTime:2024/04/02 07:07:45 -->
 

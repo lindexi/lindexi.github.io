@@ -1,7 +1,12 @@
-本文属于 OpenTK 入门博客，这是一项使用 C# 做底层调用 OpenGL 和 OpenAL 和 OpenCL 的技术。但值得一提的是，如果是想做渲染相关的话，当前是不建议使用 OpenGL 的，无论是从性能上还是其他方面，都不具备优势
+---
+title: OpenTK 入门 初始化窗口
+description: 本文属于 OpenTK 入门博客，这是一项使用 C# 做底层调用 OpenGL 和 OpenAL 和 OpenCL 的技术。但值得一提的是，如果是想做渲染相关的话，当前是不建议使用 OpenGL 的，无论是从性能上还是其他方面，都不具备优势
 
 <!--more-->
 
+tags:  渲染
+category: 
+---
 
 <!-- CreateTime:2023/4/7 8:33:59 -->
 

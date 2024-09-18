@@ -1,7 +1,12 @@
-本文将告诉大家如何通过 Vortice 使用 D2D 的 CommandList 功能
+---
+title: dotnet C# 通过 Vortice 使用 Direct2D 的 ID2D1CommandList 入门
+description: 本文将告诉大家如何通过 Vortice 使用 D2D 的 CommandList 功能
 
 <!--more-->
 
+tags: C# D2D DirectX Vortice Direct2D
+category: 
+---
 
 <!-- CreateTime:2023/5/30 19:29:44 -->
 

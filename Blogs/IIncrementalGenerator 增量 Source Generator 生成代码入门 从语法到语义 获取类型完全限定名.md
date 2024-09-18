@@ -1,7 +1,12 @@
-本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何从语法分析过程，将获取的语法 Token 转换到语义分析上，比如获取类型完全限定名。一个使用的例子是在拿到一个 Token 表示某个类型时，本文将演示通过语义分析获取到拿到的 Token 的 Type 类型的 FullName 带命名空间的完全限定名
+---
+title: IIncrementalGenerator 增量 Source Generator 生成代码入门 从语法到语义 获取类型完全限定名
+description: 本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何从语法分析过程，将获取的语法 Token 转换到语义分析上，比如获取类型完全限定名。一个使用的例子是在拿到一个 Token 表示某个类型时，本文将演示通过语义分析获取到拿到的 Token 的 Type 类型的 FullName 带命名空间的完全限定名
 
 <!--more-->
 
+tags: Roslyn MSBuild 编译器 SourceGenerator 生成代码
+category: 
+---
 
 <!-- CreateTime:2023/6/2 16:15:05 -->
 

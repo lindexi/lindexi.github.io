@@ -1,7 +1,12 @@
-以往的单元测试都是不能单独作为一个独立的可执行文件跑的，需要在 VisualStudio 或 VSTest 或 dotnet test 里面运行。这就限制了运行单元测试的环境了，有时候开发者可能期望在无 SDK 或开发环境下执行单元测试，这时就可以用到本文介绍的 MSTestRunner 功能，将单元测试制作为独立可执行文件
+---
+title: dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件
+description: 以往的单元测试都是不能单独作为一个独立的可执行文件跑的，需要在 VisualStudio 或 VSTest 或 dotnet test 里面运行。这就限制了运行单元测试的环境了，有时候开发者可能期望在无 SDK 或开发环境下执行单元测试，这时就可以用到本文介绍的 MSTestRunner 功能，将单元测试制作为独立可执行文件
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2024/1/27 9:59:41 -->
 
@@ -104,7 +109,7 @@ dotnet publish -c release -r linux-x64 --self-contained true
 以上发布内容可以在 Linux 上运行，本文这里通过 [SyncTool](https://github.com/dotnet-campus/dotnetcampus.DotNETBuildSDK/tree/master/SyncTool) 将输出内容同步到我的 UOS（统信国产 Linux 系统）系统上运行，运行结果界面如下图
 
 <!-- ![](image/dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件/dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20241271024387587.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240918203526852-1722879718.png)
 
 这时就体现出这个功能的方便性起来了，原本我的 UOS（统信国产 Linux 系统）系统是不带任何的开发环境的，且在上面的开发体验现在还是不如在 Windows 上熟悉和舒服的。通过将单元测试构建为独立可执行文件，我就可以在 UOS 上只做测试的活，不参与具体的开发。将单元测试构建出来的可执行文件归档起来，通过单元测试可以更好的批量的测试其系统版本之间的行为差异。更多关于国产 UOS 的开发，欢迎加入 810052083 群讨论
 

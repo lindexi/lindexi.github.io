@@ -1,7 +1,12 @@
-本文将和大家介绍 LLM 的魔法，通过自然语言编程的方式开发 SemanticFunction 函数
+---
+title: dotnet SemanticKernel 入门 SemanticFunction 自然语言函数
+description: 本文将和大家介绍 LLM 的魔法，通过自然语言编程的方式开发 SemanticFunction 函数
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/9/4 8:45:17 -->
 <!-- 标题： SemanticFunction 自然语言函数 -->

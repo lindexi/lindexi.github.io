@@ -1,7 +1,12 @@
-本文告诉大家如何在 GTK Sharp 里面设置窗口背景透明
+---
+title: GtkSharp 设置窗口背景透明
+description: 本文告诉大家如何在 GTK Sharp 里面设置窗口背景透明
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2024/03/28 07:23:22 -->
 

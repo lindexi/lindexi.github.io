@@ -1,7 +1,12 @@
-从业务代码构建出来 GlyphRun 对象，在 WPF 的渲染层里，如何利用 GlyphRun 提供的数据将字符在界面呈现出来。本文将和大家聊聊从 WPF 的渲染层获取到 GlyphRun 数据，到调用 DirectX 的各个渲染相关方法的过程，也就是 WPF 绘制文本字符的原理或者实现方法
+---
+title: dotnet 读 WPF 源代码笔记 渲染层是如何将字符 GlyphRun 画出来的
+description: 从业务代码构建出来 GlyphRun 对象，在 WPF 的渲染层里，如何利用 GlyphRun 提供的数据将字符在界面呈现出来。本文将和大家聊聊从 WPF 的渲染层获取到 GlyphRun 数据，到调用 DirectX 的各个渲染相关方法的过程，也就是 WPF 绘制文本字符的原理或者实现方法
 
 <!--more-->
 
+tags: WPF dotnet
+category: 
+---
 
 <!-- CreateTime:2023/1/12 16:19:33 -->
 

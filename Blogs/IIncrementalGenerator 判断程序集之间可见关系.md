@@ -1,7 +1,12 @@
-本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何判断两个程序集之间是否存在 InternalsVisibleTo 关系
+---
+title: IIncrementalGenerator 增量 Source Generator 生成代码入门 判断程序集之间的 InternalsVisibleTo 关系
+description: 本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何判断两个程序集之间是否存在 InternalsVisibleTo 关系
 
 <!--more-->
 
+tags: Roslyn MSBuild 编译器 SourceGenerator 生成代码
+category: 
+---
 
 <!-- CreateTime:2023/6/19 8:39:59 -->
 <!-- 标题： IIncrementalGenerator 判断程序集之间可见关系 -->

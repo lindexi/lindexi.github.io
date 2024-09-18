@@ -1,7 +1,12 @@
-本文记录一个 dotnet 6 已知问题，准确来说这是一个在 dotnet 5 引入的问题，到 dotnet 6.0.12 还没修。在获取 CultureInfo.NumberFormat 属性时，在一些奇怪的 Windows 设备上可能抛出 IndexOutOfRangeException 异常。本文将来告诉大家问题的原因和解决方法
+---
+title: dotnet 6 已知问题 获取 CultureInfo.NumberFormat 可能抛出 IndexOutOfRangeException 异常
+description: 本文记录一个 dotnet 6 已知问题，准确来说这是一个在 dotnet 5 引入的问题，到 dotnet 6.0.12 还没修。在获取 CultureInfo.NumberFormat 属性时，在一些奇怪的 Windows 设备上可能抛出 IndexOutOfRangeException 异常。本文将来告诉大家问题的原因和解决方法
 
 <!--more-->
 
+tags: dotnet
+category: 
+---
 
 <!-- CreateTime:2023/3/22 16:18:29 -->
 

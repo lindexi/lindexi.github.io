@@ -1,7 +1,12 @@
-本文将和大家介绍在 dotnet 8 里 WPF 引入的新功能之一，在 RDP 远程桌面状态下启用渲染硬件加速
+---
+title: dotnet 8 WPF 支持在 RDP 远程桌面状态下启用渲染硬件加速
+description: 本文将和大家介绍在 dotnet 8 里 WPF 引入的新功能之一，在 RDP 远程桌面状态下启用渲染硬件加速
 
 <!--more-->
 
+tags: WPF dotnet
+category: 
+---
 
 <!-- CreateTime:2023/10/10 8:55:08 -->
 

@@ -1,7 +1,12 @@
-本文记录我学习开发 X11 应用的笔记
+---
+title: dotnet C# X11 开发笔记
+description: 本文记录我学习开发 X11 应用的笔记
 
 <!--more-->
 
+tags: dotnet C#
+category: 
+---
 
 <!-- CreateTime:2024/04/02 07:07:16 -->
 
@@ -185,6 +190,21 @@ It is only necessary to call this function if multiple threads might use Xlib co
   XInitThreads();
   XInitThreads();
   XInitThreads();
+```
+
+## 多次调用 XMatchVisualInfo 将返回相同结果
+
+多次调用 XMatchVisualInfo 返回的 Visual 是相同的
+
+经过测试这是相同的
+
+```csharp
+    XLib.XMatchVisualInfo(display, screen, 32, 4, out var info);
+    IntPtr visual = info.visual;
+
+    XLib.XMatchVisualInfo(display, screen, 32, 4, out var info2);
+    IntPtr visual2 = info2.visual;
+    Console.WriteLine($"Visual==Visual2 {visual}=={visual2}");
 ```
 
 ## 和 Avalonia 相互调用

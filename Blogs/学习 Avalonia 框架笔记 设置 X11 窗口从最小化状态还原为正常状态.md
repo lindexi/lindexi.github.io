@@ -1,7 +1,12 @@
-本文记录在 dotnet 里面如何设置 X11 窗口从最小化状态还原为正常状态
+---
+title: 学习 Avalonia 框架笔记 设置 X11 窗口从最小化状态还原为正常状态
+description: 本文记录在 dotnet 里面如何设置 X11 窗口从最小化状态还原为正常状态
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2024/05/17 07:23:45 -->
 

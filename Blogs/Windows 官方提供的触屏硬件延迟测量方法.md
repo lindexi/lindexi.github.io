@@ -1,7 +1,12 @@
-本文记录微软 Windows 官方在 Windows Hardware Lab Kit 提供的触屏硬件延迟测量方法
+---
+title: Windows 官方提供的触屏硬件延迟测量方法
+description: 本文记录微软 Windows 官方在 Windows Hardware Lab Kit 提供的触屏硬件延迟测量方法
 
 <!--more-->
 
+tags: 
+category: 
+---
 
 <!-- CreateTime:2023/8/7 16:17:45 -->
 
