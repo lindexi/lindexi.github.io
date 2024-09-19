@@ -1,7 +1,7 @@
 ---
 title: dotnet SemanticKernel 入门 开篇
 description: 本文将开坑告诉大家什么是 SemanticKernel 以及如何使用框架
-tags: dotnet
+tags: dotnet,SemanticKernel
 category: 
 ---
 

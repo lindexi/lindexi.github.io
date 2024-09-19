@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core 6 浅析环境变量与配置的优先级
 description: 本文将简单介绍在 dotnet 6 下的 ASP.NET Core 里的环境变量当成配置的优先级行为。这部分内容在官方文档都有提到，只是我开始粗心没有看仔细，而踩到了坑，特意写篇博客记录一下
-tags: 
+tags: ASP.NETCore
 category: 
 ---
 
