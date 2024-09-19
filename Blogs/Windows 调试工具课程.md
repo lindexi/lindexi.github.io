@@ -5,6 +5,8 @@ tags:
 category: 
 ---
 
+<!-- CreateTime:2024/09/19 21:08:10 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 置顶1 -->
@@ -439,7 +441,9 @@ DebugView 工具下载地址： <https://learn.microsoft.com/en-us/sysinternals/
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程57.png) -->
 ![](http://image.acmx.xyz/lindexi%2F202491990244692.jpg)
 
-[记一次调试资源管理器未响应经验](https://blog.lindexi.com/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%B0%83%E8%AF%95%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E6%9C%AA%E5%93%8D%E5%BA%94%E7%BB%8F%E9%AA%8C.html )
+经过以上的调查工具可以了解到是蓝牙相关模块的问题，集中火力找到明确的调试方向，很快就找到是蓝牙驱动的问题
+
+详细的调试内容可比这里介绍的有趣的很，请看 [记一次调试资源管理器未响应经验](https://blog.lindexi.com/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%B0%83%E8%AF%95%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E6%9C%AA%E5%93%8D%E5%BA%94%E7%BB%8F%E9%AA%8C.html )
 
 
 <!-- 事后现场 -->
