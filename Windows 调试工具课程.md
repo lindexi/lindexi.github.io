@@ -11,7 +11,7 @@ Windows 调试工具课程——在软件万种死法中调试出原因
 
 本文是我在集团内部上的课程记录而成的博客内容。在本次课程里面将和大家介绍一些在 Windows 上常用的调试工具，以及调查问题的常见套路。适合于伙伴们入门 Windows 调试
 
-本文以下内容是采用原本课程课件里面的一页页的内容组装而来，过程中补充一些讲课时的内容
+本文内容的组织方式是按照原本课程课件里面的一页页的内容组装而来的方式组织的，在过程中补充一些讲课时的内容
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程0.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919842595851.jpg)
@@ -122,7 +122,7 @@ Windows 调试工具课程——在软件万种死法中调试出原因
 
 假设进程还在的话，那最简单的捞 DUMP 方式就是通过任务管理器右键选择创建内存转储文件了。对应的英文系统是 Create memory dump file 菜单项
 
-这里需要额外说明的是，如果当前系统是 x64 系统，但是自己的进程是 x86 进程，那此时不建议使用默认打开的任务管理器捞 DUMP 文件。因为默认打开的任务管理器是 x64 的，打出来的是 x64 转储文件，包含 WoW64 子系统的信息。详细请看 [你生成的转储文件有问题吗？ - 知乎](https://zhuanlan.zhihu.com/p/103381060 )
+这里需要额外说明的是，如果当前系统是 x64 系统，但是自己的进程是 32 位进程，那此时不建议使用默认打开的任务管理器捞 DUMP 文件。因为默认打开的任务管理器是 x64 的，打出来的是 x64 转储文件，包含 WoW64 子系统的信息。详细请看 [你生成的转储文件有问题吗？ - 知乎](https://zhuanlan.zhihu.com/p/103381060 )
 
 正确的做法应该是使用 `C:\Windows\SysWOW64\Taskmgr.exe` 的任务管理器去捞 DUMP 文件
 
@@ -443,101 +443,219 @@ DebugView 工具下载地址： <https://learn.microsoft.com/en-us/sysinternals/
 
 详细的调试内容可比这里介绍的有趣的很，请看 [记一次调试资源管理器未响应经验](https://blog.lindexi.com/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E8%B0%83%E8%AF%95%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E6%9C%AA%E5%93%8D%E5%BA%94%E7%BB%8F%E9%AA%8C.html )
 
-
 <!-- 事后现场 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程58.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491994381765.jpg)
 
+以上的案例里面 Process Monitor 立了首功，通过 Process Monitor 工具抓取了 explorer 进程的信息，发现了进程退出的信息，以及退出之前访问了蓝牙相关模块，最终通过 ShellView 工具禁用了蓝牙模块定位到了具体模块导致的问题。在许多事后现场问题中，都会使用 Process Monitor 工具配合复现，尝试找到故障之前的事前发生了什么，了解故障之前的行为。进而可以缩小定位问题的方向
+
+Process Monitor 工具适用于辅助调试不熟悉的应用、复杂的情况，通过了解其行为来辅助缩小定位范围，提高调试效率。同时 Process Monitor 工具可以一口气抓多个进程的信息，也常用于辅助定位进程们团伙作案问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程59.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F20249199458574.jpg)
 
+以上就是调查思路里面的第二大方向的事后现场的内容。其思想核心就是通过复现配合工具抓取现场信息，通过现场信息进一步分析问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程60.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20249199599190.jpg)
+![](http://cdn.lindexi.site/lindexi%2F2024919213128726.jpg)
+
+有时候调查问题过程中没有头绪，没有思路。此时可以还可以试试一些常见问题的探索，尝试通过这些常用问题套路和经验找到入手点
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程61.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F20249199688371.jpg)
 
+这些常见的工具可以帮助我们进行一些常见问题的排查。有时候开发任务紧张，没有充足的时间进行全面的调查，通过常用的套路也可以提高定位效率，不一定我们需要来一次全面的调查，有可能只通过现象和猜测，配合常用套路就能找到问题的原因
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程62.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491996191828.jpg)
+
+这些常用工具和套路被我成为更多的调试工具，分为以下多个方面：
+
+- 系统环境问题-依赖缺失等问题
+- 内存问题，包括 OOM 系问题
+- 注册表相关模块
+- 窗口相关模块
+- 键盘等等
+
+这些方面都可以作为常见问题的入手点探索方向
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程63.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491996414208.jpg)
 
+先来聊聊依赖缺失问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程64.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491996542473.jpg)
+
+依赖缺失的表现行为很明显，一般就是程序猿常说的，“在我电脑上明明就是好的，为什么到你电脑上就不行了”这类的话，那就可以第一时间怀疑是依赖缺失问题。或者是软件无法启动，启动即崩溃，这类问题也可以怀疑是依赖缺失问题。或者是软件开始能跑，但是跑到某个模块就崩溃了，且很固定的到某个功能模块就崩溃，那此时也能怀疑是依赖缺失问题
+
+有些不熟悉 Windows 的伙伴也许有这样的问题，明明自己写的应用似乎就没有什么依赖，为什么还可能遇到依赖缺失的问题呢？这是因为 Windows 系统本身就是一个依赖系统，很多功能都是通过依赖来实现的。比如说一个最简单的例子，你写了一个 C# 程序，但是你的 C# 程序里面调用了一个 MessageBox 函数，这个 MessageBox 函数是 Windows 系统的一个函数，你的 C# 程序调用了这个函数，那你的 C# 程序就依赖了 Windows 系统的 MessageBox 函数。如果你的 C# 程序在别的电脑上运行，别的电脑上没有这个 MessageBox 函数，那你的 C# 程序就会崩溃。软件运行过程中，需要依赖许多组件，包括直接依赖和间接依赖。有可能在代码编写阶段没有引入依赖，但实际上软件已经带上了许多隐式依赖内容，如常见的 C++ 程序需要的 VC++ 运行时依赖等等。这些依赖可能会在复杂的用户环境里遭遇投毒问题，导致软件无法正常运行
 
 <!-- 找不到，找错 DLL -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程65.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F20249199783236.jpg)
 
+依赖缺失问题首推是采用 Dependencies 工具，使用这个工具可以帮助我们定位两种类型的问题：
+
+- 是否在目标机器上依赖缺失问题
+- 是否在目标机器上的依赖被投毒
+
+Dependencies 工具开源地址： <https://github.com/lucasg/Dependencies>
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程66.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491997303257.jpg)
+
+识别依赖缺失问题的方法就是将自己的应用拖入到 Dependencies 工具里面，然后看看是否有缺失依赖的提示。如上图所示，可以看到这个应用缺乏了一个名为 Lindexi.dll 的依赖。此时可以看看输出文件里面是否真的包含了这个依赖文件，如果没有，那就说明这个依赖确实是缺失的。如果有，那再看看这个依赖文件的二进制是否符合预期，如可能被修改或者下载不全等问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程67.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491997422909.jpg)
 
+常用的依赖缺失调查方向套路是看看是否有 C++ 运行时系列的丢失。其中 C++ 运行时系列常见的就是 VC++ 的多个版本的分发库，或者是 VC++ 运行时，即 vcruntime140.dll 文件。以及 msvcp140.dll 文件缺失。其中重点需要说明的是，如果能看到有 vcruntime140d.dll 文件的依赖，那就证明开发侧存在问题，这里的 vcruntime140d.dll 的意思是 VC++ runtime 14.0 debug 版本的 dll 的意思。如果看到有这个 dll 的依赖，证明你的相关方提供给你的 C++ 库是使用 Debug 版本构建的，这是不能给到用户端的。最佳方法是重新让其构建一个 Release 版本的 DLL 给你。只有在实在没有办法的时候，才考虑在用户端配上开发环境
+
+另一个就是看看是否有 ucrt 系列的丢失，这个常见就是软件能在 Win10 上跑得好好的，在 Win7 上就启动不了。常见就是缺失了 ucrt 系列的依赖。如果是遇到这种问题，简单的做法就是将这些文件拷贝到软件运行目录下，或者是将这些文件打包到软件的安装包里面即可
+
+最后一个就是看看是否有某些仅在开发机才有的负载，如我就喜欢引用一个名为 Lindexi.dll 的文件，这个依赖文件只在我的电脑上存在，用户设备上是绝对没有的，那自然在用户设备上跑不起来也就符合预期了
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程68.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491997541283.jpg)
+
+使用 Dependencies 工具除了找依赖缺失之外，还可以用来找到是否被投毒的问题。如上图所示，看大家是否能够快速看出来问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程69.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F20249199851991.jpg)
 
+是的，上图里面包含了一个名为 vcruntime140.dll 文件，包含这个文件是正常的，但是不正常的地方在于其路径。为什么 vcruntime140.dll 加载的居然是在 `C:\Program Files (x86)\Foo` 文件夹里，这就证明被投毒了。大家可以在工具里面看看有没有存在不熟悉或奇怪的路径，如果有，那就可能是投毒的问题？这个问题就需要进一步的调查了
+
+如我记录的 [影子系统让 C++ 程序无法运行](https://blog.lindexi.com/post/%E5%BD%B1%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AE%A9-C++-%E7%A8%8B%E5%BA%8F%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.html ) 这篇博客提到的就是非常标准的被投毒的问题，大家可以看到 MSVCR100.dll 加载的路径是在 `C:\Program Files\PowerShadow\App` 文件夹里面
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程70.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491998185327.jpg)
 
+以上就是常用套路里面的调查依赖缺失问题，不仅仅可能是崩溃等问题，有时候软件运行功能不正常也可以看看是否有依赖缺失或被投毒的问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程71.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491998309059.jpg)
+
+继续看一下内存问题
 
 <!-- 任务管理器 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程72.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491998508245.jpg)
 
+对 Windows 内存机制不了解的伙伴也许常常会拿任务管理器里面看到的内存数值当成衡量应用软件运行占用内存的标准。比如我说软件已经 OOM 了，但是对Windows 内存机制不了解的伙伴拿出任务管理器一看，发现应用软件才占用 300MB 内存而已，于是就完全不相信可能存在的 OOM 问题
+
+这里说的 OOM 问题指的是 OutofMemory 经典问题，直接表现就是内存不足了，代码里面想要申请内存但是申请内存失败
+
+在开始聊这个话题之前，需要先做一点点科普。如果大家想要看一个符合客观事实的应用软件运行过程的内存使用情况，应该使用 VMMap 工具查看，而不是任务管理器。任务管理器只能当成一个快速查看的工具，而不是一个准确的工具。VMMap 工具可以帮助我们查看应用软件的内存使用情况，包括了虚拟内存、物理内存、私有内存、共享内存等等
+
+VMMap 工具下载地址： <https://learn.microsoft.com/zh-cn/sysinternals/downloads/vmmap>
+
+应用软件的内存使用是一个相对复杂的话题，不仅仅是看看占用了多少内存就能判断的。因为事实上一个应用软件的运行占用内存是需要分至少三个维度去看的。最直接的维度就是私有内存和共享内存的占用。一般而言，对于共享内存的占用咱是不做多关注的。另一个维度是内存使用种类。其中开发人员在进行应用软件的内存优化时，常常直接触碰的应该就是 Private Data 的 Private 部分。即前面两个维度里面的私有内存和 Private Data 种类。以及 Stack 的 Private 部分。而至于如 Image 等部分，就常常不是开发人员所关注的。这里需要对 Image 特别说明的是，这个单词在这里的意思不是图片的意思，至少不是类似于 png 或 jpg 图片的意思，而应该是内存映像之类的意思，常见的就是所加载的库。有时候可以看到这部分的 Size 大小非常大，这是没有问题的，非常正常的。比如说软件加载了显卡驱动模块，这个模块的 DLL 文件一下值就几百 MB 大小，这部分就直接被统计到 Image 部分里面，所以说这部分一般情况下不是开发人员所关注的
+
+最后一个维度就是是否在 WorkingSet 里面。在 VMMap 工具里面的 WorkingSet 被缩写为 WS 单词。简单但不准确的理解 WorkingSet 工作集就是物理内存占用量。相信大家都知道 Windows 上有可放在硬盘上的虚拟内存和放在内存条里面的物理内存的概念。可以认为 WorkingSet 就是物理内存占用量。详细的概念请看官方文档： <https://learn.microsoft.com/zh-cn/windows/win32/memory/working-set>
+
+在任务管理器里面常常看到的就是 WorkingSet 的占用量。但是这个占用量并不是准确的，至少可能一次 [EmptyWorkingSet](https://learn.microsoft.com/zh-cn/windows/win32/api/psapi/nf-psapi-emptyworkingset) 就可以将大量的在物理内存里面的内存转换到硬盘上。于是单纯靠任务管理器里面的内存占用来尝试衡量应用软件的内存使用情况是不准确的。特别是在调查 OOM 问题以及对比多个应用软件的内存使用情况时，任务管理器里面的内存占用是不具备参考意义的，看任务管理器里面的内存占用会被误导
+
+额外聊一个小知识，如果你的用户半懂不懂，想要在任务管理器里面看到的内存很低。那简单的做法就是定时调用一下 [EmptyWorkingSet](https://learn.microsoft.com/zh-cn/windows/win32/api/psapi/nf-psapi-emptyworkingset) 函数好了。据说 360 加速球就是这么做的
+
+常用的调查套路里面，可以使用 VMMap 工具来查看应用软件的内存使用情况，看看软件当前现场是否有内存使用异常的情况。此时需要关注点可能还需要包括碎片化问题，内存泄露问题。碎片化问题指的是尽管内存还有空间余量，但是申请内存却失败了，因为内存虽然够但是碎片化的存在，无法找到连续的内存空间。内存泄露问题指的是内存申请后没有释放，导致内存占用越来越高的问题
+
+额外说明一个知识点，对于 32 位进程来说，用户态能使用的内存就是 2 GB 空间。一旦发现应用软件已经用了考虑 2GB 的内存空间，则可以认为这个软件可能已经发生了 OOM 问题了。因为配合碎片化问题的存在，接近 2GB 的内存空间就有可能存在无法申请足够的连续的内存空间而导致 OOM 问题。一旦发生了 OOM 问题，可能会导致软件进入非预期逻辑分支，如本该初始化的逻辑没有初始化，导致后续访问出现空异常等问题
+
+这些时候，配合 ProcDump 一起食用效果更好。如果通过 VMMap 工具感觉到可能是内存问题，那此时通过 ProcDump 抓一个 DUMP 文件回来分析，可能会有更多的收获
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程73.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919995430.jpg)
+
+通过 VMMap 不仅可以查看应用软件真实内存是怎样，还可以在用户设备上进行简单的调试。如追踪软件启动，找到是哪个模块在申请内存。因为很有可能只有在某个用户的设备上才会存在问题，那在对应的用户的设备上跑 VMMap 寻找申请大量内存的模块是非常有帮助的
+
+通过 VMMap 也可以看到是否有内存碎片化的存在，即内存空间一看就发现出现非常多的碎片化的情况
 
 <!-- dotMemory -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程74.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491999256398.jpg)
 
+当然了，对于 dotnet 系的应用来说，别忘了还有 dotMemory 这个好用的工具。这个工具既可以在用户设备上跑起来，抓取到应用软件运行内存的 dotnet 系信息，还可以对捞回来的 DUMP 文件进行分析。这个软件的交互做的非常好，有可能大家看界面就知道如何使用了
+
+通过 dotMemory 工具可以看到各个模块的内存申请情况，各个类型存在内存的数量，以及各个类型的引用情况。适合于寻找内存泄露问题以及通过内存情况反推出软件的代码运行逻辑
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程75.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491999415134.jpg)
+
+在聊到内存 OOM 相关问题时，一个会被开发者忽略的点是可能遇到的是爆 GDI 对象的问题。试试打开任务管理器，在选择列里开启 GDI 对象列，看看进程占用的 GDI 对象有多少
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程76.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491999539041.jpg)
 
+许多的 GDI 对象所占用的内存都不计入到进程里面，这就导致了进程看起来没有使用多少内存，但是系统全局的内存却是不足了。或者是进程使用了大量的 GDI 对象，导致了许多 GDI 相关函数调用失败，而通过 LastErrorCode 获取到的错误被翻译为 OOM 相关错误，进而表现出 OOM 现象
+
+此时可以通过任务管理器快速确定是否是 GDI 对象爆炸问题，然后通过 GDIView 工具查看 GDI 对象的使用情况。GDIView 工具可以帮助我们查看系统全局的 GDI 对象使用情况，以及每个进程的 GDI 对象使用情况
+
+GDIView 工具下载地址： <https://www.nirsoft.net/utils/gdi_handles.html>
+
+举一个实际的案例，我的师兄写了一个程序，这个程序会不断使用 GDI 获取屏幕截图，此时获取到了大量的 Bitmap 对象，导致了系统资源大量被消耗，反过来导致可用物理内存不足，最终导致了 OOM 问题
+
+通过任务管理器看到我的师兄的程序的 GDI 对象十分多，再通过 GDIView 工具看到了大量的 Bitmap 对象，如此即可快速找到入手点。经过和师兄沟通发现可能是截图相关模块存在 GDI 对象泄露问题，反复复现和截图模块相关逻辑，看到任务管理器的 GDI 对象数量不断添加，就快速定位到了问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程77.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491991048352.jpg)
+
+以上就是本课程介绍的 OOM 问题的常用调查套路和工具。使用 VMMap 工具了解真实的内存是怎样的，避免被任务管理器误导。可在用户设备上跑 VMMap 工具了解到是哪个模块申请了大量内存，以及是否存在内存碎片化问题。使用 dotMemory 工具了解到 dotnet 系的内存使用情况，以及可能存在的内存泄露问题。如果内存没有问题，那就多看一下 GDI 对象的使用量，使用 GDIView 工具了解到 GDI 对象的使用情况
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程78.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919910142113.jpg)
 
+内存是一个复杂庞大的话题，本课程这里只和大家介绍了一些常见的简单情况，希望能给大家在没有调查思路的时候提供一些入手点
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程79.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919910262710.jpg)
+
+接下来来看看 Windows 系上特有的一个问题，注册表问题
 
 <!-- 注册表问题 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程80.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919910477886.jpg)
 
+注册表问题也是一个常被 Windows 开发新手忽略的问题。有些开发者有疑惑说，我的应用代码里面明明都没有碰到注册表，为什么还可能会有注册表相关问题。其实跑在 Windows 上的程序，无论如何都会碰到注册表的。从软件进程的启动开始就在碰注册表，后续的加载 COM 组件等，都会涉及到注册表。注册表问题可能会导致软件无法启动，启动即崩溃，启动后功能不正常等问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程81.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919910583214.jpg)
 
+注册表问题可能有些深奥，本课程这里只介绍一个简单的真实案例。我发现我的 Notepad 记事本软件启动就炸掉了，不知道为什么。我通过 Process Monitor 工具抓取时，发现了其注册表有以下有趣的行为。这里就是非常靠近软件进程退出的地方
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程82.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202491991192760.jpg)
+![](http://image.acmx.xyz/lindexi%2F20249202024222316.jpg)
+
+由于 Process Monitor 工具抓取注册表行为时非常刷屏，降低大家的难度，我将有问题的一行日志选择了出来，看看大家是否猜到问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程83.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919911229541.jpg)
 
+其实这个案例里面我的调查是靠经验的，这里刚好是我上回学习 COM 组件劫持时所投的毒。可以试试将注册表的各个访问项在搜索引擎里面搜索一下，看看是否有人说这个注册表项是有问题的。如果有，那就可以尝试根据网上提供的方法进一步定位问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程84.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919911351885.jpg)
+
+相信刚才通过 Process Monitor 工具大家也感受到了被注册表刷屏的恐惧。如果应用软件的表现行为是第一次能跑，第二次就不能跑，且可能是和注册表有关的时候。此时可以尝试一下 RegistryChangesView 和 whatchanged 工具，通过这些工具可以快速帮助大家找到从事前到事后注册表的变化情况，减少刷屏的影响，提升调查效率
+
+RegistryChangesView 工具下载地址： <https://www.nirsoft.net/utils/registry_changes_view.html>
+
+whatchanged 工具下载地址： <https://www.majorgeeks.com/files/details/what_changed.html>
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程85.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919911451278.jpg)
 
+通过 RegistryChangesView 和 whatchanged 工具配合找到注册表变更项，再通过 Process Monitor 工具进一步辅助定位，可以了解到是哪个进程改了注册表，改了什么内容以及在什么时候改的。这样就可以帮助大家更好找到问题的入手点
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程86.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919911563978.jpg)
 
+注册表相关问题如果深入了解还是非常有深度的，本课程这里只介绍了一个简单的案例。希望大家能够通过这个案例了解到注册表问题的存在，以及通过 Process Monitor 工具，RegistryChangesView 和 whatchanged 工具等工具帮助大家更好的调查注册表问题
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程87.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491991268901.jpg)
+
+接下来看看窗口相关模块的问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程88.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919912181649.jpg)
@@ -565,3 +683,10 @@ DebugView 工具下载地址： <https://learn.microsoft.com/en-us/sysinternals/
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程96.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F202491992020611.jpg)
+
+以上就是本次课程的内容，希望大家能够通过这次课程了解到一些常用 Windows 调试工具的使用方法，以及了解到一些常用的调试套路。希望能在实际的软件开发调试过程中有所帮助
+
+更多 dotnet 系的代码调试方法请参阅： [dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
+<!-- [dotnet 代码调试方法-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1446477 ) -->
+
+更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
