@@ -1578,7 +1578,10 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 ## 工具
 
-高效率的调试离不开工具的辅助，我收藏的一些工具请看 [在 Windows 下那些好用的调试软件](https://blog.lindexi.com/post/%E5%9C%A8-Windows-%E4%B8%8B%E9%82%A3%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6.html )
+高效率的调试离不开工具的辅助，我编写了一篇课程文章，详细请看：[Windows 调试工具课程](https://blog.lindexi.com/post/Windows-%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E8%AF%BE%E7%A8%8B.html )
+<!-- [Windows 调试工具课程 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18421353 ) -->
+
+我收藏的一些工具请看 [在 Windows 下那些好用的调试软件](https://blog.lindexi.com/post/%E5%9C%A8-Windows-%E4%B8%8B%E9%82%A3%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6.html )
 
 [Roslyn 让 VisualStudio 急速调试底层库方法](https://blog.lindexi.com/post/Roslyn-%E8%AE%A9-VisualStudio-%E6%80%A5%E9%80%9F%E8%B0%83%E8%AF%95%E5%BA%95%E5%B1%82%E5%BA%93%E6%96%B9%E6%B3%95.html )
 
