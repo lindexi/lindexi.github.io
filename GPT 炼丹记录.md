@@ -115,11 +115,23 @@
 
 [Content Start]
 
-修复在 Skia.Gtk 平台下，在 OnLaunched 里立刻使用 MainWindow.SetBackground 方法设置背景色是无效的问题
+使用MIT-SHM优化渲染推送性能
 
-问题原因是在 OnLaunched 里立刻使用 MainWindow.SetBackground 方法时，进入的 UnoGtkWindowHost.UpdateRendererBackground 里面，判断 `_renderer` 字段还没初始化，于是什么都不做。等待 InitializeAsync 执行 GtkRendererProvider.CreateForHostAsync 方法之后，才能获取到 `_renderer` 字段的值，然而此时将错过背景赋值逻辑
+## What does the pull request do?
 
-修复方法是在 GtkRendererProvider.CreateForHostAsync 方法执行完成之后，补充对 `_renderer.BackgroundColor` 赋值
+此 pull request 实现了使用 MIT-SHM 的方式推送渲染的界面画面图片，使用了XShmPutImage方法代替了XPutImage方法。可以有效减少 Bitmap 在 X11 层的拷贝，提升推送渲染性能
+
+## What is the current behavior?
+
+当前只使用了 XPutImage 进行软渲染时推送界面图片
+
+## What is the updated/expected behavior with this PR?
+
+此 pull request 提供了更多选项，允许开发者配置使用 MIT-SHM 共享内存方式推送渲染图片，可以有效在低性能设备上提升渲染性能，降低渲染延迟
+
+## How was the solution implemented (if it's not obvious)?
+
+实现方法是通过 MIT-SHM 进行渲染图片的推送，按照 @kekekeks 在 Link1 提及的方法实现
 
 [Content End]
 

@@ -13,6 +13,7 @@
         protected override void OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs e)
         {
             // 方法里面不需要写任何代码，就能解决这个问题
+            // 不要带上 base.OnManipulationBoundaryFeedback 哦
         }
 ```
 
