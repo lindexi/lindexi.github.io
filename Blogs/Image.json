@@ -166,5 +166,12 @@
   "image\\WPF 尝试使用 WinML 做一个简单的手写数字识别应用\\WPF 尝试使用 WinML 做一个简单的手写数字识别应用1.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071144136-1800204583.png",
   "image\\WPF 已知问题 开启 WM_Pointer 消息之后 获取副屏触摸数据坐标偏移\\WPF 已知问题 开启 WM_Pointer 消息之后 获取副屏触摸数据坐标偏移0.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071144672-1471379714.gif",
   "image\\一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包\\一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071145178-463997743.png",
-  "image\\推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具\\推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071145641-436271566.png"
+  "image\\推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具\\推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071145641-436271566.png",
+  "image\\dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号\\dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071100891-1182816083.png",
+  "image\\dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号\\dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号1.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071102205-972917552.png",
+  "image\\dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号\\dotnet 8 破坏性改动 在 AssemblyInformationalVersionAttribute 添加上 git 的 commit 号2.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071102671-2087796838.png",
+  "image\\dotnet 已知问题 错误标记 MethodImplOptions.InternalCall 特性参数将会在类型访问之前抛出 TypeLoadException 异常\\dotnet 已知问题 错误标记 MethodImplOptions.InternalCall 特性参数将会在类型访问之前抛出 TypeLoadException 异常0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071103492-2017180350.png",
+  "image\\dotnet 探究 SemanticKernel 的 planner 的原理\\dotnet 探究 SemanticKernel 的 planner 的原理0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071103876-837365685.png",
+  "image\\dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架\\dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071104368-1928705419.png",
+  "image\\WPF 通过 InputManager 模拟调度触摸事件\\WPF 通过 InputManager 模拟调度触摸事件.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071104886-52684406.gif"
 }
