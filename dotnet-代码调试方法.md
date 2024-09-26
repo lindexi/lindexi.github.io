@@ -1203,7 +1203,7 @@ public static int Count { set; get; }
 
 ## 模拟调试
 
-如上文所说有些调试是需要在具体的业务
+如上文所说的，有些调试是需要在具体的业务情况下才可以开始工作。比如某些依赖网络后台的业务，在执行某些碰触网络后台的业务之后，才能复现问题。在没有模拟网络请求响应的况下，想要顺利进行调试，可能会有一些困难或难以提升调试效率
 
 
 ### 网络模拟调试
@@ -1404,17 +1404,90 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 如果想要调试的地方是可能存在的闪退等问题，可能是非托管代码导致的问题，可以使用混合调试模式。混合调试时，将同时使用 Native 调试器和 .NET 调试器，此时可以调试到更多信息。为什么开始只推荐使用托管调试？这是因为开启混合调试时，信息太多，可能干扰调试思路
 
-填坑
+进入调试之后，需要等待 Visual Studio 自动分析。如果是第一次调试 DUMP 文件的，可能会在下载符号这一步卡住一会。大家可以出去喝个茶，等待一下，再回来看看。实在等不急了，那就点击取消符号加载再继续吧
+
+常见的套路就是关注 Visual Studio 以下三个方面内容
+
+- 调用堆栈
+- 后文会介绍的 "三板斧" 内容
+- 局部变量
+
+调用堆栈是个好东西，调用堆栈是一个非常重要的内容，可以帮助我们了解到程序是如何运行的。通过调用堆栈可以看到程序是如何运行的，是从哪个函数开始的，是如何调用的，是如何返回的。默认的 Visual Studio 调试布局里面，可以快速看到调用堆栈窗格
+
+<!-- ![](image/Windows 调试工具课程/Windows 调试工具课程20.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024919850225309.jpg)
+
+如果是一个崩溃的 DUMP 文件，则调用堆栈一般可以看到崩溃的堆栈，通过崩溃的堆栈配合异常，可以更好了解崩溃的原因。如下堆栈是 [记因为 NVIDIA 显驱错误而让 WPF 应用启动闪退问题](https://blog.lindexi.com/post/%E8%AE%B0%E5%9B%A0%E4%B8%BA-NVIDIA-%E6%98%BE%E9%A9%B1%E9%94%99%E8%AF%AF%E8%80%8C%E8%AE%A9-WPF-%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98.html ) 博客提到的堆栈
+
+```
+>   00000000()  Unknown
+    [Frames below may be incorrect and/or missing]  Unknown
+    nvumdshim.dll!710d0745()    Unknown
+    nvd3dum.dll!5989f2e1()  Unknown
+    nvd3dum.dll!595f1716()  Unknown
+    nvd3dum.dll!596b7827()  Unknown
+    nvd3dum.dll!598a6233()  Unknown
+    nvd3dum.dll!5989b95c()  Unknown
+    nvd3dum.dll!5989c33b()  Unknown
+    nvd3dum.dll!598816bc()  Unknown
+    nvumdshim.dll!710ca40e()    Unknown
+    nvumdshim.dll!710cbb78()    Unknown
+    nvumdshim.dll!710ca17f()    Unknown
+    nvumdshim.dll!710ca0d3()    Unknown
+    d3d9.dll!5ab86f81() Unknown
+    ntdll.dll!_NtWaitForMultipleObjects@20 ()   Unknown
+    KERNELBASE.dll!76f69723()   Unknown
+```
+
+通过调用堆栈可以看到是 nvumdshim.dll 模块带崩的。这个模块是 NVIDIA 显卡驱动的模块。通过这个调用堆栈可以看到是 NVIDIA 显卡驱动带崩的
+
+对于某些没有代码，或者是堆栈看不出来东西的，可以试试“三板斧”功能。这里介绍的“三板斧”分别是寄存器、反汇编、内存这三个方面的工具。通过这三个方面的工具可以帮助我们进一步的分析问题
+
+需要说明的是用到这三个工具时仅仅只是在咱有需要了解更多状态信息的时候。而且通过这三个工具也不一定能够准确了解到问题的原因。这三个工具的使用本身不难，但是其难点确是这几个工具所见内容的背后大家关于程序本身的理解以及软件运行机制的了解。如果对于软件运行机制不了解，那这三个工具所见内容可能会让人难以理解，或者是调查方向跑偏
+
+如下图例子，有一个代码在跑，导致了 UI 主线程忙碌，那这个代码在跑什么内容呢
+
+<!-- ![](image/Windows 调试工具课程/Windows 调试工具课程28.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024919852309943.jpg)
+
+试试先在 Visual Studio 里面打开内存、寄存器、反汇编窗格。这三个工具可以帮助我们进一步分析问题
+
+<!-- ![](image/Windows 调试工具课程/Windows 调试工具课程29.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024919201056644.jpg)
+
+此例子里面先通过反汇编发现了可能存在的问题，如想看看 rcx 寄存器里面存放了什么。通过寄存器窗格可以看到 rcx 寄存器里面存放了什么内容。通过内存窗格可以看到这个地址里面存放了什么内容。刚好就看到了对应的内存里面存放了一段逗比代码
+
+<!-- ![](image/Windows 调试工具课程/Windows 调试工具课程31.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20249192012578371.jpg)
+
+局部变量可以帮助我们了解到程序运行时的状态。通过局部变量可以看到程序运行时的变量的值，可以帮助我们了解到程序运行时的状态
+
+如下图所示，也许可以在局部变量看到一些错误信息
+
+<!-- ![](image/Windows 调试工具课程/Windows 调试工具课程34.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024919854177713.jpg)
+
+上图的局部变量配合 The Microsoft Error Lookup Tool 工具可以看到错误信息是文件或文件夹名错误。配合具体业务，就可以有更多定位信息
+
+更多请看 [Windows 调试工具课程](https://blog.lindexi.com/post/Windows-%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E8%AF%BE%E7%A8%8B.html )
+<!-- [Windows 调试工具课程 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18421353 ) -->
 
 ### 使用 dotMemory 调试内存
 
-填坑
+对于 dotnet 系的应用来说，别忘了还有 dotMemory 这个好用的工具。这个工具既可以在用户设备上跑起来，抓取到应用软件运行内存的 dotnet 系信息，还可以对捞回来的 DUMP 文件进行分析
+
+通过 dotMemory 工具可以看到各个模块的内存申请情况，各个类型存在内存的数量，以及各个类型的引用情况。适合于寻找内存泄露问题以及通过内存情况反推出软件的代码运行逻辑
+
+<!-- ![](image/Windows 调试工具课程/Windows 调试工具课程74.png) -->
+![](http://cdn.lindexi.site/lindexi%2F202491999256398.jpg)
+
+这个软件的交互做的非常好，有可能大家看界面就知道如何使用了
 
 ### 使用 WinDbg 调试
 
 使用 WinDbg 调试 .NET Core 系列的应用，包括 dotnet 5 和 dotnet 6 等，需要先加载 sos 才可以进行调试。方法请参阅 [WinDbg 加载 dotnet core 的 sos.dll 辅助调试方法](https://blog.lindexi.com/post/WinDbg-%E5%8A%A0%E8%BD%BD-dotnet-core-%E7%9A%84-sos.dll-%E8%BE%85%E5%8A%A9%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
 
-填坑
+本身使用 WinDbg 调试工具的内容不多，就是输入一些命令，看命令返回结果而已。但其背后的难度在于，对于当前的调试问题，需要输入什么命令已获取什么部分信息，再根据输出内容的信息定位问题。背后的知识非常多，且取决于期望调试的是什么内容
 
 以下是一些使用 WinDbg 配合调试 DUMP 的例子
 
@@ -1426,6 +1499,18 @@ ntdll.dll!_DbgUiRemoteBreakin
 使用 DUMP 调试还是比较难的，劝退力比较足。因为除了工具的时候比较难之外，如何进行调试，调试的思路和调试的经验都会成为劝退的原因，我收藏了一些大佬的 DUMP 调试博客，大家可以跟随大佬们的调试思路尝试调试一下
 
 - [一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/)
+
+### 终极方法
+
+这个 WinDbg 工具非常强大，只是有一个问题。那就是有亿点点上手门槛
+
+在这里我告诉大家一个非常简单的方法，让大家瞬间就能学会上手使用 WinDbg 工具调试问题
+
+<!-- ![](image/Windows 调试工具课程/Windows 调试工具课程39.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2024919855526129.jpg)
+
+方法就是请一个熟悉 WinDbg 的伙伴，让他帮你调试，找到一个工具人帮你使用 WinDbg 调试问题是最快能学会使用 WinDbg 的方法
+
 
 
 ## 性能调试
@@ -1473,7 +1558,7 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 [VisualStudio 调试内存泄漏方法](https://blog.lindexi.com/post/VisualStudio-%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%96%B9%E6%B3%95.html )
 
-通过 dotMemory 调试
+除了使用 Visual Studio 调试之外，还可以使用上文介绍的 dotMemory 工具进行调试。这个 dotMemory 工具既可以抓取运行的进程，也可以从进程启动开始一直抓取，甚至还能调试 DUMP 的内存。如果拥有源代码且能构建的话，还可以引用 API 在代码里面决定抓取时机
 
 另外，如果是调试 Linux 等服务器上的 dotnet 应用的内存占用，请看 [dotnet 用 gcdump 调试应用程序内存占用](https://blog.lindexi.com/post/dotnet-%E7%94%A8-gcdump-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8.html )
 
