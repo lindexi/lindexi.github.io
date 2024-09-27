@@ -3690,6 +3690,8 @@
 
  * [解决从旧格式的 csproj 迁移到新格式的 csproj 格式 AssemblyInfo 文件值重复问题](解决从旧格式的-csproj-迁移到新格式的-csproj-格式-AssemblyInfo-文件值重复问题.md)
 
+ * [警惕 Visual Studio 属性求值副作用导致逻辑不符合预期](警惕-Visual-Studio-属性求值副作用导致逻辑不符合预期.md)
+
  * [让 AE 输出 MPEG ](让-AE-输出-MPEG-.md)
 
  * [让 dotnet 命令行输出作为英文的方法](让-dotnet-命令行输出作为英文的方法.md)
