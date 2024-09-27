@@ -173,5 +173,13 @@
   "image\\dotnet 已知问题 错误标记 MethodImplOptions.InternalCall 特性参数将会在类型访问之前抛出 TypeLoadException 异常\\dotnet 已知问题 错误标记 MethodImplOptions.InternalCall 特性参数将会在类型访问之前抛出 TypeLoadException 异常0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071103492-2017180350.png",
   "image\\dotnet 探究 SemanticKernel 的 planner 的原理\\dotnet 探究 SemanticKernel 的 planner 的原理0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071103876-837365685.png",
   "image\\dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架\\dotnet 简单方法在一个进程内同时跑起 WPF 和 ASP.NET Core 框架0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071104368-1928705419.png",
-  "image\\WPF 通过 InputManager 模拟调度触摸事件\\WPF 通过 InputManager 模拟调度触摸事件.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071104886-52684406.gif"
+  "image\\WPF 通过 InputManager 模拟调度触摸事件\\WPF 通过 InputManager 模拟调度触摸事件.gif": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071104886-52684406.gif",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期0.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073202150-996792533.png",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期1.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073202735-296498587.png",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期2.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073203107-1489778441.png",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期3.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073203453-1180665549.png",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期4.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073203901-2064684928.png",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期5.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073204253-1708901134.png",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期6.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073204608-554476551.png",
+  "image\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期\\警惕 Visual Studio 属性求值副作用导致逻辑不符合预期7.png": "https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240928073204950-1688538493.png"
 }
