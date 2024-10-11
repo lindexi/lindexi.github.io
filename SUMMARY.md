@@ -1614,6 +1614,8 @@
 
  * [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用](Roslyn-分析器-EnforceExtendedAnalyzerRules-属性的作用.md)
 
+ * [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置](Roslyn-分析器-读取-csproj-项目文件的-AdditionalFiles-Item-的-Metadata-配置.md)
+
  * [Roslyn 判断当前使用 dotnet core 编译器进行编译](Roslyn-判断当前使用-dotnet-core-编译器进行编译.md)
 
  * [Roslyn 在 msbuild 的 target 判断文件存在](Roslyn-在-msbuild-的-target-判断文件存在.md)
