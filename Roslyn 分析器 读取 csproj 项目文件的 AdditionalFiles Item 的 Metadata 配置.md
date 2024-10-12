@@ -3,6 +3,7 @@
 定义在 ItemGroup 里面的各个引用文件的 Item 可带上自定义的 Metadata 内容，这部分内容需要转换到 AdditionalFiles 的 Metadata 上才能被分析器所获取
 
 <!--more-->
+<!-- CreateTime:2024/10/12 07:11:30 -->
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：Roslyn,MSBuild,编译器,SourceGenerator,分析器,生成代码 -->
