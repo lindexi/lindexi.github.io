@@ -8,7 +8,6 @@
 
 <!-- CreateTime:2022/11/7 8:04:32 -->
 
-
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -230,6 +229,17 @@ git pull origin d4fee9a801c5d2591162ce4280ac06906029ef48
 更多源代码生成，请看官方的 [Source Generators Cookbook](https://github.com/dotnet/roslyn/blob/main/docs/features/source-generators.cookbook.md)
 
 更多关于我博客请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+如需读取 ItemGroup 里面的 Item 项的 Metadata 信息，如读取以下代码的 Link 信息
+
+```xml
+  <ItemGroup>
+    <PaintStateDiagramMarkdownFile Include="..\KereqeewahaihibayNohelqiji\*.txt" Link="Assets\StateDiagrams\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+```
+
+可先将 PaintStateDiagramMarkdownFile 赋值给 AdditionalFiles 项，然后通过 CompilerVisibleItemMetadata 配置 Link 可见的方式让分析器可见。详细请参阅 [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置](https://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-%E8%AF%BB%E5%8F%96-csproj-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84-AdditionalFiles-Item-%E7%9A%84-Metadata-%E9%85%8D%E7%BD%AE.html )
+<!-- [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18459703 ) -->
 
 
 
