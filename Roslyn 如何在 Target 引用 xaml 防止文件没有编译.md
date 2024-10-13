@@ -8,7 +8,7 @@
 <!-- csdn -->
 <!-- 标签：Roslyn，MSBuild,编译器,xaml,打包 -->
 
-本文是更多请看[手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 的一个文章，在开始本文之前，假设大家已经了解 Roslyn 相关。
+本文是 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 系列的文章，在开始本文之前，假设大家已经了解 Roslyn 相关。
 
 本文主要是我自己探索 VisualStudio 编译的过程，所以有一点乱，主要的过程就是遇到了将 xaml 写在了 Traget 里，编译的时候因为找不到 xaml 编译，所以无法编译通过。
 
@@ -206,7 +206,7 @@ Program.cs(15,17): Error CS1061: “App”未包含“InitializeComponent”的�
 
 项目请看： [dotnet-campus/SourceYard: Add a NuGet package only for dll reference? By using dotnetCampus.SourceYard, you can pack a NuGet package with source code. By installing the new source code package, all source codes behaviors just like it is in your project.](https://github.com/dotnet-campus/SourceYard )
 
-参见：[手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
+参见：[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
 

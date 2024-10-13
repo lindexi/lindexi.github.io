@@ -52,7 +52,7 @@
 
 [MSBuild Reserved and Well-known Properties](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-reserved-and-well-known-properties?view=vs-2017 )
 
-更多请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html )
+更多请看 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
 
 ![](http://cdn.lindexi.site/lindexi%2F2019123205745682)
 
