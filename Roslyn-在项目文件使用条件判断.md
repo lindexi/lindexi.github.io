@@ -11,7 +11,7 @@
 <!-- csdn -->
 <!-- 标签：Roslyn,MSBuild,编译器 -->
 
-本文是 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 的文章，在阅读本文之前，希望已经知道了大多数关于 msbuild 的知识
+本文是 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 的文章，在阅读本文之前，希望已经知道了大多数关于 msbuild 的知识
 
 为了告诉大家如何使用判断，需要创建一个简单的程序来写，这里创建一个 dotnet core 控制台项目，如果还没安装 dotnet core 可以到 [dotnet sdk 2.1.300 winx64-CSDN下载](https://download.csdn.net/download/lindexi_gd/10582416 )
 

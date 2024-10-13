@@ -131,7 +131,7 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 
 获取代码之后，进入 KeneenejajiqairCalllebolayere 文件夹
 
-更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://lindexi.oschina.io/lindexi/post/roslyn.html ) 
+更多关于 Roslyn 请看 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 
 
 
 
