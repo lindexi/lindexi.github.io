@@ -1731,6 +1731,10 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 这就是为什么推荐先使用 ProcessExplorer 工具的原因。使用 ProcessExplorer 只要拉起应用程序的进程没有退出，就能快速找到拉起应用程序的进程
 
+## 收藏
+
+- [Advanced .Net Debugging 1：你必须知道的调试工具](https://www.cnblogs.com/PatrickLiu/p/17965068)
+
 
 
 

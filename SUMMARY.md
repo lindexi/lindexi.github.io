@@ -650,6 +650,8 @@
 
  * [dotnet core 黑科技·String.IndexOf 性能](dotnet-core-黑科技·String.IndexOf-性能.md)
 
+ * [dotnet DirectX 做一个简单绘制折线笔迹的 D2D 应用](dotnet-DirectX-做一个简单绘制折线笔迹的-D2D-应用.md)
+
  * [dotnet DirectX 通过 Vortice 控制台使用 ID2D1DeviceContext 绘制画面](dotnet-DirectX-通过-Vortice-控制台使用-ID2D1DeviceContext-绘制画面.md)
 
  * [dotnet format 忽略生成代码的格式化](dotnet-format-忽略生成代码的格式化.md)
