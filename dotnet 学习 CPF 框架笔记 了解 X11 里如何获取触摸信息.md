@@ -376,4 +376,97 @@ git pull origin 43711cd55b54616e0d75a70d61dec5591151ad2b
 - <https://www.kernel.org/doc/html/latest/input/multi-touch-protocol.html>
 - <https://source.android.google.cn/docs/core/interaction/input/touch-devices>
 
-对应的，我修复了 Avalonia 的触摸问题，详细请参阅 <https://github.com/AvaloniaUI/Avalonia/pull/15297> <https://github.com/AvaloniaUI/Avalonia/pull/15283>
+对应的，我修复了 Avalonia 的触摸问题，详细请参阅 
+
+- <https://github.com/AvaloniaUI/Avalonia/pull/15297>
+- <https://github.com/AvaloniaUI/Avalonia/pull/15283>
+- <https://github.com/AvaloniaUI/Avalonia/pull/16498>
+
+附录：
+
+我的测试设备上的信息
+
+```bash
+$ xinput list
+⎡ Virtual core pointer                          id=2    [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4    [slave  pointer  (2)]
+⎜   ↳ ...
+```
+
+```bash
+$ xinput list 2
+Virtual core pointer                            id=2    [master pointer  (3)]
+        Reporting 8 classes:
+                Class originated from: 10. Type: XIButtonClass
+                Buttons supported: 13
+                Button labels: "Button Unknown" "Button Unknown" "Button Unknown" "Button Wheel Up" "Button Wheel Down" "Button Horiz Wheel Left" "Button Horiz Wheel Right" None None None "Button Unknown" "Button Unknown" "Button Unknown"
+                Button state:
+                Class originated from: 10. Type: XIValuatorClass
+                Detail for Valuator 0:
+                  Label: Abs MT Position X
+                  Range: 0.000000 - 32767.000000
+                  Resolution: 38000 units/m
+                  Mode: absolute
+                  Current value: 13638.000000
+                Class originated from: 10. Type: XIValuatorClass
+                Detail for Valuator 1:
+                  Label: Abs MT Position Y
+                  Range: 0.000000 - 32767.000000
+                  Resolution: 66000 units/m
+                  Mode: absolute
+                  Current value: 14785.000000
+                Class originated from: 10. Type: XIValuatorClass
+                Detail for Valuator 2:
+                  Label: Abs MT Pressure
+                  Range: 0.000000 - 4095.000000
+                  Resolution: 0 units/m
+                  Mode: absolute
+                  Current value: 1678.000000
+                Class originated from: 10. Type: XIValuatorClass
+                Detail for Valuator 3:
+                  Label: Abs MT Touch Major
+                  Range: 0.000000 - 18950.000000
+                  Resolution: 10000 units/m
+                  Mode: absolute
+                  Current value: 242.000000
+                Class originated from: 10. Type: XIValuatorClass
+                Detail for Valuator 4:
+                  Label: Abs MT Touch Minor
+                  Range: 0.000000 - 10660.000000
+                  Resolution: 10000 units/m
+                  Mode: absolute
+                  Current value: 161.000000
+                Class originated from: 10. Type: XIValuatorClass
+                Detail for Valuator 5:
+                  Label: Abs MT Orientation
+                  Range: -15707.000000 - 15707.000000
+                  Resolution: 0 units/m
+                  Mode: absolute
+                  Current value: -49.000000
+                Class originated from: 10. Type: XITouchClass
+                Touch mode: direct
+                Max number of touches: 50
+```
+
+在本文里面以上输出信息里面重要的是 `Label: Abs MT Touch Major` 和 `Label: Abs MT Touch Minor` 信息
+
+```
+...
+                Detail for Valuator 3:
+                  Label: Abs MT Touch Major
+                  Range: 0.000000 - 18950.000000
+                  Resolution: 10000 units/m
+                  Mode: absolute
+                  Current value: 242.000000
+...
+
+                Detail for Valuator 4:
+                  Label: Abs MT Touch Minor
+                  Range: 0.000000 - 10660.000000
+                  Resolution: 10000 units/m
+                  Mode: absolute
+                  Current value: 161.000000
+...
+```
+
+读取 Edid 文件获取到的我的这个测试设备的触摸屏尺寸为 190 cm 宽度和 107 cm 高度，没有找到和 xinput 里有对应关系，符合预期。如需要获取物理尺寸的触摸面积，需要读取 Edid 信息，配合最大值和最小值求出比例换为物理尺寸

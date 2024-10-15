@@ -354,7 +354,7 @@ Description 描述信息
     <!-- 不要在 debug 开启 EmbedAllSources 或 EmbedUntrackedSources：
          1. NuGet 包会提示包含未追踪的源，但实际列出的未追踪的源是空的（所以其实都已经追踪了？）
          2. 如果采用此属性将源嵌入，会导致 JetBrians Rider 调试时使用嵌入的源而不是仓库中的源，这会导致无法使用断点等一系列依赖于 pdb 源的功能。-->
-    <EmbedAllSources Condition="'$(Configuration)' != 'debug'">true</EmbedAllSources>
+    <EmbedAllSources Condition="'$(Configuration)' != 'Debug'">true</EmbedAllSources>
 ```
 
 ### AllowedOutputExtensionsInPackageBuildOutputFolder
