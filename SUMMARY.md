@@ -2664,6 +2664,8 @@
 
  * [WPF 使用封装的 SharpDx 控件](WPF-使用封装的-SharpDx-控件.md)
 
+ * [WPF 使用快捷键方式制作简易的 Word 上的 Latex 输入法](WPF-使用快捷键方式制作简易的-Word-上的-Latex-输入法.md)
+
  * [WPF 依赖属性绑定不上调试方法](WPF-依赖属性绑定不上调试方法.md)
 
  * [WPF 修复 ContextMenu 在开启 PerMonitorV2 后所用 DPI 错误](WPF-修复-ContextMenu-在开启-PerMonitorV2-后所用-DPI-错误.md)
