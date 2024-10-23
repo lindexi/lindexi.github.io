@@ -3,6 +3,8 @@
 本文将告诉大家如何从简单的控制台开始，使用 Vortice 辅助调用 Direct2D1 的功能，配合 WM_Pointer 消息，制作一个简单绘制触摸折线笔迹的 D2D 应用
 
 <!--more-->
+<!-- CreateTime:2024/10/16 07:27:25 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D, -->
