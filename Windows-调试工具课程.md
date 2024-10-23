@@ -7,7 +7,6 @@ Windows 调试工具课程——在软件万种死法中调试出原因
 
 
 <!-- CreateTime:2024/09/19 21:08:10 -->
-
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 置顶1 -->
@@ -593,6 +592,8 @@ VMMap 工具下载地址： <https://learn.microsoft.com/zh-cn/sysinternals/down
 许多的 GDI 对象所占用的内存都不计入到进程里面，这就导致了进程看起来没有使用多少内存，但是系统全局的内存却是不足了。或者是进程使用了大量的 GDI 对象，导致了许多 GDI 相关函数调用失败，而通过 LastErrorCode 获取到的错误被翻译为 OOM 相关错误，进而表现出 OOM 现象
 
 此时可以通过任务管理器快速确定是否是 GDI 对象爆炸问题，然后通过 GDIView 工具查看 GDI 对象的使用情况。GDIView 工具可以帮助我们查看系统全局的 GDI 对象使用情况，以及每个进程的 GDI 对象使用情况
+
+根据 [官方文档](https://learn.microsoft.com/zh-cn/windows/win32/direct2d/server-side-rendering-overview) 可以知道，使用 GDI 的应用程序限制为每个进程 10240 GDI 句柄，每个会话 65536 个 GDI 句柄。 原因是 Windows 在内部使用 16 位 WORD 来存储每个会话的句柄索引
 
 GDIView 工具下载地址： <https://www.nirsoft.net/utils/gdi_handles.html>
 
