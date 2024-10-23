@@ -233,7 +233,7 @@ It is only necessary to call this function if multiple threads might use Xlib co
 
 ## 已知问题
 
-### XIQueryDevice 可能停止渲染
+### XIQueryDevice 可能停止渲染或卡住线程
 
 放在显示窗口之前进行 XIQueryDevice 不会让窗口停止渲染，否则将会在 XIQueryDevice 方法卡住
 
@@ -245,7 +245,7 @@ var devices = (XIDeviceInfo*) XLib.XIQueryDevice(Display,
 XMapWindow(display, X11WindowIntPtr);
 ```
 
-反过来，让 XMapWindow 在 XIQueryDevice 则可能让其他的 X11 窗口停止渲染，且非必现问题，十分诡异。仅在统信 UOS 系统能够复现，其系统版本信息如下
+反过来，让 XMapWindow 在 XIQueryDevice 之前则可能让其他的 X11 窗口停止渲染，且非必现问题，十分诡异。仅在统信 UOS 系统能够复现，其系统版本信息如下
 
 ```
 uos@uos-PC:~$ cat /etc/os-version
@@ -307,7 +307,12 @@ OsBuild=11068.102
 
 只需将以上代码回滚即可获取一个复现的 Demo 代码，然而 Demo 不是最简的，且似乎我也没有能够构建出最简的
 
+### 偶现触摸面积丢失测试
 
+在 X11 里面使用 [dotnet 学习 CPF 框架笔记 了解 X11 里如何获取触摸信息](https://blog.lindexi.com/post/dotnet-%E5%AD%A6%E4%B9%A0-CPF-%E6%A1%86%E6%9E%B6%E7%AC%94%E8%AE%B0-%E4%BA%86%E8%A7%A3-X11-%E9%87%8C%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E8%A7%A6%E6%91%B8%E4%BF%A1%E6%81%AF.html ) 博客提到的方法获取触摸宽度高度信息时，偶尔会出现拿不到 Abs MT Touch Major 和 Abs MT Touch Minor 的信息
+
+详细请参阅 [记 X11 里面触摸的一些行为](https://blog.lindexi.com/post/%E8%AE%B0-X11-%E9%87%8C%E9%9D%A2%E8%A7%A6%E6%91%B8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A1%8C%E4%B8%BA.html )
+<!-- [记 X11 里面触摸的一些行为 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18468854 ) -->
 
 ## 更多博客
 
@@ -316,3 +321,4 @@ OsBuild=11068.102
 [dotnet 后台线程发送 X11 窗口消息](https://blog.lindexi.com/post/dotnet-%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B%E5%8F%91%E9%80%81-X11-%E7%AA%97%E5%8F%A3%E6%B6%88%E6%81%AF.html )
 
 [dotnet 后台线程设置 X11 窗口最小化](https://blog.lindexi.com/post/dotnet-%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B%E8%AE%BE%E7%BD%AE-X11-%E7%AA%97%E5%8F%A3%E6%9C%80%E5%B0%8F%E5%8C%96.html )
+
