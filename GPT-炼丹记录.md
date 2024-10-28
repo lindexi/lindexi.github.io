@@ -118,23 +118,11 @@
 
 [Content Start]
 
-使用MIT-SHM优化渲染推送性能
+修复 InlineDictionary 在处理单项重新赋值时的不正确行为
 
-## What does the pull request do?
+修改之前的行为是通过 Set 方法调用进入时，将会忽略 overwrite 参数，从而导致 InlineDictionary 只有一项时，再次调用 Set 时的效果将会和调用 Add 方法相同。此行为将导致 composition animation 动画播放行为不符合预期，将导致第二次的 composition animation 无法播放。为什么第二次的 composition animation 无法播放？原因是第二次准备播放的 composition animation 无法将第一次的 composition animation 替换掉，而是将第二次的 composition animation 加入到第一次的 composition animation 后面，从而导致第二次设置的 composition animation 无法被执行
 
-此 pull request 实现了使用 MIT-SHM 的方式推送渲染的界面画面图片，使用了XShmPutImage方法代替了XPutImage方法。可以有效减少 Bitmap 在 X11 层的拷贝，提升推送渲染性能
-
-## What is the current behavior?
-
-当前只使用了 XPutImage 进行软渲染时推送界面图片
-
-## What is the updated/expected behavior with this PR?
-
-此 pull request 提供了更多选项，允许开发者配置使用 MIT-SHM 共享内存方式推送渲染图片，可以有效在低性能设备上提升渲染性能，降低渲染延迟
-
-## How was the solution implemented (if it's not obvious)?
-
-实现方法是通过 MIT-SHM 进行渲染图片的推送，按照 @kekekeks 在 Link1 提及的方法实现
+修改之后可以让 InlineDictionary 在单项时，也可以应用 overwrite 参数，从而修复第二次的 composition animation 无法播放，让第二次的 composition animation 覆盖第一次的 composition animation 动画
 
 [Content End]
 
@@ -144,27 +132,25 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-特别地，允许比最大渲染帧多一帧。这是因为可能可能现在正在有一帧正在返回中，一帧正在渲染中，所以再添加一帧进行准备渲染是能够最大化渲染效率的
+我尝试翻看代码变更历史记录，但是我没有任何收获
 ```
 
 ```
 请帮我将以下内容转述为地道的英文：
 
-你所见的 WPF 部分占用了大量的内存的问题，本质上只是硬件渲染部分占用的内存，这部分将受到许多因素的影响，包括硬件设备和驱动软件和系统版本等等的影响。这也就是为什么我坚持请你使用 SoftwareOnly 选项的原因。另外，一个应用程序占用的内存是比较复杂的，从专业一点的角度，你不能仅依靠任务管理器里面给你提示的内存来进行了解你的应用进程占用的内存大小。更合适的是，你应该使用类似 vmmap 等专业工具进行测量。一个应用程序占用的内存分为多个部分和多个维度，从共享和独占的角度讲包括共享部分的内存以及 private 部分的内存，从另外的维度讲，应用程序的内存可部分在磁盘里面的虚拟内存和在内存条里面的物理内存里面。对于你提及的 Windows Forms 部分占用比较少的内存，这是因为还有部分在 System 里面的内存没有被你统计到，给了你一些错觉。但是我十分支持你采用你更熟悉的技术完成你的任务
+我在 Xx 里的分析是否正确？
 ```
 
 ```
 请帮我将以下内容转述为地道的计算机英文：
 
-这里的行为和 WinUI 3 是相同的，即使在非百分之一百的 DPI 下也是相同的行为
+咱是否改变过 `Microsoft.WinFX.targets` 的组织结构，比如说之前它是可以被应用到 TargetFrameworks 上的，是后面哪次变更之后才不可以的？
 ```
 
 ```
 请帮我将以下内容转述为地道的计算机英文：
 
-在此变更之前，Pressure、Touch Major、Touch Minor在设备变更的时候不会刷新
-
-在此变更之后，可以让 Pressure、Touch Major、Touch Minor 跟随设备变更而刷新属性值
+从我的角度上讲，我认为 @h3xds1nz 的贡献是非常有价值的，也值得被表扬和被鼓励。尽管有时候某些变更改动范围很大，但只要认为这些改动是正确的，或者在代码审查之后能够让这些改动符合大家的问题，我认为这也是没有问题的。现在唯一的问题是咱无法及时处理 @h3xds1nz 贡献的 PR，导致我现在对一些模块的改动都在担忧着与 @h3xds1nz 的改动存在冲突，不过这是一个很小的问题，只要我小心一点和更有耐心一点就能解决
 ```
 
 ```
@@ -172,22 +158,27 @@
 
 以下是我想要报告的问题：
 
-WPF 应用程序在 Intel 设备上可能存在的高内存占用或者内存泄露问题
+在 Avalonia 里面，如果多次触发 Composition 的 Animation 动画，将会看到第二帧是停止播放动画的
 
-此问题是在 WPF 仓库的 issues 报告的，经过了漫长时间的调查，我没有什么收获。同时我也感受到了我的能力上的不足，恳请微软能够为此问题投入更多的关注。问题地址是： https://github.com/dotnet/wpf/issues/7704
+复现的步骤如下：
 
-经过我的初步调查（我的结论可能是错误的），这个问题和 D3D9On12 有比较大的关联关系，即在 D3D9On12 模块下，将原先统计在 GPU 占用的内存部分统计到了进程里面。或者是在 D3D9On12 里面确实会申请或占用更多的内存
+1. 在界面放入一个 UI 控件，如 Border 控件
+2. 通过 `ElementComposition.GetElementVisual` 方法获取 CompositionVisual 对象，再使用此对象创建和播放一个 Vector3DKeyFrameAnimation 动画
+3. 重复执行步骤 2
 
-此问题一开始是 Edi Wang 报告的，随后经过我的调查，但这个过程中我两都没有什么收获和进度。但随着时间的推移，越来越多的伙伴报告了更多的问题，特别是如 [Link1] 的 ShannonZ 伙伴报告的更加严重的问题
+此时你可以看到重复执行步骤 2 时，原本正在播放的动画已经停止播放了
 
-我追踪了很多个 Intel 驱动版本，但从 31.0.101.4032 版本到 32.0.101.5768 版本都没有对此版本有帮助
+以下是我的 XAML 界面代码
 
+[代码1]
 
-"Edi Wang"<Edi.Wang@outlook.com>
+以下是我的 C# 代码
 
-High memory consumption or memory leak on Intel integrated graphics
+[代码2]
 
-https://github.com/dotnet/wpf/issues/7704#issuecomment-2311574479
+我将最简复现步骤的例子项目上传到 GitHub 上
+
+预期的行为是能够控制 Composition 的 Animation 动画的停止以及开启新的动画
 ```
 
 
