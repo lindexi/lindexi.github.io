@@ -3,6 +3,8 @@
 我在龙芯机器上安装了 Kylin 麒麟系统，然后去下载龙芯的 dotnet sdk 安装，接着尝试构建一个简单应用，却发现构建失败。报错是 System.DllNotFoundException: Unable to load shared library 'libSystem.Security.Cryptography.Native.OpenSsl' or one of its dependencies
 
 <!--more-->
+<!-- CreateTime:2024/10/30 07:09:52 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
