@@ -3410,6 +3410,8 @@
 
  * [制作一个能构建 dotnet AOT 的 gitlab runner 的 Debian docker 镜像](制作一个能构建-dotnet-AOT-的-gitlab-runner-的-Debian-docker-镜像.md)
 
+ * [制作一个龙芯旧世界的 dotnet sdk docker 镜像](制作一个龙芯旧世界的-dotnet-sdk-docker-镜像.md)
+
  * [制作的 dotnet tool 运行失败提示依赖缺失](制作的-dotnet-tool-运行失败提示依赖缺失.md)
 
  * [剪贴板被占用导致应用使用剪贴板拷贝内容失败抛出 COMException 0x800401D0 错误](剪贴板被占用导致应用使用剪贴板拷贝内容失败抛出-COMException-0x800401D0-错误.md)

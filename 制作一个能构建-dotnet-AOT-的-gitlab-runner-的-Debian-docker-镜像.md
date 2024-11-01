@@ -425,6 +425,11 @@ RUN ln -s /root/dotnet/dotnet /usr/bin/dotnet
 
 以上命令是对 dotnet 建立链接，如此即可让全局可以使用 dotnet 命令
 
+细节：
+
+1. 应该使用 `ln -s` 软链接的方式，否则将会遇到 `Error: [/usr/bin/host/fxr] does not exist` 错误。详细请看 [彻底明白Linux硬链接和软链接-linux硬链接和软链接区别](https://www.51cto.com/article/702714.html )
+2. 软链接过程中，不应该使用相对路径，即 `ln -s ./dotnet/dotnet /usr/bin/dotnet` 也是错误的，将会提示 `bash: /usr/bin/dotnet: Too many levels of symbolic links` 错误
+
 ### 为什么使用 podman 工具
 
 原因是在 windows 下的 docker desktop 是收费的，于是我用平替的 podman 工具
