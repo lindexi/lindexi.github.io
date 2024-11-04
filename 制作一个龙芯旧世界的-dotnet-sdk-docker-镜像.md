@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/11/02 07:29:52 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -111,6 +113,11 @@ CPU 信息如下
 ```bash
 $ cat /proc/cpuinfo | grep name
 model name              : Loongson-3A6000
+```
+
+```bash
+$ lscpu
+Architecture:        loongarch64
 ```
 
 我的 docker 安装方法：
@@ -522,7 +529,6 @@ System.IO.IOException: Not enough storage is available to process this command. 
 - [.net - A fatal error occurred. The folder [/usr/share/dotnet/host/fxr] does not exist - Stack Overflow](https://stackoverflow.com/questions/73753672/a-fatal-error-occurred-the-folder-usr-share-dotnet-host-fxr-does-not-exist )
 - [Troubleshoot .NET package mix ups on Linux - .NET - Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/install/linux-package-mixup?pivots=os-linux-redhat )
 - [Globalization config settings - .NET - Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/runtime-config/globalization )
-- [X86模拟龙芯与编译 .NET CoreCLR - 痴者工良 - 博客园](https://www.cnblogs.com/whuanle/p/13196860.html )
 - [X86模拟龙芯与编译 .NET CoreCLR - 痴者工良 - 博客园](https://www.cnblogs.com/whuanle/p/13196860.html )
 - [dockerfile-新增用户并赋予sudo权限以及指定密码_dockerfile sudo-CSDN博客](https://blog.csdn.net/u010275850/article/details/120587850 )
 - [【零基础入门Docker】Dockerfile中的USER指令以及dockerfile命令详解_docker_arthas777-云原生](https://devpress.csdn.net/cloudnative/66d57eb71328e17ef4733617.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjcyNDU3NywiZXhwIjoxNzMwOTg0MzYzLCJpYXQiOjE3MzAzNzk1NjMsInVzZXJuYW1lIjoibGluZGV4aV9nZCJ9.8Hr4iU7YSi77wJixyDhn0b0COvfoda8nZ4q6V_76KGM )

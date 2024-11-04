@@ -66,6 +66,8 @@ PasswordAuthentication yes
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅3.png) -->
 ![](http://cdn.lindexi.site/lindexi%2FUOS%2520%25E5%25BC%2580%25E5%2590%25AF%2520VisualStudio%2520%25E8%25BF%259C%25E7%25A8%258B%25E8%25B0%2583%25E8%25AF%2595%2520.NET%2520%25E5%25BA%2594%25E7%2594%25A8%25E4%25B9%258B%25E6%2597%25853.png)
 
+> 注： 如果没有找到 sshd_config 文件、或使用 vi 打开时是空白，则证明其服务端没有带上，可使用 `sudo apt-get install openssh-server` 命令进行安装 ssh 服务端
+
 配置完成之后，使用以下命令了解一下 ssh 的运行情况
 
 ```
