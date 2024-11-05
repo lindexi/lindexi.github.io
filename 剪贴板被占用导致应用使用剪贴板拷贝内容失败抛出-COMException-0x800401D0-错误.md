@@ -13,7 +13,7 @@
 
 现象：
 
-访问剪贴板，例如调用 System.Windows.Clipboard.SetText 方法，将会抛出入夏异常
+访问剪贴板，例如调用 System.Windows.Clipboard.SetText 方法，将会抛出如下异常
 
 ```
  System.Runtime.InteropServices.COMException (0x800401D0): OpenClipboard 失败 (0x800401D0 (CLIPBRD_E_CANT_OPEN))
