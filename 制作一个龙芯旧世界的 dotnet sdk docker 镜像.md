@@ -261,9 +261,9 @@ $ wget https://raw.githubusercontent.com/jumpserver/installer/9dfdfad3d71759483f
 
 ## 哪个才是龙芯官方 GitHub 组织
 
-- https://github.com/loongson ：官方组织
-- https://github.com/loongarch64 ： 官方组织
-- https://github.com/Loongson-Cloud-Community ：官方组织
+- https://github.com/loongson ：官方组织的非官方组织
+- https://github.com/loongarch64 ： 官方组织的非官方组织
+- https://github.com/Loongson-Cloud-Community ：官方组织的非官方组织
 - https://github.com/Loongson-Community ： 非官方的社区组织
 
 根据 [容器镜像仓库 - 龙芯开源社区](https://www.loongnix.cn/zh/cloud/container-registry/ ) 提及的源码仓库为 ： <https://github.com/Loongson-Cloud-Community> ，可认为 Loongson-Cloud-Community 为官方组织
@@ -271,6 +271,11 @@ $ wget https://raw.githubusercontent.com/jumpserver/installer/9dfdfad3d71759483f
 最后阅读了 xen0n 大佬的博客，才了解到了其渊源，详细请看： <https://blog.xen0n.name/posts/tinkering/loongarch-faq/>
 
 基本上只有官方组织在维护 abi1.0 旧世界，其他组织都是在做新世界。新世界的 dotnet 是在龙芯社区组织里面的，详细请看 <https://github.com/loongson-community/dotnet-unofficial-build>
+
+附龙芯论坛，以下按照官方程度排序：
+
+- <https://bbs.whlug.cn/all>
+- <https://bbs.loongarch.org/>
 
 ## dotnet 找不到 icu 不支持多语言
 
