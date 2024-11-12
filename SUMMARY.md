@@ -3712,6 +3712,8 @@
 
  * [记 dotnet 8.0.4 修复的 WPF 的触摸模块安全问题](记-dotnet-8.0.4-修复的-WPF-的触摸模块安全问题.md)
 
+ * [记 dotnet campus 组织为适配龙芯所做的更改](记-dotnet-campus-组织为适配龙芯所做的更改.md)
+
  * [记 Intel 的 31.0.101.5186 版本驱动带崩 WPF 程序](记-Intel-的-31.0.101.5186-版本驱动带崩-WPF-程序.md)
 
  * [记 Kylin 麒麟系统安全中心拦截导致 dotnet sdk 找不到 OpenSsl 构建失败](记-Kylin-麒麟系统安全中心拦截导致-dotnet-sdk-找不到-OpenSsl-构建失败.md)
