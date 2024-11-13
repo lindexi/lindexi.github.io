@@ -474,6 +474,8 @@
 
  * [dotnet 9 WPF 支持 Style 的 Setter 填充内容时可忽略 Value 标签](dotnet-9-WPF-支持-Style-的-Setter-填充内容时可忽略-Value-标签.md)
 
+ * [dotnet 9 WPF 连字符渲染支持](dotnet-9-WPF-连字符渲染支持.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
@@ -1245,6 +1247,8 @@
  * [dotnet 记 TaskCompletionSource 的 SetException 可能将异常记录到 UnobservedTaskException 的问题](dotnet-记-TaskCompletionSource-的-SetException-可能将异常记录到-UnobservedTaskException-的问题.md)
 
  * [dotnet 记在 Linux 上某些文件的文件长度为 0 但是存在内容](dotnet-记在-Linux-上某些文件的文件长度为-0-但是存在内容.md)
+
+ * [dotnet 记龙芯麒麟教育版安全中心拦截文件 导致 docker 内 CI CD 构建失败](dotnet-记龙芯麒麟教育版安全中心拦截文件-导致-docker-内-CI-CD-构建失败.md)
 
  * [dotnet 设置 X11 建立窗口之间的父子关系](dotnet-设置-X11-建立窗口之间的父子关系.md)
 
