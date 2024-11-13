@@ -5,8 +5,6 @@ tags: dotnet
 category: 
 ---
 
-<!-- CreateTime:2024/07/20 07:19:28 -->
-
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -31,7 +29,7 @@ category:
   </PropertyGroup>
 ```
 
-在此时间之后，微软也许会直接让使用 http 协议的 NuGet 源的项目构建不通过。咱如果确认本地或内部的 NuGet 源安全，在 NuGet 的 6.8 以上版本，可在 NuGet 源里添加 `allowInsecureConnections` 配置，编辑之后的 `NuGet.config` 文件里面配置的包源的代码如下
+在此时间之后，微软~~也许~~会直接让使用 http 协议的 NuGet 源的项目构建不通过。咱如果确认本地或内部的 NuGet 源安全，在 NuGet 的 6.8 以上版本，可在 NuGet 源里添加 `allowInsecureConnections` 配置，编辑之后的 `NuGet.config` 文件里面配置的包源的代码如下
 
 ```xml
 <packageSources>
@@ -45,14 +43,22 @@ category:
 
 详细请看 <https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file#packagesources>
 
-以上的 `NuGet.config` 可以放在项目的 sln 所在的文件夹，随着项目走。也可以存放在本机里作为全局配置，本机路径分别如下
+随着 dotnet 9 的发布，更新到 Visual Studio 2022 17.20 版本，默认将禁用 http 的 NuGet 源，构建时将提示如下错误
+
+```
+error NU1302: 正在使用“HTTP”源运行“restore”操作: http://baget.lindexi.com:123/nuget 。NuGet 需要 HTTPS 源。若要使用 HTTP 源，必须在 NuGet.Config 文件中将 'allowInsecureConnections' 显式设置为 true。有关详细信息，请参阅 https://aka.ms/nuget-https-everywhere。 
+```
+
+我自己信任搭建在我内网的 NuGet 源，于是我就需要按照如上文提供的方法，在配置里面添加 `allowInsecureConnections="true"` 属性
+
+以上的 `NuGet.config` 可以放在项目的 sln 所在的文件夹，随着项目走。也可以存放在本机里作为全局配置，本机路径分别如下，详细请参阅 <https://learn.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior>
 
 - Windows: 
   - 用户级： `%appdata%\NuGet\NuGet.Config`
-  - 机器级： ``
+  - 机器级： `%ProgramFiles(x86)%\NuGet\Config\NuGet.Config`
 - Mac/Linux: 
   - 用户级： `~/.config/NuGet/NuGet.Config` 或 `~/.nuget/NuGet/NuGet.Config`
-  - 机器级： `/etc/opt/NuGet/Config` (Linux) 和 `/Library/Application Support` (Mac)
+  - 机器级： `/etc/opt/NuGet/Config` (Linux) 和 `/Library/Application Support`
 
 参考文档：
 
