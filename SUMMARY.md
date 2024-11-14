@@ -3722,6 +3722,8 @@
 
  * [记 Kylin 麒麟系统安全中心拦截导致 dotnet sdk 找不到 OpenSsl 构建失败](记-Kylin-麒麟系统安全中心拦截导致-dotnet-sdk-找不到-OpenSsl-构建失败.md)
 
+ * [记 QEMU 虚拟磁盘设备移动文件抛异常但实际移动成功](记-QEMU-虚拟磁盘设备移动文件抛异常但实际移动成功.md)
+
  * [记 Win8.1 某应用渲染抛出 OutOfMemoryException 异常及修复方法](记-Win8.1-某应用渲染抛出-OutOfMemoryException-异常及修复方法.md)
 
  * [记 X11 里面触摸的一些行为](记-X11-里面触摸的一些行为.md)
