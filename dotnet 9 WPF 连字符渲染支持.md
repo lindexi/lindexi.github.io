@@ -3,6 +3,7 @@
 连字符渲染功能是 WPF 呼声很高的一个功能，核心需求方是使用 Visual Studio 的开发者们。开发者们期望使用连字符的时候可以进行连字符渲染，让开发过程中的视觉效果更加。于是作为 Visual Studio 的基础设施的 WPF 就要承担此功能的实现。经过漫长的开发，终于在 dotnet 9 里面加入了此功能
 
 <!--more-->
+<!-- CreateTime:2024/11/14 07:29:19 -->
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -31,6 +32,6 @@
 
 ## 此功能是如何实现的
 
-此功能是在不开源的 PresentationNative.dll 里面实现的，因此没有直接的实现代码。但预计只是调用 DirectX 的科技即可实现。从哪可以了解到其实现信息？请参阅： [Adding AppContext Switch for disabling special character ligatures by Kuldeep-MS · Pull Request #8990 · dotnet/wpf](https://github.com/dotnet/wpf/pull/8990 )
+此功能是在不开源的 PresentationNative.dll 里面实现的，因此咱没有直接的实现代码可以看到。但预计只是调用 DirectX 的科技即可实现。从哪可以了解到其实现信息？请参阅： [Adding AppContext Switch for disabling special character ligatures by Kuldeep-MS · Pull Request #8990 · dotnet/wpf](https://github.com/dotnet/wpf/pull/8990 )
 
 更多实现 dotnet 9 的 WPF 更新请参阅：[What's new in WPF for .NET 9 - WPF .NET](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/whats-new/net90?view=netdesktop-9.0 )
