@@ -31,7 +31,7 @@ category:
 截图如下
 
 <!-- ![](image/记 Intel 的 31.0.101.5186 版本驱动带崩 WPF 程序/记 Intel 的 31.0.101.5186 版本驱动带崩 WPF 程序0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240918203541720-2021590992.png)
+![](http://cdn.lindexi.site/lindexi%2F2024317102565081.jpg)
 
 以上信息具备一点点迷惑性，因为报告的错误模块是 ucrtbase.dll 模块。不熟悉 ucrtbase.dll 的伙伴可以在网上搜 ucrtbase.dll 崩溃问题，就会搜出来许许多多和 ucrtbase.dll 相关的信息。但其实这些方向接近全部都是错误的，为什么这么说呢？因为 ucrtbase.dll 是 ucrt 库，全称是 [Universal C Runtime](https://learn.microsoft.com/zh-cn/cpp/windows/universal-crt-deployment?view=msvc-170 ) 是 Win 下的 C 标准库，基本上可以认为这是一个十分稳定的模块，真要有出错也是上层传了很离谱的参数或调用形式十分诡异才可能出错，以下是[微软官方文档](https://learn.microsoft.com/en-us/cpp/porting/upgrade-your-code-to-the-universal-crt?view=msvc-170)对 UCRT 的描述：
 

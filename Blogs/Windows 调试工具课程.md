@@ -627,7 +627,7 @@ GDIView 工具下载地址： <https://www.nirsoft.net/utils/gdi_handles.html>
 注册表问题可能有些深奥，本课程这里只介绍一个简单的真实案例。我发现我的 Notepad 记事本软件启动就炸掉了，不知道为什么。我通过 Process Monitor 工具抓取时，发现了其注册表有以下有趣的行为。这里就是非常靠近软件进程退出的地方
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程82.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071141360-956570740.png)
+![](http://image.acmx.xyz/lindexi%2F20249202024222316.jpg)
 
 由于 Process Monitor 工具抓取注册表行为时非常刷屏，降低大家的难度，我将有问题的一行日志选择了出来，看看大家是否猜到问题
 

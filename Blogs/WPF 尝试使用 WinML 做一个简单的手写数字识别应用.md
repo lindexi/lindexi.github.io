@@ -18,7 +18,7 @@ category:
 根据微软[官方文档](https://learn.microsoft.com/en-us/windows/ai/windows-ml/get-started)可以知道 WinML 底层里有依赖 DirectML 组件，从架构层级上看大概的关系图如下
 
 <!-- ![](image/WPF 尝试使用 WinML 做一个简单的手写数字识别应用/WPF 尝试使用 WinML 做一个简单的手写数字识别应用0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071143545-1908819068.png)
+![](http://cdn.lindexi.site/lindexi%2F2023129183792198.jpg)
 
 从设计上 DirectML 是底层的，通过高可控实现高性能，但高可控带来的副作用是使用麻烦，不适合应用程序直接使用，更多的是需要在此之前封装一层框架方便应用程序对接。而 WinML 正是这样的一层封装，通过 WinML 提供的较友好的 API 可以方便应用程序实现大部分业务功能
 
@@ -52,7 +52,7 @@ category:
 以上代码的最低版本要求设置为 10.0.17763.0 就是对应 1809 版本。而在 TargetFramework 里面的 10.0.19041 是对应 2004 版本。版本之间的关系图如下，详细请看 [Windows 10 version history - Wikipedia](https://en.wikipedia.org/wiki/Windows_10_version_history )
 
 <!-- ![](image/WPF 尝试使用 WinML 做一个简单的手写数字识别应用/WPF 尝试使用 WinML 做一个简单的手写数字识别应用1.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071144136-1800204583.png)
+![](http://cdn.lindexi.site/lindexi%2F202312101627275025.jpg)
 
 接下来下载大佬训练好的 mnist.onnx 模型文件，下载地址是 [https://github.com/microsoft/Windows-Machine-Learning/raw/master/Samples/MNIST/UWP/cs/Assets/mnist.onnx](https://github.com/microsoft/Windows-Machine-Learning/raw/master/Samples/MNIST/UWP/cs/Assets/mnist.onnx)
 
