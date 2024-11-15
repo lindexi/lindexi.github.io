@@ -6,6 +6,7 @@
 <!--more-->
 
 
+<!-- CreateTime:2024/11/15 07:25:55 -->
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -125,7 +126,38 @@ System.IO.DirectoryNotFoundException: Could not find a part of the path.
 
 对应的 Win32 错误码是 0x80070003
 
+解决方法：
 
+只能规避，规避方法是捕获 System.IO.DirectoryNotFoundException 异常，在异常里面判断移动之后的新文件是否存在，如果存在则证明是移动成功，只是虚拟磁盘在逗而已
+
+```csharp
+        try
+        {
+            File.Move(filePath, newFilePath);
+        }
+        catch(Exception e)
+        {
+            if (e is System.IO.DirectoryNotFoundException && (uint)e.HResult == 0x80070003/*这个 0x80070003 是多余的判断，只是为了说明就是这种情况而已*/)
+            {
+                // 有可能是在 QEMU 虚拟磁盘上，在虚拟硬盘移动文件成功，但 Win32 返回失败
+                // 尝试判断移动之后的文件是否存在，如果存在就认为移动成功
+                if (File.Exists(downloadEntry.FilePath))
+                {
+                    // 移动成功了，返回就可以了，不用再处理了
+                    return; // 业务代码里面不一定可以用 return 哦，调用了 return 将会结束方法了哦
+                }
+                else
+                {
+                    // 没有移动成功，即文件不存在，则继续的其他处理
+                }
+            }
+
+            // ...
+            // 忽略其他处理。其他处理如记录日志呀或尝试换成拷贝等
+
+            throw;
+        }
+```
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/a3b5ce1d8dcc08cdc2d23e436e6fb477f1fac503/Workbench/RecedajeeKewhinuhoyay) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/a3b5ce1d8dcc08cdc2d23e436e6fb477f1fac503/Workbench/RecedajeeKewhinuhoyay) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 

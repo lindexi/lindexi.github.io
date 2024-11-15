@@ -2934,6 +2934,8 @@
 
  * [WPF 打包为 UWP 应用构建失败 MSB3270 不匹配 AMD64 架构](WPF-打包为-UWP-应用构建失败-MSB3270-不匹配-AMD64-架构.md)
 
+ * [WPF 打开资源管理器且选中某个文件](WPF-打开资源管理器且选中某个文件.md)
+
  * [WPF 托盘显示](WPF-托盘显示.md)
 
  * [WPF 拖动时出现 Invalid FORMATETC structure](WPF-拖动时出现-Invalid-FORMATETC-structure.md)
