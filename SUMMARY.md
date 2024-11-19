@@ -476,6 +476,8 @@
 
  * [dotnet 9 WPF 连字符渲染支持](dotnet-9-WPF-连字符渲染支持.md)
 
+ * [dotnet 9 WPF 项目禁用 IncludePackageReferencesDuringMarkupCompilation 导致源代码包 XAML 构建失败](dotnet-9-WPF-项目禁用-IncludePackageReferencesDuringMarkupCompilation-导致源代码包-XAML-构建失败.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
@@ -3117,6 +3119,8 @@
  * [WPF 获得触摸精度和触摸点](WPF-获得触摸精度和触摸点.md)
 
  * [WPF 获得触笔悬停元素上](WPF-获得触笔悬停元素上.md)
+
+ * [WPF 被 灵格斯翻译官 取词带崩](WPF-被-灵格斯翻译官-取词带崩.md)
 
  * [WPF 被输入法带崩进程](WPF-被输入法带崩进程.md)
 

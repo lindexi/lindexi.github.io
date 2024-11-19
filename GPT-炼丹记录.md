@@ -162,27 +162,19 @@
 
 以下是我想要报告的问题：
 
-在 Avalonia 里面，如果多次触发 Composition 的 Animation 动画，将会看到第二帧是停止播放动画的
+禁用 IncludePackageReferencesDuringMarkupCompilation 功能，将会导致在跨项目引用 xaml 文件，将 xaml 文件作为链接方式添加时，构建过程中出现 error CS1504 错误
 
-复现的步骤如下：
+禁用 IncludePackageReferencesDuringMarkupCompilation 功能之后，从 xaml 生成的 g.cs 文件里的 `#pragma checksum` 将记录错误的相对文件路径，进而导致构建失败。最简单的复现方式如下：
 
-1. 在界面放入一个 UI 控件，如 Border 控件
-2. 通过 `ElementComposition.GetElementVisual` 方法获取 CompositionVisual 对象，再使用此对象创建和播放一个 Vector3DKeyFrameAnimation 动画
-3. 重复执行步骤 2
+1. 创建两个 wpf 项目，其中一个为 WPF 库项目，一个为 WPF 应用项目
+2. 在 WPF 库项目里面添加名为 MyUserControl 的用户控件
+3. 在 WPF 应用项目里面通过以下代码引用 MyUserControl.xaml 和 MyUserControl.xaml.cs 文件
 
-此时你可以看到重复执行步骤 2 时，原本正在播放的动画已经停止播放了
+[Code1]
 
-以下是我的 XAML 界面代码
+如果此时同样在 WPF 应用项目里设置禁用 IncludePackageReferencesDuringMarkupCompilation 功能，则构建时将会提示 `obj\Debug\net9.0-windows\MyUserControl.g.cs(59,21,59,41): error CS1504: 无法打开源文件“MyUserControl.xaml”-- 无法找到文件` 错误。以下是设置禁用 IncludePackageReferencesDuringMarkupCompilation 功能的 WPF 应用项目的 csproj 项目文件的代码
 
-[代码1]
-
-以下是我的 C# 代码
-
-[代码2]
-
-我将最简复现步骤的例子项目上传到 GitHub 上
-
-预期的行为是能够控制 Composition 的 Animation 动画的停止以及开启新的动画
+[Code2]
 ```
 
 
