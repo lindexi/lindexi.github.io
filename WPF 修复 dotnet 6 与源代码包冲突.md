@@ -49,3 +49,5 @@ C:\Program Files\dotnet\sdk\6.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET
 加上 IncludePackageReferencesDuringMarkupCompilation 之后将会导致 WPF 项目可能使用 Source Generators 功能时提示找不到某些类型，详细请看 [WPF 设置 IncludePackageReferencesDuringMarkupCompilation 属性导致分析器不工作](https://blog.lindexi.com/post/WPF-%E8%AE%BE%E7%BD%AE-IncludePackageReferencesDuringMarkupCompilation-%E5%B1%9E%E6%80%A7%E5%AF%BC%E8%87%B4%E5%88%86%E6%9E%90%E5%99%A8%E4%B8%8D%E5%B7%A5%E4%BD%9C.html )
 
 如果不想加上 IncludePackageReferencesDuringMarkupCompilation 也修复问题，那就需要去修复源代码包了
+
+禁用 IncludePackageReferencesDuringMarkupCompilation 功能将会在升级到 dotnet 9 sdk 之后，出现了另一个方向的兼容性问题

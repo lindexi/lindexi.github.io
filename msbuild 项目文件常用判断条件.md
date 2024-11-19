@@ -242,6 +242,16 @@ Condition="$([MSBuild]::IsOSPlatform('Linux'))"
     <Exec Command="$(FooToolName) --sign-resource lindexi.g.app" />
 ```
 
+## 判断当前构建 dotnet sdk 版本
+
+当前构建的 dotnet sdk 版本不同于项目所使用的 TargetFramework 版本，这点还请大家分清楚。构建的 dotnet sdk 版本是当前构建机器所安装的 dotnet sdk 版本
+
+判断当前构建过程中使用的是 dotnet 9 或以上的 SDK 版本：
+
+```xml
+Condition="$([MSBuild]::VersionGreaterThanOrEquals($(NETCoreSdkVersion), 9.0))"
+```
+
 ## 更多判断
 
 [Roslyn 在项目文件使用条件判断](https://blog.lindexi.com/post/Roslyn-%E5%9C%A8%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD.html )
