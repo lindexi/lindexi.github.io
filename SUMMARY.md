@@ -1710,6 +1710,8 @@
 
  * [SharpDx 进入全屏模式](SharpDx-进入全屏模式.md)
 
+ * [SixLabors.ImageSharp 如何读取 IDAT 校验失败的 png 图片](SixLabors.ImageSharp-如何读取-IDAT-校验失败的-png-图片.md)
+
  * [SkiaSharp 渲染输出 SVG 文件](SkiaSharp-渲染输出-SVG-文件.md)
 
  * [SourceYard 制作源代码包](SourceYard-制作源代码包.md)
@@ -3747,6 +3749,8 @@
  * [记微信截图导致 WPF 应用卡住 窗口无法激活问题](记微信截图导致-WPF-应用卡住-窗口无法激活问题.md)
 
  * [记联软 UniAccess 导致 NSIS 安装包启动进程失效](记联软-UniAccess-导致-NSIS-安装包启动进程失效.md)
+
+ * [记腾讯微信输入法导致 WPF 应用卡住 窗口无法激活和显示](记腾讯微信输入法导致-WPF-应用卡住-窗口无法激活和显示.md)
 
  * [讲师培训 多米诺原则](讲师培训-多米诺原则.md)
 
