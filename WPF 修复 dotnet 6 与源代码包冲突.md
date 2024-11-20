@@ -50,4 +50,4 @@ C:\Program Files\dotnet\sdk\6.0.101\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET
 
 如果不想加上 IncludePackageReferencesDuringMarkupCompilation 也修复问题，那就需要去修复源代码包了
 
-禁用 IncludePackageReferencesDuringMarkupCompilation 功能将会在升级到 dotnet 9 sdk 之后，出现了另一个方向的兼容性问题
+禁用 IncludePackageReferencesDuringMarkupCompilation 功能将会在升级到 dotnet 9 sdk 之后，出现了另一个方向的兼容性问题。详细请看 [dotnet 9 WPF 项目禁用 IncludePackageReferencesDuringMarkupCompilation 导致源代码包 XAML 构建失败](https://blog.lindexi.com/post/dotnet-9-WPF-%E9%A1%B9%E7%9B%AE%E7%A6%81%E7%94%A8-IncludePackageReferencesDuringMarkupCompilation-%E5%AF%BC%E8%87%B4%E6%BA%90%E4%BB%A3%E7%A0%81%E5%8C%85-XAML-%E6%9E%84%E5%BB%BA%E5%A4%B1%E8%B4%A5.html )<!-- [dotnet 9 WPF 项目禁用 IncludePackageReferencesDuringMarkupCompilation 导致源代码包 XAML 构建失败 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18555989 ) -->

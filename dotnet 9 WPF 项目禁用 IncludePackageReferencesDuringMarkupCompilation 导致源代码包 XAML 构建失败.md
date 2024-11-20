@@ -3,6 +3,8 @@
 本文记录在 dotnet 6 时通过禁用 IncludePackageReferencesDuringMarkupCompilation 解决源代码冲突问题时，在 dotnet 9 将因此导致 XAML 构建生成的 g.cs 文件包含的 XAML 只记录相对文件路径，从而导致构建不通过
 
 <!--more-->
+<!-- CreateTime:2024/11/20 07:17:26 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

@@ -5,8 +5,6 @@
 <!--more-->
 <!-- CreateTime:4/21/2020 2:15:04 PM -->
 
-
-
 但是在一些特殊的设备上，使用下面代码调起窗口只是在任务栏闪烁图标，而没有让窗口放在最上层
 
 ```csharp
@@ -98,4 +96,8 @@ window.Activate();
 
 另外少君小伙伴写了一个有趣的库，里面封装了很多 win32 的方法，请看 [kkwpsv lsjutil](https://github.com/kkwpsv/lsjutil/tree/master/Src/Lsj.Util.Win32 )
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+相关博客： 
+
+- [将 WPF 嵌入到 MFC 中，无法响应键盘输入 - J.晒太阳的猫 - 博客园](https://www.cnblogs.com/jasongrass/p/18555472 )
+- [WPF 弹出 popup 里面的 TextBox 无法输入汉字](https://blog.lindexi.com/post/WPF-%E5%BC%B9%E5%87%BA-popup-%E9%87%8C%E9%9D%A2%E7%9A%84-TextBox-%E6%97%A0%E6%B3%95%E8%BE%93%E5%85%A5%E6%B1%89%E5%AD%97.html )
+- [记微信截图导致 WPF 应用卡住 窗口无法激活问题](https://blog.lindexi.com/post/%E8%AE%B0%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE%E5%AF%BC%E8%87%B4-WPF-%E5%BA%94%E7%94%A8%E5%8D%A1%E4%BD%8F-%E7%AA%97%E5%8F%A3%E6%97%A0%E6%B3%95%E6%BF%80%E6%B4%BB%E9%97%AE%E9%A2%98.html )
