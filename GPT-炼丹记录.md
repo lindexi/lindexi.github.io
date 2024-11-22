@@ -118,11 +118,7 @@
 
 [Content Start]
 
-修复 InlineDictionary 在处理单项重新赋值时的不正确行为
-
-修改之前的行为是通过 Set 方法调用进入时，将会忽略 overwrite 参数，从而导致 InlineDictionary 只有一项时，再次调用 Set 时的效果将会和调用 Add 方法相同。此行为将导致 composition animation 动画播放行为不符合预期，将导致第二次的 composition animation 无法播放。为什么第二次的 composition animation 无法播放？原因是第二次准备播放的 composition animation 无法将第一次的 composition animation 替换掉，而是将第二次的 composition animation 加入到第一次的 composition animation 后面，从而导致第二次设置的 composition animation 无法被执行
-
-修改之后可以让 InlineDictionary 在单项时，也可以应用 overwrite 参数，从而修复第二次的 composition animation 无法播放，让第二次的 composition animation 覆盖第一次的 composition animation 动画
+修改了 `GetTabletToElementTransform` 方法，增加了对 `relativeTo` 参数是否为 null 的检查。只有在 `relativeTo` 不为 null 时，才会将 `StylusDevice.GetElementTransform(relativeTo)` 添加到 `group` 中。可以减少当 `relativeTo` 参数为 null 时的添加方法的调用，可以减少 `GeneralTransformCollection` 内部的 FrugalStructList 的分配，提升性能
 
 [Content End]
 
@@ -132,7 +128,7 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-我的疑惑点是：是否当前 D3D9 应用都需要占用更多的内存？还是这只是统计上的问题，将原本应该统计到显卡内存的内存空间，统计到应用进程上？
+代码更改前后的行为是相同的
 ```
 
 ```
