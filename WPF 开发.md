@@ -1311,6 +1311,8 @@ HorizontalAlignment="Left" VerticalAlignment="Top"
 
 使用以上方法可以定制 WPF 的 TextBox 的光标的宽度高度，任意修改光标画刷，或者让元素跟随 TextBox 的光标坐标
 
+隐藏原有 WPF 光标的方法就是设置 CaretBrush 为透明
+
 ## 发送键盘消息
 
 发送给当前应用的键盘输入

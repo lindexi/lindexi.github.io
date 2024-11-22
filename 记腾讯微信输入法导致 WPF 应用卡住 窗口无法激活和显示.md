@@ -3,6 +3,8 @@
 本文记录我远程一位老师的设备，这位老师使用的是 Win7 Sp1 系统，现象是 WPF 应用的窗口无法激活，在 user32 的 SetForegroundWindow 或 NtUserShowWindow 方法卡住
 
 <!--more-->
+<!-- CreateTime:2024/11/21 07:10:00 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

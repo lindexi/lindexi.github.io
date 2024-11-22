@@ -3,6 +3,8 @@
 本文记录如何在 SixLabors.ImageSharp 库里面读取 IDAT 校验失败的 png 图片
 
 <!--more-->
+<!-- CreateTime:2024/11/21 07:09:35 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
