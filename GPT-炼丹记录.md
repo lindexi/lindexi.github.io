@@ -118,7 +118,7 @@
 
 [Content Start]
 
-修改了 `GetTabletToElementTransform` 方法，增加了对 `relativeTo` 参数是否为 null 的检查。只有在 `relativeTo` 不为 null 时，才会将 `StylusDevice.GetElementTransform(relativeTo)` 添加到 `group` 中。可以减少当 `relativeTo` 参数为 null 时的添加方法的调用，可以减少 `GeneralTransformCollection` 内部的 FrugalStructList 的分配，提升性能
+优化了 SKRoundRectCache 的 Clear 方法，在 dotnet 6 以及更高版本上，使用更加快速的清理方法
 
 [Content End]
 
@@ -128,7 +128,7 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-代码更改前后的行为是相同的
+有些业务逻辑期望手动控制动画的开始播放和停止播放。如一些绚丽画面的应用界面里面，将会点击 A 按钮时，开始播放一段动画，直到用户点击 B 按钮才停止播放动画。由于开发者不能确定用户会在过了多久才点击 B 按钮，因此期望动画的播放时间是无穷的，让应用程序代码响应处理交互按钮才决定动画是否停止
 ```
 
 ```
