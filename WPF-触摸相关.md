@@ -1,7 +1,7 @@
 
 # WPF 触摸相关
 
-本文整理我写的触摸博客
+本文整理我写的和我收集的触摸博客
 
 <!--more-->
 
@@ -122,6 +122,8 @@
 [WPF 已知问题 监听 WMI 事件导致触摸失效](https://blog.lindexi.com/post/WPF-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E7%9B%91%E5%90%AC-WMI-%E4%BA%8B%E4%BB%B6%E5%AF%BC%E8%87%B4%E8%A7%A6%E6%91%B8%E5%A4%B1%E6%95%88.html )
 <!-- [WPF 已知问题 监听 WMI 事件导致触摸失效 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18407581 ) -->
 
+[WPF 窗口 触摸失效 的一种场景 - wuty007 - 博客园](https://www.cnblogs.com/wuty/p/18570445 )
+
 ## 笔迹
 
 - [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
@@ -144,6 +146,7 @@
 - [WPF 简易手绘笔迹支持回放的方法](https://blog.lindexi.com/post/WPF-%E7%AE%80%E6%98%93%E6%89%8B%E7%BB%98%E7%AC%94%E8%BF%B9%E6%94%AF%E6%8C%81%E5%9B%9E%E6%94%BE%E7%9A%84%E6%96%B9%E6%B3%95.html )
 - [WPF 笔迹算法 从点集转笔迹轮廓](https://blog.lindexi.com/post/WPF-%E7%AC%94%E8%BF%B9%E7%AE%97%E6%B3%95-%E4%BB%8E%E7%82%B9%E9%9B%86%E8%BD%AC%E7%AC%94%E8%BF%B9%E8%BD%AE%E5%BB%93.html ) [博客园](https://www.cnblogs.com/lindexi/p/17758666.html)
 - [WPF 记一个特别简单的点集滤波平滑方法](https://blog.lindexi.com/post/WPF-%E8%AE%B0%E4%B8%80%E4%B8%AA%E7%89%B9%E5%88%AB%E7%AE%80%E5%8D%95%E7%9A%84%E7%82%B9%E9%9B%86%E6%BB%A4%E6%B3%A2%E5%B9%B3%E6%BB%91%E6%96%B9%E6%B3%95.html ) <!-- [WPF 记一个特别简单的点集滤波平滑方法 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18387840 ) -->
+- [WPF 粉笔绘制 - wuty007 - 博客园](https://www.cnblogs.com/wuty/p/18570838 )
 
 ## 官方文档
 
