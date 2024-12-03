@@ -554,8 +554,6 @@ Description 描述信息
 实测需要使用 `AfterTargets="Publish"` 而不能使用 DependsOnTargets 方式
 
 
-
-
 ## 相关文档
 
 [msbuild Roslyn 行为详解](https://blog.lindexi.com/post/msbuild-Roslyn-%E8%A1%8C%E4%B8%BA%E8%AF%A6%E8%A7%A3.html )
@@ -565,6 +563,8 @@ Description 描述信息
 [如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html )
 
 [MSBuild properties for Microsoft.NET.Sdk - .NET Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#nuget-metadata-properties )
+
+[让你发布的nuget包支持源代码调试 - czd890 - 博客园](https://www.cnblogs.com/calvinK/p/14982676.html )
 
 更多构建打包相关请看[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
 
