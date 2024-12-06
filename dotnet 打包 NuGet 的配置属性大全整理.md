@@ -9,7 +9,7 @@
 
 本文将会持续更新，可以通过搜 《dotnet 打包 NuGet 的配置属性大全整理 林德熙》 找到我主站的博客，避免各个备份地址陈旧的内容误导
 
-本文更新于：2024.03.23
+本文更新于：2024.12.03
 
 如更新时间距离当前阅读时间过远，则表示可能你阅读的是转发的或转载的文章，推荐去到我主站的博客，了解更新的知识
 
@@ -49,6 +49,10 @@
 - [项目文件中的已知 NuGet 属性（使用这些属性，创建 NuGet 包就可以不需要 nuspec 文件啦） - walterlv](https://blog.walterlv.com/post/known-nuget-properties-in-csproj )
 - [项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 - [msbuild 项目文件常用判断条件](https://blog.lindexi.com/post/msbuild-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%B8%B8%E7%94%A8%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6.html )
+
+更进阶内容：
+
+- [msbuild Roslyn 行为详解](https://blog.lindexi.com/post/msbuild-Roslyn-%E8%A1%8C%E4%B8%BA%E8%AF%A6%E8%A7%A3.html )
 
 ## CSPROJ 系属性
 
@@ -493,13 +497,39 @@ Description 描述信息
     </None>
 ```
 
+如果已经是明确知道有安装了某个包，还可以使用下文提及的 GeneratePathProperty 方法
+
+### GeneratePathProperty
+
+获取 NuGet 包还原到的本地路径，如以下示例代码
+
+```xml
+<PackageReference Include="Lindexi.Package" Version="1.2.3" GeneratePathProperty="true"/>
+
+<Warning Text="Lindexi.Package Path=$(PkgLindexi_Package)" />
+```
+
+输出警告内容大概如下
+
+```
+Lindexi.Package Path=C:\Users\lindexi\.nuget\packages\lindexi.package\1.2.3
+```
+
+具体写法是在需要获取 NuGet 包路径的 PackageReference 标记 `GeneratePathProperty="true"` 属性
+
+获取时的格式是 `$(Pkg包名)` 包名需要将 `.` 替换为下划线
+
+详细请参阅 <https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files#generatepathproperty>
+
 ## 常写的代码片
 
 ### 输出和包含 targets 文件
 
 ```xml
-<None Include="Build\package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
-<None Include="Build\package.props" Pack="True" PackagePath="\build\$(PackageId).props" />
+  <ItemGroup>
+    <None Include="Build\package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+    <None Include="Build\package.props" Pack="True" PackagePath="\build\$(PackageId).props" />
+  </ItemGroup>
 ```
 
 详细请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
