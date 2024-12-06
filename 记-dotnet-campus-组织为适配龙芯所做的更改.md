@@ -29,6 +29,10 @@
 - <https://github.com/dotnet-campus/dotnetCampus.Logger/pull/29>
 - <https://github.com/dotnet-campus/dotnetCampus.Ipc/pull/156>
 
+## 修复源代码包
+
+- <https://github.com/dotnet-campus/DocumentFormat.OpenXml.Extensions/pull/46>
+
 
 
 
