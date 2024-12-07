@@ -52,6 +52,8 @@
 
  * [ASP.NET Core 引用其他程序集项目里面的 Controller 控制器](ASP.NET-Core-引用其他程序集项目里面的-Controller-控制器.md)
 
+ * [ASP.NET Core 简单给 Phi 模型封装一个服务](ASP.NET-Core-简单给-Phi-模型封装一个服务.md)
+
  * [ASP.NET Core 解决控制台输出日志内容前面[40m等乱码字符](ASP.NET-Core-解决控制台输出日志内容前面[40m等乱码字符.md)
 
  * [ASP.NET Core 警惕可空类型开启之后模型校验失败](ASP.NET-Core-警惕可空类型开启之后模型校验失败.md)
