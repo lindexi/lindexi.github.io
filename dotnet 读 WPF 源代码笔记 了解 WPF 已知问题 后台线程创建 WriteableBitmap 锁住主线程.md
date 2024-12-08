@@ -84,7 +84,6 @@
                         DUCECompatiblePtr
                         );
                 }
-            }
         }
      }
 ```

@@ -115,7 +115,7 @@
 
 [Content Start]
 
-修改了 `GetTabletToElementTransform` 方法，增加了对 `relativeTo` 参数是否为 null 的检查。只有在 `relativeTo` 不为 null 时，才会将 `StylusDevice.GetElementTransform(relativeTo)` 添加到 `group` 中。可以减少当 `relativeTo` 参数为 null 时的添加方法的调用，可以减少 `GeneralTransformCollection` 内部的 FrugalStructList 的分配，提升性能
+优化了 SKRoundRectCache 的 Clear 方法，在 dotnet 6 以及更高版本上，使用更加快速的清理方法
 
 [Content End]
 
@@ -125,29 +125,25 @@
 ```
 请帮我将以下内容转述为地道的英文：
 
-代码更改前后的行为是相同的
+有些业务逻辑期望手动控制动画的开始播放和停止播放。如一些绚丽画面的应用界面里面，将会点击 A 按钮时，开始播放一段动画，直到用户点击 B 按钮才停止播放动画。由于开发者不能确定用户会在过了多久才点击 B 按钮，因此期望动画的播放时间是无穷的，让应用程序代码响应处理交互按钮才决定动画是否停止
 ```
 
 ```
 请帮我将以下内容转述为地道的英文：
 
-在 WinUI 里面的按钮默认样式也是左对齐的，因此我认为这里的样式是合理的。你觉得呢？
+有一个很好的技术交流平台
 ```
 
 ```
 请帮我将以下内容转述为地道的计算机英文：
 
-咱是否改变过 `Microsoft.WinFX.targets` 的组织结构，比如说之前它是可以被应用到 TargetFrameworks 上的，是后面哪次变更之后才不可以的？
+更多开放一些轻松的咖啡时间的会议。能够有照顾更多时区的人员，有些会议可以在多个时间点重复开多次，以确保每个时区的人都有机会参加
 ```
 
 ```
 请帮我将以下内容转述为地道的计算机英文：
 
-保持在 Fluent 样式里面的按钮的 HorizontalAlignment 属性是 Center 的值。这样可以有利于保持和以往其他的样式相同的行为
-
-保持相同的行为可以让开发者更加方便应用 Fluent 主题样式，不需要担心因为切换演示导致布局变更的问题
-
-此变更的风险点在于可能会破坏某些依赖了 Fluent 样式的按钮是左对齐的情况，因此我认为这个更改越快合入，其风险就越小，将不会有更多的开发者依赖按钮是左对齐的情况
+由于时区的限制，有一些我感兴趣的会议，因为我不得不睡觉而错过
 ```
 
 ```
@@ -221,7 +217,7 @@ Title:
 ```
 
 ```csharp
-我正在编写一个功能，这个功能是根据输入的文件的文件后缀名决定文件是否被采纳。我需要将这个功能封装到一个继承 IFileImportFilter 接口的类型里面，我正在编写的是 C# 代码，我需要你给出这个类型的命名
+我正在编写一个功能，这个功能是提供API约束，更具体的是约束类型里面的成员。我需要给这个功能编写一个类型，我正在编写的是 C# 代码，我需要你给出这个类型的命名，请给出多个候选命名给我选择
 ```
 
 ```csharp
@@ -229,11 +225,15 @@ Title:
 ```
 
 ```csharp
-我正在编写一个功能，这个功能是一个带特效的笔迹效果。我需要为此功能创建一个文件夹，我将在这个文件夹里面存放实现此功能的代码，我正在编写的是 C# 代码，我需要你给出这个文件夹的命名，请给出多个候选命名给我选择
+我正在编写一个功能，这个功能是将图片设为每页水印。我需要为此功能创建一个文件夹，我将在这个文件夹里面存放实现此功能的代码，我正在编写的是 C# 代码，我需要你给出这个文件夹的命名，请给出多个候选命名给我选择
 ```
 
 ```csharp
-我正在编写一个功能，这个功能是一个表示“点和线的关系”属性。我正在编写的是 C# 代码，属性起一个符合 C# 命名规范的属性名，请给出多个候选命名给我选择
+我正在编写一个功能，这个功能是一个表示“点和线的关系”属性。我正在编写的是 C# 代码，起一个符合 C# 命名规范的属性名，请给出多个候选命名给我选择
+```
+
+```csharp
+我正在编写一个功能，这个功能是一个表示“存储兼容器”类型，要求这个类型名包含“Compatible”词根。我正在编写的是 C# 代码，起一个符合 C# 命名规范的类型名，请给出多个候选命名给我选择
 ```
 
 ```csharp
@@ -455,6 +455,82 @@ Title:
 
 ```
 你是一位代码审查者，以下是一些 WPF 的 XAML 的代码，你需要审查出代码里面的不匹配问题。不匹配问题指的是 SolidColorBrush 所使用的 Color 和 
+```
+
+```
+你是一位代码审查者，以下是一些 C# 的代码，你需要审查出代码里面的有哪些地方可以为其编写单元测试。请列举出可以编写单元测试的点
+
+#####
+public partial class TextEditorCore
+{
+    /// <summary>
+    /// 追加一段文本，追加的文本按照段末的样式
+    /// </summary>
+    /// 这是对外调用的，非框架内使用
+    [TextEditorPublicAPI]
+    public void AppendText(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+        {
+            return;
+        }
+
+        DocumentManager.AppendText(new TextRun(text));
+    }
+
+    /// <summary>
+    /// 追加一段文本
+    /// </summary>
+    /// <param name="run"></param>
+    /// 这是对外调用的，非框架内使用
+    [TextEditorPublicAPI]
+    public void AppendRun(IImmutableRun run)
+    {
+        DocumentManager.AppendText(run);
+    }
+
+    /// <summary>
+    /// 在当前的文本上编辑且替换。文本没有选择时，将在当前光标后面加入文本。文本有选择时，替换选择内容为输入内容
+    /// </summary>
+    /// <param name="text"></param>
+    /// <param name="selection">传入空时，将采用 <see cref="CurrentSelection"/> 当前选择范围</param>
+    /// 这是对外调用的，非框架内使用
+    [TextEditorPublicAPI]
+    public void EditAndReplace(string text, Selection? selection = null)
+    {
+        AddLayoutReason("TextEditorCore.EditAndReplace(string text)");
+
+        TextEditorCore textEditor = this;
+        DocumentManager documentManager = textEditor.DocumentManager;
+        // 判断光标是否在文档末尾，且没有选择内容
+        var currentSelection = selection ?? CaretManager.CurrentSelection;
+        var caretOffset = currentSelection.FrontOffset;
+        var isEmptyText = string.IsNullOrEmpty(text);
+        if (currentSelection.IsEmpty && caretOffset.Offset == documentManager.CharCount)
+        {
+            if (!isEmptyText)
+            {
+                // 在末尾，调用追加，性能更好
+                documentManager.AppendText(new TextRun(text));
+            }
+        }
+        else
+        {
+            if (isEmptyText)
+            {
+                documentManager.EditAndReplaceRun(currentSelection, null);
+            }
+            else
+            {
+                var textRun = new TextRun(text);
+                documentManager.EditAndReplaceRun(currentSelection, textRun);
+            }
+        }
+    }
+}
+#####
+
+可以编写单元测试的内容：
 ```
 
 ## 询问问题

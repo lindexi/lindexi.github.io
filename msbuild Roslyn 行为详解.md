@@ -42,7 +42,9 @@
 
 默认是使用 IntermediateOutputPath 表示 `obj` 下的缓存文件夹，可以用来输出构建相关的缓存文件，在多框架下，默认是加上框架的路径，如 `obj\Debug\net45\` 和 `obj\Debug\net5.0\` 文件夹
 
-随着调用的次数，各个框架构建的时候，将会带上框架的路径。在最终构建，也就是总的框架构建，调用时的值是不带上具体的框架的，如 `obj\Debug\` 文件夹
+<!-- 随着调用的次数，各个框架构建的时候，将会带上框架的路径。在最终构建，也就是总的框架构建，调用时的值是不带上具体的框架的，如 `obj\Debug\` 文件夹 -->
+
+更具体而言，整个 Target 将会被多次调用，多次调用包含各个框架的各次调用，以及总的一次调用。各个框架的各次调用中，将会拼接上框架的路径。在总的一次调用中，不会带上具体的框架
 
 测试逻辑如下
 
@@ -62,6 +64,7 @@
 1>C:\lindexi\Code\Foo.csproj(17,3): warning : IntermediateOutputPath: obj\Debug\
 ```
 
+可见前面两次分别是 net45 和 net5.0 框架的构建，带上了框架路径。最后一次是总的调用，不带上任何框架路径
 
 ## NuGet 相关
 
@@ -117,3 +120,88 @@
 
 因此不能在 BuildMultiTargeting 上使用到各个 Build 文件夹下的 Target 收集的属性内容
 
+### 多框架下获取 TargetFrameworks 属性
+
+可在各个框架构建时，获取到 `$(TargetFrameworks)` 属性内容，属性内容为全部框架。如以下测试项目
+
+NuGet 包的 Package.targets 文件：
+
+```xml
+  <Target Name="HejurjeelodayJicochibiki" AfterTargets="Build">
+    <Warning Text="TargetFrameworks=$(TargetFrameworks) | TargetFramework=$(TargetFramework)"/>
+  </Target>
+```
+
+应用多框架项目：
+
+```xml
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0;net7.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+```
+
+构建输出信息如下
+
+```
+1>JearjikunaBemnenerenehechekee -> C:\lindexi\Code\JearjikunaBemnenerenehechekee\bin\Debug\net7.0\JearjikunaBemnenerenehechekee.dll
+1>C:\Users\lindexi\.nuget\packages\hekairkefairfallqecairwaqai\2.0.0\build\HekairkefairfallQecairwaqai.targets(4,5): warning : TargetFrameworks=net6.0;net7.0;net9.0 | TargetFramework=net7.0
+1>已完成生成项目“JearjikunaBemnenerenehechekee.csproj”的操作。
+1>JearjikunaBemnenerenehechekee -> C:\lindexi\Code\JearjikunaBemnenerenehechekee\bin\Debug\net6.0\JearjikunaBemnenerenehechekee.dll
+1>C:\Users\lindexi\.nuget\packages\hekairkefairfallqecairwaqai\2.0.0\build\HekairkefairfallQecairwaqai.targets(4,5): warning : TargetFrameworks=net6.0;net7.0;net9.0 | TargetFramework=net6.0
+1>已完成生成项目“JearjikunaBemnenerenehechekee.csproj”的操作。
+1>JearjikunaBemnenerenehechekee -> C:\lindexi\Code\JearjikunaBemnenerenehechekee\bin\Debug\net9.0\JearjikunaBemnenerenehechekee.dll
+1>C:\Users\lindexi\.nuget\packages\hekairkefairfallqecairwaqai\2.0.0\build\HekairkefairfallQecairwaqai.targets(4,5): warning : TargetFrameworks=net6.0;net7.0;net9.0 | TargetFramework=net9.0
+```
+
+以上测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/592c0272e08bceb0e608d09d2ca560724cdd8fae/Roslyn/HewurchawawjelfeLairkonokawhere) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/592c0272e08bceb0e608d09d2ca560724cdd8fae/Roslyn/HewurchawawjelfeLairkonokawhere) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 592c0272e08bceb0e608d09d2ca560724cdd8fae
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 592c0272e08bceb0e608d09d2ca560724cdd8fae
+```
+
+获取代码之后，进入 Roslyn/HewurchawawjelfeLairkonokawhere 文件夹，即可获取到源代码
+
+继续进行测试。如 TargetFrameworks 只包含一项，如下面代码所示：
+
+```xml
+    <TargetFrameworks>net9.0</TargetFrameworks>
+```
+
+此时的输出警告信息如下
+
+```
+warning : TargetFrameworks=net9.0 | TargetFramework=net9.0
+```
+
+证明在 TargetFrameworks 只包含一项时，依然能够获取这一项
+
+反着，如果不写 TargetFrameworks 属性，将其换成 TargetFramework 属性，如以下代码所示
+
+```xml
+<TargetFramework>net9.0</TargetFramework>
+```
+
+则此时的输出警告信息如下
+
+```
+warning : TargetFrameworks= | TargetFramework=net9.0
+```
+
+通过以上警告输出，可见将 TargetFrameworks 换成 TargetFramework 时，将很符合预期的不能获取到 `$(TargetFrameworks)` 属性内容
+
+更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
