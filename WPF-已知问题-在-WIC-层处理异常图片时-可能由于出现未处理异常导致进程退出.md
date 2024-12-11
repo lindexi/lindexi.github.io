@@ -126,6 +126,173 @@
 
 更多 WPF 已知问题请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
+---
+
+今天 2024.12.11 又有用户反馈了类似的问题
+
+具体表现就是打开软件，软件碰到某张图片就崩溃，进程直接崩溃，没有任何日志。一般遇到这个问题，首先猜测的就是 WIC 层相关问题
+
+这张图片是一张灰度图，下载地址： [点此下载](https://pinco.seewo.com/s/4554f5af7af64e80b4c56a8804e3375d)
+
+使用 MediaInfo 工具查看，可见信息如下
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<MediaInfo xmlns="https://mediaarea.net/mediainfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://mediaarea.net/mediainfo https://mediaarea.net/mediainfo/mediainfo_2_0.xsd" version="2.0">
+    <creatingLibrary version="22.12" url="https://mediaarea.net/MediaInfo">MediaInfoLib</creatingLibrary>
+    <media ref="E:\lindexi\测试文件\测试图片\灰度图090e2b99c4eb8349580b2c07a3ca9941.png">
+        <track type="General">
+            <ImageCount>1</ImageCount>
+            <FileExtension>png</FileExtension>
+            <Format>PNG</Format>
+            <FileSize>13518</FileSize>
+            <StreamSize>0</StreamSize>
+            <File_Created_Date>UTC 2024-12-11 03:33:41.993</File_Created_Date>
+            <File_Created_Date_Local>2024-12-11 11:33:41.993</File_Created_Date_Local>
+            <File_Modified_Date>UTC 2024-12-11 02:41:57.106</File_Modified_Date>
+            <File_Modified_Date_Local>2024-12-11 10:41:57.106</File_Modified_Date_Local>
+        </track>
+        <track type="Image">
+            <Format>PNG</Format>
+            <Format_Compression>Deflate</Format_Compression>
+            <Width>1088</Width>
+            <Height>624</Height>
+            <ColorSpace>Y</ColorSpace>
+            <BitDepth>1</BitDepth>
+            <Compression_Mode>Lossless</Compression_Mode>
+            <StreamSize>13518</StreamSize>
+        </track>
+    </media>
+</MediaInfo>
+```
+
+以上的核心参数是：
+
+```xml
+<ColorSpace>Y</ColorSpace>
+<BitDepth>1</BitDepth>
+<Compression_Mode>Lossless</Compression_Mode>
+```
+
+用户设备上的 WindowsCodecs.dll 的版本号是 10.0.14393.7513
+
+用了 dism 尝试修复，命令如下
+
+```
+dism /online /Cleanup-Image /RestoreHealth
+```
+
+再尝试系统更新 KB5048671 和 KB5046612 补丁
+
+补充：
+
+抓取此问题的 dump 的方法如下
+
+由于此问题会最终落到 CLR 崩溃处理上，经过了 CLR 崩溃处理之后再退出进程，不能直接使用以下命令抓取
+
+```
+procdump -e -t -ma 进程Id号
+```
+
+或者配置注册表 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting` 设置进程退出就自动生成 DUMP 文件，以上这两个方式所获取的都是废料文件，因为已经错过了第一次的崩溃异常了，只能拿到一个空壳的文件
+
+正确抓取的方法是设置 `-e 1` 第一次机会异常，再配合输出的 C0000005 异常，使用以下命令抓取
+
+```
+procdump -t -ma -e 1 -f C0000005 进程Id号
+```
+
+以上命令的参数的含义如下：
+
+-t	进程终止时写入转储。
+
+-ma	写入“完整”转储文件。
+
+-e	当进程遇到未经处理的异常时写入转储。包含 1 以在第一次出现异常时创建转储。合起来 `-e 1` 就是第一次机会异常。我开始忘记加上了这个，导致错过了异常，抓取到了事后现场，无法分析
+
+-f 筛选（包括）DLL 加载/卸载时的异常内容、调试日志记录和文件名。 支持通配符 (`*`)
+
+抓取步骤是先使用 `procdump -t -ma -e 进程Id号` 命令抓，发现抓到的是废料。再看原来的输出，有哪些 `Exception: ` 输出信息，从后向前，将其信息代入到 `-f` 参数里面，使用 `procdump -t -ma -e 1 -f 带入的信息 进程Id号` 格式的命令抓取
+
+比如一开始使用 `procdump -t -ma -e 进程Id号` 命令抓的时候，输出的信息如下
+
+```
+[10:23:30] Exception: 000006BA
+[10:23:31] Exception: C0000005.ACCESS_VIOLATION
+[10:23:32] Process Exit: PID 123, Exit Code 0xc0000005
+```
+
+按照从后向前的顺序，先试试 `[10:23:31] Exception: C0000005.ACCESS_VIOLATION` 这条信息，代入 `-f` 参数的时候，只取关键少量部分，这里的 `-f` 参数最终会做字符串匹配，宁可少字也不要错字哈。代入之后的命令如下
+
+```
+procdump -t -ma -e 1 -f C0000005 进程Id号
+```
+
+假设此时的异常信息抓取到的依然没有帮助，那证明这个异常还不是咱想要的，配合时间看，似乎前面的 `[10:23:30] Exception: 000006BA` 才是关键，继续抓取。代入之后的命令如下
+
+```
+procdump -t -ma -e 1 -f 000006BA 进程Id号
+```
+
+大概简单的抓取方法就是这样了
+
+为什么要从后向前逐个代入呢？因为有些异常是可以被捕获的，比如上述例子的 `000006BA` 异常，可能只是一个内部的 RPC 异常，异常信息如下
+
+```
+0x000006BA: RPC 服务器不可用
+```
+
+错误堆栈如下
+
+```
+>	KERNELBASE.dll!_RaiseException@16()	未知
+ 	rpcrt4.dll!RpcpRaiseException()	未知
+ 	rpcrt4.dll!_RpcRaiseException@4()	未知
+ 	rpcrt4.dll!_NdrClientCall2()	未知
+ 	winsta.dll!_RpcGetCurrentSessionProtocolLastInputTime@20()	未知
+ 	winsta.dll!GetCurrentSessionInformation(struct _WINSTATIONINFORMATIONW *,unsigned long,unsigned long *)	未知
+ 	winsta.dll!_WinStationQueryCurrentSessionInformation@16()	未知
+ 	winsta.dll!_WinStationQueryInformationW@24()	未知
+ 	wtsapi32.dll!WTSQuerySessionInformationW()	未知
+ 	[托管到本机的转换]	
+ 	WindowsBase.dll!MS.Win32.SafeNativeMethods.IsCurrentSessionConnectStateWTSActive(int? SessionId = 1, bool defaultResult = true)	未知
+ 	PresentationCore.dll!System.Windows.Interop.HwndTarget.HwndTarget(System.IntPtr hwnd = 0x000d085c)	未知
+ 	PresentationCore.dll!System.Windows.Interop.HwndSource.Initialize(System.Windows.Interop.HwndSourceParameters parameters)	未知
+ 	PresentationCore.dll!System.Windows.Interop.HwndSource.HwndSource(System.Windows.Interop.HwndSourceParameters parameters = {System.Windows.Interop.HwndSourceParameters})	未知
+ 	PresentationFramework.dll!System.Windows.Window.CreateSourceWindow(bool duringShow = true)	未知
+ 	PresentationFramework.dll!System.Windows.Window.CreateSourceWindowDuringShow()	未知
+ 	PresentationFramework.dll!System.Windows.Window.SafeCreateWindowDuringShow()	未知
+ 	PresentationFramework.dll!System.Windows.Window.ShowHelper(object booleanBox = true)	未知
+ 	PresentationFramework.dll!System.Windows.Window.Show()	未知
+>	KERNELBASE.dll!_RaiseException@16()	未知
+ 	rpcrt4.dll!RpcpRaiseException()	未知
+ 	rpcrt4.dll!_RpcRaiseException@4()	未知
+ 	rpcrt4.dll!_NdrClientCall2()	未知
+ 	winsta.dll!_RpcGetCurrentSessionProtocolLastInputTime@20()	未知
+ 	winsta.dll!GetCurrentSessionInformation(struct _WINSTATIONINFORMATIONW *,unsigned long,unsigned long *)	未知
+ 	winsta.dll!_WinStationQueryCurrentSessionInformation@16()	未知
+ 	winsta.dll!_WinStationQueryInformationW@24()	未知
+ 	wtsapi32.dll!WTSQuerySessionInformationW()	未知
+ 	[托管到本机的转换]	
+ 	WindowsBase.dll!MS.Win32.SafeNativeMethods.IsCurrentSessionConnectStateWTSActive(int? SessionId = 1, bool defaultResult = true)	未知
+ 	PresentationCore.dll!System.Windows.Interop.HwndTarget.HwndTarget(System.IntPtr hwnd = 0x000d085c)	未知
+ 	PresentationCore.dll!System.Windows.Interop.HwndSource.Initialize(System.Windows.Interop.HwndSourceParameters parameters)	未知
+ 	PresentationCore.dll!System.Windows.Interop.HwndSource.HwndSource(System.Windows.Interop.HwndSourceParameters parameters = {System.Windows.Interop.HwndSourceParameters})	未知
+ 	PresentationFramework.dll!System.Windows.Window.CreateSourceWindow(bool duringShow = true)	未知
+ 	PresentationFramework.dll!System.Windows.Window.CreateSourceWindowDuringShow()	未知
+ 	PresentationFramework.dll!System.Windows.Window.SafeCreateWindowDuringShow()	未知
+ 	PresentationFramework.dll!System.Windows.Window.ShowHelper(object booleanBox = true)	未知
+ 	PresentationFramework.dll!System.Windows.Window.Show()	未知
+```
+
+这个异常是发生在 WPF 调用 IsCurrentSessionConnectStateWTSActive 方法，即 [`wtsapi32.dll!WTSQuerySessionInformationW`](https://learn.microsoft.com/zh-cn/windows/win32/api/wtsapi32/nf-wtsapi32-wtsquerysessioninformationw) 方法时，在 Win32 内部出现的异常。这个异常很快被抓住处理，不会导致最终崩溃。最终只会在 WTSQuerySessionInformationW 方法调用返回值，返回失败而已
+
+从理论分析，这个方法的调用发生在每次窗口的 Show 里面，意味着影响范围是全部窗口。如果窗口已经有正常显示过的，那基本上不会是这里再次导致崩溃。直接抓取这个 dump 文件分析，就会被带偏思路
+
+这就是为什么说为了减少干扰，就推荐大家从后到前的顺序代入抓取的原因。越后面的异常才越可能是导致崩溃的异常，前面的异常可能是被正确抓取处理的
+
+更多请参阅 <https://learn.microsoft.com/zh-cn/sysinternals/downloads/procdump>
+
 
 
 
