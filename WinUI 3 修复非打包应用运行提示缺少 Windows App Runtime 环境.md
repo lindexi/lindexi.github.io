@@ -42,7 +42,7 @@
     <TargetFramework>net6.0-windows10.0.19041</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWinUI>true</UseWinUI>
-    <Platforms>x86;x64;x86</Platforms>
+    <Platforms>x86;x64</Platforms>
     <RuntimeIdentifiers>win10-x86;win10-x64</RuntimeIdentifiers>
 
     <!-- 下面两句代码是核心 -->
@@ -59,3 +59,52 @@
 通过以上方式修改之后，即可进行独立发布后，应用无需安装 Windows App Runtime 环境，双击即可运行
 
 由于目前关于 WindowsAppSdkUndockedRegFreeWinRTInitialize 和 UndockedRegFreeWinRT 的官方文档较为缺乏，我对这部分知识的细节并不了解，如果您对此感兴趣，请自行了解
+
+---
+
+补充：
+
+调用 `global::Microsoft.UI.Xaml.Application.Start` 方法时，抛出 没有注册类 (0x80040154 (REGDB_E_CLASSNOTREG)) 异常，如以下代码
+
+```csharp
+            global::WinRT.ComWrappersSupport.InitializeComWrappers();
+
+            // 如果不在 csproj 加上
+            // <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+            // <WindowsPackageType>None</WindowsPackageType>
+            // 将抛出 没有注册类 (0x80040154 (REGDB_E_CLASSNOTREG))
+            (p =>
+            {
+            });
+```
+
+解决方法也是在 csproj 上配置 WindowsAppSDKSelfContained 和 WindowsPackageType 属性
+
+配置之后的 csproj 大概如下
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.22000</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x86</PlatformTarget>
+    <Platform>x86</Platform>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <WindowsSdkPackageVersion>10.0.22000.38</WindowsSdkPackageVersion>
+
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <WindowsPackageType>None</WindowsPackageType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
+  </ItemGroup>
+  
+</Project>
+```
+
+和上文的 `net6.0-windows10.0.19041` 的 csproj 不同的是，以上的 csproj 只写了 x86 平台
