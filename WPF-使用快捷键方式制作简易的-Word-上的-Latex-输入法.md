@@ -236,6 +236,32 @@ git pull origin 18e21d7acfd12a55b04f554cbe5ce770e37518ef
 
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
+---
+
+补充：
+
+可以使用 MathML 加粘贴的方式实现，如以下的 MathML 代码
+
+```xml
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+         <mrow>
+            <msup><mi>a</mi><mn>l</mn></msup>
+            <mo>+</mo>
+            <msup><mi>b</mi><mn>d</mn></msup>
+            <mo>=</mo>
+            <msup><mi>c</mi><mn>2</mn></msup>
+         </mrow>
+      </math>
+```
+
+然后将其粘贴到 Word 上即可转换为 Word 公式
+
+通过 <https://dpcarlisle.blogspot.com/2007/04/xhtml-and-mathml-from-office-20007.html> 博客可以知道，在 Word 2007 就已经可以支持这项功能了
+
+参考文档：
+
+[用Word创建MathML公式插入HTML - 比特飞流 - 博客园](https://www.cnblogs.com/bytebull/articles/5619130.html )
+
 
 
 
