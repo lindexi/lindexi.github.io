@@ -240,20 +240,70 @@ git pull origin 18e21d7acfd12a55b04f554cbe5ce770e37518ef
 可以使用 MathML 加粘贴的方式实现，如以下的 MathML 代码
 
 ```xml
-    <math xmlns="http://www.w3.org/1998/Math/MathML">
-         <mrow>
-            <msup><mi>a</mi><mn>l</mn></msup>
-            <mo>+</mo>
-            <msup><mi>b</mi><mn>d</mn></msup>
-            <mo>=</mo>
-            <msup><mi>c</mi><mn>2</mn></msup>
-         </mrow>
-      </math>
+ <?xml version="1.0"?>
+ <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+     <mrow>
+         <msup><mi>a</mi><mn>2</mn></msup>
+         <mo>+</mo>
+         <msup><mi>b</mi><mn>2</mn></msup>
+         <mo>=</mo>
+         <msup><mi>c</mi><mn>2</mn></msup>
+     </mrow>
+ </math>
 ```
 
-然后将其粘贴到 Word 上即可转换为 Word 公式
+具体实现方法是在本文代码的基础上，修改写入剪贴板的内容，也不再需要 alt 快捷键。但是其核心不同点在于需要先从 Latex 转换为 MathML 格式
+
+替换之后的 SendButton_OnClick 代码如下
+
+```csharp
+    private void SendButton_OnClick(object sender, RoutedEventArgs e)
+    {
+        // lang=xml
+        var mathML = """
+                     <?xml version="1.0"?>
+                     <math xmlns="http://www.w3.org/1998/Math/MathML" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+                         <mrow>
+                             <msup><mi>a</mi><mn>2</mn></msup>
+                             <mo>+</mo>
+                             <msup><mi>b</mi><mn>2</mn></msup>
+                             <mo>=</mo>
+                             <msup><mi>c</mi><mn>2</mn></msup>
+                         </mrow>
+                     </math>
+                     """;
+
+        var dataObject = new DataObject();
+        var buffer = Encoding.UTF8.GetBytes(mathML);
+        var memoryStream = new MemoryStream(buffer);
+        dataObject.SetData("MathML Presentation", memoryStream);
+        Clipboard.SetDataObject(dataObject);
+
+        SendKeys.SendWait("^v"); // 发送 ctrl+v 粘贴文本
+    }
+```
 
 通过 <https://dpcarlisle.blogspot.com/2007/04/xhtml-and-mathml-from-office-20007.html> 博客可以知道，在 Word 2007 就已经可以支持这项功能了
+
+本文更新之后的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/80a64d10ef3f3b0ac67654c6225fc6cd7a8e07a0/WPFDemo/HacereferehairJurchalanifacere) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/80a64d10ef3f3b0ac67654c6225fc6cd7a8e07a0/WPFDemo/HacereferehairJurchalanifacere) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 80a64d10ef3f3b0ac67654c6225fc6cd7a8e07a0
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 80a64d10ef3f3b0ac67654c6225fc6cd7a8e07a0
+```
+
+获取代码之后，进入 WPFDemo/HacereferehairJurchalanifacere 文件夹，即可获取到源代码
 
 参考文档：
 
