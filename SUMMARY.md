@@ -1190,6 +1190,8 @@
 
  * [dotnet 禁用 SQLite 的 SQLiteFunction 扫描程序集提升启动性能](dotnet-禁用-SQLite-的-SQLiteFunction-扫描程序集提升启动性能.md)
 
+ * [dotnet 简单使用 ICU 库进行分词和分行](dotnet-简单使用-ICU-库进行分词和分行.md)
+
  * [dotnet 简单写一个 pdb 符号文件下载器](dotnet-简单写一个-pdb-符号文件下载器.md)
 
  * [dotnet 简单控制台使用 KernelMemory 向量化文本嵌入生成和查询](dotnet-简单控制台使用-KernelMemory-向量化文本嵌入生成和查询.md)
