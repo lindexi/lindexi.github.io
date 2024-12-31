@@ -60,7 +60,7 @@ PasswordAuthentication yes
 
 相信阅读到这里的伙伴是知道 vim 的基础操作的，如果不了解的话，还请自行查阅一下 vim 如何编辑文件以及如何保存退出哈。简单说就是按下 `i` 键进入编辑模式，通过上下左右方向键定位光标，通过删除和输入字符进行编辑。完成编辑之后，使用 `esc` 键退出编辑模式，再输入 `:wq` 即可完成保存退出
 
-如果是解开注释而不是从零写入的话，需要小心 PermitRootLogin 配置项默认是 prohibit-password 的值，需要改为 yes 才对
+如果是解开注释而不是从零写入的话，需要小心 PermitRootLogin 配置项默认是 prohibit-password 的值，需要改为 yes 才对。默认的 `PermitRootLogin prohibit-password` 表示允许 root 账户登录，但是不能以密码的方式登录，只能以公私钥的方式登录。咱这里期望使用密码方式登录，于是改为 yes 的值
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅3.png) -->
 ![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240918203531329-85894114.png)
