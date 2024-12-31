@@ -3614,6 +3614,8 @@
 
  * [拼音输入法 快速输入带音调的字符](拼音输入法-快速输入带音调的字符.md)
 
+ * [挚科龙芯机器信息](挚科龙芯机器信息.md)
+
  * [探索 dotnet core 为何在 Windows7 系统需要补丁的原因](探索-dotnet-core-为何在-Windows7-系统需要补丁的原因.md)
 
  * [探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现](探索-WPF-的-ITabletManager.GetTabletCount-在-Win11-系统的底层实现.md)
