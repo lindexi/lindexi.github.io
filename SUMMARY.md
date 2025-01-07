@@ -3010,6 +3010,8 @@
 
  * [WPF 模拟触摸设备](WPF-模拟触摸设备.md)
 
+ * [WPF 测试 GlyphTypeface 的 Baseline 行为](WPF-测试-GlyphTypeface-的-Baseline-行为.md)
+
  * [WPF 测试触摸设备发送触摸按下和抬起不成对](WPF-测试触摸设备发送触摸按下和抬起不成对.md)
 
  * [WPF 添加窗口消息钩子方法](WPF-添加窗口消息钩子方法.md)
