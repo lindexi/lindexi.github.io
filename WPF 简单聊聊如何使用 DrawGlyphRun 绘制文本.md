@@ -195,6 +195,10 @@ for (var i = 0; i < text.Length; i++)
     var pixelsPerDip = (float) VisualTreeHelper.GetDpi(Application.Current.MainWindow).PixelsPerDip;
 ```
 
+在更底层的 DirectWrite 层是不知道应用进程的 DPI 值的，需要将其传入，确保让 DirectWrite 层最终绘制的平面是 DPI 感知的，从而绘制出清晰的界面效果
+
+更进一步的清晰化显示，请参阅下文内容
+
 ## 绘制文本
 
 在准备完成之后，即可创建 GlyphRun 用来绘制
@@ -226,6 +230,63 @@ for (var i = 0; i < text.Length; i++)
 以上的 `deviceFontName` 参数留空即可，这是一个没有什么作用的参数，详细请看 [dotnet 读 WPF 源代码笔记 GlyphRun 的 DeviceFontName 的功能是什么](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-GlyphRun-%E7%9A%84-DeviceFontName-%E7%9A%84%E5%8A%9F%E8%83%BD%E6%98%AF%E4%BB%80%E4%B9%88.html )
 
 以上即可完成文本的绘制，这是一个底层的方式，看起来也很简单
+
+## 清晰化文本
+
+正常此时绘制出来的文本就足够清晰了，如果感觉自己的文本还不够清晰，那可以再加上一些强度
+
+首先是确保自己的渲染时的配置是正确的，影响文本清晰化的属性影响有 ClearTypeHint 、EdgeMode、TextRenderingMode、TextHintingMode 属性。可使用如下代码确保没有投毒
+
+```csharp
+        var clearTypeHint = RenderOptions.GetClearTypeHint(this);
+        Debug.Assert(clearTypeHint == ClearTypeHint.Auto);
+        var visualEdgeMode = VisualEdgeMode;
+        Debug.Assert(visualEdgeMode == EdgeMode.Unspecified);
+
+        // 渲染模式有以下几样：
+        // 1. ClearType - 最为清晰，对大小字号都友好
+        // 2. Aliased - 采样效果好，也比较平滑，会有彩边
+        // 3. Grayscale - 灰度采样，效果和 Aliased 差不多
+        var visualTextRenderingMode = VisualTextRenderingMode;
+        Debug.Assert(visualTextRenderingMode == TextRenderingMode.Auto);
+        // 文本的 Hinting 模式有以下几样：
+        // 1. 针对固定的，优化效果好
+        // 2. 针对动画的，会有运动模糊的感觉。但对于大部分文本来说都是看不出来的
+        var visualTextHintingMode = VisualTextHintingMode;
+        Debug.Assert(visualTextHintingMode == TextHintingMode.Auto);
+```
+
+其次是在 文本偏移 拿到的 location 需要给定 PushGuidelineSet 里，确保布局偏移存在的小数点不会影响到像素对齐，进而能够实现更加清晰化的效果
+
+```csharp
+        var baseline = glyphTypeface.Baseline * fontSize; // 和 fontFamily.GetBaseline(fontSize) 是相同的
+        var location = new Point(0, baseline);
+        drawingContext.PushGuidelineSet(new GuidelineSet([0], [location.Y]));
+```
+
+如果还有进一步要求，那则是开启 DPI 感知，解决屏幕高 DPI 导致的模糊问题。做法是添加 app.manifest 文件，修改 csproj 项目文件，加上如下代码配置
+
+```xml
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+```
+
+按照 [支持 Windows 10 最新 PerMonitorV2 特性的 WPF 多屏高 DPI 应用开发 - walterlv](https://blog.walterlv.com/post/windows-high-dpi-development-for-wpf.html ) 博客提供的方法，在 app.manifest 文件里面使用如下代码开启 PM v2 的 DPI 感知
+
+```xml
+<application xmlns="urn:schemas-microsoft-com:asm.v3">
+  <windowsSettings>
+    <!-- The combination of below two tags have the following effect : 
+         1. Per-Monitor for >= Windows 10 Anniversary Update
+         2. System < Windows 10 Anniversary Update -->
+    <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
+    <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
+  </windowsSettings>
+</application>
+```
+
+添加上这么多配置之后，预期就是文本是非常清晰的，特别是在更高分辨率的设备上。再额外说明，在高于 2k 的屏幕上，高 DPI 下，开启 ClearType 与否的影响就非常低了。基本上在文本渲染尺寸不是特别大的情况下，只要 PushGuidelineSet 和 pixelsPerDip 正确，再加上 PM v2 的 DPI 感知，就能获得非常清晰的文本了
 
 ## 创建成本
 
@@ -332,7 +393,6 @@ var height = (a * OriginLineSpacing + b) * renderingEmSize;
 ```
 
 通过以上代码计算的行高将和 PPT 的行高相同
-
 
 ## 字体回滚策略
 
@@ -549,5 +609,3 @@ git remote add origin https://github.com/lindexi/lindexi_gd.git
 ```
 
 获取代码之后，进入 NiwejabainelFehargaye 文件夹
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
