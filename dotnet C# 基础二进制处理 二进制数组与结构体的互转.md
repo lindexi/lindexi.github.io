@@ -108,7 +108,7 @@ struct Foo2
 
 但是本文以上的代码是不严谨的，以上代码没有固定 Foo1 结构体和 Foo2 结构体的内存布局，以上的代码只是用来告诉大家 MemoryMarshal.Cast 的用法，而不是推荐大家在正式的项目跟随我这么写。如果在正式项目里面，需要确保多个结构体之间的内存布局相同或者是在各个情况下的直接内存转换是符合预期的才能这么做
 
-本文的代码放在[github](https://github.com/lindexi/lindexi_gd/tree/6bd28ceca1e9b73bfda270f9a3a3bddd7b8ebcc4/HallehuwearjewhoQedelqarnalar) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/6bd28ceca1e9b73bfda270f9a3a3bddd7b8ebcc4/HallehuwearjewhoQedelqarnalar) 欢迎访问
+本文以上代码放在[github](https://github.com/lindexi/lindexi_gd/tree/6bd28ceca1e9b73bfda270f9a3a3bddd7b8ebcc4/HallehuwearjewhoQedelqarnalar) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/6bd28ceca1e9b73bfda270f9a3a3bddd7b8ebcc4/HallehuwearjewhoQedelqarnalar) 欢迎访问
 
 可以通过如下方式获取本文的源代码，先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
@@ -127,5 +127,145 @@ git pull origin 6bd28ceca1e9b73bfda270f9a3a3bddd7b8ebcc4
 ```
 
 获取代码之后，进入 HallehuwearjewhoQedelqarnalar 文件夹
+
+从 byte 数组转换为结构体或结构体数组的示例：
+
+如以下的一段 byte 列表，其创建方式如下
+
+```csharp
+List<byte> buffer = [];
+
+for (int i = 1; i < 6; i++)
+{
+    buffer.AddRange([(byte) (1 * i), 0, 0, 0, (byte) (2 * i), 0, 0, 0, (byte) (3 * i), 0, 0, 0]);
+}
+
+for (var i = 0; i < buffer.Count; i++)
+{
+    Console.WriteLine($"[{i}] - {buffer[i]:X2}");
+}
+```
+
+控制台输出内容如下
+
+```
+[0] - 01
+[1] - 00
+[2] - 00
+[3] - 00
+[4] - 02
+[5] - 00
+[6] - 00
+[7] - 00
+[8] - 03
+[9] - 00
+[10] - 00
+[11] - 00
+[12] - 02
+[13] - 00
+[14] - 00
+[15] - 00
+[16] - 04
+[17] - 00
+[18] - 00
+[19] - 00
+[20] - 06
+[21] - 00
+[22] - 00
+[23] - 00
+[24] - 03
+[25] - 00
+[26] - 00
+[27] - 00
+[28] - 06
+[29] - 00
+[30] - 00
+[31] - 00
+[32] - 09
+[33] - 00
+[34] - 00
+[35] - 00
+[36] - 04
+[37] - 00
+[38] - 00
+[39] - 00
+[40] - 08
+[41] - 00
+[42] - 00
+[43] - 00
+[44] - 0C
+[45] - 00
+[46] - 00
+[47] - 00
+[48] - 05
+[49] - 00
+[50] - 00
+[51] - 00
+[52] - 0A
+[53] - 00
+[54] - 00
+[55] - 00
+[56] - 0F
+[57] - 00
+[58] - 00
+[59] - 00
+```
+
+使用 MemoryMarshal.Cast 转换为结构体的 Span 结构，约等于结构体集合，代码如下
+
+```csharp
+Span<Foo1> foo1Span = MemoryMarshal.Cast<byte, Foo1>(buffer.ToArray().AsSpan());
+```
+
+尝试输出 Foo1 结构体内容，如以下代码
+
+```csharp
+foreach (var foo1 in foo1Span)
+{
+    Console.WriteLine($"foo1.A={foo1.A}");
+    Console.WriteLine($"foo1.B={foo1.B}");
+    Console.WriteLine($"foo1.C={foo1.C}");
+}
+```
+
+此时可见结构体内容已经被填充为数组的内容
+
+```csharp
+foo1.A=1
+foo1.B=2
+foo1.C=3
+foo1.A=2
+foo1.B=4
+foo1.C=6
+foo1.A=3
+foo1.B=6
+foo1.C=9
+foo1.A=4
+foo1.B=8
+foo1.C=12
+foo1.A=5
+foo1.B=10
+foo1.C=15
+```
+
+以上示例代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/8bbf489bc158921db69b3dc1dae38affb696565f/Workbench/WherurgurhemBahegargaw) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/8bbf489bc158921db69b3dc1dae38affb696565f/Workbench/WherurgurhemBahegargaw) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 8bbf489bc158921db69b3dc1dae38affb696565f
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 8bbf489bc158921db69b3dc1dae38affb696565f
+```
+
+获取代码之后，进入 Workbench/WherurgurhemBahegargaw 文件夹，即可获取到源代码
 
 更多 dotnet 基础知识相关博客，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
