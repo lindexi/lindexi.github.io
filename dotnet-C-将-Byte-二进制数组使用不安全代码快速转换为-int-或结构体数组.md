@@ -109,7 +109,7 @@
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/f897f444/LawdalenaLifearjanugear ) 欢迎小伙伴访问
 
-
+安全的转换方式请参阅： [dotnet C# 基础二进制处理 二进制数组与结构体的互转](https://blog.lindexi.com/post/dotnet-C-%E5%9F%BA%E7%A1%80%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%A4%84%E7%90%86-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E7%BB%84%E4%B8%8E%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E4%BA%92%E8%BD%AC.html )
 
 
 

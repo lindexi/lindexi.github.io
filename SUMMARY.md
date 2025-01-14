@@ -78,6 +78,8 @@
 
  * [Avalonia 已知问题 第二次 Composition Animation 无法播放](Avalonia-已知问题-第二次-Composition-Animation-无法播放.md)
 
+ * [Avalonia 简单实现输入法光标跟随效果](Avalonia-简单实现输入法光标跟随效果.md)
+
  * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
 
  * [Azure 无服务器 Function 函数计算服务 dotnet core 3.1 创建和部署入门](Azure-无服务器-Function-函数计算服务-dotnet-core-3.1-创建和部署入门.md)
