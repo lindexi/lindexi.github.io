@@ -17,7 +17,6 @@
 先看看分词的效果：
 
 <!-- ![](image/UWP WinRT 使用系统自带的分词库对字符串文本进行分词/UWP WinRT 使用系统自带的分词库对字符串文本进行分词0.png) -->
-
 ![](http://cdn.lindexi.site/lindexi%2F2023427849138501.jpg)
 
 开始之前，先写一点有趣的界面方便进行测试，界面代码如下，本文所有的代码都可以在本文末尾找到下载方式
@@ -119,3 +118,6 @@ git pull origin a59524fc6cc35669fbb186f1ea2221891a1546cb
 获取代码之后，进入 JojairyoleNucheyerewhilu 文件夹
 
 更多博客请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+如果想要在更低的系统版本，或非 Windows 平台上，支持分词的功能，可以尝试使用 ICU 库。详细请看 [dotnet 简单使用 ICU 库进行分词和分行](https://blog.lindexi.com/post/dotnet-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8-ICU-%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%88%86%E8%AF%8D%E5%92%8C%E5%88%86%E8%A1%8C.html )
+<!-- [dotnet 简单使用 ICU 库进行分词和分行 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18622917 ) -->

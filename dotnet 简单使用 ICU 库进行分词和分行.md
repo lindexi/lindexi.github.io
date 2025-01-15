@@ -4,7 +4,6 @@
 
 <!--more-->
 <!-- CreateTime:2024/12/23 07:05:34 -->
-
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -150,3 +149,5 @@ git pull origin c060ecede2ffa8b81c57e1ff8d0efcb0820fafc4
 获取代码之后，进入 Workbench/FichallbibaRenafawwhi 文件夹，即可获取到源代码
 
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+在 Windows 上的应用，除了使用 ICU 库进行分词外，还可以调用 WinRT 的方式进行分词。如此可以减少带一个很大的 ICU 数据包。详细请参阅 [UWP WinRT 使用系统自带的分词库对字符串文本进行分词](https://blog.lindexi.com/post/UWP-WinRT-%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%B8%A6%E7%9A%84%E5%88%86%E8%AF%8D%E5%BA%93%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%87%E6%9C%AC%E8%BF%9B%E8%A1%8C%E5%88%86%E8%AF%8D.html )
