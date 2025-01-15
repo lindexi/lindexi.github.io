@@ -12,12 +12,12 @@ category:
 如下图是 dotnet 9 之前的渲染效果界面图：
 
 <!-- ![](image/dotnet 9 WPF 连字符渲染支持/dotnet 9 WPF 连字符渲染支持0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202411131958534104.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202411/1080237-20241114073112129-544494365.png)
 
 如下图是 dotnet 9 版本的渲染效果界面图：
 
 <!-- ![](image/dotnet 9 WPF 连字符渲染支持/dotnet 9 WPF 连字符渲染支持1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202411131959199581.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202411/1080237-20241114073112591-363222686.png)
 
 ## 如何启用或关闭此功能
 

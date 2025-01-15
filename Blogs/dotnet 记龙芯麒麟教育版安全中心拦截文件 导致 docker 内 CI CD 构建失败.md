@@ -54,7 +54,7 @@ bash: line 121:   251 Aborted
 感谢 [lsj](https://blog.sdlsj.net/ ) 帮忙找到是麒麟教育版安全中心在进行拦截。如下图所示，可以看到很多文件路径都被拦截了
 
 <!-- ![](image/dotnet 记龙芯麒麟教育版安全中心拦截文件 导致 docker 内 CI CD 构建失败/dotnet 记龙芯麒麟教育版安全中心拦截文件 导致 docker 内 CI CD 构建失败0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202411132028572986.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202411/1080237-20241114073113049-1466110711.png)
 
 其中写入到 `/tmp/.dotnet/shm` 路径的，大部分都是和 Mutex 有关
 

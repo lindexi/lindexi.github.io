@@ -105,7 +105,7 @@ RUN apt-get clean
 接着到 [dotnet 官网](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0) 下载 dotnet 8 和 dotnet 6 的 sdk 压缩包，本文这里使用的是自己解压缩的方式。换成命令方式安装也可以，只是命令方式拉取的速度可能不如先下载压缩包的方式，且下载压缩包可以方便多次重新构建，在 Dockerfile 不断需要修改时，使用压缩包可以省去多次修改之后的重新构建时的拉取时间
 
 <!-- ![](image/制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像/制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024428945237884.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240918203539372-103999696.png)
 
 本文这里采用的是下载压缩包的方式，下载到 dotnet-sdk-6.0.421-linux-x64.tar.gz 和 dotnet-sdk-8.0.204-linux-x64.tar.gz 这两个压缩包。如果大家下载失败，或者没有网速的话，可以邮件给我，让我用网盘发给你。一般情况下在国内都能拉取成功，因为微软帮忙提供了全球 CDN 了，下载速度在我这里还是很快的。下载 dotnet 6 版本仅仅只是为了让我的构建工具正常工作而已，属于可选项
 
@@ -202,12 +202,12 @@ podman run -i -t -v /mnt/c/lindexi/wsl:/etc/gitlab-runner t1
 本文使用注册 GitLab 组 作为例子，注册单个项目的步骤也类似，详细请参阅 <https://docs.gitlab.com/runner/configuration/> 文档。先进入到 GitLab 的 组 的 Runner 配置界面里面，点击 New group runner 按钮
 
 <!-- ![](image/制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像/制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20244281012187562.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240918203539741-1047315815.png)
 
 点击之后，进入配置界面。由于这是一个特殊的构建方式，我推荐写上 gitlab 的 runner tag 项，我这里写的是 `debian-dotnet-docker` 标记。这里的标记需要和 git 的 tag 区分哦，这是两个完全不相同的东西
 
 <!-- ![](image/制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像/制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20244281013517650.jpg)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240918203540125-454819356.png)
 
 点击 Create runner 按钮，即可进入到创建配置命令界面，拷贝其配置命令参数，如我这里的是
 
