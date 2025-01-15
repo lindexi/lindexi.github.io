@@ -2500,6 +2500,8 @@
 
  * [Windows 窗口样式 什么是 WS_EX_NOREDIRECTIONBITMAP 样式](Windows-窗口样式-什么是-WS_EX_NOREDIRECTIONBITMAP-样式.md)
 
+ * [Windows 行为测试 删除 FileStream 正在读写文件可以继续读写](Windows-行为测试-删除-FileStream-正在读写文件可以继续读写.md)
+
  * [Windows 调试工具课程](Windows-调试工具课程.md)
 
  * [Windows 通过编辑注册表设置左右手使用习惯更改 Popup 弹出位置](Windows-通过编辑注册表设置左右手使用习惯更改-Popup-弹出位置.md)
