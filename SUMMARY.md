@@ -1826,6 +1826,8 @@
 
  * [UWP 转换 IBuffer 和其他类型](UWP-转换-IBuffer-和其他类型.md)
 
+ * [UWP 部署失败 DEP0700 0x80073CF0 错误 0x800701C0 从位置 AppxManifest.xml 中打开文件失败](UWP-部署失败-DEP0700-0x80073CF0-错误-0x800701C0-从位置-AppxManifest.xml-中打开文件失败.md)
+
  * [Visual studio C# 代码使用 NotNull](Visual-studio-C-代码使用-NotNull.md)
 
  * [visual Studio 无法调试，提示程序跟踪已退出](visual-Studio-无法调试，提示程序跟踪已退出.md)
