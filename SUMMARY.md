@@ -420,6 +420,8 @@
 
  * [dotnet 6 HttpClientHandler 和 SocketsHttpHandler 有什么差别](dotnet-6-HttpClientHandler-和-SocketsHttpHandler-有什么差别.md)
 
+ * [dotnet 6 InterpolatedStringHandler 构造函数的 out 参数有什么意义](dotnet-6-InterpolatedStringHandler-构造函数的-out-参数有什么意义.md)
+
  * [dotnet 6 为什么网络请求不跟随系统网络代理变化而动态切换代理](dotnet-6-为什么网络请求不跟随系统网络代理变化而动态切换代理.md)
 
  * [dotnet 6 使用 CreateSymbolicLink 创建文件夹符号链接](dotnet-6-使用-CreateSymbolicLink-创建文件夹符号链接.md)
