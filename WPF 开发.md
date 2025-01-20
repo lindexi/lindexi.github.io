@@ -1573,3 +1573,9 @@ drawingGroup.Transform = translateTransform;
         </Grid.ContextMenu>
     </Grid>
 ```
+
+## 默认字体
+
+中文环境的默认字体是主题带的，这里比较有吐槽点，详细请看 [The default font family of Chinese characters in a WPF app in non-zh-CN region is Segoe UI instead of Microsoft YaHei UI · Issue #6164 · dotnet/wpf](https://github.com/dotnet/wpf/issues/6164 )
+
+在 Winforms 里面，默认的 `System.Windows.Forms.Control.DefaultFont.Name` 将使用 `System.Drawing.SystemFonts.MenuFont?.Name` 字体。对应在 WPF 里面，可以使用 `SystemFonts.MessageFontFamily` 属性提供的字体
