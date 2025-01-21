@@ -3664,6 +3664,10 @@
 
  * [游戏 迷雾森林迅猛龙攻略](游戏-迷雾森林迅猛龙攻略.md)
 
+ * [演练 dotnet 使用 GeneratedComInterface 源代码生成方式调用 COM 接口](演练-dotnet-使用-GeneratedComInterface-源代码生成方式调用-COM-接口.md)
+
+ * [演练 dotnet 使用 函数指针 调用 COM 接口](演练-dotnet-使用-函数指针-调用-COM-接口.md)
+
  * [熟地加洋参解决牙痛](熟地加洋参解决牙痛.md)
 
  * [理解项目文件 NuGet 打包时机](理解项目文件-NuGet-打包时机.md)
