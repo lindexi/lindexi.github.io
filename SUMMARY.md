@@ -886,6 +886,8 @@
 
  * [dotnet 使用 ClearScript 执行 VBScript 和 JS 代码 无需浏览器](dotnet-使用-ClearScript-执行-VBScript-和-JS-代码-无需浏览器.md)
 
+ * [dotnet 使用 ColorCode 做代码着色器](dotnet-使用-ColorCode-做代码着色器.md)
+
  * [dotnet 使用 ConfigureAwait.Fody 库设置默认的 await 同步上下文切换配置](dotnet-使用-ConfigureAwait.Fody-库设置默认的-await-同步上下文切换配置.md)
 
  * [dotnet 使用 Crossgen2 对 DLL 进行 ReadyToRun 提升启动性能](dotnet-使用-Crossgen2-对-DLL-进行-ReadyToRun-提升启动性能.md)
