@@ -125,15 +125,31 @@ var historyDivergenceCommonAncestor = historyDivergence.CommonAncestor;
 
 以上代码我特意选用了 `Skip(100)` 跳过当前 100 个 commit 去查找其差异作为示例
 
+## 查看指定文件的 Git 历史
 
-以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/73487785d01e8138e86733f39e7be1e63522a714&exit/Workbench/ChearjinohecelKafemlairreena) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/73487785d01e8138e86733f39e7be1e63522a714&exit/Workbench/ChearjinohecelKafemlairreena) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+如以下代码，查看 Workbench/ChearjinohecelKafemlairreena/Program.cs 文件的变更历史
+
+```csharp
+var queryableCommitLog = repository.Commits;
+
+var logEntries = queryableCommitLog.QueryBy("Workbench/ChearjinohecelKafemlairreena/Program.cs");
+foreach (LogEntry logEntry in logEntries)
+{
+}
+```
+
+这里的细节是斜杠需要使用 `/` 斜杠
+
+## 代码
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/60c472a79bfbc32b5b18071d5dec2f05046ff4db/Workbench/ChearjinohecelKafemlairreena) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/60c472a79bfbc32b5b18071d5dec2f05046ff4db/Workbench/ChearjinohecelKafemlairreena) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
 ```
 git init
 git remote add origin https://gitee.com/lindexi/lindexi_gd.git
-git pull origin 73487785d01e8138e86733f39e7be1e63522a714&exit
+git pull origin 60c472a79bfbc32b5b18071d5dec2f05046ff4db
 ```
 
 以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
@@ -141,7 +157,7 @@ git pull origin 73487785d01e8138e86733f39e7be1e63522a714&exit
 ```
 git remote remove origin
 git remote add origin https://github.com/lindexi/lindexi_gd.git
-git pull origin 73487785d01e8138e86733f39e7be1e63522a714&exit
+git pull origin 60c472a79bfbc32b5b18071d5dec2f05046ff4db
 ```
 
 获取代码之后，进入 Workbench/ChearjinohecelKafemlairreena 文件夹，即可获取到源代码
