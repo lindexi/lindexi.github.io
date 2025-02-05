@@ -484,6 +484,8 @@
 
  * [dotnet 9 WPF 项目禁用 IncludePackageReferencesDuringMarkupCompilation 导致源代码包 XAML 构建失败](dotnet-9-WPF-项目禁用-IncludePackageReferencesDuringMarkupCompilation-导致源代码包-XAML-构建失败.md)
 
+ * [dotnet 9 已知问题 默认开启 CET 导致进程崩溃](dotnet-9-已知问题-默认开启-CET-导致进程崩溃.md)
+
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
  * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
@@ -673,6 +675,8 @@
  * [dotnet Framework 源代码 · ScrollViewer](dotnet-Framework-源代码-·-ScrollViewer.md)
 
  * [dotnet Framework 源代码 类库的意思](dotnet-Framework-源代码-类库的意思.md)
+
+ * [dotnet LibGit2Sharp 使用笔记](dotnet-LibGit2Sharp-使用笔记.md)
 
  * [dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库](dotnet-Microsoft.Recognizers.Text-超强大的自然语言关键词提取库.md)
 
