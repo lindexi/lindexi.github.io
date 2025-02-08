@@ -8,6 +8,30 @@
 <!-- 发布 -->
 <!-- 博客 -->
 
+在 UNO 的 5.4 及以上版本，可以直接使用 GetNativeWindow 方法获取平台的窗口信息，代码如下
+
+```csharp
+            var nativeWindow = (X11NativeWindow)MainWindow.GetNativeWindow();
+            Console.WriteLine($"nativeWindow.WindowId={nativeWindow.WindowId:X}");
+```
+
+以上方法不仅仅适用于 X11 平台，也适合其他更多平台。从 GetNativeWindow 方法返回的是 object 对象，在各个框架平台下的对应类型如下
+
+- Skia+GTK ： Gtk.Window
+- Skia+X11 ： Uno.UI.Runtime.Skia.X11NativeWindow
+- Skia+WPF ： System.Windows.Window
+- iOS ： UIKit.UIWindow
+- Android ： Android.View.Window
+- macOS ： AppKit.NSWindow
+- Catalyst ： UIKit.UIWindow
+- WebAssembly ： null
+
+详细请看 <https://platform.uno/docs/articles/features/windows-ui-xaml-window.html#retrieving-the-native-window>
+
+以下是旧版本内容
+
+---
+
 本文以下的方法需要用到反射，已在 5.2.161 及附近版本测试通过
 
 通过阅读 UNO 的源代码，可以看到 Window 类型里面放入了不公开的 NativeWindow 属性，这个属性是平台相关的。在 X11 平台下是 Uno.WinUI.Runtime.Skia.X11.X11Window 类型。对应的 X11Window 类型的定义如下
