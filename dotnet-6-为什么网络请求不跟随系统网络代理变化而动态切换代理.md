@@ -21,7 +21,7 @@
 
 ![](http://cdn.lindexi.site/lindexi%2F202271985521104.jpg)
 
-在 .NET Core 下，网络代理的获取只有一次，获取到的代理没有再去监听注册表的变更，也就没有再次刷新。此问题已反馈给官方，详细请看 [https://github.com/dotnet/runtime/issues/46910](https://github.com/dotnet/runtime/issues/46910)
+在 .NET Core 下，网络代理的获取只有一次，获取到的代理没有再去监听注册表的变更，也就没有再次刷新。此问题已反馈给官方，且官方已在 dotnet 9 修复，详细请看 [https://github.com/dotnet/runtime/issues/46910](https://github.com/dotnet/runtime/issues/46910)
 
 在 .NET Core 将会在首次获取 HttpClient.DefaultProxy 时进行初始化，值得一提的是在 .NET Core 调用的 WebRequest.GetSystemWebProxy 方法底层也是调用 HttpClient.DefaultProxy 属性
 
@@ -123,6 +123,9 @@ git pull origin 1cedefac050e18f6eb1e953e57f737a8e41d0521
 
 获取代码之后，进入 NilerlanaihikaWhurreeberhalur 文件夹
 
+更新：
+
+在 dotnet 9 下，将自动跟随系统设置，详细请参阅 <https://github.com/dotnet/runtime/pull/103364>
 
 
 

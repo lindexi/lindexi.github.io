@@ -1178,6 +1178,8 @@
 
  * [dotnet 测试在 UOS Linux 上使用 Process Start 打开文件的行为](dotnet-测试在-UOS-Linux-上使用-Process-Start-打开文件的行为.md)
 
+ * [dotnet 源代码生成器分析器入门](dotnet-源代码生成器分析器入门.md)
+
  * [dotnet 特性 DynamicallyInvokable 是用来做什么的](dotnet-特性-DynamicallyInvokable-是用来做什么的.md)
 
  * [dotnet 理解 IConfigurationProvider 的 GetChildKeys 方法用途](dotnet-理解-IConfigurationProvider-的-GetChildKeys-方法用途.md)
