@@ -377,3 +377,5 @@
 [windows下关于程序的自动更新方案-CSDN博客_windows程序自动升级方案](https://blog.csdn.net/qq_37059136/article/details/82377786 )
 
 <https://github.com/google/omaha>
+
+[velopack/velopack: Installer and automatic update framework for cross-platform desktop applications](https://github.com/velopack/velopack )
