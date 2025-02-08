@@ -1688,6 +1688,8 @@
 
  * [Roslyn 打包自定义的文件到 NuGet 包](Roslyn-打包自定义的文件到-NuGet-包.md)
 
+ * [Roslyn 源代码生成器 SourceGenerator 获取代码文件的本地绝对路径](Roslyn-源代码生成器-SourceGenerator-获取代码文件的本地绝对路径.md)
+
  * [Roslyn 理解 msbuild 的清理过程](Roslyn-理解-msbuild-的清理过程.md)
 
  * [Roslyn 禁止 sdk style csproj 默认引用 Compile 代码文件](Roslyn-禁止-sdk-style-csproj-默认引用-Compile-代码文件.md)

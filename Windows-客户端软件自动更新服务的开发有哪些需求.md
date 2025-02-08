@@ -381,6 +381,8 @@
 
 <https://github.com/google/omaha>
 
+[velopack/velopack: Installer and automatic update framework for cross-platform desktop applications](https://github.com/velopack/velopack )
+
 
 
 
