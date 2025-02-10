@@ -3,6 +3,8 @@
 本文告诉大家如何在源代码生成器 SourceGenerator 里面获取代码文件的本地文件的绝对路径
 
 <!--more-->
+<!-- CreateTime:2025/02/09 07:13:47 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：Roslyn,MSBuild,编译器,SourceGenerator,生成代码 -->
