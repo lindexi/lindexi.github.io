@@ -389,6 +389,11 @@ git pull origin b8c036de9d9d7c4b1a3d329054086d6566d14dc4
   - 这一步的逻辑和普通的 Source Generator 是相同的，只是输入的参数不同
 
 
+
+
+
+
+
 可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
 
 
@@ -419,6 +424,7 @@ git pull origin b8c036de9d9d7c4b1a3d329054086d6566d14dc4
 
 - 演练 使用 Interceptor 的技术
 - 演练 将构建时间写入源代码
+- 从文件写入代码
 - 演练 禁用API调用 分析器
 
 - 源代码生成技术实现中文编程语言 生成的源代码保存到本地文件
