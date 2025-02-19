@@ -154,8 +154,18 @@
             public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 ```
 
-但是在 10.0.18362 版本，上面判断方法在一些设备上凉凉
+但是在 10.0.18362（1903） 版本，上面判断方法在一些设备上凉凉。可选采用 <https://github.com/microsoft/WindowsAppSDK/discussions/3343> 所述方法，通过 IFrameworkInputPane 的 [Location](https://learn.microsoft.com/en-us/windows/win32/api/shobjidl_core/nf-shobjidl_core-iframeworkinputpane-location) 方法，判断宽度高度为 0 断定屏幕键盘没有打开，如[官方文档](https://learn.microsoft.com/en-us/windows/win32/api/shobjidl_core/nf-shobjidl_core-iframeworkinputpane-location)所述
 
+> `HRESULT Location([out] RECT *prcInputPaneScreenLocation);`
+> 
+> Parameters:
+>
+> `[out] prcInputPaneScreenLocation`
+>
+> A pointer to a RECT structure that, when this method returns successfully, receives the location of the input pane, in screen coordinates.
+> If the input pane is not visible, this structure receives an empty rectangle.
+
+关于使用 IFrameworkInputPane 判断屏幕键盘是否打开的详细使用方法请参阅 <https://stackoverflow.com/a/55513524>
 
 
 
