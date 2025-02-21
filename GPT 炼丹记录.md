@@ -151,17 +151,13 @@
 
 以下是我想要报告的问题：
 
-禁用 IncludePackageReferencesDuringMarkupCompilation 功能，将会导致在跨项目引用 xaml 文件，将 xaml 文件作为链接方式添加时，构建过程中出现 error CS1504 错误
+在 OpenXML 里面，设置 PresentationDocument 的 PackageProperties 的 Title 属性为包含 `"\u0001"` 的字符串时，将会提示 ArgumentException 错误
 
-禁用 IncludePackageReferencesDuringMarkupCompilation 功能之后，从 xaml 生成的 g.cs 文件里的 `#pragma checksum` 将记录错误的相对文件路径，进而导致构建失败。最简单的复现方式如下：
-
-1. 创建两个 wpf 项目，其中一个为 WPF 库项目，一个为 WPF 应用项目
-2. 在 WPF 库项目里面添加名为 MyUserControl 的用户控件
-3. 在 WPF 应用项目里面通过以下代码引用 MyUserControl.xaml 和 MyUserControl.xaml.cs 文件
+最简的复现代码如下
 
 [Code1]
 
-如果此时同样在 WPF 应用项目里设置禁用 IncludePackageReferencesDuringMarkupCompilation 功能，则构建时将会提示 `obj\Debug\net9.0-windows\MyUserControl.g.cs(59,21,59,41): error CS1504: 无法打开源文件“MyUserControl.xaml”-- 无法找到文件` 错误。以下是设置禁用 IncludePackageReferencesDuringMarkupCompilation 功能的 WPF 应用项目的 csproj 项目文件的代码
+运行以上代码，将会出现如下错误
 
 [Code2]
 ```
