@@ -390,18 +390,92 @@ git pull origin b8c036de9d9d7c4b1a3d329054086d6566d14dc4
 
 
 
+语法分析过程中，只能知道标记了名为 Foo 的特性，不知道是否真的是特性。需要在语义分析过程中，进一步判断是否真的是特性
 
+[Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](https://blog.lindexi.com/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html )
 
 
 
 可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
 
 
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed/Roslyn/BegalllalhereCilaywhonerdem) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed/Roslyn/BegalllalhereCilaywhonerdem) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed
+```
+
+获取代码之后，进入 Roslyn/BegalllalhereCilaywhonerdem 文件夹，即可获取到源代码
+
+
+
 - 过于限制，换成直接的分析逻辑。逻辑太复杂了，需要方便调试。不想写单元测试，想直接对项目进行调试
 
 ### 编写单元测试
 
+- 编写单元测试的方法
+
+[为 IIncrementalGenerator 增量 Source Generator 源代码生成项目添加单元测试](https://blog.lindexi.com/post/%E4%B8%BA-IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html )
+
+代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/abe3f751fe987a29d0b241501fade1d20c2dc74a/Roslyn/ChunecilarkenaLibeewhemke) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/abe3f751fe987a29d0b241501fade1d20c2dc74a/Roslyn/ChunecilarkenaLibeewhemke) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
+```
+
+获取代码之后，进入 Roslyn/ChunecilarkenaLibeewhemke 文件夹，即可获取到源代码
+
+
 ### 直接调试项目
+
+dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目
+
+- 日常调试的方法 IsRoslynComponent
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
+```
+
+获取代码之后，进入 Roslyn/JehairqogefaKaiwuwhailallkihaiki 文件夹，即可获取到源代码
 
 ## 使用语法可视化窗格辅助了解语法
 
@@ -409,33 +483,67 @@ git pull origin b8c036de9d9d7c4b1a3d329054086d6566d14dc4
 
 [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树 - walterlv](https://blog.walterlv.com/post/roslyn-syntax-visualizer )
 
+- 使用视觉辅助了解语法
+
 
 学习了这么多，可以试试进行一些实践演练
 
 是否源代码生成器能够干的话，程序猿也能干？介绍 Interceptor 技术
 
 
-- 编写单元测试的方法
-- 日常调试的方法 IsRoslynComponent
 
 - 如何打包 NuGet 包
 
-- 使用视觉辅助了解语法
 
 - 演练 使用 Interceptor 的技术
 - 演练 将构建时间写入源代码
 - 从文件写入代码
 - 演练 禁用API调用 分析器
 
-- 源代码生成技术实现中文编程语言 生成的源代码保存到本地文件
+- 源代码生成技术实现中文编程语言 [dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言](https://blog.lindexi.com/post/dotnet-%E7%94%A8-SourceGenerator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80.html )
 
-- 常用的方法
-- 获取配置
-- 获取文件的实际本地路径 compilation.Options.SourceReferenceResolver 0b5550ce0e2736df6f2aac01f1f65ca37103fbdf Workbench\KonanohallreGonurliyage
+
+[将 Source Generator 生成的源代码保存到本地文件](https://blog.lindexi.com/post/%E5%B0%86-Source-Generator-%E7%94%9F%E6%88%90%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6.html )
+<!-- [将 Source Generator 生成的源代码保存到本地文件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18011557 ) -->
+
 
 [使用 Roslyn 分析代码注释，给 TODO 类型的注释添加负责人、截止日期和 issue 链接跟踪 - walterlv](https://blog.walterlv.com/post/comment-analyzer-and-code-fix-using-roslyn.html )
 
 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv](https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html )
+
+## 常用方法
+
+以下是我记录的一些零碎的常用方法和做法，供大家参考，期望能够解决大家一些使用上的问题
+
+### 获取配置
+
+[IIncrementalGenerator 增量 Source Generator 生成代码入门 读取 csproj 项目文件的属性配置](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%AF%BB%E5%8F%96-csproj-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE.html )
+
+[Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置](https://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-%E8%AF%BB%E5%8F%96-csproj-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84-AdditionalFiles-Item-%E7%9A%84-Metadata-%E9%85%8D%E7%BD%AE.html )
+<!-- [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18459703 ) -->
+
+### 获取文件的实际本地路径
+
+[Roslyn 源代码生成器 SourceGenerator 获取代码文件的本地绝对路径](https://blog.lindexi.com/post/Roslyn-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8-SourceGenerator-%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%A0%81%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84.html )
+<!-- [Roslyn 源代码生成器 SourceGenerator 获取代码文件的本地绝对路径 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18705712 ) -->
+
+### 获取引用程序集的所有类型
+
+[IIncrementalGenerator 增量 Source Generator 生成代码入门 获取引用程序集的所有类型](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%8E%B7%E5%8F%96%E5%BC%95%E7%94%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E6%89%80%E6%9C%89%E7%B1%BB%E5%9E%8B.html )
+
+### 判断程序集之间的 InternalsVisibleTo 关系
+
+[IIncrementalGenerator 增量 Source Generator 生成代码入门 判断程序集之间的 InternalsVisibleTo 关系](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E5%88%A4%E6%96%AD%E7%A8%8B%E5%BA%8F%E9%9B%86%E4%B9%8B%E9%97%B4%E7%9A%84-InternalsVisibleTo-%E5%85%B3%E7%B3%BB.html )
+
+
+### 判断程序集的引用关系
+
+[IIncrementalGenerator 增量 Source Generator 生成代码入门 判断程序集的引用关系](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E5%88%A4%E6%96%AD%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E5%BC%95%E7%94%A8%E5%85%B3%E7%B3%BB.html )
+<!-- [IIncrementalGenerator 判断程序集的引用关系 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/17678664.html ) -->
+
+### 获取项目默认命名空间
+
+[IIncrementalGenerator 增量 Source Generator 生成代码入门 获取项目默认命名空间](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%8E%B7%E5%8F%96%E9%A1%B9%E7%9B%AE%E9%BB%98%E8%AE%A4%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html )
 
 
 

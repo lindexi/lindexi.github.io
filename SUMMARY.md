@@ -726,6 +726,8 @@
 
  * [dotnet OpenXML 如何获取 schemeClr 颜色](dotnet-OpenXML-如何获取-schemeClr-颜色.md)
 
+ * [dotnet OpenXML 已知问题 设置 0x0001 等 XML 不合法字符给到标题将在保存时抛出异常](dotnet-OpenXML-已知问题-设置-0x0001-等-XML-不合法字符给到标题将在保存时抛出异常.md)
+
  * [dotnet OpenXML 幻灯片 PPTX 的 Slide Id 和页面序号的关系](dotnet-OpenXML-幻灯片-PPTX-的-Slide-Id-和页面序号的关系.md)
 
  * [dotnet OpenXML 形状的 Outline 的 LineWidth 线条轮廓粗细宽度的行为](dotnet-OpenXML-形状的-Outline-的-LineWidth-线条轮廓粗细宽度的行为.md)
@@ -1035,6 +1037,8 @@
  * [dotnet 在 UOS 国产系统上安装 MonoDevelop 开发工具](dotnet-在-UOS-国产系统上安装-MonoDevelop-开发工具.md)
 
  * [dotnet 在 UOS 统信系统上运行 UNO 程序输入时闪烁黑屏问题](dotnet-在-UOS-统信系统上运行-UNO-程序输入时闪烁黑屏问题.md)
+
+ * [dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目](dotnet-在-VisualStudio-一键-F5-启动调试-Roslyn-分析器项目.md)
 
  * [dotnet 在 Windows 系统上使用 stakx 的 WIC 库](dotnet-在-Windows-系统上使用-stakx-的-WIC-库.md)
 
