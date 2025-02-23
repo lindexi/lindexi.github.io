@@ -19,7 +19,7 @@
 
 本文的推荐打开方式是一边阅读本文，一边打开 Visual Studio 2022 或更高版本，对照本文的内容进行操作。照着本文的内容对照着编写代码，可以让大家更好地理解本文的内容，照着过一遍预计就能掌握基础的源代码生成器和分析器的知识，入门源代码生成器和分析器的编写
 
-本文过程中会添加一些外部链接文档，这些外部链接文档都是可选阅读内容，只供大家感兴趣时扩展阅读。本文的核心内容是在本文中编写的，不需要阅读外部链接文档也能够掌握本文的内容
+本文过程中会添加一些外部链接文档，这些外部链接文档都是可选阅读内容，只供大家感兴趣时扩展阅读。本文的核心内容是在本文中编写的，不需要阅读外部链接文档也能够掌握本文的内容。作为入门博客，我担心自己编写过程中存在高手盲区问题，于是尽可能将更多细节写出来，尽管这样会导致一些重复的表述
 
 先新建一个控制台项目，新建完成在 Visual Studio 2022 或更高版本中打开项目，双击 csproj 项目文件，即可进行编辑项目文件
 
@@ -340,9 +340,9 @@ namespace NinahajawhuLairfoheahurcee
 
 如此以来，对比传统的反射的方法，源代码生成的方式可以将耗时完全放在开发编译过程，不会占用用户端的执行时间。且这个过程都是完完全全的直接代码，也方便运行时的 JIT 进行优化，大大提升了运行时间。完完全全的直接代码也带来了静态分析的友好，可以作为代码裁剪和 AOT 的底层支持
 
-喜欢点点的伙伴也许在准备写 RegisterSourceOutput 的时候，就发现了还有一个名为 RegisterImplementationSourceOutput 方法，那 RegisterSourceOutput 和 RegisterImplementationSourceOutput 的差别是什么？这两个方法对最终生成的代码是没有影响的，核心差别是 RegisterImplementationSourceOutput 是用来注册具体实现生成的代码，这部分输入的代码会被 IDE 作为可选分析项。如 RegisterImplementationSourceOutput 命名所述，这是一个用来注册“具体实现”的代码，在代码里面，咱可以强行将代码分为“定义代码”和“实现代码”，比如说方法签名是定义代码，方法体是实现代码。从 IDE 的分析角度来看，只对“定义代码”而跳过“实现代码”，可以更大程度的减少分析压力，提升分析速度。通过 RegisterImplementationSourceOutput 方法注册的代码，会被 IDE 作为可选分析项，不会因为生成了大量代码导致 IDE 过于卡顿。但带来的问题是这部分生成代码可能不被加入 IDE 分析，导致业务方调用时飘红。因此通过 RegisterImplementationSourceOutput 生成的代码，基本要求是不会被业务方直接调用。常用的套路是先通过 RegisterSourceOutput 或甚至是 RegisterPostInitializationOutput 生成分部类或分部方法，然后再慢慢在 RegisterImplementationSourceOutput 里面填充实现代码
+喜欢点点的伙伴也许在准备写 RegisterSourceOutput 的时候，就发现了还有一个名为 RegisterImplementationSourceOutput 方法，那 RegisterSourceOutput 和 RegisterImplementationSourceOutput 的差别是什么？这两个方法对最终生成的代码是没有影响的，核心差别是 RegisterImplementationSourceOutput 是用来注册具体实现生成的代码，这部分输入的代码会被 IDE 作为可选分析项。如 RegisterImplementationSourceOutput 命名所述，这是一个用来注册“具体实现”的代码，在代码里面，咱可以强行将代码分为“定义代码”和“实现代码”，比如说方法签名是定义代码，方法体是实现代码。从 IDE 的分析角度来看，只对“定义代码”而跳过“实现代码”，可以更大程度的减少分析压力，提升分析速度。通过 RegisterImplementationSourceOutput 方法注册的代码，会被 IDE 作为可选分析项，不会因为生成了大量代码导致 IDE 过于卡顿。但带来的问题是这部分生成代码可能不被加入 IDE 分析，导致业务方调用时飘红。因此通过 RegisterImplementationSourceOutput 生成的代码，基本要求是不会被业务方直接调用。常用的套路是先通过 RegisterSourceOutput 或甚至是 RegisterPostInitializationOutput 生成分部类或分部方法，然后再慢慢在 RegisterImplementationSourceOutput 里面填充实现代码。如果感觉对 RegisterSourceOutput 和 RegisterImplementationSourceOutput 的差别还是很混乱，没关系，咱将在后文通过实践来让大家更好地理解两者的差别
 
-以上就是通过 ForAttributeWithMetadataName 开始入门编写分析和收集和生成的简单例子，如果对 ForAttributeWithMetadataName 使用方法感兴趣，请参阅 [使用 ForAttributeWithMetadataName 提高 IIncrementalGenerator 增量 Source Generator 源代码生成开发效率和性能](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-ForAttributeWithMetadataName-%E6%8F%90%E9%AB%98-IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E5%92%8C%E6%80%A7%E8%83%BD.html ) 
+以上就是通过 ForAttributeWithMetadataName 开始入门编写分析和收集和生成的简单例子，如果对 ForAttributeWithMetadataName 使用方法感兴趣，扩展阅读部分请参阅 [使用 ForAttributeWithMetadataName 提高 IIncrementalGenerator 增量 Source Generator 源代码生成开发效率和性能](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-ForAttributeWithMetadataName-%E6%8F%90%E9%AB%98-IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E5%92%8C%E6%80%A7%E8%83%BD.html ) 
 <!-- [使用 ForAttributeWithMetadataName 提高 IIncrementalGenerator 增量 Source Generator 源代码生成开发效率和性能 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18009107 ) -->
 
 如果大家照着以上的例子编写不出来能构建通过的代码，或者是运行代码不符合预期，欢迎拉取我的示例代码进行阅读
@@ -385,17 +385,249 @@ git pull origin b8c036de9d9d7c4b1a3d329054086d6566d14dc4
 3. 使用给出的数据进行处理源代码生成逻辑
   - 这一步的逻辑和普通的 Source Generator 是相同的，只是输入的参数不同
 
+按照以上的步骤，咱来开始重新实现上文的使用 `ForAttributeWithMetadataName` 实现的任务需求。这次咱将不使用 `ForAttributeWithMetadataName` 方法，而是使用更底层的收集分析和生成技术。在这个实现过程中，大家也能感受到使用 `ForAttributeWithMetadataName` 方法的便捷性
 
+为了方便大家后续拉取代码方便，防止多个版本之间的代码误导。我这里重新新建了两个项目，分别是名为 `BegalllalhereCilaywhonerdem.Analyzer` 的分析器项目，和一个名为 `BegalllalhereCilaywhonerdem` 的被分析项目。本文内容里面只给出关键代码片段，如需要全部的项目文件，可在下文找到所有代码的下载方法。如果自己编写的代码构建不通过或运行输出不符合预期，也推荐大家拉取本文的代码进行阅读
 
-语法分析过程中，只能知道标记了名为 Foo 的特性，不知道是否真的是特性。需要在语义分析过程中，进一步判断是否真的是特性
+先完全按照上文的方式进行项目组织，甚至是完全的代码拷贝。因为接下来咱简要替换的部分只是将原本的 `ForAttributeWithMetadataName` 相关代码进行替换而已，其他逻辑依然保持不变
 
-[Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](https://blog.lindexi.com/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html )
+删掉原本的 `ForAttributeWithMetadataName` 相关代码，即删掉如下代码
 
+```csharp
+        IncrementalValuesProvider<string> targetClassNameProvider = context.SyntaxProvider.ForAttributeWithMetadataName("Lindexi.FooAttribute",
+            // 进一步判断
+            (SyntaxNode node, CancellationToken token) => node.IsKind(SyntaxKind.ClassDeclaration),
+            (GeneratorAttributeSyntaxContext syntaxContext, CancellationToken token) => syntaxContext.TargetSymbol.Name);
+        IncrementalValueProvider<ImmutableArray<string>> targetClassNameArrayProvider = targetClassNameProvider
+            .Collect();
+```
 
+接下来咱将使用更底层的收集分析和生成技术，即从 `context.SyntaxProvider.CreateSyntaxProvider` 方法开始
 
-可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
+在 `context.SyntaxProvider.CreateSyntaxProvider` 方法里面包含两个参数，第一个参数是一个进行语法判断的过程，第二个参数是进行语义进一步判断和加工处理的逻辑。也就是说 CreateSyntaxProvider 方法就包含了上文所述的“告诉框架层需要关注哪些文件或内容或配置的变更”和“告诉框架层从变更的文件里面感兴趣什么数据，对数据预先进行处理”两个步骤
 
+在 CreateSyntaxProvider 方法里面，第一步的语法判断是判断当前传入的是否类型定义。如果是类型定义，则读取其标记的特性，判断特性满足 `Lindexi.FooAttribute` 的特征时，则算语法判断通过，让数据走到下面的语义判断处理上。其代码大概如下
 
+```csharp
+        IncrementalValueProvider<ImmutableArray<string>> targetClassNameArrayProvider = context.SyntaxProvider
+            .CreateSyntaxProvider((node, _) =>
+            {
+                if (node is not ClassDeclarationSyntax classDeclarationSyntax)
+                {
+                    return false;
+                }
+
+                // 为什么这里是 Attribute List 的集合？原因是可以写出这样的语法
+                // ```csharp
+                // [A1Attribute, A2Attribute]
+                // [A3Attribute]
+                // private void Foo()
+                // {
+                // }
+                // ```
+                foreach (AttributeListSyntax attributeListSyntax in classDeclarationSyntax.AttributeLists)
+                {
+                    foreach (AttributeSyntax attributeSyntax in attributeListSyntax.Attributes)
+                    {
+                        NameSyntax name = attributeSyntax.Name;
+                        string nameText = name.ToFullString();
+                        if (nameText == "Foo")
+                        {
+                            return true;
+                        }
+
+                        if (nameText == "FooAttribute")
+                        {
+                            return true;
+                        }
+
+                        // 可能还有 global::Lindexi.FooAttribute 的情况
+                        if (nameText.EndsWith("Lindexi.FooAttribute"))
+                        {
+                            return true;
+                        }
+
+                        if (nameText.EndsWith("Lindexi.Foo"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            }, (syntaxContext, _) =>
+            {
+                // 先忽略语义处理过程代码
+            }).Collect();
+```
+
+如上述的代码所示，首先是经过 `if (node is not ClassDeclarationSyntax classDeclarationSyntax)` 判断，过滤掉非类型定义部分的代码。此时就可以确保大量的代码都不会进入到后续分支。毕竟对于正常的代码逻辑来说，类型的定义还是少数哈。接着的逻辑编写就有些考大家对于 C# 的基础语法知识了，先获取特性列表。这里获取到的是列表的集合，为什么呢？因为在 C# 代码里面允许以下的写法，如上文代码注释所述
+
+```csharp
+[A1Attribute, A2Attribute]
+[A3Attribute]
+private void Foo()
+{
+}
+```
+
+以上代码里面的 `[A1Attribute, A2Attribute]` 就是一个特性列表，而 `[A1Attribute, A2Attribute]` 和  `A3Attribute` 三个特性构成了特性列表的集合，如此才能保证能够获取到所有的特性且不丢失语法上的特征。即可能某些特性是和其他的特性写在一起的特征才不会被丢失。这就是为什么需要有两层的 foreach 循环才能遍历所有的特性的原因
+
+在语法层面上，是不能完全判断一个特性是否真的是某个指定类型的特性的，比如说对以下代码的分析
+
+```csharp
+[Foo]
+public class F1
+{
+}
+```
+
+在语法层面上只能知道 F1 类型标记了 `[Foo]` 特性，但不知道这个 `[Foo]` 特性是否真的是 `Lindexi.FooAttribute` 特性。需要在语义分析过程中，进一步判断是否真的是 `Lindexi.FooAttribute` 特性。语法层面上只能知道写下去的是什么代码，完全字面量。这也就是为什么上面代码的判断逻辑会额外多了那么多判断的原因。当然了，如果大家图省事，那直接判断是否包含 `Foo` 字符串也可以的
+
+上面代码使用了对 `NameSyntax` 调用 `ToFullString` 方法获取到所标记的名，再通过字符串判断逻辑，判断是否可能是标记了 `Lindexi.FooAttribute` 特性
+
+```csharp
+                        NameSyntax name = attributeSyntax.Name;
+                        string nameText = name.ToFullString();
+
+                        if (nameText == "Foo")
+                        {
+                            return true;
+                        }
+
+                        if (nameText == "FooAttribute")
+                        {
+                            return true;
+                        }
+
+                        // 可能还有 global::Lindexi.FooAttribute 的情况
+                        if (nameText.EndsWith("Lindexi.FooAttribute"))
+                        {
+                            return true;
+                        }
+
+                        if (nameText.EndsWith("Lindexi.Foo"))
+                        {
+                            return true;
+                        }
+```
+
+如果大家对以上的  `NameSyntax` 的 `ToFullString` 感兴趣，请参阅 [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](https://blog.lindexi.com/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html )
+
+虽然上文判断逻辑看起来写的很多，但也不代表能通过语法判断逻辑的，就一定是标记了 `Lindexi.FooAttribute` 特性。在语义部分进行进一步处理，代码如下
+
+```csharp
+          context.SyntaxProvider
+            .CreateSyntaxProvider((node, _) =>
+            {
+                // 忽略语法处理部分代码
+            }, (syntaxContext, _) =>
+            {
+                ISymbol declaredSymbol = syntaxContext.SemanticModel.GetDeclaredSymbol(syntaxContext.Node);
+                if (declaredSymbol is not INamedTypeSymbol namedTypeSymbol)
+                {
+                    return (string) null;
+                }
+
+                ImmutableArray<AttributeData> attributeDataArray = namedTypeSymbol.GetAttributes();
+
+                // 在通过语义判断一次，防止被骗了
+                if (!attributeDataArray.Any(t =>
+                        t.AttributeClass?.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) ==
+                        "global::Lindexi.FooAttribute"))
+                {
+                    return (string) null;
+                }
+
+                return namedTypeSymbol.Name;
+            })
+```
+
+由于在语法分析过程中，只能知道标记了名为 Foo 的特性，不知道是否真的是特性。需要在语义分析过程中，进一步判断是否真的是特性。进一步判断的方法就是通过 `GetAttributes` 方法获取标记在类型上面的特性，此时和语法不同的是，可以拿到分部类上面标记的特性，不单单只是某个类型文件而已。接着使用 ToDisplayString 方法获取标记的特性的全名，判断全名是否为 `global::Lindexi.FooAttribute` 从而确保类型符合预期。当然了，这个过程里面，咱是省略了判断 `global::Lindexi.FooAttribute` 特性是属于哪个程序集的。正常的分析器项目里面也不会真的去判断某个全名的类型属于哪个程序集的。这个方法即是缺陷也是功能，方便很多开发者只要写出来“鸭子”类型即可的行为。这里说的“鸭子”行为就是只要一个类型的命名空间和名字符合约定即可，至于这个类型是放在哪个程序集和用什么方式的可访问描述都不重要。许多的 C# 高版本语法也是这么定义出来的，如 `init` 或 `ValueTuple` 等等。因为通过这样的设计，可以更好的让 C# 语言和具体的框架分离，这也是 C# dotnet 的设计基本原则
+
+在通过了语义判断逻辑之后，即可决定返回值是 `(string) null` 还是 `namedTypeSymbol.Name` 的值。返回值这一步就对应着 “告诉框架层从变更的文件里面感兴趣什么数据，对数据预先进行处理”步骤
+
+合起来的代码实现如下
+
+```csharp
+        IncrementalValueProvider<ImmutableArray<string>> targetClassNameArrayProvider = context.SyntaxProvider
+            .CreateSyntaxProvider((node, _) =>
+            {
+                if (node is not ClassDeclarationSyntax classDeclarationSyntax)
+                {
+                    return false;
+                }
+
+                // 为什么这里是 Attribute List 的集合？原因是可以写出这样的语法
+                // ```csharp
+                // [A1Attribute, A2Attribute]
+                // [A3Attribute]
+                // private void Foo()
+                // {
+                // }
+                // ```
+                foreach (AttributeListSyntax attributeListSyntax in classDeclarationSyntax.AttributeLists)
+                {
+                    foreach (AttributeSyntax attributeSyntax in attributeListSyntax.Attributes)
+                    {
+                        NameSyntax name = attributeSyntax.Name;
+                        string nameText = name.ToFullString();
+                        if (nameText == "Foo")
+                        {
+                            return true;
+                        }
+
+                        if (nameText == "FooAttribute")
+                        {
+                            return true;
+                        }
+
+                        // 可能还有 global::Lindexi.FooAttribute 的情况
+                        if (nameText.EndsWith("Lindexi.FooAttribute"))
+                        {
+                            return true;
+                        }
+
+                        if (nameText.EndsWith("Lindexi.Foo"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+                return false;
+            }, (syntaxContext, _) =>
+            {
+                ISymbol declaredSymbol = syntaxContext.SemanticModel.GetDeclaredSymbol(syntaxContext.Node);
+                if (declaredSymbol is not INamedTypeSymbol namedTypeSymbol)
+                {
+                    return (string) null;
+                }
+
+                ImmutableArray<AttributeData> attributeDataArray = namedTypeSymbol.GetAttributes();
+
+                // 在通过语义判断一次，防止被骗了
+                if (!attributeDataArray.Any(t =>
+                        t.AttributeClass?.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) ==
+                        "global::Lindexi.FooAttribute"))
+                {
+                    return (string) null;
+                }
+
+                return namedTypeSymbol.Name;
+            }).Collect();
+```
+
+依然和 `使用 ForAttributeWithMetadataName 快速分析代码` 章一样，将 `targetClassNameArrayProvider` 注册到输出源代码中，如下所示
+
+```csharp
+        context.RegisterSourceOutput(targetClassNameArrayProvider, (productionContext, classNameArray) =>
+        {
+             ... // 一摸一样的生成代码
+        });
+```
+
+这就是直接使用 CreateSyntaxProvider 方法进行语法语义分析代替 ForAttributeWithMetadataName 的方式
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed/Roslyn/BegalllalhereCilaywhonerdem) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed/Roslyn/BegalllalhereCilaywhonerdem) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
@@ -417,17 +649,237 @@ git pull origin cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed
 
 获取代码之后，进入 Roslyn/BegalllalhereCilaywhonerdem 文件夹，即可获取到源代码
 
-
-
-- 过于限制，换成直接的分析逻辑。逻辑太复杂了，需要方便调试。不想写单元测试，想直接对项目进行调试
+改用更底层的收集分析和生成之后，可以看到语法分析的过程的逻辑已经是比较复杂了。这个过程无论是为了提升可调试性也好，还是提升健壮性也好，其中一个重要手段就是为其编写单元测试。当可能存在的条件情况比较多的时候，编写单元测试可以让大家更好的快速模拟各种情况，也能固化行为，防止后续变更逻辑的时候破坏原有的逻辑。接下来我将和大家介绍如何为分析器编写单元测试
 
 ### 编写单元测试
 
-- 编写单元测试的方法
+为了方便大家获取到正确的代码，我这里依然还是再次新建两个新的项目，分别是名为 `ChunecilarkenaLibeewhemke` 的分析器项目，和名为 `ChunecilarkenaLibeewhemke.Test` 的单元测试项目。其中名为 `ChunecilarkenaLibeewhemke` 的分析器项目里面的内容和上一章提供的代码相同，在本章里面咱重点将放在单元测试项目上
 
-[为 IIncrementalGenerator 增量 Source Generator 源代码生成项目添加单元测试](https://blog.lindexi.com/post/%E4%B8%BA-IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html )
+先设置让 `ChunecilarkenaLibeewhemke.Test` 单元测试项目引用 `ChunecilarkenaLibeewhemke` 分析器项目。和前文提及的引用分析器项目不同的是，在单元测试里面就应该添加程序集应用，如此才能够让单元测试项目访问到分析器项目的公开成员，从而进行测试。以下是我设置了单元测试引用分析器项目之后的 `ChunecilarkenaLibeewhemke.Test` 单元测试项目的 csproj 项目文件代码片段
 
-代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/abe3f751fe987a29d0b241501fade1d20c2dc74a/Roslyn/ChunecilarkenaLibeewhemke) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/abe3f751fe987a29d0b241501fade1d20c2dc74a/Roslyn/ChunecilarkenaLibeewhemke) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+```xml
+  <ItemGroup>
+    <ProjectReference Include="..\ChunecilarkenaLibeewhemke\ChunecilarkenaLibeewhemke.csproj" ReferenceOutputAssembly="true" OutputItemType="Analyzer" />
+  </ItemGroup>
+```
+
+以上代码里面的 `OutputItemType="Analyzer"` 是可选的，仅仅用在期望额外将单元测试项目也当成被分析项目时才添加。默认 ReferenceOutputAssembly 属性值就是 true 值，这里强行写 `ReferenceOutputAssembly="true"` 只是为了强调而已，默认不写即可。即默认情况下，只需使用 `<ProjectReference Include="..\ChunecilarkenaLibeewhemke\ChunecilarkenaLibeewhemke.csproj" />` 代码引用即可，和其他单元测试项目没有什么差别
+
+单元测试项目需要添加单元测试负载，这里需要额外添加针对分析器的负载。添加之后的 `ChunecilarkenaLibeewhemke.Test` 单元测试项目的 csproj 项目文件的代码如下
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.8.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.8.2" />
+
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.12.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.12.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.12.0" />
+
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing.MSTest" Version="1.1.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.MSTest" Version="1.1.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeRefactoring.Testing.MSTest" Version="1.1.2" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChunecilarkenaLibeewhemke\ChunecilarkenaLibeewhemke.csproj" ReferenceOutputAssembly="true" OutputItemType="Analyzer" />
+  </ItemGroup>
+
+</Project>
+```
+
+单元测试项目可以是尽可能的高版本的 .NET 版本，只有分析器项目才在当前为了兼容 VisualStudio 才需要选用旧的 netstandard2.0 版本。单元测试项目是可以独立执行的，也不会被其他模块引用，尽可能高版本可以享用更新的技术
+
+完成单元测试项目的基础准备之后，接下来咱开始新建名为 `IncrementalGeneratorTest` 的单元测试类。在对分析器，特别是源代码生成器的单元测试中，一般都会通过一个自己编写的 CreateCompilation 方法，这个方法的作用是将传入的源代码字符串封装为 CSharpCompilation 类型。接着使用 CSharpGeneratorDriver 执行指定的源代码生成器
+
+常用的封装 CSharpCompilation 代码的 CreateCompilation 方法代码如下。可以简单将 CSharpCompilation 理解为一个虚拟的项目。一个虚拟的项目重要的部分只有两个，一个就是源代码本身，另一个就是所引用的程序集。在单元测试的源代码本身就是通过 `CSharpSyntaxTree.ParseText` 方法将源代码转换为 SyntaxTree 对象。引用程序集可能会复杂一些，在咱这个单元测试里面只需要带上 `System.Runtime` 程序集即可，带上的方法是通过某个 `System.Runtime` 程序集的类型，如 `System.Reflection.Binder` 类型，取其类型所在程序集的路径，再通过 `MetadataReference.CreateFromFile` 作为引用路径
+ 
+```csharp
+    private static CSharpCompilation CreateCompilation(string source)
+        => CSharpCompilation.Create("compilation",
+            new[] { CSharpSyntaxTree.ParseText(source, path: "Foo.cs") },
+            new[]
+            {
+                // 如果缺少引用，那将会导致单元测试有些符号无法寻找正确，从而导致解析失败
+                MetadataReference.CreateFromFile(typeof(Binder).GetTypeInfo().Assembly.Location)
+            },
+            new CSharpCompilationOptions(OutputKind.ConsoleApplication));
+``` 
+
+大部分情况下的分析器单元测试项目的 CSharpCompilation 封装代码相对固定，会变更的只有某些引用逻辑而已
+
+开始编写单元测试方法，如以下代码所示
+
+```csharp
+[TestClass]
+public class IncrementalGeneratorTest
+{
+    [TestMethod]
+    public void Test()
+    {
+        ... // 在这里编写单元测试代码
+    }
+}
+```
+
+先添加用于测试输入的代码，即假装是项目的代码，我将其放在 `testCode` 变量里面，代码如下
+
+```csharp
+    [TestMethod]
+    public void Test()
+    {
+        var testCode =
+            """
+            using System;
+            using Lindexi;
+
+            namespace ChunecilarkenaLibeewhemke.Test
+            {
+                [Foo]
+                public class F1
+                {
+                }
+            
+                [FooAttribute]
+                public class F2
+                {
+                }
+            }
+            """;
+
+        ... // 继续添加更多代码
+    }
+```
+
+先调用刚才的 CreateCompilation 方法，将 `testCode` 封装为 CSharpCompilation 对象。再创建出期望测试的源代码生成器类型。在一个分析器里面里面可以包含非常多个源代码生成器，在单元测试里面可以非常方便取出期望进行测试的源代码生成器，进行非常特定的测试。这也是单元测试能够带来的多入口的优势。本文这里将测试自己项目里面的名为 `IncrementalGenerator` 的源代码生成器
+
+```csharp
+        var generator = new IncrementalGenerator();
+```
+
+调用 `CSharpGeneratorDriver.Create` 创建出 GeneratorDriver 对象，用于在单元测试里面执行源代码生成器，从而获取其执行结果。这里需要说明的是整个 Roslyn 都在贯穿不可变设计。不例外，这个 GeneratorDriver 类型也是不可变对象，即在执行源代码生成器之后，是返回一个新的 GeneratorDriver 对象，原本的对象的状态是不改变的。这个设计上可能会让一些伙伴踩坑，让伙伴们发现在执行源代码生成器之后，调用 GeneratorDriver 的 GetRunResult 方法拿不到结果，这是因为调用的 GeneratorDriver 对象还是旧的对象，而是不执行源代码生成器之后的新的对象
+
+为什么 Roslyn 要这么设计 GeneratorDriver 类型呢？除了不可变能够带来很大程度上的降低程序复杂度，方便出现问题快速重现问题和获取过程状态之外。另一个重要原因是可以让 IDE 从某个状态重复多次快速进入下一个状态，而不需要每次都创建新的对象。如咱在某个方法里面开始编写代码，从进入方法开始的状态就可以保留，不断编写代码，不断输入字符或单词的过程中，就可以不断后台调用 GeneratorDriver 对象进行执行源代码生成状态，而不需要每输入一次都创建一次新的对象。如此可以更好的提升 IDE 的性能
+
+合起来的代码如下
+
+```csharp
+        var generator = new IncrementalGenerator();
+        GeneratorDriver driver = CSharpGeneratorDriver.Create(generator);
+```
+
+调用 CSharpGeneratorDriver 的 RunGenerators 执行源代码生成器，记得获取其方法返回值作为新的对象，代码如下
+
+```csharp
+        var generator = new IncrementalGenerator();
+        GeneratorDriver driver = CSharpGeneratorDriver.Create(generator);
+
+        GeneratorDriver driver2 = driver.RunGenerators(compilation);
+```
+
+尝试获取 `driver2` 的结果，获取到源代码生成器输出的源代码内容，代码如下
+
+```csharp
+        foreach (var generatedTree in driver2.GetRunResult().GeneratedTrees)
+        {
+            var generatedCode = generatedTree.ToString();
+            Debug.WriteLine(generatedCode);
+        }
+```
+
+这就是最简单的源代码生成器的单元测试的写法。如果大家对分析器的单元测试感兴趣，可以继续阅读此博客：[为 IIncrementalGenerator 增量 Source Generator 源代码生成项目添加单元测试](https://blog.lindexi.com/post/%E4%B8%BA-IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html )
+
+在完成单元测试的搭建之后，自然咱可以添加更多测试逻辑。比如说上文提及的在语法层面上只能知道一个类型标记了名为 `Foo` 的特性，而不知此 `Foo` 具体的是什么样的类型。需要通过进一步的语义过程的判断处理。在这里，咱将通过单元测试构建出这样的情况，进行测试咱的源代码生成器逻辑
+
+编辑放在 `testCode` 的代码，给其添加一些捣乱的代码，更改之后的代码如下
+
+```csharp
+        var testCode =
+            """
+            using System;
+            using Lindexi;
+
+            namespace ChunecilarkenaLibeewhemke.Test
+            {
+                [Foo]
+                public class F1
+                {
+                }
+            
+                [FooAttribute]
+                public class F2
+                {
+                }
+            }
+
+            namespace FooChunecilarkenaLibeewhemke
+            {
+                public class FooAttribute : Attribute
+                {
+                }
+                
+                [Foo]
+                public class F3
+                {
+                }
+            }
+            """;
+```
+
+如上面代码所示，添加了一个放在 `FooChunecilarkenaLibeewhemke` 命名空间下的用于捣乱的 F3 类型，这个 F3 类型实际上标记的是 `FooChunecilarkenaLibeewhemke.FooAttribute` 特性，而不是源代码生成器期望的标记了 `Lindexi.FooAttribute` 特性
+
+尝试调试此单元测试代码，在语义判断处打上断点
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门1.png) -->
+
+此时可见在语义判断层面上进入了 `if (!attributeDataArray.Any(t => t.AttributeClass?.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) == "global::Lindexi.FooAttribute"))` 判断分支，这就意味着前面的语法判断过程中是放过了 F3 类型这个情况，只有在语义过程中，获取其全名才拿到了真实的名为 `global::FooChunecilarkenaLibeewhemke.FooAttribute` 的全名，从而将其过滤掉。符合预期的就是只输出 F1 和 F2 类型，过滤掉 F3 类型。咱可以在单元测试里面，为生成的代码添加固定测试，确保在变更逻辑的时候，如果有生成代码逻辑变动可以进行拦截。如以下代码所示
+
+```csharp
+        GeneratorDriver driver = CSharpGeneratorDriver.Create(generator);
+        driver = driver.RunGenerators(compilation);
+
+        foreach (var generatedTree in driver.GetRunResult().GeneratedTrees)
+        {
+            var generatedCode = generatedTree.ToString();
+            Debug.WriteLine(generatedCode);
+
+            if (generatedTree.FilePath.EndsWith("GeneratedCode.cs"))
+            {
+                var expected =
+                    """
+                     using System;
+                     namespace ChunecilarkenaLibeewhemke
+                     {
+                         public static class GeneratedCode
+                         {
+                             public static void Print()
+                             {
+                                 Console.WriteLine("标记了 Foo 特性的类型有： F1,F2,");
+                             }
+                         }
+                     }
+                    """;
+                // 防止拉取 git 时出现的 \r\n 不匹配问题。能够解决一些拉取 git 的奇怪的坑，也就是在我电脑上跑的好好的，但为什么在你电脑上就炸了
+                expected = expected.Replace("\r\n", "\n");
+                Assert.AreEqual(expected, generatedCode.Replace("\r\n", "\n"));
+            }
+        }
+```
+
+通过此单元测试也可以让大家更好地理解语法和语义上的差别，也能够让大家知道为什么尽管通过了语法判断，还需要语义进行兜底的原因。在 C# 语法上，是可以存在局部代码完全相同，每个字符都相同，但实际上其语义是不相同的情况，需要联系其上下文才能知道。语法过程中更加关注语法本身，语义过程中才能从全局角度了解代码的语义
+
+本章的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/abe3f751fe987a29d0b241501fade1d20c2dc74a/Roslyn/ChunecilarkenaLibeewhemke) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/abe3f751fe987a29d0b241501fade1d20c2dc74a/Roslyn/ChunecilarkenaLibeewhemke) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
@@ -447,12 +899,55 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 
 获取代码之后，进入 Roslyn/ChunecilarkenaLibeewhemke 文件夹，即可获取到源代码
 
-
 ### 直接调试项目
 
-dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目
+在上一章中，和大家介绍了如何编写单元测试。在此过程中，也许有些伙伴会感觉编写单元测试还是比较繁琐的。或者说在编写单元测试的过程里面会比较耗时，纯字符串方式也没有代码提示，不太适合很多伙伴的工作现状。在大型项目中，或比较正式的项目里面，添加单元测试来提升分析器的稳定性，以及通过更多单元测试测试更多分支。而在许多没有那么多资源可以投入的情况下，则可以追求简单的直接调试项目
 
-- 日常调试的方法 IsRoslynComponent
+简单的直接调试项目的方式指的是直接从分析器项目上，在 VisualStudio 里面一键 F5 就可以启动调试，调试入口和其他任何 dotnet 项目相同，非常方便。不需要去新建一个单元测试项目，可以直接对着目标项目，即被分析项目，进行调试。可以减少在单元测试里面搭建项目引用关系，搭建项目组织等的工作量
+
+依然是为了让大家方便获取正确的代码起见，我这里继续新建两个项目，分别是名为 `JehairqogefaKaiwuwhailallkihaiki.Analyzer` 的分析器项目和名为 `JehairqogefaKaiwuwhailallkihaiki` 的被分析的控制台项目
+
+这两个项目的代码不重要，大家可以使用上文 “更底层的收集分析和生成” 章节的代码。咱重点方在关注如何搭建调试上。大家可以开始对比一下本章介绍的直接调试项目的方法和上文介绍的搭建单元测试进行调试的方法，两个方法之间的便利性。在自己的项目里面选择合适的方式。或者是在项目刚开始的时候选用直接调试项目的方法，在项目成熟过程中再添加单元测试提升其稳定性
+
+先确保分析器项目正确标记了 `IsRoslynComponent` 属性，即在分析器项目的 csproj 项目文件的 PropertyGroup 里面存在 `<IsRoslynComponent>true</IsRoslynComponent>` 代码片段。这个属性是告诉 VisualStudio 这是一个 Roslyn 组件，从而可以在调试的时候启动 Roslyn 的调试环境。即分析器的 csproj 项目文件的代码大概如下
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <IsRoslynComponent>true</IsRoslynComponent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
+  </ItemGroup>
+
+</Project>
+```
+
+被调试项目 `JehairqogefaKaiwuwhailallkihaiki` 正确添加了分析器项目引用，配置了 `OutputItemType="Analyzer"` 方式的引用，其 csproj 项目文件代码大概如下
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JehairqogefaKaiwuwhailallkihaiki.Analyzer\JehairqogefaKaiwuwhailallkihaiki.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+  </ItemGroup>
+
+</Project>
+``` 
+
+
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
@@ -486,7 +981,8 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 学习了这么多，可以试试进行一些实践演练
 
 是否源代码生成器能够干的话，程序猿也能干？介绍 Interceptor 技术
-
+介绍分析器
+介绍更加明确的分析器
 
 
 - 如何打包 NuGet 包
@@ -541,3 +1037,9 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 ### 获取项目默认命名空间
 
 [IIncrementalGenerator 增量 Source Generator 生成代码入门 获取项目默认命名空间](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%8E%B7%E5%8F%96%E9%A1%B9%E7%9B%AE%E9%BB%98%E8%AE%A4%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html )
+
+<!--
+可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
+
+- 过于限制，换成直接的分析逻辑。逻辑太复杂了，需要方便调试。不想写单元测试，想直接对项目进行调试
+ -->
