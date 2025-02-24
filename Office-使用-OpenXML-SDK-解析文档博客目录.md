@@ -172,6 +172,11 @@
 
 [根据SVG Arc求出其开始角、摆动角和椭圆圆心 - RyzenAdorer - 博客园](https://www.cnblogs.com/ryzen/p/15832672.html )
 
+### 已知问题
+
+[dotnet OpenXML 已知问题 设置 0x0001 等 XML 不合法字符给到标题将在保存时抛出异常](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98-%E8%AE%BE%E7%BD%AE-0x0001-%E7%AD%89-XML-%E4%B8%8D%E5%90%88%E6%B3%95%E5%AD%97%E7%AC%A6%E7%BB%99%E5%88%B0%E6%A0%87%E9%A2%98%E5%B0%86%E5%9C%A8%E4%BF%9D%E5%AD%98%E6%97%B6%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8.html )
+<!-- [dotnet OpenXML 已知问题 设置 0x0001 等 XML 不合法字符给到标题将在保存时抛出异常 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18730520 ) -->
+
 ## PPT 动画
 
 [dotnet OpenXML PPT 动画框架入门](https://blog.lindexi.com/post/dotnet-OpenXML-PPT-%E5%8A%A8%E7%94%BB%E6%A1%86%E6%9E%B6%E5%85%A5%E9%97%A8.html )
