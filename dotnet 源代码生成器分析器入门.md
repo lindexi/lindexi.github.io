@@ -842,6 +842,7 @@ public class IncrementalGeneratorTest
 尝试调试此单元测试代码，在语义判断处打上断点
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门1.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025224851237916.jpg)
 
 此时可见在语义判断层面上进入了 `if (!attributeDataArray.Any(t => t.AttributeClass?.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) == "global::Lindexi.FooAttribute"))` 判断分支，这就意味着前面的语法判断过程中是放过了 F3 类型这个情况，只有在语义过程中，获取其全名才拿到了真实的名为 `global::FooChunecilarkenaLibeewhemke.FooAttribute` 的全名，从而将其过滤掉。符合预期的就是只输出 F1 和 F2 类型，过滤掉 F3 类型。咱可以在单元测试里面，为生成的代码添加固定测试，确保在变更逻辑的时候，如果有生成代码逻辑变动可以进行拦截。如以下代码所示
 
@@ -909,6 +910,14 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 
 这两个项目的代码不重要，大家可以使用上文 “更底层的收集分析和生成” 章节的代码。咱重点方在关注如何搭建调试上。大家可以开始对比一下本章介绍的直接调试项目的方法和上文介绍的搭建单元测试进行调试的方法，两个方法之间的便利性。在自己的项目里面选择合适的方式。或者是在项目刚开始的时候选用直接调试项目的方法，在项目成熟过程中再添加单元测试提升其稳定性
 
+直接调试项目的方法的准备工作要求只有两点：
+
+1. 确保分析器项目正确标记了 `IsRoslynComponent` 属性。即在分析器项目的 csproj 项目文件的 PropertyGroup 里面存在 `<IsRoslynComponent>true</IsRoslynComponent>` 代码片段。这个属性是告诉 VisualStudio 这是一个 Roslyn 组件，从而可以在调试的时候启动 Roslyn 的调试环境
+2. 确保被调试项正确添加了分析器项目引用，配置了 `OutputItemType="Analyzer"` 方式的引用
+
+本文以上的代码都是能够满足此条件的
+
+<!-- 
 先确保分析器项目正确标记了 `IsRoslynComponent` 属性，即在分析器项目的 csproj 项目文件的 PropertyGroup 里面存在 `<IsRoslynComponent>true</IsRoslynComponent>` 代码片段。这个属性是告诉 VisualStudio 这是一个 Roslyn 组件，从而可以在调试的时候启动 Roslyn 的调试环境。即分析器的 csproj 项目文件的代码大概如下
 
 ```xml
@@ -946,7 +955,7 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 
 </Project>
 ``` 
-
+ -->
 
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快

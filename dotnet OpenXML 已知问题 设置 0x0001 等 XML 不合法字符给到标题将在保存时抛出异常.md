@@ -3,6 +3,8 @@
 本文记录 OpenXML 的已知问题，在 `PackageProperties.Title` 等属性上设置字符串包含如 Unicode 编码为 0x0001 等 XML 不合法字符，将在保存写入文件时，抛出 ArgumentException 异常
 
 <!--more-->
+<!-- CreateTime:2025/02/22 07:21:24 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
