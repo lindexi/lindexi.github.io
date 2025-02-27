@@ -918,7 +918,17 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 1. 确保分析器项目正确标记了 `IsRoslynComponent` 属性。即在分析器项目的 csproj 项目文件的 PropertyGroup 里面存在 `<IsRoslynComponent>true</IsRoslynComponent>` 代码片段。这个属性是告诉 VisualStudio 这是一个 Roslyn 组件，从而可以在调试的时候启动 Roslyn 的调试环境
 2. 确保被调试项正确添加了分析器项目引用，配置了 `OutputItemType="Analyzer"` 方式的引用
 
-本文以上的代码都是能够满足此条件的
+本文以上的代码都是能够满足此条件的，我这里就不给出 csproj 项目文件代码了
+
+分析器项目：
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门2.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025227854402566.jpg)
+
+被分析的控制台项目：
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门3.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025227855225980.jpg)
 
 <!-- 
 先确保分析器项目正确标记了 `IsRoslynComponent` 属性，即在分析器项目的 csproj 项目文件的 PropertyGroup 里面存在 `<IsRoslynComponent>true</IsRoslynComponent>` 代码片段。这个属性是告诉 VisualStudio 这是一个 Roslyn 组件，从而可以在调试的时候启动 Roslyn 的调试环境。即分析器的 csproj 项目文件的代码大概如下
@@ -958,8 +968,33 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 
 </Project>
 ``` 
- -->
+-->
 
+准备工作完成之后，即可开始进入配置调试启动工作。我将会先告诉大家如何进行手工配置，再告诉大家如何进行图形化配置。以下是手工配置的部分
+
+在分析器项目上新建 `Properties\launchSettings.json` 调试启动配置文件。即在 Properties 文件夹里新建名为 `launchSettings.json` 的配置文件
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门4.png) -->
+![](http://cdn.lindexi.site/lindexi%2F202522794334901.jpg)
+
+在`Properties\launchSettings.json` 调试启动配置文件里面设置 DebugRoslynComponent 为 `commandName` 内容。将要被调试的 `JehairqogefaKaiwuwhailallkihaiki` 控制台项目相对路径设置到 `targetProject` 属性里面，其文件代码如下
+
+```json
+{
+  "profiles": 
+  {
+    "JehairqogefaKaiwuwhailallkihaiki.Analyzer": 
+    {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\JehairqogefaKaiwuwhailallkihaiki\\JehairqogefaKaiwuwhailallkihaiki.csproj"
+    }
+  }
+}
+```
+
+完成这些步骤之后，手工配置部分就完成了，即可愉快的在分析器项目打上断点，设置分析器项目为启动项目，然后直接在 Visual Studio 使用 F5 一键运行启动调试分析器项目
+
+如果大家发现自己的项目无法进行愉快的调试，可以尝试拉取我的代码用来测试和对比不同
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/c0e948b2a3aab521f2d6d86593c385f4d406cfa5/Roslyn/JehairqogefaKaiwuwhailallkihaiki) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
@@ -980,6 +1015,8 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 ```
 
 获取代码之后，进入 Roslyn/JehairqogefaKaiwuwhailallkihaiki 文件夹，即可获取到源代码
+
+
 
 ## 使用语法可视化窗格辅助了解语法
 
