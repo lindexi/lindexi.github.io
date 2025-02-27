@@ -59,7 +59,9 @@ category:
 </Project>
 ```
 
-完成准备工作之后，在 `JehairqogefaKaiwuwhailallkihaiki.Analyzer` 分析器项目添加 `launchSettings.json` 调试启动配置文件，在里面设置 DebugRoslynComponent 为 `commandName` 内容。将要被调试的 `JehairqogefaKaiwuwhailallkihaiki` 控制台项目相对路径设置到 `targetProject` 属性里面，其文件代码如下
+完成准备工作之后，在 `JehairqogefaKaiwuwhailallkihaiki.Analyzer` 分析器项目添加 `Properties\launchSettings.json` 调试启动配置文件。即在 Properties 文件夹里新建名为 `launchSettings.json` 的配置文件
+
+在`Properties\launchSettings.json` 调试启动配置文件里面设置 DebugRoslynComponent 为 `commandName` 内容。将要被调试的 `JehairqogefaKaiwuwhailallkihaiki` 控制台项目相对路径设置到 `targetProject` 属性里面，其文件代码如下
 
 ```json
 {
