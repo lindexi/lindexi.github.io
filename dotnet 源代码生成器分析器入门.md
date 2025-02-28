@@ -9,9 +9,13 @@
 
 恭喜你看到了本文，进入到 C# dotnet 的深水区。如果你还是在浅水玩耍的小鲜肉，推荐你点击右上方的关闭按钮，避免受到过于深入的知识的污染
 
-在开始之前期望大家已经了解基础的 dotnet C# 基础知识，了解基础的概念和项目组织结构。本文将尽量使用比较缓的知识爬坡方式编写，以便让大家更舒适地进入到源代码生成器和分析器的世界
+我所在的团队在 Rosyln 刚出来没两年就开始玩了，那时候还没有现在这么多机制。。我之前很多关于 Rosyln 的博客涉及到了很底层的玩法，导致入门门槛过高。随着 dotnet 生态的不断建设，渐渐有了源代码生成技术、增量源代码生成技术等等。这次我打算综合之前的经验和知识，根据现在的 dotnet 的生态技术，编写这篇入门博客，让大家更好地入门源代码生成器和分析器，降低入门门槛。本文将尽量使用比较缓的知识爬坡方式编写，以便让大家更舒适地进入到源代码生成器和分析器的世界
+
+在开始之前期望大家已经了解基础的 dotnet C# 基础知识，了解基础的概念和项目组织结构
 
 在阅读本文过程中，发现本文有任何错误或不足之处，欢迎大家在评论区留言或发送邮件给我，我会尽快修正。如果大家有任何问题或疑问，也欢迎大家在评论区留言或发送邮件给我，我会尽快回复
+
+本文内容比较长，知识量比较多，推荐先点收藏
 
 ## 项目搭建
 
@@ -26,6 +30,11 @@
 本文这里新建了一个名为 `DercelgefarKarhelchaye.Analyzer` 的控制台项目。也许细心的伙伴发现了这个项目使用了 `Analyzer` 作为后缀，这是因为在 dotnet 中源代码生成器和分析器是一体的，按照历史原因的惯性，依然将其命名为分析器项目。在 Visual Studio 2022 的每个项目依赖项里面，大家都会看到一个名为分析器的项，而没有专门一个名为源代码生成器的项，其原因也是如此
 
 如果在这一步就开始卡住了也不用慌，本文在整个过程中都会给出示例代码。我整个代码仓库比较庞大，使用本文各个部分提供的拉取源代码的命令行代码，可以减少拉取的数据，提升拉取的速度，且能够确保切换到正确的 commit 代码
+
+创建之后，在 Visual Studio 的解决方案里的界面大概如下
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门7.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025228201392285.jpg)
 
 编辑名为 `DercelgefarKarhelchaye.Analyzer` 的控制台项目的 csproj 项目文件，将其 TargetFramework 降级到 netstandard2.0 版本，且按照 dotnet 的惯例，使用 NuGet 添加必要的组件。编辑之后的 csproj 项目文件的内容如下
 
@@ -46,7 +55,7 @@
 </Project>
 ```
 
-为什么需要降级为 netstandard2.0 版本？这是为了让此分析器项目能够同时在 dotnet CLI 和 Visual Studio 2022 里面功能。在 Visual Studio 2022 里，当前依然使用的是 .NET Framework 的版本。于是求最小公倍数，选择了 netstandard2.0 版本。预计后续版本才能使用到最新的 dotnet 框架版本
+为什么需要降级为 netstandard2.0 版本？这是为了让此分析器项目能够同时在 dotnet CLI 和 Visual Studio 2022 里面使用。在 Visual Studio 2022 里，当前依然使用的是 .NET Framework 的版本。于是求最小公倍数，选择了 netstandard2.0 版本。预计后续版本才能使用到最新的 dotnet 框架版本
 
 以上的 `<LangVersion>latest</LangVersion>` 只是为了方便让咱使用最新的语言特性。前面选择的 netstandard2.0 会导致语言特性默认开得比较低，这里设置为 latest 可以让我们使用最新的语言特性，让代码编写更加方便。这里需要再次提醒，在 dotnet 里面，语言和框架是分开的。使用低版本框架也能使用高版本语言。如果对语言和框架的关系依然有所疑惑，推荐先了解一下 dotnet 的基础知识，不要着急往下看。编写源代码生成器和分析器需要对 dotnet 有一定的了解，否则写着就开始混淆概念了
 
@@ -56,6 +65,9 @@
 以上的 `Microsoft.CodeAnalysis.Analyzers` 和 `Microsoft.CodeAnalysis.CSharp` 是必须的组件。`Microsoft.CodeAnalysis.Analyzers` 是分析器的基础组件，`Microsoft.CodeAnalysis.CSharp` 是 C# 的基础组件。这两个组件是必须的，没有这两个组件，我们就无法编写分析器和源代码生成器
 
 通过以上的步骤也可以让大家看到，其实 dotnet 分析器项目也没什么特殊的，依然可以通过一个简单的控制台项目修改而来。其核心关键仅仅只是安装了 `Microsoft.CodeAnalysis.Analyzers` 和 `Microsoft.CodeAnalysis.CSharp` 两个组件而已
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门8.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20252282020203474.jpg)
 
 现在只是有了一个空的分析器项目，但是还不知道这个项目的效果。为了让分析器项目工作，那就需要有一个被分析的项目。为此咱就再次新建一个控制台项目，让这个控制台项目成为被分析项目
 
@@ -80,10 +92,13 @@
 
 可以看到以上的 csproj 项目文件和正常的控制台项目的差别仅仅只有在对 `DercelgefarKarhelchaye.Analyzer.csproj` 的引用上。且和正常的引用项目的方式不同的是，这里额外添加了 `OutputItemType="Analyzer" ReferenceOutputAssembly="false"` 两个配置。这两个配置的作用如下：
 
-- 以上的 `OutputItemType="Analyzer"` 是告诉 dotnet 这个项目是一个分析器项目。这个配置是必须的，没有这个配置，dotnet 就不知道这个项目是一个分析器项目。这个配置是告诉 dotnet 这个项目是一个分析器项目，让 dotnet 在编译的时候能够正确的处理这个项目
+- 以上的 `OutputItemType="Analyzer"` 是告诉 dotnet 这个引用项目是一个分析器项目。这个配置是必须的，没有这个配置，dotnet 就不知道这个项目是一个分析器项目。通过这个配置是告诉 dotnet 这个项目是一个分析器项目，才能让 dotnet 在编译的时候能够正确地当成分析器处理这个项目
 - 以上的 `ReferenceOutputAssembly="false"` 是告诉 dotnet 不要引用这个项目的输出程序集。正常的项目是不应该引用分析器项目的程序集的，分析器项目的作用仅仅只是作为分析器，而不是提供程序集给其他项目引用。这个配置是为了让 dotnet 在编译的时候不要引用这个项目的输出程序集，避免引用错误或导致不小心用了不应该使用的类型
 
 对于正常的项目引用来说，一旦存在项目引用，那被引用的项目的输出程序集就会被引用。此时项目上就可以使用被引用项目的公开类型，以及获取 NuGet 包依赖传递等。但是对于分析器项目来说，这些都是不应该的，正常就不能让项目引用分析器项目的输出程序集。这就是为什么会额外添加 `ReferenceOutputAssembly="false"` 配置的原因
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门9.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20252282020588315.jpg)
 
 在这里，咱接触到了非常多次的 csproj 项目文件，如果大家对 csproj 项目文件格式感兴趣，请参阅 [理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](https://blog.walterlv.com/post/understand-the-csproj )
 
@@ -651,7 +666,7 @@ git pull origin cde8c2a0bd1da7a17467655ff1fc1d78ad28fbed
 
 改用更底层的收集分析和生成之后，可以看到语法分析的过程的逻辑已经是比较复杂了。这个过程无论是为了提升可调试性也好，还是提升健壮性也好，其中一个重要手段就是为其编写单元测试。当可能存在的条件情况比较多的时候，编写单元测试可以让大家更好的快速模拟各种情况，也能固化行为，防止后续变更逻辑的时候破坏原有的逻辑。接下来我将和大家介绍如何为分析器编写单元测试
 
-### 编写单元测试
+## 编写单元测试
 
 为了方便大家获取到正确的代码，我这里依然还是再次新建两个新的项目，分别是名为 `ChunecilarkenaLibeewhemke` 的分析器项目，和名为 `ChunecilarkenaLibeewhemke.Test` 的单元测试项目。其中名为 `ChunecilarkenaLibeewhemke` 的分析器项目里面的内容和上一章提供的代码相同，在本章里面咱重点将放在单元测试项目上
 
@@ -900,7 +915,7 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 
 获取代码之后，进入 Roslyn/ChunecilarkenaLibeewhemke 文件夹，即可获取到源代码
 
-### 直接调试项目
+## 直接调试项目
 
 在上一章中，和大家介绍了如何编写单元测试。在此过程中，也许有些伙伴会感觉编写单元测试还是比较繁琐的。或者说在编写单元测试的过程里面会比较耗时，纯字符串方式也没有代码提示，不太适合很多伙伴的工作现状。在大型项目中，或比较正式的项目里面，添加单元测试来提升分析器的稳定性，以及通过更多单元测试测试更多分支。而在许多没有那么多资源可以投入的情况下，则可以追求简单的直接调试项目
 
@@ -913,22 +928,14 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 直接调试项目的方法的准备工作要求只有两点：
 
 1. 确保分析器项目正确标记了 `IsRoslynComponent` 属性。即在分析器项目的 csproj 项目文件的 PropertyGroup 里面存在 `<IsRoslynComponent>true</IsRoslynComponent>` 代码片段。这个属性是告诉 VisualStudio 这是一个 Roslyn 组件，从而可以在调试的时候启动 Roslyn 的调试环境
-2. 确保被调试项正确添加了分析器项目引用，配置了 `OutputItemType="Analyzer"` 方式的引用
+2. 确保被调试项目正确添加了分析器项目引用，配置了 `OutputItemType="Analyzer"` 方式的引用
 
-本文以上的代码都是能够满足此条件的，我这里就不给出 csproj 项目文件代码了
+以下为分析器项目和被分析的控制台项目的 csproj 项目文件内容，大家可以对比一下自己的项目是否符合要求
 
 分析器项目：
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门2.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2025227854402566.jpg)
-
-被分析的控制台项目：
-
-<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门3.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025227855225980.jpg)
-
-<!-- 
-先确保分析器项目正确标记了 `IsRoslynComponent` 属性，即在分析器项目的 csproj 项目文件的 PropertyGroup 里面存在 `<IsRoslynComponent>true</IsRoslynComponent>` 代码片段。这个属性是告诉 VisualStudio 这是一个 Roslyn 组件，从而可以在调试的时候启动 Roslyn 的调试环境。即分析器的 csproj 项目文件的代码大概如下
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -947,7 +954,10 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 </Project>
 ```
 
-被调试项目 `JehairqogefaKaiwuwhailallkihaiki` 正确添加了分析器项目引用，配置了 `OutputItemType="Analyzer"` 方式的引用，其 csproj 项目文件代码大概如下
+被分析的控制台项目：
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门3.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025227855225980.jpg)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -964,10 +974,11 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
   </ItemGroup>
 
 </Project>
-``` 
--->
+```
 
 准备工作完成之后，即可开始进入配置调试启动工作。我将会先告诉大家如何进行手工配置，再告诉大家如何进行图形化配置。以下是手工配置的部分
+
+### 手工配置
 
 在分析器项目上新建 `Properties\launchSettings.json` 调试启动配置文件。即在 Properties 文件夹里新建名为 `launchSettings.json` 的配置文件
 
@@ -1013,42 +1024,195 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 
 获取代码之后，进入 Roslyn/JehairqogefaKaiwuwhailallkihaiki 文件夹，即可获取到源代码
 
+### 图形化的配置方式
 
+有伙伴说每次都需要新建 `launchSettings.json` 文件，要写相对的项目路径，这一点都不工程化，期望能够有更加方便的做法。我接下来将和大家介绍更加 UI 图形化的配置方式
 
-## 使用语法可视化窗格辅助了解语法
+开始配置之前，请确保分析器项目正确配置了 `IsRoslynComponent` 属性，和被调试项目正确添加了分析器项目引用，配置了 `OutputItemType="Analyzer"` 属性。细节配置还请参考上文的准备工作部分
 
-语法还是太复杂了，不知道怎么写。这个时候可以使用视觉辅助了解语法
+本文使用的 Visual Studio 为 Visual Studio 2022 17.12.4 版本。如果你的 Visual Studio 版本和我的差距过远，那可能以下图形界面或选项都有比较多的变更。这也就是为什么我选择先和大家介绍手工配置的原因
 
-[Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树 - walterlv](https://blog.walterlv.com/post/roslyn-syntax-visualizer )
+配置步骤如下：
 
-- 使用视觉辅助了解语法
+先在 解决方案资源管理器 里面右击分析器项目，点击 设为启动项目 选项，将分析器项目设置为启动项目
 
+再点击分析器项目的调试属性，如下图所示
 
-学习了这么多，可以试试进行一些实践演练
+<!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目0.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20252211054587914.jpg)
 
-是否源代码生成器能够干的话，程序猿也能干？介绍 Interceptor 技术
-介绍分析器
-介绍更加明确的分析器
+在打开的启动配置文件窗口里面，找个命令行参数，随便写入点字符。这个过程仅仅只是为了让 VisualStudio 帮助咱快速创建 `launchSettings.json` 文件而已。我现在还没有找到比这个方法更加顺手便捷的方式哈
 
+<!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目1.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20252211056201460.jpg)
 
-- 如何打包 NuGet 包
+双击 `Properties\launchSettings.json` 文件进入编辑，现在可见的 `launchSettings.json` 文件的内容大概如下
 
+```json
+{
+  "profiles": 
+  {
+    "JehairqogefaKaiwuwhailallkihaiki.Analyzer": 
+    {
+      "commandName": "Project",
+      "commandLineArgs": "123"
+    }
+  }
+}
+```
 
-- 演练 使用 Interceptor 的技术
-- 演练 将构建时间写入源代码
-- 从文件写入代码
-- 演练 禁用API调用 分析器
+此时将 `commandName` 属性的 `Project` 内容换成 `DebugRoslynComponent` 内容，再删除 `commandLineArgs` 等其他属性。此时先不要写 `targetProject` 属性项，因为这个属性项要写相对路径，手写太烦了。编辑完成之后的 `launchSettings.json` 文件的内容大概如下
 
-- 源代码生成技术实现中文编程语言 [dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言](https://blog.lindexi.com/post/dotnet-%E7%94%A8-SourceGenerator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80.html )
+```json
+{
+  "profiles": 
+  {
+    "JehairqogefaKaiwuwhailallkihaiki.Analyzer": 
+    {
+      "commandName": "DebugRoslynComponent"
+    }
+  }
+}
+```
+
+继续点击分析器项目的调试属性，此时可见启动配置文件窗口界面如下
+
+<!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目2.png) -->
+![](http://cdn.lindexi.site/lindexi%2F202522111022690.jpg)
+
+愉快点击下拉菜单，选择要调试项目即可，如下图所示
+
+<!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目3.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025221110546445.jpg)
+
+选中之后的效果如下图所示
+
+<!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目4.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025221113511471.jpg)
+
+完成之后，再次打开 `launchSettings.json` 文件，可以看到机智的 Visual Studio 已经帮咱填充了 `targetProject` 属性内容了。通过 Visual Studio 的填充，可以让咱不需要写繁琐的相对路径，也不用担心写错项目路径导致调试出错
+
+```json
+{
+  "profiles": 
+  {
+    "JehairqogefaKaiwuwhailallkihaiki.Analyzer": 
+    {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\JehairqogefaKaiwuwhailallkihaiki\\JehairqogefaKaiwuwhailallkihaiki.csproj"
+    }
+  }
+}
+```
+
+如此就完成了配置工作
+
+如配置完成运行失败，提示无法启动调试 0x80070057 错误，解决方法请参阅 [dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-VisualStudio-%E4%B8%80%E9%94%AE-F5-%E5%90%AF%E5%8A%A8%E8%B0%83%E8%AF%95-Roslyn-%E5%88%86%E6%9E%90%E5%99%A8%E9%A1%B9%E7%9B%AE.html )
+<!-- [dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18730521 ) -->
+
+## 生成的源代码保存到本地文件
 
 
 [将 Source Generator 生成的源代码保存到本地文件](https://blog.lindexi.com/post/%E5%B0%86-Source-Generator-%E7%94%9F%E6%88%90%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6.html )
 <!-- [将 Source Generator 生成的源代码保存到本地文件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18011557 ) -->
 
+## 使用语法可视化窗格辅助了解语法
 
-[使用 Roslyn 分析代码注释，给 TODO 类型的注释添加负责人、截止日期和 issue 链接跟踪 - walterlv](https://blog.walterlv.com/post/comment-analyzer-and-code-fix-using-roslyn.html )
+有些伙伴会感觉即使在有上文的调试方法辅助的情况下，编写语法分析还是太复杂了，不知道怎么写。自己对语法分析本身也不熟悉，不知道可以如何编写语法分析的代码。这个时候可以使用视觉辅助了解语法
 
-[Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv](https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html )
+在 Visual Studio 里面自带了语法可视化（Syntax Visualizer）功能，可以帮助大家更加直观的了解代码的语法树。在 Visual Studio 里面打开一个 C# 文件，然后在菜单栏里面点击 `View（视图）` -> `Other Windows（其他窗口）` -> `Syntax Visualizer` 打开语法可视化窗格，如下图所示
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门6.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20252281923515265.jpg)
+
+其界面大概如下
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门5.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20252281922443223.jpg)
+
+如果没有从视图里面找到 Syntax Visualizer 语法可视化窗格，则需要给 Visual Studio 打上 `.NET Compiler Platform SDK` 负载。安装方法如下：
+
+1. 运行“Visual Studio 安装程序”
+2. 选择“修改”
+3. 检查“Visual Studio 扩展开发”工作负荷。
+4. 在摘要树中打开“Visual Studio 扩展开发”节点。
+5. 选中“.NET Compiler Platform SDK”框。 将在可选组件最下面找到它
+
+详细安装方法请参阅 [使用 Visual Studio 中的 Roslyn 语法可视化工具浏览代码 - C# - Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/roslyn-sdk/syntax-visualizer ) 官方文档
+
+回顾语法可视化窗格界面，可以看到有多个颜色标注出来不同的语法节点，如下图所示
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门6.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20252281923515265.jpg)
+
+- 蓝色：`SyntaxNode`，表示声明、语句、子句和表达式等语法构造。
+- 绿色：`SyntaxToken`，表示关键字、标识符、运算符等标点。
+- 红色：`SyntaxTrivia`，代表语法上不重要的信息，例如标记、预处理指令和注释之间的空格。
+
+通过对照语法可视化窗格，可以更加直观的了解代码的语法树结构，从而更好的编写语法分析代码。在编写语法分析代码的时候，可以通过语法可视化窗格辅助了解语法，更加直观的了解代码的语法树结构，根据语法树结构编写语法分析代码
+
+更多关于使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格方法，请参阅：
+[Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树 - walterlv](https://blog.walterlv.com/post/roslyn-syntax-visualizer )
+
+
+
+## 演练： 写一个类型收集器
+
+学习了这么多，可以试试进行一些实践演练
+
+
+可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
+
+
+这个过程中可以看到似乎有分析器的影子在里面了，报告 过程本身也就是分析器的一个部分，大部分分析器的功能都是和源代码生成器相互重叠的，比如都需要进行语法语义的分析。不同点只是源代码生成器多了一个生成代码的过程
+
+不过这里演示的还不是专用分析器的功能，在下文将会告诉大家如何写一个专用分析器
+
+
+
+
+## 演练：源代码专有 Interceptor 技术
+
+是否源代码生成器能够干的话，程序猿也能干？介绍 Interceptor 技术
+
+- 演练 使用 Interceptor 的技术
+
+
+以上介绍的都是从代码入手，通过对现有的代码进行分析而生成新的代码。大家是否好奇其输入源还有没有其他方式。接下来将通过演练的方式和大家分别介绍从 csproj 等项目属性配置以及通过其他非代码文件的方式进行源代码生成
+
+## 演练：将构建时间写入源代码
+
+以上就是通过读取 csproj 项目文件的属性配置，获取构建时间以及将自定义配置内容不写入源代码的过程。接下来将继续通过演练的方式，告诉大家如何在分析器项目里面读取其他非代码文件的内容
+
+## 演练：写一个 禁用API调用 分析器
+
+前面介绍的都是围绕着编写源代码生成器展开的，接下来将介绍使用专用分析器技术编写一个纯分析器。这个过程中也会介绍如何读取其他非代码文件的内容作为输入源的方式
+
+介绍分析器
+介绍更加明确的分析器
+
+既然有了分析器，可以给开发者报告出一些警告或错误信息，那是否还能自动帮助开发者修复这些问题呢？这就需要用到超过本文范围的 代码修改器 知识了。编写代码修改器是另外的故事了，这里就不展开了，如果大家对此感兴趣，可以参阅 [使用 Roslyn 分析代码注释，给 TODO 类型的注释添加负责人、截止日期和 issue 链接跟踪 - walterlv](https://blog.walterlv.com/post/comment-analyzer-and-code-fix-using-roslyn.html )
+
+
+## 演练：用源代码生成技术实现中文编程语言
+
+自然而然，大家了解到了从任意的其他非代码文件也能作为输入源，那么是不是可以实现中文编程语言呢？也就是说能否实现从一个包含中文编程语言的文件里面，读取其内容，根据其内容生成对应的代码，通过此方式实现中文编程语言
+
+开始之前，先给大家看看效果
+
+<!-- ![](image/dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言/dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言0.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20221071148534467.jpg)
+
+如果大家感觉这个效果很酷，那请参阅 [dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言](https://blog.lindexi.com/post/dotnet-%E7%94%A8-SourceGenerator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80.html ) 文章，里面详细介绍了如何通过源代码生成技术实现中文编程语言
+
+
+## 打包 NuGet 包进行分发
+
+- 如何打包 NuGet 包
+
+
+
+以上就是 dotnet 的源代码生成器、分析器的入门介绍，希望能够帮助大家更好的了解源代码生成器、分析器的使用方法。在使用过程中，可能以上介绍的内容还不够满足大家的需求。我将在下文给出一些常用方法，供大家参考
 
 ## 常用方法
 
@@ -1084,8 +1248,14 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 
 [IIncrementalGenerator 增量 Source Generator 生成代码入门 获取项目默认命名空间](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%8E%B7%E5%8F%96%E9%A1%B9%E7%9B%AE%E9%BB%98%E8%AE%A4%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html )
 
-<!--
-可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
+## 参考文档
 
-- 过于限制，换成直接的分析逻辑。逻辑太复杂了，需要方便调试。不想写单元测试，想直接对项目进行调试
+[从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - walterlv](https://blog.walterlv.com/post/posts-for-learning-dotnet-build-nuget-roslyn.html )
+
+[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 
+
+更多编译器、代码分析、代码生成相关博客，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+<!--
+
+[Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv](https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html )
  -->
