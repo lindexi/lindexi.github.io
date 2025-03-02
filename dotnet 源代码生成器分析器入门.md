@@ -9,7 +9,7 @@
 
 恭喜你看到了本文，进入到 C# dotnet 的深水区。如果你还是在浅水玩耍的小鲜肉，推荐你点击右上方的关闭按钮，避免受到过于深入的知识的污染
 
-我所在的团队在 Rosyln 刚出来没两年就开始玩了，那时候还没有现在这么多机制。。我之前很多关于 Rosyln 的博客涉及到了很底层的玩法，导致入门门槛过高。随着 dotnet 生态的不断建设，渐渐有了源代码生成技术、增量源代码生成技术等等。这次我打算综合之前的经验和知识，根据现在的 dotnet 的生态技术，编写这篇入门博客，让大家更好地入门源代码生成器和分析器，降低入门门槛。本文将尽量使用比较缓的知识爬坡方式编写，以便让大家更舒适地进入到源代码生成器和分析器的世界
+我所在的团队在 Rosyln 刚出来没两年就开始玩了，那时候还没有现在这么多机制。我之前很多关于 Rosyln 的博客涉及到了很底层的玩法，导致入门门槛过高。随着 dotnet 生态的不断建设，渐渐有了源代码生成技术、增量源代码生成技术等等。这次我打算综合之前的经验和知识，根据现在的 dotnet 的生态技术，编写这篇入门博客，让大家更好地入门源代码生成器和分析器，降低入门门槛。本文将尽量使用比较缓的知识爬坡方式编写，以便让大家更舒适地进入到源代码生成器和分析器的世界
 
 在开始之前期望大家已经了解基础的 dotnet C# 基础知识，了解基础的概念和项目组织结构
 
@@ -921,6 +921,16 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 
 简单的直接调试项目的方式指的是直接从分析器项目上，在 VisualStudio 里面一键 F5 就可以启动调试，调试入口和其他任何 dotnet 项目相同，非常方便。不需要去新建一个单元测试项目，可以直接对着目标项目，即被分析项目，进行调试。可以减少在单元测试里面搭建项目引用关系，搭建项目组织等的工作量
 
+直接调试要求 Visual Studio 安装好了 `.NET Compiler Platform SDK` 负载组件，这个组件是用于支持 Roslyn 的调试环境。给 Visual Studio 打上 `.NET Compiler Platform SDK` 负载组件方法如下：
+
+1. 运行“Visual Studio 安装程序”
+2. 选择“修改”
+3. 检查“Visual Studio 扩展开发”工作负荷。
+4. 在摘要树中打开“Visual Studio 扩展开发”节点。
+5. 选中“.NET Compiler Platform SDK”框。 将在可选组件最下面找到它
+
+
+
 依然是为了让大家方便获取正确的代码起见，我这里继续新建两个项目，分别是名为 `JehairqogefaKaiwuwhailallkihaiki.Analyzer` 的分析器项目和名为 `JehairqogefaKaiwuwhailallkihaiki` 的被分析的控制台项目
 
 这两个项目的代码不重要，大家可以使用上文 “更底层的收集分析和生成” 章节的代码。咱重点方在关注如何搭建调试上。大家可以开始对比一下本章介绍的直接调试项目的方法和上文介绍的搭建单元测试进行调试的方法，两个方法之间的便利性。在自己的项目里面选择合适的方式。或者是在项目刚开始的时候选用直接调试项目的方法，在项目成熟过程中再添加单元测试提升其稳定性
@@ -1130,7 +1140,7 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门5.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F20252281922443223.jpg)
 
-如果没有从视图里面找到 Syntax Visualizer 语法可视化窗格，则需要给 Visual Studio 打上 `.NET Compiler Platform SDK` 负载。安装方法如下：
+如果没有从视图里面找到 Syntax Visualizer 语法可视化窗格，则需要给 Visual Studio 打上 `.NET Compiler Platform SDK` 负载。正常来说，根据上文的步骤一步步来的伙伴，都在前面准备直接调试的过程里面已经安装好了这个负载。安装方法如下：
 
 1. 运行“Visual Studio 安装程序”
 2. 选择“修改”
@@ -1186,7 +1196,43 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 
 ## 演练：写一个 禁用API调用 分析器
 
-前面介绍的都是围绕着编写源代码生成器展开的，接下来将介绍使用专用分析器技术编写一个纯分析器。这个过程中也会介绍如何读取其他非代码文件的内容作为输入源的方式
+前面介绍的都是围绕着编写源代码生成器展开的，本章将介绍使用专用分析器技术编写一个纯分析器。这个过程中也会介绍如何读取其他非代码文件的内容作为输入源的方式
+
+在前面的章节有和大家演示过调用 ReportDiagnostic 给出分析报告的方法。在源代码生成器里面给出的分析报告的步骤是进行语法和语义的分析，判断符合某个条件，则给出分析报告的结果。整个过程是非常公式化的。只不过在源代码生成器步骤里面更加侧重如何进行生成代码，从而需要许多细节的分析语法和语义的过程。专用的分析器则可以更大程度地省略掉这些琐碎的步骤，让大家可以使用根据方便的高级的 API 进行快速的分析语法语义
+
+为了能够更好地介绍专用分析器，在本章演练过程中，咱将带着这样的一个任务开始：编写一个禁用API调用分析器
+
+具体的任务需求细节是根据配置的禁用 API 调用文件里面记录的禁用列表，扫描整个项目里面，如果有哪个代码访问了在禁用 API 调用文件记录的禁用方法列表，则给出错误提示
+
+这个需求任务可以强行拆分为两步，第一步是获取到禁用 API 调用文件里面记录的禁用列表，第二步的扫描分析代码调用关系
+
+
+
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ed27dcda954d4baed58c74b9c1e355468c7135fc/Roslyn/NelbecarballReanallyerhohe) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/ed27dcda954d4baed58c74b9c1e355468c7135fc/Roslyn/NelbecarballReanallyerhohe) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
+```
+
+获取代码之后，进入 Roslyn/NelbecarballReanallyerhohe 文件夹，即可获取到源代码
+
+<!-- 
+为了能够更好地介绍专用分析器，在本章演练过程中，咱将带着这样的一个任务开始：编写一个 API 实现约束分析器。这个分析器的功能是检查代码中是否符合协议约定的按照某个顺序实现了某些 API 成员
+
+这个任务的背景是-->
 
 介绍分析器
 介绍更加明确的分析器
@@ -1258,4 +1304,6 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 <!--
 
 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv](https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html )
+
+IIncrementalGenerator 增量 Source Generator 生成代码入门 从语法到语义 获取类型完全限定名
  -->
