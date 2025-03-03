@@ -929,7 +929,11 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 4. 在摘要树中打开“Visual Studio 扩展开发”节点。
 5. 选中“.NET Compiler Platform SDK”框。 将在可选组件最下面找到它
 
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门10.png) -->
+![](http://cdn.lindexi.site/lindexi%2F202533856536565.jpg)
 
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门11.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253385843486.jpg)
 
 依然是为了让大家方便获取正确的代码起见，我这里继续新建两个项目，分别是名为 `JehairqogefaKaiwuwhailallkihaiki.Analyzer` 的分析器项目和名为 `JehairqogefaKaiwuwhailallkihaiki` 的被分析的控制台项目
 
@@ -1164,11 +1168,83 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 更多关于使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格方法，请参阅：
 [Roslyn 入门：使用 Visual Studio 的语法可视化（Syntax Visualizer）窗格查看和了解代码的语法树 - walterlv](https://blog.walterlv.com/post/roslyn-syntax-visualizer )
 
-
-
-## 演练： 写一个类型收集器
+## 演练：写一个类型收集器
 
 学习了这么多，可以试试进行一些实践演练
+
+在上文里面和大家介绍了如何进行类型的收集，在本次演练中，将继续加一点需求：让收集到的类型可以同时生成创建器，创建器里面要求传入上下文参数。这是一个很典型的容器注入的需求。我用具体的代码来更具体地说明的任务需求
+
+假定有 F1 和 F2 和 F3 三个类型，其定义代码分别如下
+
+```csharp
+public interface IFoo
+{
+}
+
+[Foo]
+public class F1: IFoo
+{
+    public F1(IContext context)
+    {
+        // 忽略其他代码
+    }
+}
+
+[Foo]
+public class F2 : IFoo
+{
+    public F2(IContext context)
+    {
+        // 忽略其他代码
+    }
+}
+
+[Foo]
+public class F3 : IFoo
+{
+    public F3(IContext context)
+    {
+        // 忽略其他代码
+    }
+}
+
+public interface IContext
+{
+    // 忽略其他代码
+}
+```
+
+预期能够通过源代码生成器生成收集器的代码，其代码预期内容大概如下
+
+```csharp
+public static class FooCollection
+{
+    public static IReadOnlyList<Func<IContext, IFoo>> GetFooCreatorList()
+    {
+        return new Func<IContext, IFoo>[]
+        {
+            context => new F1(context),
+            context => new F2(context),
+            context => new F3(context),
+        };
+    }
+}
+```
+
+以上的 FooCollection 的 GetFooCreatorList 方法就是咱源代码生成器的生成任务内容。这是一个知识内容比较综合的演练。我将在这个演练里面和大家演示源代码生成器的日常食用方法
+
+假定现在用户已经定义好了 F1 和 F2 和 F3 三个类型，而 FooAttribute 和 IFoo 和 IContext 则需要源代码生成器生成。核心生成的任务的 FooCollection 代码，用户使用的是 partial 分部方式定义，其代码如下
+
+```csharp
+public static partial class FooCollection
+{
+    public static partial IReadOnlyList<Func<IContext, IFoo>> GetFooCreatorList();
+}
+```
+
+咱需要做的就是源代码生成器部分的逻辑，这个过程中再加点更多需求，那就是尽可能让 Visual Studio 用的开森
+
+
 
 
 可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
