@@ -17,6 +17,22 @@
 
 本文先告诉大家完全手动的编辑文件的配置方式，然后再告诉大家如何通过图形化的配置方式作为日常工程化的配置
 
+## 环境准备
+
+要求 Visual Studio 安装好了 `.NET Compiler Platform SDK` 负载组件，这个组件是用于支持 Roslyn 的调试环境。给 Visual Studio 打上 `.NET Compiler Platform SDK` 负载组件方法如下：
+
+1. 运行“Visual Studio 安装程序”
+2. 选择“修改”
+3. 检查“Visual Studio 扩展开发”工作负荷。
+4. 在摘要树中打开“Visual Studio 扩展开发”节点。
+5. 选中“.NET Compiler Platform SDK”框。 将在可选组件最下面找到它
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门10.png) -->
+![](http://cdn.lindexi.site/lindexi%2F202533856536565.jpg)
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门11.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253385843486.jpg)
+
 ## 手动配置
 
 开始之前，先确保被调试项目正确引用了 Roslyn 分析器项目。如本文这里有两个项目，分别是 `JehairqogefaKaiwuwhailallkihaiki.Analyzer` 分析器项目和 `JehairqogefaKaiwuwhailallkihaiki` 控制台项目
