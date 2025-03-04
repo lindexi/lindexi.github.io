@@ -22,7 +22,7 @@
 
 ## 项目搭建
 
-本文先从项目搭建开始告诉大家如何创建一个源代码生成器项目。本文后续的内容将会在这个项目中进行演示。本文的编写顺序是先搭建项目，然后再讲解一些基础的概念和用法，再到如何进行调试和分发，最后提供一些实际的演练给到大家
+本文先从项目搭建开始告诉大家如何创建一个源代码生成器项目。本文后续的内容将会在这个项目中进行演示。本文的编写顺序是先搭建项目，然后再讲解一些基础的概念和用法，再到如何进行调试，最后提供一些实际的演练给到大家。基础知识部分也放在演练里面，先做演练再讲基础知识，防止一口气拍出大量基础知识劝退大家
 
 本文的推荐打开方式是一边阅读本文，一边打开 Visual Studio 2022 或更高版本，对照本文的内容进行操作。照着本文的内容对照着编写代码，可以让大家更好地理解本文的内容，照着过一遍预计就能掌握基础的源代码生成器和分析器的知识，入门源代码生成器和分析器的编写
 
@@ -30,7 +30,10 @@
 
 先新建一个控制台项目，新建完成在 Visual Studio 2022 或更高版本中打开项目，双击 csproj 项目文件，即可进行编辑项目文件
 
-本文这里新建了一个名为 `DercelgefarKarhelchaye.Analyzer` 的控制台项目。也许细心的伙伴发现了这个项目使用了 `Analyzer` 作为后缀，这是因为在 dotnet 中源代码生成器和分析器是一体的，按照历史原因的惯性，依然将其命名为分析器项目。在 Visual Studio 2022 的每个项目依赖项里面，大家都会看到一个名为分析器的项，而没有专门一个名为源代码生成器的项，其原因也是如此
+本文这里新建了一个名为 `DercelgefarKarhelchaye.Analyzer` 的控制台项目。也许细心的伙伴发现了这个项目使用了 `Analyzer` 作为后缀，这是因为在 dotnet 中源代码生成器和分析器是一体的，按照历史原因的惯性，依然将其命名为分析器项目。在 Visual Studio 2022 的每个项目依赖项里面，大家都会看到如下图的一个名为分析器的项，而没有专门一个名为源代码生成器的项，其原因也是如此
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门12.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253414882001.jpg)
 
 如果在这一步就开始卡住了也不用慌，本文在整个过程中都会给出示例代码。我整个代码仓库比较庞大，使用本文各个部分提供的拉取源代码的命令行代码，可以减少拉取的数据，提升拉取的速度，且能够确保切换到正确的 commit 代码
 
@@ -128,7 +131,7 @@ public class IncrementalGenerator : IIncrementalGenerator
 }
 ```
 
-本文这里直接就是和大家介绍 IIncrementalGenerator 增量 Source Generator 源代码生成器技术，不再介绍 ISourceGenerator 源代码生成器技术。其原因是在 2022 之后，官方大力推荐的是使用 IIncrementalGenerator 增量源代码生成器技术。从业务上讲，仅仅只是 IIncrementalGenerator 多了增量的功能，在进行源代码生成逻辑处理中没有太大的差别。但是在性能上，IIncrementalGenerator 要比 ISourceGenerator 更加高效，更加快速，更加能够防止原本已经很卡的 Visual Studio 更加卡
+本文这里直接就是和大家介绍 IIncrementalGenerator 增量 Source Generator 源代码生成器技术，不再介绍 ISourceGenerator 源代码生成器技术。其原因是在 2022 之后，官方大力推荐的是使用 IIncrementalGenerator 增量源代码生成器技术。从业务上讲，仅仅只是 IIncrementalGenerator 多了增量的功能，在进行源代码生成逻辑处理中没有太大的差别。功能上 IIncrementalGenerator 也能完全代替 ISourceGenerator 的功能。但是在性能上，IIncrementalGenerator 要比 ISourceGenerator 更加高效，更加快速，更加能够防止原本已经很卡的 Visual Studio 更加卡
 
 整个 IIncrementalGenerator 的入口都在 Initialize 方法里面，从 IncrementalGeneratorInitializationContext 参数里可以点出来非常多有用的方法。咱这里先不展开讲解这些方法，先让大家看到一个简单的源代码生成器的效果
 
@@ -1127,12 +1130,6 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 如配置完成运行失败，提示无法启动调试 0x80070057 错误，解决方法请参阅 [dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目](https://blog.lindexi.com/post/dotnet-%E5%9C%A8-VisualStudio-%E4%B8%80%E9%94%AE-F5-%E5%90%AF%E5%8A%A8%E8%B0%83%E8%AF%95-Roslyn-%E5%88%86%E6%9E%90%E5%99%A8%E9%A1%B9%E7%9B%AE.html )
 <!-- [dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18730521 ) -->
 
-## 生成的源代码保存到本地文件
-
-
-[将 Source Generator 生成的源代码保存到本地文件](https://blog.lindexi.com/post/%E5%B0%86-Source-Generator-%E7%94%9F%E6%88%90%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6.html )
-<!-- [将 Source Generator 生成的源代码保存到本地文件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18011557 ) -->
-
 ## 使用语法可视化窗格辅助了解语法
 
 有些伙伴会感觉即使在有上文的调试方法辅助的情况下，编写语法分析还是太复杂了，不知道怎么写。自己对语法分析本身也不熟悉，不知道可以如何编写语法分析的代码。这个时候可以使用视觉辅助了解语法
@@ -1175,6 +1172,8 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 
 学习了这么多，可以试试进行一些实践演练
 
+### 演练任务
+
 在上文里面和大家介绍了如何进行类型的收集，在本次演练中，将继续加一点需求：让收集到的类型可以同时生成创建器，创建器里面要求传入上下文参数。这是一个很典型的容器注入的需求。我用具体的代码来更具体地说明的任务需求
 
 假定有 F1 和 F2 和 F3 三个类型，其定义代码分别如下
@@ -1184,7 +1183,6 @@ public interface IFoo
 {
 }
 
-[Foo]
 public class F1: IFoo
 {
     public F1(IContext context)
@@ -1193,7 +1191,6 @@ public class F1: IFoo
     }
 }
 
-[Foo]
 public class F2 : IFoo
 {
     public F2(IContext context)
@@ -1202,7 +1199,6 @@ public class F2 : IFoo
     }
 }
 
-[Foo]
 public class F3 : IFoo
 {
     public F3(IContext context)
@@ -1220,34 +1216,341 @@ public interface IContext
 预期能够通过源代码生成器生成收集器的代码，其代码预期内容大概如下
 
 ```csharp
-public static class FooCollection
+public static partial class FooCollection
 {
-    public static IReadOnlyList<Func<IContext, IFoo>> GetFooCreatorList()
+    [Collection]
+    public static partial IEnumerable<Func<IContext, IFoo>> GetFooCreatorList()
     {
-        return new Func<IContext, IFoo>[]
-        {
-            context => new F1(context),
-            context => new F2(context),
-            context => new F3(context),
-        };
+        yield return context => new F1(context);
+        yield return context => new F2(context);
+        yield return context => new F3(context);
     }
 }
 ```
 
 以上的 FooCollection 的 GetFooCreatorList 方法就是咱源代码生成器的生成任务内容。这是一个知识内容比较综合的演练。我将在这个演练里面和大家演示源代码生成器的日常食用方法
 
-假定现在用户已经定义好了 F1 和 F2 和 F3 三个类型，而 FooAttribute 和 IFoo 和 IContext 则需要源代码生成器生成。核心生成的任务的 FooCollection 代码，用户使用的是 partial 分部方式定义，其代码如下
+假定现在用户已经定义好了 F1 和 F2 和 F3 三个类型，被其继承的 IFoo 接口和用作参数的 IContext 接口，以及如下代码所示的 FooCollection 的分部 GetFooCreatorList 方法。源代码生成器需要生成 CollectionAttribute 特性类型的代码，以及 FooCollection 的 GetFooCreatorList 分部方法的具体实现代码
 
 ```csharp
 public static partial class FooCollection
 {
-    public static partial IReadOnlyList<Func<IContext, IFoo>> GetFooCreatorList();
+    [Collection]
+    public static partial IEnumerable<Func<IContext, IFoo>> GetFooCreatorList();
 }
 ```
 
-咱需要做的就是源代码生成器部分的逻辑，这个过程中再加点更多需求，那就是尽可能让 Visual Studio 用的开森
+咱需要做的就是源代码生成器部分的逻辑，这个过程中再加点更多需求，那就是尽可能让 Visual Studio 用的开森，以及在遇到不符合预期的代码时给调皮的开发者报告一些警告信息
 
+### 演练步骤
 
+整体的步骤可以分为以下几个步骤：
+
+- 生成 CollectionAttribute 特性类型的代码
+- 分析使用了 CollectionAttribute 特性的分部方法，且找到方法的返回值参数
+- 根据返回值参数的类型，遍历收集项目的类型，找到感兴趣的类型，生成创建器代码
+
+依然是为了方便大家获取到正确的源代码，我这里重新创建两个项目，分别是名为 KawhawnahemCanalllearlerwhu 的控制台项目，以及名为 KawhawnahemCanalllearlerwhu.Analyzer 的分析器项目。这两个项目的初始化搭建和上文的章节一样，不再赘述。大家可以直接使用上文的章节的代码进行初始化搭建
+
+完成项目搭建之后，就可以开始进入本次演练的步骤了
+
+生成 CollectionAttribute 特性类型的代码部分，可以参考上文的章节，这里不再赘述。直接使用 RegisterPostInitializationOutput 方法注册生成 CollectionAttribute 特性类型的代码
+
+```csharp
+using System;
+using System.Buffers;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading;
+
+using KawhawnahemCanalllearlerwhu.Analyzer.Properties;
+
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
+namespace KawhawnahemCanalllearlerwhu.Analyzer;
+
+[Generator(LanguageNames.CSharp)]
+public class FooIncrementalGenerator : IIncrementalGenerator
+{
+    public void Initialize(IncrementalGeneratorInitializationContext context)
+    {
+        context.RegisterPostInitializationOutput(initializationContext =>
+        {
+            initializationContext.AddSource("CollectionAttribute.cs",
+                """
+                namespace Lindexi;
+
+                internal class CollectionAttribute : Attribute
+                {
+                }
+                """);
+        });
+
+        ... // 忽略其他代码
+    }
+}
+```
+
+以上代码唯一的细节是设置 CollectionAttribute 为 internal 类型，这样就可以保证 CollectionAttribute 只能在当前项目内部使用，不会被外部项目引用到。如此能够规避多个相互引用的项目同时使用了此分析器，导致生成了多个相同命名空间的 CollectionAttribute 类型的问题
+
+分析使用了 CollectionAttribute 特性的分部方法。使用上文章节的 ForAttributeWithMetadataName 方法找到标记了 CollectionAttribute 特性的方法。这里需要说明的是 ForAttributeWithMetadataName 方法不仅可以用来找类型，还可以用来找其他可以标记特性的成员，自然也包括方法
+
+```csharp
+            context.SyntaxProvider.ForAttributeWithMetadataName
+            (
+                "Lindexi.CollectionAttribute", static (SyntaxNode node, CancellationToken _) =>
+                {
+                    if (node is MethodDeclarationSyntax methodDeclarationSyntax)
+                    {
+                        // 判断是否是 partial 分部方法
+                        return methodDeclarationSyntax.Modifiers.Any(t => t.IsKind(SyntaxKind.PartialKeyword));
+                    }
+
+                    return false;
+                },
+                (GeneratorAttributeSyntaxContext syntaxContext, CancellationToken _) =>
+                {
+                    ... // 忽略其他代码
+                }
+            );
+```
+
+在 C# dotnet 里面的分部方法的设计上，可以让源代码生成器和 IDE 都非常开森。其原因是在 IDE 的视角上，分部方法已经完成了整个方法的对外定义。对于其他外部的引用来说，已经满足了基础的符号关系。毕竟对于外部引用来说，具体方法里面的实现是完全不关心的。只要有方法定义，就可以完全建立符号关系。这就意味着具体分部方法的实现代码，可以慢慢让源代码生成器来生成，在源代码生成器生成的过程中，IDE 也不会有任何的报错飘红。对源代码生成器来说，分部方法是一个非常好的锚点，特别是加上标记了特性的分部方法。这就是为什么现在很多 dotnet 基础支持上，都推荐写分部方法标记特性来实现很多功能的原因，比如以下代码演示的 GeneratedRegex 正则表达式源生成器方法
+
+```csharp
+[GeneratedRegex("abc|def", RegexOptions.IgnoreCase, "en-US")]
+private static partial Regex AbcOrDefGeneratedRegex();
+
+private static void EvaluateText(string text)
+{
+    if (AbcOrDefGeneratedRegex().IsMatch(text))
+    {
+        // Take action with matching text
+    }
+}
+```
+
+以上代码为 dotnet 内建机制，可以有效生成高速的 Regex 代码，极大提升整体性能，避免运行时编正则带来的损耗，如对此细节感兴趣，请参阅 [.NET 正则表达式源生成器 - .NET - Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-source-generators )
+
+在 ForAttributeWithMetadataName 的语义转换步骤里面，将获取其分部方法的返回值类型，以及在此同时生成部分代码
+
+获取分部方法的返回值类型，可以通过以下代码获取
+
+```csharp
+                context.SyntaxProvider.ForAttributeWithMetadataName
+                (
+                    "Lindexi.CollectionAttribute", static (SyntaxNode node, CancellationToken _) =>
+                    {
+                        ... // 忽略其他代码
+                    },
+                    (GeneratorAttributeSyntaxContext syntaxContext, CancellationToken _) =>
+                    {
+                        var methodSymbol = (IMethodSymbol)syntaxContext.TargetSymbol;
+                        if (!methodSymbol.IsPartialDefinition)
+                        {
+                            return null;
+                        }
+
+                        ITypeSymbol returnType = methodSymbol.ReturnType;
+                        // 这是一个泛型类型，我们需要获取泛型参数
+                        // 预期是 IEnumerable<Func<IContext, IFoo>> 这样的类型
+                        if (returnType is not INamedTypeSymbol methodSymbolReturnType)
+                        {
+                            return null;
+                        }
+
+                        ... // 忽略其他代码
+                    });
+```
+
+在获取到返回值类型之后，需要进一步判断返回值类型是否符合预期，代码如下
+
+```csharp
+ ITypeSymbol returnType = methodSymbol.ReturnType;
+ // 这是一个泛型类型，我们需要获取泛型参数
+ // 预期是 IEnumerable<Func<IContext, IFoo>> 这样的类型
+ if (returnType is not INamedTypeSymbol methodSymbolReturnType)
+ {
+     return null;
+ }
+
+ var fullNameDisplayFormat = new SymbolDisplayFormat
+ (
+     // 带上命名空间和类型名
+     SymbolDisplayGlobalNamespaceStyle.Included,
+     // 命名空间之前加上 global 防止冲突
+     SymbolDisplayTypeQualificationStyle
+         .NameAndContainingTypesAndNamespaces
+ );
+ var returnTypeName = methodSymbolReturnType.ToDisplayString(fullNameDisplayFormat);
+
+ // 预期的返回值类型
+ const string exceptedReturnTypeName = "global::System.Collections.Generic.IEnumerable";
+
+ if (!string.Equals(returnTypeName, exceptedReturnTypeName, StringComparison.InvariantCulture))
+ {
+     return null;
+ }
+```
+
+以上代码使用的是让返回值类型输出为全名的方式进行判断，这样的判断方式可以避免存在重名的情况。在判断返回值类型符合预期之后，继续取出其泛型里面的类型
+
+```csharp
+ if (methodSymbolReturnType.TypeArguments.Length != 1)
+ {
+     // 预期是 IEnumerable<Func> 这样的类型，在 IEnumerable 里面只有一个泛型参数
+     return null;
+ }
+
+ // 取出 IEnumerable<Func<IContext, IFoo>> 中的 Func<IContext, IFoo> 部分
+ if (methodSymbolReturnType.TypeArguments[0] is not INamedTypeSymbol funcTypeSymbol)
+ {
+     return null;
+ }
+```
+
+同理，拿到了 `funcTypeSymbol` 变量也要判断一下是否 System.Func 类型，以及判断其参数是否符合预期
+
+```csharp
+// 取出 IEnumerable<Func<IContext, IFoo>> 中的 Func<IContext, IFoo> 部分
+if (methodSymbolReturnType.TypeArguments[0] is not INamedTypeSymbol funcTypeSymbol)
+{
+    return null;
+}
+
+const string exceptedFuncTypeName = "global::System.Func";
+var funcTypeName = funcTypeSymbol.ToDisplayString(fullNameDisplayFormat);
+
+if (!string.Equals(funcTypeName, exceptedFuncTypeName, StringComparison.InvariantCulture))
+{
+    // 如果不是 Func 类型的，则不是预期的
+    return null;
+}
+
+// 继续取出 Func<IContext, IFoo> 中的 IContext 和 IFoo 部分
+if (funcTypeSymbol.TypeArguments.Length != 2)
+{
+    return null;
+}
+```
+
+写了这么长的判断，其实只是为了判断是否 `IEnumerable<Func<IContext, IFoo>>` 类型返回值，以及取出 `IContext` 作为参数类型和 `IFoo` 作为返回值类型。虽然代码看起来很长，但相信大家能够很快理解
+
+以下为取出 `IContext` 作为参数类型和 `IFoo` 作为返回值类型的代码，后续逻辑将需要用到这两个类型的语义
+
+```csharp
+ // 取出 Func<IContext, IFoo> 中的 IContext 部分
+ ITypeSymbol constructorArgumentType = funcTypeSymbol.TypeArguments[0];
+ string constructorArgumentTypeName = constructorArgumentType.ToDisplayString(fullNameDisplayFormat);
+ // 取出 Func<IContext, IFoo> 中的 IFoo 部分
+ ITypeSymbol collectionType = funcTypeSymbol.TypeArguments[1];
+ var collectionTypeName = collectionType.ToDisplayString(fullNameDisplayFormat);
+```
+
+以上代码在取出的过程中，顺带也获取类型的全名，这在后续的代码生成过程中会用到。在这个步骤里面就立刻生成了部分的代码。这是因为在这里进行生成，可以省去将当前的 IMethodSymbol 传递到后续的代码生成过程中，提升不到一分钱的性能
+
+在 ForAttributeWithMetadataName 的 transform 过程中，作为返回值的内容，都会参与到缓存的计算中。在增量源代码生成设计里面，通过大量的缓存换取减少计算的时间。但缓存本身会涉及很多相等判断逻辑，传递 IMethodSymbol 等符号对象在判断中会比传递字符串更加昂贵，这就是为什么即刻在此进行消费的原因。但这里需要取得一个平衡点，更多发出转换器的代码，而不要在一个转换器里面写太多逻辑，减少变更代码过程中的无效逻辑处理，防止跑了一大堆逻辑但最终因为代码文件内容变更而无效的情况
+
+在本演练例子里面，只是进行部分代码生成，这个过程还是不到一分钱的
+
+在这里期望生成的代码的示例内容
+
+```csharp
+// 生成的代码的示例内容
+//namespace KawhawnahemCanalllearlerwhu;
+//
+//public static partial class FooCollection
+//{
+//    public static partial IEnumerable<Func<IContext, IFoo>> GetFooCreatorList()
+//    {
+//        yield return context => new F1(context);
+//        yield return context => new F2(context);
+//        yield return context => new F3(context);
+//    }
+//}
+```
+
+当然了，其中间的 `yield return context => new F1(context);` 等代码，现在还不能生成，因为还没进行项目的类型收集。这个过程将在下一步进行。在这里只生成这个空壳的方法代码框架
+
+生成这个空壳框架代码需要获取到分部方法所在的类型、类型所在的命名空间，分部方法的名称、访问修饰符、是否静态等信息，准备工作如下代码所示
+
+```csharp
+ INamedTypeSymbol containingType = methodSymbol.ContainingType;
+ string classNamespace = containingType.ContainingNamespace.Name;
+ string className = containingType.Name;
+
+ // Modifiers
+ Accessibility declaredAccessibility = containingType.DeclaredAccessibility;
+ var modifier = AccessibilityToString(declaredAccessibility);
+
+      static string AccessibilityToString(Accessibility accessibility)
+        => accessibility switch
+        {
+            Accessibility.Public => "public",
+            Accessibility.Protected => "protected",
+            // 不写了，省略。大家有空自己补充
+            _ => string.Empty,
+        };
+```
+
+其拼接的生成的空壳方法框架的代码如下
+
+```csharp
+var generatedCode =
+        $$"""
+          namespace ｛｛classNamespace｝｝;
+
+          ｛｛modifier｝｝｛｛(containingType.IsStatic ? " static" : "")｝｝ partial class ｛｛className｝｝
+          {
+              ｛｛AccessibilityToString(methodSymbol.DeclaredAccessibility)｝｝｛｛(methodSymbol.IsStatic ? " static" : "")｝｝ partial ｛｛exceptedReturnTypeName｝｝<｛｛exceptedFuncTypeName｝｝<｛｛constructorArgumentTypeName｝｝, ｛｛collectionTypeName｝｝>>
+          ｛｛methodSymbol.Name｝｝()
+              {
+                  yield return context => new F1(context);
+              }
+          }
+          """
+    ;
+```
+
+注： 为了让我的博客引擎开森，以上代码部分花括号被我替换为了全角花括号。大家在使用的时候需要将全角花括号替换为半角花括号
+
+以上空壳框架代码的 `yield return context => new F1(context);` 将在后续用作替换字符串的占位符，当前生成的代码内容，即 `generatedCode` 变量的字符串内容如下
+
+```csharp
+namespace KawhawnahemCanalllearlerwhu;
+
+public static partial class FooCollection
+{
+    public static partial global::System.Collections.Generic.IEnumerable<global::System.Func<global::KawhawnahemCanalllearlerwhu.IContext, global::KawhawnahemCanalllearlerwhu.IFoo>>
+GetFooCreatorList()
+    {
+        yield return context => new F1(context);
+    }
+}
+```
+
+在源代码生成器的套路里面，就是尽量使用全命名空间，即带上 `global::` 前缀，这样可以避免引用冲突。在这里的代码生成过程中，也是使用了全命名空间的方式，以保证生成的代码可以在任何地方使用。虽然这个方式会让生成的代码比较繁琐，但毕竟是机器生成的代码，不需要人工去编写，只是会添加一些阅读的心智负担
+
+为了在 ForAttributeWithMetadataName 的 transform 进行返回，这里定义一个名为 `CollectionExportMethodInfo` 的类型，用于存储过程信息，其代码如下
+
+```csharp
+record CollectionExportMethodInfo
+(
+    ITypeSymbol ConstructorArgumentType,
+    ITypeSymbol CollectionType,
+    GeneratedCodeInfo GeneratedCodeInfo,
+    Location Location
+);
+```
+
+在源代码生成器里面使用 `record` 或 `readonly record struct` 是非常舒坦的
+
+使用了本演练介绍的技术的可产品化使用的开源项目： <https://github.com/dotnet-campus/Telescope>
 
 
 可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
@@ -1256,6 +1559,40 @@ public static partial class FooCollection
 这个过程中可以看到似乎有分析器的影子在里面了，报告 过程本身也就是分析器的一个部分，大部分分析器的功能都是和源代码生成器相互重叠的，比如都需要进行语法语义的分析。不同点只是源代码生成器多了一个生成代码的过程
 
 不过这里演示的还不是专用分析器的功能，在下文将会告诉大家如何写一个专用分析器
+
+### 代码
+
+本章的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7799af7403b6408b1e30151e144b2273c86433c7/Roslyn/KawhawnahemCanalllearlerwhu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/7799af7403b6408b1e30151e144b2273c86433c7/Roslyn/KawhawnahemCanalllearlerwhu) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 7799af7403b6408b1e30151e144b2273c86433c7
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 7799af7403b6408b1e30151e144b2273c86433c7
+```
+
+获取代码之后，进入 Roslyn/KawhawnahemCanalllearlerwhu 文件夹，即可获取到源代码
+
+
+
+### 生成的源代码保存到本地文件
+
+
+[将 Source Generator 生成的源代码保存到本地文件](https://blog.lindexi.com/post/%E5%B0%86-Source-Generator-%E7%94%9F%E6%88%90%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6.html )
+<!-- [将 Source Generator 生成的源代码保存到本地文件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18011557 ) -->
+
+
+
+
 
 
 
