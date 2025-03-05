@@ -1548,7 +1548,27 @@ record CollectionExportMethodInfo
 );
 ```
 
-在源代码生成器里面使用 `record` 或 `readonly record struct` 是非常舒坦的
+在源代码生成器里面使用 `record` 或 `readonly record struct` 是非常舒坦的，因为记录类型自带了相等判断比较器，可以省去很多工作量。但在这里需要额外说明的是，默认的相等比较器对符号类型来说是不够准确的，有心的源代码生成器开发者可以对以上的 `CollectionExportMethodInfo` 类型进行更加准确的相等比较器的重写，使用 `SymbolEqualityComparer` 比较器代替默认的相等比较器。这里的核心原因是 Roslyn 在设计之初时， C# 代码还没有可空的概念。于是设计上对类型只有一个概念，后续 NRT (Nullable Reference Types) 引入之后，导致了一个类型还有另一个可空概念，进而导致了判断逻辑上存在两个选项，分别是 `SymbolEqualityComparer.Default` 和 `SymbolEqualityComparer.IncludeNullability` 这两个选项。为了明确起见，于是 Roslyn 团队决定引入 `SymbolEqualityComparer` 比较器，从而可以让分析器开发者明确知道自己在做什么
+
+- `SymbolEqualityComparer.Default` 比较器是不包含可空性的比较器，即不区分可空性的比较器。对 `string` 和 `string?` 进行相等比较，返回的结果是相等的。这个比较器是默认的比较器，与默认会调用的相等比较器行为相同。这就是为什么上述代码即使不重写相等比较器，在业务上也是正确的原因
+- `SymbolEqualityComparer.IncludeNullability` 比较器是包含可空性的比较器，即区分可空性的比较器。对 `string` 和 `string?` 进行相等比较，返回的结果是不相等的。这个比较器是为了让开发者明确知道自己在做什么，以及在需要区分可空性的情况下使用的比较器
+
+```csharp
+ISymbol? x = ...
+ISymbol? y = ...
+
+var defaultAreEquals = x.Equals(y); // Warn: RS1024 Symbols should be compared for equality
+
+var areEquals = SymbolEqualityComparer.Default.Equals(x, y); // string == string?
+// 或：
+var areEquals = SymbolEqualityComparer.IncludeNullability.Equals(x, y); // string != string?
+```
+
+注： 更多关于 `SymbolEqualityComparer` 比较器与默认比较器的差别，请参阅此帖子： <https://github.com/dotnet/roslyn-analyzers/issues/3427>
+
+
+
+
 
 使用了本演练介绍的技术的可产品化使用的开源项目： <https://github.com/dotnet-campus/Telescope>
 
