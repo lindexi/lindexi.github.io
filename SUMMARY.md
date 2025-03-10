@@ -598,6 +598,8 @@
 
  * [dotnet CBB 为什么决定推送 Tag 才能打包](dotnet-CBB-为什么决定推送-Tag-才能打包.md)
 
+ * [dotnet Cli sdk 什么是 Terminal Logger 以及如何禁用此功能](dotnet-Cli-sdk-什么是-Terminal-Logger-以及如何禁用此功能.md)
+
  * [dotnet ConcurrentDictionary 的 GetOrAdd 性能比 TryGetValue 加 TryAdd 低](dotnet-ConcurrentDictionary-的-GetOrAdd-性能比-TryGetValue-加-TryAdd-低.md)
 
  * [dotnet ConditionalWeakTable 的底层原理](dotnet-ConditionalWeakTable-的底层原理.md)
