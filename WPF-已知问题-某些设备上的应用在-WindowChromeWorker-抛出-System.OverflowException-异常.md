@@ -13,7 +13,7 @@
 
 **此问题已修复**
 
-这是一个上古就存在的问题，有人报告说安装了某些驱动就会存在此异常，但是我没有调查到在符合什么情况下就会抛出此异常。此异常的调用堆栈大概如下
+这是一个上古就存在的问题，有人报告说安装了某些驱动（罗技 Logitech 鼠标）就会存在此异常，但是我没有调查到在符合什么情况下就会抛出此异常。此异常的调用堆栈大概如下
 
 ```
 System.OverflowException
@@ -106,6 +106,14 @@ System.OverflowException
 [https://developercommunity.visualstudio.com/t/overflow-exception-in-windowchrome/167357](https://developercommunity.visualstudio.com/t/overflow-exception-in-windowchrome/167357)
 
 [https://stackoverflow.com/questions/33287542/what-would-cause-wm-nchittest-lparam-to-overflow-a-32-bit-integer](https://stackoverflow.com/questions/33287542/what-would-cause-wm-nchittest-lparam-to-overflow-a-32-bit-integer)
+
+---
+
+相关问题：
+
+罗技 Logitech 鼠标导致消息循环越界： <https://github.com/dotnet/wpf/issues/7882>
+
+罗技 Logitech T620 鼠标导致消息循环越界：<https://www.actiprosoftware.com/community/thread/20891/wpf-application-crashes-using-logitech-t620-m>
 
 
 

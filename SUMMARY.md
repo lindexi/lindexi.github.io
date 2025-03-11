@@ -78,6 +78,8 @@
 
  * [Avalonia 已知问题 第二次 Composition Animation 无法播放](Avalonia-已知问题-第二次-Composition-Animation-无法播放.md)
 
+ * [Avalonia 已知问题 继承滚动条将让里层控件无法获得无穷大空间](Avalonia-已知问题-继承滚动条将让里层控件无法获得无穷大空间.md)
+
  * [Avalonia 简单实现输入法光标跟随效果](Avalonia-简单实现输入法光标跟随效果.md)
 
  * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
@@ -1655,6 +1657,8 @@
  * [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用](Roslyn-分析器-EnforceExtendedAnalyzerRules-属性的作用.md)
 
  * [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置](Roslyn-分析器-读取-csproj-项目文件的-AdditionalFiles-Item-的-Metadata-配置.md)
+
+ * [Roslyn 分析器已知问题 传递项目属性时将忽略分号之后的内容](Roslyn-分析器已知问题-传递项目属性时将忽略分号之后的内容.md)
 
  * [Roslyn 判断当前使用 dotnet core 编译器进行编译](Roslyn-判断当前使用-dotnet-core-编译器进行编译.md)
 
