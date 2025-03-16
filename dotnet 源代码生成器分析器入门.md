@@ -17,6 +17,8 @@
 
 本文内容比较长，知识量比较多，推荐先点收藏
 
+<div id="toc"></div>
+
 ## 项目搭建
 
 本文先从项目搭建开始告诉大家如何创建一个源代码生成器项目。本文后续的内容将会在这个项目中进行演示。本文的编写顺序是先搭建项目，然后再讲解一些基础的概念和用法，再到如何进行调试，最后提供一些实际的演练给到大家。基础知识部分也放在演练里面，先做演练再讲基础知识，防止一口气拍出大量基础知识劝退大家
@@ -25,7 +27,7 @@
 
 本文过程中会添加一些外部链接文档，这些外部链接文档都是可选阅读内容，只供大家感兴趣时扩展阅读。本文的核心内容是在本文中编写的，不需要阅读外部链接文档也能够掌握本文的内容。作为入门博客，我担心自己编写过程中存在高手盲区问题，于是尽可能将更多细节写出来，尽管这样会导致一些重复的表述
 
-先新建一个控制台项目，新建完成在 Visual Studio 2022 或更高版本中打开项目，双击 csproj 项目文件，即可进行编辑项目文件
+先新建一个控制台项目，新建完成之后在 Visual Studio 2022 或更高版本中打开项目，双击 csproj 项目文件，即可进行编辑项目文件
 
 本文这里新建了一个名为 `DercelgefarKarhelchaye.Analyzer` 的控制台项目。也许细心的伙伴发现了这个项目使用了 `Analyzer` 作为后缀，这是因为在 dotnet 中源代码生成器和分析器是一体的，按照历史原因的惯性，依然将其命名为分析器项目。在 Visual Studio 2022 的每个项目依赖项里面，大家都会看到如下图的一个名为分析器的项，而没有专门一个名为源代码生成器的项，其原因也是如此
 
@@ -1167,11 +1169,11 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 
 ## 演练：写一个类型收集器
 
-学习了这么多，可以试试进行一些实践演练
+学习了这么多，可以试试进行一些实践演练。在本次演练里面我将会告诉大家更多基础知识，以及分析器的一些设计思想
 
 ### 演练任务
 
-在上文里面和大家介绍了如何进行类型的收集，在本次演练中，将继续加一点需求：让收集到的类型可以同时生成创建器，创建器里面要求传入上下文参数。这是一个很典型的容器注入的需求。我用具体的代码来更具体地说明的任务需求
+在上文里面和大家介绍了如何进行类型的收集，在本次演练中，将继续加一点需求：让收集到的类型可以同时生成创建器，创建器里面要求传入上下文参数。这是一个很典型的容器注入的需求，不熟悉容器的伙伴也没关系，我用具体的代码来更具体地说明的任务需求
 
 假定有 F1 和 F2 和 F3 三个类型，其定义代码分别如下
 
@@ -1251,6 +1253,10 @@ public static partial class FooCollection
 
 完成项目搭建之后，就可以开始进入本次演练的步骤了
 
+演练内容里面只给出关键代码片段，如需要全部的项目文件，可到本章末尾找到所有代码的拉取下载方法
+
+#### 生成特性类型的代码
+
 生成 CollectionAttribute 特性类型的代码部分，可以参考上文的章节，这里不再赘述。直接使用 RegisterPostInitializationOutput 方法注册生成 CollectionAttribute 特性类型的代码
 
 ```csharp
@@ -1295,7 +1301,9 @@ public class FooIncrementalGenerator : IIncrementalGenerator
 
 以上代码唯一的细节是设置 CollectionAttribute 为 internal 类型，这样就可以保证 CollectionAttribute 只能在当前项目内部使用，不会被外部项目引用到。如此能够规避多个相互引用的项目同时使用了此分析器，导致生成了多个相同命名空间的 CollectionAttribute 类型的问题
 
-分析使用了 CollectionAttribute 特性的分部方法。使用上文章节的 ForAttributeWithMetadataName 方法找到标记了 CollectionAttribute 特性的方法。这里需要说明的是 ForAttributeWithMetadataName 方法不仅可以用来找类型，还可以用来找其他可以标记特性的成员，自然也包括方法
+#### 分析使用了 CollectionAttribute 特性的分部方法
+
+使用上文章节的 ForAttributeWithMetadataName 方法找到标记了 CollectionAttribute 特性的方法。这里需要说明的是 ForAttributeWithMetadataName 方法不仅可以用来找类型，还可以用来找其他可以标记特性的成员，自然也包括方法
 
 ```csharp
             context.SyntaxProvider.ForAttributeWithMetadataName
@@ -1333,6 +1341,8 @@ private static void EvaluateText(string text)
 ```
 
 以上代码为 dotnet 内建机制，可以有效生成高速的 Regex 代码，极大提升整体性能，避免运行时编正则带来的损耗，如对此细节感兴趣，请参阅 [.NET 正则表达式源生成器 - .NET - Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-source-generators )
+
+以上举例的 `AbcOrDefGeneratedRegex` 仅仅只是歪楼告诉大家，分部方法配合特性，让源代码生成器填充具体实现内容是现在 dotnet 的惯用方法而已。举例的 `AbcOrDefGeneratedRegex` 以及正则内容和本文内容没有直接关联
 
 在 ForAttributeWithMetadataName 的语义转换步骤里面，将获取其分部方法的返回值类型，以及在此同时生成部分代码
 
@@ -1533,6 +1543,8 @@ GetFooCreatorList()
 
 在源代码生成器的套路里面，就是尽量使用全命名空间，即带上 `global::` 前缀，这样可以避免引用冲突。在这里的代码生成过程中，也是使用了全命名空间的方式，以保证生成的代码可以在任何地方使用。虽然这个方式会让生成的代码比较繁琐，但毕竟是机器生成的代码，不需要人工去编写，只是会添加一些阅读的心智负担
 
+如果感觉确实阅读不方便，那就在 using 处写明别名，带上全命名空间，如 `using Xxx = global::Xx.Fxxx` 之类的写法
+
 为了在 ForAttributeWithMetadataName 的 transform 进行返回，这里定义一个名为 `CollectionExportMethodInfo` 的类型，用于存储过程信息，其代码如下
 
 ```csharp
@@ -1543,6 +1555,8 @@ record CollectionExportMethodInfo
     GeneratedCodeInfo GeneratedCodeInfo,
     Location Location
 );
+
+readonly record struct GeneratedCodeInfo(string GeneratedCode, string Name);
 ```
 
 在源代码生成器里面使用 `record` 或 `readonly record struct` 是非常舒坦的，因为记录类型自带了相等判断比较器，可以省去很多工作量。但在这里需要额外说明的是，默认的相等比较器对符号类型来说是不够准确的，有心的源代码生成器开发者可以对以上的 `CollectionExportMethodInfo` 类型进行更加准确的相等比较器的重写，使用 `SymbolEqualityComparer` 比较器代替默认的相等比较器。这里的核心原因是 Roslyn 在设计之初时， C# 代码还没有可空的概念。于是设计上对类型只有一个概念，后续 NRT (Nullable Reference Types) 引入之后，导致了一个类型还有另一个可空概念，进而导致了判断逻辑上存在两个选项，分别是 `SymbolEqualityComparer.Default` 和 `SymbolEqualityComparer.IncludeNullability` 这两个选项。为了明确起见，于是 Roslyn 团队决定引入 `SymbolEqualityComparer` 比较器，从而可以让分析器开发者明确知道自己在做什么
@@ -1563,19 +1577,773 @@ var areEquals = SymbolEqualityComparer.IncludeNullability.Equals(x, y); // strin
 
 注： 更多关于 `SymbolEqualityComparer` 比较器与默认比较器的差别，请参阅此帖子： <https://github.com/dotnet/roslyn-analyzers/issues/3427>
 
+完成 CollectionExportMethodInfo 的定义之后，将其作为返回值返回
 
+```csharp
+// 获取代码的位置，用于生成警告和错误。即告诉 Visual Studio 应该在哪里飘红
+var location = syntaxContext.TargetNode.GetLocation();
+// 使用 record 类型自带的相等判断，能够省心很多
+return new CollectionExportMethodInfo(constructorArgumentType, collectionType,
+    new GeneratedCodeInfo(generatedCode, $"{className}.{methodSymbol.Name}"), location);
+```
 
+返回时，从 TargetNode 里面调用 GetLocation 获取到 Location 位置信息。此 Location 信息可用于后续生成警告和错误信息，即告诉 Visual Studio 应该在哪里飘红。拿到的 Location 就是对应的代码的位置信息，如是哪个文件，哪个行号，从哪列到哪列等信息
 
+由于在 ForAttributeWithMetadataName 语义分析过程中，还包含了一些过滤条件，将不满足条件的，都使用 null 进行返回。于是在 ForAttributeWithMetadataName 方法完成返回时，再叠加 Where 条件，用于过滤掉不符合条件的情况。其代码如下
+
+```csharp
+            var provider = context
+            .SyntaxProvider.ForAttributeWithMetadataName
+            (
+                "Lindexi.CollectionAttribute", static (SyntaxNode node, CancellationToken _) =>
+                {
+                    ... // 忽略其他代码
+                },
+                (GeneratorAttributeSyntaxContext syntaxContext, CancellationToken _) =>
+                {
+                    ... // 忽略其他代码
+                }
+            )
+            // 过滤掉不符合条件的情况
+            .Where(t => t != null);
+```
+
+回顾本次演练的任务，在当前步骤里面收集到的是一个个的标记了 CollectionAttribute 特性的分部方法，以及这些方法的返回值类型。敲黑板，这里收集到的是一个个的。这就意味着如果直接拿这一个个去与后续的全项目所有类型进行处理，则其处理次数会是 `m * n` 的量，这里的 `m` 是标记了 CollectionAttribute 特性的分部方法的数量，`n` 是全项目所有类型的数量。且这个触发不止一次，而是每次有代码变更都会触发。在 Roslyn 源代码生成器里面禁止此行为，只允许将 IncrementalValuesProvider 多值提供器与 IncrementalValueProvider 单值提供器进行 Combine 组合。禁止将 IncrementalValuesProvider 多值提供器与 IncrementalValuesProvider 多值提供器进行组合
+
+这里有一个容易混淆的点，多值提供器与单值提供器，其类型分别如下：
+
+- `IncrementalValuesProvider<T>` 多值提供器
+- `IncrementalValueProvider<T>` 单值提供器
+
+两者差异只是一个是 `Values` 而另一个是 `Value` 而已，即多了 `s` 的差别而已，两个单词比较好混哦
+
+为了能够和后续的全项目类型收集进行 Combine 合并组合处理，这里在 Where 之后，再调用 Collect 方法，将其收集起来，成为 `IncrementalValueProvider<ImmutableArray<CollectionExportMethodInfo>>` 单值提供器，代码如下
+
+```csharp
+        IncrementalValueProvider<ImmutableArray<CollectionExportMethodInfo>> collectionMethodInfoProvider = context
+            .SyntaxProvider.ForAttributeWithMetadataName(
+                "Lindexi.CollectionAttribute", static (SyntaxNode node, CancellationToken _) =>
+                {
+                    ... // 忽略其他代码
+                },
+                (GeneratorAttributeSyntaxContext syntaxContext, CancellationToken _) =>
+                {
+                    ... // 忽略其他代码
+                })
+            // 过滤掉不符合条件的情况
+            .Where(t => t != null)
+            .Collect()!;
+```
+
+大家是否好奇，似乎这里的 `IncrementalValueProvider<ImmutableArray<T>>` 单值提供器也是骗人的，里面明明就是一个不可变数组，也就是里面就是一个集合。为什么这样也能称为单值提供器？因为多值和单值是从源代码生成器的缓存角度来说的。即数据提供器里面提供的是多个值还是单个值。这里的 `IncrementalValueProvider<ImmutableArray<T>>` 单值提供器，其提供的是一个集合，即一个值，所以称为单值提供器。核心差异在于如代码变更的时候，应该刷新的范围是多大。对于 `IncrementalValueProvider<ImmutableArray<T>>` 来说，只要有一个标记了 CollectionAttribute 的符合条件的分部方法发生了变更，就会触发整个集合的刷新，即 `collectionMethodInfoProvider` 将会重新提供值
+
+但对于 `IncrementalValuesProvider<T>` 多值提供器来说，里面的每一项都是独立的，其中一项的变更，只有触发其对应的一次，而不会影响其他项的触发。这也就是为什么 Collect 的设计上不允许多值提供器与多值提供器进行组合的原因。因为多值提供器与多值提供器组合，将会在某一项值变更的时候，其触发条件是比较震荡的，复杂度比较高，不仅人类程序猿顶不住，机器也顶不住
+
+换句话说就是只要任意一个标记了 CollectionAttribute 的符合条件的分部方法发生了变更，就会触发整个 ImmutableArray 集合的刷新。但任意一个标记了 CollectionAttribute 的符合条件的分部方法发生了变更，走到 Where 处的变更也就只有这一个分部方法而已，只不过后续的 ImmutableArray 集合的刷新是靠 Collect 触发的。因为到 Where 处还是多值提供器，只有到 Collect 处才会变成单值提供器
+
+以上代码就完成了对标记了 CollectionAttribute 特性的分部方法的收集，分析使用了 CollectionAttribute 特性的分部方法，且找到方法的返回值参数，生成 CollectionAttribute 特性类型的代码。接下来将会在下一步根据返回值参数的类型，遍历收集全项目的类型，找到感兴趣的类型，生成创建器代码
+
+#### 遍历收集全项目的类型，生成创建器代码
+
+全项目类型收集过程里面将不能使用 ForAttributeWithMetadataName 方法，而是需要使用上文介绍的高度定制支持的更底层的收集分析的 CreateSyntaxProvider 方法。在语法层面，先判断是类型即可通过，本身就需要遍历全项目的类型的，自然判断语法是类型即可
+
+```csharp
+        IncrementalValuesProvider<INamedTypeSymbol> wholeAssemblyClassTypeProvider = context.SyntaxProvider.CreateSyntaxProvider(
+            static (SyntaxNode node, CancellationToken _) => node.IsKind(SyntaxKind.ClassDeclaration),
+            (GeneratorSyntaxContext syntaxContext, CancellationToken _) =>
+            {
+                ... // 忽略其他代码
+            });
+```
+
+语义层面上，由于现在还没有和对标记了 CollectionAttribute 特性的分部方法的收集的合并，在语义层面上也就没啥好判断的。最多只判断要求类型不能是抽象的，毕竟按照咱的需求任务来说，要的就是创建出对象，抽象类型就不能被直接创建啦，自然就可以被过滤掉
+
+```csharp
+        // 全项目里面的类型
+        IncrementalValuesProvider<INamedTypeSymbol> wholeAssemblyClassTypeProvider
+            = context.SyntaxProvider
+                .CreateSyntaxProvider(
+                    static (SyntaxNode node, CancellationToken _) => node.IsKind(SyntaxKind.ClassDeclaration),
+                    static (GeneratorSyntaxContext generatorSyntaxContext, CancellationToken token) =>
+                    {
+                        var classDeclarationSyntax = (ClassDeclarationSyntax) generatorSyntaxContext.Node;
+                        INamedTypeSymbol? assemblyClassTypeSymbol =
+                            generatorSyntaxContext.SemanticModel.GetDeclaredSymbol(classDeclarationSyntax, token);
+
+                        if (assemblyClassTypeSymbol is not null && !assemblyClassTypeSymbol.IsAbstract)
+                        {
+                            return assemblyClassTypeSymbol;
+                        }
+
+                        return null;
+                    })
+                .Where(t => t != null)!;
+```
+
+完成了全项目类型的收集之后，就可以和收集了标记了 CollectionAttribute 特性的分部方法的 `collectionMethodInfoProvider` 进行合并，其代码如下
+
+```csharp
+ wholeAssemblyClassTypeProvider
+                .Combine(collectionMethodInfoProvider)
+```
+
+调用 Combine 之后返回的类型是一个元组，为 `IncrementalValuesProvider<(INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right)>` 类型。即左边 Left 是多值提供器里面的每一个值，即项目里面的每个类型，右边是单值提供器里面的值
+
+<!-- 实际效果就是当项目里面的单个代码文件变更的时候，只触发一次，且这一次会和单值提供器的值重跑一遍。 -->
+
+继续处理，带上 Select 方法，判断各自类型是否满足标记了 CollectionAttribute 特性的分部方法的感兴趣条件
+
+```csharp
+               wholeAssemblyClassTypeProvider
+                .Combine(collectionMethodInfoProvider)
+                .Select(static ((INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right) tuple,
+                    CancellationToken token) =>
+                {
+                    INamedTypeSymbol assemblyClassTypeSymbol = tuple.Left;
+                    var exportMethodReturnTypeCollectionResultArray = tuple.Right;
+
+                    ... // 忽略其他代码
+                })
+```
+
+在这一步里面，咱可以激进一些，直接就干到生成了对应的项的代码里面，即生成如 ` yield return context => new Foo(context);` 的代码。为了表示此返回类型，这里再次定义一个名为 ItemGeneratedCodeResult 的新的类型
+
+```csharp
+readonly record struct ItemGeneratedCodeResult
+(
+    string ItemGeneratedCode,
+    GeneratedCodeInfo ExportMethodGeneratedCodeInfo
+)
+{
+    public Diagnostic? Diagnostic { get; init; }
+}
+```
+
+这个新的 ItemGeneratedCodeResult 类型采用的是 `readonly record struct` 的设计，这会让分析器更加开森。我感觉 `readonly record struct` 是非常舒坦的设计，不会担心这样的类型在大量使用中，会造成大量的堆对象分配，也不会担心其分配成本和 GC 压力。使用值类型的设计是在分析器官方里面所推荐的，如以下的官方文档所示
+
+> Use value types where possible: Value types are more amenable to caching and usually have well defined and easy to understand comparison semantics.
+
+以上的 ItemGeneratedCodeResult 类型包含了 Diagnostic 类型的 Diagnostic 属性，这是用于在进行源代码生成过程中，发现某些代码不符合预期，进行的分析警告或错误信息。从这里也可以看出来源代码生成器本身也带有分析器的功能，这部分的具体使用将在下文介绍
+
+由于 Right 是 `ImmutableArray<CollectionExportMethodInfo>` 类型，表示的所有的标记了 CollectionAttribute 的分部方法收集信息。因此这里咱也需要对应的创建一个列表，用于建立多对多的关系，即一个类型可能存在对应多个分部方法的关系
+
+```csharp
+                .Select(static ((INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right) tuple,
+                    CancellationToken token) =>
+                {
+                    INamedTypeSymbol assemblyClassTypeSymbol = tuple.Left;
+                    var exportMethodReturnTypeCollectionResultArray = tuple.Right;
+
+                    // 慢点创建列表，因为这里是每个类型都会进入一次的，进入次数很多。但大部分类型都不满足条件。因此不提前创建列表能减少很多对象的创建
+                    List<ItemGeneratedCodeResult>? result = null;
+
+                    ... // 忽略其他代码
+                 })
+```
+
+这里的 `List<ItemGeneratedCodeResult>? result` 我选择不要一开始就创建，因为现在收集到的类型不一定会满足任何一个分部方法的要求，即这将是一个被忽略的类型。慢点创建可以减少浪费
+
+遍历分部方法收集 `ImmutableArray<CollectionExportMethodInfo>` 数组，判断类型是否落在某个分部方法感兴趣条件里面，代码如下
+
+```csharp
+                .Select(static ((INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right) tuple,
+                    CancellationToken token) =>
+                {
+                    INamedTypeSymbol assemblyClassTypeSymbol = tuple.Left;
+                    var exportMethodReturnTypeCollectionResultArray = tuple.Right;
+
+                    // 慢点创建列表，因为这里是每个类型都会进入一次的，进入次数很多。但大部分类型都不满足条件。因此不提前创建列表能减少很多对象的创建
+                    List<ItemGeneratedCodeResult>? result = null;
+
+                    foreach (CollectionExportMethodInfo exportMethodInfo in exportMethodReturnTypeCollectionResultArray)
+                    {
+                        // 一般进入循环的时候，都会加上这个判断。这个判断逻辑的作用是如开发者在 IDE 里面进行编辑文件的时候，那此文件对应的类型就需要重新处理，即类型对应的 token 将会被激活。此时在循环跑的逻辑就是浪费的，逻辑需要重跑，因此需要判断 token 是否被取消，减少循环里面的不必要的逻辑损耗
+                        // check for cancellation so we don't hang the host
+                        token.ThrowIfCancellationRequested();
+
+                         ... // 忽略其他代码
+
+                     }
+                 })
+```
+
+按照 Roslyn 的设计，在进入大循环等逻辑时，应该多判断一下令牌。这个原因是开发者可能不断在 IDE 里面进行编辑文件，源代码生成器执行过程中对应的文件已经被更改了，本次处理是无效的，此时对此文件涉及的相关类型的处理就应该无效掉，等待重新进入。预先多加令牌判断，可以减少无用处理，减少损耗，避免原本就很卡的 Visual Studio 更加卡顿
+
+在 foreach 里面判断当前的 `assemblyClassTypeSymbol` 类型是否继承自分部方法要求的返回类型，如以下代码所示
+
+```csharp
+                    foreach (CollectionExportMethodInfo exportMethodInfo in exportMethodReturnTypeCollectionResultArray)
+                    {
+                        token.ThrowIfCancellationRequested();
+
+                        // 判断当前的类型是否是我们需要的类型
+                        if (!IsInherit(assemblyClassTypeSymbol, exportMethodInfo.CollectionType))
+                        {
+                            continue;
+                        }
+
+                         ... // 忽略其他代码
+                     }
+```
+
+以上的 IsInherit 方法的实现如下
+
+```csharp
+    /// <summary>
+    /// 判断类型继承关系
+    /// </summary>
+    /// <param name="currentType">当前的类型</param>
+    /// <param name="requiredType">需要继承的类型</param>
+    /// <returns></returns>
+    public static bool IsInherit(ITypeSymbol currentType, ITypeSymbol requiredType)
+    {
+        var baseType = currentType.BaseType;
+        while (baseType is not null)
+        {
+            if (SymbolEqualityComparer.Default.Equals(baseType, requiredType))
+            {
+                // 如果基类型是的话
+                return true;
+            }
+
+            // 否则继续找基类型
+            baseType = baseType.BaseType;
+        }
+
+        foreach (var currentInheritInterfaceType in currentType.AllInterfaces)
+        {
+            if (SymbolEqualityComparer.Default.Equals(currentInheritInterfaceType, requiredType))
+            {
+                // 如果继承的类型是的话
+                return true;
+            }
+        }
+
+        return false;
+    }
+```
+
+继承条件判断里面是无视引用对象可空情况的，直接使用 `SymbolEqualityComparer.Default` 判断即可，不用或不该用 `SymbolEqualityComparer.IncludeNullability` 进行判断。以上的 IsInherit 是一个我常写的工具方法，可以用来判断给定类型是否被继承，包括基类型和接口类型
+
+在真实项目里面，通过 IsInherit 即可过滤大量类型，毕竟能够满足条件的，预期还是少数。再下一步就是寻找构造函数了。在 C# 语法里面，只能做到 `new T()` 泛型，做不到构造函数里面带参数的情况。源代码生成器里面可以轻易做到这一点，通过这个演练也能让大家看到源代码生成器的威力。在很多通用创建器、工厂模式等，可以打破泛型 T 只能创建无参构造函数的限制，过程中也不用任何反射，都是最直接的代码，对裁剪和 AOT 友好
+
+如果类型满足继承条件，则继续寻找构造函数。感兴趣的构造函数的特征是有且只有一个参数，参数类型等于分部方法传入的 context 类型。我这里就完全限定参数类型相等，而不是说其 context 的基类型也可以，这仅仅只是为了简单演示而已
+
+```csharp
+// 判断当前的类型是否是我们需要的类型
+if (!IsInherit(assemblyClassTypeSymbol, exportMethodInfo.CollectionType))
+{
+    continue;
+}
+
+// 遍历其构造函数，找到感兴趣的构造函数
+IMethodSymbol? candidateConstructorMethodSymbol = null;
+foreach (IMethodSymbol constructorMethodSymbol in ssemblyClassTypeSymbol.Constructors)
+{
+    if (constructorMethodSymbol.Parameters.Length != 1)
+    {
+        // 根据需求任务可知，感兴趣的构造函数的特征是有且只有一个参数
+        // 如果参数数量不等于 1 则不满足条件
+        continue;
+    }
+
+    // 判断参数的类型是否符合预期
+    IParameterSymbol parameterSymbol = constructorMethodSymbol.Parameters[0]; // 前面判断限定有且只有一个参数，这里可以放心使用下标访问获取首个参数
+    var parameterType = parameterSymbol.Type;
+
+    // 以下忽略是否可空的判断，因此业务上传入时都是有值的，因此无视可空情况。直接使用 SymbolEqualityComparer.Default 判断即可
+    if (SymbolEqualityComparer.Default.Equals(parameterType,
+            exportMethodInfo.ConstructorArgumentType))
+    {
+        // 如果参数类型满足条件，则这就是感兴趣的构造函数
+        candidateConstructorMethodSymbol = constructorMethodSymbol;
+        // 为什么直接 Break 了，不继续找找？继续找找也找不到的，因为不可能存在两个构造函数有相同的参数签名，即不存在两个构造函数的参数数量只有一个且参数类型相同的情况。不信的话，自己写写看就明白了，写任意类型包含两个构造函数，这两个构造函数的参数数量只有一个且参数类型相同
+        // 当然，如果前面判断条件开放为判断满足 `exportMethodInfo.ConstructorArgumentType` 的基类型条件，那自然这里也许就可能会有多个构造函数的情况，也就需要排优先级了哈。不排也可以，毕竟生成出来的代码都是一样的，但不排的话，语义层面则是不正确的。为了简单演示，这里就直接限制要求类型相同而不是判断继承关系
+        break;
+    }
+}
+```
+
+能够进入到这一步的，才开始创建列表用于作为返回值
+
+```csharp
+    result ??= new List<ItemGeneratedCodeResult>();
+```
+
+判断是否存在满足条件的构造函数，如满足条件，则开始生成代码
+
+```csharp
+result ??= new List<ItemGeneratedCodeResult>();
+
+if (candidateConstructorMethodSymbol is not null)
+{
+    var fullNameDisplayFormat = new SymbolDisplayFormat
+    (
+        // 带上命名空间和类型名
+        SymbolDisplayGlobalNamespaceStyle.Included,
+        // 命名空间之前加上 global 防止冲突
+        SymbolDisplayTypeQualificationStyle
+            .NameAndContainingTypesAndNamespaces
+    );
+    var className = assemblyClassTypeSymbol.ToDisplayString(fullNameDisplayFormat);
+
+    // context => new F1(context)
+    var generatedCode = $"context => new {className}(context)";
+
+    result.Add(new ItemGeneratedCodeResult(generatedCode, exportMethodInfo.GeneratedCodeInfo));
+}
+```
+
+那如果没有存在满足条件的构造函数呢？此时就可以报告一条分析报告信息了
+
+```csharp
+ if (candidateConstructorMethodSymbol is not null)
+ {
+     ... // 忽略其他代码
+ }
+ else
+ {
+     // 找不到满足条件的构造函数，给出分析警告
+     Diagnostic diagnostic = ... 
+ 
+     result.Add(default(ItemGeneratedCodeResult) with
+     {
+         Diagnostic = diagnostic,
+     });
+ }
+```
+
+分析警告警告内容也有点知识量，也比较独立，我准备在下文独立和大家介绍，这里就一笔略过。大家在这里只需知道在源代码生成器过程中，如果分析到某些代码难以开展后续的生成工作，可以在此创建分析警告或错误，用于提示开发者
+
+最后，将 result 列表返回即可
+
+```csharp
+return result?.ToImmutableArray() ?? ImmutableArray<ItemGeneratedCodeResult>.Empty;
+```
+
+以上代码将 ` List<ItemGeneratedCodeResult>` 转换为不可变的数组进行返回，如此可以更好的符合分析器的设计。整个寻找整个项目的感兴趣的类型和生成部分代码的过程的代码如下
+
+```csharp
+        IncrementalValuesProvider<ImmutableArray<ItemGeneratedCodeResult>> itemGeneratedCodeResultProvider =
+            wholeAssemblyClassTypeProvider
+                .Combine(collectionMethodInfoProvider)
+                .Select(static ((INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right) tuple,
+                    CancellationToken token) =>
+                {
+                    INamedTypeSymbol assemblyClassTypeSymbol = tuple.Left;
+                    var exportMethodReturnTypeCollectionResultArray = tuple.Right;
+
+                    // 慢点创建列表，因为这里是每个类型都会进入一次的，进入次数很多。但大部分类型都不满足条件。因此不提前创建列表能减少很多对象的创建
+                    List<ItemGeneratedCodeResult>? result = null;
+
+                    foreach (CollectionExportMethodInfo exportMethodInfo in exportMethodReturnTypeCollectionResultArray)
+                    {
+                        // 一般进入循环的时候，都会加上这个判断。这个判断逻辑的作用是如开发者在 IDE 里面进行编辑文件的时候，那此文件对应的类型就需要重新处理，即类型对应的 token 将会被激活。此时在循环跑的逻辑就是浪费的，逻辑需要重跑，因此需要判断 token 是否被取消，减少循环里面的不必要的逻辑损耗
+                        // check for cancellation so we don't hang the host
+                        token.ThrowIfCancellationRequested();
+
+                        // 判断当前的类型是否是我们需要的类型
+                        if (!IsInherit(assemblyClassTypeSymbol, exportMethodInfo.CollectionType))
+                        {
+                            continue;
+                        }
+
+                        // 遍历其构造函数，找到感兴趣的构造函数
+                        IMethodSymbol? candidateConstructorMethodSymbol = null;
+                        foreach (IMethodSymbol constructorMethodSymbol in assemblyClassTypeSymbol.Constructors)
+                        {
+                            if (constructorMethodSymbol.Parameters.Length != 1)
+                            {
+                                continue;
+                            }
+
+                            // 判断参数的类型是否符合预期
+                            IParameterSymbol parameterSymbol = constructorMethodSymbol.Parameters[0];
+                            var parameterType = parameterSymbol.Type;
+
+                            if (SymbolEqualityComparer.Default.Equals(parameterType,
+                                    exportMethodInfo.ConstructorArgumentType))
+                            {
+                                candidateConstructorMethodSymbol = constructorMethodSymbol;
+                                break;
+                            }
+                        }
+
+                        result ??= new List<ItemGeneratedCodeResult>();
+                        var fullNameDisplayFormat = new SymbolDisplayFormat
+                        (
+                            // 带上命名空间和类型名
+                            SymbolDisplayGlobalNamespaceStyle.Included,
+                            // 命名空间之前加上 global 防止冲突
+                            SymbolDisplayTypeQualificationStyle
+                                .NameAndContainingTypesAndNamespaces
+                        );
+                        var className = assemblyClassTypeSymbol.ToDisplayString(fullNameDisplayFormat);
+
+                        if (candidateConstructorMethodSymbol is not null)
+                        {
+                            // context => new F1(context)
+                            var generatedCode = $"context => new {className}(context)";
+
+                            result.Add(new ItemGeneratedCodeResult(generatedCode, exportMethodInfo.GeneratedCodeInfo));
+                        }
+                        else
+                        {
+                            // 找不到满足条件的构造函数，给出分析警告
+                            Diagnostic diagnostic = ... 
+ 
+                            result.Add(default(ItemGeneratedCodeResult) with
+                            {
+                                Diagnostic = diagnostic,
+                            });
+                        }
+                    }
+
+                    return result?.ToImmutableArray() ?? ImmutableArray<ItemGeneratedCodeResult>.Empty;
+                });
+```
+
+为了能够在后续步骤更好地聚焦处理，这里也同样在 `itemGeneratedCodeResultProvider` 叠加一个 Where 进行过滤，去掉空集，代码如下
+
+```csharp
+        IncrementalValuesProvider<ImmutableArray<ItemGeneratedCodeResult>> itemGeneratedCodeResultProvider =
+            wholeAssemblyClassTypeProvider
+                .Combine(collectionMethodInfoProvider)
+                .Select(static ((INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right) tuple,
+                    CancellationToken token) =>
+                {
+                    ... // 忽略其他代码
+                })
+                .Where(t => t != ImmutableArray<ItemGeneratedCodeResult>.Empty);
+```
+
+如此即可确保后续步骤拿到的 `itemGeneratedCodeResultProvider` 提供的值都不会是空集
+
+在这里，大家看到了很多熟悉的类似 Linq 里面的 Where 和 Select 方法。这些方法只是命名上和 Linq 相同，实际上不是原来的 Linq 的方法。但从方法的用途上和设计上，可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。在更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡。我将在下文基础知识部分和大家详细解析 Where 和 Select 和 Combine 等这几个基础 IIncrementalGenerator 增量源代码生成器的专有方法
+
+通过以上的步骤，就完成了收集各个感兴趣类型的构造函数的过程，且生成了对应的创建器委托代码。接下来就可以进行组装最终的代码了
+
+以上是逐个类型跑出来的，需要将其组装起来，生成最终的代码。这里采用的方法是先用 Collect 将其聚合为一个大数组，再使用 SelectMany 将其散开。为什么需要做合分的处理？原因是 `itemGeneratedCodeResultProvider` 提供的数组是一个类型对应在多个分部方法里面的生成代码，而最终需要生成的是单个分部方法包含多个类型的代码，且期望各个分部方法独立生成。于是就需要先调用 Collect 将其聚合为一个大数组，如此才能让各个分部方法拿到所有感兴趣的类型的生成代码，再调用 SelectMany 方法让每个分部方法独立输出，代码如下
+
+```csharp
+itemGeneratedCodeResultProvider
+ .Collect()
+ .SelectMany((ImmutableArray<ImmutableArray<ItemGeneratedCodeResult>> array, CancellationToken oken) =>
+ {
+     ... // 忽略其他代码
+ });
+```
+
+原本 `itemGeneratedCodeResultProvider` 就是一个多值提供器，提供的每个值都是 `ImmutableArray<ItemGeneratedCodeResult>` 类型。调用 Collect 之后，就转换成了 `ImmutableArray<ImmutableArray<ItemGeneratedCodeResult>>` 类型，套了两层数组。在 SelectMany 里面，需要先将其拆散，按照 ItemGeneratedCodeResult 里面的 ExportMethodGeneratedCodeInfo 进行分组。这时候采用 Linq 来写就非常简单，代码如下
+
+```csharp
+itemGeneratedCodeResultProvider
+ .Collect()
+ .SelectMany((ImmutableArray<ImmutableArray<ItemGeneratedCodeResult>> array, CancellationTokentoken) =>
+ {
+     IEnumerable<IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult>> group = array
+         .SelectMany(t => t)
+         // 如果 Diagnostic 不是空，则证明这条是用来报告的，忽略
+         .Where(t => t.Diagnostic is null)
+         .GroupBy(t => t.ExportMethodGeneratedCodeInfo);
+
+     ... // 忽略其他代码
+ });
+```
+
+这里拿到的 `IEnumerable<IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult>> group` 看似很长，其实含义非常明了，表示的是多个组。每个组的领导就是 GeneratedCodeInfo 类型，实际含义是分部方法。简单来说可以看成 `IEnumerable<分部方法组>` 类型，细分 `分部方法组` 就包含了分部方法的信息本身，以及各个满足条件的类型和其生成代码。每个 `分部方法组` 就可以组成一个最终生成代码
+
+将 `IEnumerable<IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult>> group` 进行遍历，每一项都可生成一个独立的分部方法的实现代码
+
+```csharp
+  IEnumerable<IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult>> group = array
+      .SelectMany(t => t)
+      // 这条是用来报告的，忽略
+      .Where(t => t.Diagnostic is null)
+      .GroupBy(t => t.ExportMethodGeneratedCodeInfo);
+
+  var generatedCodeList = new List<GeneratedCodeInfo>();
+  foreach (IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult> temp in group)
+  {
+      // 在这里就是可以组装出各个标记了 CollectionAttribute 特性的分部方法的实现代码
+      ... // 忽略其他代码
+  }
+```
+
+以下就是组装标记了 CollectionAttribute 特性的分部方法的实现代码，先将各个满足条件的类型的生成代码放入到 StringBuilder 里面，转换为方法体核心内容，代码如下
+
+```csharp
+var generatedCodeList = new List<GeneratedCodeInfo>();
+foreach (IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult> temp in group)
+{
+    // 进行组装生成代码。在 Select 系列方法组装会比在 RegisterSourceOutput 更好，在这里更加便被打断
+    var stringBuilder = new StringBuilder();
+    foreach (ItemGeneratedCodeResult itemGeneratedCodeResult in temp)
+    {
+        token.ThrowIfCancellationRequested();
+        //         yield return context => new F1(context);
+        stringBuilder.AppendLine($"         yield return itemGeneratedCodeResult.ItemGeneratedCode};");
+    }
+
+    // 严谨一些，添加 break 语句。顺带解决收集不到任何一个类型的情况
+    stringBuilder.AppendLine("         yield break;");
+}
+```
+
+在以上生成代码里面，还在最后添加了 ` yield break;` 代码，如此可以顺带解决收集不到任何一个类型的情况，即使收集不到一个类型，也能返回空集，而不会让构建炸掉
+
+再根据上文提供的 `yield return context => new F1(context);` 用于被替换的预置内容，将其进行替换，即可完成分部方法实现方法体的内容
+
+```csharp
+// 这是用来替换的代码
+var replacedCode = "        yield return context => new F1(context);";
+
+GeneratedCodeInfo generatedCodeInfo = temp.Key;
+var generatedCode = generatedCodeInfo.GeneratedCode.Replace(replacedCode, stringBuilder.ToString());
+```
+
+当前的 `generatedCode` 变量的内容大概如下，即以下代码内容就是最终的分部方法生成的方法体内容示例
+
+```csharp
+namespace KawhawnahemCanalllearlerwhu;
+
+public static partial class FooCollection
+{
+    public static partial global::System.Collections.Generic.IEnumerable<global::System.Func<global::KawhawnahemCanalllearlerwhu.IContext, global::KawhawnahemCanalllearlerwhu.IFoo>>
+GetFooCreatorList()
+    {
+         yield return context => new global::KawhawnahemCanalllearlerwhu.F1(context);
+         yield return context => new global::KawhawnahemCanalllearlerwhu.F2(context);
+         yield break;
+    }
+}
+```
+
+生成最终代码之后，将其加入到 `generatedCodeList` 列表里面，如以下代码所示
+
+```csharp
+generatedCodeList.Add(new GeneratedCodeInfo(generatedCode, generatedCodeInfo.Name));
+```
+
+最后，将 `generatedCodeList` 列表返回即可
+
+```csharp
+        IncrementalValuesProvider<GeneratedCodeInfo> generatedCodeInfoProvider = itemGeneratedCodeResultProvider
+            .Collect()
+            .SelectMany((ImmutableArray<ImmutableArray<ItemGeneratedCodeResult>> array, CancellationToken token) =>
+            {
+                IEnumerable<IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult>> group = array
+                    .SelectMany(t => t)
+                    // 这条是用来报告的，忽略
+                    .Where(t => t.Diagnostic is null)
+                    .GroupBy(t => t.ExportMethodGeneratedCodeInfo);
+
+                var generatedCodeList = new List<GeneratedCodeInfo>();
+                foreach (IGrouping<GeneratedCodeInfo, ItemGeneratedCodeResult> temp in group)
+                {
+                    var generatedCode = ... // 最终生成的分部方法的方法体
+                    generatedCodeList.Add(new GeneratedCodeInfo(generatedCode, generatedCodeInfo.Name));
+                }
+
+                return generatedCodeList;
+            });
+```
+
+是否大家好奇为什么 `generatedCodeInfoProvider` 是 `IncrementalValuesProvider<GeneratedCodeInfo>` 类型？明明最后返回的是 `List<GeneratedCodeInfo> generatedCodeList` 列表？这是因为当前调用的就是 SelectMany 方法，其功能和 Linq 的 SelectMany 方法一样，都是将返回的列表进行拆散
+
+最后一步就是将生成的代码进行注入，这里调用的是 RegisterImplementationSourceOutput 方法。回顾一下几个注入生成代码的方法的差别，其中 RegisterImplementationSourceOutput 的作用是注册具体的实现部分的生成代码。这个方法的调用可以让 IDE 进行充分的优化，因为具体的实现的内容不影响外部的语法语义分析，外部的语法语义分析靠定义部分即可完成，因此对于实现的内容部分可以尽量慢点调用和减少调用频次。刚好在本演练里面，生成的代码就是具体的实现部分，调用 RegisterImplementationSourceOutput 方法是非常合适的
+
+```csharp
+        context.RegisterImplementationSourceOutput(generatedCodeInfoProvider,
+            (SourceProductionContext productionContext, GeneratedCodeInfo generatedCodeInfo) =>
+            {
+                productionContext.AddSource($"{generatedCodeInfo.Name}.cs", generatedCodeInfo.GeneratedCode);
+            });
+```
+
+按照源代码生成器的最佳实践来说，在 RegisterImplementationSourceOutput 等注册代码步骤里面，应该接近没有逻辑。即在值提供器步骤时，就将代码生成完成，到 RegisterXxx 方法里面只做注册而已。这样就比较方便在前面步骤进行打断，以及缓存复用
+
+#### 报告 Diagnostic 信息
+
+认真阅读文章的伙伴也许还记得上文部分提到了 Diagnostic 信息。在源代码生成器的过程中，如果发现某些代码不符合预期，可以通过报告 Diagnostic 信息，用于提示开发者。在上文的代码里面，如果找不到满足条件的构造函数，就会报告一条分析警告。这里就来详细介绍如何报告 Diagnostic 信息
+
+回到 `itemGeneratedCodeResultProvider` 变量的赋值部分代码，即使对全项目的类型 `wholeAssemblyClassTypeProvider` 进行“遍历”的时候，如果一个类型满足分部方法收集条件，但不存在任何一个满足条件的构造函数时，应该给出分析警告。如本演练给出的 F3 测试类型的定义如下
+
+```csharp
+public class F3 : IFoo
+{
+    public F3()
+    {
+        // 忽略其他代码
+    }
+}
+```
+
+对应的分部方法的定义如下
+
+```csharp
+public static partial class FooCollection
+{
+    [Collection]
+    public static partial IEnumerable<Func<IContext, IFoo>> GetFooCreatorList();
+}
+```
+
+可以明显看出给出的 F3 测试类型是歪楼的，没有构造函数满足 `GetFooCreatorList` 收集条件。于是在 `wholeAssemblyClassTypeProvider` 进行遍历的过程中，应该对这些歪楼的类型给出警告
+
+```csharp
+IncrementalValuesProvider<INamedTypeSymbol> wholeAssemblyClassTypeProvider = ...
+
+wholeAssemblyClassTypeProvider
+    .Combine(collectionMethodInfoProvider)
+    .Select(static ((INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right) tuple,
+        CancellationToken token) =>
+    {
+        INamedTypeSymbol assemblyClassTypeSymbol = tuple.Left;
+        var exportMethodReturnTypeCollectionResultArray = tuple.Right;
+
+        List<ItemGeneratedCodeResult>? result = null;
+
+        foreach (CollectionExportMethodInfo exportMethodInfo inexportMethodReturnTypeCollectionResultArray)
+        {
+            ... // 忽略其他代码
+
+            // 遍历其构造函数，找到感兴趣的构造函数
+            IMethodSymbol? candidateConstructorMethodSymbol = null;
+
+            ... // 尝试获取满足条件的构造函数
+
+            if (candidateConstructorMethodSymbol is not null)
+            {
+                
+            }
+            else
+            {
+                Diagnostic diagnostic = ...
+
+                result.Add(default(ItemGeneratedCodeResult) with
+                {
+                    Diagnostic = diagnostic,
+                });
+            }
+        }
+
+        return result?.ToImmutableArray() ?? ImmutableArray<ItemGeneratedCodeResult>.Empty;
+    })
+```
+
+现在咱来开始填补 `Diagnostic diagnostic = ...` 这句代码的具体内容。首先需要创建一个 DiagnosticDescriptor 对象，用于描述这个 Diagnostic 信息的基本信息，如 ID、Title、MessageFormat、Category 等。这是因为大部分的 Diagnostic 基本信息都是固定的，唯一不同的就是具体的 Message 提示消息内容的一些参数不同，以及代码 Location 的不同而已。再加上为了让分析器能够提供给全球的开发者使用，自然要照顾多语言问题，这部分就可以独立出来定义，不用每次报告都重复生成。当然了，为了演示方便，我这里就在每次循环里面，每找到一次不满足条件的构造函数就创建一个 DiagnosticDescriptor 对象，实际项目中应该是提前定义好的，不用每次循环都创建，甚至作为静态的字段都是合理的
+
+```csharp
+// 找不到满足条件的构造函数，给出分析警告
+var diagnosticDescriptor = new DiagnosticDescriptor
+(
+    id: nameof(Resources.Kaw001),
+    title: Localize(nameof(Resources.Kaw001)),
+    messageFormat: Localize(nameof(Resources.Kaw001_Message)),
+    category: "FooCompiler",
+    DiagnosticSeverity.Warning,
+    isEnabledByDefault: true
+);
+```
+
+大家可以发现，以上代码写了 `Resources.Kaw001` 资源定义，这部分是依靠在分析器项目里面建立 Resources.resx 资源而被生成的属性。通过建立 Resources.resx 文件，可以复用原本 dotnet 内建的多语言机制，生成多语言程序集等方式提供多语言包。本文这里不过多介绍多语言的创建方式，大家感兴趣还请自行了解
+
+具体做法就是创建 Resources.resx 文件，确保在 csproj 项目里面里面设置为 ResXFileCodeGenerator 生成方式或[其他](https://github.com/ycanardeau/ResXGenerator)的生成方式
+
+```xml
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+```
+
+在 Resources.resx 文件里面添加两项，内容分别如下
+
+- `Kaw001` : 找不到符合预期的构造函数
+- `Kaw001_Message` : 无法从 {0} 类型中找到构造函数，期望构造函数的只有一个参数，且参数为 {1} 类型
+
+如上文代码，可见 `Kaw001` 将被当成标题，而 `Kaw001_Message` 被作为具体警告内容。其中 `Kaw001_Message` 添加了 `{0}` 和 `{1}` 内容，用于分别替换为具体警告信息内容的具体类型
+
+为了作为警告内容，在 DiagnosticDescriptor 需要将 DiagnosticSeverity 设置为 Warning 等级。如期望作为错误，则需要设置为 Error 才可以。可用选项如下所示
+
+```csharp
+  /// <summary>Describes how severe a diagnostic is.</summary>
+  public enum DiagnosticSeverity
+  {
+    /// <summary>
+    /// Something that is an issue, as determined by some authority,
+    /// but is not surfaced through normal means.
+    /// There may be different mechanisms that act on these issues.
+    /// </summary>
+    Hidden,
+    /// <summary>
+    /// Information that does not indicate a problem (i.e. not prescriptive).
+    /// </summary>
+    Info,
+    /// <summary>Something suspicious but allowed.</summary>
+    Warning,
+    /// <summary>
+    /// Something not allowed by the rules of the language or other authority.
+    /// </summary>
+    Error,
+  }
+```
+
+以上 `category` 分类是自己分析器内自定义的，这部分没有做要求，只要自己分类好就可以了。在我所在的团队的 <https://github.com/dotnet-campus/dotnetCampus.MSBuildUtils> 开源项目里面就内建了一些常用的分类，大家如果没有思路可以参考
+
+上文代码中的 DiagnosticDescriptor 构造函数参数的 Localize 方法的实现如下，其作用是返回支持语言文化的 LocalizableString 类型而不是具体字符串
+
+```csharp
+    public static LocalizableString Localize(string key) =>
+        new LocalizableResourceString(key, Resources.ResourceManager, typeof(Resources));
+```
+
+完成了对 DiagnosticDescriptor 的定义之后，接下来就可以开始创建 Diagnostic 对象。也如 DiagnosticDescriptor 的构造函数可以看到，其实基本信息都全了，剩下的就是填充具体警告信息的参数内容，即 `{0}` 和 `{1}` 参数内容，以及可选的警告的代码 Location 在哪信息而已
+
+```csharp
+var fullNameDisplayFormat = new SymbolDisplayFormat
+(
+    // 带上命名空间和类型名
+    SymbolDisplayGlobalNamespaceStyle.Included,
+    // 命名空间之前加上 global 防止冲突
+    SymbolDisplayTypeQualificationStyle
+        .NameAndContainingTypesAndNamespaces
+);
+var className = assemblyClassTypeSymbol.ToDisplayString(fullNameDisplayFormat);
+
+// 无法从 {0} 类型中找到构造函数，期望构造函数的只有一个参数，且参数类型为 {1}
+Diagnostic diagnostic = Diagnostic.Create(diagnosticDescriptor, exportMethodInfo.Location,
+    messageArgs:
+    [
+        className,
+        exportMethodInfo.ConstructorArgumentType.ToDisplayString(fullNameDisplayFormat)
+    ]);
+```
+
+如以上代码，可见警告飘红就在分部方法的定义上，内容就是当前的类型和分部方法构成的警告信息。按照本演练的例子，输出信息大概如下
+
+```csharp
+C:\lindexi\Code\Roslyn\KawhawnahemCanalllearlerwhu\KawhawnahemCanalllearlerwhu\Foo.cs(40,5,41,81): warning Kaw001: 无法从 global::KawhawnahemCanalllearlerwhu.F3 类型中找到构造函数，期望构造函数的只有一个参数，且参数为 global::KawhawnahemCanalllearlerwhu.IContext 类型
+```
+
+这个过程中可以看到似乎有分析器的影子在里面了，报告 Diagnostic 过程本身也就是分析器的一个部分，大部分分析器的功能都是和源代码生成器相互重叠的，比如都需要进行语法语义的分析。不同点只是源代码生成器多了一个生成代码的过程
+
+不过这里演示的还不是专用分析器的功能，在下文将会告诉大家如何写一个专用分析器。专用的分析器有更多好用的方法，其核心在于分析要尽量不影响用户编写代码，有各个时机可以选。但源代码生成器是如果没有生成，可能就影响到了用户写代码了，可选时机少了很多
+
+以上就是本演练的全部实现内容。期望能够让大家了解到一个比较全面的源代码生成器的各个方面内容。大家也不要被此吓到，这是我专门找到的能够覆盖源代码生成器所用大部分技术的例子。大部分源代码生成器都不会用到涉及这么全面的技术内容的。以上的例子是我按照我所在的团队的可产品化的开源项目简化的内容，更多细节和产品化处理逻辑，可以去参考开源项目
 
 使用了本演练介绍的技术的可产品化使用的开源项目： <https://github.com/dotnet-campus/Telescope>
-
-
-可以看到在 `IIncrementalGenerator` 这部分设计里面是非常靠近 Linq 的设计的。这更底层的设计上，所期望的就是让数据可以和 Linq 的数据流设计一样，能够一级级传递，且过程中是 Lazy 的和带缓存的。核心目的就是减少计算压力，充分利用 Roslyn 的不可变性带来的缓存机制，减少分析过程的计算压力，不让原本就很卡的 Visual Studio 更加卡
-
-
-这个过程中可以看到似乎有分析器的影子在里面了，报告 过程本身也就是分析器的一个部分，大部分分析器的功能都是和源代码生成器相互重叠的，比如都需要进行语法语义的分析。不同点只是源代码生成器多了一个生成代码的过程
-
-不过这里演示的还不是专用分析器的功能，在下文将会告诉大家如何写一个专用分析器
 
 ### 代码
 
@@ -1599,15 +2367,78 @@ git pull origin 7799af7403b6408b1e30151e144b2273c86433c7
 
 获取代码之后，进入 Roslyn/KawhawnahemCanalllearlerwhu 文件夹，即可获取到源代码
 
-
-
 ### 生成的源代码保存到本地文件
 
+在本演练里面生成的代码还算简单，也不知道大家是否在一开始就在好奇生成的代码是什么样子的。接下来我将告诉大家如何将生成的源代码保存到本地文件
 
-[将 Source Generator 生成的源代码保存到本地文件](https://blog.lindexi.com/post/%E5%B0%86-Source-Generator-%E7%94%9F%E6%88%90%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6.html )
+对于比较复杂的生成代码而言，有时候会导致项目构建不通过。这个技术在实际开发中非常有用，默认的生成代码只能在 VisualStudio 里面的分析器里面一项项展开查看，没有具体的文件路径，对于源代码生成器作者的调试分析不够友好，也不方便将生成的代码发送给其他开发者辅助调试。将生成的源代码保存到本地文件，可以更好的辅助大家进行阅读和调试，以及采用第三方工具辅助分析生成的代码内容
+
+将生成的源代码保存到本地文件只需在 csproj 项目文件里面设置 `EmitCompilerGeneratedFiles` 属性即可，设置完成之后，默认的生成源代码将会存放到 `$(IntermediateOutputPath)\generated` 文件夹里面，这里的 `$(IntermediateOutputPath)` 由 `obj\$(Configuration)\$(TargetFramework.ToLowerInvariant())\` 构成，调试下的输出大概是 `obj\Debug\net9.0\` 等类似的文件夹里
+
+```xml
+  <PropertyGroup>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+  </PropertyGroup>
+```
+
+如果期望自己指定保存的文件夹，可以自行设置 EmitCompilerGeneratedFiles 属性，如以下代码
+
+```xml
+  <PropertyGroup>
+    <CompilerGeneratedFilesOutputPath>Generated\$(TargetFramework)</CompilerGeneratedFilesOutputPath>
+  </PropertyGroup>
+```
+
+以上代码之所以拼接上 TargetFramework 是因为期望默认处理多框架的文件冲突问题，源代码生成器会在多框架下分别执行，为每个框架生成独立的代码。如果在多框架项目下没有配置加上 TargetFramework 将会造成生成的源代码存放的文件冲突
+
+更多请参阅 [将 Source Generator 生成的源代码保存到本地文件](https://blog.lindexi.com/post/%E5%B0%86-Source-Generator-%E7%94%9F%E6%88%90%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6.html )
 <!-- [将 Source Generator 生成的源代码保存到本地文件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18011557 ) -->
 
+### 基础知识
 
+在上文介绍了基础 IIncrementalGenerator 增量源代码生成器的专有方法，如 Where 和 Select 和 Combine 等，这里将详细介绍这几个方法的用法和设计
+
+开始之前重新介绍两个类型的值提供器，分别是 IncrementalValuesProvider 多值提供器和 IncrementalValueProvider 单值提供器。这两个类型的值提供器是源代码生成器的核心，用于提供源代码生成器的输入源
+
+对于 IncrementalValuesProvider 多值提供器来说，里面的每一项都是独立的。比如以下代码
+
+```csharp
+IncrementalValuesProvider<Foo> provider = ...
+var t = provider.Select(...);
+```
+
+当某个 Foo 项变更的时候，那么 Select 方法里面的代码就会重新执行，且只执行一次。其他没有变更的 Foo 项则不会触发 Select 方法里面的委托执行。通过类似的方式可以应用缓存，减少计算工作量
+
+有些伙伴会感谢增量源代码生成器这部分 API 比较复杂。确实是比较复杂。但大家需要明确的是，咱现在正在编写的是和编译器相关的代码，所有和编译器沾边的，其难度都不低。在 Roslyn 以及其周边的设施的设计上，都追求性能、编写的复杂度、可维护性等多方面的平衡。如果没有源代码生成的 API 封装，直接面对最裸的编译器相关实现逻辑，那其开发难度和入门门槛可想而知的高
+
+在性能追求方面上，性能优化常用套路里面就是减少计算量。除了语言层面能够提升之外，减少计算工作量能达到算法级的优化，这才是真正的优化。尽管 Roslyn 在发布之初就强调了性能，但即使单次构建足够快，架不住次数多。比如一个代码文件压到 1 毫秒，但我的项目有 2000 个文件，我假设无时不刻都在修改代码，那么每次构建就是 2000 毫秒，也就是 2 秒。这个时间对于一个大型项目来说，还是比较可观的。但事实上，绝大部分的代码我都没有动到，只有少部分的代码在修改。这时候就需要增量构建，只处理修改的代码，这样就能大大减少构建时间。这就是增量构建的优势所在
+
+为了达成增量构建，就需要引入缓存不可变机制。引入缓存不可变机制，在一定程度上能够降低整体逻辑复杂度，不需要让程序猿去内耗对象是否被变更等问题。也方便底层设施搭建者进行复现问题，即方便重现问题，各个部件都是不可变的，方法都是无副作用的，自然重现步骤就简单了
+
+在多方平衡之下，就有了现在大家所看到的 IIncrementalGenerator 增量源代码生成器的各个方法了。虽然看起来复杂，但只要想想原本的开发难度和复杂度，能够被降低到这个程度，就不会觉得这个 API 复杂了
+
+对于 IncrementalValueProvider 单值提供器来说，里面只提供一个值，有时候这个值是一个数组集合，有时候里面就真的是一个值，比如下文会和大家介绍到的配置内容。在 IIncrementalGenerator 增量源代码生成器里面就充满了聚合和散开的逻辑，也推荐这么干，这样的逻辑更底层的思想是实现细颗粒度管控，能够更好地利用缓存，减少计算工作量
+
+无论是 IncrementalValuesProvider 多值提供器还是 IncrementalValueProvider 单值提供器，整体设计都是采用管线方式，走数据流的方式，让数据一步步往下走。在每一步的输出里面都进行缓存检查，如果命中缓存，即没有更改，则不会触发后续的计算。这也就是 IIncrementalGenerator 增量源代码生成器命名的由来，即增量构建，只处理变更的部分。而 Linq 刚好就是数据流的一个现有实践，在增量源代码生成器里面复用了这部分的设计思想，只是 API 实现和行为略微不同，接下来我将逐一和大家介绍这几个方法的用法和设计
+
+本章以下的介绍顺序保持和 <https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md> 官方文档相同的顺序，对应的代码附图来源于此官方文档
+
+#### Select
+
+方法签名：
+
+```csharp
+public static partial class IncrementalValueSourceExtensions
+{
+    // 1 => 1 transform 
+    // 1 对 1 的转换，从 TSource 转换为 TResult 类型的输出
+    public static IncrementalValue[s]Provider<TResult> Select<TSource, TResult>(this IncrementalValue[s]Provider<TSource> source, Func<TSource, CancellationToken, TResult> selector);
+}
+```
+
+这是一个最常用的转换逻辑，用于从当前提供的数据转换为新的数据进行输出，可同时在 IncrementalValuesProvider 多值提供器和 IncrementalValueProvider 单值提供器
+
+为了简单表述，我使用 `IncrementalValue[s]Provider` 代表 `IncrementalValuesProvider` 和 `IncrementalValueProvider` 两个类型的值提供器都适用的情况
 
 
 
@@ -1623,9 +2454,84 @@ git pull origin 7799af7403b6408b1e30151e144b2273c86433c7
 
 以上介绍的都是从代码入手，通过对现有的代码进行分析而生成新的代码。大家是否好奇其输入源还有没有其他方式。接下来将通过演练的方式和大家分别介绍从 csproj 等项目属性配置以及通过其他非代码文件的方式进行源代码生成
 
-## 演练：将构建时间写入源代码
+## 演练：将构建时间和自定义配置写入源代码
 
-以上就是通过读取 csproj 项目文件的属性配置，获取构建时间以及将自定义配置内容不写入源代码的过程。接下来将继续通过演练的方式，告诉大家如何在分析器项目里面读取其他非代码文件的内容
+本次演练的任务是将构建时间和自定义配置写入源代码。这个任务的背景是，有时候我们想要直接从代码里面读取一些构建时的信息，比如构建时间呀、一些自定义配置呀等等。这个任务的目的是让大家了解如何从 csproj 项目文件里面读取属性配置，以及如何将这些属性配置写入源代码
+
+再细化一下，我期望的是能够在源代码里面写出以下代码
+
+```csharp
+Console.WriteLine($"BuildAt={BuildInformation.BuildAt}");
+Console.WriteLine($"Platform={BuildInformation.Platform}");
+Console.WriteLine($"Configuration={BuildInformation.Configuration}");
+```
+
+运行的输出内容大概如下
+
+```csharp
+BuildAt=2025/3/9 13:41:29
+Platform=AnyCpu
+Configuration=Release
+```
+
+以上的 BuildInformation 类型就是一个由源代码生成器生成的类，里面包含了构建时间、平台和配置信息
+
+在源代码生成器里面，不需要直接碰触 csproj 项目文件的读取，取而代之的是从 CompilationProvider 值提供器里面获取到项目的编译信息
+
+这里也能和大家证明的是，作为源代码生成器的输入源，不仅仅是代码，还可以是其他的一些信息。这里的信息是编译信息，也可以是其他的一些信息，比如额外的文件等等信息
+
+此演练的核心实现方法如下，首先是从 CompilationProvider 值提供器里面获取到项目的编译信息，接着就可以愉快地写入生成的代码啦，非常简单。这里我就跳过了项目创建的步骤，直接到核心代码的实现
+
+```csharp
+    [Generator(LanguageNames.CSharp)]
+    public class FooGenerator : IIncrementalGenerator
+    {
+        public void Initialize(IncrementalGeneratorInitializationContext context)
+        {
+            var compilerOptions = context.CompilationProvider.Select((s, _) => s.Options);
+        }
+    }
+```
+
+以上的 `compilerOptions` 就包含了构建配置信息，如 Platform 和 Configuration 等信息。当然了以上的这句 Select 纯属卖萌，没有挑拣出任何有用信息，也没有做转换，不符合最佳实践，只能作为演示
+
+接下来就直接将 `compilerOptions` 放入到 RegisterSourceOutput 方法里面，进行生成源代码，如以下代码
+
+```csharp
+            context.RegisterSourceOutput(compilerOptions, static (productionContext, options) =>
+            {
+                var code = $@"
+using System;
+using System.Globalization;
+
+public static class BuildInformation
+｛｛
+    /// <summary>
+    /// Returns the build date (UTC).
+    /// </summary>
+    public static readonly DateTime BuildAt = DateTime.ParseExact(""{DateTime.UtcNow:O}"", ""O"", CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
+    /// <summary>
+    /// Returns the platform.
+    /// </summary>
+    public const string Platform = ""{options.Platform}"";
+    /// <summary>
+    /// Returns the configuration.
+    /// </summary>
+    public const string Configuration = ""{options.OptimizationLevel}"";
+｝｝
+";
+
+                productionContext.AddSource("LinkDotNet.BuildInformation.g", code);
+            });
+```
+
+同样地，为了让我的博客引擎开森，以上代码部分花括号被我替换为了全角花括号。大家在使用的时候需要将全角花括号替换为半角花括号
+
+这就完成了生成了一个名为 BuildInformation 的静态类，且此静态类还没有包含在任何的命名空间里面
+
+大家如果对更多细节感兴趣，还请参阅 [IIncrementalGenerator 增量 Source Generator 生成代码应用 将构建时间写入源代码](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%BA%94%E7%94%A8-%E5%B0%86%E6%9E%84%E5%BB%BA%E6%97%B6%E9%97%B4%E5%86%99%E5%85%A5%E6%BA%90%E4%BB%A3%E7%A0%81.html )
+
+以上就是采用 CompilationProvider 间接读取 csproj 项目文件的属性配置，将自定义配置内容写入源代码的过程。接下来将继续通过演练的方式，告诉大家如何在分析器项目里面读取其他非代码文件的内容
 
 ## 演练：写一个 禁用API调用 分析器
 
@@ -1639,7 +2545,283 @@ git pull origin 7799af7403b6408b1e30151e144b2273c86433c7
 
 这个需求任务可以强行拆分为两步，第一步是获取到禁用 API 调用文件里面记录的禁用列表，第二步的扫描分析代码调用关系
 
+先不着急建立分析器项目，为了能够让大家更好地理解本演练的内容，这里选择先搭建好一个用于测试的项目，我这里创建名为 NelbecarballReanallyerhohe 的控制台项目，在控制台项目里面存放一个名为 BanList.txt 的文件。这个文件只是一个默认的文本文件，里面存放了一条禁用 API 调用的记录，如以下内容，禁用的是控制台输出的 WriteLine 方法
 
+```txt
+System.Console.WriteLine
+```
+
+其含义就是如果在当前项目里面，一旦有代码调用了 System.Console.WriteLine 方法，就会给出错误提示
+
+在 Program.cs 里面保持原样的 `Console.WriteLine("Hello, World!");` 输出。尝试构建项目，要求给出错误提示，告诉开发者不能调用被禁用的 System.Console.WriteLine 方法，如输出以下错误内容
+
+```
+error Ban01: 不能调用禁用的 API 哦，WriteLine 被 BanList.txt 标记禁用
+```
+
+以上就是整个演练的任务需求，这是一个非常经典的分析器任务。也适用于在真实项目里面做 API 约束。比如现在咱正在编写的分析器项目的 `EnforceExtendedAnalyzerRules` 限制属性，其实现原理也和本章将要介绍的具体技术十分接近。如果大家忘了 `EnforceExtendedAnalyzerRules` 属性，还请向前翻翻，或参阅 [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用](https://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-EnforceExtendedAnalyzerRules-%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%9C%E7%94%A8.html )
+<!-- [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/17678673.html ) -->
+
+开始编写专用分析器。搭建项目的方式和上文介绍的源代码生成器一样，也如上文所述，源代码生成器和分析器本身就一体的。在一个项目里面同时存在专用分析器和源代码生成器是完全被允许的，也是被推荐的做法。这里就不再详细展开项目的创建方法了，如需整个项目代码，可在本章末尾找到本章所有代码的下载拉取方法
+
+<!--  调试分析器和调试源代码生成器的方法也是完全相同的 -->
+在分析器项目里面创建一个名为 BanAPIAnalyzer 的类型，让其继承自 `Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer` 类型。如此即可让 BanAPIAnalyzer 成为专用分析器。继承之后，就需要实现 DiagnosticAnalyzer 抽象类型的 SupportedDiagnostics 属性和 Initialize 方法
+
+在专用分析器的设计里面，要求实现 SupportedDiagnostics 属性，告诉框架层当前这个专用分析器类型支持哪些 Diagnostic 内容。一旦 IDE 等配置某些 Diagnostic 被禁用时，如果当前的这个专用分析器的所有 Diagnostic 内容都被禁用，则此专用分析器将不会被启用。另一个作用则是可以在 VisualStudio 的分析器列表里面枚举查看信息，方便配置。比如通过 `.editorconfig` 文件，将原本是错误等级的 Diagnostic 设置为警告等级
+
+```
+# 演示在 .editorconfig 文件将原本是 error 等级的 Ban01 设置为 warning 等级
+dotnet_diagnostic.Ban01.severity = warning
+```
+
+在本演练这里，只添加一个 DiagnosticDescriptor 到 SupportedDiagnostics 属性。如任务需求所述，本演练这里只有一个禁用 API 调用的分析。创建 DiagnosticDescriptor 的方法在上文已经有详细介绍了，上文介绍的是支持多语言的创建方式，相对来说比较繁琐，但也正式。我在这里和大家介绍另一个方式，就是只有单个语言的固定字符串方式，当然了，这样的方式适用范围肯定更小了，难以全球化使用
+
+```csharp
+[DiagnosticAnalyzer(LanguageNames.CSharp)]
+public class BanAPIAnalyzer : DiagnosticAnalyzer
+{
+
+    ... // 忽略其他代码
+
+    public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = new[]
+    {
+        new DiagnosticDescriptor("Ban01", "CallBanAPI", "不能调用禁用的 API 哦，{0} 被 {1} 标记禁用", category: "Error",
+            DiagnosticSeverity.Error, isEnabledByDefault: true)
+    }.ToImmutableArray();
+}
+```
+
+和源代码生成器一样，核心的代码实现放在 Initialize 方法里面。这两个 Initialize 不同点在于其方法参数上，以下是专用分析器的 Initialize 方法的签名
+
+```csharp
+public override void Initialize(AnalysisContext context)
+{
+
+}
+```
+
+通常的专用分析器在 Initialize 的第一句话是调用 AnalysisContext 的 EnableConcurrentExecution 方法。这句话的作用是告诉框架层，当前的专用分析器是线程安全的，可以多线程并发执行。这样可以提高分析器的执行效率，但也要求开发者在编写专用分析器的时候要保证线程安全。不过在调试过程中，却通常将其注释掉，防止多线程进入让调试困难
+
+```csharp
+[DiagnosticAnalyzer(LanguageNames.CSharp)]
+public class BanAPIAnalyzer : DiagnosticAnalyzer
+{
+    public override void Initialize(AnalysisContext context)
+    {
+        context.EnableConcurrentExecution();
+
+        ... // 忽略其他代码
+    }
+
+    public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = new[]
+    {
+        new DiagnosticDescriptor("Ban01", "CallBanAPI", "不能调用禁用的 API 哦，{0} 被 {1} 标记禁用", category: "Error",
+            DiagnosticSeverity.Error, isEnabledByDefault: false)
+    }.ToImmutableArray();
+}
+```
+
+在 Initialize 的第二句话通常是配置是否对源代码生成器生成的源代码进行分析，默认咱选 None 即可，如以下代码
+
+```csharp
+    public override void Initialize(AnalysisContext context)
+    {
+        context.EnableConcurrentExecution();
+        context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
+
+        ... // 忽略其他代码
+    }
+```
+
+这两句话的调用时机没有约束，换句话说就是顺序倒过来也毫无影响
+
+喜欢点点点的伙伴也许看到了在 AnalysisContext 类型里面充满了各种 RegisterXxxAction 的方法。这些方法的作用都是寻找一个注入点，即在什么时机进行分析、在什么范围内进行分析。越是靠后的时机，能够拿到的信息越多，但其分析提示可能就不够及时。具体选用什么时机进行分析，如果把握不准的话，大家可以先选一个比较靠后的时机，调试成功之后再逐渐选择比较靠前的时机。这里的靠前和靠后相对的是构建时机。在本演练里面，为了演示方便，就选用了很是靠后的 RegisterCompilationStartAction 时机，在这里能够拿到完全的 AdditionalFile 附加文件，即 BanList.txt 文件
+
+现在开始这个专用分析器实现的第一步，获取到禁用 API 调用文件里面记录的禁用列表。在咱这个专用分析器里面，比较灵活，允许开发者设置哪个文件记录的就是禁用 API 列表的文件。如在控制台项目（敲黑板，非分析器项目，是那个被分析的项目）里面的 csproj 项目文件通过如下代码指定 `BanList.txt` 就是记录禁用 API 列表的文件
+
+```xml
+  <PropertyGroup>
+    <BanAPIFileName>BanList.txt</BanAPIFileName>
+  </PropertyGroup>
+```
+
+一般的分析器项目都在分发的时候带上 `$(PackageId).targets` 和 `$(PackageId).props` 文件。但咱这里没有通过 NuGet 进行分发，因此一些可以放在 `$(PackageId).targets` 和 `$(PackageId).props` 文件的杂活就需要放入到被分析的项目里面。详细关于如何打包 NuGet 进行分发，我将在下文详细和大家介绍
+
+为什么会提到 `$(PackageId).targets` 和 `$(PackageId).props` 文件的杂活呢？这是因为咱在被分析的控制台项目的 csproj 项目文件配置的 `BanAPIFileName` 属性内容，默认情况下是无法直接被分析器项目感知到的，添加的 `BanList.txt` 文件也无法被分析器直接感知到。为了让分析器能够拿到配置的 `BanAPIFileName` 属性，以及 `BanList.txt` 文件，就需要在被分析的控制台项目的 csproj 项目文件里面添加额外的配置
+
+- CompilerVisibleProperty ： 用于标记有哪些 Property 可以被分析器感知到
+- AdditionalFiles ： 添加用于让分析器项目使用的附加文件
+
+按照以上描述可以了解到，咱需要通过 CompilerVisibleProperty 标记 `BanAPIFileName` 属性，使用 `AdditionalFiles` 添加 `BanList.txt` 文件。修改之后的被分析的控制台项目的 csproj 项目文件内容大概如下
+
+```xml
+  <PropertyGroup>
+    <BanAPIFileName>BanList.txt</BanAPIFileName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="BanAPIFileName" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="BanList.txt" />
+  </ItemGroup>
+```
+
+对于一个通过 NuGet 分发的分析器项目，则是会在 `$(PackageId).props` 文件里面存放 `<CompilerVisibleProperty Include="BanAPIFileName" />` 和 `<AdditionalFiles Include="BanList.txt" />` 这两个配置，而不需要被分析项目添加这些杂活
+
+以上介绍的 CompilerVisibleProperty 和 AdditionalFiles 是对整个分析器生效，即无论是专用分析器还是源代码生成器，这部分知识内容都完全相同
+
+如对在分析器项目里面读取 PropertyGroup 里面的 Property 感兴趣，还请参阅 [读取 csproj 项目文件的属性配置方法](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%AF%BB%E5%8F%96-csproj-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE.html )
+
+完成被分析的控制台项目的 csproj 项目文件配置之后，就可以在 RegisterCompilationStartAction 方法内通过 `BanAPIFileName` 属性了解到哪个 AdditionalFiles 就是标记禁用列表的文件，其代码如下
+
+```csharp
+    public override void Initialize(AnalysisContext context)
+    {
+        context.EnableConcurrentExecution();
+        context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
+
+        context.RegisterCompilationStartAction((CompilationStartAnalysisContext analysisContext) =>
+        {
+            if (analysisContext.Options.AnalyzerConfigOptionsProvider.GlobalOptions.TryGetValue(
+                    "build_property.BanAPIFileName", out var fileName))
+            {
+                ... // 忽略其他代码
+            }
+        });
+    }
+```
+
+再遍历 AdditionalFiles 找到记录禁用 API 列表的文件，代码如下
+
+```csharp
+        context.RegisterCompilationStartAction(analysisContext =>
+        {
+            if (analysisContext.Options.AnalyzerConfigOptionsProvider.GlobalOptions.TryGetValue(
+                    "build_property.BanAPIFileName", out var fileName))
+            {
+                AdditionalText? file = analysisContext.Options.AdditionalFiles.FirstOrDefault(t =>
+                    Path.GetFileName(t.Path) == fileName);
+                if (file != null)
+                {
+                    ... // 忽略其他代码
+                }
+            }
+        });
+```
+
+也许有伙伴表示，这样的实现方法需要两步，第一步是读取 Property 属性，第二步是遍历 AdditionalFiles 文件，相对来说比较麻烦。能否直接在 AdditionalFiles 里面标记配置呢？即如以下的写法
+
+```xml
+  <PropertyGroup>
+    <!-- 不要 BanAPIFileName 属性，直接在文件标记 -->
+    <!-- <BanAPIFileName>BanList.txt</BanAPIFileName> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 不要 BanAPIFileName 属性，自然也就不要 CompilerVisibleProperty 配置 -->
+    <!-- <CompilerVisibleProperty Include="BanAPIFileName" /> -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="BanList.txt" IsBanAPIFileName="True"/>
+  </ItemGroup>
+```
+
+这当然是完全可以的啦，只不过其读取方法需要更改一下，按照 [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置](https://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-%E8%AF%BB%E5%8F%96-csproj-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84-AdditionalFiles-Item-%E7%9A%84-Metadata-%E9%85%8D%E7%BD%AE.html ) 进行更改。一般情况下不会这么写的，因为在有 NuGet 分发的帮助下，将杂活放入到 props 文件里面，整个实际的被分析项目只有编写 `<BanAPIFileName>BanList.txt</BanAPIFileName>` 这一句配置，相对来说会比写 `<AdditionalFiles Include="BanList.txt" IsBanAPIFileName="True"/>` 更加方便
+
+获取到了配置禁用 API 列表的文件之后，即可通过 `AdditionalText.GetText` 方法获取到文件内容，代码如下
+
+```csharp
+AdditionalText file = ...;
+SourceText sourceText = file.GetText(analysisContext.CancellationToken);
+```
+
+这里依然和源代码生成器一样，将令牌传入到调用 `AdditionalText.GetText` 方法里面，避免读取文件过程中被分析的内容变更导致白白读取内容进行空等
+
+进一步的，直接获取 SourceText 的 Lines 属性，即可拿到一行一个禁用 API 的列表。为了后续判断方便，咱将其转换为哈希集合，合起来的代码如下
+
+```csharp
+var file = analysisContext.Options.AdditionalFiles.FirstOrDefault(t =>
+    Path.GetFileName(t.Path) == fileName);
+if (file != null)
+{
+    ImmutableHashSet<string> banSet =
+        file.GetText()?.Lines.Select(t => t.ToString()).ToImmutableHashSet) ??
+        ImmutableHashSet<string>.Empty;
+
+    ... // 忽略其他代码
+}
+```
+
+以上代码就是获取到了禁用 API 列表的文件内容，接下来就是扫描分析代码调用关系，进入到这个专用分析器实现的第二步。这个过程和源代码生成器的分析过程类似，只不过这里不需要生成代码，而是给出分析报告。只是给出分析结果，咱有更多便捷的方法可用，不再和源代码生成器的分析一样逐个爬语法树或者语义树的节点，而是直接使用 `RegisterSyntaxNodeAction` 方法，给定感兴趣的分析内容点
+
+在咱本次演练内容里面，核心就是判断调用的方法是否在禁用列表里面。即感兴趣的分析内容点就是代码里面方法调用，即 `SyntaxKind.InvocationExpression` 内容。于是在调用 `RegisterSyntaxNodeAction` 方法过程，将 `SyntaxKind.InvocationExpression` 作为第二个参数传入，代码如下
+
+```csharp
+ImmutableHashSet<string> banSet =
+    file.GetText()?.Lines.Select(t => t.ToString()).ToImmutableHashSet() ??
+    ImmutableHashSet<string>.Empty;
+
+analysisContext.RegisterSyntaxNodeAction((SyntaxNodeAnalysisContext nodeAnalysisContext) =>
+{
+    ... // 忽略其他代码
+}, SyntaxKind.InvocationExpression);
+```
+
+由于在 RegisterSyntaxNodeAction 参数要求了是 InvocationExpression 类型，在 RegisterSyntaxNodeAction 的委托里面，就可以使用强转方式将 `nodeAnalysisContext.Node` 转换为 InvocationExpressionSyntax 类型，代码如下
+
+```csharp
+analysisContext.RegisterSyntaxNodeAction(nodeAnalysisContext =>
+{
+    var invocationExpression = (InvocationExpressionSyntax) nodeAnalysisContext.Node;
+
+    ... // 忽略其他代码
+}, SyntaxKind.InvocationExpression);
+```
+
+分析调用的 API 离不开语义的辅助，从全语法层面是难以或无法知道具体调用的 API 是哪个的。通过 SemanticModel 获取语义符号，即可知道调用的 API 是哪个
+
+```csharp
+analysisContext.RegisterSyntaxNodeAction(nodeAnalysisContext =>
+{
+    var invocationExpression = (InvocationExpressionSyntax) nodeAnalysisContext.Node;
+
+    var symbolInfo = nodeAnalysisContext.SemanticModel.GetSymbolInfo(invocationExpression);
+    if (symbolInfo.Symbol is not IMethodSymbol symbol)
+    {
+        return;
+    }
+
+    ... // 忽略其他代码
+}, SyntaxKind.InvocationExpression);
+```
+
+理论上这里拿到的 Symbol 必然是 IMethodSymbol 且不是空的
+
+拿到方法符号之后，再获取这个方法所在的类型是哪一个，代码如下
+
+```csharp
+analysisContext.RegisterSyntaxNodeAction(nodeAnalysisContext =>
+{
+    var invocationExpression = (InvocationExpressionSyntax) nodeAnalysisContext.Node;
+
+    var symbolInfo = nodeAnalysisContext.SemanticModel.GetSymbolInfo(invocationExpression);
+    if (symbolInfo.Symbol is not IMethodSymbol symbol)
+    {
+        return;
+    }
+
+    var containingType = symbol.ContainingType;
+
+    ... // 忽略其他代码
+}, SyntaxKind.InvocationExpression);
+```
+
+既然已经拿到被调用的方法和被调用的方法所在的类型，那就可以简单使用字符串匹配的方式判断方法是否在禁用列表里面
+
+ 
 
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ed27dcda954d4baed58c74b9c1e355468c7135fc/Roslyn/NelbecarballReanallyerhohe) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/ed27dcda954d4baed58c74b9c1e355468c7135fc/Roslyn/NelbecarballReanallyerhohe) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
@@ -1665,10 +2847,12 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 <!-- 
 为了能够更好地介绍专用分析器，在本章演练过程中，咱将带着这样的一个任务开始：编写一个 API 实现约束分析器。这个分析器的功能是检查代码中是否符合协议约定的按照某个顺序实现了某些 API 成员
 
-这个任务的背景是-->
+这个任务的背景是
 
 介绍分析器
-介绍更加明确的分析器
+介绍更加明确的分析器-->
+
+
 
 既然有了分析器，可以给开发者报告出一些警告或错误信息，那是否还能自动帮助开发者修复这些问题呢？这就需要用到超过本文范围的 代码修改器 知识了。编写代码修改器是另外的故事了，这里就不展开了，如果大家对此感兴趣，可以参阅 [使用 Roslyn 分析代码注释，给 TODO 类型的注释添加负责人、截止日期和 issue 链接跟踪 - walterlv](https://blog.walterlv.com/post/comment-analyzer-and-code-fix-using-roslyn.html )
 
