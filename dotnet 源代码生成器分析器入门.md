@@ -1469,17 +1469,17 @@ if (funcTypeSymbol.TypeArguments.Length != 2)
 
 ```csharp
 // 生成的代码的示例内容
-//namespace KawhawnahemCanalllearlerwhu;
-//
-//public static partial class FooCollection
-//{
-//    public static partial IEnumerable<Func<IContext, IFoo>> GetFooCreatorList()
-//    {
-//        yield return context => new F1(context);
-//        yield return context => new F2(context);
-//        yield return context => new F3(context);
-//    }
-//}
+namespace KawhawnahemCanalllearlerwhu;
+
+public static partial class FooCollection
+{
+    public static partial IEnumerable<Func<IContext, IFoo>> GetFooCreatorList()
+    {
+        yield return context => new F1(context);
+        yield return context => new F2(context);
+        yield return context => new F3(context);
+    }
+}
 ```
 
 当然了，其中间的 `yield return context => new F1(context);` 等代码，现在还不能生成，因为还没进行项目的类型收集。这个过程将在下一步进行。在这里只生成这个空壳的方法代码框架
@@ -1506,6 +1506,9 @@ if (funcTypeSymbol.TypeArguments.Length != 2)
 ```
 
 其拼接的生成的空壳方法框架的代码如下
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门15.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025317855425080.jpg)
 
 ```csharp
 var generatedCode =
@@ -1684,7 +1687,7 @@ return new CollectionExportMethodInfo(constructorArgumentType, collectionType,
 
 ```csharp
  wholeAssemblyClassTypeProvider
-                .Combine(collectionMethodInfoProvider)
+    .Combine(collectionMethodInfoProvider)
 ```
 
 调用 Combine 之后返回的类型是一个元组，为 `IncrementalValuesProvider<(INamedTypeSymbol Left, ImmutableArray<CollectionExportMethodInfo> Right)>` 类型。即左边 Left 是多值提供器里面的每一个值，即项目里面的每个类型，右边是单值提供器里面的值
@@ -2268,10 +2271,16 @@ var diagnosticDescriptor = new DiagnosticDescriptor
   </ItemGroup>
 ```
 
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门13.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025317852487163.jpg)
+
 在 Resources.resx 文件里面添加两项，内容分别如下
 
 - `Kaw001` : 找不到符合预期的构造函数
 - `Kaw001_Message` : 无法从 {0} 类型中找到构造函数，期望构造函数的只有一个参数，且参数为 {1} 类型
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门14.png) -->
+![](http://cdn.lindexi.site/lindexi%2F202531785439974.jpg)
 
 如上文代码，可见 `Kaw001` 将被当成标题，而 `Kaw001_Message` 被作为具体警告内容。其中 `Kaw001_Message` 添加了 `{0}` 和 `{1}` 内容，用于分别替换为具体警告信息内容的具体类型
 
@@ -2309,6 +2318,8 @@ var diagnosticDescriptor = new DiagnosticDescriptor
         new LocalizableResourceString(key, Resources.ResourceManager, typeof(Resources));
 ```
 
+上文代码里面选用的 `Kaw001` 也是有约束的，即这是一个 C# 的标识符，使用前缀加数字形式，长度小于 15 个字符，确保唯一性。详细约束请参阅 <https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/choosing-diagnostic-ids>
+
 完成了对 DiagnosticDescriptor 的定义之后，接下来就可以开始创建 Diagnostic 对象。也如 DiagnosticDescriptor 的构造函数可以看到，其实基本信息都全了，剩下的就是填充具体警告信息的参数内容，即 `{0}` 和 `{1}` 参数内容，以及可选的警告的代码 Location 在哪信息而已
 
 ```csharp
@@ -2336,6 +2347,9 @@ Diagnostic diagnostic = Diagnostic.Create(diagnosticDescriptor, exportMethodInfo
 ```csharp
 C:\lindexi\Code\Roslyn\KawhawnahemCanalllearlerwhu\KawhawnahemCanalllearlerwhu\Foo.cs(40,5,41,81): warning Kaw001: 无法从 global::KawhawnahemCanalllearlerwhu.F3 类型中找到构造函数，期望构造函数的只有一个参数，且参数为 global::KawhawnahemCanalllearlerwhu.IContext 类型
 ```
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门18.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253191036454746.jpg)
 
 这个过程中可以看到似乎有分析器的影子在里面了，报告 Diagnostic 过程本身也就是分析器的一个部分，大部分分析器的功能都是和源代码生成器相互重叠的，比如都需要进行语法语义的分析。不同点只是源代码生成器多了一个生成代码的过程
 
@@ -2432,6 +2446,7 @@ public static partial class IncrementalValueSourceExtensions
 {
     // 1 => 1 transform 
     // 1 对 1 的转换，从 TSource 转换为 TResult 类型的输出
+    // 为了简单表述，我使用 `IncrementalValue[s]Provider` 代表 `IncrementalValuesProvider` 和 `IncrementalValueProvider` 两个类型的值提供器都适用的情况
     public static IncrementalValue[s]Provider<TResult> Select<TSource, TResult>(this IncrementalValue[s]Provider<TSource> source, Func<TSource, CancellationToken, TResult> selector);
 }
 ```
@@ -2440,16 +2455,240 @@ public static partial class IncrementalValueSourceExtensions
 
 为了简单表述，我使用 `IncrementalValue[s]Provider` 代表 `IncrementalValuesProvider` 和 `IncrementalValueProvider` 两个类型的值提供器都适用的情况
 
+如以下代码所示，从 FooInfo1 数据转换为 FooInfo2 数据
 
+```csharp
+        IncrementalValuesProvider<FooInfo1> foo1ValuesProvider = ...
 
+        IncrementalValuesProvider<FooInfo2> foo2ValuesProvider = foo1ValuesProvider.Select((FooInfo1 info1, CancellationToken token) => new FooInfo2());
+```
 
+转换过程中，支持分叉和链式转换。分叉转换，即从一个 IncrementalValue[s]Provider 分叉为多条不同的转换分支，如下面代码所示
 
+```csharp
+        IncrementalValuesProvider<FooInfo1> foo1ValuesProvider = ...
+
+        IncrementalValuesProvider<FooInfo2> foo2ValuesProvider = foo1ValuesProvider.Select((FooInfo1 info1, CancellationToken token) => new FooInfo2());
+
+        IncrementalValuesProvider<FooInfo3> foo3ValuesProvider = foo1ValuesProvider.Select((FooInfo1 info1, CancellationToken token) => new FooInfo3());
+```
+
+可见 `foo2ValuesProvider` 和 `foo3ValuesProvider` 来源于共同的 `foo1ValuesProvider` 数据源。这在多个不同的业务逻辑存在共有转换时非常有用，可以更多程度地进行复用计算
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门19.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025319201467353.jpg)
+
+链式转换即一级级进行转换
+
+```csharp
+        IncrementalValuesProvider<FooInfo1> foo1ValuesProvider = ...
+
+        IncrementalValuesProvider<FooInfo2> foo2ValuesProvider = foo1ValuesProvider.Select((FooInfo1 info1, CancellationToken token) => new FooInfo2());
+
+        IncrementalValuesProvider<FooInfo3> foo3ValuesProvider = foo2ValuesProvider.Select((FooInfo2 info2, CancellationToken token) => new FooInfo3());
+```
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门20.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025319201704335.jpg)
+
+#### Select Many
+
+方法签名：
+
+```csharp
+// 1 转 多
+// 多 转 多
+public static IncrementalValuesProvider<TResult> SelectMany<TSource, TResult>(this IncrementalValue[s]Provider<TSource> source, Func<TSource, CancellationToken, IEnumerable<TResult>> selector);
+```
+
+如以下代码所示，先从 `IncrementalValueProvider<FooInfo1>` 单值提供器，调用 SelectMany 进行单转多，获取到 `IncrementalValuesProvider<FooInfo2>` 多值提供器。再继续对 `IncrementalValuesProvider<FooInfo2>` 多值提供器调用 SelectMany 进行多转多获取到 `IncrementalValuesProvider<FooInfo3>` 多值提供器
+
+```csharp
+        IncrementalValueProvider<FooInfo1> foo1ValueProvider = ...
+
+        IncrementalValuesProvider<FooInfo2> foo2ValuesProvider = foo1ValueProvider.SelectMany
+        (
+            (FooInfo1 info1, CancellationToken token) =>
+            {
+                var n = info1.Number;
+                var list = new List<FooInfo2>();
+                for (int i = 0; i < n; i++)
+                {
+                    list.Add(new FooInfo2());
+                }
+
+                return list;
+            }
+        );
+
+        IncrementalValuesProvider<FooInfo3> foo3ValuesProvider = foo2ValuesProvider.SelectMany
+        (
+            (FooInfo2 info2, CancellationToken token) =>
+            {
+                var list = new List<FooInfo3>();
+                for (int i = 0; i < info2.Count; i++)
+                {
+                    list.Add(new FooInfo3());
+                }
+
+                return list;
+            }
+        );
+```
+
+假定 FooInfo1 的 Number 的是 3 的值。每个 FooInfo2 的 Count 也是 3 的值，则经过以上转换之后，可获取带有 3x3=9 个元素的 `IncrementalValuesProvider<FooInfo3>` 多值提供器
+
+从 `IncrementalValueProvider<FooInfo1>` 单值提供器，调用 SelectMany 进行单转多，获取到 `IncrementalValuesProvider<FooInfo2>` 多值提供器的过程是 1 转多的过程，相对来说很是清晰
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门21.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253192022298551.jpg)
+
+对 `IncrementalValuesProvider<FooInfo2>` 多值提供器调用 SelectMany 进行多转多获取到 `IncrementalValuesProvider<FooInfo3>` 多值提供器的过程，相对来说就比较复杂，如以下的官方附图，每项都可转换为不定数量集合输出
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门22.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253192028418785.jpg)
+
+敲黑板，使用 SelectMany 的过程中，也可以附带过滤的作用。如上文所述，每项都可转换为不定数量集合输出，不定数量就意味着也可以返回 0 项。在 SelectMany 执行过滤作用的做法就是将不满足条件的直接过滤掉，甚至返回空集合。因此比较少见 `SelectMany(...).Where(...)` 的组合，直接就是在 SelectMany 里面内置了 Where 的活了
+
+常见于将 `SelectMany` 和下文介绍的 `Collect` 混用，达成合和分的效果
+
+#### Where
+
+方法签名：
+
+```csharp
+public static IncrementalValuesProvider<TSource> Where<TSource>(this IncrementalValuesProvider<TSource> source, Func<TSource, bool> predicate);
+```
+
+没错，只有多值提供器才有 Where 方法。通过 Where 方法可用来过滤输入源里面符合条件的元素，将符合条件的元素作为输出源内容
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门23.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253192033175447.jpg)
+
+如上图官方附图所示，假定输入源有三个，中间一个不满足条件，也就是上面打了叉叉的 Item2 项，则最终只有 Item1 和 Item3 才能流向输出源里
+
+正如大家所熟悉的 Linq 里面的 Select 和 Where 配合一样，在增量源代码生成器这里对这两个的用法和设计实现也都和 Linq 的相同
+
+#### Collect
+
+方法签名：
+
+```csharp
+IncrementalValueProvider<ImmutableArray<TSource>> Collect<TSource>(this IncrementalValuesProvider<TSource> source);
+```
+
+这是一个不用附带任何条件和转换器的方法。用于将一个多值提供器的内容，转换为单值提供器。这个过程中，一旦输入源有任何一项变动，则会重新输出整个新的不可变集合
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门24.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253192037509811.jpg)
+
+如以上官方附图所示，通过 Collect 方法将一个多值提供器转换为一个单值提供器，且这个单值提供器提供的单个值就是一个集合
+
+这个 Collect 过程可以认为和 SelectMany 是互逆的过程，即可以从 Collect 由多值提供器转换为一个单值提供器，再从 SelectMany 由单值提供器转换为多值提供器。如以下代码所示
+
+```csharp
+        IncrementalValuesProvider<FooInfo1> foo1ValuesProvider = ...;
+
+        IncrementalValueProvider<ImmutableArray<FooInfo1>> foo1ArrayValueProvider = foo1ValuesProvider.Collect();
+
+        IncrementalValuesProvider<FooInfo1> backToValuesProvider = foo1ArrayValueProvider.SelectMany((ImmutableArray<FooInfo1> array, CancellationToken token) => array);
+
+        foo1ValuesProvider = backToValuesProvider;
+```
+
+以上代码先使用 Collect 方法，从 `IncrementalValuesProvider<FooInfo1>` 多值提供器，转换为带不可变集合的 `IncrementalValueProvider<ImmutableArray<FooInfo1>>` 单值提供器
+
+再调用 SelectMany 方法，重新将 `IncrementalValueProvider<ImmutableArray<FooInfo1>>` 单值提供器转换为原来的 `IncrementalValuesProvider<FooInfo1>` 多值提供器。从以上代码最后一行可以看到，经过 SelectMany 转换回来的 `backToValuesProvider` 的类型是完全和 `foo1ValuesProvider` 一样的，相互赋值都能通过构建
+
+#### Split
+
+准确来说这只是一个用法，不是一个 API 方法。表示的就是分叉调用，多分支调用。如在 Select 一节中和大家介绍，允许进行分叉转换。事实上，在以上介绍的每个内容里面，每个值提供器，无论是多值提供器还是单值提供器，都可以被多次调用各个方法作为输入源进行消费。这和 Linq 里面的固有印象有所不同，在 Linq 里面，枚举 `IEnumerable<TSource>` 是不支持多次重复消费的，多次消费将获取不可控结果。但在源代码生成器这里面，数据源的提供依靠的是缓存失效来驱动，或者称为数据变更驱动。一旦有数据变更，缓存失效，则会一条链路进行传递
+
+咱所编写的对各个值提供器的各种转换逻辑，只是用于写入记录转换链路而已。当数据变更的时候，将会重新开始跑整个链路。在跑的过程中，引入了大量缓存判定，从而最大程度减少执行逻辑量
+
+在演练中，咱也用到了 Split 的功能，即在拿到 `IncrementalValuesProvider<ImmutableArray<ItemGeneratedCodeResult>> itemGeneratedCodeResultProvider` 数据源时，一路作为 Diagnostic 报告输出，一路作为最终源代码生成的输出
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门27.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253192117417689.jpg)
+
+#### Combine
+
+方法签名：
+
+```csharp
+// 1 对 1 合并
+IncrementalValueProvider<(TLeft Left, TRight Right)> Combine<TLeft, TRight>(this IncrementalValueProvider<TLeft> provider1, IncrementalValueProvider<TRight> provider2);
+
+// 多对 1 合并
+IncrementalValuesProvider<(TLeft Left, TRight Right)> Combine<TLeft, TRight>(this IncrementalValuesProvider<TLeft> provider1, IncrementalValueProvider<TRight> provider2);
+```
+
+和以上的分叉相对，以上的 Split 分叉是将一条值提供器作为多个数据提供源，将一个数据链路拆分为多个数据链路。而 Combine 则是将两个数据链路合并到一个链路。能够支持的合并方式是两个单值提供器的合并，以及一个多值提供器和一个单值提供器的合并
+
+两个单值提供器的合并：
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门26.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253192059107109.jpg)
+
+如以上的官方附图，将两个单值提供器的合并，返回结果依然是一个单值提供器。只是返回的输出源里面包含的是一个元组，其中左右值就是所 Combine 顺序的左右值。如以下代码所示
+
+```csharp
+IncrementalValueProvider<FooInfo1> foo1ValueProvider = ...;
+
+IncrementalValueProvider<FooInfo2> foo2ValueProvider = ...;
+
+IncrementalValueProvider<(FooInfo1 Left, FooInfo2 Right)> foo1AndFoo2CombineValueProvider = foo1ValueProvider.Combine(foo2ValueProvider);
+```
+
+以上代码分别将 `IncrementalValueProvider<FooInfo1>` 和 `IncrementalValueProvider<FooInfo2>` 两个单值提供器进行合并。合并之后获得了 `IncrementalValueProvider<(FooInfo1 Left, FooInfo2 Right)>` 的单值提供器
+
+一个多值提供器和一个单值提供器的合并：
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门25.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253192058297227.jpg)
+
+如以上的官方附图，最终输出源里面是多值提供器里面的每一项都带着单值提供器里面的内容。即输出源里面的元组的左侧是多值提供器里面的每一项，右侧都是相同的单值提供器里面的元素
+
+那两个多值提供器的合并呢？
+
+敲黑板，在 Combine 方法里面不支持两个多值提供器的合并。因为一旦两个多值提供器进行合并，则一旦出现任何一方某个元素的缓存失效问题，将会有笛卡尔积次的执行风险。只提供一个多值提供器和一个单值提供器的合并，则可以明确让源代码生成器开发者决定其优化方向，即将哪方作为单值提供器
+
+那假定我的业务上就是有两个多值提供器，我确实下一步的逻辑就需要两个多值提供器提供的数据才能完成工作。那此时应该如何开展呢？相信会灵活运用所学知识的伙伴已经想到了方法了。没错，就是将其中一个多值提供器调用 Collect 方法，将其转换为单值提供器，于是就可以继续愉快地调用 Combine 进行一个多值提供器和一个单值提供器的合并。这个过程中，源代码生成器开发者可选用两个多值提供器中量小、变化次数少的一方调用 Collect 转换为单值提供器，从而提供更多的优化效果
+
+以上就是增量源代码生成器的专有基础知识，合理运用好以上的几个数据源处理方法，即可实现对复杂的数据处理的同时，减少计算量 
 
 ## 演练：源代码专有 Interceptor 技术
 
 是否源代码生成器能够干的话，程序猿也能干？介绍 Interceptor 技术
 
 - 演练 使用 Interceptor 的技术
+
+[Add public API to obtain a location specifier for a call · Issue #72133 · dotnet/roslyn](https://github.com/dotnet/roslyn/issues/72133 )
+
+[roslyn/docs/features/interceptors.md at main · dotnet/roslyn](https://github.com/dotnet/roslyn/blob/main/docs/features/interceptors.md )
+
+
+
+代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/f242a711c0f2fb65a01406a36042d87fc314cb51/Roslyn/JuqawhicaqarLairciwholeni) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/f242a711c0f2fb65a01406a36042d87fc314cb51/Roslyn/JuqawhicaqarLairciwholeni) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin f242a711c0f2fb65a01406a36042d87fc314cb51
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin f242a711c0f2fb65a01406a36042d87fc314cb51
+```
+
+获取代码之后，进入 Roslyn/JuqawhicaqarLairciwholeni 文件夹，即可获取到源代码
+
 
 
 以上介绍的都是从代码入手，通过对现有的代码进行分析而生成新的代码。大家是否好奇其输入源还有没有其他方式。接下来将通过演练的方式和大家分别介绍从 csproj 等项目属性配置以及通过其他非代码文件的方式进行源代码生成
@@ -2596,7 +2835,7 @@ public class BanAPIAnalyzer : DiagnosticAnalyzer
 ```csharp
 public override void Initialize(AnalysisContext context)
 {
-
+    ... // 忽略其他代码
 }
 ```
 
@@ -2650,9 +2889,14 @@ public class BanAPIAnalyzer : DiagnosticAnalyzer
 为什么会提到 `$(PackageId).targets` 和 `$(PackageId).props` 文件的杂活呢？这是因为咱在被分析的控制台项目的 csproj 项目文件配置的 `BanAPIFileName` 属性内容，默认情况下是无法直接被分析器项目感知到的，添加的 `BanList.txt` 文件也无法被分析器直接感知到。为了让分析器能够拿到配置的 `BanAPIFileName` 属性，以及 `BanList.txt` 文件，就需要在被分析的控制台项目的 csproj 项目文件里面添加额外的配置
 
 - CompilerVisibleProperty ： 用于标记有哪些 Property 可以被分析器感知到
-- AdditionalFiles ： 添加用于让分析器项目使用的附加文件
+- AdditionalFiles ： 添加用于让分析器项目使用的附加文件，官方翻译为 `分析器其他文件` 或 `C# 分析器其他文件`
 
-按照以上描述可以了解到，咱需要通过 CompilerVisibleProperty 标记 `BanAPIFileName` 属性，使用 `AdditionalFiles` 添加 `BanList.txt` 文件。修改之后的被分析的控制台项目的 csproj 项目文件内容大概如下
+按照以上描述可以了解到，咱需要通过 CompilerVisibleProperty 标记 `BanAPIFileName` 属性，使用 `AdditionalFiles` 添加 `BanList.txt` 文件，即让 `BanList.txt` 使用 `C# 分析器其他文件` 生成方式，如下图所示
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门17.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253171530568088.jpg)
+
+修改之后的被分析的控制台项目的 csproj 项目文件内容大概如下
 
 ```xml
   <PropertyGroup>
@@ -2667,6 +2911,9 @@ public class BanAPIAnalyzer : DiagnosticAnalyzer
     <AdditionalFiles Include="BanList.txt" />
   </ItemGroup>
 ```
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门16.png) -->
+![](http://cdn.lindexi.site/lindexi%2F2025317858467937.jpg)
 
 对于一个通过 NuGet 分发的分析器项目，则是会在 `$(PackageId).props` 文件里面存放 `<CompilerVisibleProperty Include="BanAPIFileName" />` 和 `<AdditionalFiles Include="BanList.txt" />` 这两个配置，而不需要被分析项目添加这些杂活
 
@@ -2819,10 +3066,119 @@ analysisContext.RegisterSyntaxNodeAction(nodeAnalysisContext =>
 }, SyntaxKind.InvocationExpression);
 ```
 
-既然已经拿到被调用的方法和被调用的方法所在的类型，那就可以简单使用字符串匹配的方式判断方法是否在禁用列表里面
+既然已经拿到被调用的方法和被调用的方法所在的类型，那就可以简单使用字符串匹配的方式判断方法是否在禁用列表里面。即先取出其带命名空间的全名，拼接带命名空间的类型名和方法名即可用于判断，代码如下
 
- 
+```csharp
+var containingType = symbol.ContainingType;
 
+var symbolDisplayFormat = new SymbolDisplayFormat
+(
+    // 带上命名空间和类型名
+    SymbolDisplayGlobalNamespaceStyle.Omitted,
+    // 命名空间之前加上 global 防止冲突
+    SymbolDisplayTypeQualificationStyle
+        .NameAndContainingTypesAndNamespaces
+);
+
+var containingTypeName = containingType.ToDisplayString(symbolDisplayFormat);
+var name = symbol.Name;
+var methodName = $"{containingTypeName}.{name}";
+```
+
+如此即可拿到方法全名，即 `命名空间.类型.方法名` 的格式。再进入 `banSet` 集合判断一下即可了解当前的调用方法是否在禁用了集合中
+
+```csharp
+var methodName = $"{containingTypeName}.{name}";
+
+if (banSet.Contains(methodName))
+{
+    ... // 当前调用的方法在禁用列表中
+}
+```
+
+一旦判断当前调用的方法在禁用集合内，则给出错误信息。给出错误信息时，可选列出代码所在的文件、第几行第几列的 Location 信息。从 `SyntaxNodeAnalysisContext.Node` 创建出 Location 对象，代码如下
+
+```csharp
+var location = Location.Create(nodeAnalysisContext.Node.SyntaxTree, nodeAnalysisContext.Node.FullSpan);
+```
+
+再将符号名，即方法名，和记录禁用 API 列表的文件名传入到方法列表里面，用于填充错误详细信息的 `"不能调用禁用的 API 哦，{0} 被 {1} 标记禁用"` 里面的 `{0}` 和 `{1}` 内容，代码如下
+
+```csharp
+nodeAnalysisContext.ReportDiagnostic(Diagnostic.Create(SupportedDiagnostics[0],
+    location,
+    messageArgs: new object[] { symbol.Name, fileName }));
+```
+
+如此即可完成本演练的禁止调用禁用列表的 API 的分析器，整个 BanAPIAnalyzer 类型的代码如下，可以看到使用很少的代码量就能实现此功能
+
+```csharp
+[DiagnosticAnalyzer(LanguageNames.CSharp)]
+public class BanAPIAnalyzer : DiagnosticAnalyzer
+{
+    public override void Initialize(AnalysisContext context)
+    {
+        context.EnableConcurrentExecution();
+        context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
+
+        context.RegisterCompilationStartAction(analysisContext =>
+        {
+            if (analysisContext.Options.AnalyzerConfigOptionsProvider.GlobalOptions.TryGetValue(
+                    "build_property.BanAPIFileName", out var fileName))
+            {
+                var file = analysisContext.Options.AdditionalFiles.FirstOrDefault(t =>
+                    Path.GetFileName(t.Path) == fileName);
+                if (file != null)
+                {
+                    ImmutableHashSet<string> banSet =
+                        file.GetText()?.Lines.Select(t => t.ToString()).ToImmutableHashSet() ??
+                        ImmutableHashSet<string>.Empty;
+
+                    analysisContext.RegisterSyntaxNodeAction(nodeAnalysisContext =>
+                    {
+                        var invocationExpression = (InvocationExpressionSyntax) nodeAnalysisContext.Node;
+                        var symbolInfo = nodeAnalysisContext.SemanticModel.GetSymbolInfo(invocationExpression);
+                        if (symbolInfo.Symbol is not IMethodSymbol symbol)
+                        {
+                            return;
+                        }
+
+                        var containingType = symbol.ContainingType;
+
+                        var symbolDisplayFormat = new SymbolDisplayFormat
+                        (
+                            // 带上命名空间和类型名
+                            SymbolDisplayGlobalNamespaceStyle.Omitted,
+                            // 命名空间之前加上 global 防止冲突
+                            SymbolDisplayTypeQualificationStyle
+                                .NameAndContainingTypesAndNamespaces
+                        );
+
+                        var containingTypeName = containingType.ToDisplayString(symbolDisplayFormat);
+                        var name = symbol.Name;
+                        var methodName = $"{containingTypeName}.{name}";
+
+                        if (banSet.Contains(methodName))
+                        {
+                            var location = Location.Create(nodeAnalysisContext.Node.SyntaxTree, nodeAnalysisContext.Node.FullSpan);
+
+                            nodeAnalysisContext.ReportDiagnostic(Diagnostic.Create(SupportedDiagnostics[0],
+                                location,
+                                messageArgs: new object[] { symbol.Name, fileName }));
+                        }
+                    }, SyntaxKind.InvocationExpression);
+                }
+            }
+        });
+    }
+
+    public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = new[]
+    {
+        new DiagnosticDescriptor("Ban01", "CallBanAPI", "不能调用禁用的 API 哦，{0} 被 {1} 标记禁用", "Error",
+            DiagnosticSeverity.Error, true)
+    }.ToImmutableArray();
+}
+```
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ed27dcda954d4baed58c74b9c1e355468c7135fc/Roslyn/NelbecarballReanallyerhohe) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/ed27dcda954d4baed58c74b9c1e355468c7135fc/Roslyn/NelbecarballReanallyerhohe) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
@@ -2868,11 +3224,31 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 
 如果大家感觉这个效果很酷，那请参阅 [dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言](https://blog.lindexi.com/post/dotnet-%E7%94%A8-SourceGenerator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80.html ) 文章，里面详细介绍了如何通过源代码生成技术实现中文编程语言
 
-
 ## 打包 NuGet 包进行分发
 
 - 如何打包 NuGet 包
 
+<!-- 添加 target 文件和 props 文件 -->
+
+代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7ee17551c750a643593f6f5e4a0d03f89456b393/Roslyn/NayijainawNerkanekajawi) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/7ee17551c750a643593f6f5e4a0d03f89456b393/Roslyn/NayijainawNerkanekajawi) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
+```
+
+获取代码之后，进入 Roslyn/NayijainawNerkanekajawi 文件夹，即可获取到源代码
 
 
 以上就是 dotnet 的源代码生成器、分析器的入门介绍，希望能够帮助大家更好的了解源代码生成器、分析器的使用方法。在使用过程中，可能以上介绍的内容还不够满足大家的需求。我将在下文给出一些常用方法，供大家参考
@@ -2917,7 +3293,15 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 
 [手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html ) 
 
+[Source Generators Cookbook](https://github.com/dotnet/roslyn/blob/main/docs/features/source-generators.cookbook.md )
+
+[Source Generators](https://github.com/dotnet/roslyn/blob/main/docs/features/source-generators.md )
+
+[Incremental Generators](https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md )
+
 更多编译器、代码分析、代码生成相关博客，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+
 <!--
 
 [Roslyn 入门：使用 Roslyn 静态分析现有项目中的代码（语法分析） - walterlv](https://blog.walterlv.com/post/analysis-code-of-existed-projects-using-roslyn.html )

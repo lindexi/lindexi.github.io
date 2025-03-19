@@ -19,7 +19,7 @@
 
 通过 Roslyn 实现智能补全的核心是通过 Microsoft.CodeAnalysis.Completion.CompletionService 的 GetCompletionsAsync 方法获取补全列表
 
-本文提供的方法比 [Roslyn如何实现简单的代码提示 - JackWang-CUMT - 博客园](https://www.cnblogs.com/isaboy/p/RoslynCodeCompletionSample.html ) 博客使用的方法更加具有代码通用性，可以实现近似于 VisualStudio 里的智能提升功能，甚至如果大家考虑自己编写一点排序算法，还可以做到近似于 ReSharper 的功能
+本文提供的方法比 [Roslyn如何实现简单的代码提示 - JackWang-CUMT - 博客园](https://www.cnblogs.com/isaboy/p/RoslynCodeCompletionSample.html ) 博客使用的方法更加具有代码通用性，可以实现近似于 VisualStudio 里的智能提示功能，甚至如果大家考虑自己编写一点排序算法，还可以做到近似于 ReSharper 的功能
 
 以下是从从零开始编写代码，先创建一个控制台项目，我这里创建的是 .NET 9 的控制台项目。编辑 csproj 项目文件为以下代码用于安装必备的 NuGet 库
 
