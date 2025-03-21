@@ -3483,6 +3483,8 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 
 这个任务的背景是
 
+现实中我也有一个项目完全地使用了本章介绍的禁用API调用的
+
 介绍分析器
 介绍更加明确的分析器-->
 
@@ -3504,13 +3506,130 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 
 ## 打包 NuGet 包进行分发
 
-学习了很多源代码生成器和分析器的知识，相信此时大家也很想编写和发布一个自己的源代码生成器或分析器。按照 dotnet 里面的惯例，各种产物都会通过 NuGet 的形式进行发布，自然也包括源代码生成器和分析器。接下来我将和大家介绍如何将自己编写的源代码生成器或分析器打包成 NuGet 包进行分发
+学习了很多源代码生成器和分析器的知识，相信此时大家也很想编写和发布一个自己的源代码生成器或分析器。按照 dotnet 里面的惯例，各种产物都会通过 NuGet 的形式进行发布，自然也包括源代码生成器和分析器。接下来我将和大家介绍如何将自己编写的源代码生成器分析器打包成 NuGet 包进行分发
 
-- 如何打包 NuGet 包
+和其他基础库的打包过程非常先进，单独分析器项目本身就可以打出 NuGet 包，只不过需要一些额外的配置。核心配置如下
+
+```xml
+    <!-- 
+      配置为无依赖。即避免带上 TargetFramework=netstandard2.0 的限制
+      配合 IncludeBuildOutput=false 即可让任意项目引用，无视目标框架
+    -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+
+    <!-- 不要将输出文件放入到 nuget 的 lib 文件夹下 -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- 不要警告 lib 下没内容 -->
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+```
+
+其中核心为 `IncludeBuildOutput` 属性，表示不要将分析器输出程序集放入到 NuGet 包的 lib 文件夹下。一旦被放入到 NuGet 包的 lib 文件夹下，将会让安装了此 NuGet 包的项目引用了分析器程序集，而不会将分析器程序集作为分析器运行
+
+现在如果就直接打出来 NuGet 包，则会看到 NuGet 包是一个空包，什么有用的内容都没有包含。这是因为分析器项目的输出程序集还没被作为分析器内容打入到 NuGet 包里面。再添加以下代码，将分析器项目的输出程序集放入到 NuGet 包的 `analyzers/dotnet/cs` 文件夹下，这样就可以让其他项目在安装到本 NuGet 包的时候，按照 NuGet 的约定，从 `analyzers/dotnet/cs` 文件夹里加载上分析器
+
+```xml
+  <Target Name="AddOutputDllToNuGetAnalyzerFolder" BeforeTargets="_GetPackageFiles">
+    <!-- 
+      以下这句 ItemGroup 不能放在 Target 外面。否则首次构建之前 $(OutputPath)\$(AssemblyName).dll 是不存在的
+      这里需要选用在 _GetPackageFiles 之前，确保在 NuGet 收集文件之前，标记将输出的 dll 放入到 NuGet 的 analyzers 文件夹下
+    -->
+    <ItemGroup>
+      <None Include="$(OutputPath)\$(AssemblyName).dll"
+            Pack="true"
+            PackagePath="analyzers/dotnet/cs"
+            Visible="false" />
+    </ItemGroup>
+  </Target>
+```
+
+大家可以看到，这里使用了 `BeforeTargets="_GetPackageFiles"` 属性，表示在 NuGet 收集文件之前，将输出的 dll 放入到 NuGet 的 analyzers 文件夹下。为什么不能直接在 Project 下的一级 ItemGroup 里面添加呢？这是因为首次构建之前 `$(OutputPath)\$(AssemblyName).dll` 是不存在的，直接打包将会输出空包。于是选定在 Build 构建之后，收集文件之前的时机，此最佳时机就是在 `_GetPackageFiles` 之前
+
+如果选用直接在 Project 下的一级 ItemGroup 里面添加 `$(OutputPath)\$(AssemblyName).dll` 则不能一次构建出包，此时最推荐的是先做一次 `dotnet build` 再做一次 `dotnet pack --no-build` 打包。由于这个命令过程需要拆分为两步，可能会漏掉导致行为不符合预期，因此我在本文里面就特意使用了 Target 的方式进行收集
+
+如果大家对于在 csproj 里面编写 Target 等逻辑不熟悉，还请参阅 [如何编写基于 Microsoft.NET.Sdk 的跨平台的 MSBuild Target（附各种自带的 Task） - walterlv](https://blog.walterlv.com/post/write-msbuild-target )
+
+整体修改之后的分析器项目的 csproj 项目文件内容大概如下
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <IsRoslynComponent>true</IsRoslynComponent>
+    <Nullable>enable</Nullable>
+
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- [dotnet 打包 NuGet 的配置属性大全整理](https://blog.lindexi.com/post/dotnet-%E6%89%93%E5%8C%85-NuGet-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8%E6%95%B4%E7%90%86.html ) -->
+    <Copyright>Copyright (c) lindexi 2020-$([System.DateTime]::Now.ToString(`yyyy`))</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>这里填写描述信息</Description>
+
+    <!-- 
+      配置为无依赖。即避免带上 TargetFramework=netstandard2.0 的限制
+      配合 IncludeBuildOutput=false 即可让任意项目引用，无视目标框架
+    -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+
+    <!-- 不要将输出文件放入到 nuget 的 lib 文件夹下 -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- 不要警告 lib 下没内容 -->
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\..\README.md" Link="README.md" Pack="True" PackagePath="\"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dotnetCampus.LatestCSharpFeatures" Version="12.0.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="AddOutputDllToNuGetAnalyzerFolder" BeforeTargets="_GetPackageFiles">
+    <!-- 
+      以下这句 ItemGroup 不能放在 Target 外面。否则首次构建之前 $(OutputPath)\$(AssemblyName).dll 是不存在的
+      这里需要选用在 _GetPackageFiles 之前，确保在 NuGet 收集文件之前，标记将输出的 dll 放入到 NuGet 的 analyzers 文件夹下
+    -->
+    <ItemGroup>
+      <None Include="$(OutputPath)\$(AssemblyName).dll"
+            Pack="true"
+            PackagePath="analyzers/dotnet/cs"
+            Visible="false" />
+    </ItemGroup>
+  </Target>
+</Project>
+```
+
+
+
+
+以上内容里面用到了很多 NuGet 打包相关属性，如对此感兴趣，还请参阅 [dotnet 打包 NuGet 的配置属性大全整理](https://blog.lindexi.com/post/dotnet-%E6%89%93%E5%8C%85-NuGet-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8%E6%95%B4%E7%90%86.html )
 
 <!-- 添加 target 文件和 props 文件 -->
 
-代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7ee17551c750a643593f6f5e4a0d03f89456b393/Roslyn/NayijainawNerkanekajawi) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/7ee17551c750a643593f6f5e4a0d03f89456b393/Roslyn/NayijainawNerkanekajawi) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+如果大家打不出来正确的 NuGet 包，可以拉取我的代码进行对比参考
+
+本章以上的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7ee17551c750a643593f6f5e4a0d03f89456b393/Roslyn/NayijainawNerkanekajawi) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/7ee17551c750a643593f6f5e4a0d03f89456b393/Roslyn/NayijainawNerkanekajawi) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
 
@@ -3529,6 +3648,113 @@ git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
 ```
 
 获取代码之后，进入 Roslyn/NayijainawNerkanekajawi 文件夹，即可获取到源代码
+
+以上是十分简单地将分析器打成 NuGet 包。如编写一个 禁用API调用 的分析器演练章节中所述，在制作 NuGet 包的过程可以附带 props 文件和 targets 文件，用于在安装 NuGet 包的时候，自动添加一些配置。这样就可以让分析器的使用更加方便，不需要安装了分析器的项目手动添加配置
+
+回顾一下原本在 禁用API调用 的分析器章节中的引用分析器的 NelbecarballReanallyerhohe 控制台项目的 csproj 文件内容
+
+```xml
+  <PropertyGroup>
+    <BanAPIFileName>BanList.txt</BanAPIFileName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="BanAPIFileName" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="BanList.txt" />
+  </ItemGroup>
+```
+
+以上内容里面的 `<CompilerVisibleProperty Include="BanAPIFileName" />` 和 `<AdditionalFiles Include="BanList.txt" />` 都是固定配置内容。完全可以放入到分析器 NuGet 包里面，不需要每个安装了分析器的项目都手动添加这些重复的配置内容
+
+在分析器的 NuGet 包里面存放 props 文件和 targets 文件，将分析器所需配置放入到这两个文件的方法如下
+
+首先在分析器项目里面新建一个名为 `Assets` 的文件夹。这个 `Assets` 文件夹名仅仅只是我的喜好，大家可以根据自己的喜好换成其他的文件夹名。再在 `Assets` 文件夹里面新建两个文件，分别是 `Package.props` 和 `Package.targets` 文件。这两个文件的内容如下
+
+`Package.props` 文件内容如下
+
+```xml
+<Project>
+
+</Project>
+```
+
+`Package.targets` 文件内容如下
+
+```xml
+<Project>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="BanAPIFileName" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(BanAPIFileName)" />
+  </ItemGroup>
+</Project>
+```
+
+针对上文的 禁用API调用 的分析器演练的内容，完全写入到 `Package.targets` 文件里面，确保顺序足够靠后，在对应的安装了分析器的项目里面完成配置之后，再设置加入到 `AdditionalFiles` 文件里面
+
+完成 `Package.props` 和 `Package.targets` 文件的创建之后，将这两个文件按照 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html ) 博客的方法，将这两个文件打包到 NuGet 包的 `build` 文件夹下
+
+```xml
+  <ItemGroup>
+    <None Include="Assets\Package.targets" Pack="True" PackagePath="\build\$(PackageId).targets" />
+    <None Include="Assets\Package.props" Pack="True" PackagePath="\build\$(PackageId).props" />
+  </ItemGroup>
+```
+
+放入到 NuGet 包里面的 `build` 文件夹下，这样安装了分析器的项目就会自动引入这两个文件，依靠这两个文件提供的配置，不需要手动添加配置。以下是从原本项目引用方式分析器，更改为引用分析器 NuGet 包的方式之后，控制台项目的 csproj 文件里的配置内容发生的变更
+
+引用分析器项目：
+
+```xml
+  <PropertyGroup>
+    <BanAPIFileName>BanList.txt</BanAPIFileName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="BanAPIFileName" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="BanList.txt" />
+  </ItemGroup>
+```
+
+改用分析器 NuGet 包之后：
+
+```xml
+  <PropertyGroup>
+    <BanAPIFileName>BanList.txt</BanAPIFileName>
+  </PropertyGroup>
+```
+
+可以看到，引用分析器 NuGet 包之后，不需要再手动添加 `<CompilerVisibleProperty Include="BanAPIFileName" />` 和 `<AdditionalFiles Include="BanList.txt" />` 这两个配置内容，这两个配置内容已经被分析器 NuGet 包的 `Package.targets` 文件提供了。整个项目看起来更加简洁
+
+以上在分析器 NuGet 包里面存放 props 和 targets 的全部项目代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/fb40665eacad9578d14bf799969bb0e9ac6f0b89/Roslyn/JabeehuharKekajerlurlaw) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/fb40665eacad9578d14bf799969bb0e9ac6f0b89/Roslyn/JabeehuharKekajerlurlaw) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin fb40665eacad9578d14bf799969bb0e9ac6f0b89
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin fb40665eacad9578d14bf799969bb0e9ac6f0b89
+```
+
+获取代码之后，进入 Roslyn/JabeehuharKekajerlurlaw 文件夹，即可获取到源代码
+
 
 
 以上就是 dotnet 的源代码生成器、分析器的入门介绍，希望能够帮助大家更好的了解源代码生成器、分析器的使用方法。在使用过程中，可能以上介绍的内容还不够满足大家的需求。我将在下文给出一些常用方法，供大家参考
@@ -3580,7 +3806,6 @@ git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
 [Incremental Generators](https://github.com/dotnet/roslyn/blob/main/docs/features/incremental-generators.md )
 
 更多编译器、代码分析、代码生成相关博客，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
-
 
 <!--
 
