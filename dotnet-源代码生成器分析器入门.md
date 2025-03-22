@@ -7,8 +7,9 @@
 
 
 <!-- CreateTime:2025/02/11 07:29:34 -->
-
-<!-- 草稿 -->
+<!-- 发布 -->
+<!-- 博客 -->
+<!-- 置顶1 -->
 
 恭喜你看到了本文，进入到 C# dotnet 的深水区。如果你还是在浅水玩耍的小鲜肉，推荐你点击右上方的关闭按钮，避免受到过于深入的知识的污染
 
@@ -2950,6 +2951,114 @@ Interceptor3: lindexi is doubi
 
 这项 Interceptor 拦截器技术的介绍就到这里，拦截器技术现在还是有很多争议的，核心一点是破坏原本的静态代码阅读能力。静态阅读代码，不运行不构建时，所见的代码认为的运行效果不等于最终执行效果。这将会给很多开发者带来困惑，甚至可能被用于恶意代码的隐藏。但是在某些场景下，拦截器技术是非常有用的，比如在构建过程中进行日志记录、性能监控、权限控制等等，将原本影响性能的代码使用拦截器重新实现生成，不破坏原本代码结构等等
 
+整个使用 Interceptor 拦截器的源代码生成器的代码如下，同样是为了让我的博客引擎开森，我将以下代码的两个连在一起的花括号替换为全角的花括号
+
+```csharp
+[Generator(LanguageNames.CSharp)]
+public class FooIncrementalGenerator : IIncrementalGenerator
+{
+    public void Initialize(IncrementalGeneratorInitializationContext context)
+    {
+        IncrementalValuesProvider<GeneratedCodeInfo> sourceProvider = context.SyntaxProvider.CreateSyntaxProvider(
+            (node, _) =>
+            {
+                if (node is InvocationExpressionSyntax invocationExpressionSyntax)
+                {
+                    if (invocationExpressionSyntax.Expression is MemberAccessExpressionSyntax memberAccessExpressionSyntax)
+                    {
+                        // 这是一个调用名为 WriteLine 的方法代码，但就不知道具体是谁的 WriteLine 了。语法过程中是无法知道具体的类型是哪个的
+                        // 比如 Foo a = ...; a.WriteLine(...);
+                        // 或 Foo b = ...; b.WriteLine(...);
+                        // 此时最多在语法层面只判断出是 WriteLine 方法，进一步判断就交给语义过程了
+                        return memberAccessExpressionSyntax.Name.Identifier.Text == "WriteLine";
+                    }
+                }
+
+                return false;
+            },
+            (syntaxContext, _) =>
+            {
+                var symbolInfo = syntaxContext.SemanticModel.GetSymbolInfo(syntaxContext.Node);
+
+                if (symbolInfo.Symbol is not IMethodSymbol methodSymbol
+                    // 以下这句判断纯属多余，因为语法过程中已经判断了是 WriteLine 方法
+                    || methodSymbol.Name != "WriteLine")
+                {
+                    return default(GeneratedCodeInfo);
+                }
+
+                // 语义过程继续判断具体是否 Foo 类型的 WriteLine 方法
+                var className = methodSymbol.ContainingType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat);
+                if (className != "global::JuqawhicaqarLairciwholeni.Foo")
+                {
+                    return default(GeneratedCodeInfo);
+                }
+
+                /*
+                   class Foo
+                   {
+                       public void WriteLine(int message)
+                       {
+                           Console.WriteLine($"Foo: {message}");
+                       }
+                   }
+                 */
+
+                var invocationExpressionSyntax = (InvocationExpressionSyntax) syntaxContext.Node;
+                ArgumentSyntax argumentSyntax = invocationExpressionSyntax.ArgumentList.Arguments.First();
+                var argument = (int)syntaxContext.SemanticModel.GetConstantValue(argumentSyntax.Expression).Value!;
+
+#pragma warning disable RSEXPERIMENTAL002 // 实验性警告，忽略即可
+                var interceptableLocation = syntaxContext.SemanticModel.GetInterceptableLocation(invocationExpressionSyntax)!;
+
+                var displayLocation = interceptableLocation.GetDisplayLocation();
+
+                var generatedCode =
+                    $$"""
+                      using System.Runtime.CompilerServices;
+                      
+                      namespace Foo_JuqawhicaqarLairciwholeni
+                      {
+                          static partial class FooInterceptor
+                          {
+                              // ｛｛displayLocation｝｝
+                              [InterceptsLocation(version: ｛｛interceptableLocation.Version｝｝, data: "｛｛interceptableLocation.Data｝｝")]
+                              public static void InterceptorMethod｛｛argument｝｝(this ｛｛className｝｝ foo, int param)
+                              {
+                                  Console.WriteLine($"Interceptor｛｛argument｝｝: lindexi is doubi");
+                              }
+                          }
+                      }
+
+                      namespace System.Runtime.CompilerServices
+                      {
+                          [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+                          file sealed class InterceptsLocationAttribute : Attribute
+                          {
+                              public InterceptsLocationAttribute(int version, string data)
+                              {
+                                  _ = version;
+                                  _ = data;
+                              }
+                          }
+                      }
+                      """;
+
+                return new GeneratedCodeInfo(generatedCode, $"FooInterceptor{argument}.cs");
+            })
+            .Where(t => t != default);
+
+        context.RegisterImplementationSourceOutput(sourceProvider,
+           (productionContext, provider) =>
+           {
+               productionContext.AddSource(provider.Name, provider.GeneratedCode);
+           });
+    }
+}
+
+readonly record struct GeneratedCodeInfo(string GeneratedCode, string Name);
+```
+
 更多拦截器技术的介绍请参阅： [Interceptors document](https://github.com/dotnet/roslyn/blob/main/docs/features/interceptors.md )
 
 本演练代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/f242a711c0f2fb65a01406a36042d87fc314cb51/Roslyn/JuqawhicaqarLairciwholeni) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/f242a711c0f2fb65a01406a36042d87fc314cb51/Roslyn/JuqawhicaqarLairciwholeni) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
@@ -3491,8 +3600,6 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 介绍分析器
 介绍更加明确的分析器-->
 
-
-
 既然有了分析器，可以给开发者报告出一些警告或错误信息，那是否还能自动帮助开发者修复这些问题呢？这就需要用到超过本文范围的 代码修改器 知识了。编写代码修改器是另外的故事了，这里就不展开了，如果大家对此感兴趣，可以参阅 [使用 Roslyn 分析代码注释，给 TODO 类型的注释添加负责人、截止日期和 issue 链接跟踪 - walterlv](https://blog.walterlv.com/post/comment-analyzer-and-code-fix-using-roslyn.html )
 
 
@@ -3623,12 +3730,23 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 </Project>
 ```
 
+第一个 PropertyGroup 块为分析器固有信息，其中的 `<Version>1.0.0</Version>` 版本号被程序集和 NuGet 包版本号所共用。如果只为指定 NuGet 的包版本号而不影响程序集的版本号，可使用专用的 `PackageVersion` 属性
 
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门33.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253221529185015.jpg)
 
+第二个 PropertyGroup 块为 NuGet 包的信息。其中的 `<Description>这里填写描述信息</Description>` 为 NuGet 包的描述信息，这个描述信息可以在 NuGet Package Explorer 里面直接看到，如下图所示，直接使用 NuGet Package Explorer 打开 NuGet 包，即可看到描述信息
+
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门34.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253221531126363.jpg)
+
+而 ReadMe 文件记录则是需要与下方的 `<None Include="..\..\..\README.md" Link="README.md" Pack="True" PackagePath="\"/>` 配合才能完成，用于放入识别的 README.md 文件，帮助开发者入门使用此分析器 NuGet 包
+
+版权 `Copyright` 信息里面，我使用了 `$([System.DateTime]::Now.ToString(`yyyy`))` 语法，用于获取当前年份。这样可以保证每年都会更新版权信息，不需要手动修改，只需要在新年的时候重新打包即可
+
+再往下是 SuppressDependenciesWhenPacking 配置无依赖和 IncludeBuildOutput 配置不要将输出文件放入到 nuget 的 lib 文件夹等信息，这部分上文有描述，这里就不再赘述
 
 以上内容里面用到了很多 NuGet 打包相关属性，如对此感兴趣，还请参阅 [dotnet 打包 NuGet 的配置属性大全整理](https://blog.lindexi.com/post/dotnet-%E6%89%93%E5%8C%85-NuGet-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%A4%A7%E5%85%A8%E6%95%B4%E7%90%86.html )
-
-<!-- 添加 target 文件和 props 文件 -->
 
 如果大家打不出来正确的 NuGet 包，可以拉取我的代码进行对比参考
 
@@ -3672,7 +3790,9 @@ git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
 
 以上内容里面的 `<CompilerVisibleProperty Include="BanAPIFileName" />` 和 `<AdditionalFiles Include="BanList.txt" />` 都是固定配置内容。完全可以放入到分析器 NuGet 包里面，不需要每个安装了分析器的项目都手动添加这些重复的配置内容
 
-在分析器的 NuGet 包里面存放 props 文件和 targets 文件，将分析器所需配置放入到这两个文件的方法如下
+在分析器的 NuGet 包里面存放 props 文件和 targets 文件，将分析器所需配置放入到这两个文件里面，即可在安装完 NuGet 包之后，应用这两个文件里面的配置，避免安装分析器的项目需要添加固定配置内容
+
+依然是为了方便大家获取源代码，我这里重新拷贝 禁用API调用 的分析器演练章节的项目里面的代码，重新新建了名为 `JabeehuharKekajerlurlaw.Analyzer` 的分析器项目和名为 `JabeehuharKekajerlurlaw` 控制台项目
 
 首先在分析器项目里面新建一个名为 `Assets` 的文件夹。这个 `Assets` 文件夹名仅仅只是我的喜好，大家可以根据自己的喜好换成其他的文件夹名。再在 `Assets` 文件夹里面新建两个文件，分别是 `Package.props` 和 `Package.targets` 文件。这两个文件的内容如下
 
@@ -3699,7 +3819,10 @@ git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
 </Project>
 ```
 
-针对上文的 禁用API调用 的分析器演练的内容，完全写入到 `Package.targets` 文件里面，确保顺序足够靠后，在对应的安装了分析器的项目里面完成配置之后，再设置加入到 `AdditionalFiles` 文件里面
+<!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门32.png) -->
+![](http://cdn.lindexi.site/lindexi%2F20253221523435206.jpg)
+
+针对上文的 禁用API调用 的分析器演练的需求，完全将配置的信息写入到 `Package.targets` 文件里面，确保顺序足够靠后，在对应的安装了分析器的项目里面完成配置之后，再设置加入到 `AdditionalFiles` 文件里面
 
 完成 `Package.props` 和 `Package.targets` 文件的创建之后，将这两个文件按照 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html ) 博客的方法，将这两个文件打包到 NuGet 包的 `build` 文件夹下
 
@@ -3712,7 +3835,7 @@ git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
 
 放入到 NuGet 包里面的 `build` 文件夹下，这样安装了分析器的项目就会自动引入这两个文件，依靠这两个文件提供的配置，不需要手动添加配置。以下是从原本项目引用方式分析器，更改为引用分析器 NuGet 包的方式之后，控制台项目的 csproj 文件里的配置内容发生的变更
 
-引用分析器项目：
+原来的引用分析器项目：
 
 ```xml
   <PropertyGroup>
@@ -3758,8 +3881,6 @@ git pull origin fb40665eacad9578d14bf799969bb0e9ac6f0b89
 
 获取代码之后，进入 Roslyn/JabeehuharKekajerlurlaw 文件夹，即可获取到源代码
 
-
-
 以上就是 dotnet 的源代码生成器、分析器的入门介绍，希望能够帮助大家更好的了解源代码生成器、分析器的使用方法。在使用过程中，可能以上介绍的内容还不够满足大家的需求。我将在下文给出一些常用方法，供大家参考
 
 ## 常用方法
@@ -3785,7 +3906,6 @@ git pull origin fb40665eacad9578d14bf799969bb0e9ac6f0b89
 ### 判断程序集之间的 InternalsVisibleTo 关系
 
 [IIncrementalGenerator 增量 Source Generator 生成代码入门 判断程序集之间的 InternalsVisibleTo 关系](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E5%88%A4%E6%96%AD%E7%A8%8B%E5%BA%8F%E9%9B%86%E4%B9%8B%E9%97%B4%E7%9A%84-InternalsVisibleTo-%E5%85%B3%E7%B3%BB.html )
-
 
 ### 判断程序集的引用关系
 
