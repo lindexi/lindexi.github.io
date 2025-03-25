@@ -160,6 +160,12 @@
 
 加入以上代码之后，即可每次打包都设置版权信息为当前的年份
 
+而有些包则是先日期再公司名，如以下代码，这也是可以接受的
+
+```xml
+<Copyright>Copyright (c) 玄年-玄月 Metaphysical Algorithm</Copyright>
+```
+
 #### CopyrightSlim
 
 只是 Copyright 的较短版本，默认不设置将采用 Copyright 的值
