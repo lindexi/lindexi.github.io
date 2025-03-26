@@ -140,7 +140,7 @@
 
 ### Copyright
 
-版权信息，官方推荐的格式是 `"Copyright (c) <name/company> <year>` 的格式。正经的包一般都会如此遵守。年份上是可以写范围或固定某个年
+版权信息，官方推荐的格式是 `Copyright (c) <name/company> <year>` 的格式。正经的包一般都会如此遵守。年份上是可以写范围或固定某个年
 
 ```xml
 <Project>
@@ -160,15 +160,25 @@
 
 加入以上代码之后，即可每次打包都设置版权信息为当前的年份
 
-而有些包则是先日期再公司名，如以下代码，这也是可以接受的
+而有些包则是先日期再公司名，如以下代码，这也是可以接受的。详细请参阅 [规范的版权Copyright说明怎么写？ 赵智功律师回答内容 - 知乎](https://www.zhihu.com/question/19916364 )
 
 ```xml
-<Copyright>Copyright (c) 玄年-玄月 Metaphysical Algorithm</Copyright>
+<Copyright>Copyright (c) 玄年-玄月 Metaphysical Algorithm Co.,Ltd</Copyright>
 ```
 
 #### CopyrightSlim
 
 只是 Copyright 的较短版本，默认不设置将采用 Copyright 的值
+
+较短版本一般来说采用的是公司的简称而不是全称，以及省略 `All Rights Reserved` 内容，其他信息不变，格式如下
+
+```
+Copyright (c) <name/company简称> <year>
+```
+
+如将 `Metaphysical Algorithm Co.,Ltd, All Rights Reserved.` 换成 `Metaphysical Algorithm` 简写
+
+注： 这里的 `Metaphysical Algorithm Co.,Ltd` 是我根据太子最喜欢的 `玄学算法公司` 杜撰而来的，如有相同，纯属巧合
 
 ### PackageLicenseExpression
 
