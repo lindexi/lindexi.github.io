@@ -12,6 +12,8 @@ Windows 调试工具课程——在软件万种死法中调试出原因
 
 本文内容的组织方式是按照原本课程课件里面的一页页的内容组装而来的方式组织的，在过程中补充一些讲课时的内容
 
+**注：** 如果你看不到图片，请确保了允许 http 图片内容（Make sure enable `Insecure origins treated as secure` for my blog）
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程0.png) -->
 ![](http://cdn.lindexi.site/lindexi%2F2024919842595851.jpg)
 
