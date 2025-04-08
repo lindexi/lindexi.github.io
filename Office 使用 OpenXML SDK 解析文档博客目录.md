@@ -277,6 +277,12 @@
 
 ~~貌似要购买的话，找我也许有优惠…… 但一年大概也是 10w 左右~~
 
+### Conholdate.Total
+
+用 .NET 创建、操作、转换、比较、搜索、签名和查看 Word、Excel、PowerPoint、Outlook、PDF 以及其他 100 多个文件格式。似乎也是 aspose 提供的能力，如 <https://websites.aspose.com/conholdate/com/> 所示
+
+<https://www.componentsource.com/zh-hans/product/conholdate-total-for-net>
+
 ### [grapecity](https://www.grapecity.com)
 
 这是一个控件库，里面也包含了部分工具，请看
