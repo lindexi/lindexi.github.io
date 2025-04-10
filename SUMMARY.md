@@ -506,6 +506,8 @@
 
  * [dotnet C# 使用 SHFileOperation 调用 Win32 的文件复制对话框](dotnet-C-使用-SHFileOperation-调用-Win32-的文件复制对话框.md)
 
+ * [dotnet C# 使用 System.IO.Hashing 库进行 Crc32 计算](dotnet-C-使用-System.IO.Hashing-库进行-Crc32-计算.md)
+
  * [dotnet C# 使用 using 关键字释放 IDisposable 的结构体是否会装箱](dotnet-C-使用-using-关键字释放-IDisposable-的结构体是否会装箱.md)
 
  * [dotnet C# 使用 Vortice 创建 Direct2D1 的 ID2D1SolidColorBrush 纯色画刷](dotnet-C-使用-Vortice-创建-Direct2D1-的-ID2D1SolidColorBrush-纯色画刷.md)
@@ -517,6 +519,8 @@
  * [dotnet C# 使用无捕获的委托可以获得编译器缓存减少对象创建](dotnet-C-使用无捕获的委托可以获得编译器缓存减少对象创建.md)
 
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
+
+ * [dotnet C# 做一个压缩包和解压缩出来的文件夹内容对比工具](dotnet-C-做一个压缩包和解压缩出来的文件夹内容对比工具.md)
 
  * [dotnet C# 全局 Windows 鼠标钩子](dotnet-C-全局-Windows-鼠标钩子.md)
 
