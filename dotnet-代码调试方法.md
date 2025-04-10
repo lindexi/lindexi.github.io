@@ -1494,6 +1494,8 @@ ntdll.dll!_DbgUiRemoteBreakin
 - [dotnet 6 在 Win7 系统证书链错误导致 HttpWebRequest 内存泄露](https://blog.lindexi.com/post/dotnet-6-%E5%9C%A8-Win7-%E7%B3%BB%E7%BB%9F%E8%AF%81%E4%B9%A6%E9%93%BE%E9%94%99%E8%AF%AF%E5%AF%BC%E8%87%B4-HttpWebRequest-%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.html )
 - [win10 uwp 使用 WinDbg 调试](https://blog.lindexi.com/post/win10-uwp-%E4%BD%BF%E7%94%A8-WinDbg-%E8%B0%83%E8%AF%95.html )
 
+搭配 WinDbg 还可以制作一个简单的自动化 DUMP 分析器，如果自己日常能够收到的 DUMP 数量足够多，不想一个个进行分析调查，那可以搭建一个 DUMP 分析器平台。自动分析平台肯定不能解决所有问题，但能够减少一些工作量，甚至对接一些数据聚合平台，可以完成一些聚合任务，类似数据挖掘的方法辅助定位一些问题。搭建方法请参阅 [搭建一个自动化分析 DUMP 平台](https://blog.lindexi.com/post/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E5%88%86%E6%9E%90-DUMP-%E5%B9%B3%E5%8F%B0.html )
+
 ### 收藏一些大佬的 DUMP 调试博客
 
 使用 DUMP 调试还是比较难的，劝退力比较足。因为除了工具的时候比较难之外，如何进行调试，调试的思路和调试的经验都会成为劝退的原因，我收藏了一些大佬的 DUMP 调试博客，大家可以跟随大佬们的调试思路尝试调试一下
