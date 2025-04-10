@@ -3,6 +3,8 @@
 本文和大家介绍 dotnet 官方提供的 System.IO.Hashing 库进行 Crc32 计算
 
 <!--more-->
+<!-- CreateTime:2025/04/10 09:02:06 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
