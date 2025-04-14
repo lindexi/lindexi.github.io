@@ -764,6 +764,8 @@
 
  * [dotnet OpenXML 测量单位的角度和弧度值](dotnet-OpenXML-测量单位的角度和弧度值.md)
 
+ * [dotnet OpenXML 演练 设置 PPT 单元格垂直合并](dotnet-OpenXML-演练-设置-PPT-单元格垂直合并.md)
+
  * [dotnet OpenXML 的 Slide Master 和 Slide Layout 是什么](dotnet-OpenXML-的-Slide-Master-和-Slide-Layout-是什么.md)
 
  * [dotnet OpenXML 的 spcPct 和 spcPts 表示距离的不同](dotnet-OpenXML-的-spcPct-和-spcPts-表示距离的不同.md)
@@ -1667,6 +1669,8 @@
  * [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](Roslyn-使用-WriteLinesToFile-解决参数过长无法传入.md)
 
  * [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用](Roslyn-分析器-EnforceExtendedAnalyzerRules-属性的作用.md)
+
+ * [Roslyn 分析器 INamedTypeSymbol 的 AllInterfaces 包含类型全部继承接口](Roslyn-分析器-INamedTypeSymbol-的-AllInterfaces-包含类型全部继承接口.md)
 
  * [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置](Roslyn-分析器-读取-csproj-项目文件的-AdditionalFiles-Item-的-Metadata-配置.md)
 
