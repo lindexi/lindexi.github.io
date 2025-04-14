@@ -4,7 +4,7 @@
 
 <!--more-->
 <!-- CreateTime:2023/1/29 11:43:55 -->
-
+<!-- 博客 -->
 <!-- 发布 -->
 
 本文将会持续更新，可以通过搜 《dotnet 打包 NuGet 的配置属性大全整理 林德熙》 找到我主站的博客，避免各个备份地址陈旧的内容误导
@@ -584,6 +584,43 @@ Lindexi.Package Path=C:\Users\lindexi\.nuget\packages\lindexi.package\1.2.3
 以上代码的两个加入打包的文件都会成功都被加入打包。更多请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
 
 更多请看 [msbuild Roslyn 行为详解](https://blog.lindexi.com/post/msbuild-Roslyn-%E8%A1%8C%E4%B8%BA%E8%AF%A6%E8%A7%A3.html )
+
+### 打包分析器进入 NuGet 包
+
+在分析器项目里面将自身打入到 NuGet 的 `analyzers/dotnet/cs` 文件夹，作为分析器的存在
+
+```xml
+  <Target Name="AddOutputDllToNuGetAnalyzerFolder" BeforeTargets="_GetPackageFiles">
+    <!-- 
+      以下这句 ItemGroup 不能放在 Target 外面。否则首次构建之前 $(OutputPath)\$(AssemblyName).dll 是不存在的
+      这里需要选用在 _GetPackageFiles 之前，确保在 NuGet 收集文件之前，标记将输出的 dll 放入到 NuGet 的 analyzers 文件夹下
+    -->
+    <ItemGroup>
+      <None Include="$(OutputPath)\$(AssemblyName).dll"
+            Pack="true"
+            PackagePath="analyzers/dotnet/cs"
+            Visible="false" />
+    </ItemGroup>
+  </Target>
+```
+
+常写的分析器 NuGet 包配置属性如下
+
+```xml
+    <!-- 
+      配置为无依赖。即避免带上 TargetFramework=netstandard2.0 的限制
+      配合 IncludeBuildOutput=false 即可让任意项目引用，无视目标框架
+    -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+
+    <!-- 不要将输出文件放入到 nuget 的 lib 文件夹下 -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- 不要警告 lib 下没内容 -->
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+```
+
+更多分析器打包相关，请参阅 [dotnet 源代码生成器分析器入门](https://blog.lindexi.com/post/dotnet-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E5%88%86%E6%9E%90%E5%99%A8%E5%85%A5%E9%97%A8.html )
+<!-- [dotnet 源代码生成器分析器入门 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18786647 ) -->
 
 ### 进行 Publish 发布之后的时机
 
