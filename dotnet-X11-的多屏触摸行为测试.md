@@ -204,13 +204,13 @@ TouchMajorAtom Max=18950.00; Min=0.00; Resolution=10000
 TouchMinorAtom Max=10660.00; Min=0.00; Resolution=10000
 ```
 
-以上的 `Max=18950.00` 所获取的值是其物理尺寸，即 1.89 米宽度。这里的 Resolution 是一个比例，计算公式如下
+以上的 `Max=18950.00` 所获取的值是逻辑值，但刚好在 [CVT](https://devicehunt.com/view/type/usb/vendor/1FF7) 设备上逻辑值和物理值都是相同的最大值最小值，因此可将其直接等同于其物理尺寸，即 1.89 米宽度。这里的 Resolution 是一个比例，计算公式如下
 
 ```
 TouchMajorAtomMax/Resolution = 18950.00/10000 = 1.895 米
 ```
 
-由于 [CVT](https://devicehunt.com/view/type/usb/vendor/1FF7) 的设备报告的逻辑值和物理值都是相同的最大值最小值，因此以上代码我不确定拿到的是逻辑值还是物理值
+<!-- 由于 [CVT](https://devicehunt.com/view/type/usb/vendor/1FF7) 的设备报告的逻辑值和物理值都是相同的最大值最小值，因此以上代码我不确定拿到的是逻辑值还是物理值 -->
 
 通过以上代码也可以看到，我无法直接获取到正确的多屏不同尺寸的设备的多个屏幕的物理尺寸。这是因为我无法直接知道输入的是哪个屏幕以及其比例值
 

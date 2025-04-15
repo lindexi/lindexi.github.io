@@ -2524,6 +2524,8 @@
 
  * [windows 10预览版升级win10 7月29 10240.16384](windows-10预览版升级win10-7月29-10240.16384.md)
 
+ * [Windows 11 在 GitLab Runner 服务内找不到 SMB 挂载的 NAS 文件夹](Windows-11-在-GitLab-Runner-服务内找不到-SMB-挂载的-NAS-文件夹.md)
+
  * [Windows Community Toolkit 3.0 新功能](Windows-Community-Toolkit-3.0-新功能.md)
 
  * [Windows 下的 WPF 开发 调试应用程序在什么时机加载了 Dll 模块](Windows-下的-WPF-开发-调试应用程序在什么时机加载了-Dll-模块.md)
@@ -3787,6 +3789,8 @@
  * [解决 Win10 UWP 无法使用 ss 连接](解决-Win10-UWP-无法使用-ss-连接.md)
 
  * [解决从旧格式的 csproj 迁移到新格式的 csproj 格式 AssemblyInfo 文件值重复问题](解决从旧格式的-csproj-迁移到新格式的-csproj-格式-AssemblyInfo-文件值重复问题.md)
+
+ * [解决麒麟 Kylin 系统提示 IP 冲突 无法正常连接到网络](解决麒麟-Kylin-系统提示-IP-冲突-无法正常连接到网络.md)
 
  * [警惕 Visual Studio 属性求值副作用导致逻辑不符合预期](警惕-Visual-Studio-属性求值副作用导致逻辑不符合预期.md)
 

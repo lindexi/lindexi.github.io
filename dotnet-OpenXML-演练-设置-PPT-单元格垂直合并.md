@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2025/04/15 07:19:14 -->
+
 <!-- 草稿 -->
 
 
@@ -29,12 +31,13 @@ var slide = slidePart.Slide;
 
 var graphicFrame = slide.CommonSlideData!.ShapeTree!.GetFirstChild<GraphicFrame>()!;
 var graphic = graphicFrame.Graphic!;
-var graphicData = graphic.GraphicData!;
-var table = graphicData.GetFirstChi # dotnet OpenXML 演练 设置 PPT 单元格垂直合并
+var graphicData = graphic.Graphic # dotnet OpenXML 演练 设置 PPT 单元格垂直合并
 
 本文将告诉大家如何在使用 OpenXML SDK 为
 
 <!--more-->
+<!-- CreateTime:2025/04/15 07:19:14 -->
+
 <!-- 草稿 -->
 
 
