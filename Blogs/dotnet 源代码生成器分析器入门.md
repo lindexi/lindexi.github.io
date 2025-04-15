@@ -3915,6 +3915,15 @@ git pull origin fb40665eacad9578d14bf799969bb0e9ac6f0b89
 
 [IIncrementalGenerator 增量 Source Generator 生成代码入门 获取项目默认命名空间](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%8E%B7%E5%8F%96%E9%A1%B9%E7%9B%AE%E9%BB%98%E8%AE%A4%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html )
 
+## 基础知识
+
+- [Roslyn 分析器 INamedTypeSymbol 的 AllInterfaces 包含类型全部继承接口](https://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-INamedTypeSymbol-%E7%9A%84-AllInterfaces-%E5%8C%85%E5%90%AB%E7%B1%BB%E5%9E%8B%E5%85%A8%E9%83%A8%E7%BB%A7%E6%89%BF%E6%8E%A5%E5%8F%A3.html ) <!-- [Roslyn 分析器 INamedTypeSymbol 的 AllInterfaces 包含类型全部继承接口 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18826021 ) -->
+- [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](https://blog.lindexi.com/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html )
+- [Roslyn 节点的 Span 和 FullSpan 有什么区别](https://blog.lindexi.com/post/Roslyn-%E8%8A%82%E7%82%B9%E7%9A%84-Span-%E5%92%8C-FullSpan-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB.html )
+- [Roslyn 如何获得一个类的引用](https://blog.lindexi.com/post/Roslyn-%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%B8%80%E4%B8%AA%E7%B1%BB%E7%9A%84%E5%BC%95%E7%94%A8.html )
+
+- [读取解析 ValueTuple 的定义](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%AF%BB%E5%8F%96%E8%A7%A3%E6%9E%90-ValueTuple-%E7%9A%84%E5%AE%9A%E4%B9%89.html )
+
 ## 参考文档
 
 [从零开始学习 dotnet 编译过程和 Roslyn 源码分析 - walterlv](https://blog.walterlv.com/post/posts-for-learning-dotnet-build-nuget-roslyn.html )
