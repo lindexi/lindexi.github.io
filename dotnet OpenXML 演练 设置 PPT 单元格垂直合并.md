@@ -1,4 +1,4 @@
- # dotnet OpenXML 演练 设置 PPT 单元格垂直合并
+# dotnet OpenXML 演练 设置 PPT 单元格垂直合并
 
 本文将告诉大家如何在使用 2.20 版本的 OpenXML SDK 对 PPT 里面的单元格进行垂直合并
 
@@ -16,7 +16,7 @@
 
 在 PPT 里面合并单元格时，重点就是在首个单元格设置好 RowSpan 属性，这个属性用于设置从这个单元格以下多少个单元格将被合并，数值包含自己在内，即最小合并单元为 2 个单元格。其次是非首个单元格的，需要设置 VerticalMerge 属性
 
-按照这份文档，可以看到很简单的先取出首行首列，和末汉首列，这就是 a 和 1 所在的单元格，代码如下
+按照这份文档，可以看到很简单的先取出首行首列，和末行首列，这就是 a 和 1 所在的单元格，代码如下
 
 ```csharp
 Table table = ...
@@ -27,7 +27,7 @@ var firstRowFirstCell = firstRow.Elements<TableCell>().First();
 var lastRowFirstCell = lastRow.Elements<TableCell>().First();
 ```
 
-对首个单元格设置上 RowSpan 属性，这里只合并两个单元格，设置 2 的值。对末汉首列单元格的 VerticalMerge 设置 true 属性，代码如下
+对首个单元格设置上 RowSpan 属性，这里只合并两个单元格，设置 2 的值。对末行首列单元格的 VerticalMerge 设置 true 属性，代码如下
 
 ```csharp
 firstRowFirstCell.RowSpan = 2;
