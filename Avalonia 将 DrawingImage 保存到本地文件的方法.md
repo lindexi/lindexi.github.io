@@ -3,6 +3,8 @@
 本文将和大家演示如何在 11.2.0 的 Avalonia 框架上，将 Avalonia.Media.DrawingImage 保存存放为本地图片文件的方法
 
 <!--more-->
+<!-- CreateTime:2025/04/18 07:17:14 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
