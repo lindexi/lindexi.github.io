@@ -86,6 +86,8 @@
 
  * [Avalonia 界面效果 滚动的渐变矩形边框](Avalonia-界面效果-滚动的渐变矩形边框.md)
 
+ * [Avalonia 笔迹渲染太慢了 用 WPF 做加速层](Avalonia-笔迹渲染太慢了-用-WPF-做加速层.md)
+
  * [Avalonia 简单实现输入法光标跟随效果](Avalonia-简单实现输入法光标跟随效果.md)
 
  * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
@@ -1287,6 +1289,8 @@
  * [dotnet 警惕使用 StackTrace 加获取方法标记 Attribute 特性在 Release 下被内联](dotnet-警惕使用-StackTrace-加获取方法标记-Attribute-特性在-Release-下被内联.md)
 
  * [dotnet 警惕判断文件是否存在因为检查网络资源造成超长等待](dotnet-警惕判断文件是否存在因为检查网络资源造成超长等待.md)
+
+ * [dotnet 警惕设置 StreamReader 的 BaseStream 的 Position 属性](dotnet-警惕设置-StreamReader-的-BaseStream-的-Position-属性.md)
 
  * [dotnet 让 C# 可以通过动态生成 HLSL 使用 DX12 的 GPU 并行计算库 ComputeSharp 的简介](dotnet-让-C-可以通过动态生成-HLSL-使用-DX12-的-GPU-并行计算库-ComputeSharp-的简介.md)
 
