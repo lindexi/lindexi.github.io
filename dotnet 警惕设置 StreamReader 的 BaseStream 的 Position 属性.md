@@ -3,6 +3,8 @@
 使用 StreamReader 的过程中，如果设置了 StreamReader 的 BaseStream 的 Position 属性，由于 StreamReader 内部缓存的影响，可能会在缓存消耗完成之前，依然是读取缓存的值，导致行为不符合预期
 
 <!--more-->
+<!-- CreateTime:2025/04/19 07:27:51 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
