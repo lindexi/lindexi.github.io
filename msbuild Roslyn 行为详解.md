@@ -25,10 +25,57 @@
 
 ```xml
   <PropertyGroup>
-    <!-- 拷贝输出项，用于给 MauiWpfAdapt 项目引用 -->
+    <!-- 拷贝输出项，可作为独立插件 -->
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 ```
+
+更具体而言，比如说有一个类库项目，引用了 A NuGet 包。构建此类库项目时，可见其 `bin\Debug` 下输出只有此类库dll文件，不见在 A NuGet 包里的 A.dll 文件。配置上 `<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>` 时，再次构建此类库项目，可见输出目录里面包含了 A.dll 文件。演示用的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/7c99c938860b2ebd141486c164a8760b920ab0d2/Workbench/CafajiherbairBairfearneakur) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/7c99c938860b2ebd141486c164a8760b920ab0d2/Workbench/CafajiherbairBairfearneakur) 上，可以拉取我的代码，试试加上或去掉 CopyLocalLockFileAssemblies 属性对构建输出目录的影响
+
+### CopyDebugSymbolFilesFromPackages
+
+设置 CopyDebugSymbolFilesFromPackages 为 true 将 NuGet 包或 NuGet 符号包里面的 PDB 符号文件拷贝输出到输出目录，如此可以更方便调试构建，以及 CI 构建时的存档内容
+
+默认情况下不拷贝 NuGet 包的 PDB 符号文件，于是 VisualStudio 可能在调试时就找不到 PDB 符号文件，导致打断点和异常调试信息受到限制
+
+```xml
+  <PropertyGroup>
+    <!-- 拷贝 NuGet 包里的 PDB 符号文件到输出目录 -->
+    <CopyDebugSymbolFilesFromPackages>true</CopyDebugSymbolFilesFromPackages>
+  </PropertyGroup>
+```
+
+此属性在 .NET SDK 7.0.100 引入
+
+### CopyDocumentationFilesFromPackages
+
+配置 CopyDocumentationFilesFromPackages 为 true 将 NuGet 包里的 XML 注释文件拷贝输出到输出目录。正常预计不会用到的属性，因为 Visual Studio 在开发过程中可以稳定读取 NuGet 包里面的 XML 注释文件内容
+
+```xml
+  <PropertyGroup>
+    <!-- 拷贝 NuGet 包里的 XML 注释文件到输出目录 -->
+    <CopyDocumentationFilesFromPackages>true</CopyDocumentationFilesFromPackages>
+  </PropertyGroup>
+```
+
+此属性在 .NET SDK 7.0.100 引入
+
+
+### ErrorOnDuplicatePublishOutputFiles
+
+控制发布时，发现会有同名文件将要被拷贝到发布输出文件夹时，是否要给出 NETSDK1148 错误信息
+
+```xml
+<PropertyGroup>
+  <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+</PropertyGroup>
+```
+
+设置为 true 时，将在发布时发现同名文件相互覆盖情况时给出 NETSDK1148 错误
+
+此属性在 dotnet 6 sdk 引入
+
+可以在日常流水 CI 上开启，用于检测是否可能有输出同名文件，防止出现覆盖非预期行为
 
 ## 多框架相关
 

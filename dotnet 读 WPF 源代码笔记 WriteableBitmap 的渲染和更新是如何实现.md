@@ -264,4 +264,90 @@ Cleanup:
 
 详细请看 [IWICBitmapSource::CopyPixels (wincodec.h) - Win32 apps](https://docs.microsoft.com/en-us/windows/win32/api/wincodec/nf-wincodec-iwicbitmapsource-copypixels?WT.mc_id=WD-MVP-5003260 )
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+---
+
+以下是更多细节
+
+关于 CSwDoubleBufferedBitmap 创建 `IWICBitmap *  m_pBackBuffer;` 的逻辑
+
+在 `CSwDoubleBufferedBitmap::HrInit` 方法里面执行了实际的创建逻辑。核心逻辑如下
+
+先使用 `CWriteProtectedBitmap::Create` 方法创建出 `CWriteProtectedBitmap * m_pBackBufferAsWriteProtectedBitmap` 对象，代码如下
+
+```c++
+    IFC(CWriteProtectedBitmap::Create(width, height, dpiX, dpiY, pixelFormat, pPalette, &pWriteProtectedBitmap));
+
+    pWriteProtectedBitmap->AddRef();
+    m_pBackBufferAsWriteProtectedBitmap = pWriteProtectedBitmap;
+```
+
+这个过程是为了让 `m_pBackBufferAsWriteProtectedBitmap` 处理写，而分离让 `m_pBackBuffer` 只处理读的情况
+
+再使用 QueryInterface 方式，从 `pWriteProtectedBitmap` 转换为 `IWGXBitmap * pBackBuffer` 变量，代码如下
+
+```c++
+    // QI to a friendly interface that we'll pass out to the user
+    // of this double buffered bitmap.  We ask for the WIC interface instead of
+    // the MIL interface so that we can use the extensive set of format
+    // converters provided by WIC but not MIL.
+    IFC(pWriteProtectedBitmap->QueryInterface(
+        IID_IWGXBitmap,
+        reinterpret_cast<void**>(&pBackBuffer)
+        ));
+```
+
+再从 `IWGXBitmap * pBackBuffer` 转换为 `IWICBitmap *  m_pBackBuffer;` 对象
+
+```c++
+    IFC(CWGXWrapperBitmap::Create(
+        pBackBuffer,
+        &m_pBackBuffer
+        ));
+```
+
+不要被 `CWGXWrapperBitmap::Create` 方法给骗了，里面只是简单做了一次 wrapper 而已，代码如下
+
+```c++
+HRESULT
+CWGXWrapperBitmap::Create(
+    __in_ecount(1) IWGXBitmap *pIBitmap,
+    __deref_out_ecount(1) IWICBitmap **ppWrapper
+    )
+{
+    HRESULT hr = S_OK;
+    
+    CWGXWrapperBitmap *pWrapper = new CWGXWrapperBitmap(pIBitmap);
+    IFCOOM(pWrapper);
+    pWrapper->AddRef();
+
+    *ppWrapper = pWrapper;
+
+Cleanup:
+    RRETURN(hr);
+}
+```
+
+由于同时创建了 `CWriteProtectedBitmap * m_pBackBufferAsWriteProtectedBitmap` 和 `IWICBitmap *  m_pBackBuffer` 两个字段，且相互之间只是用 COM 魔法关联，于是就可以在写入过程中，使用 `m_pBackBufferAsWriteProtectedBitmap` 字段进行写入，不碰 `IWICBitmap *  m_pBackBuffer` 字段，但数据能够同步给到 `IWICBitmap *  m_pBackBuffer` 里面
+
+即在上文提到的 `CopyForwardDirtyRects` 方法里面，只有 `Assert(m_pBackBuffer);` 一句话碰了 `m_pBackBuffer` 而已。从静态代码看实际写入的是通过 `GetPossiblyFormatConvertedBackBuffer(&pIWGXBitmapSource);` 方法返回的 `IWGXBitmapSource *pIWGXBitmapSource` 变量。实际上这两个变量和字段之间是 COM 魔法关联的，写入到 `pIWGXBitmapSource` 就是写入到 `m_pBackBuffer` 里面
+
+具体的 GetPossiblyFormatConvertedBackBuffer 代码如下
+
+```c++
+void
+CSwDoubleBufferedBitmap::GetPossiblyFormatConvertedBackBuffer(
+    __deref_out IWGXBitmapSource **ppPossiblyFormatConvertedBackBuffer
+    ) const
+{
+    if (m_pFormatConverter)
+    {
+        SetInterface(*ppPossiblyFormatConvertedBackBuffer, m_pFormatConverter);
+    }
+    else
+    {
+        SetInterface(*ppPossiblyFormatConvertedBackBuffer, m_pBackBufferAsWriteProtectedBitmap);
+    }
+}
+```
+
+通过以上代码可以看到，这只是判断有没有需要格式转换而已，默认没有格式转换的情况下，就是返回 `m_pBackBufferAsWriteProtectedBitmap` 字段作为写入内容
