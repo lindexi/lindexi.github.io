@@ -2642,6 +2642,8 @@
 
  * [WPF 从 windows 消息到路由事件](WPF-从-windows-消息到路由事件.md)
 
+ * [WPF 从 WriteableBitmap 里获取到渲染线程使用的 IWICBitmap 对象](WPF-从-WriteableBitmap-里获取到渲染线程使用的-IWICBitmap-对象.md)
+
  * [WPF 从文件创建图片的方法](WPF-从文件创建图片的方法.md)
 
  * [WPF 从文件加载字体](WPF-从文件加载字体.md)
