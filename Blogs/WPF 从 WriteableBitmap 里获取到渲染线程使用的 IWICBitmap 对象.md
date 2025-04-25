@@ -5,6 +5,8 @@ tags: WPF
 category: 
 ---
 
+<!-- CreateTime:2025/04/24 07:09:57 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -173,3 +175,84 @@ git pull origin a920291d64e1163ffa40f4134c2a8c56cbbf1342
 获取代码之后，进入 WPFDemo/CabawgakaicurrecalLalkiniyajagear 文件夹，即可获取到源代码
 
 更多 WPF 框架原理博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+更新：
+
+有伙伴反馈说用 `stakx.WIC` 太旧了，没有能够用上最新的 COM 函数指针调用技术。用函数指针调用技术可以做到无中间商赚差价，无 COM 对象包装，直接调用，性能无敌且 AOT 友好。小伙伴就让我写用 Vortice 库的调用方法，直接走 Vortice 封装好的函数指针调用。我这里就来更新，先原有代码不动，先卸载 `stakx.WIC` 库，换成安装 `Vortice.Win32.Graphics.Imaging` 库，修改之后的 csproj 项目文件代码大概如下
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Vortice.Win32.Graphics.Imaging" Version="2.2.7" />
+  </ItemGroup>
+
+</Project>
+```
+
+依然是从反射获取 WriteableBitmap 的 WicSourceHandle 属性，拿到的 `wicBitmapHandle` 变量，原来代码如下
+
+```csharp
+        var writeableBitmap = (WriteableBitmap) Image.Source;
+        var type = writeableBitmap.GetType();
+        var propertyInfo = type.GetProperty("WicSourceHandle", BindingFlags.NonPublic | BindingFlags.Instance);
+        var value = propertyInfo?.GetValue(writeableBitmap);
+        nint wicBitmapHandle = 0;
+        if (value is SafeHandleZeroOrMinusOneIsInvalid safeHandle)
+        {
+            var handle = safeHandle.DangerousGetHandle();
+            wicBitmapHandle = handle;
+            ...
+        }
+```
+
+这里拿到的 `wicBitmapHandle` 实际上是一个 COM 的 pvtable 指针，对应着 C# 函数指针里面应该是 `(void***)` 类型，需要取值才能作为 `void**` 传入到 `Win32.Graphics.Imaging.IWICBitmap` 的 lpVtbl 字段里面。也可以这么认为，拿到的 `wicBitmapHandle` 就是 COM 对象本身，这个 COM 对象首个字段就是 `vtable` 字段，取首个字段的值就是取 `wicBitmapHandle[0]` 的值，刚好 `[0]` 等于自身，可以约掉不写。整理之后的代码如下，请不要被 `(void***)` 吓到
+
+```csharp
+            var handle = safeHandle.DangerousGetHandle();
+            wicBitmapHandle = handle;
+            var wicBitmap = new IWICBitmap();
+            unsafe
+            {
+                void*** pvtable = (void***) wicBitmapHandle;
+                void** vtable = *pvtable;
+                wicBitmap.lpVtbl = vtable;
+
+                uint w = 0, h = 0;
+                wicBitmap.GetSize(&w, &h);
+            }
+```
+
+转换完成之后，尝试调用 GetSize 方法，可以获取到宽度高度符合传入的初始宽度高度，证明转换正确
+
+更新的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/ff2b1566292ce1ebc40d579d9f7ea71c0086f9a3/WPFDemo/JaikikerallkurBerhayeajur) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/ff2b1566292ce1ebc40d579d9f7ea71c0086f9a3/WPFDemo/JaikikerallkurBerhayeajur) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin ff2b1566292ce1ebc40d579d9f7ea71c0086f9a3
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin ff2b1566292ce1ebc40d579d9f7ea71c0086f9a3
+```
+
+获取代码之后，进入 WPFDemo/JaikikerallkurBerhayeajur 文件夹，即可获取到源代码
+
+更多 COM 函数指针调用，请参阅 [演练 dotnet 使用 函数指针 调用 COM 接口](https://blog.lindexi.com/post/%E6%BC%94%E7%BB%83-dotnet-%E4%BD%BF%E7%94%A8-%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88-%E8%B0%83%E7%94%A8-COM-%E6%8E%A5%E5%8F%A3.html )
+<!-- [演练 dotnet 使用 函数指针 调用 COM 接口 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18684913 ) -->
