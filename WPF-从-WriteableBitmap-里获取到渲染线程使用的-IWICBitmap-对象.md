@@ -23,7 +23,8 @@
 
 我开始认为可以绕过 CSwDoubleBufferedBitmap 里面的一次 CPU 到 CPU 的拷贝，减少表层内存拷贝到里层 IWICBitmap 对象里的耗时，我直接就访问 CSwDoubleBufferedBitmap 的 `IWICBitmap * m_pBackBuffer` 对象，对其写入数据，于是就进行了本文的测试
 
-当然了，最后我发现即使我成功拿到了 IWICBitmap 对象，且对其写入数据，最后要么就是没有通知到变更没有刷新渲染，要么就是被表层内存给覆盖了。没有任何的优化
+当然了，最后我发现即使我成功拿到了 IWICBitmap 对象，且对其写入数据，最后要么就是没有通知到变更没有刷新渲染，要么就是被表层内存给覆盖了。没有任何的优化。如果大家对 WriteableBitmap 的写入性能感兴趣，推荐拉取 [WPF 性能测试](https://blog.lindexi.com/post/WPF-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html ) 博客里面的代码进行测试
+<!-- [WPF 性能测试 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/17678694.html ) -->
 
 为了获取到 CSwDoubleBufferedBitmap 的 `IWICBitmap * m_pBackBuffer` 对象，我按照 [lsj](https://blog.sdlsj.net) 教我的方法，从 VisualStudio 里面查看 CSwDoubleBufferedBitmap 类的布局。即鼠标移动到类定义上，点击查看内存布局，即可看到如下图内容
 
