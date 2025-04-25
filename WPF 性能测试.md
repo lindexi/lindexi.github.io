@@ -254,3 +254,6 @@ git pull origin b14c7cca5ad1fae96cbb3a60ca9977d872fb8941
 ```
 
 获取代码之后，进入 WPFDemo/NebalnefaichallkereQalayhearchal 文件夹，即可获取到源代码。欢迎拉取代码进行测试
+
+如对框架底层的 WriteableBitmap 更新渲染感兴趣，请参阅 [dotnet 读 WPF 源代码笔记 WriteableBitmap 的渲染和更新是如何实现](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-WriteableBitmap-%E7%9A%84%E6%B8%B2%E6%9F%93%E5%92%8C%E6%9B%B4%E6%96%B0%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0.html ) 和 [WPF 从 WriteableBitmap 里获取到渲染线程使用的 IWICBitmap 对象](https://blog.lindexi.com/post/WPF-%E4%BB%8E-WriteableBitmap-%E9%87%8C%E8%8E%B7%E5%8F%96%E5%88%B0%E6%B8%B2%E6%9F%93%E7%BA%BF%E7%A8%8B%E4%BD%BF%E7%94%A8%E7%9A%84-IWICBitmap-%E5%AF%B9%E8%B1%A1.html )
+<!-- [WPF 从 WriteableBitmap 里获取到渲染线程使用的 IWICBitmap 对象 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18843888 ) -->
