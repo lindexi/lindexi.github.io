@@ -406,6 +406,8 @@
 
  * [C＃枚举中使用Flags特性](C＃枚举中使用Flags特性.md)
 
+ * [d3dcompiler_47.dll 无法定位程序输入点__CxxFrameHandler4于动态链接库](d3dcompiler_47.dll-无法定位程序输入点__CxxFrameHandler4于动态链接库.md)
+
  * [Developing Universal Windows Apps 开发UWA应用 问答](Developing-Universal-Windows-Apps-开发UWA应用-问答.md)
 
  * [DirectX 使用 Vortice 从零开始控制台创建 Direct2D1 窗口修改颜色](DirectX-使用-Vortice-从零开始控制台创建-Direct2D1-窗口修改颜色.md)
