@@ -197,3 +197,31 @@ public bool TryFormat(Span<char> destination, out int charsWritten)
 以上的代码只是因为我学到了这个方式进行优化，强行想试试而已，不代表着在业务代码里面一定要使用此方式哦
 
 其实在编写代码的时候，以可读性为第一，除非遇到的模块是属于性能敏感的。但愿阅读本文不会带坏一些新手开发者，让新手开发者想着在任何的地方强行使用写整数代替可读性比较高的字符串处理方法
+
+如果感觉以上的 long 还是太干巴巴了，可以在 [Utf8 Strings Literals](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-11.0/utf8-string-literals) 的辅助下，编写更加可读的代码，如以下的我在 .NET 9 的示例代码，同样代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/d33b318a689311380081069090391c4d174d3da9/Workbench/BaylarneafeanuLirearwowherewhalfaja) 上
+
+```csharp
+using System.Runtime.InteropServices;
+
+long result = 5283938767475196740;
+ReadOnlySpan<byte> value = "DCFBPRTI"u8;
+var converted = MemoryMarshal.Cast<byte, long>(value);
+
+Console.WriteLine(converted[0] == result);
+```
+
+运行以上代码，可见输出 true 的值，证明用 `u8` 辅助配合 MemoryMarshal 转换为 long 的方式，和直接写一串 long 数字能够获取相同的效果，且执行效果相同。明显用带 `u8` 的字符串方式可读性会略微比直接写 long 好一点点
+
+当然了，用 MemoryMarshal.Cast 方法返回的是 Span 需要取首项，相对来说代码量多一点点。咱可以换成 MemoryMarshal.Read 的方法，更改之后的代码如下，同样代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/67e8f9b16f79a0c04823a5aefc3a5ae4530d7be3/Workbench/BaylarneafeanuLirearwowherewhalfaja) 上
+
+```csharp
+using System.Runtime.InteropServices;
+
+long result = 5283938767475196740;
+ReadOnlySpan<byte> value = "DCFBPRTI"u8;
+var converted = MemoryMarshal.Read<long>(value);
+
+Console.WriteLine(converted == result);
+```
+
+运行以上代码，同样可以看到控制台输出 true 字符串
