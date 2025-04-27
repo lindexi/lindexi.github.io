@@ -43,7 +43,7 @@ C:\Program Files\CompanyName\Produce3\
 - AppHostDotNetSearch ： 决定从哪里开始寻找，可选参数为 AppLocal、 AppRelative、 EnvironmentVariables 和 Global，可认为在此之前就是 Global 的值。允许设置多个参数，多个参数之间依然用 `;` 分号隔开。在本文里面，核心功能将由 `AppRelative` 参数实现
 - AppHostRelativeDotNet ： 配置相对于 exe 的路径，这个路径将被作为 dotnet 运行时的查找路径
 
-默认情况下，可只需设置 AppHostRelativeDotNet 属性即可。当 AppHostRelativeDotNet 属性被设置的时候，隐式设置了 AppHostDotNetSearch 属性为 AppRelative 的值。但通常来讲，可以将 AppHostDotNetSearch 属性设置为 `AppHostDotNetSearch=AppRelative;Global` 的值，这就意味着如果从相对路径没有找到 dotnet 运行时，将自动回滚到从 Global 全局进行查找。这里的 Global 全局即 `C:\Program Files\dotnet\` 或 `C:\Program Files (x86)\dotnet\` 文件夹
+默认情况下，可只需设置 AppHostRelativeDotNet 属性即可。当 AppHostRelativeDotNet 属性被设置的时候，隐式设置了 AppHostDotNetSearch 属性为 AppRelative 的值。但通常来讲，可以将 AppHostDotNetSearch 属性设置为 `AppHostDotNetSearch=AppRelative;Global` 的值，这就意味着如果从相对路径没有找到 dotnet 运行时，将自动回滚到从 Global 全局进行查找。这里的 Global 全局即 `C:\Program Files\dotnet\` 或 `C:\Program Files (x86)\dotnet\` 文件夹或全局注册表记录的路径
 
 为了演示此功能的用法，我创建了一个名为 LinerewheldeholearjearHalllurlecayawfea 的控制台项目，控制台项目使用的是 .NET 9 默认控制台模版代码。编辑 csproj 项目文件，添加 AppHostDotNetSearch 和 AppHostRelativeDotNet 属性，修改之后的 csproj 项目文件代码大概如下。本文内容里面只给出关键代码片段，如需要全部的项目文件，可到本文末尾找到本文所有代码的下载方法
 
