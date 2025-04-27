@@ -3,6 +3,8 @@
 进行框架依赖发布的时候，应用程序需要有 dotnet runtime 运行时才能跑起来。在 dotnet 9 之前，通常都是需要安装到系统的 Program File 文件夹下的全局 dotnet 运行时的支持。在 dotnet 9 时，引入了 AppHostRelativeDotNet 机制，允许开发者自定义依赖框架发布的应用使用的 dotnet 运行时路径
 
 <!--more-->
+<!-- CreateTime:2025/04/26 07:13:38 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
