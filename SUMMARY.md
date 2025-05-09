@@ -700,6 +700,8 @@
 
  * [dotnet LibGit2Sharp 使用笔记](dotnet-LibGit2Sharp-使用笔记.md)
 
+ * [dotnet MCP 无魔法 本地进程内服务端客户端调用和通讯示例](dotnet-MCP-无魔法-本地进程内服务端客户端调用和通讯示例.md)
+
  * [dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库](dotnet-Microsoft.Recognizers.Text-超强大的自然语言关键词提取库.md)
 
  * [dotnet Multi-platform App UI 多平台应用 UI 框架简介](dotnet-Multi-platform-App-UI-多平台应用-UI-框架简介.md)
@@ -3777,6 +3779,8 @@
  * [编程思想 定义过滤的方式解耦](编程思想-定义过滤的方式解耦.md)
 
  * [考古 dotnet 的不同版本](考古-dotnet-的不同版本.md)
+
+ * [考古 ISO 639 标准 1988 和 1989 版的变更](考古-ISO-639-标准-1988-和-1989-版的变更.md)
 
  * [聊聊 2020 的 dotnet 各大开源项目仓库的情况](聊聊-2020-的-dotnet-各大开源项目仓库的情况.md)
 
