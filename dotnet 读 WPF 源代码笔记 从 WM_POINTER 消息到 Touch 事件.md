@@ -16,6 +16,8 @@
 
 在 Win32 应用程序中，大概有三个方式来进行对 Pointer 消息进行处理。我将从简单到复杂和大家讲述这三个方式
 
+### 最简单获取触摸信息方式
+
 方式1:
 
 接收到 WM_POINTER 消息之后，将 wparam 转换为 `pointerId` 参数，调用 GetPointerTouchInfo 方法即可获取到 [POINTER_INFO](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-pointer_info) 信息
@@ -27,6 +29,8 @@
 此方法的最大缺点在于 `ptPixelLocationRaw` 字段拿到的是丢失精度的点，像素为单位。如果在精度稍微高的触摸屏下，将会有明显的锯齿效果
 
 优点在于其获取特别简单
+
+### 获取高精度触摸点坐标方式
 
 方式2：
 
@@ -87,6 +91,8 @@ git pull origin 322313ee55d0eeaae7148b24ca279e1df087871e
 
 方式2的优点在于可以获取到更高的精度。缺点是相对来说比较复杂，需要多了点点处理
 
+### 最复杂全功能方式
+
 方式3：
 
 此方式会更加复杂，但功能能够更加全面，适合用在要求更高控制的应用里面
@@ -107,9 +113,298 @@ git pull origin 322313ee55d0eeaae7148b24ca279e1df087871e
 
 这里的 屏幕尺寸 是通过 [GetPointerDeviceRects](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevicerects) 函数获取 的 `displayRect` 尺寸
 
-转换为屏幕坐标系之后，就需要再次处理 DPI 和转换为窗口坐标系的才能使用
+转换为屏幕坐标系之后，就需要再次处理 DPI 和转换为窗口坐标系的才能使用。核心处理示例代码如下，以下代码写在窗口消息处理里，为了清晰起见以下代码只包含关键部分，可在本章末尾找到全部代码下载方法
 
-可以看到方式3相对来说还是比较复杂的，但其优点是可以获取到更多的设备描述信息，获取到输入点的更多信息，如可以计算出触摸宽度对应的物理触摸尺寸面积等信息
+```csharp
+    [SupportedOSPlatform("windows5.0")]
+    private unsafe LRESULT Hook(HWND hwnd, uint msg, WPARAM wParam, LPARAM lParam)
+    {
+        if (msg == WM_POINTERUPDATE /*Pointer Update*/)
+        {
+            var result = CallWindowProc(_oldWndProc, hwnd, msg, wParam, lParam);
+
+            Debug.Assert(OperatingSystem.IsWindowsVersionAtLeast(10, 0), "能够收到 WM_Pointer 消息，必定系统版本号不会低");
+
+            var pointerId = (uint) (ToInt32(wParam) & 0xFFFF);
+            GetPointerTouchInfo(pointerId, out POINTER_TOUCH_INFO info);
+            POINTER_INFO pointerInfo = info.pointerInfo;
+
+            global::Windows.Win32.Foundation.RECT pointerDeviceRect = default;
+            global::Windows.Win32.Foundation.RECT displayRect = default;
+
+            GetPointerDeviceRects(pointerInfo.sourceDevice, &pointerDeviceRect, &displayRect);
+
+            uint propertyCount = 0;
+            GetPointerDeviceProperties(pointerInfo.sourceDevice, &propertyCount, null);
+            POINTER_DEVICE_PROPERTY* pointerDevicePropertyArray =
+                stackalloc POINTER_DEVICE_PROPERTY[(int) propertyCount];
+            GetPointerDeviceProperties(pointerInfo.sourceDevice, &propertyCount, pointerDevicePropertyArray);
+            var pointerDevicePropertySpan =
+                new Span<POINTER_DEVICE_PROPERTY>(pointerDevicePropertyArray, (int) propertyCount);
+
+            GetPointerCursorId(pointerId, out uint cursorId);
+
+            var touchInfo = new StringBuilder();
+            touchInfo.Append($"[{DateTime.Now}] ");
+            touchInfo.AppendLine(
+                $"PointerId={pointerId} CursorId={cursorId} PointerDeviceRect={RectToString(pointerDeviceRect)} DisplayRect={RectToString(displayRect)} PropertyCount={propertyCount} SourceDevice={pointerInfo.sourceDevice}");
+
+            var xPropertyIndex = -1;
+            var yPropertyIndex = -1;
+            var contactIdentifierPropertyIndex = -1;
+            var widthPropertyIndex = -1;
+            var heightPropertyIndex = -1;
+
+            for (var i = 0; i < pointerDevicePropertySpan.Length; i++)
+            {
+                POINTER_DEVICE_PROPERTY pointerDeviceProperty = pointerDevicePropertySpan[i];
+                var usagePageId = pointerDeviceProperty.usagePageId;
+                var usageId = pointerDeviceProperty.usageId;
+                // 单位
+                var unit = pointerDeviceProperty.unit;
+                // 单位指数。 它与 Unit 字段一起定义了设备报告中数据的物理单位。具体来说：
+                // - Unit：定义了数据的基本单位，例如厘米、英寸、弧度等。
+                // - UnitExponent：表示单位的数量级（即 10 的幂次）。它用于缩放单位值，使其适应不同的范围
+                var unitExponent = pointerDeviceProperty.unitExponent;
+                touchInfo.Append(
+                        $"{UsagePageAndIdConverter.ConvertToString(usagePageId, usageId)} Unit={StylusPointPropertyUnitHelper.FromPointerUnit(unit)}({unit}) UnitExponent={unitExponent}")
+                    .Append(
+                        $"  LogicalMin={pointerDeviceProperty.logicalMin} LogicalMax={pointerDeviceProperty.logicalMax}")
+                    .Append(
+                        $"  PhysicalMin={pointerDeviceProperty.physicalMin} PhysicalMax={pointerDeviceProperty.physicalMax}")
+                    .AppendLine();
+
+                if (usagePageId == (ushort) HidUsagePage.Generic)
+                {
+                    if (usageId == (ushort) HidUsage.X)
+                    {
+                        xPropertyIndex = i;
+                    }
+                    else if (usageId == (ushort) HidUsage.Y)
+                    {
+                        yPropertyIndex = i;
+                    }
+                }
+                else if (usagePageId == (ushort) HidUsagePage.Digitizer)
+                {
+                    if (usageId == (ushort) DigitizersUsageId.Width)
+                    {
+                        widthPropertyIndex = i;
+                    }
+                    else if (usageId == (ushort) DigitizersUsageId.Height)
+                    {
+                        heightPropertyIndex = i;
+                    }
+                    else if (usageId == (ushort) DigitizersUsageId.ContactIdentifier)
+                    {
+                        contactIdentifierPropertyIndex = i;
+                    }
+                }
+            }
+
+            var historyCount = pointerInfo.historyCount;
+            int[] rawPointerData = new int[propertyCount * historyCount];
+
+            fixed (int* pValue = rawPointerData)
+            {
+                bool success = GetRawPointerDeviceData(pointerId, historyCount, propertyCount,
+                    pointerDevicePropertyArray, pValue);
+                Debug.Assert(success);
+            }
+
+            var rawPointerPoint = new RawPointerPoint();
+
+            for (int i = 0; i < historyCount; i++)
+            {
+                var baseIndex = i * propertyCount;
+
+                if (xPropertyIndex >= 0 && yPropertyIndex >= 0)
+                {
+                    var xValue = rawPointerData[baseIndex + xPropertyIndex];
+                    var yValue = rawPointerData[baseIndex + yPropertyIndex];
+                    var xProperty = pointerDevicePropertySpan[xPropertyIndex];
+                    var yProperty = pointerDevicePropertySpan[yPropertyIndex];
+
+                    // 从 Pointer 算到的只能是屏幕坐标的点，转换进应用程序窗口坐标还需要自己再次计算
+                    var xForScreen = ((double) xValue - xProperty.logicalMin) /
+                        (xProperty.logicalMax - xProperty.logicalMin) * displayRect.Width;
+                    var yForScreen = ((double) yValue - yProperty.logicalMin) /
+                        (yProperty.logicalMax - yProperty.logicalMin) * displayRect.Height;
+
+                    rawPointerPoint = rawPointerPoint with
+                    {
+                        X = xForScreen,
+                        Y = yForScreen,
+                    };
+                }
+
+                if (contactIdentifierPropertyIndex >= 0)
+                {
+                    // 这里的 Id 关联会出现 id 重复的问题，似乎是在上层处理的
+                    var contactIdentifierValue = rawPointerData[baseIndex + contactIdentifierPropertyIndex];
+
+                    rawPointerPoint = rawPointerPoint with
+                    {
+                        Id = contactIdentifierValue
+                    };
+                }
+
+                if (widthPropertyIndex >= 0 && heightPropertyIndex >= 0)
+                {
+                    var widthValue = rawPointerData[baseIndex + widthPropertyIndex];
+                    var heightValue = rawPointerData[baseIndex + heightPropertyIndex];
+
+                    var widthProperty = pointerDevicePropertySpan[widthPropertyIndex];
+                    var heightProperty = pointerDevicePropertySpan[heightPropertyIndex];
+
+                    // 计算宽度高度的方法：
+                    // 1. 计算出宽度 Value 和最大值最小值的比例
+                    // 2. 按照比例计算出宽度高度在屏幕上的像素值
+                    // 3. 按照比例配合物理最小值和最大值计算出宽度高度的物理值
+                    var widthScale = ((double) widthValue - widthProperty.logicalMin) /
+                                     (widthProperty.logicalMax - widthProperty.logicalMin);
+
+                    var heightScale = ((double) heightValue - heightProperty.logicalMin) /
+                                      (heightProperty.logicalMax - heightProperty.logicalMin);
+
+                    var widthPixel = widthScale * displayRect.Width;
+                    var heightPixel = heightScale * displayRect.Height;
+
+                    rawPointerPoint = rawPointerPoint with
+                    {
+                        RawWidth = widthValue,
+                        RawHeight = heightValue,
+                        PixelWidth = widthPixel,
+                        PixelHeight = heightPixel,
+                    };
+
+                    if (StylusPointPropertyUnitHelper.FromPointerUnit(widthProperty.unit) ==
+                        StylusPointPropertyUnit.Centimeters)
+                    {
+                        var unitExponent = (int) widthProperty.unitExponent;
+
+                        // 根据 HID 规范，单位指数的值范围是 0x00-0x0F，带上 mask 可以强行约束范围
+                        const byte HidExponentMask = 0x0F;
+                        // HID hut1_6.pdf 23.18.4 Generic Unit Exponent
+                        // 以下代码也能从 WPF 的 System.Windows.Input.StylusPointer.PointerStylusPointPropertyInfoHelper 找到
+                        unitExponent = (byte)(unitExponent & HidExponentMask) switch
+                        {
+                            5 => 5,
+                            6 => 6,
+                            7 => 7,
+                            8 => -8,
+                            9 => -7,
+                            0x0A => -6,
+                            0x0B => -5,
+                            0x0C => -4,
+                            0x0D => -3,
+                            0x0E => -2,
+                            0x0F => -1,
+                            _ => unitExponent
+                        };
+                        // 也可以这么写，正好也是相同的值。只是这么写在玩二进制的转换，不如打一个表好
+                        // - unchecked((short) (0xFFF0 | 0xA)) == -6
+                        // - unchecked((short) (0xFFF0 | 0x9)) == -7
+                        //if (unitExponent > 7)
+                        //{
+                        //    unitExponent = unchecked((short)(0xFFF0 | unitExponent));
+                        //}
+
+                        // 宽度高度都使用相同的单位值好了，预计也没有哪个厂商的触摸框有这么有趣，宽度和高度分别采用不同的单位
+                        var exponent = Math.Pow(10, unitExponent);
+
+                        var widthPhysical = widthScale * (widthProperty.physicalMax - widthProperty.physicalMin) *
+                                            exponent;
+                        var heightPhysical = heightScale * (heightProperty.physicalMax - heightProperty.physicalMin) *
+                                             exponent;
+
+                        rawPointerPoint = rawPointerPoint with
+                        {
+                            // 物理尺寸的计算能够保持和 WPF 的 StylusPoint 拿到的相同
+                            PhysicalWidth = widthPhysical,
+                            PhysicalHeight = heightPhysical,
+                        };
+                    }
+                }
+
+                if (rawPointerPoint != default)
+                {
+                    // 默认调试只取一个点好了
+                    break;
+                }
+            }
+
+            touchInfo.AppendLine(
+                $"PointerPoint PointerId={pointerInfo.pointerId} XY={pointerInfo.ptPixelLocationRaw.X},{pointerInfo.ptPixelLocationRaw.Y} rc ContactXY={info.rcContactRaw.X},{info.rcContactRaw.Y} ContactWH={info.rcContactRaw.Width},{info.rcContactRaw.Height}");
+            touchInfo.AppendLine(
+                $"RawPointerPoint Id={rawPointerPoint.Id} XY={rawPointerPoint.X:0.00},{rawPointerPoint.Y:0.00} RawWH={rawPointerPoint.RawWidth},{rawPointerPoint.RawHeight} PixelWH={rawPointerPoint.PixelWidth:0.00},{rawPointerPoint.PixelHeight:0.00} PhysicalWH={rawPointerPoint.PhysicalWidth:0.00},{rawPointerPoint.PhysicalHeight:0.00}cm");
+
+            // 转换为 WPF 坐标系
+            var scale = VisualTreeHelper.GetDpi(this).PixelsPerDip;
+            // 计算出窗口的左上角坐标对应到屏幕坐标的点
+            // 为什么不是在 PointToScreen 传入坐标点，而是传入 0 点呢？这是因为经过了 PointToScreen 方法会丢失精度，即小数点之后的内容会被丢失。因此正常的计算方法都是取 0 点计算出窗口坐标系相对于屏幕坐标系的偏移量
+            // 减去偏移量之后，再经过 DPI 缩放即可获取窗口坐标系的坐标
+            var originPointToScreen = this.PointToScreen(new Point(0, 0));
+
+            var xWpf = (rawPointerPoint.X + displayRect.left - originPointToScreen.X) / scale;
+            var yWpf = (rawPointerPoint.Y + displayRect.top - originPointToScreen.Y) / scale;
+            var widthWpf = rawPointerPoint.PixelWidth / scale;
+            var heightWpf = rawPointerPoint.PixelHeight / scale;
+            touchInfo.AppendLine(
+                $"RawPointerPoint For WPF XY={xWpf:0.00},{yWpf:0.00} WH={widthWpf:0.00},{heightWpf:0.00}");
+
+            if (double.IsRealNumber(xWpf) && double.IsRealNumber(yWpf) && double.IsRealNumber(widthWpf) &&
+                double.IsRealNumber(heightWpf))
+            {
+                TouchSizeBorder.Visibility = Visibility.Visible;
+                if (TouchSizeBorder.RenderTransform is TranslateTransform translateTransform)
+                {
+                    translateTransform.X = xWpf - widthWpf / 2;
+                    translateTransform.Y = yWpf - heightWpf / 2;
+                }
+
+                TouchSizeBorder.Width = widthWpf;
+                TouchSizeBorder.Height = heightWpf;
+            }
+
+            TouchInfoTextBlock.Text += "\r\n" + touchInfo.ToString();
+
+            return result;
+        }
+
+        return CallWindowProc(_oldWndProc, hwnd, msg, wParam, lParam);
+
+        static string RectToString(global::Windows.Win32.Foundation.RECT rect)
+        {
+            return $"[XY:{rect.left},{rect.top};WH:{rect.Width},{rect.Height}]";
+        }
+    }
+
+    private static int ToInt32(WPARAM wParam) => ToInt32((IntPtr) wParam.Value);
+    private static int ToInt32(IntPtr ptr) => IntPtr.Size == 4 ? ptr.ToInt32() : (int) (ptr.ToInt64() & 0xffffffff);
+```
+
+可以看到方式3相对来说还是比较复杂的，但其优点是可以获取到更多的设备描述信息，获取到输入点的更多信息，如可以计算出触摸宽度对应的物理触摸尺寸面积等信息。我写了一个 Demo 采用了方式3获取触摸信息，可以拿到十分具体的触摸信息，包括触摸物体物理尺寸等信息。这里需要强调一点，如果期望在 WPF 获取到触摸物体物理面积等信息，则需要硬件触摸框的功能支持。只有在支持上报正确触摸面积/尺寸的触摸框下，咱才能在 WPF 里面获取到触摸信息
+
+采用以上方式3的 Demo 的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/c779f7cdf7970ede4fa31f73ff9f92228c7c1498/WPFDemo/NawrernalgarGibehayle) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/c779f7cdf7970ede4fa31f73ff9f92228c7c1498/WPFDemo/NawrernalgarGibehayle) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin c779f7cdf7970ede4fa31f73ff9f92228c7c1498
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin c779f7cdf7970ede4fa31f73ff9f92228c7c1498
+```
+
+获取代码之后，进入 WPFDemo/NawrernalgarGibehayle 文件夹，即可获取到源代码
 
 对于 WPF 框架来说，自然是选最复杂且功能全强的方法了
 
