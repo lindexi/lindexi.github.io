@@ -3290,6 +3290,8 @@
 
  * [WPF 通过 GetMessageExtraInfo 方法获取当前收到的鼠标消息是否由触摸转换过来](WPF-通过-GetMessageExtraInfo-方法获取当前收到的鼠标消息是否由触摸转换过来.md)
 
+ * [WPF 通过 GetRawPointerDeviceData 从 WM_POINTER 消息触摸裸数据](WPF-通过-GetRawPointerDeviceData-从-WM_POINTER-消息触摸裸数据.md)
+
  * [WPF 通过 GifBitmapDecoder 调用 WIC 解析 Gif 和进行动画播放的简单方法](WPF-通过-GifBitmapDecoder-调用-WIC-解析-Gif-和进行动画播放的简单方法.md)
 
  * [WPF 通过 InputManager 模拟调度触摸事件](WPF-通过-InputManager-模拟调度触摸事件.md)
