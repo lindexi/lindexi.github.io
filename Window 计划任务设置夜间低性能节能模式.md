@@ -419,3 +419,5 @@ powercfg -query
   </Actions>
 </Task>
 ```
+
+导入方法就是打开任务计划程序，点击右侧的导入任务即可

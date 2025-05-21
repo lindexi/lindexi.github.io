@@ -5,8 +5,6 @@
 <!--more-->
 <!-- CreateTime:2020/10/13 19:53:07 -->
 
-
-
 这个方法将需要用到 dotnet 完全开源的专业格式化工具 dotnet format 工具，请看 [https://github.com/dotnet/format](https://github.com/dotnet/format)
 
 用法十分简单，可以复制本文最后的 GitHub 的自动构建 Action 的脚本，放在仓库的 `.github\workflows` 文件夹里面。现在请让我告诉大家这个构建脚本的细节
@@ -181,8 +179,7 @@ jobs:
 
 我现在在 [dotnetCampus.Ipc](https://github.com/dotnet-campus/dotnetCampus.Ipc) 就接入这个自动代码格式化机器人，用起来还不错
 
-
-构建脚本的全部代码请看下面
+构建脚本的全部代码如下
 
 ```yml
 name: Code format check
@@ -231,4 +228,12 @@ jobs:
           branch: t/bot/fix-codeformatting
 ```
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+---
+
+以上的 `dotnet format` 命令为全格式化命令，将会进行一些代码逻辑上的修复更改，如果只期望更改代码样式而不包含任何代码逻辑更改，可以带上 `whitespace` 或 `style` 参数
+
+- `dotnet format whitespace` : 只处理空格的格式化
+- `dotnet format style` :  只处理代码样式，如换行空格等这些，比 `whitespace` 处理更多
+- `dotnet format` : 最全面的代码格式化处理，包含代码样式和代码逻辑
+
+详细命令请参阅 [dotnet format command - .NET CLI Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-format )
