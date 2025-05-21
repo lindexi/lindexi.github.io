@@ -205,3 +205,61 @@ git pull origin 1e09f77a553d664872cb12324a118649ffd23ad9
 - https://github.com/dotnet/designs/blob/main/accepted/2020/install-locations.md
 
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+---
+
+补充：
+
+本文提供的方法对 .NET 9 框架有效。如期望能够在 TargetFramework 为 .NET 8 的低版本也采用此技术，可参阅以下方式
+
+1. 先将 TargetFramework 调低到 .NET 8 版本
+2. 寻找自己本地的 .NET 9 SDK 下的 apphost 文件，将其设置到 AppHostSourcePath 属性里
+
+如我本地的 .NET 9 SDK 下的 x64 的 apphost 文件路径为：`C:\Program Files\dotnet\sdk\9.0.203\AppHostTemplate\apphost.exe`
+
+我将其设置到 AppHostSourcePath 属性里面，其代码如下
+
+```xml
+    <AppHostSourcePath Condition="'$(RuntimeIdentifier)'=='win-x64'">C:\Program Files\dotnet\sdk\9.0.203\AppHostTemplate\apphost.exe</AppHostSourcePath>
+```
+
+如此依然按照上文提供的方法，也可采用相对路径引用运行时。此方法利用了 .NET 9 的 AppHost 兼容 .NET 8 版本的机制
+
+不仅可以在控制台项目使用，也可以在带 -windows 的如 WPF 或 WinForms 项目上使用此技术。以下是我的 .NET 8 的 WPF 应用的 csproj 文件代码
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWpf>true</UseWpf>
+    <AppHostDotNetSearch>AppRelative;Global;</AppHostDotNetSearch>
+    <AppHostRelativeDotNet>../relative2</AppHostRelativeDotNet>
+    <AppHostSourcePath Condition="'$(RuntimeIdentifier)'=='win-x64'">C:\Program Files\dotnet\sdk\9.0.203\AppHostTemplate\apphost.exe</AppHostSourcePath>
+  </PropertyGroup>
+
+</Project>
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b73d1145eef2d926fac050aeed1139424b60651f/Workbench/JeehaweejallheardallJefarrerlo) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/b73d1145eef2d926fac050aeed1139424b60651f/Workbench/JeehaweejallheardallJefarrerlo) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin b73d1145eef2d926fac050aeed1139424b60651f
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin b73d1145eef2d926fac050aeed1139424b60651f
+```
+
+获取代码之后，进入 Workbench/JeehaweejallheardallJefarrerlo 文件夹，即可获取到源代码
