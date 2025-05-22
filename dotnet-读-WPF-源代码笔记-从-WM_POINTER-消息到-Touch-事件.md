@@ -116,7 +116,12 @@ git pull origin 322313ee55d0eeaae7148b24ca279e1df087871e
 
 这里的 屏幕尺寸 是通过 [GetPointerDeviceRects](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getpointerdevicerects) 函数获取 的 `displayRect` 尺寸
 
-转换为屏幕坐标系之后，就需要再次处理 DPI 和转换为窗口坐标系的才能使用。核心处理示例代码如下，以下代码写在窗口消息处理里，为了清晰起见以下代码只包含关键部分，可在本章末尾找到全部代码下载方法
+转换为屏幕坐标系之后，就需要再次处理 DPI 和转换为窗口坐标系的才能使用
+
+方式3的内容比较多，我将详细过程放在 [WPF 通过 GetRawPointerDeviceData 从 WM_POINTER 消息触摸裸数据](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-GetRawPointerDeviceData-%E4%BB%8E-WM_POINTER-%E6%B6%88%E6%81%AF%E8%A7%A6%E6%91%B8%E8%A3%B8%E6%95%B0%E6%8D%AE.html )
+<!-- [WPF 通过 GetRawPointerDeviceData 从 WM_POINTER 消息触摸裸数据 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18890017 ) -->
+
+核心处理示例代码如下，以下代码写在窗口消息处理里，为了清晰起见以下代码只包含关键部分，可在本章末尾找到全部代码下载方法
 
 ```csharp
     [SupportedOSPlatform("windows5.0")]
