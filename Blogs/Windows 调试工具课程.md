@@ -536,6 +536,8 @@ Dependencies 工具开源地址： <https://github.com/lucasg/Dependencies>
 
 以上就是常用套路里面的调查依赖缺失问题，不仅仅可能是崩溃等问题，有时候软件运行功能不正常也可以看看是否有依赖缺失或被投毒的问题
 
+额外地，也可以使用 [sxstrace 工具](https://www.cnblogs.com/suv789/p/18173393) 辅助定位启动不了的问题。只是从直观程度上讲，采用 SxsTrace 工具需要去爬日志，不如 Dependencies 工具来得简单。但 [SxsTrace 工具](https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sxstrace) 能分析更多其他维度上的问题，如果 Dependencies 不能定位到问题，也好来试试系统自带的 [SxsTrace 工具](https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sxstrace) 进行分析
+
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程71.png) -->
 ![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212150472-696447212.png)
 
