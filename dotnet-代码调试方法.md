@@ -344,13 +344,16 @@ WegaljifoWhelbaichewair.Program.Main(string[])
 
 ### 调试软件启动
 
-如果有些软件是在发布的时候，刚好在软件启动的过程需要进行调试，此时就需要使用调试软件启动的方法，详细请看
+如果有些软件是在发布的时候，刚好在软件启动的过程中就需要进行调试，此时就需要使用调试软件启动的方法，详细请看
 
 [dotnet 调试应用启动闪退的方法](https://blog.lindexi.com/post/dotnet-%E8%B0%83%E8%AF%95%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E7%9A%84%E6%96%B9%E6%B3%95.html )
 
 [WPF 如何在应用程序调试启动](https://blog.lindexi.com/post/WPF-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%90%AF%E5%8A%A8.html )
 
 [win10 uwp 调试软件启动](https://blog.lindexi.com/post/win10-uwp-%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8.html )
+
+若是遇到了应用软件无法启动问题，可采用 [sxstrace 工具](https://www.cnblogs.com/suv789/p/18173393) 辅助定位问题。如依然无法定位问题，还请参阅 [Windows 调试工具课程](https://blog.lindexi.com/post/Windows-%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E8%AF%BE%E7%A8%8B.html )
+<!-- [Windows 调试工具课程 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18421353 ) -->
 
 ## 异常调试
 

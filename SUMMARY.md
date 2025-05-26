@@ -948,6 +948,8 @@
 
  * [dotnet 使用 MessagePack 序列化对象](dotnet-使用-MessagePack-序列化对象.md)
 
+ * [dotnet 使用 Microsoft.NET.HostModel 库辅助更改 AppHost 内容](dotnet-使用-Microsoft.NET.HostModel-库辅助更改-AppHost-内容.md)
+
  * [dotnet 使用 MSTestRunner 将单元测试制作为独立可执行文件](dotnet-使用-MSTestRunner-将单元测试制作为独立可执行文件.md)
 
  * [dotnet 使用 NamedPipeClientStream 连接一个不存在管道服务名将不断空跑 CPU 资源](dotnet-使用-NamedPipeClientStream-连接一个不存在管道服务名将不断空跑-CPU-资源.md)
