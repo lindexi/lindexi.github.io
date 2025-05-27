@@ -1396,6 +1396,8 @@
 
  * [dotnet 通过 HttpClient 下载文件同时报告进度的方法](dotnet-通过-HttpClient-下载文件同时报告进度的方法.md)
 
+ * [dotnet 通过 PublishReadyToRunComposite 减少启动过程读取大量 DLL 文件提升启动性能](dotnet-通过-PublishReadyToRunComposite-减少启动过程读取大量-DLL-文件提升启动性能.md)
+
  * [dotnet 通过 WMI 拿到显卡信息](dotnet-通过-WMI-拿到显卡信息.md)
 
  * [dotnet 通过 WMI 获取指定进程的输入命令行](dotnet-通过-WMI-获取指定进程的输入命令行.md)
