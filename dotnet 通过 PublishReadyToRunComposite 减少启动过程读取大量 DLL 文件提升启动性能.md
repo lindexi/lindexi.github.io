@@ -3,6 +3,8 @@
 在 dotnet 应用程序发布的时候，可以选择带上 PublishReadyToRunComposite 选项，带上之后可以将 ReadyToRun 的内容合并到一个入口 DLL 文件里面，可以减少启动过程中访问大量的 DLL 文件导致的 IO 缓慢问题，从而提升启动性能
 
 <!--more-->
+<!-- CreateTime:2025/05/28 07:01:51 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
