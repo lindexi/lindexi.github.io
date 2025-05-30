@@ -60,4 +60,6 @@ git pull origin 2a8c750c4000470169c95c5ff21c190728fb57ac
 
 获取代码之后，进入 WPFDemo/BallweanayheyaylarBaberwhikani 文件夹，即可获取到源代码
 
+更多 WPF 应用程序通过 ReadyToRun 提升性能请参阅 [WPF 通过 ReadyToRun 提升性能](https://blog.lindexi.com/post/WPF-%E9%80%9A%E8%BF%87-ReadyToRun-%E6%8F%90%E5%8D%87%E6%80%A7%E8%83%BD.html )
+
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
