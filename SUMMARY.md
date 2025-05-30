@@ -3248,6 +3248,8 @@
 
  * [WPF 讲讲 Microsoft.NET.Sdk.WindowsDesktop 的原理](WPF-讲讲-Microsoft.NET.Sdk.WindowsDesktop-的原理.md)
 
+ * [WPF 设置 Aliased 的 EdgeMode 会让圆形渲染出棱角](WPF-设置-Aliased-的-EdgeMode-会让圆形渲染出棱角.md)
+
  * [WPF 设置 IncludePackageReferencesDuringMarkupCompilation 属性导致分析器不工作](WPF-设置-IncludePackageReferencesDuringMarkupCompilation-属性导致分析器不工作.md)
 
  * [WPF 设置 ShowInTaskbar 对窗口最小化的影响](WPF-设置-ShowInTaskbar-对窗口最小化的影响.md)
