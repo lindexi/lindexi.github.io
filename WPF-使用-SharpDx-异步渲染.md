@@ -11,7 +11,10 @@
 <div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->
 
-本文是一个系列，希望大家从第一篇开始看
+本文是[渲染相关系列博客](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )中的一篇，为方便读者系统性学习，该系列博客已按照逻辑顺序编排，方便大家依次阅读。本文属于系列博客中，比较靠中间的博客，推荐大家从头开始阅读。您可以通过以下链接访问整个系列：[渲染相关系列博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+
+<!-- 本文是一个系列，希望大家从第一篇开始看
 
  - [WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
 
@@ -25,9 +28,9 @@
 
  - [WPF 使用 SharpDx 异步渲染](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E5%BC%82%E6%AD%A5%E6%B8%B2%E6%9F%93.html )
 
-更多请看 [WPF 使用 SharpDx 渲染博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+更多请看 [WPF 使用 SharpDx 渲染博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html ) -->
 
-虽然上一篇告诉大家如何使用封装的 SharpDx 控件，但是大家也看到了核心是使用`CompositionTarget`告诉刷新的。
+虽然[上一篇](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )告诉大家如何使用封装的 SharpDx 控件，但是大家也看到了核心是使用`CompositionTarget`告诉刷新的。
 
 这个方法适合不停变化的控件，如果是很少刷新的控件使用这个方法会降低 WPF 的性能。
 

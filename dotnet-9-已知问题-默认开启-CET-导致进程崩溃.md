@@ -11,6 +11,8 @@
 <!-- 发布 -->
 <!-- 博客 -->
 
+什么是 CET ，有什么用？ Control-flow Enforcement Technology (CET) Shadow Stack 是一项提供安全性的功能。细节请参阅 [CET Shadow Stack compatible - Microsoft Learn](https://learn.microsoft.com/en-us/cpp/build/reference/cetcompat?view=msvc-170 ) 和 [A Technical Look at Intel’s Control-flow Enforcement Technology](https://www.intel.com/content/www/us/en/developer/articles/technical/technical-look-control-flow-enforcement-technology.html )
+
 官方文档： [Breaking change: CET supported by default - .NET Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/compatibility/interop/9.0/cet-support )
 
 表现：

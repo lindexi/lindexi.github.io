@@ -12,7 +12,7 @@
 <div id="toc"></div>
 <!-- 标签：WPF,D2D,DirectX,SharpDX,渲染 -->
 
-本文是一个系列，希望大家从第一篇开始看
+<!-- 本文是一个系列，希望大家从第一篇开始看
 
  - [WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
 
@@ -22,13 +22,16 @@
 
  - [WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 
 
- - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html )
+ - [WPF 使用封装的 SharpDx 控件](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8%E5%B0%81%E8%A3%85%E7%9A%84-SharpDx-%E6%8E%A7%E4%BB%B6.html ) -->
 
-在[WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html#%E7%94%BB%E5%87%BA%E6%9D%A5 )我告诉大家如何在 WPF 使用，但是代码都是写在一个 MainPage ，所以下面我把代码封装一下，放在一个类。
+本文是[渲染相关系列博客](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )中的一篇，为方便读者系统性学习，该系列博客已按照逻辑顺序编排，方便大家依次阅读。本文属于系列博客中，比较靠中间的博客，推荐大家从头开始阅读。您可以通过以下链接访问整个系列：[渲染相关系列博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
-我的代码可以复制一下放在自己的工程使用，现在我还不想做 Nuget 因为这个类还有性能问题。
 
-使用这个类作为 Image 的 Source 会占用 3% 的 CPU ，而且这个类没有注释，关于这个类是如何写的请看[WPF 使用 SharpDX 在 D3DImage 显示](https://lindexi.gitee.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 。
+在[WPF 使用 SharpDX 在 D3DImage 显示](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html )这篇博客中，我告诉大家如何在 WPF 使用 SharpDX 库，但是代码都是写在一个 MainPage 里面，耦合了 UI 逻辑，不方便扩展使用。在本文里面，我把代码封装一下，放在一个类里面
+
+我的代码可以复制一下放在自己的工程使用，现在我还不想制作 NuGet 包，其原因是这个类还有性能问题。
+
+使用这个类作为 Image 的 Source 会占用 3% 的 CPU ，而且这个类没有注释，关于这个类是如何写的请看[WPF 使用 SharpDX 在 D3DImage 显示](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html ) 
 
 我会把这个类的代码放在文章最后，方便大家复制。
 
@@ -243,7 +246,6 @@ namespace WPFSharpDx
 <script src='https://gitee.com/lindexi/codes/lfusrm0aebdqtyx5ckv3i100/widget_preview?title=SharpDxImage.cs'></script>
 
 [SurfaceImageSource Manager: Connecting C# and DirectX/Direct2D using the WinRT/Metro SurfaceImageSource class, through a small C++ component - CodeProject](https://www.codeproject.com/Articles/351939/SurfaceImageSource-Manager-Connecting-Csharp-and-D )
-
 
 
 
