@@ -1664,6 +1664,8 @@
 
  * [Resharper 如何把类里的类移动到其他文件](Resharper-如何把类里的类移动到其他文件.md)
 
+ * [ReSharper 已知问题 在 Directory.Build.props 属性求值结果不能应用到项目里](ReSharper-已知问题-在-Directory.Build.props-属性求值结果不能应用到项目里.md)
+
  * [ReSharper 显示使用的颜色](ReSharper-显示使用的颜色.md)
 
  * [resharper 自定义代码片](resharper-自定义代码片.md)
