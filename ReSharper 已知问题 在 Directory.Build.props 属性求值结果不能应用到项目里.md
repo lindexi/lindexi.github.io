@@ -3,6 +3,8 @@
 本文记录一个 ReSharper 已知问题，在在 Directory.Build.props 属性求值结果不能应用到项目里，此行为将导致 ReSharper 获取的构建文件与 VisualStudio 不同，导致了可能存在的冲突
 
 <!--more-->
+<!-- CreateTime:2025/06/10 07:01:43 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
