@@ -72,6 +72,8 @@
 
  * [Avalonia 11.1 获取平台调用的窗口的方法](Avalonia-11.1-获取平台调用的窗口的方法.md)
 
+ * [Avalonia 取消窗口关闭导致 Linux 麒麟系统无法关机注销重启](Avalonia-取消窗口关闭导致-Linux-麒麟系统无法关机注销重启.md)
+
  * [Avalonia 后台代码简单播放动画示例](Avalonia-后台代码简单播放动画示例.md)
 
  * [Avalonia 在 X11 下使用软渲染的方法](Avalonia-在-X11-下使用软渲染的方法.md)
@@ -1445,6 +1447,8 @@
  * [dotnet6 C# 一个国内还能用的 NTP 时间校准客户端的实现](dotnet6-C-一个国内还能用的-NTP-时间校准客户端的实现.md)
 
  * [dotnetCampus.UITest.WPF 一个支持中文用例的界面单元测试框架](dotnetCampus.UITest.WPF-一个支持中文用例的界面单元测试框架.md)
+
+ * [FastTunnel 搭配 nginx 将本地内网电脑 HTTP 服务公开到子域名公网访问](FastTunnel-搭配-nginx-将本地内网电脑-HTTP-服务公开到子域名公网访问.md)
 
  * [Fiddler 插件开发 将插件放在独立子文件夹防止 DLL 冲突](Fiddler-插件开发-将插件放在独立子文件夹防止-DLL-冲突.md)
 

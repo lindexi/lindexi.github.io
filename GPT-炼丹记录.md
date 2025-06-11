@@ -69,39 +69,7 @@
 
 [Content Start]
 
-如果一个项目同时标记引用另一个项目的代码或进行项目引用，则可能在 ReSharper 里面出现 Ambiguous reference 错误，但实际上在 VisualStudio 里面能够构建通过
-
-构建出能够复现此问题的项目结构稍微复杂，但请不要担心，我构建出来了。我将最简复现代码放在 GitHub 上，你可以通过此链接[Link1]找到全部的代码
-
-复现步骤如下：
-
-1. 新建三个项目，分别是 Lib ,AllInOne ,App项目
-2. 在 sln 文件所在的文件夹里面放入 Directory.Build.props 文件
-3. 建立项目之间的关联关系：Lib 被 AllInOne 依赖， AllInOne 被 App 项目依赖
-
-建立完成项目之后，接下来是填充必要的内容
-
-在 Directory.Build.props 文件里面添加以下自定义属性内容
-
-[Code1]
-
-在 Lib 项目里面添加一个空的 Foo 类型，这个类型里面没有任何的代码，因为复现此问题时，只需要有类型即可
-
-[Code2]
-
-在 App 项目里面编写 Program.cs 文件，让其创建 Foo 对象，代码如下
-
-using Lib;
-
-var foo = new Foo();
-
-代码写到这里，一切都能正常工作。这是因为 App 项目通过 AllInOne 项目，间接依赖到 Lib 项目，从而能够访问 Foo 类型
-
-最后一步是编辑 AllInOne 的 csproj 文件内容，配置 AllInOne 项目通过 PackAllInOne 属性决定是引用 Lib 项目，还是引用 Lib 里面的代码，代码如下
-
-[Code3]
-
-完成这一步之后，你将可以看到原本在 App 项目里面能够正常工作的 Program.cs 文件，现在 ReSharper 会提示 Ambiguous reference 错误。即使此时依然可以在 VisualStudio 里面构建通过，即 ReSharper 的错误提示是不正确的误报
+Avalonia 在系统关闭时，通知窗口关闭时，传递给窗口的关闭的 WindowCloseReason 参数错误，预期是 OSShutdown 但实际是 ApplicationShutdown
 
 [Content End]
 
