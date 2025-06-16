@@ -582,6 +582,8 @@
 
  * [dotnet C# 将 Byte 二进制数组使用不安全代码快速转换为 int 或结构体数组](dotnet-C-将-Byte-二进制数组使用不安全代码快速转换为-int-或结构体数组.md)
 
+ * [dotnet C# 布尔可以是 true 或 false 外的值](dotnet-C-布尔可以是-true-或-false-外的值.md)
+
  * [dotnet C# 序列化 XML 时进行自动格式化](dotnet-C-序列化-XML-时进行自动格式化.md)
 
  * [dotnet C# 应用程序进程创建太多线程将会抛出 OutOfMemoryException 异常](dotnet-C-应用程序进程创建太多线程将会抛出-OutOfMemoryException-异常.md)

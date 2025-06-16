@@ -476,7 +476,7 @@ else
    //不执行的代码 
 }
 ```
-    
+
 实际在微软代码也是这样写，点击[string的实现源代码](https://referencesource.microsoft.com/#mscorlib/system/string.cs,507 )可以看到微软代码
 
 ## 重载的运算符
