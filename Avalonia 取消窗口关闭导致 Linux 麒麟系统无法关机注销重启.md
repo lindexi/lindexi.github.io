@@ -3,6 +3,8 @@
 在 Avalonia 的窗口 OnClosing 事件里面，将 WindowClosingEventArgs 的 Cancel 属性赋值为 true 用来取消窗口关闭，此时 Linux 麒麟系统的 ukui 组件在进行关机时，将会在调用 会话管理器 时，收到会话管理器取消了本次操作，进而无法进行关机或注销或重启
 
 <!--more-->
+<!-- CreateTime:2025/06/12 07:17:23 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
