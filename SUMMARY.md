@@ -504,6 +504,8 @@
 
  * [dotnet Blazor 用 C# 控制界面行为](dotnet-Blazor-用-C-控制界面行为.md)
 
+ * [dotnet C# Windows 桌面应用程序简单使用 DwmFlush 对齐刷新率](dotnet-C-Windows-桌面应用程序简单使用-DwmFlush-对齐刷新率.md)
+
  * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
 
  * [dotnet C# 从控制台开始 关联 Win2D 和 WinUI 3 应用](dotnet-C-从控制台开始-关联-Win2D-和-WinUI-3-应用.md)
@@ -531,6 +533,8 @@
  * [dotnet C# 使用阿里函数计算服务](dotnet-C-使用阿里函数计算服务.md)
 
  * [dotnet C# 做一个压缩包和解压缩出来的文件夹内容对比工具](dotnet-C-做一个压缩包和解压缩出来的文件夹内容对比工具.md)
+
+ * [dotnet C# 入门示例 用底层的 Socket 进行 HTTP 网络请求](dotnet-C-入门示例-用底层的-Socket-进行-HTTP-网络请求.md)
 
  * [dotnet C# 全局 Windows 鼠标钩子](dotnet-C-全局-Windows-鼠标钩子.md)
 
@@ -3479,6 +3483,8 @@
  * [使用 Resharper 特性](使用-Resharper-特性.md)
 
  * [使用 RetroShare 分享资源](使用-RetroShare-分享资源.md)
+
+ * [使用 SatelliteResourceLanguages 减少 WPF 发布的多语言文件夹数量](使用-SatelliteResourceLanguages-减少-WPF-发布的多语言文件夹数量.md)
 
  * [使用 Silk.NET 创建 OpenGL 空窗口项目例子](使用-Silk.NET-创建-OpenGL-空窗口项目例子.md)
 

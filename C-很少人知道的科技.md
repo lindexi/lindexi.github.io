@@ -14,7 +14,7 @@
 
 我在网上找了很多大神的博客，然后和很多大神聊天，知道了一些科技，于是就在本文和大家分享一下。如果大家有了解本博客里面没有收藏的科技，还请告诉我
 
-现在整个 C# 从编译器到运行时都是开源的，所有权在 dotnet 基金会上，全部开源的项目都基于最友好的 MIT 协议和 Apache 2 开源协议，文档协议遵循CC-BY协议。这将允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。唯一的限制是，软件中必须包含上述版 权和许可提示，后者协议将会除了为用户提供版权许可之外，还有专利许可，并且授权是免费，无排他性的(任何个人和企业都能获得授权)并且永久不可撤销，用户使用.NET 和 C# 完全不用担心收费问题和版权问题，以及后续无法维护问题。而 dotnet 基金会是一个开放的平台，我也是 dotnet 基金会的成员之一。微软在 2020 的时候依然是 dotnet 基金会最大的支持组织
+现在整个 C# 从编译器到运行时都是开源的，所有权在 dotnet 基金会上，全部开源的项目都基于最友好的 MIT 协议和 Apache 2 开源协议，文档协议遵循CC-BY协议。这将允许任何人任何组织和企业任意处置，包括使用，复制，修改，合并，发表，分发，再授权，或者销售。唯一的限制是，软件中必须包含上述版 权和许可提示，后者协议将会除了为用户提供版权许可之外，还有专利许可，并且授权是免费，无排他性的(任何个人和企业都能获得授权)并且永久不可撤销，用户使用.NET 和 C# 完全不用担心收费问题和版权问题，以及后续无法维护问题。而 dotnet 基金会是一个开放的平台，我也是 dotnet 基金会的成员之一。微软在 2025 的时候依然是 dotnet 基金会最大的支持组织
 
 现在最火的 dotnet 仓库是 [dotnet csharplang](https://github.com/dotnet/csharplang ) 仓库，当前的 C# 语言特性由整个社区决定，这是一个官方开放用来讨论 C# 语言未来的仓库，天天都有大佬们在讨论语言的特性，欢迎大家加入
 
@@ -22,7 +22,7 @@
 
 ## 无限级判断空
 
-在 C# 6.0 可以使用`??`判断空，那么就可以使用下面代码
+在 C# 6.0 可以使用 `??` 判断空，如下面代码所示
 
 ```csharp
             var v1 = "123";
@@ -32,7 +32,7 @@
             var v = v1 ?? v2 ?? v3;
 ```
 
-实际上可以无限的使用`??`判断前面一个函数为空，那么问题来了，下面的代码输出的是多少？
+基于这个语法规则，代码里面可以无限地使用 `??` 符号来判断前面一个函数/表达式/变量等为空。那么问题来了，下面的代码输出的是多少？
 
 ```csharp
 var n = 2 + foo?.N ?? 1;
@@ -40,7 +40,7 @@ var n = 2 + foo?.N ?? 1;
 
 上面代码的 foo 就是空的，那么 n 是多少？是 1 还是 2 还是 3 还是空？
 
-想要了解这道题的推导过程请看[C# 高级面试题](https://blog.lindexi.com/post/C-%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98.html ) 里面写了很多老司机都不一定能解出
+想要了解这道题的推导过程请看[C# 高级面试题](https://blog.lindexi.com/post/C-%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98.html ) 里面写了很多老司机都不一定能解出的问题
 
 ## 使用 using 关键词省略长的定义
 
@@ -371,6 +371,49 @@ int* block = stackalloc int[100];
 
 可以重写的运算很多，返回值可以自己随意定义
 
+## 布尔可以是 true 或 false 外的值
+
+试试看以下的代码片段，猜猜将会输出什么内容
+
+```csharp
+using System.Runtime.CompilerServices;
+
+byte t = 2;
+var foo = Unsafe.As<byte, bool>(ref t);
+Console.WriteLine(foo);
+
+if (foo)
+{
+    Console.WriteLine($"if (foo.F1)");
+}
+
+if (foo == true)
+{
+    Console.WriteLine($"if (foo.F1 == true)");
+}
+else
+{
+    Console.WriteLine($"if (foo.F1 != true)");
+}
+
+var t1 = true;
+if (foo == t1)
+{
+    Console.WriteLine($"if (foo.F1 == t1)");
+}
+else
+{
+    Console.WriteLine($"if (foo.F1 != t1)");
+}
+```
+
+有些伙伴也许和我一样，在看到前面几句话时，就开始感觉到不妙。正如 `var foo = Unsafe.As<byte, bool>(ref t);` 代码所示，将一个 `byte t = 2;` 塞到 `bool foo` 里面。这似乎看起来很有违和感，但在 dotnet 运行时里面却又是合法的行为。因为 bool 的长度也和 byte 相同
+
+这就有趣起来了，众所周知，在 dotnet C# 里面的布尔 true 和 false 分别是 1 和 0 的值。如果我强行将一个 2 塞到布尔里面，那会发生什么事情呢？此时的 foo 还是一个合法的布尔值么
+
+想要知道答案是什么，还请参阅 [dotnet C# 布尔可以是 true 或 false 外的值](https://blog.lindexi.com/post/dotnet-C-%E5%B8%83%E5%B0%94%E5%8F%AF%E4%BB%A5%E6%98%AF-true-%E6%88%96-false-%E5%A4%96%E7%9A%84%E5%80%BC.html )
+<!-- [dotnet C# 布尔可以是 true 或 false 外的值 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18930537 ) -->
+
 ## await 任何类型
 
 等待任意的类型，包括已定义的基础类型，如下面代码
@@ -569,7 +612,7 @@ static void Main(string[] args)
 ```
 
 ```csharp
-       static void Main(string[] args)
+        static void Main(string[] args)
         {
             GetMethodName<Foo>(foo => foo.KzcSevfio());
         }
@@ -639,7 +682,7 @@ string zer = 0.ToString(format);     // (0)
 如果需要获得调用方法的堆栈，可以使用[这个文章的方法](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
 
 ```csharp
-  class Program
+    class Program
     {
         static void Main(string[] args)
         {
