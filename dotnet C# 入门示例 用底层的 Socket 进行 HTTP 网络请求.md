@@ -1,8 +1,10 @@
-﻿# dotnet C# 入门示例 用底层的 Socket 进行 HTTP 网络请求
+# dotnet C# 入门示例 用底层的 Socket 进行 HTTP 网络请求
 
 本文属于基础入门博客，将和大家介绍如何在 dotnet C# 代码里面使用底层的 Socket 进行 HTTP 网络请求
 
 <!--more-->
+<!-- CreateTime:2025/06/17 07:05:23 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
