@@ -98,6 +98,8 @@
 
  * [BAT 脚本判断当前系统是 x86 还是 x64 系统](BAT-脚本判断当前系统是-x86-还是-x64-系统.md)
 
+ * [BinSkim 一款强大的二进制安全分析工具](BinSkim-一款强大的二进制安全分析工具.md)
+
  * [Blazor 如何使用代码跳转链接](Blazor-如何使用代码跳转链接.md)
 
  * [Blazor 的 NavLink 提示 RZ9986 不支持复杂内容](Blazor-的-NavLink-提示-RZ9986-不支持复杂内容.md)
