@@ -32,6 +32,9 @@
 
 这将会对应在 OpenXML SDK 的各个命名空间里面
 
+我找到了中文版的文档，请参阅：[ECMA-376标准中文版](https://hellowac.github.io/ecma-376-zh-cn/ecma-part1/chapter-1/ ) 
+<!-- https://github.com/hellowac/ecma-376-zh-cn -->
+
 [OfficeTalk: Essentials of the Open Packaging Conventions](https://docs.microsoft.com/en-us/previous-versions/office/office-12/ee361919(v=office.12)?redirectedfrom=MSDN )
 
 [Open XML SDK](https://docs.microsoft.com/en-us/office/open-xml/open-xml-sdk )
@@ -41,10 +44,6 @@
 [ISO/IEC 29500](https://www.iso.org/standard/71691.html)
 
 更多请看 [Office 使用 OpenXML SDK 解析文档博客目录](https://blog.lindexi.com/post/Office-%E4%BD%BF%E7%94%A8-OpenXML-SDK-%E8%A7%A3%E6%9E%90%E6%96%87%E6%A1%A3%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95.html )
-
- 		
- 	 	
- 	 	
 
 
 
