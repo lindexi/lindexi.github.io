@@ -1570,9 +1570,19 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 ### 读写性能调试
 
-通过 dot trace 找到读写文件
+使用 DotTrace 可以辅助调试读写文件 IO 性能问题，可以非常方便找到卡顿点或热点路径。详细使用教程请参阅：
 
-填坑
+[DotTrace系列：5. 诊断程序的 慢File 和 慢SQL - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/18949512 )
+
+### 使用 DotTrace 的系列教程
+
+参阅：
+
+- [DotTrace系列：1. 理解四大经典的诊断类型（上） - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/18938244 )
+- [DotTrace系列：2. 理解四大经典的诊断类型（下） - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/18942584 )
+- [DotTrace系列：3. 时间度量之墙钟时间和线程时间 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/18943834 )
+- [DotTrace系列：4. 诊断窗体程序变卡之原因分析 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/18947774 )
+- [DotTrace系列：5. 诊断程序的 慢File 和 慢SQL - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/18949512 )
 
 ## 远程调试
 
