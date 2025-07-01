@@ -209,7 +209,7 @@ System.TypeLoadException:“所请求的 Windows 运行时类型“Microsoft.Gra
 
 或者这个文件没有在 csproj 声明，也就是没有在项目文件找到下面代码
 
-```csharp
+```xml
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>

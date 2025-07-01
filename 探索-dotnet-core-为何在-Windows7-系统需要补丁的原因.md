@@ -104,7 +104,7 @@
 
 看起来文件不多，就看哪个伙伴想不开就去改改挖坑吧
 
-此 [LoadLibraryExW](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw?WT.mc_id=WD-MVP-5003260 ) 函数是放在 Kernel32.dll 的，相同的需求，在 dotnet core 里也间接依赖于 [AddDllDirectory](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-adddlldirectory?WT.mc_id=WD-MVP-5003260) 和 [SetDefaultDllDirectories](http://msdn.microsoft.com/zh-cn/library/hh310515(vs.85).aspx) 和 [RemoveDllDirectory](https://docs.microsoft.com/zh-cn/windows/win32/api/libloaderapi/nf-libloaderapi-removedlldirectory?WT.mc_id=WD-MVP-5003260) 等方法。如官方文档描述，刚好这些方法也都相同依赖 KB2533623 补丁
+此 [LoadLibraryExW](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexw?WT.mc_id=WD-MVP-5003260 ) 函数是放在 Kernel32.dll 的，相同的需求，在 dotnet core 里也间接依赖于 [AddDllDirectory](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-adddlldirectory?WT.mc_id=WD-MVP-5003260) 和 [SetDefaultDllDirectories](https://learn.microsoft.com/zh-cn/windows/win32/api/libloaderapi/nf-libloaderapi-setdefaultdlldirectories) 和 [RemoveDllDirectory](https://docs.microsoft.com/zh-cn/windows/win32/api/libloaderapi/nf-libloaderapi-removedlldirectory?WT.mc_id=WD-MVP-5003260) 等方法。如官方文档描述，刚好这些方法也都相同依赖 KB2533623 补丁
 
 > Windows 7, Windows Server 2008 R2, Windows Vista and Windows Server 2008:  To use this function in an application, call GetProcAddress to retrieve the function's address from Kernel32.dll. KB2533623 must be installed on the target platform.
 
