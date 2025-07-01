@@ -16,7 +16,7 @@ category:
 
 <!-- ![](image/WPF 通过 InputManager 模拟调度触摸事件/WPF 通过 InputManager 模拟调度触摸事件.gif) -->
 
-![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E9%2580%259A%25E8%25BF%2587%2520InputManager%2520%25E6%25A8%25A1%25E6%258B%259F%25E8%25B0%2583%25E5%25BA%25A6%25E8%25A7%25A6%25E6%2591%25B8%25E4%25BA%258B%25E4%25BB%25B6.gif)
+![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240926071104886-52684406.gif)
 
 可以显示接收到的 Win32 消息、当前的触摸设备状态，以及设备插拔信息
 

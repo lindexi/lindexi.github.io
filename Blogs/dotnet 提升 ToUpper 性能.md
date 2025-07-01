@@ -21,7 +21,7 @@ chars[0] = char.ToUpper(chars[0], CultureInfo.InvariantCulture);
 以上代码将会导致在启动过程中初始化 ICU 模块，而 ICU 模块的初始化是需要耗费资源的，以下是使用 dotTrace 测量的结果
 
 <!-- ![](image/dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢/dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20238101213589765.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250701202015323-1051973532.png)
 
 尽管 dotTrace 测量出来的 12ms 的时间是属于基本可以忽略的耗时，但是在一个以 Tick 计时的命令行解析库里面进行耗时对比，可以看到基本命令行解析所有时间都用在了 ICU 初始化上，这是不合理的
 
@@ -139,7 +139,7 @@ chars[0] = char.ToUpperInvariant(chars[0]);
 相同的启动问题性能优化，也在 MAUI 仓库里面执行，在 MAUI 里面引入了 [CA1311: Specify a culture or use an invariant version](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1311 ) 警告提示，意思就是如果发现代码里面写了不带语言文化的 `String.ToUpper()` 或 `String.ToLower()` 方法，将会提示换成 `ToUpper(CultureInfo)` 或 `ToUpperInvariant()` 或 `ToLower(CultureInfo)` 或 `ToLowerInvariant()` 方式减少语言文化加载性能
 
 <!-- ![](image/dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢/dotnet 使用 ToUpperInvariant 替换 ToUpper 以避免初始化 icu 过慢1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20231122014408429.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250701202015630-1142880281.png)
 
 如在 [.NET 8 Performance Improvements in .NET MAUI - .NET Blog](https://devblogs.microsoft.com/dotnet/dotnet-8-performance-improvements-in-dotnet-maui/ ) 博客里面提到的
 

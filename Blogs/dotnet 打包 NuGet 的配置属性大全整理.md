@@ -11,7 +11,7 @@ category:
 
 本文将会持续更新，可以通过搜 《dotnet 打包 NuGet 的配置属性大全整理 林德熙》 找到我主站的博客，避免各个备份地址陈旧的内容误导
 
-本文更新于：2025.03.19
+本文更新于：2025.07.01
 
 如更新时间距离当前阅读时间过远，则表示可能你阅读的是转发的或转载的文章，推荐去到我主站的博客，了解更新的知识
 
@@ -494,11 +494,31 @@ Description 描述信息
 
 一般和 `<IsTool>true</IsTool>` 进行二选一使用。使用 `<IncludeBuildOutput>false</IncludeBuildOutput>` 能够实现更高的定制化，与 IsTool 不同之处在于 IsTool 属性设置为 true 的值将会让输出 NuGet 包的 `tools` 文件夹里面
 
+设置 `<IncludeBuildOutput>false</IncludeBuildOutput>` 时，常会带上 `<NoPackageAnalysis>true</NoPackageAnalysis>` 设置，用于去掉 NU5128 警告。这是因为设置 IncludeBuildOutput 为 false 时，将不会在 NuGet 包的 lib 文件夹包含当前此项目的输出，如果没有额外设置 lib 文件夹内容，则会收到警告
+
+设置此属性时，通常也会考虑再带上 SuppressDependenciesWhenPacking 属性
+
 ### DevelopmentDependency
 
 这是一个仅开发阶段使用的 NuGet 包，默认是 false 的值。如果设置为 true 即可在安装此 NuGet 包后自动配置为不传递依赖。可用在工具类型的 NuGet 包上，让工具包只对当前安装的项目生效，不会传递给所引用的项目
 
 详细请参阅 [帮助官方 NuGet 解掉 Bug，制作绝对不会传递依赖的 NuGet 包 - walterlv](https://blog.walterlv.com/post/prevent-nuget-package-been-depended )
+
+### SuppressDependenciesWhenPacking
+
+默认情况下，会将 TargetFramework 作为 NuGet 的框架依赖。有一些工具库之类的，想要适用范围更广，不想通过修改 TargetFrameworks 包含旧框架实现。可以设置 SuppressDependenciesWhenPacking 为 true 的值
+
+```xml
+    <!-- 
+      配置为无依赖。即避免带上 TargetFramework=netstandard2.0 的限制
+      配合 IncludeBuildOutput=false 即可让任意项目引用，无视目标框架
+    -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+```
+
+一般而言，设置了 SuppressDependenciesWhenPacking 为 true 会搭配设置 IncludeBuildOutput 属性，反之不然
+
+设置了 SuppressDependenciesWhenPacking 为 true 之后，可见此时的 NuGet 包的 Dependencies 是空白，在 NuGet Package Explorer 里面将显示 No Dependencies 表示无依赖。此时的 NuGet 包可被任意 TargetFramework 框架所引用
 
 
 ## 已知属性
