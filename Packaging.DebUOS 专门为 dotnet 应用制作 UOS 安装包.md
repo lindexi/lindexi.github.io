@@ -18,7 +18,7 @@ Packaging.DebUOS 旨在通过使用 csproj 项目文件等方式进行配置，�
 
 ```xml
   <ItemGroup>
-    <PackageReference Include="Packaging.DebUOS" Version="3.16.3"/>
+    <PackageReference Include="Packaging.DebUOS" Version="3.17.6"/>
   </ItemGroup>
 ```
 

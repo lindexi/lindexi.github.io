@@ -4,6 +4,7 @@
 
 <!--more-->
 <!-- CreateTime:2019/12/24 9:27:49 -->
+<!-- 博客 -->
 
 在本文的开始是先向大家介绍一些常见的套路，即遇到什么问题应该调试。然后从常见套路常见问题过渡到一些比较棘手问题，例如遇到我不熟悉的代码如何调试，遇到库里面的代码出问题如何调试。在这个介绍的过程里面，还会穿插介绍一些调试经验
 
@@ -1379,7 +1380,7 @@ sxe ld:xxx.dll
 
 或在 WinDbg 里面使用 [.dump](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/-dump--create-dump-file- ) 创建 dump 文件。这里需要小心一点的是，如果被 WinDbg 工具暂停了进程，那此时抓到的 DUMP 文件，可能存在了一个调试异常，如果看到调试器异常还请不用慌，这是 WinDbg 暂停给出的异常，异常错误码是 0x80000003 STATUS_BREAKPOINT 表示进入断点，常见的堆栈如下
 
-```
+```stacktrace
 ntdll.dll!_DbgBreakPoint
 ntdll.dll!_DbgUiRemoteBreakin
 ```
@@ -1419,7 +1420,7 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 如果是一个崩溃的 DUMP 文件，则调用堆栈一般可以看到崩溃的堆栈，通过崩溃的堆栈配合异常，可以更好了解崩溃的原因。如下堆栈是 [记因为 NVIDIA 显驱错误而让 WPF 应用启动闪退问题](https://blog.lindexi.com/post/%E8%AE%B0%E5%9B%A0%E4%B8%BA-NVIDIA-%E6%98%BE%E9%A9%B1%E9%94%99%E8%AF%AF%E8%80%8C%E8%AE%A9-WPF-%E5%BA%94%E7%94%A8%E5%90%AF%E5%8A%A8%E9%97%AA%E9%80%80%E9%97%AE%E9%A2%98.html ) 博客提到的堆栈
 
-```
+```stacktrace
 >   00000000()  Unknown
     [Frames below may be incorrect and/or missing]  Unknown
     nvumdshim.dll!710d0745()    Unknown
