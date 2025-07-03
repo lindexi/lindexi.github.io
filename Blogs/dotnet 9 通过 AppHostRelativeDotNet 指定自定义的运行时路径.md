@@ -54,7 +54,7 @@ C:\Program Files\CompanyName\Produce3\
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AppHostDotNetSearch>AppRelative;Global;</AppHostDotNetSearch>
+    <AppHostDotNetSearch>AppRelative;EnvironmentVariable;Global;</AppHostDotNetSearch>
     <AppHostRelativeDotNet>../relative/path/to/runtime</AppHostRelativeDotNet>
   </PropertyGroup>
 
