@@ -80,6 +80,8 @@
 
  * [Avalonia 将 DrawingImage 保存到本地文件的方法](Avalonia-将-DrawingImage-保存到本地文件的方法.md)
 
+ * [Avalonia 已知问题 使用 RenderTargetBitmap 截图文本模糊](Avalonia-已知问题-使用-RenderTargetBitmap-截图文本模糊.md)
+
  * [Avalonia 已知问题 第二次 Composition Animation 无法播放](Avalonia-已知问题-第二次-Composition-Animation-无法播放.md)
 
  * [Avalonia 已知问题 继承滚动条将让里层控件无法获得无穷大空间](Avalonia-已知问题-继承滚动条将让里层控件无法获得无穷大空间.md)
@@ -1179,6 +1181,8 @@
  * [dotnet 推荐一个使用 Json 直接路由通讯的 IPC 库](dotnet-推荐一个使用-Json-直接路由通讯的-IPC-库.md)
 
  * [dotnet 教你写一个可以搞炸本机所有 WCF 应用的程序方法](dotnet-教你写一个可以搞炸本机所有-WCF-应用的程序方法.md)
+
+ * [dotnet 数组池 ArrayPool 行为记录](dotnet-数组池-ArrayPool-行为记录.md)
 
  * [dotnet 数组自动转基类数组提示 Co-variant array conversion 是什么问题](dotnet-数组自动转基类数组提示-Co-variant-array-conversion-是什么问题.md)
 
