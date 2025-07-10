@@ -222,7 +222,7 @@
 
 [dotnet OpenXML 解析 WPS 不符合压缩文档规范的文档](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-WPS-%E4%B8%8D%E7%AC%A6%E5%90%88%E5%8E%8B%E7%BC%A9%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E7%9A%84%E6%96%87%E6%A1%A3.html )
 
-[2019-1-8-看看你的PPT是不是被WPS玩坏了 - huangtengxiao](https://huangtengxiao.gitee.io/post/%E7%9C%8B%E7%9C%8B%E4%BD%A0%E7%9A%84PPT%E6%98%AF%E4%B8%8D%E6%98%AF%E8%A2%ABWPS%E7%8E%A9%E5%9D%8F%E4%BA%86.html)
+[2019-1-8-看看你的PPT是不是被WPS玩坏了 - huangtengxiao](https://xinyuehtx.github.io/post/%E7%9C%8B%E7%9C%8B%E4%BD%A0%E7%9A%84PPT%E6%98%AF%E4%B8%8D%E6%98%AF%E8%A2%ABWPS%E7%8E%A9%E5%9D%8F%E4%BA%86.html )
 
 [dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%9C%A8-PPTX-%E8%A1%A8%E6%A0%BC%E5%8D%95%E5%85%83%E6%A0%BC%E5%8A%A0%E4%B8%8A-VerticalMerge-%E6%88%96-HorizontalMerge-%E5%B0%86%E5%AF%BC%E8%87%B4-WPS-%E4%B8%A2%E5%A4%B1%E6%96%87%E6%9C%AC.html )
 <!-- [dotnet OpenXML 在 PPTX 表格单元格加上 VerticalMerge 或 HorizontalMerge 将导致 WPS 丢失文本 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18207531 ) -->
