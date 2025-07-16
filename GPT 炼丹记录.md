@@ -66,33 +66,13 @@
 
 [Content Start]
 
-在 Avalonia 里，使用 RenderTargetBitmap 对控件进行截图，如果控件的顶层子控件没有背景色，则会截图出一张文本是模糊的图片。如果给控件的顶层子控件设置白色作为背景色，则能够截图出正常渲染的清晰文本
+在 Linux 上使用 NamedPipeClientStream 连接一个不存在的目标，将疯狂在 dotnet 内部抛出 SocketException 异常，非常影响性能
 
-复现步骤如下：
-
-1. 创建一个空的 Avalonia 程序，在 MainView.axaml 里面放入一个包含“Hello World”内容的 TextBlock 控件，以及两个按钮。两个按钮分别是 TakeSnapshotButton 和 TakeSnapshotWithFixButton 按钮
-2. 设置 TakeSnapshotButton 按钮在点击的时候，使用 RenderTargetBitmap 进行截图，且将图片保存到 1.png 文件里
-3. 设置 TakeSnapshotWithFixButton 按钮在点击的时候，先设置 RootGrid 的背景色为白色，然后再使用 RenderTargetBitmap 进行截图，且将图片保存到 2.png 文件里
-
-其代码内容如下：
-
-MainView.axaml：
+复现步骤，如以下简单的示例代码所示
 
 [Code1]
 
-MainView.axaml.cs:
-
-[Code2]
-
-我的最小复现项目放在 GitHub 上，请参阅：[Link1]
-
-请运行项目，依次点击 TakeSnapshotButton 和 TakeSnapshotWithFixButton 按钮，观察程序生成的 1.png 和 2.png 文件
-
-你可以看见 1.png 里面的文本都是模糊的，如下图所示
-
-[Image1]
-
-而 2.png 里面的文本是清晰的。证明了只要给 RootGrid 设置非透明的背景色，则能够让渲染正常工作
+尝试在 Linux 系统上运行上述代码，可见 FirstChanceException 被疯狂触发，控制台也在不断输出
 
 [Content End]
 
