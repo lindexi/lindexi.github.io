@@ -1140,6 +1140,8 @@
 
  * [dotnet 将自动代码格式化机器人带入团队 GitLab 平台](dotnet-将自动代码格式化机器人带入团队-GitLab-平台.md)
 
+ * [dotnet 已知问题 NamedPipeClientStream 连接不存在的服务在内部抛出异常](dotnet-已知问题-NamedPipeClientStream-连接不存在的服务在内部抛出异常.md)
+
  * [dotnet 已知问题 使用 Directory.EnumerateXXX 方法枚举 C 盘根路径可能错误的问题](dotnet-已知问题-使用-Directory.EnumerateXXX-方法枚举-C-盘根路径可能错误的问题.md)
 
  * [dotnet 已知问题 警惕 StreamReader 的 EndOfStream 卡住线程](dotnet-已知问题-警惕-StreamReader-的-EndOfStream-卡住线程.md)
