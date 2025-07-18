@@ -3,6 +3,8 @@
 本文记录一个 dotnet 已知问题，此问题在 dotnet 9 之前就存在。在 Linux 系统上，使用 NamedPipeClientStream 连接不存在的服务时，将不断疯狂地抛出 SocketException 异常
 
 <!--more-->
+<!-- CreateTime:2025/07/18 07:09:35 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
