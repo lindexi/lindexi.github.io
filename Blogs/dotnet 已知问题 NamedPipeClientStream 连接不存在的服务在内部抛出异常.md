@@ -54,6 +54,8 @@ FirstChanceException: System.Net.Sockets.SocketException (99): Cannot assign req
 
 此问题可能很难从底层改掉，业务层优化会更加简单，那就是在 Connect 方法里面传递限制时间，防止无限等待
 
+此问题已经报告给 dotnet 官方，详细请看 <https://github.com/dotnet/runtime/issues/117718>
+
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/31318b24ff8656a05f0f81bef867b501e425d6bf/Workbench/BeekefanereHawgudairwochemwhi) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/31318b24ff8656a05f0f81bef867b501e425d6bf/Workbench/BeekefanereHawgudairwochemwhi) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
 先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
