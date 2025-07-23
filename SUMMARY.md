@@ -3500,6 +3500,8 @@
 
  * [使用 Silk.NET 创建 OpenGL 空窗口项目例子](使用-Silk.NET-创建-OpenGL-空窗口项目例子.md)
 
+ * [使用 Silk.NET 调用 DirectWrite 获取字体 Font Metrics 信息](使用-Silk.NET-调用-DirectWrite-获取字体-Font-Metrics-信息.md)
+
  * [使用 SizeBench 分析 Exe 文件体积](使用-SizeBench-分析-Exe-文件体积.md)
 
  * [使用 Uno Islands 在现有 WPF 里面嵌入 Uno 框架](使用-Uno-Islands-在现有-WPF-里面嵌入-Uno-框架.md)
