@@ -22,6 +22,8 @@ category:
 <!-- ![](image/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用1.png) -->
 ![](https://img2023.cnblogs.com/blog/1080237/202412/1080237-20241222070253754-17859207.png)
 
+在各个文本、字体渲染引擎里面，都会将基线当成 0 点。如果能够理解这一点，则能够更好地接受 Top 和 Ascent 等属性都是负值。如示意图所示，可见 Top 和 Ascent 都在基线上方。按照图形库的约定，坐标系采用左上角为 （0,0） 点，且 Y 轴是从上到下的。这就意味着越靠下的 Y 值越大，而 Top 和 Ascent 都在基线上方，即从坐标系的角度理解，可知 Top 和 Ascent 的 Y 轴坐标比 Baseline 小，于是相对于 Baseline 来说，自然 Top 和 Ascent 等属性是负值
+
 如 [【SkiaSharp绘图04】SKPaint详解（二）FakeBoldText/FilterQuality/FontMetrics/FontSpacing/ImageFilter_skiasharp 字体-CSDN博客](https://blog.csdn.net/TyroneKing/article/details/139665911 ) 博客所述，各属性含义如下
 
 - Top：表示字体基线（baseline）以上的最高点的坐标。对于大多数拉丁字母，这个值通常是负的，因为大多数字形的顶部在基线之上。
@@ -65,6 +67,39 @@ category:
 排版里面的字高就是再 `baseline + Descent` 的值，即 `|Ascent| + Descent` 的值。排版的字高不等同与渲染字高，渲染字高在不考虑合写字情况下，一般就是 Top 线到 Bottom 线之间的高度就是渲染字高度。正常咱是不关心渲染字高，最多只关心排版字高
 
 行距部分会比较复杂，我自己建立的文本库就准备尝试模拟 WPF 的行距算法或 PPT 的行距算法，详细请看 [dotnet OpenXML 聊聊 PPT 文本行距行高计算公式](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%81%8A%E8%81%8A-PPT-%E6%96%87%E6%9C%AC%E8%A1%8C%E8%B7%9D%E8%A1%8C%E9%AB%98%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.html )
+
+行距的计算无法在 Skia 里面算出来和 WPF 一样的值，根据 DirectWrite 的 [DWRITE_FONT_METRICS 文档](https://learn.microsoft.com/en-us/windows/win32/api/dwrite/ns-dwrite-dwrite_font_metrics) 描述：
+
+> LineGap: The line gap in font design units. Recommended additional white space to add between lines to improve legibility. The recommended line spacing (baseline-to-baseline distance) is the sum of ascent, descent, and lineGap. The line gap is usually positive or zero but can be negative, in which case the recommended line spacing is less than the height of the character alignment box.
+
+可以看到推荐的行距（基线到基线的距离）应该是 ascent + descent + lineGap 的总和。具体的 DWRITE_FONT_METRICS 结构体代码如下
+
+```csharp
+    public struct FontMetrics
+    {
+        public ushort DesignUnitsPerEm;
+
+        public ushort Ascent;
+
+        public ushort Descent;
+
+        public short LineGap;
+
+        public ushort CapHeight;
+
+        public ushort XHeight;
+
+        public short UnderlinePosition;
+
+        public ushort UnderlineThickness;
+
+        public short StrikethroughPosition;
+
+        public ushort StrikethroughThickness;
+    }
+```
+
+如上定义可知，在 DirectWrite 里面的 LineGap 字段是 Skia 的 SKFontMetrics 结构体所不存在的。兼容的方法只好取 SKFontMetrics 的 Leading 来参与计算
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/9c035b4fc813169ead14567f8d40bdb9c382ec4c/SkiaSharp/RijojahijayNoherrerhu) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9c035b4fc813169ead14567f8d40bdb9c382ec4c/SkiaSharp/RijojahijayNoherrerhu) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
