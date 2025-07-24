@@ -68,7 +68,8 @@
 
 - [dotnet C# 通过 Vortice 将 ID2D1CommandList 作为特效的输入源](https://blog.lindexi.com/post/dotnet-C-%E9%80%9A%E8%BF%87-Vortice-%E5%B0%86-ID2D1CommandList-%E4%BD%9C%E4%B8%BA%E7%89%B9%E6%95%88%E7%9A%84%E8%BE%93%E5%85%A5%E6%BA%90.html )
 
-
+- [使用 Silk.NET 调用 DirectWrite 获取字体 Font Metrics 信息](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-Silk.NET-%E8%B0%83%E7%94%A8-DirectWrite-%E8%8E%B7%E5%8F%96%E5%AD%97%E4%BD%93-Font-Metrics-%E4%BF%A1%E6%81%AF.html )
+<!-- [使用 Silk.NET 调用 DirectWrite 获取字体 Font Metrics 信息 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19001918 ) -->
 
 在 4k 下的性能测试请看 [WPF 模拟 WPFMediaKit 的 D3D 配置用来测试4k性能](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F-WPFMediaKit-%E7%9A%84-D3D-%E9%85%8D%E7%BD%AE%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%954k%E6%80%A7%E8%83%BD.html )
 
