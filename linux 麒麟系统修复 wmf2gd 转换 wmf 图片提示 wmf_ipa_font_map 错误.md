@@ -3,6 +3,8 @@
 本文记录在 2403 麒麟系统上，使用 wmf2gd 转换 wmf 图片时提示 ERROR: font.c (1334): wmf_ipa_font_map: failed to load any font! 错误问题
 
 <!--more-->
+<!-- CreateTime:2025/07/25 07:13:48 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
