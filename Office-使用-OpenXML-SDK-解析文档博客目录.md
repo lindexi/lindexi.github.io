@@ -307,6 +307,14 @@ C# / VB.NET Word component
 
 [https://www.gemboxsoftware.com](https://www.gemboxsoftware.com)
 
+### OfficeIMO
+
+[EvotecIT/OfficeIMO: Fast and easy to use cross-platform .NET library that creates or modifies Microsoft Word (DocX) and later also Excel (XLSX) files without installing any software. Library is based on Open XML SDK](https://github.com/EvotecIT/OfficeIMO )
+
+### DocSharp
+
+[manfromarce/DocSharp: Pure C# library to convert between document formats (Office 97-2003, Open XML, RTF, Markdown)](https://github.com/manfromarce/DocSharp )
+
 ### VS 插件
 
 [bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio: This Power Tool is a Visual Studio add-in that provides an easy way to parse and edit Open Packaging Conventions files, including Word, Excel and PowerPoint documents.](https://github.com/bsivanov/Open-XML-Package-Editor-Power-Tool-for-Visual-Studio )

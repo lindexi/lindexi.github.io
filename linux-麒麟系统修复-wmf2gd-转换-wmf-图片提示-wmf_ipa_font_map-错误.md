@@ -47,7 +47,18 @@ sudo dpkg -i gsfonts_8.11+urwcyr1.0.7~pre44-4.5_all.deb
 ./wmf2gd -t png -o 1.png --wmf-fontdir=/usr/share/fonts/type1/gsfonts image.wmf
 ```
 
-但如果自己将 gsfonts 解压出来，将 pfb 等字体放在自己的文件夹，再使用 `--wmf-fontdir` 设置到自己的文件夹，这是有用的
+但如果自己将 gsfonts 解压出来，将 pfb 等字体放在自己的文件夹，再使用 `--wmf-fontdir` 设置到自己的文件夹，这是有用的，如以下示例命令
+
+```
+./wmf2svg --wmf-fontdir=/home/lindexi/linux-64/fonts -o 1.svg ~/sync/lin64/image.wmf
+```
+
+注： 请不要使用 `~` 路径作为 `--wmf-fontdir` 参数，如以下命令是错误的
+
+```
+# 以下命令是错误的，不应该使用 ~/xx 的路径，应该使用绝对路径
+./wmf2svg --wmf-fontdir=~/linux-64/fonts -o 1.svg ~/sync/lin64/image.wmf
+```
 
 本文的所有方法对 wmf2svg 等工具同样生效
 
