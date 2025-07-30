@@ -358,22 +358,47 @@ Error: building at STEP "RUN apt update": while running runtime: exit status 100
 
 重新参考了 [替换docker容器默认的debian镜像 - OrcHome](https://www.orchome.com/8173 ) 博客，结果依然配置失败。核心原因是配置的版本不正确
 
-我当前使用的是 debian 是 10.13 版本，需要根据 [debian镜像_debian下载地址_debian安装教程-阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/debian ) 教程文档，更新对应的 `debian 10.x (buster)` 的配置，即如下内容
+我当前使用的是 debian 是 10.13 版本，需要根据 [腾讯云 Debian 源帮助文档](https://mirrors.cloud.tencent.com/help/debian.html) 教程文档，更新对应的 `debian 10.x (buster)` 的配置，即如下内容
 
 ```
 debian 10.x (buster)
 
 编辑/etc/apt/sources.list文件(需要使用sudo), 在文件最前面添加以下条目(操作前请做好相应备份)
 
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释。debian10 已移入 archive 源，配置方式如下（各仓库按需使用）：
+
+deb http://mirrors.tencent.com/debian-archive/debian buster main contrib non-free
+# deb-src http://mirrors.tencent.com/debian-archive/debian buster main contrib non-free
+deb http://mirrors.tencent.com/debian-archive/debian buster-updates main contrib non-free
+# deb-src http://mirrors.tencent.com/debian-archive/debian buster-updates main contrib non-free
+deb http://mirrors.tencent.com/debian-archive/debian-security buster/updates main contrib non-free
+
+# deb-src http://mirrors.tencent.com/debian-archive/debian-security buster/updates main contrib non-free
+#deb http://mirrors.tencent.com/debian-archive/debian buster-backports main contrib non-free
+# deb-src http://mirrors.tencent.com/debian-archive/debian buster-backports main contrib non-free
+#deb http://mirrors.tencent.com/debian-archive/debian buster-proposed-updates main contrib non-free
+# deb-src http://mirrors.tencent.com/debian-archive/debian buster-proposed-updates main contrib non-free
+```
+
+<!-- 
 deb https://mirrors.aliyun.com/debian/ buster main non-free contrib
 deb-src https://mirrors.aliyun.com/debian/ buster main non-free contrib
 deb https://mirrors.aliyun.com/debian-security buster/updates main
 deb-src https://mirrors.aliyun.com/debian-security buster/updates main
 deb https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
 deb-src https://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
-```
+
+Err:4 http://mirrors.aliyun.com/debian buster Release
+  404  Not Found [IP: 119.188.109.20 80]
+Err:5 http://mirrors.aliyun.com/debian-security buster/updates Release
+  404  Not Found [IP: 119.188.109.20 80]
+Err:6 http://mirrors.aliyun.com/debian buster-updates Release
+  404  Not Found [IP: 119.188.109.20 80]
+ -->
 
 我是如何知道我当前的 debian 版本的？我通过运行镜像，输入 `cat /etc/debian_version` 命令获取到版本
+
+注：在 2025.07.30 之前，我使用的是阿里云的镜像源，但在今天，我发现拉取失败，提示 `Err:4 http://mirrors.aliyun.com/debian buster Release 404  Not Found [IP: 119.188.109.20 80]` 错误。重新阅读文档，发现阿里云让 debian 10 使用 `http://mirrors.cloud.aliyuncs.com/debian-archive/debian` 路径。但实际上发现连接将会失败，详细请参阅 [【云安全中心】Linux 更新软件-域名解析失败-阿里云开发者社区](https://developer.aliyun.com/article/767805 ) 文档。于是就不如换成使用腾讯的源
 
 ### No system certificates available
 

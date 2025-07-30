@@ -269,3 +269,14 @@ git pull origin 8bbf489bc158921db69b3dc1dae38affb696565f
 获取代码之后，进入 Workbench/WherurgurhemBahegargaw 文件夹，即可获取到源代码
 
 更多 dotnet 基础知识相关博客，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+---
+
+如果只是简单的基础类型，期望转换为二进制 byte 数组表示，可以尝试零分配的写法，完全在栈上分配，无 GC 压力。大概写法示例如下，假定有 `ushort foo` 变量，期望将其转换为 `Span<byte>` 对象
+
+```csharp
+Span<byte> byteBuffer = stackalloc byte[sizeof(ushort)];
+BitConverter.TryWriteBytes(byteBuffer, (ushort) foo);
+```
+
+以上的代码是完全安全的代码，不需要接触指针，也不需要开启不安全开关
