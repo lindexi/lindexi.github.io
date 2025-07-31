@@ -3,6 +3,8 @@
 故事的背景是我尝试在纯净的 Debian docker 设备上，使用 Oxage.Wmf 解析转换 WMF 图片，在此过程中我需要使用 SkiaSharp 渲染出字体，一切在 Windows 上跑得好好的，结果在 Linux 上就渲染出方框，无法使用 Symbol 字体渲染出正确的文本
 
 <!--more-->
+<!-- CreateTime:2025/07/31 07:05:44 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
