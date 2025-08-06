@@ -15,12 +15,12 @@ category:
 如下图所示，是我绘制的示意图
 
 <!-- ![](image/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202412/1080237-20241222070253115-1937096603.png)
+![](http://cdn.lindexi.site/lindexi%2F20241221100406783.jpg)
 
 通过以上示意图再配合咱小学学到的四线三格知识，大概就可以明白各个属性的含义了。基线是排版里面一个重要的概念，基线（Baseline）是字母（拉丁字母、希腊字母、西里尔字母）放置的水平线。排版里面对齐基线非常重要
 
 <!-- ![](image/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用1.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202412/1080237-20241222070253754-17859207.png)
+![](http://cdn.lindexi.site/lindexi%2F20241221107474814.jpg)
 
 在各个文本、字体渲染引擎里面，都会将基线当成 0 点。如果能够理解这一点，则能够更好地接受 Top 和 Ascent 等属性都是负值。如示意图所示，可见 Top 和 Ascent 都在基线上方。按照图形库的约定，坐标系采用左上角为 （0,0） 点，且 Y 轴是从上到下的。这就意味着越靠下的 Y 值越大，而 Top 和 Ascent 都在基线上方，即从坐标系的角度理解，可知 Top 和 Ascent 的 Y 轴坐标比 Baseline 小，于是相对于 Baseline 来说，自然 Top 和 Ascent 等属性是负值
 
@@ -60,7 +60,7 @@ category:
 此时可见文本是绘制在蓝色线上的，且是基线部分绘制对齐蓝线，运行之后的界面效果大概如下
 
 <!-- ![](image/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用/dotnet 简单聊聊 Skia 里的 SKFontMetrics 的各项属性作用2.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202412/1080237-20241222070254411-1715836722.png)
+![](http://cdn.lindexi.site/lindexi%2F2024122110963978.jpg)
 
 在 Skia 里面计算出 baseline 基线的方法是通过 `Ascent` 属性计算出来的，在 Skia 里面取 Ascent 的绝对值就是 baseline 基线的值
 

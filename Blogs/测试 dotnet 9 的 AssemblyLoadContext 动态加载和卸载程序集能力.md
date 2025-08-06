@@ -170,7 +170,7 @@ for (int i = 0; t.IsAlive; i++)
 预期在循环的过程中，可以在调试下的 VisualStudio 输出窗口里面看到程序集卸载的输出信息。如果没能看到输出的信息，则可能是输出窗口里面没有勾选消息的输出。右击输出窗口，全部消息都勾选，如下图所示
 
 <!-- ![](image/测试 dotnet 9 的 AssemblyLoadContext 动态加载和卸载程序集能力/测试 dotnet 9 的 AssemblyLoadContext 动态加载和卸载程序集能力0.png) -->
-![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250710071211953-1576141862.png)
+![](http://cdn.lindexi.site/lindexi-202579204517600.jpg)
 
 完成循环之后，再等待一下，即可删除文件了，代码如下
 

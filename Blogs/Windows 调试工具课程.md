@@ -17,47 +17,47 @@ category:
 **注：** 如果你看不到图片，请确保了允许 http 图片内容（Make sure enable `Insecure origins treated as secure` for my blog）
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212124327-685512585.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919842595851.jpg)
 
 本次课程里面核心的内容是调试工具，调试工具是我们在调试软件的时候的利器，通过调试工具我们可以找到软件的问题，解决软件的问题
 
 <!-- 今天来讲一个调试故事，故事是从用户反馈软件用不了的问题开始 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程1.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212125013-1954873000.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919843463623.jpg)
 
 本次的课程的开始我来和大家讲一个调试故事，这个故事是从用户反馈软件用不了的问题开始的
 
 <!-- 需求分析 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程2.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212125507-327992471.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919844179826.jpg)
 
 用户说软件用不了，那可能会是什么问题呢？用户不是专业的开发人员，他们不知道如何准确的表述问题
 
 <!-- 调查思路 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程4.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212125876-1784347359.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919845292516.jpg)
 
 学过软件工程的同学应该有不少，软件工程里面应该会有提到，开发的第一步也是非常关键的一步就是需求分析。当收到用户反馈说软件用不了时，用户在说什么呢？是不是可能是软件崩溃了？还是软件无法启动？还是其他的问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程5.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212126180-76267290.png)
+![](http://cdn.lindexi.site/lindexi%2F202491984546192.jpg)
 
 遇到用户说软件用不了的时候，咱可以有哪些入手点呢？我的调查思路是分为两个大的方向。第一个方向是从当下的情况入手。如果当下已经没有了现场了，则可以考虑第二个方向，复现（重现）问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程6.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212126512-2024275190.png)
+![](http://cdn.lindexi.site/lindexi%2F202491984625143.jpg)
 
 从第一个方向入手时，可以先考虑从用户的设备上寻找痕迹。接下来我将和大家聊聊如何开始从用户的设备上寻找痕迹。当然了，如果这个用户是咱的测试人员或者是咱的同事，那寻找痕迹这一步就更有价值了
 
 <!-- Windows 是咱的好朋友 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程3.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212126889-800100683.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919844397864.jpg)
 
 在用户设备上寻找痕迹时，别忘了 Windows 是咱的好朋友。Windows 提供了很多工具，可以帮助我们找到问题的原因。接下来我将和大家介绍一些 Windows 上自带的常用的调试工具
 
 <!-- 寻找痕迹-事件查看器 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程7.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212127261-991425937.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919846288825.jpg)
 
 第一站就是事件查看器。可以先假设咱可能遇到的是软件启动即崩溃的问题。在不远程用户的情况下，可以先请用户发送系统事件日志或截图过来看看。事件查看器作为第一站的原因是可不发起远程，直接请用户截图或发送日志过来。相对来说对开发者的工作成本较低
 
@@ -83,7 +83,7 @@ category:
 
 <!-- 举个栗子 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程8.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212127589-1034949391.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919846521393.jpg)
 
 细心的伙伴也许一眼就看出来问题了，出现问题的是 MSVCR100.dll 模块，然而这个模块路径居然是在一个不认识的，名为 PowerShadow 的软件的目录下。这时候就可以大概确定问题了，这是被投毒了
 
@@ -93,14 +93,14 @@ category:
 
 <!-- 事件查看器 - 日常不工作 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程9.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212127907-1595049296.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919847156085.jpg)
 
 可惜的是在很多用户的设备上，事件查看器日常不工作。没关系，能从事件查看器找到额外信息，就是赚到了
 
 如果事件查看器找不到或不能用？咱还有其他很多工具可以用
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程10.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212128269-505031045.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919847302677.jpg)
 
 寻找痕迹的时候，另一个常用的好工具就是任务管理器。任务管理器是 Windows 自带的一个工具，可以帮助我们了解到非常多的信息
 
@@ -109,19 +109,19 @@ category:
 无论是何种情况，都可以试试捞一个 DUMP 回来调试看看。当然了，对于软件崩掉的情况，先尝试一下是不是能启动起来，拼手的速度快速捞一个 DUMP 回来，如果不能，那后文还会和大家介绍其他工具来辅助捞 DUMP 文件
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程11.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212128628-648376072.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919847441750.jpg)
 
 先回顾一下，咱的调查思路一开始就是尝试寻找痕迹。寻找痕迹的时候借助 Windows 里面提供的好用的工具，这里重点介绍的是事件查看器和任务管理器。通过事件查看器可以快速的了解到软件崩溃的原因，通过任务管理器可以了解到软件的运行情况
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程12.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212128933-49359190.png)
+![](http://cdn.lindexi.site/lindexi%2F20249198480955.jpg)
 
 在通过自带的工具没有明确收获的情况下，则尝试捞一个 DUMP 回来开发机器上进行进一步分析
 
 本课程这里提到的 DUMP 文件是指 Windows 下的内存转储文件，是一个二进制文件，简单用人话说就是将进程的内存内容保存到文件里面。通过 DUMP 文件可以有效还原出此时的进程的内存状态和内存里面的内容，可以用于进一步的分析。当用户环境里面没有带开发工具时，捞一个 DUMP 文件回来，可以帮助我们在开发机器上进行进一步的分析。捞 DUMP 分析的过程，相当于给进程做了一个快照，然后将其放在开发机器上进行进一步的分析
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程13.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072711824-1176521438.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919193513102.jpg)
 
 假设进程还在的话，那最简单的捞 DUMP 方式就是通过任务管理器右键选择创建内存转储文件了。对应的英文系统是 Create memory dump file 菜单项
 
@@ -130,34 +130,34 @@ category:
 正确的做法应该是使用 `C:\Windows\SysWOW64\Taskmgr.exe` 的任务管理器去捞 DUMP 文件
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程14.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212129671-1355301177.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919848326712.jpg)
 
 现在假定捞到了 DUMP 文件了，那接下来的步骤就是如何分析 DUMP 文件了。当然了，前置步骤就是如何将 DUMP 文件传回到自己的开发机器上，这里有一个小妙招就是将这个 DUMP 压缩一下。由于 DUMP 文件是内存转储文件，大部分都是全零的内容，压缩率非常高。如果需要通过网络等方式传输，那压缩一下再传输会快很多
 
 <!-- 如何分析 DUMP 文件 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程15.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212129981-1415639483.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919848549055.jpg)
 
 分析 DUMP 的工具有很多，我着重要和大家介绍的是太阳系最强 IDE —— VisualStudio。VisualStudio 已经是一个成熟的 IDE 了，只需将 DUMP 拖进去就可以了，聪明的 VisualStudio 可以自动帮咱进行分析
 
 <!-- 将 DUMP 拖入到 VisualStudio 的界面 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程16.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212130314-1652877248.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919849116862.jpg)
 
 一般而言，将 DUMP 拖入到 Visual Studio 里面，接着点击混合调试按钮即可。混合调试是使用 托管 调试和 本机 调试的组合。托管调试是指调试 .NET 程序，本机调试是指调试其他非 .NET 系的程序。混合调试是指同时调试托管和本机代码，因为一般而言 .NET 系的应用要在托管层崩溃是有点难度的，除非开发者自己比较缺乏处理。然而本机代码，如某些使用 C 、汇编、C++ 编写的程序，那就容易崩溃了。混合调试可以同时调试这两种代码。即使进程完全不是 .NET 程序，也可以使用混合调试来调试
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程97.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072712396-397855847.png)
+![](http://cdn.lindexi.site/lindexi%2F20249191945597805.jpg)
 
 进入混合调试之后，需要等待 Visual Studio 自动分析。如果是第一次调试 DUMP 文件的，可能会在下载符号这一步卡住一会。大家可以出去喝个茶，等待一下，再回来看看。实在等不急了，那就点击取消符号加载再继续吧
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程18.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212130932-163926869.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919849549120.jpg)
 
 好的，现在咱的进度就是在用户侧发现了问题，且不能通过事件查看器等结束战斗。将用户的 DUMP 文件捞回来，通过 Visual Studio 进行分析。分析的方法就是将 DUMP 文件拖入 Visual Studio 里面，然后点击混合调试按钮。等待 Visual Studio 自动分析，即可看到分析结果
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程19.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212131260-773257782.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985074456.jpg)
 
 那聪明的 Visual Studio 会帮咱分析出什么内容呢？如何看 Visual Studio 的分析结果呢？常见的套路就是关注 Visual Studio 以下三个方面内容
 
@@ -166,18 +166,18 @@ category:
 - 局部变量
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程20.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212131597-1411968254.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919850225309.jpg)
 
 先来和大家介绍一下调用堆栈。调用堆栈是个好东西，调用堆栈是一个非常重要的内容，可以帮助我们了解到程序是如何运行的。通过调用堆栈可以看到程序是如何运行的，是从哪个函数开始的，是如何调用的，是如何返回的。默认的 Visual Studio 调试布局里面，可以快速看到调用堆栈窗格
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程21.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212131966-363653243.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919850346537.jpg)
 
 调用堆栈可以如何看？调用堆栈可以和着之前在用户端任务管理器所见内容进行一起分析。如在任务管理器看不见进程，即对应进程崩了的问题，可以通过调用堆栈尝试看到是谁带崩的，崩之前调用的是哪个函数。如果是在任务管理器能看到进程，但是 CPU 使用率不动，那可能是死锁问题，可以通过调用堆栈看到是哪个函数卡住了主线程或进入锁。如果是 CPU 使用率爆高，那可能是死循环问题，可以通过调用堆栈看到是哪个函数跑满了线程
 
 <!-- 堆栈是个好东西 谁带崩的 - 任务管理器已看不到进程 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程22.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212132300-1211488616.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919850513991.jpg)
 
 举个真实的例子，以下就是我从用户端捞回来的一个 DUMP 文件。通过 Visual Studio 分析，崩溃之前的调用堆栈如下
 
@@ -210,75 +210,75 @@ category:
 讲完了谁带崩的问题，接下来再看另一个案例。对应 CPU 不动的问题，如下图所示的调用堆栈
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程17.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072712723-587901283.png)
+![](http://cdn.lindexi.site/lindexi%2F20249191958274476.jpg)
 
 大家猜猜上面堆栈告诉咱什么问题
 
 <!-- 堆栈是个好东西 谁卡住了我的主线程 - CPU 不动 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程23.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212133052-1614464860.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985113140.jpg)
 
 通过以上的堆栈可以知道进入了锁。此时的常见套路就是从上到下找找，找第一个咱自己程序集的调用函数，如这里就找到了是在 lindexi.dll 里面的方法。可以知道的是这个方法有逻辑在等待锁，且这个锁就不返回。此时配合代码食用更佳。咱这里能够知道进程卡住的原因是因为等待锁，且这个锁不返回，而至于这个锁在业务上是什么作用就需要咱进一步配合代码进行分析了
 
 <!-- 堆栈是个好东西 谁跑满了线程 - CPU 爆高 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程24.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212133418-537799999.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919851324111.jpg)
 
 再来看看对应 CPU 爆高的一个案例，此时堆栈里面的信息可以告诉咱，现在正在跑的方法是哪些。有可能就是当前的调用堆栈的顶部的几个方法有逻辑跑满了线程了。同样，此时配合代码食用更佳
 
 但有可能此时面对的情况是没有代码。如使用的是第三方库等，此时靠堆栈信息是不够的。先让大家思考这个问题，如果此时没有代码还可以如何进一步分析？我将在后文和大家介绍如何通过三板斧来进一步分析
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程25.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212133751-1183240821.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919851455017.jpg)
 
 回顾一下，这就是咱拖入 DUMP 文件之后，依靠 Visual Studio 里面的调用堆栈进行问题分析的常见三个案例。对应软件崩溃的问题，可以通过调用堆栈看到是谁带崩的。对应 CPU 不动的问题，可以通过调用堆栈看到是谁卡住了主线程。对应 CPU 爆高的问题，可以通过调用堆栈看到是谁跑满了线程
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程26.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212134048-1804481098.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919851592025.jpg)
 
 但是仅靠调用堆栈可能还是不够的，有时候需要更多的信息。接下来我将和大家介绍如何通过“三板斧”来进一步分析
 
 这里介绍的“三板斧”分别是寄存器、反汇编、内存这三个方面的工具。通过这三个方面的工具可以帮助我们进一步的分析问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程27.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212134341-745442449.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919852129168.jpg)
 
 需要说明的是用到这三个工具时仅仅只是在咱有需要了解更多状态信息的时候。而且通过这三个工具也不一定能够准确了解到问题的原因。这三个工具的使用本身不难，但是其难点确是这几个工具所见内容的背后大家关于程序本身的理解以及软件运行机制的了解。如果对于软件运行机制不了解，那这三个工具所见内容可能会让人难以理解，或者是调查方向跑偏
 
 <!-- 这个方法有逻辑跑满了，跑了什么？ -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程28.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212134667-900369249.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919852309943.jpg)
 
 依然使用刚才的例子，当看到 CPU 爆高的时候，通过调用堆栈可以看到是哪个方法跑满了线程。但是这个方法逻辑跑满了，其原因是什么呢？调用堆栈可无法回答此问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程29.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072713068-183593034.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919201056644.jpg)
 
 试试先在 Visual Studio 里面打开内存、寄存器、反汇编窗格。这三个工具可以帮助我们进一步分析问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程30.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212135543-1509223177.png)
+![](http://cdn.lindexi.site/lindexi%2F20249198538404.jpg)
 
 打开之后的 Visual Studio 的界面布局大概如上图所示
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程31.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072713556-156661807.png)
+![](http://cdn.lindexi.site/lindexi%2F20249192012578371.jpg)
 
 拿本课程的 CPU 爆高的例子，先通过反汇编发现了可能存在的问题，如想看看 rcx 寄存器里面存放了什么。通过寄存器窗格可以看到 rcx 寄存器里面存放了什么内容。通过内存窗格可以看到这个地址里面存放了什么内容。刚好就看到了对应的内存里面存放了一段逗比代码
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程32.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212136332-796516595.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919853377084.jpg)
 
 使用 “三板斧” 本身的难度不大，但是其难点在于其背后的知识。如汇编知识，寄存器的机制，以及软件本身的运行机制。这部分知识远远超过了本课程能介绍的范围，需要大家自行学习，但由于这部分知识的学习成本较高，所以在实际工作中，这部分知识可能并不是必须的。我只敢推荐大家在有余力的情况下进行学习，如果平时工作已经很忙了学不过来了，那这部分知识还可以先放着。但是如果能够掌握这部分知识，那在调试问题时会有所帮助
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程33.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212136642-2010866903.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919853515312.jpg)
 
 继续和大家介绍 Visual Studio 的另一个调试工具——局部变量。局部变量也是个好东西，可以帮助我们了解到程序运行时的状态。通过局部变量可以看到程序运行时的变量的值，可以帮助我们了解到程序运行时的状态
 
 <!-- 局部变量也是好东西 - 错误码含义哪里找 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程34.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212136970-580590729.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919854177713.jpg)
 
 如看到了错误之前的局部变量有一个名为 `lastErrorCode` 的变量，也许可以通过这个变量的值来了解到错误的原因。但是这个错误码是什么意思呢？这个错误码的含义在哪里找呢？咱可以试试 error 这个工具，这个工具可以自动帮助咱找到可能的错误码的含义。这是工具是微软整理的，绝大部分调用系统层的组件所见的错误码都可以在这里找到
 
@@ -287,18 +287,18 @@ category:
 如在这里咱可以看到的错误信息是文件或文件夹名错误，根据咱的业务逻辑，可能是文件名错误导致的问题。那接下来的调查方向就是看看为什么出现错误的文件名了，这时候也许一看代码就理解了
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程36.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212137627-1993797500.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985518809.jpg)
 
 再举另一个真实的例子，如看到的是如上图的异常导致的崩溃。根据咱通过搜索引擎了解到的知识，这个 WindowsCodecs.dll 是 Windows 系统的 WIC 多媒体解码层。可能此时遇到的问题和图片等多媒体的编解码有关
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程35.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072714008-1397490605.png)
+![](http://cdn.lindexi.site/lindexi%2F20249192029147352.jpg)
 
 刚好在本例子里面，通过局部变量看到了出问题的图片的文件地址，此时的调查就更加有方向了。除了可能存在的 WIC 层的问题外，还可以是图片文件本身的问题。如图片文件投毒等问题
 
 <!-- 图片/音视频投了什么毒？延伸一下 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程37.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212138332-1529643694.png)
+![](http://cdn.lindexi.site/lindexi%2F20249198552013.jpg)
 
 延伸一下，如何了解图片、音视频等文件是否被投毒了？这里推荐一个工具，通过 MediaInfo 工具可以帮助咱看到文件的许多信息
 
@@ -308,14 +308,14 @@ MediaInfo 工具下载地址： <https://mediaarea.net/en/MediaInfo/Download>
 
 <!-- 好像… 还是有些问题调试不出来 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程38.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212138665-738214419.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985534673.jpg)
 
 好像… 还是有些问题调试不出来
 
 太阳系最强 IDE 也顶不住呀
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程39.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212138977-81342587.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919855526129.jpg)
 
 那就试试上接近能调试一切的 WinDbg 吧
 
@@ -324,7 +324,7 @@ MediaInfo 工具下载地址： <https://mediaarea.net/en/MediaInfo/Download>
 在这里我告诉大家一个非常简单的方法，让大家瞬间就能学会上手使用 WinDbg 工具调试问题。方法就是请一个熟悉 WinDbg 的伙伴，让他帮你调试，找到一个工具人帮你使用 WinDbg 调试问题是最快能学会使用 WinDbg 的方法
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程40.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212139314-2090270082.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985665115.jpg)
 
 回顾一下，以上咱就聊了在用户端发现问题，先尝试使用 Windows 自带工具快速进行定位问题。以及捞到 DUMP 文件之后，如何在开发机器上通过 Visual Studio 进行进一步分析。分析的方法就是将 DUMP 文件拖入 Visual Studio 里面，然后点击混合调试按钮。等待 Visual Studio 自动分析，即可看到分析结果。分析的重点是调用堆栈、三板斧、局部变量。通过这三个方面的工具可以帮助我们进一步的分析问题
 
@@ -333,55 +333,55 @@ MediaInfo 工具下载地址： <https://mediaarea.net/en/MediaInfo/Download>
 这就是第一个大方向的内容
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程41.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212139617-1448719184.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919856197861.jpg)
 
 第二个大方向就是事后现场的复现问题。什么时候需要复现问题？比如最简单来说就是软件启动即崩溃，完全来不及打开任务管理器捞 DUMP 文件。这时候就需要复现问题了，通过复现问题可以帮助我们更好的定位问题
 
 复现问题时也不是只是简单重复跑程序，而是可以通过更多的工具辅助来在复现问题时更好的定位问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程42.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212139911-662429105.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919856333791.jpg)
 
 首要介绍的就是 ProcDump 工具
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程43.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212140241-1595784856.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919856493397.jpg)
 
 当使用任务管理器捞不到 DUMP 或不好捞 DUMP 时，使用 ProcDump 工具能够更好的帮助我们捞 DUMP 文件。ProcDump 工具是 Sysinternals 的工具，下载地址是： <https://learn.microsoft.com/zh-cn/sysinternals/downloads/procdump>
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程44.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212140593-57843880.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985745255.jpg)
 
 为什么说有时候不好使用任务管理器捞 DUMP 呢？因为现实往往很复杂。除了闪崩，软件启动即崩溃导致的手速不够快，捞不到 DUMP 文件之外，还有其他很多问题。比如软件就是处于似崩未崩的状态，期望抓到某个时机的状态，如软件一定会在某次 CPU 爆高之后不能符合预期工作，然而 CPU 爆高的时间非常短，靠人类去看去抓是有些废程序猿的。比如软件半夜崩溃，只有在午夜12点才会崩溃，这时候人类可能已经睡着了，即使没睡着，可能错过了这个时间点就要等明天的午夜12点了。再比如是非必现的问题，需要压测才能复现，期望自动化收集，否则可能要跑几千次才能复现一次，靠人类手工一次次一个个去捞的工作量有些大
 
 <!-- 如何在程序万种死法中有效的生成 Dump 文件 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程45.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212140930-300117724.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919857308659.jpg)
 
 通过 ProcDump 可以在程序万种死法中有效的生成 Dump 文件，只需使用好 ProcDump 的参数。具体参数作用可以参考 [微软官方文档](https://learn.microsoft.com/zh-cn/sysinternals/downloads/procdump) 和 [如何在 NET 程序万种死法中有效的生成 Dump (上) - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/14661031.html )
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程46.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212141286-1696604879.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919857465731.jpg)
 
 这是一个小游戏，让大家连连线，看看在什么情况下应该使用什么方法
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程47.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212141602-1614870991.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985801006.jpg)
 
 在调查思路这里，复现问题时经常伴随使用 ProcDump 工具，因为 ProcDump 工具可以在非常多的情况下帮助我们捞 DUMP 文件
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程48.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212141897-1051229366.png)
+![](http://cdn.lindexi.site/lindexi%2F202491985814719.jpg)
 
 复现问题时，不仅只有 ProcDump 工具。还有可能面对的是事后现场的情况，此时需要使用更多的工具来辅助定位问题。以及当没有调查思路时，可以试试常见的问题的探索帮助寻找思路
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程49.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212142275-644905007.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919858276197.jpg)
 
 来和大家讲讲事后现场的调查
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程50.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212142609-982428534.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919858402700.jpg)
 
 什么是事后现场？事后现场问题在这里一般说的是当前的现场或能复现所抓取到的现场已经不是问题发生的现场，而是发生问题之后的现场了
 
@@ -393,7 +393,7 @@ MediaInfo 工具下载地址： <https://mediaarea.net/en/MediaInfo/Download>
 
 <!-- 事后现场？团伙作案？ -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程51.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072714371-628334256.png)
+![](http://cdn.lindexi.site/lindexi%2F202491920533676.jpg)
 
 面对事后现场和团伙作案等问题，采用微软极品工具箱的 Process Monitor 工具，配合 DebugView 工具通常都能有不错的收获
 
@@ -407,7 +407,7 @@ DebugView 工具下载地址： <https://learn.microsoft.com/en-us/sysinternals/
 
 <!-- 举个真实栗子 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程52.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212143291-237676883.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919859209122.jpg)
 
 举个真实栗子来和大家演示多个工具之间的配合使用来调用一个有趣且复杂的问题
 
@@ -416,31 +416,31 @@ DebugView 工具下载地址： <https://learn.microsoft.com/en-us/sysinternals/
 这个问题复杂之处在于 explorer 不是咱的，咱也不熟悉，也不知道是什么导致的。而且 explorer 太庞大了，捞到 DUMP 分析压力过大，耗时耗力。需要使用更多的工具辅助进一步分析问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程53.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212143713-1757448308.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919859335765.jpg)
 
 此时通过 Process Monitor 工具抓取 explorer 进程信息，发现了如上图的有趣的内容。里面很受我关注的就是存在了进程退出
 
 通过网上四处搜发现 explorer 是一个多进程软件，进程的退出和迷之闪黑可能有所影响。既然进程退出了，那就试试上 ProcDump 工具在进程之前之后抓一个 DUMP 文件回来分析
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程54.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212144308-1665626667.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919859437965.jpg)
 
 由于 explorer 十分庞大，且咱也不熟悉 explorer 的代码，来回抓了几次 DUMP 分析都没有什么收获。直到某次抓取到了一个有趣的 DUMP 文件，通过这个 DUMP 文件发现了在进程退出之前的调用堆栈里面包含了 Shell32 的一些调用
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程55.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212144899-410521410.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919859557372.jpg)
 
 再根据前面的 Process Monitor 工具抓到的在进程退出之前碰的是 Realtek Bluetooth 蓝牙模块，于是重心就在 Shell32 和蓝牙一起组合上面
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程56.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212145404-872665331.png)
+![](http://cdn.lindexi.site/lindexi%2F20249199099454.jpg)
 
 既然大概定位到这里，那就继续上 ShellView 工具。通过 ShellView 工具进行大量的 Shell32 组件的禁用，我的做法大概就是看哪个不开森就禁用哪个，进行二分法的禁用，最终发现了是 Realtek Bluetooth 蓝牙模块导致的问题
 
 二分法的禁用就是先一口气禁用一半的组件，看看问题是否解决。如果解决了，那就说明问题在这一半里面。如果没有解决，那就说明问题在另一半里面。然后再在这一半里面继续二分禁用，直到找到问题所在
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程57.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212145767-1996264745.png)
+![](http://cdn.lindexi.site/lindexi%2F202491990244692.jpg)
 
 经过以上的调查工具可以了解到是蓝牙相关模块的问题，集中火力找到明确的调试方向，很快就找到是蓝牙驱动的问题
 
@@ -448,29 +448,29 @@ DebugView 工具下载地址： <https://learn.microsoft.com/en-us/sysinternals/
 
 <!-- 事后现场 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程58.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212146073-350127677.png)
+![](http://cdn.lindexi.site/lindexi%2F202491994381765.jpg)
 
 以上的案例里面 Process Monitor 立了首功，通过 Process Monitor 工具抓取了 explorer 进程的信息，发现了进程退出的信息，以及退出之前访问了蓝牙相关模块，最终通过 ShellView 工具禁用了蓝牙模块定位到了具体模块导致的问题。在许多事后现场问题中，都会使用 Process Monitor 工具配合复现，尝试找到故障之前的事前发生了什么，了解故障之前的行为。进而可以缩小定位问题的方向
 
 Process Monitor 工具适用于辅助调试不熟悉的应用、复杂的情况，通过了解其行为来辅助缩小定位范围，提高调试效率。同时 Process Monitor 工具可以一口气抓多个进程的信息，也常用于辅助定位进程们团伙作案问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程59.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212146401-1355596096.png)
+![](http://cdn.lindexi.site/lindexi%2F20249199458574.jpg)
 
 以上就是调查思路里面的第二大方向的事后现场的内容。其思想核心就是通过复现配合工具抓取现场信息，通过现场信息进一步分析问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程60.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240921072714724-748651581.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919213128726.jpg)
 
 有时候调查问题过程中没有头绪，没有思路。此时可以还可以试试一些常见问题的探索，尝试通过这些常用问题套路和经验找到入手点
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程61.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212147078-385837460.png)
+![](http://cdn.lindexi.site/lindexi%2F20249199688371.jpg)
 
 这些常见的工具可以帮助我们进行一些常见问题的排查。有时候开发任务紧张，没有充足的时间进行全面的调查，通过常用的套路也可以提高定位效率，不一定我们需要来一次全面的调查，有可能只通过现象和猜测，配合常用套路就能找到问题的原因
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程62.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212147426-1946306682.png)
+![](http://cdn.lindexi.site/lindexi%2F202491996191828.jpg)
 
 这些常用工具和套路被我成为更多的调试工具，分为以下多个方面：
 
@@ -483,12 +483,12 @@ Process Monitor 工具适用于辅助调试不熟悉的应用、复杂的情况�
 这些方面都可以作为常见问题的入手点探索方向
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程63.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212147744-2055029679.png)
+![](http://cdn.lindexi.site/lindexi%2F202491996414208.jpg)
 
 先来聊聊依赖缺失问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程64.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212148066-738517607.png)
+![](http://cdn.lindexi.site/lindexi%2F202491996542473.jpg)
 
 依赖缺失的表现行为很明显，一般就是程序猿常说的，“在我电脑上明明就是好的，为什么到你电脑上就不行了”这类的话，那就可以第一时间怀疑是依赖缺失问题。或者是软件无法启动，启动即崩溃，这类问题也可以怀疑是依赖缺失问题。或者是软件开始能跑，但是跑到某个模块就崩溃了，且很固定的到某个功能模块就崩溃，那此时也能怀疑是依赖缺失问题
 
@@ -496,7 +496,7 @@ Process Monitor 工具适用于辅助调试不熟悉的应用、复杂的情况�
 
 <!-- 找不到，找错 DLL -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程65.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212148426-1601106630.png)
+![](http://cdn.lindexi.site/lindexi%2F20249199783236.jpg)
 
 依赖缺失问题首推是采用 Dependencies 工具，使用这个工具可以帮助我们定位两种类型的问题：
 
@@ -506,12 +506,12 @@ Process Monitor 工具适用于辅助调试不熟悉的应用、复杂的情况�
 Dependencies 工具开源地址： <https://github.com/lucasg/Dependencies>
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程66.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212148783-1565752442.png)
+![](http://cdn.lindexi.site/lindexi%2F202491997303257.jpg)
 
 识别依赖缺失问题的方法就是将自己的应用拖入到 Dependencies 工具里面，然后看看是否有缺失依赖的提示。如上图所示，可以看到这个应用缺乏了一个名为 Lindexi.dll 的依赖。此时可以看看输出文件里面是否真的包含了这个依赖文件，如果没有，那就说明这个依赖确实是缺失的。如果有，那再看看这个依赖文件的二进制是否符合预期，如可能被修改或者下载不全等问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程67.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212149097-20043348.png)
+![](http://cdn.lindexi.site/lindexi%2F202491997422909.jpg)
 
 常用的依赖缺失调查方向套路是看看是否有 C++ 运行时系列的丢失。其中 C++ 运行时系列常见的就是 VC++ 的多个版本的分发库，或者是 VC++ 运行时，即 vcruntime140.dll 文件。以及 msvcp140.dll 文件缺失。其中重点需要说明的是，如果能看到有 vcruntime140d.dll 文件的依赖，那就证明开发侧存在问题，这里的 vcruntime140d.dll 的意思是 VC++ runtime 14.0 debug 版本的 dll 的意思。如果看到有这个 dll 的依赖，证明你的相关方提供给你的 C++ 库是使用 Debug 版本构建的，这是不能给到用户端的。最佳方法是重新让其构建一个 Release 版本的 DLL 给你。只有在实在没有办法的时候，才考虑在用户端配上开发环境
 
@@ -520,32 +520,32 @@ Dependencies 工具开源地址： <https://github.com/lucasg/Dependencies>
 最后一个就是看看是否有某些仅在开发机才有的负载，如我就喜欢引用一个名为 Lindexi.dll 的文件，这个依赖文件只在我的电脑上存在，用户设备上是绝对没有的，那自然在用户设备上跑不起来也就符合预期了
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程68.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212149428-1031748187.png)
+![](http://cdn.lindexi.site/lindexi%2F202491997541283.jpg)
 
 使用 Dependencies 工具除了找依赖缺失之外，还可以用来找到是否被投毒的问题。如上图所示，看大家是否能够快速看出来问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程69.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212149789-1092379737.png)
+![](http://cdn.lindexi.site/lindexi%2F20249199851991.jpg)
 
 是的，上图里面包含了一个名为 vcruntime140.dll 文件，包含这个文件是正常的，但是不正常的地方在于其路径。为什么 vcruntime140.dll 加载的居然是在 `C:\Program Files (x86)\Foo` 文件夹里，这就证明被投毒了。大家可以在工具里面看看有没有存在不熟悉或奇怪的路径，如果有，那就可能是投毒的问题？这个问题就需要进一步的调查了
 
 如我记录的 [影子系统让 C++ 程序无法运行](https://blog.lindexi.com/post/%E5%BD%B1%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%AE%A9-C++-%E7%A8%8B%E5%BA%8F%E6%97%A0%E6%B3%95%E8%BF%90%E8%A1%8C.html ) 这篇博客提到的就是非常标准的被投毒的问题，大家可以看到 MSVCR100.dll 加载的路径是在 `C:\Program Files\PowerShadow\App` 文件夹里面
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程70.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212150152-211506609.png)
+![](http://cdn.lindexi.site/lindexi%2F202491998185327.jpg)
 
 以上就是常用套路里面的调查依赖缺失问题，不仅仅可能是崩溃等问题，有时候软件运行功能不正常也可以看看是否有依赖缺失或被投毒的问题
 
 额外地，也可以使用 [sxstrace 工具](https://www.cnblogs.com/suv789/p/18173393) 辅助定位启动不了的问题。只是从直观程度上讲，采用 SxsTrace 工具需要去爬日志，不如 Dependencies 工具来得简单。但 [SxsTrace 工具](https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sxstrace) 能分析更多其他维度上的问题，如果 Dependencies 不能定位到问题，也好来试试系统自带的 [SxsTrace 工具](https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sxstrace) 进行分析
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程71.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212150472-696447212.png)
+![](http://cdn.lindexi.site/lindexi%2F202491998309059.jpg)
 
 继续看一下内存问题
 
 <!-- 任务管理器 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程72.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212150795-541591140.png)
+![](http://cdn.lindexi.site/lindexi%2F202491998508245.jpg)
 
 对 Windows 内存机制不了解的伙伴也许常常会拿任务管理器里面看到的内存数值当成衡量应用软件运行占用内存的标准。比如我说软件已经 OOM 了，但是对Windows 内存机制不了解的伙伴拿出任务管理器一看，发现应用软件才占用 300MB 内存而已，于是就完全不相信可能存在的 OOM 问题
 
@@ -570,7 +570,7 @@ VMMap 工具下载地址： <https://learn.microsoft.com/zh-cn/sysinternals/down
 这些时候，配合 ProcDump 一起食用效果更好。如果通过 VMMap 工具感觉到可能是内存问题，那此时通过 ProcDump 抓一个 DUMP 文件回来分析，可能会有更多的收获
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程73.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212151182-1424920000.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919995430.jpg)
 
 通过 VMMap 不仅可以查看应用软件真实内存是怎样，还可以在用户设备上进行简单的调试。如追踪软件启动，找到是哪个模块在申请内存。因为很有可能只有在某个用户的设备上才会存在问题，那在对应的用户的设备上跑 VMMap 寻找申请大量内存的模块是非常有帮助的
 
@@ -578,19 +578,19 @@ VMMap 工具下载地址： <https://learn.microsoft.com/zh-cn/sysinternals/down
 
 <!-- dotMemory -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程74.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212151546-504679949.png)
+![](http://cdn.lindexi.site/lindexi%2F202491999256398.jpg)
 
 当然了，对于 dotnet 系的应用来说，别忘了还有 dotMemory 这个好用的工具。这个工具既可以在用户设备上跑起来，抓取到应用软件运行内存的 dotnet 系信息，还可以对捞回来的 DUMP 文件进行分析。这个软件的交互做的非常好，有可能大家看界面就知道如何使用了
 
 通过 dotMemory 工具可以看到各个模块的内存申请情况，各个类型存在内存的数量，以及各个类型的引用情况。适合于寻找内存泄露问题以及通过内存情况反推出软件的代码运行逻辑
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程75.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212151880-682556657.png)
+![](http://cdn.lindexi.site/lindexi%2F202491999415134.jpg)
 
 在聊到内存 OOM 相关问题时，一个会被开发者忽略的点是可能遇到的是爆 GDI 对象的问题。试试打开任务管理器，在选择列里开启 GDI 对象列，看看进程占用的 GDI 对象有多少
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程76.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212152267-1955296085.png)
+![](http://cdn.lindexi.site/lindexi%2F202491999539041.jpg)
 
 许多的 GDI 对象所占用的内存都不计入到进程里面，这就导致了进程看起来没有使用多少内存，但是系统全局的内存却是不足了。或者是进程使用了大量的 GDI 对象，导致了许多 GDI 相关函数调用失败，而通过 LastErrorCode 获取到的错误被翻译为 OOM 相关错误，进而表现出 OOM 现象
 
@@ -605,45 +605,45 @@ GDIView 工具下载地址： <https://www.nirsoft.net/utils/gdi_handles.html>
 通过任务管理器看到我的师兄的程序的 GDI 对象十分多，再通过 GDIView 工具看到了大量的 Bitmap 对象，如此即可快速找到入手点。经过和师兄沟通发现可能是截图相关模块存在 GDI 对象泄露问题，反复复现和截图模块相关逻辑，看到任务管理器的 GDI 对象数量不断添加，就快速定位到了问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程77.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212152609-127320184.png)
+![](http://cdn.lindexi.site/lindexi%2F202491991048352.jpg)
 
 以上就是本课程介绍的 OOM 问题的常用调查套路和工具。使用 VMMap 工具了解真实的内存是怎样的，避免被任务管理器误导。可在用户设备上跑 VMMap 工具了解到是哪个模块申请了大量内存，以及是否存在内存碎片化问题。使用 dotMemory 工具了解到 dotnet 系的内存使用情况，以及可能存在的内存泄露问题。如果内存没有问题，那就多看一下 GDI 对象的使用量，使用 GDIView 工具了解到 GDI 对象的使用情况
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程78.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212152930-710750436.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919910142113.jpg)
 
 内存是一个复杂庞大的话题，本课程这里只和大家介绍了一些常见的简单情况，希望能给大家在没有调查思路的时候提供一些入手点
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程79.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212153238-1220936944.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919910262710.jpg)
 
 接下来来看看 Windows 系上特有的一个问题，注册表问题
 
 <!-- 注册表问题 -->
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程80.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212153743-24645475.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919910477886.jpg)
 
 注册表问题也是一个常被 Windows 开发新手忽略的问题。有些开发者有疑惑说，我的应用代码里面明明都没有碰到注册表，为什么还可能会有注册表相关问题。其实跑在 Windows 上的程序，无论如何都会碰到注册表的。从软件进程的启动开始就在碰注册表，后续的加载 COM 组件等，都会涉及到注册表。注册表问题可能会导致软件无法启动，启动即崩溃，启动后功能不正常等问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程81.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212154198-1428148565.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919910583214.jpg)
 
 注册表问题可能有些深奥，本课程这里只介绍一个简单的真实案例。我发现我的 Notepad 记事本软件启动就炸掉了，不知道为什么。我通过 Process Monitor 工具抓取时，发现了其注册表有以下有趣的行为。这里就是非常靠近软件进程退出的地方
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程82.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240924071141360-956570740.png)
+![](http://image.acmx.xyz/lindexi%2F20249202024222316.jpg)
 
 由于 Process Monitor 工具抓取注册表行为时非常刷屏，降低大家的难度，我将有问题的一行日志选择了出来，看看大家是否猜到问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程83.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212155136-1368557349.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919911229541.jpg)
 
 其实这个案例里面我的调查是靠经验的，这里刚好是我上回学习 COM 组件劫持时所投的毒。可以试试将注册表的各个访问项在搜索引擎里面搜索一下，看看是否有人说这个注册表项是有问题的。如果有，那就可以尝试根据网上提供的方法进一步定位问题
 
 以上案例的详细内容请参阅 [后门及持久化访问4----Com组件劫持 - 浅笑996 - 博客园](https://www.cnblogs.com/qianxiao996/p/13574568.html )
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程84.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212155496-1723270416.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919911351885.jpg)
 
 相信刚才通过 Process Monitor 工具大家也感受到了被注册表刷屏的恐惧。如果应用软件的表现行为是第一次能跑，第二次就不能跑，且可能是和注册表有关的时候。此时可以尝试一下 RegistryChangesView 和 whatchanged 工具，通过这些工具可以快速帮助大家找到从事前到事后注册表的变化情况，减少刷屏的影响，提升调查效率
 
@@ -652,29 +652,29 @@ RegistryChangesView 工具下载地址： <https://www.nirsoft.net/utils/registr
 whatchanged 工具下载地址： <https://www.majorgeeks.com/files/details/what_changed.html>
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程85.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212155844-800869023.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919911451278.jpg)
 
 通过 RegistryChangesView 和 whatchanged 工具配合找到注册表变更项，再通过 Process Monitor 工具进一步辅助定位，可以了解到是哪个进程改了注册表，改了什么内容以及在什么时候改的。这样就可以帮助大家更好找到问题的入手点
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程86.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212156167-1590642818.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919911563978.jpg)
 
 注册表相关问题如果深入了解还是非常有深度的，本课程这里只介绍了一个简单的案例。希望大家能够通过这个案例了解到注册表问题的存在，以及通过 Process Monitor 工具，RegistryChangesView 和 whatchanged 工具等工具帮助大家更好的调查注册表问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程87.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212156538-1528053562.png)
+![](http://cdn.lindexi.site/lindexi%2F202491991268901.jpg)
 
 接下来看看窗口相关模块的问题
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程88.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212156844-991967994.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919912181649.jpg)
 
 回到一开始的用户反馈的软件用不了的问题，经过咱的一番排查，发现了软件的进程没有崩溃，没有异常，没有依赖问题。捞一个 DUMP 回来也看不到问题，即无论是在 Visual Studio 里面分析还是在 WinDbg 里面分析都看不到问题。那此时就可以怀疑是窗口相关的问题了
 
 如上图所示，大家猜猜进程还在，但是用户打开的软件却啥都没有发生，可能会是什么问题？
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程89.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212157163-22367783.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919912292895.jpg)
 
 细心的伙伴也许一眼就看到了，这个窗口的 Top 在 -1000 坐标里面。这就有趣了，如果刚好用户的屏幕分辨率不够大，那这个窗口就会被放到屏幕外面去了。此时用户打开软件，软件进程还在，但是用户看不到软件的窗口，自然就以为软件打不开用不了
 
@@ -685,7 +685,7 @@ whatchanged 工具下载地址： <https://www.majorgeeks.com/files/details/what
 WindowDebugger 窗口调试神器开源地址： <https://github.com/kkwpsv/WindowDebugger>
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程90.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212157480-703735451.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919912468473.jpg)
 
 继续回到了用户反馈的问题的这个故事上，经过了鸡飞狗跳的调试，发现了窗口之所以非到 -1000 的坐标的原因是因为有业务逻辑写了有趣的代码，判断当窗口失去焦点的时候，将窗口坐标设置到了 -1000 的位置。于是故事里的开发工程师就很疑惑了，为什么用户双击这个软件的时候，还会有其他软件来抢窗口
 
@@ -698,7 +698,7 @@ WindowDebugger 窗口调试神器开源地址： <https://github.com/kkwpsv/Wind
 实时输出焦点窗口工具开源地址： <https://github.com/walterlv/Walterlv.ForegroundWindowMonitor>
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程91.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212157805-1621596135.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919912582544.jpg)
 
 用户报告的问题总不是只有一刀，故事里的开发工程师很开森卸掉了翻译工具之后，发现虽然自己的窗口起来了，能被看到了。但是似乎无法接收任何按键输入，十分奇怪
 
@@ -719,7 +719,7 @@ OpenArk64 工具开源地址： <https://github.com/BlackINT3/OpenArk>
 如果一个问题是纯软件层的问题，那调试难度可能就已经很高了。再加上可能存在的硬件相关的问题，那调试难度就更高了。这就是为什么开玩笑说故事里面的开发工程师要砸掉触摸屏幕的原因
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程92.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212158128-1253618214.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919913108638.jpg)
 
 以上就是本课程介绍的窗口系常用的工具，包括 WindowDebugger 窗口调试神器、Walterlv.ForegroundWindowMonitor 实时输出焦点窗口工具、KeyCastOW 键盘显示工具、OpenArk64 驱动级的键盘消息抓取工具
 
@@ -728,17 +728,17 @@ OpenArk64 工具开源地址： <https://github.com/BlackINT3/OpenArk>
 且在 Win32 非常复杂的窗口属性里面，多个不同的属性的组合以及窗口之间的关系组合，可能有很多都是网上难以搜到的特殊情况。通过 WindowDebugger 窗口调试神器辅助调试，尝试开关多个不同的属性，很多时候也可以减少问题的范围面，提升调查效率
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程93.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212158435-1595050941.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919913217451.jpg)
 
 常见问题除了这些之外，还有许多专项的问题。比如网络系问题、触摸系问题、音视频系问题、DPI和DWM相关问题、数据库相关问题等等。其他专项问题都有比较明确的特征，不会说需要探索一下摸索一下，有比较特征的问题可以直接使用专项工具进行调查。本课程就不在这里展开
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程94.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212158753-409067196.png)
+![](http://cdn.lindexi.site/lindexi%2F2024919919539190.jpg)
 
 以上就是本课程里面介绍的常用调查套路和工具。包括了从当下的现场出发，再到复现步骤过程中配合抓取更多信息的工具，最后到一些常见的问题的寻找入手点。但往往有很多现实遇到的问题都是十分复杂的，需要一步步进行调查，逐步深入，让我来和大家介绍一个我的终极方法
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程95.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212159093-326188144.png)
+![](http://cdn.lindexi.site/lindexi%2F202491992046928.jpg)
 
 小黄鸭调试法是终极方法，当自己完全没有思路的时候，不妨找只小黄鸭聊聊天。和小黄鸭说说自己所遇到的问题，问题的表现行为，以及用了哪些调试工具，这些调试工具的结果是如何的，自己有什么猜测。很多时候，当自己和小黄鸭说完之后，自己就会有新的想法，甚至直接就找到了问题的入手点
 
@@ -747,7 +747,7 @@ OpenArk64 工具开源地址： <https://github.com/BlackINT3/OpenArk>
 小黄鸭调试法是一个软件工程里面很有名的调试方法，详细请参阅 <https://zh.wikipedia.org/wiki/%E5%B0%8F%E9%BB%84%E9%B8%AD%E8%B0%83%E8%AF%95%E6%B3%95>
 
 <!-- ![](image/Windows 调试工具课程/Windows 调试工具课程96.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202409/1080237-20240919212159491-1324163964.png)
+![](http://cdn.lindexi.site/lindexi%2F202491992020611.jpg)
 
 以上就是本次课程的内容，希望大家能够通过这次课程了解到一些常用 Windows 调试工具的使用方法，以及了解到一些常用的调试套路。希望能在实际的软件开发调试过程中有所帮助
 

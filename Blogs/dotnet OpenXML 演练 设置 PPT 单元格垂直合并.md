@@ -12,7 +12,7 @@ category:
 一般在做 OpenXML 相关生成或处理任务的时候，都会预先做好模版的文件，如本文这里预先做好了 Test.pptx 文档
 
 <!-- ![](image/dotnet OpenXML 演练 设置 PPT 单元格垂直合并/dotnet OpenXML 演练 设置 PPT 单元格垂直合并0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202504/1080237-20250417072011270-345850379.png)
+![](http://cdn.lindexi.site/lindexi%2F20254161938171020.jpg)
 
 这份文档里面只包含了一个 a1b2 的表格，本文演练的需求就是将 a 和 1 所在的单元格进行垂直合并
 

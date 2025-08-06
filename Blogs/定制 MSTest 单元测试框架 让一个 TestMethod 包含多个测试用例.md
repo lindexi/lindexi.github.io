@@ -40,7 +40,7 @@ public sealed class Test1
 跑起来的效果如下图所示
 
 <!-- ![](image/定制 MSTest 单元测试框架 让一个 TestMethod 包含多个测试用例/定制 MSTest 单元测试框架 让一个 TestMethod 包含多个测试用例0.png) -->
-![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250720070825518-2096910795.png)
+![](http://cdn.lindexi.site/lindexi-20257191130355427.jpg)
 
 用这样的方式写可以减少单元测试方法的命名，尽量多用自然语言组织用例说明。我所在的团队现在非常多有单元测试的项目都采用 <https://github.com/dotnet-campus/CUnit> 这个库
 

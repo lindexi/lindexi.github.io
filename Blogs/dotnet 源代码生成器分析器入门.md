@@ -35,14 +35,14 @@ category:
 本文这里新建了一个名为 `DercelgefarKarhelchaye.Analyzer` 的控制台项目。也许细心的伙伴发现了这个项目使用了 `Analyzer` 作为后缀，这是因为在 dotnet 中源代码生成器和分析器是一体的，按照历史原因的惯性，依然将其命名为分析器项目。在 Visual Studio 2022 的每个项目依赖项里面，大家都会看到如下图的一个名为分析器的项，而没有专门一个名为源代码生成器的项，其原因也是如此
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门12.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155217110-1318759613.png)
+![](http://cdn.lindexi.site/lindexi%2F20253414882001.jpg)
 
 如果在这一步就开始卡住了也不用慌，本文在整个过程中都会给出示例代码。我整个代码仓库比较庞大，使用本文各个部分提供的拉取源代码的命令行代码，可以减少拉取的数据，提升拉取的速度，且能够确保切换到正确的 commit 代码
 
 创建之后，在 Visual Studio 的解决方案里的界面大概如下
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门7.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155217761-1455727772.png)
+![](http://cdn.lindexi.site/lindexi%2F2025228201392285.jpg)
 
 编辑名为 `DercelgefarKarhelchaye.Analyzer` 的控制台项目的 csproj 项目文件，将其 TargetFramework 降级到 netstandard2.0 版本，且按照 dotnet 的惯例，使用 NuGet 添加必要的组件。编辑之后的 csproj 项目文件的内容如下
 
@@ -75,7 +75,7 @@ category:
 通过以上的步骤也可以让大家看到，其实 dotnet 分析器项目也没什么特殊的，依然可以通过一个简单的控制台项目修改而来。其核心关键仅仅只是安装了 `Microsoft.CodeAnalysis.Analyzers` 和 `Microsoft.CodeAnalysis.CSharp` 两个组件而已
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门8.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155218110-444240520.png)
+![](http://cdn.lindexi.site/lindexi%2F20252282020203474.jpg)
 
 现在只是有了一个空的分析器项目，但是还不知道这个项目的效果。为了让分析器项目工作，那就需要有一个被分析的项目。为此咱就再次新建一个控制台项目，让这个控制台项目成为被分析项目
 
@@ -106,7 +106,7 @@ category:
 对于正常的项目引用来说，一旦存在项目引用，那被引用的项目的输出程序集就会被引用。此时项目上就可以使用被引用项目的公开类型，以及获取 NuGet 包依赖传递等。但是对于分析器项目来说，这些都是不应该的，正常就不能让项目引用分析器项目的输出程序集。这就是为什么会额外添加 `ReferenceOutputAssembly="false"` 配置的原因
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门9.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155218459-1556599867.png)
+![](http://cdn.lindexi.site/lindexi%2F20252282020588315.jpg)
 
 在这里，咱接触到了非常多次的 csproj 项目文件，如果大家对 csproj 项目文件格式感兴趣，请参阅 [理解 C# 项目 csproj 文件格式的本质和编译流程 - walterlv](https://blog.walterlv.com/post/understand-the-csproj )
 
@@ -343,7 +343,7 @@ var provider =
 尝试展开 Visual Studio 的 依赖项->分析器，如下图所示
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155218816-98817267.png)
+![](http://cdn.lindexi.site/lindexi%2F20252142036427475.jpg)
 
 可以看到生成的代码如下
 
@@ -865,7 +865,7 @@ public class IncrementalGeneratorTest
 尝试调试此单元测试代码，在语义判断处打上断点
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门1.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155219198-1718492481.png)
+![](http://cdn.lindexi.site/lindexi%2F2025224851237916.jpg)
 
 此时可见在语义判断层面上进入了 `if (!attributeDataArray.Any(t => t.AttributeClass?.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) == "global::Lindexi.FooAttribute"))` 判断分支，这就意味着前面的语法判断过程中是放过了 F3 类型这个情况，只有在语义过程中，获取其全名才拿到了真实的名为 `global::FooChunecilarkenaLibeewhemke.FooAttribute` 的全名，从而将其过滤掉。符合预期的就是只输出 F1 和 F2 类型，过滤掉 F3 类型。咱可以在单元测试里面，为生成的代码添加固定测试，确保在变更逻辑的时候，如果有生成代码逻辑变动可以进行拦截。如以下代码所示
 
@@ -938,10 +938,10 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 5. 选中“.NET Compiler Platform SDK”框。 将在可选组件最下面找到它
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门10.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250304070932963-1534877105.png)
+![](http://cdn.lindexi.site/lindexi%2F202533856536565.jpg)
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门11.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250304070933870-1489482949.png)
+![](http://cdn.lindexi.site/lindexi%2F20253385843486.jpg)
 
 依然是为了让大家方便获取正确的代码起见，我这里继续新建两个项目，分别是名为 `JehairqogefaKaiwuwhailallkihaiki.Analyzer` 的分析器项目和名为 `JehairqogefaKaiwuwhailallkihaiki` 的被分析的控制台项目
 
@@ -957,7 +957,7 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 分析器项目：
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门2.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155219508-1068897352.png)
+![](http://cdn.lindexi.site/lindexi%2F2025227854402566.jpg)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -979,7 +979,7 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 被分析的控制台项目：
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门3.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155219891-1274549666.png)
+![](http://cdn.lindexi.site/lindexi%2F2025227855225980.jpg)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -1005,7 +1005,7 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 在分析器项目上新建 `Properties\launchSettings.json` 调试启动配置文件。即在 Properties 文件夹里新建名为 `launchSettings.json` 的配置文件
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门4.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155220236-1467821029.png)
+![](http://cdn.lindexi.site/lindexi%2F202522794334901.jpg)
 
 在`Properties\launchSettings.json` 调试启动配置文件里面设置 DebugRoslynComponent 为 `commandName` 内容。将要被调试的 `JehairqogefaKaiwuwhailallkihaiki` 控制台项目相对路径设置到 `targetProject` 属性里面，其文件代码如下
 
@@ -1061,12 +1061,12 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 再点击分析器项目的调试属性，如下图所示
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202502/1080237-20250222072331755-968971167.png)
+![](http://cdn.lindexi.site/lindexi%2F20252211054587914.jpg)
 
 在打开的启动配置文件窗口里面，找个命令行参数，随便写入点字符。这个过程仅仅只是为了让 VisualStudio 帮助咱快速创建 `launchSettings.json` 文件而已。我现在还没有找到比这个方法更加顺手便捷的方式哈
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目1.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202502/1080237-20250222072332264-1366126843.png)
+![](http://cdn.lindexi.site/lindexi%2F20252211056201460.jpg)
 
 双击 `Properties\launchSettings.json` 文件进入编辑，现在可见的 `launchSettings.json` 文件的内容大概如下
 
@@ -1100,17 +1100,17 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 继续点击分析器项目的调试属性，此时可见启动配置文件窗口界面如下
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目2.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202502/1080237-20250222072332894-350310330.png)
+![](http://cdn.lindexi.site/lindexi%2F202522111022690.jpg)
 
 愉快点击下拉菜单，选择要调试项目即可，如下图所示
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目3.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202502/1080237-20250222072333171-1256262081.png)
+![](http://cdn.lindexi.site/lindexi%2F2025221110546445.jpg)
 
 选中之后的效果如下图所示
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目4.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202502/1080237-20250222072333505-2070692843.png)
+![](http://cdn.lindexi.site/lindexi%2F2025221113511471.jpg)
 
 完成之后，再次打开 `launchSettings.json` 文件，可以看到机智的 Visual Studio 已经帮咱填充了 `targetProject` 属性内容了。通过 Visual Studio 的填充，可以让咱不需要写繁琐的相对路径，也不用担心写错项目路径导致调试出错
 
@@ -1139,12 +1139,12 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 在 Visual Studio 里面自带了语法可视化（Syntax Visualizer）功能，可以帮助大家更加直观的了解代码的语法树。在 Visual Studio 里面打开一个 C# 文件，然后在菜单栏里面点击 `View（视图）` -> `Other Windows（其他窗口）` -> `Syntax Visualizer` 打开语法可视化窗格，如下图所示
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门6.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155220539-1351412566.png)
+![](http://cdn.lindexi.site/lindexi%2F20252281923515265.jpg)
 
 其界面大概如下
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门5.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155220904-492784397.png)
+![](http://cdn.lindexi.site/lindexi%2F20252281922443223.jpg)
 
 如果没有从视图里面找到 Syntax Visualizer 语法可视化窗格，则需要给 Visual Studio 打上 `.NET Compiler Platform SDK` 负载。正常来说，根据上文的步骤一步步来的伙伴，都在前面准备直接调试的过程里面已经安装好了这个负载。安装方法如下：
 
@@ -1159,7 +1159,7 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 回顾语法可视化窗格界面，可以看到有多个颜色标注出来不同的语法节点，如下图所示
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门6.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155220539-1351412566.png)
+![](http://cdn.lindexi.site/lindexi%2F20252281923515265.jpg)
 
 - 蓝色：`SyntaxNode`，表示声明、语句、子句和表达式等语法构造。
 - 绿色：`SyntaxToken`，表示关键字、标识符、运算符等标点。
@@ -1511,7 +1511,7 @@ public static partial class FooCollection
 其拼接的生成的空壳方法框架的代码如下
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门15.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155221254-1560093408.png)
+![](http://cdn.lindexi.site/lindexi%2F2025317855425080.jpg)
 
 ```csharp
 var generatedCode =
@@ -2275,7 +2275,7 @@ var diagnosticDescriptor = new DiagnosticDescriptor
 ```
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门13.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155221556-1319967402.png)
+![](http://cdn.lindexi.site/lindexi%2F2025317852487163.jpg)
 
 在 Resources.resx 文件里面添加两项，内容分别如下
 
@@ -2283,7 +2283,7 @@ var diagnosticDescriptor = new DiagnosticDescriptor
 - `Kaw001_Message` : 无法从 {0} 类型中找到构造函数，期望构造函数的只有一个参数，且参数为 {1} 类型
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门14.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155221856-642176593.png)
+![](http://cdn.lindexi.site/lindexi%2F202531785439974.jpg)
 
 如上文代码，可见 `Kaw001` 将被当成标题，而 `Kaw001_Message` 被作为具体警告内容。其中 `Kaw001_Message` 添加了 `{0}` 和 `{1}` 内容，用于分别替换为具体警告信息内容的具体类型
 
@@ -2352,7 +2352,7 @@ C:\lindexi\Code\Roslyn\KawhawnahemCanalllearlerwhu\KawhawnahemCanalllearlerwhu\F
 ```
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门18.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155222198-1195303878.png)
+![](http://cdn.lindexi.site/lindexi%2F20253191036454746.jpg)
 
 这个过程中可以看到似乎有分析器的影子在里面了，报告 Diagnostic 过程本身也就是分析器的一个部分，大部分分析器的功能都是和源代码生成器相互重叠的，比如都需要进行语法语义的分析。不同点只是源代码生成器多了一个生成代码的过程
 
@@ -2479,7 +2479,7 @@ public static partial class IncrementalValueSourceExtensions
 可见 `foo2ValuesProvider` 和 `foo3ValuesProvider` 来源于共同的 `foo1ValuesProvider` 数据源。这在多个不同的业务逻辑存在共有转换时非常有用，可以更多程度地进行复用计算
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门19.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155222510-283998766.png)
+![](http://cdn.lindexi.site/lindexi%2F2025319201467353.jpg)
 
 链式转换即一级级进行转换
 
@@ -2492,7 +2492,7 @@ public static partial class IncrementalValueSourceExtensions
 ```
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门20.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155222785-1341367193.png)
+![](http://cdn.lindexi.site/lindexi%2F2025319201704335.jpg)
 
 #### Select Many
 
@@ -2544,12 +2544,12 @@ public static IncrementalValuesProvider<TResult> SelectMany<TSource, TResult>(th
 从 `IncrementalValueProvider<FooInfo1>` 单值提供器，调用 SelectMany 进行单转多，获取到 `IncrementalValuesProvider<FooInfo2>` 多值提供器的过程是 1 转多的过程，相对来说很是清晰
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门21.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155223110-78223016.png)
+![](http://cdn.lindexi.site/lindexi%2F20253192022298551.jpg)
 
 对 `IncrementalValuesProvider<FooInfo2>` 多值提供器调用 SelectMany 进行多转多获取到 `IncrementalValuesProvider<FooInfo3>` 多值提供器的过程，相对来说就比较复杂，如以下的官方附图，每项都可转换为不定数量集合输出
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门22.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155223387-814985181.png)
+![](http://cdn.lindexi.site/lindexi%2F20253192028418785.jpg)
 
 敲黑板，使用 SelectMany 的过程中，也可以附带过滤的作用。如上文所述，每项都可转换为不定数量集合输出，不定数量就意味着也可以返回 0 项。在 SelectMany 执行过滤作用的做法就是将不满足条件的直接过滤掉，甚至返回空集合。因此比较少见 `SelectMany(...).Where(...)` 的组合，直接就是在 SelectMany 里面内置了 Where 的活了
 
@@ -2566,7 +2566,7 @@ public static IncrementalValuesProvider<TSource> Where<TSource>(this Incremental
 没错，只有多值提供器才有 Where 方法。通过 Where 方法可用来过滤输入源里面符合条件的元素，将符合条件的元素作为输出源内容
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门23.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155223700-1653424917.png)
+![](http://cdn.lindexi.site/lindexi%2F20253192033175447.jpg)
 
 如上图官方附图所示，假定输入源有三个，中间一个不满足条件，也就是上面打了叉叉的 Item2 项，则最终只有 Item1 和 Item3 才能流向输出源里
 
@@ -2583,7 +2583,7 @@ IncrementalValueProvider<ImmutableArray<TSource>> Collect<TSource>(this Incremen
 这是一个不用附带任何条件和转换器的方法。用于将一个多值提供器的内容，转换为单值提供器。这个过程中，一旦输入源有任何一项变动，则会重新输出整个新的不可变集合
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门24.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155223969-81440916.png)
+![](http://cdn.lindexi.site/lindexi%2F20253192037509811.jpg)
 
 如以上官方附图所示，通过 Collect 方法将一个多值提供器转换为一个单值提供器，且这个单值提供器提供的单个值就是一个集合
 
@@ -2612,7 +2612,7 @@ IncrementalValueProvider<ImmutableArray<TSource>> Collect<TSource>(this Incremen
 在演练中，咱也用到了 Split 的功能，即在拿到 `IncrementalValuesProvider<ImmutableArray<ItemGeneratedCodeResult>> itemGeneratedCodeResultProvider` 数据源时，一路作为 Diagnostic 报告输出，一路作为最终源代码生成的输出
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门27.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155224276-634531099.png)
+![](http://cdn.lindexi.site/lindexi%2F20253192117417689.jpg)
 
 #### Combine
 
@@ -2631,7 +2631,7 @@ IncrementalValuesProvider<(TLeft Left, TRight Right)> Combine<TLeft, TRight>(thi
 两个单值提供器的合并：
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门26.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155224590-1241341093.png)
+![](http://cdn.lindexi.site/lindexi%2F20253192059107109.jpg)
 
 如以上的官方附图，将两个单值提供器的合并，返回结果依然是一个单值提供器。只是返回的输出源里面包含的是一个元组，其中左右值就是所 Combine 顺序的左右值。如以下代码所示
 
@@ -2648,7 +2648,7 @@ IncrementalValueProvider<(FooInfo1 Left, FooInfo2 Right)> foo1AndFoo2CombineValu
 一个多值提供器和一个单值提供器的合并：
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门25.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155224933-1247250745.png)
+![](http://cdn.lindexi.site/lindexi%2F20253192058297227.jpg)
 
 如以上的官方附图，最终输出源里面是多值提供器里面的每一项都带着单值提供器里面的内容。即输出源里面的元组的左侧是多值提供器里面的每一项，右侧都是相同的单值提供器里面的元素
 
@@ -2730,17 +2730,17 @@ Interceptor1: lindexi is doubi
 而不是原本预期的 `Foo: 1` 的输出内容。这就是 Interceptor 拦截器技术的核心，通过拦截器技术，可以在构建过程中执行额外的逻辑实现拦截现有代码的功能
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门29.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155225202-185235195.png)
+![](http://cdn.lindexi.site/lindexi%2F20253202028155776.jpg)
 
 简单了解了 Interceptor 拦截器技术的核心，在本演练中将开始和大家介绍如何实现这个功能，将原本调用 `Foo` 类型的 `WriteLine` 方法，转发到调用源代码新生成的代码里面。以下是我的实现效果，将原本代码里面对 `Foo` 类型的 `WriteLine` 方法的三个调用，分别转发到源代码生成器所生成的三个不同的方法里面，如下图所示
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门28.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155225518-224557645.png)
+![](http://cdn.lindexi.site/lindexi%2F20253202012517222.jpg)
 
 通过本演练的源代码生成器所处理之后，通过 ILSpy 工具查看生成的 dll 文件，可见最终的生成代码是调用了 FooInterceptor 的三个生成的方法，完全不是静态代码所见的调用 `Foo` 类型的 `WriteLine` 方法
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门30.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155225846-857281391.png)
+![](http://cdn.lindexi.site/lindexi%2F20253202032373826.jpg)
 
 即在这个过程里面，所发生的所有科技都在构建之中完成，不会在运行时发生任何额外的调用
 
@@ -2897,7 +2897,7 @@ var generatedCode =
 ```
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门31.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155226142-1275782140.png)
+![](http://cdn.lindexi.site/lindexi%2F20253202056566003.jpg)
 
 如以上代码所示，可以看到将 `displayLocation` 作为注释放在拦截方法上方，如此即可在阅读源代码生成器所生成的代码的时候，可以看到被拦截的代码的位置信息。接着再将读取到的传入参数信息拼接成为拦截方法的方法名以及作为拦截方法的输出内容
 
@@ -3283,7 +3283,7 @@ public class BanAPIAnalyzer : DiagnosticAnalyzer
 按照以上描述可以了解到，咱需要通过 CompilerVisibleProperty 标记 `BanAPIFileName` 属性，使用 `AdditionalFiles` 添加 `BanList.txt` 文件，即让 `BanList.txt` 使用 `C# 分析器其他文件` 生成方式，如下图所示
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门17.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155226489-43208941.png)
+![](http://cdn.lindexi.site/lindexi%2F20253171530568088.jpg)
 
 修改之后的被分析的控制台项目的 csproj 项目文件内容大概如下
 
@@ -3302,7 +3302,7 @@ public class BanAPIAnalyzer : DiagnosticAnalyzer
 ```
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门16.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155226812-1010635562.png)
+![](http://cdn.lindexi.site/lindexi%2F2025317858467937.jpg)
 
 对于一个通过 NuGet 分发的分析器项目，则是会在 `$(PackageId).props` 文件里面存放 `<CompilerVisibleProperty Include="BanAPIFileName" />` 和 `<AdditionalFiles Include="BanList.txt" />` 这两个配置，而不需要被分析项目添加这些杂活
 
@@ -3609,7 +3609,7 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 开始之前，先给大家看看效果
 
 <!-- ![](image/dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言/dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155227186-209095382.png)
+![](http://cdn.lindexi.site/lindexi%2F20221071148534467.jpg)
 
 如果大家感觉这个效果很酷，那请参阅 [dotnet 用 SourceGenerator 源代码生成技术实现中文编程语言](https://blog.lindexi.com/post/dotnet-%E7%94%A8-SourceGenerator-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E4%B8%AD%E6%96%87%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80.html ) 文章，里面详细介绍了如何通过源代码生成技术实现中文编程语言
 
@@ -3732,12 +3732,12 @@ git pull origin ed27dcda954d4baed58c74b9c1e355468c7135fc
 第一个 PropertyGroup 块为分析器固有信息，其中的 `<Version>1.0.0</Version>` 版本号被程序集和 NuGet 包版本号所共用。如果只为指定 NuGet 的包版本号而不影响程序集的版本号，可使用专用的 `PackageVersion` 属性
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门33.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155227551-1824559044.png)
+![](http://cdn.lindexi.site/lindexi%2F20253221529185015.jpg)
 
 第二个 PropertyGroup 块为 NuGet 包的信息。其中的 `<Description>这里填写描述信息</Description>` 为 NuGet 包的描述信息，这个描述信息可以在 NuGet Package Explorer 里面直接看到，如下图所示，直接使用 NuGet Package Explorer 打开 NuGet 包，即可看到描述信息
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门34.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155227838-1199732943.png)
+![](http://cdn.lindexi.site/lindexi%2F20253221531126363.jpg)
 
 而 ReadMe 文件记录则是需要与下方的 `<None Include="..\..\..\README.md" Link="README.md" Pack="True" PackagePath="\"/>` 配合才能完成，用于放入识别的 README.md 文件，帮助开发者入门使用此分析器 NuGet 包
 
@@ -3819,7 +3819,7 @@ git pull origin 7ee17551c750a643593f6f5e4a0d03f89456b393
 ```
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门32.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202503/1080237-20250322155228137-1022829521.png)
+![](http://cdn.lindexi.site/lindexi%2F20253221523435206.jpg)
 
 针对上文的 禁用API调用 的分析器演练的需求，完全将配置的信息写入到 `Package.targets` 文件里面，确保顺序足够靠后，在对应的安装了分析器的项目里面完成配置之后，再设置加入到 `AdditionalFiles` 文件里面
 

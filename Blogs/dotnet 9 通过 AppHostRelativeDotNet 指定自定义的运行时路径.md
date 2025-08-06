@@ -66,7 +66,7 @@ C:\Program Files\CompanyName\Produce3\
 准备工作就此完成，接下来就是设置进行框架依赖发布。这里需要特别说明的是 .NET Core （包含 .NET 5 和更高版本）的输出 exe 是不能实现 .NET Framework 的 AnyCpu 魔法的，在使用自定义 dotnet 运行时路径时，需要根据自己的需求，明确指定其版本。这里也需要额外说明的是，尽管本文内容都在 Windows 下测试，但事实上本文介绍的 dotnet 这项新功能是可以在全平台使用的，即在 Linux 或 mac 上也适用
 
 <!-- ![](image/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径0.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202504/1080237-20250426071743379-1303235077.png)
+![](http://cdn.lindexi.site/lindexi%2F20254252013475105.jpg)
 
 我的发布配置文件 FolderProfile.pubxml 代码如下
 
@@ -92,7 +92,7 @@ C:\Program Files\CompanyName\Produce3\
 配置完成之后，直接进行发布，此时可以看到发布创建的文件只有几个。有了这项技术就不怕发布大量工具了，有了这项技术就可以让发布的 .NET Core（包含.NET 5及更高版本）应用也和 .NET Framework 应用一样小体积占用
 
 <!-- ![](image/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径1.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202504/1080237-20250426071743912-1840864164.png)
+![](http://cdn.lindexi.site/lindexi%2F20254252015201925.jpg)
 
 发布完成之后，可不能和进行独立发布（Self-Contained）一样，直接就将此分发给到用户了，咱还需要对此进行包装文件夹布局
 
@@ -103,7 +103,7 @@ C:\Program Files\CompanyName\Produce3\
 包装完成的文件夹布局情况如下
 
 <!-- ![](image/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径2.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202504/1080237-20250426071744249-1178032683.png)
+![](http://cdn.lindexi.site/lindexi%2F20254252026203870.jpg)
 
 ```csharp
 C:\LINDEXI\APP
@@ -158,17 +158,17 @@ C:\LINDEXI\APP
 下载右边“运行应用 - 运行时”这一列的内容
 
 <!-- ![](image/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径3.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202504/1080237-20250426071744979-1608892421.png)
+![](http://cdn.lindexi.site/lindexi%2F20254252031363060.jpg)
 
 运行时这一列有很多选项，具体应该下哪一个呢？这就看自己的需求了。如我只是一个简单的控制台，且准备发布的是 x86 应用，那我就应该下载 x86 二进制文件，就是这样的对应关系，先取决于要用什么框架，再决定用什么平台
 
 <!-- ![](image/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径4.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202504/1080237-20250426071745337-1893165724.png)
+![](http://cdn.lindexi.site/lindexi%2F20254252032403128.jpg)
 
 下载下来的是一个 zip 压缩包，打开压缩包就可以看到这就是上文提到的 `relative/path/to/runtime` 文件夹内的结构，按照本文提供的方式将其解压缩就好了
 
 <!-- ![](image/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径/dotnet 9 通过 AppHostRelativeDotNet 指定自定义的运行时路径5.png) -->
-![](https://img2023.cnblogs.com/blog/1080237/202504/1080237-20250426071745633-509595437.png)
+![](http://cdn.lindexi.site/lindexi%2F2025425203748178.jpg)
 
 额外需要说明的是，现在对于桌面应用来说是没有提供二进制包，只有安装包。即对于 WPF 和 WinForms 来说，现在只有安装包可用。那咋办呢？很简单，只需要找一个干净的系统（如虚拟机内），下载安装包且安装。安装完成之后，即可在 `C:\Program Files\dotnet\` 或 `C:\Program Files (x86)\dotnet\` 文件夹内找到安装输出的文件，将其拷贝出来放入到 `relative/path/to/runtime` 文件夹内即可
 

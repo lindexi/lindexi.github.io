@@ -17,7 +17,7 @@ category:
 相同的代码，在 Windows 上，就可以在 Skia 里面，使用 Symbol.ttf 或 StandardSymbolsPS.ttf 字体渲染出正确的文本内容，然而在纯净的 Debian 10 docker 容器内，跑出来的输出效果就是渲染出方框，如下图所示
 
 <!-- ![](image/SkiaSharp 使用 HarfBuzz 修复找不到 Symbol 字形/SkiaSharp 使用 HarfBuzz 修复找不到 Symbol 字形1.png) -->
-![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250731070816645-564703920.png)
+![](http://cdn.lindexi.site/lindexi-20257302035233140.jpg)
 
 我的代码如下
 
@@ -168,7 +168,7 @@ TryGetGlyph=True 81
 正确的渲染图如下：
 
 <!-- ![](image/SkiaSharp 使用 HarfBuzz 修复找不到 Symbol 字形/SkiaSharp 使用 HarfBuzz 修复找不到 Symbol 字形0.png) -->
-![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250731070817629-865683947.png)
+![](http://cdn.lindexi.site/lindexi-20257302032593496.jpg)
 
 这也能说明为什么很多时候都是 Skia 和 HarfBuzz 搭配着使用了。在字体处理方向，还是需要依靠 HarfBuzz 的基础设施支持。如果大家发现使用 Skia 渲染某个字体时，只能渲染出方框。可以尝试按照本文的方法，使用 HarfBuzz 做辅助，让 HarfBuzz 从字体里面获取 glyph 字形序号，再配合 SKTextEncoding.GlyphId 创建 SKTextBlob 对象加入渲染
 

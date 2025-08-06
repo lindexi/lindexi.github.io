@@ -15,7 +15,7 @@ category:
 出现问题的表现的截图界面图片的文本模糊如下图所示
 
 <!-- ![](image/Avalonia 已知问题 使用 RenderTargetBitmap 截图文本模糊/Avalonia 已知问题 使用 RenderTargetBitmap 截图文本模糊0.png) -->
-![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250711073032744-1425262102.png)
+![](http://cdn.lindexi.site/lindexi-20257101442354396.jpg)
 
 在 Avalonia 里，使用 RenderTargetBitmap 对控件进行截图，如果控件的顶层子控件没有背景色，则会截图出一张文本是模糊的图片。如果给控件的顶层子控件设置白色作为背景色，则能够截图出正常渲染的清晰文本
 
@@ -116,7 +116,7 @@ public partial class MainView : UserControl
 而 2.png 里面的文本是清晰的，如下图所示。证明了只要给 RootGrid 设置非透明的背景色，则能够让渲染正常工作
 
 <!-- ![](image/Avalonia 已知问题 使用 RenderTargetBitmap 截图文本模糊/Avalonia 已知问题 使用 RenderTargetBitmap 截图文本模糊1.png) -->
-![](https://img2024.cnblogs.com/blog/1080237/202507/1080237-20250711073033225-1137829508.png)
+![](http://cdn.lindexi.site/lindexi-20257101444123040.jpg)
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/86ff9a4bb65e2775fb71d34f34283b68b5ab1605/AvaloniaIDemo/KarhelearkuDemkunalhaw) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/86ff9a4bb65e2775fb71d34f34283b68b5ab1605/AvaloniaIDemo/KarhelearkuDemkunalhaw) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
