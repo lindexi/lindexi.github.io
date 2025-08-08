@@ -241,6 +241,10 @@ TouchMajorAtomMax/Resolution = 18950.00/10000 = 1.895 米
 - 左边屏幕： `100/18950*3840=20.2638522427`
 - 右边屏幕： `160/18950*2400=20.2638522427`
 
+## 多屏多窗口
+
+[X11 使用 XSetWMNormalHints 固定窗口所在的屏幕](https://blog.lindexi.com/post/X11-%E4%BD%BF%E7%94%A8-XSetWMNormalHints-%E5%9B%BA%E5%AE%9A%E7%AA%97%E5%8F%A3%E6%89%80%E5%9C%A8%E7%9A%84%E5%B1%8F%E5%B9%95.html )
+<!-- [X11 使用 XSetWMNormalHints 固定窗口所在的屏幕 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19024401 ) -->
 
 ## 代码
 
