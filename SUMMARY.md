@@ -2770,6 +2770,8 @@
 
  * [WPF 使用 Win2d 渲染](WPF-使用-Win2d-渲染.md)
 
+ * [WPF 使用 WNetUseConnection 连接 SMB 网络资源](WPF-使用-WNetUseConnection-连接-SMB-网络资源.md)
+
  * [WPF 使用 XmlDataProvider 提供数据](WPF-使用-XmlDataProvider-提供数据.md)
 
  * [WPF 使用RPC调用其他进程](WPF-使用RPC调用其他进程.md)
@@ -3365,6 +3367,10 @@
  * [wpf DoEvents ](wpf-DoEvents-.md)
 
  * [WPF 绑定密码](WPF-绑定密码.md)
+
+ * [X11 使用 XSetWMNormalHints 固定窗口所在的屏幕](X11-使用-XSetWMNormalHints-固定窗口所在的屏幕.md)
+
+ * [X11 设置多屏下窗口在哪个屏幕上全屏](X11-设置多屏下窗口在哪个屏幕上全屏.md)
 
  * [Xamarin Forms 4.7 支持更简化的 Grid 行列布局写法](Xamarin-Forms-4.7-支持更简化的-Grid-行列布局写法.md)
 
