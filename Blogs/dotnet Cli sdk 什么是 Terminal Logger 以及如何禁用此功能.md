@@ -13,7 +13,7 @@ category:
 在 dotnet 9 默认开启的 Terminal Logger 功能，是在 dotnet 8 作为实验性引入的功能。核心原因是因为有开发者认为 dotnet sdk 在构建等过程中输出的内容太多了，干扰了程序猿的开发，期望能够自动折叠或删除不需要的输出内容。比如在 dotnet build 过程中，将在构建过程中刷刷刷显示日志的过程内容，如 Info 内容，但最终只包含构建过程，以及进行读秒。完成之后就只有警告和错误信息留下，其他信息全部删除
 
 <!-- ![](image/dotnet Cli sdk 什么是 Terminal Logger 以及如何禁用此功能/dotnet Cli sdk 什么是 Terminal Logger 以及如何禁用此功能0.gif) -->
-![](http://cdn.lindexi.site/lindexi%2Fdotnet%2520Cli%2520sdk%2520%25E4%25BB%2580%25E4%25B9%2588%25E6%2598%25AF%2520Terminal%2520Logger%2520%25E4%25BB%25A5%25E5%258F%258A%25E5%25A6%2582%25E4%25BD%2595%25E7%25A6%2581%25E7%2594%25A8%25E6%25AD%25A4%25E5%258A%259F%25E8%2583%25BD0.gif)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094757280-411058188.gif)
 
 ```
 PS C:\lindexi\Code\Foo> dotnet build

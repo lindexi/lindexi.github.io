@@ -37,7 +37,7 @@ category:
 默认情况下渲染的字符高度，直接等于字高度是可以的，能够实现一个字紧接一个字的效果。尽管这样会让字过于紧凑，如以下示意图
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202548165279122.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094914744-2134950612.png)
 
 对应的代码如下
 
@@ -64,7 +64,7 @@ category:
 实现的效果十分紧凑的字符排版效果，如此的直排竖排垂直分布排版界面效果如下
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202548166496308.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094915045-215516423.png)
 
 以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/d77e52470f55cc00d556dea1c873a1ec5ce61f22/SkiaSharp/DihealereniRakallfairko) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/d77e52470f55cc00d556dea1c873a1ec5ce61f22/SkiaSharp/DihealereniRakallfairko) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 
@@ -102,7 +102,7 @@ if (!isHorizontal)
 一个自然的方法是引入 baseline（Ascent）来作为间距，如下图所示
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025481613524425.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094915361-258160892.png)
 
 引入 baseline（Ascent）来作为间距，即以上代码的 margin 换成了 space 值
 
@@ -150,7 +150,7 @@ RenderHeight = height + space
 运行之后的界面效果如下
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度3.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025481616462464.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094915671-48914368.png)
 
 是不是看起来有些奇怪？试试将每个外接边框也输出出来，代码如下
 
@@ -174,12 +174,12 @@ RenderHeight = height + space
 运行的效果如下图，从下图一下就可以看出来，汉字“一”明显过于偏下
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度4.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202548161952914.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094916005-885934779.png)
 
 只引入 baseline 依然还是不够的，为了能够在竖排过程中，让一些汉字，如“一”进行垂直方向的居中，这里不会直接从 baseline 开始画，而是取 `(baseline-space/2)` 开始画，确保画出来的效果如下所示
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度5.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025481623145200.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094916314-1268079608.png)
 
 核心实现代码如下
 
@@ -208,12 +208,12 @@ RenderHeight = height + space
 画出来的界面效果如下
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度6.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202548162413584.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094916630-1274138643.png)
 
 去掉调试边框之后的效果如下
 
 <!-- ![](image/WPF 探索 Skia 的竖排文本渲染的字符高度/WPF 探索 Skia 的竖排文本渲染的字符高度7.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025481624449463.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094916937-220665075.png)
 
 如此看起来垂直方向就十分正常了。以上优化修改的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0223eda53dae64ded4aa99a0a4506b6c89af207e/SkiaSharp/RebeduryaiNarjargeka) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/0223eda53dae64ded4aa99a0a4506b6c89af207e/SkiaSharp/RebeduryaiNarjargeka) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 

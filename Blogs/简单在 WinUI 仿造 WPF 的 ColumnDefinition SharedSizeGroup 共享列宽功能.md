@@ -55,7 +55,7 @@ category:
 运行代码的界面效果如下图
 
 <!-- ![](image/简单在 WinUI 仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能/简单在 WinUI 仿造 WPF 的 ColumnDefinition SharedSizeGroup 共享列宽功能0.gif) -->
-![](http://cdn.lindexi.site/lindexi%2F%25E7%25AE%2580%25E5%258D%2595%25E5%259C%25A8%2520WinUI%2520%25E4%25BB%25BF%25E9%2580%25A0%2520WPF%2520%25E7%259A%2584%2520ColumnDefinition%2520SharedSizeGroup%2520%25E5%2585%25B1%25E4%25BA%25AB%25E5%2588%2597%25E5%25AE%25BD%25E5%258A%259F%25E8%2583%25BD0.gif)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094926410-1499702812.gif)
 
 核心代码是 ColumnSharedSizeHelper 类型，其实现逻辑如下
 

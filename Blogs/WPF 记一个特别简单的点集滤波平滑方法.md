@@ -119,20 +119,20 @@ The predicted value is based on the pointer position reported by the digitizer a
 效果图：
 
 <!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024830160201068.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094917980-1240071968.png)
 
 <!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024830160364905.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094912505-140179603.png)
 
 带边缘采样：
 
 <!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法3.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024830160537114.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094918308-1907312398.png)
 
 在实际的大尺寸触摸屏的效果：
 
 <!-- ![](image/WPF 记一个特别简单的点集滤波平滑方法/WPF 记一个特别简单的点集滤波平滑方法1.gif) -->
-![](http://cdn.lindexi.site/lindexi%2FWPF%2520%25E8%25AE%25B0%25E4%25B8%2580%25E4%25B8%25AA%25E7%2589%25B9%25E5%2588%25AB%25E7%25AE%2580%25E5%258D%2595%25E7%259A%2584%25E7%2582%25B9%25E9%259B%2586%25E6%25BB%25A4%25E6%25B3%25A2%25E5%25B9%25B3%25E6%25BB%2591%25E6%2596%25B9%25E6%25B3%25951.gif)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094918931-1286837767.gif)
 
 上图的黑色的线就是一条直接从 Move 事件收到的点绘制的折线，红色的线是经过平滑之后的线
 

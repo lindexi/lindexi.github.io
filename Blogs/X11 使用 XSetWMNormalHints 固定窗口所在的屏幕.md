@@ -55,7 +55,7 @@ model name      : ZHAOXIN KaiXian KX-U6780A@2.7GHz
 在 X 里面，通过 XDisplayWidth 和 XDisplayHeight 拿到的是虚拟屏幕的尺寸，即多个物理屏幕拼接的外接矩形虚拟范围。我的两个屏幕排放如下
 
 <!-- ![](image/X11 使用 XSetWMNormalHints 固定窗口所在的屏幕/X11 使用 XSetWMNormalHints 固定窗口所在的屏幕0.png) -->
-![](http://cdn.lindexi.site/lindexi-202585195918630.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094919734-1064204170.png)
 
 可通过以下调用 XRRGetMonitors 的代码获取两个屏幕的信息
 

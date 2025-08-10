@@ -17,12 +17,12 @@ category:
 以下为 WPF 版本的效果图
 
 <!-- ![](image/dotnet 使用 ColorCode 做代码着色器/dotnet 使用 ColorCode 做代码着色器0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20251221934522155.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094759178-1987373803.png)
 
 以下为 Avalonia 版本的效果图
 
 <!-- ![](image/dotnet 使用 ColorCode 做代码着色器/dotnet 使用 ColorCode 做代码着色器1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20251221935282305.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094759551-1281039822.png)
 
 以下是具体的测试逻辑。由于 WPF 和 Avalonia 版本代码几乎没有差别，我这里就使用 WPF 为例子进行演示，完全的代码还请到本文末尾找到下载方法
 

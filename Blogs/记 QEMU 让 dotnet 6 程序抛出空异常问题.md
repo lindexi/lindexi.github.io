@@ -36,7 +36,7 @@ Windows 10 2004 (19041.508)
 ```
 
 <!-- ![](image/记 QEMU 让 dotnet 6 程序抛出空异常问题/记 QEMU 让 dotnet 6 程序抛出空异常问题0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025561954114937.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094930734-1816334063.png)
 
 遇到的两个空异常信息分别如下
 

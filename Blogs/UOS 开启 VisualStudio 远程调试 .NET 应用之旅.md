@@ -19,7 +19,7 @@ category:
 第一步是保证 UOS 和 Windows 构成局域网网络，或可直接联通的网络。这一步可自行了解网络配置，只要双方网络能互通即可，挂在一个局域网内相同网段是最好的选择
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201054501567.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094826361-367140166.png)
 
 其次是在 UOS 里面开启开发者模式，开启方法请参阅 [如何打开开发者模式？-UOS官方文档](https://doc.chinauos.com/content/poVHjoEBplouMytzM6i8)
 
@@ -42,7 +42,7 @@ vi /etc/ssh/sshd_config
 ```
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024320111235862.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094826705-2106949103.png)
 
 进入 `sshd_config` 编辑入以下代码，这里有一个可简化的输入方法，那就是一般此文件里面只是包含大量被注释掉的配置，只需要找到对应的配置，解开注释即可。解开注释就是去掉行首的 `#` 字符，在这份配置文档里面，使用 `#` 作为表示此行是注释的用途
 
@@ -56,14 +56,14 @@ PasswordAuthentication yes
 ```
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201113185834.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094827029-913788692.png)
 
 相信阅读到这里的伙伴是知道 vim 的基础操作的，如果不了解的话，还请自行查阅一下 vim 如何编辑文件以及如何保存退出哈。简单说就是按下 `i` 键进入编辑模式，通过上下左右方向键定位光标，通过删除和输入字符进行编辑。完成编辑之后，使用 `esc` 键退出编辑模式，再输入 `:wq` 即可完成保存退出
 
 如果是解开注释而不是从零写入的话，需要小心 PermitRootLogin 配置项默认是 prohibit-password 的值，需要改为 yes 才对。默认的 `PermitRootLogin prohibit-password` 表示允许 root 账户登录，但是不能以密码的方式登录，只能以公私钥的方式登录。咱这里期望使用密码方式登录，于是改为 yes 的值
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅3.png) -->
-![](http://cdn.lindexi.site/lindexi%2FUOS%2520%25E5%25BC%2580%25E5%2590%25AF%2520VisualStudio%2520%25E8%25BF%259C%25E7%25A8%258B%25E8%25B0%2583%25E8%25AF%2595%2520.NET%2520%25E5%25BA%2594%25E7%2594%25A8%25E4%25B9%258B%25E6%2597%25853.png)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094827365-1643998719.png)
 
 > 注： 如果没有找到 sshd_config 文件、或使用 vi 打开时是空白，则证明其服务端没有带上，可使用 `sudo apt-get install openssh-server` 命令进行安装 ssh 服务端
 
@@ -74,7 +74,7 @@ PasswordAuthentication yes
 ```
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅5.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201115557064.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094827692-369212263.png)
 
 默认新装的 UOS 都是关闭的状态，请使用以下代码进行开启
 
@@ -83,12 +83,12 @@ PasswordAuthentication yes
 ```
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅6.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201116206600.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094828012-401802412.png)
 
 开启之后，继续使用 `/etc/init.d/ssh status` 命令了解一下状态，预期是能够正确开启。如果不能正确开启，再根据错误信息，自行解决
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅7.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201116476856.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094828339-1814583804.png)
 
 ### 使用 VisualStudio 连接
 
@@ -97,32 +97,32 @@ PasswordAuthentication yes
 点击调试里面的附加进程
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅8.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201118516875.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094828758-1489222085.png)
 
 点击连接类型，切换到 ssh 类型
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅9.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024320111938919.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094829100-1777244273.png)
 
 在连接目标里面输入 UOS 的网络地址，这里支持 IP 或域名，如果开启的 SSH 端口非 22 端口，这里也可以不用输入端口，可以在后续界面再输入。相信如何查看 UOS 的网络的 IP 地址你已经学会了，如果还不知道的话，请自行搜寻答案。输入完成之后按回车，或者点查找按钮，但查找按钮有时候会不工作，推荐还是按回车好
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅10.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201121357347.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094829419-1421014319.png)
 
 按下回车之后，可以看到如下界面，输入你的端口和用户名密码，即可点击连接
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅11.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201124512833.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094829785-797439048.png)
 
 如果能够看到提示是否要继续连接，请点击 是 按钮
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅12.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201125304739.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094830087-217368705.png)
 
 预期是能够看到以下调试界面，如能看到则表示连接成功，如果连接失败，请回到上一步，确定自己配置正确了 SSH 连接
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅13.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201127108509.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094830403-707551872.png)
 
 常见的错误就是网络连不通，以及输入错账号密码等。比如说虚拟机进行了诡异的网络配置，导致物理机无法访问到虚拟机的网络等，这些就请大家自行解决网络问题
 
@@ -133,12 +133,12 @@ PasswordAuthentication yes
 先从可用进程选中将要调试的应用，接着的细节是点击附加到里面，选择手动以及选择 托管(.NET Core for Unix)代码 选项。这是因为默认的 VisualStudio 的自动选择经常不工作
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅14.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201132486644.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094830730-1912373611.png)
 
 点击调试以下代码类型，然后选择 托管(.NET Core for Unix)代码 即可
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅15.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201133116914.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094831039-1494124093.png)
 
 如果大家看到附加按钮是禁用状态，也可以尝试以上的选择 托管(.NET Core for Unix)代码 步骤
 
@@ -149,7 +149,7 @@ PasswordAuthentication yes
 > Unable to find debugger script at 'home/lin/.vs-debugger'.
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅16.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024320113548572.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094831338-1232677690.png)
 
 看到错误有以下代码
 
@@ -190,7 +190,7 @@ mkdir .vs-debugger
 ```
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅17.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201141363240.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094831674-444719923.png)
 
 以上的 exit 命令仅仅为了退出 sudo su 状态，如果你是新开的控制台，那请不要带上 exit 命令
 
@@ -199,14 +199,14 @@ mkdir .vs-debugger
 预期能够看到正在启动调试适配器界面
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅18.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024320114316443.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094831983-1422245133.png)
 
 看到此界面表示 VisualStudio 正在帮你部署调试环境，首次部署输入比较慢，大概需要在你的 UOS 下载 200MB 的内容
 
 如果等太久，可以进入 `~/.vs-debugger` 输入 `du -sh` 命令查看大小，就可以知道是否正在下载
 
 <!-- ![](image/UOS 开启 VisualStudio 远程调试 .NET 应用之旅/UOS 开启 VisualStudio 远程调试 .NET 应用之旅19.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20243201144502108.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094832293-373705460.png)
 
 接下来就进入到了咱熟悉的 VisualStudio 调试 .NET 应用的状态了
 

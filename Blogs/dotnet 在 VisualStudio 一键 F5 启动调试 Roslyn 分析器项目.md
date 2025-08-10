@@ -27,10 +27,10 @@ category:
 5. 选中“.NET Compiler Platform SDK”框。 将在可选组件最下面找到它
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门10.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202533856536565.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094800495-739334316.png)
 
 <!-- ![](image/dotnet 源代码生成器分析器入门/dotnet 源代码生成器分析器入门11.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20253385843486.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094800903-1011351453.png)
 
 ## 手动配置
 
@@ -127,12 +127,12 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 再点击分析器项目的调试属性，如下图所示
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20252211054587914.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094801247-1688762993.png)
 
 在打开的启动配置文件窗口里面，找个命令行参数，随便写入点字符。这个过程仅仅只是为了让 VisualStudio 帮助咱快速创建 `launchSettings.json` 文件而已。我现在还没有找到比这个方法更加顺手便捷的方式哈
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20252211056201460.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094801567-1409992820.png)
 
 双击 `Properties\launchSettings.json` 文件进入编辑，现在可见的 `launchSettings.json` 文件的内容大概如下
 
@@ -166,17 +166,17 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 继续点击分析器项目的调试属性，此时可见启动配置文件窗口界面如下
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202522111022690.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094801877-402732877.png)
 
 愉快点击下拉菜单，选择要调试项目即可，如下图所示
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目3.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025221110546445.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094802196-132118089.png)
 
 选中之后的效果如下图所示
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目4.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025221113511471.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094802508-1156605642.png)
 
 完成之后，再次打开 `launchSettings.json` 文件，可以看到机智的 Visual Studio 已经帮咱填充了 `targetProject` 属性内容了。通过 Visual Studio 的填充，可以让咱不需要写繁琐的相对路径，也不用担心写错项目路径导致调试出错
 
@@ -200,7 +200,7 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 如果在打开的启动配置文件窗口里面，没有找到期望的调试项目，如下图所示，那么可能的原因就是期望的调试项目没有设置正确的分析器项目引用，即期望被调试的项目的 csproj 项目文件里面缺少如 `<ProjectReference Include="你的分析器项目" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>` 这样的代码，或分析器项目引用路径错误，引用了其他的分析器项目
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目5.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20252211112296912.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094802803-385234835.png)
 
 ## 无法启动调试 0x80070057 错误
 
@@ -211,7 +211,7 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 > 不支持操作。未知错误：0x80070057。
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目6.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025221111401734.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094803118-1727881693.png)
 
 或英文版的如下提示错误
 
@@ -222,6 +222,6 @@ git pull origin c0e948b2a3aab521f2d6d86593c385f4d406cfa5
 出现这个问题是 Visual Studio 缓存识别错误或被调试的项目路径错误，需要先关闭 Visual Studio 然后清理 sln 文件所在文件夹里的 `.vs` 文件夹，和各个项目的 `bin` 和 `obj` 文件夹。接着再重复点击分析器项目的调试属性，愉快点击下拉菜单，重新选择要调试项目即可
 
 <!-- ![](image/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目/dotnet 在 VisualStudio 一键 F5 启动调试 Roslyn 分析器项目3.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025221110546445.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094802196-132118089.png)
 
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )

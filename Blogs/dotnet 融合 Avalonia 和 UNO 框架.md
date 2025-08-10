@@ -245,7 +245,7 @@ MainPage.xaml.cs(15,9,15,18): error CS0104: “Thickness”是“Avalonia.Thickn
 完成引用之后的项目引用关系如下图
 
 <!-- ![](image/dotnet 融合 Avalonia 和 UNO 框架/dotnet 融合 Avalonia 和 UNO 框架0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20246221527259579.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094820480-1990201672.png)
 
 为了让 AppDemo 控制台项目能够正确的引用上 UnoDemo 项目，需要修改项目文件，修改之后的代码大概如下
 

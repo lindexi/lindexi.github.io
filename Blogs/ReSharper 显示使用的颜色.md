@@ -13,17 +13,17 @@ category:
 如 ReSharper 的[官方文档](https://www.jetbrains.com.cn/en-us/help/resharper/Coding_Assistance__Color_Assistance.html)描述，此功能的效果如下
 
 <!-- ![](image/ReSharper 显示使用的颜色/ReSharper 显示使用的颜色0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202457936473710.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094823889-1322810402.png)
 
 或如下
 
 <!-- ![](image/ReSharper 显示使用的颜色/ReSharper 显示使用的颜色1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20245793657313.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094824187-494215247.png)
 
 此功能名叫 “Highlight color usages” 可以对代码里面的颜色进行颜色标识，比如在代码提示或在编写完成里显示代码的颜色对应的颜色方块。可在 ReShaprer 的选项的 Code Inspection 的 Settings 里面，通过勾选或去掉勾选 Highlight color usages 来决定功能的开关
 
 <!-- ![](image/ReSharper 显示使用的颜色/ReSharper 显示使用的颜色2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202457939401498.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094824568-892049088.png)
 
 
 更多 ReSharper 相关，请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )

@@ -2070,7 +2070,7 @@ PresentationCore.dll!System.Windows.Input.InputManager.RaiseProcessInputEventHan
 在 WPF 里面，除了走 WM_Pointer 之外，还有默认的 RealTimeStylus 机制。根据 [lsj](https://blog.sdlsj.net) 大佬的考古，预计在 Win10 的版本下，底层的 RealTimeStylus 机制的数据也是从 WM_Pointer 里面来的，如下图所示
 
 <!-- ![](image/WPF 从零自己实现从 RealTimeStylus 获取触摸信息/WPF 从零自己实现从 RealTimeStylus 获取触摸信息3.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20233271731347622.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094822910-257308644.png)
 
 以上的 581 和 582 等就是对应的 `WM_Pointer` 消息号。更多细节信息请参阅 [WPF 从零自己实现从 RealTimeStylus 获取触摸信息](https://blog.lindexi.com/post/WPF-%E4%BB%8E%E9%9B%B6%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E4%BB%8E-RealTimeStylus-%E8%8E%B7%E5%8F%96%E8%A7%A6%E6%91%B8%E4%BF%A1%E6%81%AF.html )
 

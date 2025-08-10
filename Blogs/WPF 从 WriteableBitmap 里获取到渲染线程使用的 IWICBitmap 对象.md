@@ -28,7 +28,7 @@ category:
 为了获取到 CSwDoubleBufferedBitmap 的 `IWICBitmap * m_pBackBuffer` 对象，我按照 [lsj](https://blog.sdlsj.net) 教我的方法，从 VisualStudio 里面查看 CSwDoubleBufferedBitmap 类的布局。即鼠标移动到类定义上，点击查看内存布局，即可看到如下图内容
 
 <!-- ![](image/WPF 从 WriteableBitmap 里获取到渲染线程使用的 IWICBitmap 对象/WPF 从 WriteableBitmap 里获取到渲染线程使用的 IWICBitmap 对象0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025423203853402.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094912136-253754823.png)
 
 如此即可看到 `IWICBitmap * m_pBackBuffer` 对象是 32 偏移量，刚好这是第一个指针，无论是 x86 还是 x64 都是 32 偏移量，于是定义如下结构体
 

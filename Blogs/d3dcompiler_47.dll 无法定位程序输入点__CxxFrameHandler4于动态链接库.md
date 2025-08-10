@@ -23,17 +23,17 @@ category:
 在有这些问题的前提下，当 Windows Kits 更新到 10.0.26100 或更高版本的 SDK 时，此 SDK 所带的 `C:\Program Files (x86)\Windows Kits\10\Redist\D3D\x64\d3dcompiler_47.dll` 文件就是动态依赖了 `C:\Windows\System32\ucrtbase.dll` 文件，如以下 [Dependencies](https://github.com/lucasg/Dependencies) 工具截图所见内容
 
 <!-- ![](image/d3dcompiler_47.dll 无法定位程序输入点__CxxFrameHandler4于动态链接库/d3dcompiler_47.dll 无法定位程序输入点__CxxFrameHandler4于动态链接库0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20254242041447564.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094752049-1145936241.png)
 
 其版本信息如下
 
 <!-- ![](image/d3dcompiler_47.dll 无法定位程序输入点__CxxFrameHandler4于动态链接库/d3dcompiler_47.dll 无法定位程序输入点__CxxFrameHandler4于动态链接库2.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2025424204655417.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094752420-900612843.png)
 
 而在此版本之前的 10.0.22621 或更低版本里面 d3dcompiler_47.dll 还是将 ucrtbase 静态打进去的，通过 [Dependencies](https://github.com/lucasg/Dependencies) 工具所见内容如下，可以看到依赖非常少
 
 <!-- ![](image/d3dcompiler_47.dll 无法定位程序输入点__CxxFrameHandler4于动态链接库/d3dcompiler_47.dll 无法定位程序输入点__CxxFrameHandler4于动态链接库1.png) -->
-![](http://cdn.lindexi.site/lindexi%2F20254242046195997.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094752742-1348000490.png)
 
 由于 10.0.26100 版本的 d3dcompiler_47.dll 显式要求引用 `C:\Windows\System32\ucrtbase.dll` 文件，这就导致了即使在应用程序同路径下，放入 ucrtbase.dll 文件也不能解决问题
 

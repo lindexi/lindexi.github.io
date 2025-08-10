@@ -31,7 +31,7 @@ Caption    : QEMU QEMU HARDDISK SCSI Disk Device
 通过设备管理器能看到如下界面
 
 <!-- ![](image/记 QEMU 虚拟磁盘设备移动文件抛异常但实际移动成功/记 QEMU 虚拟磁盘设备移动文件抛异常但实际移动成功0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202411142043157882.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094930338-119301972.png)
 
 经过 [lsj](https://blog.sdlsj.net/ ) 的分析，预计是虚拟磁盘的问题，导致移动成功了，但是 Win32 给出错误信息
 

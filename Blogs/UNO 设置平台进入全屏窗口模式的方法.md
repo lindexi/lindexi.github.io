@@ -245,7 +245,7 @@ public class GtkPlatformProvider : IPlatformProvider
 完成代码之后，分别切换到 UNO 的 WPF 和 GTK 和 WinUI 平台上，进行构建和运行项目。测试点击全屏按钮时，是否能够符合预期的进入和退出全屏模式。如下图是在 UOS 上使用 Skia.GTK 的测试效果
 
 <!-- ![](image/UNO 设置平台进入全屏窗口模式的方法/UNO 设置平台进入全屏窗口模式的方法0.gif) -->
-![](http://cdn.lindexi.site/lindexi%2FUNO%2520%25E8%25AE%25BE%25E7%25BD%25AE%25E5%25B9%25B3%25E5%258F%25B0%25E8%25BF%259B%25E5%2585%25A5%25E5%2585%25A8%25E5%25B1%258F%25E7%25AA%2597%25E5%258F%25A3%25E6%25A8%25A1%25E5%25BC%258F%25E7%259A%2584%25E6%2596%25B9%25E6%25B3%25950.gif)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094825928-304758400.gif)
 
 代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/0b1371317210b0a5e000484d57ee3ae7fc844e24/RalllawfairlekolairHemyiqearkice) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/0b1371317210b0a5e000484d57ee3ae7fc844e24/RalllawfairlekolairHemyiqearkice) 上，可以使用如下命令行拉取代码
 

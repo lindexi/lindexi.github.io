@@ -83,7 +83,7 @@ while (XLib.XNextEvent(display, out var xEvent) == default)
 完成之后运行代码，以下是我在 Hyperv 虚拟机的运行效果，可以看到绘制的两条线段在所有应用上方，也在任务栏上方
 
 <!-- ![](image/学习 Avalonia 框架笔记 如何创建一个全屏置顶的 X11 应用窗口/学习 Avalonia 框架笔记 如何创建一个全屏置顶的 X11 应用窗口0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2024410204263964.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094924472-1044706359.png)
 
 完全的 Program.cs 文件的代码如下
 

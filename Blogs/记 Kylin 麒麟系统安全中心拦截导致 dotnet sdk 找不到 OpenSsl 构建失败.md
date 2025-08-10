@@ -87,7 +87,7 @@ dotnet: ELF 64-bit LSB shared object, LoongArch-64, version 1 (SYSV), dynamicall
 点击那会我忘记截图了，下图可见是在麒麟系统的通知栏上的内容
 
 <!-- ![](image/记 Kylin 麒麟系统安全中心拦截导致 dotnet sdk 找不到 OpenSsl 构建失败/记 Kylin 麒麟系统安全中心拦截导致 dotnet sdk 找不到 OpenSsl 构建失败0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F202410291458337190.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202508/1080237-20250810094929776-1490319928.png)
 
 点击允许之后，再次在远程的 ssh 里面执行 dotnet build 就都能通过了
 
