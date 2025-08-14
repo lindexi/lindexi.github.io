@@ -72,6 +72,8 @@
 
  * [Avalonia 11.1 获取平台调用的窗口的方法](Avalonia-11.1-获取平台调用的窗口的方法.md)
 
+ * [Avalonia 制作 AOT 单文件](Avalonia-制作-AOT-单文件.md)
+
  * [Avalonia 取消窗口关闭导致 Linux 麒麟系统无法关机注销重启](Avalonia-取消窗口关闭导致-Linux-麒麟系统无法关机注销重启.md)
 
  * [Avalonia 后台代码简单播放动画示例](Avalonia-后台代码简单播放动画示例.md)
