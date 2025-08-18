@@ -63,6 +63,8 @@
 
 为什么需要降级为 netstandard2.0 版本？这是为了让此分析器项目能够同时在 dotnet CLI 和 Visual Studio 2022 里面使用。在 Visual Studio 2022 里，当前依然使用的是 .NET Framework 的版本。于是求最小公倍数，选择了 netstandard2.0 版本。预计后续版本才能使用到最新的 dotnet 框架版本
 
+由于分析器本身需要利用到部分 VisualStudio 的基础设施支持，为了能够在 VisualStudio 里面更好地工作，某些情况下需要关注 Microsoft.CodeAnalysis.CSharp 库的版本，尽管大部分情况下都不应该惯着开发者，直接有多新就用多新，详细请参阅 [支持的 Roslyn 包版本映射 - Visual Studio (Windows) - Microsoft Learn](https://learn.microsoft.com/zh-cn/visualstudio/extensibility/roslyn-version-support?view=vs-2022 )
+
 以上的 `<LangVersion>latest</LangVersion>` 只是为了方便让咱使用最新的语言特性。前面选择的 netstandard2.0 会导致语言特性默认开得比较低，这里设置为 latest 可以让我们使用最新的语言特性，让代码编写更加方便。这里需要再次提醒，在 dotnet 里面，语言和框架是分开的。使用低版本框架也能使用高版本语言。如果对语言和框架的关系依然有所疑惑，推荐先了解一下 dotnet 的基础知识，不要着急往下看。编写源代码生成器和分析器需要对 dotnet 有一定的了解，否则写着就开始混淆概念了
 
 以上的 `<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>` 的作用是强制执行扩展分析器规则。这个属性是为了让我们在编写分析器的时候能够更加严格，让我们的代码更加规范。这里大家不需要细致了解，如有兴趣，请参阅 [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用](https://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-EnforceExtendedAnalyzerRules-%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%9C%E7%94%A8.html )
@@ -2819,6 +2821,8 @@ public class FooIncrementalGenerator : IIncrementalGenerator
             })
 ```
 
+以上代码判断逻辑里，判断是否为 Foo 类型采用的是字符串判断。除了此实现方式外，还可以使用明确的符号判断方法。通常来说，使用字符串判断能够满足绝大部分情况，且能够适应一定程度的模糊处理，符号判断能够实现更加精准。可根据自身业务需求或喜好选用判断方式。在本文末尾常用方法处，我给出了通过符号进行判断的方法，如感兴趣，还请翻到后文了解实现细节
+
 为了调用 `SemanticModel` 的 `GetInterceptableLocation` 方法获取传入到 `InterceptsLocationAttribute` 特性的必要参数，这里通过 `syntaxContext.Node` 属性拿到当前正在发起方法调用的 InvocationExpressionSyntax 语法节点。接着调用 `GetInterceptableLocation` 方法获取到拦截器的位置信息
 
 ```csharp
@@ -3912,6 +3916,126 @@ git pull origin fb40665eacad9578d14bf799969bb0e9ac6f0b89
 ### 获取项目默认命名空间
 
 [IIncrementalGenerator 增量 Source Generator 生成代码入门 获取项目默认命名空间](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A2%9E%E9%87%8F-Source-Generator-%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81%E5%85%A5%E9%97%A8-%E8%8E%B7%E5%8F%96%E9%A1%B9%E7%9B%AE%E9%BB%98%E8%AE%A4%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4.html )
+
+### 使用符号判断类型
+
+在上文提到的类型判断方法里面，基本全是通过字符串判断的方式，比如在《分析使用了 CollectionAttribute 特性的分部方法》判断是否返回值类型是 System.Collections.Generic.IEnumerable 泛型类型时，就使用了如下的字符串判断方法
+
+```csharp
+ var returnTypeName = methodSymbolReturnType.ToDisplayString(fullNameDisplayFormat);
+
+ // 预期的返回值类型
+ const string exceptedReturnTypeName = "global::System.Collections.Generic.IEnumerable";
+
+ if (!string.Equals(returnTypeName, exceptedReturnTypeName, StringComparison.InvariantCulture))
+ {
+     return null;
+ }
+
+ if (methodSymbolReturnType.TypeArguments.Length != 1)
+ {
+     // 预期是 IEnumerable<Func> 这样的类型，在 IEnumerable 里面只有一个泛型参数
+     return null;
+ }
+
+ // 取出 IEnumerable<Func<IContext, IFoo>> 中的 Func<IContext, IFoo> 部分
+ if (methodSymbolReturnType.TypeArguments[0] is not INamedTypeSymbol funcTypeSymbol)
+ {
+     return null;
+ }
+```
+
+字符串判断方法本身可以实现一些模糊判断效果，如采用 StartsWith 等方法进行不精确的判断。接下来将和大家介绍使用符号判断类型的方法，通过符号进行判断，可以实现十分精确的判断逻辑，这就意味着在上面代码里面的多个判断条件都可以合并为一个判断
+
+先取出 `System.Collections.Generic.IEnumerable` 泛型类型，代码如下
+
+```csharp
+ // 预期的返回值类型
+ // 使用反引号 (`) 和泛型参数的数量在元数据中指定泛型类型。这就是为什么你在元数据名称中看不到“...IEnumerable<T>”的原因
+ // [适用于 ImmutableArrays 的 Roslyn 分析器和代码感知库 - Microsoft Learn](https://learn.microsoft.com/zh-cn/visualstudio/extensibility/roslyn-analyzers-and-code-aware-library-for-immutablearrays?view=vs-2022 )
+ const string exceptedReturnTypeName = "System.Collections.Generic.IEnumerable`1";
+```
+
+对比可以看出，去掉了 `global::` 前缀，加上了反引号和泛型参数的数量
+
+由于此基础类型必定存在，因此可以直接使用以下代码获取
+
+```csharp
+GeneratorAttributeSyntaxContext syntaxContext = ...
+
+// 此基础类型必定存在
+INamedTypeSymbol symbolOfIEnumerable = syntaxContext.SemanticModel
+    .Compilation
+    .GetTypeByMetadataName(exceptedReturnTypeName)!;
+```
+
+获取类型之后，即可和方法返回类型进行对比判断是否相同。由于这里是两个泛型进行对比，需要获取方法返回值类型的 ConstructedFrom 属性，判断代码如下
+
+```csharp
+ ITypeSymbol returnType = methodSymbol.ReturnType;
+ // 这是一个泛型类型，我们需要获取泛型参数
+ // 预期是 IEnumerable<Func<IContext, IFoo>> 这样的类型
+ if (returnType is not INamedTypeSymbol methodSymbolReturnType)
+ {
+     return null;
+ }
+
+ // 此基础类型必定存在
+ INamedTypeSymbol symbolOfIEnumerable = syntaxContext.SemanticModel
+     .Compilation
+     .GetTypeByMetadataName(exceptedReturnTypeName)!;
+
+ var methodSymbolReturnTypeConstructedFrom = methodSymbolReturnType.ConstructedFrom;
+
+ if (!symbolOfIEnumerable.Equals(methodSymbolReturnTypeConstructedFrom, SymbolEqualityComparer.Default))
+ {
+     return null;
+ }
+
+ // 通过以上的符号判断，以下几个判断都可不需要。如判断类型名、判断是否是泛型类型，判断泛型参数数量。这些全部包括在 System.Collections.Generic.IEnumerable`1 类型里面，只要类型符号判断相同，就等于这些条件满足
+ //var returnTypeName = methodSymbolReturnType.ToDisplayString(fullNameDisplayFormat);
+ //if (!string.Equals(returnTypeName, exceptedReturnTypeName, StringComparison.InvariantCulture))
+ //{
+ //    return null;
+ //}
+
+ //if (!methodSymbolReturnType.IsGenericType)
+ //{
+ //    // 不是泛型类型，不是我们想要的
+ //    return null;
+ //}
+
+ //if (methodSymbolReturnType.TypeArguments.Length != 1)
+ //{
+ //    // 预期是 IEnumerable<Func> 这样的类型，在 IEnumerable 里面只有一个泛型参数
+ //    return null;
+ //}
+```
+
+也许有伙伴开始疑惑，为什么不能直接用 `methodSymbolReturnType` 做相等比较，而是需要取 ConstructedFrom 属性？这是因为 ConstructedFrom 属性是获取把当前“已构造”的泛型类型还原成“去掉自身类型实参”的那个泛型定义的符号，但保留外层已确定的封闭类型实参。这使你可以忽略本类型自己的类型参数替换结果，只比较它到底是哪一个泛型类型模板
+
+以上代码的 GetTypeByMetadataName 拿到的是“泛型定义”符号（Definition），它不带具体类型实参。而实际代码的 `IEnumerable<Func<IContext, IFoo>>` 是一个“已构造”实例。自然两个符号是不相等的。通过 ConstructedFrom 把它还原为 `IEnumerable<T>` 类型符号，两者才语义等价，从而比较成功
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/60954446bebcbc84cfa6e91cb8681b551ac60b93/Roslyn/JicanerekeaFawbairbalbayhearwear) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/60954446bebcbc84cfa6e91cb8681b551ac60b93/Roslyn/JicanerekeaFawbairbalbayhearwear) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 60954446bebcbc84cfa6e91cb8681b551ac60b93
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 60954446bebcbc84cfa6e91cb8681b551ac60b93
+```
+
+获取代码之后，进入 Roslyn/JicanerekeaFawbairbalbayhearwear 文件夹，即可获取到源代码
+
 
 ## 基础知识
 
