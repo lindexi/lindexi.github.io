@@ -3036,6 +3036,8 @@
 
  * [WPF 异常 NativeWPFDLLLoader.LoadNativeWPFDLL](WPF-异常-NativeWPFDLLLoader.LoadNativeWPFDLL.md)
 
+ * [WPF 引用 ASP.NET Core 的 AOT 版本](WPF-引用-ASP.NET-Core-的-AOT-版本.md)
+
  * [WPF 引用 UWP 控件 不打包为 MSIX 分发的方法](WPF-引用-UWP-控件-不打包为-MSIX-分发的方法.md)
 
  * [WPF 引用第三方库的控件在设计器加上设计时数据和属性](WPF-引用第三方库的控件在设计器加上设计时数据和属性.md)
