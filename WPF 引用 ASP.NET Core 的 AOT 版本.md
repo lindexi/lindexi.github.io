@@ -3,6 +3,8 @@
 之前我写过博客让 WPF 和 ASP.NET Core 跑在一个应用程序进程里面，这样的方式十分简单方便，缺点是输出路径会带一些 ASP.NET Core 的 DLL 文件。本文将来尝试对 ASP.NET Core 进行 AOT 发布为类库，通过类库调用方式在 WPF 里引用 ASP.NET Core 开启 HTTP 服务
 
 <!--more-->
+<!-- CreateTime:2025/08/21 08:48:46 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

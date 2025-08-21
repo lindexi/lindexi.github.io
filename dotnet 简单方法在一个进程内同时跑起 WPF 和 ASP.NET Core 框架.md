@@ -50,3 +50,6 @@ git pull origin 0bb1705e0118208f4134b5334ace9ee84270eb5f
 ```
 
 获取代码之后，进入 HefebehairHercheaconem 文件夹
+
+本文以上方式是直接项目引用，会带入 ASP.NET Core 负载且要求 ASP.NET Core 与 WPF 依赖相同 .NET 框架版本，如想破坏以上条件，可将 ASP.NET Core 进行 AOT 构建为类库被 WPF 使用，详细请参阅 [WPF 引用 ASP.NET Core 的 AOT 版本](https://blog.lindexi.com/post/WPF-%E5%BC%95%E7%94%A8-ASP.NET-Core-%E7%9A%84-AOT-%E7%89%88%E6%9C%AC.html )
+<!-- [WPF 引用 ASP.NET Core 的 AOT 版本 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19049877 ) -->
