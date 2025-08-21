@@ -66,27 +66,27 @@
 
 [Content Start]
 
-开启 WM_Pointer 后，在多屏幕设备上，如果 WPF 应用在非主屏幕上显示窗口，则此窗口收到触摸消息时，调用 `GetTouchPoint` 或 `GetStylusPoint` 方法都会返回错误的触摸点坐标
+WPF 的 IncrementalStrokeHitTester 存在计算错误问题
 
-复现步骤：
+我偶尔能够发现使用 WPF 的 IncrementalStrokeHitTester 时候，传入一个只能将笔迹擦断为两条新的笔迹的橡皮擦轨迹时，实际上是将整条笔迹都擦掉了。我尝试复现了问题，收集了测试数据，终于我拿到了一段特别简洁的数据。使用我的这个数据可以直接复现 IncrementalStrokeHitTester 的计算错误问题。以下是我的测试数据：
 
-创建空 WPF 应用程序，开启 WM_Pointer 功能。寻找一台包含多个带触摸的显示屏幕的设备，设置此设备多个屏幕之间使用扩展方式显示。将此空 WPF 应用程序运行在副屏幕上，即窗口在非主屏上显示。触摸点击窗口内容，查看 `GetTouchPoint` 或 `GetStylusPoint` 方法返回的触摸点坐标
+[Data1]
 
-预期行为：
+当对此数据传入 (684.9383585999957,446.44199735085795) 坐标的点时，将会发现 IncrementalStrokeHitTester 将整条笔迹都擦掉了。然而相同的输入情况下，使用 Stroke.GetEraseResult 方法却能够返回符合预期的两段笔迹
 
-预期能够返回正确的相对于窗口内的坐标
+以下是我给出的最简复现 Demo 代码，我将我的整个复现 Demo 项目上传到了 GitHub 上，请看： [Link1]
 
-实际行为：
+[Code1]
 
-返回的坐标差了屏幕宽度的值，证明计算过程中没有考虑到多屏的状态
+尝试运行以上代码，可见看到当调用 `incrementalStrokeHitTester.AddPoint(point);` 时，将会触发 StrokeHit 事件，然而从 StrokeHitEventArgs 的 GetPointEraseResults 方法返回的 StrokeCollection 只包含了 0 条笔迹，这就意味着传入 XY=(684,446) WH=(50,70) 的范围时，整条笔迹都被擦掉了。这明显就是 IncrementalStrokeHitTester 存在的计算错误问题
 
-产生的影响：
+为了能够让大家直观感受到此问题，我将测试数据的笔迹轨迹和橡皮擦范围在界面绘制出来，绘制代码如下
 
-对于带触摸的多屏应用来说，将无法正确获取触摸点坐标
+[Code2]
 
-更多信息：
+绘制出来的界面如下图所示
 
-在 Windows 上，主屏的左上角是 （0,0） 点，副屏坐标允许是负数坐标系，如副屏在主屏的左侧。在 HwndPointerInputProvider.cs 类里面的 GetOriginOffsetsLogical 方法里，直接采用 PointToScreen 进行计算，导致了缺少了对多屏的支持。正确的做法应该是取当前的 DisplayRect 参与计算，从而计算出正确的坐标。我的伙伴在 2023 时就尝试在我团队内部维护的 WPF 版本进行此问题修复，经过了大约两年的在实际用户设备上的测试，没有发现问题，我准备将他的代码搬运合入到主仓库里
+[Image1]
 
 [Content End]
 
