@@ -3752,6 +3752,8 @@
 
  * [支持 dotnet 6 的 dnSpy 神器版本](支持-dotnet-6-的-dnSpy-神器版本.md)
 
+ * [支持较低 GLibC 的 dotnet AOT GitHub Action 构建方法](支持较低-GLibC-的-dotnet-AOT-GitHub-Action-构建方法.md)
+
  * [收集的 C 盘 Windows System32 文件夹里的文件](收集的-C-盘-Windows-System32-文件夹里的文件.md)
 
  * [文件传输](文件传输.md)

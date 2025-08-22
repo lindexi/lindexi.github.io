@@ -221,12 +221,14 @@ RUN powershell_version=7.0.0-rc.2 \
 
 ```
 
-我将本文用到两个资源 CSDN 如果没法下载请发我邮件
+我将本文用到两个资源，我都上传到 CSDN 上，如果没法下载请发我邮件向我要
 
 [dotnet-sdk-3.1.102-linux-x64.tar.gz](https://download.csdn.net/download/lindexi_gd/12233549)
 
 [PowerShell.Linux.x64.7.0.0-rc.2.nupkg ](https://download.csdn.net/download/lindexi_gd/12233550)
 
+由于当前 Debian 10 (buster) 已经停止维护了，需要更换包源才能下载，更新方式请参阅 [制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像](https://blog.lindexi.com/post/%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E8%83%BD%E6%9E%84%E5%BB%BA-dotnet-AOT-%E7%9A%84-gitlab-ruuner-%E7%9A%84-Debian-docker-%E9%95%9C%E5%83%8F.html )
+<!-- [制作一个能构建 dotnet AOT 的 gitlab runner 的 Debian docker 镜像 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18164886 ) -->
 
 
 
