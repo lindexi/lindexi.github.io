@@ -28,7 +28,7 @@
 FROM debian:buster-slim
 ```
 
-为了提升一点拉取速度，我换成国内的源，使用的是阿里的源
+为了提升一点拉取速度，我换成国内的源，使用的是腾讯的源
 
 ```
 RUN rm /etc/apt/sources.list
@@ -36,15 +36,16 @@ COPY sources.list /etc/apt/sources.list
 RUN apt-get update
 ```
 
-这里的 sources.list 的代码是从 [debian镜像_debian下载地址_debian安装教程-阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/debian ) 抄的，代码如下
+<!-- 这里的 sources.list 的代码是从 [debian镜像_debian下载地址_debian安装教程-阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/debian ) 抄的，代码如下 -->
+
+以上的 sources.list 文件是提前准备的，其内容代码如下。细心的伙伴也许看到了，这是从 debian-archive 里面拉取的，这是因为现在 debian 10 （buster）已经停止维护了，需要从归档源才能拉取，详细请参阅后文的踩坑经验
 
 ```
-deb http://mirrors.aliyun.com/debian/ buster main non-free contrib
-deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib
-deb http://mirrors.aliyun.com/debian-security buster/updates main
-deb-src http://mirrors.aliyun.com/debian-security buster/updates main
-deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
-deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib
+deb http://mirrors.tencent.com/debian-archive/debian buster main contrib non-free
+# deb-src http://mirrors.tencent.com/debian-archive/debian buster main contrib non-free
+deb http://mirrors.tencent.com/debian-archive/debian buster-updates main contrib non-free
+# deb-src http://mirrors.tencent.com/debian-archive/debian buster-updates main contrib non-free
+deb http://mirrors.tencent.com/debian-archive/debian-security buster/updates main contrib non-free
 ```
 
 为了交叉构建，同时构建出 ARM64 的 AOT 的 dotnet 应用，我根据 [Cross-compilation - .NET - Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/cross-compile ) 的文档安装上必要的负载
@@ -358,7 +359,7 @@ Error: building at STEP "RUN apt update": while running runtime: exit status 100
 
 重新参考了 [替换docker容器默认的debian镜像 - OrcHome](https://www.orchome.com/8173 ) 博客，结果依然配置失败。核心原因是配置的版本不正确
 
-我当前使用的是 debian 是 10.13 版本，需要根据 [腾讯云 Debian 源帮助文档](https://mirrors.cloud.tencent.com/help/debian.html) 教程文档，更新对应的 `debian 10.x (buster)` 的配置，即如下内容
+我当前使用的是 debian 是 10.13 版本，需要根据 [腾讯云 Debian 源帮助文档](https://mirrors.cloud.tencent.com/help/debian.html) 教程文档，更新对应的 `debian 10.x (buster)` 的配置，即修改 sources.list 为如下内容
 
 ```
 debian 10.x (buster)
@@ -399,6 +400,29 @@ Err:6 http://mirrors.aliyun.com/debian buster-updates Release
 我是如何知道我当前的 debian 版本的？我通过运行镜像，输入 `cat /etc/debian_version` 命令获取到版本
 
 注：在 2025.07.30 之前，我使用的是阿里云的镜像源，但在今天，我发现拉取失败，提示 `Err:4 http://mirrors.aliyun.com/debian buster Release 404  Not Found [IP: 119.188.109.20 80]` 错误。重新阅读文档，发现阿里云让 debian 10 使用 `http://mirrors.cloud.aliyuncs.com/debian-archive/debian` 路径。但实际上发现连接将会失败，详细请参阅 [【云安全中心】Linux 更新软件-域名解析失败-阿里云开发者社区](https://developer.aliyun.com/article/767805 ) 文档。于是就不如换成使用腾讯的源
+
+### 提示 404 Not Found 错误
+
+不替换 sources.list 时，直接提示 `404  Not Found [IP: 146.75.30.132 80]` 错误，详细错误如下
+
+```
+Ign:1 http://deb.debian.org/debian buster InRelease
+Ign:2 http://deb.debian.org/debian-security buster/updates InRelease
+Ign:3 http://deb.debian.org/debian buster-updates InRelease
+Err:4 http://deb.debian.org/debian buster Release
+  404  Not Found [IP: 146.75.30.132 80]
+Err:5 http://deb.debian.org/debian-security buster/updates Release
+  404  Not Found [IP: 146.75.30.132 80]
+Err:6 http://deb.debian.org/debian buster-updates Release
+  404  Not Found [IP: 146.75.30.132 80]
+Reading package lists...
+E: The repository 'http://deb.debian.org/debian buster Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian-security buster/updates Release' does not have a Release file.
+E: The repository 'http://deb.debian.org/debian buster-updates Release' does not have a Release file.
+```
+
+这个错误的原因是 Debian 10 (buster) 已经停止支持，被移动到 archive 里，需要更换包源。按照上文的方法，替换为 mirrors.tencent.com/debian-archive 腾讯的源即可
+
 
 ### No system certificates available
 

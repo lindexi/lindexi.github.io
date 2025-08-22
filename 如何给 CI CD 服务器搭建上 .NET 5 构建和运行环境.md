@@ -85,6 +85,9 @@ RUN echo "" >> /etc/apt/sources.list \
     && echo "deb-src http://ftp.cn.debian.org/debian/ buster-backports main contrib non-free" >> /etc/apt/sources.list
 ```
 
+注：由于当前 Debian 10 (buster) 已经停止维护了，需要更换包源才能下载，更新方式请参阅 [制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像](https://blog.lindexi.com/post/%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E8%83%BD%E6%9E%84%E5%BB%BA-dotnet-AOT-%E7%9A%84-gitlab-ruuner-%E7%9A%84-Debian-docker-%E9%95%9C%E5%83%8F.html )
+<!-- [制作一个能构建 dotnet AOT 的 gitlab runner 的 Debian docker 镜像 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18164886 ) -->
+
 然后加上必备的环境
 
 ```
@@ -223,5 +226,3 @@ USER cloud
 可以看到搭建 docker 的步骤比虚拟机的步骤多太多了，但这是因为我不能拉官方的 docker 来用而已，如果能拉官方的，那就只需要两句话就完成了
 
 我在做 docker 服务器的时候，因为本地磁盘空间不足，翻车了，请看 [dotnet 制作 docker 提示 Insufficient space in download directory 磁盘空间不足](https://blog.lindexi.com/post/dotnet-%E5%88%B6%E4%BD%9C-docker-%E6%8F%90%E7%A4%BA-Insufficient-space-in-download-directory-%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3.html )
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

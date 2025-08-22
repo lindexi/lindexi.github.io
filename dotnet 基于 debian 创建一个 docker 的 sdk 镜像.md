@@ -218,10 +218,11 @@ RUN powershell_version=7.0.0-rc.2 \
 
 ```
 
-我将本文用到两个资源 CSDN 如果没法下载请发我邮件
+我将本文用到两个资源，我都上传到 CSDN 上，如果没法下载请发我邮件向我要
 
 [dotnet-sdk-3.1.102-linux-x64.tar.gz](https://download.csdn.net/download/lindexi_gd/12233549)
 
 [PowerShell.Linux.x64.7.0.0-rc.2.nupkg ](https://download.csdn.net/download/lindexi_gd/12233550)
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+由于当前 Debian 10 (buster) 已经停止维护了，需要更换包源才能下载，更新方式请参阅 [制作一个能构建 dotnet AOT 的 gitlab ruuner 的 Debian docker 镜像](https://blog.lindexi.com/post/%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E8%83%BD%E6%9E%84%E5%BB%BA-dotnet-AOT-%E7%9A%84-gitlab-ruuner-%E7%9A%84-Debian-docker-%E9%95%9C%E5%83%8F.html )
+<!-- [制作一个能构建 dotnet AOT 的 gitlab runner 的 Debian docker 镜像 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18164886 ) -->
