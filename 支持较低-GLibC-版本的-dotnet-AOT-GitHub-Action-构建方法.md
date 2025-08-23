@@ -1,10 +1,12 @@
 
-# 支持较低 GLibC 的 dotnet AOT GitHub Action 构建方法
+# 支持较低 GLibC 版本的 dotnet AOT GitHub Action 构建方法
 
 无论是麒麟还是 UOS 系统，所采用的 GLibC 版本都比较低。默认在 GitHub Action 上构建用的是 ubuntu-latest 较新的版本。进行 AOT 发布的 dotnet 程序将因为 GLibC 版本太新，而无法在麒麟或 UOS 等国产化系统上跑起来
 
 <!--more-->
 
+
+<!-- CreateTime:2025/08/23 07:18:20 -->
 
 <!-- 发布 -->
 <!-- 博客 -->
@@ -105,7 +107,7 @@ E: The repository 'http://deb.debian.org/debian buster-updates Release' does not
 
 ```yml
     steps:
-      # 由于 Debian 10 (buster) 停止维护了，需要换成 archive.debian.org 源头
+      # 由于 Debian 10 (buster) 停止维护了，需要换成 archive.debian.org 源
     - name: UpdateSource
       run: |
           rm /etc/apt/sources.list
@@ -114,7 +116,7 @@ E: The repository 'http://deb.debian.org/debian buster-updates Release' does not
           echo 'deb http://archive.debian.org/debian-security buster/updates main contrib non-free'  >> /etc/apt/sources.list
 ```
 
-这里需要说明的是，除了 `http://archive.debian.org/debian` 之外，后面两个也是非常重要的，否则将会遇到找不到 libc-dev 失败，大概提示如下
+这里需要说明的是，除了 `http://archive.debian.org/debian` 之外，后面两个也是非常重要的，否则将会遇到找不到 libc-dev 而失败，其失败提示如下
 
 ```
 Get:1 http://archive.debian.org/debian buster InRelease [122 kB]
@@ -141,7 +143,7 @@ The following packages have unmet dependencies:
 E: Unable to correct problems, you have held broken packages.
 ```
 
-由于 GitHub Action 是跑在国外的，就没有必要去使用腾讯的源
+由于 GitHub Action 是跑在国外的，就没有必要去使用腾讯的源，直接使用 archive.debian.org 就可以了
 
 完成以上步骤之后，即可按照正常方式进行安装 .NET SDK 了，代码如下
 
