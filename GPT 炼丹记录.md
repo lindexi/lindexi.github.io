@@ -139,7 +139,7 @@ WPF 的 IncrementalStrokeHitTester 存在计算错误问题
 ```
 
 ```
-请帮我将以下内容转述为地道的英文：我最近重新阅读了 WritableBitmap 的源代码，我发现你的结论应该是有误的。在 WPF 里面，对 WritableBitmap 写入内容时，应该放入到 Lock 和 Unlock 中间。这两个方法做的事情就是确保和渲染线程同步，渲染线程也会执行类似 Lock 和 Unlock 的事情，在 Lock 和 Unlock 中间将 WritableBitmap 的内容拷贝到 m_pBackBuffer 里面。实际渲染时，将取出 m_pBackBuffer 参与渲染，此时本身属于双缓冲设计，不会存在闪烁问题，如果可能出现的闪烁问题，则可能是你的业务端没有执行渲染对齐所造成的。比如预期是缓动动画，实际上被实现为离散动画。如果我有任何理解错误的点，还请告诉我
+请帮我将以下内容转述为地道的英文：现在 Win11 已经完全在界面上移除了 handedness 相关选项，现在除了通过注册表修改之外，再也没有任何入口设置可以设置 Menu apper to the left or right of your hand 功能。我观察到了，即使注册表修改了选项，整个系统的各个应用，甚至包括 NotePad 应用，都没有再遵循此选项了。似乎现在只有 WPF 才遵守这个选项的约定。然而事实上，这个遵守行为会让 WPF 应用显得和系统应用格格不入。我认为是时候废弃这个选项了，或者是通过 AppContext 允许开发者配置是否忽略此选项
 ```
 
 ```
