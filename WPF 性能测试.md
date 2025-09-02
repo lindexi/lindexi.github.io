@@ -124,7 +124,29 @@ git pull origin 4983492acb47c040ecb80b7417f7cf364d1e3e19
 
 获取代码之后，进入 NarlearcefearNuyikallair 文件夹
 
-带刷新率的绘制一万矩形版本的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 欢迎访问
+带刷新率的绘制一万矩形版本的测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/9e4fb7c067598fb133c9c1ade73b45e27f4cea67/FekemreakairlayHijehereci) 上
+
+## 画千线
+
+测试代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/83621f444c741eb424f1a52fbac503d04b7608e0/WPFDemo/CebemwarjawkeJaihokahaiqere) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/83621f444c741eb424f1a52fbac503d04b7608e0/WPFDemo/CebemwarjawkeJaihokahaiqere) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 83621f444c741eb424f1a52fbac503d04b7608e0
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 83621f444c741eb424f1a52fbac503d04b7608e0
+```
+
+获取代码之后，进入 WPFDemo/CebemwarjawkeJaihokahaiqere 文件夹，即可获取到源代码
 
 ## 视频播放性能
 
