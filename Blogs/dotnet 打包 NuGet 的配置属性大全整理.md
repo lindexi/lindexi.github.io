@@ -577,6 +577,17 @@ Lindexi.Package Path=C:\Users\lindexi\.nuget\packages\lindexi.package\1.2.3
 
 详细请参阅 [Roslyn 打包自定义的文件到 NuGet 包](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E6%96%87%E4%BB%B6%E5%88%B0-NuGet-%E5%8C%85.html )
 
+包含穿透依赖传递的 BuildTransitive 文件夹：
+
+```xml
+  <ItemGroup>
+     <None Include="BuildTransitive\Package.targets" Pack="True" PackagePath="\buildTransitive\$(PackageId).targets" /> 
+     <None Include="BuildTransitive\Package.props" Pack="True" PackagePath="\buildTransitive\$(PackageId).props" /> 
+  </ItemGroup>
+```
+
+详细请参阅 [Roslyn 打包 NuGet 包 BuildTransitive 文件夹用于穿透依赖传递拷贝文件](https://blog.lindexi.com/post/Roslyn-%E6%89%93%E5%8C%85-NuGet-%E5%8C%85-BuildTransitive-%E6%96%87%E4%BB%B6%E5%A4%B9%E7%94%A8%E4%BA%8E%E7%A9%BF%E9%80%8F%E4%BE%9D%E8%B5%96%E4%BC%A0%E9%80%92%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6.html )
+
 ### 判断框架和平台
 
 ```xml
