@@ -11,7 +11,7 @@
 
 此问题已经报告给 WPF 官方，请看 [https://github.com/dotnet/wpf/issues/8517](https://github.com/dotnet/wpf/issues/8517)
 
-此问题已经被 [少珺](https://github.com/kkwpsv) 修复，请看 [https://github.com/dotnet-campus/wpf/pull/9](https://github.com/dotnet-campus/wpf/pull/9)
+此问题已经被 [少珺](https://github.com/kkwpsv) 修复，请看 [https://github.com/dotnet-campus/wpf/pull/9](https://github.com/dotnet-campus/wpf/pull/9) 和 [https://github.com/dotnet/wpf/pull/11051](https://github.com/dotnet/wpf/pull/11051)
 
 修复后的测试包是 [https://www.nuget.org/packages/dotnetCampus.WPF.Resource/6.0.4-alpha07-test06](https://www.nuget.org/packages/dotnetCampus.WPF.Resource/6.0.4-alpha07-test06)
 
