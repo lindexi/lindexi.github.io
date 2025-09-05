@@ -576,6 +576,8 @@
 
  * [dotnet C# 如何使用 MemoryFailPoint 检查是否有足够的内存资源来执行操作](dotnet-C-如何使用-MemoryFailPoint-检查是否有足够的内存资源来执行操作.md)
 
+ * [dotnet C# 如何修改异常的堆栈](dotnet-C-如何修改异常的堆栈.md)
+
  * [dotnet C# 如何在顶级语句定义属性](dotnet-C-如何在顶级语句定义属性.md)
 
  * [dotnet C# 如何正确获取藏文的字数](dotnet-C-如何正确获取藏文的字数.md)
