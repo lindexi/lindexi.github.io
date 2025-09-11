@@ -66,27 +66,21 @@
 
 [Content Start]
 
-WPF 的 IncrementalStrokeHitTester 存在计算错误问题
+标题： WPF 的 StylusPlugIn 被 UI 线程错误地触发
 
-我偶尔能够发现使用 WPF 的 IncrementalStrokeHitTester 时候，传入一个只能将笔迹擦断为两条新的笔迹的橡皮擦轨迹时，实际上是将整条笔迹都擦掉了。我尝试复现了问题，收集了测试数据，终于我拿到了一段特别简洁的数据。使用我的这个数据可以直接复现 IncrementalStrokeHitTester 的计算错误问题。以下是我的测试数据：
+我最近遇到了 WPF 的 StylusPlugIn 的 OnStylusDown 和 OnStylusUp 方法被乱序调用的问题。先在 UI 线程调用了 OnStylusUp 方法，然后在 Stylus Input 线程调用了 OnStylusDown 方法。其中我认为不应该在 UI 线程调用了 OnStylusUp 方法，因为当前是一个触摸消息，且 StylusDeviceId 为 123，即由 StylusDeviceId 证明当前这条消息非鼠标消息
 
-[Data1]
+最简复现步骤：
 
-当对此数据传入 (684.9383585999957,446.44199735085795) 坐标的点时，将会发现 IncrementalStrokeHitTester 将整条笔迹都擦掉了。然而相同的输入情况下，使用 Stroke.GetEraseResult 方法却能够返回符合预期的两段笔迹
+编写一个类型继承 StylusPlugIn 类，在 OnStylusDown 和 OnStylusMove 和 OnStylusUp 方法里面使用 `Thread.Sleep` 模拟耗时逻辑。接着在触摸屏幕上多指快速点击，此时将可能能够复现出从 UI 线程调用 OnStylusDown 或 OnStylusMove 或 OnStylusUp 方法
 
-以下是我给出的最简复现 Demo 代码，我将我的整个复现 Demo 项目上传到了 GitHub 上，请看： [Link1]
+我将最简复现 Demo 放在 GitHub 上： [Link1]
 
-[Code1]
+我观察到在 WispLogic.cs 的一句注释：
 
-尝试运行以上代码，可见看到当调用 `incrementalStrokeHitTester.AddPoint(point);` 时，将会触发 StrokeHit 事件，然而从 StrokeHitEventArgs 的 GetPointEraseResults 方法返回的 StrokeCollection 只包含了 0 条笔迹，这就意味着传入 XY=(684,446) WH=(50,70) 的范围时，整条笔迹都被擦掉了。这明显就是 IncrementalStrokeHitTester 存在的计算错误问题
+> // We are on the pen thread, just call directly.
 
-为了能够让大家直观感受到此问题，我将测试数据的笔迹轨迹和橡皮擦范围在界面绘制出来，绘制代码如下
-
-[Code2]
-
-绘制出来的界面如下图所示
-
-[Image1]
+这句注释是完全错误的，因为它处在于 WispLogic.cs 的 VerifyStylusPlugInCollectionTarget 方法里面。而 `WispLogic.VerifyStylusPlugInCollectionTarget` 方法的唯一调用方就是 `WispLogic.PreNotifyInput` 方法。而 `WispLogic.PreNotifyInput` 方法是毫无疑问在 UI 线程触发的，因为它监听了 InputManager 的 PreNotifyInput 事件： `_inputManager.Value.PreNotifyInput += new NotifyInputEventHandler(PreNotifyInput);`
 
 [Content End]
 
