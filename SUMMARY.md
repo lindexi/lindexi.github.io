@@ -3276,6 +3276,8 @@
 
  * [WPF 触摸相关](WPF-触摸相关.md)
 
+ * [WPF 警惕 StylusPlugIn 的多线程安全问题](WPF-警惕-StylusPlugIn-的多线程安全问题.md)
+
  * [WPF 警惕使用 Dispatcher.InvokeShutdown 方法退出应用 将不触发 Application.Exit 事件](WPF-警惕使用-Dispatcher.InvokeShutdown-方法退出应用-将不触发-Application.Exit-事件.md)
 
  * [WPF 让 TextBox 支持水平滚动](WPF-让-TextBox-支持水平滚动.md)
