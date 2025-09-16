@@ -55,3 +55,5 @@ git pull origin 6f10958bbe27b2c288ac79da3f9c4600727c10a7
 - 感谢 Intel 大佬们修复了此问题
 
 关联博客：[WPF 的 Viewport3D 等 3D 模块在带 Intel UHD 770 设备上抛出渲染异常](https://blog.lindexi.com/post/WPF-%E7%9A%84-Viewport3D-%E7%AD%89-3D-%E6%A8%A1%E5%9D%97%E5%9C%A8%E5%B8%A6-Intel-UHD-770-%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%8A%9B%E5%87%BA%E6%B8%B2%E6%9F%93%E5%BC%82%E5%B8%B8.html )
+
+另有老师和我报告说在 Intel i3-4150 CPU 上也复现此问题，尝试更新显卡驱动到 10.18.14.5074 版本可以解决

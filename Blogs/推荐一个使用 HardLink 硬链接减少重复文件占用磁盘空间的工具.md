@@ -22,7 +22,7 @@ category:
 2. 将需要进行瘦身的文件夹拖入到工具的 "Drag Folder Here" 里面即可
 
 <!-- ![](image/推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具/推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具0.png) -->
-![](http://cdn.lindexi.site/lindexi%2F2023129110104868.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202509/1080237-20250917072952393-436916501.png)
 
 拖进去之后，工具将会分析拖入的文件夹里面包含的重复文件，记录文件哈希值，调用 [CreateHardLink](https://learn.microsoft.com/zh-cn/windows/win32/api/winbase/nf-winbase-createhardlinkw) 这个 Win32 函数创建硬链接减少重复文件。如此实现减少重复文件占用磁盘空间
 
