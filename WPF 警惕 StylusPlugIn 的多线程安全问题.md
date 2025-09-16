@@ -3,6 +3,8 @@
 在 WPF 里面，可以通过 StylusPlugIn 直接从触摸线程获取触摸消息，不需要经过 UI 线程。如此可以实现更低的触摸延迟。但是 StylusPlugIn 的 OnStylusDown\Move\Up 方法都可能是从触摸线程或 UI 线程调入，需要警惕这里的多线程安全问题 
 
 <!--more-->
+<!-- CreateTime:2025/09/11 08:46:35 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
