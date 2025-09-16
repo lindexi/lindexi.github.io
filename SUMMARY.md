@@ -3354,6 +3354,8 @@
 
  * [WPF 通过 WindowsAppSDK 使用 WinRT 的手写识别功能](WPF-通过-WindowsAppSDK-使用-WinRT-的手写识别功能.md)
 
+ * [WPF 通过 WriteableBitmap 实现 TAGC 低光增强效果算法](WPF-通过-WriteableBitmap-实现-TAGC-低光增强效果算法.md)
+
  * [WPF 通过位处理合并图片](WPF-通过位处理合并图片.md)
 
  * [WPF 通过辅助方法在 csharp 代码写出 XAML 界面效果](WPF-通过辅助方法在-csharp-代码写出-XAML-界面效果.md)

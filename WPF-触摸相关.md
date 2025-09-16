@@ -127,6 +127,9 @@
 
 [WPF 窗口 触摸失效 的一种场景 - wuty007 - 博客园](https://www.cnblogs.com/wuty/p/18570445 )
 
+[WPF 警惕 StylusPlugIn 的多线程安全问题](https://blog.lindexi.com/post/WPF-%E8%AD%A6%E6%83%95-StylusPlugIn-%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98.html )
+<!-- [WPF 警惕 StylusPlugIn 的多线程安全问题 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19085065 ) -->
+
 ## 笔迹
 
 - [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
