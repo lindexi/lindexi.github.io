@@ -116,7 +116,7 @@
 
 [Content Start]
 
-根据我之前的调查，这是一个设备丢失问题。开启缓存之后，当设备丢失之后，重新创建新设备时，没有让旧设备关联的缓存失效，从而导致缓存跨设备使用，进而导致了渲染问题。这个问题是在比较底层的渲染模块发生的，我没有调查到具体的代码
+根据我这几天的调查，我没有任何的收获。我想请你帮忙进行更近一步的调试调查，这是因为我无法在我的设备上复现问题。我按照你给的代码，构建了一个 .NET 10 的应用，且我将它与调试版的 WPF 发布到一起。我期望你做的事情是：在你的设备上将它运行起来，随后使用 VisualStudio 附加调试运行起来的进程。附加调试的过程中，请在 Code Type 下拉框勾选 Native 选项。随后请你确保已经加载上 wpfgfx_cor3.dll 的符号——wpfgfx_cor3.pdb文件，你必须确保所加载的 wpfgfx_cor3.pdb 文件是我上传的压缩包里的文件。这一步的理由是我上传的压缩包里面的文件是我采用 Debug 构建的，可以包含充足的调试信息。紧接着，请你打开 Breakpoint 窗格，添加函数断点。添加函数断点的函数名为 MilInstrumentationCallHRCheckFunction 的 C++ 语言函数断点。随后请你尝试复现问题。我的预期是当你能够复现问题时，在 VisualStudio 里面能够进入 MilInstrumentationCallHRCheckFunction 函数的断点，此时从调用堆栈里面可能可以看到很多有用的信息。如果你发现调试困难，还请此时在 VisualStudio 里面通过 `select Debug > Save Dump As` 功能存放 DUMP 文件，再将此 DUMP 文件分享给我进行下一步的分析
 
 [Content End]
 
