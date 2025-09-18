@@ -166,6 +166,12 @@
 <Copyright>Copyright (c) 玄年-玄月 Metaphysical Algorithm Co.,Ltd</Copyright>
 ```
 
+中间的 `(c)` 的正确表述应该是 UTF-8 编码的 169 号（0xA9）字符，这个字符经常存在编码问题。好在 csproj 等都采用 XML 格式，可以直接使用 XML 编码 `&#169;` 表示，如
+
+```xml
+<Copyright>Copyright &#169; dotnet-campus 2020-$([System.DateTime]::Now.ToString(`yyyy`))</Copyright>
+```
+
 #### CopyrightSlim
 
 只是 Copyright 的较短版本，默认不设置将采用 Copyright 的值
