@@ -66,21 +66,7 @@
 
 [Content Start]
 
-标题： WPF 的 StylusPlugIn 被 UI 线程错误地触发
-
-我最近遇到了 WPF 的 StylusPlugIn 的 OnStylusDown 和 OnStylusUp 方法被乱序调用的问题。先在 UI 线程调用了 OnStylusUp 方法，然后在 Stylus Input 线程调用了 OnStylusDown 方法。其中我认为不应该在 UI 线程调用了 OnStylusUp 方法，因为当前是一个触摸消息，且 StylusDeviceId 为 123，即由 StylusDeviceId 证明当前这条消息非鼠标消息
-
-最简复现步骤：
-
-编写一个类型继承 StylusPlugIn 类，在 OnStylusDown 和 OnStylusMove 和 OnStylusUp 方法里面使用 `Thread.Sleep` 模拟耗时逻辑。接着在触摸屏幕上多指快速点击，此时将可能能够复现出从 UI 线程调用 OnStylusDown 或 OnStylusMove 或 OnStylusUp 方法
-
-我将最简复现 Demo 放在 GitHub 上： [Link1]
-
-我观察到在 WispLogic.cs 的一句注释：
-
-> // We are on the pen thread, just call directly.
-
-这句注释是完全错误的，因为它处在于 WispLogic.cs 的 VerifyStylusPlugInCollectionTarget 方法里面。而 `WispLogic.VerifyStylusPlugInCollectionTarget` 方法的唯一调用方就是 `WispLogic.PreNotifyInput` 方法。而 `WispLogic.PreNotifyInput` 方法是毫无疑问在 UI 线程触发的，因为它监听了 InputManager 的 PreNotifyInput 事件： `_inputManager.Value.PreNotifyInput += new NotifyInputEventHandler(PreNotifyInput);`
+我发现 Avalonia 的 TextBox 的光标移动在当设置为某些字体时，出现错误，其表现行为和 WPF 不相符。最简复现的例子是设置使用 Calibri 字体，再输入 `ti` 文本内容。尝试使用左右箭头键移动光标，可以看到光标完全跳过了 `ti` 单词，似乎将整个单词当成一个字符。我尝试用鼠标进行命中测试，同样地无法命中到 `ti` 的中间。相同的字体在 WPF 框架里是符合预期工作的，可以将光标命中到 `ti` 的中间
 
 [Content End]
 
@@ -137,7 +123,7 @@
 ```
 
 ```
-请帮我将以下内容转述为地道的英文：请不用遵循 Axx 的建议，因为他既不是此项目成员也不是长期在此开源项目活跃的成员。你的问题依然是可以开放讨论的，尽管我认为可能很难会有决策性的意见能够产生。而且，讨论一个 API 时，不一定要求其最终都能发生改变，讨论的过程中思维的碰撞也是一个很有趣的过程。你会遇到疑惑，那未来也许会有更多人产生相同的疑惑，他们搜到了这个帖子，翻看沟通记录，也许遇到疑惑的人能从中受益
+请帮我将以下内容转述为地道的英文：经过了我的调查，我认为当前的断言判断条件过于苛刻。断言判断条件没有充分考虑当前的情况，我认为去掉此断言判断条件是合理的
 ```
 
 ```
