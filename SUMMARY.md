@@ -3922,6 +3922,8 @@
 
  * [读 MAUI 源代码 理解可绑定对象和可绑定属性的存储机制](读-MAUI-源代码-理解可绑定对象和可绑定属性的存储机制.md)
 
+ * [读 WPF 源代码 了解获取 GlyphTypeface 的 CharacterToGlyphMap 的数量耗时原因](读-WPF-源代码-了解获取-GlyphTypeface-的-CharacterToGlyphMap-的数量耗时原因.md)
+
  * [读 WPF 源代码的疑惑记录](读-WPF-源代码的疑惑记录.md)
 
  * [读书笔记 dotnet 什么时候进行垃圾回收](读书笔记-dotnet-什么时候进行垃圾回收.md)
