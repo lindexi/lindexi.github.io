@@ -113,7 +113,7 @@ while (x == y)
 
 如果在代码使用了 非 ascii 的字符，那么需要把他转换为 `\uxx` 方式，这样可以解决一些非 ascii 因为编译器分析的问题。
 
-当然上面的要求只是对于编译的代码
+当然上面的要求只是针对于参与编译的代码，不参与构建的部分，如注释、内建字符串等，不在此要求范围内
 
 ## Label
 
@@ -121,9 +121,9 @@ while (x == y)
 
 ## 主构造函数
 
-主构造函数参数应该像普通参数一样命名，使用`camelCase`格式，并且不应以`_`前缀。例如，应使用 `public ObservableLinkedList(IEnumerable<T> items)` 而不是 `public ObservableLinkedList(IEnumerable<T> _items)`
+非 record 记录类型的主构造函数参数应该像普通参数一样命名，使用`camelCase`格式，并且不应以`_`前缀。例如，应使用 `public ObservableLinkedList(IEnumerable<T> items)` 而不是 `public ObservableLinkedList(IEnumerable<T> _items)`
 
-如果使用了了主构造函数的类型的代码不足够小，不能一眼看出主构造函数参数使用位置，或可能主构造函数参数与局部变量混淆。那么应该新建一个使用 `_` 下划线前缀的字段，将主构造函数参数分配给此字段，且在代码逻辑中使用字段而不是主构造函数参数，如
+如果使用了主构造函数的非 record 记录类型的代码不足够小，不能一眼看出主构造函数参数使用位置，或可能主构造函数参数与局部变量混淆。那么应该新建一个使用 `_` 下划线前缀的字段，将主构造函数参数分配给此字段，且在代码逻辑中使用字段而不是主构造函数参数，如
 
 ```csharp
 private readonly IEnumerable<T> _items = item;

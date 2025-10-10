@@ -1812,6 +1812,8 @@
 
  * [SharpDx 进入全屏模式](SharpDx-进入全屏模式.md)
 
+ * [SignTool 使用 SafeNet eToken 硬证书进行代码签名](SignTool-使用-SafeNet-eToken-硬证书进行代码签名.md)
+
  * [SixLabors.ImageSharp 如何读取 IDAT 校验失败的 png 图片](SixLabors.ImageSharp-如何读取-IDAT-校验失败的-png-图片.md)
 
  * [SkiaSharp 使用 HarfBuzz 修复找不到 Symbol 字形](SkiaSharp-使用-HarfBuzz-修复找不到-Symbol-字形.md)
