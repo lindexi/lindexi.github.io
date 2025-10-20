@@ -1042,6 +1042,8 @@
 
  * [dotnet 判断程序当前使用管理员运行降低权使用普通权限运行](dotnet-判断程序当前使用管理员运行降低权使用普通权限运行.md)
 
+ * [dotnet 利用 Windows 注册表实现开机自动启动](dotnet-利用-Windows-注册表实现开机自动启动.md)
+
  * [dotnet 制作 docker 提示 Insufficient space in download directory 磁盘空间不足](dotnet-制作-docker-提示-Insufficient-space-in-download-directory-磁盘空间不足.md)
 
  * [dotnet 动态代理魔法书](dotnet-动态代理魔法书.md)
