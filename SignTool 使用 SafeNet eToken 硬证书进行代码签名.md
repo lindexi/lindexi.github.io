@@ -12,9 +12,9 @@
 
 换成带 HSM 硬件设备的硬证书之后，依然可以使用 SignTool 进行自动化签名。和之前的软证书 PFX 文件只有命令行参数的差别了。本文将记录如何修改 SignTool 签名命令适配硬证书
 
-我所在的团队是从天威诚信购买的证书，没有议价，稍贵。但他们的售后服务还不错，会给一些指导。但天威诚信推荐的是用他们的 iTrusSignTool.exe 工具，而非微软官方提供的 SignTool 工具，不利于我的自动化打包平台接入
+我所在的团队是从天威诚信购买的证书，没有议价，稍贵。好在他们的售后服务还不错，会给一些指导，还算值这个价钱。但天威诚信推荐的是用他们的 iTrusSignTool.exe 工具，而非微软官方提供的 SignTool 工具，不利于我的自动化打包平台接入
 
-好在天威诚信购买的证书使用的是 SafeNet 工具，依然可以从堆栈网找到 `SafeNet eToken` 的 SignTool 命令行签名方法，整个不会被弹出要求输入密码的对话框。堆栈网上给的是 EV 证书签名，且也没有中文截图。为了防止其他伙伴踩坑，我重新跑了一遍，编写了本文，包含详细的步骤，步骤里包含中文和英文界面的截图。详细堆栈网的地址是： <https://stackoverflow.com/questions/17927895/automate-extended-validation-ev-code-signing-with-safenet-etoken/47894907#47894907>
+好在天威诚信购买的证书使用的是 SafeNet 工具，依然可以从堆栈网找到 `SafeNet eToken` 的 SignTool 命令行签名方法，整个过程不会被弹出要求输入密码的对话框。堆栈网上给的是 EV 证书签名的方法，且也没有中文截图。为了防止其他伙伴踩坑，我重新跑了一遍，编写了本文，包含详细的步骤，步骤里包含中文和英文界面的截图。详细堆栈网的地址是： <https://stackoverflow.com/questions/17927895/automate-extended-validation-ev-code-signing-with-safenet-etoken/47894907#47894907>
 
 先使用天威诚信供应商提供的口令和安装方法进行安装，这个步骤完成按照他们的文档就可以了，十分简单。唯一需要小心的是，这个过程里面不能使用远程桌面连接，哪怕用向日葵都可以，尽管在打包服务器部署向日葵是十分不安全的
 
@@ -67,7 +67,7 @@ CSP 名和读卡器名称在相同一页，只是内容比较多，需要滚动�
 
 如我的读卡器名 reader 为 `SafeNet Token JC 0`
 
-我的 CSP 名为 `eToken Base Cryptographic Provider`
+如我的 CSP 名为 `eToken Base Cryptographic Provider`
 
 4 拼接私钥容器名参数
 
@@ -98,15 +98,15 @@ eToken CSP 具有隐藏（或者至少没有广泛宣传）的功能，可以从
 按照微软的官方文档，可以知道其核心参数如下
 
 - `/f` ： 导出的 Codesign.cer 签名证书文件，此证书文件没有包含私钥。私钥是存放在硬件设备里面。如后续步骤错误，将收到 SignTool Error: No private key is available 错误提示
-- `/csp` ： 步骤 3 获取的 CSP 名。只有 csp 不配合 `/k` 参数，则将收到 SignTool Error: The /csp option requires the /k option. 错误
+- `/csp` ：传入从步骤 3 获取的 CSP 名。只有 csp 不配合 `/k` 参数，则将收到 SignTool Error: The /csp option requires the /k option. 错误
 - `/k` ： 从步骤 4 拼接到的。等同于 `/kc` 参数，即写 `/k` 或 `/kc` 都可以
 
 非核心的日常参数如下，以下参数相对固定，正常不用更改
 
 - `/td` ：将此选项与 `/tr` 选项一起使用可请求 RFC 3161 时间戳服务器使用的摘要算法。正常现在只能用 `/td sha256`
 - `/tr` ：指定 RFC 3161 时间戳服务器的 URL 地址。如用 digi 的服务器 `/tr http://timestamp.digicert.com`
-- `/fd` ：指定要用于创建文件签名的文件摘要算法。正常现在只能用 `/fd sha256`
-
+- `/fd` ：指定要用于创建文件签名的文件摘要算法。正常现在只能用 `/fd sha256` 或 `/fd sha1`
+  - 额外说明，正常只需带上 `/fd sha256` 即可。如需让 win7 兼容识别，则再跑一次签名，传入 `/fd sha1` 和 `/as` 参数即可
 - `/as` ：追加此签名。如果不存在主签名，则改为使此签名成为主签名
 
 以下是我的示例签名命令，对 Test1.exe 文件进行签名
@@ -127,6 +127,32 @@ Successfully signed: Test1.exe
 ```
 
 签名成功之后，右击被签名的文件的属性，可以从数字签名界面看到签名内容。大家可以先尝试命令行参数，确定能够正常签名之后，再接入到自己的打包平台里面。对每个文件的签名，也只有传入的文件路径不相同而已，其他参数都是一样的，换句话说只要自己能拼接出一次正确的命令参数，接下来的其他文件的签名都可以复用这些参数
+
+为了防止有伙伴不知道从哪获取 SignTool 工具，我这里给出正确的获取 SignTool 方法。敲黑板，正常安装 VisualStudio 2022 或更高版本，即可在你的电脑上找到官方的 SignTool 工具，可别在网上随便下载。证书这东西可是非常机密且重要的，你可以理解为你的公章，被盗用了会有法律风险。证书可是你司签了合同才能购买的哦，如果被木马伪装的工具偷走了，那可就麻烦了哦
+
+正常应该是在 `C:\Program Files (x86)\Windows Kits\10\bin\<SDK 版本号>\<x86 或 x64>\signtool.exe` 路径里。获取确切路径的方法如下
+
+从开始菜单打开 Developer Command Prompt for VS 2022 命令行工具，先敲下 SignTool 回车，确保工具已经就绪。随后再输入 `where SignTool` 即可获取到工具所在路径
+
+```
+C:\Program Files\Microsoft Visual Studio\2022\Professional>where SignTool
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x86\signtool.exe
+```
+
+如果打开的 Developer Command Prompt for VS 2022 命令工具是 PowerShell 版本的，还请先输入 cmd 进入到 cmd 里，再输入 `where SignTool` 获取其路径
+
+```
+**********************************************************************
+** Visual Studio 2022 Developer PowerShell v17.14.17
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+PS C:\Program Files\Microsoft Visual Studio\2022\Professional> cmd
+Microsoft Windows [版本 10.0.26100.6899]
+(c) Microsoft Corporation。保留所有权利。
+
+C:\Program Files\Microsoft Visual Studio\2022\Professional>where SignTool
+C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe
+```
 
 参考文档
 
