@@ -2998,6 +2998,8 @@
 
  * [WPF 已知问题 传入错误数据给到 WriteableBitmap 可能导致渲染线程锁住](WPF-已知问题-传入错误数据给到-WriteableBitmap-可能导致渲染线程锁住.md)
 
+ * [WPF 已知问题 使用 WindowChrome 在切换系统主题色时导致窗口界面偏移](WPF-已知问题-使用-WindowChrome-在切换系统主题色时导致窗口界面偏移.md)
+
  * [WPF 已知问题 全屏透明窗口弹出子窗口会闪烁](WPF-已知问题-全屏透明窗口弹出子窗口会闪烁.md)
 
  * [WPF 已知问题 包含 NaN 的 Geometry 几何可能导致渲染层抛出 UCEERR_RENDERTHREADFAILURE 异常](WPF-已知问题-包含-NaN-的-Geometry-几何可能导致渲染层抛出-UCEERR_RENDERTHREADFAILURE-异常.md)
