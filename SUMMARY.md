@@ -44,6 +44,8 @@
 
  * [ASP.NET Core 写一个能够接收所有请求路径的测试服务](ASP.NET-Core-写一个能够接收所有请求路径的测试服务.md)
 
+ * [ASP.NET Core 制作一个低资源占用的支持超大文件表单上传的服务](ASP.NET-Core-制作一个低资源占用的支持超大文件表单上传的服务.md)
+
  * [ASP.NET Core 因为 Nginx 配置 Connection 为 Upgrade 导致 Kestrel 返回 400 错误](ASP.NET-Core-因为-Nginx-配置-Connection-为-Upgrade-导致-Kestrel-返回-400-错误.md)
 
  * [ASP.NET Core 将文件夹内容输出为压缩包文件方法](ASP.NET-Core-将文件夹内容输出为压缩包文件方法.md)
