@@ -1354,6 +1354,8 @@
 
  * [dotnet 读 WPF 源代码 Popup 的 StaysOpen 为 false 将会吃掉其他窗口的首次激活](dotnet-读-WPF-源代码-Popup-的-StaysOpen-为-false-将会吃掉其他窗口的首次激活.md)
 
+ * [dotnet 读 WPF 源代码 学习使用 Microsoft.DotNet.Arcade.Sdk 处理代码里的多语言](dotnet-读-WPF-源代码-学习使用-Microsoft.DotNet.Arcade.Sdk-处理代码里的多语言.md)
+
  * [dotnet 读 WPF 源代码 聊聊 DispatcherTimer 的实现](dotnet-读-WPF-源代码-聊聊-DispatcherTimer-的实现.md)
 
  * [dotnet 读 WPF 源代码笔记 AppDomainShutdownMonitor 的设计](dotnet-读-WPF-源代码笔记-AppDomainShutdownMonitor-的设计.md)
