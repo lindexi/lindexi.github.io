@@ -1824,6 +1824,8 @@
 
  * [SixLabors.ImageSharp 如何读取 IDAT 校验失败的 png 图片](SixLabors.ImageSharp-如何读取-IDAT-校验失败的-png-图片.md)
 
+ * [Skia 在龙芯搭景嘉微显卡设备 某些字体会渲染相互覆盖](Skia-在龙芯搭景嘉微显卡设备-某些字体会渲染相互覆盖.md)
+
  * [SkiaSharp 使用 HarfBuzz 修复找不到 Symbol 字形](SkiaSharp-使用-HarfBuzz-修复找不到-Symbol-字形.md)
 
  * [SkiaSharp 渲染输出 SVG 文件](SkiaSharp-渲染输出-SVG-文件.md)
