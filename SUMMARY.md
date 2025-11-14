@@ -430,6 +430,8 @@
 
  * [dot net double 数组转 float 数组](dot-net-double-数组转-float-数组.md)
 
+ * [dotnet 10 已知问题 构建 WPF 时提示 System.Private.Windows.GdiPlus 程序集未找到错误](dotnet-10-已知问题-构建-WPF-时提示-System.Private.Windows.GdiPlus-程序集未找到错误.md)
+
  * [dotnet 5 从 IL 层面分析协变返回类型新特性](dotnet-5-从-IL-层面分析协变返回类型新特性.md)
 
  * [dotnet 5 判断当前程序运行在 Windows 系统 Linux 系统的简单方法](dotnet-5-判断当前程序运行在-Windows-系统-Linux-系统的简单方法.md)
