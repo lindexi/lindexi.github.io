@@ -1486,6 +1486,10 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 这个软件的交互做的非常好，有可能大家看界面就知道如何使用了
 
+- [DotMemory系列：1. 终结队列积压引发的内存暴涨分析 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/19220465 )
+- [DotMemory系列：2. 事件泄露引发的内存暴涨分析 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/19224329 )
+- [DotMemory系列：3. 堆碎片化引发的内存暴涨分析 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/19227185 )
+
 ### 使用 WinDbg 调试
 
 使用 WinDbg 调试 .NET Core 系列的应用，包括 dotnet 5 和 dotnet 6 等，需要先加载 sos 才可以进行调试。方法请参阅 [WinDbg 加载 dotnet core 的 sos.dll 辅助调试方法](https://blog.lindexi.com/post/WinDbg-%E5%8A%A0%E8%BD%BD-dotnet-core-%E7%9A%84-sos.dll-%E8%BE%85%E5%8A%A9%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
@@ -1609,7 +1613,7 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 - [dotnet 读 WPF 源代码笔记 为什么自定义的 UserControl 用户控件不能跨程序集继承](https://blog.lindexi.com/post/dotnet-%E8%AF%BB-WPF-%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AC%94%E8%AE%B0-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84-UserControl-%E7%94%A8%E6%88%B7%E6%8E%A7%E4%BB%B6%E4%B8%8D%E8%83%BD%E8%B7%A8%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%BB%A7%E6%89%BF.html )
 
-- [【细致完整】终章：模拟.NET应用场景，综合应用反编译、第三方库调试、拦截、一库多版本兼容方案 - Dotnet9](https://dotnet9.com/m5 )
+- [【细致完整】终章：模拟.NET应用场景，综合应用反编译、第三方库调试、拦截、一库多版本兼容方案 - Dotnet9](https://dotnet9.com/bbs/post/2023/9/Simulate-scenarios-using-third-party-dotNET-libraries-for-debugging-interception-decompilation-and-compatibility-solutions-for-multiple-versions-of-one-library )
 
 - [记一次有教益的内存碎片转储文件分析经历-编程技术-看雪-安全社区kanxue.com](https://bbs.kanxue.com/thread-273799.htm )
 
