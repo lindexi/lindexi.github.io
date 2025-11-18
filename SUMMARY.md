@@ -624,6 +624,8 @@
 
  * [dotnet C# 警惕可空结构体的方法内部赋值无效](dotnet-C-警惕可空结构体的方法内部赋值无效.md)
 
+ * [dotnet C# 警惕结构体加等事件](dotnet-C-警惕结构体加等事件.md)
+
  * [dotnet C# 设置 X11 应用窗口背景透明](dotnet-C-设置-X11-应用窗口背景透明.md)
 
  * [dotnet C# 调用委托的 GetInvocationList 的对象分配](dotnet-C-调用委托的-GetInvocationList-的对象分配.md)
