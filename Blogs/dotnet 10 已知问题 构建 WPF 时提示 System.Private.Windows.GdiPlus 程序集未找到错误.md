@@ -24,16 +24,44 @@ error CS0012: The type 'IImage' is defined in an assembly that is not referenced
 
 如果等不及 SDK 更新，可使用以下补丁方法：
 
+用户修复构建：
+
 ```xml
-    <!-- Workaround for https://github.com/dotnet/wpf/issues/11246 -->
-    <Target Name="FixWpfReferences" AfterTargets="ResolveTargetingPackAssets" Condition="'$(UseWPF)' == 'true'">
-        <ItemGroup>
-            <SystemPrivateWindowsCoreRef Include="@(Reference)" Condition="'%(Filename)' == 'System.Private.Windows.Core'" />
-            <ReferencePath Include="@(SystemPrivateWindowsCoreRef->'%(RootDir)%(Directory)System.Private.Windows.GdiPlus.dll')">
-                <AssemblyName>System.Private.Windows.GdiPlus</AssemblyName>
-            </ReferencePath>
-        </ItemGroup>
-    </Target>
+  <!-- Workaround for https://github.com/dotnet/wpf/issues/11246 -->
+  <!-- Copy from https://github.com/dotnet/sdk/issues/51173#issuecomment-3392609295 -->
+  <Target Name="_AddDrawingReference" AfterTargets="ResolveTargetingPackAssets">
+    <ItemGroup>
+      <Reference Condition="'%(Reference.FileName)' == 'PresentationCore'" 
+                 Include="%(Reference.RootDir)%(Reference.Directory)System.Drawing.Common.dll;
+                          %(Reference.RootDir)%(Reference.Directory)System.Private.Windows.GdiPlus.dll" />
+    </ItemGroup>
+  </Target>
+```
+
+用于自包含 self contained 应用：
+
+```xml
+  <!-- Copy from https://github.com/dotnet/windowsdesktop/issues/5405#issuecomment-3548429691 -->
+  <Target Name="_AddDrawingRuntime" 
+          AfterTargets="ResolveRuntimePackAssets"
+          Condition="'$(SelfContained)' == 'true' AND '$(UseWPF)' == 'true' AND '$(UseWinforms)' != 'true'">
+    <ItemGroup>
+      <_additionalRuntimePackAsset Condition="'%(RuntimePackAsset.FileName)' == 'PresentationCore'" 
+        Include="@(RuntimePackAsset->'%(RootDir)%(Directory)System.Drawing.Common.dll')" DestinationSubPath="System.Drawing.Common.dll" />
+      <_additionalRuntimePackAsset Condition="'%(RuntimePackAsset.FileName)' == 'PresentationCore'" 
+        Include="@(RuntimePackAsset->'%(RootDir)%(Directory)System.Private.Windows.GdiPlus.dll')" DestinationSubPath="System.Private.Windows.GdiPlus.dll" />
+      <RuntimePackAsset Include="@(_additionalRuntimePackAsset)" />
+      <ReferenceCopyLocalPaths Include="@(_additionalRuntimePackAsset)" />
+    </ItemGroup>
+  </Target>
 ```
 
 等待下个 .NET 10 正式版本发布之后，以上补丁代码需要删掉
+
+参考链接：
+
+- https://github.com/dotnet/wpf/issues/11261
+- https://github.com/dotnet/sdk/issues/51173
+- https://github.com/NuGet/Home/issues/11786
+- https://github.com/dotnet/windowsdesktop/issues/5405
+- https://github.com/dotnet/dotnet/pull/3402
