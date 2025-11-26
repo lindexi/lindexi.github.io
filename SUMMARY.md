@@ -1582,6 +1582,8 @@
 
  * [IIncrementalGenerator 增量 Source Generator 生成代码应用 将构建时间写入源代码](IIncrementalGenerator-增量-Source-Generator-生成代码应用-将构建时间写入源代码.md)
 
+ * [IIncrementalGenerator 如何在源代码生成器单元测试提供 AnalyzerConfigOptionsProvider 选项](IIncrementalGenerator-如何在源代码生成器单元测试提供-AnalyzerConfigOptionsProvider-选项.md)
+
  * [Inno Setup 安装包脚本 Run 的 Flags 标记](Inno-Setup-安装包脚本-Run-的-Flags-标记.md)
 
  * [jekyll 在博客添加流程图](jekyll-在博客添加流程图.md)
