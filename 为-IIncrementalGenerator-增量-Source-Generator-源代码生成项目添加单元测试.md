@@ -310,6 +310,11 @@ git pull origin 3b7623ad46e80e8cc88a51e8084339ac29937b64
 
 获取代码之后，进入 YawrofajuGekeyaljilay 文件夹
 
+更多源代码生成器单元测试博客：
+
+- [IIncrementalGenerator 如何在源代码生成器单元测试提供 AnalyzerConfigOptionsProvider 选项](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%8F%90%E4%BE%9B-AnalyzerConfigOptionsProvider-%E9%80%89%E9%A1%B9.html )
+<!-- [IIncrementalGenerator 如何在源代码生成器单元测试提供 AnalyzerConfigOptionsProvider 选项 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19275194 ) -->
+
 更多关于源代码生成博客请参阅我的 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
 

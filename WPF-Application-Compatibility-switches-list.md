@@ -619,7 +619,19 @@ See Switch.System.Windows.Media.MediaContext.DisableDirtyRectangles
 
 See <https://github.com/dotnet/wpf/pull/5837> <https://github.com/dotnet/wpf/issues/5441>
 
+### Switch.System.Windows.Media.DisableDWMCrashContainment
 
+Using AppContextSwitch, we are trying to contain the retry mechanism of DWM's `ExtendFrameIntoClientArea` API call.
+
+After .NET 10, developers can use the AppContextSwtich as below to avoid the retry mechanism:
+
+```xml
+<ItemGroup>
+    <RuntimeHostConfigurationOption Include="Switch.System.Windows.Media.DisableDWMCrashContainment" Value="true" />
+</ItemGroup>
+```
+
+See https://github.com/dotnet/wpf/pull/11285
 
 
 
