@@ -925,6 +925,9 @@ git pull origin abe3f751fe987a29d0b241501fade1d20c2dc74a
 
 获取代码之后，进入 Roslyn/ChunecilarkenaLibeewhemke 文件夹，即可获取到源代码
 
+如果在单元测试中，需要测试到 AnalyzerConfigOptionsProvider 选项，请参阅 [IIncrementalGenerator 如何在源代码生成器单元测试提供 AnalyzerConfigOptionsProvider 选项](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%8F%90%E4%BE%9B-AnalyzerConfigOptionsProvider-%E9%80%89%E9%A1%B9.html )
+<!-- [IIncrementalGenerator 如何在源代码生成器单元测试提供 AnalyzerConfigOptionsProvider 选项 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19275194 ) -->
+
 ## 直接调试项目
 
 在上一章中，和大家介绍了如何编写单元测试。在此过程中，也许有些伙伴会感觉编写单元测试还是比较繁琐的。或者说在编写单元测试的过程里面会比较耗时，纯字符串方式也没有代码提示，不太适合很多伙伴的工作现状。在大型项目中，或比较正式的项目里面，添加单元测试来提升分析器的稳定性，以及通过更多单元测试测试更多分支。而在许多没有那么多资源可以投入的情况下，则可以追求简单的直接调试项目
