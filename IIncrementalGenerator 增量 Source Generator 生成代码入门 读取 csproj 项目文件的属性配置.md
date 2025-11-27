@@ -237,3 +237,7 @@ git pull origin d4fee9a801c5d2591162ce4280ac06906029ef48
 
 可先将 PaintStateDiagramMarkdownFile 赋值给 AdditionalFiles 项，然后通过 CompilerVisibleItemMetadata 配置 Link 可见的方式让分析器可见。详细请参阅 [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置](https://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-%E8%AF%BB%E5%8F%96-csproj-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%9A%84-AdditionalFiles-Item-%E7%9A%84-Metadata-%E9%85%8D%E7%BD%AE.html )
 <!-- [Roslyn 分析器 读取 csproj 项目文件的 AdditionalFiles Item 的 Metadata 配置 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18459703 ) -->
+
+如需对编写的代码的 AnalyzerConfigOptionsProvider 相关内容进行单元测试，请参阅
+[IIncrementalGenerator 如何在源代码生成器单元测试提供 AnalyzerConfigOptionsProvider 选项](https://blog.lindexi.com/post/IIncrementalGenerator-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%BA%90%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%8F%90%E4%BE%9B-AnalyzerConfigOptionsProvider-%E9%80%89%E9%A1%B9.html )
+<!-- [IIncrementalGenerator 如何在源代码生成器单元测试提供 AnalyzerConfigOptionsProvider 选项 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19275194 ) -->
