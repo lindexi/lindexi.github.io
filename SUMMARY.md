@@ -520,6 +520,8 @@
 
  * [dotnet C# X11 开发笔记](dotnet-C-X11-开发笔记.md)
 
+ * [dotnet C# 主构造函数带来的虚属性优势](dotnet-C-主构造函数带来的虚属性优势.md)
+
  * [dotnet C# 从控制台开始 关联 Win2D 和 WinUI 3 应用](dotnet-C-从控制台开始-关联-Win2D-和-WinUI-3-应用.md)
 
  * [dotnet C# 代码获取系统日志](dotnet-C-代码获取系统日志.md)
