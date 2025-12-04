@@ -328,6 +328,8 @@
 
  * [C# 标准性能测试高级用法](C-标准性能测试高级用法.md)
 
+ * [C# 浮点数 double 的 IsFinite IsNormal IsRealNumber 分不清楚](C-浮点数-double-的-IsFinite-IsNormal-IsRealNumber-分不清楚.md)
+
  * [C# 直接创建多个类和使用反射创建类的性能](C-直接创建多个类和使用反射创建类的性能.md)
 
  * [C# 程序内的类数量对程序启动的影响](C-程序内的类数量对程序启动的影响.md)
