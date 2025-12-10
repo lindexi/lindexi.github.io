@@ -2746,6 +2746,8 @@
 
  * [wpf 使用 Dispatcher.Invoke 冻结窗口](wpf-使用-Dispatcher.Invoke-冻结窗口.md)
 
+ * [WPF 使用 DisplayConfigGetDeviceInfo 获取显示器名的方法](WPF-使用-DisplayConfigGetDeviceInfo-获取显示器名的方法.md)
+
  * [WPF 使用 Edge 浏览器](WPF-使用-Edge-浏览器.md)
 
  * [WPF 使用 HandyControl 给 ListView 添加漂亮的表头效果](WPF-使用-HandyControl-给-ListView-添加漂亮的表头效果.md)

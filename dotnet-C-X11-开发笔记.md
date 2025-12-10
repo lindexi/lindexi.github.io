@@ -315,6 +315,90 @@ OsBuild=11068.102
 详细请参阅 [记 X11 里面触摸的一些行为](https://blog.lindexi.com/post/%E8%AE%B0-X11-%E9%87%8C%E9%9D%A2%E8%A7%A6%E6%91%B8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A1%8C%E4%B8%BA.html )
 <!-- [记 X11 里面触摸的一些行为 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18468854 ) -->
 
+### 使用 XInternAtoms 获取 `_NET_WM_PID` 将导致窗口无法收到消息
+
+使用如下代码，在 XInternAtoms 获取 `_NET_WM_PID` 内容
+
+```csharp
+            nint[] array = new nint[1];
+            string[] array2 = new string[]
+            {
+                "_NET_WM_PID",
+            };
+            var result = XLib.XInternAtoms(display, array2, array2.Length, only_if_exists: true, array);
+```
+
+此时将会导致使用 XSendEvent 发送给自己之后，在 XNextEvent 无法接收到任何消息
+
+只有 `_NET_WM_PID` 才会存在此问题，其他正常。无论 `only_if_exists` 是 true 还是 false 都是一样的现象
+
+能复现此问题的系统：
+
+```
+$ cat /etc/.kyinfo
+[dist]
+name=Kylin-Desktop-Maxtablet
+milestone=V10
+arch=x86_64
+beta=False
+time=2024-04-15 10:18:12
+dist_id=Kylin-Desktop-V10-SP1-2304-update1-Maxtablet-Release-20240415-x86_64-2024-04-15 10:18:12
+
+[servicekey]
+key=777719020
+```
+
+```
+$ cat /etc/os-release
+NAME="Kylin"
+VERSION="银河麒麟桌面操作系统（教育版）V10"
+VERSION_US="Kylin Linux Desktop EDU V10"
+ID=kylin
+ID_LIKE=debian
+PRETTY_NAME="Kylin V10 SP1"
+VERSION_ID="v10"
+HOME_URL="http://www.kylinos.cn/"
+SUPPORT_URL="http://www.kylinos.cn/support/technology.html"
+BUG_REPORT_URL="http://www.kylinos.cn/"
+PRIVACY_POLICY_URL="http://www.kylinos.cn"
+VERSION_CODENAME=kylin
+UBUNTU_CODENAME=kylin
+PROJECT_CODENAME=V10SP1-General-Edu
+KYLIN_RELEASE_ID="2403"
+```
+
+```
+$ uname -r
+5.4.18-116-generic
+```
+
+以及以下这台设备：
+
+```
+$ uname -r
+6.6.0-15-generic
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/5ef78bd3f3be995e9b7c914fa29647988a02cbad/X11/xwayland/FealubawlaiBecegaguwawheekem) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/5ef78bd3f3be995e9b7c914fa29647988a02cbad/X11/xwayland/FealubawlaiBecegaguwawheekem) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 5ef78bd3f3be995e9b7c914fa29647988a02cbad
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 5ef78bd3f3be995e9b7c914fa29647988a02cbad
+```
+
+获取代码之后，进入 X11/xwayland/FealubawlaiBecegaguwawheekem 文件夹，即可获取到源代码
+
 ## 更多博客
 
 [dotnet X11 窗口之间发送鼠标消息 模拟鼠标输入](https://blog.lindexi.com/post/dotnet-X11-%E7%AA%97%E5%8F%A3%E4%B9%8B%E9%97%B4%E5%8F%91%E9%80%81%E9%BC%A0%E6%A0%87%E6%B6%88%E6%81%AF-%E6%A8%A1%E6%8B%9F%E9%BC%A0%E6%A0%87%E8%BE%93%E5%85%A5.html )
