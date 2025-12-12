@@ -1056,6 +1056,8 @@
 
  * [dotnet 制作 docker 提示 Insufficient space in download directory 磁盘空间不足](dotnet-制作-docker-提示-Insufficient-space-in-download-directory-磁盘空间不足.md)
 
+ * [dotnet 制作一个简单的自动更新系统日期时间工具](dotnet-制作一个简单的自动更新系统日期时间工具.md)
+
  * [dotnet 动态代理魔法书](dotnet-动态代理魔法书.md)
 
  * [dotnet 单元测试 Mock 让一个对象继承多个接口](dotnet-单元测试-Mock-让一个对象继承多个接口.md)
