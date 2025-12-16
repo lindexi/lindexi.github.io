@@ -424,6 +424,8 @@
 
  * [Developing Universal Windows Apps 开发UWA应用 问答](Developing-Universal-Windows-Apps-开发UWA应用-问答.md)
 
+ * [DirectWrite 通过 GetUnicodeRanges 获取字体能支持的字符范围](DirectWrite-通过-GetUnicodeRanges-获取字体能支持的字符范围.md)
+
  * [DirectX 使用 Vortice 从零开始控制台创建 Direct2D1 窗口修改颜色](DirectX-使用-Vortice-从零开始控制台创建-Direct2D1-窗口修改颜色.md)
 
  * [dot net core 使用 IPC 进程通信](dot-net-core-使用-IPC-进程通信.md)
@@ -431,6 +433,8 @@
  * [dot net core 使用 usb](dot-net-core-使用-usb.md)
 
  * [dot net double 数组转 float 数组](dot-net-double-数组转-float-数组.md)
+
+ * [dotnet 10 已知问题 WinForms 的 TargetFramework 与 System.Drawing.Common 不匹配将抛出找不到类型异常](dotnet-10-已知问题-WinForms-的-TargetFramework-与-System.Drawing.Common-不匹配将抛出找不到类型异常.md)
 
  * [dotnet 10 已知问题 构建 WPF 时提示 System.Private.Windows.GdiPlus 程序集未找到错误](dotnet-10-已知问题-构建-WPF-时提示-System.Private.Windows.GdiPlus-程序集未找到错误.md)
 
