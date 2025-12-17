@@ -2,12 +2,6 @@
 
 本文告诉大家获得两条一般式直线距离。
 
-<!--more-->
-<!-- CreateTime:2018/7/31 14:38:13 -->
-
-<!-- 标签：数学，C#，几何 -->
-<!-- math -->
-
 一般式的意思就是
 
 $$
@@ -17,8 +11,7 @@ $$
 如果有两个直线
 
 $$
-A_1x+B_1y+C_1=0 \\
-A_2x+B_2y+C_2=0
+A_1x+B_1y+C_1=0 \\ A_2x+B_2y+C_2=0
 $$
 
 如何判断两条直线的距离？
@@ -42,9 +35,7 @@ $$
 但是因为两个直线一般式的 AB 是不相等的，所以需要把两个直线转换相同的 AB
 
 $$
-A_1x+B_1y+C_1=0 \\
-A_2x\frac{A_1}{A_2}+B_2y\frac{A_1}{A_2}+C_2\frac{A_1}{A_2}=0 \\
-A_1x+B_1y+C_2\frac{A_1}{A_2}=0
+A_1x+B_1y+C_1=0 \\ A_2x\frac{A_1}{A_2}+B_2y\frac{A_1}{A_2}+C_2\frac{A_1}{A_2}=0 \\ A_1x+B_1y+C_2\frac{A_1}{A_2}=0
 $$
 
 这时的距离公式是
@@ -58,8 +49,7 @@ $$
 如果$a=0 ,b \neq 0$ 那么需要修改直线公式
 
 $$
-B_1y+C_1=0 \\
-B_1y+C_2\frac{B_1}{B_2}=0
+B_1y+C_1=0 \\ B_1y+C_2\frac{B_1}{B_2}=0
 $$
 
 这时距离公式
@@ -71,8 +61,7 @@ $$
 如果$a\neq0 ,b = 0$ 那么需要修改直线公式
 
 $$
-A_1x+C_1=0 \\
-A_1x+C_2\frac{A_1}{A_2}=0
+A_1x+C_1=0 \\ A_1x+C_2\frac{A_1}{A_2}=0
 $$
 
 这时距离公式
@@ -124,4 +113,5 @@ $$
 
 上面代码的 `A.IsZero()` 就是判断 A 是不是为 0 ，在 C# 很难判断 double 是不是为 0 所以需要这个方法
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
+本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

@@ -2,13 +2,6 @@
 
 本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何判断两个程序集之间是否存在 InternalsVisibleTo 关系
 
-<!--more-->
-<!-- CreateTime:2023/6/19 8:39:59 -->
-<!-- 标题： IIncrementalGenerator 判断程序集之间可见关系 -->
-<!-- 发布 -->
-<!-- 博客 -->
-<!-- 标签：Roslyn,MSBuild,编译器,SourceGenerator,生成代码 -->
-
 当获取到两个程序集时，如果要开始准备生成相关代码，可能会因为不知道两个程序集之间是否存在 InternalsVisibleTo 关系，也就是是否应该导出其 internal 的类型而困扰。在能够获取到 IAssemblySymbol 类型的对象，即可通过 GivesAccessTo 方法判断两个程序集的 InternalsVisibleTo 关系
 
 这个 GivesAccessTo 方法可以获取到当前的程序集对给定的程序集参数是否为 internal 可见
@@ -78,7 +71,7 @@ using System.Runtime.CompilerServices;
 
 详细关于以上 csproj 项目文件代码里的 EnforceExtendedAnalyzerRules 的属性，请参阅 [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用](http://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-EnforceExtendedAnalyzerRules-%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%9C%E7%94%A8.html)
 
-以上的 LangVersion 属性设置为 latest 表示使用最新的语言版本，详细请参阅 [VisualStudio 使用三个方法启动最新 C# 功能](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%80%E6%96%B0-C-%E5%8A%9F%E8%83%BD.html )
+以上的 LangVersion 属性设置为 latest 表示使用最新的语言版本，详细请参阅 [VisualStudio 使用三个方法启动最新 C# 功能](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%80%E6%96%B0-C-%E5%8A%9F%E8%83%BD.html)
 
 通过以上配置即可完成项目的初始化逻辑。回到咱这个例子的任务上，就是在 Analyzers 分析器项目编写代码，分析 App 项目所引用的程序集里面的存在哪些程序集对 App 程序集设置了 internal 可见
 
@@ -174,8 +167,6 @@ public class FooTelescopeIncrementalGenerator : IIncrementalGenerator
 
 接下来将收集到的给当前正在分析的程序集设置了 internal 可见的程序集列表输出到生成代码里面，如以下代码
 
-{% raw %}
-
 ```csharp
 using System.Collections.Generic;
 using System.Linq;
@@ -223,8 +214,6 @@ public class FooTelescopeIncrementalGenerator : IIncrementalGenerator
     }
 }
 ```
-
-{% endraw %}
 
 回到 App 项目里面，编辑 Program.cs 文件，输出以上生成的 InternalsVisibleToHelper 类型里面的 GetAllInternalsVisibleFromAssemblyName 方法返回内容到控制台，如以下代码
 

@@ -1,10 +1,6 @@
-# C# GUID ToString 
+# C# GUID ToString
 
 最近在看到小伙伴直接使用 Guid.ToString 方法，我告诉他需要使用 Guid.ToString("N") 的方式输出字符串 ，为什么需要使用 N 这个参数呢，因为默认的是参数 D 在输出的时候会出现连字符
-
-<!--more-->
-<!-- CreateTime:2018/10/19 9:04:44 -->
-
 
 Guid 是 Globally Unique Identifier 全局唯一标识符的缩写，是一种由算法生成的唯一标识，在 C# dotnet 里面的 Guid 类是微软的UUID标准的实现。
 
@@ -40,7 +36,6 @@ System.Console.WriteLine(Guid.NewGuid().ToString("P"));
 
 从代码可以看到 B 使用 `{` 括号包含内容 ，使用参数 P 将使用 `(` 括号包含内容
 
-
 在 Guid 格式化中的最特殊的是 x 参数，他会存在 4 个数字，最后一个数字是 8 个数字组合的，如下面代码
 
 ```csharp
@@ -48,7 +43,7 @@ System.Console.WriteLine(Guid.NewGuid().ToString("P"));
   {0xd3f51d9d,0x31b3,0x45f6,{0x9b,0x7c,0x89,0x1d,0xa5,0x6a,0xa3,0x43}}
 ```
 
-## GUID 转 int 
+## GUID 转 int
 
 一个 GUID 需要 16 个 byte 也就是 4 个 int 才能组成，可以使用下面的方法转换
 
@@ -74,8 +69,9 @@ System.Console.WriteLine(Guid.NewGuid().ToString("P"));
         }
 ```
 
-参见：[全局唯一标识符 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E7%AC%A6 )
+参见：[全局唯一标识符 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%E5%85%A8%E5%B1%80%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E7%AC%A6)
 
-![](http://cdn.lindexi.site/65fb6078-c169-4ce3-cdd9-e35752d07be0%2Fyande.re%2520443795%2520sample%2520bikini%2520goto_jun%2520kaneshiro_sora%2520momijidani_nozomi%2520noguchi_takayuki%2520swimsuits%2520tenshi_no_three_piece%2521201841104040.jpg)
+![](http://cdn.lindexi.site/65fb6078-c169-4ce3-cdd9-e35752d07be0%2Fyande.re%20443795%20sample%20bikini%20goto_jun%20kaneshiro_sora%20momijidani_nozomi%20noguchi_takayuki%20swimsuits%20tenshi_no_three_piece%21201841104040.jpg)
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  
+[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
+本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

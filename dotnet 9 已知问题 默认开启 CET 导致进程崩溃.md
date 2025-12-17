@@ -2,25 +2,19 @@
 
 本文记录 dotnet 9 的一个已知且当前已修问题。默认开启 CET 导致一些模块执行时触发崩溃
 
-<!--more-->
-<!-- CreateTime:2025/02/06 07:13:36 -->
+什么是 CET ，有什么用？ Control-flow Enforcement Technology (CET) Shadow Stack 是一项提供安全性的功能。细节请参阅 [CET Shadow Stack compatible - Microsoft Learn](https://learn.microsoft.com/en-us/cpp/build/reference/cetcompat?view=msvc-170) 和 [A Technical Look at Intel’s Control-flow Enforcement Technology](https://www.intel.com/content/www/us/en/developer/articles/technical/technical-look-control-flow-enforcement-technology.html)
 
-<!-- 发布 -->
-<!-- 博客 -->
-
-什么是 CET ，有什么用？ Control-flow Enforcement Technology (CET) Shadow Stack 是一项提供安全性的功能。细节请参阅 [CET Shadow Stack compatible - Microsoft Learn](https://learn.microsoft.com/en-us/cpp/build/reference/cetcompat?view=msvc-170 ) 和 [A Technical Look at Intel’s Control-flow Enforcement Technology](https://www.intel.com/content/www/us/en/developer/articles/technical/technical-look-control-flow-enforcement-technology.html )
-
-官方文档： [Breaking change: CET supported by default - .NET Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/compatibility/interop/9.0/cet-support )
+官方文档： [Breaking change: CET supported by default - .NET Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/core/compatibility/interop/9.0/cet-support)
 
 表现：
 
 调用 OpenFileDialog 的 ShowDialog 将会异常崩溃，崩溃异常是 `FAST_FAIL_SET_CONTEXT_DENIED`
 
-或退出错误码为 0xc0000409 STATUS_STACK_BUFFER_OVERRUN
+或退出错误码为 0xc0000409 STATUS\_STACK\_BUFFER\_OVERRUN
 
 修复的代码：
 
-此问题已在 <https://github.com/dotnet/runtime/pull/109074> 修复
+此问题已在 [https://github.com/dotnet/runtime/pull/109074](https://github.com/dotnet/runtime/pull/109074) 修复
 
 永久解决方法：
 
@@ -53,11 +47,11 @@
 
 相关问题：
 
-- <https://github.com/dotnet/wpf/issues/10305>
-- <https://github.com/dotnet/wpf/issues/10318>
-- <https://github.com/dotnet/docs/issues/42600>
+* [https://github.com/dotnet/wpf/issues/10305](https://github.com/dotnet/wpf/issues/10305)
+* [https://github.com/dotnet/wpf/issues/10318](https://github.com/dotnet/wpf/issues/10318)
+* [https://github.com/dotnet/docs/issues/42600](https://github.com/dotnet/docs/issues/42600)
 
----
+***
 
 在一台 Win10 22H2 的设备上，由于 CET 的开启导致运行过程中出现 0xC0000602 Fail Fast 异常，直接终止进程
 
@@ -95,20 +89,20 @@
 
 不能从以上方法看出来任何有用的信息，而且相同的 exe 文件，只有在这一台 Win10 设备上运行就崩溃，还没有找到自己的 C# 代码就崩溃。在其他设备上都能跑得好好的
 
-如 <https://github.com/dotnet/docs/issues/42600> 的相关讨论帖子，尝试使用 `<CETCompat>false</CETCompat>` 禁用 CET 之后，就能好好运行了。以下是 [Jan Kotas](https://github.com/jkotas) 大佬在 <https://github.com/dotnet/runtime/issues/108589> 帖子上的原话：
+如 [https://github.com/dotnet/docs/issues/42600](https://github.com/dotnet/docs/issues/42600) 的相关讨论帖子，尝试使用 `<CETCompat>false</CETCompat>` 禁用 CET 之后，就能好好运行了。以下是 [Jan Kotas](https://github.com/jkotas) 大佬在 [https://github.com/dotnet/runtime/issues/108589](https://github.com/dotnet/runtime/issues/108589) 帖子上的原话：
 
-> Some older Windows versions had issues in CET
+> Some older Windows versions had issues in CET> \
 > 一些较旧的 Windows 版本在 CET 方面存在问题
 
-这台出现问题的 Win10 设备的 ntdll.dll 是 10.0.19041.1949 (WinBuild.160101.0800) 的版本，低于 [Jan Kotas](https://github.com/jkotas) 大佬说的所需 10.0.19041.5007 版本。以下是 [Jan Kotas](https://github.com/jkotas) 大佬在 <https://github.com/dotnet/runtime/issues/110920> 帖子上的原话：
+这台出现问题的 Win10 设备的 ntdll.dll 是 10.0.19041.1949 (WinBuild.160101.0800) 的版本，低于 [Jan Kotas](https://github.com/jkotas) 大佬说的所需 10.0.19041.5007 版本。以下是 [Jan Kotas](https://github.com/jkotas) 大佬在 [https://github.com/dotnet/runtime/issues/110920](https://github.com/dotnet/runtime/issues/110920) 帖子上的原话：
 
-> It means that ntdll.dll version 10.0.19041.5007 has the required CET fixes, but ntdll.dll version 10.0.19041.2788 does not have the required CET fixes, both come from Windows 22H2.
+> It means that ntdll.dll version 10.0.19041.5007 has the required CET fixes, but ntdll.dll version 10.0.19041.2788 does not have the required CET fixes, both come from Windows 22H2.> \
 > 这意味着 ntdll.dll 版本 10.0.19041.5007 具有所需的 CET 修复，但 ntdll.dll 版本 10.0.19041.2788 没有所需的 CET 修复，它们都来自 Windows 22H2 版本
 
 相关链接：
 
-- <https://github.com/dotnet/runtime/issues/108589>
-- <https://github.com/dotnet/runtime/issues/114671>
-- <https://github.com/dotnet/runtime/issues/110920>
-- <https://github.com/dotnet/runtime/issues/114673>
-- <https://github.com/dotnet/runtime/issues/112253>
+* [https://github.com/dotnet/runtime/issues/108589](https://github.com/dotnet/runtime/issues/108589)
+* [https://github.com/dotnet/runtime/issues/114671](https://github.com/dotnet/runtime/issues/114671)
+* [https://github.com/dotnet/runtime/issues/110920](https://github.com/dotnet/runtime/issues/110920)
+* [https://github.com/dotnet/runtime/issues/114673](https://github.com/dotnet/runtime/issues/114673)
+* [https://github.com/dotnet/runtime/issues/112253](https://github.com/dotnet/runtime/issues/112253)
