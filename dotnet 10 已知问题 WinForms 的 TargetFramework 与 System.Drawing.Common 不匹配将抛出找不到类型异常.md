@@ -3,6 +3,8 @@
 本文记录 dotnet 10 新引入的问题。如果 TargetFramework 是 .NET 9 版本，而引用的 System.Drawing.Common 包是 10.0 版本，那么运行程序时，可能抛出找不到类型异常
 
 <!--more-->
+<!-- CreateTime:2025/12/17 07:01:08 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

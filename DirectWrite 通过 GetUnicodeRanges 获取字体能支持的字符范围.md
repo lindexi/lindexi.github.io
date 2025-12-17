@@ -3,6 +3,8 @@
 一个字体文件只能支持有限的字符数量，为了能够知道某个字体包含哪些字符，可通过 DirectWrite 提供的 GetUnicodeRanges 方法获取。本文将演示如何从 IDWriteFontFace 的 GetUnicodeRanges 方法获取字体能支持的字符范围以及对比 WPF 的行为
 
 <!--more-->
+<!-- CreateTime:2025/12/17 07:01:08 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
