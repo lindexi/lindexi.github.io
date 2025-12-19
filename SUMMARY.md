@@ -900,6 +900,8 @@
 
  * [dotnet win32 使用 WIC 获取系统编解码器](dotnet-win32-使用-WIC-获取系统编解码器.md)
 
+ * [dotnet win32 判断传入路径是否在 U 盘](dotnet-win32-判断传入路径是否在-U-盘.md)
+
  * [dotnet WinUI 3 修复非打包应用运行提示 Microsoft.ui.xaml.dll 找不到](dotnet-WinUI-3-修复非打包应用运行提示-Microsoft.ui.xaml.dll-找不到.md)
 
  * [dotnet WinUI3 Win2D 翻转图片](dotnet-WinUI3-Win2D-翻转图片.md)
