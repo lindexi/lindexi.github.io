@@ -3546,6 +3546,8 @@
 
  * [使用 IOC 控制反转和 DI 依赖注入的意义](使用-IOC-控制反转和-DI-依赖注入的意义.md)
 
+ * [使用 IShellLinkW 创建 URL 网址超链接快捷方式](使用-IShellLinkW-创建-URL-网址超链接快捷方式.md)
+
  * [使用 LatestCSharpFeatures 库让旧版本 dotnet 框架项目使用新 C# 语法](使用-LatestCSharpFeatures-库让旧版本-dotnet-框架项目使用新-C-语法.md)
 
  * [使用 Pandoc 把 Markdown 转 Docx](使用-Pandoc-把-Markdown-转-Docx.md)
