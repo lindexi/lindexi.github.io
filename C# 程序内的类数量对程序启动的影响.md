@@ -4,6 +4,12 @@
 
 本渣使用了代码创建器，创建了 1000 个垃圾文件，这些文件都很简单。我将这些文件放在一个控制台项目里，没有做任何的引用，然后使用 dotTrace 测试控制台启动的时间。
 
+<!--more-->
+<!-- CreateTime:2018/10/31 14:07:06 -->
+
+
+<!-- 标签：C#，性能测试 -->
+
 我同时还写了一个空白的控制台项目，连输出都没有，请看代码
 
 ```csharp
@@ -24,9 +30,13 @@ namespace KejerbopaNekereyeresereJemayRouxouqou
 
 这应该就是最快的控制台的代码了，这时使用 dotTrace 附加调试这个项目
 
+<!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响0.png) -->
+
 ![](http://cdn.lindexi.site/lindexi%2F20181012962573)
 
 附加调试可以看到运行的时间都不是自己写的代码的时间，总时间是 138ms 实际运行的时间会比这个少。每个人的设备测试的时间都会不相同，而且每个时间运行的值都不太一样
+
+<!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响1.png) -->
 
 ![](http://cdn.lindexi.site/lindexi%2F2018101291430892)
 
@@ -64,6 +74,8 @@ namespace KejerbopaNekereyeresereJemayRouxouqou
 
 然后使用下面代码创建随机的类
 
+{% raw %}
+
 ```csharp
         private static void RelawcereMirouxayTibe()
         {
@@ -96,9 +108,13 @@ namespace LecuryouWuruhempa
 
 ```
 
+{% endraw %}
+
 这样就可以创建 1000 个类，创建一个空白的控制台项目，引用这些类
 
 然后运行一个有1000个类的空白控制台项目，第一次运行的时间居然是 67ms 十分少
+
+<!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响2.png) -->
 
 ![](http://cdn.lindexi.site/lindexi%2F2018101291718318)
 
@@ -118,6 +134,8 @@ namespace LecuryouWuruhempa
 
 空白的项目是 KejerbopaNekereyeresereJemayRouxouqou.exe 引用的 dll 是 MeeLearlerepeda.exe 可以看到有 1000 个类还是比较大
 
+<!-- ![](image/C# 程序内的类数量对程序启动的影响/C# 程序内的类数量对程序启动的影响3.png) -->
+
 ![](http://cdn.lindexi.site/lindexi%2F20181012103919886)
 
 同样测试三次
@@ -131,3 +149,5 @@ namespace LecuryouWuruhempa
 ```
 
 从上面数据可以看到，几乎没有任何影响
+
+

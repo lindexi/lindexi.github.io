@@ -2,6 +2,13 @@
 
 Button是一个常用控件，有很多和wpf一样，可以看《深入浅出WPF》，但还有一些虽然常用，但是可能大家不知道的功能
 
+
+<!--more-->
+<!-- CreateTime:2018/8/10 19:16:53 -->
+
+
+<div id="toc"></div>
+
 Button常用的就是点击
 
 我们可以在button的click写上
@@ -10,7 +17,7 @@ Button常用的就是点击
 <Button Content="确定" Click="Button_Click"/>
 ```
 
-在Button\_Click按F12到代码写上点击按钮需要运行
+在Button_Click按F12到代码写上点击按钮需要运行
 
 ```csharp
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,13 +65,17 @@ button content可以使用一个元素，这个元素可以是Grid，我们可�
     </Button>
 ```
 
-注意，放在项目的图片，不是这么简单，具体如何使用，参见 [win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6/)
+注意，放在项目的图片，不是这么简单，具体如何使用，参见 [win10 uwp 访问解决方案文件](http://lindexi.oschina.io/lindexi/post/win10-uwp-访问解决方案文件/)
 
 ## 修改鼠标在按钮上的样子
 
 我们可以修改鼠标在按钮上的样子
 
-button可以设置属性，使用资源 资源可以写在页面
+
+
+
+button可以设置属性，使用资源
+资源可以写在页面
 
 ```xml
     <Page.Resources>
@@ -116,9 +127,10 @@ button可以设置属性，使用资源 资源可以写在页面
          <Button Style="{StaticResource button}" Content="确定"/>
 ```
 
-![这里写图片描述](.gitbook/assets/20151211154753136.jpg)
+![这里写图片描述](image/20151211154753136.jpg)
 
-在设计，点按钮，右击，编辑模板副本，选择当前页 ![这里写图片描述](.gitbook/assets/QQ截图20160103092022.png)
+在设计，点按钮，右击，编辑模板副本，选择当前页
+![这里写图片描述](image/QQ截图20160103092022.png)
 
 可以看到
 
@@ -198,39 +210,40 @@ button可以设置属性，使用资源 资源可以写在页面
 
 在`<VisualState x:Name="Pressed">`可以把里面写成这个状态的样子，按钮有正常，按下，鼠标在按钮上，可以对每个修改
 
-![这里写图片描述](.gitbook/assets/QQ截图20160103093039.png)
+![这里写图片描述](image/QQ截图20160103093039.png)
 
 点击Pressed更改pressed
 
-![点击Pressed更改pressed](.gitbook/assets/QQ截图20160103093204.png)
+![点击Pressed更改pressed](image/QQ截图20160103093204.png)
 
 看到这里按钮有背景
 
-![看到这里按钮有背景](.gitbook/assets/QQ截图20160103093320.png)
+![看到这里按钮有背景](image/QQ截图20160103093320.png)
 
 去掉背景，按F4把背景无画笔
 
-![去掉背景，按F4把背景无画笔](.gitbook/assets/QQ截图20160103093441.png)
+![去掉背景，按F4把背景无画笔](image/QQ截图20160103093441.png)
 
 添加过度
 
-![添加过度](.gitbook/assets/QQ截图20160103093544.png)
+![添加过度](image/QQ截图20160103093544.png)
 
 记录关键帧
 
-![记录关键帧](.gitbook/assets/QQ截图20160103093647.png)
+![记录关键帧](image/QQ截图20160103093647.png "记录关键帧")
 
 选时间0.5改变背景
 
-![选时间0.5改变背景](.gitbook/assets/QQ截图20160103093838.png)
+![选时间0.5改变背景](image/QQ截图20160103093838.png "选时间0.5改变背景")
 
 选时间，改变背景
 
-![](.gitbook/assets/QQ截图20160103094007.png)
+![](image/QQ截图20160103094007.png)
 
 点播放可以看到我们做出来的按钮，可以运行。移动到button显示文字
 
-在装机必备移动到搜狐显示搜狐，具体代码 参考：[http://blog.csdn.net/lindexi\_gd/article/details/50166161](http://blog.csdn.net/lindexi_gd/article/details/50166161)
+在装机必备移动到搜狐显示搜狐，具体代码
+参考：[http://blog.csdn.net/lindexi_gd/article/details/50166161](http://blog.csdn.net/lindexi_gd/article/details/50166161)
 
 ```xml
                         <Button Click="souhu_Click" ToolTipService.ToolTip="搜狐视频" Padding="0" >
@@ -247,7 +260,7 @@ button可以设置属性，使用资源 资源可以写在页面
                         </Button>
 ```
 
-![这里写图片描述](.gitbook/assets/20151211161126290.jpg)
+![这里写图片描述](image/20151211161126290.jpg)
 
 显示图片
 
@@ -271,7 +284,7 @@ button可以设置属性，使用资源 资源可以写在页面
 
 ## 圆角按钮
 
-参见：[圆角按钮](http://lindexi.oschina.io/lindexi/post/win10-uwp-%E5%9C%86%E8%A7%92%E6%8C%89%E9%92%AE/)
+参见：[圆角按钮](http://lindexi.oschina.io/lindexi/post/win10-uwp-圆角按钮/)
 
 ## 点击进度条按钮
 
@@ -281,9 +294,8 @@ https://github.com/lindexi/uwp/tree/master/uwp/control/Button
 
 ## 大神写的按钮
 
-*   [UWP：使用Behavior实现Button点击动态效果 - 叫我蓝火火 - 博客园](http://www.cnblogs.com/blue-fire/p/7237158.html)
+ - [UWP：使用Behavior实现Button点击动态效果 - 叫我蓝火火 - 博客园](http://www.cnblogs.com/blue-fire/p/7237158.html )
 
-    ![](https://images2017.cnblogs.com/blog/1179189/201707/1179189-20170725222230185-1476172220.gif)
+   ![](https://images2017.cnblogs.com/blog/1179189/201707/1179189-20170725222230185-1476172220.gif)
 
-[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
-本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

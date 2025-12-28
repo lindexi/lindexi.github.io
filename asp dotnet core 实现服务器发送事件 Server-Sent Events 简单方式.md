@@ -4,6 +4,11 @@
 
 这是一个简陋的开发端的工具，开源的好处就是，你觉得不爽，自己改哇。自己改不动就等开发者下班协助啦，本文就使用一个简单的方式在 asp dotnet core 实现服务器发送事件。虽然标题是 asp dotnet core 而实际上我的软件是一个桌面端软件
 
+<!--more-->
+<!-- CreateTime:2020/1/6 18:17:58 -->
+
+<!-- csdn -->
+
 其实服务器发送事件 Server-Sent Events 原理就是在请求发送的 stream 设置 `Content-Type` 为 `text/event-stream` 然后不断写入数据就可以了
 
 新建一个控制器，在控制台里面的调用方法，注意需要是 get 方法哦（其实没有限制）这样写起来才简单
@@ -34,7 +39,7 @@
                     .WriteAsync($"data: 当前时间 {DateTime.Now} {Thread.CurrentThread.ManagedThreadId}\r\r");
 ```
 
-注意写入数据的格式，要求是 `data: 信息 \r` 如果格式不对，那么调用方是接收不到数据
+注意写入数据的格式，要求是 `data: 信息 \r\r` 如果格式不对，那么调用方是接收不到数据
 
 写入数据之后需要发送
 
@@ -76,5 +81,4 @@
 
 本文开始标题是 WPF 发送Server-Sent Events给其他进程，但是实际上没有用到 WPF 的任何内容，于是修改了标题。如果你是因为工作需要用到这个技术，搜到本文，如果还有精力，那么我推荐你看一下 WCF 或 SignalR 的方法。如果没有，那么本文的代码也请不要抄，因为上面的代码会让方法不断运行
 
-[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
-本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

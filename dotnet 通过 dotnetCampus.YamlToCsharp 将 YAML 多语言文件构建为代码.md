@@ -2,7 +2,14 @@
 
 我在团队内的几乎所有 dotnet 项目，包括 UWP 和 WPF 桌面端以及 Xamarin 移动端和 ASP.NET Core 后端等需要用到多语言的项目，我的多语言都是通过 YAML 写的，这样相对来说在项目比较小的时候维护方便。但是 YAML 写的文件要读取需要用到 YAML 解析等，这部分的解析速度不够快，于是我就写了一个工具，用于在软件构建的时候自动将 YAML 多语言文件构建为代码。这样不仅能提升软件的执行速度，还能减少软件发布时需要带出去 YAML 解析库
 
+<!--more-->
+<!-- CreateTime:2020/2/29 11:29:01 -->
+
+
+
 用 YAML 做多语言有什么好处？其实在项目用的语言项不多的时候可读性还是很好的，维护起来也很清真
+
+<!-- ![](image/dotnet 通过 dotnetCampus.Localizations 将 YAML 多语言文件构建为代码/dotnet 通过 dotnetCampus.Localizations 将 YAML 多语言文件构建为代码0.png) -->
 
 ![](http://cdn.lindexi.site/lindexi%2F20202291028547378.jpg)
 
@@ -28,6 +35,8 @@ yamlFileToCsharpFile.ParseToCsharpFile(new FileInfo(@"C:\lindexi\1.yml"), new Fi
 ```
 
 此时默认创建的代码的命名空间是 dotnetCampus.Localizations 而返回多语言的方法是 GetLang 而类名则是传入的文件名
+
+{% raw %}
 
 ```csharp
 $@"//------------------------------------------------------------------------------
@@ -55,17 +64,18 @@ namespace {classNamespace}
 }}";
 ```
 
+{% endraw %}
+
 这个工具适用于在各个开发框架里面，因为这个工具不会被放入最终创建的项目，而是将这个工具生成的代码放入项目中。这个工具创建的代码使用的内容又全部是很基础的 C# 类的内容，虽然有一个特别的特性，但是这个特性是给 VisualStudio 用的，如果你有项目不认识这个特性，只要你提个 Issus 我就去优化
 
 通过这个方式不仅能用上 YAML 简洁多语言配置，同时兼顾软件的运行性能
 
 但是如何将这个库作为一个工具帮助你生成工具就需要你自己写额外的工具咯，因为这个框架使用的多语言都不同
 
-这个库是开源的，请看 [dotnet-campus/dotnetCampus.YamlToCsharp: 将 YAML 文件转 C# 代码](https://github.com/dotnet-campus/dotnetCampus.YamlToCsharp)
+这个库是开源的，请看 [dotnet-campus/dotnetCampus.YamlToCsharp: 将 YAML 文件转 C# 代码](https://github.com/dotnet-campus/dotnetCampus.YamlToCsharp )
 
 如何写一个构建时执行的工具，在构建中添加自己的步骤请看下面博客
 
-[如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html)
+[如何创建一个基于命令行工具的跨平台的 NuGet 工具包 - walterlv](https://blog.walterlv.com/post/create-a-cross-platform-command-based-nuget-tool.html )
 
-[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
-本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。 

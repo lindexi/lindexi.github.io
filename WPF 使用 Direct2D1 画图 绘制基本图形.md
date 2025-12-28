@@ -2,9 +2,15 @@
 
 本文来告诉大家如何在 Direct2D1 绘制基本图形，包括线段、矩形、椭圆
 
-本文是[渲染相关系列博客](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html)中的一篇，为方便读者系统性学习，该系列博客已按照逻辑顺序编排，方便大家依次阅读。本文属于系列博客中，比较靠中间的博客，推荐大家从头开始阅读。您可以通过以下链接访问整个系列：[渲染相关系列博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html)
+<!--more-->
+<!-- CreateTime:2018/8/10 19:16:53 -->
 
-本文的组织参考[Direct2D系列教程博客](http://www.cnblogs.com/grenet/category/507059.html)，我在这里对[万仓一黍](https://www.cnblogs.com/grenet)大神表示感谢。
+<div id="toc"></div>
+<!-- 标签：WPF，D2D,DirectX,渲染 -->
+
+本文是[渲染相关系列博客](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )中的一篇，为方便读者系统性学习，该系列博客已按照逻辑顺序编排，方便大家依次阅读。本文属于系列博客中，比较靠中间的博客，推荐大家从头开始阅读。您可以通过以下链接访问整个系列：[渲染相关系列博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+本文的组织参考[Direct2D系列教程博客](http://www.cnblogs.com/grenet/category/507059.html )，我在这里对[万仓一黍](https://www.cnblogs.com/grenet)大神表示感谢。
 
 在开始前先告诉大家为何需要使用 Direct2D ，虽然 WPF 也是基于 DX 进行渲染，但是 WPF 做了很多兼容处理，所以没有比直接使用 Direct2D 的性能高。经过测试，在使用下面的所有代码，占用 CPU 几乎都是 0% ，因为没有布局、透明和事件处理，所以速度是很快。
 
@@ -23,7 +29,7 @@ Point2F 也是一个结构体，所以和 Point 类型差不多
 
     public unsafe void DrawLine(Point2F firstPoint, Point2F secondPoint, Brush brush, float strokeWidth, StrokeStyle strokeStyle 线段样式)
 ```
-
+ 
 所以使用下面的方法就可以在 (10,10) (100,10) 画出一条宽度为 2 的红线
 
 ```csharp
@@ -33,7 +39,7 @@ Point2F 也是一个结构体，所以和 Point 类型差不多
 
 ![](http://cdn.lindexi.site/lindexi%2F20184191049105692.jpg)
 
-上面的代码运行在[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html)文章的 OnRendering 方法，为了让大家也可以试试下面的代码，建议大家先去看这篇博客。
+上面的代码运行在[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )文章的 OnRendering 方法，为了让大家也可以试试下面的代码，建议大家先去看这篇博客。
 
 关于笔刷会在后面说
 
@@ -48,6 +54,7 @@ public StrokeStyleProperties(CapStyle startCap, CapStyle endCap, CapStyle dashCa
 ```
 
 从代码的命名大概大家也可以知道 StrokeStyleProperties 参数的意思，下面先创建一个没有构造函数的来创建 StrokeStyle ，请看下面代码
+
 
 ```csharp
             var strokeStyleProperties = new D2D.StrokeStyleProperties();
@@ -67,7 +74,7 @@ public StrokeStyleProperties(CapStyle startCap, CapStyle endCap, CapStyle dashCa
 Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has failed with error: 一起使用的对象必须创建自相同的工厂实例。 (异常来自 HRESULT:0x88990012) Tags=(0,0).”
 ```
 
-所以需要修改[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html)文章的代码，把 D2DFactory 写为字段
+所以需要修改[WPF 使用 Direct2D1 画图入门](https://lindexi.oschina.io/lindexi/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )文章的代码，把 D2DFactory 写为字段
 
 ```csharp
         public MainWindow()
@@ -105,16 +112,18 @@ Microsoft.WindowsAPICodePack.DirectX.Direct2D1.Direct2DException:“EndDraw has 
 
 从名字可以看到 StartCap 和 EndCap 就是线段的两端的图形，可以选的参数
 
-* Flat
-* Square
-* Round
-* Triangle
+ - Flat
+ - Square
+ - Round
+ - Triangle
 
 具体表示是什么，我会使用下面的例子
+
 
 ### Flat
 
 平的
+
 
 ```csharp
             var strokeStyleProperties = new D2D.StrokeStyleProperties();
@@ -315,7 +324,7 @@ public unsafe void DrawTextLayout(Point2F origin, TextLayout textLayout, Brush d
             var textFormat = dWriteFactory.CreateTextFormat("宋体", 20);
 ```
 
-下面就是画出文字，文字换行可以使用，复杂的换行请使用文字重载方法，这里我就不说了
+下面就是画出文字，文字换行可以使用`\n`，复杂的换行请使用文字重载方法，这里我就不说了
 
 ```csharp
             _renderTarget.BeginDraw();
@@ -325,11 +334,10 @@ public unsafe void DrawTextLayout(Point2F origin, TextLayout textLayout, Brush d
             _renderTarget.EndDraw();
 ```
 
-需要说的是 Windows API Code Pack 1.1 已经很久没更新，而且有错误，所以建议使用 [SharpDX](http://www.sharpdx.org/)
+需要说的是 Windows API Code Pack 1.1 已经很久没更新，而且有错误，所以建议使用 [SharpDX](http://www.sharpdx.org/) 
 
-参见：[Using Direct2D with WPF - CodeProject](https://www.codeproject.com/Articles/113991/Using-Direct-D-with-WPF)
+参见：[Using Direct2D with WPF - CodeProject](https://www.codeproject.com/Articles/113991/Using-Direct-D-with-WPF )
 
-https://jeremiahmorrill.wordpress.com/2011/02/14/a-critical-deep-dive-into-the-wpf-rendering-system/
+https://jeremiahmorrill.wordpress.com/2011/02/14/a-critical-deep-dive-into-the-wpf-rendering-system/ 
 
-[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
-本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

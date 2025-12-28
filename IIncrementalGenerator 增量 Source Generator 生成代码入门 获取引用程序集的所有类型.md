@@ -2,6 +2,13 @@
 
 本文告诉大家如何在使用 IIncrementalGenerator 进行增量的 Source Generator 生成代码时，如何获取到当前正在分析的程序集所引用的所有的程序集，以及引用的程序集里面的所有类型
 
+<!--more-->
+<!-- CreateTime:2023/6/19 8:39:59 -->
+<!-- 标题： IIncrementalGenerator 获取引用程序集的所有类型 -->
+<!-- 发布 -->
+<!-- 博客 -->
+<!-- 标签：Roslyn,MSBuild,编译器,SourceGenerator,生成代码 -->
+
 这项技术可以用在生成导出类型相关的需求上，比如我想导出我当前程序集里面所有引用的程序集的继承于 `IFoo` 接口的所有类型，即可采用本文介绍的方法
 
 核心逻辑是在 Compilation 里面拿到 SourceModule 属性，通过 IModuleSymbol 类型的 SourceModule 属性进一步拿到 `ImmutableArray<IAssemblySymbol>` 类型的 ReferencedAssemblySymbols 属性
@@ -82,7 +89,7 @@
 
 详细关于以上 csproj 项目文件代码里的 EnforceExtendedAnalyzerRules 的属性，请参阅 [Roslyn 分析器 EnforceExtendedAnalyzerRules 属性的作用](http://blog.lindexi.com/post/Roslyn-%E5%88%86%E6%9E%90%E5%99%A8-EnforceExtendedAnalyzerRules-%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%9C%E7%94%A8.html)
 
-以上的 LangVersion 属性设置为 latest 表示使用最新的语言版本，详细请参阅 [VisualStudio 使用三个方法启动最新 C# 功能](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%80%E6%96%B0-C-%E5%8A%9F%E8%83%BD.html)
+以上的 LangVersion 属性设置为 latest 表示使用最新的语言版本，详细请参阅 [VisualStudio 使用三个方法启动最新 C# 功能](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95%E5%90%AF%E5%8A%A8%E6%9C%80%E6%96%B0-C-%E5%8A%9F%E8%83%BD.html )
 
 通过以上配置即可完成项目的初始化逻辑。回到咱这个例子的任务上，就是在 Analyzers 分析器项目编写代码，分析 App 项目所引用的 Lib 项目里面的存在哪些类型
 
@@ -257,6 +264,8 @@ public class FooTelescopeIncrementalGenerator : IIncrementalGenerator
 
 以上拿到的 `allTypeSymbol` 就是引用的 Lib 程序集里面的所有类型。为了测试咱的分析器代码是否正确，可以尝试将收集到的 Lib 程序集里面的所有类型的记录输出作为一个源代码生成
 
+{% raw %}
+
 ```csharp
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
@@ -308,6 +317,8 @@ public class FooTelescopeIncrementalGenerator : IIncrementalGenerator
         });
     }
 ```
+
+{% endraw %}
 
 如以上代码就在代码生成器里面生成了名为 FooHelper 的类型，这个类型将会返回 Lib 程序集里面的所有的类型
 

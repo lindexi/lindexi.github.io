@@ -4,6 +4,12 @@
 
 本文来和大家简单介绍我团队开源的 dotnetCampus.Configurations 高性能配置文件读写库。这个库不仅包含了配置文件的读取解析，还包括了自定义配置文件格式，也就是 COIN 硬币格式的配置文件。提供了多线程和多进程的读写安全的功能和毫秒级的配置文件读取解析性能，以及最低支持到 .NET Framework 4.5 框架
 
+<!--more-->
+<!-- CreateTime:2021/7/18 19:43:35 -->
+
+<!-- 发布 -->
+<div id="toc"></div>
+
 ## 背景
 
 我有很多个客户端 .NET 应用程序，我需要在客户端启动的过程中，读取一些配置文件，包括机器级配置和用户级配置。原本一开始我的应用程序都是采用先启动通用逻辑，将通用界面显示出来，接着慢慢去读取配置文件，根据配置文件展开不同的功能
@@ -16,7 +22,7 @@
 
 综合考虑了之后，在太子的带领下，开发和开源了 dotnetCampus.Configurations 硬币格式的高性能配置文件读写库
 
-为什么叫硬币 COIN 呢，原因是取自 `COIN = Configuration` 即“配置+换行符”，因默认使用“\n”作为换行符而得名
+为什么叫硬币 COIN 呢，原因是取自 `COIN = Configuration\n` 即“配置+换行符”，因默认使用“\n”作为换行符而得名
 
 ## 开源
 
@@ -24,9 +30,9 @@
 
 此配置文件库完全百分百使用 C# 编写，支持如下 .NET 框架
 
-* netstandard2.0
-* net45
-* netcoreapp3.0
+- netstandard2.0
+- net45
+- netcoreapp3.0
 
 等等 .NET 5 和 .NET 6 呢？在 .NET 5 或更高版本将会自动使用 .NET Core 3.0 的库，放心，这是完全 IL 级兼容的。为什么要有 .NET Standard 2.0 的？ 因为还要给 Xamarin 做兼容哦。对于 .NET Framework 系列的，最低要求是 .NET Framework 4.5 版本，对于更高的 .NET Framework 版本，也将会自动引用 .NET Framework 4.5 版本，放心，这也是完全 IL 级兼容的
 
@@ -253,16 +259,15 @@ Foo
 ## 特性
 
 1. 高性能读写
-   * 在初始化阶段使用全异步处理，避免阻塞主流程。
-   * 使用特别为高性能读写而设计的配置文件格式。
-   * 多线程和多进程安全高性能读写
-2. 无异常设计
-   * 所有配置项的读写均为“无异常设计”，你完全不需要在业务代码中处理任何异常。
-   * 为防止业务代码中出现意料之外的 `NullReferenceException`，所有配置项的返回值均不为实际意义的 `null`。
-     * 值类型会返回其对应的 `Nullable<T>` 类型，这是一个结构体，虽然有 `null` 值，但不会产生空引用。
-     * 引用类型仅提供字符串，返回 `Nullable<ConfigurationString>` 类型，这也是一个结构体，你可以判断 `null`，但实际上不可能为 `null`。
-3. 全应用程序统一的 API
-   * 在大型应用中开放 API 时记得使用 `CreateAppConfigurator()` 来开放，这会让整个应用程序使用统一的一套配置读写 API，且完全的 IO 无感知。
+    - 在初始化阶段使用全异步处理，避免阻塞主流程。
+    - 使用特别为高性能读写而设计的配置文件格式。
+    - 多线程和多进程安全高性能读写
+1. 无异常设计
+    - 所有配置项的读写均为“无异常设计”，你完全不需要在业务代码中处理任何异常。
+    - 为防止业务代码中出现意料之外的 `NullReferenceException`，所有配置项的返回值均不为实际意义的 `null`。
+        - 值类型会返回其对应的 `Nullable<T>` 类型，这是一个结构体，虽然有 `null` 值，但不会产生空引用。
+        - 引用类型仅提供字符串，返回 `Nullable<ConfigurationString>` 类型，这也是一个结构体，你可以判断 `null`，但实际上不可能为 `null`。
+1. 全应用程序统一的 API
+    - 在大型应用中开放 API 时记得使用 `CreateAppConfigurator()` 来开放，这会让整个应用程序使用统一的一套配置读写 API，且完全的 IO 无感知。
 
-[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
-本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
