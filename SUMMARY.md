@@ -1628,6 +1628,8 @@
 
  * [Microsoft .NET框架程序设计 笔记](Microsoft-.NET框架程序设计-笔记.md)
 
+ * [Microsoft Agent Framework 与 DeepSeek 对接](Microsoft-Agent-Framework-与-DeepSeek-对接.md)
+
  * [Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题](Microsoft.Maui.Graphics.Skia-使用-DrawString-绘制文本的坐标问题.md)
 
  * [MobaXterm 使用代理](MobaXterm-使用代理.md)
