@@ -1,13 +1,6 @@
-# Roslyn 节点的 Span 和  FullSpan 有什么区别
+# Roslyn 节点的 Span 和 FullSpan 有什么区别
 
 本文告诉大家在使用 Roslyn 分析代码时，使用的 Span 和 FullSpan 有什么区别
-
-<!--more-->
-<!-- CreateTime:2018/8/10 19:16:52 -->
-
-<!-- csdn -->
-<!-- 标签：Roslyn,MSBuild,编译器 -->
-<div id="toc"></div>
 
 在开始读本文之前，希望大家已经了解部分关于 Roslyn 的知识，如果是通过搜索进来的，大概就是已经知道基础的写法了。如果是通过本渣的推荐看到本文，本渣会详细告诉大家如何做。
 
@@ -121,8 +114,6 @@ namespace BebehersoSerdar
 
 这时运行可以看到这个输出
 
-<!-- ![](image/Roslyn 节点的 Span 和  FullSpan 有什么区别/Roslyn 节点的 Span 和  FullSpan 有什么区别0.png) -->
-
 ![](http://cdn.lindexi.site/lindexi%2F2018722175017613)
 
 可以看到 Span 和 FullSpan 的一个不同是 Span 是从方法的第一个代码字符开始，和 Span 不同的是 FullSpan 是从方法的距离上一个代码结束开始的字符到方法结束的最后的字符
@@ -148,7 +139,7 @@ Console.WriteLine(NawraSaw);
 \r\n
 ```
 
-也就是 Span 就是去掉了 RorgiWhiseaSawrear 的前后空白，上面的 `\r\n` 是告诉大家这里还有一个换行符
+也就是 Span 就是去掉了 RorgiWhiseaSawrear 的前后空白，上面的 `\r` 是告诉大家这里还有一个换行符
 
 但是对于 TurlouDismemteeka 就可以看到明显的不相同，第二个属性可以拿到注释
 
@@ -159,7 +150,7 @@ Console.WriteLine(NawraSaw);
 \r\n
 ```
 
-在 VisualStudio 可以看到的转换 FullSpan 的值是 `"            // 输出一个值\r\n            Console.WriteLine(NawraSaw);// 代码需要多写没有用的注释\r\n"`
+在 VisualStudio 可以看到的转换 FullSpan 的值是 `" // 输出一个值\r\n Console.WriteLine(NawraSaw);// 代码需要多写没有用的注释\r\n"`
 
 可以看到注释下一句代码没有被引用，但是如果在 TurlouDismemteeka 的第一句代码多加一些换行，在 FullSpan 是可以转换
 
@@ -174,7 +165,7 @@ Console.WriteLine(NawraSaw);
         }
 ```
 
-这时从 VisualStudio 转换是多了换行`"\r\n            // 输出一个值\r\n            Console.WriteLine(NawraSaw);// 代码需要多写没有用的注释\r\n"`，也就是引号后面多了`\r\n`的换行
+这时从 VisualStudio 转换是多了换行`"\r\n // 输出一个值\r\n Console.WriteLine(NawraSaw);// 代码需要多写没有用的注释\r\n"`，也就是引号后面多了`\r`的换行
 
 ## 不同
 
@@ -184,10 +175,11 @@ Console.WriteLine(NawraSaw);
 
 对于不同的结点的 Span 是不会存在值的冲突，但是对于 FullSpan 是存在多个节点的覆盖。
 
-实际上使用 Span 转换字符串和使用 FullSpan 转换字符串的方法就和使用 ToString 差不多，请看 [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](https://lindexi.github.io/lindexi/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html )
+实际上使用 Span 转换字符串和使用 FullSpan 转换字符串的方法就和使用 ToString 差不多，请看 [Roslyn NameSyntax 的 ToString 和 ToFullString 的区别](https://lindexi.github.io/lindexi/post/Roslyn-NameSyntax-%E7%9A%84-ToString-%E5%92%8C-ToFullString-%E7%9A%84%E5%8C%BA%E5%88%AB.html)
 
-参见：[Use the .NET Compiler Platform SDK syntax model](https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/work-with-syntax )
+参见：[Use the .NET Compiler Platform SDK syntax model](https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/work-with-syntax)
 
-[Roslyn](https://github.com/dotnet/roslyn/wiki/Roslyn-Overview )
+[Roslyn](https://github.com/dotnet/roslyn/wiki/Roslyn-Overview)
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
+本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

@@ -1,13 +1,8 @@
 # C# 性能分析 反射 VS 配置文件 VS 预编译
 
-本文分析在 C# 中使用反射和配置文件和预编译做注入的性能，本文的数据是为[预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://blog.walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html )提供
+本文分析在 C# 中使用反射和配置文件和预编译做注入的性能，本文的数据是为[预编译框架，开发高性能应用 - 课程 - 微软技术暨生态大会 2018 - walterlv](https://blog.walterlv.com/post/dotnet-build-and-roslyn-course-in-tech-summit-2018.html)提供
 
-<!--more-->
-<!-- CreateTime:2019/11/29 10:13:17 -->
-
-<!-- 标签：C#，性能测试 -->
-
-本文通过代码生成工具，使用[C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html )拿到三个不同的方法的性能
+本文通过代码生成工具，使用[C# 标准性能测试](https://blog.lindexi.com/post/C-%E6%A0%87%E5%87%86%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.html)拿到三个不同的方法的性能
 
 先来介绍一个程序的构成，这个程序里面有 1000 个类，这些类表示需要注入的类，每个类的代码大概都是这样
 
@@ -36,38 +31,34 @@ namespace LecuryouWuruhempa
 
 反射的代码都很简单，先看一下测试的数据
 
-<!-- ![](image/C# 性能分析 反射 VS 配置文件 VS 预编译/C# 性能分析 反射 VS 配置文件 VS 预编译0.png) -->
-
 ![](http://cdn.lindexi.site/lindexi%2F2018101521519594)
 
 | Method |        Mean |      Error |      StdDev |      Median | Scaled | ScaledSD |
-|------- |------------:|-----------:|------------:|------------:|-------:|---------:|
-|    预编译 |    28.20 us |  0.3970 us |   0.3713 us |    28.16 us |   1.00 |     0.00 |
-|   配置文件 | 2,125.77 us | 44.3371 us | 121.3722 us | 2,074.70 us |  75.39 |     4.39 |
+| ------ | ----------: | ---------: | ----------: | ----------: | -----: | -------: |
+| 预编译    |    28.20 us |  0.3970 us |   0.3713 us |    28.16 us |   1.00 |     0.00 |
+| 配置文件   | 2,125.77 us | 44.3371 us | 121.3722 us | 2,074.70 us |  75.39 |     4.39 |
 | 反射特定的类 | 3,141.09 us | 47.0754 us |  41.7311 us | 3,146.11 us | 111.40 |     2.01 |
 
 预编译如果使用委托创建，测试数据会比直接 new 的慢很多
 
-<!-- ![](image/C# 性能分析 反射 VS 配置文件 VS 预编译/C# 性能分析 反射 VS 配置文件 VS 预编译1.png) -->
-
 ![](http://cdn.lindexi.site/lindexi%2F201810169372573)
 
-| Method          |        Mean |      Error |      StdDev | Scaled | ScaledSD |
-| --------------- | ----------: | ---------: | ----------: | -----: | -------: |
-| 预编译-new      |    28.48 us |  0.3682 us |   0.3445 us |   1.00 |     0.00 |
+| Method   |        Mean |      Error |      StdDev | Scaled | ScaledSD |
+| -------- | ----------: | ---------: | ----------: | -----: | -------: |
+| 预编译-new  |    28.48 us |  0.3682 us |   0.3445 us |   1.00 |     0.00 |
 | 预编译-委托创建 |    61.55 us |  1.1327 us |   1.0595 us |   2.16 |     0.04 |
-| 配置文件        | 2,098.50 us | 40.6163 us |  48.3508 us |  73.70 |     1.87 |
-| 反射特定的类    | 3,236.56 us | 63.3132 us | 126.4434 us | 113.67 |     4.59 |
+| 配置文件     | 2,098.50 us | 40.6163 us |  48.3508 us |  73.70 |     1.87 |
+| 反射特定的类   | 3,236.56 us | 63.3132 us | 126.4434 us | 113.67 |     4.59 |
 
 我通过设置了基线是预编译，可以看到通过配置文件创建的方式比预编译慢 75 倍，而通过反射特定的类是慢 100 多倍
 
-其他测试请看 [C# 直接创建多个类和使用反射创建类的性能](https://lindexi.oschina.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html )
+其他测试请看 [C# 直接创建多个类和使用反射创建类的性能](https://lindexi.oschina.io/lindexi/post/C-%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%80%A7%E8%83%BD.html)
 
-[C# 程序内的类数量对程序启动的影响](https://lindexi.oschina.io/lindexi/post/C-%E7%A8%8B%E5%BA%8F%E5%86%85%E7%9A%84%E7%B1%BB%E6%95%B0%E9%87%8F%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E7%9A%84%E5%BD%B1%E5%93%8D.html )
+[C# 程序内的类数量对程序启动的影响](https://lindexi.oschina.io/lindexi/post/C-%E7%A8%8B%E5%BA%8F%E5%86%85%E7%9A%84%E7%B1%BB%E6%95%B0%E9%87%8F%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%90%AF%E5%8A%A8%E7%9A%84%E5%BD%B1%E5%93%8D.html)
 
 整个测试的工程我打包放在下面，这个工程的创建代码很简单，我也直接放在下面
 
-测试的工程 [C# 性能分析 反射 VS 配置文件 VS 预编译-CSDN下载](https://download.csdn.net/download/lindexi_gd/10722444 )
+测试的工程 [C# 性能分析 反射 VS 配置文件 VS 预编译-CSDN下载](https://download.csdn.net/download/lindexi_gd/10722444)
 
 如果觉得我的数据很诡异，那么请自己运行一下
 
@@ -87,8 +78,6 @@ using BenchmarkDotNet.Running;
 ```
 
 通过运行 ReecelnaxeaDrasilouhalLaigeci 方法就可以在运行的文件夹找到创建的文件夹，将这个文件夹复制到测试的工程就可以
-
-{% raw %}
 
 ```csharp
         private static void ReecelnaxeaDrasilouhalLaigeci()
@@ -290,6 +279,5 @@ namespace LecuryouWuruhempa
 
 ```
 
-{% endraw %}
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
+[![知识共享许可协议](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)\
+本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/)进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi\_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

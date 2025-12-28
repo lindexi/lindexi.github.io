@@ -2,32 +2,25 @@
 
 九幽数据统计是统计和分析数据来源，用户使用，先申请账号
 
-<!--more-->
-<!-- CreateTime:2018/2/13 17:23:03 -->
-
-
-<div id="toc"></div>
-
 http://www.windows.sc
 
-![这里写图片描述](image/201611220331168.png)
+![这里写图片描述](.gitbook/assets/201611220331168.png)
 
 创建应用
 
-![这里写图片描述](image/201611220345291.png)
+![这里写图片描述](.gitbook/assets/201611220345291.png)
 
 图片要`72*72`的，然后请看下面的图片，记密钥
 
-![这里写图片描述](image/201611220348976.png)
+![这里写图片描述](.gitbook/assets/201611220348976.png)
 
 在项目Nuget进行搜索，然后下载安装
 
-![这里写图片描述](image/201611220373361.png)
+![这里写图片描述](.gitbook/assets/201611220373361.png)
 
-![这里写图片描述](image/20161122037747.png)
+![这里写图片描述](.gitbook/assets/20161122037747.png)
 
 在App.xaml.cs添加`Suspending`和`Resuming`准备给九幽发信息，这时莫老板就会收到消息
-
 
 ```csharp
 
@@ -69,7 +62,6 @@ track();
 
 在OnSuspending加`EndTrackAsync`，需要注意代码的位置
 
-
 ```csharp
 
         private async void OnSuspending(object sender, SuspendingEventArgs e)
@@ -85,7 +77,6 @@ track();
 运行，等待九幽，因为鹤鹤跑了，所有只能靠莫老板统计了，等一下就可以看到了，大概是几个小时。
 
 如果需要使用页面统计，那么需要添加的代码就是使用`TrackPageStart`，里面就写进入哪个类。
-
 
 ```csharp
 
@@ -104,7 +95,6 @@ track();
 
 如果需要统计一个特殊的事件，那么请使用`TrackEvent`，传入一个字符串，可以得到一个事件的次数，如在点击打开游戏，就发送统计。
 
-
 ```csharp
 
 JYAnalytics.TrackEvent("StartTimes");
@@ -112,7 +102,6 @@ JYAnalytics.TrackEvent("StartTimes");
 ```
 
 除了输入字符串，还可以输入 id 和参数，当然都是字符串，例如需要统计用于打开`blog.csdn.net/lindexi_gd`，那么可以使用下面代码。
-
 
 ```csharp
 
@@ -132,8 +121,4 @@ JYAnalytics.TrackError(error);
 
 在开始运行的时候，还需要在在Package.appxmanifest功能，选择Internet(客户端服务器)使用
 
-![这里写图片描述](image/201611220506879.png)
-
-
-
-
+![这里写图片描述](.gitbook/assets/201611220506879.png)
