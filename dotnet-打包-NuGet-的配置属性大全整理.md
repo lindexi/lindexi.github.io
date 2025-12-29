@@ -529,6 +529,13 @@ Description 描述信息
 
 设置了 SuppressDependenciesWhenPacking 为 true 之后，可见此时的 NuGet 包的 Dependencies 是空白，在 NuGet Package Explorer 里面将显示 No Dependencies 表示无依赖。此时的 NuGet 包可被任意 TargetFramework 框架所引用
 
+### EnablePackageValidation
+
+启用基线包版本处理兼容性问题
+
+用于判断当前版本是否能够兼容旧版本，对于大型项目来说，此功能能够更好地保持 API 兼容性
+
+[dotnet 根据基线包版本实现库版本兼容](https://blog.lindexi.com/post/dotnet-%E6%A0%B9%E6%8D%AE%E5%9F%BA%E7%BA%BF%E5%8C%85%E7%89%88%E6%9C%AC%E5%AE%9E%E7%8E%B0%E5%BA%93%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9.html )
 
 ## 已知属性
 
