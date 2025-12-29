@@ -108,6 +108,8 @@ static class BoostHelper
     - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`
   - Run是自动运行程序最常用的注册表。会先执行HKEY_LOCAL_MACHINE下的Run注册键内容，再执行HKEY_CURRENT_USER下的Run注册键内容，但两者都是在处理“启动文件夹”之前
 
+某些流氓软件为了让任务管理器里面禁用的启动项功能失效，让自己的软件能够突破任务管理器里面的禁用启动项拦截，就会在 `计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run` 里面删除自己的项，从而让任务管理器的禁用启动项功能失效
+
 除了本文记录的写注册表方法之外，还可以在启动文件夹存放快捷方式实现开机自启，详细请参阅 [WPF 开发自动开机启动程序](https://blog.lindexi.com/post/WPF-%E5%BC%80%E5%8F%91%E8%87%AA%E5%8A%A8%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%A8%8B%E5%BA%8F.html )
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/e2a02a9aaa2148cc580cdbc91b92a5970d4b470f/Workbench/QeyeqawkayqaiWhonirikaywi) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/e2a02a9aaa2148cc580cdbc91b92a5970d4b470f/Workbench/QeyeqawkayqaiWhonirikaywi) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
