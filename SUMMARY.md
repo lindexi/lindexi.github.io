@@ -1702,6 +1702,8 @@
 
  * [PowerShell 拿到最近的10个系统日志](PowerShell-拿到最近的10个系统日志.md)
 
+ * [PowerShell 设置 Windows 安全中心白名单排除项](PowerShell-设置-Windows-安全中心白名单排除项.md)
+
  * [PowerShell 通过 WMI 获取系统信息](PowerShell-通过-WMI-获取系统信息.md)
 
  * [PowerShell 通过 WMI 获取系统安装的驱动](PowerShell-通过-WMI-获取系统安装的驱动.md)
