@@ -3,6 +3,8 @@
 通过管理员的 PowerShell 的 Add-MpPreference 和 Get-MpPreference 可分别设置和获取安全中心设置，进而添加进程或文件夹到 Windows 安全中心白名单
 
 <!--more-->
+<!-- CreateTime:2025/12/31 07:21:58 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
