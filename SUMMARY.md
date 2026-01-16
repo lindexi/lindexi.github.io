@@ -378,6 +378,8 @@
 
  * [cmd 如何跨驱动器移动文件夹](cmd-如何跨驱动器移动文件夹.md)
 
+ * [C# Microsoft Agent Framework 与 豆包 对接](C-Microsoft-Agent-Framework-与-豆包-对接.md)
+
  * [C＃ 6.0 字符串 String Interpolation](C＃-6.0-字符串-String-Interpolation.md)
 
  * [C＃ await 高级用法](C＃-await-高级用法.md)
