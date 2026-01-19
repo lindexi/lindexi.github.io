@@ -3,6 +3,8 @@
 本文将告诉大家如何将 Microsoft Agent Framework 与 豆包 对接
 
 <!--more-->
+<!-- CreateTime:2026/01/17 07:27:15 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
