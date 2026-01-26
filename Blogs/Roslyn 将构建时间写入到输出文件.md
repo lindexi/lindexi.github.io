@@ -86,6 +86,6 @@ git pull origin 2d9b071c62ae6d47c0b88d4b5abccb1bf4b60778
 
 获取代码之后，进入 YearkelbeneaqeahaicoChurinocechu 文件夹
 
-更多关于 WriteLinesToFile 的使用，请参阅 [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](https://lindexi.gitee.io/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html )
+更多关于 WriteLinesToFile 的使用，请参阅 [Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html )
 
 更多编译相关请看[手把手教你写 Roslyn 修改编译](https://blog.lindexi.com/post/roslyn.html )
