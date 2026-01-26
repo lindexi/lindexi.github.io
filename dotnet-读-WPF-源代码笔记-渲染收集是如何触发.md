@@ -16,7 +16,7 @@
 
 在开始之前，必须明确一点的是，不是所有的 WPF 应用行为，如依赖属性变更，都会触发渲染变更。有渲染变更不代表立刻将会触发界面刷新，从触发渲染变更到界面刷新，还有以下步骤： 触发渲染，渲染上层收集应用层的绘制渲染的命令，触发渲染线程接收绘制渲染的命令，渲染的下层根据绘制渲染的命令进入 DirectX 渲染管线，由 DirectX 完成后续渲染步骤
 
-本文所聊到的仅仅只是以上的触发渲染，渲染上层收集应用层的绘制渲染的命令这两个步骤。关于 WPF 渲染部分的大框架还请参阅 [WPF 渲染原理](https://lindexi.gitee.io/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
+本文所聊到的仅仅只是以上的触发渲染，渲染上层收集应用层的绘制渲染的命令这两个步骤。关于 WPF 渲染部分的大框架还请参阅 [WPF 渲染原理](https://blog.lindexi.com/post/WPF-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86.html )
 
 本篇博客基于 [WPF 更改 DrawingVisual 的 RenderOpen 用到的对象的内容将持续影响渲染效果](https://blog.lindexi.com/post/WPF-%E6%9B%B4%E6%94%B9-DrawingVisual-%E7%9A%84-RenderOpen-%E7%94%A8%E5%88%B0%E7%9A%84%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AE%B9%E5%B0%86%E6%8C%81%E7%BB%AD%E5%BD%B1%E5%93%8D%E6%B8%B2%E6%9F%93%E6%95%88%E6%9E%9C.html ) 博客进行更深入 WPF 框架源代码探讨
 

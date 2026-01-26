@@ -67,7 +67,7 @@ dotnet new wpf -o 创建的 WPF 的项目的名
 
 ![](http://cdn.lindexi.site/lindexi%2F2019214205738829)
 
-如果这个 dotnet core 程序被多个项目引用，希望能在不同的引用的程序调试请看[VisualStudio 使用多个环境进行调试](https://lindexi.gitee.io/post/VisualStudio-%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E7%8E%AF%E5%A2%83%E8%BF%9B%E8%A1%8C%E8%B0%83%E8%AF%95.html )
+如果这个 dotnet core 程序被多个项目引用，希望能在不同的引用的程序调试请看[VisualStudio 使用多个环境进行调试](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E7%8E%AF%E5%A2%83%E8%BF%9B%E8%A1%8C%E8%B0%83%E8%AF%95.html )
 
 现在右击修改启动项目为 dotnet core 项目，最快修改启动项目的方法是点击下拉选择程序，如下面图片，点击 DirtesFanelsalmair 的下拉选择另一个程序就可以调试另一个程序
 
@@ -115,7 +115,7 @@ dotnet new wpf -o 创建的 WPF 的项目的名
 
 如果是添加一个参数之后再调试，就会发现 System.MissingMethodException 找不到方法
 
-```csharp
+```
 System.MissingMethodException:“Method not found: 'Void DirtesFanelsalmair.Foo.A()'.”
 ```
 
@@ -130,7 +130,7 @@ System.MissingMethodException:“Method not found: 'Void DirtesFanelsalmair.Foo.
 ```csharp
         public void A(int n = 0)
         {
-            Debug.WriteLine("欢迎访问我博客 http://lindexi.gitee.io 里面有大量 UWP WPF 博客");
+            Debug.WriteLine("欢迎访问我博客 http://blog.lindexi.com 里面有大量 UWP WPF 博客");
         }
 ```
 

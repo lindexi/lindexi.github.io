@@ -424,9 +424,9 @@ await "林德熙逗比";
 await "不告诉你";
 ```
 
-这个代码是可以编译通过的，但是只有在我的设备。在看了这个[博客](https://lindexi.gitee.io/post/C-await-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html )之后，可能你也可以在你的设备编译
+这个代码是可以编译通过的，但是只有在我的设备。在看了这个[博客](https://blog.lindexi.com/post/C-await-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95.html )之后，可能你也可以在你的设备编译通过以上代码
 
-其实 await 是可以写很多次的，如下面代码
+额外地冷知识是 await 可以写很多次的，如下面代码
 
 ```csharp
 await await await await await await await await await await await await await await await await await await await await await await await "林德熙逗比";
@@ -679,7 +679,7 @@ string zer = 0.ToString(format);     // (0)
 
 ## 调用堆栈
 
-如果需要获得调用方法的堆栈，可以使用[这个文章的方法](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
+如果需要获得调用方法的堆栈，可以使用[这个文章的方法](https://blog.lindexi.com/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
 
 ```csharp
     class Program
@@ -717,7 +717,7 @@ F2
 F1
 ```
 
-参见：[WPF 判断调用方法堆栈](https://lindexi.gitee.io/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
+参见：[WPF 判断调用方法堆栈](https://blog.lindexi.com/post/WPF-%E5%88%A4%E6%96%AD%E8%B0%83%E7%94%A8%E6%96%B9%E6%B3%95%E5%A0%86%E6%A0%88.html )
 
 调用堆栈判断是存在一个小坑的，请看 [dotnet 警惕使用 StackTrace 加获取方法标记 Attribute 特性在 Release 下被内联](https://blog.lindexi.com/post/dotnet-%E8%AD%A6%E6%83%95%E4%BD%BF%E7%94%A8-StackTrace-%E5%8A%A0%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E6%A0%87%E8%AE%B0-Attribute-%E7%89%B9%E6%80%A7%E5%9C%A8-Release-%E4%B8%8B%E8%A2%AB%E5%86%85%E8%81%94.html )
 

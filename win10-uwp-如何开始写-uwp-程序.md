@@ -104,11 +104,11 @@
 
 然后需要学习 dot net core 或 dot net Framework 的知识，学习只需要了解里面有哪些类，如何使用他。
 
-实际上 dot net core 就已经需要学很久了，但是开发时还需要学 VisualStudio 和一些插件的使用。我看到有些小伙伴写代码的速度实在太慢，还有调试的能力也很差，因为他不会使用 VisualStudio ，如果学会使用，那么开发速度很快很多。除了 VisualStudio 还需要去了解一些常用的工具，请看[高效率工具](https://lindexi.gitee.io/post/%E9%AB%98%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7.html )
+实际上 dot net core 就已经需要学很久了，但是开发时还需要学 VisualStudio 和一些插件的使用。我看到有些小伙伴写代码的速度实在太慢，还有调试的能力也很差，因为他不会使用 VisualStudio ，如果学会使用，那么开发速度很快很多。除了 VisualStudio 还需要去了解一些常用的工具，请看[高效率工具](https://blog.lindexi.com/post/%E9%AB%98%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7.html )
 
 另外软件开发还有基础的部分，关于数据结构、基础算法、设计模式都需要去学一下。但是必须告诉大家的是，关于数据结构千万要学 dot net 提供的数据结构而不是对于每个数据结构都去自己写，如果自己写轮子在 dot net 开发大神看来这就是新手。尽量使用 dot net 提供的算法才是一个高手需要做的。
 
-更多的 UWP 博客请直接看我的博客，csdn博客：https://blog.csdn.net/lindexi_gd 个人博客： https://lindexi.gitee.io 在国内我是写 UWP 博客最多的人，但是文章水平比较低，如果发现我博客写的不好懂，请告诉我
+更多的 UWP 博客请直接看我的博客，csdn博客：https://blog.csdn.net/lindexi_gd 个人博客： https://blog.lindexi.com 在国内我是写 UWP 博客最多的人，但是文章水平比较低，如果发现我博客写的不好懂，请告诉我
 
 如果遇到任何的问题，欢迎加入一些 dot net 交流的群交流。
 

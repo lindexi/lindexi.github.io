@@ -74,9 +74,9 @@
 
 [dotnet OpenXML 文本字体的选择规则](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E7%9A%84%E9%80%89%E6%8B%A9%E8%A7%84%E5%88%99.html)
 
-[dotnet OpenXML 文本 Kerning 字间距的作用](https://lindexi.gitee.io/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Kerning-%E5%AD%97%E9%97%B4%E8%B7%9D%E7%9A%84%E4%BD%9C%E7%94%A8.html )
+[dotnet OpenXML 文本 Kerning 字间距的作用](https://blog.lindexi.com/post/dotnet-OpenXML-%E6%96%87%E6%9C%AC-Kerning-%E5%AD%97%E9%97%B4%E8%B7%9D%E7%9A%84%E4%BD%9C%E7%94%A8.html )
 
-[dotnet OpenXML 解析 PPT 文本字体获取详解](https://lindexi.gitee.io/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E8%8E%B7%E5%8F%96%E8%AF%A6%E8%A7%A3.html )
+[dotnet OpenXML 解析 PPT 文本字体获取详解](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%A7%A3%E6%9E%90-PPT-%E6%96%87%E6%9C%AC%E5%AD%97%E4%BD%93%E8%8E%B7%E5%8F%96%E8%AF%A6%E8%A7%A3.html )
 
 [dotnet OpenXML 聊聊文本段落对齐方式](https://blog.lindexi.com/post/dotnet-OpenXML-%E8%81%8A%E8%81%8A%E6%96%87%E6%9C%AC%E6%AE%B5%E8%90%BD%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F.html )
 
@@ -100,7 +100,7 @@
 
 [dotnet OpenXML 如何判断是形状还是文本](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E5%BD%A2%E7%8A%B6%E8%BF%98%E6%98%AF%E6%96%87%E6%9C%AC.html )
 
-[dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响](https://lindexi.gitee.io/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84-rect-Shape-Text-Rectangle-%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%96%87%E6%9C%AC%E6%A1%86%E7%9A%84%E5%9D%90%E6%A0%87%E5%BD%B1%E5%93%8D.html )
+[dotnet OpenXML SDK 形状的 rect Shape Text Rectangle 属性对文本框的坐标影响](https://blog.lindexi.com/post/dotnet-OpenXML-SDK-%E5%BD%A2%E7%8A%B6%E7%9A%84-rect-Shape-Text-Rectangle-%E5%B1%9E%E6%80%A7%E5%AF%B9%E6%96%87%E6%9C%AC%E6%A1%86%E7%9A%84%E5%9D%90%E6%A0%87%E5%BD%B1%E5%93%8D.html )
 
 ### 形状几何
 
@@ -122,9 +122,9 @@
 
 ## 图片
 
-[dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](https://lindexi.gitee.io/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-Color-Change-Effect-%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )
+[dotnet OpenXML 图片特效的 Color Change Effect 特效修改图片颜色](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-Color-Change-Effect-%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )
 
-[dotnet OpenXML 图片特效的 BiLevel 黑白特效修改图片颜色](https://lindexi.gitee.io/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-BiLevel-%E9%BB%91%E7%99%BD%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )
+[dotnet OpenXML 图片特效的 BiLevel 黑白特效修改图片颜色](https://blog.lindexi.com/post/dotnet-OpenXML-%E5%9B%BE%E7%89%87%E7%89%B9%E6%95%88%E7%9A%84-BiLevel-%E9%BB%91%E7%99%BD%E7%89%B9%E6%95%88%E4%BF%AE%E6%94%B9%E5%9B%BE%E7%89%87%E9%A2%9C%E8%89%B2.html )
 
 [C# Net 使用 openxml 提取ppt中的音频、视频、图片、文本 - 爱恋的红尘 - 博客园](https://www.cnblogs.com/ping9719/p/13497923.html )
 
@@ -237,7 +237,7 @@
 
 ## 例子
 
-[WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](https://lindexi.gitee.io/post/WPF-%E5%B0%86-docx-%E7%9A%84-Word-%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-FlowDocument-%E6%98%BE%E7%A4%BA.html )
+[WPF 将 docx 的 Word 文件转换为 FlowDocument 显示](https://blog.lindexi.com/post/WPF-%E5%B0%86-docx-%E7%9A%84-Word-%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA-FlowDocument-%E6%98%BE%E7%A4%BA.html )
 
 [Xamarin.Forms创建与读写Word文件](https://mp.weixin.qq.com/s/S3xK4Vn4cst8J-uMWJ0I7A )
 

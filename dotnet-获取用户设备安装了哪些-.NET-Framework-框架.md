@@ -156,8 +156,7 @@ v2.0.50727=.NET Framework 2.0 SP2; v3.0=.NET Framework 3.0 SP2; v3.5=.NET Framew
 [.NET Framework Versions and Dependencies](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies#targeting-and-running-net-framework-apps-for-version-45-and-later?wt.mc_id=MVP )
 
 
-[.NET Framework 4.x 程序到底运行在哪个 CLR 版本之上 - walterlv](https://walterlv.gitee.io/dotnet/2017/09/22/dotnet-version.html )
-
+[.NET Framework 4.x 程序到底运行在哪个 CLR 版本之上 - walterlv](https://blog.walterlv.com/dotnet/2017/09/22/dotnet-version.html )
 
 
 

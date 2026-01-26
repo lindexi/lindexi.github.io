@@ -47,7 +47,7 @@ nuget.exe spec
     <authors>lindexi</authors>
     <owners>lindexi</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>欢迎访问我博客 https://lindexi.gitee.io/ 里面有很多 UWP WPF 博客</description>
+    <description>欢迎访问我博客 https://blog.lindexi.com/ 里面有很多 UWP WPF 博客</description>
     <dependencies>
       <group targetFramework=".NETCoreApp2.1">
         <dependency id="Microsoft.NETCore.App" version="2.1.0" exclude="Build,Analyzers" />

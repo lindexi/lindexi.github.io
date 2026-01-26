@@ -159,7 +159,7 @@ namespace LecuryouWuruhempa
 |------------------- |---------:|----------:|----------:|
 | WeejujeGaljouPemhu | 16.11 us | 0.3217 us | 0.3160 us |
 
-也许大家会说，这个方法是因为被优化了，现在添加 MethodImpl 禁止优化，请看[win10 uwp 禁止编译器优化代码](https://lindexi.gitee.io/post/win10-uwp-%E7%A6%81%E6%AD%A2%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81.html )
+也许大家会说，这个方法是因为被优化了，现在添加 MethodImpl 禁止优化，请看[win10 uwp 禁止编译器优化代码](https://blog.lindexi.com/post/win10-uwp-%E7%A6%81%E6%AD%A2%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81.html )
 
 运行的可以看到几乎没有影响
 

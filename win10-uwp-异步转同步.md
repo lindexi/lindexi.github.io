@@ -20,7 +20,7 @@
 
 看到这里也许你会疑惑，为何异步方法可以不在另一个线程？实际上对于 IO 等的异步方法，都是没有创建线程，请看[There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html )
 
-关于这条件是如何来的，请看[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://walterlv.gitee.io/post/deadlock-in-task-wait.html )
+关于这条件是如何来的，请看[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://blog.walterlv.com/post/deadlock-in-task-wait.html )
 
 ## 使用方法
 
@@ -162,7 +162,7 @@
         }
 ```
 
-参见：[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://walterlv.gitee.io/post/deadlock-in-task-wait.html )
+参见：[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://blog.walterlv.com/post/deadlock-in-task-wait.html )
 
 
 

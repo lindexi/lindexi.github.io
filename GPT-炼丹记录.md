@@ -134,7 +134,7 @@
 ```
 
 ```
-请帮我将以下内容转述为地道的计算机英文：我报告此问题的目的是让其他开发者遇到此问题时，可以通过搜索引擎找到这个问题，让开发者们获得解决方法和了解原因
+请帮我将以下内容转述为地道的计算机英文：减少对 `WrapDirect3D11Texture` 的调用，让 `EglSurface` 跟随 `_renderTexture` 的生命周期。我在一个 4k 分辨率的屏幕测试的时候，我发现了通过 `WrapDirect3D11Texture` 调用的 `eglCreatePbufferFromClientBuffer` 在一帧中的耗时有 5 毫秒。如果我减少了 `eglCreatePbufferFromClientBuffer` 调用，可以提升百分之三十的渲染性能。但我不清楚为什么之前的代码需要每一帧都调用 WrapDirect3D11Texture 方法
 ```
 
 ```

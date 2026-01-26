@@ -61,7 +61,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\Windows Error Reporting
 ```csharp
 
     <Grid Background="Transparent">
-        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="不要碰我，碰我就直接退出&#x0a;&#x0a;欢迎访问我博客 http://lindexi.gitee.io 里面有大量 UWP WPF 博客"/>
+        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="不要碰我，碰我就直接退出&#x0a;&#x0a;欢迎访问我博客 http://blog.lindexi.com 里面有大量 UWP WPF 博客"/>
     </Grid>
 ```
 

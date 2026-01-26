@@ -468,11 +468,11 @@
 
 下面是相关文章
 
- - [win10 uwp 商业游戏 ](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
+ - [win10 uwp 商业游戏 ](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
 
- - [win10 uwp 商业游戏 1.1.5](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html)
+ - [win10 uwp 商业游戏 1.1.5](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html)
 
- - [win10 uwp 商业游戏 1.2.1 ](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.2.1.html )
+ - [win10 uwp 商业游戏 1.2.1 ](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.2.1.html )
 
 <!--  - [win10 uwp 商业游戏 ](./win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html) 
 
@@ -488,7 +488,7 @@
 
 落書き  https://www.pixiv.net/member_illust.php?mode=medium&illust_id=64830430
 
-欢迎大家来我的[博客](https://lindexi.gitee.io)，现在csdn的博客文章发布了就不再编辑，如果希望看最新的文章，请到我的[博客](https://lindexi.gitee.io)。本文也发在博客园备份，如果大家有什么建议，请在博客下面评论。
+欢迎大家来我的[博客](https://blog.lindexi.com)，现在csdn的博客文章发布了就不再编辑，如果希望看最新的文章，请到我的[博客](https://blog.lindexi.com)。本文也发在博客园备份，如果大家有什么建议，请在博客下面评论。
 
 
 

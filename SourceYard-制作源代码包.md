@@ -11,7 +11,7 @@
 <!-- CreateTime:2018/12/25 9:43:07 -->
 
 
-如果使用复制代码的方式，很难知道从哪里复制代码，如果在很多项目都复制了代码，发现原来的代码存在一些虫子，很难修改所有复制代码的项目。通过传统 Nuget 的方式可以方便管理工具的更新，和引入工具，同时会将每个小轮子打包成一个 dll 这样会引入很多 dll 让软件启动的速度和运行的速度降低。关于 dll 数量和启动时间的测试请看 [C# 程序集数量对软件启动性能的影响](https://lindexi.gitee.io/post/C-%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%95%B0%E9%87%8F%E5%AF%B9%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D.html ) 介绍了程序集数量对软件启动性能的影响，运行的性能是在引用某个 dll 方法的时候需要加载这个 dll 降低速度。
+如果使用复制代码的方式，很难知道从哪里复制代码，如果在很多项目都复制了代码，发现原来的代码存在一些虫子，很难修改所有复制代码的项目。通过传统 Nuget 的方式可以方便管理工具的更新，和引入工具，同时会将每个小轮子打包成一个 dll 这样会引入很多 dll 让软件启动的速度和运行的速度降低。关于 dll 数量和启动时间的测试请看 [C# 程序集数量对软件启动性能的影响](https://blog.lindexi.com/post/C-%E7%A8%8B%E5%BA%8F%E9%9B%86%E6%95%B0%E9%87%8F%E5%AF%B9%E8%BD%AF%E4%BB%B6%E5%90%AF%E5%8A%A8%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D.html ) 介绍了程序集数量对软件启动性能的影响，运行的性能是在引用某个 dll 方法的时候需要加载这个 dll 降低速度。
 
 有小伙伴问，为何不将所有的工具放在一个大的项目，这样每次只需要更新大项目的 Nuget 就可以，这样就可以解决引入dll的数量和管理小工具。
 
@@ -31,7 +31,7 @@
 
 ![](http://cdn.lindexi.site/lindexi%2F201812911718537)
 
-在我之前的博客[C# 金额转中文大写](https://lindexi.gitee.io/post/C-%E9%87%91%E9%A2%9D%E8%BD%AC%E4%B8%AD%E6%96%87%E5%A4%A7%E5%86%99.html )已经有了代码，可以从[码云复制](https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20 ) 复制的代码因为没有命名空间，需要手动添加，于是现在就创建了一个项目，这个项目包含一个类。
+在我之前的博客[C# 金额转中文大写](https://blog.lindexi.com/post/C-%E9%87%91%E9%A2%9D%E8%BD%AC%E4%B8%AD%E6%96%87%E5%A4%A7%E5%86%99.html )已经有了代码，可以从[码云复制](https://gitee.com/lindexi/codes/w6bxlue9o14rv5nscjyhf20 ) 复制的代码因为没有命名空间，需要手动添加，于是现在就创建了一个项目，这个项目包含一个类。
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包1.png) -->
 
@@ -47,7 +47,7 @@
 
 如果对 SourceYard 感兴趣，请在 [github](https://github.com/dotnet-campus/SourceYard ) 关注
 
-右击 TheLib 的属性，在打包的页面勾选在版本中生成 Nuget 包，勾选之后重新编译就可以制作出 Nuget 包。但是请不要急，在打包页面还有很多东西需要填写，在[广州 .NET 微软技术俱乐部12月份活动](http://www.10tiao.com/html/391/201811/2654072986/1.html) 的演示中，我使用了[这个黑科技](https://lindexi.gitee.io/post/Roslyn-%E5%B0%86%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E6%94%BE%E5%9C%A8%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%97%A0%E8%AE%BA%E5%93%AA%E4%B8%AA%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%A1%B9%E7%9B%AE%E9%83%BD%E4%BC%9A%E8%BE%93%E5%87%BA%E6%9E%97%E5%BE%B7%E7%86%99%E6%98%AF%E9%80%97%E6%AF%94.html )瞬间完成了所有属性，小伙伴如果还没学会这个黑科技就需要手动填写内容了，其实只有作者、公司、说明是必要的，其他的可以不写。
+右击 TheLib 的属性，在打包的页面勾选在版本中生成 Nuget 包，勾选之后重新编译就可以制作出 Nuget 包。但是请不要急，在打包页面还有很多东西需要填写，在[广州 .NET 微软技术俱乐部12月份活动](http://www.10tiao.com/html/391/201811/2654072986/1.html) 的演示中，我使用了[这个黑科技](https://blog.lindexi.com/post/Roslyn-%E5%B0%86%E8%BF%99%E4%B8%AA%E6%96%87%E4%BB%B6%E6%94%BE%E5%9C%A8%E4%BD%A0%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%97%A0%E8%AE%BA%E5%93%AA%E4%B8%AA%E6%8E%A7%E5%88%B6%E5%8F%B0%E9%A1%B9%E7%9B%AE%E9%83%BD%E4%BC%9A%E8%BE%93%E5%87%BA%E6%9E%97%E5%BE%B7%E7%86%99%E6%98%AF%E9%80%97%E6%AF%94.html )瞬间完成了所有属性，小伙伴如果还没学会这个黑科技就需要手动填写内容了，其实只有作者、公司、说明是必要的，其他的可以不写。
 
 <!-- ![](image/SourceYard 制作源代码包/SourceYard 制作源代码包3.png) -->
 
@@ -73,7 +73,7 @@
 </Project>
 ```
 
-现在右击项目重新编译就可以打出 Nuget 包，在使用新的项目格式，默认的 dotnet core 项目就是这么简单，具体请看[VisualStudio 使用新项目格式快速打出 Nuget 包](https://lindexi.gitee.io/post/VisualStudio-%E4%BD%BF%E7%94%A8%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E5%BF%AB%E9%80%9F%E6%89%93%E5%87%BA-Nuget-%E5%8C%85.html )详细写了黑科技
+现在右击项目重新编译就可以打出 Nuget 包，在使用新的项目格式，默认的 dotnet core 项目就是这么简单，具体请看[VisualStudio 使用新项目格式快速打出 Nuget 包](https://blog.lindexi.com/post/VisualStudio-%E4%BD%BF%E7%94%A8%E6%96%B0%E9%A1%B9%E7%9B%AE%E6%A0%BC%E5%BC%8F%E5%BF%AB%E9%80%9F%E6%89%93%E5%87%BA-Nuget-%E5%8C%85.html )详细写了黑科技
 
 在输出的文件夹可以找到打包的 Nuget 文件
 
@@ -223,7 +223,7 @@
 
 相对来说，做 WPF 的库使用新项目格式要求对新的格式比较熟悉，所以请直接卸载项目，编辑一下项目文件，填入下面的代码
 
-```
+```xml
 <Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
     <LanguageTargets>$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
@@ -395,8 +395,7 @@
 
 如果不设置 TheLibSourceFolder 路径，也是可以调试文件，同样也可以在调试的时候修改代码，但是这时的代码是无法上传的，也就是只能在本地的缓存使用，在清空缓存之后，对代码的修改将会找不到
 
-因为 SourceYard 还在开发过程，代码开放在 [github](https://github.com/dotnet-campus/SourceYard ) 欢迎小伙伴贡献
- 
+因为 SourceYard 还在开发过程，代码开放在 [github](https://github.com/dotnet-campus/SourceYard ) 欢迎小伙伴参与贡献
 
 
 

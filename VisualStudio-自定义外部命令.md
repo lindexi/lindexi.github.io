@@ -64,7 +64,7 @@
 1. 添加命令 这里选择工具的外部命令4，外部命令和添加命令所在有关，我这里添加的是第4个
 
 
-感谢 [吕毅 ](https://walterlv.gitee.io/ )
+感谢 [吕毅 ](https://blog.walterlv.com/ )
 
 更多自定义外部工具请看 [Visual Studio 自定义外部命令 (External Tools) - J.晒太阳的猫 - 博客园](https://www.cnblogs.com/jasongrass/p/14682527.html )
 

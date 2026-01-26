@@ -19,7 +19,7 @@
 ![](http://cdn.lindexi.site/lindexi%2F20181117153856312)
 
 ```xml
-        <TextBlock Text="换行的最简单方法&#x0a;欢迎访问我博客 lindexi.gitee.io 里面有大量 UWP WPF 博客
+        <TextBlock Text="换行的最简单方法&#x0a;欢迎访问我博客 blog.lindexi.com 里面有大量 UWP WPF 博客
 " 
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
@@ -29,13 +29,13 @@
 
 如果是在 WPF 可以通过 `LineBreak` 的方法换行
 
-```csharp
+```xml
         <TextBlock HorizontalAlignment="Center"
                    VerticalAlignment="Center">
             <TextBlock.Text>
                 换行的最简单方法
                 <LineBreak/>
-                欢迎访问我博客 lindexi.gitee.io 里面有大量 UWP WPF 博客
+                欢迎访问我博客 blog.lindexi.com 里面有大量 UWP WPF 博客
             </TextBlock.Text>
         </TextBlock>
 ```
@@ -44,11 +44,11 @@
 
 好在可以使用`xml:space="preserve"`直接输入换行
 
-```csharp
+```xml
         <TextBlock xml:space="preserve">
             <TextBlock.Text>
                 换行的最简单方法
-                欢迎访问我博客 lindexi.gitee.io 里面有大量 UWP WPF 博客
+                欢迎访问我博客 blog.lindexi.com 里面有大量 UWP WPF 博客
             </TextBlock.Text>
         </TextBlock>
 ```
@@ -57,11 +57,11 @@
 
 如果担心在 元素 上添加 `xml:space="preserve"` 会让其他的功能不好用，可以使用资源的方法，请看代码
 
-```csharp
+```xml
         <Grid.Resources>
             <x:String x:Key="str" xml:space="preserve">
                 换行的最简单方法
-                欢迎访问我博客 lindexi.gitee.io 里面有大量 UWP WPF 博客
+                欢迎访问我博客 blog.lindexi.com 里面有大量 UWP WPF 博客
             </x:String>
         </Grid.Resources>
         <TextBlock HorizontalAlignment="Center" 

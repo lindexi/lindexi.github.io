@@ -94,7 +94,7 @@ Microsoft Windows NT 中允许使用包含句点的非 DNS 名称。 但是，�
 
 [NetBIOS协议_百度百科](https://baike.baidu.com/item/NetBIOS%E5%8D%8F%E8%AE%AE )
 
-关于文件的限制请看 [C# 不能用于文件名的字符](https://lindexi.gitee.io/post/C-%E4%B8%8D%E8%83%BD%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E5%AD%97%E7%AC%A6.html )
+关于文件的限制请看 [C# 不能用于文件名的字符](https://blog.lindexi.com/post/C-%E4%B8%8D%E8%83%BD%E7%94%A8%E4%BA%8E%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E5%AD%97%E7%AC%A6.html )
 
 
 

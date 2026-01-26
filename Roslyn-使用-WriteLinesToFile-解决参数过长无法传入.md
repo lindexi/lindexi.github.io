@@ -124,7 +124,7 @@
 <!-- 下载文件 NekasNugouMedapai -->
 
 参见：
-[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://walterlv.gitee.io/post/known-properties-in-csproj.html )
+[项目文件中的已知属性（知道了这些，就不会随便在 csproj 中写死常量啦） - walterlv](https://blog.walterlv.com/post/known-properties-in-csproj.html )
 
 ![](https://i.loli.net/2018/08/20/5b7aab757d2f9.jpg)
 

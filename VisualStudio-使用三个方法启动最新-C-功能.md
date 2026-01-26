@@ -51,7 +51,7 @@
     <Authors>lindexi</Authors>
     <RepositoryUrl>https://github.com/lindexi/UWP</RepositoryUrl>
     <Description>
-      欢迎来我博客 lindexi.gitee.io
+      欢迎来我博客 blog.lindexi.com
     </Description>
   </PropertyGroup>
 ```
