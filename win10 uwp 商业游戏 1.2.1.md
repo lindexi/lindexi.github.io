@@ -247,7 +247,7 @@
 
 现在可以看到，添加技能这个存在点击按钮，但是不需要点击，只有升级。所以如何修改？下面来告诉大家使用列表模板
 
-实际在[win10 uwp 列表模板选择器](https://lindexi.gitee.io/post/win10-uwp-%E5%88%97%E8%A1%A8%E6%A8%A1%E6%9D%BF%E9%80%89%E6%8B%A9%E5%99%A8.html )已经有告诉大家如何写了，所以这里只是很简单告诉大家，这里的代码需要如何写
+实际在[win10 uwp 列表模板选择器](https://blog.lindexi.com/post/win10-uwp-%E5%88%97%E8%A1%A8%E6%A8%A1%E6%9D%BF%E9%80%89%E6%8B%A9%E5%99%A8.html )已经有告诉大家如何写了，所以这里只是很简单告诉大家，这里的代码需要如何写
 
 先创建一个类 DyqbdpreKuoujeq ，这个类就是选择不同的数据
 
@@ -774,9 +774,9 @@ internal class KwxTpivzdikn
 
 ## 其他文章
 
- - [win10 uwp 商业游戏](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html )
+ - [win10 uwp 商业游戏](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F.html )
 
- - [win10 uwp 商业游戏 1.1.5](https://lindexi.gitee.io/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html )
+ - [win10 uwp 商业游戏 1.1.5](https://blog.lindexi.com/post/win10-uwp-%E5%95%86%E4%B8%9A%E6%B8%B8%E6%88%8F-1.1.5.html )
 
 ## 感谢
 

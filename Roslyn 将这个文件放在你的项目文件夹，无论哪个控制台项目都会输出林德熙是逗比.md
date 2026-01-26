@@ -17,7 +17,7 @@
 
 所以将 `Directory.Build.props` 文件 放在磁盘文件夹，如`E:\\`就可以让整个放在 `E:\\` 的工程可以被这个文件修改
 
-详细请看 [Roslyn 使用 Directory.Build.props 文件定义编译](https://lindexi.gitee.io/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html )
+详细请看 [Roslyn 使用 Directory.Build.props 文件定义编译](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-Directory.Build.props-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%BC%96%E8%AF%91.html )
 
 现在我告诉小伙伴，将这个文件放在你的文件夹内，然后他的控制台项目都会输出 林德熙是逗比是如何做到的？
 
@@ -41,7 +41,7 @@ namespace CeseacooteeGowgu
 
 ```
 
-那么现在的问题是，我刚才说的是将这个文件放在你的项目文件夹，但是要输出林德熙是逗比的代码需要放在一个文件，当然不能放两个文件，那么可以怎么做？简单的方法是使用[Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](https://lindexi.gitee.io/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html )提供的方法，写入文件
+那么现在的问题是，我刚才说的是将这个文件放在你的项目文件夹，但是要输出林德熙是逗比的代码需要放在一个文件，当然不能放两个文件，那么可以怎么做？简单的方法是使用[Roslyn 使用 WriteLinesToFile 解决参数过长无法传入](https://blog.lindexi.com/post/Roslyn-%E4%BD%BF%E7%94%A8-WriteLinesToFile-%E8%A7%A3%E5%86%B3%E5%8F%82%E6%95%B0%E8%BF%87%E9%95%BF%E6%97%A0%E6%B3%95%E4%BC%A0%E5%85%A5.html )提供的方法，写入文件
 
 先假设写入文件很简单，需要在 `Directory.Build.props` 文件添加文件所在的路径，然后移除其他的文件
 

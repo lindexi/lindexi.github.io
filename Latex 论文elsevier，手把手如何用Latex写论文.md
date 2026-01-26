@@ -1075,7 +1075,7 @@ http://hubl82.blog.163.com/blog/static/1267694852013459412617/
 
 [Latex](https://www.elsevier.com/authors/author-schemas/latex-instructions )
 
-更多数学公式请看 [Latex 公式速查](https://lindexi.gitee.io/lindexi/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
+更多数学公式请看 [Latex 公式速查](https://blog.lindexi.com/post/Latex-%E5%85%AC%E5%BC%8F%E9%80%9F%E6%9F%A5.html )
 
 [离线安装Miktex/CTEX的宏包Package-02015678](http://02015678.lofter.com/post/1cd5b3ca_6fa6e34 )
 

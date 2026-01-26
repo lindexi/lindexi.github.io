@@ -17,7 +17,7 @@
 
 看到这里也许你会疑惑，为何异步方法可以不在另一个线程？实际上对于 IO 等的异步方法，都是没有创建线程，请看[There Is No Thread](http://blog.stephencleary.com/2013/11/there-is-no-thread.html )
 
-关于这条件是如何来的，请看[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://walterlv.gitee.io/post/deadlock-in-task-wait.html )
+关于这条件是如何来的，请看[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://blog.walterlv.com/post/deadlock-in-task-wait.html )
 
 ## 使用方法
 
@@ -159,6 +159,6 @@
         }
 ```
 
-参见：[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://walterlv.gitee.io/post/deadlock-in-task-wait.html )
+参见：[使用 Task.Wait()？立刻死锁（deadlock） - walterlv](https://blog.walterlv.com/post/deadlock-in-task-wait.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。  

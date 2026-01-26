@@ -12,7 +12,7 @@
 
 <!-- 标签：uwp,win2d,渲染 -->
 
-在之前的入门教程[win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )我直接用的是`CanvasControl`，实际上可以使用的画布还有下面两个
+在之前的入门教程[win10 uwp win2d 入门 看这一篇就够了](https://blog.lindexi.com/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )我直接用的是`CanvasControl`，实际上可以使用的画布还有下面两个
 
  - [CanvasAnimatedControl](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm )
 
@@ -28,7 +28,7 @@
 
 如果是为了做动画需要不停调用 `Invalidate` ，在 UWP 比较好的方法是使用 CanvasAnimatedControl 这个可以到每秒 60 帧，而且在用户设备比较差的时候会降低调用频率。
 
-所以做动画的时候需要不停触发重新渲染就使用 CanvasAnimatedControl ，关于这个控件，请看[win10 uwp 萤火虫效果](https://lindexi.gitee.io/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
+所以做动画的时候需要不停触发重新渲染就使用 CanvasAnimatedControl ，关于这个控件，请看[win10 uwp 萤火虫效果](https://blog.lindexi.com/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
 
 [Win2D 中的游戏循环：CanvasAnimatedControl](https://blog.csdn.net/WPwalter/article/details/84585594 )
 
@@ -84,14 +84,14 @@ void VirtualControl_SizeChanged(object sender, SizeChangedEventArgs e)
 
 ## 其他博客
 
-[win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
+[win10 uwp win2d 入门 看这一篇就够了](https://blog.lindexi.com/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
 
-win2d 毛玻璃：[win10 uwp 毛玻璃](https://lindexi.gitee.io/post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83.html )
+win2d 毛玻璃：[win10 uwp 毛玻璃](https://blog.lindexi.com/post/win10-uwp-%E6%AF%9B%E7%8E%BB%E7%92%83.html )
 
-[win2d 画出好看的图形](https://lindexi.gitee.io/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2.html )
+[win2d 画出好看的图形](https://blog.lindexi.com/post/win2d-%E7%94%BB%E5%87%BA%E5%A5%BD%E7%9C%8B%E7%9A%84%E5%9B%BE%E5%BD%A2.html )
 
-[win10 uwp 萤火虫效果](https://lindexi.gitee.io/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
+[win10 uwp 萤火虫效果](https://blog.lindexi.com/post/win10-uwp-%E8%90%A4%E7%81%AB%E8%99%AB%E6%95%88%E6%9E%9C.html )
 
-[win2d 图片水印](https://lindexi.gitee.io/post/win2d-%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0.html )
+[win2d 图片水印](https://blog.lindexi.com/post/win2d-%E5%9B%BE%E7%89%87%E6%B0%B4%E5%8D%B0.html )
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。

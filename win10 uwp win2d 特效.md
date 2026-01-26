@@ -75,7 +75,7 @@ using Microsoft.Graphics.Canvas.UI.Xaml;
         }
 ```
 
-注意在获取图片时，需要设置图片为内容，请看 [win10 uwp 访问解决方案文件](https://lindexi.gitee.io/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
+注意在获取图片时，需要设置图片为内容，请看 [win10 uwp 访问解决方案文件](https://blog.lindexi.com/post/win10-uwp-%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%87%E4%BB%B6.html )
 
 如果没有设置图片为内容，就会出现 FileNotFoundException 而且信息是
 
@@ -126,7 +126,7 @@ using Microsoft.Graphics.Canvas.Effects;
 
 ![](http://cdn.lindexi.site/lindexi%2F2018930201612575)
 
-更多关于 AlphaMaskEffect 请看 [win10 uwp win2d 入门 看这一篇就够了](https://lindexi.gitee.io/lindexi/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
+更多关于 AlphaMaskEffect 请看 [win10 uwp win2d 入门 看这一篇就够了](https://blog.lindexi.com/lindexi/post/win10-uwp-win2d-%E5%85%A5%E9%97%A8-%E7%9C%8B%E8%BF%99%E4%B8%80%E7%AF%87%E5%B0%B1%E5%A4%9F%E4%BA%86.html )
 
 代码 [win2d AlphaMaskEffect-CSDN下载](https://download.csdn.net/download/lindexi_gd/10698535 )
 

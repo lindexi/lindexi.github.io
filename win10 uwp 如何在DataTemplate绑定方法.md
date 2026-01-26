@@ -28,7 +28,7 @@
     }
 ```
 
-然后绑定 ViewModel ，在 MainPage 绑定就是 DataContext ，如果想知道 DataContext 的写法，请看 [win10 uwp DataContext](https://lindexi.gitee.io/post/win10-uwp-DataContext.html )
+然后绑定 ViewModel ，在 MainPage 绑定就是 DataContext ，如果想知道 DataContext 的写法，请看 [win10 uwp DataContext](https://blog.lindexi.com/post/win10-uwp-DataContext.html )
 
 ```csharp
         public MainPage()
