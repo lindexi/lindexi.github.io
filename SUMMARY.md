@@ -2068,6 +2068,8 @@
 
  * [VisualStudio 配置多进程调试快捷键启动项目](VisualStudio-配置多进程调试快捷键启动项目.md)
 
+ * [Vortice 使用 DirectComposition 显示透明窗口](Vortice-使用-DirectComposition-显示透明窗口.md)
+
  * [win 消息](win-消息.md)
 
  * [win10 17025 触摸bug](win10-17025-触摸bug.md)
@@ -2811,6 +2813,8 @@
  * [WPF 使用 VisualBrush 在 4k 加 200 DPI 设备上某些文本不渲染看不见问题](WPF-使用-VisualBrush-在-4k-加-200-DPI-设备上某些文本不渲染看不见问题.md)
 
  * [WPF 使用 VisualStudio 2017 项目文件](WPF-使用-VisualStudio-2017-项目文件.md)
+
+ * [WPF 使用 Vortice 在 D3DImage 显示 D2D 内容](WPF-使用-Vortice-在-D3DImage-显示-D2D-内容.md)
 
  * [WPF 使用 Win10 的 WinRT 自带 Windows.Media.Ocr 实现图片转文本](WPF-使用-Win10-的-WinRT-自带-Windows.Media.Ocr-实现图片转文本.md)
 

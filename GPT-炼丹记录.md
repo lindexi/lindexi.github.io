@@ -162,7 +162,7 @@
 
 以下是我想要询问的问题：
 
-
+当使用 LowLatencyDxgiSwapChain 时，将创建 DxgiConnection 和 DxgiRenderTarget 对象。我观察到在 DxgiConnection 里面使用了 IDXGIOutput.WaitForVBlank 或 DwmFlush 方法等待同步刷新，且在 DxgiRenderTarget 里传递给到 IDXGISwapChain 的 Present 方法参数是 0 值。这就意味着通过 `IDXGISwapChain.Present(0, 0)` 跳过交换链的渲染同步，转而采用 `IDXGIOutput.WaitForVBlank` 控制帧率。我的问题在于为什么会选用这样的方式，是出于解决什么问题考虑或为了带来什么功能特性。因为按照我对 DirectX 的了解，最佳实践应该是通过 `IDXGISwapChain.Present(1, 0)` 由交换链辅助控制渲染帧率。相比于通过 `IDXGIOutput.WaitForVBlank` 可能存在的靠近帧边缘时导致的掉帧问题，完全由交换链控制渲染帧率能够更好地跑满显示器帧率。我尝试让我的设备执行很多渲染程序时，跑起来 RenderDemo 项目，我对比采用 `IDXGIOutput.WaitForVBlank` 控制帧率和采用 IDXGISwapChain 控制帧率两个方式，我观察到采用 IDXGISwapChain 的版本能够更大程度地跑满帧率，而 `IDXGIOutput.WaitForVBlank` 则不能。但无论如何，采用 `Win32CompositionMode.LowLatencyDxgiSwapChain` 的渲染帧率都会远远大于采用 `Win32CompositionMode.WinUIComposition` 的渲染帧率
 ```
 
 
