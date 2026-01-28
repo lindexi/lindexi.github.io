@@ -5,6 +5,8 @@ tags: C#,D2D,DirectX,Vortice,Direct2D,渲染
 category: 
 ---
 
+<!-- CreateTime:2026/01/28 07:23:43 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染 -->
@@ -119,7 +121,7 @@ DCompositionCreateDevice
 
 ```csharp
         WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_OVERLAPPEDWINDOW
-                                  | WINDOW_EX_STYLE.WS_EX_LAYERED; // Layered 是透明窗口的最关键
+                                  | WINDOW_EX_STYLE.WS_EX_LAYERED; // Layered 是透明窗口的关键（但即使没有设置也没关系）
         var style = WNDCLASS_STYLES.CS_OWNDC | WNDCLASS_STYLES.CS_HREDRAW | WNDCLASS_STYLES.CS_VREDRAW;
 
         var defaultCursor = LoadCursor(
@@ -230,7 +232,7 @@ DCompositionCreateDevice
 
 以上的 WM_NCCALCSIZE 用于声明客户区，通过直接返回 0 告诉系统整个区域都是客户区
 
-透明窗口的实现在窗口创建过程中，最关键点只有 WS_EX_LAYERED 和 WM_NCCALCSIZE 的逻辑
+透明窗口的实现在窗口创建过程中，最关键点只有 WS_EX_LAYERED 和 WM_NCCALCSIZE 的逻辑。其中 WM_NCCALCSIZE 最为关键。不带 WS_EX_LAYERED 只会出现边框而已
 
 ## 渲染线程
 
