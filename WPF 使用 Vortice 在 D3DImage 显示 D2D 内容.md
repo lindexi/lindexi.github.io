@@ -3,6 +3,8 @@
 本文属于 DirectX 的基础入门使用博客。本文将告诉大家，如何在 WPF 里面，使用 Vortice 库在 D3DImage 上显示通过 D2D 绘制的内容
 
 <!--more-->
+<!-- CreateTime:2026/01/28 07:23:56 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染 -->
