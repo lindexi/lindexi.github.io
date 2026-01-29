@@ -62,7 +62,7 @@
 ```
 
 ```
-我正在 github 上报告一个问题，请根据以下内容帮我拟定一个英文标题和内容，要求标题简略：
+我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题和内容，要求标题简略：
 
 [Content Start]
 
@@ -107,11 +107,36 @@
 ```
 
 ```
-我正在 github 上新建一个 PR 请根据以下内容帮我编写符合程序员风格的英文标题和内容，要求标题简略：
+我正在 github 上报告一个问题，请根据以下内容帮我拟定一个英文标题和内容，要求标题简略：
 
 [Content Start]
 
-优化了 SKRoundRectCache 的 Clear 方法，在 dotnet 6 以及更高版本上，使用更加快速的清理方法
+我测试对比了 Avalonia 和 WPF 两个 UI 框架的渲染延迟，我发现 Avalonia 框架有很大的渲染延迟性。具体的实验设计如下：
+
+- 新建 WPF 和 Avalonia 空白项目
+- 分别在 WPF 和 Avalonia 项目的界面添加不同颜色的 Border 控件。且附加上 TranslateTransform 到 `Border.RenderTransform` 属性上，用于让 Border 控件被移动
+- 让 WPF 窗口背景透明，且通过 GWL_HWNDPARENT 让 WPF 窗口显示在 Avalonia 窗口之上。如此运行项目可在同一屏幕上看到 Avalonia 和 WPF 框架的两个窗口，其中 WPF 窗口作为透明窗口叠加在 Avalonia 窗口之上
+- 在 Avalonia 框架内监听 Pointer 的按下和移动，当移动的时候设置 Border 的 TranslateTransform 的 X 坐标。随后将此坐标变更发送给到 WPF 应用，让 WPF 应用内的 Border 也做相同的 TranslateTransform 变换
+- 脱离 Visual Studio 独立运行项目，使用鼠标或触摸移动 Border 控件
+
+如果 Avalonia 的渲染延迟能够和 WPF 持平，则预期咱能够看到 Avalonia 和 WPF 的 Border 有着相同的移动进度。事实上，可见 Avalonia 的 Border 移动远远落后于 WPF 的 Border 控件。如此可非常明确的了解到 Avalonia 具有很高的渲染延迟
+
+以下是我实际运行的效果
+
+[Image1]
+
+我将全部的测试代码放在 GitHub 上，你可以拉取我的代码在你的设备上进行测试： [Link1]
+
+回答一些疑惑：
+
+- 按照以上的实验设计，输入层是从 Avalonia 框架来的，意味着 Avalonia 在输入处理方面还比 WPF 执行得更早。至少 WPF 需要等待 Dispatcher 调度之后才能收到输入
+- 无论是 WPF 还是 Avalonia 框架，都执行了相同的上层逻辑代码，都通过 RenderTransform 进行变换
+- 为什么不使用动画而是使用输入来测试？因为 WPF 和 Avalonia 的动画模块有很大的实现差异，为了控制变量，选择使用输入来做
+- 选择让 WPF 窗口是透明的，如此可以让 WPF 框架承担透明窗口带来的更多渲染代价。在 WPF 框架承受了透明窗口渲染代价的前提下，依然能够轻松领先于 Avalonia 框架，如此更可说明 Avalonia 框架的渲染延迟性
+- 在实际实验中，在 4K 分辨率的触摸屏上，能够感受到更大的差异，可见 Avalonia 更落后于 WPF 框架
+- 是否设置 Avalonia 使用 LowLatencyDxgiSwapChain 能够解决此问题？设置 LowLatencyDxgiSwapChain 只能缓解问题，但依然在渲染延迟上落后与 WPF 框架
+
+我期望本实验能够给 Avalonia 框架带来帮助，我希望 Avalonia 框架能够在渲染方面有所优化，我非常愿意贡献我的一份帮助
 
 [Content End]
 
