@@ -17,7 +17,7 @@
 
 那么什么的软件会用到这个功能？用到这个功能最多的是 UWP 应用，但是经过考古在 Win8 的全屏应用也用到这个技术，在 win32 函数里面的 CreateWindowEx 方法创建窗口的时候，可以通过传入 WS_EX_NOREDIRECTIONBITMAP 参数，这个参数需要传入到扩展样式里面，根据文档说的，添加这个样式之后的应用窗口不呈现到重定向表面。这适用于没有可见内容的窗口，或者使用表面以外的机制来提供其视觉效果的窗口。详细文档请看 [Extended Window Styles (Winuser.h) - Win32 apps](https://docs.microsoft.com/zh-cn/windows/win32/winmsg/extended-window-styles?redirectedfrom=MSDN )
 
-如何才能说德熙不是在骗你？创建一个 UWP 应用，然后运行这个应用。打开 spyxx 工具，找到这个窗口，如我创建的 KurdigalbaHercuqeahear 窗口，右击属性就可以看到窗口样式
+如何才能证明德熙不是在骗你的呢？创建一个 UWP 应用，然后运行这个应用。打开 spyxx 工具，找到这个窗口，如我创建的 KurdigalbaHercuqeahear 窗口，右击属性就可以看到窗口样式
 
 <!-- ![](image/Windows 窗口样式 什么是 WS_EX_NOREDIRECTIONBITMAP 样式/Windows 窗口样式 什么是 WS_EX_NOREDIRECTIONBITMAP 样式0.png) -->
 
@@ -37,10 +37,13 @@
 
 而通过 DirectComposition 则是由软件自己实现管理和创建表面，通过 DWM 调度的是图层合并。对应用来说有更可控和更多的优化空间，可以压榨 DWM 部分的性能。对 DWM 来说，可以通过合成图层的方法方便进行窗口特效处理，如亚克力效果。对其他应用来说，可以通过重定向表面技术，获取其他应用的截图，这对于视频直播软件来说能提升很多性能。关于应用截图请看 [win10 uwp 录制任意应用屏幕](https://blog.lindexi.com/post/win10-uwp-%E5%BD%95%E5%88%B6%E4%BB%BB%E6%84%8F%E5%BA%94%E7%94%A8%E5%B1%8F%E5%B9%95.html)
 
-本文只是和小伙伴吹这个技术，不会告诉大家实际上应该如何做。每个微软添加的 API 大部分都是有历史原因的，为什么添加这个 API 解决什么问题，大概都是遇到某个问题，但是正经解决方案解决不了，因为有历史原因，所以换了一个咱看起来很诡异的方法解决
+~~本文只是和小伙伴吹这个技术，不会告诉大家实际上应该如何做。~~每个微软添加的 API 大部分都是有历史原因的，为什么添加这个 API 解决什么问题，大概都是遇到某个问题，但是正经解决方案解决不了，因为有历史原因，所以换了一个咱看起来很诡异的方法解决
+
+自己想实现的话，也非常简单，完全在 Win32 层面，代码量也不多，详细请参阅：
+
+- [Vortice 使用 DirectComposition 显示透明窗口](https://blog.lindexi.com/post/Vortice-%E4%BD%BF%E7%94%A8-DirectComposition-%E6%98%BE%E7%A4%BA%E9%80%8F%E6%98%8E%E7%AA%97%E5%8F%A3.html )
+<!-- [Vortice 使用 DirectComposition 显示透明窗口 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19541356 ) -->
 
 [Extended Window Styles (Winuser.h) - Win32 apps](https://docs.microsoft.com/zh-cn/windows/win32/winmsg/extended-window-styles?redirectedfrom=MSDN )
 
 [Windows with C++ - High-Performance Window Layering Using the Windows Composition Engine](https://docs.microsoft.com/en-us/archive/msdn-magazine/2014/june/windows-with-c-high-performance-window-layering-using-the-windows-composition-engine )
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
