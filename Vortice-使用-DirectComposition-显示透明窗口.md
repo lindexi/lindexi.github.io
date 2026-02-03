@@ -1,16 +1,15 @@
 
 # Vortice 使用 DirectComposition 显示透明窗口
 
-通过 DirectComposition 配合 WS_EX_LAYERED 窗口样式，可以让窗口高性能地背景透明，完全依靠 DWM 将窗口背景和桌面画面合成
+通过 DirectComposition 配合 WS_EX_LAYERED 或 WS_EX_NOREDIRECTIONBITMAP 窗口样式，可以让窗口高性能地背景透明，完全依靠 DWM 将窗口背景和桌面画面合成
 
 <!--more-->
 
 
-<!-- CreateTime:2026/01/28 07:23:43 -->
-
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染 -->
+<!-- 置顶1 -->
 
 本文是[渲染相关系列博客](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )中的一篇，该系列博客已按照逻辑顺序编排，方便大家依次阅读。如您对渲染相关感兴趣，可以通过以下链接访问整个系列：[渲染相关系列博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
@@ -231,9 +230,16 @@ DCompositionCreateDevice
     }
 ```
 
-以上的 WM_NCCALCSIZE 用于声明客户区，通过直接返回 0 告诉系统整个区域都是客户区
+以上的 WM_NCCALCSIZE 用于声明客户区，通过直接返回 0 告诉系统整个区域都是客户区。否则将出现标题栏不可见，但是点击有效，能拖动窗口也能在原本的最小化、最大化、关闭窗口按钮所在的位置点击响应对应的功能
 
-透明窗口的实现在窗口创建过程中，最关键点只有 WS_EX_LAYERED 和 WM_NCCALCSIZE 的逻辑。其中 WM_NCCALCSIZE 最为关键。不带 WS_EX_LAYERED 只会出现边框而已
+透明窗口的实现在窗口创建过程中，最关键点只有 WS_EX_LAYERED 和 WM_NCCALCSIZE 的逻辑 ~~。其中 WM_NCCALCSIZE 最为关键。不带 WS_EX_LAYERED 只会出现边框而已~~
+
+以上为采用 WS_EX_LAYERED 的方式，此方法没有采用 WS_EX_NOREDIRECTIONBITMAP 来的高效。如 [Windows 窗口样式 什么是 WS_EX_NOREDIRECTIONBITMAP 样式](https://blog.lindexi.com/post/Windows-%E7%AA%97%E5%8F%A3%E6%A0%B7%E5%BC%8F-%E4%BB%80%E4%B9%88%E6%98%AF-WS_EX_NOREDIRECTIONBITMAP-%E6%A0%B7%E5%BC%8F.html ) 博客所述，可以知道，对比采用 WS_EX_LAYERED 分层窗口的方式需要由 CPU 处理分层窗口导致的性能损耗（不一定，详见注），采用 WS_EX_NOREDIRECTIONBITMAP 方式配合 DirectComposition 可以实现更加高性能的窗口透明效果，直接将 DirectComposition 的像素交给 DWM 合成，可让全过程发生在 GPU 中，无 CPU-GPU 的拷贝损耗和带宽占用
+
+> 注： 从 Windows 8 和 8.1 开始，虽然 User32 一直没有发生显著变化，但细微变化也有，即完全支持 GPU 上的每像素 alpha 值混合处理，且将窗口表面传输到系统内存的费用也取消了。也就是说，如果我不需要执行每像素命中测试，现在就能够生成分层窗口效果，同时不会对性能造成影响
+> https://learn.microsoft.com/zh-cn/archive/msdn-magazine/2014/june/windows-with-c-high-performance-window-layering-using-the-windows-composition-engine
+
+由于本文在编写的时候，本金鱼忘记了 WS_EX_NOREDIRECTIONBITMAP 配置，后面想加上时，担心破坏文章的连贯性，于是将 WS_EX_NOREDIRECTIONBITMAP 部分安排在本文末尾的追加内容中
 
 ## 渲染线程
 
@@ -619,6 +625,110 @@ git pull origin 369de6b65c4122cec6a6c9ffbcc0b352a419e83e
 获取代码之后，进入 DirectX/D2D/FarjairyakaBurnefuwache 文件夹，即可获取到源代码
 
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
+
+## 采用 WS_EX_NOREDIRECTIONBITMAP 的方案
+
+上文提及的是采用 WS_EX_LAYERED 分层窗口的方式，此方式与采用 WS_EX_NOREDIRECTIONBITMAP 的方案的代码写法非常接近，只是 WS_EX_NOREDIRECTIONBITMAP 可以带来更高的性能
+
+其改动全在 CreateWindow 中，只需将 WINDOW_EX_STYLE 从 WS_EX_LAYERED 换成 WS_EX_NOREDIRECTIONBITMAP 即可
+
+在使用 WS_EX_NOREDIRECTIONBITMAP 中，还可以在 WndProc 干掉 WM_NCCALCSIZE 用来保留窗口边框，即窗口标题栏
+
+修改之后的 CreateWindow 方法中的 WINDOW_EX_STYLE 配置如下
+
+```csharp
+    private unsafe HWND CreateWindow()
+    {
+        DwmIsCompositionEnabled(out var compositionEnabled);
+
+        if (!compositionEnabled)
+        {
+            Console.WriteLine($"无法启用透明窗口效果");
+        }
+
+        // [Windows 窗口样式 什么是 WS_EX_NOREDIRECTIONBITMAP 样式](https://blog.lindexi.com/post/Windows-%E7%AA%97%E5%8F%A3%E6%A0%B7%E5%BC%8F-%E4%BB%80%E4%B9%88%E6%98%AF-WS_EX_NOREDIRECTIONBITMAP-%E6%A0%B7%E5%BC%8F.html )
+        WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_NOREDIRECTIONBITMAP;
+
+        var style = WNDCLASS_STYLES.CS_OWNDC | WNDCLASS_STYLES.CS_HREDRAW | WNDCLASS_STYLES.CS_VREDRAW;
+
+        var defaultCursor = LoadCursor(
+            new HINSTANCE(IntPtr.Zero), new PCWSTR(IDC_ARROW.Value));
+
+        var className = $"lindexi-{Guid.NewGuid().ToString()}";
+        var title = "The Title";
+        fixed (char* pClassName = className)
+        fixed (char* pTitle = title)
+        {
+            var wndClassEx = new WNDCLASSEXW
+            {
+                cbSize = (uint) Marshal.SizeOf<WNDCLASSEXW>(),
+                style = style,
+                lpfnWndProc = new WNDPROC(WndProc),
+                hInstance = new HINSTANCE(GetModuleHandle(null).DangerousGetHandle()),
+                hCursor = defaultCursor,
+                hbrBackground = new HBRUSH(IntPtr.Zero),
+                lpszClassName = new PCWSTR(pClassName)
+            };
+            ushort atom = RegisterClassEx(in wndClassEx);
+
+            var dwStyle = WINDOW_STYLE.WS_OVERLAPPEDWINDOW | WINDOW_STYLE.WS_VISIBLE;
+
+            var windowHwnd = CreateWindowEx(
+                exStyle,
+                new PCWSTR((char*) atom),
+                new PCWSTR(pTitle),
+                dwStyle,
+                0, 0, 1900, 1000,
+                HWND.Null, HMENU.Null, HINSTANCE.Null, null);
+
+            return windowHwnd;
+        }
+    }
+```
+
+可见核心关键改动只有 `WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_NOREDIRECTIONBITMAP;` 这一行
+
+如果期望显示标题栏，则可以继续在 WndProc 进行改动，删除 WM_NCCALCSIZE 相关代码，删除之后的代码如下
+
+```csharp
+    private LRESULT WndProc(HWND hwnd, uint message, WPARAM wParam, LPARAM lParam)
+    {
+        if ((WindowsMessage) message == WindowsMessage.WM_SIZE)
+        {
+            _renderManager?.ReSize();
+        }
+
+        return DefWindowProc(hwnd, message, wParam, lParam);
+    }
+```
+
+更改使用 WS_EX_NOREDIRECTIONBITMAP 的代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/5b79f1c45819750fa9e931d78b3797a81c877294/DirectX/D2D/NearajurkeekallnoYabarfoge) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/5b79f1c45819750fa9e931d78b3797a81c877294/DirectX/D2D/NearajurkeekallnoYabarfoge) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin 5b79f1c45819750fa9e931d78b3797a81c877294
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin 5b79f1c45819750fa9e931d78b3797a81c877294
+```
+
+获取代码之后，进入 DirectX/D2D/NearajurkeekallnoYabarfoge 文件夹，即可获取到源代码
+
+## 性能提醒
+
+无论是采用 WS_EX_LAYERED 还是 WS_EX_NOREDIRECTIONBITMAP 的方案，都会导致 DWM 需要更多的性能损耗
+
+如果自己的应用是没有透明背景需求的，建议不要带上这两个选项以降低 DWM 合成的损耗。或依然保持窗口样式，但在交换链配置 `swapChainDescription.AlphaMode = AlphaMode.Ignore;` 也能减少 DWM 的损耗
+
+只有在 4k 全屏应用里面，才能比较明显看到开启透明窗口带来的性能损耗
 
 ## 更多博客
 

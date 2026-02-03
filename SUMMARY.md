@@ -2598,6 +2598,8 @@
 
  * [Win32 使用 CreateProcess 方法让任务管理器里的命令行不显示应用文件路径](Win32-使用-CreateProcess-方法让任务管理器里的命令行不显示应用文件路径.md)
 
+ * [Win32 使用 MoveFileEx 延迟到重启后删除文件](Win32-使用-MoveFileEx-延迟到重启后删除文件.md)
+
  * [Win32 使用 SetCurrentProcessExplicitAppUserModelID 关联多个进程 在任务栏合并 WPF 多进程窗口](Win32-使用-SetCurrentProcessExplicitAppUserModelID-关联多个进程-在任务栏合并-WPF-多进程窗口.md)
 
  * [win32 嵌入第三方 UWP 应用做开放平台](win32-嵌入第三方-UWP-应用做开放平台.md)
