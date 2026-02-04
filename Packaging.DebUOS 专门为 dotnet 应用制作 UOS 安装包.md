@@ -123,6 +123,7 @@ dotnet dpkg-debuos -b C:\lindexi\DebPacking -o C:\lindexi\UOS\Foo.deb
 
 - [一步步教你在 Windows 上构建 dotnet 系应用的 UOS 软件安装包](https://blog.lindexi.com/post/%E4%B8%80%E6%AD%A5%E6%AD%A5%E6%95%99%E4%BD%A0%E5%9C%A8-Windows-%E4%B8%8A%E6%9E%84%E5%BB%BA-dotnet-%E7%B3%BB%E5%BA%94%E7%94%A8%E7%9A%84-UOS-%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85.html )
 - [应用打包规范 文档中心-统信UOS生态社区](https://doc.chinauos.com/content/M7kCi3QB_uwzIp6HyF5J )
+- [商店打包规范 - deepin开发者平台](https://docs.deepin.org/info/%E5%BC%80%E5%8F%91%E8%BF%9B%E9%98%B6/%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97/%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E8%A7%84%E8%8C%83/%E7%9B%B8%E5%85%B3%E8%A7%84%E8%8C%83/%E5%95%86%E5%BA%97%E6%89%93%E5%8C%85%E8%A7%84%E8%8C%83 )
 
 ## 感谢
 
@@ -289,7 +290,7 @@ dotnet dpkg-debuos -b C:\lindexi\DebPacking -o C:\lindexi\UOS\Foo.deb
 
 ### 如何在 deb 包里面添加符号 pdb 文件
 
-添加 ExcludePackingDebFileExtensions 属性配置，重新指定打包时应该有哪些后缀被排除。因为默认的 ExcludePackingDebFileExtensions 属性包含了 .pdb .dbg .md 文件，因此符号 pdb 文件将被排除
+添加 ExcludePackingDebFileExtensions 属性配置，重新指定打包时应该有哪些后缀被排除。因为默认的 ExcludePackingDebFileExtensions 属性包含了 .pdb .dbg .md 文件，因此符号 pdb 文件将被排除。使用如下代码重设 ExcludePackingDebFileExtensions 属性，减少对 `.pdb` 文件的排除，自然就可以在 deb 包里面打进符号 pdb 文件
 
 ```xml
     <PropertyGroup>

@@ -3,6 +3,8 @@
 通过 DirectComposition 配合 WS_EX_LAYERED 或 WS_EX_NOREDIRECTIONBITMAP 窗口样式，可以让窗口高性能地背景透明，完全依靠 DWM 将窗口背景和桌面画面合成
 
 <!--more-->
+<!-- CreateTime:2026/02/04 07:15:58 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染 -->
