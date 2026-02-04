@@ -5,6 +5,8 @@ tags: C#,D2D,DirectX,Vortice,Direct2D,渲染
 category: 
 ---
 
+<!-- CreateTime:2026/02/04 07:15:58 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染 -->
