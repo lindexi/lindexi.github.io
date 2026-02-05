@@ -98,6 +98,8 @@
 
  * [Avalonia 简单实现输入法光标跟随效果](Avalonia-简单实现输入法光标跟随效果.md)
 
+ * [Avalonia 简易对比不同的 Win32CompositionMode 的性能情况](Avalonia-简易对比不同的-Win32CompositionMode-的性能情况.md)
+
  * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
 
  * [Azure 无服务器 Function 函数计算服务 dotnet core 3.1 创建和部署入门](Azure-无服务器-Function-函数计算服务-dotnet-core-3.1-创建和部署入门.md)
@@ -3739,6 +3741,8 @@
  * [完整的 P2P 应用需要包含哪些功能](完整的-P2P-应用需要包含哪些功能.md)
 
  * [定制 MSTest 单元测试框架 让一个 TestMethod 包含多个测试用例](定制-MSTest-单元测试框架-让一个-TestMethod-包含多个测试用例.md)
+
+ * [对比 Avalonia 和 WPF 的渲染延迟](对比-Avalonia-和-WPF-的渲染延迟.md)
 
  * [将 Source Generator 生成的源代码保存到本地文件](将-Source-Generator-生成的源代码保存到本地文件.md)
 
