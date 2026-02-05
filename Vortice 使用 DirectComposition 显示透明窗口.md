@@ -729,6 +729,176 @@ git pull origin 5b79f1c45819750fa9e931d78b3797a81c877294
 
 只有在 4k 全屏应用里面，才能比较明显看到开启透明窗口带来的性能损耗
 
+### 性能测试
+
+为了说明性能的差异，我做了对比测试
+
+本次实验的机器配置如下：
+
+- 屏幕： 3840x2160 (4K) + 百分百 DPI
+- CPU： i5-12450H
+- GPU： 集显
+
+测试结果如下：
+
+#### DirectCompositionPremultipliedAlphaMode
+
+采用 DirectComposition 和配置交换链的 AlphaMode 为 Premultiplied 预乘，此为本文的演示透明窗口组合效果。代码片段如下
+
+```csharp
+        WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_NOREDIRECTIONBITMAP;
+
+        SwapChainDescription1 swapChainDescription = new()
+        {
+            Width = (uint) clientSize.Width,
+            Height = (uint) clientSize.Height,
+            Format = _colorFormat,
+            BufferCount = FrameCount,
+            BufferUsage = Usage.RenderTargetOutput,
+            SampleDescription = SampleDescription.Default,
+            Scaling = Scaling.Stretch,
+            SwapEffect = SwapEffect.FlipSequential, // 使用 FlipSequential 配合 Composition
+            AlphaMode = AlphaMode.Premultiplied,
+            Flags = SwapChainFlags.None,
+        };
+
+        var swapChain = dxgiFactory2.CreateSwapChainForComposition(d3D11Device1, swapChainDescription);
+```
+
+运行效果：
+
+- CPU： 忽略不计
+- GPU： 占用 75-80
+- DWM： 占用 65-70
+- 满帧率
+
+可见此时会让 DWM 非常繁忙。整体的 GPU 占用比较高
+
+#### DirectCompositionWithWS_EX_LAYERED
+
+和 DirectCompositionPremultipliedAlphaMode 不同的是，仅将窗口样式从 WS_EX_NOREDIRECTIONBITMAP 换成 WS_EX_LAYERED 而已，代码差异如下
+
+```diff
+-       WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_NOREDIRECTIONBITMAP;
++       WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_LAYERED;
+
+        SwapChainDescription1 swapChainDescription = new()
+        {
+            Width = (uint) clientSize.Width,
+            Height = (uint) clientSize.Height,
+            Format = _colorFormat,
+            BufferCount = FrameCount,
+            BufferUsage = Usage.RenderTargetOutput,
+            SampleDescription = SampleDescription.Default,
+            Scaling = Scaling.Stretch,
+            SwapEffect = SwapEffect.FlipSequential, // 使用 FlipSequential 配合 Composition
+            AlphaMode = AlphaMode.Premultiplied,
+            Flags = SwapChainFlags.None,
+        };
+
+        var swapChain = dxgiFactory2.CreateSwapChainForComposition(d3D11Device1, swapChainDescription);
+```
+
+运行效果：
+
+- CPU： 忽略不计
+- GPU： 占用 77-85
+- DWM： 占用 75-80
+- 满帧率
+
+可见采用 WS_EX_LAYERED 样式基本和 WS_EX_NOREDIRECTIONBITMAP 持平，差异几乎测试不到，符合文档说明内容
+
+#### DirectCompositionIgnoreAlphaMode
+
+和 DirectCompositionPremultipliedAlphaMode 不同的是，仅将 AlphaMode 设置为忽略，此时将丢失窗口透明效果
+
+```diff
+        WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_NOREDIRECTIONBITMAP;
+
+-       swapChainDescription.AlphaMode = AlphaMode.Premultiplied;
++       swapChainDescription.AlphaMode = AlphaMode.Ignore;
+
+        var swapChain = dxgiFactory2.CreateSwapChainForComposition(d3D11Device1, swapChainDescription);
+```
+
+运行效果：
+
+- CPU： 忽略不计
+- GPU： 占用 5
+- DWM： 0-1
+- 满帧率
+
+此时的窗口没有透明效果，聪明的 DWM 也就没有需要执行合成逻辑，自然占用也就少了
+
+#### DirectCompositionWithoutWS_EX_NOREDIRECTIONBITMAP
+
+和 DirectCompositionPremultipliedAlphaMode 不同的是，去掉了窗口的 WS_EX_NOREDIRECTIONBITMAP 样式，此时也会丢失窗口的透明效果，且这个组合是不正确的，正常不会有人会这么做
+
+```diff
+-        WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_NOREDIRECTIONBITMAP;
++        WINDOW_EX_STYLE exStyle = default;
+
+        swapChainDescription.AlphaMode = AlphaMode.Premultiplied;
+
+        var swapChain = dxgiFactory2.CreateSwapChainForComposition(d3D11Device1, swapChainDescription);
+```
+
+运行效果：
+
+- CPU： 忽略不计
+- GPU： 占用 45-50
+- DWM： 40
+- 满帧率
+
+这个组合比较奇怪，跑出来的效果也比较奇怪。我感觉是因为此时需要重定向表面，导致存在一些带宽损耗
+
+#### CreateSwapChainForHwnd
+
+直接使用 CreateSwapChainForHwnd 传统方式，不再使用 DirectComposition 创建，丢失窗口透明效果，代码差异如下
+
+```diff
+        WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_NOREDIRECTIONBITMAP;
+
+-       swapChainDescription.AlphaMode = AlphaMode.Premultiplied;
++       swapChainDescription.AlphaMode = AlphaMode.Ignore;
+
+-       var swapChain = dxgiFactory2.CreateSwapChainForComposition(d3D11Device1, swapChainDescription);
++       var swapChain = dxgiFactory2.CreateSwapChainForHwnd(d3D11Device1, HWND, swapChainDescription, fullscreenDescription);        
+```
+
+运行效果：
+
+- CPU： 忽略不计
+- GPU： 占用 5
+- DWM： 0-1
+- 满帧率
+
+此时可见使用传统的 CreateSwapChainForHwnd 方式和 DirectComposition 忽略 AlphaMode 的性能持平，此时两者都能达到较好的效果
+
+无论是对 CreateSwapChainForHwnd 设置的 WINDOW_EX_STYLE 为无或 WS_EX_LAYERED 都对此结果没有影响
+
+### 性能测试代码
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b678a0cc6d689aa63fd1239bb88113ff8a4b9fcd/DirectX/D2D/LurqificelgallRikurneawekearner) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/b678a0cc6d689aa63fd1239bb88113ff8a4b9fcd/DirectX/D2D/LurqificelgallRikurneawekearner) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin b678a0cc6d689aa63fd1239bb88113ff8a4b9fcd
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin b678a0cc6d689aa63fd1239bb88113ff8a4b9fcd
+```
+
+获取代码之后，进入 DirectX/D2D/LurqificelgallRikurneawekearner 文件夹，即可获取到源代码
+
 ## 更多博客
 
 渲染部分，关于 SharpDx 和 Vortice 的使用方法，包括入门级教程，请参阅：
