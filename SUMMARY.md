@@ -902,6 +902,8 @@
 
  * [dotnet ValueTask 简单入门](dotnet-ValueTask-简单入门.md)
 
+ * [dotnet Vortice 通过 Angle 将 Skia 和 DirectX 对接](dotnet-Vortice-通过-Angle-将-Skia-和-DirectX-对接.md)
+
  * [dotnet win32 使用 WIC 获取系统编解码器](dotnet-win32-使用-WIC-获取系统编解码器.md)
 
  * [dotnet win32 判断传入路径是否在 U 盘](dotnet-win32-判断传入路径是否在-U-盘.md)
