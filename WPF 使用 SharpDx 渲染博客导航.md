@@ -1,11 +1,13 @@
 # WPF 使用 SharpDx 渲染博客导航
 
-我写了很多在 WPF 使用 SharpDx 渲染的博客，但是有小伙伴吐槽说这些博客没有一个好看的顺序，我将所有的 SharpDx 的博客按照顺序放在下面
+我写了很多在 WPF 使用 SharpDx 渲染的博客，但是有小伙伴吐槽说这些博客没有一个方便阅读的顺序，于是我就整理了本文的内容，将涉及渲染的博客按照方便阅读的顺序在排列出来。本文的内容也包含更多 DirectX 相关知识和其他基础渲染库的博客
 
 <!--more-->
 <!-- CreateTime:2019/10/23 21:10:13 -->
 
-使用 SharpDx 必然会涉及很多底层的渲染知识，和 DirectX 相关的知识将会有很多，一旦开始入手就是复杂的大项目，将很好被劝退。我希望大家在开始前，先看如何在 C# 用一个控制台创建一个 SharpDx 程序，以下是系列博客
+## 从控制台入门
+
+使用 SharpDx 必然需要涉及很多底层的渲染知识，再加上 DirectX 相关的知识实在太多了，一旦开始入手就是面向复杂的大项目，那将很好被劝退。我希望大家在开始前，先看如何在 C# 用一个控制台创建一个 SharpDx 程序，降低入门难度。以下是系列博客
 
 - [C# 从零开始写 SharpDx 应用 控制台创建 Sharpdx 窗口](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Sharpdx-%E7%AA%97%E5%8F%A3.html )
 
@@ -16,17 +18,21 @@
 
 - [C# 从零开始写 SharpDx 应用 绘制基础图形](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%BB%98%E5%88%B6%E5%9F%BA%E7%A1%80%E5%9B%BE%E5%BD%A2.html )
 
+## 杂项知识
+
 一些 SharpDx 杂项知识如下：
 
 - [C# 从零开始写 SharpDx 应用 聊聊功能等级](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E8%81%8A%E8%81%8A%E5%8A%9F%E8%83%BD%E7%AD%89%E7%BA%A7.html )
 - [C# 从零开始写 SharpDx 应用 从 D3DDevice 获取 DXGIDevice 方法](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E4%BB%8E-D3DDevice-%E8%8E%B7%E5%8F%96-DXGIDevice-%E6%96%B9%E6%B3%95.html )
+
+## 和 WPF 对接
 
 其实 SharpDx 只是一个封装，在没有封装的时候可以直接使用 Direct2D1 在 WPF 画出界面
 
 - [WPF 使用 Direct2D1 画图入门](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE%E5%85%A5%E9%97%A8.html )
 - [WPF 使用 Direct2D1 画图 绘制基本图形](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-Direct2D1-%E7%94%BB%E5%9B%BE-%E7%BB%98%E5%88%B6%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2.html)
 
-但是使用Direct2D1写起来很难写，需要有一些封装，下面告诉大家如何在 WPF 使用 SharpDx 做界面
+但是使用 Direct2D1 写起来很难写，实际使用过程中还是需要有一些封装，下面告诉大家如何在 WPF 使用 SharpDx 做界面
 
 - [WPF 使用 SharpDX](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX.html )
 - [WPF 使用 SharpDX 在 D3DImage 显示](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDX-%E5%9C%A8-D3DImage-%E6%98%BE%E7%A4%BA.html )
@@ -39,11 +45,11 @@
 - [SharpDx 进入全屏模式](https://blog.lindexi.com/post/SharpDx-%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%8F%E6%A8%A1%E5%BC%8F.html )
 - [C# 从零开始写 SharpDx 应用 禁止 Alt + Enter 进入全屏](https://blog.lindexi.com/post/C-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%86%99-SharpDx-%E5%BA%94%E7%94%A8-%E7%A6%81%E6%AD%A2-Alt-+-Enter-%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%8F.html )
 
-值得一说的是 SharpDx 当前官方不维护了，可以选择的代替请看 [SharpDx 的代替项目](https://blog.lindexi.com/post/SharpDx-%E7%9A%84%E4%BB%A3%E6%9B%BF%E9%A1%B9%E7%9B%AE.html )
+## Vortice 库
 
+值得一说的是当前官方 SharpDx 不维护了，可以选择的代替请看 [SharpDx 的代替项目](https://blog.lindexi.com/post/SharpDx-%E7%9A%84%E4%BB%A3%E6%9B%BF%E9%A1%B9%E7%9B%AE.html )
 
-
-其中一个可代替 SharpDx 的是 Vortice 库，以下是使用 Vortice 库的博客
+其中一个可代替 SharpDx 库的是 Vortice 库，以下是使用 Vortice 库的博客
 
 - [DirectX 使用 Vortice 从零开始控制台创建 Direct2D1 窗口修改颜色](https://blog.lindexi.com/post/DirectX-%E4%BD%BF%E7%94%A8-Vortice-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Direct2D1-%E7%AA%97%E5%8F%A3%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2.html )
 
@@ -81,6 +87,17 @@
 - [使用 Direct3D11 的 OpenSharedResource 方法渲染来自其他进程/设备的共享资源（SharedHandle） - walterlv](https://blog.walterlv.com/post/direct3d11-open-shared-resource.html#sharedhandle )
 
 在遇到界面不渲染时，可以保存渲染图片到本地查看，请看 [将 Direct3D11 在 GPU 中的纹理（Texture2D）导出到内存（Map）或导出成图片文件 - walterlv](https://blog.walterlv.com/post/map-directx-surface-to-bitmap.html )
+
+## DirectComposition
+
+[为何使用 DirectComposition](https://blog.lindexi.com/post/%E4%B8%BA%E4%BD%95%E4%BD%BF%E7%94%A8-DirectComposition.html )
+
+[Vortice 使用 DirectComposition 显示透明窗口](https://blog.lindexi.com/post/Vortice-%E4%BD%BF%E7%94%A8-DirectComposition-%E6%98%BE%E7%A4%BA%E9%80%8F%E6%98%8E%E7%AA%97%E5%8F%A3.html )
+<!-- [Vortice 使用 DirectComposition 显示透明窗口 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19541356 ) -->
+
+[win10 uwp 渲染原理 DirectComposition 渲染](https://blog.lindexi.com/post/win10-uwp-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86-DirectComposition-%E6%B8%B2%E6%9F%93.html )
+
+## 更多博客
 
 更多请看 [SharpDX 系列](https://blog.lindexi.com/post/sharpdx.html )
 

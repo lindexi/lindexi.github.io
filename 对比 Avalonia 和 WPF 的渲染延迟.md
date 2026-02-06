@@ -3,6 +3,8 @@
 最近我在摸索 Avalonia 的渲染层，这个问题源自于 7 年前，我尝试给 Avalonia 添加笔迹应用。在去年的时候，我发现 Avalonia 的笔迹性能非常糟糕，今年我设计了一个测试用例。在 Avalonia 窗口上叠加一个透明的 WPF 窗口，从 Avalonia 收到鼠标或触摸输入之后，再发送到 WPF 窗口上，让 Avalonia 和 WPF 窗口同时对一个 Border 进行 RenderTransform 平移
 
 <!--more-->
+<!-- CreateTime:2026/02/06 07:18:27 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
