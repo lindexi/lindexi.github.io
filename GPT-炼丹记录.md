@@ -114,9 +114,11 @@
 
 [Content Start]
 
-我尝试在使用 LowLatencyDxgiSwapChain 的 CompositionMode 时，发现透明窗口的 TransparencyLevelHint 属性设置是无效的，如果此时设置 Window.Background 为 Transparent 将显示黑色的窗口背景色。我编写了最简的 Demo 代码，以下是我的 MainWindow.axaml 的代码：
+我最近在调查 Avalonia 的渲染性能问题和渲染延迟问题。我发现了 Avalonia 在 Windows 的基础渲染存在问题： Windows 下默认采用 Premultiplied 的 AlphaMode 会导致全屏或最大化窗口消耗大量的 DWM 计算资源，导致动画帧率下降和渲染延迟
 
-[Code1]
+通过阅读代码，我发现无论窗口背景是否透明，在 Avalonia 的 `Win32CompositionMode.WinUIComposition` 和 `Win32CompositionMode.DirectComposition` 都给 AlphaMode 设置为 Premultiplied 模式。这样的配置会导致不透明的窗口也需要消耗大量 DWM 资源进行合成，特别是运行在 4K 分辨率屏幕上
+
+我编写了一个最简单的 D2D 应用示例，这里面没有任何 Avalonia 的逻辑，甚至也没有 Skia 的任何引用，仅仅只是一个简单的 D2D 应用。你可以拉取代码，对比配置 CreateVirtualSurface 过程中传入 Premultiplied 和 IgnoreAlphaMode 参数的性能差别。如果你能够在一台 4K 分辨率百分百 DPI 屏幕，且不带独立显卡的设备上运行，你将可以看到 IgnoreAlphaMode 能够比 Premultiplied 更省资源
 
 我将代码上传到 GitHub 上，你可以从 [Link1] 获取我的代码
 

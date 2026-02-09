@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2026/02/07 07:23:45 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -70,9 +72,9 @@ ANGLE 是谷歌开源的组件，提供将 OpenGL ES API 调用转换为实际�
 以上代码的 ShowWindow 是标准的 Win32 方法，由 CsWin32 库生成。定义如下
 
 ```csharp
-		[DllImport("USER32.dll", ExactSpelling = true),DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
-		[SupportedOSPlatform("windows5.0")]
-		internal static extern winmdroot.Foundation.BOOL ShowWindow(winmdroot.Foundation.HWND hWnd, winmdroot.UI.WindowsAndMessaging.SHOW_WINDOW_CMD nCmdShow);
+        [DllImport("USER32.dll", ExactSpelling = true),DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
+        [SupportedOSPlatform("windows5.0")]
+        internal static extern winmdroot.Foundation.BOOL ShowWindow(winmdroot.Foundation.HWND hWnd, winmdroot.UI.WindowsAndMessaging.SHOW_WINDOW_CMD nCmdShow);
 ```
 
 为了直接使用方法，在本文这里直接在命名空间引用静态类，代码如下

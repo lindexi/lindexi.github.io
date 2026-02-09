@@ -83,6 +83,9 @@
 - [使用 Silk.NET 调用 DirectWrite 获取字体 Font Metrics 信息](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-Silk.NET-%E8%B0%83%E7%94%A8-DirectWrite-%E8%8E%B7%E5%8F%96%E5%AD%97%E4%BD%93-Font-Metrics-%E4%BF%A1%E6%81%AF.html )
 <!-- [使用 Silk.NET 调用 DirectWrite 获取字体 Font Metrics 信息 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19001918 ) -->
 
+- [dotnet Vortice 通过 Angle 将 Skia 和 DirectX 对接](https://blog.lindexi.com/post/dotnet-Vortice-%E9%80%9A%E8%BF%87-Angle-%E5%B0%86-Skia-%E5%92%8C-DirectX-%E5%AF%B9%E6%8E%A5.html )
+<!-- [dotnet Vortice 通过 Angle 将 Skia 和 DirectX 对接 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19593476 ) -->
+
 在 4k 下的性能测试请看 [WPF 模拟 WPFMediaKit 的 D3D 配置用来测试4k性能](https://blog.lindexi.com/post/WPF-%E6%A8%A1%E6%8B%9F-WPFMediaKit-%E7%9A%84-D3D-%E9%85%8D%E7%BD%AE%E7%94%A8%E6%9D%A5%E6%B5%8B%E8%AF%954k%E6%80%A7%E8%83%BD.html )
 
 如果有部分逻辑是通过其实平台渲染的，可以通过 SharedHandle 在不同的 Direct3D 设备之间共享资源，详细请看下面博客
