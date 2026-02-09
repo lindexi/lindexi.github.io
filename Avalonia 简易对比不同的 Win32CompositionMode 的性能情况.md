@@ -140,7 +140,7 @@ git pull origin 2599a486433e897590ba552cd9049a1bfcdf364f
   - DWM: 占用为 40 左右，可见合成过程中确实让 GPU 非常繁忙
   - 帧率: 20-30 帧
 
-虽然 GPU 没有吃满，但是已经掉帧了，感觉这里应该有坑
+虽然 GPU 没有吃满，但是已经掉帧了，感觉这里应该有坑。详细请看 <https://github.com/AvaloniaUI/Avalonia/issues/20643>
 
 ## DirectComposition
 
