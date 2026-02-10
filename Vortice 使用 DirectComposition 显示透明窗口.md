@@ -7,7 +7,7 @@
 
 <!-- 发布 -->
 <!-- 博客 -->
-<!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染 -->
+<!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染,DirectComposition -->
 <!-- 置顶1 -->
 
 本文是[渲染相关系列博客](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )中的一篇，该系列博客已按照逻辑顺序编排，方便大家依次阅读。如您对渲染相关感兴趣，可以通过以下链接访问整个系列：[渲染相关系列博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )

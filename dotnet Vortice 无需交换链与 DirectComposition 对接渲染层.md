@@ -3,6 +3,8 @@
 在传统的写法里面，都是面向于 DXGI 交换链实现界面渲染。在 DirectComposition 里面可以通过 IDCompositionDevice 的 Commit 和 WaitForCommitCompletion 方法配置将窗口内容提交到 DWM（DWM Desktop Window Manager）进行渲染，整个过程无需交换链参与 
 
 <!--more-->
+<!-- CreateTime:2026/02/10 07:23:26 -->
+<!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,DirectComposition,渲染 -->
 <!-- 发布 -->
 <!-- 博客 -->
 

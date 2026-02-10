@@ -98,6 +98,9 @@
 [Vortice 使用 DirectComposition 显示透明窗口](https://blog.lindexi.com/post/Vortice-%E4%BD%BF%E7%94%A8-DirectComposition-%E6%98%BE%E7%A4%BA%E9%80%8F%E6%98%8E%E7%AA%97%E5%8F%A3.html )
 <!-- [Vortice 使用 DirectComposition 显示透明窗口 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19541356 ) -->
 
+[dotnet Vortice 无需交换链与 DirectComposition 对接渲染层](https://blog.lindexi.com/post/dotnet-Vortice-%E6%97%A0%E9%9C%80%E4%BA%A4%E6%8D%A2%E9%93%BE%E4%B8%8E-DirectComposition-%E5%AF%B9%E6%8E%A5%E6%B8%B2%E6%9F%93%E5%B1%82.html )
+<!-- [dotnet Vortice 无需交换链与 DirectComposition 对接渲染层 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19597758 ) -->
+
 [win10 uwp 渲染原理 DirectComposition 渲染](https://blog.lindexi.com/post/win10-uwp-%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86-DirectComposition-%E6%B8%B2%E6%9F%93.html )
 
 ## 更多博客
