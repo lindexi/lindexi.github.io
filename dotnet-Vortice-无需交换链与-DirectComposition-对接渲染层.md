@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2026/02/10 07:23:26 -->
+<!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,DirectComposition,渲染 -->
 <!-- 发布 -->
 <!-- 博客 -->
 
