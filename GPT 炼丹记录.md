@@ -129,15 +129,15 @@
 ```
 
 ```
-请帮我将以下内容转述为地道的英文：我不确定这个过程的性能损耗会有多少，但似乎在这里可以使用 `SKColorType.Bgra8888` 像素格式
+请帮我将以下内容转述为地道的英文：我尝试了两个方案，你可以在下文看到 Code1 和 Code2 两个代码。其中 Code1 为配置不等待交换链，使用非常高的频率去刷新屏幕。而 Code2 则是使用 @ShadowMarker789 教我的采用 [Link1] 的方法。实际执行测试可以发现，无论是 Code1 还是 Code2 都能显著地比 Avalonia 有更低的渲染延迟
 ```
 
 ```
-请帮我将以下内容转述为地道的计算机英文：由于 `GROOVEEX.DLL` 是一个很常见的组件，我十分期望微软 Office 团队能够谨慎地考虑这个问题的影响，避免大规模的第三方应用因为 GROOVEEX.DLL 而崩溃。我十分乐意将我所遇到问题的 DUMP 文件提供出来以便协助分析问题
+请帮我将以下内容转述为地道的计算机英文：感谢你的说明。现在 Avalonia 已经在各个平台上，使用各个平台的底层渲染引擎对接。比如在 Windows 系统上，Avalonia 会使用 Skia+Angle+DirectX 的模式，这样的模式是完全绑定 Windows 系统的
 ```
 
 ```
-请帮我将以下内容转述为地道的计算机英文：减少对 `WrapDirect3D11Texture` 的调用，让 `EglSurface` 跟随 `_renderTexture` 的生命周期。我在一个 4k 分辨率的屏幕测试的时候，我发现了通过 `WrapDirect3D11Texture` 调用的 `eglCreatePbufferFromClientBuffer` 在一帧中的耗时有 5 毫秒。如果我减少了 `eglCreatePbufferFromClientBuffer` 调用，可以提升百分之三十的渲染性能。但我不清楚为什么之前的代码需要每一帧都调用 WrapDirect3D11Texture 方法
+请帮我将以下内容转述为地道的计算机英文：我发起这个问题帖子的是
 ```
 
 ```
