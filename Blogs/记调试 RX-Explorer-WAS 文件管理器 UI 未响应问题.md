@@ -15,29 +15,29 @@ category:
 在我设备上复现打开黑屏问题的界面如下图
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题0.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211144721449.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102417891-1251621740.png)
 
 此时非常快速的第一反映就是打开 Visual Studio 进行附加调试。有开发环境的机器上，就不要去打 DUMP 分析了，通过 DUMP 分析是不如直接用开发机的 Visual Studio 附加调试来得爽的
 
 点击 Visual Studio 的 调试->附加到进程 选项，选择未响应窗口对应的进程，然后勾选代码类型为托管类型
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题1.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111449374487.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102244152-303071304.png)
 
 遇到这类未响应问题，优先勾选托管代码调试，附带加上托管（本机编译）选项，不先勾选本机调试。这样做的原因是大部分情况下，可以通过托管代码快速定位到卡住的问题，无需挂载本机调试来干扰调试
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题2.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111452175937.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102331351-215564585.png)
 
 挂进去之后，现在的进程还在正常跑着，点一下暂停，看看 UI 主线程卡在哪里了
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题3.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111453495178.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102331937-17151618.png)
 
 这个时候我习惯让 Visual Studio 的调试界面布局为一边为调用堆栈，一边为线程。如此可以快速切线程来查看各个线程当前所在的堆栈情况。通过 Visual Studio 的 调试->窗口 选项里面，可以打开调用堆栈、线程等窗口
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题4.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111456126627.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102332508-414536294.png)
 
 我看到这里，我开始就以为一定就是 `RX_Explorer_WAS.UI.Views.FilePresenter.FilePresenter` 写了什么代码导致的卡住。但是具体是什么呢，这里看不到。于是我就去找了 [Ruofan](https://github.com/zhuxb711) 要来了 pdb 符号文件，此时有符号文件是很有帮助的
 
@@ -48,14 +48,14 @@ category:
 加载符号之后，可以看到卡在这一行了：
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题5.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211153252049.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102332916-67099515.png)
 
 按照我的经验，优先怀疑是静态构造函数相关问题，毕竟正在 new 一个对象而已，这个过程不应该有任何问题才对。因为如果发生在 new 对象里面，那应该堆栈就去到对象的构造函数里了，而不是在这里
 
 此时我就在线程窗口里面，从上到下全看了一遍，然而没有发现任何的调用堆栈可能发生在静态构造函数里面，此时调试过程卡住了，这不是一个常见问题
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题6.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211155321079.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102333271-1361953284.png)
 
 我向 [Ruofan](https://github.com/zhuxb711) 要了这部分的源代码，然而经过我仔细阅读，我都没有找到问题
 
@@ -71,17 +71,17 @@ category:
 停下调试，再次附加进程，这一次勾选了本机调试选项
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题7.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211158166216.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102333593-1646676599.png)
 
 此时附加过程中出现了一个调试异常，如下图所示，忽略即可，忽略方法就是点击继续运行
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题8.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211159283214.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102333912-1243741793.png)
 
 再次点击暂停，看看这一次的主线程堆栈
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题9.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111510143168.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102334253-1925411591.png)
 
 似乎是卡在加载某个程序集的过程了
 
@@ -105,12 +105,12 @@ category:
 我点击停止调试，准备这一次只开启本机调试方式进行附加调试。只开启本机调试的方式，可以展示出整个 CoreCLR 的执行过程，如此可以看到在加载的发起方 CoreCLR 的调用堆栈，进而了解到正在加载的程序集是哪个
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题10.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111515549703.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102334621-1932660026.png)
 
 再次附加调试就看到了 CoreCLR 发起加载程序集的堆栈了
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题11.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111517296875.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102335088-2112825434.png)
 
 ```
  	ntdll.dll!NtWaitForSingleObject()	未知
@@ -136,7 +136,7 @@ category:
 点击进入 `LoadLibraryExWrapper` 这一行，此时我习惯让 Visual Studio 的调试界面一边是调用堆栈，一边是局部变量窗口。如此可以在切调用堆栈时，看到各个方法的局部变量情况。此时我看到了有 path 变量，再点击 Visual Studio 的 调试->窗口->内存->内存1 选项卡，打开内存查看窗口。在内存查看窗口，输入 path 变量的地址，此时就看到了准备加载的路径
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题12.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111520103316.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102335482-2045409330.png)
 
 我看到准备加载的是非常正常的 System.IO.FileSystem.Watcher.dll 文件，再在网上搜也找不到相关的问题。此时调试再次卡住
 
@@ -159,17 +159,17 @@ category:
 打开 调试->窗口->并行堆栈 窗口，作为熟练工，我很快就定位到一个线程正在一个加载 DLL 的堆栈
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题13.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211154314926.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102335988-507104387.png)
 
 此时就能看到主线程卡住的核心原因就是因为存在一个线程在加载 DLL 的过程中卡住，如下图所示。注：下图是后面截的，导致线程号和后文的不匹配，还请大家略过
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题17.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211161251696.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102336352-688538840.png)
 
 切换到对应的线程，查看堆栈，可以看到确实是正在加载 DLL 的过程中
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题14.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111544401942.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102336736-191663697.png)
 
 也就是主线程的加载 DLL 卡住是因为正在等待这个线程完成 DLL 加载。那这个线程正在加载啥呢？为什么需要加载呢？
 
@@ -217,14 +217,14 @@ category:
 打开 Visual Studio 的调试->窗口->模块界面，尝试搜 `YunShellExtV164.dll` 找到路径
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题15.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211154818324.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102337051-1008608242.png)
 
 通过 `C:\Users\lindexi\AppData\Roaming\baidu\BaiduNetdisk\YunShellExtV164.dll` 路径可以看到这是百度云的 DLL 文件。为什么会加载它？它又卡在哪？
 
 顺着调用堆栈顶部，可以看到是在等锁。由于这是发生在百度云的 DLL main 里面，我就不想继续调查具体在卡什么了，只需要知道在卡一个锁就好
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题16.png) -->
-![](http://cdn.lindexi.site/lindexi-20262111550123038.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102337395-1149158559.png)
 
 按照最佳实践，不应该在 DLL main 里面执行任何长时间的逻辑，或者可能导致卡住的逻辑。如果真要执行，最好是自己开一个线程去执行。这是因为 DLL main 是在 DLL 被加载的时候将被执行的方法，如果在这个方法卡住，那这个进程将无法加载其他的 DLL 了
 
@@ -243,12 +243,12 @@ category:
 从用户侧来说，我可以禁用百度云的右键菜单，如此也可以提升我的右键菜单的性能。我完全不用右键菜单的百度云的功能，其百度云右键菜单的功能如下图所示
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题19.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211167206398.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102337758-1192235683.png)
 
 通过 <https://www.nirsoft.net/utils/shexview.html> 提供的 ShellView 工具干掉百度云右键菜单
 
 <!-- ![](image/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题/记调试 RX-Explorer-WAS 文件管理器 UI 未响应问题18.png) -->
-![](http://cdn.lindexi.site/lindexi-2026211165585828.jpg)
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260224102338166-79683342.png)
 
 右击百度云相关的项，点击禁用即可
 
