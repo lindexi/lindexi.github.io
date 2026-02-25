@@ -726,6 +726,8 @@
 
  * [dotnet DirectX 通过 Vortice 控制台使用 ID2D1DeviceContext 绘制画面](dotnet-DirectX-通过-Vortice-控制台使用-ID2D1DeviceContext-绘制画面.md)
 
+ * [dotnet DirectX 通过可等待交换链降低输入渲染延迟](dotnet-DirectX-通过可等待交换链降低输入渲染延迟.md)
+
  * [dotnet format 忽略生成代码的格式化](dotnet-format-忽略生成代码的格式化.md)
 
  * [dotnet Framework 源代码 · Ink](dotnet-Framework-源代码-·-Ink.md)

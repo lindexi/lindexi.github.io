@@ -1092,7 +1092,7 @@ class Program
             {
                 cbSize = (uint)Marshal.SizeOf<WNDCLASSEXW>(),
                 style = style,
-                lpfnWndProc = new WNDPROC(WndProc),
+                lpfnWndProc = new WNDPROC(WndProc), // 注：由于 `new WNDPROC(WndProc)` 委托没有赋值给字段，仅仅只是一个局部变量，将在被 GC 回收之后，抛出执行引擎异常而崩溃进程。请在正式项目里面，将此捕获到字段上，防止被回收
                 hInstance = new HINSTANCE(GetModuleHandle(null).DangerousGetHandle()),
                 hCursor = defaultCursor,
                 hbrBackground = new HBRUSH(IntPtr.Zero),
