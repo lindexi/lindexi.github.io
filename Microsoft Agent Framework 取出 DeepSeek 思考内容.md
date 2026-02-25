@@ -3,6 +3,8 @@
 默认情况下的 Microsoft Agent Framework 是没有将 DeepSeek 思考内容提供出来的。官方给出的原因是当前 OpenAI 提供的 API 还没有将 reasoning_content 放开。好在 Microsoft Agent Framework 也没有堵住获取思考内容的获取方法，咱依然可以从返回结果获取思考内容
 
 <!--more-->
+<!-- CreateTime:2026/02/25 07:21:57 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
