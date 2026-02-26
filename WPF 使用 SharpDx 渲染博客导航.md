@@ -77,6 +77,14 @@
 
 - [dotnet C# 通过 Vortice 将 ID2D1CommandList 作为特效的输入源](https://blog.lindexi.com/post/dotnet-C-%E9%80%9A%E8%BF%87-Vortice-%E5%B0%86-ID2D1CommandList-%E4%BD%9C%E4%B8%BA%E7%89%B9%E6%95%88%E7%9A%84%E8%BE%93%E5%85%A5%E6%BA%90.html )
 
+- [分享一个在 dotnet 里使用 D2D 配合 AOT 开发小而美的应用开发经验](https://blog.lindexi.com/post/%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%9C%A8-dotnet-%E9%87%8C%E4%BD%BF%E7%94%A8-D2D-%E9%85%8D%E5%90%88-AOT-%E5%BC%80%E5%8F%91%E5%B0%8F%E8%80%8C%E7%BE%8E%E7%9A%84%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C.html )
+
+- [dotnet DirectX 做一个简单绘制折线笔迹的 D2D 应用](https://blog.lindexi.com/post/dotnet-DirectX-%E5%81%9A%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%BB%98%E5%88%B6%E6%8A%98%E7%BA%BF%E7%AC%94%E8%BF%B9%E7%9A%84-D2D-%E5%BA%94%E7%94%A8.html )
+<!-- [dotnet DirectX 做一个简单绘制折线笔迹的 D2D 应用 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18468855 ) -->
+
+- [dotnet DirectX 通过可等待交换链降低输入渲染延迟](https://blog.lindexi.com/post/dotnet-DirectX-%E9%80%9A%E8%BF%87%E5%8F%AF%E7%AD%89%E5%BE%85%E4%BA%A4%E6%8D%A2%E9%93%BE%E9%99%8D%E4%BD%8E%E8%BE%93%E5%85%A5%E6%B8%B2%E6%9F%93%E5%BB%B6%E8%BF%9F.html )
+<!-- [dotnet DirectX 通过可等待交换链降低输入渲染延迟 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19643684 ) -->
+
 - [使用 Silk.NET 调用 DirectWrite 获取字体 Font Metrics 信息](https://blog.lindexi.com/post/%E4%BD%BF%E7%94%A8-Silk.NET-%E8%B0%83%E7%94%A8-DirectWrite-%E8%8E%B7%E5%8F%96%E5%AD%97%E4%BD%93-Font-Metrics-%E4%BF%A1%E6%81%AF.html )
 <!-- [使用 Silk.NET 调用 DirectWrite 获取字体 Font Metrics 信息 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19001918 ) -->
 
