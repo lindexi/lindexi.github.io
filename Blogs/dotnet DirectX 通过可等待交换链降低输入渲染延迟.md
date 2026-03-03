@@ -941,3 +941,11 @@ git pull origin 2581b6d3b962e1f9912ebf359de3afbda4ab7e78
 参考文档：
 
 [Reduce latency with DXGI 1.3 swap chains - UWP applications - Microsoft Learn](https://learn.microsoft.com/en-us/windows/uwp/gaming/reduce-latency-with-dxgi-1-3-swap-chains )
+
+[Multiple Buffering 会不会增加游戏的响应延迟？ - 知乎](https://www.zhihu.com/question/264670682/answer/283738522 )
+
+[DX 11 如何使用 triple buffering？ - 知乎](https://www.zhihu.com/question/296474570?sort=created )
+
+[优化 UWP DirectX 游戏的输入延迟 - UWP applications - Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/uwp/gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher )
+
+[使用 DXGI 1.3 交换链减少延迟 - UWP applications - Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/uwp/gaming/reduce-latency-with-dxgi-1-3-swap-chains )
