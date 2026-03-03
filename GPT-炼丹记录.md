@@ -140,7 +140,17 @@
 ```
 
 ```
-请帮我将以下内容转述为地道的计算机英文：我发起这个问题帖子的是
+请帮我将以下内容转述为地道的计算机英文：
+
+这个问题的原因在于 DataGridHyperlinkColumn 的代码实现选择上。在 DataGridHyperlinkColumn 里面，将采用在 Hyperlink 里面添加 ContentPresenter 的方式实现超链接，这么选择的原因是 DataGridHyperlinkColumn 的内容可以支持除了文本以外的可能其他样式内容。采用在 Hyperlink 里面放置 ContentPresenter 的方式将导致超链接下划线只能显示在元素的下方，而不是定位文本的字符基线，这就是为什么超链接下划线是在整个文本元素的下方，而不是字符的下方的原因。你可以自己尝试一下以下这段代码，你可以看到下划线显示的效果将和 DataGridHyperlinkColumn 相同
+
+[Code1]
+
+而以上示例代码正是 DataGridHyperlinkColumn 的核心实现逻辑。从 snoop 工具也可以看到符合预期的层级：
+
+[Image1]
+
+如上图所示，在一个 TextBlock 里面套了另一个 ContentPresenter 对象，在 ContentPresenter 再放置实际显示文本的 TextBlock 控件，超链接是显示在最外层的 TextBlock 里面，此时 TextBlock 不能知道 ContentPresenter 的内容将会是什么，因此无法显示在字符的下方，只能选择显示在整个 ContentPresenter 的下方
 ```
 
 ```
