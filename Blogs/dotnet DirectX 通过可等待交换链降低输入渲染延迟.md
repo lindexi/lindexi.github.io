@@ -949,3 +949,376 @@ git pull origin 2581b6d3b962e1f9912ebf359de3afbda4ab7e78
 [优化 UWP DirectX 游戏的输入延迟 - UWP applications - Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/uwp/gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher )
 
 [使用 DXGI 1.3 交换链减少延迟 - UWP applications - Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/uwp/gaming/reduce-latency-with-dxgi-1-3-swap-chains )
+
+---
+
+这篇博客发出来之后，收到几位伙伴问我说，为什么可等待交换链能够获取更低的输入延迟。他们看了官方文档和我贴出来的原因，感觉还是很困惑。在群里聊天的时候，我猛然发现，我应该将最关键的 `IDXGISwapChain1.Present` 的预留帧的问题给出来，这一下就能让大家理解了
+
+调用 `IDXGISwapChain1.Present` 的时候，如果是快速频率调用，那开始的几帧将会被压在队列里面。如此的设计目的有二：一是跑分的时候好看，二是解决 CPU 抖动的时候的帧率抖动问题
+
+证据如下：
+
+尝试在一个无限循环里面，调用 `IDXGISwapChain1.Present` 方法，记录方法的耗时
+
+代码如下
+
+```csharp
+IDXGISwapChain1 swapChain = ...;
+D2D.ID2D1RenderTarget renderTarget = ...;
+
+        var maxCount = 100;
+        var stepTimeList = new List<TimeSpan>();
+        var stopwatch = new Stopwatch();
+
+        while (true)
+        {
+            renderTarget.BeginDraw();
+
+            renderTarget.Clear(new Color4((uint) Random.Shared.Next()));
+
+            renderTarget.EndDraw();
+
+            stopwatch.Restart();
+            swapChain.Present(1, 0);
+            stopwatch.Stop();
+
+            if (stepTimeList.Count < maxCount)
+            {
+                stepTimeList.Add(stopwatch.Elapsed);
+            }
+            
+            ...
+        }
+```
+
+尝试将 `stepTimeList` 列表打印出来，可见大概如下内容
+
+- [000] 0.173 ms
+- [001] 0.171 ms
+- [002] 0.591 ms
+- [003] 7.008 ms
+- [004] 16.074 ms
+- [005] 17.490 ms
+- [006] 10.339 ms
+- [007] 18.348 ms
+- [008] 12.287 ms
+- [009] 15.211 ms
+- [010] 16.125 ms
+- [011] 16.110 ms
+- [012] 16.100 ms
+- [013] 2.887 ms
+- [014] 2.171 ms
+- [015] 2.223 ms
+- [016] 2.365 ms
+- [017] 15.942 ms
+- [018] 15.915 ms
+- [019] 15.896 ms
+- [020] 15.930 ms
+- [021] 15.950 ms
+- [022] 15.903 ms
+- [023] 15.602 ms
+- [024] 16.525 ms
+- [025] 15.597 ms
+- [026] 15.878 ms
+- [027] 15.908 ms
+- [028] 15.912 ms
+- [029] 16.046 ms
+- [030] 15.938 ms
+
+可见前面几帧都是瞬间完成的，这是因为前面几帧都将加入到队列里面，而不是有等待。后面发现队列满了，才会作为 16 毫秒（60帧）的时间
+
+这就是一开始的贴出来的两张图片的意义：
+
+<!-- ![](image/dotnet DirectX 通过可等待交换链降低输入渲染延迟/dotnet DirectX 通过可等待交换链降低输入渲染延迟0.png) -->
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260226071608959-601354272.png)
+
+<!-- ![](image/dotnet DirectX 通过可等待交换链降低输入渲染延迟/dotnet DirectX 通过可等待交换链降低输入渲染延迟1.png) -->
+![](https://img2024.cnblogs.com/blog/1080237/202602/1080237-20260226071609612-569291360.png)
+
+可见在没有开启可等待交换链的时候，有很多的帧是压在队列里面，从而让响应交互的画面会延迟很多帧才能在屏幕上显示出来
+
+开启可等待交换链的情况下，可以等待队列空闲才压入下一帧。此时就可以很好地让当前的响应交互输入的画面快速地排上渲染
+
+此时如果使用 DwmFlush 对齐刷新率呢？每个循环里面都使用 DwmFlush 对齐刷新率，避免一开始就压入很多帧进去呢？这样是确实有帮助的
+
+```csharp
+        while (true)
+        {
+            renderTarget.BeginDraw();
+
+            renderTarget.Clear(new Color4((uint) Random.Shared.Next()));
+
+            renderTarget.EndDraw();
+
+            swapChain.Present(1, 0);
+
+            DwmFlush();
+        }
+```
+
+此时如果测量的话，会看到 `IDXGISwapChain1.Present` 的耗时非常短，这是因为此时队列接近是空，无需排队无需等待
+
+必须说明的是，正常情况下，使用 `IDXGISwapChain1.Present` 对齐刷新率才是通用的做法。调用 `DwmFlush` 做渲染对齐是不得已才会考虑的
+
+如果对 DwmFlush 感兴趣，请参阅 [dotnet C# Windows 桌面应用程序简单使用 DwmFlush 对齐刷新率](https://blog.lindexi.com/post/dotnet-C-Windows-%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8-DwmFlush-%E5%AF%B9%E9%BD%90%E5%88%B7%E6%96%B0%E7%8E%87.html )
+<!-- [dotnet C# Windows 桌面应用程序简单使用 DwmFlush 对齐刷新率 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/18932218 ) -->
+
+以上的全部测试代码如下
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+
+using Vortice.DCommon;
+using Vortice.Direct3D;
+using Vortice.Direct3D11;
+using Vortice.DXGI;
+using Vortice.Mathematics;
+
+using Windows.Win32.Foundation;
+using Windows.Win32.Graphics.Gdi;
+using Windows.Win32.UI.WindowsAndMessaging;
+
+using static Windows.Win32.PInvoke;
+
+using AlphaMode = Vortice.DXGI.AlphaMode;
+using D2D = Vortice.Direct2D1;
+
+namespace JecekelbereLaiwharhowhelli;
+
+class Program
+{
+    [STAThread]
+    static unsafe void Main(string[] args)
+    {
+        HWND window;
+
+        #region 创建窗口
+
+        WINDOW_EX_STYLE exStyle = WINDOW_EX_STYLE.WS_EX_APPWINDOW;
+
+        var style = WNDCLASS_STYLES.CS_OWNDC | WNDCLASS_STYLES.CS_HREDRAW | WNDCLASS_STYLES.CS_VREDRAW;
+
+        var defaultCursor = LoadCursor(
+            new HINSTANCE(IntPtr.Zero), new PCWSTR(IDC_ARROW.Value));
+        var wndProcDelegate = new WNDPROC(WndProc);
+
+        var className = $"lindexi-{Guid.NewGuid().ToString()}";
+        var title = "The Title";
+        fixed (char* pClassName = className)
+        fixed (char* pTitle = title)
+        {
+            var wndClassEx = new WNDCLASSEXW
+            {
+                cbSize = (uint) Marshal.SizeOf<WNDCLASSEXW>(),
+                style = style,
+                lpfnWndProc = wndProcDelegate,
+                hInstance = new HINSTANCE(GetModuleHandle(null).DangerousGetHandle()),
+                hCursor = defaultCursor,
+                hbrBackground = new HBRUSH(IntPtr.Zero),
+                lpszClassName = new PCWSTR(pClassName)
+            };
+            ushort atom = RegisterClassEx(in wndClassEx);
+
+            WINDOW_STYLE dwStyle = WINDOW_STYLE.WS_OVERLAPPEDWINDOW | WINDOW_STYLE.WS_VISIBLE | WINDOW_STYLE.WS_CAPTION | WINDOW_STYLE.WS_SYSMENU | WINDOW_STYLE.WS_MINIMIZEBOX | WINDOW_STYLE.WS_CLIPCHILDREN | WINDOW_STYLE.WS_BORDER | WINDOW_STYLE.WS_DLGFRAME | WINDOW_STYLE.WS_THICKFRAME | WINDOW_STYLE.WS_TABSTOP | WINDOW_STYLE.WS_SIZEBOX;
+
+            HWND windowHwnd = CreateWindowEx(
+                exStyle,
+                new PCWSTR((char*) atom),
+                new PCWSTR(pTitle),
+                dwStyle,
+                0, 0, 1900, 1000,
+                HWND.Null, HMENU.Null, HINSTANCE.Null, null);
+            window = windowHwnd;
+        }
+
+        // 防止委托对象被回收，导致注册进去的方法指针失效
+        GC.KeepAlive(wndProcDelegate); // 保稳来说，这句话应该放在方法末尾
+
+        #endregion
+
+        // 显示窗口
+        ShowWindow(window, SHOW_WINDOW_CMD.SW_NORMAL);
+
+        RECT windowRect;
+        GetClientRect(window, &windowRect);
+        GetClientRect(window, &windowRect);
+        var clientSize = new SizeI(windowRect.right - windowRect.left, windowRect.bottom - windowRect.top);
+
+        #region 初始化 DX 相关
+
+        DeviceCreationFlags creationFlags = DeviceCreationFlags.BgraSupport;
+        var result = D3D11.D3D11CreateDevice
+        (
+            null,
+            DriverType.Hardware,
+            creationFlags,
+            null,
+            out ID3D11Device? d3D11Device
+        );
+
+        result.CheckError();
+        Debug.Assert(d3D11Device != null);
+
+        // 缓存的数量，包括前缓存。大部分应用来说，至少需要两个缓存，这个玩过游戏的伙伴都知道
+        const int FrameCount = 2;
+        Format colorFormat = Format.B8G8R8A8_UNorm;
+        SwapChainDescription1 swapChainDescription = new()
+        {
+            Width = (uint) clientSize.Width,
+            Height = (uint) clientSize.Height,
+            Format = colorFormat,
+            BufferCount = FrameCount,
+            BufferUsage = Usage.RenderTargetOutput,
+            SampleDescription = SampleDescription.Default,
+            Scaling = Scaling.Stretch,
+            SwapEffect = SwapEffect.FlipSequential,
+            AlphaMode = AlphaMode.Ignore,
+            Flags = SwapChainFlags.None,
+        };
+
+        var fullscreenDescription = new SwapChainFullscreenDescription()
+        {
+            Windowed = true,
+        };
+
+        using var dxgiFactory2 = DXGI.CreateDXGIFactory1<IDXGIFactory2>();
+        using IDXGISwapChain1 swapChain =
+            dxgiFactory2.CreateSwapChainForHwnd(d3D11Device, window, swapChainDescription, fullscreenDescription);
+
+        // 不要被按下 alt+enter 进入全屏
+        dxgiFactory2.MakeWindowAssociation(window,
+            WindowAssociationFlags.IgnoreAltEnter | WindowAssociationFlags.IgnorePrintScreen);
+        #endregion
+
+        #region 对接 D2D 渲染
+
+        using var d3D11Texture2D = swapChain.GetBuffer<ID3D11Texture2D>(0);
+        using var dxgiSurface = d3D11Texture2D.QueryInterface<IDXGISurface>();
+
+        var renderTargetProperties = new D2D.RenderTargetProperties()
+        {
+            PixelFormat = new PixelFormat(colorFormat, Vortice.DCommon.AlphaMode.Premultiplied),
+            Type = D2D.RenderTargetType.Hardware,
+        };
+
+        using D2D.ID2D1Factory1 d2DFactory = D2D.D2D1.D2D1CreateFactory<D2D.ID2D1Factory1>();
+        D2D.ID2D1RenderTarget d2D1RenderTarget =
+            d2DFactory.CreateDxgiSurfaceRenderTarget(dxgiSurface, renderTargetProperties);
+        D2D.ID2D1RenderTarget renderTarget = d2D1RenderTarget;
+        #endregion
+
+        var maxCount = 100;
+        var stepTimeList = new List<TimeSpan>();
+        var stopwatch = new Stopwatch();
+
+        while (true)
+        {
+            renderTarget.BeginDraw();
+
+            renderTarget.Clear(new Color4((uint) Random.Shared.Next()));
+
+            renderTarget.EndDraw();
+
+            stopwatch.Restart();
+            swapChain.Present(1, 0);
+            stopwatch.Stop();
+
+            if (stepTimeList.Count < maxCount)
+            {
+                stepTimeList.Add(stopwatch.Elapsed);
+            }
+            else
+            {
+                var stringBuilder = new StringBuilder();
+
+                for (var i = 0; i < stepTimeList.Count; i++)
+                {
+                    var timeSpan = stepTimeList[i];
+                    stringBuilder.AppendLine($"[{i:D3}] {timeSpan.TotalMilliseconds:0.000} ms");
+                }
+
+                var costText = stringBuilder.ToString();
+                Console.WriteLine(costText);
+
+                /*
+                   [000] 0.173 ms
+                   [001] 0.171 ms
+                   [002] 0.591 ms
+                   [003] 7.008 ms
+                   [004] 16.074 ms
+                   [005] 17.490 ms
+                   [006] 10.339 ms
+                   [007] 18.348 ms
+                   [008] 12.287 ms
+                   [009] 15.211 ms
+                   [010] 16.125 ms
+                   [011] 16.110 ms
+                   [012] 16.100 ms
+                   [013] 2.887 ms
+                   [014] 2.171 ms
+                   [015] 2.223 ms
+                   [016] 2.365 ms
+                   [017] 15.942 ms
+                   [018] 15.915 ms
+                   [019] 15.896 ms
+                   [020] 15.930 ms
+                   [021] 15.950 ms
+                   [022] 15.903 ms
+                   [023] 15.602 ms
+                   [024] 16.525 ms
+                   [025] 15.597 ms
+                   [026] 15.878 ms
+                   [027] 15.908 ms
+                   [028] 15.912 ms
+                   [029] 16.046 ms
+                   [030] 15.938 ms
+                 */
+
+                Console.ReadLine();
+            }
+
+            // 以下只是为了防止窗口无响应而已
+            var success = PeekMessage(out var msg, HWND.Null, 0, 0, PEEK_MESSAGE_REMOVE_TYPE.PM_REMOVE);
+            if (success)
+            {
+                // 处理窗口消息
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+        }
+
+        Console.ReadLine();
+
+        LRESULT WndProc(HWND hwnd, uint message, WPARAM wParam, LPARAM lParam)
+        {
+            return DefWindowProc(hwnd, message, wParam, lParam);
+        }
+    }
+}
+```
+
+本文以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/db627230f9d565b3b6839a978582f872bcbacfd5/DirectX/D2D/JecekelbereLaiwharhowhelli) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/db627230f9d565b3b6839a978582f872bcbacfd5/DirectX/D2D/JecekelbereLaiwharhowhelli) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin db627230f9d565b3b6839a978582f872bcbacfd5
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin db627230f9d565b3b6839a978582f872bcbacfd5
+```
+
+获取代码之后，进入 DirectX/D2D/JecekelbereLaiwharhowhelli 文件夹，即可获取到源代码
