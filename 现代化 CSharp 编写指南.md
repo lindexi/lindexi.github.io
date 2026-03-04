@@ -1,8 +1,10 @@
-﻿# 现代化 C# 编写指南
+# 现代化 C# 编写指南
 
 这是给 AI 看的提示词内容
 
 <!--more-->
+<!-- CreateTime:2026/03/04 07:18:40 -->
+
 <!-- 不发布 -->
 
 1. 网络层统一使用 `HttpClient` + `HttpRequestMessage`，避免 `HttpWebRequest`。
