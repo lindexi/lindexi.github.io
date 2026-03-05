@@ -132,11 +132,11 @@
 ```
 
 ```
-请帮我将以下内容转述为地道的英文：在图片解码方面，Skia的能力是比较弱的
+请帮我将以下内容转述为地道的英文：当前的情况是无论窗口是否需要透明，在 Windows 上的渲染底层都设置采用 Premultiplied AlphaMode 模式。这将导致不透明的窗口也让 DWM 需要处理 Alpha 叠加，让 DWM 浪费更多的 GPU 资源。更改之后，将判断如果窗口是非透明的，则在渲染底层设置 AlphaMode 为忽略，如此可以让 GPU 在处理非透明窗口时节省大量的资源。更改之后，可以在 4K 分辨率的不带独立显卡的设备上，允许全屏的非透明窗口时，减少大量的 GPU 资源占用
 ```
 
 ```
-请帮我将以下内容转述为地道的计算机英文：感谢你的说明。现在 Avalonia 已经在各个平台上，使用各个平台的底层渲染引擎对接。比如在 Windows 系统上，Avalonia 会使用 Skia+Angle+DirectX 的模式，这样的模式是完全绑定 Windows 系统的
+请帮我将以下内容转述为地道的计算机英文：很抱歉，我无法将 `TransparencyLevel` 放在 `CompositionTarget` 里面，因为我找不到任何可用的传递路径。因此我决定参考 `BlurEffect` 的实现，在 `ICompositionEffectsSurface` 里面添加了 `SetTransparencyLevel` 方法，然后在每次渲染时都判断是否变更决定渲染后端的状态
 ```
 
 ```
