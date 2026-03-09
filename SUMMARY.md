@@ -1392,6 +1392,8 @@
 
  * [dotnet 读 WPF 源代码笔记 SafeMILHandleMemoryPressure 的作用](dotnet-读-WPF-源代码笔记-SafeMILHandleMemoryPressure-的作用.md)
 
+ * [dotnet 读 WPF 源代码笔记 ShowInTaskbar 的实现原理](dotnet-读-WPF-源代码笔记-ShowInTaskbar-的实现原理.md)
+
  * [dotnet 读 WPF 源代码笔记 Stroke 类可能存在的内存泄露](dotnet-读-WPF-源代码笔记-Stroke-类可能存在的内存泄露.md)
 
  * [dotnet 读 WPF 源代码笔记 WIC 多媒体图片处理通过 WindowsCodecs.dll 实现功能](dotnet-读-WPF-源代码笔记-WIC-多媒体图片处理通过-WindowsCodecs.dll-实现功能.md)
