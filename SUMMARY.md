@@ -1646,6 +1646,8 @@
 
  * [Microsoft Agent Framework 取出 DeepSeek 思考内容](Microsoft-Agent-Framework-取出-DeepSeek-思考内容.md)
 
+ * [Microsoft Agent Framework 测试豆包的根据图片生成矢量图的能力](Microsoft-Agent-Framework-测试豆包的根据图片生成矢量图的能力.md)
+
  * [Microsoft.Maui.Graphics.Skia 使用 DrawString 绘制文本的坐标问题](Microsoft.Maui.Graphics.Skia-使用-DrawString-绘制文本的坐标问题.md)
 
  * [MobaXterm 使用代理](MobaXterm-使用代理.md)
