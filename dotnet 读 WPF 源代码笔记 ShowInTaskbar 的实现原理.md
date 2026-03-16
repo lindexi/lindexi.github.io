@@ -1,8 +1,10 @@
-﻿# dotnet 读 WPF 源代码笔记 ShowInTaskbar 的实现原理
+# dotnet 读 WPF 源代码笔记 ShowInTaskbar 的实现原理
 
 本文记录我阅读 WPF 项目了解到的 ShowInTaskbar 的实现原理
 
 <!--more-->
+<!-- CreateTime:2026/03/10 07:15:25 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

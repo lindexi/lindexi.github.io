@@ -133,7 +133,7 @@
 ```
 
 ```
-请帮我将以下内容转述为地道的计算机英文：很抱歉，我无法将 `TransparencyLevel` 放在 `CompositionTarget` 里面，因为我找不到任何可用的传递路径。因此我决定参考 `BlurEffect` 的实现，在 `ICompositionEffectsSurface` 里面添加了 `SetTransparencyLevel` 方法，然后在每次渲染时都判断是否变更决定渲染后端的状态
+请帮我将以下内容转述为地道的计算机英文：这个变更和 `DirectComposition` 在 `Transparency` 模式下有什么差别？在采用 `LowLatencyDxgiSwapChain` + `Transparency` 时，将采用 `CreateSwapChainForComposition` 方式创建 IDXGISwapChain1 对象，接下来将使用 SwapChain 进行渲染，完成渲染后，调用 `IDXGISwapChain1.Present` 方法提交渲染内容。而 DirectComposition 则是直接通过 `IDCompositionVirtualSurface.BeginDraw` 获取到纹理进行渲染，渲染完成之后调用 `IDCompositionDevice2.Commit` 和 `IDCompositionDevice2.WaitForCommitCompletion` 方法等待渲染完成。经过我的实际测试，我发现采用 `LowLatencyDxgiSwapChain` 能够在 `Transparency` 模式时，获得比 DirectComposition 更高的帧率和更底的渲染延迟
 ```
 
 ```
