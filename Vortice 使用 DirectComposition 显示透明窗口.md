@@ -13,7 +13,9 @@
 
 在 [DirectX 使用 Vortice 从零开始控制台创建 Direct2D1 窗口修改颜色](https://blog.lindexi.com/post/DirectX-%E4%BD%BF%E7%94%A8-Vortice-%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%88%9B%E5%BB%BA-Direct2D1-%E7%AA%97%E5%8F%A3%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2.html ) 博客中和大家介绍了最简方式创建了窗口和对接了 DirectX 层。在此基础上，大家也能看到此时创建的窗口是无法应用透明背景效果的
 
-即使强行设置 `SwapChainDescription1.AlphaMode` 为 `AlphaMode.Premultiplied` 也会在 `IDXGIFactory2.CreateSwapChainForHwnd` 报错
+即使强行设置 `SwapChainDescription1.AlphaMode` 为 `AlphaMode.Premultiplied` 也会在 `IDXGIFactory2.CreateSwapChainForHwnd` 报错：
+
+> DXGI ERROR: IDXGIFactory::CreateSwapChain: Alpha blended swapchains must be created with CreateSwapChainForComposition, or CreateSwapChainForCoreWindow with the DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER flag.
 
 传统 Win32 应用可以通过 UpdateLayeredWindow 方法设置窗口透明，然而 UpdateLayeredWindow 是有比较大的性能代价的，详细请参阅 [WPF 从最底层源代码了解 AllowsTransparency 性能差的原因](https://blog.lindexi.com/post/WPF-%E4%BB%8E%E6%9C%80%E5%BA%95%E5%B1%82%E6%BA%90%E4%BB%A3%E7%A0%81%E4%BA%86%E8%A7%A3-AllowsTransparency-%E6%80%A7%E8%83%BD%E5%B7%AE%E7%9A%84%E5%8E%9F%E5%9B%A0.html )
 
@@ -23,6 +25,8 @@
 
 为了方便大家阅读，本文将重新从零控制台开始，先创建好 WS_EX_LAYERED 的窗口，再将 DirectX 对接上去。总代码控制在 500 行左右。额外，为了方便 Win32 方法调用，本文还请出了 CsWin32 库，详细使用方法请参阅 
 [dotnet 使用 CsWin32 库简化 Win32 函数调用逻辑](https://blog.lindexi.com/post/dotnet-%E4%BD%BF%E7%94%A8-CsWin32-%E5%BA%93%E7%AE%80%E5%8C%96-Win32-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%80%BB%E8%BE%91.html )
+
+在本文的追加部分内容，补充了 DirectComposition + WS_EX_NOREDIRECTIONBITMAP 制作带标题栏的透明窗口内容方案
 
 ## 准备工作
 
@@ -529,6 +533,8 @@ unsafe class RenderManager(HWND hwnd)
                 Windowed = true,
             };
 
+            // 比如设置为忽略，否则将会报错。错误信息如下，只有 CreateSwapChainForComposition 或 CreateSwapChainForCoreWindow 才能使用
+            // DXGI ERROR: IDXGIFactory::CreateSwapChain: Alpha blended swapchains must be created with CreateSwapChainForComposition, or CreateSwapChainForCoreWindow with the DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER flag.
             swapChainDescription.AlphaMode = AlphaMode.Ignore;
 
             swapChain = dxgiFactory2.CreateSwapChainForHwnd(d3D11Device1, hwnd, swapChainDescription,
@@ -734,6 +740,8 @@ git pull origin 5b79f1c45819750fa9e931d78b3797a81c877294
 ```
 
 获取代码之后，进入 DirectX/D2D/NearajurkeekallnoYabarfoge 文件夹，即可获取到源代码
+
+此方案即可制作出保留窗口标题，窗口内容透明可与窗口背后的内容做 Alpha 透明合成叠加的窗口效果
 
 ## 性能提醒
 
