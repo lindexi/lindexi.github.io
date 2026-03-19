@@ -100,6 +100,8 @@
 
  * [Avalonia 简易对比不同的 Win32CompositionMode 的性能情况](Avalonia-简易对比不同的-Win32CompositionMode-的性能情况.md)
 
+ * [Avalonia 解决渲染高清大图帧率下降问题](Avalonia-解决渲染高清大图帧率下降问题.md)
+
  * [Azure 函数服务部署失败 因为函数应用设置 v3 但主机是 v2 版本](Azure-函数服务部署失败-因为函数应用设置-v3-但主机是-v2-版本.md)
 
  * [Azure 无服务器 Function 函数计算服务 dotnet core 3.1 创建和部署入门](Azure-无服务器-Function-函数计算服务-dotnet-core-3.1-创建和部署入门.md)
@@ -3869,6 +3871,8 @@
  * [生成密码](生成密码.md)
 
  * [用 C# 写脚本 如何输出文件夹内所有文件名](用-C-写脚本-如何输出文件夹内所有文件名.md)
+
+ * [用 Microsoft Agent Framework 对接豆包大模型实现AI自动玩「谁是卧底」游戏](用-Microsoft-Agent-Framework-对接豆包大模型实现AI自动玩「谁是卧底」游戏.md)
 
  * [用 SetWindowPos 方法设置一个停止响应的窗口将卡调用方](用-SetWindowPos-方法设置一个停止响应的窗口将卡调用方.md)
 

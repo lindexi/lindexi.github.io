@@ -158,19 +158,30 @@
 
 以下是我想要报告的问题：
 
-最近有用户向我反馈了应用程序打开文件对话框(OpenFileDialog) 时，应用程序进程将崩溃退出
+最近有用户向我反馈了应用程序启动时就闪退的问题，我测试了 .NET 9 和 .NET 6 甚至 .NET Framework 版本的各个应用，都能复现到十分相同的问题
 
-经过我的调查，我发现是 GROOVEEX.DLL 组件导致的崩溃。崩溃的堆栈信息如下
+崩溃异常信息是： 0x6AE3D389 (coreclr.dll) (5e.dmp 中)处有未经处理的异常: 堆栈 Cookie 检测代码检测到基于堆栈的缓冲区溢出。
 
-[Stacktrace1]
+堆栈错误信息如下
 
-根据崩溃信息中的 `msvcp140.dll!mtx_do_lock` 信息，我定位到了是 “VCRuntime incompatibility with older version in mutex code” 问题
+> coreclr.dll!__report_gsfailure(...) 行 220 C
+  [内联框架] coreclr.dll!DoJITFailFast() 行 4431 C++
+  coreclr.dll!CrawlFrame::SetCurGSCookie(unsigned int * pGSCookie) 行 372  C++
+  coreclr.dll!StackFrameIterator::Init(Thread * pThread=0x04d36ad0, Frame * pFrame=0x00000000, REGDISPLAY * pRegDisp=0x0ab2ecc0, unsigned int flags=33) 行 1185  C++
+  coreclr.dll!Thread::StackWalkFramesEx(REGDISPLAY * pRD=0x0ab2ecc0, StackWalkAction(__stdcall*)(CrawlFrame *, void *) pCallback=0x6ae1d5d0, void * pData=0x0ab2eff4, unsigned int flags=33, Frame * pStartFrame=0x00000000) 行 907  C++
+  coreclr.dll!Thread::StackWalkFrames(StackWalkAction(__stdcall*)(CrawlFrame *, void *) pCallback=0x6ae1d5d0, void * pData=0x0ab2eff4, unsigned int flags=33, Frame * pStartFrame=0x00000000) 行 995 C++
+  coreclr.dll!SystemDomain::GetCallersModule(StackCrawlMark * stackMark=0x0ab2f158) 行 1785  C++
+  [内联框架] coreclr.dll!SystemDomain::GetCallersAssembly(StackCrawlMark *) 行 1801  C++
+  coreclr.dll!RuntimeTypeHandle::GetTypeByName(const wchar_t * pwzClassName=0x06e9cb84, int bThrowOnError=1, int bIgnoreCase=0, QCall::StackCrawlMarkHandle pStackMark={...}, QCall::ObjectHandleOnStack pAssemblyLoadContext={...}, QCall::ObjectHandleOnStack retType={...}, QCall::ObjectHandleOnStack keepAlive={...}) 行 1460 C++
 
-核心原因是我的应用程序自己携带了旧版本的 VC 运行时文件，这就意味着我的应用程序自己加载了旧版本的 VC 运行时。但是 GROOVEEX.DLL 依赖新的 VC 运行时，这就导致了注入了我的应用进程的 GROOVEEX.DLL 将实际调用了旧版本的 VC 运行时。由于上述提及的 VC 运行时兼容性问题，将在使用 mutex 时出现崩溃
+混合调试下的堆栈错误信息如下：
 
-由于 GROOVEEX.DLL 将会注入到任何打开文件对话框的应用里面，我担心很多应用都自己携带了 VC 运行时，这就意味着可能 Office 的 GROOVEEX.DLL 组件会导致很多应用进程的崩溃
+[Stacktrace2]
 
-我十分期望微软 Office 团队能够谨慎地考虑这个问题的影响，避免大规模的第三方应用因为 GROOVEEX.DLL 而崩溃
+我尝试在这台出现问题的 Win10 19041 的设备上，右击开始菜单，尝试打开 PowerShell 工具，也能复现到 .NET Framework 版本的 PowerShell 启动闪退问题。我捕获了 PowerShell 崩溃的 dump 进行分析，也能看到类似的堆栈，信息如下
+
+[Stacktrace3]
+
 ```
 
 ```
