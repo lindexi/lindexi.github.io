@@ -1170,6 +1170,8 @@
 
  * [dotnet 对指针转换为结构体多个不同方法的性能分析](dotnet-对指针转换为结构体多个不同方法的性能分析.md)
 
+ * [dotnet 对接豆包模型时如何控制是否进入思考模式](dotnet-对接豆包模型时如何控制是否进入思考模式.md)
+
  * [dotnet 将C#编译为wasm让前端html使用](dotnet-将C-编译为wasm让前端html使用.md)
 
  * [dotnet 将任意时区的 DateTimeOffset 转换为中国时区时间文本](dotnet-将任意时区的-DateTimeOffset-转换为中国时区时间文本.md)
@@ -1441,6 +1443,8 @@
  * [dotnet 读 WPF 源代码笔记 简单聊聊文本布局换行逻辑](dotnet-读-WPF-源代码笔记-简单聊聊文本布局换行逻辑.md)
 
  * [dotnet 读 WPF 源代码笔记 聊聊 HwndWrapper.GetGCMemMessage 调试消息](dotnet-读-WPF-源代码笔记-聊聊-HwndWrapper.GetGCMemMessage-调试消息.md)
+
+ * [dotnet 读 WPF 源代码笔记 聊聊 OpenType 定义的字体特性](dotnet-读-WPF-源代码笔记-聊聊-OpenType-定义的字体特性.md)
 
  * [dotnet 读 WPF 源代码笔记 默认的 Main 函数是在哪创建的](dotnet-读-WPF-源代码笔记-默认的-Main-函数是在哪创建的.md)
 
