@@ -3980,6 +3980,8 @@
 
  * [记 X11 里面触摸的一些行为](记-X11-里面触摸的一些行为.md)
 
+ * [记 YKQQClean 导致应用程序界面窗口弹出失败](记-YKQQClean-导致应用程序界面窗口弹出失败.md)
+
  * [记一次调试资源管理器未响应经验](记一次调试资源管理器未响应经验.md)
 
  * [记从 dotnet framework 4.8 升级到 4.8.1 时运行的 dotnet remoting 程序出现空异常](记从-dotnet-framework-4.8-升级到-4.8.1-时运行的-dotnet-remoting-程序出现空异常.md)
