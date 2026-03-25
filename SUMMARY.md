@@ -742,6 +742,8 @@
 
  * [dotnet MCP 无魔法 本地进程内服务端客户端调用和通讯示例](dotnet-MCP-无魔法-本地进程内服务端客户端调用和通讯示例.md)
 
+ * [dotnet Microsoft Agent Framework 配置调用工具后退出对话](dotnet-Microsoft-Agent-Framework-配置调用工具后退出对话.md)
+
  * [dotnet Microsoft.Recognizers.Text 超强大的自然语言关键词提取库](dotnet-Microsoft.Recognizers.Text-超强大的自然语言关键词提取库.md)
 
  * [dotnet Multi-platform App UI 多平台应用 UI 框架简介](dotnet-Multi-platform-App-UI-多平台应用-UI-框架简介.md)
@@ -1577,6 +1579,8 @@
  * [git无法pull仓库refusing to merge unrelated histories](git无法pull仓库refusing-to-merge-unrelated-histories.md)
 
  * [git镜像仓库](git镜像仓库.md)
+
+ * [GPT 总结的 WPF 框架的 kerning 用法](GPT-总结的-WPF-框架的-kerning-用法.md)
 
  * [GPT 炼丹记录](GPT-炼丹记录.md)
 
