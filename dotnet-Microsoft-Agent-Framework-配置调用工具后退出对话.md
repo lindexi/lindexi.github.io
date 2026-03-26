@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2026/03/26 07:11:29 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -94,7 +96,6 @@ Console.Read();
 尝试运行代码，可以看到模型在对话过程中，尝试调用 GetWeather 方法。方法执行完成之后，对话也就结束了
 
 如此可见工具的结果不会返回到模型里，如此也就可以很方便地被设计为让模型只负责工具的调用分发，而不让模型对工具返回结果感兴趣
-
 
 本文代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/743fb8a7885af20c265dbd323dd703c912e41774/SemanticKernelSamples/BejalljeawakihereKearyojileelai) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/743fb8a7885af20c265dbd323dd703c912e41774/SemanticKernelSamples/BejalljeawakihereKearyojileelai) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
 

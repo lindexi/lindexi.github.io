@@ -82,6 +82,8 @@
 
  * [Avalonia 在 X11 下使用软渲染的方法](Avalonia-在-X11-下使用软渲染的方法.md)
 
+ * [Avalonia 实现离屏渲染能力](Avalonia-实现离屏渲染能力.md)
+
  * [Avalonia 将 DrawingImage 保存到本地文件的方法](Avalonia-将-DrawingImage-保存到本地文件的方法.md)
 
  * [Avalonia 已知问题 使用 RenderTargetBitmap 截图文本模糊](Avalonia-已知问题-使用-RenderTargetBitmap-截图文本模糊.md)
