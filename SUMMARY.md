@@ -92,6 +92,8 @@
 
  * [Avalonia 已知问题 继承滚动条将让里层控件无法获得无穷大空间](Avalonia-已知问题-继承滚动条将让里层控件无法获得无穷大空间.md)
 
+ * [Avalonia 已知问题 过早创建 App 对象将抛出 PlatformNotSupportedException 异常](Avalonia-已知问题-过早创建-App-对象将抛出-PlatformNotSupportedException-异常.md)
+
  * [Avalonia 界面效果 三个圆实现模糊界面动效背景](Avalonia-界面效果-三个圆实现模糊界面动效背景.md)
 
  * [Avalonia 界面效果 滚动的渐变矩形边框](Avalonia-界面效果-滚动的渐变矩形边框.md)
