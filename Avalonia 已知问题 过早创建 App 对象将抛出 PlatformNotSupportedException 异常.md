@@ -1,8 +1,10 @@
-﻿# Avalonia 已知问题 过早创建 App 对象将抛出 PlatformNotSupportedException 异常
+# Avalonia 已知问题 过早创建 App 对象将抛出 PlatformNotSupportedException 异常
 
 本文记录 Avalonia 的一个已知问题，过早创建 App 对象将抛出 PlatformNotSupportedException 异常
 
 <!--more-->
+<!-- CreateTime:2026/04/04 07:11:22 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
