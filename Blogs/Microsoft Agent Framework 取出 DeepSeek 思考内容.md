@@ -20,6 +20,74 @@ category:
 - [C# Microsoft Agent Framework 与 豆包 对接](https://blog.lindexi.com/post/C-Microsoft-Agent-Framework-%E4%B8%8E-%E8%B1%86%E5%8C%85-%E5%AF%B9%E6%8E%A5.html )
 <!-- [C# Microsoft Agent Framework 与 豆包 对接 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19494917 ) -->
 
+---
+
+更新：
+
+在正式的 1.0.0 版本，已经内置支持了获取思考内容。只需要判断输出的 AIContent 为 TextReasoningContent 类型即可，核心代码如下
+
+```csharp
+ChatClient chatClient = ...;
+
+ChatClientAgent aiAgent = chatClient.AsAIAgent();
+
+ChatMessage message = new ChatMessage(ChatRole.User, "请讲一个笑话");
+
+bool isThinking = false;
+
+await foreach (var agentResponseUpdate in aiAgent.RunStreamingAsync(message))
+{
+    foreach (AIContent aiContent in agentResponseUpdate.Contents)
+    {
+        if (aiContent is TextReasoningContent textReasoningContent)
+        {
+            Console.Write(textReasoningContent.Text);
+            isThinking = true;
+        }
+        else if(aiContent is TextContent textContent)
+        {
+            if (string.IsNullOrEmpty(textContent.Text))
+            {
+                continue;
+            }
+
+            if (isThinking)
+            {
+                Console.WriteLine();
+                Console.WriteLine("--------");
+            }
+
+            Console.Write(textContent.Text);
+            isThinking = false;
+        }
+    }
+}
+```
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/b5d26e974a4b9a5e331a4e1c4e95e739e77e057c/SemanticKernelSamples/HaneakilabeaGocurwarjur) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/blob/b5d26e974a4b9a5e331a4e1c4e95e739e77e057c/SemanticKernelSamples/HaneakilabeaGocurwarjur) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin b5d26e974a4b9a5e331a4e1c4e95e739e77e057c
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin b5d26e974a4b9a5e331a4e1c4e95e739e77e057c
+```
+
+获取代码之后，进入 SemanticKernelSamples/HaneakilabeaGocurwarjur 文件夹，即可获取到源代码
+
+---
+
+以下方法已不推荐，建议直接更新 Microsoft.Agents.AI 版本，然后如上文提供的方法，直接用 TextReasoningContent 就可以了
+
 核心原理是从 AgentResponseUpdate 里面的 RawRepresentation 获取 reasoning_content 字段
 
 核心代码如下
