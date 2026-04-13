@@ -74,6 +74,8 @@
 
  * [Avalonia 11.1 获取平台调用的窗口的方法](Avalonia-11.1-获取平台调用的窗口的方法.md)
 
+ * [Avalonia 使用 AvaloniaMath 做内联 Latex 公式](Avalonia-使用-AvaloniaMath-做内联-Latex-公式.md)
+
  * [Avalonia 制作 AOT 单文件](Avalonia-制作-AOT-单文件.md)
 
  * [Avalonia 取消窗口关闭导致 Linux 麒麟系统无法关机注销重启](Avalonia-取消窗口关闭导致-Linux-麒麟系统无法关机注销重启.md)
@@ -1011,6 +1013,8 @@
  * [dotnet 使用 Newtonsoft.Json 输出枚举首字符小写](dotnet-使用-Newtonsoft.Json-输出枚举首字符小写.md)
 
  * [dotnet 使用 Obsolete 特性标记成员过时保持库和框架的兼容性](dotnet-使用-Obsolete-特性标记成员过时保持库和框架的兼容性.md)
+
+ * [dotnet 使用 OpenILink.SDK 制作微信聊天机器人对接豆包大模型](dotnet-使用-OpenILink.SDK-制作微信聊天机器人对接豆包大模型.md)
 
  * [dotnet 使用 OpenXML SDK 解析 Office 的项目符号 buNone 含义](dotnet-使用-OpenXML-SDK-解析-Office-的项目符号-buNone-含义.md)
 
