@@ -4052,6 +4052,8 @@
 
  * [通过 frp 开启服务器打开本地的 ZeroNet 服务器外网访问](通过-frp-开启服务器打开本地的-ZeroNet-服务器外网访问.md)
 
+ * [通过 OllamaSharp 对接 Microsoft Agent Framework 的方法](通过-OllamaSharp-对接-Microsoft-Agent-Framework-的方法.md)
+
  * [通过公开的自动构建发布开源项目的库的安全意义](通过公开的自动构建发布开源项目的库的安全意义.md)
 
  * [通过命令行使用微信](通过命令行使用微信.md)
