@@ -1,8 +1,10 @@
-﻿# Avalonia 使用 AvaloniaMath 做内联 Latex 公式
+# Avalonia 使用 AvaloniaMath 做内联 Latex 公式
 
 本文将告诉大家如何使用 AvaloniaMath 库在 TextBlock 里面，通过 InlineUIContainer 实现内联 Latex 公式效果
 
 <!--more-->
+<!-- CreateTime:2026/04/13 08:52:41 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
