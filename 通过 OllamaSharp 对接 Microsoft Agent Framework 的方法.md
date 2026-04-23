@@ -1,8 +1,10 @@
-﻿# 通过 OllamaSharp 对接 Microsoft Agent Framework 的方法
+# 通过 OllamaSharp 对接 Microsoft Agent Framework 的方法
 
 本文记录如何使用 OllamaSharp 对接 Microsoft.Agents 框架，调用本地部署的阿里千问 qwen3-vl:8b 多模态大模型，实现本地图片的内容识别能力，代码可直接集成到现有 .NET 项目中使用
 
 <!--more-->
+<!-- CreateTime:2026/04/23 07:02:39 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
