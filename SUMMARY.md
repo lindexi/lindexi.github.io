@@ -1232,6 +1232,8 @@
 
  * [dotnet 控制台读写 Sqlite 提示 no such table 找不到文件](dotnet-控制台读写-Sqlite-提示-no-such-table-找不到文件.md)
 
+ * [dotnet 控制台调用 Windows.Graphics 实现屏幕截图功能](dotnet-控制台调用-Windows.Graphics-实现屏幕截图功能.md)
+
  * [dotnet 推荐 LightWorkFlowManager 轻量的工作过程管理库](dotnet-推荐-LightWorkFlowManager-轻量的工作过程管理库.md)
 
  * [dotnet 推荐一个使用 Json 直接路由通讯的 IPC 库](dotnet-推荐一个使用-Json-直接路由通讯的-IPC-库.md)
@@ -1609,6 +1611,8 @@
  * [How to use code to exit the application in UWP](How-to-use-code-to-exit-the-application-in-UWP.md)
 
  * [HttpRepl 互操作的 RESTful HTTP 服务调试命令行工具](HttpRepl-互操作的-RESTful-HTTP-服务调试命令行工具.md)
+
+ * [HyperAgent 思想的实践 制作 PPT 文档内容分析提示词](HyperAgent-思想的实践-制作-PPT-文档内容分析提示词.md)
 
  * [IIncrementalGenerator 增量 Source Generator 生成代码入门 从语法到语义 获取类型完全限定名](IIncrementalGenerator-增量-Source-Generator-生成代码入门-从语法到语义-获取类型完全限定名.md)
 
@@ -3273,6 +3277,8 @@
  * [WPF 绑定的默认模式](WPF-绑定的默认模式.md)
 
  * [WPF 绑定继承的样式提示 只能根据带有基类型 IFrameworkInputElement 的目标类型的 Style 样式](WPF-绑定继承的样式提示-只能根据带有基类型-IFrameworkInputElement-的目标类型的-Style-样式.md)
+
+ * [WPF 结合本地 Ollama 千问多模态实现离线屏幕使用记录工具](WPF-结合本地-Ollama-千问多模态实现离线屏幕使用记录工具.md)
 
  * [WPF 给 Grid 的辅助方法 添加行列名称绑定](WPF-给-Grid-的辅助方法-添加行列名称绑定.md)
 
