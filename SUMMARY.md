@@ -82,6 +82,8 @@
 
  * [Avalonia 后台代码简单播放动画示例](Avalonia-后台代码简单播放动画示例.md)
 
+ * [Avalonia 在 Docker 容器中通过 xvfb 运行的方法](Avalonia-在-Docker-容器中通过-xvfb-运行的方法.md)
+
  * [Avalonia 在 X11 下使用软渲染的方法](Avalonia-在-X11-下使用软渲染的方法.md)
 
  * [Avalonia 实现离屏渲染能力](Avalonia-实现离屏渲染能力.md)
