@@ -1,8 +1,10 @@
-﻿# dotnet 控制台调用 Windows.Graphics 实现屏幕截图功能
+# dotnet 控制台调用 Windows.Graphics 实现屏幕截图功能
 
 本文将告诉大家如何在 .NET 控制台应用中，借助 Windows.Graphics.Capture 系列 WinRT API 实现高性能屏幕截图能力，最终将截图保存为 PNG 格式到本地临时目录
 
 <!--more-->
+<!-- CreateTime:2026/04/24 07:29:48 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 

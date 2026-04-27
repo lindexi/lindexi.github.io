@@ -1,8 +1,10 @@
-﻿# WPF 结合本地 Ollama 千问多模态实现离线屏幕使用记录工具
+# WPF 结合本地 Ollama 千问多模态实现离线屏幕使用记录工具
 
 本文将告诉大家如何基于 WPF 框架、Windows.Graphics 截图能力和本地部署的千问多模态大模型，实现一款完全离线的屏幕使用记录工具，自动定时截图并解读当前屏幕内容，方便自己回溯一天的工作内容，全程无需联网，完全保障隐私安全。
 
 <!--more-->
+<!-- CreateTime:2026/04/24 07:30:30 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -24,6 +26,12 @@
 1. **截图能力**：采用 Windows.Graphics API 实现截图，相比传统 GDI 截图性能更好，资源占用极低，再加上 10 秒截一次，对整机性能几乎没有影响，天然支持多屏幕同时适配。
 2. **大模型**：使用本地 Ollama 部署的 qwen3-vl:8b 多模态模型，完全离线运行，不需要把截图传到任何第三方服务器，隐私完全可控，8B 参数的模型在普通消费级显卡上就能流畅运行，一次解读仅需 2-3 秒。
 3. **上下文逻辑**：每次解读时会带上最近 10 张截图的历史解读内容，保证上下文连贯性，同时明确要求模型优先信任当前截图的内容，避免历史内容误导解读结果。
+
+截图能力详细请参阅： [dotnet 控制台调用 Windows.Graphics 实现屏幕截图功能](https://blog.lindexi.com/post/dotnet-%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%B0%83%E7%94%A8-Windows.Graphics-%E5%AE%9E%E7%8E%B0%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%E5%8A%9F%E8%83%BD.html )
+<!-- [dotnet 控制台调用 Windows.Graphics 实现屏幕截图功能 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19919369 ) -->
+
+调用 Ollama 的方法请参阅： [通过 OllamaSharp 对接 Microsoft Agent Framework 的方法](https://blog.lindexi.com/post/%E9%80%9A%E8%BF%87-OllamaSharp-%E5%AF%B9%E6%8E%A5-Microsoft-Agent-Framework-%E7%9A%84%E6%96%B9%E6%B3%95.html )
+<!-- [通过 OllamaSharp 对接 Microsoft Agent Framework 的方法 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19912560 ) -->
 
 ## 核心实现
 
