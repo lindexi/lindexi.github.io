@@ -22,6 +22,8 @@ category:
 
 下面我按照实际解决问题的逻辑顺序展开说明。
 
+本文提供的方法非 Headless 无头模式，而是采用 xvfb 创建虚拟的 X11 环境，走真实应用处理逻辑。可以提供可获取的虚拟 X11 环境，和执行桌面客户端的 Avalonia 窗口逻辑。如想了解无头模式的用法，请划到本文末尾
+
 ## 一、准备 Docker 基础镜像
 
 为了方便，我会在一份 Dockerfile 里同时完成基础环境、.NET 运行时、X11 和字体的安装。完整文件在文末给出，这里先说核心部分。
@@ -235,3 +237,31 @@ git pull origin 4fc6e1c6c9511c935bae33186fff35b32101077c
 
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
+## 无头模式
+
+本文提供的是采用虚拟 X11 环境做渲染，这与 Avalonia 内置的无头模式 Headless 有稍微的不同。如果只是做简单的渲染处理，没有涉及到窗口或 X11 环境的情况，那直接采用无头模式即可
+
+直接采用无头模式是无需带 xvfb 虚拟 X11 环境的，但该添加的字体依然还是需要添加。核心逻辑只有在 Program.cs 里面添加 UseSkia 和 UseHeadless 且设置 `UseHeadlessDrawing = false` 采用真实 Skia 做渲染。无需编写 OffscreenTopLevelImpl 相关逻辑，和真实的应用差别仅在于 Program.cs 上。当然，别忘了添加 Avalonia.Headless 库的引用。修改之后的 Program.cs 代码示例如下：
+
+```csharp
+class Program
+{
+    // Initialization code. Don't use any Avalonia, third-party APIs or any
+    // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
+    // yet and stuff might break.
+    [STAThread]
+    public static void Main(string[] args) => BuildAvaloniaApp()
+        .StartWithClassicDesktopLifetime(args);
+
+    // Avalonia configuration, don't remove; also used by visual designer.
+    public static AppBuilder BuildAvaloniaApp()
+        => AppBuilder.Configure<App>()
+            .UseSkia()
+            .UseHeadless(new AvaloniaHeadlessPlatformOptions()
+            {
+                UseHeadlessDrawing = false,
+            })
+            .WithInterFont()
+            .LogToTrace();
+}
+```
