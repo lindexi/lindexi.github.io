@@ -98,6 +98,8 @@
 
  * [Avalonia 已知问题 过早创建 App 对象将抛出 PlatformNotSupportedException 异常](Avalonia-已知问题-过早创建-App-对象将抛出-PlatformNotSupportedException-异常.md)
 
+ * [Avalonia 无头模式在 Docker 容器中的运行方法](Avalonia-无头模式在-Docker-容器中的运行方法.md)
+
  * [Avalonia 界面效果 三个圆实现模糊界面动效背景](Avalonia-界面效果-三个圆实现模糊界面动效背景.md)
 
  * [Avalonia 界面效果 滚动的渐变矩形边框](Avalonia-界面效果-滚动的渐变矩形边框.md)
