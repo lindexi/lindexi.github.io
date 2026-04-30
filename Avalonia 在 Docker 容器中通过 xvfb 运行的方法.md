@@ -1,8 +1,10 @@
-﻿# Avalonia 在 Docker 容器中通过 xvfb 运行的方法
+# Avalonia 在 Docker 容器中通过 xvfb 运行的方法
 
 本文将告诉大家如何将 Avalonia 应用部署到 Docker 容器中，使用 Avalonia 作为渲染端，通过离屏渲染输出图像。我将在本文分享在这个过程中遇到的核心坑点以及对应的解决方案
 
 <!--more-->
+<!-- CreateTime:2026/04/29 07:01:23 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
