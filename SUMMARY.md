@@ -1184,6 +1184,8 @@
 
  * [dotnet 对指针转换为结构体多个不同方法的性能分析](dotnet-对指针转换为结构体多个不同方法的性能分析.md)
 
+ * [dotnet 对接 DeepSeek 模型工具调用时 400 错误](dotnet-对接-DeepSeek-模型工具调用时-400-错误.md)
+
  * [dotnet 对接豆包模型时如何控制是否进入思考模式](dotnet-对接豆包模型时如何控制是否进入思考模式.md)
 
  * [dotnet 将C#编译为wasm让前端html使用](dotnet-将C-编译为wasm让前端html使用.md)
