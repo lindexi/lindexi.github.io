@@ -1150,6 +1150,8 @@
 
  * [dotnet 基于 dotnet format 的 GitHub Action 自动代码格式化机器人](dotnet-基于-dotnet-format-的-GitHub-Action-自动代码格式化机器人.md)
 
+ * [dotnet 基于 FFmpeg 实现图片加多音频批量合成视频方法](dotnet-基于-FFmpeg-实现图片加多音频批量合成视频方法.md)
+
  * [dotnet 多线程禁止同时调用相同的方法 禁止方法重入调用 双检锁的设计](dotnet-多线程禁止同时调用相同的方法-禁止方法重入调用-双检锁的设计.md)
 
  * [dotnet 如何从 Gtk 3 的窗口到对应的 X11 窗口](dotnet-如何从-Gtk-3-的窗口到对应的-X11-窗口.md)
@@ -2929,6 +2931,8 @@
  * [WPF 判断当前应用被打包为 UWP 而运行](WPF-判断当前应用被打包为-UWP-而运行.md)
 
  * [WPF 判断调用方法堆栈](WPF-判断调用方法堆栈.md)
+
+ * [WPF 制作一个从 PPT 文档自动生成演讲视频工具](WPF-制作一个从-PPT-文档自动生成演讲视频工具.md)
 
  * [WPF 制作一个加密文件夹应用](WPF-制作一个加密文件夹应用.md)
 

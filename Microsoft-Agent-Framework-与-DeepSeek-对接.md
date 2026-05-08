@@ -139,6 +139,14 @@ git pull origin cb19960c943988735924144830886c76f20adae9
 
 更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
+相关博客：
+
+[Microsoft Agent Framework 取出 DeepSeek 思考内容](https://blog.lindexi.com/post/Microsoft-Agent-Framework-%E5%8F%96%E5%87%BA-DeepSeek-%E6%80%9D%E8%80%83%E5%86%85%E5%AE%B9.html )
+<!-- [Microsoft Agent Framework 取出 DeepSeek 思考内容 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19635618 ) -->
+
+[dotnet 对接 DeepSeek 模型工具调用时 400 错误](https://blog.lindexi.com/post/dotnet-%E5%AF%B9%E6%8E%A5-DeepSeek-%E6%A8%A1%E5%9E%8B%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E6%97%B6-400-%E9%94%99%E8%AF%AF.html )
+<!-- [dotnet 对接 DeepSeek 模型工具调用时 400 错误 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19983717 ) -->
+
 
 
 
