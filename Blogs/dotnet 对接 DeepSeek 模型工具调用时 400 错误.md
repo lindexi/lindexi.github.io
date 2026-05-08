@@ -5,12 +5,14 @@ tags: dotnet
 category: 
 ---
 
+<!-- CreateTime:2026/05/07 07:17:46 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
 本文内容由 AI 辅助编写
 
-最近我尝试用 OpenAI 官方 SDK 以兼容模式对接 DeepSeek 模型，开启深度思考模式之后，如果调用了自定义工具，就会在工具调用完成后发起下一轮请求的时候抛出 HTTP 400 错误，错误内容为 `The \`reasoning_content\` in the thinking mode must be passed back to the API`
+最近我尝试用 OpenAI 官方 SDK 以兼容模式对接 DeepSeek 模型，开启深度思考模式之后，如果调用了自定义工具，就会在工具调用完成后发起下一轮请求的时候抛出 HTTP 400 错误，错误内容为 `The reasoning_content in the thinking mode must be passed back to the API`
 
 翻查 DeepSeek 官方文档 <https://api-docs.deepseek.com/zh-cn/guides/thinking_mode#%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8> 可知，问题出在上下文回传的逻辑上：DeepSeek 的思考模式下，模型返回的 reasoning_content 思考内容，在后续的上下文请求里必须完整带回，包括工具调用完成后的续传请求。但是官方的 OpenAI .NET SDK 并没有适配 reasoning_content 这个扩展字段，在拼接上下文时会直接丢弃这部分内容，就触发了 API 的参数校验错误
 
@@ -988,8 +990,6 @@ git pull origin bc29ceb1611cb60c264143c3b13e408346ae14e3
 
 获取代码之后，进入 SemanticKernelSamples/Microsoft.Agents.AI.Extensions 文件夹，即可获取到源代码
 
-更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
-
 ## 其他异常情况
 
 由于 DeepSeek 对工具要求比较严格，如工具名只能符合 `^[a-zA-Z0-9_-]+$` 正则条件。如果传入不符合正则约束的工具名，将会遇到 HTTP 400 错误：
@@ -999,3 +999,16 @@ HTTP 400：Invalid 'tools[0].function.name': string does not match pattern. Expe
 ```
 
 解决方法为修改工具名，让工具名符合规范
+
+## 相关博客
+
+[Microsoft Agent Framework 取出 DeepSeek 思考内容](https://blog.lindexi.com/post/Microsoft-Agent-Framework-%E5%8F%96%E5%87%BA-DeepSeek-%E6%80%9D%E8%80%83%E5%86%85%E5%AE%B9.html )
+<!-- [Microsoft Agent Framework 取出 DeepSeek 思考内容 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19635618 ) -->
+
+[dotnet 对接 DeepSeek 模型工具调用时 400 错误](https://blog.lindexi.com/post/dotnet-%E5%AF%B9%E6%8E%A5-DeepSeek-%E6%A8%A1%E5%9E%8B%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E6%97%B6-400-%E9%94%99%E8%AF%AF.html )
+<!-- [dotnet 对接 DeepSeek 模型工具调用时 400 错误 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19983717 ) -->
+
+[dotnet Microsoft Agent Framework 配置调用工具后退出对话](https://blog.lindexi.com/post/dotnet-Microsoft-Agent-Framework-%E9%85%8D%E7%BD%AE%E8%B0%83%E7%94%A8%E5%B7%A5%E5%85%B7%E5%90%8E%E9%80%80%E5%87%BA%E5%AF%B9%E8%AF%9D.html )
+<!-- [dotnet Microsoft Agent Framework 配置调用工具后退出对话 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19773412 ) -->
+
+更多技术博客，请参阅 [博客导航](https://blog.lindexi.com/post/%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
