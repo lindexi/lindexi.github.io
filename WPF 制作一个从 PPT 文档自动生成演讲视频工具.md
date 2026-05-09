@@ -3,6 +3,8 @@
 本文将告诉大家如何基于多模态大模型、语音合成能力和 FFMpeg 实现自动将 PPT 文档转换为带专业讲解的演讲视频，项目代码拉取后即可直接运行。我现在给的提示词炼丹效果是针对于教育垂直领域，整个代码完全开源，欢迎二次创作
 
 <!--more-->
+<!-- CreateTime:2026/05/09 07:08:02 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -187,6 +189,9 @@ await ffmpegVideoComposer.ComposeAsync(outputVideoFile, cancellationToken);
 ```
 
 合成的视频默认保存在输出目录下，文件名带时间戳，中间生成的临时音频和图片文件会在合成完成后自动清理，不会占用额外磁盘空间。
+
+详细的技术细节请参阅： [dotnet 基于 FFmpeg 实现图片加多音频批量合成视频方法](https://blog.lindexi.com/post/dotnet-%E5%9F%BA%E4%BA%8E-FFmpeg-%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E5%8A%A0%E5%A4%9A%E9%9F%B3%E9%A2%91%E6%89%B9%E9%87%8F%E5%90%88%E6%88%90%E8%A7%86%E9%A2%91%E6%96%B9%E6%B3%95.html )
+<!-- [dotnet 基于 FFmpeg 实现图片加多音频批量合成视频方法 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/19998655 ) -->
 
 ## 注意事项
 
