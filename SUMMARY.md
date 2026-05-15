@@ -2668,6 +2668,8 @@
 
  * [Windows Community Toolkit 3.0 新功能](Windows-Community-Toolkit-3.0-新功能.md)
 
+ * [Windows 上高效开发与调试 docker 容器内 dotnet 程序的方案](Windows-上高效开发与调试-docker-容器内-dotnet-程序的方案.md)
+
  * [Windows 下的 WPF 开发 调试应用程序在什么时机加载了 Dll 模块](Windows-下的-WPF-开发-调试应用程序在什么时机加载了-Dll-模块.md)
 
  * [Windows 官方提供的触屏硬件延迟测量方法](Windows-官方提供的触屏硬件延迟测量方法.md)
