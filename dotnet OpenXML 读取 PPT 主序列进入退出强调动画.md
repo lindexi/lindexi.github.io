@@ -11,7 +11,7 @@
 
 <!-- ![](image/dotnet OpenXML 读取 PPT 主序列进入退出强调动画/dotnet OpenXML 读取 PPT 主序列进入退出强调动画0.png) -->
 
-![](https://i.loli.net/2021/07/01/RZmjPobNxvHyTJg.jpg)
+![](http://cdn.lindexi.site/lindexi-dotnet%2520OpenXML%2520%25E8%25AF%25BB%25E5%258F%2596%2520PPT%2520%25E4%25B8%25BB%25E5%25BA%258F%25E5%2588%2597%25E8%25BF%259B%25E5%2585%25A5%25E9%2580%2580%25E5%2587%25BA%25E5%25BC%25BA%25E8%25B0%2583%25E5%258A%25A8%25E7%2594%25BB0.png)
 
 大概的动画内容如下
 
