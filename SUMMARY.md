@@ -3578,6 +3578,8 @@
 
  * [从 Uno Platform 4 更新 Uno Platform 5 的迁移方法](从-Uno-Platform-4-更新-Uno-Platform-5-的迁移方法.md)
 
+ * [从 Visual Studio Copilot 的请求内容学习其实现原理](从-Visual-Studio-Copilot-的请求内容学习其实现原理.md)
+
  * [从 WPF 搬迁到 UOS 下的 UNO 的笔记](从-WPF-搬迁到-UOS-下的-UNO-的笔记.md)
 
  * [从人工思维加上二阶熵猜测世界存在意志思维](从人工思维加上二阶熵猜测世界存在意志思维.md)
