@@ -1,8 +1,10 @@
-﻿# 从 Visual Studio Copilot 的请求内容学习其实现原理
+# 从 Visual Studio Copilot 的请求内容学习其实现原理
 
 本文介绍了我拿到的 Visual Studio Copilot 发给大语言模型的完整请求内容，其中包含了非常详尽的系统提示词和完整的工具定义，让我得以一窥 Copilot 的内部实现原理
 
 <!--more-->
+<!-- CreateTime:2026/06/02 07:06:22 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
