@@ -1674,6 +1674,8 @@
 
  * [Microsoft Agent Framework 与 DeepSeek 对接](Microsoft-Agent-Framework-与-DeepSeek-对接.md)
 
+ * [Microsoft Agent Framework 中 RequirePerServiceCallChatHistoryPersistence 对 ReduceAsync 调用时机的影响](Microsoft-Agent-Framework-中-RequirePerServiceCallChatHistoryPersistence-对-ReduceAsync-调用时机的影响.md)
+
  * [Microsoft Agent Framework 取出 DeepSeek 思考内容](Microsoft-Agent-Framework-取出-DeepSeek-思考内容.md)
 
  * [Microsoft Agent Framework 测试豆包的根据图片生成矢量图的能力](Microsoft-Agent-Framework-测试豆包的根据图片生成矢量图的能力.md)
