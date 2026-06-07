@@ -3860,6 +3860,8 @@
 
  * [探索 WPF 的 ITabletManager.GetTabletCount 在 Win11 系统的底层实现](探索-WPF-的-ITabletManager.GetTabletCount-在-Win11-系统的底层实现.md)
 
+ * [探索用 SlideML 让大模型生成 PPT 的实验方法](探索用-SlideML-让大模型生成-PPT-的实验方法.md)
+
  * [推荐一个使用 HardLink 硬链接减少重复文件占用磁盘空间的工具](推荐一个使用-HardLink-硬链接减少重复文件占用磁盘空间的工具.md)
 
  * [推荐官方开源 PInvoke 库 包含大量 win32 封装](推荐官方开源-PInvoke-库-包含大量-win32-封装.md)
