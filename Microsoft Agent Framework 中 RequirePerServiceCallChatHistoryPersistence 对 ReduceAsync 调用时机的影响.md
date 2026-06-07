@@ -1,8 +1,10 @@
-﻿# Microsoft Agent Framework 中 RequirePerServiceCallChatHistoryPersistence 对 ReduceAsync 调用时机的影响
+# Microsoft Agent Framework 中 RequirePerServiceCallChatHistoryPersistence 对 ReduceAsync 调用时机的影响
 
 本文将演示在 Microsoft Agent Framework 中，RequirePerServiceCallChatHistoryPersistence 选项对 ChatReducer 的 ReduceAsync 方法调用时机的影响，并说明在不同场景下应该如何选择开启或关闭该选项。
 
 <!--more-->
+<!-- CreateTime:2026/06/03 07:04:01 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
