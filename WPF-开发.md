@@ -817,6 +817,56 @@ window.Activate();
 
 [WPF ListBox Scroll to end automatically - Stack Overflow](https://stackoverflow.com/questions/2337822/wpf-listbox-scroll-to-end-automatically )
 
+## 保持 ItemsControl 滚动条持续在最底部的方法
+
+有些时候做类似日志输出的业务情况，此时需要不断地让滚动条保持在底部，即使内容在不断变高
+
+实现方法非常简单，只需要调用 `ScrollViewer.ScrollToEnd();` 方法就可以了
+
+如以下结构：
+
+```xml
+        <ScrollViewer x:Name="FooScrollViewer">
+            <ItemsControl x:Name="ItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type local:TextItem}">
+                        <TextBlock Text="{Binding Content}"
+                               TextWrapping="Wrap"
+                               Margin="4" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+```
+
+只需调用过一次。重点： 一次。调用过一次 `ScrollViewer.ScrollToEnd();` 方法就可以了
+
+```csharp
+FooScrollViewer.ScrollToEnd();
+```
+
+此后，如果没有用户操作滚动条的情况，滚动条将一直保持在底部
+
+以上代码放在 [github](https://github.com/lindexi/lindexi_gd/tree/d61edab9f587d992d8e8a7900e14827cdb58c07d/WPFDemo/JedicairqaiWejobajaibiqe) 和 [gitee](https://gitee.com/lindexi/lindexi_gd/tree/d61edab9f587d992d8e8a7900e14827cdb58c07d/WPFDemo/JedicairqaiWejobajaibiqe) 上，可以使用如下命令行拉取代码。我整个代码仓库比较庞大，使用以下命令行可以进行部分拉取，拉取速度比较快
+
+先创建一个空文件夹，接着使用命令行 cd 命令进入此空文件夹，在命令行里面输入以下代码，即可获取到本文的代码
+
+```
+git init
+git remote add origin https://gitee.com/lindexi/lindexi_gd.git
+git pull origin d61edab9f587d992d8e8a7900e14827cdb58c07d
+```
+
+以上使用的是国内的 gitee 的源，如果 gitee 不能访问，请替换为 github 的源。请在命令行继续输入以下代码，将 gitee 源换成 github 源进行拉取代码。如果依然拉取不到代码，可以发邮件向我要代码
+
+```
+git remote remove origin
+git remote add origin https://github.com/lindexi/lindexi_gd.git
+git pull origin d61edab9f587d992d8e8a7900e14827cdb58c07d
+```
+
+获取代码之后，进入 WPFDemo/JedicairqaiWejobajaibiqe 文件夹，即可获取到源代码
+
 ## [WPF 截图功能的实现](https://huchengv5.gitee.io/post/WPF-%E6%88%AA%E5%9B%BE%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0.html )
 
 ```csharp

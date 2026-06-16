@@ -93,6 +93,19 @@
 5.  无需业务场景特定的硬编码逻辑，可直接复用在不同项目中
 
 
+## 更新规则
+
+- 只记录已经验证过的事实；未验证内容必须明确写成“待确认”或“不确定”。
+- 若新的构建结果与旧记录冲突，应直接改写旧结论，不要把互相矛盾的描述同时保留。
+- 优先记录以下信息：
+  - 当前解决方案实际纳入的项目
+  - 当前磁盘上已存在但尚未纳管的项目
+  - 最新构建入口、构建命令和首个真实失败点
+- 每次推进后都要更新“当前状态”“阻塞点”“下一步建议”。
+- 文档中不要写“本轮”“本次”之类依赖上下文轮次的描述，应直接写当前状态和后续动作。
+- 工作过程中发现的问题若不属于当前优先任务范围，应记录到 `backlog.md`，不要打断当前迁移顺序。
+
+
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。欢迎转载、使用、重新发布，但务必保留文章署名[林德熙](http://blog.csdn.net/lindexi_gd)(包含链接:http://blog.csdn.net/lindexi_gd )，不得用于商业目的，基于本文修改后的作品务必以相同的许可发布。如有任何疑问，请与我[联系](mailto:lindexi_gd@163.com)。
