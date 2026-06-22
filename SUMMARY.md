@@ -930,6 +930,8 @@
 
  * [dotnet WinUI3 Win2D 翻转图片](dotnet-WinUI3-Win2D-翻转图片.md)
 
+ * [dotnet WPF 实现端口占用检测与自动查找可用端口](dotnet-WPF-实现端口占用检测与自动查找可用端口.md)
+
  * [dotnet X11 多次调用 XPutImage 是否能做到渲染同步](dotnet-X11-多次调用-XPutImage-是否能做到渲染同步.md)
 
  * [dotnet X11 栈空间被回收导致调用 XPutShmImage 闪退](dotnet-X11-栈空间被回收导致调用-XPutShmImage-闪退.md)
@@ -3913,6 +3915,8 @@
  * [用 C# 写脚本 如何输出文件夹内所有文件名](用-C-写脚本-如何输出文件夹内所有文件名.md)
 
  * [用 Microsoft Agent Framework 对接豆包大模型实现AI自动玩「谁是卧底」游戏](用-Microsoft-Agent-Framework-对接豆包大模型实现AI自动玩「谁是卧底」游戏.md)
+
+ * [用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型](用-OllamaHub-让-Visual-Studio-Copilot-可以对接任意模型.md)
 
  * [用 SetWindowPos 方法设置一个停止响应的窗口将卡调用方](用-SetWindowPos-方法设置一个停止响应的窗口将卡调用方.md)
 
