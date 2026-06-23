@@ -1,10 +1,12 @@
 
 # 用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型
 
-随着 GitHub Copilot 订阅策略发现变化，再叠加上国产 DeepSeek 大降价与 GLM 5.2 发力。默认 GitHub Copilot 提供的模型已经不香了，也不够用了。本文将和大家介绍如何使用 OllamaHub 对接国内的 DeepSeek 模型。相信看完本文之后，大家也自然地学会对接其他厂商
+随着 GitHub Copilot 订阅策略发现变化，再叠加上国产 DeepSeek 大降价与 GLM 5.2 发力。默认 GitHub Copilot 提供的模型已经不香了，也不够用了。本文将和大家介绍如何使用 OllamaHub 对接国内的 DeepSeek 模型。相信看完本文之后，大家也自然地学会对接其他厂商，如 GLM 、阿里千问、豆包等等
 
 <!--more-->
 
+
+<!-- CreateTime:2026/06/22 09:35:26 -->
 
 <!-- 发布 -->
 <!-- 博客 -->
@@ -15,7 +17,7 @@ OllamaHub 的开源项目地址： <https://github.com/mingkuang-Chuyu/OllamaHub
 
 整个 OllamaHub 非常纯净，虽然名字叫 OllamaHub 但完全无需 Ollama 的任何依赖。仅仅只是模拟 Ollama 协议用于左边连 Visual Studio Copilot，右边连其他厂商而已。整个 OllamaHub 项目全 C# 代码，结构简单，基本拉下来有心去看，不到一会代码就全扫完了。这也就是我敢和大家推荐的原因
 
-先用 GitHub 拉取项目，如果发现需要梯子才能访问。那就请试试用 Gitee 将其拉下来： <https://gitee.com/projects/import/url>
+先用 GitHub 拉取项目，如果发现难以访问。那就请试试用 Gitee 将其拉下来： <https://gitee.com/projects/import/url>
 
 拉下来项目之后，先 cd 进入 OllamaHub 文件夹后，可以一键用 dotnet run 跑起来项目
 
@@ -33,7 +35,8 @@ OllamaHub 的开源项目地址： <https://github.com/mingkuang-Chuyu/OllamaHub
   "port": 2315,
   "url": null,
   "baseUrl": null,
-  "providers": [
+  "providers": 
+   [
     {
       "id": "DeepSeek",
       "baseUrl": "https://api.deepseek.com",
@@ -91,23 +94,58 @@ Loaded 1 model(s) from Xxx\OllamaHub\bin\Debug\net10.0\settings.json
 
 在 Visual Studio Copilot 界面里面，在选择模型的最下方，点击管理模型
 
+<!-- ![](image/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型0.png) -->
 ![](http://cdn.lindexi.site/lindexi-20266211047273730.jpg)
 
 选择 Ollama 然后填入 `http://127.0.0.1:2315` 即可
 
+<!-- ![](image/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型1.png) -->
 ![](http://cdn.lindexi.site/lindexi-2026621104901102.jpg)
 
 以上的  2315 端口号就是在上面 `settings.json` 里配置的
 
 配置完成之后点击添加，随后开始转圈，预期转圈完成之后即可显示出来刚才配置在  `settings.json` 里面的模型
 
+<!-- ![](image/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型2.png) -->
 ![](http://cdn.lindexi.site/lindexi-2026621105112469.jpg)
 
 将其勾选后点保存即可
 
 回到 Visual Studio Copilot 界面上，此时可选模型就包含了刚才咱添加的模型了
 
+<!-- ![](image/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型5.png) -->
+![](http://cdn.lindexi.site/lindexi-202662294629867.jpg)
+
 我从 6 月 1 号到现在（6月21号），每天正常在用，拿 DeepSeek v4 Flash 当成补全模型，拿 DeepSeek v4 Pro 当成主力辅助模型。大概 20 天用了 7 块钱，就是感觉还很便宜的
+
+<!-- ![](image/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型3.png) -->
+![](http://cdn.lindexi.site/lindexi-2026622940355809.jpg)
+
+我现在有几个项目都是用 DeepSeek 辅助编写的，博客也是，感觉用起来不错
+
+### 常见问题
+
+#### 找不到“管理模型”选项？
+
+原因1 是登录的是公司组织下的账号，这是受限的，切换为自己的账号，应该就可以了。切换方式就是切换活动账号，在 "..." 里面就能找到
+
+<!-- ![](image/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型/用 OllamaHub  让 Visual Studio Copilot 可以对接任意模型4.png) -->
+![](http://cdn.lindexi.site/lindexi-2026622943291204.jpg)
+
+原因2是版本太旧了，试试升级一下吧
+
+#### DeepSeek 报告 415 错误
+
+原因是没有添加好 header 导致 DeepSeek 报告 Response: Expected request with Content-Type: application/json
+
+解决方法是添加在配置里面 header 内容：
+
+```json
+      "headers": 
+      {
+        "Content-Type": "application/json"
+      },
+```
 
 
 

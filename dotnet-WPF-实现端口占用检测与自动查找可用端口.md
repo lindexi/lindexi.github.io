@@ -6,6 +6,8 @@
 <!--more-->
 
 
+<!-- CreateTime:2026/06/22 08:24:37 -->
+
 <!-- 发布 -->
 <!-- 博客 -->
 
@@ -18,6 +20,9 @@
 传统的做法是打开命令行敲 `netstat -ano | findstr :端口号`，然后去任务管理器找 PID。但这种方法有几个盲区：如果端口被系统保留（比如被 Hyper-V 或 WSL 的排除端口范围覆盖），或者被 HTTP.sys 等内核组件占用，netstat 的输出可能看不到任何记录，却依然无法绑定。
 
 于是就有了这个端口检测器工具。它通过真正去尝试监听端口来判断占用情况，并结合 Windows API 查询占用进程，还能一键自动查找当前可用的端口。
+
+<!-- ![](image/dotnet WPF 实现端口占用检测与自动查找可用端口/dotnet WPF 实现端口占用检测与自动查找可用端口0.png) -->
+![](http://cdn.lindexi.site/lindexi-2026622832339865.jpg)
 
 ## 最核心的检测原理：直接去 Bind
 
@@ -323,6 +328,9 @@ private static PortOwner CreatePortOwner(string protocol, uint address, int port
 
 `BitConverter.GetBytes` 在主机字节序的机器上输出的是小端字节序，但对于网络字节序的 `uint` 来说，`BitConverter.GetBytes` 输出的第 0 个字节恰好是大端的最低位，这正好对应 `IPAddress` 构造函数要求的网络字节序排列。所以虽然绕了一下，但结果是正确的。
 
+<!-- ![](image/dotnet WPF 实现端口占用检测与自动查找可用端口/dotnet WPF 实现端口占用检测与自动查找可用端口1.png) -->
+![](http://cdn.lindexi.site/lindexi-2026622834244980.jpg)
+
 ## 读取系统排除端口范围
 
 Windows 有一个容易被忽略的端口占用机制：排除端口范围。这些端口被系统保留给 Hyper-V、WSL、某些 VPN 客户端等使用。它的特点是：端口表里查不到，也没有你能看到的进程在监听，但就是绑不上去，返回 `AccessDenied`。
@@ -435,7 +443,7 @@ for (var port = range.Start; port <= range.End; port++)
 var analysis = new List<string>
 {
     "在常用扫描区间内未找到同时满足四项监听条件的端口。",
-    "如果几乎所有端口都报 AccessDenied，优先检查 Windows 排除端口范围、Hyper-V/HNS、HTTP.sys、VPN/代理或安全软件。"
+    "如果几乎所有端口都报 AccessDenied，优先检查 Windows 排除端口范围、Hyper-V/HNS、HTTP.sys、VPN/代 理或安全软件。"
 };
 return new PortSearchResult(null, analysis);
 ```
@@ -506,18 +514,18 @@ var loopbackDeniedProtocols = probeResults
 if (loopbackDeniedProtocols.Any(protocol => probeResults.Any(result =>
     result.Protocol == protocol && result.Address.Equals(IPAddress.Any) && !result.IsOccupied)))
 {
-    analysis.Add("同协议下 127.0.0.1 失败而 0.0.0.0 成功，更像是环回地址被代理、安全软件、端口转发组件或系统策略限制。");
+    analysis.Add("同协议下 127.0.0.1 失败而 0.0.0.0 成功，更像是环回地址被代 理、安全软件、端口转发组件或系统策略限制。");
 }
 ```
 
-这里的判断逻辑是：同一个协议下，127.0.0.1 被拒但 0.0.0.0 成功。如果两个都被拒，那可能是全局性的端口占用或系统策略；只有环回地址被拒，则更像是代理软件（如 Clash、ssr）或 VPN 在环回地址上的流量拦截。
+这里的判断逻辑是：同一个协议下，127.0.0.1 被拒但 0.0.0.0 成功。如果两个都被拒，那可能是全局性的端口占用或系统策略；只有环回地址被拒，则更像是代 理软件（如 Cl*sh、s*r）或 VPN 在环回地址上的流量拦截。
 
 第三步，结合监听表给出建议：
 
 ```csharp
 if (owners.Count == 0)
 {
-    analysis.Add("监听表未返回对应进程时，常见原因是 Windows 端口保留、HTTP.sys、Hyper-V/HNS、VPN/代理或安全软件。");
+    analysis.Add("监听表未返回对应进程时，常见原因是 Windows 端口保留、HTTP.sys、Hyper-V/HNS、VPN/代 理或安全软件。");
 }
 
 if (!IsRunningAsAdministrator())
