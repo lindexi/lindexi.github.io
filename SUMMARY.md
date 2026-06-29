@@ -12,6 +12,8 @@
 
  * [Accessing Internal Members in the UNO Framework](Accessing-Internal-Members-in-the-UNO-Framework.md)
 
+ * [AI 时代的设备所见即用](AI-时代的设备所见即用.md)
+
  * [asp dotnet core 3.0 接口返回 json 使用 PascalCase 格式](asp-dotnet-core-3.0-接口返回-json-使用-PascalCase-格式.md)
 
  * [asp dotnet core 不正经的提升效率的单元测试方法](asp-dotnet-core-不正经的提升效率的单元测试方法.md)
@@ -3799,6 +3801,8 @@
  * [完整的 P2P 应用需要包含哪些功能](完整的-P2P-应用需要包含哪些功能.md)
 
  * [定制 MSTest 单元测试框架 让一个 TestMethod 包含多个测试用例](定制-MSTest-单元测试框架-让一个-TestMethod-包含多个测试用例.md)
+
+ * [实验千问 3.7 Plus 在 VS Copilot 里撰写 XAML 的能力](实验千问-3.7-Plus-在-VS-Copilot-里撰写-XAML-的能力.md)
 
  * [对比 Avalonia 和 WPF 的渲染延迟](对比-Avalonia-和-WPF-的渲染延迟.md)
 
