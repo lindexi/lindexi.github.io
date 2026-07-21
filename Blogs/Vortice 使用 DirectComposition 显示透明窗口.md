@@ -9,7 +9,6 @@ category:
 <!-- 发布 -->
 <!-- 博客 -->
 <!-- 标签：C#,D2D,DirectX,Vortice,Direct2D,渲染,DirectComposition -->
-<!-- 置顶1 -->
 
 本文是[渲染相关系列博客](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )中的一篇，该系列博客已按照逻辑顺序编排，方便大家依次阅读。如您对渲染相关感兴趣，可以通过以下链接访问整个系列：[渲染相关系列博客导航](https://blog.lindexi.com/post/WPF-%E4%BD%BF%E7%94%A8-SharpDx-%E6%B8%B2%E6%9F%93%E5%8D%9A%E5%AE%A2%E5%AF%BC%E8%88%AA.html )
 
@@ -635,6 +634,8 @@ git pull origin 369de6b65c4122cec6a6c9ffbcc0b352a419e83e
 ## 采用 WS_EX_NOREDIRECTIONBITMAP 的方案
 
 上文提及的是采用 WS_EX_LAYERED 分层窗口的方式，此方式与采用 WS_EX_NOREDIRECTIONBITMAP 的方案的代码写法非常接近，只是 WS_EX_NOREDIRECTIONBITMAP 可以带来更高的性能
+
+> 注： 见下文的实际测试。实际上我在 Win10 多个版本、Win11 多个版本，分别对采用 WS_EX_LAYERED 和 WS_EX_NOREDIRECTIONBITMAP 的透明窗口进行实验测试，均获得十分接近的效果。如此可以说明，WS_EX_NOREDIRECTIONBITMAP 也许能带来更高的性能，但是高多少？比 WS_EX_LAYERED 高接近可以忽略的性能。根据此指导思想，无须将旧逻辑的 WS_EX_LAYERED 更换为 WS_EX_NOREDIRECTIONBITMAP 的方案
 
 其改动全在 CreateWindow 中，只需将 WINDOW_EX_STYLE 从 WS_EX_LAYERED 换成 WS_EX_NOREDIRECTIONBITMAP 即可
 
