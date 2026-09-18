@@ -1236,6 +1236,8 @@
 
  * [dotnet 找到博客中引用已失败的链接地址](dotnet-找到博客中引用已失败的链接地址.md)
 
+ * [dotnet 抓取启动即崩溃的进程的 dump 文件](dotnet-抓取启动即崩溃的进程的-dump-文件.md)
+
  * [dotnet 探究 SemanticKernel 的 planner 的原理](dotnet-探究-SemanticKernel-的-planner-的原理.md)
 
  * [dotnet 控制台 Hangfire 后台定时任务](dotnet-控制台-Hangfire-后台定时任务.md)
