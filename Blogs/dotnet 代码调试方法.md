@@ -1636,7 +1636,7 @@ ntdll.dll!_DbgUiRemoteBreakin
 
 以及 一线码农 提供的也是通过 [ProcDump](https://docs.microsoft.com/zh-cn/sysinternals/downloads/procdump?WT.mc_id=WD-MVP-5003260) 工具来抓 DUMP 的方法，请看 [如何在 NET 程序万种死法中有效的生成 Dump (上) - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/14661031.html) 和 [.NET程序崩溃了怎么抓 Dump ? 我总结了三种方案 - 一线码农 - 博客园](https://www.cnblogs.com/huangxincheng/p/14811953.html)
 
-
+如果连 ProcDump 都难以抓取，则推荐采用 [dotnet 抓取启动即崩溃的进程的 dump 文件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/23034880 ) 介绍的我开源的 ProcdumpExec 工具进行抓取，适用于启动立刻崩溃、多进程带参数的应用
 
 ### 面对不熟悉代码的调试
 
