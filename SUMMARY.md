@@ -3490,6 +3490,8 @@
 
  * [wpf DoEvents ](wpf-DoEvents-.md)
 
+ * [WpfRuntime 提前体验尚未发布的 WPF 新功能](WpfRuntime-提前体验尚未发布的-WPF-新功能.md)
+
  * [WPF 使用像素着色器实现单应变换](WPF-使用像素着色器实现单应变换.md)
 
  * [WPF 保持同一个 HWND 将窗口从 X8 单向升级到 A8 透明渲染](WPF-保持同一个-HWND-将窗口从-X8-单向升级到-A8-透明渲染.md)
