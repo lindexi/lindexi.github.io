@@ -992,6 +992,8 @@
 
  * [dotnet 使用 dnlib 检测插件程序集的 API 兼容性](dotnet-使用-dnlib-检测插件程序集的-API-兼容性.md)
 
+ * [dotnet 使用 DotNetHost.Win32Metadata 让 .NET Framework 与 Native AOT 程序加载 .NET 10 组件](dotnet-使用-DotNetHost.Win32Metadata-让-.NET-Framework-与-Native-AOT-程序加载-.NET-10-组件.md)
+
  * [dotnet 使用 Environment.FailFast 结束程序](dotnet-使用-Environment.FailFast-结束程序.md)
 
  * [dotnet 使用 FileAccess 与 OpenOrCreate 对文件访问权限的影响](dotnet-使用-FileAccess-与-OpenOrCreate-对文件访问权限的影响.md)
