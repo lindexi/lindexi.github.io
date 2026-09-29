@@ -149,6 +149,11 @@ procdump.exe -e -t -w -ma KajijuniLiguqujokemka
 
 大家可以尝试使用我放在 [github](https://github.com/lindexi/lindexi_gd/tree/56318bf4ca4337539f65987cec2b057c1f9c6f8e/BeyajaydahifallChecheecaifelwarlerenel ) 的代码进行测试
 
+### 抓取带启动参数的多进程闪退程序的方法
+
+请参阅 [dotnet 抓取启动即崩溃的进程的 dump 文件](https://blog.lindexi.com/post/dotnet-%E6%8A%93%E5%8F%96%E5%90%AF%E5%8A%A8%E5%8D%B3%E5%B4%A9%E6%BA%83%E7%9A%84%E8%BF%9B%E7%A8%8B%E7%9A%84-dump-%E6%96%87%E4%BB%B6.html )
+<!-- [dotnet 抓取启动即崩溃的进程的 dump 文件 - lindexi - 博客园](https://www.cnblogs.com/lindexi/p/23034880 ) -->
+
 更多请看 [dotnet 代码调试方法](https://blog.lindexi.com/post/dotnet-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%96%B9%E6%B3%95.html )
 
 
