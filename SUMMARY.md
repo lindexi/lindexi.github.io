@@ -1150,6 +1150,8 @@
 
  * [dotnet 在析构函数调用 ThreadLocal 也许会抛出对方已释放](dotnet-在析构函数调用-ThreadLocal-也许会抛出对方已释放.md)
 
+ * [dotnet 在矩形堆里为新矩形找空位时如何避免扫描像素](dotnet-在矩形堆里为新矩形找空位时如何避免扫描像素.md)
+
  * [dotnet 基于 debian 创建一个 docker 的 sdk 镜像](dotnet-基于-debian-创建一个-docker-的-sdk-镜像.md)
 
  * [dotnet 基于 DirectML 控制台运行 Phi-3 模型](dotnet-基于-DirectML-控制台运行-Phi-3-模型.md)
@@ -2977,6 +2979,8 @@
  * [WPF 启动性能优化 在 EnsureHandle 之前设置 WindowStyle 提升性能](WPF-启动性能优化-在-EnsureHandle-之前设置-WindowStyle-提升性能.md)
 
  * [WPF 和 ASP.NET Core 通过 elastic APM 上报信息](WPF-和-ASP.NET-Core-通过-elastic-APM-上报信息.md)
+
+ * [WPF 和 Avalonia 在 XAML 里给字典填充值的简单写法](WPF-和-Avalonia-在-XAML-里给字典填充值的简单写法.md)
 
  * [WPF 图片移除视觉树内存泄漏](WPF-图片移除视觉树内存泄漏.md)
 
